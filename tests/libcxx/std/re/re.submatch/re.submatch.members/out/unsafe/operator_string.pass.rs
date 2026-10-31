@@ -22,29 +22,39 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut sm: () = unimplemented!();
         let mut str: () = unimplemented!();
-        unimplemented!();
-        let s: [(); 4] = [('1' as ()), ('2' as ()), ('3' as ()), 0_()];
-        sm.first = s.as_ptr();
-        sm.second = s.as_ptr().offset((3_()) as isize);
+        assert!(Vec::len(&str) <= 1);
+        let s: [libc::c_char; 4] = [
+            ('1' as libc::c_char),
+            ('2' as libc::c_char),
+            ('3' as libc::c_char),
+            (0 as libc::c_char),
+        ];
+        (sm as (*const libc::c_char, *const libc::c_char)).0 = s.as_ptr();
+        (sm as (*const libc::c_char, *const libc::c_char)).1 = s.as_ptr().offset((3) as isize);
         sm.matched = true;
-        unimplemented!();
-        unimplemented!();
+        str = unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let mut sm: () = unimplemented!();
         let mut str: () = unimplemented!();
-        unimplemented!();
-        let s: [(); 4] = [('1' as ()), ('2' as ()), ('3' as ()), 0_()];
-        sm.first = s.as_ptr();
-        sm.second = s.as_ptr().offset((3_()) as isize);
+        assert!(Vec::len(&str) <= 1);
+        let s: [i32; 4] = [
+            (('1' as libc::c_char) as i32),
+            (('2' as libc::c_char) as i32),
+            (('3' as libc::c_char) as i32),
+            0_i32,
+        ];
+        (sm as (*const i32, *const i32)).0 = s.as_ptr();
+        (sm as (*const i32, *const i32)).1 = s.as_ptr().offset((3) as isize);
         sm.matched = true;
-        unimplemented!();
-        unimplemented!();
+        str = unimplemented!();
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

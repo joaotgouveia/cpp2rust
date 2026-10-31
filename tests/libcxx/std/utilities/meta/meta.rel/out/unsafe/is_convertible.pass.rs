@@ -767,10 +767,11 @@ pub unsafe fn test_is_not_convertible_75() {
     const _: () = assert!(true, "(!std::is_convertible_v<const T, const U>)");;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(*const libc::c_char , new, value)]
 pub struct StringType {}
 impl StringType {
-    pub unsafe fn new(mut _a0: *const ()) -> Self {
+    pub unsafe fn new(mut _a0: *const libc::c_char) -> Self {
         let mut this = Self {};
         this
     }
@@ -780,7 +781,7 @@ impl StringType {
 pub struct NonCopyable {}
 impl NonCopyable {}
 pub unsafe trait abstract_ {
-    unsafe fn f(&mut self) -> ();
+    unsafe fn f(&mut self) -> i32;
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -797,7 +798,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_is_convertible_0() });
     (unsafe { test_is_not_convertible_9() });
     (unsafe { test_is_not_convertible_10() });
@@ -1032,6 +1033,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "(std::is_convertible<CannotInstantiate<int>*, CannotInstantiate<int>*>::value)"
     );;
     const _: () = assert!(true, "!std::is_convertible<abstract, abstract>::value");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

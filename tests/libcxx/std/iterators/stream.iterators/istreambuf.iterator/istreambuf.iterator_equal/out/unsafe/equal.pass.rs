@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut inf1: () = unimplemented!();
         let mut inf2: () = unimplemented!();
@@ -30,32 +30,32 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut i2: () = unimplemented!();
         let mut i3: () = unimplemented!();
         let mut i4: () = unimplemented!();
-        let mut i5: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut i5: () = std::ptr::null_mut();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
         let mut inf1: () = unimplemented!();
@@ -64,33 +64,33 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut i2: () = unimplemented!();
         let mut i3: () = unimplemented!();
         let mut i4: () = unimplemented!();
-        let mut i5: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut i5: () = std::ptr::null_mut();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

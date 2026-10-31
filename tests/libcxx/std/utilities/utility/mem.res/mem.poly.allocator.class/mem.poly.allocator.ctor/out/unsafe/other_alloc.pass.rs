@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         const _: () = assert!(true, "std::is_convertible<A1 const&, A2>::value");;
         const _: () = assert!(true, "std::is_convertible<A2 const&, A1>::value");;
@@ -32,15 +32,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let a: () = unimplemented!();
         let a2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (42 as *mut ())));
     }
     {
         let mut a: () = unimplemented!();
         let a2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (42 as *mut ())));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

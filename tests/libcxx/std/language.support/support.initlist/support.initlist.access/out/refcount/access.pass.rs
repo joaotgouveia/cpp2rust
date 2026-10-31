@@ -6,37 +6,39 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Vec<i32  >  , new, value)]
 #[byte_size(1)]
 pub struct A {}
 impl A {
-    pub fn new(il: ()) -> Self {
-        let il: Value<()> = Rc::new(RefCell::new(il));
+    pub fn new(il: Vec<i32>) -> Self {
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         let __this: A = Self {};
-        let mut b: Ptr<()> = unimplemented!();
-        let mut e: Ptr<()> = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut b: Ptr<i32> = unimplemented!();
+        let mut e: Ptr<i32> = unimplemented!();
+        assert!(((*il.borrow()).len() == 3_usize));
+        assert!(({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }));
+        assert!(((b.postfix_inc().read()) == 3));
+        assert!(((b.postfix_inc().read()) == 2));
+        assert!(((b.postfix_inc().read()) == 1));
         __this
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Vec<i32  >  , new, value)]
 #[byte_size(1)]
 pub struct B {}
 impl B {
-    pub fn new(il: ()) -> Self {
-        let il: Value<()> = Rc::new(RefCell::new(il));
+    pub fn new(il: Vec<i32>) -> Self {
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         let __this: B = Self {};
-        let mut b: Ptr<()> = unimplemented!();
-        let mut e: Ptr<()> = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut b: Ptr<i32> = unimplemented!();
+        let mut e: Ptr<i32> = unimplemented!();
+        assert!(((*il.borrow()).len() == 3_usize));
+        assert!(({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }));
+        assert!(((b.postfix_inc().read()) == 3));
+        assert!(((b.postfix_inc().read()) == 2));
+        assert!(((b.postfix_inc().read()) == 1));
         __this
     }
 }
@@ -59,11 +61,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut test1: A = A::new({ unimplemented!() });
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let mut test1: A = A::new({ Vec::from([3, 2, 1]) });
     &(test1);
-    let mut test2: B = B::new({ unimplemented!() });
+    let mut test2: B = B::new({ Vec::from([3, 2, 1]) });
     &(test2);
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -7,42 +7,42 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
-    let mut s: () = 0_();
-    'loop_: while (s < 20_()) {
+    let mut s: u16 = 0_u16;
+    'loop_: while ((s as i32) < 20) {
         let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
         s.prefix_inc();
     }
 }
 pub fn test1_1() {
-    let mut s: () = 0_();
-    'loop_: while (s < 20_()) {
+    let mut s: u32 = 0_u32;
+    'loop_: while (s < 20_u32) {
         let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
         s.prefix_inc();
     }
 }
 pub fn test1_2() {
-    let mut s: () = 0_();
-    'loop_: while (s < 20_()) {
+    let mut s: u64 = 0_u64;
+    'loop_: while (s < 20_u64) {
         let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
         s.prefix_inc();
     }
 }
 pub fn test1_3() {
-    let mut s: () = 0_();
-    'loop_: while (s < 20_()) {
+    let mut s: u64 = 0_u64;
+    'loop_: while (s < 20_u64) {
         let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
         s.prefix_inc();
     }
 }
@@ -65,11 +65,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_0() });
     ({ test1_1() });
     ({ test1_2() });
     ({ test1_3() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -27,13 +27,13 @@ const _: () = assert!(true, "");
 const _: () = assert!(true, "");
 const _: () = assert!(true, "");
 const _: () = assert!(true, "");
-pub static mut line_1: std::cell::LazyCell<()> =
+pub static mut line_1: std::cell::LazyCell<u32> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut column_2: std::cell::LazyCell<()> =
+pub static mut column_2: std::cell::LazyCell<u32> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut file_3: std::cell::LazyCell<*const ()> =
+pub static mut file_3: std::cell::LazyCell<*const libc::c_char> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut function_4: std::cell::LazyCell<*const ()> =
+pub static mut function_4: std::cell::LazyCell<*const libc::c_char> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub static mut cur_5: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
@@ -59,23 +59,23 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut local: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((libc::strcmp(unimplemented!(), c"ss".as_ptr())) == (0)));
+    assert!(!((libc::strstr(unimplemented!(), c"main".as_ptr()) as *const libc::c_char).is_null()));
+    assert!(((unimplemented!()) == (2000_u32)));
+    assert!(((unimplemented!()) > (0_u32)));
     let mut local2: () = unimplemented!();
+    assert!(((libc::strcmp(unimplemented!(), unimplemented!())) == (0)));
+    assert!(((libc::strcmp(unimplemented!(), unimplemented!())) == (0)));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((libc::strcmp(unimplemented!(), unimplemented!())) == (0)));
+    assert!(((libc::strcmp(unimplemented!(), unimplemented!())) == (0)));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const empty_0);

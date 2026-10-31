@@ -43,22 +43,22 @@ pub struct types_concatenate_types_type_list_int___types_type_list_long___types_
 pub struct types_concatenate_types_type_list_int__long___types_type_list_long_long__ {}
 pub unsafe fn for_each_0(mut _a0: types_type_list_NumT_0___NumT_1___NumT_2__, mut f: ApplyAllTest) {
     (unsafe {
-        let _arg0: () = {
+        let _arg0: i32 = {
             (unsafe { ApplyAllTest::operator_call_4_class_NumT_0_(&mut f) });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             (unsafe { ApplyAllTest::operator_call_4_class_NumT_1_(&mut f) });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             (unsafe { ApplyAllTest::operator_call_4_class_NumT_2_(&mut f) });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2)
     });
 }
-pub unsafe fn swallow_1(mut _a0: (), mut _a1: (), mut _a2: ()) {}
+pub unsafe fn swallow_1(mut _a0: i32, mut _a1: i32, mut _a2: i32) {}
 const _: () = assert!(
     true,
     "std::is_same<types::concatenate_t<types::type_list<>>,\n                           types::type_list<>>::value"
@@ -85,28 +85,29 @@ pub struct NumT_1_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NumT_2_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(*mut bool , new, value)]
 pub struct ApplyAllTest {
-    pub is_called_array_: *mut (),
+    pub is_called_array_: *mut bool,
 }
 impl ApplyAllTest {
-    pub unsafe fn new(mut is_called_array: *mut ()) -> Self {
+    pub unsafe fn new(mut is_called_array: *mut bool) -> Self {
         let mut this = Self {
             is_called_array_: is_called_array,
         };
         this
     }
     pub unsafe fn check_num_2_0(&mut self, mut _a0: NumT_0_) {
-        unimplemented!();
-        (*self.is_called_array_.offset((0_()) as isize)) = true;
+        assert!(!(*self.is_called_array_.offset((0) as isize)));
+        (*self.is_called_array_.offset((0) as isize)) = true;
     }
     pub unsafe fn check_num_2_1(&mut self, mut _a0: NumT_1_) {
-        unimplemented!();
-        (*self.is_called_array_.offset((1_()) as isize)) = true;
+        assert!(!(*self.is_called_array_.offset((1) as isize)));
+        (*self.is_called_array_.offset((1) as isize)) = true;
     }
     pub unsafe fn check_num_2_2(&mut self, mut _a0: NumT_2_) {
-        unimplemented!();
-        (*self.is_called_array_.offset((2_()) as isize)) = true;
+        assert!(!(*self.is_called_array_.offset((2) as isize)));
+        (*self.is_called_array_.offset((2) as isize)) = true;
     }
     pub unsafe fn operator_call_4_class_NumT_0_(&mut self) {
         (unsafe { ApplyAllTest::check_num_2_0(self, <NumT_0_>::default()) });
@@ -122,21 +123,21 @@ impl ApplyAllTest {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Identity {}
 impl Identity {
-    pub unsafe fn operator_call(&self, mut b: ()) -> () {
+    pub unsafe fn operator_call(&self, mut b: bool) -> bool {
         return b;
     }
 }
 pub unsafe fn test_for_each_2() {
-    let mut is_called_array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+    let mut is_called_array: [bool; 3] = [false, false, false];
     (unsafe {
         for_each_0(
             <types_type_list_NumT_0___NumT_1___NumT_2__>::default(),
             ApplyAllTest::new({ is_called_array.as_mut_ptr() }),
         )
     });
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_3() -> bool {
     (unsafe { test_for_each_2() });
     return true;
 }
@@ -155,9 +156,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_3() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

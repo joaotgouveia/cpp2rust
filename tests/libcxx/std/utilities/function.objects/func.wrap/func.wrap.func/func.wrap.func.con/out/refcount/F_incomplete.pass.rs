@@ -29,7 +29,7 @@ impl IncompleteReturnType {
     }
 }
 thread_local!(
-    pub static called_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static called_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 pub fn test_fn_1() -> IncompleteReturnType {
     (*called_0.with(Value::clone).borrow_mut()).prefix_inc();
@@ -48,16 +48,16 @@ pub fn test_pr34298_2() {
         unimplemented!();
         let CX: Ptr<IncompleteReturnType> = X.as_pointer();
         let mut X2: IncompleteReturnType = (*CX.upgrade().deref()).clone();
+        assert!(unimplemented!());
+        assert!((called_0.with(|rc| *rc.borrow()) == 0));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((called_0.with(|rc| *rc.borrow()) == 1));
     }
     {
         let Empty: Value<IncompleteReturnType> =
             Rc::new(RefCell::new(<IncompleteReturnType>::default()));
         let mut X2: IncompleteReturnType = (*Empty.borrow()).clone();
-        unimplemented!();
+        assert!(!(unimplemented!()));
     }
 }
 pub fn main() {
@@ -79,9 +79,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_pr34298_2() });
-    return 0_();
+    return 0;
 }
 pub trait IncompleteReturnTypeImpl {
     fn move_assign(&self, _a0: Ptr<IncompleteReturnType>) -> Ptr<IncompleteReturnType>;

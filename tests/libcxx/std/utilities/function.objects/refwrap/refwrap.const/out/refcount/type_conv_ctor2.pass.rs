@@ -23,24 +23,24 @@ pub struct A2 {
     #[byte_size(1)]
     pub b_: B,
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         let a: Value<A1> = Rc::new(RefCell::new(<A1>::default()));
         const _: () = assert!(true, "");;
-        let b1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let mut b1: Ptr<B> = a.as_pointer();
+        assert!(((b1) == (field_ptr!(a.as_pointer(), b_))));
         const _: () = assert!(true, "");;
         unimplemented!();
-        unimplemented!();
+        assert!(((b1) == (field_ptr!(a.as_pointer(), b_))));
     }
     {
         let a: Value<A2> = Rc::new(RefCell::new(<A2>::default()));
         const _: () = assert!(true, "");;
-        let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let mut b2: Ptr<B> = a.as_pointer();
+        assert!(((b2) == (field_ptr!(a.as_pointer(), b_))));
         const _: () = assert!(true, "");;
         unimplemented!();
-        unimplemented!();
+        assert!(((b2) == (field_ptr!(a.as_pointer(), b_))));
     }
     return true;
 }
@@ -63,10 +63,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait A1Impl {
     fn to_pmutB(&self) -> Ptr<B>;

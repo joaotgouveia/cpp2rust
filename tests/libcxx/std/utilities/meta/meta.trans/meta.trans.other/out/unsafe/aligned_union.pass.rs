@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::is_trivially_copyable<T1>::value");;
@@ -30,7 +30,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 1");;
         const _: () = assert!(
-            ((::std::mem::size_of::<()>()) == (10_())),
+            ((::std::mem::size_of::<()>()) == (10_usize)),
             "sizeof(T1) == 10"
         );;
     }
@@ -41,7 +41,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 2");;
         const _: () = assert!(
-            ((::std::mem::size_of::<()>()) == (10_())),
+            ((::std::mem::size_of::<()>()) == (10_usize)),
             "sizeof(T1) == 10"
         );;
     }
@@ -52,7 +52,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 4");;
         const _: () = assert!(
-            ((::std::mem::size_of::<()>()) == (12_())),
+            ((::std::mem::size_of::<()>()) == (12_usize)),
             "sizeof(T1) == 12"
         );;
     }
@@ -63,7 +63,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 8");;
         const _: () = assert!(
-            ((::std::mem::size_of::<()>()) == (16_())),
+            ((::std::mem::size_of::<()>()) == (16_usize)),
             "sizeof(T1) == 16"
         );;
     }
@@ -74,7 +74,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 2");;
         const _: () = assert!(
-            ((::std::mem::size_of::<()>()) == (10_())),
+            ((::std::mem::size_of::<()>()) == (10_usize)),
             "sizeof(T1) == 10"
         );;
     }
@@ -85,7 +85,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 2");;
         const _: () = assert!(
-            ((::std::mem::size_of::<()>()) == (10_())),
+            ((::std::mem::size_of::<()>()) == (10_usize)),
             "sizeof(T1) == 10"
         );;
     }
@@ -95,7 +95,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 4");;
-        const _: () = assert!(((::std::mem::size_of::<()>()) == (4_())), "sizeof(T1) == 4");;
+        const _: () = assert!(
+            ((::std::mem::size_of::<()>()) == (4_usize)),
+            "sizeof(T1) == 4"
+        );;
     }
     {
         const _: () = assert!(true, "");;
@@ -103,7 +106,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 4");;
-        const _: () = assert!(((::std::mem::size_of::<()>()) == (4_())), "sizeof(T1) == 4");;
+        const _: () = assert!(
+            ((::std::mem::size_of::<()>()) == (4_usize)),
+            "sizeof(T1) == 4"
+        );;
     }
     {
         const _: () = assert!(true, "");;
@@ -111,8 +117,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 4");;
-        const _: () = assert!(((::std::mem::size_of::<()>()) == (4_())), "sizeof(T1) == 4");;
+        const _: () = assert!(
+            ((::std::mem::size_of::<()>()) == (4_usize)),
+            "sizeof(T1) == 4"
+        );;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

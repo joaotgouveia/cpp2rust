@@ -17,28 +17,28 @@ const _: () = assert!(
     true,
     "std::is_nothrow_default_constructible_v<std::expected<void, NoDefaultCtor>>"
 );
-pub fn operator_eq_0(_a0: Ptr<MyInt>, _a1: Ptr<MyInt>) -> () {
+pub fn operator_eq_0(_a0: Ptr<MyInt>, _a1: Ptr<MyInt>) -> bool {
     return ({ _a0.with(|__s| __s.i) } == { _a1.with(|__s| __s.i) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct MyInt {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl CppEq for MyInt {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     return true;
 }
@@ -61,9 +61,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

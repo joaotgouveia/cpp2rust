@@ -26,16 +26,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let f: Ptr<()> = unimplemented!();
-    let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut from: Ptr<()> = Ptr::<()>::from_string_literal(b"123467890");
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let mut from: Ptr<i8> = Ptr::<i8>::from_string_literal(b"123467890");
+    assert!((unimplemented!() == 0));
+    assert!((unimplemented!() == 9));
+    assert!((unimplemented!() == 10));
+    assert!((unimplemented!() == 10));
+    assert!((unimplemented!() == 10));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

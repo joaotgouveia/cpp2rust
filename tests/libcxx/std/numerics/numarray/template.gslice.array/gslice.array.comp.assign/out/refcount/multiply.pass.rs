@@ -26,123 +26,61 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-        11_(),
-        12_(),
-        13_(),
-        14_(),
-        15_(),
-        16_(),
-        17_(),
-        18_(),
-        19_(),
-        20_(),
-        21_(),
-        22_(),
-        23_(),
-        24_(),
-        25_(),
-        26_(),
-        27_(),
-        28_(),
-        29_(),
-        30_(),
-        31_(),
-        32_(),
-        33_(),
-        34_(),
-        35_(),
-        36_(),
-        37_(),
-        38_(),
-        39_(),
-        40_(),
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+        25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
     ])));
-    let a2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-        11_(),
-        12_(),
-        13_(),
-        14_(),
-        15_(),
-        16_(),
-        17_(),
-        18_(),
-        19_(),
-        20_(),
-        21_(),
-        22_(),
-        23_(),
-        24_(),
+    let a2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
     ])));
     let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sz: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([2_(), 4_(), 3_()])));
-    let st: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([19_(), 4_(), 1_()])));
+    let sz: Value<Box<[usize]>> = Rc::new(RefCell::new(Box::new([2_usize, 4_usize, 3_usize])));
+    let st: Value<Box<[usize]>> = Rc::new(RefCell::new(Box::new([19_usize, 4_usize, 1_usize])));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((unimplemented!() == 41_usize));
+    assert!(((unimplemented!().read()) == 0));
+    assert!(((unimplemented!().read()) == 1));
+    assert!(((unimplemented!().read()) == 2));
+    assert!(((unimplemented!().read()) == 3));
+    assert!(((unimplemented!().read()) == 8));
+    assert!(((unimplemented!().read()) == 15));
+    assert!(((unimplemented!().read()) == 6));
+    assert!(((unimplemented!().read()) == 28));
+    assert!(((unimplemented!().read()) == 40));
+    assert!(((unimplemented!().read()) == 54));
+    assert!(((unimplemented!().read()) == 10));
+    assert!(((unimplemented!().read()) == 77));
+    assert!(((unimplemented!().read()) == 96));
+    assert!(((unimplemented!().read()) == 117));
+    assert!(((unimplemented!().read()) == 14));
+    assert!(((unimplemented!().read()) == 150));
+    assert!(((unimplemented!().read()) == 176));
+    assert!(((unimplemented!().read()) == 204));
+    assert!(((unimplemented!().read()) == 18));
+    assert!(((unimplemented!().read()) == 19));
+    assert!(((unimplemented!().read()) == 20));
+    assert!(((unimplemented!().read()) == 21));
+    assert!(((unimplemented!().read()) == 286));
+    assert!(((unimplemented!().read()) == 322));
+    assert!(((unimplemented!().read()) == 360));
+    assert!(((unimplemented!().read()) == 25));
+    assert!(((unimplemented!().read()) == 416));
+    assert!(((unimplemented!().read()) == 459));
+    assert!(((unimplemented!().read()) == 504));
+    assert!(((unimplemented!().read()) == 29));
+    assert!(((unimplemented!().read()) == 570));
+    assert!(((unimplemented!().read()) == 620));
+    assert!(((unimplemented!().read()) == 672));
+    assert!(((unimplemented!().read()) == 33));
+    assert!(((unimplemented!().read()) == 748));
+    assert!(((unimplemented!().read()) == 805));
+    assert!(((unimplemented!().read()) == 864));
+    assert!(((unimplemented!().read()) == 37));
+    assert!(((unimplemented!().read()) == 38));
+    assert!(((unimplemented!().read()) == 39));
+    assert!(((unimplemented!().read()) == 40));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

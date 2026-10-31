@@ -7,11 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 impl Key {
-    pub fn new(_a0: Ptr<()>) -> Self {
+    pub fn new(_a0: Ptr<i32>) -> Self {
         Self {}
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, ptr)]
 #[byte_size(1)]
 pub struct Key {}
 impl CppEq for Key {
@@ -38,20 +39,28 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((*it.borrow()) == unimplemented!());
+    let result: Value<(Value<()>, Value<bool>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(((*(*result.borrow()).1.borrow()) as bool));
+    assert!(
+        ((*(*(*(*result.borrow()).0.borrow())
+            .iter_deref()
+            .upgrade()
+            .deref())
+        .1
+        .borrow())
+            == 42)
+    );
+    return 0;
 }
 pub trait KeyImpl {
-    fn operator_eq(&self, _a0: Ptr<Key>) -> ();
+    fn operator_eq(&self, _a0: Ptr<Key>) -> bool;
 }
 impl KeyImpl for Ptr<Key> {
-    fn operator_eq(&self, _a0: Ptr<Key>) -> () {
+    fn operator_eq(&self, _a0: Ptr<Key>) -> bool {
         return true;
     }
 }

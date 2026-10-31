@@ -6,99 +6,99 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub fn test_0(mut bad: i32, mut args_1: i32, mut args_2: i32, mut args_3: i32, mut args_4: i32) {
     let set: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let vals: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([args_1, args_2, args_3, args_4])));
+    let vals: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([args_1, args_2, args_3, args_4])));
     'loop_: for v in IterRange::new(
-        (vals.as_pointer() as Ptr<()>),
-        (vals.as_pointer() as Ptr<()>).offset((4_()) as isize),
+        (vals.as_pointer() as Ptr<i32>),
+        (vals.as_pointer() as Ptr<i32>).offset((4_i64) as isize),
     ) {
-        let v: Ptr<()> = (v).clone();
+        let v: Ptr<i32> = (v).clone();
         unimplemented!();
     }
     'loop_: for v in IterRange::new(
-        (vals.as_pointer() as Ptr<()>),
-        (vals.as_pointer() as Ptr<()>).offset((4_()) as isize),
+        (vals.as_pointer() as Ptr<i32>),
+        (vals.as_pointer() as Ptr<i32>).offset((4_i64) as isize),
     ) {
-        let v: Ptr<()> = (v).clone();
-        unimplemented!();
+        let v: Ptr<i32> = (v).clone();
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
-pub fn test_1(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub fn test_1(mut bad: i8, mut args_1: i8, mut args_2: i8, mut args_3: i8, mut args_4: i8) {
     let set: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let vals: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([args_1, args_2, args_3, args_4])));
+    let vals: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([args_1, args_2, args_3, args_4])));
     'loop_: for v in IterRange::new(
-        (vals.as_pointer() as Ptr<()>),
-        (vals.as_pointer() as Ptr<()>).offset((4_()) as isize),
+        (vals.as_pointer() as Ptr<i8>),
+        (vals.as_pointer() as Ptr<i8>).offset((4_i64) as isize),
     ) {
-        let v: Ptr<()> = (v).clone();
+        let v: Ptr<i8> = (v).clone();
         unimplemented!();
     }
     'loop_: for v in IterRange::new(
-        (vals.as_pointer() as Ptr<()>),
-        (vals.as_pointer() as Ptr<()>).offset((4_()) as isize),
+        (vals.as_pointer() as Ptr<i8>),
+        (vals.as_pointer() as Ptr<i8>).offset((4_i64) as isize),
     ) {
-        let v: Ptr<()> = (v).clone();
-        unimplemented!();
+        let v: Ptr<i8> = (v).clone();
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
-pub fn test_2(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub fn test_2(mut bad: i32, mut args_1: i32, mut args_2: i32, mut args_3: i32, mut args_4: i32) {
     let set: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let vals: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([args_1, args_2, args_3, args_4])));
+    let vals: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([args_1, args_2, args_3, args_4])));
     'loop_: for v in IterRange::new(
-        (vals.as_pointer() as Ptr<()>),
-        (vals.as_pointer() as Ptr<()>).offset((4_()) as isize),
+        (vals.as_pointer() as Ptr<i32>),
+        (vals.as_pointer() as Ptr<i32>).offset((4_i64) as isize),
     ) {
-        let v: Ptr<()> = (v).clone();
+        let v: Ptr<i32> = (v).clone();
         unimplemented!();
     }
     'loop_: for v in IterRange::new(
-        (vals.as_pointer() as Ptr<()>),
-        (vals.as_pointer() as Ptr<()>).offset((4_()) as isize),
+        (vals.as_pointer() as Ptr<i32>),
+        (vals.as_pointer() as Ptr<i32>).offset((4_i64) as isize),
     ) {
-        let v: Ptr<()> = (v).clone();
-        unimplemented!();
+        let v: Ptr<i32> = (v).clone();
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
-pub fn test_3(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub fn test_3(mut bad: i8, mut args_1: i8, mut args_2: i8, mut args_3: i8, mut args_4: i8) {
     let set: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let vals: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([args_1, args_2, args_3, args_4])));
+    let vals: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([args_1, args_2, args_3, args_4])));
     'loop_: for v in IterRange::new(
-        (vals.as_pointer() as Ptr<()>),
-        (vals.as_pointer() as Ptr<()>).offset((4_()) as isize),
+        (vals.as_pointer() as Ptr<i8>),
+        (vals.as_pointer() as Ptr<i8>).offset((4_i64) as isize),
     ) {
-        let v: Ptr<()> = (v).clone();
+        let v: Ptr<i8> = (v).clone();
         unimplemented!();
     }
     'loop_: for v in IterRange::new(
-        (vals.as_pointer() as Ptr<()>),
-        (vals.as_pointer() as Ptr<()>).offset((4_()) as isize),
+        (vals.as_pointer() as Ptr<i8>),
+        (vals.as_pointer() as Ptr<i8>).offset((4_i64) as isize),
     ) {
-        let v: Ptr<()> = (v).clone();
-        unimplemented!();
+        let v: Ptr<i8> = (v).clone();
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(24)]
 pub struct E {
     #[offset(0)]
-    pub a: (),
+    pub a: i32,
     #[offset(8)]
-    pub b: (),
+    pub b: f64,
     #[offset(16)]
-    pub c: (),
+    pub c: i8,
 }
 impl Default for E {
     fn default() -> Self {
         {
             E {
-                a: 1_(),
-                b: 1_(),
-                c: 1_(),
+                a: 1,
+                b: 1_f64,
+                c: 1_i8,
             }
         }
     }
@@ -122,31 +122,31 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        ({ test_0(14_(), 10_(), 11_(), 12_(), 13_()) });
+        ({ test_0(14, 10, 11, 12, 13) });
         ({
             test_1(
-                ('e' as ()),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
-                ('d' as ()),
+                ('e' as i8),
+                ('a' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                ('d' as i8),
             )
         });
     }
     {
-        ({ test_2(14_(), 10_(), 11_(), 12_(), 13_()) });
+        ({ test_2(14, 10, 11, 12, 13) });
         ({
             test_3(
-                ('e' as ()),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
-                ('d' as ()),
+                ('e' as i8),
+                ('a' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                ('d' as i8),
             )
         });
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

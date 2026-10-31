@@ -9,17 +9,17 @@ use std::rc::{Rc, Weak};
 pub fn make_implicit_0() -> () {
     return unimplemented!();
 }
-pub fn test_convertible_imp_1(mut _a0: ()) -> () {
+pub fn test_convertible_imp_1(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_2(mut _a0: ()) -> () {
+pub fn test_convertible_imp_2(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_3() -> () {
-    return ({ test_convertible_imp_1(0_()) });
+pub fn test_convertible_3() -> bool {
+    return ({ test_convertible_imp_1(0) });
 }
-pub fn test_convertible_4() -> () {
-    return ({ test_convertible_imp_2(0_()) });
+pub fn test_convertible_4() -> bool {
+    return ({ test_convertible_imp_2(0_i64) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -40,24 +40,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 0.5_f64));
     }
     {
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 0_f64));
     }
     {
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 0.75_f64));
     }
     {
         const _: () = assert!(true, "test_convertible<D>()");;
-        unimplemented!();
+        assert!(unimplemented!());
         const _: () = assert!(true, "!test_convertible<D, double>()");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

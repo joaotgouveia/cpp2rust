@@ -9,64 +9,72 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {
-    pub time_to_throw: (),
-    pub throw_after: (),
-    pub count: (),
-    pub alloc_count: (),
-    pub allocated_size: (),
-    pub construct_count: (),
-    pub destroy_count: (),
-    pub copied: (),
-    pub moved: (),
-    pub converted: (),
+    pub time_to_throw: i32,
+    pub throw_after: i32,
+    pub count: i32,
+    pub alloc_count: i32,
+    pub allocated_size: i32,
+    pub construct_count: i32,
+    pub destroy_count: i32,
+    pub copied: i32,
+    pub moved: i32,
+    pub converted: i32,
 }
 impl test_allocator_statistics {
     pub unsafe fn clear(&mut self) {
-        unimplemented!();
-        self.count = 0_();
-        self.time_to_throw = 0_();
-        self.alloc_count = 0_();
-        self.allocated_size = 0_();
-        self.construct_count = 0_();
-        self.destroy_count = 0_();
-        self.throw_after = 2147483647_();
+        assert!(
+            ((self.count) == (0)) && (!(c"clearing leaking allocator data?".as_ptr()).is_null())
+        );
+        self.count = 0;
+        self.time_to_throw = 0;
+        self.alloc_count = 0;
+        self.allocated_size = 0;
+        self.construct_count = 0;
+        self.destroy_count = 0;
+        self.throw_after = 2147483647;
         (unsafe { test_allocator_statistics::clear_ctor_counters(self) });
     }
     pub unsafe fn clear_ctor_counters(&mut self) {
-        self.copied = 0_();
-        self.moved = 0_();
-        self.converted = 0_();
+        self.copied = 0;
+        self.moved = 0;
+        self.converted = 0;
     }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         unsafe {
             test_allocator_statistics {
-                time_to_throw: 0_(),
-                throw_after: 2147483647_(),
-                count: 0_(),
-                alloc_count: 0_(),
-                allocated_size: 0_(),
-                construct_count: 0_(),
-                destroy_count: 0_(),
-                copied: 0_(),
-                moved: 0_(),
-                converted: 0_(),
+                time_to_throw: 0,
+                throw_after: 2147483647,
+                count: 0,
+                alloc_count: 0,
+                allocated_size: 0,
+                construct_count: 0,
+                destroy_count: 0,
+                copied: 0,
+                moved: 0,
+                converted: 0,
             }
         }
     }
 }
-pub static mut destructed_value_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 2147483647_() });
+pub static mut destructed_value_0: std::cell::LazyCell<i32> =
+    std::cell::LazyCell::new(|| unsafe { -1_i32 });
+pub static mut moved_value_1: std::cell::LazyCell<i32> =
+    std::cell::LazyCell::new(|| unsafe { 2147483647 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_2(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_2(
+    x: *const test_allocator_void_,
+    y: *const test_allocator_void_,
+) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_3(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_3(
+    x: *const test_allocator_void_,
+    y: *const test_allocator_void_,
+) -> bool {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
@@ -76,36 +84,36 @@ pub unsafe fn operator_ne_3(x: *const test_allocator_void_, y: *const test_alloc
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct test_allocator_void_ {
-    data_: (),
-    id_: (),
+    data_: i32,
+    id_: i32,
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_void_ {
     pub unsafe fn new_1(mut stats: *mut test_allocator_statistics) -> Self {
         let mut this = Self {
-            data_: 0_(),
-            id_: 0_(),
+            data_: 0,
+            id_: 0,
             stats_: stats,
         };
         this
     }
-    pub unsafe fn new_2(mut data: ()) -> Self {
+    pub unsafe fn new_2(mut data: i32) -> Self {
         let mut this = Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: std::ptr::null_mut(),
         };
         this
     }
-    pub unsafe fn new_3(mut data: (), mut stats: *mut test_allocator_statistics) -> Self {
+    pub unsafe fn new_3(mut data: i32, mut stats: *mut test_allocator_statistics) -> Self {
         let mut this = Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: stats,
         };
         this
     }
-    pub unsafe fn new_4(mut data: (), mut id: ()) -> Self {
+    pub unsafe fn new_4(mut data: i32, mut id: i32) -> Self {
         let mut this = Self {
             data_: data,
             id_: id,
@@ -114,8 +122,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn new_5(
-        mut data: (),
-        mut id: (),
+        mut data: i32,
+        mut id: i32,
         mut stats: *mut test_allocator_statistics,
     ) -> Self {
         let mut this = Self {
@@ -137,10 +145,10 @@ impl test_allocator_void_ {
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
     }
-    pub unsafe fn get_id(&self) -> () {
+    pub unsafe fn get_id(&self) -> i32 {
         return self.id_;
     }
-    pub unsafe fn get_data(&self) -> () {
+    pub unsafe fn get_data(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn copy_assign(
@@ -173,8 +181,8 @@ impl Default for test_allocator_void_ {
     fn default() -> Self {
         unsafe {
             test_allocator_void_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -184,7 +192,8 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
-#[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 pub struct Tag_X {}
 impl Tag_X {
     pub unsafe fn new_1(mut _a0: Ctor_Tag) -> Self {
@@ -207,13 +216,14 @@ impl Tag_X {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(i32, new_1, value)]
 pub struct MutableCopy {
-    pub val: (),
-    pub alloc_constructed: (),
+    pub val: i32,
+    pub alloc_constructed: bool,
 }
 impl MutableCopy {
-    pub unsafe fn new_1(mut _val: ()) -> Self {
+    pub unsafe fn new_1(mut _val: i32) -> Self {
         let mut this = Self {
             val: _val,
             alloc_constructed: false,
@@ -232,20 +242,21 @@ impl Default for MutableCopy {
     fn default() -> Self {
         unsafe {
             MutableCopy {
-                val: unimplemented!(),
+                val: 0_i32,
                 alloc_constructed: false,
             }
         }
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(i32, new_1, value)]
 pub struct ConstCopy {
-    pub val: (),
-    pub alloc_constructed: (),
+    pub val: i32,
+    pub alloc_constructed: bool,
 }
 impl ConstCopy {
-    pub unsafe fn new_1(mut _val: ()) -> Self {
+    pub unsafe fn new_1(mut _val: i32) -> Self {
         let mut this = Self {
             val: _val,
             alloc_constructed: false,
@@ -264,20 +275,21 @@ impl Default for ConstCopy {
     fn default() -> Self {
         unsafe {
             ConstCopy {
-                val: unimplemented!(),
+                val: 0_i32,
                 alloc_constructed: false,
             }
         }
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe)]
+#[cpp_from(i32, new_1, value)]
 pub struct MutableMove {
-    pub val: (),
-    pub alloc_constructed: (),
+    pub val: i32,
+    pub alloc_constructed: bool,
 }
 impl MutableMove {
-    pub unsafe fn new_1(mut _val: ()) -> Self {
+    pub unsafe fn new_1(mut _val: i32) -> Self {
         let mut this = Self {
             val: _val,
             alloc_constructed: false,
@@ -303,20 +315,21 @@ impl Default for MutableMove {
     fn default() -> Self {
         unsafe {
             MutableMove {
-                val: unimplemented!(),
+                val: 0_i32,
                 alloc_constructed: false,
             }
         }
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe)]
+#[cpp_from(i32, new_1, value)]
 pub struct ConstMove {
-    pub val: (),
-    pub alloc_constructed: (),
+    pub val: i32,
+    pub alloc_constructed: bool,
 }
 impl ConstMove {
-    pub unsafe fn new_1(mut _val: ()) -> Self {
+    pub unsafe fn new_1(mut _val: i32) -> Self {
         let mut this = Self {
             val: _val,
             alloc_constructed: false,
@@ -342,7 +355,7 @@ impl Default for ConstMove {
     fn default() -> Self {
         unsafe {
             ConstMove {
-                val: unimplemented!(),
+                val: 0_i32,
                 alloc_constructed: false,
             }
         }
@@ -358,10 +371,11 @@ impl ConvertibleFrom_ConstMove_ {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg)]
+#[derive(FnPtrArg, CppFromUnsafe)]
+#[cpp_from_move(ConstMove, new_1, ptr)]
 pub struct ConvertibleFrom_ConstMove_ {
     pub v: ConstMove,
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl Default for ConvertibleFrom_ConstMove_ {
     fn default() -> Self {
@@ -374,7 +388,7 @@ impl Default for ConvertibleFrom_ConstMove_ {
     }
 }
 impl ConvertibleFrom_int_ {
-    pub unsafe fn new_1(_v: *const ()) -> Self {
+    pub unsafe fn new_1(_v: *const i32) -> Self {
         let mut this = Self {
             v: (*_v),
             alloc_constructed: false,
@@ -383,16 +397,17 @@ impl ConvertibleFrom_int_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from_move(i32, new_1, ptr)]
 pub struct ConvertibleFrom_int_ {
-    pub v: (),
-    pub alloc_constructed: (),
+    pub v: i32,
+    pub alloc_constructed: bool,
 }
 impl Default for ConvertibleFrom_int_ {
     fn default() -> Self {
         unsafe {
             ConvertibleFrom_int_ {
-                v: unimplemented!(),
+                v: 0_i32,
                 alloc_constructed: false,
             }
         }
@@ -408,10 +423,11 @@ impl ConvertibleFrom_TracedCopyMove_ {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg)]
+#[derive(Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from_move(TracedCopyMove, new_1, ptr)]
 pub struct ConvertibleFrom_TracedCopyMove_ {
     pub v: TracedCopyMove,
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl Default for ConvertibleFrom_TracedCopyMove_ {
     fn default() -> Self {
@@ -436,7 +452,7 @@ impl ExplicitConstructibleFrom_ConstMove_ {
 #[derive(FnPtrArg)]
 pub struct ExplicitConstructibleFrom_ConstMove_ {
     pub v: ConstMove,
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl Default for ExplicitConstructibleFrom_ConstMove_ {
     fn default() -> Self {
@@ -449,7 +465,7 @@ impl Default for ExplicitConstructibleFrom_ConstMove_ {
     }
 }
 impl ExplicitConstructibleFrom_int_ {
-    pub unsafe fn new_1(_v: *const ()) -> Self {
+    pub unsafe fn new_1(_v: *const i32) -> Self {
         let mut this = Self {
             v: (*_v),
             alloc_constructed: false,
@@ -460,14 +476,14 @@ impl ExplicitConstructibleFrom_int_ {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct ExplicitConstructibleFrom_int_ {
-    pub v: (),
-    pub alloc_constructed: (),
+    pub v: i32,
+    pub alloc_constructed: bool,
 }
 impl Default for ExplicitConstructibleFrom_int_ {
     fn default() -> Self {
         unsafe {
             ExplicitConstructibleFrom_int_ {
-                v: unimplemented!(),
+                v: 0_i32,
                 alloc_constructed: false,
             }
         }
@@ -476,17 +492,17 @@ impl Default for ExplicitConstructibleFrom_int_ {
 #[repr(C)]
 #[derive(VaArg, FnPtrArg)]
 pub struct TracedCopyMove {
-    pub nonConstCopy: (),
-    pub constCopy: (),
-    pub nonConstMove: (),
-    pub constMove: (),
-    pub alloc_constructed: (),
+    pub nonConstCopy: i32,
+    pub constCopy: i32,
+    pub nonConstMove: i32,
+    pub constMove: i32,
+    pub alloc_constructed: bool,
 }
 impl TracedCopyMove {
     pub unsafe fn new_2(other: *const TracedCopyMove) -> Self {
         let mut this = Self {
             nonConstCopy: (*other).nonConstCopy,
-            constCopy: (((*other).constCopy) + (1_())),
+            constCopy: (((*other).constCopy) + (1)),
             nonConstMove: (*other).nonConstMove,
             constMove: (*other).constMove,
             alloc_constructed: false,
@@ -495,7 +511,7 @@ impl TracedCopyMove {
     }
     pub unsafe fn new_3(other: *mut TracedCopyMove) -> Self {
         let mut this = Self {
-            nonConstCopy: (((*other).nonConstCopy) + (1_())),
+            nonConstCopy: (((*other).nonConstCopy) + (1)),
             constCopy: (*other).constCopy,
             nonConstMove: (*other).nonConstMove,
             constMove: (*other).constMove,
@@ -507,7 +523,7 @@ impl TracedCopyMove {
         let mut this = Self {
             nonConstCopy: (*other).nonConstCopy,
             constCopy: (*other).constCopy,
-            nonConstMove: (((*other).nonConstMove) + (1_())),
+            nonConstMove: (((*other).nonConstMove) + (1)),
             constMove: (*other).constMove,
             alloc_constructed: false,
         };
@@ -518,7 +534,7 @@ impl TracedCopyMove {
             nonConstCopy: (*other).nonConstCopy,
             constCopy: (*other).constCopy,
             nonConstMove: (*other).nonConstMove,
-            constMove: (((*other).constMove) + (1_())),
+            constMove: (((*other).constMove) + (1)),
             alloc_constructed: false,
         };
         this
@@ -533,30 +549,31 @@ impl Default for TracedCopyMove {
     fn default() -> Self {
         unsafe {
             TracedCopyMove {
-                nonConstCopy: 0_(),
-                constCopy: 0_(),
-                nonConstMove: 0_(),
-                constMove: 0_(),
+                nonConstCopy: 0,
+                constCopy: 0,
+                nonConstMove: 0,
+                constMove: 0,
                 alloc_constructed: false,
             }
         }
     }
 }
-pub unsafe fn nonConstCopyCtrCalled_4(obj: *const TracedCopyMove) -> () {
-    return (((((*obj).nonConstCopy) == (1_())) && (((*obj).constCopy) == (0_())))
-        && (((*obj).constMove) == (0_())))
-        && (((*obj).nonConstMove) == (0_()));
+pub unsafe fn nonConstCopyCtrCalled_4(obj: *const TracedCopyMove) -> bool {
+    return (((((*obj).nonConstCopy) == (1)) && (((*obj).constCopy) == (0)))
+        && (((*obj).constMove) == (0)))
+        && (((*obj).nonConstMove) == (0));
 }
-pub unsafe fn constMoveCtrCalled_5(obj: *const TracedCopyMove) -> () {
-    return (((((*obj).nonConstMove) == (0_())) && (((*obj).constMove) == (1_())))
-        && (((*obj).constCopy) == (0_())))
-        && (((*obj).nonConstCopy) == (0_()));
+pub unsafe fn constMoveCtrCalled_5(obj: *const TracedCopyMove) -> bool {
+    return (((((*obj).nonConstMove) == (0)) && (((*obj).constMove) == (1)))
+        && (((*obj).constCopy) == (0)))
+        && (((*obj).nonConstCopy) == (0));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NoConstructorFromInt {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(() , new_1, mut_ptr)]
 pub struct CvtFromTupleRef {}
 impl CvtFromTupleRef {
     pub unsafe fn new_1(other: *mut ()) -> Self {
@@ -574,7 +591,8 @@ impl ExplicitCtrFromTupleRef {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from_move(() , new_1, ptr)]
 pub struct CvtFromConstTupleRefRef {}
 impl CvtFromConstTupleRefRef {
     pub unsafe fn new_1(other: *const ()) -> Self {
@@ -592,23 +610,25 @@ impl ExplicitCtrFromConstTupleRefRef {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new_1, value)]
 pub struct CopyAssign {
-    pub val: (),
+    pub val: i32,
 }
 impl CopyAssign {
-    pub unsafe fn new_1(mut v: ()) -> Self {
+    pub unsafe fn new_1(mut v: i32) -> Self {
         let mut this = Self { val: v };
         this
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, CopyAssignUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, Default)]
+#[cpp_from(i32, new_1, value)]
 pub struct ConstCopyAssign {
-    pub val: (),
+    pub val: i32,
 }
 impl ConstCopyAssign {
-    pub unsafe fn new_1(mut v: ()) -> Self {
+    pub unsafe fn new_1(mut v: i32) -> Self {
         let mut this = Self { val: v };
         this
     }
@@ -618,12 +638,13 @@ impl ConstCopyAssign {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveAssignUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, MoveAssignUnsafe, Default)]
+#[cpp_from(i32, new_1, value)]
 pub struct MoveAssign {
-    pub val: (),
+    pub val: i32,
 }
 impl MoveAssign {
-    pub unsafe fn new_1(mut v: ()) -> Self {
+    pub unsafe fn new_1(mut v: i32) -> Self {
         let mut this = Self { val: v };
         this
     }
@@ -633,12 +654,13 @@ impl MoveAssign {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveAssignUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, MoveAssignUnsafe, Default)]
+#[cpp_from(i32, new_1, value)]
 pub struct ConstMoveAssign {
-    pub val: (),
+    pub val: i32,
 }
 impl ConstMoveAssign {
-    pub unsafe fn new_1(mut v: ()) -> Self {
+    pub unsafe fn new_1(mut v: i32) -> Self {
         let mut this = Self { val: v };
         this
     }
@@ -650,10 +672,10 @@ impl ConstMoveAssign {
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct TracedAssignment {
-    pub copyAssign: (),
-    pub constCopyAssign: (),
-    pub moveAssign: (),
-    pub constMoveAssign: (),
+    pub copyAssign: i32,
+    pub constCopyAssign: i32,
+    pub moveAssign: i32,
+    pub constMoveAssign: i32,
 }
 impl TracedAssignment {
     pub unsafe fn operator_assign_2(
@@ -686,10 +708,10 @@ impl Default for TracedAssignment {
     fn default() -> Self {
         unsafe {
             TracedAssignment {
-                copyAssign: 0_(),
-                constCopyAssign: 0_(),
-                moveAssign: 0_(),
-                constMoveAssign: 0_(),
+                copyAssign: 0,
+                constCopyAssign: 0,
+                moveAssign: 0,
+                constMoveAssign: 0,
             }
         }
     }
@@ -734,24 +756,24 @@ const _: () = assert!(
     true,
     "!std::is_convertible_v<const std::pair<ConstMove, ConstMove>&&,\n                                     std::tuple<ConvertibleFrom<ConstMove>, ExplicitConstructibleFrom<ConstMove>>>"
 );
-pub unsafe fn test_6() -> () {
+pub unsafe fn test_6() -> bool {
     {
-        let p: () = unimplemented!();
+        let p: (ConstMove, i32) = (ConstMove::new_1({ 1 }), 2);
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).v.val) == (1)));
+        assert!((((*unimplemented!()).v) == (2)));
     }
     {
-        let p: () = unimplemented!();
+        let p: (ConstMove, i32) = (ConstMove::new_1({ 1 }), 2);
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).v.val) == (1)));
+        assert!((((*unimplemented!()).v) == (2)));
     }
     {
-        let p: () = unimplemented!();
+        let p: (TracedCopyMove, TracedCopyMove) = unimplemented!();
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unsafe { constMoveCtrCalled_5(&(*unimplemented!()).v,) }));
+        assert!((unsafe { constMoveCtrCalled_5(unimplemented!(),) }));
     }
     return true;
 }
@@ -770,10 +792,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_6() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
 pub struct test_allocator_int_;

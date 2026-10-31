@@ -163,218 +163,218 @@ thread_local!(
         unimplemented!(),
     ])));
 );
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_zero: anon_1 = 0;
 pub const anon_1_non_zero: anon_1 = 1;
 pub const anon_1_inf: anon_1 = 2;
 pub const anon_1_NaN: anon_1 = 3;
 pub const anon_1_non_zero_nan: anon_1 = 4;
-pub fn classify_2(mut x: ()) -> () {
-    if (x == 0_()) {
-        return (anon_1_zero as ());
+pub fn classify_2(mut x: f64) -> i32 {
+    if (x == 0_f64) {
+        return (anon_1_zero as i32);
     }
     if unimplemented!() {
-        return (anon_1_inf as ());
+        return (anon_1_inf as i32);
     }
     if unimplemented!() {
-        return (anon_1_NaN as ());
+        return (anon_1_NaN as i32);
     }
-    return (anon_1_non_zero as ());
+    return (anon_1_non_zero as i32);
 }
-pub fn is_about_3(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_3(mut x: f32, mut y: f32) {
+    assert!(((unimplemented!() as f64) < 1e-06_f64));
 }
-pub fn is_about_4(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_4(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn is_about_5(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_5(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn test_6(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_6(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 0_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: i32 = 0;
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_7(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_7(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 1_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: i32 = 1;
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_8(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_8(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 10_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: i32 = 10;
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_9(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_9(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 0_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: u32 = (0 as u32);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_10(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_10(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 1_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: u32 = (1 as u32);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_11(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_11(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 10_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: u32 = (10 as u32);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_12(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_12(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 0_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: i64 = (0 as i64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_13(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_13(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 1_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: i64 = (1 as i64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_14(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_14(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::imag(T(x))), double>::value)"
     );;
-    unimplemented!();
-    let mut val: () = 10_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: i64 = (10 as i64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_15(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_15(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 0_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f32 = (0 as f32);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_16(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_16(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 1_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f32 = (1 as f32);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_17(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_17(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 10_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f32 = (10 as f32);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_18(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_18(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 0_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f64 = (0 as f64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_19(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_19(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 1_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f64 = (1 as f64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_20(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_20(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 10_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f64 = (10 as f64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_21(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_21(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 0_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f64 = (0 as f64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_22(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_22(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 1_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f64 = (1 as f64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
 }
-pub fn test_23(_a0: Option<()>) {
-    let mut _a0: () = _a0.unwrap_or_else(|| unimplemented!());
+pub fn test_23(_a0: Option<AnyPtr>) {
+    let mut _a0: AnyPtr = _a0.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::imag(T(x))), T>::value)");;
-    unimplemented!();
-    let mut val: () = 10_();
+    assert!((unimplemented!() == 0_f64));
+    let mut val: f64 = (10 as f64);
     const _: () = assert!(true, "std::imag(val) == 0");;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "t.imag() == x");;
@@ -428,14 +428,14 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_24() });
     ({ test_25() });
     ({ test_26() });
     ({ test_27() });
     ({ test_28() });
     ({ test_29() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = testcases_0.with(|_| ());

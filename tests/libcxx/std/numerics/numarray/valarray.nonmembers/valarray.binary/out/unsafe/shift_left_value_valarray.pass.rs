@@ -22,21 +22,21 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut a1: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut a2: [(); 5] = [6_(), 12_(), 24_(), 48_(), 96_()];
-        let N: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut a1: [i32; 5] = [1, 2, 3, 4, 5];
+        let mut a2: [i32; 5] = [6, 12, 24, 48, 96];
+        let N: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((*unimplemented!()) == (a2[(i)])));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

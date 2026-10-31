@@ -6,22 +6,22 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn where_0(_a0: Ptr<()>) {}
+pub fn where_0(_a0: Ptr<u64>) {}
 pub fn test1_1() {
     const _: () = assert!(true, "(E::block_size == 223)");;
     const _: () = assert!(true, "(E::used_block == 23)");;
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFF)");;
-    ({ where_0(unimplemented!()) });
-    ({ where_0(unimplemented!()) });
+    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
+    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
 }
 pub fn test2_2() {
     const _: () = assert!(true, "(E::block_size == 389)");;
     const _: () = assert!(true, "(E::used_block == 11)");;
     const _: () = assert!(true, "(E::min() == 0)");;
     const _: () = assert!(true, "(E::max() == 0xFFFFFFFFFFFFull)");;
-    ({ where_0(unimplemented!()) });
-    ({ where_0(unimplemented!()) });
+    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
+    ({ where_0((unimplemented!()).reinterpret_cast::<u64>()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -42,9 +42,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_1() });
     ({ test2_2() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

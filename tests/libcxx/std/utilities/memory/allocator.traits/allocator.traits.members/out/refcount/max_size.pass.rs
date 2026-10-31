@@ -10,30 +10,30 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -44,26 +44,32 @@ pub struct B_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct B_Holder_NS_Incomplete__ptr_ {}
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     {
         let mut b: B_int_ = <B_int_>::default();
-        unimplemented!();
+        assert!((unimplemented!() == 100_()));
     }
     {
         let mut b: B_int_ = <B_int_>::default();
-        unimplemented!();
+        assert!((unimplemented!() == 100_()));
     }
     {
         let mut a: B_Holder_NS_Incomplete__ptr_ = <B_Holder_NS_Incomplete__ptr_>::default();
-        unimplemented!();
+        assert!((unimplemented!() == 100_()));
     }
     {
         let mut a: A_int_ = <A_int_>::default();
-        unimplemented!();
+        assert!(
+            (unimplemented!()
+                == (u64::MAX as u64).wrapping_div((::std::mem::size_of::<i32>() as u64)))
+        );
     }
     {
         let mut a: A_int_ = <A_int_>::default();
-        unimplemented!();
+        assert!(
+            (unimplemented!()
+                == (u64::MAX as u64).wrapping_div((::std::mem::size_of::<i32>() as u64)))
+        );
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -93,25 +99,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait B_Holder_NS_Incomplete__ptr_Impl {
-    fn max_size(&self) -> ();
+    fn max_size(&self) -> usize;
 }
 impl B_Holder_NS_Incomplete__ptr_Impl for Ptr<B_Holder_NS_Incomplete__ptr_> {
-    fn max_size(&self) -> () {
-        return 100_();
+    fn max_size(&self) -> usize {
+        return 100_usize;
     }
 }
 pub trait B_int_Impl {
-    fn max_size(&self) -> ();
+    fn max_size(&self) -> usize;
 }
 impl B_int_Impl for Ptr<B_int_> {
-    fn max_size(&self) -> () {
-        return 100_();
+    fn max_size(&self) -> usize {
+        return 100_usize;
     }
 }
 pub fn __cpp2rust_init_globals() {

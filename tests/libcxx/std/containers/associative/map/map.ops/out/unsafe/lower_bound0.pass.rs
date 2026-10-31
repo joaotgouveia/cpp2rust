@@ -12,11 +12,11 @@ pub struct transparent_less {}
 impl transparent_less {
     pub unsafe fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
         &self,
-        t: *const (),
+        t: *const i32,
         u: *const C2Int,
-    ) -> () {
+    ) -> bool {
         return (unsafe {
-            let _rhs: () = (*t);
+            let _rhs: i32 = (*t);
             let _lhs: *const C2Int = u;
             operator_lt_0(_rhs, _lhs)
         });
@@ -28,11 +28,11 @@ pub struct transparent_less_not_referenceable {}
 impl transparent_less_not_referenceable {
     pub unsafe fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
         &self,
-        t: *const (),
+        t: *const i32,
         u: *const C2Int,
-    ) -> () {
+    ) -> bool {
         return (unsafe {
-            let _rhs: () = (*t);
+            let _rhs: i32 = (*t);
             let _lhs: *const C2Int = u;
             operator_lt_0(_rhs, _lhs)
         });
@@ -49,11 +49,11 @@ pub struct transparent_less_nonempty {
 impl transparent_less_nonempty {
     pub unsafe fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
         &self,
-        t: *const (),
+        t: *const i32,
         u: *const C2Int,
-    ) -> () {
+    ) -> bool {
         return (unsafe {
-            let _rhs: () = (*t);
+            let _rhs: i32 = (*t);
             let _lhs: *const C2Int = u;
             operator_lt_0(_rhs, _lhs)
         });
@@ -68,23 +68,24 @@ pub struct transparent_less_private {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct transparent_less_not_a_type {
-    pub is_transparent: (),
+    pub is_transparent: i32,
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(i32, new_1, value)]
 pub struct C2Int {
-    i_: (),
+    i_: i32,
 }
 impl C2Int {
-    pub unsafe fn new_1() -> Self {
-        let mut this = Self { i_: 0_() };
+    pub unsafe fn new_2() -> Self {
+        let mut this = Self { i_: 0 };
         this
     }
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_1(mut i: i32) -> Self {
         let mut this = Self { i_: i };
         this
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.i_;
     }
 }
@@ -117,30 +118,30 @@ impl std::cmp::PartialEq for C2Int {
 impl std::cmp::Eq for C2Int {}
 impl Default for C2Int {
     fn default() -> Self {
-        unsafe { C2Int::new_1() }
+        unsafe { C2Int::new_2() }
     }
 }
-pub unsafe fn operator_lt_0(mut rhs: (), lhs: *const C2Int) -> () {
+pub unsafe fn operator_lt_0(mut rhs: i32, lhs: *const C2Int) -> bool {
     return ((rhs) < (unsafe { C2Int::get(&(*lhs)) }));
 }
-pub unsafe fn operator_lt_1(rhs: *const C2Int, lhs: *const C2Int) -> () {
+pub unsafe fn operator_lt_1(rhs: *const C2Int, lhs: *const C2Int) -> bool {
     return ((unsafe { C2Int::get(&(*rhs)) }) < (unsafe { C2Int::get(&(*lhs)) }));
 }
-pub unsafe fn operator_lt_2(rhs: *const C2Int, mut lhs: ()) -> () {
+pub unsafe fn operator_lt_2(rhs: *const C2Int, mut lhs: i32) -> bool {
     return ((unsafe { C2Int::get(&(*rhs)) }) < (lhs));
 }
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_3() -> bool {
     {
-        let mut example: () = unimplemented!();
-        unimplemented!();
+        let mut example: UnsafeMap<i32, (i32, f64)> = UnsafeMap::new();
+        assert!(unimplemented!() == example.end());
     }
     {
-        let mut example: () = unimplemented!();
-        unimplemented!();
+        let mut example: UnsafeMap<i32, (i32, f64)> = UnsafeMap::new();
+        assert!(unimplemented!() == example.end());
     }
     {
-        let mut example: () = unimplemented!();
-        unimplemented!();
+        let mut example: UnsafeMap<i32, (i32, f64)> = UnsafeMap::new();
+        assert!(unimplemented!() == example.end());
     }
     return true;
 }
@@ -159,8 +160,8 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_3() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

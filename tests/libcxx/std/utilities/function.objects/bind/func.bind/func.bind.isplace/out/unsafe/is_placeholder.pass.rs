@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -191,7 +191,7 @@ pub unsafe fn test_10(_a0: *const ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_11(_a0: *const ()) {
+pub unsafe fn test_11(_a0: *const i32) {
     const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -209,7 +209,7 @@ pub unsafe fn test_11(_a0: *const ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_12(_a0: *const ()) {
+pub unsafe fn test_12(_a0: *const f64) {
     const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -227,7 +227,7 @@ pub unsafe fn test_12(_a0: *const ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_13(_a0: *const ()) {
+pub unsafe fn test_13(_a0: *const libc::c_char) {
     const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -281,7 +281,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_1(&(*unimplemented!())) });
     (unsafe { test_2(&(*unimplemented!())) });
     (unsafe { test_3(&(*unimplemented!())) });
@@ -293,21 +293,21 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_9(&(*unimplemented!())) });
     (unsafe { test_10(&(*unimplemented!())) });
     (unsafe {
-        let mut _arg0: () = 4_();
+        let mut _arg0: i32 = 4;
         test_11(&mut _arg0)
     });
     (unsafe {
-        let mut _arg0: () = 5.5_f64;
+        let mut _arg0: f64 = 5.5_f64;
         test_12(&mut _arg0)
     });
     (unsafe {
-        let mut _arg0: () = ('a' as ());
+        let mut _arg0: libc::c_char = ('a' as libc::c_char);
         test_13(&mut _arg0)
     });
     (unsafe {
         let mut _arg0: C = <C>::default();
         test_14(&mut _arg0)
     });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

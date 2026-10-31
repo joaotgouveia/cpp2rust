@@ -10,19 +10,19 @@ use std::rc::{Rc, Weak};
 #[byte_size(16)]
 pub struct Tag {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
     #[offset(8)]
     #[byte_size(8)]
-    pub tag: Ptr<()>,
+    pub tag: Ptr<i8>,
 }
 impl Tag {
     pub fn new_1() -> Self {
         Self {
-            val: 0_(),
-            tag: Ptr::<()>::from_string_literal(b"Default"),
+            val: 0,
+            tag: Ptr::<i8>::from_string_literal(b"Default"),
         }
     }
-    pub fn new_2(mut a: (), mut b: Ptr<()>) -> Self {
+    pub fn new_2(mut a: i32, mut b: Ptr<i8>) -> Self {
         Self {
             val: a,
             tag: (b).clone(),
@@ -45,15 +45,15 @@ impl Default for Tag {
         { Tag::new_1() }
     }
 }
-pub fn eq_1(rhs: Ptr<Tag>, lhs: Ptr<Tag>) -> () {
+pub fn eq_1(rhs: Ptr<Tag>, lhs: Ptr<Tag>) -> bool {
     return ({ rhs.with(|__s| __s.val) } == { lhs.with(|__s| __s.val) })
         && ({ rhs.with(|__s| __s.tag.clone()) } == { lhs.with(|__s| __s.tag.clone()) });
 }
-pub fn operator_lt_0(rhs: Ptr<Tag>, lhs: Ptr<Tag>) -> () {
+pub fn operator_lt_0(rhs: Ptr<Tag>, lhs: Ptr<Tag>) -> bool {
     return ({ rhs.with(|__s| __s.val) } < { lhs.with(|__s| __s.val) });
 }
-pub fn test_2(a: Ptr<()>, lo: Ptr<()>, hi: Ptr<()>, x: Ptr<()>) {
-    unimplemented!();
+pub fn test_2(a: Ptr<i32>, lo: Ptr<i32>, hi: Ptr<i32>, x: Ptr<i32>) {
+    assert!(({ (unimplemented!()) } == { (x).clone() }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -74,156 +74,228 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let x: Value<()> = Rc::new(RefCell::new(0_()));
-        let y: Value<()> = Rc::new(RefCell::new(0_()));
-        let z: Value<()> = Rc::new(RefCell::new(0_()));
+        let x: Value<i32> = Rc::new(RefCell::new(0));
+        let y: Value<i32> = Rc::new(RefCell::new(0));
+        let z: Value<i32> = Rc::new(RefCell::new(0));
         ({
-            let _a: Ptr<()> = x.as_pointer();
-            let _x: Ptr<()> = x.as_pointer();
+            let _a: Ptr<i32> = x.as_pointer();
+            let _x: Ptr<i32> = x.as_pointer();
             test_2(_a, y.as_pointer(), z.as_pointer(), _x)
         });
         ({
-            let _a: Ptr<()> = y.as_pointer();
-            let _x: Ptr<()> = y.as_pointer();
+            let _a: Ptr<i32> = y.as_pointer();
+            let _x: Ptr<i32> = y.as_pointer();
             test_2(_a, x.as_pointer(), z.as_pointer(), _x)
         });
     }
     {
-        let x: Value<()> = Rc::new(RefCell::new(0_()));
-        let y: Value<()> = Rc::new(RefCell::new(1_()));
-        let z: Value<()> = Rc::new(RefCell::new(2_()));
+        let x: Value<i32> = Rc::new(RefCell::new(0));
+        let y: Value<i32> = Rc::new(RefCell::new(1));
+        let z: Value<i32> = Rc::new(RefCell::new(2));
         ({
-            let _lo: Ptr<()> = y.as_pointer();
-            let _x: Ptr<()> = y.as_pointer();
+            let _lo: Ptr<i32> = y.as_pointer();
+            let _x: Ptr<i32> = y.as_pointer();
             test_2(x.as_pointer(), _lo, z.as_pointer(), _x)
         });
         ({
-            let _a: Ptr<()> = y.as_pointer();
-            let _x: Ptr<()> = y.as_pointer();
+            let _a: Ptr<i32> = y.as_pointer();
+            let _x: Ptr<i32> = y.as_pointer();
             test_2(_a, x.as_pointer(), z.as_pointer(), _x)
         });
     }
     {
-        let x: Value<()> = Rc::new(RefCell::new(1_()));
-        let y: Value<()> = Rc::new(RefCell::new(0_()));
-        let z: Value<()> = Rc::new(RefCell::new(1_()));
+        let x: Value<i32> = Rc::new(RefCell::new(1));
+        let y: Value<i32> = Rc::new(RefCell::new(0));
+        let z: Value<i32> = Rc::new(RefCell::new(1));
         ({
-            let _a: Ptr<()> = x.as_pointer();
-            let _x: Ptr<()> = x.as_pointer();
+            let _a: Ptr<i32> = x.as_pointer();
+            let _x: Ptr<i32> = x.as_pointer();
             test_2(_a, y.as_pointer(), z.as_pointer(), _x)
         });
         ({
-            let _lo: Ptr<()> = x.as_pointer();
-            let _x: Ptr<()> = x.as_pointer();
+            let _lo: Ptr<i32> = x.as_pointer();
+            let _x: Ptr<i32> = x.as_pointer();
             test_2(y.as_pointer(), _lo, z.as_pointer(), _x)
         });
     }
     {
-        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-x")
+        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-x")
         })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-y")
+        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-y")
         })));
         let _dtor_y = ScopedDestructor::new(&y, |__p| __p.destructor());
-        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-z")
+        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = x.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = y.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
     }
     {
-        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-x")
+        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-x")
         })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-y")
+        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-y")
         })));
         let _dtor_y = ScopedDestructor::new(&y, |__p| __p.destructor());
-        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1_() }, {
-            Ptr::<()>::from_string_literal(b"One-z")
+        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1 }, {
+            Ptr::<i8>::from_string_literal(b"One-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = x.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = y.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
     }
     {
-        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1_() }, {
-            Ptr::<()>::from_string_literal(b"One-x")
+        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1 }, {
+            Ptr::<i8>::from_string_literal(b"One-x")
         })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-y")
+        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-y")
         })));
         let _dtor_y = ScopedDestructor::new(&y, |__p| __p.destructor());
-        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1_() }, {
-            Ptr::<()>::from_string_literal(b"One-z")
+        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1 }, {
+            Ptr::<i8>::from_string_literal(b"One-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = x.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = z.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
     }
     {
-        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1_() }, {
-            Ptr::<()>::from_string_literal(b"One-x")
+        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1 }, {
+            Ptr::<i8>::from_string_literal(b"One-x")
         })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-y")
+        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-y")
         })));
         let _dtor_y = ScopedDestructor::new(&y, |__p| __p.destructor());
-        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 2_() }, {
-            Ptr::<()>::from_string_literal(b"Two-z")
+        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 2 }, {
+            Ptr::<i8>::from_string_literal(b"Two-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = x.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = x.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
     }
     {
-        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-x")
+        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-x")
         })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1_() }, {
-            Ptr::<()>::from_string_literal(b"One-y")
+        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1 }, {
+            Ptr::<i8>::from_string_literal(b"One-y")
         })));
         let _dtor_y = ScopedDestructor::new(&y, |__p| __p.destructor());
-        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 2_() }, {
-            Ptr::<()>::from_string_literal(b"Two-z")
+        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 2 }, {
+            Ptr::<i8>::from_string_literal(b"Two-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = y.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = y.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
     }
     {
-        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 2_() }, {
-            Ptr::<()>::from_string_literal(b"Two-x")
+        let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 2 }, {
+            Ptr::<i8>::from_string_literal(b"Two-x")
         })));
         let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
-        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0_() }, {
-            Ptr::<()>::from_string_literal(b"Zero-y")
+        let y: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
+            Ptr::<i8>::from_string_literal(b"Zero-y")
         })));
         let _dtor_y = ScopedDestructor::new(&y, |__p| __p.destructor());
-        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1_() }, {
-            Ptr::<()>::from_string_literal(b"One-z")
+        let z: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1 }, {
+            Ptr::<i8>::from_string_literal(b"One-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = z.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
+        assert!(
+            ({
+                let _rhs: Ptr<Tag> = unimplemented!();
+                let _lhs: Ptr<Tag> = z.as_pointer();
+                eq_1(_rhs, _lhs)
+            })
+        );
     }
     {
-        let mut x: () = 1_();
-        let mut y: () = 0_();
-        let mut z: () = 1_();
+        let mut x: i32 = 1;
+        let mut y: i32 = 0;
+        let mut z: i32 = 1;
         const _: () = assert!(true, "std::clamp(x, y, z) == x");;
         const _: () = assert!(true, "std::clamp(y, x, z) == x");;
     }
-    return 0_();
+    return 0;
 }
 pub trait TagImpl {
     fn destructor(&self);

@@ -9,8 +9,8 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Class {}
-pub type Enum1 = ();
-pub type Enum2 = ();
+pub type Enum1 = u32;
+pub type Enum2 = i32;
 pub fn test_0() {
     const _: () = assert!(true, "!std::is_void<T>::value");;
     const _: () = assert!(true, "!std::is_null_pointer<T>::value");;
@@ -1566,7 +1566,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
@@ -1664,6 +1664,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_94() });
     ({ test_95() });
     const _: () = assert!(true, "!std::is_function<incomplete_type>::value");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

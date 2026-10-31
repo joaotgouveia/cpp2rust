@@ -26,13 +26,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut index: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < 10000_()) {
-        unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let mut index: i32 = unimplemented!();
+    let mut i: i32 = 0;
+    'loop_: while (i < 10000) {
+        assert!((unimplemented!() == index.prefix_inc()));
         i.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

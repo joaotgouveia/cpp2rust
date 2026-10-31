@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "std::is_enum<std::endian>::value");;
     const _: () = assert!(true, "!std::is_convertible<std::endian, UT>::value");;
     const _: () = assert!(true, "std::endian::little == std::endian::little");;
@@ -34,15 +34,27 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "std::endian::native == std::endian::little ||\n                   std::endian::native == std::endian::big"
     );;
     {
-        let mut i: () = 16909060_();
-        let mut c: [(); 4] = [unimplemented!(); 4];
+        let mut i: u32 = 16909060_u32;
+        let mut c: [libc::c_char; 4] = [(0 as libc::c_char); 4];
         const _: () = assert!(
-            ((::std::mem::size_of::<()>()) == (::std::mem::size_of::<[(); 4]>())),
+            ((::std::mem::size_of::<u32>()) == (::std::mem::size_of::<[libc::c_char; 4]>())),
             "sizeof(i) == sizeof(c)"
         );;
-        unimplemented!();
-        unimplemented!();
+        {
+            if ::std::mem::size_of::<[libc::c_char; 4]>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    ((&mut i as *mut u32) as *const ::libc::c_void),
+                    (c.as_mut_ptr() as *mut ::libc::c_void),
+                    ::std::mem::size_of::<[libc::c_char; 4]>() as usize,
+                )
+            }
+            (c.as_mut_ptr() as *mut ::libc::c_void)
+        };
+        assert!(
+            ((((c[(0) as usize] as i32) == (1)) as i32)
+                == (((unimplemented!()) == (unimplemented!())) as i32))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

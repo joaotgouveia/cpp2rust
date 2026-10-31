@@ -104,7 +104,7 @@ unsafe fn main_0() -> i32 {
     ok = ((ok as i32) & (((((*a).value) == (11)) && (((*b).value) == (22))) as i32)) != 0;
     ok = ((ok as i32) & ((a_it == distinct.find(&distinct_a)) as i32)) != 0;
     ok = ((ok as i32) & ((b_it == distinct.find(&distinct_b)) as i32)) != 0;
-    ok = ((ok as i32) & ((!(b_it == distinct.end())) as i32)) != 0;
+    ok = ((ok as i32) & ((b_it != distinct.end()) as i32)) != 0;
     ok = ((ok as i32) & (((&mut (*a_it.iter_deref()).1 as *mut Mapped) == (a_value)) as i32)) != 0;
     ok = ((ok as i32) & ((((*a_it.iter_deref()).1.value) == (11)) as i32)) != 0;
     ok = ((ok as i32)
@@ -159,7 +159,7 @@ unsafe fn main_0() -> i32 {
     ok = ((ok as i32) & (reused as i32)) != 0;
     ok = ((ok as i32) & (((equivalent.len()) == (1_usize)) as i32)) != 0;
     if reused {
-        ok = ((ok as i32) & ((!(first_it == equivalent.end())) as i32)) != 0;
+        ok = ((ok as i32) & ((first_it != equivalent.end()) as i32)) != 0;
         ok = ((ok as i32) & (((first) == (second)) as i32)) != 0;
         ok = ((ok as i32) & ((first_it == equivalent.find(&equivalent_a)) as i32)) != 0;
         ok = ((ok as i32) & ((first_it == equivalent.find(&equivalent_b)) as i32)) != 0;

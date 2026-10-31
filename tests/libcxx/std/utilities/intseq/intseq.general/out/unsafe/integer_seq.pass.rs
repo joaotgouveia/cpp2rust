@@ -39,7 +39,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "std::is_same<int3::value_type, int>::value");;
     const _: () = assert!(true, "int3::size () == 3");;
     const _: () = assert!(true, "std::is_same<size7::value_type, std::size_t>::value");;
@@ -61,37 +61,37 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "std::tuple_size<decltype(t3)>::value == int3::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let mut t7: () = (unsafe { extract_1(&tup, unimplemented!()) });
     const _: () = assert!(
         true,
         "std::tuple_size<decltype(t7)>::value == size7::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let mut t4: () = (unsafe { extract_2(&tup, unimplemented!()) });
     const _: () = assert!(
         true,
         "std::tuple_size<decltype(t4)>::value == size4::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let mut t2: () = (unsafe { extract_3(&tup, unimplemented!()) });
     const _: () = assert!(
         true,
         "std::tuple_size<decltype(t2)>::value == size2::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let mut tintmix: () = (unsafe { extract_4(&tup, unimplemented!()) });
     const _: () = assert!(
         true,
         "std::tuple_size<decltype(tintmix)>::value == intmix::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let mut tsizemix: () = (unsafe { extract_5(&tup, unimplemented!()) });
     const _: () = assert!(
         true,
         "std::tuple_size<decltype(tsizemix)>::value == sizemix::size ()"
     );;
-    unimplemented!();
-    return 0_();
+    assert!(unimplemented!());
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

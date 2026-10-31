@@ -14,27 +14,27 @@ const _: () = assert!(true, "ErrorNoexcept<std::bad_expected_access<int> const&&
 pub fn test_0() {
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Ptr<()> = unimplemented!();
+        let i: Ptr<i32> = unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(i), int&>");;
-        unimplemented!();
+        assert!(((i.read()) == 5));
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Ptr<()> = unimplemented!();
+        let i: Ptr<i32> = unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(i), const int&>");;
-        unimplemented!();
+        assert!(((i.read()) == 5));
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Ptr<()> = unimplemented!();
+        let i: Ptr<i32> = unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(i), int&&>");;
-        unimplemented!();
+        assert!(((i.read()) == 5));
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Ptr<()> = unimplemented!();
+        let i: Ptr<i32> = unimplemented!();
         const _: () = assert!(true, "std::same_as<decltype(i), const int&&>");;
-        unimplemented!();
+        assert!(((i.read()) == 5));
     }
 }
 pub fn main() {
@@ -56,8 +56,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

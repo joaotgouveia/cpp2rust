@@ -6,17 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(a: Ptr<test_less_int_>, b: Ptr<test_less_int_>) -> () {
+pub fn operator_eq_0(a: Ptr<test_less_int_>, b: Ptr<test_less_int_>) -> bool {
     return ({ a.with(|__s| __s.data_) } == { b.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct test_less_int_ {
     #[offset(0)]
-    pub data_: (),
+    pub data_: i32,
 }
 impl test_less_int_ {
-    pub fn new_1(mut data: ()) -> Self {
+    pub fn new_1(mut data: i32) -> Self {
         Self { data_: data }
     }
 }
@@ -25,12 +25,24 @@ impl CppEq for test_less_int_ {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!() == unimplemented!());
+    assert!(
+        ({
+            let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+            let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
+            operator_eq_0(_a.as_pointer(), _b.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+            let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 3 })));
+            operator_eq_0(_a.as_pointer(), _b.as_pointer())
+        })
+    );
     return true;
 }
 pub fn main() {
@@ -52,12 +64,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
-    return 0_();
+    return 0;
 }
 pub trait test_less_int_Impl {
-    fn operator_call(&self, a: Ptr<()>, b: Ptr<()>) -> () {
+    fn operator_call(&self, a: Ptr<i32>, b: Ptr<i32>) -> bool {
         unimplemented!()
     }
 }

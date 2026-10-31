@@ -28,7 +28,7 @@ impl Default for Union {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct bit_zero {
-    pub anon_0: (),
+    pub anon_0: i32,
 }
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
@@ -38,14 +38,14 @@ impl A {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NonPODClass {}
 impl NonPODClass {}
-pub type Enum = ();
+pub type Enum = u32;
 pub const Enum_EV: Enum = 0;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Base {
     pub e: Enum,
-    pub i: (),
-    pub f: (),
+    pub i: i32,
+    pub f: f32,
     pub p: *mut NonPODClass,
 }
 #[repr(C)]
@@ -54,71 +54,51 @@ pub struct Derived {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct ConvertsToRef_int__int_ref_ {
-    pub obj: (),
+    pub obj: i32,
 }
 impl Default for ConvertsToRef_int__int_ref_ {
     fn default() -> Self {
-        unsafe {
-            ConvertsToRef_int__int_ref_ {
-                obj: unimplemented!(),
-            }
-        }
+        unsafe { ConvertsToRef_int__int_ref_ { obj: 0_i32 } }
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct ConvertsToRef_int__int_refref_ {
-    pub obj: (),
+    pub obj: i32,
 }
 impl Default for ConvertsToRef_int__int_refref_ {
     fn default() -> Self {
-        unsafe {
-            ConvertsToRef_int__int_refref_ {
-                obj: unimplemented!(),
-            }
-        }
+        unsafe { ConvertsToRef_int__int_refref_ { obj: 0_i32 } }
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct ConvertsToRef_int__const_int_ref_ {
-    pub obj: (),
+    pub obj: i32,
 }
 impl Default for ConvertsToRef_int__const_int_ref_ {
     fn default() -> Self {
-        unsafe {
-            ConvertsToRef_int__const_int_ref_ {
-                obj: unimplemented!(),
-            }
-        }
+        unsafe { ConvertsToRef_int__const_int_ref_ { obj: 0_i32 } }
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct ConvertsToRef_long__long_ref_ {
-    pub obj: (),
+    pub obj: i64,
 }
 impl Default for ConvertsToRef_long__long_ref_ {
     fn default() -> Self {
-        unsafe {
-            ConvertsToRef_long__long_ref_ {
-                obj: unimplemented!(),
-            }
-        }
+        unsafe { ConvertsToRef_long__long_ref_ { obj: 0_i64 } }
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct ConvertsToRefPrivate_long__long_ref_ {
-    obj: (),
+    obj: i64,
 }
 impl Default for ConvertsToRefPrivate_long__long_ref_ {
     fn default() -> Self {
-        unsafe {
-            ConvertsToRefPrivate_long__long_ref_ {
-                obj: unimplemented!(),
-            }
-        }
+        unsafe { ConvertsToRefPrivate_long__long_ref_ { obj: 0_i64 } }
     }
 }
 #[repr(C)]
@@ -128,106 +108,106 @@ pub struct ExplicitConversionRvalueRef {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ExplicitConversionRef {}
 pub unsafe fn test_reference_converts_from_temporary_1() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_2() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_3() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_4() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_5() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_6() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_7() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_8() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_9() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_10() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_11() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_12() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_13() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_14() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_15() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_16() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_17() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_18() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_19() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_20() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_21() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_22() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_23() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_24() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test_reference_converts_from_temporary_25() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
-pub unsafe fn test_26() -> () {
+pub unsafe fn test_26() -> bool {
     (unsafe { test_reference_converts_from_temporary_1() });
     (unsafe { test_reference_converts_from_temporary_1() });
     (unsafe { test_reference_converts_from_temporary_2() });
@@ -238,13 +218,13 @@ pub unsafe fn test_26() -> () {
     (unsafe { test_reference_converts_from_temporary_7() });
     (unsafe { test_reference_converts_from_temporary_8() });
     (unsafe { test_reference_converts_from_temporary_9() });
-    unimplemented!();
+    assert!((unimplemented!()));
     (unsafe { test_reference_converts_from_temporary_10() });
-    unimplemented!();
+    assert!((unimplemented!()));
     (unsafe { test_reference_converts_from_temporary_11() });
-    unimplemented!();
+    assert!((unimplemented!()));
     (unsafe { test_reference_converts_from_temporary_12() });
-    unimplemented!();
+    assert!((unimplemented!()));
     (unsafe { test_reference_converts_from_temporary_13() });
     (unsafe { test_reference_converts_from_temporary_14() });
     (unsafe { test_reference_converts_from_temporary_15() });
@@ -276,9 +256,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_26() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

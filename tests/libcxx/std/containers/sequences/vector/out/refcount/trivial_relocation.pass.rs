@@ -10,13 +10,13 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Tracker {
     #[offset(0)]
-    pub move_constructs: (),
+    pub move_constructs: usize,
 }
 impl Default for Tracker {
     fn default() -> Self {
         {
             Tracker {
-                move_constructs: 0_(),
+                move_constructs: 0_usize,
             }
         }
     }
@@ -43,7 +43,7 @@ impl Inner {
             (this
                 .with(|__s| __s.tracker_.clone())
                 .with(|__s| __s.move_constructs))
-            .wrapping_add(1_())
+            .wrapping_add(1_usize)
         });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -56,7 +56,7 @@ impl Inner {
             (this
                 .with(|__s| __s.tracker_.clone())
                 .with(|__s| __s.move_constructs))
-            .wrapping_add(1_())
+            .wrapping_add(1_usize)
         });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -93,19 +93,28 @@ const _: () = assert!(
     "!std::is_trivially_copyable<NotTriviallyMovable>::value"
 );
 const _: () = assert!(true, "");
-pub fn tests_0() -> () {
+pub fn tests_0() -> bool {
     let track: Value<Tracker> = Rc::new(RefCell::new(<Tracker>::default()));
-    let mut v: () = unimplemented!();
-    unimplemented!();
-    let mut capacity: () = unimplemented!();
-    'loop_: while (unimplemented!() < unimplemented!()) {
-        unimplemented!();
+    let mut v: Vec<NotTriviallyMovable> = Vec::new();
+    if 5_usize as usize > v.capacity() as usize {
+        let len_0 = v.len();
+        v.reserve_exact(5_usize as usize - len_0 as usize);
+    };
+    let mut capacity: usize = v.capacity();
+    'loop_: while (v.len() < v.capacity()) {
+        {
+            let __init = NotTriviallyMovable::new({ (track.as_pointer()) });
+            v.push(__init)
+        };
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (*track.borrow()).move_constructs } == 0_usize));
+    assert!((v.capacity() == capacity));
+    assert!((v.len() == capacity));
+    {
+        let __init = NotTriviallyMovable::new({ (track.as_pointer()) });
+        v.push(__init)
+    };
+    assert!(({ (*track.borrow()).move_constructs } == capacity));
     return true;
 }
 pub fn main() {
@@ -127,9 +136,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_0() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

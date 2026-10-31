@@ -6,53 +6,54 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: ()) -> () {
+pub fn test_convertible_imp_0(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_1(mut _a0: ()) -> () {
+pub fn test_convertible_imp_1(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_2(mut _a0: ()) -> () {
+pub fn test_convertible_imp_2(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_3(mut _a0: ()) -> () {
+pub fn test_convertible_imp_3(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_4(mut _a0: ()) -> () {
+pub fn test_convertible_imp_4(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_5(mut _a0: ()) -> () {
+pub fn test_convertible_imp_5(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_6() -> () {
-    return ({ test_convertible_imp_0(0_()) });
+pub fn test_convertible_6() -> bool {
+    return ({ test_convertible_imp_0(0_i64) });
 }
-pub fn test_convertible_7() -> () {
-    return ({ test_convertible_imp_1(0_()) });
+pub fn test_convertible_7() -> bool {
+    return ({ test_convertible_imp_1(0_i64) });
 }
-pub fn test_convertible_8() -> () {
-    return ({ test_convertible_imp_2(0_()) });
+pub fn test_convertible_8() -> bool {
+    return ({ test_convertible_imp_2(0_i64) });
 }
-pub fn test_convertible_9() -> () {
-    return ({ test_convertible_imp_3(0_()) });
+pub fn test_convertible_9() -> bool {
+    return ({ test_convertible_imp_3(0_i64) });
 }
-pub fn test_convertible_10() -> () {
-    return ({ test_convertible_imp_4(0_()) });
+pub fn test_convertible_10() -> bool {
+    return ({ test_convertible_imp_4(0_i64) });
 }
-pub fn test_convertible_11() -> () {
-    return ({ test_convertible_imp_5(0_()) });
+pub fn test_convertible_11() -> bool {
+    return ({ test_convertible_imp_5(0_i64) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Vec<i32  >  , new, value)]
 #[byte_size(8)]
 pub struct InitList {
     #[offset(0)]
-    pub size: (),
+    pub size: usize,
 }
 impl InitList {
-    pub fn new(il: ()) -> Self {
-        let il: Value<()> = Rc::new(RefCell::new(il));
+    pub fn new(il: Vec<i32>) -> Self {
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         Self {
-            size: unimplemented!(),
+            size: (*il.borrow()).len(),
         }
     }
 }
@@ -60,15 +61,15 @@ impl InitList {
 #[byte_size(16)]
 pub struct InitListArg {
     #[offset(0)]
-    pub size: (),
+    pub size: usize,
     #[offset(8)]
-    pub value: (),
+    pub value: i32,
 }
 impl InitListArg {
-    pub fn new(il: (), mut v: ()) -> Self {
-        let il: Value<()> = Rc::new(RefCell::new(il));
+    pub fn new(il: Vec<i32>, mut v: i32) -> Self {
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         Self {
-            size: unimplemented!(),
+            size: (*il.borrow()).len(),
             value: v,
         }
     }
@@ -160,9 +161,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_ctor_basic_13() });
     ({ test_ctor_sfinae_12() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

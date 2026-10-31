@@ -6,53 +6,53 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
-pub fn check_seconds_1(d: ()) -> () {
+pub fn check_seconds_1(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_seconds_2(d: ()) -> () {
+pub fn check_seconds_2(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_seconds_3(d: ()) -> () {
+pub fn check_seconds_3(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_seconds_4(d: ()) -> () {
+pub fn check_seconds_4(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_seconds_5(d: ()) -> () {
+pub fn check_seconds_5(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_seconds_6(d: ()) -> () {
+pub fn check_seconds_6(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_seconds_7(d: ()) -> () {
+pub fn check_seconds_7(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -73,25 +73,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "check_seconds(std::chrono::seconds( 1)) == 1");;
     const _: () = assert!(true, "check_seconds(std::chrono::seconds(-1)) == 1");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((({ check_seconds_1(unimplemented!(),) }) == 20_i64));
+    assert!((({ check_seconds_1(unimplemented!(),) }) == 20_i64));
+    assert!((({ check_seconds_2(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_seconds_2(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_seconds_3(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_seconds_3(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_seconds_4(unimplemented!(),) }) == 36_i64));
+    assert!((({ check_seconds_4(unimplemented!(),) }) == 36_i64));
+    assert!((({ check_seconds_5(unimplemented!(),) }) == 3_i64));
+    assert!((({ check_seconds_5(unimplemented!(),) }) == 3_i64));
+    assert!((({ check_seconds_6(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_seconds_6(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_seconds_7(unimplemented!(),) }) == 9_i64));
+    assert!((({ check_seconds_7(unimplemented!(),) }) == 9_i64));
+    assert!((({ check_seconds_7(unimplemented!(),) }) == 36_i64));
+    assert!((({ check_seconds_7(unimplemented!(),) }) == 36_i64));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

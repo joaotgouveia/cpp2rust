@@ -6,16 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(!(!(unimplemented!())));
     let __decomp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same_v<decltype(ptr), char*>");;
-    unimplemented!();
+    assert!(({ { (*__decomp_1.borrow()).ptr.clone() } } == { { (*lhs.borrow()).ptr.clone() } }));
     const _: () = assert!(true, "std::is_same_v<decltype(ec), std::errc>");;
-    unimplemented!();
+    assert!(({ (*__decomp_1.borrow()).ec } == { (*lhs.borrow()).ec }));
     return true;
 }
 pub fn main() {
@@ -37,12 +37,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::equality_comparable<std::to_chars_result>");;
     const _: () = assert!(!(false), "!std::totally_ordered<std::to_chars_result>");;
     const _: () = assert!(!(false), "!std::three_way_comparable<std::to_chars_result>");;
-    unimplemented!();
+    assert!(({ test_0() }));
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

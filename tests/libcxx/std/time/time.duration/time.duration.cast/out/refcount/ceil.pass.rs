@@ -9,13 +9,13 @@ use std::rc::{Rc, Weak};
 pub fn test_0(f: Ptr<()>, d: Ptr<()>) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn test_1(f: Ptr<()>, d: Ptr<()>) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn main() {
@@ -37,7 +37,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
         let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -64,6 +64,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let h2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "h2.count() == -2");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

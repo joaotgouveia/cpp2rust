@@ -341,16 +341,16 @@ impl Default for Union {
 #[byte_size(1)]
 pub struct bit_zero {
     #[offset(0)]
-    pub anon_31: (),
+    pub anon_31: i32,
 }
-pub type Enum = ();
+pub type Enum = u32;
 pub const Enum_zero: Enum = 0;
 pub const Enum_one: Enum = 1;
-pub type EnumSigned = ();
+pub type EnumSigned = i32;
 pub const EnumSigned_two: EnumSigned = 0;
-pub type EnumUnsigned = ();
+pub type EnumUnsigned = u32;
 pub const EnumUnsigned_three: EnumUnsigned = 0;
-pub type EnumClass = ();
+pub type EnumClass = i32;
 pub const EnumClass_zero: EnumClass = 0;
 pub const EnumClass_one: EnumClass = 1;
 pub fn main() {
@@ -372,7 +372,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_is_arithmetic_0() });
     ({ test_is_arithmetic_1() });
     ({ test_is_arithmetic_2() });
@@ -404,6 +404,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_is_not_arithmetic_28() });
     ({ test_is_not_arithmetic_29() });
     ({ test_is_not_arithmetic_30() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

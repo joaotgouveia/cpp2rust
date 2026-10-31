@@ -9,77 +9,77 @@ use std::rc::{Rc, Weak};
 pub fn rand0_0() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 1043618065_()));
 }
 pub fn rand0_1() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 1043618065_()));
 }
 pub fn rand0_2() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 1043618065_()));
 }
 pub fn rand_3() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 399268537_()));
 }
 pub fn rand_4() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 399268537_()));
 }
 pub fn rand_5() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 399268537_()));
 }
 pub fn other_6() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn other_7() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn other_8() {
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -100,7 +100,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ rand0_0() });
     ({ rand0_1() });
     ({ rand0_2() });
@@ -110,6 +110,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ other_6() });
     ({ other_7() });
     ({ other_8() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

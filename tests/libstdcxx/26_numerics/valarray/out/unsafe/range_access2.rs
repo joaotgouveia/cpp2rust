@@ -28,7 +28,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test01_0() });
     (unsafe { test02_1() });
     0

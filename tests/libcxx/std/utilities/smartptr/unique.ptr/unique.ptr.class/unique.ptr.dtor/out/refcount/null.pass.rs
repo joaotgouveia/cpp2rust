@@ -10,11 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct Deleter {
     #[offset(0)]
-    state_: (),
+    state_: i32,
 }
 impl Deleter {
     pub fn new() -> Self {
-        Self { state_: 0_() }
+        Self { state_: 0 }
     }
 }
 impl Default for Deleter {
@@ -24,25 +24,25 @@ impl Default for Deleter {
 }
 pub fn test_basic_0() {
     let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
-    unimplemented!();
+    assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Option<Value<i32>> = unimplemented!();
+        assert!((p.as_pointer()).is_null());
+        assert!(((unimplemented!()) == (d.as_pointer())));
     }
-    unimplemented!();
+    assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
 }
 pub fn test_basic_1() {
     let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
-    unimplemented!();
+    assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Option<Value<Box<[i32]>>> = unimplemented!();
+        assert!((p.as_pointer()).is_null());
+        assert!(((unimplemented!()) == (d.as_pointer())));
     }
-    unimplemented!();
+    assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
 }
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     ({ test_basic_0() });
     ({ test_basic_1() });
     return true;
@@ -66,23 +66,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait DeleterImpl {
     fn copy_assign(&self, _a0: Ptr<Deleter>) -> Ptr<Deleter> {
         unimplemented!()
     }
-    fn state(&self) -> ();
-    fn operator_call(&self, _a0: ());
+    fn state(&self) -> i32;
+    fn operator_call(&self, _a0: AnyPtr);
 }
 impl DeleterImpl for Ptr<Deleter> {
-    fn state(&self) -> () {
+    fn state(&self) -> i32 {
         return (*self).with(|__s| __s.state_);
     }
-    fn operator_call(&self, mut _a0: ()) {
+    fn operator_call(&self, mut _a0: AnyPtr) {
         field!((*self), state_).with_mut(|__v| __v.prefix_inc());
     }
 }

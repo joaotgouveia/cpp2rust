@@ -22,73 +22,73 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut a1: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut a2: [(); 7] = [6_(), 7_(), 8_(), 9_(), 10_(), 11_(), 12_()];
-        let N1: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let N2: () = (::std::mem::size_of::<[(); 7]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut a1: [i32; 5] = [1, 2, 3, 4, 5];
+        let mut a2: [i32; 7] = [6, 7, 8, 9, 10, 11, 12];
+        let N1: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+        let N2: u32 = (((::std::mem::size_of::<[i32; 7]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
         let mut v1_save: () = unimplemented!();
         let mut v2_save: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        cpp_swap_unsafe!(&mut v1, &mut v2);
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((*unimplemented!()) == (*unimplemented!())));
             i.prefix_inc();
         }
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut a1: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-        let N1: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let mut v1: () = unimplemented!();
-        let mut v2: () = unimplemented!();
-        let mut v1_save: () = unimplemented!();
-        let mut v2_save: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((*unimplemented!()) == (*unimplemented!())));
             i.prefix_inc();
         }
     }
     {
-        let mut a2: [(); 7] = [6_(), 7_(), 8_(), 9_(), 10_(), 11_(), 12_()];
-        let N2: () = (::std::mem::size_of::<[(); 7]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut a1: [i32; 5] = [1, 2, 3, 4, 5];
+        let N1: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
         let mut v1_save: () = unimplemented!();
         let mut v2_save: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        cpp_swap_unsafe!(&mut v1, &mut v2);
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((*unimplemented!()) == (*unimplemented!())));
             i.prefix_inc();
         }
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((*unimplemented!()) == (*unimplemented!())));
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut a2: [i32; 7] = [6, 7, 8, 9, 10, 11, 12];
+        let N2: u32 = (((::std::mem::size_of::<[i32; 7]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
+        let mut v1_save: () = unimplemented!();
+        let mut v2_save: () = unimplemented!();
+        cpp_swap_unsafe!(&mut v1, &mut v2);
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) < (unimplemented!())) {
+            assert!(((*unimplemented!()) == (*unimplemented!())));
+            i.prefix_inc();
+        }
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) < (unimplemented!())) {
+            assert!(((*unimplemented!()) == (*unimplemented!())));
             i.prefix_inc();
         }
     }
@@ -97,20 +97,20 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut v2: () = unimplemented!();
         let mut v1_save: () = unimplemented!();
         let mut v2_save: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        cpp_swap_unsafe!(&mut v1, &mut v2);
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((*unimplemented!()) == (*unimplemented!())));
             i.prefix_inc();
         }
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((*unimplemented!()) == (*unimplemented!())));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

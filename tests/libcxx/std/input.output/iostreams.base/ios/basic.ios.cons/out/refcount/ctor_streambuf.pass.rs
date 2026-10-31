@@ -26,33 +26,33 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let mut sb: Ptr<()> = Ptr::<()>::null();
         let ios: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ unimplemented!() } == { (sb).clone() }));
+        assert!((unimplemented!()).is_null());
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+        assert!(((unimplemented!() as i32) == ((unimplemented!()) as i32)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 6_()));
+        assert!(((unimplemented!() as i32) == ((' ' as i8) as i32)));
+        assert!(unimplemented!());
     }
     {
-        let mut sb: Ptr<()> = <Ptr<()>>::from_int(1_());
+        let mut sb: Ptr<()> = <Ptr<()>>::from_int(1);
         let ios: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ unimplemented!() } == { (sb).clone() }));
+        assert!((unimplemented!()).is_null());
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+        assert!(((unimplemented!() as i32) == ((unimplemented!()) as i32)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 6_()));
+        assert!(((unimplemented!() as i32) == ((' ' as i8) as i32)));
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

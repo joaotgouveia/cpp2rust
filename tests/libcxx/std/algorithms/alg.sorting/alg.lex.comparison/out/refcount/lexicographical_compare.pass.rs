@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct support_double_move_tracker {
     #[offset(0)]
-    moved_from_: (),
+    moved_from_: bool,
 }
 impl support_double_move_tracker {
     pub fn new() -> Self {
@@ -18,7 +18,7 @@ impl support_double_move_tracker {
     }
     pub fn move_from(other: Ptr<support_double_move_tracker>) -> Self {
         let __this: support_double_move_tracker = Self { moved_from_: false };
-        unimplemented!();
+        assert!(!(other.with(|__s| __s.moved_from_)));
         field!(other, moved_from_).write(true);
         __this
     }
@@ -114,49 +114,49 @@ pub fn for_each_0(
 ) {
     let f: Value<TestIter_const_int_> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({ TestIter_const_int_Impl::operator_call_1_const_int_ptr(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 TestIter_const_int_Impl::operator_call_1_class_contiguous_iterator_const_int_ptr_(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 TestIter_const_int_Impl::operator_call_1_class_random_access_iterator_const_int_ptr_(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 TestIter_const_int_Impl::operator_call_1_class_bidirectional_iterator_const_int_ptr_(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 TestIter_const_int_Impl::operator_call_1_class_forward_iterator_const_int_ptr_(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 TestIter_const_int_Impl::operator_call_1_class_cpp17_input_iterator_const_int_ptr_(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -167,41 +167,41 @@ pub fn for_each_2(
 ) {
     let f: Value<Test_const_int__const_int_ptr_> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_int__const_int_ptr_Impl::operator_call_1_const_int_ptr(&f.as_pointer())
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_int__const_int_ptr_Impl :: operator_call_1_class_contiguous_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_int__const_int_ptr_Impl :: operator_call_1_class_random_access_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_int__const_int_ptr_Impl :: operator_call_1_class_bidirectional_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_int__const_int_ptr_Impl :: operator_call_1_class_forward_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_int__const_int_ptr_Impl :: operator_call_1_class_cpp17_input_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -212,41 +212,41 @@ pub fn for_each_3(
 ) {
     let f: Value<Test_const_int__contiguous_iterator_const_int_ptr__> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_int__contiguous_iterator_const_int_ptr__Impl :: operator_call_1_const_int_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_int__contiguous_iterator_const_int_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_int__contiguous_iterator_const_int_ptr__Impl :: operator_call_1_class_random_access_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_int__contiguous_iterator_const_int_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_int__contiguous_iterator_const_int_ptr__Impl :: operator_call_1_class_forward_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_int__contiguous_iterator_const_int_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -257,41 +257,41 @@ pub fn for_each_4(
 ) {
     let f: Value<Test_const_int__random_access_iterator_const_int_ptr__> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_int__random_access_iterator_const_int_ptr__Impl :: operator_call_1_const_int_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_int__random_access_iterator_const_int_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_int__random_access_iterator_const_int_ptr__Impl :: operator_call_1_class_random_access_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_int__random_access_iterator_const_int_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_int__random_access_iterator_const_int_ptr__Impl :: operator_call_1_class_forward_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_int__random_access_iterator_const_int_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -302,41 +302,41 @@ pub fn for_each_5(
 ) {
     let f: Value<Test_const_int__bidirectional_iterator_const_int_ptr__> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_int__bidirectional_iterator_const_int_ptr__Impl :: operator_call_1_const_int_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_int__bidirectional_iterator_const_int_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_int__bidirectional_iterator_const_int_ptr__Impl :: operator_call_1_class_random_access_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_int__bidirectional_iterator_const_int_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_int__bidirectional_iterator_const_int_ptr__Impl :: operator_call_1_class_forward_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_int__bidirectional_iterator_const_int_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -347,43 +347,43 @@ pub fn for_each_6(
 ) {
     let f: Value<Test_const_int__forward_iterator_const_int_ptr__> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_int__forward_iterator_const_int_ptr__Impl::operator_call_1_const_int_ptr(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_int__forward_iterator_const_int_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_int__forward_iterator_const_int_ptr__Impl :: operator_call_1_class_random_access_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_int__forward_iterator_const_int_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_int__forward_iterator_const_int_ptr__Impl :: operator_call_1_class_forward_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_int__forward_iterator_const_int_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -395,41 +395,41 @@ pub fn for_each_7(
     let f: Value<Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl :: operator_call_1_const_int_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl :: operator_call_1_class_random_access_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl :: operator_call_1_class_forward_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_int_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -440,39 +440,39 @@ pub fn for_each_8(
 ) {
     let f: Value<TestIter_const_wchar_t_> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({ TestIter_const_wchar_t_Impl::operator_call_1_const_wchar_t_ptr(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 TestIter_const_wchar_t_Impl :: operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 TestIter_const_wchar_t_Impl :: operator_call_1_class_random_access_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 TestIter_const_wchar_t_Impl :: operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 TestIter_const_wchar_t_Impl :: operator_call_1_class_forward_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 TestIter_const_wchar_t_Impl :: operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -483,43 +483,43 @@ pub fn for_each_9(
 ) {
     let f: Value<Test_const_wchar_t__const_wchar_t_ptr_> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_wchar_t__const_wchar_t_ptr_Impl::operator_call_1_const_wchar_t_ptr(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_wchar_t__const_wchar_t_ptr_Impl :: operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_wchar_t__const_wchar_t_ptr_Impl :: operator_call_1_class_random_access_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_wchar_t__const_wchar_t_ptr_Impl :: operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_wchar_t__const_wchar_t_ptr_Impl :: operator_call_1_class_forward_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_wchar_t__const_wchar_t_ptr_Impl :: operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -531,41 +531,41 @@ pub fn for_each_10(
     let f: Value<Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl :: operator_call_1_const_wchar_t_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_random_access_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_forward_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -577,41 +577,41 @@ pub fn for_each_11(
     let f: Value<Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl :: operator_call_1_const_wchar_t_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_random_access_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_forward_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -623,41 +623,41 @@ pub fn for_each_12(
     let f: Value<Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl :: operator_call_1_const_wchar_t_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_random_access_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_forward_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -669,41 +669,41 @@ pub fn for_each_13(
     let f: Value<Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl :: operator_call_1_const_wchar_t_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_random_access_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_forward_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -715,41 +715,41 @@ pub fn for_each_14(
     let f: Value<Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__Impl :: operator_call_1_const_wchar_t_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__Impl :: operator_call_1_class_random_access_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__Impl :: operator_call_1_class_forward_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -760,45 +760,45 @@ pub fn for_each_15(
 ) {
     let f: Value<TestIter_const_char_> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({ TestIter_const_char_Impl::operator_call_1_const_char_ptr(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 TestIter_const_char_Impl::operator_call_1_class_contiguous_iterator_const_char_ptr_(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 TestIter_const_char_Impl :: operator_call_1_class_random_access_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 TestIter_const_char_Impl :: operator_call_1_class_bidirectional_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 TestIter_const_char_Impl::operator_call_1_class_forward_iterator_const_char_ptr_(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 TestIter_const_char_Impl::operator_call_1_class_cpp17_input_iterator_const_char_ptr_(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -809,43 +809,43 @@ pub fn for_each_16(
 ) {
     let f: Value<Test_const_char__const_char_ptr_> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_char__const_char_ptr_Impl::operator_call_1_const_char_ptr(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_char__const_char_ptr_Impl :: operator_call_1_class_contiguous_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_char__const_char_ptr_Impl :: operator_call_1_class_random_access_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_char__const_char_ptr_Impl :: operator_call_1_class_bidirectional_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_char__const_char_ptr_Impl :: operator_call_1_class_forward_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_char__const_char_ptr_Impl :: operator_call_1_class_cpp17_input_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -856,41 +856,41 @@ pub fn for_each_17(
 ) {
     let f: Value<Test_const_char__contiguous_iterator_const_char_ptr__> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_char__contiguous_iterator_const_char_ptr__Impl :: operator_call_1_const_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_char__contiguous_iterator_const_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_char__contiguous_iterator_const_char_ptr__Impl :: operator_call_1_class_random_access_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_char__contiguous_iterator_const_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_char__contiguous_iterator_const_char_ptr__Impl :: operator_call_1_class_forward_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_char__contiguous_iterator_const_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -902,41 +902,41 @@ pub fn for_each_18(
     let f: Value<Test_const_char__random_access_iterator_const_char_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_char__random_access_iterator_const_char_ptr__Impl :: operator_call_1_const_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_char__random_access_iterator_const_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_char__random_access_iterator_const_char_ptr__Impl :: operator_call_1_class_random_access_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_char__random_access_iterator_const_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_char__random_access_iterator_const_char_ptr__Impl :: operator_call_1_class_forward_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_char__random_access_iterator_const_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -948,41 +948,41 @@ pub fn for_each_19(
     let f: Value<Test_const_char__bidirectional_iterator_const_char_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_char__bidirectional_iterator_const_char_ptr__Impl :: operator_call_1_const_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_char__bidirectional_iterator_const_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_char__bidirectional_iterator_const_char_ptr__Impl :: operator_call_1_class_random_access_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_char__bidirectional_iterator_const_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_char__bidirectional_iterator_const_char_ptr__Impl :: operator_call_1_class_forward_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_char__bidirectional_iterator_const_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -993,41 +993,41 @@ pub fn for_each_20(
 ) {
     let f: Value<Test_const_char__forward_iterator_const_char_ptr__> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_char__forward_iterator_const_char_ptr__Impl :: operator_call_1_const_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_char__forward_iterator_const_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_char__forward_iterator_const_char_ptr__Impl :: operator_call_1_class_random_access_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_char__forward_iterator_const_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_char__forward_iterator_const_char_ptr__Impl :: operator_call_1_class_forward_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_char__forward_iterator_const_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -1039,41 +1039,41 @@ pub fn for_each_21(
     let f: Value<Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl :: operator_call_1_const_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl :: operator_call_1_class_random_access_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl :: operator_call_1_class_forward_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_const_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -1084,39 +1084,39 @@ pub fn for_each_22(
 ) {
     let f: Value<TestIter_unsigned_char_> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({ TestIter_unsigned_char_Impl::operator_call_1_unsigned_char_ptr(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 TestIter_unsigned_char_Impl :: operator_call_1_class_contiguous_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 TestIter_unsigned_char_Impl :: operator_call_1_class_random_access_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 TestIter_unsigned_char_Impl :: operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 TestIter_unsigned_char_Impl :: operator_call_1_class_forward_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 TestIter_unsigned_char_Impl :: operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -1127,43 +1127,43 @@ pub fn for_each_23(
 ) {
     let f: Value<Test_unsigned_char__unsigned_char_ptr_> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_unsigned_char__unsigned_char_ptr_Impl::operator_call_1_unsigned_char_ptr(
                     &f.as_pointer(),
                 )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_unsigned_char__unsigned_char_ptr_Impl :: operator_call_1_class_contiguous_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_unsigned_char__unsigned_char_ptr_Impl :: operator_call_1_class_random_access_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_unsigned_char__unsigned_char_ptr_Impl :: operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_unsigned_char__unsigned_char_ptr_Impl :: operator_call_1_class_forward_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_unsigned_char__unsigned_char_ptr_Impl :: operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -1175,41 +1175,41 @@ pub fn for_each_24(
     let f: Value<Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl :: operator_call_1_unsigned_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_random_access_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_forward_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -1221,41 +1221,41 @@ pub fn for_each_25(
     let f: Value<Test_unsigned_char__random_access_iterator_unsigned_char_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl :: operator_call_1_unsigned_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_random_access_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_forward_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -1267,41 +1267,41 @@ pub fn for_each_26(
     let f: Value<Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl :: operator_call_1_unsigned_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_random_access_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_forward_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -1313,41 +1313,41 @@ pub fn for_each_27(
     let f: Value<Test_unsigned_char__forward_iterator_unsigned_char_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl :: operator_call_1_unsigned_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_random_access_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_forward_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
@@ -1359,52 +1359,60 @@ pub fn for_each_28(
     let f: Value<Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__> =
         Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({
                 Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__Impl :: operator_call_1_unsigned_char_ptr ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({
                 Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__Impl :: operator_call_1_class_contiguous_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({
                 Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__Impl :: operator_call_1_class_random_access_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({
                 Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__Impl :: operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({
                 Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__Impl :: operator_call_1_class_forward_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({
                 Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__Impl :: operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_ ( &f .as_pointer()  , )
             });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
 }
-pub fn swallow_1(mut _a0: (), mut _a1: (), mut _a2: (), mut _a3: (), mut _a4: (), mut _a5: ()) {}
+pub fn swallow_1(
+    mut _a0: i32,
+    mut _a1: i32,
+    mut _a2: i32,
+    mut _a3: i32,
+    mut _a4: i32,
+    mut _a5: i32,
+) {
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -1426,7 +1434,7 @@ const _: () = assert!(
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -1442,13 +1450,13 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
 pub fn operator_eq_29(
     x: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
     y: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_30(
     x: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
     y: Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1456,13 +1464,13 @@ pub fn operator_ne_30(
 pub struct cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
-    pub fn new(mut it: Ptr<()>) -> Self {
+    pub fn new(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1480,16 +1488,21 @@ impl CppEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         operator_eq_29(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_5();
+    }
+}
 pub fn operator_eq_31(
     x: Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_>,
     y: Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_32(
     x: Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_>,
     y: Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1497,13 +1510,13 @@ pub fn operator_ne_32(
 pub struct cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
-    pub fn new(mut it: Ptr<()>) -> Self {
+    pub fn new(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1521,16 +1534,21 @@ impl CppEq for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
         operator_eq_31(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_5();
+    }
+}
 pub fn operator_eq_33(
     x: Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>,
     y: Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_34(
     x: Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>,
     y: Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1538,13 +1556,13 @@ pub fn operator_ne_34(
 pub struct cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
-    pub fn new(mut it: Ptr<()>) -> Self {
+    pub fn new(mut it: Ptr<i8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1562,16 +1580,21 @@ impl CppEq for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
         operator_eq_33(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_5();
+    }
+}
 pub fn operator_eq_35(
     x: Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_>,
     y: Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_36(
     x: Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_>,
     y: Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1579,13 +1602,13 @@ pub fn operator_ne_36(
 pub struct cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<u8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
-    pub fn new(mut it: Ptr<()>) -> Self {
+    pub fn new(mut it: Ptr<u8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1603,17 +1626,22 @@ impl CppEq for cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
         operator_eq_35(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_5();
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn operator_eq_37(
     x: Ptr<forward_iterator_const_int_ptr_>,
     y: Ptr<forward_iterator_const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_38(
     x: Ptr<forward_iterator_const_int_ptr_>,
     y: Ptr<forward_iterator_const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1621,13 +1649,13 @@ pub fn operator_ne_38(
 pub struct forward_iterator_const_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_const_int_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1645,16 +1673,21 @@ impl CppEq for forward_iterator_const_int_ptr_ {
         operator_eq_37(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for forward_iterator_const_int_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_eq_39(
     x: Ptr<forward_iterator_const_wchar_t_ptr_>,
     y: Ptr<forward_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_40(
     x: Ptr<forward_iterator_const_wchar_t_ptr_>,
     y: Ptr<forward_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1662,13 +1695,13 @@ pub fn operator_ne_40(
 pub struct forward_iterator_const_wchar_t_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_const_wchar_t_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1686,16 +1719,21 @@ impl CppEq for forward_iterator_const_wchar_t_ptr_ {
         operator_eq_39(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for forward_iterator_const_wchar_t_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_eq_41(
     x: Ptr<forward_iterator_const_char_ptr_>,
     y: Ptr<forward_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_42(
     x: Ptr<forward_iterator_const_char_ptr_>,
     y: Ptr<forward_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1703,13 +1741,13 @@ pub fn operator_ne_42(
 pub struct forward_iterator_const_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_const_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1727,16 +1765,21 @@ impl CppEq for forward_iterator_const_char_ptr_ {
         operator_eq_41(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for forward_iterator_const_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_eq_43(
     x: Ptr<forward_iterator_unsigned_char_ptr_>,
     y: Ptr<forward_iterator_unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_44(
     x: Ptr<forward_iterator_unsigned_char_ptr_>,
     y: Ptr<forward_iterator_unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1744,13 +1787,13 @@ pub fn operator_ne_44(
 pub struct forward_iterator_unsigned_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<u8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_unsigned_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<u8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1768,16 +1811,21 @@ impl CppEq for forward_iterator_unsigned_char_ptr_ {
         operator_eq_43(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for forward_iterator_unsigned_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_eq_45(
     x: Ptr<bidirectional_iterator_const_int_ptr_>,
     y: Ptr<bidirectional_iterator_const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_46(
     x: Ptr<bidirectional_iterator_const_int_ptr_>,
     y: Ptr<bidirectional_iterator_const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1785,13 +1833,13 @@ pub fn operator_ne_46(
 pub struct bidirectional_iterator_const_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl bidirectional_iterator_const_int_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1809,16 +1857,21 @@ impl CppEq for bidirectional_iterator_const_int_ptr_ {
         operator_eq_45(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for bidirectional_iterator_const_int_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_eq_47(
     x: Ptr<bidirectional_iterator_const_wchar_t_ptr_>,
     y: Ptr<bidirectional_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_48(
     x: Ptr<bidirectional_iterator_const_wchar_t_ptr_>,
     y: Ptr<bidirectional_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1826,13 +1879,13 @@ pub fn operator_ne_48(
 pub struct bidirectional_iterator_const_wchar_t_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl bidirectional_iterator_const_wchar_t_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1850,16 +1903,21 @@ impl CppEq for bidirectional_iterator_const_wchar_t_ptr_ {
         operator_eq_47(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for bidirectional_iterator_const_wchar_t_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_eq_49(
     x: Ptr<bidirectional_iterator_const_char_ptr_>,
     y: Ptr<bidirectional_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_50(
     x: Ptr<bidirectional_iterator_const_char_ptr_>,
     y: Ptr<bidirectional_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1867,13 +1925,13 @@ pub fn operator_ne_50(
 pub struct bidirectional_iterator_const_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl bidirectional_iterator_const_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1891,16 +1949,21 @@ impl CppEq for bidirectional_iterator_const_char_ptr_ {
         operator_eq_49(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for bidirectional_iterator_const_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_eq_51(
     x: Ptr<bidirectional_iterator_unsigned_char_ptr_>,
     y: Ptr<bidirectional_iterator_unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_52(
     x: Ptr<bidirectional_iterator_unsigned_char_ptr_>,
     y: Ptr<bidirectional_iterator_unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1908,13 +1971,13 @@ pub fn operator_ne_52(
 pub struct bidirectional_iterator_unsigned_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<u8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl bidirectional_iterator_unsigned_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<u8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1932,9 +1995,14 @@ impl CppEq for bidirectional_iterator_unsigned_char_ptr_ {
         operator_eq_51(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for bidirectional_iterator_unsigned_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_add_53(
     x: random_access_iterator_const_int_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_const_int_ptr_ {
     let x: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(x));
     ({ random_access_iterator_const_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
@@ -1943,19 +2011,19 @@ pub fn operator_add_53(
 pub fn operator_sub_54(
     mut x: random_access_iterator_const_int_ptr_,
     mut y: random_access_iterator_const_int_ptr_,
-) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
+) -> isize {
+    return (((x.it_).clone() - (y.it_).clone()) as i64 as isize);
 }
 pub fn operator_eq_55(
     x: Ptr<random_access_iterator_const_int_ptr_>,
     y: Ptr<random_access_iterator_const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_56(
     x: Ptr<random_access_iterator_const_int_ptr_>,
     y: Ptr<random_access_iterator_const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -1963,13 +2031,13 @@ pub fn operator_ne_56(
 pub struct random_access_iterator_const_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_const_int_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -1987,9 +2055,14 @@ impl CppEq for random_access_iterator_const_int_ptr_ {
         operator_eq_55(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for random_access_iterator_const_int_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_7();
+    }
+}
 pub fn operator_add_57(
     x: random_access_iterator_const_wchar_t_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_const_wchar_t_ptr_ {
     let x: Value<random_access_iterator_const_wchar_t_ptr_> = Rc::new(RefCell::new(x));
     ({ random_access_iterator_const_wchar_t_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
@@ -1998,19 +2071,19 @@ pub fn operator_add_57(
 pub fn operator_sub_58(
     mut x: random_access_iterator_const_wchar_t_ptr_,
     mut y: random_access_iterator_const_wchar_t_ptr_,
-) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
+) -> isize {
+    return (((x.it_).clone() - (y.it_).clone()) as i64 as isize);
 }
 pub fn operator_eq_59(
     x: Ptr<random_access_iterator_const_wchar_t_ptr_>,
     y: Ptr<random_access_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_60(
     x: Ptr<random_access_iterator_const_wchar_t_ptr_>,
     y: Ptr<random_access_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -2018,13 +2091,13 @@ pub fn operator_ne_60(
 pub struct random_access_iterator_const_wchar_t_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_const_wchar_t_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -2042,9 +2115,14 @@ impl CppEq for random_access_iterator_const_wchar_t_ptr_ {
         operator_eq_59(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for random_access_iterator_const_wchar_t_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_7();
+    }
+}
 pub fn operator_add_61(
     x: random_access_iterator_const_char_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_const_char_ptr_ {
     let x: Value<random_access_iterator_const_char_ptr_> = Rc::new(RefCell::new(x));
     ({ random_access_iterator_const_char_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
@@ -2053,19 +2131,19 @@ pub fn operator_add_61(
 pub fn operator_sub_62(
     mut x: random_access_iterator_const_char_ptr_,
     mut y: random_access_iterator_const_char_ptr_,
-) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
+) -> isize {
+    return (((x.it_).clone() - (y.it_).clone()) as i64 as isize);
 }
 pub fn operator_eq_63(
     x: Ptr<random_access_iterator_const_char_ptr_>,
     y: Ptr<random_access_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_64(
     x: Ptr<random_access_iterator_const_char_ptr_>,
     y: Ptr<random_access_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -2073,13 +2151,13 @@ pub fn operator_ne_64(
 pub struct random_access_iterator_const_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_const_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -2097,9 +2175,14 @@ impl CppEq for random_access_iterator_const_char_ptr_ {
         operator_eq_63(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for random_access_iterator_const_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_7();
+    }
+}
 pub fn operator_add_65(
     x: random_access_iterator_unsigned_char_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_unsigned_char_ptr_ {
     let x: Value<random_access_iterator_unsigned_char_ptr_> = Rc::new(RefCell::new(x));
     ({ random_access_iterator_unsigned_char_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
@@ -2108,19 +2191,19 @@ pub fn operator_add_65(
 pub fn operator_sub_66(
     mut x: random_access_iterator_unsigned_char_ptr_,
     mut y: random_access_iterator_unsigned_char_ptr_,
-) -> () {
-    return (((x.it_).clone() - (y.it_).clone()) as () as ());
+) -> isize {
+    return (((x.it_).clone() - (y.it_).clone()) as i64 as isize);
 }
 pub fn operator_eq_67(
     x: Ptr<random_access_iterator_unsigned_char_ptr_>,
     y: Ptr<random_access_iterator_unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_68(
     x: Ptr<random_access_iterator_unsigned_char_ptr_>,
     y: Ptr<random_access_iterator_unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -2128,13 +2211,13 @@ pub fn operator_ne_68(
 pub struct random_access_iterator_unsigned_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<u8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_unsigned_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<u8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -2152,12 +2235,17 @@ impl CppEq for random_access_iterator_unsigned_char_ptr_ {
         operator_eq_67(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for random_access_iterator_unsigned_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_7();
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -2177,13 +2265,13 @@ const _: () = assert!(
 pub fn operator_eq_69(
     x: Ptr<contiguous_iterator_const_int_ptr_>,
     y: Ptr<contiguous_iterator_const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_70(
     x: Ptr<contiguous_iterator_const_int_ptr_>,
     y: Ptr<contiguous_iterator_const_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -2191,13 +2279,13 @@ pub fn operator_ne_70(
 pub struct contiguous_iterator_const_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_const_int_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -2215,16 +2303,21 @@ impl CppEq for contiguous_iterator_const_int_ptr_ {
         operator_eq_69(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for contiguous_iterator_const_int_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_9();
+    }
+}
 pub fn operator_eq_71(
     x: Ptr<contiguous_iterator_const_wchar_t_ptr_>,
     y: Ptr<contiguous_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_72(
     x: Ptr<contiguous_iterator_const_wchar_t_ptr_>,
     y: Ptr<contiguous_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -2232,13 +2325,13 @@ pub fn operator_ne_72(
 pub struct contiguous_iterator_const_wchar_t_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_const_wchar_t_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -2256,16 +2349,21 @@ impl CppEq for contiguous_iterator_const_wchar_t_ptr_ {
         operator_eq_71(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for contiguous_iterator_const_wchar_t_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_9();
+    }
+}
 pub fn operator_eq_73(
     x: Ptr<contiguous_iterator_const_char_ptr_>,
     y: Ptr<contiguous_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_74(
     x: Ptr<contiguous_iterator_const_char_ptr_>,
     y: Ptr<contiguous_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -2273,13 +2371,13 @@ pub fn operator_ne_74(
 pub struct contiguous_iterator_const_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_const_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -2297,16 +2395,21 @@ impl CppEq for contiguous_iterator_const_char_ptr_ {
         operator_eq_73(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for contiguous_iterator_const_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_9();
+    }
+}
 pub fn operator_eq_75(
     x: Ptr<contiguous_iterator_unsigned_char_ptr_>,
     y: Ptr<contiguous_iterator_unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
 pub fn operator_ne_76(
     x: Ptr<contiguous_iterator_unsigned_char_ptr_>,
     y: Ptr<contiguous_iterator_unsigned_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -2314,13 +2417,13 @@ pub fn operator_ne_76(
 pub struct contiguous_iterator_unsigned_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<u8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_unsigned_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<u8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -2338,12 +2441,17 @@ impl CppEq for contiguous_iterator_unsigned_char_ptr_ {
         operator_eq_75(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for contiguous_iterator_unsigned_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_9();
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_input_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -2362,7 +2470,7 @@ const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 pub struct cpp20_output_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -2383,22 +2491,22 @@ const _: () = assert!(
 #[byte_size(32)]
 pub struct IteratorOpCounts {
     #[offset(0)]
-    pub increments: (),
+    pub increments: usize,
     #[offset(8)]
-    pub decrements: (),
+    pub decrements: usize,
     #[offset(16)]
-    pub zero_moves: (),
+    pub zero_moves: usize,
     #[offset(24)]
-    pub equal_cmps: (),
+    pub equal_cmps: usize,
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
         {
             IteratorOpCounts {
-                increments: 0_(),
-                decrements: 0_(),
-                zero_moves: 0_(),
-                equal_cmps: 0_(),
+                increments: 0_usize,
+                decrements: 0_usize,
+                zero_moves: 0_usize,
+                equal_cmps: 0_usize,
             }
         }
     }
@@ -2406,7 +2514,7 @@ impl Default for IteratorOpCounts {
 pub fn operator_eq_77(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ _a0.with(|__s| __s.it_.clone()) } == { _a1.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -2414,7 +2522,7 @@ pub fn operator_eq_77(
 pub struct forward_sized_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    pub it_: Ptr<()>,
+    pub it_: Ptr<i32>,
 }
 impl forward_sized_iterator_int_ptr_ {}
 impl CppEq for forward_sized_iterator_int_ptr_ {
@@ -2426,7 +2534,7 @@ impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
             forward_sized_iterator_int_ptr_ {
-                it_: Ptr::<()>::null(),
+                it_: Ptr::<i32>::null(),
             }
         }
     }
@@ -2436,36 +2544,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_78(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_78(mut i: adl_Iterator, mut n: isize) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_79(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_79(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
         operator_add_78(_i, n)
     });
 }
 pub fn iter_swap_80(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_81(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_81(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_82(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_82(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> bool {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_83(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_83(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> std::cmp::Ordering {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -2476,34 +2584,34 @@ pub fn operator_cmp_83(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
 pub struct adl_Iterator {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(8)]
-    iter_moves_: Ptr<()>,
+    iter_moves_: Ptr<i32>,
     #[offset(16)]
     #[byte_size(8)]
-    iter_swaps_: Ptr<()>,
+    iter_swaps_: Ptr<i32>,
 }
 impl adl_Iterator {
-    fn new_1(mut p: Ptr<()>, mut iter_moves: Ptr<()>, mut iter_swaps: Ptr<()>) -> Self {
+    fn new_1(mut p: Ptr<i32>, mut iter_moves: Ptr<i32>, mut iter_swaps: Ptr<i32>) -> Self {
         Self {
             ptr_: (p).clone(),
             iter_moves_: (iter_moves).clone(),
             iter_swaps_: (iter_swaps).clone(),
         }
     }
-    pub fn TrackMoves(mut p: Ptr<()>, iter_moves: Ptr<()>) -> adl_Iterator {
+    pub fn TrackMoves(mut p: Ptr<i32>, iter_moves: Ptr<i32>) -> adl_Iterator {
         return adl_Iterator::new_1({ (p).clone() }, { (iter_moves).clone() }, {
-            Ptr::<()>::null()
+            Ptr::<i32>::null()
         });
     }
-    pub fn TrackSwaps_4(iter_swaps: Ptr<()>) -> adl_Iterator {
-        return adl_Iterator::new_1({ Ptr::<()>::null() }, { Ptr::<()>::null() }, {
+    pub fn TrackSwaps_4(iter_swaps: Ptr<i32>) -> adl_Iterator {
+        return adl_Iterator::new_1({ Ptr::<i32>::null() }, { Ptr::<i32>::null() }, {
             (iter_swaps).clone()
         });
     }
-    pub fn TrackSwaps_5(mut p: Ptr<()>, iter_swaps: Ptr<()>) -> adl_Iterator {
-        return adl_Iterator::new_1({ (p).clone() }, { Ptr::<()>::null() }, {
+    pub fn TrackSwaps_5(mut p: Ptr<i32>, iter_swaps: Ptr<i32>) -> adl_Iterator {
+        return adl_Iterator::new_1({ (p).clone() }, { Ptr::<i32>::null() }, {
             (iter_swaps).clone()
         });
     }
@@ -2518,13 +2626,21 @@ impl CppEq for adl_Iterator {
         operator_eq_82(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for adl_Iterator {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_14();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_16();
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
             adl_Iterator {
-                ptr_: Ptr::<()>::null(),
-                iter_moves_: Ptr::<()>::null(),
-                iter_swaps_: Ptr::<()>::null(),
+                ptr_: Ptr::<i32>::null(),
+                iter_moves_: Ptr::<i32>::null(),
+                iter_swaps_: Ptr::<i32>::null(),
             }
         }
     }
@@ -2534,7 +2650,7 @@ impl Default for adl_Iterator {
 pub struct rvalue_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<Ptr<()>>,
+    it_: Ptr<Ptr<i32>>,
 }
 impl rvalue_iterator_int_ptr_ {}
 impl CppLess for rvalue_iterator_int_ptr_ {
@@ -2549,11 +2665,12 @@ impl CppEq for rvalue_iterator_int_ptr_ {
     }
 }
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Ptr< i8  >  , new, value)]
 #[byte_size(16)]
 pub struct util_iterator_error {}
 impl util_iterator_error {
-    pub fn new(mut what: Ptr<()>) -> Self {
+    pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
     }
 }
@@ -2641,7 +2758,7 @@ pub struct TestIter_const_char_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIter_unsigned_char_ {}
-pub fn test_84() -> () {
+pub fn test_84() -> bool {
     ({
         for_each_0 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr___cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , <TestIter_const_int_  >::default()  , )
     });
@@ -2675,51 +2792,51 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_84() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait TestIter_const_char_Impl {
-    fn operator_call_1_const_char_ptr(&self) -> ();
-    fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) -> ();
-    fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) -> ();
-    fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) -> ();
-    fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) -> ();
-    fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) -> ();
+    fn operator_call_1_const_char_ptr(&self) -> bool;
+    fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) -> bool;
+    fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) -> bool;
+    fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) -> bool;
+    fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) -> bool;
+    fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) -> bool;
 }
 impl TestIter_const_char_Impl for Ptr<TestIter_const_char_> {
-    fn operator_call_1_const_char_ptr(&self) -> () {
+    fn operator_call_1_const_char_ptr(&self) -> bool {
         ({
             for_each_16 ( <types_type_list_const_char_ptr__contiguous_iterator_const_char_ptr___random_access_iterator_const_char_ptr___bidirectional_iterator_const_char_ptr___forward_iterator_const_char_ptr___cpp17_input_iterator_const_char_ptr__const_char_ptr__  >::default()  , <Test_const_char__const_char_ptr_  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) -> () {
+    fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) -> bool {
         ({
             for_each_17 ( <types_type_list_const_char_ptr__contiguous_iterator_const_char_ptr___random_access_iterator_const_char_ptr___bidirectional_iterator_const_char_ptr___forward_iterator_const_char_ptr___cpp17_input_iterator_const_char_ptr__const_char_ptr__  >::default()  , <Test_const_char__contiguous_iterator_const_char_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) -> () {
+    fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) -> bool {
         ({
             for_each_18 ( <types_type_list_const_char_ptr__contiguous_iterator_const_char_ptr___random_access_iterator_const_char_ptr___bidirectional_iterator_const_char_ptr___forward_iterator_const_char_ptr___cpp17_input_iterator_const_char_ptr__const_char_ptr__  >::default()  , <Test_const_char__random_access_iterator_const_char_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) -> () {
+    fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) -> bool {
         ({
             for_each_19 ( <types_type_list_const_char_ptr__contiguous_iterator_const_char_ptr___random_access_iterator_const_char_ptr___bidirectional_iterator_const_char_ptr___forward_iterator_const_char_ptr___cpp17_input_iterator_const_char_ptr__const_char_ptr__  >::default()  , <Test_const_char__bidirectional_iterator_const_char_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) -> () {
+    fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) -> bool {
         ({
             for_each_20 ( <types_type_list_const_char_ptr__contiguous_iterator_const_char_ptr___random_access_iterator_const_char_ptr___bidirectional_iterator_const_char_ptr___forward_iterator_const_char_ptr___cpp17_input_iterator_const_char_ptr__const_char_ptr__  >::default()  , <Test_const_char__forward_iterator_const_char_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) -> () {
+    fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) -> bool {
         ({
             for_each_21 ( <types_type_list_const_char_ptr__contiguous_iterator_const_char_ptr___random_access_iterator_const_char_ptr___bidirectional_iterator_const_char_ptr___forward_iterator_const_char_ptr___cpp17_input_iterator_const_char_ptr__const_char_ptr__  >::default()  , <Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__  >::default()  , )
         });
@@ -2727,45 +2844,45 @@ impl TestIter_const_char_Impl for Ptr<TestIter_const_char_> {
     }
 }
 pub trait TestIter_const_int_Impl {
-    fn operator_call_1_const_int_ptr(&self) -> ();
-    fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) -> ();
-    fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) -> ();
-    fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) -> ();
-    fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) -> ();
-    fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) -> ();
+    fn operator_call_1_const_int_ptr(&self) -> bool;
+    fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) -> bool;
+    fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) -> bool;
+    fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) -> bool;
+    fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) -> bool;
+    fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) -> bool;
 }
 impl TestIter_const_int_Impl for Ptr<TestIter_const_int_> {
-    fn operator_call_1_const_int_ptr(&self) -> () {
+    fn operator_call_1_const_int_ptr(&self) -> bool {
         ({
             for_each_2 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr___cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , <Test_const_int__const_int_ptr_  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) -> () {
+    fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) -> bool {
         ({
             for_each_3 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr___cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , <Test_const_int__contiguous_iterator_const_int_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) -> () {
+    fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) -> bool {
         ({
             for_each_4 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr___cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , <Test_const_int__random_access_iterator_const_int_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) -> () {
+    fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) -> bool {
         ({
             for_each_5 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr___cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , <Test_const_int__bidirectional_iterator_const_int_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) -> () {
+    fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) -> bool {
         ({
             for_each_6 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr___cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , <Test_const_int__forward_iterator_const_int_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) -> () {
+    fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) -> bool {
         ({
             for_each_7 ( <types_type_list_const_int_ptr__contiguous_iterator_const_int_ptr___random_access_iterator_const_int_ptr___bidirectional_iterator_const_int_ptr___forward_iterator_const_int_ptr___cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , <Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__  >::default()  , )
         });
@@ -2773,45 +2890,45 @@ impl TestIter_const_int_Impl for Ptr<TestIter_const_int_> {
     }
 }
 pub trait TestIter_const_wchar_t_Impl {
-    fn operator_call_1_const_wchar_t_ptr(&self) -> ();
-    fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) -> ();
-    fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) -> ();
-    fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) -> ();
-    fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) -> ();
-    fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) -> ();
+    fn operator_call_1_const_wchar_t_ptr(&self) -> bool;
+    fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) -> bool;
+    fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) -> bool;
+    fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) -> bool;
+    fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) -> bool;
+    fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) -> bool;
 }
 impl TestIter_const_wchar_t_Impl for Ptr<TestIter_const_wchar_t_> {
-    fn operator_call_1_const_wchar_t_ptr(&self) -> () {
+    fn operator_call_1_const_wchar_t_ptr(&self) -> bool {
         ({
             for_each_9 ( <types_type_list_const_wchar_t_ptr__contiguous_iterator_const_wchar_t_ptr___random_access_iterator_const_wchar_t_ptr___bidirectional_iterator_const_wchar_t_ptr___forward_iterator_const_wchar_t_ptr___cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__  >::default()  , <Test_const_wchar_t__const_wchar_t_ptr_  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) -> () {
+    fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) -> bool {
         ({
             for_each_10 ( <types_type_list_const_wchar_t_ptr__contiguous_iterator_const_wchar_t_ptr___random_access_iterator_const_wchar_t_ptr___bidirectional_iterator_const_wchar_t_ptr___forward_iterator_const_wchar_t_ptr___cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__  >::default()  , <Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) -> () {
+    fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) -> bool {
         ({
             for_each_11 ( <types_type_list_const_wchar_t_ptr__contiguous_iterator_const_wchar_t_ptr___random_access_iterator_const_wchar_t_ptr___bidirectional_iterator_const_wchar_t_ptr___forward_iterator_const_wchar_t_ptr___cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__  >::default()  , <Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) -> () {
+    fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) -> bool {
         ({
             for_each_12 ( <types_type_list_const_wchar_t_ptr__contiguous_iterator_const_wchar_t_ptr___random_access_iterator_const_wchar_t_ptr___bidirectional_iterator_const_wchar_t_ptr___forward_iterator_const_wchar_t_ptr___cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__  >::default()  , <Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) -> () {
+    fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) -> bool {
         ({
             for_each_13 ( <types_type_list_const_wchar_t_ptr__contiguous_iterator_const_wchar_t_ptr___random_access_iterator_const_wchar_t_ptr___bidirectional_iterator_const_wchar_t_ptr___forward_iterator_const_wchar_t_ptr___cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__  >::default()  , <Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) -> () {
+    fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) -> bool {
         ({
             for_each_14 ( <types_type_list_const_wchar_t_ptr__contiguous_iterator_const_wchar_t_ptr___random_access_iterator_const_wchar_t_ptr___bidirectional_iterator_const_wchar_t_ptr___forward_iterator_const_wchar_t_ptr___cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__  >::default()  , <Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__  >::default()  , )
         });
@@ -2819,45 +2936,45 @@ impl TestIter_const_wchar_t_Impl for Ptr<TestIter_const_wchar_t_> {
     }
 }
 pub trait TestIter_unsigned_char_Impl {
-    fn operator_call_1_unsigned_char_ptr(&self) -> ();
-    fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) -> ();
-    fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) -> ();
-    fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) -> ();
-    fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) -> ();
-    fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) -> ();
+    fn operator_call_1_unsigned_char_ptr(&self) -> bool;
+    fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) -> bool;
+    fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) -> bool;
+    fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) -> bool;
+    fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) -> bool;
+    fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) -> bool;
 }
 impl TestIter_unsigned_char_Impl for Ptr<TestIter_unsigned_char_> {
-    fn operator_call_1_unsigned_char_ptr(&self) -> () {
+    fn operator_call_1_unsigned_char_ptr(&self) -> bool {
         ({
             for_each_23 ( <types_type_list_unsigned_char_ptr__contiguous_iterator_unsigned_char_ptr___random_access_iterator_unsigned_char_ptr___bidirectional_iterator_unsigned_char_ptr___forward_iterator_unsigned_char_ptr___cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__  >::default()  , <Test_unsigned_char__unsigned_char_ptr_  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) -> () {
+    fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) -> bool {
         ({
             for_each_24 ( <types_type_list_unsigned_char_ptr__contiguous_iterator_unsigned_char_ptr___random_access_iterator_unsigned_char_ptr___bidirectional_iterator_unsigned_char_ptr___forward_iterator_unsigned_char_ptr___cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__  >::default()  , <Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) -> () {
+    fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) -> bool {
         ({
             for_each_25 ( <types_type_list_unsigned_char_ptr__contiguous_iterator_unsigned_char_ptr___random_access_iterator_unsigned_char_ptr___bidirectional_iterator_unsigned_char_ptr___forward_iterator_unsigned_char_ptr___cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__  >::default()  , <Test_unsigned_char__random_access_iterator_unsigned_char_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) -> () {
+    fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) -> bool {
         ({
             for_each_26 ( <types_type_list_unsigned_char_ptr__contiguous_iterator_unsigned_char_ptr___random_access_iterator_unsigned_char_ptr___bidirectional_iterator_unsigned_char_ptr___forward_iterator_unsigned_char_ptr___cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__  >::default()  , <Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) -> () {
+    fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) -> bool {
         ({
             for_each_27 ( <types_type_list_unsigned_char_ptr__contiguous_iterator_unsigned_char_ptr___random_access_iterator_unsigned_char_ptr___bidirectional_iterator_unsigned_char_ptr___forward_iterator_unsigned_char_ptr___cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__  >::default()  , <Test_unsigned_char__forward_iterator_unsigned_char_ptr__  >::default()  , )
         });
         return true;
     }
-    fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) -> () {
+    fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) -> bool {
         ({
             for_each_28 ( <types_type_list_unsigned_char_ptr__contiguous_iterator_unsigned_char_ptr___random_access_iterator_unsigned_char_ptr___bidirectional_iterator_unsigned_char_ptr___forward_iterator_unsigned_char_ptr___cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__  >::default()  , <Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__  >::default()  , )
         });
@@ -2876,76 +2993,82 @@ impl Test_const_char__bidirectional_iterator_const_char_ptr__Impl
     for Ptr<Test_const_char__bidirectional_iterator_const_char_ptr__>
 {
     fn operator_call_1_const_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_char__const_char_ptr_Impl {
@@ -2958,76 +3081,82 @@ pub trait Test_const_char__const_char_ptr_Impl {
 }
 impl Test_const_char__const_char_ptr_Impl for Ptr<Test_const_char__const_char_ptr_> {
     fn operator_call_1_const_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_char__contiguous_iterator_const_char_ptr__Impl {
@@ -3042,76 +3171,82 @@ impl Test_const_char__contiguous_iterator_const_char_ptr__Impl
     for Ptr<Test_const_char__contiguous_iterator_const_char_ptr__>
 {
     fn operator_call_1_const_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl {
@@ -3126,76 +3261,82 @@ impl Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__Impl
     for Ptr<Test_const_char__cpp17_input_iterator_const_char_ptr__const_char_ptr__>
 {
     fn operator_call_1_const_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_char__forward_iterator_const_char_ptr__Impl {
@@ -3210,76 +3351,82 @@ impl Test_const_char__forward_iterator_const_char_ptr__Impl
     for Ptr<Test_const_char__forward_iterator_const_char_ptr__>
 {
     fn operator_call_1_const_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_char__random_access_iterator_const_char_ptr__Impl {
@@ -3294,76 +3441,82 @@ impl Test_const_char__random_access_iterator_const_char_ptr__Impl
     for Ptr<Test_const_char__random_access_iterator_const_char_ptr__>
 {
     fn operator_call_1_const_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8, 4_i8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i8>() as usize)))
+            as u32);
+        let ib: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_int__bidirectional_iterator_const_int_ptr__Impl {
@@ -3378,76 +3531,82 @@ impl Test_const_int__bidirectional_iterator_const_int_ptr__Impl
     for Ptr<Test_const_int__bidirectional_iterator_const_int_ptr__>
 {
     fn operator_call_1_const_int_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_int__const_int_ptr_Impl {
@@ -3460,76 +3619,82 @@ pub trait Test_const_int__const_int_ptr_Impl {
 }
 impl Test_const_int__const_int_ptr_Impl for Ptr<Test_const_int__const_int_ptr_> {
     fn operator_call_1_const_int_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_int__contiguous_iterator_const_int_ptr__Impl {
@@ -3544,76 +3709,82 @@ impl Test_const_int__contiguous_iterator_const_int_ptr__Impl
     for Ptr<Test_const_int__contiguous_iterator_const_int_ptr__>
 {
     fn operator_call_1_const_int_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl {
@@ -3628,76 +3799,82 @@ impl Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__Impl
     for Ptr<Test_const_int__cpp17_input_iterator_const_int_ptr__const_int_ptr__>
 {
     fn operator_call_1_const_int_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_int__forward_iterator_const_int_ptr__Impl {
@@ -3712,76 +3889,82 @@ impl Test_const_int__forward_iterator_const_int_ptr__Impl
     for Ptr<Test_const_int__forward_iterator_const_int_ptr__>
 {
     fn operator_call_1_const_int_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_int__random_access_iterator_const_int_ptr__Impl {
@@ -3796,76 +3979,82 @@ impl Test_const_int__random_access_iterator_const_int_ptr__Impl
     for Ptr<Test_const_int__random_access_iterator_const_int_ptr__>
 {
     fn operator_call_1_const_int_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_int_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl {
@@ -3880,76 +4069,82 @@ impl Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__Impl
     for Ptr<Test_const_wchar_t__bidirectional_iterator_const_wchar_t_ptr__>
 {
     fn operator_call_1_const_wchar_t_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_wchar_t__const_wchar_t_ptr_Impl {
@@ -3962,76 +4157,82 @@ pub trait Test_const_wchar_t__const_wchar_t_ptr_Impl {
 }
 impl Test_const_wchar_t__const_wchar_t_ptr_Impl for Ptr<Test_const_wchar_t__const_wchar_t_ptr_> {
     fn operator_call_1_const_wchar_t_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl {
@@ -4046,76 +4247,82 @@ impl Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__Impl
     for Ptr<Test_const_wchar_t__contiguous_iterator_const_wchar_t_ptr__>
 {
     fn operator_call_1_const_wchar_t_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__Impl {
@@ -4130,76 +4337,82 @@ impl Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_p
     for Ptr<Test_const_wchar_t__cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr__>
 {
     fn operator_call_1_const_wchar_t_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl {
@@ -4214,76 +4427,82 @@ impl Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__Impl
     for Ptr<Test_const_wchar_t__forward_iterator_const_wchar_t_ptr__>
 {
     fn operator_call_1_const_wchar_t_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl {
@@ -4298,76 +4517,82 @@ impl Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__Impl
     for Ptr<Test_const_wchar_t__random_access_iterator_const_wchar_t_ptr__>
 {
     fn operator_call_1_const_wchar_t_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_const_wchar_t_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32, 4_i32])));
+        let mut sa: u32 = (((::std::mem::size_of::<[i32; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
+        let ib: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1_i32, 2_i32, 3_i32])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl {
@@ -4382,76 +4607,82 @@ impl Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__Impl
     for Ptr<Test_unsigned_char__bidirectional_iterator_unsigned_char_ptr__>
 {
     fn operator_call_1_unsigned_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl {
@@ -4466,76 +4697,82 @@ impl Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__Impl
     for Ptr<Test_unsigned_char__contiguous_iterator_unsigned_char_ptr__>
 {
     fn operator_call_1_unsigned_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__Impl {
@@ -4550,76 +4787,82 @@ impl Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_p
     for Ptr<Test_unsigned_char__cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr__>
 {
     fn operator_call_1_unsigned_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl {
@@ -4634,76 +4877,82 @@ impl Test_unsigned_char__forward_iterator_unsigned_char_ptr__Impl
     for Ptr<Test_unsigned_char__forward_iterator_unsigned_char_ptr__>
 {
     fn operator_call_1_unsigned_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl {
@@ -4718,76 +4967,82 @@ impl Test_unsigned_char__random_access_iterator_unsigned_char_ptr__Impl
     for Ptr<Test_unsigned_char__random_access_iterator_unsigned_char_ptr__>
 {
     fn operator_call_1_unsigned_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait Test_unsigned_char__unsigned_char_ptr_Impl {
@@ -4800,125 +5055,131 @@ pub trait Test_unsigned_char__unsigned_char_ptr_Impl {
 }
 impl Test_unsigned_char__unsigned_char_ptr_Impl for Ptr<Test_unsigned_char__unsigned_char_ptr_> {
     fn operator_call_1_unsigned_char_ptr(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_contiguous_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_random_access_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_bidirectional_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_forward_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     fn operator_call_1_class_cpp17_input_iterator_unsigned_char_ptr_(&self) {
-        let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-        let mut sa: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let ia: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8, 4_u8])));
+        let mut sa: u32 = (((::std::mem::size_of::<[u8; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<u8>() as usize)))
+            as u32);
+        let ib: Value<Box<[u8]>> = Rc::new(RefCell::new(Box::new([1_u8, 2_u8, 3_u8])));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub trait adl_IteratorImpl {
-    fn iter_moves(&self) -> ();
-    fn iter_swaps(&self) -> ();
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_index(&self, n: ()) -> Ptr<()>;
-    fn operator_sub_10(&self, n: ()) -> adl_Iterator;
-    fn operator_sub_11(&self, rhs: adl_Iterator) -> ();
-    fn operator_add_assign(&self, n: ()) -> Ptr<adl_Iterator>;
-    fn operator_sub_assign(&self, n: ()) -> Ptr<adl_Iterator>;
+    fn iter_moves(&self) -> i32;
+    fn iter_swaps(&self) -> i32;
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_index(&self, n: isize) -> Ptr<i32>;
+    fn operator_sub_10(&self, n: isize) -> adl_Iterator;
+    fn operator_sub_11(&self, rhs: adl_Iterator) -> isize;
+    fn operator_add_assign(&self, n: isize) -> Ptr<adl_Iterator>;
+    fn operator_sub_assign(&self, n: isize) -> Ptr<adl_Iterator>;
     fn operator_inc_14(&self) -> Ptr<adl_Iterator>;
-    fn operator_post_inc_15(&self, _a0: ()) -> adl_Iterator;
+    fn operator_post_inc_15(&self, _a0: i32) -> adl_Iterator;
     fn operator_dec_16(&self) -> Ptr<adl_Iterator>;
-    fn operator_post_dec_17(&self, _a0: ()) -> adl_Iterator;
+    fn operator_post_dec_17(&self, _a0: i32) -> adl_Iterator;
 }
 impl adl_IteratorImpl for Ptr<adl_Iterator> {
-    fn iter_moves(&self) -> () {
-        unimplemented!();
+    fn iter_moves(&self) -> i32 {
+        assert!(!((*self).with(|__s| __s.iter_moves_.clone())).is_null());
         return ((*self).with(|__s| __s.iter_moves_.clone()).read());
     }
-    fn iter_swaps(&self) -> () {
-        unimplemented!();
+    fn iter_swaps(&self) -> i32 {
+        assert!(!((*self).with(|__s| __s.iter_swaps_.clone())).is_null());
         return ((*self).with(|__s| __s.iter_swaps_.clone()).read());
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone()).offset((n) as isize);
     }
-    fn operator_sub_10(&self, mut n: ()) -> adl_Iterator {
+    fn operator_sub_10(&self, mut n: isize) -> adl_Iterator {
         return adl_Iterator::new_1(
             { (*self).with(|__s| __s.ptr_.clone()).offset(-((n) as isize)) },
             { (*self).with(|__s| __s.iter_moves_.clone()) },
             { (*self).with(|__s| __s.iter_swaps_.clone()) },
         );
     }
-    fn operator_sub_11(&self, mut rhs: adl_Iterator) -> () {
-        return (((*self).with(|__s| __s.ptr_.clone()) - (rhs.ptr_).clone()) as () as ());
+    fn operator_sub_11(&self, mut rhs: adl_Iterator) -> isize {
+        return (((*self).with(|__s| __s.ptr_.clone()) - (rhs.ptr_).clone()) as i64 as isize);
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<adl_Iterator> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<adl_Iterator> {
         {
             let _ptr = field!((*self), ptr_);
             _ptr.write(_ptr.read() + n)
         };
         return (*self).clone();
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<adl_Iterator> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<adl_Iterator> {
         {
             let _ptr = field!((*self), ptr_);
             _ptr.write(_ptr.read() - n)
@@ -4929,7 +5190,7 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_post_inc_15(&self, mut _a0: ()) -> adl_Iterator {
+    fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
         field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
         return prev;
@@ -4938,22 +5199,22 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
         return (*self).clone();
     }
-    fn operator_post_dec_17(&self, mut _a0: ()) -> adl_Iterator {
+    fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
         field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
         return prev;
     }
 }
 pub trait bidirectional_iterator_const_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i8>;
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_char_ptr_>;
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_char_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_8(&self, mut _a0: ()) -> bidirectional_iterator_const_char_ptr_ {
+    fn operator_post_inc_8(&self, mut _a0: i32) -> bidirectional_iterator_const_char_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_const_char_ptr_ {
+    fn operator_post_dec_9(&self, mut _a0: i32) -> bidirectional_iterator_const_char_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -4962,7 +5223,7 @@ pub trait bidirectional_iterator_const_char_ptr_Impl {
     ) -> Ptr<bidirectional_iterator_const_char_ptr_>;
 }
 impl bidirectional_iterator_const_char_ptr_Impl for Ptr<bidirectional_iterator_const_char_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_char_ptr_> {
@@ -4982,15 +5243,15 @@ impl bidirectional_iterator_const_char_ptr_Impl for Ptr<bidirectional_iterator_c
     }
 }
 pub trait bidirectional_iterator_const_int_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_>;
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_8(&self, mut _a0: ()) -> bidirectional_iterator_const_int_ptr_ {
+    fn operator_post_inc_8(&self, mut _a0: i32) -> bidirectional_iterator_const_int_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_const_int_ptr_ {
+    fn operator_post_dec_9(&self, mut _a0: i32) -> bidirectional_iterator_const_int_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -4999,7 +5260,7 @@ pub trait bidirectional_iterator_const_int_ptr_Impl {
     ) -> Ptr<bidirectional_iterator_const_int_ptr_>;
 }
 impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_const_int_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_int_ptr_> {
@@ -5019,15 +5280,15 @@ impl bidirectional_iterator_const_int_ptr_Impl for Ptr<bidirectional_iterator_co
     }
 }
 pub trait bidirectional_iterator_const_wchar_t_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_wchar_t_ptr_>;
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_const_wchar_t_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_8(&self, mut _a0: ()) -> bidirectional_iterator_const_wchar_t_ptr_ {
+    fn operator_post_inc_8(&self, mut _a0: i32) -> bidirectional_iterator_const_wchar_t_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_const_wchar_t_ptr_ {
+    fn operator_post_dec_9(&self, mut _a0: i32) -> bidirectional_iterator_const_wchar_t_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -5038,7 +5299,7 @@ pub trait bidirectional_iterator_const_wchar_t_ptr_Impl {
 impl bidirectional_iterator_const_wchar_t_ptr_Impl
     for Ptr<bidirectional_iterator_const_wchar_t_ptr_>
 {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_const_wchar_t_ptr_> {
@@ -5058,15 +5319,15 @@ impl bidirectional_iterator_const_wchar_t_ptr_Impl
     }
 }
 pub trait bidirectional_iterator_unsigned_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<u8>;
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_unsigned_char_ptr_>;
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_unsigned_char_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_8(&self, mut _a0: ()) -> bidirectional_iterator_unsigned_char_ptr_ {
+    fn operator_post_inc_8(&self, mut _a0: i32) -> bidirectional_iterator_unsigned_char_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_9(&self, mut _a0: ()) -> bidirectional_iterator_unsigned_char_ptr_ {
+    fn operator_post_dec_9(&self, mut _a0: i32) -> bidirectional_iterator_unsigned_char_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -5077,7 +5338,7 @@ pub trait bidirectional_iterator_unsigned_char_ptr_Impl {
 impl bidirectional_iterator_unsigned_char_ptr_Impl
     for Ptr<bidirectional_iterator_unsigned_char_ptr_>
 {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<u8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_unsigned_char_ptr_> {
@@ -5097,30 +5358,30 @@ impl bidirectional_iterator_unsigned_char_ptr_Impl
     }
 }
 pub trait contiguous_iterator_const_char_ptr_Impl {
-    fn base(&self) -> Ptr<()> {
+    fn base(&self) -> Ptr<i8> {
         unimplemented!()
     }
-    fn operator_deref(&self) -> ();
-    fn operator_arrow(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i8>;
+    fn operator_arrow(&self) -> Ptr<i8> {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> () {
+    fn operator_index(&self, mut n: isize) -> Ptr<i8> {
         unimplemented!()
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_char_ptr_>;
     fn operator_dec_10(&self) -> Ptr<contiguous_iterator_const_char_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_11(&self, mut _a0: ()) -> contiguous_iterator_const_char_ptr_ {
+    fn operator_post_inc_11(&self, mut _a0: i32) -> contiguous_iterator_const_char_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_12(&self, mut _a0: ()) -> contiguous_iterator_const_char_ptr_ {
+    fn operator_post_dec_12(&self, mut _a0: i32) -> contiguous_iterator_const_char_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_char_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<contiguous_iterator_const_char_ptr_> {
         unimplemented!()
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_char_ptr_> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<contiguous_iterator_const_char_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5129,7 +5390,7 @@ pub trait contiguous_iterator_const_char_ptr_Impl {
     ) -> Ptr<contiguous_iterator_const_char_ptr_>;
 }
 impl contiguous_iterator_const_char_ptr_Impl for Ptr<contiguous_iterator_const_char_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_char_ptr_> {
@@ -5149,30 +5410,30 @@ impl contiguous_iterator_const_char_ptr_Impl for Ptr<contiguous_iterator_const_c
     }
 }
 pub trait contiguous_iterator_const_int_ptr_Impl {
-    fn base(&self) -> Ptr<()> {
+    fn base(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_deref(&self) -> ();
-    fn operator_arrow(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> () {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_int_ptr_>;
     fn operator_dec_10(&self) -> Ptr<contiguous_iterator_const_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_11(&self, mut _a0: ()) -> contiguous_iterator_const_int_ptr_ {
+    fn operator_post_inc_11(&self, mut _a0: i32) -> contiguous_iterator_const_int_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_12(&self, mut _a0: ()) -> contiguous_iterator_const_int_ptr_ {
+    fn operator_post_dec_12(&self, mut _a0: i32) -> contiguous_iterator_const_int_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_int_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<contiguous_iterator_const_int_ptr_> {
         unimplemented!()
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_int_ptr_> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<contiguous_iterator_const_int_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5181,7 +5442,7 @@ pub trait contiguous_iterator_const_int_ptr_Impl {
     ) -> Ptr<contiguous_iterator_const_int_ptr_>;
 }
 impl contiguous_iterator_const_int_ptr_Impl for Ptr<contiguous_iterator_const_int_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_int_ptr_> {
@@ -5201,30 +5462,30 @@ impl contiguous_iterator_const_int_ptr_Impl for Ptr<contiguous_iterator_const_in
     }
 }
 pub trait contiguous_iterator_const_wchar_t_ptr_Impl {
-    fn base(&self) -> Ptr<()> {
+    fn base(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_deref(&self) -> ();
-    fn operator_arrow(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> () {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_wchar_t_ptr_>;
     fn operator_dec_10(&self) -> Ptr<contiguous_iterator_const_wchar_t_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_11(&self, mut _a0: ()) -> contiguous_iterator_const_wchar_t_ptr_ {
+    fn operator_post_inc_11(&self, mut _a0: i32) -> contiguous_iterator_const_wchar_t_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_12(&self, mut _a0: ()) -> contiguous_iterator_const_wchar_t_ptr_ {
+    fn operator_post_dec_12(&self, mut _a0: i32) -> contiguous_iterator_const_wchar_t_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_wchar_t_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<contiguous_iterator_const_wchar_t_ptr_> {
         unimplemented!()
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_const_wchar_t_ptr_> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<contiguous_iterator_const_wchar_t_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5233,7 +5494,7 @@ pub trait contiguous_iterator_const_wchar_t_ptr_Impl {
     ) -> Ptr<contiguous_iterator_const_wchar_t_ptr_>;
 }
 impl contiguous_iterator_const_wchar_t_ptr_Impl for Ptr<contiguous_iterator_const_wchar_t_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_const_wchar_t_ptr_> {
@@ -5253,30 +5514,30 @@ impl contiguous_iterator_const_wchar_t_ptr_Impl for Ptr<contiguous_iterator_cons
     }
 }
 pub trait contiguous_iterator_unsigned_char_ptr_Impl {
-    fn base(&self) -> Ptr<()> {
+    fn base(&self) -> Ptr<u8> {
         unimplemented!()
     }
-    fn operator_deref(&self) -> ();
-    fn operator_arrow(&self) -> () {
+    fn operator_deref(&self) -> Ptr<u8>;
+    fn operator_arrow(&self) -> Ptr<u8> {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> () {
+    fn operator_index(&self, mut n: isize) -> Ptr<u8> {
         unimplemented!()
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_unsigned_char_ptr_>;
     fn operator_dec_10(&self) -> Ptr<contiguous_iterator_unsigned_char_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_11(&self, mut _a0: ()) -> contiguous_iterator_unsigned_char_ptr_ {
+    fn operator_post_inc_11(&self, mut _a0: i32) -> contiguous_iterator_unsigned_char_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_12(&self, mut _a0: ()) -> contiguous_iterator_unsigned_char_ptr_ {
+    fn operator_post_dec_12(&self, mut _a0: i32) -> contiguous_iterator_unsigned_char_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_unsigned_char_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<contiguous_iterator_unsigned_char_ptr_> {
         unimplemented!()
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<contiguous_iterator_unsigned_char_ptr_> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<contiguous_iterator_unsigned_char_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5285,7 +5546,7 @@ pub trait contiguous_iterator_unsigned_char_ptr_Impl {
     ) -> Ptr<contiguous_iterator_unsigned_char_ptr_>;
 }
 impl contiguous_iterator_unsigned_char_ptr_Impl for Ptr<contiguous_iterator_unsigned_char_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<u8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_unsigned_char_ptr_> {
@@ -5305,11 +5566,11 @@ impl contiguous_iterator_unsigned_char_ptr_Impl for Ptr<contiguous_iterator_unsi
     }
 }
 pub trait cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i8>;
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>;
     fn operator_post_inc_6(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> cpp17_input_iterator_const_char_ptr__const_char_ptr_ {
         unimplemented!()
     }
@@ -5321,7 +5582,7 @@ pub trait cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl {
 impl cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl
     for Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>
 {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_> {
@@ -5341,11 +5602,11 @@ impl cpp17_input_iterator_const_char_ptr__const_char_ptr_Impl
     }
 }
 pub trait cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>;
     fn operator_post_inc_6(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         unimplemented!()
     }
@@ -5357,7 +5618,7 @@ pub trait cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl {
 impl cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl
     for Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_>
 {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_int_ptr__const_int_ptr_> {
@@ -5377,11 +5638,11 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_Impl
     }
 }
 pub trait cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_>;
     fn operator_post_inc_6(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_ {
         unimplemented!()
     }
@@ -5393,7 +5654,7 @@ pub trait cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl {
 impl cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl
     for Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_>
 {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_> {
@@ -5413,13 +5674,13 @@ impl cpp17_input_iterator_const_wchar_t_ptr__const_wchar_t_ptr_Impl
     }
 }
 pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn operator_post_inc_6(&self, mut _a0: i32) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -5441,11 +5702,11 @@ impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int
     }
 }
 pub trait cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<u8>;
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_>;
     fn operator_post_inc_6(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_ {
         unimplemented!()
     }
@@ -5457,7 +5718,7 @@ pub trait cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_Impl {
 impl cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_Impl
     for Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_>
 {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<u8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_> {
@@ -5477,13 +5738,13 @@ impl cpp17_input_iterator_unsigned_char_ptr__unsigned_char_ptr_Impl
     }
 }
 pub trait cpp17_output_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_output_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
+    fn operator_post_inc_6(&self, mut _a0: i32) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -5509,11 +5770,11 @@ pub trait cpp20_input_iterator_int_ptr_Impl {
         &self,
         _a0: Ptr<cpp20_input_iterator_int_ptr_>,
     ) -> Ptr<cpp20_input_iterator_int_ptr_>;
-    fn operator_deref(&self) -> Ptr<()>;
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_5(&self) -> Ptr<cpp20_input_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, mut _a0: ()) {
+    fn operator_post_inc_6(&self, mut _a0: i32) {
         unimplemented!()
     }
 }
@@ -5529,7 +5790,7 @@ impl cpp20_input_iterator_int_ptr_Impl for Ptr<cpp20_input_iterator_int_ptr_> {
         });
         return (*self).clone();
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
 }
@@ -5538,11 +5799,11 @@ pub trait cpp20_output_iterator_int_ptr_Impl {
         &self,
         _a0: Ptr<cpp20_output_iterator_int_ptr_>,
     ) -> Ptr<cpp20_output_iterator_int_ptr_>;
-    fn operator_deref(&self) -> Ptr<()>;
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_5(&self) -> Ptr<cpp20_output_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, mut _a0: ()) -> cpp20_output_iterator_int_ptr_ {
+    fn operator_post_inc_6(&self, mut _a0: i32) -> cpp20_output_iterator_int_ptr_ {
         unimplemented!()
     }
 }
@@ -5558,29 +5819,29 @@ impl cpp20_output_iterator_int_ptr_Impl for Ptr<cpp20_output_iterator_int_ptr_> 
         });
         return (*self).clone();
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
 }
 pub trait cpp20_random_access_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_index(&self, n: ()) -> Ptr<()>;
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_index(&self, n: isize) -> Ptr<i32>;
     fn operator_inc_7(&self) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
     fn operator_dec_8(&self) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_9(&self, mut _a0: ()) -> cpp20_random_access_iterator_int_ptr_ {
+    fn operator_post_inc_9(&self, mut _a0: i32) -> cpp20_random_access_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_10(&self, mut _a0: ()) -> cpp20_random_access_iterator_int_ptr_ {
+    fn operator_post_dec_10(&self, mut _a0: i32) -> cpp20_random_access_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5589,10 +5850,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
     fn move_assign(
@@ -5608,9 +5869,9 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     }
 }
 pub trait forward_iterator_const_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i8>;
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_char_ptr_>;
-    fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_const_char_ptr_ {
+    fn operator_post_inc_7(&self, mut _a0: i32) -> forward_iterator_const_char_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -5619,7 +5880,7 @@ pub trait forward_iterator_const_char_ptr_Impl {
     ) -> Ptr<forward_iterator_const_char_ptr_>;
 }
 impl forward_iterator_const_char_ptr_Impl for Ptr<forward_iterator_const_char_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_char_ptr_> {
@@ -5639,9 +5900,9 @@ impl forward_iterator_const_char_ptr_Impl for Ptr<forward_iterator_const_char_pt
     }
 }
 pub trait forward_iterator_const_int_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_int_ptr_>;
-    fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_const_int_ptr_ {
+    fn operator_post_inc_7(&self, mut _a0: i32) -> forward_iterator_const_int_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -5650,7 +5911,7 @@ pub trait forward_iterator_const_int_ptr_Impl {
     ) -> Ptr<forward_iterator_const_int_ptr_>;
 }
 impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_int_ptr_> {
@@ -5670,9 +5931,9 @@ impl forward_iterator_const_int_ptr_Impl for Ptr<forward_iterator_const_int_ptr_
     }
 }
 pub trait forward_iterator_const_wchar_t_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_wchar_t_ptr_>;
-    fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_const_wchar_t_ptr_ {
+    fn operator_post_inc_7(&self, mut _a0: i32) -> forward_iterator_const_wchar_t_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -5681,7 +5942,7 @@ pub trait forward_iterator_const_wchar_t_ptr_Impl {
     ) -> Ptr<forward_iterator_const_wchar_t_ptr_>;
 }
 impl forward_iterator_const_wchar_t_ptr_Impl for Ptr<forward_iterator_const_wchar_t_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_wchar_t_ptr_> {
@@ -5701,9 +5962,9 @@ impl forward_iterator_const_wchar_t_ptr_Impl for Ptr<forward_iterator_const_wcha
     }
 }
 pub trait forward_iterator_unsigned_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<u8>;
     fn operator_inc_6(&self) -> Ptr<forward_iterator_unsigned_char_ptr_>;
-    fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_unsigned_char_ptr_ {
+    fn operator_post_inc_7(&self, mut _a0: i32) -> forward_iterator_unsigned_char_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -5712,7 +5973,7 @@ pub trait forward_iterator_unsigned_char_ptr_Impl {
     ) -> Ptr<forward_iterator_unsigned_char_ptr_>;
 }
 impl forward_iterator_unsigned_char_ptr_Impl for Ptr<forward_iterator_unsigned_char_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<u8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_unsigned_char_ptr_> {
@@ -5732,34 +5993,34 @@ impl forward_iterator_unsigned_char_ptr_Impl for Ptr<forward_iterator_unsigned_c
     }
 }
 pub trait forward_sized_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_4(&self) -> Ptr<forward_sized_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_5(&self, mut _a0: ()) -> forward_sized_iterator_int_ptr_ {
+    fn operator_post_inc_5(&self, mut _a0: i32) -> forward_sized_iterator_int_ptr_ {
         unimplemented!()
     }
 }
 impl forward_sized_iterator_int_ptr_Impl for Ptr<forward_sized_iterator_int_ptr_> {}
 pub trait random_access_iterator_const_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
-    fn operator_index(&self, mut n: ()) -> () {
+    fn operator_deref(&self) -> Ptr<i8>;
+    fn operator_index(&self, mut n: isize) -> Ptr<i8> {
         unimplemented!()
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_char_ptr_>;
     fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_char_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_9(&self, mut _a0: ()) -> random_access_iterator_const_char_ptr_ {
+    fn operator_post_inc_9(&self, mut _a0: i32) -> random_access_iterator_const_char_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_10(&self, mut _a0: ()) -> random_access_iterator_const_char_ptr_ {
+    fn operator_post_dec_10(&self, mut _a0: i32) -> random_access_iterator_const_char_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, n: ()) -> Ptr<random_access_iterator_const_char_ptr_>;
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_char_ptr_> {
+    fn operator_add_assign(&self, n: isize) -> Ptr<random_access_iterator_const_char_ptr_>;
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<random_access_iterator_const_char_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5768,14 +6029,14 @@ pub trait random_access_iterator_const_char_ptr_Impl {
     ) -> Ptr<random_access_iterator_const_char_ptr_>;
 }
 impl random_access_iterator_const_char_ptr_Impl for Ptr<random_access_iterator_const_char_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_char_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_char_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<random_access_iterator_const_char_ptr_> {
         {
             let _ptr = field!((*self), it_);
             _ptr.write(_ptr.read() + n)
@@ -5795,22 +6056,22 @@ impl random_access_iterator_const_char_ptr_Impl for Ptr<random_access_iterator_c
     }
 }
 pub trait random_access_iterator_const_int_ptr_Impl {
-    fn operator_deref(&self) -> ();
-    fn operator_index(&self, mut n: ()) -> () {
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_int_ptr_>;
     fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_9(&self, mut _a0: ()) -> random_access_iterator_const_int_ptr_ {
+    fn operator_post_inc_9(&self, mut _a0: i32) -> random_access_iterator_const_int_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_10(&self, mut _a0: ()) -> random_access_iterator_const_int_ptr_ {
+    fn operator_post_dec_10(&self, mut _a0: i32) -> random_access_iterator_const_int_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, n: ()) -> Ptr<random_access_iterator_const_int_ptr_>;
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_int_ptr_> {
+    fn operator_add_assign(&self, n: isize) -> Ptr<random_access_iterator_const_int_ptr_>;
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<random_access_iterator_const_int_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5819,14 +6080,14 @@ pub trait random_access_iterator_const_int_ptr_Impl {
     ) -> Ptr<random_access_iterator_const_int_ptr_>;
 }
 impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_const_int_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_int_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<random_access_iterator_const_int_ptr_> {
         {
             let _ptr = field!((*self), it_);
             _ptr.write(_ptr.read() + n)
@@ -5846,22 +6107,22 @@ impl random_access_iterator_const_int_ptr_Impl for Ptr<random_access_iterator_co
     }
 }
 pub trait random_access_iterator_const_wchar_t_ptr_Impl {
-    fn operator_deref(&self) -> ();
-    fn operator_index(&self, mut n: ()) -> () {
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_wchar_t_ptr_>;
     fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_wchar_t_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_9(&self, mut _a0: ()) -> random_access_iterator_const_wchar_t_ptr_ {
+    fn operator_post_inc_9(&self, mut _a0: i32) -> random_access_iterator_const_wchar_t_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_10(&self, mut _a0: ()) -> random_access_iterator_const_wchar_t_ptr_ {
+    fn operator_post_dec_10(&self, mut _a0: i32) -> random_access_iterator_const_wchar_t_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, n: ()) -> Ptr<random_access_iterator_const_wchar_t_ptr_>;
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_wchar_t_ptr_> {
+    fn operator_add_assign(&self, n: isize) -> Ptr<random_access_iterator_const_wchar_t_ptr_>;
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<random_access_iterator_const_wchar_t_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5872,14 +6133,14 @@ pub trait random_access_iterator_const_wchar_t_ptr_Impl {
 impl random_access_iterator_const_wchar_t_ptr_Impl
     for Ptr<random_access_iterator_const_wchar_t_ptr_>
 {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_wchar_t_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_wchar_t_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<random_access_iterator_const_wchar_t_ptr_> {
         {
             let _ptr = field!((*self), it_);
             _ptr.write(_ptr.read() + n)
@@ -5899,22 +6160,22 @@ impl random_access_iterator_const_wchar_t_ptr_Impl
     }
 }
 pub trait random_access_iterator_unsigned_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
-    fn operator_index(&self, mut n: ()) -> () {
+    fn operator_deref(&self) -> Ptr<u8>;
+    fn operator_index(&self, mut n: isize) -> Ptr<u8> {
         unimplemented!()
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_unsigned_char_ptr_>;
     fn operator_dec_8(&self) -> Ptr<random_access_iterator_unsigned_char_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_9(&self, mut _a0: ()) -> random_access_iterator_unsigned_char_ptr_ {
+    fn operator_post_inc_9(&self, mut _a0: i32) -> random_access_iterator_unsigned_char_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_10(&self, mut _a0: ()) -> random_access_iterator_unsigned_char_ptr_ {
+    fn operator_post_dec_10(&self, mut _a0: i32) -> random_access_iterator_unsigned_char_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, n: ()) -> Ptr<random_access_iterator_unsigned_char_ptr_>;
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_unsigned_char_ptr_> {
+    fn operator_add_assign(&self, n: isize) -> Ptr<random_access_iterator_unsigned_char_ptr_>;
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<random_access_iterator_unsigned_char_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -5925,14 +6186,14 @@ pub trait random_access_iterator_unsigned_char_ptr_Impl {
 impl random_access_iterator_unsigned_char_ptr_Impl
     for Ptr<random_access_iterator_unsigned_char_ptr_>
 {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<u8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_unsigned_char_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<random_access_iterator_unsigned_char_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<random_access_iterator_unsigned_char_ptr_> {
         {
             let _ptr = field!((*self), it_);
             _ptr.write(_ptr.read() + n)
@@ -5952,56 +6213,56 @@ impl random_access_iterator_unsigned_char_ptr_Impl
     }
 }
 pub trait rvalue_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> Ptr<Ptr<()>> {
+    fn operator_deref(&self) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
     fn operator_inc_4(&self) -> Ptr<rvalue_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_5(&self, mut _a0: ()) -> rvalue_iterator_int_ptr_ {
+    fn operator_post_inc_5(&self, mut _a0: i32) -> rvalue_iterator_int_ptr_ {
         unimplemented!()
     }
     fn operator_dec_6(&self) -> Ptr<rvalue_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_dec_7(&self, mut _a0: ()) -> rvalue_iterator_int_ptr_ {
+    fn operator_post_dec_7(&self, mut _a0: i32) -> rvalue_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_add(&self, mut n: ()) -> rvalue_iterator_int_ptr_ {
+    fn operator_add(&self, mut n: isize) -> rvalue_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_sub_9(&self, mut n: ()) -> rvalue_iterator_int_ptr_ {
+    fn operator_sub_9(&self, mut n: isize) -> rvalue_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_sub_10(&self, other: Ptr<rvalue_iterator_int_ptr_>) -> () {
+    fn operator_sub_10(&self, other: Ptr<rvalue_iterator_int_ptr_>) -> isize {
         unimplemented!()
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<rvalue_iterator_int_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<rvalue_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<rvalue_iterator_int_ptr_> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<rvalue_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<Ptr<()>> {
+    fn operator_index(&self, mut n: isize) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
-    fn operator_cmp(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> ();
-    fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> ();
+    fn operator_cmp(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> std::cmp::Ordering;
+    fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool;
 }
 impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
-    fn operator_cmp(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> () {
+    fn operator_cmp(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> std::cmp::Ordering {
         {
-            let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+            let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
-    fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> () {
+    fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });
     }
 }
@@ -6016,7 +6277,7 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
         &self,
         other: Ptr<support_double_move_tracker>,
     ) -> Ptr<support_double_move_tracker> {
-        unimplemented!();
+        assert!(!(other.with(|__s| __s.moved_from_)));
         field!(other, moved_from_).write(true);
         field!((*self), moved_from_).write(false);
         return (*self).clone();

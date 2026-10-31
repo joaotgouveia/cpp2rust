@@ -9,24 +9,24 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct Stats {
-    pub compared: (),
-    pub copied: (),
-    pub moved: (),
+    pub compared: i32,
+    pub copied: i32,
+    pub moved: i32,
 }
 impl Default for Stats {
     fn default() -> Self {
         unsafe {
             Stats {
-                compared: 0_(),
-                copied: 0_(),
-                moved: 0_(),
+                compared: 0,
+                copied: 0,
+                moved: 0,
             }
         }
     }
 }
 pub static mut stats_0: std::cell::LazyCell<Stats> =
     std::cell::LazyCell::new(|| unsafe { <Stats>::default() });
-pub unsafe fn operator_lt_1(a: *const MyInt, b: *const MyInt) -> () {
+pub unsafe fn operator_lt_1(a: *const MyInt, b: *const MyInt) -> bool {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut stats_0))
         .compared
         .prefix_inc();
@@ -35,10 +35,10 @@ pub unsafe fn operator_lt_1(a: *const MyInt, b: *const MyInt) -> () {
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
 pub struct MyInt {
-    pub value: (),
+    pub value: i32,
 }
 impl MyInt {
-    pub unsafe fn new(mut xval: ()) -> Self {
+    pub unsafe fn new(mut xval: i32) -> Self {
         let mut this = Self { value: xval };
         this
     }
@@ -122,23 +122,36 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let N: () = ((1_()) << (20_()));
-    let mut v: () = unimplemented!();
-    unimplemented!();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let N: i32 = ((1) << (20));
+    let mut v: Vec<MyInt> = Vec::new();
+    if (N as usize) as usize > v.capacity() as usize {
+        let len_0 = v.len();
+        v.reserve_exact((N as usize) as usize - len_0 as usize);
+    };
     let mut g: () = unimplemented!();
-    let mut i: () = 0_();
+    let mut i: i32 = 0;
     'loop_: while ((i) < (N)) {
-        unimplemented!();
+        {
+            let __init = MyInt::new({ i });
+            v.push(__init)
+        };
         i.prefix_inc();
     }
-    let mut logn: () = 10_();
-    'loop_: while ((logn) <= (20_())) {
-        let n: () = ((1_()) << (logn));
-        let mut first: () = unimplemented!();
-        let mut last: () = unimplemented!();
-        let debug_elements: () = (*unimplemented!());
-        let debug_comparisons: () = (((2_()) * ((debug_elements) + (1_()))) * (debug_elements));
+    let mut logn: i32 = 10;
+    'loop_: while ((logn) <= (20)) {
+        let n: i32 = ((1) << (logn));
+        let mut first: UnsafeRandomAccessIterator<MyInt> = v.begin();
+        let mut last: UnsafeRandomAccessIterator<MyInt> = v.begin().iter_add((n as isize));
+        let debug_elements: i32 = {
+            let mut __tmp_0: i32 = 100;
+            (*{
+                let __a: *const _ = &mut __tmp_0;
+                let __b: *const _ = &n;
+                if *__b < *__a { __b } else { __a }
+            })
+        };
+        let debug_comparisons: i32 = (((2) * ((debug_elements) + (1))) * (debug_elements));
         &(debug_comparisons);
         unimplemented!();
         unimplemented!();
@@ -150,7 +163,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
         logn.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const stats_0);

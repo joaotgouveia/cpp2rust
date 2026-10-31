@@ -11,12 +11,12 @@ use std::rc::{Rc, Weak};
 pub struct X {
     #[offset(0)]
     #[byte_size(24)]
-    pub q: (),
+    pub q: Vec<X>,
 }
 impl X {
     pub fn move_from(_a0: Ptr<X>) -> Self {
         Self {
-            q: unimplemented!(),
+            q: field!(_a0, q).with_mut(std::mem::take),
         }
     }
 }
@@ -39,15 +39,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    return 0;
 }
 pub trait XImpl {
     fn move_assign(&self, _a0: Ptr<X>) -> Ptr<X>;
 }
 impl XImpl for Ptr<X> {
     fn move_assign(&self, _a0: Ptr<X>) -> Ptr<X> {
-        unimplemented!();
+        field_ref!((*self), q)
+            .as_pointer()
+            .write(field!(_a0, q).with_mut(std::mem::take));
         return (*self).clone();
     }
 }

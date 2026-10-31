@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct support_double_move_tracker {
-    moved_from_: (),
+    moved_from_: bool,
 }
 impl support_double_move_tracker {
     pub unsafe fn new() -> Self {
@@ -18,7 +18,7 @@ impl support_double_move_tracker {
     }
     pub unsafe fn move_from(other: *mut support_double_move_tracker) -> Self {
         let mut this = Self { moved_from_: false };
-        unimplemented!();
+        assert!(!((*other).moved_from_));
         (*other).moved_from_ = true;
         this
     }
@@ -26,7 +26,7 @@ impl support_double_move_tracker {
         &mut self,
         other: *mut support_double_move_tracker,
     ) -> *mut support_double_move_tracker {
-        unimplemented!();
+        assert!(!((*other).moved_from_));
         (*other).moved_from_ = true;
         self.moved_from_ = false;
         return &mut (*(self as *mut support_double_move_tracker));
@@ -56,7 +56,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp17_output_iterator_int_ptr_ {
@@ -86,7 +86,7 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_ {
@@ -112,14 +112,14 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_add_0(
     mut x: random_access_iterator_int_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_int_ptr_ {
     (unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_int_ptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_1(
     mut x: random_access_iterator_int_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_int_ptr_ {
     (unsafe { random_access_iterator_int_ptr_::operator_sub_assign(&mut x, n) });
     return random_access_iterator_int_ptr_::move_from({ &mut x });
@@ -127,36 +127,36 @@ pub unsafe fn operator_sub_1(
 pub unsafe fn operator_sub_2(
     mut x: random_access_iterator_int_ptr_,
     mut y: random_access_iterator_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
 }
 pub unsafe fn operator_eq_3(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_4(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_int_ptr_ {
@@ -169,14 +169,14 @@ impl random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_int_ptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut random_access_iterator_int_ptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_int_ptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut random_access_iterator_int_ptr_));
@@ -211,16 +211,24 @@ impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_int_ptr_ {}
+impl UnsafeCppAdvance for random_access_iterator_int_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_7();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_8();
+    }
+}
 pub unsafe fn operator_add_5(
     mut x: random_access_iterator_MoveOnly_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_MoveOnly_ptr_ {
     (unsafe { random_access_iterator_MoveOnly_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_MoveOnly_ptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_6(
     mut x: random_access_iterator_MoveOnly_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_MoveOnly_ptr_ {
     (unsafe { random_access_iterator_MoveOnly_ptr_::operator_sub_assign(&mut x, n) });
     return random_access_iterator_MoveOnly_ptr_::move_from({ &mut x });
@@ -228,19 +236,20 @@ pub unsafe fn operator_sub_6(
 pub unsafe fn operator_sub_7(
     mut x: random_access_iterator_MoveOnly_ptr_,
     mut y: random_access_iterator_MoveOnly_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<MoveOnly>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<MoveOnly>()) as i64
+        as isize);
 }
 pub unsafe fn operator_eq_8(
     x: *const random_access_iterator_MoveOnly_ptr_,
     y: *const random_access_iterator_MoveOnly_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_9(
     x: *const random_access_iterator_MoveOnly_ptr_,
     y: *const random_access_iterator_MoveOnly_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
@@ -257,7 +266,7 @@ impl random_access_iterator_MoveOnly_ptr_ {
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut MoveOnly {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_MoveOnly_ptr_ {
@@ -270,14 +279,14 @@ impl random_access_iterator_MoveOnly_ptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_MoveOnly_ptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut random_access_iterator_MoveOnly_ptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_MoveOnly_ptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut random_access_iterator_MoveOnly_ptr_));
@@ -312,17 +321,25 @@ impl std::cmp::PartialEq for random_access_iterator_MoveOnly_ptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_MoveOnly_ptr_ {}
+impl UnsafeCppAdvance for random_access_iterator_MoveOnly_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_7();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_8();
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_random_access_iterator_int_ptr_ {
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+    pub unsafe fn operator_index(&self, mut n: isize) -> *mut i32 {
         return &mut (*self.it_.offset((n) as isize));
     }
     pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
@@ -351,7 +368,7 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_input_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_input_iterator_int_ptr_ {
@@ -373,7 +390,7 @@ impl cpp20_input_iterator_int_ptr_ {
         });
         return &mut (*(self as *mut cpp20_input_iterator_int_ptr_));
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
 }
@@ -381,7 +398,7 @@ const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_output_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_output_iterator_int_ptr_ {
@@ -403,7 +420,7 @@ impl cpp20_output_iterator_int_ptr_ {
         });
         return &mut (*(self as *mut cpp20_output_iterator_int_ptr_));
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
 }
@@ -414,19 +431,19 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct IteratorOpCounts {
-    pub increments: (),
-    pub decrements: (),
-    pub zero_moves: (),
-    pub equal_cmps: (),
+    pub increments: usize,
+    pub decrements: usize,
+    pub zero_moves: usize,
+    pub equal_cmps: usize,
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
         unsafe {
             IteratorOpCounts {
-                increments: 0_(),
-                decrements: 0_(),
-                zero_moves: 0_(),
-                equal_cmps: 0_(),
+                increments: 0_usize,
+                decrements: 0_usize,
+                zero_moves: 0_usize,
+                equal_cmps: 0_usize,
             }
         }
     }
@@ -434,13 +451,13 @@ impl Default for IteratorOpCounts {
 pub unsafe fn operator_eq_10(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*_a0).it_) == ((*_a1).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct forward_sized_iterator_int_ptr_ {
-    pub it_: *mut (),
+    pub it_: *mut i32,
 }
 impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
@@ -468,44 +485,47 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_11(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_11(mut i: adl_Iterator, mut n: isize) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_12(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_12(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
         operator_add_11(_i, n)
     });
 }
 pub unsafe fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    cpp_swap_unsafe!(a.ptr_, b.ptr_);
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut i32 {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> bool {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_16(
+    lhs: *const adl_Iterator,
+    rhs: *const adl_Iterator,
+) -> std::cmp::Ordering {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct adl_Iterator {
-    ptr_: *mut (),
-    iter_moves_: *mut (),
-    iter_swaps_: *mut (),
+    ptr_: *mut i32,
+    iter_moves_: *mut i32,
+    iter_swaps_: *mut i32,
 }
 impl adl_Iterator {
-    unsafe fn new_1(mut p: *mut (), mut iter_moves: *mut (), mut iter_swaps: *mut ()) -> Self {
+    unsafe fn new_1(mut p: *mut i32, mut iter_moves: *mut i32, mut iter_swaps: *mut i32) -> Self {
         let mut this = Self {
             ptr_: p,
             iter_moves_: iter_moves,
@@ -513,47 +533,47 @@ impl adl_Iterator {
         };
         this
     }
-    pub unsafe fn TrackMoves(mut p: *mut (), iter_moves: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackMoves(mut p: *mut i32, iter_moves: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ p }, { (iter_moves) }, { std::ptr::null_mut() });
     }
-    pub unsafe fn TrackSwaps_4(iter_swaps: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackSwaps_4(iter_swaps: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ std::ptr::null_mut() }, { std::ptr::null_mut() }, {
             (iter_swaps)
         });
     }
-    pub unsafe fn TrackSwaps_5(mut p: *mut (), iter_swaps: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackSwaps_5(mut p: *mut i32, iter_swaps: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ p }, { std::ptr::null_mut() }, { (iter_swaps) });
     }
-    pub unsafe fn iter_moves(&self) -> () {
-        unimplemented!();
+    pub unsafe fn iter_moves(&self) -> i32 {
+        assert!(!(self.iter_moves_).is_null());
         return (*self.iter_moves_);
     }
-    pub unsafe fn iter_swaps(&self) -> () {
-        unimplemented!();
+    pub unsafe fn iter_swaps(&self) -> i32 {
+        assert!(!(self.iter_swaps_).is_null());
         return (*self.iter_swaps_);
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.ptr_);
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+    pub unsafe fn operator_index(&self, mut n: isize) -> *mut i32 {
         return &mut (*self.ptr_.offset((n) as isize));
     }
-    pub unsafe fn operator_sub_10(&self, mut n: ()) -> adl_Iterator {
+    pub unsafe fn operator_sub_10(&self, mut n: isize) -> adl_Iterator {
         return adl_Iterator::new_1(
             { self.ptr_.offset(-((n) as isize)) },
             { self.iter_moves_ },
             { self.iter_swaps_ },
         );
     }
-    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> () {
-        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<()>()) as ()
-            as ());
+    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> isize {
+        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64
+            as isize);
     }
-    pub unsafe fn operator_add_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+    pub unsafe fn operator_add_assign(&mut self, mut n: isize) -> *mut adl_Iterator {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_sub_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+    pub unsafe fn operator_sub_assign(&mut self, mut n: isize) -> *mut adl_Iterator {
         self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
         return &mut (*(self as *mut adl_Iterator));
     }
@@ -561,7 +581,7 @@ impl adl_Iterator {
         self.ptr_.prefix_inc();
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: ()) -> adl_Iterator {
+    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
         self.ptr_.prefix_inc();
         return prev;
@@ -570,7 +590,7 @@ impl adl_Iterator {
         self.ptr_.prefix_dec();
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: ()) -> adl_Iterator {
+    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
         self.ptr_.prefix_dec();
         return prev;
@@ -592,6 +612,14 @@ impl std::cmp::PartialEq for adl_Iterator {
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
+impl UnsafeCppAdvance for adl_Iterator {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_14();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_16();
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -606,22 +634,22 @@ impl Default for adl_Iterator {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct rvalue_iterator_int_ptr_ {
-    it_: *mut *mut (),
+    it_: *mut *mut i32,
 }
 impl rvalue_iterator_int_ptr_ {
-    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> std::cmp::Ordering {
         {
-            let mut cmp: () = std::cmp::Ord::cmp(
+            let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(
                 &((*(self as *const rvalue_iterator_int_ptr_)).it_),
                 &((*_a0).it_),
             );
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !(cmp == std::cmp::Ordering::Equal) {
+                return cmp;
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
-    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> bool {
         return (((*(self as *const rvalue_iterator_int_ptr_)).it_) == ((*_a0).it_));
     }
 }
@@ -648,63 +676,65 @@ impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
 impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(*const libc::c_char , new, value)]
 pub struct util_iterator_error {}
 impl util_iterator_error {
-    pub unsafe fn new(mut what: *const ()) -> Self {
+    pub unsafe fn new(mut what: *const libc::c_char) -> Self {
         let mut this = Self {};
         this
     }
 }
-pub unsafe fn operator_eq_17(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_eq_17(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_18(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ne_18(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_19(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_lt_19(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_20(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_le_20(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_21(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_gt_21(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_22(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ge_22(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_23(_a0: *const MoveOnly, _a1: *const MoveOnly) -> () {
+pub unsafe fn operator_cmp_23(_a0: *const MoveOnly, _a1: *const MoveOnly) -> std::cmp::Ordering {
     {
-        let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
+        if !(cmp == std::cmp::Ordering::Equal) {
+            return cmp;
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, MoveAssignUnsafe)]
+#[cpp_from(i32, new, some_value)]
 pub struct MoveOnly {
-    data_: (),
+    data_: i32,
 }
 impl MoveOnly {
-    pub unsafe fn new(mut data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| unsafe { 1_() });
+    pub unsafe fn new(mut data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| unsafe { 1 });
         let mut this = Self { data_: data };
         this
     }
     pub unsafe fn move_from(x: *mut MoveOnly) -> Self {
         let mut this = Self { data_: (*x).data_ };
-        (*x).data_ = 0_();
+        (*x).data_ = 0;
         this
     }
     pub unsafe fn move_assign(&mut self, x: *mut MoveOnly) -> *mut MoveOnly {
         self.data_ = (*x).data_;
-        (*x).data_ = 0_();
+        (*x).data_ = 0;
         return &mut (*(self as *mut MoveOnly));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn operator_add(&self, x: *const MoveOnly) -> MoveOnly {
@@ -735,41 +765,45 @@ impl Default for MoveOnly {
         unsafe { MoveOnly::new(None) }
     }
 }
-pub unsafe fn operator_eq_24(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_eq_24(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_25(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ne_25(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_26(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_lt_26(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_27(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_le_27(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_28(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_gt_28(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_29(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ge_29(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_30(_a0: *const TrivialMoveOnly, _a1: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_cmp_30(
+    _a0: *const TrivialMoveOnly,
+    _a1: *const TrivialMoveOnly,
+) -> std::cmp::Ordering {
     {
-        let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
+        if !(cmp == std::cmp::Ordering::Equal) {
+            return cmp;
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, MoveAssignUnsafe)]
+#[cpp_from(i32, new, some_value)]
 pub struct TrivialMoveOnly {
-    data_: (),
+    data_: i32,
 }
 impl TrivialMoveOnly {
-    pub unsafe fn new(mut data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| unsafe { 1_() });
+    pub unsafe fn new(mut data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| unsafe { 1 });
         let mut this = Self { data_: data };
         this
     }
@@ -783,7 +817,7 @@ impl TrivialMoveOnly {
         self.data_ = (*_a0).data_;
         return &mut (*(self as *mut TrivialMoveOnly));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn operator_add(&self, x: *const TrivialMoveOnly) -> TrivialMoveOnly {
@@ -824,330 +858,234 @@ impl Default for TrivialMoveOnly {
         unsafe { TrivialMoveOnly::new(None) }
     }
 }
-pub unsafe fn test_31() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
+pub unsafe fn test_31() -> bool {
+    let mut orig: [i32; 15] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
+    let mut work: [i32; 15] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32,
     ];
-    let mut work: [(); 15] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) < (15_())) {
+    let mut n: i32 = 0;
+    'loop_: while ((n) < (15)) {
+        let mut m: i32 = 0;
+        'loop_: while ((m) < (15)) {
             let mut it: random_access_iterator_int_ptr_ = unimplemented!();
             if ((n) <= (m)) {
-                unimplemented!();
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _x: *const random_access_iterator_int_ptr_ = &it;
+                        let mut _y: random_access_iterator_int_ptr_ =
+                            random_access_iterator_int_ptr_::new_1({
+                                work.as_mut_ptr().offset((n) as isize)
+                            });
+                        operator_eq_3(_x, &mut _y)
+                    })
+                );
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _x: *const random_access_iterator_int_ptr_ = &it;
+                        let mut _y: random_access_iterator_int_ptr_ =
+                            random_access_iterator_int_ptr_::new_1({
+                                work.as_mut_ptr().offset((m) as isize)
+                            });
+                        operator_eq_3(_x, &mut _y)
+                    })
+                );
             }
-            unimplemented!();
+            assert!(unimplemented!());
             if (unsafe {
                 let _x: *const random_access_iterator_int_ptr_ = &it;
                 let mut _y: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ work.as_mut_ptr() });
                 operator_ne_4(_x, &mut _y)
             }) {
-                let mut count: () = 0_();
-                let mut i: () = m;
+                let mut count: i32 = 0;
+                let mut i: i32 = m;
                 'loop_: while ((i) < (n)) {
-                    count += ((orig[(i) as usize])
+                    count += (((orig[(i) as usize])
                         < (*(unsafe {
                             random_access_iterator_int_ptr_::operator_deref(
                                 &(unsafe {
                                     let _x: random_access_iterator_int_ptr_ = it;
-                                    operator_sub_1(_x, 1_())
+                                    operator_sub_1(_x, 1_isize)
                                 }),
                             )
-                        })));
+                        }))) as i32);
                     i.prefix_inc();
                 }
-                unimplemented!();
+                assert!(((count) < (m)));
             }
             m.prefix_inc();
         }
         n.prefix_inc();
     }
     {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
-        let mut output: [(); 3] = [0_(), 0_(), 0_()];
+        let mut input: [i32; 5] = [3, 4, 2, 5, 1];
+        let mut output: [i32; 3] = [0, 0, 0];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((output[(0) as usize]) == (1)));
+        assert!(((output[(1) as usize]) == (2)));
+        assert!(((output[(2) as usize]) == (3)));
     }
     return true;
 }
-pub unsafe fn test_32() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
+pub unsafe fn test_32() -> bool {
+    let mut orig: [i32; 15] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
+    let mut work: [i32; 15] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32,
     ];
-    let mut work: [(); 15] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) < (15_())) {
-            let mut it: *mut () = unimplemented!();
+    let mut n: i32 = 0;
+    'loop_: while ((n) < (15)) {
+        let mut m: i32 = 0;
+        'loop_: while ((m) < (15)) {
+            let mut it: *mut i32 = unimplemented!();
             if ((n) <= (m)) {
-                unimplemented!();
-                unimplemented!();
+                assert!(((it) == (work.as_mut_ptr().offset((n) as isize))));
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!(((it) == (work.as_mut_ptr().offset((m) as isize))));
             }
-            unimplemented!();
+            assert!(unimplemented!());
             if ((it) != (work.as_mut_ptr())) {
-                let mut count: () = 0_();
-                let mut i: () = m;
+                let mut count: i32 = 0;
+                let mut i: i32 = m;
                 'loop_: while ((i) < (n)) {
-                    count += ((orig[(i) as usize]) < (*(it.offset(-((1_()) as isize)))));
+                    count += (((orig[(i) as usize]) < (*(it.offset(-((1) as isize))))) as i32);
                     i.prefix_inc();
                 }
-                unimplemented!();
+                assert!(((count) < (m)));
             }
             m.prefix_inc();
         }
         n.prefix_inc();
     }
     {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
-        let mut output: [(); 3] = [0_(), 0_(), 0_()];
+        let mut input: [i32; 5] = [3, 4, 2, 5, 1];
+        let mut output: [i32; 3] = [0, 0, 0];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((output[(0) as usize]) == (1)));
+        assert!(((output[(1) as usize]) == (2)));
+        assert!(((output[(2) as usize]) == (3)));
     }
     return true;
 }
-pub unsafe fn test_33() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
+pub unsafe fn test_33() -> bool {
+    let mut orig: [i32; 15] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
+    let mut work: [i32; 15] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32,
     ];
-    let mut work: [(); 15] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) < (15_())) {
+    let mut n: i32 = 0;
+    'loop_: while ((n) < (15)) {
+        let mut m: i32 = 0;
+        'loop_: while ((m) < (15)) {
             let mut it: random_access_iterator_int_ptr_ = unimplemented!();
             if ((n) <= (m)) {
-                unimplemented!();
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _x: *const random_access_iterator_int_ptr_ = &it;
+                        let mut _y: random_access_iterator_int_ptr_ =
+                            random_access_iterator_int_ptr_::new_1({
+                                work.as_mut_ptr().offset((n) as isize)
+                            });
+                        operator_eq_3(_x, &mut _y)
+                    })
+                );
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _x: *const random_access_iterator_int_ptr_ = &it;
+                        let mut _y: random_access_iterator_int_ptr_ =
+                            random_access_iterator_int_ptr_::new_1({
+                                work.as_mut_ptr().offset((m) as isize)
+                            });
+                        operator_eq_3(_x, &mut _y)
+                    })
+                );
             }
-            unimplemented!();
+            assert!(unimplemented!());
             if (unsafe {
                 let _x: *const random_access_iterator_int_ptr_ = &it;
                 let mut _y: random_access_iterator_int_ptr_ =
                     random_access_iterator_int_ptr_::new_1({ work.as_mut_ptr() });
                 operator_ne_4(_x, &mut _y)
             }) {
-                let mut count: () = 0_();
-                let mut i: () = m;
+                let mut count: i32 = 0;
+                let mut i: i32 = m;
                 'loop_: while ((i) < (n)) {
-                    count += ((orig[(i) as usize])
+                    count += (((orig[(i) as usize])
                         < (*(unsafe {
                             random_access_iterator_int_ptr_::operator_deref(
                                 &(unsafe {
                                     let _x: random_access_iterator_int_ptr_ = it;
-                                    operator_sub_1(_x, 1_())
+                                    operator_sub_1(_x, 1_isize)
                                 }),
                             )
-                        })));
+                        }))) as i32);
                     i.prefix_inc();
                 }
-                unimplemented!();
+                assert!(((count) < (m)));
             }
             m.prefix_inc();
         }
         n.prefix_inc();
     }
     {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
-        let mut output: [(); 3] = [0_(), 0_(), 0_()];
+        let mut input: [i32; 5] = [3, 4, 2, 5, 1];
+        let mut output: [i32; 3] = [0, 0, 0];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((output[(0) as usize]) == (1)));
+        assert!(((output[(1) as usize]) == (2)));
+        assert!(((output[(2) as usize]) == (3)));
     }
     return true;
 }
-pub unsafe fn test_34() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
+pub unsafe fn test_34() -> bool {
+    let mut orig: [i32; 15] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
+    let mut work: [i32; 15] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32,
     ];
-    let mut work: [(); 15] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) < (15_())) {
-            let mut it: *mut () = unimplemented!();
+    let mut n: i32 = 0;
+    'loop_: while ((n) < (15)) {
+        let mut m: i32 = 0;
+        'loop_: while ((m) < (15)) {
+            let mut it: *mut i32 = unimplemented!();
             if ((n) <= (m)) {
-                unimplemented!();
-                unimplemented!();
+                assert!(((it) == (work.as_mut_ptr().offset((n) as isize))));
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!(((it) == (work.as_mut_ptr().offset((m) as isize))));
             }
-            unimplemented!();
+            assert!(unimplemented!());
             if ((it) != (work.as_mut_ptr())) {
-                let mut count: () = 0_();
-                let mut i: () = m;
+                let mut count: i32 = 0;
+                let mut i: i32 = m;
                 'loop_: while ((i) < (n)) {
-                    count += ((orig[(i) as usize]) < (*(it.offset(-((1_()) as isize)))));
+                    count += (((orig[(i) as usize]) < (*(it.offset(-((1) as isize))))) as i32);
                     i.prefix_inc();
                 }
-                unimplemented!();
+                assert!(((count) < (m)));
             }
             m.prefix_inc();
         }
         n.prefix_inc();
     }
     {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
-        let mut output: [(); 3] = [0_(), 0_(), 0_()];
+        let mut input: [i32; 5] = [3, 4, 2, 5, 1];
+        let mut output: [i32; 3] = [0, 0, 0];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((output[(0) as usize]) == (1)));
+        assert!(((output[(1) as usize]) == (2)));
+        assert!(((output[(2) as usize]) == (3)));
     }
     return true;
 }
-pub unsafe fn test_35() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
-    ];
+pub unsafe fn test_35() -> bool {
+    let mut orig: [i32; 15] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
     let mut work: [MoveOnly; 15] = [
         MoveOnly::new(None),
         MoveOnly::new(None),
@@ -1165,28 +1103,46 @@ pub unsafe fn test_35() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) < (15_())) {
+    let mut n: i32 = 0;
+    'loop_: while ((n) < (15)) {
+        let mut m: i32 = 0;
+        'loop_: while ((m) < (15)) {
             let mut it: random_access_iterator_MoveOnly_ptr_ = unimplemented!();
             if ((n) <= (m)) {
-                unimplemented!();
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _x: *const random_access_iterator_MoveOnly_ptr_ = &it;
+                        let mut _y: random_access_iterator_MoveOnly_ptr_ =
+                            random_access_iterator_MoveOnly_ptr_::new_1({
+                                work.as_mut_ptr().offset((n) as isize)
+                            });
+                        operator_eq_8(_x, &mut _y)
+                    })
+                );
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _x: *const random_access_iterator_MoveOnly_ptr_ = &it;
+                        let mut _y: random_access_iterator_MoveOnly_ptr_ =
+                            random_access_iterator_MoveOnly_ptr_::new_1({
+                                work.as_mut_ptr().offset((m) as isize)
+                            });
+                        operator_eq_8(_x, &mut _y)
+                    })
+                );
             }
-            unimplemented!();
+            assert!(unimplemented!());
             if (unsafe {
                 let _x: *const random_access_iterator_MoveOnly_ptr_ = &it;
                 let mut _y: random_access_iterator_MoveOnly_ptr_ =
                     random_access_iterator_MoveOnly_ptr_::new_1({ work.as_mut_ptr() });
                 operator_ne_9(_x, &mut _y)
             }) {
-                let mut count: () = 0_();
-                let mut i: () = m;
+                let mut count: i32 = 0;
+                let mut i: i32 = m;
                 'loop_: while ((i) < (n)) {
-                    count += (unsafe {
+                    count += ((unsafe {
                         let mut _x: MoveOnly = MoveOnly::new({ Some(orig[(i) as usize]) });
                         operator_lt_19(
                             &mut _x,
@@ -1194,52 +1150,54 @@ pub unsafe fn test_35() -> () {
                                 random_access_iterator_MoveOnly_ptr_::operator_deref(
                                     &(unsafe {
                                         let _x: random_access_iterator_MoveOnly_ptr_ = it;
-                                        operator_sub_6(_x, 1_())
+                                        operator_sub_6(_x, 1_isize)
                                     }),
                                 )
                             })),
                         )
-                    });
+                    }) as i32);
                     i.prefix_inc();
                 }
-                unimplemented!();
+                assert!(((count) < (m)));
             }
             m.prefix_inc();
         }
         n.prefix_inc();
     }
     {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
+        let mut input: [i32; 5] = [3, 4, 2, 5, 1];
         let mut output: [MoveOnly; 3] = [
-            MoveOnly::new({ Some(0_()) }),
-            MoveOnly::new({ Some(0_()) }),
-            MoveOnly::new({ Some(0_()) }),
+            MoveOnly::new({ Some(0) }),
+            MoveOnly::new({ Some(0) }),
+            MoveOnly::new({ Some(0) }),
         ];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(0) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(1) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(1) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(2) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(2) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(3) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
     }
     return true;
 }
-pub unsafe fn test_36() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
-    ];
+pub unsafe fn test_36() -> bool {
+    let mut orig: [i32; 15] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
     let mut work: [MoveOnly; 15] = [
         MoveOnly::new(None),
         MoveOnly::new(None),
@@ -1257,67 +1215,69 @@ pub unsafe fn test_36() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) < (15_())) {
+    let mut n: i32 = 0;
+    'loop_: while ((n) < (15)) {
+        let mut m: i32 = 0;
+        'loop_: while ((m) < (15)) {
             let mut it: *mut MoveOnly = unimplemented!();
             if ((n) <= (m)) {
-                unimplemented!();
-                unimplemented!();
+                assert!(((it) == (work.as_mut_ptr().offset((n) as isize))));
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!(((it) == (work.as_mut_ptr().offset((m) as isize))));
             }
-            unimplemented!();
+            assert!(unimplemented!());
             if ((it) != (work.as_mut_ptr())) {
-                let mut count: () = 0_();
-                let mut i: () = m;
+                let mut count: i32 = 0;
+                let mut i: i32 = m;
                 'loop_: while ((i) < (n)) {
-                    count += (unsafe {
+                    count += ((unsafe {
                         let mut _x: MoveOnly = MoveOnly::new({ Some(orig[(i) as usize]) });
-                        let _y: *const MoveOnly = &(*(it.offset(-((1_()) as isize))));
+                        let _y: *const MoveOnly = &(*(it.offset(-((1) as isize))));
                         operator_lt_19(&mut _x, _y)
-                    });
+                    }) as i32);
                     i.prefix_inc();
                 }
-                unimplemented!();
+                assert!(((count) < (m)));
             }
             m.prefix_inc();
         }
         n.prefix_inc();
     }
     {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
+        let mut input: [i32; 5] = [3, 4, 2, 5, 1];
         let mut output: [MoveOnly; 3] = [
-            MoveOnly::new({ Some(0_()) }),
-            MoveOnly::new({ Some(0_()) }),
-            MoveOnly::new({ Some(0_()) }),
+            MoveOnly::new({ Some(0) }),
+            MoveOnly::new({ Some(0) }),
+            MoveOnly::new({ Some(0) }),
         ];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(0) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(1) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(1) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(2) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(2) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(3) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
     }
     return true;
 }
-pub unsafe fn test_37() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
-    ];
+pub unsafe fn test_37() -> bool {
+    let mut orig: [i32; 15] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
     let mut work: [MoveOnly; 15] = [
         MoveOnly::new(None),
         MoveOnly::new(None),
@@ -1335,28 +1295,46 @@ pub unsafe fn test_37() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) < (15_())) {
+    let mut n: i32 = 0;
+    'loop_: while ((n) < (15)) {
+        let mut m: i32 = 0;
+        'loop_: while ((m) < (15)) {
             let mut it: random_access_iterator_MoveOnly_ptr_ = unimplemented!();
             if ((n) <= (m)) {
-                unimplemented!();
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _x: *const random_access_iterator_MoveOnly_ptr_ = &it;
+                        let mut _y: random_access_iterator_MoveOnly_ptr_ =
+                            random_access_iterator_MoveOnly_ptr_::new_1({
+                                work.as_mut_ptr().offset((n) as isize)
+                            });
+                        operator_eq_8(_x, &mut _y)
+                    })
+                );
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _x: *const random_access_iterator_MoveOnly_ptr_ = &it;
+                        let mut _y: random_access_iterator_MoveOnly_ptr_ =
+                            random_access_iterator_MoveOnly_ptr_::new_1({
+                                work.as_mut_ptr().offset((m) as isize)
+                            });
+                        operator_eq_8(_x, &mut _y)
+                    })
+                );
             }
-            unimplemented!();
+            assert!(unimplemented!());
             if (unsafe {
                 let _x: *const random_access_iterator_MoveOnly_ptr_ = &it;
                 let mut _y: random_access_iterator_MoveOnly_ptr_ =
                     random_access_iterator_MoveOnly_ptr_::new_1({ work.as_mut_ptr() });
                 operator_ne_9(_x, &mut _y)
             }) {
-                let mut count: () = 0_();
-                let mut i: () = m;
+                let mut count: i32 = 0;
+                let mut i: i32 = m;
                 'loop_: while ((i) < (n)) {
-                    count += (unsafe {
+                    count += ((unsafe {
                         let mut _x: MoveOnly = MoveOnly::new({ Some(orig[(i) as usize]) });
                         operator_lt_19(
                             &mut _x,
@@ -1364,52 +1342,54 @@ pub unsafe fn test_37() -> () {
                                 random_access_iterator_MoveOnly_ptr_::operator_deref(
                                     &(unsafe {
                                         let _x: random_access_iterator_MoveOnly_ptr_ = it;
-                                        operator_sub_6(_x, 1_())
+                                        operator_sub_6(_x, 1_isize)
                                     }),
                                 )
                             })),
                         )
-                    });
+                    }) as i32);
                     i.prefix_inc();
                 }
-                unimplemented!();
+                assert!(((count) < (m)));
             }
             m.prefix_inc();
         }
         n.prefix_inc();
     }
     {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
+        let mut input: [i32; 5] = [3, 4, 2, 5, 1];
         let mut output: [MoveOnly; 3] = [
-            MoveOnly::new({ Some(0_()) }),
-            MoveOnly::new({ Some(0_()) }),
-            MoveOnly::new({ Some(0_()) }),
+            MoveOnly::new({ Some(0) }),
+            MoveOnly::new({ Some(0) }),
+            MoveOnly::new({ Some(0) }),
         ];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(0) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(1) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(1) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(2) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(2) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(3) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
     }
     return true;
 }
-pub unsafe fn test_38() -> () {
-    let mut orig: [(); 15] = [
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
-    ];
+pub unsafe fn test_38() -> bool {
+    let mut orig: [i32; 15] = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9];
     let mut work: [MoveOnly; 15] = [
         MoveOnly::new(None),
         MoveOnly::new(None),
@@ -1427,46 +1407,64 @@ pub unsafe fn test_38() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
-    let mut n: () = 0_();
-    'loop_: while ((n) < (15_())) {
-        let mut m: () = 0_();
-        'loop_: while ((m) < (15_())) {
+    let mut n: i32 = 0;
+    'loop_: while ((n) < (15)) {
+        let mut m: i32 = 0;
+        'loop_: while ((m) < (15)) {
             let mut it: *mut MoveOnly = unimplemented!();
             if ((n) <= (m)) {
-                unimplemented!();
-                unimplemented!();
+                assert!(((it) == (work.as_mut_ptr().offset((n) as isize))));
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!(((it) == (work.as_mut_ptr().offset((m) as isize))));
             }
-            unimplemented!();
+            assert!(unimplemented!());
             if ((it) != (work.as_mut_ptr())) {
-                let mut count: () = 0_();
-                let mut i: () = m;
+                let mut count: i32 = 0;
+                let mut i: i32 = m;
                 'loop_: while ((i) < (n)) {
-                    count += (unsafe {
+                    count += ((unsafe {
                         let mut _x: MoveOnly = MoveOnly::new({ Some(orig[(i) as usize]) });
-                        let _y: *const MoveOnly = &(*(it.offset(-((1_()) as isize))));
+                        let _y: *const MoveOnly = &(*(it.offset(-((1) as isize))));
                         operator_lt_19(&mut _x, _y)
-                    });
+                    }) as i32);
                     i.prefix_inc();
                 }
-                unimplemented!();
+                assert!(((count) < (m)));
             }
             m.prefix_inc();
         }
         n.prefix_inc();
     }
     {
-        let mut input: [(); 5] = [3_(), 4_(), 2_(), 5_(), 1_()];
+        let mut input: [i32; 5] = [3, 4, 2, 5, 1];
         let mut output: [MoveOnly; 3] = [
-            MoveOnly::new({ Some(0_()) }),
-            MoveOnly::new({ Some(0_()) }),
-            MoveOnly::new({ Some(0_()) }),
+            MoveOnly::new({ Some(0) }),
+            MoveOnly::new({ Some(0) }),
+            MoveOnly::new({ Some(0) }),
         ];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(0) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(1) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(1) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(2) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const MoveOnly = &output[(2) as usize];
+                let mut _y: MoveOnly = MoveOnly::new({ Some(3) });
+                operator_eq_17(_x, &mut _y)
+            })
+        );
     }
     return true;
 }
@@ -1485,12 +1483,12 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut i: () = 42_();
-    let mut j: () = 75_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut i: i32 = 42;
+    let mut j: i32 = 75;
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((i) == (42)));
+    assert!(((j) == (75)));
     (unsafe { test_31() });
     (unsafe { test_32() });
     (unsafe { test_33() });
@@ -1519,6 +1517,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "test<MoveOnly, int*, random_access_iterator<MoveOnly*>>()"
     );;
     const _: () = assert!(true, "test<MoveOnly, int*, MoveOnly*>()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

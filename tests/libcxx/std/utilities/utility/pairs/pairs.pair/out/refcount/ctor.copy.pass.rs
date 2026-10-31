@@ -26,19 +26,34 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(3)),
+            Rc::new(RefCell::new(4_i16)),
+        )));
+        let p2: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new({
+            let __a0 = (*p1.borrow()).clone();
+            (
+                Rc::new(RefCell::new((__a0.0.as_pointer().read()))),
+                Rc::new(RefCell::new((__a0.1.as_pointer().read()))),
+            )
+        }));
+        assert!(((*(*p2.borrow()).0.borrow()) == 3));
+        assert!((((*(*p2.borrow()).1.borrow()) as i32) == 4));
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(3)),
+            Rc::new(RefCell::new(4_i16)),
+        )));
+        let p2: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new((*p1.borrow()).0.borrow().clone())),
+            Rc::new(RefCell::new((*p1.borrow()).1.borrow().clone())),
+        )));
         const _: () = assert!(true, "p2.first == 3");;
         const _: () = assert!(true, "p2.second == 4");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

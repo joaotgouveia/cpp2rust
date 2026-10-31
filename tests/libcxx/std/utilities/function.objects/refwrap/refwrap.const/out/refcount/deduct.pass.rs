@@ -26,29 +26,29 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut i: () = 0_();
-    let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let i: Value<i32> = Rc::new(RefCell::new(0));
+    let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri), std::reference_wrapper<int>>"
     );;
-    let ri2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ri2: Value<Ptr<i32>> = Rc::new(RefCell::new((*ri.borrow()).clone()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri2), std::reference_wrapper<int>>"
     );;
-    let mut j: () = 0_();
-    let rj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let j: Value<i32> = Rc::new(RefCell::new(0));
+    let rj: Value<Ptr<i32>> = Rc::new(RefCell::new(j.as_pointer()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj), std::reference_wrapper<const int>>"
     );;
-    let rj2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let rj2: Value<Ptr<i32>> = Rc::new(RefCell::new((*rj.borrow()).clone()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj2), std::reference_wrapper<const int>>"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

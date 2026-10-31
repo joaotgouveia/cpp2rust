@@ -6,71 +6,79 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn DoNotOptimize_0(value: *const ()) -> *const () {
+pub unsafe fn DoNotOptimize_0(value: *const *mut ::libc::c_void) -> *const *mut ::libc::c_void {
     c"";
     return value;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {
-    pub time_to_throw: (),
-    pub throw_after: (),
-    pub count: (),
-    pub alloc_count: (),
-    pub allocated_size: (),
-    pub construct_count: (),
-    pub destroy_count: (),
-    pub copied: (),
-    pub moved: (),
-    pub converted: (),
+    pub time_to_throw: i32,
+    pub throw_after: i32,
+    pub count: i32,
+    pub alloc_count: i32,
+    pub allocated_size: i32,
+    pub construct_count: i32,
+    pub destroy_count: i32,
+    pub copied: i32,
+    pub moved: i32,
+    pub converted: i32,
 }
 impl test_allocator_statistics {
     pub unsafe fn clear(&mut self) {
-        unimplemented!();
-        self.count = 0_();
-        self.time_to_throw = 0_();
-        self.alloc_count = 0_();
-        self.allocated_size = 0_();
-        self.construct_count = 0_();
-        self.destroy_count = 0_();
-        self.throw_after = 2147483647_();
+        assert!(
+            ((self.count) == (0)) && (!(c"clearing leaking allocator data?".as_ptr()).is_null())
+        );
+        self.count = 0;
+        self.time_to_throw = 0;
+        self.alloc_count = 0;
+        self.allocated_size = 0;
+        self.construct_count = 0;
+        self.destroy_count = 0;
+        self.throw_after = 2147483647;
         (unsafe { test_allocator_statistics::clear_ctor_counters(self) });
     }
     pub unsafe fn clear_ctor_counters(&mut self) {
-        self.copied = 0_();
-        self.moved = 0_();
-        self.converted = 0_();
+        self.copied = 0;
+        self.moved = 0;
+        self.converted = 0;
     }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         unsafe {
             test_allocator_statistics {
-                time_to_throw: 0_(),
-                throw_after: 2147483647_(),
-                count: 0_(),
-                alloc_count: 0_(),
-                allocated_size: 0_(),
-                construct_count: 0_(),
-                destroy_count: 0_(),
-                copied: 0_(),
-                moved: 0_(),
-                converted: 0_(),
+                time_to_throw: 0,
+                throw_after: 2147483647,
+                count: 0,
+                alloc_count: 0,
+                allocated_size: 0,
+                construct_count: 0,
+                destroy_count: 0,
+                copied: 0,
+                moved: 0,
+                converted: 0,
             }
         }
     }
 }
-pub static mut destructed_value_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 2147483647_() });
+pub static mut destructed_value_1: std::cell::LazyCell<i32> =
+    std::cell::LazyCell::new(|| unsafe { -1_i32 });
+pub static mut moved_value_2: std::cell::LazyCell<i32> =
+    std::cell::LazyCell::new(|| unsafe { 2147483647 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_3(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_3(
+    x: *const test_allocator_void_,
+    y: *const test_allocator_void_,
+) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_4(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_4(
+    x: *const test_allocator_void_,
+    y: *const test_allocator_void_,
+) -> bool {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
@@ -80,36 +88,36 @@ pub unsafe fn operator_ne_4(x: *const test_allocator_void_, y: *const test_alloc
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct test_allocator_void_ {
-    data_: (),
-    id_: (),
+    data_: i32,
+    id_: i32,
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_void_ {
     pub unsafe fn new_1(mut stats: *mut test_allocator_statistics) -> Self {
         let mut this = Self {
-            data_: 0_(),
-            id_: 0_(),
+            data_: 0,
+            id_: 0,
             stats_: stats,
         };
         this
     }
-    pub unsafe fn new_2(mut data: ()) -> Self {
+    pub unsafe fn new_2(mut data: i32) -> Self {
         let mut this = Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: std::ptr::null_mut(),
         };
         this
     }
-    pub unsafe fn new_3(mut data: (), mut stats: *mut test_allocator_statistics) -> Self {
+    pub unsafe fn new_3(mut data: i32, mut stats: *mut test_allocator_statistics) -> Self {
         let mut this = Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: stats,
         };
         this
     }
-    pub unsafe fn new_4(mut data: (), mut id: ()) -> Self {
+    pub unsafe fn new_4(mut data: i32, mut id: i32) -> Self {
         let mut this = Self {
             data_: data,
             id_: id,
@@ -118,8 +126,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn new_5(
-        mut data: (),
-        mut id: (),
+        mut data: i32,
+        mut id: i32,
         mut stats: *mut test_allocator_statistics,
     ) -> Self {
         let mut this = Self {
@@ -141,10 +149,10 @@ impl test_allocator_void_ {
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
     }
-    pub unsafe fn get_id(&self) -> () {
+    pub unsafe fn get_id(&self) -> i32 {
         return self.id_;
     }
-    pub unsafe fn get_data(&self) -> () {
+    pub unsafe fn get_data(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn copy_assign(
@@ -177,8 +185,8 @@ impl Default for test_allocator_void_ {
     fn default() -> Self {
         unsafe {
             test_allocator_void_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -188,7 +196,8 @@ impl Default for test_allocator_void_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
-#[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 pub struct Tag_X {}
 impl Tag_X {
     pub unsafe fn new_1(mut _a0: Ctor_Tag) -> Self {
@@ -213,23 +222,23 @@ impl Tag_X {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct limited_alloc_handle_51_ {
-    pub outstanding_: (),
-    pub last_alloc_: (),
+    pub outstanding_: usize,
+    pub last_alloc_: *mut ::libc::c_void,
 }
 impl limited_alloc_handle_51_ {
-    pub unsafe fn allocate_1_int(&mut self, mut N: ()) -> *mut () {
-        if (((N).wrapping_add(self.outstanding_)) > (51_())) {
-            unimplemented!();
+    pub unsafe fn allocate_1_int(&mut self, mut N: usize) -> *mut i32 {
+        if (((N).wrapping_add(self.outstanding_)) > (51_u64 as usize)) {
+            std::process::abort();
         }
-        let mut alloc: *mut () = unimplemented!();
-        self.last_alloc_ = (alloc as ());
+        let mut alloc: *mut i32 = unimplemented!();
+        self.last_alloc_ = (alloc as *mut ::libc::c_void);
         self.outstanding_ = (self.outstanding_).wrapping_add(N);
         return alloc;
     }
-    pub unsafe fn deallocate_2_int(&mut self, mut ptr: *mut (), mut N: ()) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
+    pub unsafe fn deallocate_2_int(&mut self, mut ptr: *mut i32, mut N: usize) {
+        if ((ptr as *mut ::libc::c_void) == (self.last_alloc_)) {
+            self.last_alloc_ = std::ptr::null_mut();
+            assert!(((self.outstanding_) >= (N)));
             self.outstanding_ = (self.outstanding_).wrapping_sub(N);
         }
         unimplemented!();
@@ -239,8 +248,8 @@ impl Default for limited_alloc_handle_51_ {
     fn default() -> Self {
         unsafe {
             limited_alloc_handle_51_ {
-                outstanding_: 0_(),
-                last_alloc_: unimplemented!(),
+                outstanding_: 0_usize,
+                last_alloc_: std::ptr::null_mut(),
             }
         }
     }
@@ -261,7 +270,7 @@ pub unsafe fn make_thread_unsafe_shared_5()
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_51___control_block {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            ref_count: 1_(),
+            ref_count: 1_usize,
             content: <limited_alloc_handle_51_>::default(),
         };
         this
@@ -270,14 +279,14 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_51___control_block {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_51___control_block {
-    pub ref_count: (),
+    pub ref_count: usize,
     pub content: limited_alloc_handle_51_,
 }
 impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_51___control_block {
     fn default() -> Self {
         unsafe {
             detail_thread_unsafe_shared_ptr_limited_alloc_handle_51___control_block {
-                ref_count: 1_(),
+                ref_count: 1_usize,
                 content: <limited_alloc_handle_51_>::default(),
             }
         }
@@ -300,7 +309,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_51__ {
     }
     pub unsafe fn destructor(&mut self) {
         (*self.block).ref_count.prefix_dec();
-        if (((*self.block).ref_count) != (0_())) {
+        if (((*self.block).ref_count) != (0_usize)) {
             return;
         };
         let mut alloc: () = unimplemented!();
@@ -351,7 +360,7 @@ impl limited_allocator_int__51_ {
         };
         this
     }
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
+    pub unsafe fn allocate(&mut self, mut n: usize) -> *mut i32 {
         return (unsafe {
             limited_alloc_handle_51_::allocate_1_int(
                 &mut (*(unsafe {
@@ -363,7 +372,7 @@ impl limited_allocator_int__51_ {
             )
         });
     }
-    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
+    pub unsafe fn deallocate(&mut self, mut p: *mut i32, mut n: usize) {
         (unsafe {
             limited_alloc_handle_51_::deallocate_2_int(
                 &mut (*(unsafe {
@@ -376,8 +385,8 @@ impl limited_allocator_int__51_ {
             )
         });
     }
-    pub unsafe fn max_size(&self) -> () {
-        return 51_();
+    pub unsafe fn max_size(&self) -> usize {
+        return (51_u64 as usize);
     }
 }
 impl limited_allocator_int__51_ {
@@ -394,43 +403,46 @@ impl Default for limited_allocator_int__51_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_7))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_8)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_7))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_8))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_9)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_6)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_7)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_8)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_6)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_7)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_8)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_6: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_7: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_8: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_9: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_6: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_7: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_8: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_9: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 pub unsafe fn operator_sub_10(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
 }
 pub unsafe fn operator_eq_11(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ((x.ptr_) == (y.ptr_));
 }
 pub unsafe fn operator_ne_12(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !(unsafe {
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
         operator_eq_11(_x, y)
@@ -439,17 +451,17 @@ pub unsafe fn operator_ne_12(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut i32,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *mut ()) -> Self {
+    unsafe fn new_1(mut p: *mut i32) -> Self {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn to_(&self) -> () {
+    pub unsafe fn to_bool(&self) -> bool {
         return !((self.ptr_).is_null());
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.ptr_);
     }
     pub unsafe fn operator_inc_8(
@@ -460,14 +472,14 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
     pub unsafe fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let mut tmp: min_pointer_int__std_integral_constant_unsigned_long__0__ =
             (*(self as *const min_pointer_int__std_integral_constant_unsigned_long__0__));
@@ -485,22 +497,32 @@ impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_lon
     }
 }
 impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_8();
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub unsafe fn operator_eq_13(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ((x.ptr_) == (y.ptr_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(
+    min_pointer_int__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
 pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
+    ptr_: *const i32,
 }
 impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     pub unsafe fn new_1(mut p: min_pointer_int__std_integral_constant_unsigned_long__0__) -> Self {
@@ -509,7 +531,7 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> *const () {
+    pub unsafe fn operator_deref(&self) -> *const i32 {
         return &(*self.ptr_);
     }
     pub unsafe fn operator_inc_9(
@@ -526,10 +548,15 @@ impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsign
     }
 }
 impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *const ::libc::c_void,
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
@@ -538,7 +565,7 @@ pub struct min_allocator_int_ {}
 impl min_allocator_int_ {
     pub unsafe fn allocate(
         &mut self,
-        mut n: (),
+        mut n: usize,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             unimplemented!()
@@ -547,7 +574,7 @@ impl min_allocator_int_ {
     pub unsafe fn deallocate(
         &mut self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
@@ -560,17 +587,33 @@ impl safe_allocator_int_ {
         let mut this = Self {};
         this
     }
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
-        let mut memory: *mut () = unimplemented!();
+    pub unsafe fn allocate(&mut self, mut n: usize) -> *mut i32 {
+        let mut memory: *mut i32 = unimplemented!();
         {
-            unimplemented!();
+            {
+                let byte_0 = (memory as *mut ::libc::c_void) as *mut u8;
+                for offset in
+                    0..((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
+                {
+                    *byte_0.offset(offset as isize) = 0 as u8;
+                }
+                (memory as *mut ::libc::c_void)
+            };
         }
         return memory;
     }
-    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
+    pub unsafe fn deallocate(&mut self, mut p: *mut i32, mut n: usize) {
         {
             (unsafe {
-                let mut _value: () = unimplemented!();
+                let mut _value: *mut ::libc::c_void = ({
+                    let byte_0 = (p as *mut ::libc::c_void) as *mut u8;
+                    for offset in
+                        0..((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
+                    {
+                        *byte_0.offset(offset as isize) = 0 as u8;
+                    }
+                    (p as *mut ::libc::c_void)
+                } as *mut ::libc::c_void);
                 DoNotOptimize_0(&mut _value)
             });
         }
@@ -582,90 +625,90 @@ impl Default for safe_allocator_int_ {
         unsafe { safe_allocator_int_::new() }
     }
 }
-pub unsafe fn test_14(mut n: (), x: *const ()) {
-    let mut c: () = unimplemented!();
+pub unsafe fn test_14(mut n: usize, x: *const i32) {
+    let mut c: Vec<i32> = vec![(*x); n as usize];
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((c.len()) == (n)));
     const _: () = assert!(true, "");;
-    let mut i: () = unimplemented!();
-    let mut e: () = unimplemented!();
-    'loop_: while !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
+    let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
+    let mut e: UnsafeRandomAccessIterator<i32> = c.end();
+    'loop_: while i != e {
+        assert!(((*i.iter_deref()) == (*x)));
+        i.iter_inc();
     }
 }
-pub unsafe fn test_15(mut n: (), x: *const ()) {
-    let mut c: () = unimplemented!();
+pub unsafe fn test_15(mut n: usize, x: *const i32) {
+    let mut c: Vec<i32> = vec![(*x); n as usize];
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((c.len()) == (n)));
     const _: () = assert!(true, "");;
-    let mut i: () = unimplemented!();
-    let mut e: () = unimplemented!();
-    'loop_: while !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
+    let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
+    let mut e: UnsafeRandomAccessIterator<i32> = c.end();
+    'loop_: while i != e {
+        assert!(((*i.iter_deref()) == (*x)));
+        i.iter_inc();
     }
 }
-pub unsafe fn test_16(mut n: (), x: *const ()) {
-    let mut c: () = unimplemented!();
+pub unsafe fn test_16(mut n: usize, x: *const i32) {
+    let mut c: Vec<i32> = vec![(*x); n as usize];
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((c.len()) == (n)));
     const _: () = assert!(true, "");;
-    let mut i: () = unimplemented!();
-    let mut e: () = unimplemented!();
-    'loop_: while !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
+    let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
+    let mut e: UnsafeRandomAccessIterator<i32> = c.end();
+    'loop_: while i != e {
+        assert!(((*i.iter_deref()) == (*x)));
+        i.iter_inc();
     }
 }
-pub unsafe fn test_17(mut n: (), x: *const ()) {
-    let mut c: () = unimplemented!();
+pub unsafe fn test_17(mut n: usize, x: *const i32) {
+    let mut c: Vec<i32> = vec![(*x); n as usize];
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((c.len()) == (n)));
     const _: () = assert!(true, "");;
-    let mut i: () = unimplemented!();
-    let mut e: () = unimplemented!();
-    'loop_: while !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
+    let mut i: UnsafeRandomAccessIterator<i32> = unimplemented!();
+    let mut e: UnsafeRandomAccessIterator<i32> = c.end();
+    'loop_: while i != e {
+        assert!(((*i.iter_deref()) == (*x)));
+        i.iter_inc();
     }
 }
-pub unsafe fn tests_18() -> () {
+pub unsafe fn tests_18() -> bool {
     (unsafe {
-        let mut _x: () = 3_();
-        test_14(0_(), &mut _x)
+        let mut _x: i32 = 3;
+        test_14(0_usize, &mut _x)
     });
     (unsafe {
-        let mut _x: () = 3_();
-        test_14(50_(), &mut _x)
+        let mut _x: i32 = 3;
+        test_14(50_usize, &mut _x)
     });
     (unsafe {
-        let mut _x: () = 5_();
-        test_15(0_(), &mut _x)
+        let mut _x: i32 = 5;
+        test_15(0_usize, &mut _x)
     });
     (unsafe {
-        let mut _x: () = 5_();
-        test_15(50_(), &mut _x)
+        let mut _x: i32 = 5;
+        test_15(50_usize, &mut _x)
     });
     (unsafe {
-        let mut _x: () = 5_();
-        test_15(50_(), &mut _x)
+        let mut _x: i32 = 5;
+        test_15(50_usize, &mut _x)
     });
     (unsafe {
-        let mut _x: () = 3_();
-        test_16(0_(), &mut _x)
+        let mut _x: i32 = 3;
+        test_16(0_usize, &mut _x)
     });
     (unsafe {
-        let mut _x: () = 3_();
-        test_16(50_(), &mut _x)
+        let mut _x: i32 = 3;
+        test_16(50_usize, &mut _x)
     });
     (unsafe {
-        let mut _x: () = 3_();
-        test_17(0_(), &mut _x)
+        let mut _x: i32 = 3;
+        test_17(0_usize, &mut _x)
     });
     (unsafe {
-        let mut _x: () = 3_();
-        test_17(50_(), &mut _x)
+        let mut _x: i32 = 3;
+        test_17(50_usize, &mut _x)
     });
     return true;
 }
@@ -684,10 +727,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { tests_18() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const destructed_value_1);

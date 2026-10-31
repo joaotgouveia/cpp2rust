@@ -7,16 +7,16 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn add_const_0() -> () {
-    return unimplemented!();
+    return (0_i32 as ());
 }
 pub fn add_cv_1() -> () {
-    return unimplemented!();
+    return (0_i32 as ());
 }
 pub fn add_lvalue_reference_2() -> () {
     return i_3.with(|v| v.as_pointer());
 }
 thread_local!(
-    static i_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static i_3: Value<i32> = Rc::new(RefCell::new(0_i32));
 );
 pub fn add_pointer_4() -> () {
     return unimplemented!();
@@ -25,19 +25,19 @@ pub fn add_rvalue_reference_5() -> () {
     return i_6.with(|v| v.as_pointer());
 }
 thread_local!(
-    static i_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static i_6: Value<i32> = Rc::new(RefCell::new(0_i32));
 );
 pub fn add_volatile_7() -> () {
-    return i_8.with(|rc| *rc.borrow());
+    return (i_8.with(|rc| *rc.borrow()) as ());
 }
 thread_local!(
-    static i_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static i_8: Value<i32> = Rc::new(RefCell::new(0_i32));
 );
 pub fn decay_9() -> () {
     return unimplemented!();
 }
-pub fn enable_if_10() -> () {
-    return unimplemented!();
+pub fn enable_if_10() -> i32 {
+    return 0_i32;
 }
 pub fn make_signed_11() -> () {
     return unimplemented!();
@@ -48,14 +48,14 @@ pub fn make_unsigned_12() -> () {
 pub fn remove_all_extents_13() -> () {
     return unimplemented!();
 }
-pub fn remove_const_14() -> () {
-    return unimplemented!();
+pub fn remove_const_14() -> i32 {
+    return 0_i32;
 }
-pub fn remove_cv_15() -> () {
-    return unimplemented!();
+pub fn remove_cv_15() -> i32 {
+    return 0_i32;
 }
-pub fn remove_cvref_16() -> () {
-    return unimplemented!();
+pub fn remove_cvref_16() -> i32 {
+    return 0_i32;
 }
 pub fn remove_extent_17() -> () {
     return unimplemented!();
@@ -63,19 +63,19 @@ pub fn remove_extent_17() -> () {
 pub fn remove_pointer_18() -> () {
     return unimplemented!();
 }
-pub fn remove_reference_19() -> () {
-    return unimplemented!();
+pub fn remove_reference_19() -> i32 {
+    return 0_i32;
 }
-pub fn remove_volatile_20() -> () {
-    return unimplemented!();
+pub fn remove_volatile_20() -> i32 {
+    return 0_i32;
 }
 pub fn type_identity_21() -> () {
     return unimplemented!();
 }
-pub fn underlying_type_22() -> () {
-    return unimplemented!();
+pub fn underlying_type_22() -> i32 {
+    return 0_i32;
 }
-pub type E = ();
+pub type E = i32;
 pub fn void_t_23() {}
 pub fn instantiate_24() {
     ({ add_const_0() });
@@ -119,7 +119,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

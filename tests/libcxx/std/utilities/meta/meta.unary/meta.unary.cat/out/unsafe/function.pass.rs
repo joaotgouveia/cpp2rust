@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Class {}
-pub type Enum1 = ();
-pub type Enum2 = ();
+pub type Enum1 = u32;
+pub type Enum2 = i32;
 pub unsafe fn test_0() {
     const _: () = assert!(true, "!std::is_void<T>::value");;
     const _: () = assert!(true, "!std::is_null_pointer<T>::value");;
@@ -1562,7 +1562,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     (unsafe { test_1() });
     (unsafe { test_2() });
@@ -1660,6 +1660,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_94() });
     (unsafe { test_95() });
     const _: () = assert!(true, "!std::is_function<incomplete_type>::value");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

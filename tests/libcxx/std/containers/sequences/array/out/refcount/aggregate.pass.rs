@@ -76,24 +76,21 @@ pub struct Empty {}
 #[byte_size(8)]
 pub struct Trivial {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
     #[offset(4)]
-    pub j: (),
+    pub j: i32,
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Default)]
 #[byte_size(8)]
 pub struct NonTrivial {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
     #[offset(4)]
-    pub j: (),
+    pub j: i32,
 }
 impl NonTrivial {
     pub fn copy_from(_a0: Ptr<NonTrivial>) -> Self {
-        Self {
-            i: unimplemented!(),
-            j: unimplemented!(),
-        }
+        Self { i: 0_i32, j: 0_i32 }
     }
 }
 impl Clone for NonTrivial {
@@ -124,7 +121,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ check_aggregate_0() });
     ({ check_aggregate_1() });
     ({ check_aggregate_2() });
@@ -134,7 +131,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ check_aggregate_6() });
     ({ check_aggregate_7() });
     ({ check_aggregate_8() });
-    return 0_();
+    return 0;
 }
 pub trait NonTrivialImpl {
     fn copy_assign(&self, _a0: Ptr<NonTrivial>) -> Ptr<NonTrivial>;

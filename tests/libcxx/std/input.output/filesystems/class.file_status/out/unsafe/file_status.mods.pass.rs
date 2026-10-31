@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut st: () = unimplemented!();
     {
         const _: () = assert!(true, "noexcept(st.type(file_type::regular))");;
@@ -30,9 +30,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             true,
             "std::is_same<decltype(st.type(file_type::regular)), void>::value"
         );;
+        assert!(((unimplemented!()) != (unimplemented!())));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
         const _: () = assert!(true, "noexcept(st.permissions(perms::owner_read))");;
@@ -40,10 +40,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             true,
             "std::is_same<decltype(st.permissions(perms::owner_read)), void>::value"
         );;
+        assert!(((unimplemented!()) != (unimplemented!())));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

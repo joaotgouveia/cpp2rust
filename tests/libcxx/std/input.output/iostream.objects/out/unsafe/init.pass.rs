@@ -9,43 +9,83 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct Checker {
-    pub cerr_mem_dump: *mut (),
-    pub cin_mem_dump: *mut (),
-    pub cout_mem_dump: *mut (),
-    pub clog_mem_dump: *mut (),
+    pub cerr_mem_dump: *mut libc::c_char,
+    pub cin_mem_dump: *mut libc::c_char,
+    pub cout_mem_dump: *mut libc::c_char,
+    pub clog_mem_dump: *mut libc::c_char,
 }
 impl Checker {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             cerr_mem_dump: Box::leak(
-                (0..::std::mem::size_of::<()>())
-                    .map(|_| unimplemented!())
-                    .collect::<Box<[()]>>(),
+                (0..::std::mem::size_of::<::std::fs::File>())
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Box<[libc::c_char]>>(),
             )
             .as_mut_ptr(),
             cin_mem_dump: Box::leak(
                 (0..::std::mem::size_of::<()>())
-                    .map(|_| unimplemented!())
-                    .collect::<Box<[()]>>(),
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Box<[libc::c_char]>>(),
             )
             .as_mut_ptr(),
             cout_mem_dump: Box::leak(
-                (0..::std::mem::size_of::<()>())
-                    .map(|_| unimplemented!())
-                    .collect::<Box<[()]>>(),
+                (0..::std::mem::size_of::<::std::fs::File>())
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Box<[libc::c_char]>>(),
             )
             .as_mut_ptr(),
             clog_mem_dump: Box::leak(
-                (0..::std::mem::size_of::<()>())
-                    .map(|_| unimplemented!())
-                    .collect::<Box<[()]>>(),
+                (0..::std::mem::size_of::<::std::fs::File>())
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Box<[libc::c_char]>>(),
             )
             .as_mut_ptr(),
         };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            if ::std::mem::size_of::<::std::fs::File>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    (((&raw mut (*libcc2rs::cerr_unsafe()) as *mut ::std::fs::File)
+                        as *mut libc::c_char) as *const ::libc::c_void),
+                    (this.cerr_mem_dump as *mut ::libc::c_void),
+                    ::std::mem::size_of::<::std::fs::File>() as usize,
+                )
+            }
+            (this.cerr_mem_dump as *mut ::libc::c_void)
+        };
+        {
+            if ::std::mem::size_of::<()>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    (((&raw mut (*unimplemented!()) as *mut ()) as *mut libc::c_char)
+                        as *const ::libc::c_void),
+                    (this.cin_mem_dump as *mut ::libc::c_void),
+                    ::std::mem::size_of::<()>() as usize,
+                )
+            }
+            (this.cin_mem_dump as *mut ::libc::c_void)
+        };
+        {
+            if ::std::mem::size_of::<::std::fs::File>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    (((&raw mut (*libcc2rs::cout_unsafe()) as *mut ::std::fs::File)
+                        as *mut libc::c_char) as *const ::libc::c_void),
+                    (this.cout_mem_dump as *mut ::libc::c_void),
+                    ::std::mem::size_of::<::std::fs::File>() as usize,
+                )
+            }
+            (this.cout_mem_dump as *mut ::libc::c_void)
+        };
+        {
+            if ::std::mem::size_of::<::std::fs::File>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    (((&raw mut (*unimplemented!()) as *mut ::std::fs::File) as *mut libc::c_char)
+                        as *const ::libc::c_void),
+                    (this.clog_mem_dump as *mut ::libc::c_void),
+                    ::std::mem::size_of::<::std::fs::File>() as usize,
+                )
+            }
+            (this.clog_mem_dump as *mut ::libc::c_void)
+        };
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -55,7 +95,7 @@ impl Checker {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -65,7 +105,7 @@ impl Checker {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -75,7 +115,7 @@ impl Checker {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -85,7 +125,7 @@ impl Checker {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -101,43 +141,83 @@ pub static mut check_0: std::cell::LazyCell<Checker> =
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct WideChecker {
-    pub wcerr_mem_dump: *mut (),
-    pub wcin_mem_dump: *mut (),
-    pub wcout_mem_dump: *mut (),
-    pub wclog_mem_dump: *mut (),
+    pub wcerr_mem_dump: *mut libc::c_char,
+    pub wcin_mem_dump: *mut libc::c_char,
+    pub wcout_mem_dump: *mut libc::c_char,
+    pub wclog_mem_dump: *mut libc::c_char,
 }
 impl WideChecker {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             wcerr_mem_dump: Box::leak(
                 (0..::std::mem::size_of::<()>())
-                    .map(|_| unimplemented!())
-                    .collect::<Box<[()]>>(),
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Box<[libc::c_char]>>(),
             )
             .as_mut_ptr(),
             wcin_mem_dump: Box::leak(
                 (0..::std::mem::size_of::<()>())
-                    .map(|_| unimplemented!())
-                    .collect::<Box<[()]>>(),
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Box<[libc::c_char]>>(),
             )
             .as_mut_ptr(),
             wcout_mem_dump: Box::leak(
                 (0..::std::mem::size_of::<()>())
-                    .map(|_| unimplemented!())
-                    .collect::<Box<[()]>>(),
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Box<[libc::c_char]>>(),
             )
             .as_mut_ptr(),
             wclog_mem_dump: Box::leak(
                 (0..::std::mem::size_of::<()>())
-                    .map(|_| unimplemented!())
-                    .collect::<Box<[()]>>(),
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Box<[libc::c_char]>>(),
             )
             .as_mut_ptr(),
         };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            if ::std::mem::size_of::<()>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    (((&raw mut (*unimplemented!()) as *mut ()) as *mut libc::c_char)
+                        as *const ::libc::c_void),
+                    (this.wcerr_mem_dump as *mut ::libc::c_void),
+                    ::std::mem::size_of::<()>() as usize,
+                )
+            }
+            (this.wcerr_mem_dump as *mut ::libc::c_void)
+        };
+        {
+            if ::std::mem::size_of::<()>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    (((&raw mut (*unimplemented!()) as *mut ()) as *mut libc::c_char)
+                        as *const ::libc::c_void),
+                    (this.wcin_mem_dump as *mut ::libc::c_void),
+                    ::std::mem::size_of::<()>() as usize,
+                )
+            }
+            (this.wcin_mem_dump as *mut ::libc::c_void)
+        };
+        {
+            if ::std::mem::size_of::<()>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    (((&raw mut (*unimplemented!()) as *mut ()) as *mut libc::c_char)
+                        as *const ::libc::c_void),
+                    (this.wcout_mem_dump as *mut ::libc::c_void),
+                    ::std::mem::size_of::<()>() as usize,
+                )
+            }
+            (this.wcout_mem_dump as *mut ::libc::c_void)
+        };
+        {
+            if ::std::mem::size_of::<()>() != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    (((&raw mut (*unimplemented!()) as *mut ()) as *mut libc::c_char)
+                        as *const ::libc::c_void),
+                    (this.wclog_mem_dump as *mut ::libc::c_void),
+                    ::std::mem::size_of::<()>() as usize,
+                )
+            }
+            (this.wclog_mem_dump as *mut ::libc::c_void)
+        };
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -147,7 +227,7 @@ impl WideChecker {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -157,7 +237,7 @@ impl WideChecker {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -167,7 +247,7 @@ impl WideChecker {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -177,7 +257,7 @@ impl WideChecker {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -206,16 +286,184 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    assert!(
+        (({
+            let sa = core::slice::from_raw_parts(
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut check_0)).cerr_mem_dump
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<::std::fs::File>() as usize,
+            );
+            let sb = core::slice::from_raw_parts(
+                (((&raw mut (*libcc2rs::cerr_unsafe()) as *mut ::std::fs::File)
+                    as *const libc::c_char) as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<::std::fs::File>() as usize,
+            );
+            let mut diff = 0_i32;
+            for (x, y) in sa.iter().zip(sb.iter()) {
+                if x != y {
+                    diff = (*x as i32) - (*y as i32);
+                    break;
+                }
+            }
+            diff
+        }) == (0))
+    );
+    assert!(
+        (({
+            let sa = core::slice::from_raw_parts(
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut check_0)).cin_mem_dump
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let sb = core::slice::from_raw_parts(
+                (((&raw mut (*unimplemented!()) as *mut ()) as *const libc::c_char)
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let mut diff = 0_i32;
+            for (x, y) in sa.iter().zip(sb.iter()) {
+                if x != y {
+                    diff = (*x as i32) - (*y as i32);
+                    break;
+                }
+            }
+            diff
+        }) == (0))
+    );
+    assert!(
+        (({
+            let sa = core::slice::from_raw_parts(
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut check_0)).cout_mem_dump
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<::std::fs::File>() as usize,
+            );
+            let sb = core::slice::from_raw_parts(
+                (((&raw mut (*libcc2rs::cout_unsafe()) as *mut ::std::fs::File)
+                    as *const libc::c_char) as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<::std::fs::File>() as usize,
+            );
+            let mut diff = 0_i32;
+            for (x, y) in sa.iter().zip(sb.iter()) {
+                if x != y {
+                    diff = (*x as i32) - (*y as i32);
+                    break;
+                }
+            }
+            diff
+        }) == (0))
+    );
+    assert!(
+        (({
+            let sa = core::slice::from_raw_parts(
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut check_0)).clog_mem_dump
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<::std::fs::File>() as usize,
+            );
+            let sb = core::slice::from_raw_parts(
+                (((&raw mut (*unimplemented!()) as *mut ::std::fs::File) as *const libc::c_char)
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<::std::fs::File>() as usize,
+            );
+            let mut diff = 0_i32;
+            for (x, y) in sa.iter().zip(sb.iter()) {
+                if x != y {
+                    diff = (*x as i32) - (*y as i32);
+                    break;
+                }
+            }
+            diff
+        }) == (0))
+    );
+    assert!(
+        (({
+            let sa = core::slice::from_raw_parts(
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut wide_check_1)).wcerr_mem_dump
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let sb = core::slice::from_raw_parts(
+                (((&raw mut (*unimplemented!()) as *mut ()) as *const libc::c_char)
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let mut diff = 0_i32;
+            for (x, y) in sa.iter().zip(sb.iter()) {
+                if x != y {
+                    diff = (*x as i32) - (*y as i32);
+                    break;
+                }
+            }
+            diff
+        }) == (0))
+    );
+    assert!(
+        (({
+            let sa = core::slice::from_raw_parts(
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut wide_check_1)).wcin_mem_dump
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let sb = core::slice::from_raw_parts(
+                (((&raw mut (*unimplemented!()) as *mut ()) as *const libc::c_char)
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let mut diff = 0_i32;
+            for (x, y) in sa.iter().zip(sb.iter()) {
+                if x != y {
+                    diff = (*x as i32) - (*y as i32);
+                    break;
+                }
+            }
+            diff
+        }) == (0))
+    );
+    assert!(
+        (({
+            let sa = core::slice::from_raw_parts(
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut wide_check_1)).wcout_mem_dump
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let sb = core::slice::from_raw_parts(
+                (((&raw mut (*unimplemented!()) as *mut ()) as *const libc::c_char)
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let mut diff = 0_i32;
+            for (x, y) in sa.iter().zip(sb.iter()) {
+                if x != y {
+                    diff = (*x as i32) - (*y as i32);
+                    break;
+                }
+            }
+            diff
+        }) == (0))
+    );
+    assert!(
+        (({
+            let sa = core::slice::from_raw_parts(
+                ((*std::cell::LazyCell::force_mut(&mut *&raw mut wide_check_1)).wclog_mem_dump
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let sb = core::slice::from_raw_parts(
+                (((&raw mut (*unimplemented!()) as *mut ()) as *const libc::c_char)
+                    as *const ::libc::c_void) as *const u8,
+                ::std::mem::size_of::<()>() as usize,
+            );
+            let mut diff = 0_i32;
+            for (x, y) in sa.iter().zip(sb.iter()) {
+                if x != y {
+                    diff = (*x as i32) - (*y as i32);
+                    break;
+                }
+            }
+            diff
+        }) == (0))
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const check_0);

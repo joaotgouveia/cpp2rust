@@ -6,12 +6,12 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_Deleter_ref__const_Deleter_ref_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -31,61 +31,61 @@ impl Default for Deleter {
 }
 pub fn test_basic_2() {
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
+        let mut p: Option<Value<i32>> = None;
+        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
     }
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut d: Deleter = Deleter::new();
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cp: Ptr<()> = p.as_pointer();
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
+        let mut p: Option<Value<i32>> = None;
+        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
     }
     {
         let mut d: Deleter = Deleter::new();
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cp: Ptr<()> = p.as_pointer();
+        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(unimplemented!()));
+        let cp: Ptr<Option<Value<i32>>> = p.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
+        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
+        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
+    }
+    {
+        let mut d: Deleter = Deleter::new();
+        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(unimplemented!()));
+        let cp: Ptr<Option<Value<i32>>> = p.as_pointer();
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
+        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
     }
 }
 pub fn test_basic_3() {
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
+        let mut p: Option<Value<i32>> = None;
+        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
     }
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut d: Deleter = Deleter::new();
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cp: Ptr<()> = p.as_pointer();
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
+        let mut p: Option<Value<Box<[i32]>>> = None;
+        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
     }
     {
         let mut d: Deleter = Deleter::new();
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cp: Ptr<()> = p.as_pointer();
+        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(unimplemented!()));
+        let cp: Ptr<Option<Value<Box<[i32]>>>> = p.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
+        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
+        assert!((({ DeleterImpl::test_4(&unimplemented!(),) }) == 6));
+    }
+    {
+        let mut d: Deleter = Deleter::new();
+        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(unimplemented!()));
+        let cp: Ptr<Option<Value<Box<[i32]>>>> = p.as_pointer();
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
+        assert!((({ DeleterImpl::test_3(&unimplemented!(),) }) == 5));
     }
 }
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     ({ test_basic_2() });
     ({ test_basic_3() });
     return true;
@@ -109,23 +109,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait DeleterImpl {
-    fn operator_call(&self, _a0: ());
-    fn test_3(&self) -> ();
-    fn test_4(&self) -> ();
+    fn operator_call(&self, _a0: AnyPtr);
+    fn test_3(&self) -> i32;
+    fn test_4(&self) -> i32;
 }
 impl DeleterImpl for Ptr<Deleter> {
-    fn operator_call(&self, mut _a0: ()) {}
-    fn test_3(&self) -> () {
-        return 5_();
+    fn operator_call(&self, mut _a0: AnyPtr) {}
+    fn test_3(&self) -> i32 {
+        return 5;
     }
-    fn test_4(&self) -> () {
-        return 6_();
+    fn test_4(&self) -> i32 {
+        return 6;
     }
 }
 pub fn __cpp2rust_init_globals() {}

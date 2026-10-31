@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct two {
-    pub __: [(); 2],
+    pub __: [libc::c_char; 2],
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -26,18 +26,18 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "std::denorm_indeterminate == -1");;
     const _: () = assert!(true, "std::denorm_absent == 0");;
     const _: () = assert!(true, "std::denorm_present == 1");;
     const _: () = assert!(
-        ((::std::mem::size_of::<()>()) == (1_())),
+        ((::std::mem::size_of::<libc::c_char>()) == (1_usize)),
         "sizeof(test(std::denorm_present)) == 1"
     );;
     const _: () = assert!(
-        ((::std::mem::size_of::<two>()) == (2_())),
+        ((::std::mem::size_of::<two>()) == (2_usize)),
         "sizeof(test(1)) == 2"
     );;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

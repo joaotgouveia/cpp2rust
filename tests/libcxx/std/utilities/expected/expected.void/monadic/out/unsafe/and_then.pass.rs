@@ -7,19 +7,21 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 #[repr(C)]
-#[derive(FnPtrArg, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct NonCopyable {}
 impl NonCopyable {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct NonMovable {}
 impl NonMovable {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
@@ -82,7 +84,7 @@ pub unsafe fn test_val_types_3() {
         });
         let mut v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
@@ -91,7 +93,7 @@ pub unsafe fn test_val_types_3() {
             }
         });
         let v: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
         const _: () = assert!(
             true,
             "std::is_same_v< decltype(v.and_then(l)), std::expected<int, int>>"
@@ -105,7 +107,7 @@ pub unsafe fn test_val_types_3() {
         });
         let mut v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
@@ -115,56 +117,56 @@ pub unsafe fn test_val_types_3() {
         });
         let v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_fail_4() {
     {
         let mut f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
             unsafe {
-                unimplemented!();
+                assert!(false);
                 return unimplemented!();
             }
         });
         let mut v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
     }
     {
         let mut f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
             unsafe {
-                unimplemented!();
+                assert!(false);
                 return unimplemented!();
             }
         });
         let v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
     }
     {
         let mut f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
             unsafe {
-                unimplemented!();
+                assert!(false);
                 return unimplemented!();
             }
         });
         let mut v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
     }
     {
         let mut f: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
             unsafe {
-                unimplemented!();
+                assert!(false);
                 return unimplemented!();
             }
         });
         let v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
     }
 }
-pub unsafe fn test_5() -> () {
+pub unsafe fn test_5() -> bool {
     (unsafe { test_fail_4() });
     (unsafe { test_val_types_3() });
     return true;
@@ -184,9 +186,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_5() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

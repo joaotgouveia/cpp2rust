@@ -6,19 +6,21 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(1)]
 pub struct NonCopyable {}
 impl NonCopyable {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         Self {}
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(1)]
 pub struct NonMovable {}
 impl NonMovable {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         Self {}
     }
 }
@@ -81,7 +83,7 @@ pub fn test_val_types_3() {
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let l: Value<FnPtr<fn() -> ()>> =
@@ -91,7 +93,7 @@ pub fn test_val_types_3() {
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
         const _: () = assert!(
             true,
             "std::is_same_v< decltype(v.and_then(l)), std::expected<int, int>>"
@@ -106,7 +108,7 @@ pub fn test_val_types_3() {
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let l: Value<FnPtr<fn() -> ()>> =
@@ -117,7 +119,7 @@ pub fn test_val_types_3() {
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn test_fail_4() {
@@ -125,52 +127,52 @@ pub fn test_fail_4() {
         let f: Value<FnPtr<fn() -> ()>> =
             Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
                 {
-                    unimplemented!();
+                    assert!(false);
                     return unimplemented!();
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let f: Value<FnPtr<fn() -> ()>> =
             Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
                 {
-                    unimplemented!();
+                    assert!(false);
                     return unimplemented!();
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let f: Value<FnPtr<fn() -> ()>> =
             Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
                 {
-                    unimplemented!();
+                    assert!(false);
                     return unimplemented!();
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let f: Value<FnPtr<fn() -> ()>> =
             Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
                 {
-                    unimplemented!();
+                    assert!(false);
                     return unimplemented!();
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
 }
-pub fn test_5() -> () {
+pub fn test_5() -> bool {
     ({ test_fail_4() });
     ({ test_val_types_3() });
     return true;
@@ -194,9 +196,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_5() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

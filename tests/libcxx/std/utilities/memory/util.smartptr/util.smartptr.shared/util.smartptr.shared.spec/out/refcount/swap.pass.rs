@@ -33,7 +33,7 @@ impl Default for A {
     }
 }
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 
 pub fn main() {
@@ -55,7 +55,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let mut ptr1: Ptr<A> = Ptr::alloc(A::new());
         let mut ptr2: Ptr<A> = Ptr::alloc(A::new());
@@ -63,17 +63,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 1_i64));
+            assert!(({ unimplemented!() } == { (ptr2).clone() }));
+            assert!((unimplemented!() == 1_i64));
+            assert!(({ unimplemented!() } == { (ptr1).clone() }));
+            assert!((count_0.with(|rc| *rc.borrow()) == 2));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 1_i64));
+        assert!(({ unimplemented!() } == { (ptr2).clone() }));
+        assert!((count_0.with(|rc| *rc.borrow()) == 1));
     }
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
         let mut ptr1: Ptr<A> = Ptr::alloc(A::new());
         let mut ptr2: Ptr<A> = Ptr::<A>::null();
@@ -81,17 +81,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_i64));
+            assert!(({ unimplemented!() } == { (ptr2).clone() }));
+            assert!((unimplemented!() == 1_i64));
+            assert!(({ unimplemented!() } == { (ptr1).clone() }));
+            assert!((count_0.with(|rc| *rc.borrow()) == 1));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_i64));
+        assert!(({ unimplemented!() } == { (ptr2).clone() }));
+        assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
         let mut ptr1: Ptr<A> = Ptr::<A>::null();
         let mut ptr2: Ptr<A> = Ptr::alloc(A::new());
@@ -99,17 +99,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 1_i64));
+            assert!(({ unimplemented!() } == { (ptr2).clone() }));
+            assert!((unimplemented!() == 0_i64));
+            assert!(({ unimplemented!() } == { (ptr1).clone() }));
+            assert!((count_0.with(|rc| *rc.borrow()) == 1));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 1_i64));
+        assert!(({ unimplemented!() } == { (ptr2).clone() }));
+        assert!((count_0.with(|rc| *rc.borrow()) == 1));
     }
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
         let mut ptr1: Ptr<A> = Ptr::<A>::null();
         let mut ptr2: Ptr<A> = Ptr::<A>::null();
@@ -117,18 +117,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         {
             let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_i64));
+            assert!(({ unimplemented!() } == { (ptr2).clone() }));
+            assert!((unimplemented!() == 0_i64));
+            assert!(({ unimplemented!() } == { (ptr1).clone() }));
+            assert!((count_0.with(|rc| *rc.borrow()) == 0));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_i64));
+        assert!(({ unimplemented!() } == { (ptr2).clone() }));
+        assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
-    unimplemented!();
-    return 0_();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    return 0;
 }
 pub trait AImpl {
     fn destructor(&self);

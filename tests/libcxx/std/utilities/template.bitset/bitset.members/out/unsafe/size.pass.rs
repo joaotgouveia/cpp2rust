@@ -8,41 +8,41 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_size_0() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_u64 as usize)));
 }
 pub unsafe fn test_size_1() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (1_u64 as usize)));
 }
 pub unsafe fn test_size_2() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (31_u64 as usize)));
 }
 pub unsafe fn test_size_3() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (32_u64 as usize)));
 }
 pub unsafe fn test_size_4() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (33_u64 as usize)));
 }
 pub unsafe fn test_size_5() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (63_u64 as usize)));
 }
 pub unsafe fn test_size_6() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (64_u64 as usize)));
 }
 pub unsafe fn test_size_7() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (65_u64 as usize)));
 }
 pub unsafe fn test_size_8() {
     let v: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (1000_u64 as usize)));
 }
-pub unsafe fn test_9() -> () {
+pub unsafe fn test_9() -> bool {
     (unsafe { test_size_0() });
     (unsafe { test_size_1() });
     (unsafe { test_size_2() });
@@ -69,9 +69,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_9() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

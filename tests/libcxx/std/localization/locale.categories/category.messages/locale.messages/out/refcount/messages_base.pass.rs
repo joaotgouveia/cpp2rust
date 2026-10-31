@@ -7,28 +7,40 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_eprintf_0(
-    mut fmt: Ptr<()>,
-    args_1: Ptr<Ptr<()>>,
-    args_2: Ptr<Ptr<()>>,
-    args_3: Ptr<Ptr<()>>,
-    args_4: Ptr<()>,
-    args_5: Ptr<Ptr<()>>,
+    mut fmt: Ptr<i8>,
+    args_1: Ptr<Ptr<i8>>,
+    args_2: Ptr<Ptr<i8>>,
+    args_3: Ptr<Ptr<i8>>,
+    args_4: Ptr<i32>,
+    args_5: Ptr<Ptr<i8>>,
 ) {
-    unimplemented!();
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([
+                (args_1.read()).into(),
+                (args_2.read()).into(),
+                (args_3.read()).into(),
+                (args_4.read()).into(),
+                (args_5.read()).into(),
+            ]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
-pub fn test_log_1(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
-    let message: Value<Ptr<()>> = Rc::new(RefCell::new(message));
-    let msg: Value<Ptr<()>> = Rc::new(RefCell::new(if !(*condition.borrow()).is_null() {
-        Ptr::<()>::from_string_literal(b"Assertion failure: ")
+pub fn test_log_1(condition: Ptr<i8>, file: Ptr<i8>, line: i32, message: Ptr<i8>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
+    let message: Value<Ptr<i8>> = Rc::new(RefCell::new(message));
+    let msg: Value<Ptr<i8>> = Rc::new(RefCell::new(if !(*condition.borrow()).is_null() {
+        Ptr::<i8>::from_string_literal(b"Assertion failure: ")
     } else {
-        Ptr::<()>::from_string_literal(b"Unconditional failure:")
+        Ptr::<i8>::from_string_literal(b"Unconditional failure:")
     }));
     ({
         test_eprintf_0(
-            Ptr::<()>::from_string_literal(b"%s%s %s %d\n%s"),
+            Ptr::<i8>::from_string_literal(b"%s%s %s %d\n%s"),
             msg.as_pointer(),
             condition.as_pointer(),
             file.as_pointer(),
@@ -58,8 +70,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -7,10 +7,10 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static allocated__0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static allocated__0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static deallocated__1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static deallocated__1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
@@ -39,24 +39,32 @@ impl Default for test_alloc_char__unsigned_long_ {
     }
 }
 pub fn test_2() {
-    let mut i: () = 1_();
-    'loop_: while (i < 1000_()) {
+    let mut i: u32 = 1_u32;
+    'loop_: while (i < 1000_u32) {
         {
-            let mut s: () = unimplemented!();
+            let mut s: Vec<i8> = vec![('t' as i8); (i as usize) as usize]
+                .iter()
+                .cloned()
+                .chain(std::iter::once(0_i8))
+                .collect();
             &(s);
         }
-        unimplemented!();
+        assert!((allocated__0.with(|rc| *rc.borrow()) == deallocated__1.with(|rc| *rc.borrow())));
         i.prefix_inc();
     }
 }
 pub fn test_3() {
-    let mut i: () = 1_();
-    'loop_: while (i < 1000_()) {
+    let mut i: u32 = 1_u32;
+    'loop_: while (i < 1000_u32) {
         {
-            let mut s: () = unimplemented!();
+            let mut s: Vec<i8> = vec![('t' as i8); (i as usize) as usize]
+                .iter()
+                .cloned()
+                .chain(std::iter::once(0_i8))
+                .collect();
             &(s);
         }
-        unimplemented!();
+        assert!((allocated__0.with(|rc| *rc.borrow()) == deallocated__1.with(|rc| *rc.borrow())));
         i.prefix_inc();
     }
 }
@@ -79,44 +87,44 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
     ({ test_3() });
     ({ test_3() });
-    return 0_();
+    return 0;
 }
 pub trait test_alloc_char__unsigned_int_Impl {
-    fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<()>;
-    fn deallocate(&self, p: Ptr<()>, s: ());
+    fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<i8>;
+    fn deallocate(&self, p: Ptr<i8>, s: u32);
 }
 impl test_alloc_char__unsigned_int_Impl for Ptr<test_alloc_char__unsigned_int_> {
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
-        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+    fn allocate(&self, mut n: u32, _a1: Option<AnyPtr>) -> Ptr<i8> {
+        let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
         allocated__0.with(|rc| {
-            *rc.borrow_mut() = { (allocated__0.with(|rc| *rc.borrow())).wrapping_add(n) }
+            *rc.borrow_mut() = { (allocated__0.with(|rc| *rc.borrow())).wrapping_add((n as u64)) }
         });
         return unimplemented!();
     }
-    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+    fn deallocate(&self, mut p: Ptr<i8>, mut s: u32) {
         deallocated__1.with(|rc| {
-            *rc.borrow_mut() = { (deallocated__1.with(|rc| *rc.borrow())).wrapping_add(s) }
+            *rc.borrow_mut() = { (deallocated__1.with(|rc| *rc.borrow())).wrapping_add((s as u64)) }
         });
         unimplemented!();
     }
 }
 pub trait test_alloc_char__unsigned_long_Impl {
-    fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<()>;
-    fn deallocate(&self, p: Ptr<()>, s: ());
+    fn allocate(&self, n: u64, _a1: Option<AnyPtr>) -> Ptr<i8>;
+    fn deallocate(&self, p: Ptr<i8>, s: u64);
 }
 impl test_alloc_char__unsigned_long_Impl for Ptr<test_alloc_char__unsigned_long_> {
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
-        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+    fn allocate(&self, mut n: u64, _a1: Option<AnyPtr>) -> Ptr<i8> {
+        let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
         allocated__0.with(|rc| {
             *rc.borrow_mut() = { (allocated__0.with(|rc| *rc.borrow())).wrapping_add(n) }
         });
         return unimplemented!();
     }
-    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+    fn deallocate(&self, mut p: Ptr<i8>, mut s: u64) {
         deallocated__1.with(|rc| {
             *rc.borrow_mut() = { (deallocated__1.with(|rc| *rc.borrow())).wrapping_add(s) }
         });

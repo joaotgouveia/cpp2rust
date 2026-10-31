@@ -6,10 +6,10 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(mut p: Ptr<()>, mut len: (), mut mc: ()) {
+pub fn test_0(mut p: Ptr<i8>, mut len: usize, mut mc: u32) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as u32) == (unimplemented!() as u32)));
+    assert!((unimplemented!() == mc));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -30,27 +30,51 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_0(Ptr::<()>::from_string_literal(b"\\(a\\)"), 5_(), 0_()) });
-    ({ test_0(Ptr::<()>::from_string_literal(b"\\(a[bc]\\)"), 9_(), 0_()) });
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    ({ test_0(Ptr::<i8>::from_string_literal(b"\\(a\\)"), 5_usize, 0_u32) });
     ({
         test_0(
-            Ptr::<()>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
-            13_(),
-            0_(),
+            Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"),
+            9_usize,
+            0_u32,
         )
     });
-    ({ test_0(Ptr::<()>::from_string_literal(b"(a([bc]))"), 9_(), 2_()) });
     ({
         test_0(
-            Ptr::<()>::from_string_literal(b"(\0)(b)(c)(d)"),
-            12_(),
-            4_(),
+            Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
+            13_usize,
+            0_u32,
         )
     });
-    ({ test_0(Ptr::<()>::from_string_literal(b"(\0)(b)(c)(d)"), 9_(), 3_()) });
-    ({ test_0(Ptr::<()>::from_string_literal(b"(\0)(b)(c)(d)"), 3_(), 1_()) });
-    ({ test_0(Ptr::<()>::from_string_literal(b"(\0)(b)(c)(d)"), 0_(), 0_()) });
-    return 0_();
+    ({ test_0(Ptr::<i8>::from_string_literal(b"(a([bc]))"), 9_usize, 2_u32) });
+    ({
+        test_0(
+            Ptr::<i8>::from_string_literal(b"(\0)(b)(c)(d)"),
+            12_usize,
+            4_u32,
+        )
+    });
+    ({
+        test_0(
+            Ptr::<i8>::from_string_literal(b"(\0)(b)(c)(d)"),
+            9_usize,
+            3_u32,
+        )
+    });
+    ({
+        test_0(
+            Ptr::<i8>::from_string_literal(b"(\0)(b)(c)(d)"),
+            3_usize,
+            1_u32,
+        )
+    });
+    ({
+        test_0(
+            Ptr::<i8>::from_string_literal(b"(\0)(b)(c)(d)"),
+            0_usize,
+            0_u32,
+        )
+    });
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

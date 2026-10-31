@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -31,7 +31,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let February: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
@@ -40,15 +40,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "(Feb2018/last).year()  == year{{2018}}");;
         const _: () = assert!(true, "(Feb2018/last).month() == February");;
-        let mut i: () = 1000_();
-        'loop_: while (i < 1010_()) {
-            let mut j: () = 1_();
-            'loop_: while (j <= 12_()) {
+        let mut i: i32 = 1000;
+        'loop_: while (i < 1010) {
+            let mut j: u32 = 1_u32;
+            'loop_: while (j <= 12_u32) {
                 let y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ymdl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
+                assert!(unimplemented!());
+                assert!(unimplemented!());
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -75,19 +75,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             true,
             "(month_day_last{{February}}/year{{2018}}).year()  == year{{2018}}"
         );;
-        let mut i: () = 1000_();
-        'loop_: while (i < 1010_()) {
-            let mut j: () = 1_();
-            'loop_: while (j <= 12_()) {
+        let mut i: i32 = 1000;
+        'loop_: while (i < 1010) {
+            let mut j: u32 = 1_u32;
+            'loop_: while (j <= 12_u32) {
                 let y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ymdl1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ymdl2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!(unimplemented!());
+                assert!(unimplemented!());
+                assert!(unimplemented!());
+                assert!(unimplemented!());
+                assert!(unimplemented!());
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -114,19 +114,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             true,
             "(month_day_last{{February}}/2018).year()  == year{{2018}}"
         );;
-        let mut i: () = 1000_();
-        'loop_: while (i < 1010_()) {
-            let mut j: () = 1_();
-            'loop_: while (j <= 12_()) {
+        let mut i: i32 = 1000;
+        'loop_: while (i < 1010) {
+            let mut j: u32 = 1_u32;
+            'loop_: while (j <= 12_u32) {
                 let y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ymdl1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ymdl2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!(unimplemented!());
+                assert!(unimplemented!());
+                assert!(unimplemented!());
+                assert!(unimplemented!());
+                assert!(unimplemented!());
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -134,10 +134,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let ymdl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(!(unimplemented!()));
+        let d: Value<u32> = Rc::new(RefCell::new(unimplemented!()));
         &(*d.borrow_mut());
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

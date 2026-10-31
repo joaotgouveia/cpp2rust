@@ -22,23 +22,23 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut a1: [(); 3] = [1_(), 2_(), 3_()];
-    let mut a2: [(); 3] = [4_(), 5_(), 6_()];
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut a1: [usize; 3] = [1_usize, 2_usize, 3_usize];
+    let mut a2: [usize; 3] = [4_usize, 5_usize, 6_usize];
     let mut size: () = unimplemented!();
     let mut stride: () = unimplemented!();
     let mut gs: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (7_usize)));
     let mut r: () = unimplemented!();
+    assert!(((unimplemented!()) == (3_usize)));
+    assert!(((*unimplemented!()) == (1_u64)));
+    assert!(((*unimplemented!()) == (2_u64)));
+    assert!(((*unimplemented!()) == (3_u64)));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((unimplemented!()) == (3_usize)));
+    assert!(((*unimplemented!()) == (4_u64)));
+    assert!(((*unimplemented!()) == (5_u64)));
+    assert!(((*unimplemented!()) == (6_u64)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

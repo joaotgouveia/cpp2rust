@@ -10,14 +10,18 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub unsafe fn eq(mut c1: (), mut c2: ()) -> () {
-        return ((c1) == (c2));
+    pub unsafe fn eq(mut c1: libc::c_char, mut c2: libc::c_char) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
-    pub unsafe fn find(mut s: *const (), mut n: (), a: *const ()) -> *const () {
+    pub unsafe fn find(
+        mut s: *const libc::c_char,
+        mut n: usize,
+        a: *const libc::c_char,
+    ) -> *const libc::c_char {
         'loop_: while (n != 0) {
             if (unsafe {
-                let _c1: () = (*s);
-                let _c2: () = (*a);
+                let _c1: libc::c_char = (*s);
+                let _c2: libc::c_char = (*a);
                 constexpr_char_traits_char_::eq(_c1, _c2)
             }) {
                 return s;
@@ -30,41 +34,17 @@ impl constexpr_char_traits_char_ {
 }
 pub unsafe fn test_0(s: *const (), mut str: *const (), mut pos: (), mut n: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (x)));
     if ((x) != (unimplemented!())) {
-        unimplemented!();
+        assert!(((x) <= (pos)) && ((x) < (unimplemented!())));
     }
 }
 pub unsafe fn test0_1() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 0_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"irkhs".as_ptr(), 0_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kante".as_ptr(), 0_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"oknlr".as_ptr(), 0_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pcdro".as_ptr(), 0_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"bnrpe".as_ptr(), 0_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"jtdaefblso".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -74,7 +54,17 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"oselktgbca".as_ptr(),
+            (c"irkhs".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kante".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -84,7 +74,27 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"eqgaplhckj".as_ptr(),
+            (c"oknlr".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pcdro".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bnrpe".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             5_(),
             unimplemented!(),
@@ -94,7 +104,37 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"bjahtcmnlp".as_ptr(),
+            (c"jtdaefblso".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"oselktgbca".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"eqgaplhckj".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bjahtcmnlp".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             9_(),
             unimplemented!(),
@@ -104,7 +144,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"hjlcmgpket".as_ptr(),
+            (c"hjlcmgpket".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             10_(),
             unimplemented!(),
@@ -114,7 +154,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"htaobedqikfplcgjsmrn".as_ptr(),
+            (c"htaobedqikfplcgjsmrn".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -124,7 +164,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"hpqiarojkcdlsgnmfetb".as_ptr(),
+            (c"hpqiarojkcdlsgnmfetb".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -134,7 +174,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"dfkaprhjloqetcsimnbg".as_ptr(),
+            (c"dfkaprhjloqetcsimnbg".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             10_(),
             unimplemented!(),
@@ -144,7 +184,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"ihqrfebgadntlpmjksoc".as_ptr(),
+            (c"ihqrfebgadntlpmjksoc".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             19_(),
             unimplemented!(),
@@ -154,7 +194,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"ngtjfcalbseiqrphmkdo".as_ptr(),
+            (c"ngtjfcalbseiqrphmkdo".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             20_(),
             unimplemented!(),
@@ -162,33 +202,9 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 1_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lbtqd".as_ptr(), 1_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"tboim".as_ptr(), 1_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"slcer".as_ptr(), 1_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"cbjfs".as_ptr(), 1_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"aqibs".as_ptr(), 1_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"gtfblmqinc".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -198,7 +214,17 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"mkqpbtdalg".as_ptr(),
+            (c"lbtqd".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tboim".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -208,7 +234,27 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"kphatlimcd".as_ptr(),
+            (c"slcer".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"cbjfs".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"aqibs".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             5_(),
             unimplemented!(),
@@ -218,7 +264,37 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"pblasqogic".as_ptr(),
+            (c"gtfblmqinc".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"mkqpbtdalg".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kphatlimcd".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pblasqogic".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             9_(),
             unimplemented!(),
@@ -228,7 +304,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"arosdhcfme".as_ptr(),
+            (c"arosdhcfme".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -238,7 +314,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"blkhjeogicatqfnpdmsr".as_ptr(),
+            (c"blkhjeogicatqfnpdmsr".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -248,7 +324,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"bmhineprjcoadgstflqk".as_ptr(),
+            (c"bmhineprjcoadgstflqk".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -258,7 +334,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"djkqcmetslnghpbarfoi".as_ptr(),
+            (c"djkqcmetslnghpbarfoi".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -268,7 +344,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"lgokshjtpbemarcdqnfi".as_ptr(),
+            (c"lgokshjtpbemarcdqnfi".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             19_(),
             unimplemented!(),
@@ -278,7 +354,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"bqjhtkfepimcnsgrlado".as_ptr(),
+            (c"bqjhtkfepimcnsgrlado".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             20_(),
             unimplemented!(),
@@ -286,45 +362,99 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"gfsrt".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pfsoc".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"tpflm".as_ptr(), 0_(), 2_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"sgkec".as_ptr(), 0_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"romds".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qhjistlgmr".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pedfirsglo".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"aqcoslgrmk".as_ptr(), 0_(), 5_(), 0_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"dabckmepqj".as_ptr(),
+            (c"gfsrt".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pfsoc".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tpflm".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            2_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"sgkec".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"romds".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qhjistlgmr".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pedfirsglo".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"aqcoslgrmk".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"dabckmepqj".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             9_(),
             unimplemented!(),
@@ -332,25 +462,49 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pqscrjthli".as_ptr(), 0_(), 10_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kfphdcsjqmobliagtren".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rokpefncljibsdhqtagm".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"afionmkphlebtcjqsgrd".as_ptr(), 0_(), 10_(), 0_())
+        test_0(
+            &mut _s,
+            (c"pqscrjthli".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"aenmqplidhkofrjbctsg".as_ptr(),
+            (c"kfphdcsjqmobliagtren".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"rokpefncljibsdhqtagm".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"afionmkphlebtcjqsgrd".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"aenmqplidhkofrjbctsg".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             19_(),
             unimplemented!(),
@@ -360,7 +514,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"osjmbtcadhiklegrpqnf".as_ptr(),
+            (c"osjmbtcadhiklegrpqnf".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             20_(),
             unimplemented!(),
@@ -368,61 +522,139 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"osmia".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ckonl".as_ptr(), 1_(), 1_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ilcaj".as_ptr(), 1_(), 2_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lasiq".as_ptr(), 1_(), 4_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kfqmr".as_ptr(), 1_(), 5_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"klnitfaobg".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"gjhmdlqikp".as_ptr(), 1_(), 1_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"skbgtahqej".as_ptr(), 1_(), 5_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"bjsdgtlpkf".as_ptr(), 1_(), 9_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"bjgfmnlkio".as_ptr(), 1_(), 10_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lbhepotfsjdqigcnamkr".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"tebangckmpsrqdlfojhi".as_ptr(), 1_(), 1_(), 1_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"joflqbdkhtegimscpanr".as_ptr(),
+            (c"osmia".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ckonl".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ilcaj".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            2_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lasiq".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            4_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kfqmr".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"klnitfaobg".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"gjhmdlqikp".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"skbgtahqej".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bjsdgtlpkf".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            9_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bjgfmnlkio".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lbhepotfsjdqigcnamkr".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tebangckmpsrqdlfojhi".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"joflqbdkhtegimscpanr".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -432,7 +664,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"adpmcohetfbsrjinlqkg".as_ptr(),
+            (c"adpmcohetfbsrjinlqkg".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             19_(),
             unimplemented!(),
@@ -442,7 +674,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"iacldqjpfnogbsrhmetk".as_ptr(),
+            (c"iacldqjpfnogbsrhmetk".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             20_(),
             unimplemented!(),
@@ -450,65 +682,149 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 2_(), 0_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"otkgb".as_ptr(), 2_(), 0_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"cqsjl".as_ptr(), 2_(), 1_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dpifl".as_ptr(), 2_(), 2_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"oapht".as_ptr(), 2_(), 4_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"cifts".as_ptr(), 2_(), 5_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"nmsckbgalo".as_ptr(), 2_(), 0_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"tpksqhamle".as_ptr(), 2_(), 1_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"tpdrchmkji".as_ptr(), 2_(), 5_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ijagfkblst".as_ptr(), 2_(), 9_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kpocsignjb".as_ptr(), 2_(), 10_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pecqtkjsnbdrialgmohf".as_ptr(), 2_(), 0_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"aiortphfcmkjebgsndql".as_ptr(), 2_(), 1_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"sdbkeamglhipojqftrcn".as_ptr(), 2_(), 10_(), 2_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            0_(),
+            2_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"ljqncehgmfktroapidbs".as_ptr(),
+            (c"otkgb".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            0_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"cqsjl".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            1_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"dpifl".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            2_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"oapht".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            4_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"cifts".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            5_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"nmsckbgalo".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            0_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tpksqhamle".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            1_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tpdrchmkji".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            5_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ijagfkblst".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            9_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kpocsignjb".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            10_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pecqtkjsnbdrialgmohf".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            0_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"aiortphfcmkjebgsndql".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            1_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"sdbkeamglhipojqftrcn".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            10_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ljqncehgmfktroapidbs".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             19_(),
             unimplemented!(),
@@ -518,7 +834,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"rtcfodilamkbenjghqps".as_ptr(),
+            (c"rtcfodilamkbenjghqps".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             20_(),
             unimplemented!(),
@@ -526,69 +842,159 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 4_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"mabns".as_ptr(), 4_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"bdnrp".as_ptr(), 4_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"scidp".as_ptr(), 4_(), 2_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"agbjl".as_ptr(), 4_(), 4_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jfmpr".as_ptr(), 4_(), 5_(), 3_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rbpefghsmj".as_ptr(), 4_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"apsfntdoqc".as_ptr(), 4_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ndkjeisgcl".as_ptr(), 4_(), 5_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rnfpqatdeo".as_ptr(), 4_(), 9_(), 3_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"bntjlqrfik".as_ptr(), 4_(), 10_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kcrtmpolnaqejghsfdbi".as_ptr(), 4_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lobheanpkmqidsrtcfgj".as_ptr(), 4_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"athdkljcnreqbgpmisof".as_ptr(), 4_(), 10_(), 3_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qkdmjialrscpbhefgont".as_ptr(), 4_(), 19_(), 2_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            0_(),
+            4_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"dmasojntqleribkgfchp".as_ptr(),
+            (c"mabns".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bdnrp".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"scidp".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            2_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"agbjl".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            4_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jfmpr".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            5_(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"rbpefghsmj".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"apsfntdoqc".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ndkjeisgcl".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            5_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"rnfpqatdeo".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            9_(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bntjlqrfik".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            10_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kcrtmpolnaqejghsfdbi".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lobheanpkmqidsrtcfgj".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"athdkljcnreqbgpmisof".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            10_(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qkdmjialrscpbhefgont".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            19_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"dmasojntqleribkgfchp".as_ptr() as *const libc::c_char).cast::<()>(),
             4_(),
             20_(),
             unimplemented!(),
@@ -596,71 +1002,161 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 5_(), 0_(), 4_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            4_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"psthd".as_ptr(), 5_(), 0_(), 4_())
+        test_0(
+            &mut _s,
+            (c"psthd".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            4_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rpmjd".as_ptr(), 5_(), 1_(), 4_())
+        test_0(
+            &mut _s,
+            (c"rpmjd".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            4_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dfsmk".as_ptr(), 5_(), 2_(), 4_())
+        test_0(
+            &mut _s,
+            (c"dfsmk".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            2_(),
+            4_(),
+        )
     });
 }
 pub unsafe fn test1_2() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"skqne".as_ptr(), 5_(), 4_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kipnf".as_ptr(), 5_(), 5_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"hmrnqdgifl".as_ptr(), 5_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"fsmjcdairn".as_ptr(), 5_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pcdgltbrfj".as_ptr(), 5_(), 5_(), 3_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"aekfctpirg".as_ptr(), 5_(), 9_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ledihrsgpf".as_ptr(), 5_(), 10_(), 3_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"mqcklahsbtirgopefndj".as_ptr(), 5_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kmlthaoqgecrnpdbjfis".as_ptr(), 5_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"sfhbamcdptojlkrenqgi".as_ptr(), 5_(), 10_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pbniofmcedrkhlstgaqj".as_ptr(), 5_(), 19_(), 2_())
+        test_0(
+            &mut _s,
+            (c"skqne".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            4_(),
+            4_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"mongjratcskbhqiepfdl".as_ptr(),
+            (c"kipnf".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            5_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"hmrnqdgifl".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"fsmjcdairn".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pcdgltbrfj".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            5_(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"aekfctpirg".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            9_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ledihrsgpf".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            10_(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"mqcklahsbtirgopefndj".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kmlthaoqgecrnpdbjfis".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"sfhbamcdptojlkrenqgi".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            10_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pbniofmcedrkhlstgaqj".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            19_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"mongjratcskbhqiepfdl".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             20_(),
             unimplemented!(),
@@ -668,65 +1164,149 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 6_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"hrnat".as_ptr(), 6_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"gsqdt".as_ptr(), 6_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"bspkd".as_ptr(), 6_(), 2_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ohcmb".as_ptr(), 6_(), 4_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"heatr".as_ptr(), 6_(), 5_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pmblckedfn".as_ptr(), 6_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"aceqmsrbik".as_ptr(), 6_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lmbtdehjrn".as_ptr(), 6_(), 5_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"teqmcrlgib".as_ptr(), 6_(), 9_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"njolbmspac".as_ptr(), 6_(), 10_(), 3_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pofnhidklamecrbqjgst".as_ptr(), 6_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jbhckmtgrqnosafedpli".as_ptr(), 6_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dobntpmqklicsahgjerf".as_ptr(), 6_(), 10_(), 1_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            0_(),
+            4_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"tpdshainjkbfoemlrgcq".as_ptr(),
+            (c"hrnat".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"gsqdt".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bspkd".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            2_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ohcmb".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            4_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"heatr".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            5_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pmblckedfn".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"aceqmsrbik".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lmbtdehjrn".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            5_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"teqmcrlgib".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            9_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"njolbmspac".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            10_(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pofnhidklamecrbqjgst".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jbhckmtgrqnosafedpli".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"dobntpmqklicsahgjerf".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            10_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tpdshainjkbfoemlrgcq".as_ptr() as *const libc::c_char).cast::<()>(),
             6_(),
             19_(),
             unimplemented!(),
@@ -736,7 +1316,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"oldpfgeakrnitscbjmqh".as_ptr(),
+            (c"oldpfgeakrnitscbjmqh".as_ptr() as *const libc::c_char).cast::<()>(),
             6_(),
             20_(),
             unimplemented!(),
@@ -744,41 +1324,89 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rqegt".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dashm".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jqirk".as_ptr(), 0_(), 2_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rckeg".as_ptr(), 0_(), 4_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jscie".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"efsphndliq".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"gdicosleja".as_ptr(), 0_(), 1_(), 0_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"qcpjibosfl".as_ptr(),
+            (c"rqegt".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"dashm".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jqirk".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            2_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"rckeg".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            4_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jscie".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"efsphndliq".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"gdicosleja".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qcpjibosfl".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             5_(),
             unimplemented!(),
@@ -788,7 +1416,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"lrhmefnjcq".as_ptr(),
+            (c"lrhmefnjcq".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             9_(),
             unimplemented!(),
@@ -796,25 +1424,49 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dtablcrseo".as_ptr(), 0_(), 10_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"apckjsftedbhgomrnilq".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pcbrgflehjtiadnsokqm".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"nsiadegjklhobrmtqcpf".as_ptr(), 0_(), 10_(), 0_())
+        test_0(
+            &mut _s,
+            (c"dtablcrseo".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"cpmajdqnolikhgsbretf".as_ptr(),
+            (c"apckjsftedbhgomrnilq".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pcbrgflehjtiadnsokqm".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"nsiadegjklhobrmtqcpf".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"cpmajdqnolikhgsbretf".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             19_(),
             unimplemented!(),
@@ -824,7 +1476,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"jcflkntmgiqrphdosaeb".as_ptr(),
+            (c"jcflkntmgiqrphdosaeb".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             20_(),
             unimplemented!(),
@@ -832,49 +1484,109 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ontrs".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pfkna".as_ptr(), 1_(), 1_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ekosa".as_ptr(), 1_(), 2_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"anqhk".as_ptr(), 1_(), 4_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jekca".as_ptr(), 1_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ikemsjgacf".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"arolgsjkhm".as_ptr(), 1_(), 1_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"oftkbldhre".as_ptr(), 1_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"gbkqdoeftl".as_ptr(), 1_(), 9_(), 1_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"sqcflrgtim".as_ptr(),
+            (c"ontrs".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pfkna".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ekosa".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            2_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"anqhk".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            4_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jekca".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ikemsjgacf".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"arolgsjkhm".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"oftkbldhre".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"gbkqdoeftl".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            9_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"sqcflrgtim".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -882,17 +1594,29 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"fmhbkislrjdpanogqcet".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rnioadktqlgpbcjsmhef".as_ptr(), 1_(), 1_(), 1_())
+        test_0(
+            &mut _s,
+            (c"fmhbkislrjdpanogqcet".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"oakgtnldpsefihqmjcbr".as_ptr(),
+            (c"rnioadktqlgpbcjsmhef".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"oakgtnldpsefihqmjcbr".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -902,7 +1626,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"gbnaelosidmcjqktfhpr".as_ptr(),
+            (c"gbnaelosidmcjqktfhpr".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             19_(),
             unimplemented!(),
@@ -912,7 +1636,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"akbripjhlosndcmqgfet".as_ptr(),
+            (c"akbripjhlosndcmqgfet".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             20_(),
             unimplemented!(),
@@ -920,65 +1644,149 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 5_(), 0_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pijag".as_ptr(), 5_(), 0_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jrckd".as_ptr(), 5_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qcloh".as_ptr(), 5_(), 2_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"thlmp".as_ptr(), 5_(), 4_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qidmo".as_ptr(), 5_(), 5_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lnegpsjqrd".as_ptr(), 5_(), 0_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rjqdablmfs".as_ptr(), 5_(), 1_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"enkgpbsjaq".as_ptr(), 5_(), 5_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kdsgoaijfh".as_ptr(), 5_(), 9_(), 3_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"trfqgmckbe".as_ptr(), 5_(), 10_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"igetsracjfkdnpoblhqm".as_ptr(), 5_(), 0_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"nqctfaogirshlekbdjpm".as_ptr(), 5_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"csehfgomljdqinbartkp".as_ptr(), 5_(), 10_(), 1_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"qahoegcmplkfsjbdnitr".as_ptr(),
+            (c"pijag".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jrckd".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qcloh".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            2_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"thlmp".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            4_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qidmo".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            5_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lnegpsjqrd".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"rjqdablmfs".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"enkgpbsjaq".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            5_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kdsgoaijfh".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            9_(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"trfqgmckbe".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            10_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"igetsracjfkdnpoblhqm".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"nqctfaogirshlekbdjpm".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"csehfgomljdqinbartkp".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            10_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qahoegcmplkfsjbdnitr".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             19_(),
             unimplemented!(),
@@ -988,7 +1796,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"dpteiajrqmsognhlfbkc".as_ptr(),
+            (c"dpteiajrqmsognhlfbkc".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             20_(),
             unimplemented!(),
@@ -996,69 +1804,159 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 9_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"tqbnh".as_ptr(), 9_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"akmle".as_ptr(), 9_(), 1_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"iqfkm".as_ptr(), 9_(), 2_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"tqjsr".as_ptr(), 9_(), 4_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jplqg".as_ptr(), 9_(), 5_(), 8_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"oilnrbcgtj".as_ptr(), 9_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"morkglpesn".as_ptr(), 9_(), 1_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dmicerngat".as_ptr(), 9_(), 5_(), 8_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"radgeskbtc".as_ptr(), 9_(), 9_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ljikprsmqo".as_ptr(), 9_(), 10_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"trqihkcgsjamfdbolnpe".as_ptr(), 9_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lqmthbsrekajgnofcipd".as_ptr(), 9_(), 1_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jtalmedribkgqsopcnfh".as_ptr(), 9_(), 10_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"spqfoiclmtagejbndkrh".as_ptr(), 9_(), 19_(), 3_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            0_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"nmotklspigjrdhcfaebq".as_ptr(),
+            (c"tqbnh".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"akmle".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            1_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"iqfkm".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            2_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tqjsr".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            4_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jplqg".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            5_(),
+            8_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"oilnrbcgtj".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"morkglpesn".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            1_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"dmicerngat".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            5_(),
+            8_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"radgeskbtc".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            9_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ljikprsmqo".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            10_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"trqihkcgsjamfdbolnpe".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lqmthbsrekajgnofcipd".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            1_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jtalmedribkgqsopcnfh".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            10_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"spqfoiclmtagejbndkrh".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            19_(),
+            3_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"nmotklspigjrdhcfaebq".as_ptr() as *const libc::c_char).cast::<()>(),
             9_(),
             20_(),
             unimplemented!(),
@@ -1066,63 +1964,141 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 10_(), 0_(), 9_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"hpmsd".as_ptr(), 10_(), 0_(), 9_())
+        test_0(
+            &mut _s,
+            (c"hpmsd".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qnpor".as_ptr(), 10_(), 1_(), 9_())
+        test_0(
+            &mut _s,
+            (c"qnpor".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            1_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"otdma".as_ptr(), 10_(), 2_(), 9_())
+        test_0(
+            &mut _s,
+            (c"otdma".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            2_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"efhjg".as_ptr(), 10_(), 4_(), 9_())
+        test_0(
+            &mut _s,
+            (c"efhjg".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            4_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"odpte".as_ptr(), 10_(), 5_(), 9_())
+        test_0(
+            &mut _s,
+            (c"odpte".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            5_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"bctdgfmolr".as_ptr(), 10_(), 0_(), 9_())
+        test_0(
+            &mut _s,
+            (c"bctdgfmolr".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"oaklidrbqg".as_ptr(), 10_(), 1_(), 9_())
+        test_0(
+            &mut _s,
+            (c"oaklidrbqg".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            1_(),
+            9_(),
+        )
     });
 }
 pub unsafe fn test2_3() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dnjfsagktr".as_ptr(), 10_(), 5_(), 8_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"nejaktmiqg".as_ptr(), 10_(), 9_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pjqonlebsf".as_ptr(), 10_(), 10_(), 8_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dshmnbtolcjepgaikfqr".as_ptr(), 10_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"iogfhpabtjkqlrnemcds".as_ptr(), 10_(), 1_(), 9_())
+        test_0(
+            &mut _s,
+            (c"dnjfsagktr".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            5_(),
+            8_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"ngridfabjsecpqltkmoh".as_ptr(),
+            (c"nejaktmiqg".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            9_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pjqonlebsf".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            10_(),
+            8_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"dshmnbtolcjepgaikfqr".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"iogfhpabtjkqlrnemcds".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            1_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ngridfabjsecpqltkmoh".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             10_(),
             7_(),
@@ -1132,7 +2108,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"athmknplcgofrqejsdib".as_ptr(),
+            (c"athmknplcgofrqejsdib".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             19_(),
             5_(),
@@ -1142,7 +2118,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"ldobhmqcafnjtkeisgrp".as_ptr(),
+            (c"ldobhmqcafnjtkeisgrp".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             20_(),
             unimplemented!(),
@@ -1150,61 +2126,109 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 11_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"aocjb".as_ptr(), 11_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jbrnk".as_ptr(), 11_(), 1_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"tqedg".as_ptr(), 11_(), 2_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"nqskp".as_ptr(), 11_(), 4_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"eaqkl".as_ptr(), 11_(), 5_(), 7_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"reaoicljqm".as_ptr(), 11_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lsftgajqpm".as_ptr(), 11_(), 1_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rlpfogmits".as_ptr(), 11_(), 5_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"shkncmiaqj".as_ptr(), 11_(), 9_(), 7_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"fpnatrhqgs".as_ptr(), 11_(), 10_(), 8_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"sjclemqhnpdbgikarfot".as_ptr(), 11_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"otcmedjikgsfnqbrhpla".as_ptr(), 11_(), 1_(), 9_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            0_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"bonsaefdqiprkhlgtjcm".as_ptr(),
+            (c"aocjb".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jbrnk".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            1_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tqedg".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            2_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"nqskp".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            4_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"eaqkl".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            5_(),
+            7_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"reaoicljqm".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lsftgajqpm".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            1_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"rlpfogmits".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            5_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"shkncmiaqj".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            9_(),
+            7_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"fpnatrhqgs".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             10_(),
             8_(),
@@ -1214,7 +2238,37 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"egpscmahijlfnkrodqtb".as_ptr(),
+            (c"sjclemqhnpdbgikarfot".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"otcmedjikgsfnqbrhpla".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            1_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bonsaefdqiprkhlgtjcm".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            10_(),
+            8_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"egpscmahijlfnkrodqtb".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             19_(),
             unimplemented!(),
@@ -1224,7 +2278,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"kmqbfepjthgilscrndoa".as_ptr(),
+            (c"kmqbfepjthgilscrndoa".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             20_(),
             unimplemented!(),
@@ -1232,65 +2286,149 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"prboq".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"fjcqh".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"fmosa".as_ptr(), 0_(), 2_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qdbok".as_ptr(), 0_(), 4_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"amslg".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"smpltjneqb".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"flitskrnge".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"pgqihmlbef".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"cfpdqjtgsb".as_ptr(), 0_(), 9_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"htpsiaflom".as_ptr(), 0_(), 10_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kpjfiaceghsrdtlbnomq".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qhtbomidljgafneksprc".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"nhtjobkcefldimpsaqgr".as_ptr(), 0_(), 10_(), 0_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"prabcjfqnoeskilmtgdh".as_ptr(),
+            (c"prboq".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"fjcqh".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"fmosa".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            2_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qdbok".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            4_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"amslg".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"smpltjneqb".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"flitskrnge".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"pgqihmlbef".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"cfpdqjtgsb".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            9_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"htpsiaflom".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kpjfiaceghsrdtlbnomq".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qhtbomidljgafneksprc".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"nhtjobkcefldimpsaqgr".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"prabcjfqnoeskilmtgdh".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             19_(),
             unimplemented!(),
@@ -1300,7 +2438,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"dtrgmchilkasqoebfpjn".as_ptr(),
+            (c"dtrgmchilkasqoebfpjn".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             20_(),
             unimplemented!(),
@@ -1308,65 +2446,149 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"sqome".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"smfte".as_ptr(), 1_(), 1_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ciboh".as_ptr(), 1_(), 2_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"haois".as_ptr(), 1_(), 4_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abfki".as_ptr(), 1_(), 5_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"frdkocntmq".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"oasbpedlnr".as_ptr(), 1_(), 1_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kltqmhgand".as_ptr(), 1_(), 5_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"gdtfjchpmr".as_ptr(), 1_(), 9_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ponmcqblet".as_ptr(), 1_(), 10_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"sgphqdnofeiklatbcmjr".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ljqprsmigtfoneadckbh".as_ptr(), 1_(), 1_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ligeojhafnkmrcsqtbdp".as_ptr(), 1_(), 10_(), 0_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"lsimqfnjarbopedkhcgt".as_ptr(),
+            (c"sqome".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"smfte".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ciboh".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            2_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"haois".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            4_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abfki".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"frdkocntmq".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"oasbpedlnr".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kltqmhgand".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"gdtfjchpmr".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            9_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ponmcqblet".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"sgphqdnofeiklatbcmjr".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ljqprsmigtfoneadckbh".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ligeojhafnkmrcsqtbdp".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lsimqfnjarbopedkhcgt".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             19_(),
             unimplemented!(),
@@ -1376,7 +2598,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abedmfjlghniorcqptks".as_ptr(),
+            (c"abedmfjlghniorcqptks".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             20_(),
             unimplemented!(),
@@ -1384,53 +2606,9 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 10_(), 0_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"hqtoa".as_ptr(), 10_(), 0_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"cahif".as_ptr(), 10_(), 1_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kehis".as_ptr(), 10_(), 2_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kdlmh".as_ptr(), 10_(), 4_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"paeql".as_ptr(), 10_(), 5_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"aghoqiefnb".as_ptr(), 10_(), 0_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jrbqaikpdo".as_ptr(), 10_(), 1_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"smjonaeqcl".as_ptr(), 10_(), 5_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"eqbdrkcfah".as_ptr(), 10_(), 9_(), 8_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"kapmsienhf".as_ptr(), 10_(), 10_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"jpqotrlenfcsbhkaimdg".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             0_(),
             10_(),
@@ -1440,7 +2618,17 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"jlbmhnfgtcqprikeados".as_ptr(),
+            (c"hqtoa".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"cahif".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             1_(),
             10_(),
@@ -1450,7 +2638,107 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"stgbhfmdaljnpqoicker".as_ptr(),
+            (c"kehis".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            2_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kdlmh".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            4_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"paeql".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            5_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"aghoqiefnb".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jrbqaikpdo".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            1_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"smjonaeqcl".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            5_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"eqbdrkcfah".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            9_(),
+            8_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"kapmsienhf".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            10_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jpqotrlenfcsbhkaimdg".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jlbmhnfgtcqprikeados".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            1_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"stgbhfmdaljnpqoicker".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             10_(),
             8_(),
@@ -1460,7 +2748,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"oihcetflbjagdsrkmqpn".as_ptr(),
+            (c"oihcetflbjagdsrkmqpn".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             19_(),
             unimplemented!(),
@@ -1470,7 +2758,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"adtclebmnpjsrqfkigoh".as_ptr(),
+            (c"adtclebmnpjsrqfkigoh".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             20_(),
             unimplemented!(),
@@ -1478,53 +2766,9 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 19_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"beafg".as_ptr(), 19_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"iclat".as_ptr(), 19_(), 1_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rkhnf".as_ptr(), 19_(), 2_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"clshq".as_ptr(), 19_(), 4_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"dtcoj".as_ptr(), 19_(), 5_(), 17_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"rqosnjmfth".as_ptr(), 19_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"siatdfqglh".as_ptr(), 19_(), 1_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"mrlshtpgjq".as_ptr(), 19_(), 5_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"adlcskgqjt".as_ptr(), 19_(), 9_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"drshcjknaf".as_ptr(), 19_(), 10_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"etsaqroinghpkjdlfcbm".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             0_(),
             19_(),
@@ -1534,7 +2778,17 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"sgepdnkqliambtrocfhj".as_ptr(),
+            (c"beafg".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"iclat".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             1_(),
             19_(),
@@ -1544,7 +2798,107 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"nlmcjaqgbsortfdihkpe".as_ptr(),
+            (c"rkhnf".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            2_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"clshq".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            4_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"dtcoj".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            5_(),
+            17_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"rqosnjmfth".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"siatdfqglh".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            1_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"mrlshtpgjq".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            5_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"adlcskgqjt".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            9_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"drshcjknaf".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            10_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"etsaqroinghpkjdlfcbm".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"sgepdnkqliambtrocfhj".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            1_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"nlmcjaqgbsortfdihkpe".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             10_(),
             18_(),
@@ -1554,7 +2908,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"racfnpmosldibqkghjet".as_ptr(),
+            (c"racfnpmosldibqkghjet".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             19_(),
             7_(),
@@ -1564,7 +2918,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"fjhdsctkqeiolagrnmbp".as_ptr(),
+            (c"fjhdsctkqeiolagrnmbp".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             20_(),
             unimplemented!(),
@@ -1572,53 +2926,119 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 20_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"ejanp".as_ptr(), 20_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"odife".as_ptr(), 20_(), 1_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"okaqd".as_ptr(), 20_(), 2_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"lcdbi".as_ptr(), 20_(), 4_(), 18_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"fsqbj".as_ptr(), 20_(), 5_(), 18_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"bigdomnplq".as_ptr(), 20_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"apiblotgcd".as_ptr(), 20_(), 1_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"acfhdenops".as_ptr(), 20_(), 5_(), 18_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"jopdeamcrk".as_ptr(), 20_(), 9_(), 18_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"trqncbkgmh".as_ptr(), 20_(), 10_(), 17_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            0_(),
+            19_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"tomglrkencbsfjqpihda".as_ptr(),
+            (c"ejanp".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"odife".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            1_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"okaqd".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            2_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"lcdbi".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            4_(),
+            18_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"fsqbj".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            5_(),
+            18_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"bigdomnplq".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"apiblotgcd".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            1_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"acfhdenops".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            5_(),
+            18_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jopdeamcrk".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            9_(),
+            18_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"trqncbkgmh".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            10_(),
+            17_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"tomglrkencbsfjqpihda".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             0_(),
             19_(),
@@ -1630,7 +3050,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"gbkhdnpoietfcmrslajq".as_ptr(),
+            (c"gbkhdnpoietfcmrslajq".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             1_(),
             19_(),
@@ -1640,7 +3060,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"rtfnmbsglkjaichoqedp".as_ptr(),
+            (c"rtfnmbsglkjaichoqedp".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             10_(),
             19_(),
@@ -1650,7 +3070,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"ohkmdpfqbsacrtjnlgei".as_ptr(),
+            (c"ohkmdpfqbsacrtjnlgei".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             19_(),
             1_(),
@@ -1660,7 +3080,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"dlbrteoisgphmkncajfq".as_ptr(),
+            (c"dlbrteoisgphmkncajfq".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             20_(),
             unimplemented!(),
@@ -1668,53 +3088,9 @@ pub unsafe fn test3_4() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 21_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"sjrlo".as_ptr(), 21_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qjpor".as_ptr(), 21_(), 1_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"odhfn".as_ptr(), 21_(), 2_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"qtfin".as_ptr(), 21_(), 4_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"hpqfo".as_ptr(), 21_(), 5_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"fabmertkos".as_ptr(), 21_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"brqtgkmaej".as_ptr(), 21_(), 1_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"nfrdeihsgl".as_ptr(), 21_(), 5_(), 18_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"hlfrosekpi".as_ptr(), 21_(), 9_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"atgbkrjdsm".as_ptr(), 21_(), 10_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"blnrptjgqmaifsdkhoec".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             0_(),
             19_(),
@@ -1724,7 +3100,17 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"ctpmdahebfqjgknloris".as_ptr(),
+            (c"sjrlo".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qjpor".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             1_(),
             19_(),
@@ -1734,7 +3120,77 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"apnkeqthrmlbfodiscgj".as_ptr(),
+            (c"odhfn".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            2_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"qtfin".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            4_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"hpqfo".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            5_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"fabmertkos".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"brqtgkmaej".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            1_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"nfrdeihsgl".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            5_(),
+            18_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"hlfrosekpi".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            9_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"atgbkrjdsm".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             10_(),
             19_(),
@@ -1744,7 +3200,37 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"jdgictpframeoqlsbknh".as_ptr(),
+            (c"blnrptjgqmaifsdkhoec".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"ctpmdahebfqjgknloris".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            1_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"apnkeqthrmlbfodiscgj".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            10_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"jdgictpframeoqlsbknh".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             19_(),
             7_(),
@@ -1754,7 +3240,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"qprlsfojamgndekthibc".as_ptr(),
+            (c"qprlsfojamgndekthibc".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             20_(),
             unimplemented!(),
@@ -1776,7 +3262,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         (unsafe { test0_1() });
         (unsafe { test1_2() });
@@ -1792,6 +3278,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "sv2.find_last_not_of(\"gfsrt\", 5, 0) == 4");;
         const _: () = assert!(true, "sv2.find_last_not_of(\"lecar\", 5, 0) == 4");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

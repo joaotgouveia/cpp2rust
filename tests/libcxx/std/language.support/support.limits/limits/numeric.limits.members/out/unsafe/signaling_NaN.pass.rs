@@ -7,130 +7,130 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_imp_0(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub unsafe fn test_imp_1(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub unsafe fn test_imp_2(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub unsafe fn test_imp_3(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub unsafe fn test_imp_4(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == ((0 as libc::c_char) as i32)));
+    assert!(((unimplemented!() as i32) == ((0 as libc::c_char) as i32)));
+    assert!(((unimplemented!() as i32) == ((0 as libc::c_char) as i32)));
+    assert!(((unimplemented!() as i32) == ((0 as libc::c_char) as i32)));
 }
 pub unsafe fn test_imp_5(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
 }
 pub unsafe fn test_imp_6(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
 }
 pub unsafe fn test_imp_7(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_i32)));
+    assert!(((unimplemented!() as i32) == (0_i32)));
+    assert!(((unimplemented!() as i32) == (0_i32)));
+    assert!(((unimplemented!() as i32) == (0_i32)));
 }
 pub unsafe fn test_imp_8(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
 }
 pub unsafe fn test_imp_9(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
 }
 pub unsafe fn test_imp_10(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as u32) == (0_u32)));
+    assert!(((unimplemented!() as u32) == (0_u32)));
+    assert!(((unimplemented!() as u32) == (0_u32)));
+    assert!(((unimplemented!() as u32) == (0_u32)));
 }
 pub unsafe fn test_imp_11(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_i16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i16 as i32)));
 }
 pub unsafe fn test_imp_12(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
 }
 pub unsafe fn test_imp_13(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i32)));
+    assert!(((unimplemented!()) == (0_i32)));
+    assert!(((unimplemented!()) == (0_i32)));
+    assert!(((unimplemented!()) == (0_i32)));
 }
 pub unsafe fn test_imp_14(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_u32)));
+    assert!(((unimplemented!()) == (0_u32)));
+    assert!(((unimplemented!()) == (0_u32)));
+    assert!(((unimplemented!()) == (0_u32)));
 }
 pub unsafe fn test_imp_15(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!(((unimplemented!()) == (0_i64)));
 }
 pub unsafe fn test_imp_16(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_u64)));
+    assert!(((unimplemented!()) == (0_u64)));
+    assert!(((unimplemented!()) == (0_u64)));
+    assert!(((unimplemented!()) == (0_u64)));
 }
 pub unsafe fn test_imp_17(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!(((unimplemented!()) == (0_i64)));
 }
 pub unsafe fn test_imp_18(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_u64)));
+    assert!(((unimplemented!()) == (0_u64)));
+    assert!(((unimplemented!()) == (0_u64)));
+    assert!(((unimplemented!()) == (0_u64)));
 }
 pub unsafe fn test_imp_19(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i128)));
+    assert!(((unimplemented!()) == (0_i128)));
+    assert!(((unimplemented!()) == (0_i128)));
+    assert!(((unimplemented!()) == (0_i128)));
 }
 pub unsafe fn test_imp_20(mut _a0: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_u128)));
+    assert!(((unimplemented!()) == (0_u128)));
+    assert!(((unimplemented!()) == (0_u128)));
+    assert!(((unimplemented!()) == (0_u128)));
 }
 pub unsafe fn test_21() {
     (unsafe { test_imp_3(unimplemented!()) });
@@ -210,7 +210,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_21() });
     (unsafe { test_22() });
     (unsafe { test_23() });
@@ -232,6 +232,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_39() });
     (unsafe { test_40() });
     (unsafe { test_41() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         const _: () = assert!(true, "(std::is_same<SM::iterator, char*>::value)");;
         const _: () = assert!(true, "(std::is_same<SM::value_type, char>::value)");;
@@ -44,8 +44,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             "(std::is_same<std::ssub_match, std::sub_match<std::string::const_iterator> >::value)"
         );;
         let mut sm: () = unimplemented!();
-        sm.first = std::ptr::null_mut();
-        sm.second = std::ptr::null_mut();
+        (sm as (*mut libc::c_char, *mut libc::c_char)).0 = std::ptr::null_mut();
+        (sm as (*mut libc::c_char, *mut libc::c_char)).1 = std::ptr::null_mut();
         sm.matched = false;
     }
     {
@@ -69,10 +69,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             "(std::is_same<std::wssub_match, std::sub_match<std::wstring::const_iterator> >::value)"
         );;
         let mut sm: () = unimplemented!();
-        sm.first = std::ptr::null_mut();
-        sm.second = std::ptr::null_mut();
+        (sm as (*mut i32, *mut i32)).0 = std::ptr::null_mut();
+        (sm as (*mut i32, *mut i32)).1 = std::ptr::null_mut();
         sm.matched = false;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -22,11 +22,11 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut c: () = 0_();
-    let mut s: () = 0_();
-    let mut t: () = 0_();
-    let mut tm: () = unimplemented!();
+    let mut s: usize = 0_usize;
+    let mut t: ::libc::time_t = (0 as ::libc::time_t);
+    let mut tm: ::libc::tm = unsafe { std::mem::zeroed() };
     (&(c));
     (&(s));
     (&(t));
@@ -63,14 +63,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "(std::is_same<decltype(std::localtime(&t)), std::tm*>::value)"
     );;
-    let mut c1: *mut () = std::ptr::null_mut();
-    let mut c2: *const () = std::ptr::null();
+    let mut c1: *mut libc::c_char = std::ptr::null_mut();
+    let mut c2: *const libc::c_char = std::ptr::null();
     (&(c1));
     (&(c2));
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::strftime(c1,s,c2,&tm)), std::size_t>::value)"
     );;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

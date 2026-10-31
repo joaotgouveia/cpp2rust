@@ -92,7 +92,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_is_same_0() });
     (unsafe { test_is_same_1() });
     (unsafe { test_is_same_2() });
@@ -105,6 +105,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_is_not_same_9() });
     let mut t: OverloadTest_char_ = <OverloadTest_char_>::default();
     &(t);
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

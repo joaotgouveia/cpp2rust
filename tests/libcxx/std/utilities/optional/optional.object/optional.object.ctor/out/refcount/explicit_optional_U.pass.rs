@@ -6,50 +6,50 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
-    let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
+pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+    let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
     const _: () = assert!(
         true,
         "!(std::is_convertible<optional<U>&&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: () = unimplemented!();
+    let mut rhs_engaged: bool = unimplemented!();
     if is_going_to_throw {
         return;
     }
     let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
 }
-pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
-    let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
+pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+    let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
     const _: () = assert!(
         true,
         "!(std::is_convertible<optional<U>&&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: () = unimplemented!();
+    let mut rhs_engaged: bool = unimplemented!();
     if is_going_to_throw {
         return;
     }
     let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
 }
-pub fn operator_eq_2(x: Ptr<X>, y: Ptr<X>) -> () {
+pub fn operator_eq_2(x: Ptr<X>, y: Ptr<X>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Destructor, Default)]
 #[byte_size(4)]
 pub struct X {
     #[offset(0)]
-    i_: (),
+    i_: i32,
 }
 impl X {
-    pub fn new(mut i: ()) -> Self {
+    pub fn new(mut i: i32) -> Self {
         Self { i_: i }
     }
     pub fn move_from(x: Ptr<X>) -> Self {
         let __this: X = Self {
             i_: x.with(|__s| __s.i_),
         };
-        field!(x, i_).write(0_());
+        field!(x, i_).write(0);
         __this
     }
 }
@@ -59,19 +59,19 @@ impl CppEq for X {
     }
 }
 thread_local!(
-    pub static count_3: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_3: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Z {}
 impl Z {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         let __this: Z = Self {};
-        unimplemented!();
+        std::process::abort();
         __this
     }
 }
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_0(rhs.as_pointer(), None) });
@@ -101,7 +101,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "test()");;
     ({ test_4() });
     {
@@ -112,14 +112,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_1(rhs.as_pointer(), Some(true)) });
     }
-    return 0_();
+    return 0;
 }
 pub trait XImpl {
     fn destructor(&self);
 }
 impl XImpl for Ptr<X> {
     fn destructor(&self) {
-        field!((*self), i_).write(0_());
+        field!((*self), i_).write(0);
     }
 }
 pub fn __cpp2rust_init_globals() {

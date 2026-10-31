@@ -6,18 +6,18 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     {
-        let mut f: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
+        let mut f: FnPtr<fn(i32) -> i32> = FnPtr::<fn(i32) -> i32>::new(|mut i: i32| -> i32 {
             unsafe {
-                return ((i) + (3_()));
+                return ((i) + (3));
             }
         });
-        unimplemented!();
+        assert!(((unimplemented!()) == (7)));
     }
     {
-        let mut f: FnPtr<fn(()) -> *mut ()> =
-            FnPtr::<fn(()) -> *mut ()>::new(|mut _a0: ()| -> *mut () {
+        let mut f: FnPtr<fn(i32) -> *mut libc::c_char> =
+            FnPtr::<fn(i32) -> *mut libc::c_char>::new(|mut _a0: i32| -> *mut libc::c_char {
                 unsafe {
                     return std::ptr::null_mut();
                 }
@@ -31,14 +31,14 @@ pub unsafe fn test_0() -> () {
         const _: () = assert!(!(false), "!can_invoke_r<void,  decltype(f), void*>");;
     }
     {
-        let mut f: FnPtr<fn(()) -> *mut ()> =
-            FnPtr::<fn(()) -> *mut ()>::new(|mut _a0: ()| -> *mut () {
+        let mut f: FnPtr<fn(i32) -> *mut libc::c_char> =
+            FnPtr::<fn(i32) -> *mut libc::c_char>::new(|mut _a0: i32| -> *mut libc::c_char {
                 unsafe {
                     return std::ptr::null_mut();
                 }
             });
-        let mut g: FnPtr<fn(()) -> *mut ()> =
-            FnPtr::<fn(()) -> *mut ()>::new(|mut _a0: ()| -> *mut () {
+        let mut g: FnPtr<fn(i32) -> *mut libc::c_char> =
+            FnPtr::<fn(i32) -> *mut libc::c_char>::new(|mut _a0: i32| -> *mut libc::c_char {
                 unsafe {
                     return std::ptr::null_mut();
                 }
@@ -59,36 +59,36 @@ pub unsafe fn test_0() -> () {
             Generic,
             {},
             || {
-                let mut was_called: () = false;
-                let mut f: FnPtr<fn(()) -> *mut ()> = lambda_unsafe!(
+                let mut was_called: bool = false;
+                let mut f: FnPtr<fn(i32) -> *mut libc::c_char> = lambda_unsafe!(
                     {
-                        let was_called: *mut () = &mut was_called;
+                        let was_called: *mut bool = &mut was_called;
                     },
-                    |mut _a0: ()| -> *mut () {
+                    |mut _a0: i32| -> *mut libc::c_char {
                         (*was_called) = true;
                         return std::ptr::null_mut();
                     }
                 );
                 unimplemented!();
-                unimplemented!();
+                assert!(was_called);
                 const _: () = assert!(
                     true,
                     "std::is_void_v<decltype(std::invoke_r<CV_Void>(f, 3))>"
                 );;
             },
             || {
-                let mut was_called: () = false;
-                let mut f: FnPtr<fn(()) -> *mut ()> = lambda_unsafe!(
+                let mut was_called: bool = false;
+                let mut f: FnPtr<fn(i32) -> *mut libc::c_char> = lambda_unsafe!(
                     {
-                        let was_called: *mut () = &mut was_called;
+                        let was_called: *mut bool = &mut was_called;
                     },
-                    |mut _a0: ()| -> *mut () {
+                    |mut _a0: i32| -> *mut libc::c_char {
                         (*was_called) = true;
                         return std::ptr::null_mut();
                     }
                 );
                 unimplemented!();
-                unimplemented!();
+                assert!(was_called);
                 const _: () = assert!(
                     true,
                     "std::is_void_v<decltype(std::invoke_r<CV_Void>(f, 3))>"
@@ -100,41 +100,41 @@ pub unsafe fn test_0() -> () {
     }
     {
         {
-            let mut was_called: () = false;
+            let mut was_called: bool = false;
             let mut f: FnPtr<fn(NonCopyable_2)> = lambda_unsafe!(
                 {
-                    let was_called: *mut () = &mut was_called;
+                    let was_called: *mut bool = &mut was_called;
                 },
                 |mut _a0: NonCopyable_2| {
                     (*was_called) = true;
                 }
             );
             unimplemented!();
-            unimplemented!();
+            assert!(was_called);
         }
         {
-            let mut was_called: () = false;
-            let mut f: FnPtr<fn(NonCopyable_2) -> ()> = lambda_unsafe!(
+            let mut was_called: bool = false;
+            let mut f: FnPtr<fn(NonCopyable_2) -> i32> = lambda_unsafe!(
                 {
-                    let was_called: *mut () = &mut was_called;
+                    let was_called: *mut bool = &mut was_called;
                 },
-                |mut _a0: NonCopyable_2| -> () {
+                |mut _a0: NonCopyable_2| -> i32 {
                     (*was_called) = true;
-                    return 0_();
+                    return 0;
                 }
             );
             &(unimplemented!());
-            unimplemented!();
+            assert!(was_called);
         }
         {
-            let mut was_called: () = false;
+            let mut was_called: bool = false;
             unimplemented!();
-            unimplemented!();
+            assert!(was_called);
         }
         {
-            let mut was_called: () = false;
+            let mut was_called: bool = false;
             &(unimplemented!());
-            unimplemented!();
+            assert!(was_called);
         }
     }
     {
@@ -144,16 +144,17 @@ pub unsafe fn test_0() -> () {
                     return <Convertible_5>::default();
                 }
             });
-        let mut result: () = unimplemented!();
-        unimplemented!();
+        let mut result: i32 = unimplemented!();
+        assert!(((result) == (42)));
     }
     return true;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(*mut libc::c_char , new, value)]
 pub struct ConversionNotNoexcept_1 {}
 impl ConversionNotNoexcept_1 {
-    pub unsafe fn new(mut _a0: *mut ()) -> Self {
+    pub unsafe fn new(mut _a0: *mut libc::c_char) -> Self {
         let mut this = Self {};
         this
     }
@@ -170,7 +171,7 @@ impl NonCopyable_2 {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MoveOnlyVoidFunction_3 {
-    pub was_called: *mut (),
+    pub was_called: *mut bool,
 }
 impl MoveOnlyVoidFunction_3 {
     pub unsafe fn operator_call(&mut self) {
@@ -180,20 +181,21 @@ impl MoveOnlyVoidFunction_3 {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MoveOnlyIntFunction_4 {
-    pub was_called: *mut (),
+    pub was_called: *mut bool,
 }
 impl MoveOnlyIntFunction_4 {
-    pub unsafe fn operator_call(&mut self) -> () {
+    pub unsafe fn operator_call(&mut self) -> i32 {
         (*self.was_called) = true;
-        return 0_();
+        return 0;
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_into(i32, to_i32)]
 pub struct Convertible_5 {}
 impl Convertible_5 {
-    pub unsafe fn to_(&self) -> () {
-        return 42_();
+    pub unsafe fn to_i32(&self) -> i32 {
+        return 42;
     }
 }
 pub fn main() {
@@ -211,9 +213,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

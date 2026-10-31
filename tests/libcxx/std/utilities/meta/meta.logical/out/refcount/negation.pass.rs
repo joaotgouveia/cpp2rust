@@ -7,13 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static value_0: Value<()> = Rc::new(RefCell::new(true));
+    pub static value_0: Value<bool> = Rc::new(RefCell::new(true));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct True {}
 thread_local!(
-    pub static value_1: Value<()> = Rc::new(RefCell::new(false));
+    pub static value_1: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -37,7 +37,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "!std::negation<std::true_type >::value");;
     const _: () = assert!(true, "std::negation<std::false_type>::value");;
     const _: () = assert!(true, "!std::negation_v<std::true_type >");;
@@ -51,7 +51,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "!std::negation<std::negation<std::false_type>>::value"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = value_0.with(|_| ());

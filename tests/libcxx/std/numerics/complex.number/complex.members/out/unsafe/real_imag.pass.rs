@@ -50,60 +50,60 @@ pub unsafe fn test_constexpr_3() {
     const _: () = assert!(true, "c3.real() == 3");;
     const _: () = assert!(true, "c3.imag() == 4");;
 }
-pub unsafe fn test_4() -> () {
+pub unsafe fn test_4() -> bool {
     let mut c: () = unimplemented!();
+    assert!(((unimplemented!()) == (0_f32)));
+    assert!(((unimplemented!()) == (0_f32)));
     unimplemented!();
+    assert!(((unimplemented!() as f64) == (3.5_f64)));
+    assert!(((unimplemented!()) == (0_f32)));
     unimplemented!();
+    assert!(((unimplemented!() as f64) == (3.5_f64)));
+    assert!(((unimplemented!() as f64) == (4.5_f64)));
     unimplemented!();
+    assert!(((unimplemented!() as f64) == (-4.5_f64)));
+    assert!(((unimplemented!() as f64) == (4.5_f64)));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as f64) == (-4.5_f64)));
+    assert!(((unimplemented!() as f64) == (-5.5_f64)));
     (unsafe { test_constexpr_0() });
     return true;
 }
-pub unsafe fn test_5() -> () {
+pub unsafe fn test_5() -> bool {
     let mut c: () = unimplemented!();
+    assert!(((unimplemented!()) == (0_f64)));
+    assert!(((unimplemented!()) == (0_f64)));
     unimplemented!();
+    assert!(((unimplemented!()) == (3.5_f64)));
+    assert!(((unimplemented!()) == (0_f64)));
     unimplemented!();
+    assert!(((unimplemented!()) == (3.5_f64)));
+    assert!(((unimplemented!()) == (4.5_f64)));
     unimplemented!();
+    assert!(((unimplemented!()) == (-4.5_f64)));
+    assert!(((unimplemented!()) == (4.5_f64)));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (-4.5_f64)));
+    assert!(((unimplemented!()) == (-5.5_f64)));
     (unsafe { test_constexpr_1() });
     return true;
 }
-pub unsafe fn test_6() -> () {
+pub unsafe fn test_6() -> bool {
     let mut c: () = unimplemented!();
+    assert!(((unimplemented!()) == (0_f64)));
+    assert!(((unimplemented!()) == (0_f64)));
     unimplemented!();
+    assert!(((unimplemented!()) == (3.5_f64)));
+    assert!(((unimplemented!()) == (0_f64)));
     unimplemented!();
+    assert!(((unimplemented!()) == (3.5_f64)));
+    assert!(((unimplemented!()) == (4.5_f64)));
     unimplemented!();
+    assert!(((unimplemented!()) == (-4.5_f64)));
+    assert!(((unimplemented!()) == (4.5_f64)));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (-4.5_f64)));
+    assert!(((unimplemented!()) == (-5.5_f64)));
     (unsafe { test_constexpr_2() });
     return true;
 }
@@ -122,7 +122,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_4() });
     (unsafe { test_5() });
     (unsafe { test_6() });
@@ -130,6 +130,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "test<float>()");;
     const _: () = assert!(true, "test<double>()");;
     const _: () = assert!(true, "test<long double>()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

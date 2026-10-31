@@ -9,18 +9,18 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct __gnu_test_func_callback {
-    _M_size: (),
+    _M_size: i32,
     _M_tests: [Option<unsafe fn()>; 15],
 }
 impl __gnu_test_func_callback {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            _M_size: 0_(),
+            _M_size: 0,
             _M_tests: [None; 15],
         };
         this
     }
-    pub unsafe fn size(&self) -> () {
+    pub unsafe fn size(&self) -> i32 {
         return self._M_size;
     }
     pub unsafe fn tests(&self) -> *const Option<unsafe fn()> {
@@ -74,7 +74,7 @@ impl Default for __gnu_test_object_counter {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1));
     }
     pub unsafe fn mark_call() {
@@ -86,10 +86,10 @@ impl __gnu_test_copy_constructor {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = count;
     }
 }
@@ -97,7 +97,7 @@ impl __gnu_test_copy_constructor {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
@@ -109,10 +109,10 @@ impl __gnu_test_assignment_operator {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
@@ -120,28 +120,28 @@ impl __gnu_test_assignment_operator {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_u32;
     }
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct __gnu_test_copy_tracker {
-    id_: (),
-    throw_on_copy_: (),
+    id_: i32,
+    throw_on_copy_: bool,
 }
 impl __gnu_test_copy_tracker {
-    pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| unsafe {
+    pub unsafe fn new(mut id: Option<i32>, mut throw_on_copy: Option<bool>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
-        let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
+        let mut throw_on_copy: bool = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
             id_: id,
             throw_on_copy_: throw_on_copy,
@@ -156,7 +156,7 @@ impl __gnu_test_copy_tracker {
         if this.throw_on_copy_ {
             (unsafe {
                 __gnu_test_copy_constructor::throw_on(
-                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -171,7 +171,7 @@ impl __gnu_test_copy_tracker {
         if (*rhs).throw_on_copy_ {
             (unsafe {
                 __gnu_test_assignment_operator::throw_on(
-                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -181,7 +181,7 @@ impl __gnu_test_copy_tracker {
     pub unsafe fn destructor(&mut self) {
         (unsafe { __gnu_test_destructor::mark_call() });
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
     pub unsafe fn reset() {
@@ -238,171 +238,192 @@ impl Default for __gnu_test_copy_tracker {
 pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         < (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
-    sem_set_: (),
+    sem_set_: i32,
     pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_offsets_ok {
-    pub in_size: (),
-    pub out_size: (),
+    pub in_size: usize,
+    pub out_size: usize,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_offsets_partial {
-    pub in_size: (),
-    pub out_size: (),
-    pub expected_in_next: (),
-    pub expected_out_next: (),
+    pub in_size: usize,
+    pub out_size: usize,
+    pub expected_in_next: usize,
+    pub expected_out_next: usize,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_offsets_error_unsigned_char_ {
-    pub in_size: (),
-    pub out_size: (),
-    pub expected_in_next: (),
-    pub expected_out_next: (),
-    pub replace_char: (),
-    pub replace_pos: (),
+    pub in_size: usize,
+    pub out_size: usize,
+    pub expected_in_next: usize,
+    pub expected_out_next: usize,
+    pub replace_char: u8,
+    pub replace_pos: usize,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_offsets_error_char16_t_ {
-    pub in_size: (),
-    pub out_size: (),
-    pub expected_in_next: (),
-    pub expected_out_next: (),
-    pub replace_char: (),
-    pub replace_pos: (),
+    pub in_size: usize,
+    pub out_size: usize,
+    pub expected_in_next: usize,
+    pub expected_out_next: usize,
+    pub replace_char: u16,
+    pub replace_pos: usize,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_offsets_error_wchar_t_ {
-    pub in_size: (),
-    pub out_size: (),
-    pub expected_in_next: (),
-    pub expected_out_next: (),
-    pub replace_char: (),
-    pub replace_pos: (),
+    pub in_size: usize,
+    pub out_size: usize,
+    pub expected_in_next: usize,
+    pub expected_out_next: usize,
+    pub replace_char: i32,
+    pub replace_pos: usize,
 }
-pub unsafe fn array_size_9(_a0: *const [(); 11]) -> () {
-    return 11_();
+pub unsafe fn array_size_9(_a0: *const [u8; 11]) -> usize {
+    return (11_u64 as usize);
 }
-pub unsafe fn array_size_10(_a0: *const [(); 5]) -> () {
-    return 5_();
+pub unsafe fn array_size_10(_a0: *const [u32; 5]) -> usize {
+    return (5_u64 as usize);
 }
-pub unsafe fn array_size_11(_a0: *const [(); 6]) -> () {
-    return 6_();
+pub unsafe fn array_size_11(_a0: *const [u16; 6]) -> usize {
+    return (6_u64 as usize);
 }
-pub unsafe fn array_size_12(_a0: *const [(); 7]) -> () {
-    return 7_();
+pub unsafe fn array_size_12(_a0: *const [u8; 7]) -> usize {
+    return (7_u64 as usize);
 }
-pub unsafe fn array_size_13(_a0: *const [(); 4]) -> () {
-    return 4_();
+pub unsafe fn array_size_13(_a0: *const [u16; 4]) -> usize {
+    return (4_u64 as usize);
 }
-pub unsafe fn array_size_14(_a0: *const [(); 12]) -> () {
-    return 12_();
+pub unsafe fn array_size_14(_a0: *const [libc::c_char; 12]) -> usize {
+    return (12_u64 as usize);
 }
-pub unsafe fn array_size_15(_a0: *const [(); 10]) -> () {
-    return 10_();
+pub unsafe fn array_size_15(_a0: *const [libc::c_char; 10]) -> usize {
+    return (10_u64 as usize);
 }
-pub unsafe fn array_size_16(_a0: *const [(); 8]) -> () {
-    return 8_();
+pub unsafe fn array_size_16(_a0: *const [libc::c_char; 8]) -> usize {
+    return (8_u64 as usize);
 }
-pub unsafe fn array_size_17(_a0: *const [(); 6]) -> () {
-    return 6_();
+pub unsafe fn array_size_17(_a0: *const [libc::c_char; 6]) -> usize {
+    return (6_u64 as usize);
 }
-pub unsafe fn array_size_18(_a0: *const [(); 5]) -> () {
-    return 5_();
+pub unsafe fn array_size_18(_a0: *const [i32; 5]) -> usize {
+    return (5_u64 as usize);
 }
-pub unsafe fn array_size_19(_a0: *const [(); 11]) -> () {
-    return 11_();
+pub unsafe fn array_size_19(_a0: *const [libc::c_char; 11]) -> usize {
+    return (11_u64 as usize);
 }
-pub unsafe fn array_size_20(_a0: *const [(); 4]) -> () {
-    return 4_();
+pub unsafe fn array_size_20(_a0: *const [i32; 4]) -> usize {
+    return (4_u64 as usize);
 }
-pub unsafe fn array_size_21(_a0: *const [(); 6]) -> () {
-    return 6_();
+pub unsafe fn array_size_21(_a0: *const [i32; 6]) -> usize {
+    return (6_u64 as usize);
 }
 pub unsafe fn utf8_to_utf32_in_ok_22(cvt: *const ()) {
-    let input: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
-    let expected: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
+    let input: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let expected: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
     const _: () = assert!(true, "array_size (input) == 11");;
     const _: () = assert!(true, "array_size (expected) == 5");;
-    let mut in_: [(); 11] = [unimplemented!(); 11];
-    let mut exp: [(); 5] = [unimplemented!(); 5];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    let mut exp: [i32; 5] = [0_i32; 5];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (4_())) {
+        if !((unimplemented!()) == (4_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_ok; 5] = [
         test_offsets_ok {
-            in_size: 0_(),
-            out_size: 0_(),
+            in_size: 0_usize,
+            out_size: 0_usize,
         },
         test_offsets_ok {
-            in_size: 1_(),
-            out_size: 1_(),
+            in_size: 1_usize,
+            out_size: 1_usize,
         },
         test_offsets_ok {
-            in_size: 3_(),
-            out_size: 2_(),
+            in_size: 3_usize,
+            out_size: 2_usize,
         },
         test_offsets_ok {
-            in_size: 6_(),
-            out_size: 3_(),
+            in_size: 6_usize,
+            out_size: 3_usize,
         },
         test_offsets_ok {
-            in_size: 10_(),
-            out_size: 4_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 4] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 4] = [0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_19(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -410,20 +431,20 @@ pub unsafe fn utf8_to_utf32_in_ok_22(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_20(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -431,7 +452,7 @@ pub unsafe fn utf8_to_utf32_in_ok_22(cvt: *const ()) {
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -439,64 +460,58 @@ pub unsafe fn utf8_to_utf32_in_ok_22(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_20(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.in_size)) {
+            if !((len as usize) == (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 5] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 5] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_19(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -504,20 +519,20 @@ pub unsafe fn utf8_to_utf32_in_ok_22(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_18(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -525,7 +540,7 @@ pub unsafe fn utf8_to_utf32_in_ok_22(cvt: *const ()) {
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -533,187 +548,208 @@ pub unsafe fn utf8_to_utf32_in_ok_22(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_18(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.in_size)) {
+            if !((len as usize) == (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
 pub unsafe fn utf8_to_utf32_in_partial_23(cvt: *const ()) {
-    let input: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
-    let expected: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
+    let input: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let expected: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
     const _: () = assert!(true, "array_size (input) == 11");;
     const _: () = assert!(true, "array_size (expected) == 5");;
-    let mut in_: [(); 11] = [unimplemented!(); 11];
-    let mut exp: [(); 5] = [unimplemented!(); 5];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    let mut exp: [i32; 5] = [0_i32; 5];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (4_())) {
+        if !((unimplemented!()) == (4_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_partial; 16] = [
         test_offsets_partial {
-            in_size: 1_(),
-            out_size: 0_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 1_usize,
+            out_size: 0_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 1_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 3_usize,
+            out_size: 1_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 2_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 2_usize,
+            out_size: 2_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 1_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 2_usize,
+            out_size: 1_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 6_(),
-            out_size: 2_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 6_usize,
+            out_size: 2_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 3_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 4_usize,
+            out_size: 3_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 3_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 5_usize,
+            out_size: 3_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 2_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 4_usize,
+            out_size: 2_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 2_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 5_usize,
+            out_size: 2_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 10_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 10_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 7_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 7_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 8_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 8_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 9_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 9_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 7_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 7_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 8_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 8_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 9_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 9_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((16_()) as isize),
+        offsets.as_mut_ptr().offset((16_i64) as isize),
     ) {
         let mut t: test_offsets_partial = (*t);
-        let mut out: [(); 4] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 4] = [0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_19(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -721,7 +757,7 @@ pub unsafe fn utf8_to_utf32_in_partial_23(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_20(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -729,7 +765,7 @@ pub unsafe fn utf8_to_utf32_in_partial_23(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -737,20 +773,20 @@ pub unsafe fn utf8_to_utf32_in_partial_23(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -760,7 +796,7 @@ pub unsafe fn utf8_to_utf32_in_partial_23(cvt: *const ()) {
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -768,395 +804,416 @@ pub unsafe fn utf8_to_utf32_in_partial_23(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_20(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.expected_in_next)) {
+            if !((len as usize) == (t.expected_in_next)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
 pub unsafe fn utf8_to_utf32_in_error_24(cvt: *const ()) {
-    let input: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xed\x9c\x80\xf4\x8a\xaa\xaa\0");
-    let expected: [(); 5] = [98 as (), 1096 as (), 55040 as (), 1092266 as (), 0 as ()];
+    let input: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xed\x9c\x80\xf4\x8a\xaa\xaa\0");
+    let expected: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        55040 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
     const _: () = assert!(true, "array_size (input) == 11");;
     const _: () = assert!(true, "array_size (expected) == 5");;
-    let mut in_: [(); 11] = [unimplemented!(); 11];
-    let mut exp: [(); 5] = [unimplemented!(); 5];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    let mut exp: [i32; 5] = [0_i32; 5];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (4_())) {
+        if !((unimplemented!()) == (4_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_error_unsigned_char_; 38] = [
         test_offsets_error_unsigned_char_ {
-            in_size: 1_(),
-            out_size: 4_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 255_(),
-            replace_pos: 0_(),
+            in_size: 1_usize,
+            out_size: 4_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 255_u8,
+            replace_pos: 0_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 255_(),
-            replace_pos: 1_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 255_u8,
+            replace_pos: 1_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 255_(),
-            replace_pos: 3_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 255_u8,
+            replace_pos: 3_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 6_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 6_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 1_(),
-            out_size: 4_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 170_(),
-            replace_pos: 0_(),
+            in_size: 1_usize,
+            out_size: 4_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 170_u8,
+            replace_pos: 0_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 170_(),
-            replace_pos: 1_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 170_u8,
+            replace_pos: 1_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 170_(),
-            replace_pos: 3_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 170_u8,
+            replace_pos: 3_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 170_(),
-            replace_pos: 6_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 170_u8,
+            replace_pos: 6_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: ('z' as ()),
-            replace_pos: 2_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 2_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: ('z' as ()),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 7_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 255_(),
-            replace_pos: 2_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 255_u8,
+            replace_pos: 2_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 255_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 255_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 7_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: ('z' as ()),
-            replace_pos: 5_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 5_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 8_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 8_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 255_(),
-            replace_pos: 5_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 255_u8,
+            replace_pos: 5_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 8_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 8_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 9_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 9_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 9_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 9_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 5_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: ('z' as ()),
-            replace_pos: 4_(),
+            in_size: 5_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 8_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 7_(),
+            in_size: 8_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 9_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 7_(),
+            in_size: 9_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 5_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 255_(),
-            replace_pos: 4_(),
+            in_size: 5_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 255_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 8_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 7_(),
+            in_size: 8_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 9_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 7_(),
+            in_size: 9_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 9_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 8_(),
+            in_size: 9_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 8_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 9_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 8_(),
+            in_size: 9_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 8_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 160_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 160_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 172_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 172_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 176_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 176_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 188_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 188_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 192_(),
-            replace_pos: 1_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 192_u8,
+            replace_pos: 1_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 193_(),
-            replace_pos: 1_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 193_u8,
+            replace_pos: 1_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 4_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 224_(),
-            replace_pos: 3_(),
+            in_size: 6_usize,
+            out_size: 4_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 224_u8,
+            replace_pos: 3_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 240_(),
-            replace_pos: 6_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 240_u8,
+            replace_pos: 6_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 245_(),
-            replace_pos: 6_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 245_u8,
+            replace_pos: 6_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 154_(),
-            replace_pos: 7_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 154_u8,
+            replace_pos: 7_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((38_()) as isize),
+        offsets.as_mut_ptr().offset((38_i64) as isize),
     ) {
         let mut t: test_offsets_error_unsigned_char_ = (*t);
-        let mut out: [(); 4] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 4] = [0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_19(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1164,7 +1221,7 @@ pub unsafe fn utf8_to_utf32_in_error_24(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_20(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1172,7 +1229,7 @@ pub unsafe fn utf8_to_utf32_in_error_24(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1180,22 +1237,22 @@ pub unsafe fn utf8_to_utf32_in_error_24(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut old_char: () = in_[(t.replace_pos) as usize];
-        in_[(t.replace_pos) as usize] = t.replace_char;
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut old_char: libc::c_char = in_[(t.replace_pos)];
+        in_[(t.replace_pos)] = (t.replace_char as libc::c_char);
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1205,7 +1262,7 @@ pub unsafe fn utf8_to_utf32_in_error_24(cvt: *const ()) {
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1213,46 +1270,46 @@ pub unsafe fn utf8_to_utf32_in_error_24(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_20(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.expected_in_next)) {
+            if !((len as usize) == (t.expected_in_next)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        in_[(t.replace_pos) as usize] = old_char;
+        in_[(t.replace_pos)] = old_char;
     }
 }
 pub unsafe fn utf8_to_utf32_in_25(cvt: *const ()) {
@@ -1261,75 +1318,101 @@ pub unsafe fn utf8_to_utf32_in_25(cvt: *const ()) {
     (unsafe { utf8_to_utf32_in_error_24(cvt) });
 }
 pub unsafe fn utf32_to_utf8_out_ok_26(cvt: *const ()) {
-    let input: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
-    let expected: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let input: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
+    let expected: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
     const _: () = assert!(true, "array_size (input) == 5");;
     const _: () = assert!(true, "array_size (expected) == 11");;
-    let mut in_: [(); 5] = [unimplemented!(); 5];
-    let mut exp: [(); 11] = [unimplemented!(); 11];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [i32; 5] = [0_i32; 5];
+    let mut exp: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (4_())) {
+        if !((unimplemented!()) == (4_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_ok; 5] = [
         test_offsets_ok {
-            in_size: 0_(),
-            out_size: 0_(),
+            in_size: 0_usize,
+            out_size: 0_usize,
         },
         test_offsets_ok {
-            in_size: 1_(),
-            out_size: 1_(),
+            in_size: 1_usize,
+            out_size: 1_usize,
         },
         test_offsets_ok {
-            in_size: 2_(),
-            out_size: 3_(),
+            in_size: 2_usize,
+            out_size: 3_usize,
         },
         test_offsets_ok {
-            in_size: 3_(),
-            out_size: 6_(),
+            in_size: 3_usize,
+            out_size: 6_usize,
         },
         test_offsets_ok {
-            in_size: 4_(),
-            out_size: 10_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_18(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1337,20 +1420,20 @@ pub unsafe fn utf32_to_utf8_out_ok_26(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1358,7 +1441,7 @@ pub unsafe fn utf32_to_utf8_out_ok_26(cvt: *const ()) {
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1366,139 +1449,165 @@ pub unsafe fn utf32_to_utf8_out_ok_26(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
     }
 }
 pub unsafe fn utf32_to_utf8_out_partial_27(cvt: *const ()) {
-    let input: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
-    let expected: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let input: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
+    let expected: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
     const _: () = assert!(true, "array_size (input) == 5");;
     const _: () = assert!(true, "array_size (expected) == 11");;
-    let mut in_: [(); 5] = [unimplemented!(); 5];
-    let mut exp: [(); 11] = [unimplemented!(); 11];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [i32; 5] = [0_i32; 5];
+    let mut exp: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (4_())) {
+        if !((unimplemented!()) == (4_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_partial; 10] = [
         test_offsets_partial {
-            in_size: 1_(),
-            out_size: 0_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 1_usize,
+            out_size: 0_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 1_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 2_usize,
+            out_size: 1_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 2_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 2_usize,
+            out_size: 2_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 3_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
+            in_size: 3_usize,
+            out_size: 3_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 6_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 6_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 7_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 7_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 8_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 8_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 9_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 9_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((10_()) as isize),
+        offsets.as_mut_ptr().offset((10_i64) as isize),
     ) {
         let mut t: test_offsets_partial = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_18(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1506,7 +1615,7 @@ pub unsafe fn utf32_to_utf8_out_partial_27(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1514,7 +1623,7 @@ pub unsafe fn utf32_to_utf8_out_partial_27(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1522,20 +1631,20 @@ pub unsafe fn utf32_to_utf8_out_partial_27(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1545,7 +1654,7 @@ pub unsafe fn utf32_to_utf8_out_partial_27(cvt: *const ()) {
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1553,143 +1662,169 @@ pub unsafe fn utf32_to_utf8_out_partial_27(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
     }
 }
 pub unsafe fn utf32_to_utf8_out_error_28(cvt: *const ()) {
-    let input: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
-    let expected: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let input: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
+    let expected: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
     const _: () = assert!(true, "array_size (input) == 5");;
     const _: () = assert!(true, "array_size (expected) == 11");;
-    let mut in_: [(); 5] = [unimplemented!(); 5];
-    let mut exp: [(); 11] = [unimplemented!(); 11];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [i32; 5] = [0_i32; 5];
+    let mut exp: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (4_())) {
+        if !((unimplemented!()) == (4_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_error_wchar_t_; 8] = [
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 55296_(),
-            replace_pos: 0_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 55296_i32,
+            replace_pos: 0_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 56319_(),
-            replace_pos: 1_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 56319_i32,
+            replace_pos: 1_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
-            replace_char: 56320_(),
-            replace_pos: 2_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
+            replace_char: 56320_i32,
+            replace_pos: 2_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: 57343_(),
-            replace_pos: 3_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: 57343_i32,
+            replace_pos: 3_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 1114112_(),
-            replace_pos: 0_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 1114112_i32,
+            replace_pos: 0_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 1114112_(),
-            replace_pos: 1_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 1114112_i32,
+            replace_pos: 1_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
-            replace_char: 1114112_(),
-            replace_pos: 2_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
+            replace_char: 1114112_i32,
+            replace_pos: 2_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: 1114112_(),
-            replace_pos: 3_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: 1114112_i32,
+            replace_pos: 3_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((8_()) as isize),
+        offsets.as_mut_ptr().offset((8_i64) as isize),
     ) {
         let mut t: test_offsets_error_wchar_t_ = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_18(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1697,7 +1832,7 @@ pub unsafe fn utf32_to_utf8_out_error_28(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1705,7 +1840,7 @@ pub unsafe fn utf32_to_utf8_out_error_28(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1713,22 +1848,22 @@ pub unsafe fn utf32_to_utf8_out_error_28(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut old_char: () = in_[(t.replace_pos) as usize];
-        in_[(t.replace_pos) as usize] = t.replace_char;
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut old_char: i32 = in_[(t.replace_pos)];
+        in_[(t.replace_pos)] = t.replace_char;
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1738,7 +1873,7 @@ pub unsafe fn utf32_to_utf8_out_error_28(cvt: *const ()) {
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1746,28 +1881,28 @@ pub unsafe fn utf32_to_utf8_out_error_28(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        in_[(t.replace_pos) as usize] = old_char;
+        in_[(t.replace_pos)] = old_char;
     }
 }
 pub unsafe fn utf32_to_utf8_out_29(cvt: *const ()) {
@@ -1780,77 +1915,91 @@ pub unsafe fn test_utf8_utf32_cvt_30(cvt: *const ()) {
     (unsafe { utf32_to_utf8_out_29(cvt) });
 }
 pub unsafe fn utf8_to_utf16_in_ok_31(cvt: *const ()) {
-    let input: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
-    let expected: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let expected: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
     const _: () = assert!(true, "array_size (input) == 11");;
     const _: () = assert!(true, "array_size (expected) == 6");;
-    let mut in_: [(); 11] = [unimplemented!(); 11];
-    let mut exp: [(); 6] = [unimplemented!(); 6];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    let mut exp: [i32; 6] = [0_i32; 6];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (5_())) {
+        if !((unimplemented!()) == (5_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_ok; 5] = [
         test_offsets_ok {
-            in_size: 0_(),
-            out_size: 0_(),
+            in_size: 0_usize,
+            out_size: 0_usize,
         },
         test_offsets_ok {
-            in_size: 1_(),
-            out_size: 1_(),
+            in_size: 1_usize,
+            out_size: 1_usize,
         },
         test_offsets_ok {
-            in_size: 3_(),
-            out_size: 2_(),
+            in_size: 3_usize,
+            out_size: 2_usize,
         },
         test_offsets_ok {
-            in_size: 6_(),
-            out_size: 3_(),
+            in_size: 6_usize,
+            out_size: 3_usize,
         },
         test_offsets_ok {
-            in_size: 10_(),
-            out_size: 5_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 5] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 5] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_19(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1858,20 +2007,20 @@ pub unsafe fn utf8_to_utf16_in_ok_31(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_18(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1879,7 +2028,7 @@ pub unsafe fn utf8_to_utf16_in_ok_31(cvt: *const ()) {
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1887,65 +2036,58 @@ pub unsafe fn utf8_to_utf16_in_ok_31(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_18(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.in_size)) {
+            if !((len as usize) == (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 6] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 6] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_19(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1953,20 +2095,20 @@ pub unsafe fn utf8_to_utf16_in_ok_31(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_21(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1974,7 +2116,7 @@ pub unsafe fn utf8_to_utf16_in_ok_31(cvt: *const ()) {
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1982,219 +2124,233 @@ pub unsafe fn utf8_to_utf16_in_ok_31(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_21(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.in_size)) {
+            if !((len as usize) == (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
 pub unsafe fn utf8_to_utf16_in_partial_32(cvt: *const ()) {
-    let input: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
-    let expected: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let expected: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
     const _: () = assert!(true, "array_size (input) == 11");;
     const _: () = assert!(true, "array_size (expected) == 6");;
-    let mut in_: [(); 11] = [unimplemented!(); 11];
-    let mut exp: [(); 6] = [unimplemented!(); 6];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    let mut exp: [i32; 6] = [0_i32; 6];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (5_())) {
+        if !((unimplemented!()) == (5_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_partial; 20] = [
         test_offsets_partial {
-            in_size: 1_(),
-            out_size: 0_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 1_usize,
+            out_size: 0_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 1_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 3_usize,
+            out_size: 1_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 2_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 2_usize,
+            out_size: 2_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 1_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 2_usize,
+            out_size: 1_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 6_(),
-            out_size: 2_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 6_usize,
+            out_size: 2_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 3_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 4_usize,
+            out_size: 3_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 3_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 5_usize,
+            out_size: 3_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 2_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 4_usize,
+            out_size: 2_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 2_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
+            in_size: 5_usize,
+            out_size: 2_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 10_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 10_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 7_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 7_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 8_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 8_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 9_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 9_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 7_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 7_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 8_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 8_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 9_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 9_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 7_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 7_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 8_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 8_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 9_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 9_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((20_()) as isize),
+        offsets.as_mut_ptr().offset((20_i64) as isize),
     ) {
         let mut t: test_offsets_partial = (*t);
-        let mut out: [(); 5] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 5] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_19(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2202,7 +2358,7 @@ pub unsafe fn utf8_to_utf16_in_partial_32(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_18(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2210,7 +2366,7 @@ pub unsafe fn utf8_to_utf16_in_partial_32(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2218,20 +2374,20 @@ pub unsafe fn utf8_to_utf16_in_partial_32(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2241,7 +2397,7 @@ pub unsafe fn utf8_to_utf16_in_partial_32(cvt: *const ()) {
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2249,403 +2405,417 @@ pub unsafe fn utf8_to_utf16_in_partial_32(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_18(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.expected_in_next)) {
+            if !((len as usize) == (t.expected_in_next)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
 pub unsafe fn utf8_to_utf16_in_error_33(cvt: *const ()) {
-    let input: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xed\x9c\x80\xf4\x8a\xaa\xaa\0");
-    let expected: [(); 6] = [
-        98 as (),
-        1096 as (),
-        55040 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xed\x9c\x80\xf4\x8a\xaa\xaa\0");
+    let expected: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        55040 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
     const _: () = assert!(true, "array_size (input) == 11");;
     const _: () = assert!(true, "array_size (expected) == 6");;
-    let mut in_: [(); 11] = [unimplemented!(); 11];
-    let mut exp: [(); 6] = [unimplemented!(); 6];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    let mut exp: [i32; 6] = [0_i32; 6];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (5_())) {
+        if !((unimplemented!()) == (5_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_error_unsigned_char_; 38] = [
         test_offsets_error_unsigned_char_ {
-            in_size: 1_(),
-            out_size: 5_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 255_(),
-            replace_pos: 0_(),
+            in_size: 1_usize,
+            out_size: 5_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 255_u8,
+            replace_pos: 0_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 255_(),
-            replace_pos: 1_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 255_u8,
+            replace_pos: 1_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 255_(),
-            replace_pos: 3_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 255_u8,
+            replace_pos: 3_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 6_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 6_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 1_(),
-            out_size: 5_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 170_(),
-            replace_pos: 0_(),
+            in_size: 1_usize,
+            out_size: 5_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 170_u8,
+            replace_pos: 0_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 170_(),
-            replace_pos: 1_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 170_u8,
+            replace_pos: 1_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 170_(),
-            replace_pos: 3_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 170_u8,
+            replace_pos: 3_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 170_(),
-            replace_pos: 6_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 170_u8,
+            replace_pos: 6_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: ('z' as ()),
-            replace_pos: 2_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 2_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: ('z' as ()),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 7_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 255_(),
-            replace_pos: 2_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 255_u8,
+            replace_pos: 2_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 255_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 255_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 7_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: ('z' as ()),
-            replace_pos: 5_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 5_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 8_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 8_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 255_(),
-            replace_pos: 5_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 255_u8,
+            replace_pos: 5_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 8_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 8_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 9_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 9_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 9_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 9_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 5_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: ('z' as ()),
-            replace_pos: 4_(),
+            in_size: 5_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 8_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 7_(),
+            in_size: 8_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 9_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 7_(),
+            in_size: 9_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 5_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 255_(),
-            replace_pos: 4_(),
+            in_size: 5_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 255_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 8_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 7_(),
+            in_size: 8_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 9_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 7_(),
+            in_size: 9_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 7_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 9_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: ('z' as ()),
-            replace_pos: 8_(),
+            in_size: 9_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (('z' as libc::c_char) as u8),
+            replace_pos: 8_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 9_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 255_(),
-            replace_pos: 8_(),
+            in_size: 9_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 255_u8,
+            replace_pos: 8_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 160_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 160_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 172_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 172_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 176_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 176_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 188_(),
-            replace_pos: 4_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 188_u8,
+            replace_pos: 4_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 192_(),
-            replace_pos: 1_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 192_u8,
+            replace_pos: 1_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 193_(),
-            replace_pos: 1_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 193_u8,
+            replace_pos: 1_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 6_(),
-            out_size: 5_(),
-            expected_in_next: 3_(),
-            expected_out_next: 2_(),
-            replace_char: 224_(),
-            replace_pos: 3_(),
+            in_size: 6_usize,
+            out_size: 5_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 2_usize,
+            replace_char: 224_u8,
+            replace_pos: 3_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 240_(),
-            replace_pos: 6_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 240_u8,
+            replace_pos: 6_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 245_(),
-            replace_pos: 6_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 245_u8,
+            replace_pos: 6_usize,
         },
         test_offsets_error_unsigned_char_ {
-            in_size: 10_(),
-            out_size: 5_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 154_(),
-            replace_pos: 7_(),
+            in_size: 10_usize,
+            out_size: 5_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 154_u8,
+            replace_pos: 7_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((38_()) as isize),
+        offsets.as_mut_ptr().offset((38_i64) as isize),
     ) {
         let mut t: test_offsets_error_unsigned_char_ = (*t);
-        let mut out: [(); 5] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 5] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_19(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2653,7 +2823,7 @@ pub unsafe fn utf8_to_utf16_in_error_33(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_18(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2661,7 +2831,7 @@ pub unsafe fn utf8_to_utf16_in_error_33(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2669,22 +2839,22 @@ pub unsafe fn utf8_to_utf16_in_error_33(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut old_char: () = in_[(t.replace_pos) as usize];
-        in_[(t.replace_pos) as usize] = t.replace_char;
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut old_char: libc::c_char = in_[(t.replace_pos)];
+        in_[(t.replace_pos)] = (t.replace_char as libc::c_char);
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2694,7 +2864,7 @@ pub unsafe fn utf8_to_utf16_in_error_33(cvt: *const ()) {
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2702,46 +2872,46 @@ pub unsafe fn utf8_to_utf16_in_error_33(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_18(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.expected_in_next)) {
+            if !((len as usize) == (t.expected_in_next)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        in_[(t.replace_pos) as usize] = old_char;
+        in_[(t.replace_pos)] = old_char;
     }
 }
 pub unsafe fn utf8_to_utf16_in_34(cvt: *const ()) {
@@ -2750,82 +2920,102 @@ pub unsafe fn utf8_to_utf16_in_34(cvt: *const ()) {
     (unsafe { utf8_to_utf16_in_error_33(cvt) });
 }
 pub unsafe fn utf16_to_utf8_out_ok_35(cvt: *const ()) {
-    let input: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
-    let expected: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let expected: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
     const _: () = assert!(true, "array_size (input) == 6");;
     const _: () = assert!(true, "array_size (expected) == 11");;
-    let mut in_: [(); 6] = [unimplemented!(); 6];
-    let mut exp: [(); 11] = [unimplemented!(); 11];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [i32; 6] = [0_i32; 6];
+    let mut exp: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (5_())) {
+        if !((unimplemented!()) == (5_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_ok; 5] = [
         test_offsets_ok {
-            in_size: 0_(),
-            out_size: 0_(),
+            in_size: 0_usize,
+            out_size: 0_usize,
         },
         test_offsets_ok {
-            in_size: 1_(),
-            out_size: 1_(),
+            in_size: 1_usize,
+            out_size: 1_usize,
         },
         test_offsets_ok {
-            in_size: 2_(),
-            out_size: 3_(),
+            in_size: 2_usize,
+            out_size: 3_usize,
         },
         test_offsets_ok {
-            in_size: 3_(),
-            out_size: 6_(),
+            in_size: 3_usize,
+            out_size: 6_usize,
         },
         test_offsets_ok {
-            in_size: 5_(),
-            out_size: 10_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_21(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2833,20 +3023,20 @@ pub unsafe fn utf16_to_utf8_out_ok_35(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2854,7 +3044,7 @@ pub unsafe fn utf16_to_utf8_out_ok_35(cvt: *const ()) {
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2862,176 +3052,196 @@ pub unsafe fn utf16_to_utf8_out_ok_35(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
     }
 }
 pub unsafe fn utf16_to_utf8_out_partial_36(cvt: *const ()) {
-    let input: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
-    let expected: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let expected: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
     const _: () = assert!(true, "array_size (input) == 6");;
     const _: () = assert!(true, "array_size (expected) == 11");;
-    let mut in_: [(); 6] = [unimplemented!(); 6];
-    let mut exp: [(); 11] = [unimplemented!(); 11];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [i32; 6] = [0_i32; 6];
+    let mut exp: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (5_())) {
+        if !((unimplemented!()) == (5_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_partial; 15] = [
         test_offsets_partial {
-            in_size: 1_(),
-            out_size: 0_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 1_usize,
+            out_size: 0_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 1_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 2_usize,
+            out_size: 1_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 2_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
+            in_size: 2_usize,
+            out_size: 2_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 3_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
+            in_size: 3_usize,
+            out_size: 3_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 6_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 5_usize,
+            out_size: 6_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 7_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 5_usize,
+            out_size: 7_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 8_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 5_usize,
+            out_size: 8_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 9_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 5_usize,
+            out_size: 9_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 6_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 6_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 7_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 7_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 8_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 8_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 9_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 9_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((15_()) as isize),
+        offsets.as_mut_ptr().offset((15_i64) as isize),
     ) {
         let mut t: test_offsets_partial = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_21(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3039,7 +3249,7 @@ pub unsafe fn utf16_to_utf8_out_partial_36(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3047,7 +3257,7 @@ pub unsafe fn utf16_to_utf8_out_partial_36(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3055,20 +3265,20 @@ pub unsafe fn utf16_to_utf8_out_partial_36(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3078,7 +3288,7 @@ pub unsafe fn utf16_to_utf8_out_partial_36(cvt: *const ()) {
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3086,222 +3296,242 @@ pub unsafe fn utf16_to_utf8_out_partial_36(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
     }
 }
 pub unsafe fn utf16_to_utf8_out_error_37(cvt: *const ()) {
-    let input: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
-    let expected: [(); 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
+    let expected: [u8; 11] = std::mem::transmute(*b"b\xd1\x88\xea\xaa\xaa\xf4\x8a\xaa\xaa\0");
     const _: () = assert!(true, "array_size (input) == 6");;
     const _: () = assert!(true, "array_size (expected) == 11");;
-    let mut in_: [(); 6] = [unimplemented!(); 6];
-    let mut exp: [(); 11] = [unimplemented!(); 11];
-    unimplemented!();
-    unimplemented!();
+    let mut in_: [i32; 6] = [0_i32; 6];
+    let mut exp: [libc::c_char; 11] = [(0 as libc::c_char); 11];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as libc::c_char);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (5_())) {
+        if !((unimplemented!()) == (5_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (10_())) {
+        if !((unimplemented!()) == (10_usize)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut offsets: [test_offsets_error_wchar_t_; 17] = [
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 55296_(),
-            replace_pos: 0_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 55296_i32,
+            replace_pos: 0_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 56319_(),
-            replace_pos: 0_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 56319_i32,
+            replace_pos: 0_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 56320_(),
-            replace_pos: 0_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 56320_i32,
+            replace_pos: 0_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 57343_(),
-            replace_pos: 0_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 57343_i32,
+            replace_pos: 0_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 55296_(),
-            replace_pos: 1_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 55296_i32,
+            replace_pos: 1_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 56319_(),
-            replace_pos: 1_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 56319_i32,
+            replace_pos: 1_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 56320_(),
-            replace_pos: 1_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 56320_i32,
+            replace_pos: 1_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 1_(),
-            expected_out_next: 1_(),
-            replace_char: 57343_(),
-            replace_pos: 1_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 1_usize,
+            replace_char: 57343_i32,
+            replace_pos: 1_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
-            replace_char: 55296_(),
-            replace_pos: 2_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
+            replace_char: 55296_i32,
+            replace_pos: 2_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
-            replace_char: 56319_(),
-            replace_pos: 2_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
+            replace_char: 56319_i32,
+            replace_pos: 2_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
-            replace_char: 56320_(),
-            replace_pos: 2_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
+            replace_char: 56320_i32,
+            replace_pos: 2_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 2_(),
-            expected_out_next: 3_(),
-            replace_char: 57343_(),
-            replace_pos: 2_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 3_usize,
+            replace_char: 57343_i32,
+            replace_pos: 2_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: 56320_(),
-            replace_pos: 3_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: 56320_i32,
+            replace_pos: 3_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: 57343_(),
-            replace_pos: 3_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: 57343_i32,
+            replace_pos: 3_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: 55296_(),
-            replace_pos: 4_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: 55296_i32,
+            replace_pos: 4_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: 56319_(),
-            replace_pos: 4_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: 56319_i32,
+            replace_pos: 4_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 5_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: (122 as ()),
-            replace_pos: 4_(),
+            in_size: 5_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: ((122 as u16) as i32),
+            replace_pos: 4_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((17_()) as isize),
+        offsets.as_mut_ptr().offset((17_i64) as isize),
     ) {
         let mut t: test_offsets_error_wchar_t_ = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_21(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3309,7 +3539,7 @@ pub unsafe fn utf16_to_utf8_out_error_37(cvt: *const ()) {
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3317,7 +3547,7 @@ pub unsafe fn utf16_to_utf8_out_error_37(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3325,22 +3555,22 @@ pub unsafe fn utf16_to_utf8_out_error_37(cvt: *const ()) {
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut old_char: () = in_[(t.replace_pos) as usize];
-        in_[(t.replace_pos) as usize] = t.replace_char;
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut old_char: i32 = in_[(t.replace_pos)];
+        in_[(t.replace_pos)] = t.replace_char;
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3350,7 +3580,7 @@ pub unsafe fn utf16_to_utf8_out_error_37(cvt: *const ()) {
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3358,28 +3588,28 @@ pub unsafe fn utf16_to_utf8_out_error_37(cvt: *const ()) {
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        in_[(t.replace_pos) as usize] = old_char;
+        in_[(t.replace_pos)] = old_char;
     }
 }
 pub unsafe fn utf16_to_utf8_out_38(cvt: *const ()) {
@@ -3391,110 +3621,121 @@ pub unsafe fn test_utf8_utf16_cvt_39(cvt: *const ()) {
     (unsafe { utf8_to_utf16_in_34(cvt) });
     (unsafe { utf16_to_utf8_out_38(cvt) });
 }
-pub type utf16_endianess = ();
+pub type utf16_endianess = u32;
 pub const utf16_endianess_utf16_big_endian: utf16_endianess = 0;
 pub const utf16_endianess_utf16_little_endian: utf16_endianess = 1;
 pub unsafe fn utf16_to_bytes_40(
-    mut f: *const (),
-    mut l: *const (),
-    mut o: *mut (),
+    mut f: *const u16,
+    mut l: *const u16,
+    mut o: *mut libc::c_char,
     mut e: utf16_endianess,
-) -> *mut () {
-    if ((e as ()) == (utf16_endianess_utf16_big_endian as ())) {
+) -> *mut libc::c_char {
+    if ((e as i32) == (utf16_endianess_utf16_big_endian as i32)) {
         'loop_: while ((f) != (l)) {
-            (*o.postfix_inc()) = (((*f) >> (8_())) & (255_()));
-            (*o.postfix_inc()) = ((*f) & (255_()));
+            (*o.postfix_inc()) = (((((*f) as i32) >> (8)) & (255)) as libc::c_char);
+            (*o.postfix_inc()) = ((((*f) as i32) & (255)) as libc::c_char);
             f.prefix_inc();
         }
     } else {
         'loop_: while ((f) != (l)) {
-            (*o.postfix_inc()) = ((*f) & (255_()));
-            (*o.postfix_inc()) = (((*f) >> (8_())) & (255_()));
+            (*o.postfix_inc()) = ((((*f) as i32) & (255)) as libc::c_char);
+            (*o.postfix_inc()) = (((((*f) as i32) >> (8)) & (255)) as libc::c_char);
             f.prefix_inc();
         }
     }
     return o;
 }
 pub unsafe fn utf16_to_bytes_41(
-    mut f: *mut (),
-    mut l: *mut (),
-    mut o: *mut (),
+    mut f: *mut u16,
+    mut l: *mut u16,
+    mut o: *mut libc::c_char,
     mut e: utf16_endianess,
-) -> *mut () {
-    if ((e as ()) == (utf16_endianess_utf16_big_endian as ())) {
+) -> *mut libc::c_char {
+    if ((e as i32) == (utf16_endianess_utf16_big_endian as i32)) {
         'loop_: while ((f) != (l)) {
-            (*o.postfix_inc()) = (((*f) >> (8_())) & (255_()));
-            (*o.postfix_inc()) = ((*f) & (255_()));
+            (*o.postfix_inc()) = (((((*f) as i32) >> (8)) & (255)) as libc::c_char);
+            (*o.postfix_inc()) = ((((*f) as i32) & (255)) as libc::c_char);
             f.prefix_inc();
         }
     } else {
         'loop_: while ((f) != (l)) {
-            (*o.postfix_inc()) = ((*f) & (255_()));
-            (*o.postfix_inc()) = (((*f) >> (8_())) & (255_()));
+            (*o.postfix_inc()) = ((((*f) as i32) & (255)) as libc::c_char);
+            (*o.postfix_inc()) = (((((*f) as i32) >> (8)) & (255)) as libc::c_char);
             f.prefix_inc();
         }
     }
     return o;
 }
 pub unsafe fn utf16_to_utf32_in_ok_42(cvt: *const (), mut endianess: utf16_endianess) {
-    let input: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
-    let expected: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
+    let expected: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
     const _: () = assert!(true, "array_size (input) == 6");;
     const _: () = assert!(true, "array_size (expected) == 5");;
-    let mut in_: [(); 12] = [unimplemented!(); 12];
-    let mut exp: [(); 5] = [unimplemented!(); 5];
+    let mut in_: [libc::c_char; 12] = [(0 as libc::c_char); 12];
+    let mut exp: [i32; 5] = [0_i32; 5];
     (unsafe {
-        let _f: *const () = unimplemented!();
-        let _l: *const () = unimplemented!();
+        let _f: *const u16 = unimplemented!();
+        let _l: *const u16 = input.as_ptr().add(input.len());
         utf16_to_bytes_40(_f, _l, unimplemented!(), endianess)
     });
-    unimplemented!();
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut offsets: [test_offsets_ok; 5] = [
         test_offsets_ok {
-            in_size: 0_(),
-            out_size: 0_(),
+            in_size: 0_usize,
+            out_size: 0_usize,
         },
         test_offsets_ok {
-            in_size: 2_(),
-            out_size: 1_(),
+            in_size: 2_usize,
+            out_size: 1_usize,
         },
         test_offsets_ok {
-            in_size: 4_(),
-            out_size: 2_(),
+            in_size: 4_usize,
+            out_size: 2_usize,
         },
         test_offsets_ok {
-            in_size: 6_(),
-            out_size: 3_(),
+            in_size: 6_usize,
+            out_size: 3_usize,
         },
         test_offsets_ok {
-            in_size: 10_(),
-            out_size: 4_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 4] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 4] = [0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_14(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3502,20 +3743,20 @@ pub unsafe fn utf16_to_utf32_in_ok_42(cvt: *const (), mut endianess: utf16_endia
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_20(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3523,7 +3764,7 @@ pub unsafe fn utf16_to_utf32_in_ok_42(cvt: *const (), mut endianess: utf16_endia
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3531,64 +3772,58 @@ pub unsafe fn utf16_to_utf32_in_ok_42(cvt: *const (), mut endianess: utf16_endia
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_20(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.in_size)) {
+            if !((len as usize) == (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 5] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 5] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_14(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3596,20 +3831,20 @@ pub unsafe fn utf16_to_utf32_in_ok_42(cvt: *const (), mut endianess: utf16_endia
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_18(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3617,7 +3852,7 @@ pub unsafe fn utf16_to_utf32_in_ok_42(cvt: *const (), mut endianess: utf16_endia
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3625,182 +3860,193 @@ pub unsafe fn utf16_to_utf32_in_ok_42(cvt: *const (), mut endianess: utf16_endia
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_18(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.in_size)) {
+            if !((len as usize) == (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
 pub unsafe fn utf16_to_utf32_in_partial_43(cvt: *const (), mut endianess: utf16_endianess) {
-    let input: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
-    let expected: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
+    let expected: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
     const _: () = assert!(true, "array_size (input) == 6");;
     const _: () = assert!(true, "array_size (expected) == 5");;
-    let mut in_: [(); 12] = [unimplemented!(); 12];
-    let mut exp: [(); 5] = [unimplemented!(); 5];
+    let mut in_: [libc::c_char; 12] = [(0 as libc::c_char); 12];
+    let mut exp: [i32; 5] = [0_i32; 5];
     (unsafe {
-        let _f: *const () = unimplemented!();
-        let _l: *const () = unimplemented!();
+        let _f: *const u16 = unimplemented!();
+        let _l: *const u16 = input.as_ptr().add(input.len());
         utf16_to_bytes_40(_f, _l, unimplemented!(), endianess)
     });
-    unimplemented!();
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut offsets: [test_offsets_partial; 16] = [
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 0_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 2_usize,
+            out_size: 0_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 1_(),
-            out_size: 1_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 1_usize,
+            out_size: 1_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 1_(),
-            out_size: 0_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 1_usize,
+            out_size: 0_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 1_(),
-            expected_in_next: 2_(),
-            expected_out_next: 1_(),
+            in_size: 4_usize,
+            out_size: 1_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 2_(),
-            expected_in_next: 2_(),
-            expected_out_next: 1_(),
+            in_size: 3_usize,
+            out_size: 2_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 1_(),
-            expected_in_next: 2_(),
-            expected_out_next: 1_(),
+            in_size: 3_usize,
+            out_size: 1_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 1_usize,
         },
         test_offsets_partial {
-            in_size: 6_(),
-            out_size: 2_(),
-            expected_in_next: 4_(),
-            expected_out_next: 2_(),
+            in_size: 6_usize,
+            out_size: 2_usize,
+            expected_in_next: 4_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 3_(),
-            expected_in_next: 4_(),
-            expected_out_next: 2_(),
+            in_size: 5_usize,
+            out_size: 3_usize,
+            expected_in_next: 4_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 5_(),
-            out_size: 2_(),
-            expected_in_next: 4_(),
-            expected_out_next: 2_(),
+            in_size: 5_usize,
+            out_size: 2_usize,
+            expected_in_next: 4_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 10_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 10_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 7_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 7_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 8_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 8_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 9_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 9_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 7_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 7_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 8_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 8_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
         test_offsets_partial {
-            in_size: 9_(),
-            out_size: 3_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
+            in_size: 9_usize,
+            out_size: 3_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((16_()) as isize),
+        offsets.as_mut_ptr().offset((16_i64) as isize),
     ) {
         let mut t: test_offsets_partial = (*t);
-        let mut out: [(); 4] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut out: [i32; 4] = [0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_14(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3808,7 +4054,7 @@ pub unsafe fn utf16_to_utf32_in_partial_43(cvt: *const (), mut endianess: utf16_
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_20(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3816,7 +4062,7 @@ pub unsafe fn utf16_to_utf32_in_partial_43(cvt: *const (), mut endianess: utf16_
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3824,20 +4070,20 @@ pub unsafe fn utf16_to_utf32_in_partial_43(cvt: *const (), mut endianess: utf16_
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3847,7 +4093,7 @@ pub unsafe fn utf16_to_utf32_in_partial_43(cvt: *const (), mut endianess: utf16_
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3855,217 +4101,228 @@ pub unsafe fn utf16_to_utf32_in_partial_43(cvt: *const (), mut endianess: utf16_
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_20(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.expected_in_next)) {
+            if !((len as usize) == (t.expected_in_next)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
 pub unsafe fn utf16_to_utf32_in_error_44(cvt: *const (), mut endianess: utf16_endianess) {
-    let mut input: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let mut input: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
-    let expected: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
+    let expected: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
     const _: () = assert!(true, "array_size (input) == 6");;
     const _: () = assert!(true, "array_size (expected) == 5");;
-    let mut exp: [(); 5] = [unimplemented!(); 5];
-    unimplemented!();
+    let mut exp: [i32; 5] = [0_i32; 5];
+    {
+        let mut __first = unimplemented!();
+        let __last = expected.as_ptr().add(expected.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     let mut offsets: [test_offsets_error_char16_t_; 17] = [
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 55296_(),
-            replace_pos: 0_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 55296_u16,
+            replace_pos: 0_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 56319_(),
-            replace_pos: 0_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 56319_u16,
+            replace_pos: 0_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 56320_(),
-            replace_pos: 0_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 56320_u16,
+            replace_pos: 0_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 57343_(),
-            replace_pos: 0_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 57343_u16,
+            replace_pos: 0_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 2_(),
-            expected_out_next: 1_(),
-            replace_char: 55296_(),
-            replace_pos: 1_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 1_usize,
+            replace_char: 55296_u16,
+            replace_pos: 1_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 2_(),
-            expected_out_next: 1_(),
-            replace_char: 56319_(),
-            replace_pos: 1_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 1_usize,
+            replace_char: 56319_u16,
+            replace_pos: 1_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 2_(),
-            expected_out_next: 1_(),
-            replace_char: 56320_(),
-            replace_pos: 1_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 1_usize,
+            replace_char: 56320_u16,
+            replace_pos: 1_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 2_(),
-            expected_out_next: 1_(),
-            replace_char: 57343_(),
-            replace_pos: 1_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 1_usize,
+            replace_char: 57343_u16,
+            replace_pos: 1_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 4_(),
-            expected_out_next: 2_(),
-            replace_char: 55296_(),
-            replace_pos: 2_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 4_usize,
+            expected_out_next: 2_usize,
+            replace_char: 55296_u16,
+            replace_pos: 2_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 4_(),
-            expected_out_next: 2_(),
-            replace_char: 56319_(),
-            replace_pos: 2_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 4_usize,
+            expected_out_next: 2_usize,
+            replace_char: 56319_u16,
+            replace_pos: 2_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 4_(),
-            expected_out_next: 2_(),
-            replace_char: 56320_(),
-            replace_pos: 2_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 4_usize,
+            expected_out_next: 2_usize,
+            replace_char: 56320_u16,
+            replace_pos: 2_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 4_(),
-            expected_out_next: 2_(),
-            replace_char: 57343_(),
-            replace_pos: 2_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 4_usize,
+            expected_out_next: 2_usize,
+            replace_char: 57343_u16,
+            replace_pos: 2_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 56320_(),
-            replace_pos: 3_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 56320_u16,
+            replace_pos: 3_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 57343_(),
-            replace_pos: 3_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 57343_u16,
+            replace_pos: 3_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 55296_(),
-            replace_pos: 4_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 55296_u16,
+            replace_pos: 4_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: 56319_(),
-            replace_pos: 4_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: 56319_u16,
+            replace_pos: 4_usize,
         },
         test_offsets_error_char16_t_ {
-            in_size: 10_(),
-            out_size: 4_(),
-            expected_in_next: 6_(),
-            expected_out_next: 3_(),
-            replace_char: (122 as ()),
-            replace_pos: 4_(),
+            in_size: 10_usize,
+            out_size: 4_usize,
+            expected_in_next: 6_usize,
+            expected_out_next: 3_usize,
+            replace_char: (122 as u16),
+            replace_pos: 4_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((17_()) as isize),
+        offsets.as_mut_ptr().offset((17_i64) as isize),
     ) {
         let mut t: test_offsets_error_char16_t_ = (*t);
-        let mut in_: [(); 12] = [unimplemented!(); 12];
-        let mut out: [(); 4] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let mut in_: [libc::c_char; 12] = [(0 as libc::c_char); 12];
+        let mut out: [i32; 4] = [0_i32, 0_i32, 0_i32, 0_i32];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_14(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4073,7 +4330,7 @@ pub unsafe fn utf16_to_utf32_in_error_44(cvt: *const (), mut endianess: utf16_en
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_20(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4081,7 +4338,7 @@ pub unsafe fn utf16_to_utf32_in_error_44(cvt: *const (), mut endianess: utf16_en
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4089,27 +4346,27 @@ pub unsafe fn utf16_to_utf32_in_error_44(cvt: *const (), mut endianess: utf16_en
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut old_char: () = input[(t.replace_pos) as usize];
-        input[(t.replace_pos) as usize] = t.replace_char;
+        let mut old_char: u16 = input[(t.replace_pos)];
+        input[(t.replace_pos)] = t.replace_char;
         (unsafe {
-            let _f: *mut () = unimplemented!();
-            let _l: *mut () = unimplemented!();
+            let _f: *mut u16 = unimplemented!();
+            let _l: *mut u16 = input.as_ptr().add(input.len());
             utf16_to_bytes_41(_f, _l, unimplemented!(), endianess)
         });
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const libc::c_char = std::ptr::null();
+        let mut out_next: *mut i32 = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4119,7 +4376,7 @@ pub unsafe fn utf16_to_utf32_in_error_44(cvt: *const (), mut endianess: utf16_en
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4127,113 +4384,129 @@ pub unsafe fn utf16_to_utf32_in_error_44(cvt: *const (), mut endianess: utf16_en
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_20(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)]) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        state = unsafe { std::mem::zeroed::<__mbstate_t>() };
-        let mut len: () = unimplemented!();
+        state = unsafe { std::mem::zeroed() };
+        let mut len: i32 = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) >= (0_())) {
+            if !((len) >= (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((len) == (t.expected_in_next)) {
+            if !((len as usize) == (t.expected_in_next)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        input[(t.replace_pos) as usize] = old_char;
+        input[(t.replace_pos)] = old_char;
     }
 }
 pub unsafe fn utf32_to_utf16_out_ok_45(cvt: *const (), mut endianess: utf16_endianess) {
-    let input: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
-    let expected: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
+    let expected: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
     const _: () = assert!(true, "array_size (input) == 5");;
     const _: () = assert!(true, "array_size (expected) == 6");;
-    let mut in_: [(); 5] = [unimplemented!(); 5];
-    let mut exp: [(); 12] = [unimplemented!(); 12];
-    unimplemented!();
+    let mut in_: [i32; 5] = [0_i32; 5];
+    let mut exp: [libc::c_char; 12] = [(0 as libc::c_char); 12];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     (unsafe {
-        let _f: *const () = unimplemented!();
-        let _l: *const () = unimplemented!();
+        let _f: *const u16 = unimplemented!();
+        let _l: *const u16 = expected.as_ptr().add(expected.len());
         utf16_to_bytes_40(_f, _l, unimplemented!(), endianess)
     });
     let mut offsets: [test_offsets_ok; 5] = [
         test_offsets_ok {
-            in_size: 0_(),
-            out_size: 0_(),
+            in_size: 0_usize,
+            out_size: 0_usize,
         },
         test_offsets_ok {
-            in_size: 1_(),
-            out_size: 2_(),
+            in_size: 1_usize,
+            out_size: 2_usize,
         },
         test_offsets_ok {
-            in_size: 2_(),
-            out_size: 4_(),
+            in_size: 2_usize,
+            out_size: 4_usize,
         },
         test_offsets_ok {
-            in_size: 3_(),
-            out_size: 6_(),
+            in_size: 3_usize,
+            out_size: 6_usize,
         },
         test_offsets_ok {
-            in_size: 4_(),
-            out_size: 10_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((5_()) as isize),
+        offsets.as_mut_ptr().offset((5_i64) as isize),
     ) {
         let mut t: test_offsets_ok = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_18(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4241,20 +4514,20 @@ pub unsafe fn utf32_to_utf16_out_ok_45(cvt: *const (), mut endianess: utf16_endi
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4262,7 +4535,7 @@ pub unsafe fn utf32_to_utf16_out_ok_45(cvt: *const (), mut endianess: utf16_endi
             __do_while = false;
             if !((in_next) == ((in_.as_mut_ptr().offset((t.in_size) as isize)).cast_const())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4270,134 +4543,150 @@ pub unsafe fn utf32_to_utf16_out_ok_45(cvt: *const (), mut endianess: utf16_endi
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.out_size) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.out_size) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.out_size) as usize]) == (0_())) {
+                if !((out[(t.out_size)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
     }
 }
 pub unsafe fn utf32_to_utf16_out_partial_46(cvt: *const (), mut endianess: utf16_endianess) {
-    let input: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
-    let expected: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
+    let expected: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
     const _: () = assert!(true, "array_size (input) == 5");;
     const _: () = assert!(true, "array_size (expected) == 6");;
-    let mut in_: [(); 5] = [unimplemented!(); 5];
-    let mut exp: [(); 12] = [unimplemented!(); 12];
-    unimplemented!();
+    let mut in_: [i32; 5] = [0_i32; 5];
+    let mut exp: [libc::c_char; 12] = [(0 as libc::c_char); 12];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     (unsafe {
-        let _f: *const () = unimplemented!();
-        let _l: *const () = unimplemented!();
+        let _f: *const u16 = unimplemented!();
+        let _l: *const u16 = expected.as_ptr().add(expected.len());
         utf16_to_bytes_40(_f, _l, unimplemented!(), endianess)
     });
     let mut offsets: [test_offsets_partial; 10] = [
         test_offsets_partial {
-            in_size: 1_(),
-            out_size: 0_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 1_usize,
+            out_size: 0_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 1_(),
-            out_size: 1_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
+            in_size: 1_usize,
+            out_size: 1_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 2_(),
-            expected_in_next: 1_(),
-            expected_out_next: 2_(),
+            in_size: 2_usize,
+            out_size: 2_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 2_(),
-            out_size: 3_(),
-            expected_in_next: 1_(),
-            expected_out_next: 2_(),
+            in_size: 2_usize,
+            out_size: 3_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 2_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 4_(),
-            expected_in_next: 2_(),
-            expected_out_next: 4_(),
+            in_size: 3_usize,
+            out_size: 4_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 4_usize,
         },
         test_offsets_partial {
-            in_size: 3_(),
-            out_size: 5_(),
-            expected_in_next: 2_(),
-            expected_out_next: 4_(),
+            in_size: 3_usize,
+            out_size: 5_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 4_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 6_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 6_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 7_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 7_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 8_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 8_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
         test_offsets_partial {
-            in_size: 4_(),
-            out_size: 9_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
+            in_size: 4_usize,
+            out_size: 9_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((10_()) as isize),
+        offsets.as_mut_ptr().offset((10_i64) as isize),
     ) {
         let mut t: test_offsets_partial = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_18(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4405,7 +4694,7 @@ pub unsafe fn utf32_to_utf16_out_partial_46(cvt: *const (), mut endianess: utf16
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4413,7 +4702,7 @@ pub unsafe fn utf32_to_utf16_out_partial_46(cvt: *const (), mut endianess: utf16
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4421,20 +4710,20 @@ pub unsafe fn utf32_to_utf16_out_partial_46(cvt: *const (), mut endianess: utf16
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4444,7 +4733,7 @@ pub unsafe fn utf32_to_utf16_out_partial_46(cvt: *const (), mut endianess: utf16
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4452,138 +4741,154 @@ pub unsafe fn utf32_to_utf16_out_partial_46(cvt: *const (), mut endianess: utf16
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
     }
 }
 pub unsafe fn utf32_to_utf16_out_error_47(cvt: *const (), mut endianess: utf16_endianess) {
-    let input: [(); 5] = [98 as (), 1096 as (), 43690 as (), 1092266 as (), 0 as ()];
-    let expected: [(); 6] = [
-        98 as (),
-        1096 as (),
-        43690 as (),
-        56298 as (),
-        57002 as (),
-        0 as (),
+    let input: [u32; 5] = [
+        98 as u32,
+        1096 as u32,
+        43690 as u32,
+        1092266 as u32,
+        0 as u32,
+    ];
+    let expected: [u16; 6] = [
+        98 as u16,
+        1096 as u16,
+        43690 as u16,
+        56298 as u16,
+        57002 as u16,
+        0 as u16,
     ];
     const _: () = assert!(true, "array_size (input) == 5");;
     const _: () = assert!(true, "array_size (expected) == 6");;
-    let mut in_: [(); 5] = [unimplemented!(); 5];
-    let mut exp: [(); 12] = [unimplemented!(); 12];
-    unimplemented!();
+    let mut in_: [i32; 5] = [0_i32; 5];
+    let mut exp: [libc::c_char; 12] = [(0 as libc::c_char); 12];
+    {
+        let mut __first = unimplemented!();
+        let __last = input.as_ptr().add(input.len());
+        let mut __out = unimplemented!();
+        while __first != __last {
+            *__out.iter_deref() = ((*__first.iter_deref()) as i32);
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     (unsafe {
-        let _f: *const () = unimplemented!();
-        let _l: *const () = unimplemented!();
+        let _f: *const u16 = unimplemented!();
+        let _l: *const u16 = expected.as_ptr().add(expected.len());
         utf16_to_bytes_40(_f, _l, unimplemented!(), endianess)
     });
     let mut offsets: [test_offsets_error_wchar_t_; 8] = [
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 55296_(),
-            replace_pos: 0_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 55296_i32,
+            replace_pos: 0_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 1_(),
-            expected_out_next: 2_(),
-            replace_char: 56319_(),
-            replace_pos: 1_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 2_usize,
+            replace_char: 56319_i32,
+            replace_pos: 1_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 2_(),
-            expected_out_next: 4_(),
-            replace_char: 56320_(),
-            replace_pos: 2_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 4_usize,
+            replace_char: 56320_i32,
+            replace_pos: 2_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: 57343_(),
-            replace_pos: 3_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: 57343_i32,
+            replace_pos: 3_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 0_(),
-            expected_out_next: 0_(),
-            replace_char: 1114112_(),
-            replace_pos: 0_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 0_usize,
+            expected_out_next: 0_usize,
+            replace_char: 1114112_i32,
+            replace_pos: 0_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 1_(),
-            expected_out_next: 2_(),
-            replace_char: 1114112_(),
-            replace_pos: 1_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 1_usize,
+            expected_out_next: 2_usize,
+            replace_char: 1114112_i32,
+            replace_pos: 1_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 2_(),
-            expected_out_next: 4_(),
-            replace_char: 1114112_(),
-            replace_pos: 2_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 2_usize,
+            expected_out_next: 4_usize,
+            replace_char: 1114112_i32,
+            replace_pos: 2_usize,
         },
         test_offsets_error_wchar_t_ {
-            in_size: 4_(),
-            out_size: 10_(),
-            expected_in_next: 3_(),
-            expected_out_next: 6_(),
-            replace_char: 1114112_(),
-            replace_pos: 3_(),
+            in_size: 4_usize,
+            out_size: 10_usize,
+            expected_in_next: 3_usize,
+            expected_out_next: 6_usize,
+            replace_char: 1114112_i32,
+            replace_pos: 3_usize,
         },
     ];
     'loop_: for t in IterRange::new(
         offsets.as_mut_ptr(),
-        offsets.as_mut_ptr().offset((8_()) as isize),
+        offsets.as_mut_ptr().offset((8_i64) as isize),
     ) {
         let mut t: test_offsets_error_wchar_t_ = (*t);
-        let mut out: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut out: [libc::c_char; 10] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
         ];
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !((t.in_size) <= (unsafe { array_size_18(&in_) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4591,7 +4896,7 @@ pub unsafe fn utf32_to_utf16_out_error_47(cvt: *const (), mut endianess: utf16_e
             __do_while = false;
             if !((t.out_size) <= (unsafe { array_size_15(&out) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4599,7 +4904,7 @@ pub unsafe fn utf32_to_utf16_out_error_47(cvt: *const (), mut endianess: utf16_e
             __do_while = false;
             if !((t.expected_in_next) <= (t.in_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4607,22 +4912,22 @@ pub unsafe fn utf32_to_utf16_out_error_47(cvt: *const (), mut endianess: utf16_e
             __do_while = false;
             if !((t.expected_out_next) <= (t.out_size)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
-        let mut old_char: () = in_[(t.replace_pos) as usize];
-        in_[(t.replace_pos) as usize] = t.replace_char;
-        let mut state: () = unimplemented!();
-        let mut in_next: *const () = std::ptr::null();
-        let mut out_next: *mut () = std::ptr::null_mut();
+        let mut old_char: i32 = in_[(t.replace_pos)];
+        in_[(t.replace_pos)] = t.replace_char;
+        let mut state: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut in_next: *const i32 = std::ptr::null();
+        let mut out_next: *mut libc::c_char = std::ptr::null_mut();
         let mut res: () = unimplemented!();
         res = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4632,7 +4937,7 @@ pub unsafe fn utf32_to_utf16_out_error_47(cvt: *const (), mut endianess: utf16_e
                 == ((in_.as_mut_ptr().offset((t.expected_in_next) as isize)).cast_const()))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4640,28 +4945,28 @@ pub unsafe fn utf32_to_utf16_out_error_47(cvt: *const (), mut endianess: utf16_e
             __do_while = false;
             if !((out_next) == (out.as_mut_ptr().offset((t.expected_out_next) as isize))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !((unimplemented!()) == (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         if ((t.expected_out_next) < (unsafe { array_size_15(&out) })) {
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
-                if !((out[(t.expected_out_next) as usize]) == (0_())) {
+                if !((out[(t.expected_out_next)] as i32) == (0)) {
                     unimplemented!();
-                    unimplemented!();
+                    std::process::abort();
                 }
             }
         }
-        in_[(t.replace_pos) as usize] = old_char;
+        in_[(t.replace_pos)] = old_char;
     }
 }
 pub unsafe fn test_utf16_utf32_cvt_48(cvt: *const (), mut endianess: utf16_endianess) {
@@ -4718,7 +5023,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test_utf8_utf32_codecvts_49() });
     (unsafe { test_utf8_utf16_codecvts_50() });
     (unsafe { test_utf8_ucs2_codecvts_51() });
@@ -4729,26 +5034,26 @@ unsafe fn main_0() -> () {
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            sem_set_: unimplemented!(),
+            sem_set_: 0_i32,
             pid_: unimplemented!(),
         };
         this.pid_ = unimplemented!();
         this.sem_set_ = unimplemented!();
-        if ((this.sem_set_) == (-1_())) {
+        if ((this.sem_set_) == (-1_i32)) {
             unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
-        if ((unimplemented!()) == (-1_())) {
+        val.val = 0;
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_54(mut size: Option<()>) {
-    let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
+pub unsafe fn set_memory_limits_54(mut size: Option<f32>) {
+    let mut size: f32 = size.unwrap_or_else(|| unsafe { (16_f64 as f32) });
     let mut r: () = unimplemented!();
-    let mut limit: () = ((size) * (1048576_()));
+    let mut limit: () = (((size) * (1048576_f32)) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
@@ -4762,34 +5067,37 @@ pub unsafe fn set_memory_limits_54(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_55(mut size: ()) {
+pub unsafe fn set_file_limit_55(mut size: u64) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_56(mut mangled: *const (), mut wanted: *const ()) {
-    let mut status: () = 0_();
-    let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = unimplemented!();
+pub unsafe fn verify_demangle_56(
+    mut mangled: *const libc::c_char,
+    mut wanted: *const libc::c_char,
+) {
+    let mut status: i32 = 0;
+    let mut s: *const libc::c_char = std::ptr::null();
+    let mut demangled: *mut libc::c_char = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
         switch!(match status {
-            __v if __v == 0_() => {
+            __v if __v == 0 => {
                 s = c"error code = 0: success".as_ptr();
                 break;
             }
-            __v if __v == -1_() => {
+            __v if __v == -1_i32 => {
                 s = c"error code = -1: memory allocation failure".as_ptr();
                 break;
             }
-            __v if __v == -2_() => {
+            __v if __v == -2_i32 => {
                 s = c"error code = -2: invalid mangled name".as_ptr();
                 break;
             }
-            __v if __v == -3_() => {
+            __v if __v == -3_i32 => {
                 s = c"error code = -3: invalid arguments".as_ptr();
                 break;
             }
@@ -4798,77 +5106,99 @@ pub unsafe fn verify_demangle_56(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if !(unimplemented!()) {
+    let mut w: Vec<libc::c_char> =
+        std::slice::from_raw_parts(wanted, libcc2rs::c_str_len(wanted) + 1).to_vec();
+    if !(w == std::slice::from_raw_parts(s, libcc2rs::c_str_len(s) + 1).to_vec()) {
         unimplemented!();
     }
-    unimplemented!();
+    libcc2rs::free_unsafe((demangled as *mut ::libc::c_void));
 }
-pub unsafe fn run_tests_wrapped_locale_57(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_57(
+    mut name: *const libc::c_char,
+    l: *const __gnu_test_func_callback,
+) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut res: *const () = (unimplemented!()).cast_const();
+    let mut res: *const libc::c_char = (libc::setlocale(6, name)).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () = unimplemented!();
+        let mut preLC_ALL: Vec<libc::c_char> =
+            std::slice::from_raw_parts(res, libcc2rs::c_str_len(res) + 1).to_vec();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () = unimplemented!();
+        let mut postLC_ALL: Vec<libc::c_char> = std::slice::from_raw_parts(
+            (libc::setlocale(6, std::ptr::null())).cast_const(),
+            libcc2rs::c_str_len((libc::setlocale(6, std::ptr::null())).cast_const()) + 1,
+        )
+        .to_vec();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"LC_ALL for ".as_ptr(),
+            libcc2rs::c_str_len(c"LC_ALL for ".as_ptr()) + 1,
+        )
+        .to_vec();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn run_tests_wrapped_env_58(
-    mut name: *const (),
-    mut env: *const (),
+    mut name: *const libc::c_char,
+    mut env: *const libc::c_char,
     l: *const __gnu_test_func_callback,
 ) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut oldENV: *const () = (unimplemented!()).cast_const();
-    if !(unimplemented!() != 0) {
+    let mut oldENV: *const libc::c_char = (libc::getenv(env)).cast_const();
+    if !(libc::setenv(env, name, 1) != 0) {
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        unimplemented!();
+        libc::setenv(
+            env,
+            if !(oldENV).is_null() {
+                oldENV
+            } else {
+                c"".as_ptr()
+            },
+            1,
+        );
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> =
+            std::slice::from_raw_parts(env, libcc2rs::c_str_len(env) + 1).to_vec();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+static mut count__1: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__2: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut count__3: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__4: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut _M_count_5: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut next_id__6: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
-    pub val: (),
+    pub val: i32,
     pub buf: *mut (),
-    pub array: *mut (),
+    pub array: *mut u16,
 }
 impl Default for __gnu_test_semun {
     fn default() -> Self {
@@ -4879,7 +5209,7 @@ impl __gnu_test_semaphore {}
 impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
+        val.val = 0;
         if ((self.pid_) == (unimplemented!())) {
             unimplemented!();
         }
@@ -4888,7 +5218,7 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
@@ -4896,22 +5226,22 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
 }
 pub unsafe fn test_tm_59(
-    mut sec: (),
-    mut min: (),
-    mut hour: (),
-    mut mday: (),
-    mut mon: (),
-    mut year: (),
-    mut wday: (),
-    mut yday: (),
-    mut isdst: (),
-) -> () {
+    mut sec: i32,
+    mut min: i32,
+    mut hour: i32,
+    mut mday: i32,
+    mut mon: i32,
+    mut year: i32,
+    mut wday: i32,
+    mut yday: i32,
+    mut isdst: i32,
+) -> ::libc::tm {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_60)).tm_sec = sec;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_60)).tm_min = min;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_60)).tm_hour = hour;
@@ -4921,10 +5251,10 @@ pub unsafe fn test_tm_59(
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_60)).tm_wday = wday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_60)).tm_yday = yday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_60)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_60)).clone();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_60));
 }
-static mut tmp_60: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut tmp_60: std::cell::LazyCell<::libc::tm> =
+    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);
     std::cell::LazyCell::force(&*&raw const count__1);

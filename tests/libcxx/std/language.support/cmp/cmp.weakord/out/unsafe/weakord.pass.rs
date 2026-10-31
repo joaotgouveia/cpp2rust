@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -15,8 +15,8 @@ pub unsafe fn DoNotOptimize_1(value: *const *const ()) -> *const *const () {
     c"";
     return value;
 }
-pub static mut sink_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut sink_2: std::cell::LazyCell<*const ::libc::c_void> =
+    std::cell::LazyCell::new(|| unsafe { std::ptr::null() });
 pub unsafe fn test_static_members_3() {
     (unsafe {
         let mut _value: *const () = (&raw const (*unimplemented!()) as *const ());
@@ -50,7 +50,7 @@ pub unsafe fn test_signatures_4() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_conversion_5() -> () {
+pub unsafe fn test_conversion_5() -> bool {
     const _: () = assert!(
         true,
         "std::is_convertible<const std::weak_ordering&,\n      std::partial_ordering>::value"
@@ -58,28 +58,28 @@ pub unsafe fn test_conversion_5() -> () {
     {
         let mut V: () = unimplemented!();
         let mut WV: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let mut V: () = unimplemented!();
         let mut WV: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let mut V: () = unimplemented!();
         let mut WV: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     return true;
 }
 pub unsafe fn test_equality_6() {
     let WeakEq: *const () = &(*unimplemented!());
     let PartialEq: *const () = &(*unimplemented!());
-    unimplemented!();
-    let StrongEq: *const () = &(*unimplemented!());
-    unimplemented!();
+    assert!(unimplemented!());
+    let StrongEq: *const std::cmp::Ordering = &std::cmp::Ordering::Equal;
+    assert!(unimplemented!());
 }
-pub unsafe fn test_constexpr_7() -> () {
+pub unsafe fn test_constexpr_7() -> bool {
     let Eq: *const () = &(*unimplemented!());
     let Less: *const () = &(*unimplemented!());
     let Greater: *const () = &(*unimplemented!());
@@ -108,22 +108,22 @@ pub unsafe fn test_constexpr_7() -> () {
     ];
     'loop_: for TC in IterRange::new(
         TestCases.as_mut_ptr(),
-        TestCases.as_mut_ptr().offset((3_()) as isize),
+        TestCases.as_mut_ptr().offset((3_i64) as isize),
     ) {
         let mut TC: anon_8 = (*TC).clone();
         let mut V: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((unimplemented!()) as i32) == (TC.ExpectEq as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectEq as i32)));
+        assert!((((!(unimplemented!())) as i32) == (TC.ExpectNeq as i32)));
+        assert!((((!(unimplemented!())) as i32) == (TC.ExpectNeq as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectLess as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectGreater as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectLess) || (TC.ExpectEq)) as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectGreater) || (TC.ExpectEq)) as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectGreater as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectLess as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectGreater) || (TC.ExpectEq)) as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectLess) || (TC.ExpectEq)) as i32)));
     }
     {
         let mut res: () = (unimplemented!());
@@ -147,23 +147,23 @@ pub unsafe fn test_constexpr_7() -> () {
     ];
     'loop_: for TC in IterRange::new(
         SpaceshipTestCases.as_mut_ptr(),
-        SpaceshipTestCases.as_mut_ptr().offset((3_()) as isize),
+        SpaceshipTestCases.as_mut_ptr().offset((3_i64) as isize),
     ) {
         let mut TC: anon_10 = (*TC).clone();
         let mut Res: () = (unimplemented!());
         'switch: {
-            match { (TC.Expect as ()) } {
-                __v if __v == (ExpectRes_9_ER_Equiv as ()) => {
-                    unimplemented!();
-                    unimplemented!();
+            match { (TC.Expect as i32) } {
+                __v if __v == (ExpectRes_9_ER_Equiv as i32) => {
+                    assert!(unimplemented!());
+                    assert!(unimplemented!());
                     break 'switch;
                 }
-                __v if __v == (ExpectRes_9_ER_Less as ()) => {
-                    unimplemented!();
+                __v if __v == (ExpectRes_9_ER_Less as i32) => {
+                    assert!(unimplemented!());
                     break 'switch;
                 }
-                __v if __v == (ExpectRes_9_ER_Greater as ()) => {
-                    unimplemented!();
+                __v if __v == (ExpectRes_9_ER_Greater as i32) => {
+                    assert!(unimplemented!());
                     break 'switch;
                 }
                 _ => {}
@@ -212,12 +212,12 @@ pub unsafe fn test_constexpr_7() -> () {
 #[derive(Clone, VaArg, FnPtrArg, Default)]
 pub struct anon_8 {
     pub Value: (),
-    pub ExpectEq: (),
-    pub ExpectNeq: (),
-    pub ExpectLess: (),
-    pub ExpectGreater: (),
+    pub ExpectEq: bool,
+    pub ExpectNeq: bool,
+    pub ExpectLess: bool,
+    pub ExpectGreater: bool,
 }
-pub type ExpectRes_9 = ();
+pub type ExpectRes_9 = u32;
 pub const ExpectRes_9_ER_Greater: ExpectRes_9 = 0;
 pub const ExpectRes_9_ER_Less: ExpectRes_9 = 1;
 pub const ExpectRes_9_ER_Equiv: ExpectRes_9 = 2;
@@ -242,13 +242,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_static_members_3() });
     (unsafe { test_signatures_4() });
     (unsafe { test_equality_6() });
     const _: () = assert!(true, "test_conversion()");;
     const _: () = assert!(true, "test_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const sink_2);

@@ -26,46 +26,139 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let f: Ptr<()> = unimplemented!();
     {
-        let mut from: () = unimplemented!();
-        let mut to: () = unimplemented!();
-        let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                115 as i32, 111 as i32, 109 as i32, 101 as i32, 32 as i32, 116 as i32, 101 as i32,
+                120 as i32, 116 as i32, 0 as i32,
+            ])
+            .to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        let to: Value<Vec<i8>> = Rc::new(RefCell::new(
+            (0..(((*from.borrow()).len() - 1).wrapping_add(1_usize)) as usize)
+                .map(|_| 0_i8)
+                .collect::<Vec<_>>(),
+        ));
+        let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
         let mut from_next: Ptr<()> = Ptr::<()>::null();
-        let mut to_next: Ptr<()> = Ptr::<()>::null();
+        let mut to_next: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(
+            ({ ((((from_next).clone() - from.decay()) as i64) as usize) } == {
+                ((*from.borrow()).len() - 1)
+            })
+        );
+        assert!(
+            ({ ((((to_next).clone() - to.decay()) as i64) as usize) } == {
+                ((*from.borrow()).len() - 1)
+            })
+        );
+        assert!(
+            to.decay().with_c_str(|__s| {
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"some text").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }[..{
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"some text").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }
+            .len()
+            .saturating_sub(1)]
+                == *__s)
+        );
     }
     {
-        let mut from: () = unimplemented!();
-        unimplemented!().write(('\0' as ()));
-        let mut to: () = unimplemented!();
-        let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                115 as i32, 111 as i32, 109 as i32, 101 as i32, 32 as i32, 116 as i32, 101 as i32,
+                120 as i32, 116 as i32, 0 as i32,
+            ])
+            .to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        from.decay()
+            .offset(4_usize as isize)
+            .write((('\0' as i8) as i32));
+        let to: Value<Vec<i8>> = Rc::new(RefCell::new(
+            (0..(((*from.borrow()).len() - 1).wrapping_add(1_usize)) as usize)
+                .map(|_| 0_i8)
+                .collect::<Vec<_>>(),
+        ));
+        let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
         let mut from_next: Ptr<()> = Ptr::<()>::null();
-        let mut to_next: Ptr<()> = Ptr::<()>::null();
+        let mut to_next: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(
+            ({ ((((from_next).clone() - from.decay()) as i64) as usize) } == {
+                ((*from.borrow()).len() - 1)
+            })
+        );
+        assert!(
+            ({ ((((to_next).clone() - to.decay()) as i64) as usize) } == {
+                ((*from.borrow()).len() - 1)
+            })
+        );
+        assert!(
+            ((to.decay() as Ptr<i8>).to_any().memcmp(
+                &Ptr::<i8>::from_string_literal(b"some\0text").to_any(),
+                ((*from.borrow()).len() - 1)
+            ) == 0)
+        );
     }
     {
-        let mut from: () = unimplemented!();
-        let mut to: () = unimplemented!();
-        let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let from: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                115 as i32, 111 as i32, 109 as i32, 101 as i32, 32 as i32, 116 as i32, 101 as i32,
+                120 as i32, 116 as i32, 0 as i32,
+            ])
+            .to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        let to: Value<Vec<i8>> = Rc::new(RefCell::new(
+            (0..(((*from.borrow()).len() - 1).wrapping_sub(1_usize)) as usize)
+                .map(|_| 0_i8)
+                .collect::<Vec<_>>(),
+        ));
+        let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
         let mut from_next: Ptr<()> = Ptr::<()>::null();
-        let mut to_next: Ptr<()> = Ptr::<()>::null();
+        let mut to_next: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(
+            ({ ((((from_next).clone() - from.decay()) as i64) as usize) } == {
+                ((*to.borrow()).len()).wrapping_sub(1_usize)
+            })
+        );
+        assert!(
+            ({ ((((to_next).clone() - to.decay()) as i64) as usize) } == {
+                ((*to.borrow()).len()).wrapping_sub(1_usize)
+            })
+        );
+        assert!(
+            to.decay().with_c_str(|__s| {
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"some te").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }[..{
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"some te").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }
+            .len()
+            .saturating_sub(1)]
+                == *__s)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -10,40 +10,40 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct A_int_ {
     #[offset(0)]
-    pub id: (),
+    pub id: i32,
 }
 impl A_int_ {
-    pub fn new(i: Option<()>) -> Self {
-        let mut i: () = i.unwrap_or_else(|| 0_());
+    pub fn new(i: Option<i32>) -> Self {
+        let mut i: i32 = i.unwrap_or_else(|| 0);
         Self { id: i }
     }
 }
@@ -56,11 +56,11 @@ impl Default for A_int_ {
 #[byte_size(4)]
 pub struct A_Holder_NS_Incomplete__ptr_ {
     #[offset(0)]
-    pub id: (),
+    pub id: i32,
 }
 impl A_Holder_NS_Incomplete__ptr_ {
-    pub fn new(i: Option<()>) -> Self {
-        let mut i: () = i.unwrap_or_else(|| 0_());
+    pub fn new(i: Option<i32>) -> Self {
+        let mut i: i32 = i.unwrap_or_else(|| 0);
         Self { id: i }
     }
 }
@@ -73,11 +73,11 @@ impl Default for A_Holder_NS_Incomplete__ptr_ {
 #[byte_size(4)]
 pub struct B_int_ {
     #[offset(0)]
-    pub id: (),
+    pub id: i32,
 }
 impl B_int_ {
-    pub fn new(i: Option<()>) -> Self {
-        let mut i: () = i.unwrap_or_else(|| 0_());
+    pub fn new(i: Option<i32>) -> Self {
+        let mut i: i32 = i.unwrap_or_else(|| 0);
         Self { id: i }
     }
 }
@@ -86,26 +86,26 @@ impl Default for B_int_ {
         { B_int_::new(None) }
     }
 }
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     {
         let mut a: A_int_ = A_int_::new(None);
-        unimplemented!();
+        assert!(({ unimplemented!().id } == 0));
     }
     {
-        let mut a: A_int_ = A_int_::new({ Some(0_()) });
-        unimplemented!();
+        let mut a: A_int_ = A_int_::new({ Some(0) });
+        assert!(({ unimplemented!().id } == 0));
     }
     {
         let mut a: A_Holder_NS_Incomplete__ptr_ = A_Holder_NS_Incomplete__ptr_::new(None);
-        unimplemented!();
+        assert!(({ unimplemented!().id } == 0));
     }
     {
         let mut b: B_int_ = B_int_::new(None);
-        unimplemented!();
+        assert!(({ unimplemented!().id } == 100));
     }
     {
-        let mut b: B_int_ = B_int_::new({ Some(0_()) });
-        unimplemented!();
+        let mut b: B_int_ = B_int_::new({ Some(0) });
+        assert!(({ unimplemented!().id } == 100));
     }
     return true;
 }
@@ -128,17 +128,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait B_int_Impl {
     fn select_on_container_copy_construction(&self) -> B_int_;
 }
 impl B_int_Impl for Ptr<B_int_> {
     fn select_on_container_copy_construction(&self) -> B_int_ {
-        return B_int_::new({ Some(100_()) });
+        return B_int_::new({ Some(100) });
     }
 }
 pub fn __cpp2rust_init_globals() {

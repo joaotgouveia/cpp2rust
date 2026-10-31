@@ -15,15 +15,14 @@ pub unsafe fn source_0() -> A {
 pub unsafe fn csource_1() -> A {
     return <A>::default();
 }
-pub unsafe fn test_constexpr_forward_2() -> () {
-    let mut x: () = 42_();
-    let cx: () = 101_();
-    return ((((((((x) == (42_())) && ((x) == (42_()))) && ((x) == (42_())))
-        && ((x) == (42_())))
-        && ((x) == (42_())))
-        && ((x) == (42_())))
-        && ((cx) == (101_())))
-        && ((cx) == (101_()));
+pub unsafe fn test_constexpr_forward_2() -> bool {
+    let mut x: i32 = 42;
+    let cx: i32 = 101;
+    return ((((((((x) == (42)) && ((x) == (42))) && ((x) == (42))) && ((x) == (42)))
+        && ((x) == (42)))
+        && ((x) == (42)))
+        && ((cx) == (101)))
+        && ((cx) == (101));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -40,7 +39,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut a: A = <A>::default();
     let ca: A = <A>::default();
     (&(a));
@@ -91,11 +90,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     {
-        let i2: () = 42_();
+        let i2: i32 = 42;
         const _: () = assert!(true, "std::forward<int>(42) == 42");;
         const _: () = assert!(true, "std::forward<const int&>(i2) == 42");;
         const _: () = assert!(true, "test_constexpr_forward()");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

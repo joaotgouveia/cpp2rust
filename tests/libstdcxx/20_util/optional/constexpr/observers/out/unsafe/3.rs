@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct value_type {
-    pub i: (),
+    pub i: i32,
 }
 pub fn main() {
     unsafe {
@@ -17,7 +17,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let o: () = unimplemented!();
     const _: () = assert!(true, "o.value().i == 51");;
     const _: () = assert!(true, "o.value().i == (*o).i");;

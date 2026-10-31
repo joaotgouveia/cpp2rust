@@ -26,16 +26,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 30_()])));
+        let p0: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([10_f64, 30_f64])));
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let p: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*p.borrow()).len() == 2_usize));
+        assert!(((p.decay().offset(0_usize as isize).read()) == 0.25_f64));
+        assert!(((p.decay().offset(1_usize as isize).read()) == 0.75_f64));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

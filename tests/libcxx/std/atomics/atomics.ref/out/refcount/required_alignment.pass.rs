@@ -7,26 +7,26 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn check_required_alignment_0() {
-    let mut required_alignment: () = unimplemented!();
-    unimplemented!();
+    let mut required_alignment: usize = unimplemented!();
+    assert!((required_alignment >= ::std::mem::align_of::<i32>()));
 }
 pub fn check_required_alignment_1() {
-    let mut required_alignment: () = unimplemented!();
-    unimplemented!();
+    let mut required_alignment: usize = unimplemented!();
+    assert!((required_alignment >= ::std::mem::align_of::<f32>()));
 }
 pub fn check_required_alignment_2() {
-    let mut required_alignment: () = unimplemented!();
-    unimplemented!();
+    let mut required_alignment: usize = unimplemented!();
+    assert!((required_alignment >= 8usize));
 }
 pub fn check_required_alignment_3() {
-    let mut required_alignment: () = unimplemented!();
-    unimplemented!();
+    let mut required_alignment: usize = unimplemented!();
+    assert!((required_alignment >= 1usize));
 }
 pub fn check_required_alignment_4() {
-    let mut required_alignment: () = unimplemented!();
-    unimplemented!();
+    let mut required_alignment: usize = unimplemented!();
+    assert!((required_alignment >= 4usize));
 }
-pub fn test_5() -> () {
+pub fn test_5() -> bool {
     ({ check_required_alignment_0() });
     ({ check_required_alignment_1() });
     ({ check_required_alignment_2() });
@@ -41,7 +41,7 @@ pub struct Empty_6 {}
 #[byte_size(4)]
 pub struct Trivial_7 {
     #[offset(0)]
-    pub a: (),
+    pub a: i32,
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -62,9 +62,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_5() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

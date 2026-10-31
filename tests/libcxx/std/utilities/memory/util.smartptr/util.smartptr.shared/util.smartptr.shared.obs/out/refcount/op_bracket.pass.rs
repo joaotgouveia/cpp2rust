@@ -26,50 +26,50 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 8_()) {
-            let __rhs = i;
+        let mut i: i32 = 0;
+        'loop_: while (i < 8) {
+            let __rhs = (i as ());
             unimplemented!().write(__rhs);
             i.prefix_inc();
         }
-        let mut i: () = 0_();
-        'loop_: while (i < 8_()) {
-            unimplemented!();
+        let mut i: i32 = 0;
+        'loop_: while (i < 8) {
+            assert!(((unimplemented!().read()) == i));
             i.prefix_inc();
         }
     }
     {
-        let mut iptr: Ptr<()> =
-            Ptr::alloc_array((0..8_()).map(|_| unimplemented!()).collect::<Box<[()]>>());
-        let mut i: () = 0_();
-        'loop_: while (i < 8_()) {
+        let mut iptr: Ptr<i32> =
+            Ptr::alloc_array((0..8_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
+        let mut i: i32 = 0;
+        'loop_: while (i < 8) {
             elem!(iptr, i).write({ i });
             i.prefix_inc();
         }
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 8_()) {
-            unimplemented!();
+        let mut i: i32 = 0;
+        'loop_: while (i < 8) {
+            assert!(((unimplemented!().read()) == i));
             i.prefix_inc();
         }
     }
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 8_()) {
-            let __rhs = i;
+        let mut i: i32 = 0;
+        'loop_: while (i < 8) {
+            let __rhs = (i as ());
             unimplemented!().write(__rhs);
             i.prefix_inc();
         }
-        let mut i: () = 0_();
-        'loop_: while (i < 8_()) {
-            unimplemented!();
+        let mut i: i32 = 0;
+        'loop_: while (i < 8) {
+            assert!(((unimplemented!().read()) == i));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

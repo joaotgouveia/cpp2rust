@@ -9,18 +9,18 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Emplaceable {
-    int_: (),
-    double_: (),
+    int_: i32,
+    double_: f64,
 }
 impl Emplaceable {
     pub unsafe fn new_1() -> Self {
         let mut this = Self {
-            int_: 0_(),
-            double_: 0_(),
+            int_: 0,
+            double_: 0_f64,
         };
         this
     }
-    pub unsafe fn new_2(mut i: (), mut d: ()) -> Self {
+    pub unsafe fn new_2(mut i: i32, mut d: f64) -> Self {
         let mut this = Self {
             int_: i,
             double_: d,
@@ -32,25 +32,25 @@ impl Emplaceable {
             int_: (*x).int_,
             double_: (*x).double_,
         };
-        (*x).int_ = 0_();
-        (*x).double_ = 0_();
+        (*x).int_ = 0;
+        (*x).double_ = 0_f64;
         this
     }
     pub unsafe fn move_assign(&mut self, x: *mut Emplaceable) -> *mut Emplaceable {
         self.int_ = (*x).int_;
-        (*x).int_ = 0_();
+        (*x).int_ = 0;
         self.double_ = (*x).double_;
-        (*x).double_ = 0_();
+        (*x).double_ = 0_f64;
         return &mut (*(self as *mut Emplaceable));
     }
-    pub unsafe fn operator_eq(&self, x: *const Emplaceable) -> () {
+    pub unsafe fn operator_eq(&self, x: *const Emplaceable) -> bool {
         return ((self.int_) == ((*x).int_)) && ((self.double_) == ((*x).double_));
     }
-    pub unsafe fn operator_lt(&self, x: *const Emplaceable) -> () {
+    pub unsafe fn operator_lt(&self, x: *const Emplaceable) -> bool {
         return ((self.int_) < ((*x).int_))
             || (((self.int_) == ((*x).int_)) && ((self.double_) < ((*x).double_)));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.int_;
     }
 }
@@ -110,18 +110,23 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_return_type_0() });
     (unsafe { test_return_type_1() });
     let mut q: () = unimplemented!();
     let r1: *mut Emplaceable = unimplemented!();
-    unimplemented!();
+    assert!(((r1) == (unimplemented!())));
     let r2: *mut Emplaceable = unimplemented!();
-    unimplemented!();
+    assert!(((r2) == (unimplemented!())));
     let r3: *mut Emplaceable = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((r3) == (unimplemented!())));
+    assert!(((unimplemented!()) == (3_())));
+    assert!(
+        (unsafe {
+            let mut _x: Emplaceable = Emplaceable::new_2({ 3 }, { 4.5_f64 });
+            Emplaceable::operator_eq(&(*unimplemented!()), &mut _x)
+        })
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -25,7 +25,7 @@ pub struct PotentiallyThrowingCopyAssignable {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct CopyAssignableInt {}
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -35,27 +35,27 @@ pub fn test_0() -> () {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!((((unimplemented!().read()) as i32) == (('a' as i8) as i32)));
     }
     {
-        let x: Value<()> = Rc::new(RefCell::new(42_()));
-        let y: Value<()> = Rc::new(RefCell::new(100_()));
-        let mut x2: () = -1_();
-        let y2: Value<()> = Rc::new(RefCell::new(500_()));
+        let x: Value<i32> = Rc::new(RefCell::new(42));
+        let y: Value<i32> = Rc::new(RefCell::new(100));
+        let mut x2: i32 = -1_i32;
+        let y2: Value<i32> = Rc::new(RefCell::new(500));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == x2));
+        assert!(((unimplemented!()) == (x.as_pointer())));
+        assert!(((unimplemented!().read()) == (*y2.borrow())));
+        assert!(((unimplemented!()) == (y.as_pointer())));
     }
     return true;
 }
@@ -78,16 +78,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!((((unimplemented!().read()) as i32) == (('a' as i8) as i32)));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"some text").with_c_str(|__s| (*unimplemented!()
+                .upgrade()
+                .deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         const _: () = assert!(true, "!std::is_copy_assignable<T>::value");;
@@ -117,13 +124,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::is_copy_assignable<T>::value");;
         const _: () = assert!(true, "!std::is_nothrow_copy_assignable<T>::value");;
     }
-    return 0_();
+    return 0;
 }
 pub trait CopyAssignableIntImpl {
-    fn operator_assign_1(&self, _a0: Ptr<()>) -> Ptr<CopyAssignableInt>;
+    fn operator_assign_1(&self, _a0: Ptr<i32>) -> Ptr<CopyAssignableInt>;
 }
 impl CopyAssignableIntImpl for Ptr<CopyAssignableInt> {
-    fn operator_assign_1(&self, _a0: Ptr<()>) -> Ptr<CopyAssignableInt> {
+    fn operator_assign_1(&self, _a0: Ptr<i32>) -> Ptr<CopyAssignableInt> {
         return (*self).clone();
     }
 }

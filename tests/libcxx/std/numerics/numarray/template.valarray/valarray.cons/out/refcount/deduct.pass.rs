@@ -6,17 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_valarray_int___std_valarray_int__ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_valarray_long___std_valarray_long__ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -40,18 +40,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
+        let a: Value<Box<[i64]>> =
+            Rc::new(RefCell::new(Box::new([1_i64, 2_i64, 3_i64, 4_i64, 5_i64])));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
+        let a: Value<Box<[i64]>> =
+            Rc::new(RefCell::new(Box::new([1_i64, 2_i64, 3_i64, 4_i64, 5_i64])));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
@@ -77,6 +79,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::is_same_v<decltype(v2), std::valarray<long>>");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

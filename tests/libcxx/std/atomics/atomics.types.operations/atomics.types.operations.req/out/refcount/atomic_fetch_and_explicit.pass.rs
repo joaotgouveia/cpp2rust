@@ -6,44 +6,44 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type LockFreeStatus = ();
+pub type LockFreeStatus = i32;
 pub const LockFreeStatus_unknown: LockFreeStatus = -1;
 pub const LockFreeStatus_never: LockFreeStatus = 0;
 pub const LockFreeStatus_sometimes: LockFreeStatus = 1;
 pub const LockFreeStatus_always: LockFreeStatus = 2;
 thread_local!(
     pub static value_0: Value<LockFreeStatus> = Rc::new(RefCell::new(
-        ((if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+        ((if ((::std::mem::size_of::<i8>() == ::std::mem::size_of::<i8>())
+            && (::std::mem::align_of::<i8>() >= ::std::mem::size_of::<i8>()))
         {
-            2_()
+            2
         } else {
-            (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+            (if ((::std::mem::size_of::<i8>() == ::std::mem::size_of::<i16>())
+                && (::std::mem::align_of::<i8>() >= ::std::mem::size_of::<i8>()))
             {
-                2_()
+                2
             } else {
-                (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                    && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                (if ((::std::mem::size_of::<i8>() == ::std::mem::size_of::<i32>())
+                    && (::std::mem::align_of::<i8>() >= ::std::mem::size_of::<i8>()))
                 {
-                    2_()
+                    2
                 } else {
-                    (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                        && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                    (if ((::std::mem::size_of::<i8>() == ::std::mem::size_of::<i64>())
+                        && (::std::mem::align_of::<i8>() >= ::std::mem::size_of::<i8>()))
                     {
-                        2_()
+                        2
                     } else {
-                        (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                        (if ((::std::mem::size_of::<i8>() == ::std::mem::size_of::<i64>())
+                            && (::std::mem::align_of::<i8>() >= ::std::mem::size_of::<i8>()))
                         {
-                            2_()
+                            2
                         } else {
-                            (if ((::std::mem::size_of::<()>() == 8usize)
-                                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                            (if ((::std::mem::size_of::<i8>() == 8usize)
+                                && (::std::mem::align_of::<i8>() >= ::std::mem::size_of::<i8>()))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -53,7 +53,7 @@ thread_local!(
     ));
 );
 thread_local!(
-    pub static status_known_1: Value<()> = Rc::new(RefCell::new(
+    pub static status_known_1: Value<bool> = Rc::new(RefCell::new(
         (value_0.with(|rc| *rc.borrow()) != LockFreeStatus_unknown),
     ));
 );
@@ -62,37 +62,37 @@ thread_local!(
 pub struct LockFreeStatusInfo_char_ {}
 thread_local!(
     pub static value_2: Value<LockFreeStatus> = Rc::new(RefCell::new(
-        ((if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+        ((if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i8>())
+            && (::std::mem::align_of::<i16>() >= ::std::mem::size_of::<i16>()))
         {
-            2_()
+            2
         } else {
-            (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+            (if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i16>())
+                && (::std::mem::align_of::<i16>() >= ::std::mem::size_of::<i16>()))
             {
-                2_()
+                2
             } else {
-                (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                    && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                (if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i32>())
+                    && (::std::mem::align_of::<i16>() >= ::std::mem::size_of::<i16>()))
                 {
-                    2_()
+                    2
                 } else {
-                    (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                        && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                    (if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i64>())
+                        && (::std::mem::align_of::<i16>() >= ::std::mem::size_of::<i16>()))
                     {
-                        2_()
+                        2
                     } else {
-                        (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                        (if ((::std::mem::size_of::<i16>() == ::std::mem::size_of::<i64>())
+                            && (::std::mem::align_of::<i16>() >= ::std::mem::size_of::<i16>()))
                         {
-                            2_()
+                            2
                         } else {
-                            (if ((::std::mem::size_of::<()>() == 8usize)
-                                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                            (if ((::std::mem::size_of::<i16>() == 8usize)
+                                && (::std::mem::align_of::<i16>() >= ::std::mem::size_of::<i16>()))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -102,7 +102,7 @@ thread_local!(
     ));
 );
 thread_local!(
-    pub static status_known_3: Value<()> = Rc::new(RefCell::new(
+    pub static status_known_3: Value<bool> = Rc::new(RefCell::new(
         (value_2.with(|rc| *rc.borrow()) != LockFreeStatus_unknown),
     ));
 );
@@ -111,37 +111,37 @@ thread_local!(
 pub struct LockFreeStatusInfo_short_ {}
 thread_local!(
     pub static value_4: Value<LockFreeStatus> = Rc::new(RefCell::new(
-        ((if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+        ((if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i8>())
+            && (::std::mem::align_of::<i32>() >= ::std::mem::size_of::<i32>()))
         {
-            2_()
+            2
         } else {
-            (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+            (if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i16>())
+                && (::std::mem::align_of::<i32>() >= ::std::mem::size_of::<i32>()))
             {
-                2_()
+                2
             } else {
-                (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                    && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                (if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i32>())
+                    && (::std::mem::align_of::<i32>() >= ::std::mem::size_of::<i32>()))
                 {
-                    2_()
+                    2
                 } else {
-                    (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                        && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                    (if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i64>())
+                        && (::std::mem::align_of::<i32>() >= ::std::mem::size_of::<i32>()))
                     {
-                        2_()
+                        2
                     } else {
-                        (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                        (if ((::std::mem::size_of::<i32>() == ::std::mem::size_of::<i64>())
+                            && (::std::mem::align_of::<i32>() >= ::std::mem::size_of::<i32>()))
                         {
-                            2_()
+                            2
                         } else {
-                            (if ((::std::mem::size_of::<()>() == 8usize)
-                                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                            (if ((::std::mem::size_of::<i32>() == 8usize)
+                                && (::std::mem::align_of::<i32>() >= ::std::mem::size_of::<i32>()))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -151,7 +151,7 @@ thread_local!(
     ));
 );
 thread_local!(
-    pub static status_known_5: Value<()> = Rc::new(RefCell::new(
+    pub static status_known_5: Value<bool> = Rc::new(RefCell::new(
         (value_4.with(|rc| *rc.borrow()) != LockFreeStatus_unknown),
     ));
 );
@@ -160,37 +160,37 @@ thread_local!(
 pub struct LockFreeStatusInfo_int_ {}
 thread_local!(
     pub static value_6: Value<LockFreeStatus> = Rc::new(RefCell::new(
-        ((if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+        ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
+            && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
         {
-            2_()
+            2
         } else {
-            (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+            (if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i16>())
+                && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
             {
-                2_()
+                2
             } else {
-                (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                    && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                (if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i32>())
+                    && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
                 {
-                    2_()
+                    2
                 } else {
-                    (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                        && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                    (if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i64>())
+                        && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
                     {
-                        2_()
+                        2
                     } else {
-                        (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                        (if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i64>())
+                            && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
                         {
-                            2_()
+                            2
                         } else {
-                            (if ((::std::mem::size_of::<()>() == 8usize)
-                                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                            (if ((::std::mem::size_of::<i64>() == 8usize)
+                                && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -200,7 +200,7 @@ thread_local!(
     ));
 );
 thread_local!(
-    pub static status_known_7: Value<()> = Rc::new(RefCell::new(
+    pub static status_known_7: Value<bool> = Rc::new(RefCell::new(
         (value_6.with(|rc| *rc.borrow()) != LockFreeStatus_unknown),
     ));
 );
@@ -209,25 +209,25 @@ thread_local!(
 pub struct LockFreeStatusInfo_long_ {}
 thread_local!(
     pub static value_8: Value<LockFreeStatus> = Rc::new(RefCell::new(
-        ((if ((8usize == ::std::mem::size_of::<()>()) && (8usize >= 8usize)) {
-            2_()
+        ((if ((8usize == ::std::mem::size_of::<i8>()) && (8usize >= 8usize)) {
+            2
         } else {
-            (if ((8usize == ::std::mem::size_of::<()>()) && (8usize >= 8usize)) {
-                2_()
+            (if ((8usize == ::std::mem::size_of::<i16>()) && (8usize >= 8usize)) {
+                2
             } else {
-                (if ((8usize == ::std::mem::size_of::<()>()) && (8usize >= 8usize)) {
-                    2_()
+                (if ((8usize == ::std::mem::size_of::<i32>()) && (8usize >= 8usize)) {
+                    2
                 } else {
-                    (if ((8usize == ::std::mem::size_of::<()>()) && (8usize >= 8usize)) {
-                        2_()
+                    (if ((8usize == ::std::mem::size_of::<i64>()) && (8usize >= 8usize)) {
+                        2
                     } else {
-                        (if ((8usize == ::std::mem::size_of::<()>()) && (8usize >= 8usize)) {
-                            2_()
+                        (if ((8usize == ::std::mem::size_of::<i64>()) && (8usize >= 8usize)) {
+                            2
                         } else {
                             (if ((8usize == 8usize) && (8usize >= 8usize)) {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -237,7 +237,7 @@ thread_local!(
     ));
 );
 thread_local!(
-    pub static status_known_9: Value<()> = Rc::new(RefCell::new(
+    pub static status_known_9: Value<bool> = Rc::new(RefCell::new(
         (value_8.with(|rc| *rc.borrow()) != LockFreeStatus_unknown),
     ));
 );
@@ -246,37 +246,37 @@ thread_local!(
 pub struct LockFreeStatusInfo_void_ptr_ {}
 thread_local!(
     pub static value_10: Value<LockFreeStatus> = Rc::new(RefCell::new(
-        ((if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+        ((if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i8>())
+            && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
         {
-            2_()
+            2
         } else {
-            (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+            (if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i16>())
+                && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
             {
-                2_()
+                2
             } else {
-                (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                    && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                (if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i32>())
+                    && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
                 {
-                    2_()
+                    2
                 } else {
-                    (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                        && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                    (if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i64>())
+                        && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
                     {
-                        2_()
+                        2
                     } else {
-                        (if ((::std::mem::size_of::<()>() == ::std::mem::size_of::<()>())
-                            && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                        (if ((::std::mem::size_of::<i64>() == ::std::mem::size_of::<i64>())
+                            && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
                         {
-                            2_()
+                            2
                         } else {
-                            (if ((::std::mem::size_of::<()>() == 8usize)
-                                && (::std::mem::align_of::<()>() >= ::std::mem::size_of::<()>()))
+                            (if ((::std::mem::size_of::<i64>() == 8usize)
+                                && (::std::mem::align_of::<i64>() >= ::std::mem::size_of::<i64>()))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -286,7 +286,7 @@ thread_local!(
     ));
 );
 thread_local!(
-    pub static status_known_11: Value<()> = Rc::new(RefCell::new(
+    pub static status_known_11: Value<bool> = Rc::new(RefCell::new(
         (value_10.with(|rc| *rc.borrow()) != LockFreeStatus_unknown),
     ));
 );
@@ -314,18 +314,18 @@ const _: () = assert!(
     true,
     "LockFreeStatusInfo<int>::value == LockFreeStatus::always"
 );
-pub fn operator_eq_12(x: Ptr<UserAtomicType>, y: Ptr<UserAtomicType>) -> () {
+pub fn operator_eq_12(x: Ptr<UserAtomicType>, y: Ptr<UserAtomicType>) -> bool {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct UserAtomicType {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl UserAtomicType {
-    pub fn new(d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| 0_());
+    pub fn new(d: Option<i32>) -> Self {
+        let mut d: i32 = d.unwrap_or_else(|| 0);
         Self { i: d }
     }
 }
@@ -339,9 +339,9 @@ impl Default for UserAtomicType {
         { UserAtomicType::new(None) }
     }
 }
-pub fn operator_eq_13(x: Ptr<LargeUserAtomicType>, y: Ptr<LargeUserAtomicType>) -> () {
-    let mut i: () = 0_();
-    'loop_: while (i < 128_()) {
+pub fn operator_eq_13(x: Ptr<LargeUserAtomicType>, y: Ptr<LargeUserAtomicType>) -> bool {
+    let mut i: i32 = 0;
+    'loop_: while (i < 128) {
         if ({ (array_elem!(x, a, i).read()) } != { (array_elem!(y, a, i).read()) }) {
             return false;
         }
@@ -349,25 +349,26 @@ pub fn operator_eq_13(x: Ptr<LargeUserAtomicType>, y: Ptr<LargeUserAtomicType>) 
     }
     return true;
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(512)]
 pub struct LargeUserAtomicType {
     #[offset(0)]
     #[byte_size(512)]
-    pub a: Box<[()]>,
+    pub a: Box<[i32]>,
 }
 impl LargeUserAtomicType {
-    pub fn new(d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| 0_());
+    pub fn new(d: Option<i32>) -> Self {
+        let mut d: i32 = d.unwrap_or_else(|| 0);
         let __this: Value<LargeUserAtomicType> = Rc::new(RefCell::new(Self {
-            a: (0..128).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            a: (0..128).map(|_| 0_i32).collect::<Box<[i32]>>(),
         }));
         let this: Ptr<LargeUserAtomicType> = __this.as_pointer();
         'loop_: for e in IterRange::new(
-            (array_field_ptr!(this, a) as Ptr<()>),
-            (array_field_ptr!(this, a) as Ptr<()>).offset((128_()) as isize),
+            (array_field_ptr!(this, a) as Ptr<i32>),
+            (array_field_ptr!(this, a) as Ptr<i32>).offset((128_i64) as isize),
         ) {
-            let e: Ptr<()> = (e).clone();
+            let e: Ptr<i32> = (e).clone();
             let __rhs = d.postfix_inc();
             e.write(__rhs);
         }
@@ -451,13 +452,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
         TestEachIntegralType_TestFn_Impl::operator_call(
             &Rc::new(RefCell::new(<TestEachIntegralType_TestFn_>::default())).as_pointer(),
         )
     });
-    return 0_();
+    return 0;
 }
 pub trait TestEachIntegralType_TestFn_Impl {
     fn operator_call(&self);
@@ -588,14 +589,14 @@ impl TestFn_char16_t_Impl for Ptr<TestFn_char16_t_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (1_u16 as i32)));
+            assert!(((unimplemented!() as i32) == (0_u16 as i32)));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (3_u16 as i32)));
+            assert!(((unimplemented!() as i32) == (2_u16 as i32)));
             const _: () = assert!(true, "");;
         }
     }
@@ -607,14 +608,14 @@ impl TestFn_char32_t_Impl for Ptr<TestFn_char32_t_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as u32) == 1_u32));
+            assert!(((unimplemented!() as u32) == 0_u32));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as u32) == 3_u32));
+            assert!(((unimplemented!() as u32) == 2_u32));
             const _: () = assert!(true, "");;
         }
     }
@@ -626,14 +627,14 @@ impl TestFn_char8_t_Impl for Ptr<TestFn_char8_t_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (1_u8 as i32)));
+            assert!(((unimplemented!() as i32) == (0_u8 as i32)));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (3_u8 as i32)));
+            assert!(((unimplemented!() as i32) == (2_u8 as i32)));
             const _: () = assert!(true, "");;
         }
     }
@@ -645,14 +646,14 @@ impl TestFn_char_Impl for Ptr<TestFn_char_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (1_i8 as i32)));
+            assert!(((unimplemented!() as i32) == (0_i8 as i32)));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (3_i8 as i32)));
+            assert!(((unimplemented!() as i32) == (2_i8 as i32)));
             const _: () = assert!(true, "");;
         }
     }
@@ -664,14 +665,14 @@ impl TestFn_int_Impl for Ptr<TestFn_int_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 1));
+            assert!((unimplemented!() == 0));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3));
+            assert!((unimplemented!() == 2));
             const _: () = assert!(true, "");;
         }
     }
@@ -683,14 +684,14 @@ impl TestFn_long_Impl for Ptr<TestFn_long_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 1_i64));
+            assert!((unimplemented!() == 0_i64));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_i64));
+            assert!((unimplemented!() == 2_i64));
             const _: () = assert!(true, "");;
         }
     }
@@ -702,14 +703,14 @@ impl TestFn_long_long_Impl for Ptr<TestFn_long_long_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 1_i64));
+            assert!((unimplemented!() == 0_i64));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_i64));
+            assert!((unimplemented!() == 2_i64));
             const _: () = assert!(true, "");;
         }
     }
@@ -721,14 +722,14 @@ impl TestFn_short_Impl for Ptr<TestFn_short_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (1_i16 as i32)));
+            assert!(((unimplemented!() as i32) == (0_i16 as i32)));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (3_i16 as i32)));
+            assert!(((unimplemented!() as i32) == (2_i16 as i32)));
             const _: () = assert!(true, "");;
         }
     }
@@ -740,14 +741,14 @@ impl TestFn_signed_char_Impl for Ptr<TestFn_signed_char_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (1_i8 as i32)));
+            assert!(((unimplemented!() as i32) == (0_i8 as i32)));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (3_i8 as i32)));
+            assert!(((unimplemented!() as i32) == (2_i8 as i32)));
             const _: () = assert!(true, "");;
         }
     }
@@ -759,14 +760,14 @@ impl TestFn_unsigned_char_Impl for Ptr<TestFn_unsigned_char_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (1_u8 as i32)));
+            assert!(((unimplemented!() as i32) == (0_u8 as i32)));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (3_u8 as i32)));
+            assert!(((unimplemented!() as i32) == (2_u8 as i32)));
             const _: () = assert!(true, "");;
         }
     }
@@ -778,14 +779,14 @@ impl TestFn_unsigned_int_Impl for Ptr<TestFn_unsigned_int_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 1_u32));
+            assert!((unimplemented!() == 0_u32));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_u32));
+            assert!((unimplemented!() == 2_u32));
             const _: () = assert!(true, "");;
         }
     }
@@ -797,14 +798,14 @@ impl TestFn_unsigned_long_Impl for Ptr<TestFn_unsigned_long_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 1_u64));
+            assert!((unimplemented!() == 0_u64));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_u64));
+            assert!((unimplemented!() == 2_u64));
             const _: () = assert!(true, "");;
         }
     }
@@ -816,14 +817,14 @@ impl TestFn_unsigned_long_long_Impl for Ptr<TestFn_unsigned_long_long_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 1_u64));
+            assert!((unimplemented!() == 0_u64));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_u64));
+            assert!((unimplemented!() == 2_u64));
             const _: () = assert!(true, "");;
         }
     }
@@ -835,14 +836,14 @@ impl TestFn_unsigned_short_Impl for Ptr<TestFn_unsigned_short_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (1_u16 as i32)));
+            assert!(((unimplemented!() as i32) == (0_u16 as i32)));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (3_u16 as i32)));
+            assert!(((unimplemented!() as i32) == (2_u16 as i32)));
             const _: () = assert!(true, "");;
         }
     }
@@ -854,14 +855,14 @@ impl TestFn_wchar_t_Impl for Ptr<TestFn_wchar_t_> {
     fn operator_call(&self) {
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == 1_i32));
+            assert!(((unimplemented!() as i32) == 0_i32));
             const _: () = assert!(true, "");;
         }
         {
             let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == 3_i32));
+            assert!(((unimplemented!() as i32) == 2_i32));
             const _: () = assert!(true, "");;
         }
     }

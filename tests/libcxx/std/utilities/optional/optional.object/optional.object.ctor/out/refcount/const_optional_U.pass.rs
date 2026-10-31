@@ -6,65 +6,84 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
-    let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: () = unimplemented!();
+pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+    let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
+    let mut rhs_engaged: bool = unimplemented!();
     if is_going_to_throw {
         return;
     }
     let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
     if rhs_engaged {
-        unimplemented!();
+        assert!(({ (unimplemented!().read()) } == { ((unimplemented!().read()) as i32) }));
     }
 }
-pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
-    let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: () = unimplemented!();
+pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+    let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
+    let mut rhs_engaged: bool = unimplemented!();
     if is_going_to_throw {
         return;
     }
     let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
     if rhs_engaged {
-        unimplemented!();
+        assert!(
+            ({
+                let _x: Ptr<X> = unimplemented!();
+                let _y: Value<X> = Rc::new(RefCell::new(X::new({ (unimplemented!().read()) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
     }
 }
-pub fn test_2(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
-    let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: () = unimplemented!();
+pub fn test_3(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+    let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
+    let mut rhs_engaged: bool = unimplemented!();
     if is_going_to_throw {
         return;
     }
     let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
     if rhs_engaged {
-        unimplemented!();
+        assert!(
+            ({
+                let _x: Ptr<Y> = unimplemented!();
+                let _y: Value<Y> = Rc::new(RefCell::new(Y::new({ (unimplemented!().read()) })));
+                operator_eq_4(_x, _y.as_pointer())
+            })
+        );
     }
 }
-pub fn test_3(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
-    let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: () = unimplemented!();
+pub fn test_5(rhs: Ptr<()>, is_going_to_throw: Option<bool>) {
+    let mut is_going_to_throw: bool = is_going_to_throw.unwrap_or_else(|| false);
+    let mut rhs_engaged: bool = unimplemented!();
     if is_going_to_throw {
         return;
     }
     let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (rhs_engaged as i32)));
     if rhs_engaged {
-        unimplemented!();
+        assert!(
+            ({
+                let _x: Ptr<Z> = unimplemented!();
+                let _y: Value<Z> = Rc::new(RefCell::new(Z::new({ (unimplemented!().read()) })));
+                operator_eq_6(_x, _y.as_pointer())
+            })
+        );
     }
 }
-pub fn operator_eq_4(x: Ptr<X>, y: Ptr<X>) -> () {
+pub fn operator_eq_2(x: Ptr<X>, y: Ptr<X>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) });
 }
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor, Default)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Destructor, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct X {
     #[offset(0)]
-    i_: (),
+    i_: i32,
 }
 impl X {
-    pub fn new(mut i: ()) -> Self {
+    pub fn new(mut i: i32) -> Self {
         Self { i_: i }
     }
     pub fn copy_from(x: Ptr<X>) -> Self {
@@ -75,7 +94,7 @@ impl X {
 }
 impl CppEq for X {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_4(__lhs.clone(), __rhs.clone())
+        operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for X {
@@ -86,50 +105,52 @@ impl Clone for X {
         X::copy_from(__src.as_pointer())
     }
 }
-pub fn operator_eq_5(x: Ptr<Y>, y: Ptr<Y>) -> () {
+pub fn operator_eq_4(x: Ptr<Y>, y: Ptr<Y>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct Y {
     #[offset(0)]
-    i_: (),
+    i_: i32,
 }
 impl Y {
-    pub fn new(mut i: ()) -> Self {
+    pub fn new(mut i: i32) -> Self {
         Self { i_: i }
     }
 }
 impl CppEq for Y {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_5(__lhs.clone(), __rhs.clone())
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
 thread_local!(
-    pub static count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_7: Value<i32> = Rc::new(RefCell::new(0));
 );
-pub fn operator_eq_7(x: Ptr<Z>, y: Ptr<Z>) -> () {
+pub fn operator_eq_6(x: Ptr<Z>, y: Ptr<Z>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct Z {
     #[offset(0)]
-    i_: (),
+    i_: i32,
 }
 impl Z {
-    pub fn new(mut i: ()) -> Self {
+    pub fn new(mut i: i32) -> Self {
         let __this: Z = Self { i_: i };
-        unimplemented!();
+        std::process::abort();
         __this
     }
 }
 impl CppEq for Z {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_7(__lhs.clone(), __rhs.clone())
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn test_all_8() -> () {
+pub fn test_all_8() -> bool {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_0(rhs.as_pointer(), None) });
@@ -140,7 +161,7 @@ pub fn test_all_8() -> () {
     }
     return true;
 }
-pub fn test_all_9() -> () {
+pub fn test_all_9() -> bool {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_1(rhs.as_pointer(), None) });
@@ -151,14 +172,14 @@ pub fn test_all_9() -> () {
     }
     return true;
 }
-pub fn test_all_10() -> () {
+pub fn test_all_10() -> bool {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_2(rhs.as_pointer(), None) });
+        ({ test_3(rhs.as_pointer(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_2(rhs.as_pointer(), None) });
+        ({ test_3(rhs.as_pointer(), None) });
     }
     return true;
 }
@@ -181,7 +202,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_all_8() });
     ({ test_all_9() });
     ({ test_all_10() });
@@ -190,17 +211,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test_all<Y, int>()");;
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_3(rhs.as_pointer(), None) });
+        ({ test_5(rhs.as_pointer(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_3(rhs.as_pointer(), Some(true)) });
+        ({ test_5(rhs.as_pointer(), Some(true)) });
     }
     const _: () = assert!(
         true,
         "!(std::is_constructible<optional<X>, const optional<Y>&>::value)"
     );;
-    return 0_();
+    return 0;
 }
 pub trait XImpl {
     fn destructor(&self);
@@ -208,7 +229,7 @@ pub trait XImpl {
 }
 impl XImpl for Ptr<X> {
     fn destructor(&self) {
-        field!((*self), i_).write(0_());
+        field!((*self), i_).write(0);
     }
     fn copy_assign(&self, _a0: Ptr<X>) -> Ptr<X> {
         field!((*self), i_).write({ _a0.with(|__s| __s.i_) });
@@ -216,5 +237,5 @@ impl XImpl for Ptr<X> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = count_6.with(|_| ());
+    let _ = count_7.with(|_| ());
 }

@@ -22,21 +22,49 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "!std::is_convertible<std::string, Myconv>::value");;
     const _: () = assert!(true, "std::is_constructible<Myconv, std::string>::value");;
     {
         let mut myconv: () = unimplemented!();
-        let mut bs: () = unimplemented!();
-        unimplemented!();
+        let mut bs: Vec<libc::c_char> = unimplemented!();
+        assert!(
+            bs == std::slice::from_raw_parts(
+                c"byte error".as_ptr(),
+                libcc2rs::c_str_len(c"byte error".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
         let mut myconv: () = unimplemented!();
-        let mut bs: () = unimplemented!();
-        unimplemented!();
-        let mut ws: () = unimplemented!();
-        unimplemented!();
+        let mut bs: Vec<libc::c_char> = unimplemented!();
+        assert!(
+            bs == std::slice::from_raw_parts(
+                c"byte error".as_ptr(),
+                libcc2rs::c_str_len(c"byte error".as_ptr()) + 1
+            )
+            .to_vec()
+        );
+        let mut ws: Vec<i32> = unimplemented!();
+        assert!(
+            ws == std::slice::from_raw_parts(
+                [
+                    119 as i32, 105 as i32, 100 as i32, 101 as i32, 32 as i32, 101 as i32,
+                    114 as i32, 114 as i32, 111 as i32, 114 as i32, 0 as i32,
+                ]
+                .as_ptr(),
+                libcc2rs::c_str_len(
+                    [
+                        119 as i32, 105 as i32, 100 as i32, 101 as i32, 32 as i32, 101 as i32,
+                        114 as i32, 114 as i32, 111 as i32, 114 as i32, 0 as i32,
+                    ]
+                    .as_ptr()
+                ) + 1
+            )
+            .to_vec()
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

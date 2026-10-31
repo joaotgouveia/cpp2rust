@@ -75,21 +75,18 @@ pub struct Empty {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Trivial {
-    pub i: (),
-    pub j: (),
+    pub i: i32,
+    pub j: i32,
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, Default)]
 pub struct NonTrivial {
-    pub i: (),
-    pub j: (),
+    pub i: i32,
+    pub j: i32,
 }
 impl NonTrivial {
     pub unsafe fn copy_from(_a0: *const NonTrivial) -> Self {
-        let mut this = Self {
-            i: unimplemented!(),
-            j: unimplemented!(),
-        };
+        let mut this = Self { i: 0_i32, j: 0_i32 };
         this
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const NonTrivial) -> *mut NonTrivial {
@@ -118,7 +115,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { check_aggregate_0() });
     (unsafe { check_aggregate_1() });
     (unsafe { check_aggregate_2() });
@@ -128,6 +125,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { check_aggregate_6() });
     (unsafe { check_aggregate_7() });
     (unsafe { check_aggregate_8() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -47,11 +47,11 @@ impl PotentiallyThrowingCopyAssignable {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CopyAssignableInt {}
 impl CopyAssignableInt {
-    pub unsafe fn operator_assign_1(&mut self, _a0: *mut ()) -> *mut CopyAssignableInt {
+    pub unsafe fn operator_assign_1(&mut self, _a0: *mut i32) -> *mut CopyAssignableInt {
         return &mut (*(self as *mut CopyAssignableInt));
     }
 }
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
@@ -61,27 +61,27 @@ pub unsafe fn test_0() -> () {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
     }
     {
         let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
+        assert!((((*unimplemented!()) as i32) == (('a' as libc::c_char) as i32)));
     }
     {
-        let mut x: () = 42_();
-        let mut y: () = 100_();
-        let mut x2: () = -1_();
-        let mut y2: () = 500_();
+        let mut x: i32 = 42;
+        let mut y: i32 = 100;
+        let mut x2: i32 = -1_i32;
+        let mut y2: i32 = 500;
         let mut t: () = unimplemented!();
         let mut t2: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (x2)));
+        assert!(((unimplemented!()) == (&mut x as *mut i32)));
+        assert!(((*unimplemented!()) == (y2)));
+        assert!(((unimplemented!()) == (&mut y as *mut i32)));
     }
     return true;
 }
@@ -100,16 +100,23 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
     {
         let t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
+        assert!((((*unimplemented!()) as i32) == (('a' as libc::c_char) as i32)));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"some text".as_ptr(),
+                    libcc2rs::c_str_len(c"some text".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         const _: () = assert!(true, "!std::is_copy_assignable<T>::value");;
@@ -139,6 +146,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_copy_assignable<T>::value");;
         const _: () = assert!(true, "!std::is_nothrow_copy_assignable<T>::value");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

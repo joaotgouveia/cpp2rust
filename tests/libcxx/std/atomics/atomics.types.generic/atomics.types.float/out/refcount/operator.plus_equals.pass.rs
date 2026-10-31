@@ -17,9 +17,9 @@ pub fn test_impl_0() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: f32 = unimplemented!();
+        assert!((r == ((3.1_f64 as f32) + (1.2_f64 as f32))));
+        assert!((unimplemented!() == ((3.1_f64 as f32) + (1.2_f64 as f32))));
     }
 }
 pub fn test_impl_1() {
@@ -33,9 +33,9 @@ pub fn test_impl_1() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: f32 = unimplemented!();
+        assert!((r == ((3.1_f64 as f32) + (1.2_f64 as f32))));
+        assert!((unimplemented!() == ((3.1_f64 as f32) + (1.2_f64 as f32))));
     }
 }
 pub fn test_impl_2() {
@@ -49,9 +49,9 @@ pub fn test_impl_2() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: f64 = unimplemented!();
+        assert!((r == (3.1_f64 + 1.2_f64)));
+        assert!((unimplemented!() == (3.1_f64 + 1.2_f64)));
     }
 }
 pub fn test_impl_3() {
@@ -65,9 +65,9 @@ pub fn test_impl_3() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: f64 = unimplemented!();
+        assert!((r == (3.1_f64 + 1.2_f64)));
+        assert!((unimplemented!() == (3.1_f64 + 1.2_f64)));
     }
 }
 pub fn test_4() {
@@ -101,9 +101,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     ({ test_5() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,29 +6,30 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct Error {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl Error {
-    pub fn new(mut ii: ()) -> Self {
+    pub fn new(mut ii: i32) -> Self {
         Self { i: ii }
     }
     pub fn move_from(other: Ptr<Error>) -> Self {
         let __this: Error = Self {
             i: other.with(|__s| __s.i),
         };
-        field!(other, i).write(0_());
+        field!(other, i).write(0);
         __this
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!().with(|__s| __s.i) == 5));
+    assert!((unimplemented!().with(|__s| __s.i) == 0));
     return true;
 }
 pub fn main() {
@@ -50,9 +51,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

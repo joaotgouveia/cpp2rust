@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct support_double_move_tracker {
-    moved_from_: (),
+    moved_from_: bool,
 }
 impl support_double_move_tracker {
     pub unsafe fn new() -> Self {
@@ -18,7 +18,7 @@ impl support_double_move_tracker {
     }
     pub unsafe fn move_from(other: *mut support_double_move_tracker) -> Self {
         let mut this = Self { moved_from_: false };
-        unimplemented!();
+        assert!(!((*other).moved_from_));
         (*other).moved_from_ = true;
         this
     }
@@ -26,7 +26,7 @@ impl support_double_move_tracker {
         &mut self,
         other: *mut support_double_move_tracker,
     ) -> *mut support_double_move_tracker {
-        unimplemented!();
+        assert!(!((*other).moved_from_));
         (*other).moved_from_ = true;
         self.moved_from_ = false;
         return &mut (*(self as *mut support_double_move_tracker));
@@ -56,7 +56,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp17_output_iterator_int_ptr_ {
@@ -86,7 +86,7 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_ {
@@ -112,7 +112,7 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_add_0(
     mut x: random_access_iterator_int_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_int_ptr_ {
     (unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_int_ptr_::move_from({ &mut x });
@@ -120,35 +120,35 @@ pub unsafe fn operator_add_0(
 pub unsafe fn operator_sub_1(
     mut x: random_access_iterator_int_ptr_,
     mut y: random_access_iterator_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
 }
 pub unsafe fn operator_eq_2(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_int_ptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut random_access_iterator_int_ptr_));
@@ -186,14 +186,14 @@ impl std::cmp::Eq for random_access_iterator_int_ptr_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_random_access_iterator_int_ptr_ {
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+    pub unsafe fn operator_index(&self, mut n: isize) -> *mut i32 {
         return &mut (*self.it_.offset((n) as isize));
     }
     pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
@@ -222,7 +222,7 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_input_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_input_iterator_int_ptr_ {
@@ -244,7 +244,7 @@ impl cpp20_input_iterator_int_ptr_ {
         });
         return &mut (*(self as *mut cpp20_input_iterator_int_ptr_));
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
 }
@@ -252,7 +252,7 @@ const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_output_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_output_iterator_int_ptr_ {
@@ -274,7 +274,7 @@ impl cpp20_output_iterator_int_ptr_ {
         });
         return &mut (*(self as *mut cpp20_output_iterator_int_ptr_));
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
 }
@@ -285,19 +285,19 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct IteratorOpCounts {
-    pub increments: (),
-    pub decrements: (),
-    pub zero_moves: (),
-    pub equal_cmps: (),
+    pub increments: usize,
+    pub decrements: usize,
+    pub zero_moves: usize,
+    pub equal_cmps: usize,
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
         unsafe {
             IteratorOpCounts {
-                increments: 0_(),
-                decrements: 0_(),
-                zero_moves: 0_(),
-                equal_cmps: 0_(),
+                increments: 0_usize,
+                decrements: 0_usize,
+                zero_moves: 0_usize,
+                equal_cmps: 0_usize,
             }
         }
     }
@@ -305,13 +305,13 @@ impl Default for IteratorOpCounts {
 pub unsafe fn operator_eq_3(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*_a0).it_) == ((*_a1).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct forward_sized_iterator_int_ptr_ {
-    pub it_: *mut (),
+    pub it_: *mut i32,
 }
 impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
@@ -339,44 +339,47 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_4(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_4(mut i: adl_Iterator, mut n: isize) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_5(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
         operator_add_4(_i, n)
     });
 }
 pub unsafe fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    cpp_swap_unsafe!(a.ptr_, b.ptr_);
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut i32 {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> bool {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_9(
+    lhs: *const adl_Iterator,
+    rhs: *const adl_Iterator,
+) -> std::cmp::Ordering {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct adl_Iterator {
-    ptr_: *mut (),
-    iter_moves_: *mut (),
-    iter_swaps_: *mut (),
+    ptr_: *mut i32,
+    iter_moves_: *mut i32,
+    iter_swaps_: *mut i32,
 }
 impl adl_Iterator {
-    unsafe fn new_1(mut p: *mut (), mut iter_moves: *mut (), mut iter_swaps: *mut ()) -> Self {
+    unsafe fn new_1(mut p: *mut i32, mut iter_moves: *mut i32, mut iter_swaps: *mut i32) -> Self {
         let mut this = Self {
             ptr_: p,
             iter_moves_: iter_moves,
@@ -384,47 +387,47 @@ impl adl_Iterator {
         };
         this
     }
-    pub unsafe fn TrackMoves(mut p: *mut (), iter_moves: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackMoves(mut p: *mut i32, iter_moves: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ p }, { (iter_moves) }, { std::ptr::null_mut() });
     }
-    pub unsafe fn TrackSwaps_4(iter_swaps: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackSwaps_4(iter_swaps: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ std::ptr::null_mut() }, { std::ptr::null_mut() }, {
             (iter_swaps)
         });
     }
-    pub unsafe fn TrackSwaps_5(mut p: *mut (), iter_swaps: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackSwaps_5(mut p: *mut i32, iter_swaps: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ p }, { std::ptr::null_mut() }, { (iter_swaps) });
     }
-    pub unsafe fn iter_moves(&self) -> () {
-        unimplemented!();
+    pub unsafe fn iter_moves(&self) -> i32 {
+        assert!(!(self.iter_moves_).is_null());
         return (*self.iter_moves_);
     }
-    pub unsafe fn iter_swaps(&self) -> () {
-        unimplemented!();
+    pub unsafe fn iter_swaps(&self) -> i32 {
+        assert!(!(self.iter_swaps_).is_null());
         return (*self.iter_swaps_);
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.ptr_);
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+    pub unsafe fn operator_index(&self, mut n: isize) -> *mut i32 {
         return &mut (*self.ptr_.offset((n) as isize));
     }
-    pub unsafe fn operator_sub_10(&self, mut n: ()) -> adl_Iterator {
+    pub unsafe fn operator_sub_10(&self, mut n: isize) -> adl_Iterator {
         return adl_Iterator::new_1(
             { self.ptr_.offset(-((n) as isize)) },
             { self.iter_moves_ },
             { self.iter_swaps_ },
         );
     }
-    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> () {
-        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<()>()) as ()
-            as ());
+    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> isize {
+        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64
+            as isize);
     }
-    pub unsafe fn operator_add_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+    pub unsafe fn operator_add_assign(&mut self, mut n: isize) -> *mut adl_Iterator {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_sub_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+    pub unsafe fn operator_sub_assign(&mut self, mut n: isize) -> *mut adl_Iterator {
         self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
         return &mut (*(self as *mut adl_Iterator));
     }
@@ -432,7 +435,7 @@ impl adl_Iterator {
         self.ptr_.prefix_inc();
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: ()) -> adl_Iterator {
+    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
         self.ptr_.prefix_inc();
         return prev;
@@ -441,7 +444,7 @@ impl adl_Iterator {
         self.ptr_.prefix_dec();
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: ()) -> adl_Iterator {
+    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
         self.ptr_.prefix_dec();
         return prev;
@@ -463,6 +466,14 @@ impl std::cmp::PartialEq for adl_Iterator {
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
+impl UnsafeCppAdvance for adl_Iterator {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_14();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_16();
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -477,22 +488,22 @@ impl Default for adl_Iterator {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct rvalue_iterator_int_ptr_ {
-    it_: *mut *mut (),
+    it_: *mut *mut i32,
 }
 impl rvalue_iterator_int_ptr_ {
-    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> std::cmp::Ordering {
         {
-            let mut cmp: () = std::cmp::Ord::cmp(
+            let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(
                 &((*(self as *const rvalue_iterator_int_ptr_)).it_),
                 &((*_a0).it_),
             );
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !(cmp == std::cmp::Ordering::Equal) {
+                return cmp;
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
-    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> bool {
         return (((*(self as *const rvalue_iterator_int_ptr_)).it_) == ((*_a0).it_));
     }
 }
@@ -519,517 +530,532 @@ impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
 impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(*const libc::c_char , new, value)]
 pub struct util_iterator_error {}
 impl util_iterator_error {
-    pub unsafe fn new(mut what: *const ()) -> Self {
+    pub unsafe fn new(mut what: *const libc::c_char) -> Self {
         let mut this = Self {};
         this
     }
 }
-pub unsafe fn test_constexpr_10() -> () {
-    let mut ia: [(); 6] = [0_(), 0_(), 0_(), 0_(), 1_(), 0_()];
-    let mut ib: [(); 6] = [0_(), 0_(), 0_(), 1_(), 1_(), 1_()];
-    return ((unimplemented!()) == (ia.as_mut_ptr().offset((4_()) as isize)))
-        && ((unimplemented!()) == (ib.as_mut_ptr().offset((3_()) as isize)));
+pub unsafe fn test_constexpr_10() -> bool {
+    let mut ia: [i32; 6] = [0, 0, 0, 0, 1, 0];
+    let mut ib: [i32; 6] = [0, 0, 0, 1, 1, 1];
+    return ((unimplemented!()) == (ia.as_mut_ptr().offset((4) as isize)))
+        && ((unimplemented!()) == (ib.as_mut_ptr().offset((3) as isize)));
 }
 pub unsafe fn test_11() {
-    let mut i1: [(); 2] = [0_(), 0_()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i2: [(); 2] = [0_(), 1_()];
-    let mut i3: [(); 2] = [1_(), 0_()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i4: [(); 3] = [0_(), 0_(), 0_()];
-    let mut i5: [(); 3] = [0_(), 0_(), 1_()];
-    let mut i6: [(); 3] = [0_(), 1_(), 0_()];
-    let mut i7: [(); 3] = [0_(), 1_(), 1_()];
-    let mut i8: [(); 3] = [1_(), 0_(), 0_()];
-    let mut i9: [(); 3] = [1_(), 0_(), 1_()];
-    let mut i10: [(); 3] = [1_(), 1_(), 0_()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i11: [(); 4] = [0_(), 0_(), 0_(), 0_()];
-    let mut i12: [(); 4] = [0_(), 0_(), 0_(), 1_()];
-    let mut i13: [(); 4] = [0_(), 0_(), 1_(), 0_()];
-    let mut i14: [(); 4] = [0_(), 0_(), 1_(), 1_()];
-    let mut i15: [(); 4] = [0_(), 1_(), 0_(), 0_()];
-    let mut i16: [(); 4] = [0_(), 1_(), 0_(), 1_()];
-    let mut i17: [(); 4] = [0_(), 1_(), 1_(), 0_()];
-    let mut i18: [(); 4] = [0_(), 1_(), 1_(), 1_()];
-    let mut i19: [(); 4] = [1_(), 0_(), 0_(), 0_()];
-    let mut i20: [(); 4] = [1_(), 0_(), 0_(), 1_()];
-    let mut i21: [(); 4] = [1_(), 0_(), 1_(), 0_()];
-    let mut i22: [(); 4] = [1_(), 0_(), 1_(), 1_()];
-    let mut i23: [(); 4] = [1_(), 1_(), 0_(), 0_()];
-    let mut i24: [(); 4] = [1_(), 1_(), 0_(), 1_()];
-    let mut i25: [(); 4] = [1_(), 1_(), 1_(), 0_()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i26: [(); 5] = [0_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i27: [(); 5] = [0_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i28: [(); 5] = [0_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i29: [(); 5] = [0_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i30: [(); 5] = [0_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i31: [(); 5] = [0_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i32: [(); 5] = [0_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i33: [(); 5] = [0_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i34: [(); 5] = [0_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i35: [(); 5] = [0_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i36: [(); 5] = [0_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i37: [(); 5] = [0_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i38: [(); 5] = [0_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i39: [(); 5] = [0_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i40: [(); 5] = [0_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i41: [(); 5] = [0_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i42: [(); 5] = [1_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i43: [(); 5] = [1_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i44: [(); 5] = [1_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i45: [(); 5] = [1_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i46: [(); 5] = [1_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i47: [(); 5] = [1_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i48: [(); 5] = [1_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i49: [(); 5] = [1_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i50: [(); 5] = [1_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i51: [(); 5] = [1_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i52: [(); 5] = [1_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i53: [(); 5] = [1_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i54: [(); 5] = [1_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i55: [(); 5] = [1_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i56: [(); 5] = [1_(), 1_(), 1_(), 1_(), 0_()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i57: [(); 6] = [0_(), 0_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i58: [(); 6] = [0_(), 0_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i59: [(); 6] = [0_(), 0_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i60: [(); 6] = [0_(), 0_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i61: [(); 6] = [0_(), 0_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i62: [(); 6] = [0_(), 0_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i63: [(); 6] = [0_(), 0_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i64: [(); 6] = [0_(), 0_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i65: [(); 6] = [0_(), 0_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i66: [(); 6] = [0_(), 0_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i67: [(); 6] = [0_(), 0_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i68: [(); 6] = [0_(), 0_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i69: [(); 6] = [0_(), 0_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i70: [(); 6] = [0_(), 0_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i71: [(); 6] = [0_(), 0_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i72: [(); 6] = [0_(), 0_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i73: [(); 6] = [0_(), 1_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i74: [(); 6] = [0_(), 1_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i75: [(); 6] = [0_(), 1_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i76: [(); 6] = [0_(), 1_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i77: [(); 6] = [0_(), 1_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i78: [(); 6] = [0_(), 1_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i79: [(); 6] = [0_(), 1_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i80: [(); 6] = [0_(), 1_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i81: [(); 6] = [0_(), 1_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i82: [(); 6] = [0_(), 1_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i83: [(); 6] = [0_(), 1_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i84: [(); 6] = [0_(), 1_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i85: [(); 6] = [0_(), 1_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i86: [(); 6] = [0_(), 1_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i87: [(); 6] = [0_(), 1_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i88: [(); 6] = [0_(), 1_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i89: [(); 6] = [1_(), 0_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i90: [(); 6] = [1_(), 0_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i91: [(); 6] = [1_(), 0_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i92: [(); 6] = [1_(), 0_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i93: [(); 6] = [1_(), 0_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i94: [(); 6] = [1_(), 0_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i95: [(); 6] = [1_(), 0_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i96: [(); 6] = [1_(), 0_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i97: [(); 6] = [1_(), 0_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i98: [(); 6] = [1_(), 0_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i99: [(); 6] = [1_(), 0_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i100: [(); 6] = [1_(), 0_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i101: [(); 6] = [1_(), 0_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i102: [(); 6] = [1_(), 0_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i103: [(); 6] = [1_(), 0_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i104: [(); 6] = [1_(), 0_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i105: [(); 6] = [1_(), 1_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i106: [(); 6] = [1_(), 1_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i107: [(); 6] = [1_(), 1_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i108: [(); 6] = [1_(), 1_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i109: [(); 6] = [1_(), 1_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i110: [(); 6] = [1_(), 1_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i111: [(); 6] = [1_(), 1_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i112: [(); 6] = [1_(), 1_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i113: [(); 6] = [1_(), 1_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i114: [(); 6] = [1_(), 1_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i115: [(); 6] = [1_(), 1_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i116: [(); 6] = [1_(), 1_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i117: [(); 6] = [1_(), 1_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i118: [(); 6] = [1_(), 1_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i119: [(); 6] = [1_(), 1_(), 1_(), 1_(), 1_(), 0_()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i120: [(); 7] = [0_(), 0_(), 0_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i121: [(); 7] = [0_(), 0_(), 0_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i122: [(); 7] = [0_(), 0_(), 0_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i123: [(); 7] = [0_(), 0_(), 0_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i124: [(); 7] = [0_(), 0_(), 0_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i125: [(); 7] = [0_(), 0_(), 0_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i126: [(); 7] = [0_(), 0_(), 0_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i127: [(); 7] = [0_(), 0_(), 0_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i128: [(); 7] = [0_(), 0_(), 0_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i129: [(); 7] = [0_(), 0_(), 0_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i130: [(); 7] = [0_(), 0_(), 0_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i131: [(); 7] = [0_(), 0_(), 0_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i132: [(); 7] = [0_(), 0_(), 0_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i133: [(); 7] = [0_(), 0_(), 0_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i134: [(); 7] = [0_(), 0_(), 0_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i135: [(); 7] = [0_(), 0_(), 0_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i136: [(); 7] = [0_(), 0_(), 1_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i137: [(); 7] = [0_(), 0_(), 1_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i138: [(); 7] = [0_(), 0_(), 1_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i139: [(); 7] = [0_(), 0_(), 1_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i140: [(); 7] = [0_(), 0_(), 1_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i141: [(); 7] = [0_(), 0_(), 1_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i142: [(); 7] = [0_(), 0_(), 1_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i143: [(); 7] = [0_(), 0_(), 1_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i144: [(); 7] = [0_(), 0_(), 1_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i145: [(); 7] = [0_(), 0_(), 1_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i146: [(); 7] = [0_(), 0_(), 1_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i147: [(); 7] = [0_(), 0_(), 1_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i148: [(); 7] = [0_(), 0_(), 1_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i149: [(); 7] = [0_(), 0_(), 1_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i150: [(); 7] = [0_(), 0_(), 1_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i151: [(); 7] = [0_(), 0_(), 1_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i152: [(); 7] = [0_(), 1_(), 0_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i153: [(); 7] = [0_(), 1_(), 0_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i154: [(); 7] = [0_(), 1_(), 0_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i155: [(); 7] = [0_(), 1_(), 0_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i156: [(); 7] = [0_(), 1_(), 0_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i157: [(); 7] = [0_(), 1_(), 0_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i158: [(); 7] = [0_(), 1_(), 0_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i159: [(); 7] = [0_(), 1_(), 0_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i160: [(); 7] = [0_(), 1_(), 0_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i161: [(); 7] = [0_(), 1_(), 0_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i162: [(); 7] = [0_(), 1_(), 0_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i163: [(); 7] = [0_(), 1_(), 0_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i164: [(); 7] = [0_(), 1_(), 0_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i165: [(); 7] = [0_(), 1_(), 0_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i166: [(); 7] = [0_(), 1_(), 0_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i167: [(); 7] = [0_(), 1_(), 0_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i168: [(); 7] = [0_(), 1_(), 1_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i169: [(); 7] = [0_(), 1_(), 1_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i170: [(); 7] = [0_(), 1_(), 1_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i171: [(); 7] = [0_(), 1_(), 1_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i172: [(); 7] = [0_(), 1_(), 1_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i173: [(); 7] = [0_(), 1_(), 1_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i174: [(); 7] = [0_(), 1_(), 1_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i175: [(); 7] = [0_(), 1_(), 1_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i176: [(); 7] = [0_(), 1_(), 1_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i177: [(); 7] = [0_(), 1_(), 1_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i178: [(); 7] = [0_(), 1_(), 1_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i179: [(); 7] = [0_(), 1_(), 1_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i180: [(); 7] = [0_(), 1_(), 1_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i181: [(); 7] = [0_(), 1_(), 1_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i182: [(); 7] = [0_(), 1_(), 1_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i183: [(); 7] = [0_(), 1_(), 1_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i184: [(); 7] = [1_(), 0_(), 0_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i185: [(); 7] = [1_(), 0_(), 0_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i186: [(); 7] = [1_(), 0_(), 0_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i187: [(); 7] = [1_(), 0_(), 0_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i188: [(); 7] = [1_(), 0_(), 0_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i189: [(); 7] = [1_(), 0_(), 0_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i190: [(); 7] = [1_(), 0_(), 0_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i191: [(); 7] = [1_(), 0_(), 0_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i192: [(); 7] = [1_(), 0_(), 0_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i193: [(); 7] = [1_(), 0_(), 0_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i194: [(); 7] = [1_(), 0_(), 0_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i195: [(); 7] = [1_(), 0_(), 0_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i196: [(); 7] = [1_(), 0_(), 0_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i197: [(); 7] = [1_(), 0_(), 0_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i198: [(); 7] = [1_(), 0_(), 0_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i199: [(); 7] = [1_(), 0_(), 0_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i200: [(); 7] = [1_(), 0_(), 1_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i201: [(); 7] = [1_(), 0_(), 1_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i202: [(); 7] = [1_(), 0_(), 1_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i203: [(); 7] = [1_(), 0_(), 1_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i204: [(); 7] = [1_(), 0_(), 1_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i205: [(); 7] = [1_(), 0_(), 1_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i206: [(); 7] = [1_(), 0_(), 1_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i207: [(); 7] = [1_(), 0_(), 1_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i208: [(); 7] = [1_(), 0_(), 1_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i209: [(); 7] = [1_(), 0_(), 1_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i210: [(); 7] = [1_(), 0_(), 1_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i211: [(); 7] = [1_(), 0_(), 1_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i212: [(); 7] = [1_(), 0_(), 1_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i213: [(); 7] = [1_(), 0_(), 1_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i214: [(); 7] = [1_(), 0_(), 1_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i215: [(); 7] = [1_(), 0_(), 1_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i216: [(); 7] = [1_(), 1_(), 0_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i217: [(); 7] = [1_(), 1_(), 0_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i218: [(); 7] = [1_(), 1_(), 0_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i219: [(); 7] = [1_(), 1_(), 0_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i220: [(); 7] = [1_(), 1_(), 0_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i221: [(); 7] = [1_(), 1_(), 0_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i222: [(); 7] = [1_(), 1_(), 0_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i223: [(); 7] = [1_(), 1_(), 0_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i224: [(); 7] = [1_(), 1_(), 0_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i225: [(); 7] = [1_(), 1_(), 0_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i226: [(); 7] = [1_(), 1_(), 0_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i227: [(); 7] = [1_(), 1_(), 0_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i228: [(); 7] = [1_(), 1_(), 0_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i229: [(); 7] = [1_(), 1_(), 0_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i230: [(); 7] = [1_(), 1_(), 0_(), 1_(), 1_(), 1_(), 0_()];
-    let mut i231: [(); 7] = [1_(), 1_(), 0_(), 1_(), 1_(), 1_(), 1_()];
-    let mut i232: [(); 7] = [1_(), 1_(), 1_(), 0_(), 0_(), 0_(), 0_()];
-    let mut i233: [(); 7] = [1_(), 1_(), 1_(), 0_(), 0_(), 0_(), 1_()];
-    let mut i234: [(); 7] = [1_(), 1_(), 1_(), 0_(), 0_(), 1_(), 0_()];
-    let mut i235: [(); 7] = [1_(), 1_(), 1_(), 0_(), 0_(), 1_(), 1_()];
-    let mut i236: [(); 7] = [1_(), 1_(), 1_(), 0_(), 1_(), 0_(), 0_()];
-    let mut i237: [(); 7] = [1_(), 1_(), 1_(), 0_(), 1_(), 0_(), 1_()];
-    let mut i238: [(); 7] = [1_(), 1_(), 1_(), 0_(), 1_(), 1_(), 0_()];
-    let mut i239: [(); 7] = [1_(), 1_(), 1_(), 0_(), 1_(), 1_(), 1_()];
-    let mut i240: [(); 7] = [1_(), 1_(), 1_(), 1_(), 0_(), 0_(), 0_()];
-    let mut i241: [(); 7] = [1_(), 1_(), 1_(), 1_(), 0_(), 0_(), 1_()];
-    let mut i242: [(); 7] = [1_(), 1_(), 1_(), 1_(), 0_(), 1_(), 0_()];
-    let mut i243: [(); 7] = [1_(), 1_(), 1_(), 1_(), 0_(), 1_(), 1_()];
-    let mut i244: [(); 7] = [1_(), 1_(), 1_(), 1_(), 1_(), 0_(), 0_()];
-    let mut i245: [(); 7] = [1_(), 1_(), 1_(), 1_(), 1_(), 0_(), 1_()];
-    let mut i246: [(); 7] = [1_(), 1_(), 1_(), 1_(), 1_(), 1_(), 0_()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut i1: [i32; 2] = [0, 0];
+    assert!(((unimplemented!()) == (i1.as_mut_ptr())));
+    assert!(((unimplemented!()) == (i1.as_mut_ptr().offset((1) as isize))));
+    assert!(
+        (unsafe {
+            let mut _x: random_access_iterator_int_ptr_ = unimplemented!();
+            let mut _y: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ i1.as_mut_ptr() });
+            operator_eq_2(&mut _x, &mut _y)
+        })
+    );
+    assert!(
+        (unsafe {
+            let mut _x: random_access_iterator_int_ptr_ = unimplemented!();
+            let mut _y: random_access_iterator_int_ptr_ =
+                random_access_iterator_int_ptr_::new_1({ i1.as_mut_ptr().offset((1) as isize) });
+            operator_eq_2(&mut _x, &mut _y)
+        })
+    );
+    let mut i2: [i32; 2] = [0, 1];
+    let mut i3: [i32; 2] = [1, 0];
+    assert!(((unimplemented!()) == (i1.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i2.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i3.as_mut_ptr().offset((2) as isize))));
+    let mut i4: [i32; 3] = [0, 0, 0];
+    let mut i5: [i32; 3] = [0, 0, 1];
+    let mut i6: [i32; 3] = [0, 1, 0];
+    let mut i7: [i32; 3] = [0, 1, 1];
+    let mut i8: [i32; 3] = [1, 0, 0];
+    let mut i9: [i32; 3] = [1, 0, 1];
+    let mut i10: [i32; 3] = [1, 1, 0];
+    assert!(((unimplemented!()) == (i4.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i5.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i6.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i7.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i8.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i9.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i10.as_mut_ptr().offset((3) as isize))));
+    let mut i11: [i32; 4] = [0, 0, 0, 0];
+    let mut i12: [i32; 4] = [0, 0, 0, 1];
+    let mut i13: [i32; 4] = [0, 0, 1, 0];
+    let mut i14: [i32; 4] = [0, 0, 1, 1];
+    let mut i15: [i32; 4] = [0, 1, 0, 0];
+    let mut i16: [i32; 4] = [0, 1, 0, 1];
+    let mut i17: [i32; 4] = [0, 1, 1, 0];
+    let mut i18: [i32; 4] = [0, 1, 1, 1];
+    let mut i19: [i32; 4] = [1, 0, 0, 0];
+    let mut i20: [i32; 4] = [1, 0, 0, 1];
+    let mut i21: [i32; 4] = [1, 0, 1, 0];
+    let mut i22: [i32; 4] = [1, 0, 1, 1];
+    let mut i23: [i32; 4] = [1, 1, 0, 0];
+    let mut i24: [i32; 4] = [1, 1, 0, 1];
+    let mut i25: [i32; 4] = [1, 1, 1, 0];
+    assert!(((unimplemented!()) == (i11.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i12.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i13.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i14.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i15.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i16.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i17.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i18.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i19.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i20.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i21.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i22.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i23.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i24.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i25.as_mut_ptr().offset((4) as isize))));
+    let mut i26: [i32; 5] = [0, 0, 0, 0, 0];
+    let mut i27: [i32; 5] = [0, 0, 0, 0, 1];
+    let mut i28: [i32; 5] = [0, 0, 0, 1, 0];
+    let mut i29: [i32; 5] = [0, 0, 0, 1, 1];
+    let mut i30: [i32; 5] = [0, 0, 1, 0, 0];
+    let mut i31: [i32; 5] = [0, 0, 1, 0, 1];
+    let mut i32: [i32; 5] = [0, 0, 1, 1, 0];
+    let mut i33: [i32; 5] = [0, 0, 1, 1, 1];
+    let mut i34: [i32; 5] = [0, 1, 0, 0, 0];
+    let mut i35: [i32; 5] = [0, 1, 0, 0, 1];
+    let mut i36: [i32; 5] = [0, 1, 0, 1, 0];
+    let mut i37: [i32; 5] = [0, 1, 0, 1, 1];
+    let mut i38: [i32; 5] = [0, 1, 1, 0, 0];
+    let mut i39: [i32; 5] = [0, 1, 1, 0, 1];
+    let mut i40: [i32; 5] = [0, 1, 1, 1, 0];
+    let mut i41: [i32; 5] = [0, 1, 1, 1, 1];
+    let mut i42: [i32; 5] = [1, 0, 0, 0, 0];
+    let mut i43: [i32; 5] = [1, 0, 0, 0, 1];
+    let mut i44: [i32; 5] = [1, 0, 0, 1, 0];
+    let mut i45: [i32; 5] = [1, 0, 0, 1, 1];
+    let mut i46: [i32; 5] = [1, 0, 1, 0, 0];
+    let mut i47: [i32; 5] = [1, 0, 1, 0, 1];
+    let mut i48: [i32; 5] = [1, 0, 1, 1, 0];
+    let mut i49: [i32; 5] = [1, 0, 1, 1, 1];
+    let mut i50: [i32; 5] = [1, 1, 0, 0, 0];
+    let mut i51: [i32; 5] = [1, 1, 0, 0, 1];
+    let mut i52: [i32; 5] = [1, 1, 0, 1, 0];
+    let mut i53: [i32; 5] = [1, 1, 0, 1, 1];
+    let mut i54: [i32; 5] = [1, 1, 1, 0, 0];
+    let mut i55: [i32; 5] = [1, 1, 1, 0, 1];
+    let mut i56: [i32; 5] = [1, 1, 1, 1, 0];
+    assert!(((unimplemented!()) == (i26.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i27.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i28.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i29.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i30.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i31.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i32.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i33.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i34.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i35.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i36.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i37.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i38.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i39.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i40.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i41.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i42.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i43.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i44.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i45.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i46.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i47.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i48.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i49.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i50.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i51.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i52.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i53.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i54.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i55.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i56.as_mut_ptr().offset((5) as isize))));
+    let mut i57: [i32; 6] = [0, 0, 0, 0, 0, 0];
+    let mut i58: [i32; 6] = [0, 0, 0, 0, 0, 1];
+    let mut i59: [i32; 6] = [0, 0, 0, 0, 1, 0];
+    let mut i60: [i32; 6] = [0, 0, 0, 0, 1, 1];
+    let mut i61: [i32; 6] = [0, 0, 0, 1, 0, 0];
+    let mut i62: [i32; 6] = [0, 0, 0, 1, 0, 1];
+    let mut i63: [i32; 6] = [0, 0, 0, 1, 1, 0];
+    let mut i64: [i32; 6] = [0, 0, 0, 1, 1, 1];
+    let mut i65: [i32; 6] = [0, 0, 1, 0, 0, 0];
+    let mut i66: [i32; 6] = [0, 0, 1, 0, 0, 1];
+    let mut i67: [i32; 6] = [0, 0, 1, 0, 1, 0];
+    let mut i68: [i32; 6] = [0, 0, 1, 0, 1, 1];
+    let mut i69: [i32; 6] = [0, 0, 1, 1, 0, 0];
+    let mut i70: [i32; 6] = [0, 0, 1, 1, 0, 1];
+    let mut i71: [i32; 6] = [0, 0, 1, 1, 1, 0];
+    let mut i72: [i32; 6] = [0, 0, 1, 1, 1, 1];
+    let mut i73: [i32; 6] = [0, 1, 0, 0, 0, 0];
+    let mut i74: [i32; 6] = [0, 1, 0, 0, 0, 1];
+    let mut i75: [i32; 6] = [0, 1, 0, 0, 1, 0];
+    let mut i76: [i32; 6] = [0, 1, 0, 0, 1, 1];
+    let mut i77: [i32; 6] = [0, 1, 0, 1, 0, 0];
+    let mut i78: [i32; 6] = [0, 1, 0, 1, 0, 1];
+    let mut i79: [i32; 6] = [0, 1, 0, 1, 1, 0];
+    let mut i80: [i32; 6] = [0, 1, 0, 1, 1, 1];
+    let mut i81: [i32; 6] = [0, 1, 1, 0, 0, 0];
+    let mut i82: [i32; 6] = [0, 1, 1, 0, 0, 1];
+    let mut i83: [i32; 6] = [0, 1, 1, 0, 1, 0];
+    let mut i84: [i32; 6] = [0, 1, 1, 0, 1, 1];
+    let mut i85: [i32; 6] = [0, 1, 1, 1, 0, 0];
+    let mut i86: [i32; 6] = [0, 1, 1, 1, 0, 1];
+    let mut i87: [i32; 6] = [0, 1, 1, 1, 1, 0];
+    let mut i88: [i32; 6] = [0, 1, 1, 1, 1, 1];
+    let mut i89: [i32; 6] = [1, 0, 0, 0, 0, 0];
+    let mut i90: [i32; 6] = [1, 0, 0, 0, 0, 1];
+    let mut i91: [i32; 6] = [1, 0, 0, 0, 1, 0];
+    let mut i92: [i32; 6] = [1, 0, 0, 0, 1, 1];
+    let mut i93: [i32; 6] = [1, 0, 0, 1, 0, 0];
+    let mut i94: [i32; 6] = [1, 0, 0, 1, 0, 1];
+    let mut i95: [i32; 6] = [1, 0, 0, 1, 1, 0];
+    let mut i96: [i32; 6] = [1, 0, 0, 1, 1, 1];
+    let mut i97: [i32; 6] = [1, 0, 1, 0, 0, 0];
+    let mut i98: [i32; 6] = [1, 0, 1, 0, 0, 1];
+    let mut i99: [i32; 6] = [1, 0, 1, 0, 1, 0];
+    let mut i100: [i32; 6] = [1, 0, 1, 0, 1, 1];
+    let mut i101: [i32; 6] = [1, 0, 1, 1, 0, 0];
+    let mut i102: [i32; 6] = [1, 0, 1, 1, 0, 1];
+    let mut i103: [i32; 6] = [1, 0, 1, 1, 1, 0];
+    let mut i104: [i32; 6] = [1, 0, 1, 1, 1, 1];
+    let mut i105: [i32; 6] = [1, 1, 0, 0, 0, 0];
+    let mut i106: [i32; 6] = [1, 1, 0, 0, 0, 1];
+    let mut i107: [i32; 6] = [1, 1, 0, 0, 1, 0];
+    let mut i108: [i32; 6] = [1, 1, 0, 0, 1, 1];
+    let mut i109: [i32; 6] = [1, 1, 0, 1, 0, 0];
+    let mut i110: [i32; 6] = [1, 1, 0, 1, 0, 1];
+    let mut i111: [i32; 6] = [1, 1, 0, 1, 1, 0];
+    let mut i112: [i32; 6] = [1, 1, 0, 1, 1, 1];
+    let mut i113: [i32; 6] = [1, 1, 1, 0, 0, 0];
+    let mut i114: [i32; 6] = [1, 1, 1, 0, 0, 1];
+    let mut i115: [i32; 6] = [1, 1, 1, 0, 1, 0];
+    let mut i116: [i32; 6] = [1, 1, 1, 0, 1, 1];
+    let mut i117: [i32; 6] = [1, 1, 1, 1, 0, 0];
+    let mut i118: [i32; 6] = [1, 1, 1, 1, 0, 1];
+    let mut i119: [i32; 6] = [1, 1, 1, 1, 1, 0];
+    assert!(((unimplemented!()) == (i57.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i58.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i59.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i60.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i61.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i62.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i63.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i64.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i65.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i66.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i67.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i68.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i69.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i70.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i71.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i72.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i73.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i74.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i75.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i76.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i77.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i78.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i79.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i80.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i81.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i82.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i83.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i84.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i85.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i86.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i87.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i88.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i89.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i90.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i91.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i92.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i93.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i94.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i95.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i96.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i97.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i98.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i99.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i100.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i101.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i102.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i103.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i104.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i105.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i106.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i107.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i108.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i109.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i110.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i111.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i112.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i113.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i114.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i115.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i116.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i117.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i118.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i119.as_mut_ptr().offset((6) as isize))));
+    let mut i120: [i32; 7] = [0, 0, 0, 0, 0, 0, 0];
+    let mut i121: [i32; 7] = [0, 0, 0, 0, 0, 0, 1];
+    let mut i122: [i32; 7] = [0, 0, 0, 0, 0, 1, 0];
+    let mut i123: [i32; 7] = [0, 0, 0, 0, 0, 1, 1];
+    let mut i124: [i32; 7] = [0, 0, 0, 0, 1, 0, 0];
+    let mut i125: [i32; 7] = [0, 0, 0, 0, 1, 0, 1];
+    let mut i126: [i32; 7] = [0, 0, 0, 0, 1, 1, 0];
+    let mut i127: [i32; 7] = [0, 0, 0, 0, 1, 1, 1];
+    let mut i128: [i32; 7] = [0, 0, 0, 1, 0, 0, 0];
+    let mut i129: [i32; 7] = [0, 0, 0, 1, 0, 0, 1];
+    let mut i130: [i32; 7] = [0, 0, 0, 1, 0, 1, 0];
+    let mut i131: [i32; 7] = [0, 0, 0, 1, 0, 1, 1];
+    let mut i132: [i32; 7] = [0, 0, 0, 1, 1, 0, 0];
+    let mut i133: [i32; 7] = [0, 0, 0, 1, 1, 0, 1];
+    let mut i134: [i32; 7] = [0, 0, 0, 1, 1, 1, 0];
+    let mut i135: [i32; 7] = [0, 0, 0, 1, 1, 1, 1];
+    let mut i136: [i32; 7] = [0, 0, 1, 0, 0, 0, 0];
+    let mut i137: [i32; 7] = [0, 0, 1, 0, 0, 0, 1];
+    let mut i138: [i32; 7] = [0, 0, 1, 0, 0, 1, 0];
+    let mut i139: [i32; 7] = [0, 0, 1, 0, 0, 1, 1];
+    let mut i140: [i32; 7] = [0, 0, 1, 0, 1, 0, 0];
+    let mut i141: [i32; 7] = [0, 0, 1, 0, 1, 0, 1];
+    let mut i142: [i32; 7] = [0, 0, 1, 0, 1, 1, 0];
+    let mut i143: [i32; 7] = [0, 0, 1, 0, 1, 1, 1];
+    let mut i144: [i32; 7] = [0, 0, 1, 1, 0, 0, 0];
+    let mut i145: [i32; 7] = [0, 0, 1, 1, 0, 0, 1];
+    let mut i146: [i32; 7] = [0, 0, 1, 1, 0, 1, 0];
+    let mut i147: [i32; 7] = [0, 0, 1, 1, 0, 1, 1];
+    let mut i148: [i32; 7] = [0, 0, 1, 1, 1, 0, 0];
+    let mut i149: [i32; 7] = [0, 0, 1, 1, 1, 0, 1];
+    let mut i150: [i32; 7] = [0, 0, 1, 1, 1, 1, 0];
+    let mut i151: [i32; 7] = [0, 0, 1, 1, 1, 1, 1];
+    let mut i152: [i32; 7] = [0, 1, 0, 0, 0, 0, 0];
+    let mut i153: [i32; 7] = [0, 1, 0, 0, 0, 0, 1];
+    let mut i154: [i32; 7] = [0, 1, 0, 0, 0, 1, 0];
+    let mut i155: [i32; 7] = [0, 1, 0, 0, 0, 1, 1];
+    let mut i156: [i32; 7] = [0, 1, 0, 0, 1, 0, 0];
+    let mut i157: [i32; 7] = [0, 1, 0, 0, 1, 0, 1];
+    let mut i158: [i32; 7] = [0, 1, 0, 0, 1, 1, 0];
+    let mut i159: [i32; 7] = [0, 1, 0, 0, 1, 1, 1];
+    let mut i160: [i32; 7] = [0, 1, 0, 1, 0, 0, 0];
+    let mut i161: [i32; 7] = [0, 1, 0, 1, 0, 0, 1];
+    let mut i162: [i32; 7] = [0, 1, 0, 1, 0, 1, 0];
+    let mut i163: [i32; 7] = [0, 1, 0, 1, 0, 1, 1];
+    let mut i164: [i32; 7] = [0, 1, 0, 1, 1, 0, 0];
+    let mut i165: [i32; 7] = [0, 1, 0, 1, 1, 0, 1];
+    let mut i166: [i32; 7] = [0, 1, 0, 1, 1, 1, 0];
+    let mut i167: [i32; 7] = [0, 1, 0, 1, 1, 1, 1];
+    let mut i168: [i32; 7] = [0, 1, 1, 0, 0, 0, 0];
+    let mut i169: [i32; 7] = [0, 1, 1, 0, 0, 0, 1];
+    let mut i170: [i32; 7] = [0, 1, 1, 0, 0, 1, 0];
+    let mut i171: [i32; 7] = [0, 1, 1, 0, 0, 1, 1];
+    let mut i172: [i32; 7] = [0, 1, 1, 0, 1, 0, 0];
+    let mut i173: [i32; 7] = [0, 1, 1, 0, 1, 0, 1];
+    let mut i174: [i32; 7] = [0, 1, 1, 0, 1, 1, 0];
+    let mut i175: [i32; 7] = [0, 1, 1, 0, 1, 1, 1];
+    let mut i176: [i32; 7] = [0, 1, 1, 1, 0, 0, 0];
+    let mut i177: [i32; 7] = [0, 1, 1, 1, 0, 0, 1];
+    let mut i178: [i32; 7] = [0, 1, 1, 1, 0, 1, 0];
+    let mut i179: [i32; 7] = [0, 1, 1, 1, 0, 1, 1];
+    let mut i180: [i32; 7] = [0, 1, 1, 1, 1, 0, 0];
+    let mut i181: [i32; 7] = [0, 1, 1, 1, 1, 0, 1];
+    let mut i182: [i32; 7] = [0, 1, 1, 1, 1, 1, 0];
+    let mut i183: [i32; 7] = [0, 1, 1, 1, 1, 1, 1];
+    let mut i184: [i32; 7] = [1, 0, 0, 0, 0, 0, 0];
+    let mut i185: [i32; 7] = [1, 0, 0, 0, 0, 0, 1];
+    let mut i186: [i32; 7] = [1, 0, 0, 0, 0, 1, 0];
+    let mut i187: [i32; 7] = [1, 0, 0, 0, 0, 1, 1];
+    let mut i188: [i32; 7] = [1, 0, 0, 0, 1, 0, 0];
+    let mut i189: [i32; 7] = [1, 0, 0, 0, 1, 0, 1];
+    let mut i190: [i32; 7] = [1, 0, 0, 0, 1, 1, 0];
+    let mut i191: [i32; 7] = [1, 0, 0, 0, 1, 1, 1];
+    let mut i192: [i32; 7] = [1, 0, 0, 1, 0, 0, 0];
+    let mut i193: [i32; 7] = [1, 0, 0, 1, 0, 0, 1];
+    let mut i194: [i32; 7] = [1, 0, 0, 1, 0, 1, 0];
+    let mut i195: [i32; 7] = [1, 0, 0, 1, 0, 1, 1];
+    let mut i196: [i32; 7] = [1, 0, 0, 1, 1, 0, 0];
+    let mut i197: [i32; 7] = [1, 0, 0, 1, 1, 0, 1];
+    let mut i198: [i32; 7] = [1, 0, 0, 1, 1, 1, 0];
+    let mut i199: [i32; 7] = [1, 0, 0, 1, 1, 1, 1];
+    let mut i200: [i32; 7] = [1, 0, 1, 0, 0, 0, 0];
+    let mut i201: [i32; 7] = [1, 0, 1, 0, 0, 0, 1];
+    let mut i202: [i32; 7] = [1, 0, 1, 0, 0, 1, 0];
+    let mut i203: [i32; 7] = [1, 0, 1, 0, 0, 1, 1];
+    let mut i204: [i32; 7] = [1, 0, 1, 0, 1, 0, 0];
+    let mut i205: [i32; 7] = [1, 0, 1, 0, 1, 0, 1];
+    let mut i206: [i32; 7] = [1, 0, 1, 0, 1, 1, 0];
+    let mut i207: [i32; 7] = [1, 0, 1, 0, 1, 1, 1];
+    let mut i208: [i32; 7] = [1, 0, 1, 1, 0, 0, 0];
+    let mut i209: [i32; 7] = [1, 0, 1, 1, 0, 0, 1];
+    let mut i210: [i32; 7] = [1, 0, 1, 1, 0, 1, 0];
+    let mut i211: [i32; 7] = [1, 0, 1, 1, 0, 1, 1];
+    let mut i212: [i32; 7] = [1, 0, 1, 1, 1, 0, 0];
+    let mut i213: [i32; 7] = [1, 0, 1, 1, 1, 0, 1];
+    let mut i214: [i32; 7] = [1, 0, 1, 1, 1, 1, 0];
+    let mut i215: [i32; 7] = [1, 0, 1, 1, 1, 1, 1];
+    let mut i216: [i32; 7] = [1, 1, 0, 0, 0, 0, 0];
+    let mut i217: [i32; 7] = [1, 1, 0, 0, 0, 0, 1];
+    let mut i218: [i32; 7] = [1, 1, 0, 0, 0, 1, 0];
+    let mut i219: [i32; 7] = [1, 1, 0, 0, 0, 1, 1];
+    let mut i220: [i32; 7] = [1, 1, 0, 0, 1, 0, 0];
+    let mut i221: [i32; 7] = [1, 1, 0, 0, 1, 0, 1];
+    let mut i222: [i32; 7] = [1, 1, 0, 0, 1, 1, 0];
+    let mut i223: [i32; 7] = [1, 1, 0, 0, 1, 1, 1];
+    let mut i224: [i32; 7] = [1, 1, 0, 1, 0, 0, 0];
+    let mut i225: [i32; 7] = [1, 1, 0, 1, 0, 0, 1];
+    let mut i226: [i32; 7] = [1, 1, 0, 1, 0, 1, 0];
+    let mut i227: [i32; 7] = [1, 1, 0, 1, 0, 1, 1];
+    let mut i228: [i32; 7] = [1, 1, 0, 1, 1, 0, 0];
+    let mut i229: [i32; 7] = [1, 1, 0, 1, 1, 0, 1];
+    let mut i230: [i32; 7] = [1, 1, 0, 1, 1, 1, 0];
+    let mut i231: [i32; 7] = [1, 1, 0, 1, 1, 1, 1];
+    let mut i232: [i32; 7] = [1, 1, 1, 0, 0, 0, 0];
+    let mut i233: [i32; 7] = [1, 1, 1, 0, 0, 0, 1];
+    let mut i234: [i32; 7] = [1, 1, 1, 0, 0, 1, 0];
+    let mut i235: [i32; 7] = [1, 1, 1, 0, 0, 1, 1];
+    let mut i236: [i32; 7] = [1, 1, 1, 0, 1, 0, 0];
+    let mut i237: [i32; 7] = [1, 1, 1, 0, 1, 0, 1];
+    let mut i238: [i32; 7] = [1, 1, 1, 0, 1, 1, 0];
+    let mut i239: [i32; 7] = [1, 1, 1, 0, 1, 1, 1];
+    let mut i240: [i32; 7] = [1, 1, 1, 1, 0, 0, 0];
+    let mut i241: [i32; 7] = [1, 1, 1, 1, 0, 0, 1];
+    let mut i242: [i32; 7] = [1, 1, 1, 1, 0, 1, 0];
+    let mut i243: [i32; 7] = [1, 1, 1, 1, 0, 1, 1];
+    let mut i244: [i32; 7] = [1, 1, 1, 1, 1, 0, 0];
+    let mut i245: [i32; 7] = [1, 1, 1, 1, 1, 0, 1];
+    let mut i246: [i32; 7] = [1, 1, 1, 1, 1, 1, 0];
+    assert!(((unimplemented!()) == (i120.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i121.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i122.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i123.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i124.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i125.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i126.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i127.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i128.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i129.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i130.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i131.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i132.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i133.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i134.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i135.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i136.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i137.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i138.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i139.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i140.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i141.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i142.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i143.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i144.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i145.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i146.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i147.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i148.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i149.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i150.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i151.as_mut_ptr().offset((2) as isize))));
+    assert!(((unimplemented!()) == (i152.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i153.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i154.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i155.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i156.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i157.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i158.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i159.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i160.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i161.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i162.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i163.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i164.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i165.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i166.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i167.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i168.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i169.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i170.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i171.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i172.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i173.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i174.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i175.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i176.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i177.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i178.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i179.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i180.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i181.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i182.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i183.as_mut_ptr().offset((1) as isize))));
+    assert!(((unimplemented!()) == (i184.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i185.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i186.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i187.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i188.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i189.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i190.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i191.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i192.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i193.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i194.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i195.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i196.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i197.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i198.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i199.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i200.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i201.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i202.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i203.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i204.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i205.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i206.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i207.as_mut_ptr().offset((4) as isize))));
+    assert!(((unimplemented!()) == (i208.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i209.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i210.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i211.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i212.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i213.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i214.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i215.as_mut_ptr().offset((3) as isize))));
+    assert!(((unimplemented!()) == (i216.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i217.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i218.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i219.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i220.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i221.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i222.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i223.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i224.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i225.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i226.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i227.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i228.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i229.as_mut_ptr().offset((6) as isize))));
+    assert!(((unimplemented!()) == (i230.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i231.as_mut_ptr().offset((5) as isize))));
+    assert!(((unimplemented!()) == (i232.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i233.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i234.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i235.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i236.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i237.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i238.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i239.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i240.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i241.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i242.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i243.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i244.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i245.as_mut_ptr().offset((7) as isize))));
+    assert!(((unimplemented!()) == (i246.as_mut_ptr().offset((7) as isize))));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -1046,9 +1072,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_11() });
     const _: () = assert!(true, "test_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -6,31 +6,31 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn check_tag_0(_a0: ()) -> () {
+pub fn check_tag_0(_a0: ()) -> bool {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
     return (unimplemented!()) && (unimplemented!());
 }
-pub fn check_tag_1(_a0: ()) -> () {
+pub fn check_tag_1(_a0: ()) -> bool {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
     return (unimplemented!()) && (unimplemented!());
 }
-pub fn check_tag_2(_a0: ()) -> () {
+pub fn check_tag_2(_a0: ()) -> bool {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
     return (unimplemented!()) && (unimplemented!());
 }
-pub fn check_tag_3(_a0: ()) -> () {
+pub fn check_tag_3(_a0: ()) -> bool {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
     return (unimplemented!()) && (unimplemented!());
 }
-pub fn check_tag_4(_a0: ()) -> () {
+pub fn check_tag_4(_a0: ()) -> bool {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
     return (unimplemented!()) && (unimplemented!());
 }
-pub fn check_tag_5(_a0: ()) -> () {
+pub fn check_tag_5(_a0: ()) -> bool {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
     return (unimplemented!()) && (unimplemented!());
 }
-pub fn check_tag_6(_a0: ()) -> () {
+pub fn check_tag_6(_a0: ()) -> bool {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
     return (unimplemented!()) && (unimplemented!());
 }
@@ -53,7 +53,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "check_tag<T>(std::in_place)");;
     }
@@ -80,6 +80,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "check_tag<T3>(std::in_place_index<static_cast<std::size_t>(-1)>)"
         );;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

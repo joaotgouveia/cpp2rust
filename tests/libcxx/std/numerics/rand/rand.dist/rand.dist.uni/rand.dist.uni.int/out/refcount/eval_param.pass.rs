@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn sqr_0(mut x: ()) -> () {
+pub fn sqr_0(mut x: f64) -> f64 {
     return (x * x);
 }
 pub fn main() {
@@ -28,50 +28,59 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut N: () = 100000_();
-        let mut u: () = unimplemented!();
-        let mut i: () = 0_();
+        let mut N: i32 = 100000;
+        let u: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        let mut i: i32 = 0;
         'loop_: while (i < N) {
             let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() <= v) && (v <= unimplemented!()));
+            {
+                let a0_clone = (v as i32).clone();
+                (*u.borrow_mut()).push(a0_clone)
+            };
             i.prefix_inc();
         }
-        let mut mean: () = (unimplemented!() / unimplemented!());
-        let mut var: () = 0_();
-        let mut skew: () = 0_();
-        let mut kurtosis: () = 0_();
-        let mut i: () = 0_();
-        'loop_: while (i < unimplemented!()) {
-            let mut dbl: () = ((unimplemented!().read()) - mean);
-            let mut d2: () = ({ sqr_0(dbl) });
+        let mut mean: f64 = (unimplemented!() / ((*u.borrow()).len() as f64));
+        let mut var: f64 = 0_f64;
+        let mut skew: f64 = 0_f64;
+        let mut kurtosis: f64 = 0_f64;
+        let mut i: usize = 0_usize;
+        'loop_: while (i < (*u.borrow()).len()) {
+            let mut dbl: f64 = (((u.decay().offset(i as isize).read()) as f64) - mean);
+            let mut d2: f64 = ({ sqr_0(dbl) });
             var += d2;
             skew += (dbl * d2);
             kurtosis += (d2 * d2);
             i.prefix_inc();
         }
-        var /= unimplemented!();
-        let mut dev: () = unimplemented!();
-        skew /= ((unimplemented!() * dev) * var);
-        kurtosis /= ((unimplemented!() * var) * var);
-        kurtosis -= 3_();
-        let mut x_mean: () = ((unimplemented!() + unimplemented!()) / 2_());
-        let mut x_var: () =
-            ((({ sqr_0(((unimplemented!() - unimplemented!()) + 1_())) }) - 1_()) / 12_());
-        let mut x_skew: () = 0_();
-        let mut x_kurtosis: () = ((-6_f64
-            * (({ sqr_0(((unimplemented!() - unimplemented!()) + 1_())) }) + 1_()))
-            / (5_f64 * (({ sqr_0(((unimplemented!() - unimplemented!()) + 1_())) }) - 1_())));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        var /= ((*u.borrow()).len() as f64);
+        let mut dev: f64 = unimplemented!();
+        skew /= ((((*u.borrow()).len() as f64) * dev) * var);
+        kurtosis /= ((((*u.borrow()).len() as f64) * var) * var);
+        kurtosis -= 3_f64;
+        let mut x_mean: f64 = (((unimplemented!() as f64) + (unimplemented!() as f64)) / 2_f64);
+        let mut x_var: f64 =
+            ((({ sqr_0((((unimplemented!() as f64) - (unimplemented!() as f64)) + 1_f64)) })
+                - 1_f64)
+                / 12_f64);
+        let mut x_skew: f64 = 0_f64;
+        let mut x_kurtosis: f64 = ((-6_f64
+            * (({ sqr_0((((unimplemented!() as f64) - (unimplemented!() as f64)) + 1_f64)) })
+                + 1_f64))
+            / (5_f64
+                * (({
+                    sqr_0((((unimplemented!() as f64) - (unimplemented!() as f64)) + 1_f64))
+                }) - 1_f64)));
+        assert!((unimplemented!() < 0.01_f64));
+        assert!((unimplemented!() < 0.01_f64));
+        assert!((unimplemented!() < 0.01_f64));
+        assert!((unimplemented!() < 0.01_f64));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

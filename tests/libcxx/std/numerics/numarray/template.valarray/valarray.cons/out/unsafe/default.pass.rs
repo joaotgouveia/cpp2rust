@@ -21,7 +21,7 @@ impl Default for S {
         unsafe { S::new() }
     }
 }
-pub static mut ctor_called_0: std::cell::LazyCell<()> =
+pub static mut ctor_called_0: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 
 pub fn main() {
@@ -39,29 +39,29 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut v: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
     }
     {
         let mut v: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
     }
     {
         let mut v: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
     }
     {
         let mut v: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
     }
     {
         let mut v: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
+        assert!(!(*std::cell::LazyCell::force_mut(&mut *&raw mut ctor_called_0)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const ctor_called_0);

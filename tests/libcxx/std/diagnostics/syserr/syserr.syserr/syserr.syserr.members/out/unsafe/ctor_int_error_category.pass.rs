@@ -22,11 +22,24 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut se: () = unimplemented!();
-    unimplemented!();
-    let mut what_message: () = unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(unimplemented!());
+    let mut what_message: Vec<libc::c_char> =
+        std::slice::from_raw_parts(unimplemented!(), libcc2rs::c_str_len(unimplemented!()) + 1)
+            .to_vec();
+    assert!(
+        (({
+            let __hay = &what_message[..what_message.len() - 1];
+            let __needle = ::std::slice::from_raw_parts(
+                c"Not a directory".as_ptr(),
+                libcc2rs::c_str_len(c"Not a directory".as_ptr()),
+            );
+            (0_usize..=__hay.len().saturating_sub(__needle.len()))
+                .find(|&__i| __hay[__i..].starts_with(__needle))
+                .unwrap_or(usize::MAX)
+        }) != (usize::MAX))
+    );
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

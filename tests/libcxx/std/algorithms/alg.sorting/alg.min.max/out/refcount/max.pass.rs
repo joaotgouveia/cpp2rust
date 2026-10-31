@@ -6,8 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(a: Ptr<()>, b: Ptr<()>, x: Ptr<()>) {
-    unimplemented!();
+pub fn test_0(a: Ptr<i32>, b: Ptr<i32>, x: Ptr<i32>) {
+    assert!(
+        ({
+            ({
+                let __a = (a).clone();
+                let __b = (b).clone();
+                if CppLess::less(&__a, &__b) { __b } else { __a }
+            })
+        } == { (x).clone() })
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -28,55 +36,55 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let x: Value<()> = Rc::new(RefCell::new(0_()));
-        let y: Value<()> = Rc::new(RefCell::new(0_()));
+        let x: Value<i32> = Rc::new(RefCell::new(0));
+        let y: Value<i32> = Rc::new(RefCell::new(0));
         ({
-            let _a: Ptr<()> = x.as_pointer();
-            let _x: Ptr<()> = x.as_pointer();
+            let _a: Ptr<i32> = x.as_pointer();
+            let _x: Ptr<i32> = x.as_pointer();
             test_0(_a, y.as_pointer(), _x)
         });
         ({
-            let _a: Ptr<()> = y.as_pointer();
-            let _x: Ptr<()> = y.as_pointer();
+            let _a: Ptr<i32> = y.as_pointer();
+            let _x: Ptr<i32> = y.as_pointer();
             test_0(_a, x.as_pointer(), _x)
         });
     }
     {
-        let x: Value<()> = Rc::new(RefCell::new(0_()));
-        let y: Value<()> = Rc::new(RefCell::new(1_()));
+        let x: Value<i32> = Rc::new(RefCell::new(0));
+        let y: Value<i32> = Rc::new(RefCell::new(1));
         ({
-            let _b: Ptr<()> = y.as_pointer();
-            let _x: Ptr<()> = y.as_pointer();
+            let _b: Ptr<i32> = y.as_pointer();
+            let _x: Ptr<i32> = y.as_pointer();
             test_0(x.as_pointer(), _b, _x)
         });
         ({
-            let _a: Ptr<()> = y.as_pointer();
-            let _x: Ptr<()> = y.as_pointer();
+            let _a: Ptr<i32> = y.as_pointer();
+            let _x: Ptr<i32> = y.as_pointer();
             test_0(_a, x.as_pointer(), _x)
         });
     }
     {
-        let x: Value<()> = Rc::new(RefCell::new(1_()));
-        let y: Value<()> = Rc::new(RefCell::new(0_()));
+        let x: Value<i32> = Rc::new(RefCell::new(1));
+        let y: Value<i32> = Rc::new(RefCell::new(0));
         ({
-            let _a: Ptr<()> = x.as_pointer();
-            let _x: Ptr<()> = x.as_pointer();
+            let _a: Ptr<i32> = x.as_pointer();
+            let _x: Ptr<i32> = x.as_pointer();
             test_0(_a, y.as_pointer(), _x)
         });
         ({
-            let _b: Ptr<()> = x.as_pointer();
-            let _x: Ptr<()> = x.as_pointer();
+            let _b: Ptr<i32> = x.as_pointer();
+            let _x: Ptr<i32> = x.as_pointer();
             test_0(y.as_pointer(), _b, _x)
         });
     }
     {
-        let mut x: () = 1_();
-        let mut y: () = 0_();
+        let x: Value<i32> = Rc::new(RefCell::new(1));
+        let y: Value<i32> = Rc::new(RefCell::new(0));
         const _: () = assert!(true, "std::max(x, y) == x");;
         const _: () = assert!(true, "std::max(y, x) == x");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -21,12 +21,13 @@ const _: () = assert!(
     "!std::is_trivially_destructible_v<std::expected<void, NonTrivial>>"
 );
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
+#[derive(Clone, VaArg, FnPtrArg, CppFromUnsafe, DestructorUnsafe, Default)]
+#[cpp_from(bool, new, mut_ptr)]
 pub struct TrackedDestroy {
-    pub destroyed: *mut (),
+    pub destroyed: *mut bool,
 }
 impl TrackedDestroy {
-    pub unsafe fn new(b: *mut ()) -> Self {
+    pub unsafe fn new(b: *mut bool) -> Self {
         let mut this = Self { destroyed: b };
         this
     }
@@ -34,16 +35,16 @@ impl TrackedDestroy {
         (*self.destroyed) = true;
     }
 }
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     {
         let mut e: () = unimplemented!();
     }
     {
-        let mut errorDestroyed: () = false;
+        let mut errorDestroyed: bool = false;
         {
             let mut e: () = unimplemented!();
         }
-        unimplemented!();
+        assert!(errorDestroyed);
     }
     return true;
 }
@@ -62,9 +63,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

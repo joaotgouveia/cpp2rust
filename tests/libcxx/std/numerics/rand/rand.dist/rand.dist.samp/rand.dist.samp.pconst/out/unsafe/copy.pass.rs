@@ -7,11 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test1_0() {
-    let mut p: [(); 4] = [2_(), 4_(), 1_(), 8_()];
-    let mut b: [(); 5] = [2_(), 4_(), 5_(), 8_(), 9_()];
+    let mut p: [f64; 4] = [2_f64, 4_f64, 1_f64, 8_f64];
+    let mut b: [f64; 5] = [2_f64, 4_f64, 5_f64, 8_f64, 9_f64];
     let mut d1: () = unimplemented!();
     let mut d2: () = d1.clone();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -28,8 +28,8 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test1_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

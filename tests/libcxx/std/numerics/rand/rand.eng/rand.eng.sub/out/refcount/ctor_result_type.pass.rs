@@ -12,55 +12,59 @@ pub fn make_implicit_0() -> () {
 pub fn make_implicit_1() -> () {
     return unimplemented!();
 }
-pub fn test_convertible_imp_2(mut _a0: ()) -> () {
+pub fn test_convertible_imp_2(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_3(mut _a0: ()) -> () {
+pub fn test_convertible_imp_3(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_4(mut _a0: ()) -> () {
+pub fn test_convertible_imp_4(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_5(mut _a0: ()) -> () {
+pub fn test_convertible_imp_5(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_6() -> () {
-    return ({ test_convertible_imp_2(0_()) });
+pub fn test_convertible_6() -> bool {
+    return ({ test_convertible_imp_2(0) });
 }
-pub fn test_convertible_7() -> () {
-    return ({ test_convertible_imp_3(0_()) });
+pub fn test_convertible_7() -> bool {
+    return ({ test_convertible_imp_3(0) });
 }
-pub fn test_convertible_8() -> () {
-    return ({ test_convertible_imp_4(0_()) });
+pub fn test_convertible_8() -> bool {
+    return ({ test_convertible_imp_4(0_i64) });
 }
-pub fn test_convertible_9() -> () {
-    return ({ test_convertible_imp_5(0_()) });
+pub fn test_convertible_9() -> bool {
+    return ({ test_convertible_imp_5(0_i64) });
 }
-pub fn to_string_10(e: Ptr<()>) -> () {
+pub fn to_string_10(e: Ptr<()>) -> Vec<i8> {
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return unimplemented!();
 }
-pub fn to_string_11(e: Ptr<()>) -> () {
+pub fn to_string_11(e: Ptr<()>) -> Vec<i8> {
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return unimplemented!();
 }
 pub fn test1_12() {
-    let mut a : Ptr< ()  >  = Ptr::<() >::from_string_literal(b"15136306 8587749 2346244 16479026 15515802 9510553 16090340 14501685 13839944 10789678 11581259 9590790 5840316 5953700 13398366 8134459 16629731 6851902 15583892 1317475 4231148 9092691 5707268 2355175 0" )  ;
+    let mut a : Ptr< i8  >  = Ptr::<i8 >::from_string_literal(b"15136306 8587749 2346244 16479026 15515802 9510553 16090340 14501685 13839944 10789678 11581259 9590790 5840316 5953700 13398366 8134459 16629731 6851902 15583892 1317475 4231148 9092691 5707268 2355175 0" )  ;
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(a.with_c_str(|__s| ({ to_string_10(e1.as_pointer(),) })
+        [..({ to_string_10(e1.as_pointer(),) }).len().saturating_sub(1)]
+        == *__s));
 }
 pub fn test2_13() {
-    let mut a : Ptr< ()  >  = Ptr::<() >::from_string_literal(b"10880375256626 126660097854724 33643165434010 78293780235492 179418984296008 96783156950859 238199764491708 34339434557790 155299155394531 29014415493780 209265474179052 263777435457028 0" )  ;
+    let mut a : Ptr< i8  >  = Ptr::<i8 >::from_string_literal(b"10880375256626 126660097854724 33643165434010 78293780235492 179418984296008 96783156950859 238199764491708 34339434557790 155299155394531 29014415493780 209265474179052 263777435457028 0" )  ;
     let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(a.with_c_str(|__s| ({ to_string_11(e1.as_pointer(),) })
+        [..({ to_string_11(e1.as_pointer(),) }).len().saturating_sub(1)]
+        == *__s));
 }
 pub fn test_implicit_ctor_14() {
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_implicit_ctor_15() {
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -81,7 +85,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_12() });
     ({ test2_13() });
     const _: () = assert!(true, "test_convertible<std::ranlux24_base>()");;
@@ -96,6 +100,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "!test_convertible<std::ranlux48_base, std::uint_fast64_t>()"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

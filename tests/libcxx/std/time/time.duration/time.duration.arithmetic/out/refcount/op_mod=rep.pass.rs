@@ -13,7 +13,7 @@ pub fn operator_rem_assign_0(d: (), mut _a1: NotARep) -> () {
     let d: Value<()> = Rc::new(RefCell::new(d));
     return unimplemented!();
 }
-pub fn test_constexpr_1() -> () {
+pub fn test_constexpr_1() -> bool {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return (unimplemented!() == 2_());
@@ -37,11 +37,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let us: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 2_()));
     }
     const _: () = assert!(true, "test_constexpr()");;
     {
@@ -51,8 +51,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _d: () = unimplemented!();
             operator_rem_assign_0(_d, (n).clone())
         });
-        unimplemented!();
+        assert!((unimplemented!() == 5_()));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

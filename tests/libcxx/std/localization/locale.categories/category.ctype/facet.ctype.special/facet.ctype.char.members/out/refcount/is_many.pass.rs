@@ -26,87 +26,311 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let f: Ptr<()> = unimplemented!();
-        let mut in_: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        let mut h: Ptr<()> = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let in_: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b" A\x07.a1").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
+        let m: Value<Vec<u16>> = Rc::new(RefCell::new(
+            (0..((*in_.borrow()).len() - 1) as usize)
+                .map(|_| 0_u16)
+                .collect::<Vec<_>>(),
+        ));
+        let mut h: Ptr<i8> = unimplemented!();
+        assert!(({ (h).clone() } == { in_.decay().offset(((*in_.borrow()).len() - 1) as isize) }));
+        assert!(
+            ((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(0_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(1_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(2_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(3_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(4_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            !((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
+        assert!(
+            ((((m.decay().offset(5_usize as isize).read()) as i32) & (unimplemented!() as i32))
+                != 0)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

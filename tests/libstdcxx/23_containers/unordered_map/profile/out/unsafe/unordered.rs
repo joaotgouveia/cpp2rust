@@ -19,12 +19,12 @@ pub unsafe fn test_unordered_set_0() {
 }
 pub unsafe fn test_unordered_map_1() {
     let mut tmp: *mut () = std::ptr::null_mut();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (20_())) {
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (20)) {
         tmp = (Box::leak(Box::new(unimplemented!())) as *mut ());
-        let mut j: () = 0_();
-        'loop_: while ((j) < (10000_())) {
-            (*unimplemented!()) = j;
+        let mut j: i32 = 0;
+        'loop_: while ((j) < (10000)) {
+            (*unimplemented!()) = (j as ());
             j.postfix_inc();
         }
         {
@@ -36,8 +36,8 @@ pub unsafe fn test_unordered_map_1() {
         i.postfix_inc();
     }
     tmp = (Box::leak(Box::new(unimplemented!())) as *mut ());
-    let mut i: () = 0_();
-    'loop_: while ((i) < (150000_())) {
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (150000)) {
         unimplemented!();
         i.postfix_inc();
     }
@@ -55,7 +55,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test_unordered_set_0() });
     (unsafe { test_unordered_map_1() });
     0

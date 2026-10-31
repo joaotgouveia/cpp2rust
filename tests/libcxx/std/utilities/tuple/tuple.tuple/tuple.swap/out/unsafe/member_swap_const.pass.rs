@@ -9,38 +9,41 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ConstSwappable {
-    pub i: (),
+    pub i: i32,
 }
 pub unsafe fn swap_0(lhs: *const ConstSwappable, rhs: *const ConstSwappable) {
-    unimplemented!();
+    cpp_swap_unsafe!(
+        (&raw const (*lhs).i).cast_mut(),
+        (&raw const (*rhs).i).cast_mut()
+    );
 }
-pub unsafe fn test_1() -> () {
+pub unsafe fn test_1() -> bool {
     {
         let t0: () = unimplemented!();
         let mut t1: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).i) == (1)));
+        assert!((((*unimplemented!()).i) == (0)));
     }
     {
         let t0: () = unimplemented!();
         let t1: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).i) == (2)));
+        assert!((((*unimplemented!()).i) == (3)));
+        assert!((((*unimplemented!()).i) == (0)));
+        assert!((((*unimplemented!()).i) == (1)));
     }
     {
         let t0: () = unimplemented!();
         let t1: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).i) == (3)));
+        assert!((((*unimplemented!()).i) == (4)));
+        assert!((((*unimplemented!()).i) == (5)));
+        assert!((((*unimplemented!()).i) == (0)));
+        assert!((((*unimplemented!()).i) == (1)));
+        assert!((((*unimplemented!()).i) == (2)));
     }
     return true;
 }
@@ -59,9 +62,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

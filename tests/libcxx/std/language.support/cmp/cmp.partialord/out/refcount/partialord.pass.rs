@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -16,7 +16,7 @@ pub fn DoNotOptimize_1(value: Ptr<Ptr<()>>) -> Ptr<Ptr<()>> {
     return (value).clone();
 }
 thread_local!(
-    pub static sink_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static sink_2: Value<AnyPtr> = Rc::new(RefCell::new(AnyPtr::default()));
 );
 pub fn test_static_members_3() {
     ({
@@ -58,11 +58,11 @@ pub fn test_signatures_4() {
 pub fn test_equality_5() {
     let PartialEq: Ptr<()> = unimplemented!();
     let WeakEq: Ptr<()> = unimplemented!();
-    unimplemented!();
-    let StrongEq: Ptr<()> = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    let StrongEq: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
+    assert!(unimplemented!());
 }
-pub fn test_constexpr_6() -> () {
+pub fn test_constexpr_6() -> bool {
     let Eq: Ptr<()> = unimplemented!();
     let Less: Ptr<()> = unimplemented!();
     let Greater: Ptr<()> = unimplemented!();
@@ -99,22 +99,22 @@ pub fn test_constexpr_6() -> () {
     ])));
     'loop_: for TC in IterRange::new(
         (TestCases.as_pointer() as Ptr<anon_7>),
-        (TestCases.as_pointer() as Ptr<anon_7>).offset((4_()) as isize),
+        (TestCases.as_pointer() as Ptr<anon_7>).offset((4_i64) as isize),
     ) {
         let mut TC: anon_7 = (*TC.upgrade().deref()).clone();
         let V: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((unimplemented!()) as i32) == (TC.ExpectEq as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectEq as i32)));
+        assert!((((!(unimplemented!())) as i32) == (TC.ExpectNeq as i32)));
+        assert!((((!(unimplemented!())) as i32) == (TC.ExpectNeq as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectLess as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectGreater as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectLess) || (TC.ExpectEq)) as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectGreater) || (TC.ExpectEq)) as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectGreater as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectLess as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectGreater) || (TC.ExpectEq)) as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectLess) || (TC.ExpectEq)) as i32)));
     }
     {
         let res: Value<()> = Rc::new(RefCell::new((unimplemented!())));
@@ -142,31 +142,31 @@ pub fn test_constexpr_6() -> () {
     ])));
     'loop_: for TC in IterRange::new(
         (SpaceshipTestCases.as_pointer() as Ptr<anon_9>),
-        (SpaceshipTestCases.as_pointer() as Ptr<anon_9>).offset((4_()) as isize),
+        (SpaceshipTestCases.as_pointer() as Ptr<anon_9>).offset((4_i64) as isize),
     ) {
         let mut TC: anon_9 = (*TC.upgrade().deref()).clone();
         let Res: Value<()> = Rc::new(RefCell::new((unimplemented!())));
         'switch: {
-            match { (TC.Expect as ()) } {
-                __v if __v == (ExpectRes_8_ER_Equiv as ()) => {
-                    unimplemented!();
-                    unimplemented!();
+            match { (TC.Expect as i32) } {
+                __v if __v == (ExpectRes_8_ER_Equiv as i32) => {
+                    assert!(unimplemented!());
+                    assert!(unimplemented!());
                     break 'switch;
                 }
-                __v if __v == (ExpectRes_8_ER_Less as ()) => {
-                    unimplemented!();
+                __v if __v == (ExpectRes_8_ER_Less as i32) => {
+                    assert!(unimplemented!());
                     break 'switch;
                 }
-                __v if __v == (ExpectRes_8_ER_Greater as ()) => {
-                    unimplemented!();
+                __v if __v == (ExpectRes_8_ER_Greater as i32) => {
+                    assert!(unimplemented!());
                     break 'switch;
                 }
-                __v if __v == (ExpectRes_8_ER_Unord as ()) => {
-                    unimplemented!();
-                    unimplemented!();
-                    unimplemented!();
-                    unimplemented!();
-                    unimplemented!();
+                __v if __v == (ExpectRes_8_ER_Unord as i32) => {
+                    assert!(!(unimplemented!()));
+                    assert!(!(unimplemented!()));
+                    assert!((((unimplemented!()) as i32) == (false as i32)));
+                    assert!((((unimplemented!()) as i32) == (false as i32)));
+                    assert!((((unimplemented!()) as i32) == (false as i32)));
                     break 'switch;
                 }
                 _ => {}
@@ -249,15 +249,15 @@ pub struct anon_7 {
     #[byte_size(1)]
     pub Value: (),
     #[offset(1)]
-    pub ExpectEq: (),
+    pub ExpectEq: bool,
     #[offset(2)]
-    pub ExpectNeq: (),
+    pub ExpectNeq: bool,
     #[offset(3)]
-    pub ExpectLess: (),
+    pub ExpectLess: bool,
     #[offset(4)]
-    pub ExpectGreater: (),
+    pub ExpectGreater: bool,
 }
-pub type ExpectRes_8 = ();
+pub type ExpectRes_8 = u32;
 pub const ExpectRes_8_ER_Greater: ExpectRes_8 = 0;
 pub const ExpectRes_8_ER_Less: ExpectRes_8 = 1;
 pub const ExpectRes_8_ER_Equiv: ExpectRes_8 = 2;
@@ -290,12 +290,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_static_members_3() });
     ({ test_signatures_4() });
     ({ test_equality_5() });
     const _: () = assert!(true, "test_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = sink_2.with(|_| ());

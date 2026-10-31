@@ -13,14 +13,14 @@ pub struct Empty {}
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct S {
     pub a: (),
-    pub k: (),
+    pub k: i32,
     pub e: Empty,
 }
 impl S {
     pub unsafe fn new() -> Self {
         let mut this = Self {
             a: unimplemented!(),
-            k: (*unimplemented!()),
+            k: ((*unimplemented!()) as i32),
             e: (*unimplemented!()),
         };
         this
@@ -63,35 +63,63 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut t: () = unimplemented!();
-        unimplemented!();
-        (*unimplemented!()) = 2_();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (3)));
+        (*unimplemented!()) = (2 as ());
+        assert!(((*unimplemented!()) == (2)));
     }
     {
         let mut t: () = unimplemented!();
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"high".as_ptr(),
+                    libcc2rs::c_str_len(c"high".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((*unimplemented!()) == (5)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*unimplemented!()) = 4_();
-        unimplemented!();
-        unimplemented!();
+        (*unimplemented!()) = (4 as ());
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((*unimplemented!()) == (4)));
     }
     {
-        let mut d: () = 1.5_f64;
+        let mut d: f64 = 1.5_f64;
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (1.5_f64)));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"high".as_ptr(),
+                    libcc2rs::c_str_len(c"high".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((*unimplemented!()) == (5)));
         (*unimplemented!()) = 2.5_f64;
         unimplemented!();
-        (*unimplemented!()) = 4_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        (*unimplemented!()) = (4 as ());
+        assert!(((*unimplemented!()) == (2.5_f64)));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((*unimplemented!()) == (4)));
+        assert!(((d) == (2.5_f64)));
     }
     {
         const _: () = assert!(
@@ -113,6 +141,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "S().k == 1");;
         const _: () = assert!(true, "std::get<1>(getP()) == 4");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

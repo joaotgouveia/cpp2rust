@@ -26,208 +26,190 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 4));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 3));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 0));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 0));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            -17_(),
-            -69_(),
-            -65_(),
-            -15_(),
-            -128_(),
-            -128_(),
-            -125_(),
+        let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
+            -17_i8, -69_i8, -65_i8, -15_i8, -128_i8, -128_i8, -125_i8,
         ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 7));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 3));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 4));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 3));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 0));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 0));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            -17_(),
-            -69_(),
-            -65_(),
-            -15_(),
-            -128_(),
-            -128_(),
-            -125_(),
+        let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
+            -17_i8, -69_i8, -65_i8, -15_i8, -128_i8, -128_i8, -125_i8,
         ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 7));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 3));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 4));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 3));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 0));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 0));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let n: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            -17_(),
-            -69_(),
-            -65_(),
-            -15_(),
-            -128_(),
-            -128_(),
-            -125_(),
+        let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
+            -17_i8, -69_i8, -65_i8, -15_i8, -128_i8, -128_i8, -125_i8,
         ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut r: i32 = unimplemented!();
+        assert!((r == 7));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!((r == 3));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!((r == 2));
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
+        assert!((r == 1));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

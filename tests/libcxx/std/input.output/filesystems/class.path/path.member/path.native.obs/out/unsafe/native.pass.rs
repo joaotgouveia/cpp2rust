@@ -6,29 +6,39 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref__const_std_basic_string_char__std_char_traits_char___std_allocator_char___ref_
 {}
 pub unsafe fn test_eprintf_1(
-    mut fmt: *const (),
-    args_1: *const *const (),
-    args_2: *const *const (),
-    args_3: *const *const (),
-    args_4: *const (),
-    args_5: *const *const (),
+    mut fmt: *const libc::c_char,
+    args_1: *const *const libc::c_char,
+    args_2: *const *const libc::c_char,
+    args_3: *const *const libc::c_char,
+    args_4: *const i32,
+    args_5: *const *const libc::c_char,
 ) {
-    unimplemented!();
+    (unsafe {
+        libc::fprintf(
+            libcc2rs::stderr_unsafe() as *mut ::libc::FILE,
+            fmt as *const libc::c_char,
+            (*args_1),
+            (*args_2),
+            (*args_3),
+            (*args_4),
+            (*args_5),
+        )
+    });
 }
 pub unsafe fn test_log_2(
-    mut condition: *const (),
-    mut file: *const (),
-    mut line: (),
-    mut message: *const (),
+    mut condition: *const libc::c_char,
+    mut file: *const libc::c_char,
+    mut line: i32,
+    mut message: *const libc::c_char,
 ) {
-    let mut msg: *const () = if !(condition).is_null() {
+    let mut msg: *const libc::c_char = if !(condition).is_null() {
         c"Assertion failure: ".as_ptr()
     } else {
         c"Unconditional failure:".as_ptr()
@@ -59,19 +69,36 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let value: *const () = c"hello world".as_ptr();
-    let mut value_str: () = unimplemented!();
-    let mut pathstr_value: () = unimplemented!();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let value: *const libc::c_char = c"hello world".as_ptr();
+    let mut value_str: Vec<libc::c_char> =
+        std::slice::from_raw_parts(value, libcc2rs::c_str_len(value) + 1).to_vec();
+    let mut pathstr_value: Vec<libc::c_char> = unimplemented!();
     {
-        let mut p: () = unimplemented!();
+        let mut p: Vec<libc::c_char> = {
+            let mut __v: Vec<libc::c_char> = value
+                .path_bytes()
+                .into_iter()
+                .map(|__b| __b as libc::c_char)
+                .collect();
+            __v.push(0);
+            __v
+        };
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
+        let mut p: Vec<libc::c_char> = {
+            let mut __v: Vec<libc::c_char> = value
+                .path_bytes()
+                .into_iter()
+                .map(|__b| __b as libc::c_char)
+                .collect();
+            __v.push(0);
+            __v
+        };
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

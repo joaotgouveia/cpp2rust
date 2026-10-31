@@ -6,42 +6,42 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn doAssign_0(lhs: (), rhs: ()) -> () {
+pub fn doAssign_0(lhs: (), rhs: ()) -> bool {
     let lhs: Value<()> = Rc::new(RefCell::new(lhs));
     let rhs: Value<()> = Rc::new(RefCell::new(rhs));
     const _: () = assert!(true, "");;
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn doAssign_1(lhs: (), rhs: ()) -> () {
+pub fn doAssign_1(lhs: (), rhs: ()) -> bool {
     let lhs: Value<()> = Rc::new(RefCell::new(lhs));
     let rhs: Value<()> = Rc::new(RefCell::new(rhs));
     const _: () = assert!(true, "");;
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn doAssign_2(lhs: (), rhs: ()) -> () {
+pub fn doAssign_2(lhs: (), rhs: ()) -> bool {
     let lhs: Value<()> = Rc::new(RefCell::new(lhs));
     let rhs: Value<()> = Rc::new(RefCell::new(rhs));
     const _: () = assert!(true, "");;
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn doAssign_3(lhs: (), rhs: ()) -> () {
+pub fn doAssign_3(lhs: (), rhs: ()) -> bool {
     let lhs: Value<()> = Rc::new(RefCell::new(lhs));
     let rhs: Value<()> = Rc::new(RefCell::new(rhs));
     const _: () = assert!(true, "");;
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn doAssign_4(lhs: (), rhs: ()) -> () {
+pub fn doAssign_4(lhs: (), rhs: ()) -> bool {
     let lhs: Value<()> = Rc::new(RefCell::new(lhs));
     let rhs: Value<()> = Rc::new(RefCell::new(rhs));
     const _: () = assert!(true, "");;
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn doAssign_5(lhs: (), rhs: ()) -> () {
+pub fn doAssign_5(lhs: (), rhs: ()) -> bool {
     let lhs: Value<()> = Rc::new(RefCell::new(lhs));
     let rhs: Value<()> = Rc::new(RefCell::new(rhs));
     const _: () = assert!(true, "");;
@@ -49,23 +49,34 @@ pub fn doAssign_5(lhs: (), rhs: ()) -> () {
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
 thread_local!(
-    pub static carr1_6: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+    pub static carr1_6: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
 );
 thread_local!(
-    pub static carr2_7: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 4_(), 5_()])));
+    pub static carr2_7: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([3, 4, 5])));
 );
 thread_local!(
-    pub static carr3_8: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([7_(), 8_()])));
+    pub static carr3_8: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([7, 8])));
 );
 thread_local!(
-    pub static arr_9: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([5_(), 6_(), 7_(), 9_()])));
+    pub static arr_9: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 6, 7, 9])));
 );
 thread_local!(
-    pub static strs_10: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    pub static strs_10: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"ABC").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        },
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"DEF").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        },
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"GHI").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        },
     ])));
 );
 
@@ -88,7 +99,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let mut spans: [(); 13] = [
             unimplemented!(),
@@ -240,11 +251,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut i: () = 0_();
+        let mut i: usize = 0_usize;
         'loop_: while (i < unimplemented!()) {
-            let mut j: () = i;
+            let mut j: usize = i;
             'loop_: while (j < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ({
+                        let _lhs: () = unimplemented!();
+                        let _rhs: () = unimplemented!();
+                        doAssign_2(_lhs, _rhs)
+                    })
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -252,11 +269,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut spans: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut i: () = 0_();
+        let mut i: usize = 0_usize;
         'loop_: while (i < unimplemented!()) {
-            let mut j: () = i;
+            let mut j: usize = i;
             'loop_: while (j < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ({
+                        let _lhs: () = unimplemented!();
+                        let _rhs: () = unimplemented!();
+                        doAssign_3(_lhs, _rhs)
+                    })
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -275,11 +298,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut i: () = 0_();
+        let mut i: usize = 0_usize;
         'loop_: while (i < unimplemented!()) {
-            let mut j: () = i;
+            let mut j: usize = i;
             'loop_: while (j < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ({
+                        let _lhs: () = unimplemented!();
+                        let _rhs: () = unimplemented!();
+                        doAssign_4(_lhs, _rhs)
+                    })
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -287,17 +316,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut spans: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut i: () = 0_();
+        let mut i: usize = 0_usize;
         'loop_: while (i < unimplemented!()) {
-            let mut j: () = i;
+            let mut j: usize = i;
             'loop_: while (j < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ({
+                        let _lhs: () = unimplemented!();
+                        let _rhs: () = unimplemented!();
+                        doAssign_5(_lhs, _rhs)
+                    })
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = carr1_6.with(|_| ());

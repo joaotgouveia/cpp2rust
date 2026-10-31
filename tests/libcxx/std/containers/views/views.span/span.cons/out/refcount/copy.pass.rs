@@ -12,55 +12,42 @@ pub fn test_0() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_1() {
@@ -69,55 +56,42 @@ pub fn test_1() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_2() {
@@ -126,55 +100,42 @@ pub fn test_2() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_3() {
@@ -183,55 +144,42 @@ pub fn test_3() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_4() {
@@ -240,55 +188,42 @@ pub fn test_4() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_5() {
@@ -297,55 +232,42 @@ pub fn test_5() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_6() {
@@ -354,55 +276,42 @@ pub fn test_6() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_7() {
@@ -411,55 +320,42 @@ pub fn test_7() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([0_i64, 0_i64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<i64>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_8() {
@@ -468,55 +364,42 @@ pub fn test_8() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_9() {
@@ -525,55 +408,42 @@ pub fn test_9() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_10() {
@@ -582,55 +452,42 @@ pub fn test_10() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_11() {
@@ -639,55 +496,42 @@ pub fn test_11() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr::<f64>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_12() {
@@ -696,8 +540,8 @@ pub fn test_12() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let array: Value<Box<[Foo]>> = Rc::new(RefCell::new(Box::new([
@@ -707,8 +551,8 @@ pub fn test_12() {
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Foo>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
         let array: Value<Box<[Foo]>> = Rc::new(RefCell::new(Box::new([
@@ -718,14 +562,14 @@ pub fn test_12() {
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Foo>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let array: Value<Box<[Foo]>> = Rc::new(RefCell::new(Box::new([
@@ -735,16 +579,16 @@ pub fn test_12() {
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Foo>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
         let array: Value<Box<[Foo]>> =
             Rc::new(RefCell::new(Box::new([<Foo>::default(), <Foo>::default()])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Foo>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_13() {
@@ -753,8 +597,8 @@ pub fn test_13() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let array: Value<Box<[Foo]>> = Rc::new(RefCell::new(Box::new([
@@ -764,8 +608,8 @@ pub fn test_13() {
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Foo>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
         let array: Value<Box<[Foo]>> = Rc::new(RefCell::new(Box::new([
@@ -775,14 +619,14 @@ pub fn test_13() {
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Foo>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let array: Value<Box<[Foo]>> = Rc::new(RefCell::new(Box::new([
@@ -792,16 +636,16 @@ pub fn test_13() {
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Foo>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
         let array: Value<Box<[Foo]>> =
             Rc::new(RefCell::new(Box::new([<Foo>::default(), <Foo>::default()])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Foo>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_14() {
@@ -810,55 +654,57 @@ pub fn test_14() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let array: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+            vec![i8::default()],
+            vec![i8::default()],
+            vec![i8::default()],
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Vec<i8>>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let array: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+            vec![i8::default()],
+            vec![i8::default()],
+            vec![i8::default()],
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Vec<i8>>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let array: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+            vec![i8::default()],
+            vec![i8::default()],
+            vec![i8::default()],
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Vec<i8>>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+            vec![i8::default()],
+            vec![i8::default()],
+        ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Vec<i8>>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 pub fn test_15() {
@@ -867,61 +713,63 @@ pub fn test_15() {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let array: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+            vec![i8::default()],
+            vec![i8::default()],
+            vec![i8::default()],
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Vec<i8>>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let array: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+            vec![i8::default()],
+            vec![i8::default()],
+            vec![i8::default()],
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Vec<i8>>)));
+        assert!((unimplemented!() == 2_()));
     }
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
-        let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let array: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+            vec![i8::default()],
+            vec![i8::default()],
+            vec![i8::default()],
         ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Vec<i8>>)));
+        assert!((unimplemented!() == 3_()));
     }
     {
-        let array: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+        let array: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+            vec![i8::default()],
+            vec![i8::default()],
+        ])));
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (array.as_pointer() as Ptr<Vec<i8>>)));
+        assert!((unimplemented!() == 2_()));
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Foo {}
-pub fn test_all_16() -> () {
+pub fn test_all_16() -> bool {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
@@ -941,8 +789,8 @@ pub fn test_all_16() -> () {
     {
         let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
     }
     return true;
 }
@@ -965,9 +813,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_all_16() });
     const _: () = assert!(true, "test_all()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

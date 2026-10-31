@@ -22,41 +22,48 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-        let N: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut a: [i32; 5] = [1, 2, 3, 4, 5];
+        let N: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
         let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!((((*unimplemented!()) as i32) == (!((*unimplemented!()) != 0) as i32)));
             i.prefix_inc();
         }
     }
     {
-        let mut a: [(); 5] = [1_(), 2.5_f64, 3_(), 4.25_f64, 5_()];
-        let N: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut a: [f64; 5] = [1_f64, 2.5_f64, 3_f64, 4.25_f64, 5_f64];
+        let N: u32 = (((::std::mem::size_of::<[f64; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<f64>() as usize))) as u32);
         let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(
+                (((*unimplemented!()) as i32)
+                    == (!(((*unimplemented!()) + (*unimplemented!())) != 0.0) as i32))
+            );
             i.prefix_inc();
         }
     }
     {
-        let mut array: [(); 3] = [true, false, true];
+        let mut array: [bool; 3] = [true, false, true];
         let mut a: () = unimplemented!();
         let mut b: () = unimplemented!();
         let mut c: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (3_usize)));
+        assert!(
+            (((unimplemented!() as i32) == (false as i32))
+                && ((unimplemented!() as i32) == (false as i32)))
+                && ((unimplemented!() as i32) == (false as i32))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

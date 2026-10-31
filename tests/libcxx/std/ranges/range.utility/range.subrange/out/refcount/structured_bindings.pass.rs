@@ -6,84 +6,84 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_unreachable_sentinel_t__std_unreachable_sentinel_t_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptr__int_ptr_ {}
 pub fn test_sized_subrange_2() {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+    let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(true);
     {
         let __decomp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut first: () = unimplemented!();
         let mut last: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (first).clone() } == { (a.as_pointer() as Ptr::<i32>) }));
+        assert!(({ (last).clone() } == { (a.as_pointer() as Ptr::<i32>).offset((4) as isize) }));
     }
     {
         let __decomp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut first: () = unimplemented!();
         let mut last: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (first).clone() } == { (a.as_pointer() as Ptr::<i32>) }));
+        assert!(({ (last).clone() } == { (a.as_pointer() as Ptr::<i32>).offset((4) as isize) }));
     }
     {
         let __decomp_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut first: () = unimplemented!();
         let mut last: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (first).clone() } == { (a.as_pointer() as Ptr::<i32>) }));
+        assert!(({ (last).clone() } == { (a.as_pointer() as Ptr::<i32>).offset((4) as isize) }));
     }
     {
         let __decomp_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut first: () = unimplemented!();
         let mut last: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (first).clone() } == { (a.as_pointer() as Ptr::<i32>) }));
+        assert!(({ (last).clone() } == { (a.as_pointer() as Ptr::<i32>).offset((4) as isize) }));
     }
 }
 pub fn test_unsized_subrange_7() {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+    let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(!(false));
     {
         let __decomp_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut first: () = unimplemented!();
         let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(({ (first).clone() } == { (a.as_pointer() as Ptr::<i32>) }));
         const _: () = assert!(true, "");;
     }
     {
         let __decomp_9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut first: () = unimplemented!();
         let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(({ (first).clone() } == { (a.as_pointer() as Ptr::<i32>) }));
         const _: () = assert!(true, "");;
     }
     {
         let __decomp_10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut first: () = unimplemented!();
         let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(({ (first).clone() } == { (a.as_pointer() as Ptr::<i32>) }));
         const _: () = assert!(true, "");;
     }
     {
         let __decomp_11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut first: () = unimplemented!();
         let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(({ (first).clone() } == { (a.as_pointer() as Ptr::<i32>) }));
         const _: () = assert!(true, "");;
     }
 }
 pub fn test_copies_not_originals_12() {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+    let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let __decomp_13: Ptr<()> = r.as_pointer();
@@ -91,10 +91,10 @@ pub fn test_copies_not_originals_12() {
         let mut last: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        first = (a.as_pointer() as Ptr<()>).offset((2_()) as isize);
-        last = (a.as_pointer() as Ptr<()>).offset((2_()) as isize);
-        unimplemented!();
-        unimplemented!();
+        first = (a.as_pointer() as Ptr<i32>).offset((2) as isize);
+        last = (a.as_pointer() as Ptr<i32>).offset((2) as isize);
+        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>).offset((4) as isize)));
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -103,13 +103,13 @@ pub fn test_copies_not_originals_12() {
         let mut last: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        first = (a.as_pointer() as Ptr<()>).offset((2_()) as isize);
-        last = (a.as_pointer() as Ptr<()>).offset((2_()) as isize);
-        unimplemented!();
-        unimplemented!();
+        first = (a.as_pointer() as Ptr<i32>).offset((2) as isize);
+        last = (a.as_pointer() as Ptr<i32>).offset((2) as isize);
+        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
+        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>).offset((4) as isize)));
     }
 }
-pub fn test_15() -> () {
+pub fn test_15() -> bool {
     ({ test_sized_subrange_2() });
     ({ test_unsized_subrange_7() });
     ({ test_copies_not_originals_12() });
@@ -134,9 +134,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_15() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

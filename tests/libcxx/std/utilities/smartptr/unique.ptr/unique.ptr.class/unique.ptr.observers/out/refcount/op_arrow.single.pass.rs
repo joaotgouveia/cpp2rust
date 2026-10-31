@@ -10,11 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct A {
     #[offset(0)]
-    pub i_: (),
+    pub i_: i32,
 }
 impl A {
     pub fn new() -> Self {
-        Self { i_: 7_() }
+        Self { i_: 7 }
     }
 }
 impl Default for A {
@@ -22,9 +22,9 @@ impl Default for A {
         { A::new() }
     }
 }
-pub fn test_0() -> () {
-    let mut p: () = unimplemented!();
-    unimplemented!();
+pub fn test_0() -> bool {
+    let mut p: Option<Value<A>> = Ptr::alloc(A::new()).to_owned_opt();
+    assert!((p.as_pointer().with(|__s| __s.i_) == 7));
     return true;
 }
 pub fn main() {
@@ -46,9 +46,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

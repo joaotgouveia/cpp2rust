@@ -28,15 +28,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 3));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
+            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!().read()) == 5));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -49,17 +54,27 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         (&(e));
     }
     {
-        let mut d: () = 1.5_f64;
+        let mut d: f64 = 1.5_f64;
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 1.5_f64));
+        assert!(Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
+            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!().read()) == 5));
         unimplemented!().write(2.5_f64);
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2.5_f64));
+        assert!(Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
+            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!().read()) == 5));
+        assert!((d == 2.5_f64));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

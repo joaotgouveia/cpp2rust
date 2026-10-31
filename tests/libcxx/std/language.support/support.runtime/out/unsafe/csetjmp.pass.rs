@@ -22,18 +22,18 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut jb: () = unimplemented!();
     'switch: {
         match { unimplemented!() } {
-            __v if __v == 0_() => {
+            __v if __v == 0 => {
                 break 'switch;
             }
-            __v if __v == 42_() => {
-                return 0_();
+            __v if __v == 42 => {
+                return 0;
             }
             _ => {
-                return 1_();
+                return 1;
             }
         }
     };
@@ -42,6 +42,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "std::is_same<decltype(std::longjmp(jb, 0)), void>::value"
     );;
-    return 1_();
+    return 1;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

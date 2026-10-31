@@ -48,7 +48,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let x: Value<Ptr<Holder_Incomplete_>> =
         Rc::new(RefCell::new(Ptr::<Holder_Incomplete_>::null()));
     let cx: Value<Ptr<Holder_Incomplete_>> =
@@ -70,7 +70,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]

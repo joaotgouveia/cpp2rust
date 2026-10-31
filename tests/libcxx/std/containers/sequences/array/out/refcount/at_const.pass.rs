@@ -6,13 +6,13 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn tests_0() -> () {
+pub fn tests_0() -> bool {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));
         let r1: () = unimplemented!();
-        unimplemented!();
+        assert!(((r1.read()) == 1_f64));
         let r2: () = unimplemented!();
-        unimplemented!();
+        assert!(((r2.read()) == 3.5_f64));
     }
     return true;
 }
@@ -36,10 +36,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_0() });
     ({ test_exceptions_1() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

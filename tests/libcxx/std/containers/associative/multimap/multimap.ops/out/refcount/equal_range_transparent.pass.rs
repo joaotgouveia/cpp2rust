@@ -9,17 +9,26 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Comp {}
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let er: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut nels: () = 0_();
-    let it: Value<()> = Rc::new(RefCell::new({ (*er.borrow()).first.clone() }));
-    'loop_: while !(unimplemented!()) {
-        unimplemented!();
+    let er: Value<(
+        Value<BidirectionalIterator<(Value<(Value<i32>, Value<i32>)>, Value<i32>)>>,
+        Value<BidirectionalIterator<(Value<(Value<i32>, Value<i32>)>, Value<i32>)>>,
+    )> = Rc::new(RefCell::new(unimplemented!()));
+    let mut nels: i64 = 0_i64;
+    let it: Value<BidirectionalIterator<(Value<(Value<i32>, Value<i32>)>, Value<i32>)>> =
+        Rc::new(RefCell::new((*(*er.borrow()).0.borrow()).clone()));
+    'loop_: while (*it.borrow()) != (*(*er.borrow()).1.borrow()) {
+        assert!(
+            ((*(*(*(*it.borrow()).iter_deref().upgrade().deref()).0.borrow())
+                .0
+                .borrow())
+                == 1)
+        );
         nels.postfix_inc();
-        unimplemented!();
+        (*it.borrow_mut()).iter_post_inc();
     }
-    unimplemented!();
+    assert!((nels == 3_i64));
     return true;
 }
 pub fn main() {
@@ -41,24 +50,32 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
-    return 0_();
+    return 0;
 }
 pub trait CompImpl {
-    fn operator_call_1(&self, lhs: Ptr<()>, rhs: Ptr<()>) -> ();
-    fn operator_call_2(&self, lhs: Ptr<()>, rhs: ()) -> ();
-    fn operator_call_3(&self, lhs: (), rhs: Ptr<()>) -> ();
+    fn operator_call_1(
+        &self,
+        lhs: Ptr<(Value<i32>, Value<i32>)>,
+        rhs: Ptr<(Value<i32>, Value<i32>)>,
+    ) -> bool;
+    fn operator_call_2(&self, lhs: Ptr<(Value<i32>, Value<i32>)>, rhs: i32) -> bool;
+    fn operator_call_3(&self, lhs: i32, rhs: Ptr<(Value<i32>, Value<i32>)>) -> bool;
 }
 impl CompImpl for Ptr<Comp> {
-    fn operator_call_1(&self, lhs: Ptr<()>, rhs: Ptr<()>) -> () {
-        return unimplemented!();
+    fn operator_call_1(
+        &self,
+        lhs: Ptr<(Value<i32>, Value<i32>)>,
+        rhs: Ptr<(Value<i32>, Value<i32>)>,
+    ) -> bool {
+        return unimplemented!() == std::cmp::Ordering::Less;
     }
-    fn operator_call_2(&self, lhs: Ptr<()>, mut rhs: ()) -> () {
-        return ({ lhs.with(|__s| __s.first) } < { rhs });
+    fn operator_call_2(&self, lhs: Ptr<(Value<i32>, Value<i32>)>, mut rhs: i32) -> bool {
+        return ({ (*(*lhs.upgrade().deref()).0.borrow()) } < { rhs });
     }
-    fn operator_call_3(&self, mut lhs: (), rhs: Ptr<()>) -> () {
-        return ({ lhs } < { rhs.with(|__s| __s.first) });
+    fn operator_call_3(&self, mut lhs: i32, rhs: Ptr<(Value<i32>, Value<i32>)>) -> bool {
+        return ({ lhs } < { (*(*rhs.upgrade().deref()).0.borrow()) });
     }
 }
 pub fn __cpp2rust_init_globals() {}

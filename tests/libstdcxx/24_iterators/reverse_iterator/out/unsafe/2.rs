@@ -10,11 +10,11 @@ pub unsafe fn test02_0() {
     let mut it01: () = unimplemented!();
     let mut it02: () = unimplemented!();
     unimplemented!();
-    !(unimplemented!());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    it01 != it02;
+    it01 < it02;
+    it01 <= it02;
+    it01 > it02;
+    it01 >= it02;
     unimplemented!();
     unimplemented!();
 }
@@ -24,8 +24,8 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test02_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

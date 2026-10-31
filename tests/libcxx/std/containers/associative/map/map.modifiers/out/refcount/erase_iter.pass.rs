@@ -10,37 +10,37 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<(Value<i32>, Value<f64>)>,
 }
 impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -48,18 +48,19 @@ impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_lon
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__double__ {}
 impl TemplateConstructor {
-    pub fn new(_a0: Ptr<()>) -> Self {
+    pub fn new(_a0: Ptr<i32>) -> Self {
         Self {}
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, ptr)]
 #[byte_size(1)]
 pub struct TemplateConstructor {}
 impl CppLess for TemplateConstructor {
@@ -73,209 +74,1669 @@ impl CppEq for TemplateConstructor {
             && !(operator_lt_4(__rhs.clone(), __lhs.clone()))
     }
 }
-pub fn operator_lt_4(_a0: Ptr<TemplateConstructor>, _a1: Ptr<TemplateConstructor>) -> () {
+pub fn operator_lt_4(_a0: Ptr<TemplateConstructor>, _a1: Ptr<TemplateConstructor>) -> bool {
     return false;
 }
-pub fn test_5() -> () {
+pub fn test_5() -> bool {
     {
-        let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
+            (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(1.5_f64))),
+            (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(2.5_f64))),
+            (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(3.5_f64))),
+            (Rc::new(RefCell::new(4)), Rc::new(RefCell::new(4.5_f64))),
+            (Rc::new(RefCell::new(5)), Rc::new(RefCell::new(5.5_f64))),
+            (Rc::new(RefCell::new(6)), Rc::new(RefCell::new(6.5_f64))),
+            (Rc::new(RefCell::new(7)), Rc::new(RefCell::new(7.5_f64))),
+            (Rc::new(RefCell::new(8)), Rc::new(RefCell::new(8.5_f64))),
         ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let ar: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut a: TemplateConstructor = {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
-            TemplateConstructor::new({ __tmp_0.as_pointer() })
+        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*m.borrow()).len() == 8_usize));
+        let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new({
+            let __it = libcc2rs::next_refcount(unimplemented!(), 3_isize);
+            Map::erase(m.as_pointer(), &__it)
+        }));
+        assert!(((*m.borrow()).len() == 7_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    3_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 1)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 1.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 3)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 3.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 6)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 6.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                5_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                5_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                6_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 8)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                6_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 8.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 0_isize);
+            Map::erase(m.as_pointer(), &__it)
         };
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        if !(unimplemented!()) {
-            unimplemented!();
+        assert!(((*m.borrow()).len() == 6_usize));
+        assert!(
+            (*i.borrow())
+                == m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 3)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 3.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 6)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 6.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                5_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 8)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                5_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 8.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 5_isize);
+            Map::erase(m.as_pointer(), &__it)
+        };
+        assert!(((*m.borrow()).len() == 5_usize));
+        assert!(
+            (*i.borrow())
+                == m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 3)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 3.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 6)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 6.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 1_isize);
+            Map::erase(m.as_pointer(), &__it)
+        };
+        assert!(((*m.borrow()).len() == 4_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    1_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 6)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 6.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 2_isize);
+            Map::erase(m.as_pointer(), &__it)
+        };
+        assert!(((*m.borrow()).len() == 3_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    2_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 2_isize);
+            Map::erase(m.as_pointer(), &__it)
+        };
+        assert!(((*m.borrow()).len() == 2_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    2_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 0_isize);
+            Map::erase(m.as_pointer(), &__it)
+        };
+        assert!(((*m.borrow()).len() == 1_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    0_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = unimplemented!();
+            Map::erase(m.as_pointer(), &__it)
+        };
+        assert!(((*m.borrow()).len() == 0_usize));
+        assert!(
+            (*i.borrow())
+                == m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+        );
+        assert!(
+            (*i.borrow())
+                == m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
+        );
+    }
+    {
+        let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
+            (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(1.5_f64))),
+            (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(2.5_f64))),
+            (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(3.5_f64))),
+            (Rc::new(RefCell::new(4)), Rc::new(RefCell::new(4.5_f64))),
+            (Rc::new(RefCell::new(5)), Rc::new(RefCell::new(5.5_f64))),
+            (Rc::new(RefCell::new(6)), Rc::new(RefCell::new(6.5_f64))),
+            (Rc::new(RefCell::new(7)), Rc::new(RefCell::new(7.5_f64))),
+            (Rc::new(RefCell::new(8)), Rc::new(RefCell::new(8.5_f64))),
+        ])));
+        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*m.borrow()).len() == 8_usize));
+        let i: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new({
+            let __it = libcc2rs::next_refcount(unimplemented!(), 3_isize);
+            Map::erase(m.as_pointer(), &__it)
+        }));
+        assert!(((*m.borrow()).len() == 7_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    3_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 1)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 1.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 3)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 3.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 6)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 6.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                5_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                5_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                6_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 8)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                6_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 8.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 0_isize);
+            Map::erase(m.as_pointer(), &__it)
+        }
+        .clone();
+        assert!(((*m.borrow()).len() == 6_usize));
+        assert!(
+            (*i.borrow())
+                == m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 3)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 3.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 6)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 6.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                5_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 8)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                5_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 8.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 5_isize);
+            Map::erase(m.as_pointer(), &__it)
+        }
+        .clone();
+        assert!(((*m.borrow()).len() == 5_usize));
+        assert!(
+            (*i.borrow())
+                == m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 3)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 3.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 6)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 6.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                4_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 1_isize);
+            Map::erase(m.as_pointer(), &__it)
+        }
+        .clone();
+        assert!(((*m.borrow()).len() == 4_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    1_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 6)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 6.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                3_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 2_isize);
+            Map::erase(m.as_pointer(), &__it)
+        }
+        .clone();
+        assert!(((*m.borrow()).len() == 3_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    2_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 7)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                2_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 7.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 2_isize);
+            Map::erase(m.as_pointer(), &__it)
+        }
+        .clone();
+        assert!(((*m.borrow()).len() == 2_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    2_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 2)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 2.5_f64)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*libcc2rs::next_refcount(
+                m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                1_isize
+            )
+            .iter_deref()
+            .upgrade()
+            .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = libcc2rs::next_refcount(unimplemented!(), 0_isize);
+            Map::erase(m.as_pointer(), &__it)
+        }
+        .clone();
+        assert!(((*m.borrow()).len() == 1_usize));
+        assert!(
+            (*i.borrow())
+                == libcc2rs::next_refcount(
+                    m.as_pointer()
+                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin()),
+                    0_isize
+                )
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .0
+            .borrow())
+                == 5)
+        );
+        assert!(
+            ((*(*m
+                .as_pointer()
+                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 5.5_f64)
+        );
+        (*i.borrow_mut()) = {
+            let __it = unimplemented!();
+            Map::erase(m.as_pointer(), &__it)
+        }
+        .clone();
+        assert!(((*m.borrow()).len() == 0_usize));
+        assert!(
+            (*i.borrow())
+                == m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
+        );
+        assert!(
+            (*i.borrow())
+                == m.as_pointer()
+                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end())
+        );
+    }
+    {
+        let c: Value<Map<TemplateConstructor, (Value<TemplateConstructor>, Value<i32>)>> =
+            Rc::new(RefCell::new(Map::new()));
+        let a: Value<TemplateConstructor> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(0));
+            TemplateConstructor::new({ __tmp_0.as_pointer() })
+        }));
+        let it: Value<BidirectionalIterator<(Value<TemplateConstructor>, Value<i32>)>> =
+            Rc::new(RefCell::new(c.as_pointer().with(
+                |__m: &Map<TemplateConstructor, (Value<TemplateConstructor>, Value<i32>)>| {
+                    __m.find(&a.as_pointer())
+                },
+            )));
+        if (*it.borrow())
+            != c.as_pointer().with(
+                |__m: &Map<TemplateConstructor, (Value<TemplateConstructor>, Value<i32>)>| {
+                    __m.end()
+                },
+            )
+        {
+            {
+                let __it = (*it.borrow()).clone();
+                Map::erase(c.as_pointer(), &__it)
+            };
         }
     }
     return true;
@@ -299,21 +1760,21 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_5() });
-    return 0_();
+    return 0;
 }
 pub trait min_allocator_std_pair_const_int__double__Impl {
     fn allocate(
         &self,
-        mut n: (),
+        mut n: usize,
     ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!()
     }
@@ -323,13 +1784,13 @@ impl min_allocator_std_pair_const_int__double__Impl
 {
 }
 pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<f64>)> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<f64>)> {
         unimplemented!()
     }
     fn operator_inc_8(
@@ -340,7 +1801,7 @@ pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigne
     }
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -352,37 +1813,37 @@ pub trait min_pointer_std_pair_const_int__double___std_integral_constant_unsigne
     }
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
     {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__>
     {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<f64>)> {
         unimplemented!()
     }
 }
@@ -391,7 +1852,7 @@ impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_lon
 {
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }

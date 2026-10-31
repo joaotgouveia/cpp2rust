@@ -6,10 +6,10 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> () {
+pub fn operator_eq_0(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> bool {
     return ({ LHS.with(|__s| __s.m_id.clone()) } == { RHS.with(|__s| __s.m_id.clone()) });
 }
-pub fn operator_ne_1(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> () {
+pub fn operator_ne_1(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> bool {
     return ({ LHS.with(|__s| __s.m_id.clone()) } != { RHS.with(|__s| __s.m_id.clone()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
@@ -17,10 +17,10 @@ pub fn operator_ne_1(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> () {
 pub struct TypeID {
     #[offset(0)]
     #[byte_size(8)]
-    m_id: Ptr<()>,
+    m_id: Ptr<i8>,
 }
 impl TypeID {
-    fn new(mut xid: Ptr<()>) -> Self {
+    fn new(mut xid: Ptr<i8>) -> Self {
         Self {
             m_id: (xid).clone(),
         }
@@ -31,16 +31,17 @@ impl CppEq for TypeID {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-pub type CallType = ();
+pub type CallType = u32;
 pub const CallType_CT_None: CallType = 0;
 pub const CallType_CT_NonConst: CallType = 1;
 pub const CallType_CT_Const: CallType = 2;
 pub const CallType_CT_LValue: CallType = 4;
 pub const CallType_CT_RValue: CallType = 8;
 pub fn operator_bitor_2(mut LHS: CallType, mut RHS: CallType) -> CallType {
-    return (((LHS as ()) | (RHS as ())) as CallType);
+    return (((LHS as u32) | (RHS as u32)) as CallType);
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct ForwardingCallObject {}
 thread_local!(
@@ -55,11 +56,12 @@ pub struct ReturnFirst {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct ReturnArity {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(1)]
 pub struct NonDefaultConstructible {}
 impl NonDefaultConstructible {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         Self {}
     }
 }
@@ -96,18 +98,18 @@ pub fn test_default_ctor_throws_7() {}
 pub fn test_default_ctor_basic_8() {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
+        assert!(((unimplemented!().read()) == 0));
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
+        assert!(((unimplemented!().read()) == 0));
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
+        assert!(((unimplemented!().read()) == 0));
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -128,7 +130,7 @@ pub fn test_default_ctor_basic_8() {
 pub fn issue_86686_9() {
     const _: () = assert!(true, "std::variant<std::string>{{}}.index() == 0");;
 }
-pub fn test_10() -> () {
+pub fn test_10() -> bool {
     ({ test_default_ctor_basic_8() });
     ({ test_default_ctor_sfinae_5() });
     ({ test_default_ctor_noexcept_6() });
@@ -154,26 +156,30 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_10() });
     ({ test_default_ctor_throws_7() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait ForwardingCallObjectImpl {
-    fn to_(&self) -> ();
+    fn to_i32(&self) -> i32;
 }
 impl ForwardingCallObjectImpl for Ptr<ForwardingCallObject> {
-    fn to_(&self) -> () {
-        return 0_();
+    fn to_i32(&self) -> i32 {
+        return 0;
     }
 }
 pub trait TypeIDImpl {
-    fn name(&self) -> ();
+    fn name(&self) -> Vec<i8>;
 }
 impl TypeIDImpl for Ptr<TypeID> {
-    fn name(&self) -> () {
-        return unimplemented!();
+    fn name(&self) -> Vec<i8> {
+        return {
+            let mut __bytes = (*self).with(|__s| __s.m_id.clone()).to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
     }
 }
 pub fn __cpp2rust_init_globals() {

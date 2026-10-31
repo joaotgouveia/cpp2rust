@@ -6,21 +6,23 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_double_ref__const_double_ref_ {}
-pub fn tests_1() -> () {
+pub fn tests_1() -> bool {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));
         let r1: () = unimplemented!();
-        unimplemented!();
+        assert!(((r1.read()) == 1_f64));
         let r2: () = unimplemented!();
-        unimplemented!();
+        assert!(((r2.read()) == 3.5_f64));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<Vec<f64>> = Rc::new(RefCell::new(
+            std::array::from_fn::<_, 0, _>(|_| 0_f64).to_vec(),
+        ));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -28,7 +30,9 @@ pub fn tests_1() -> () {
         {}
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<Vec<f64>> = Rc::new(RefCell::new(
+            std::array::from_fn::<_, 0, _>(|_| 0_f64).to_vec(),
+        ));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -56,9 +60,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_1() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

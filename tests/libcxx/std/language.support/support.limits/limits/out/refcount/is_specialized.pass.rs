@@ -32,89 +32,89 @@ pub fn for_each_0(
 ) {
     let f: Value<Test> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({ TestImpl::operator_call_1_char(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({ TestImpl::operator_call_1_wchar_t(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({ TestImpl::operator_call_1_char8_t(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             ({ TestImpl::operator_call_1_char16_t(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             ({ TestImpl::operator_call_1_char32_t(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             ({ TestImpl::operator_call_1_signed_char(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg6: () = {
+        let _arg6: i32 = {
             ({ TestImpl::operator_call_1_short(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg7: () = {
+        let _arg7: i32 = {
             ({ TestImpl::operator_call_1_int(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg8: () = {
+        let _arg8: i32 = {
             ({ TestImpl::operator_call_1_long(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg9: () = {
+        let _arg9: i32 = {
             ({ TestImpl::operator_call_1_long_long(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg10: () = {
+        let _arg10: i32 = {
             ({ TestImpl::operator_call_1___int128(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg11: () = {
+        let _arg11: i32 = {
             ({ TestImpl::operator_call_1_unsigned_char(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg12: () = {
+        let _arg12: i32 = {
             ({ TestImpl::operator_call_1_unsigned_short(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg13: () = {
+        let _arg13: i32 = {
             ({ TestImpl::operator_call_1_unsigned_int(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg14: () = {
+        let _arg14: i32 = {
             ({ TestImpl::operator_call_1_unsigned_long(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg15: () = {
+        let _arg15: i32 = {
             ({ TestImpl::operator_call_1_unsigned_long_long(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg16: () = {
+        let _arg16: i32 = {
             ({ TestImpl::operator_call_1_unsigned___int128(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg17: () = {
+        let _arg17: i32 = {
             ({ TestImpl::operator_call_1__Bool(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg18: () = {
+        let _arg18: i32 = {
             ({ TestImpl::operator_call_1_float(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg19: () = {
+        let _arg19: i32 = {
             ({ TestImpl::operator_call_1_double(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg20: () = {
+        let _arg20: i32 = {
             ({ TestImpl::operator_call_1_long_double(&f.as_pointer()) });
-            0_()
+            0
         };
         swallow_1(
             _arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8, _arg9, _arg10, _arg11,
@@ -123,27 +123,27 @@ pub fn for_each_0(
     });
 }
 pub fn swallow_1(
-    mut _a0: (),
-    mut _a1: (),
-    mut _a2: (),
-    mut _a3: (),
-    mut _a4: (),
-    mut _a5: (),
-    mut _a6: (),
-    mut _a7: (),
-    mut _a8: (),
-    mut _a9: (),
-    mut _a10: (),
-    mut _a11: (),
-    mut _a12: (),
-    mut _a13: (),
-    mut _a14: (),
-    mut _a15: (),
-    mut _a16: (),
-    mut _a17: (),
-    mut _a18: (),
-    mut _a19: (),
-    mut _a20: (),
+    mut _a0: i32,
+    mut _a1: i32,
+    mut _a2: i32,
+    mut _a3: i32,
+    mut _a4: i32,
+    mut _a5: i32,
+    mut _a6: i32,
+    mut _a7: i32,
+    mut _a8: i32,
+    mut _a9: i32,
+    mut _a10: i32,
+    mut _a11: i32,
+    mut _a12: i32,
+    mut _a13: i32,
+    mut _a14: i32,
+    mut _a15: i32,
+    mut _a16: i32,
+    mut _a17: i32,
+    mut _a18: i32,
+    mut _a19: i32,
+    mut _a20: i32,
 ) {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -168,7 +168,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
         for_each_0 ( <types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool__float__double__long_double_  >::default()  , <Test  >::default()  , )
     });
@@ -176,7 +176,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "!std::numeric_limits<std::complex<double> >::is_specialized"
     );;
-    return 0_();
+    return 0;
 }
 pub trait TestImpl {
     fn operator_call_1_char(&self);

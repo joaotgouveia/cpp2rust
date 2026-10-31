@@ -20,14 +20,17 @@ pub unsafe fn test1_0() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
     }
     {
         let mut sv: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unimplemented!())
+                <= ((u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64))))
+        );
         const _: () = assert!(true, "");;
     }
 }
@@ -45,14 +48,17 @@ pub unsafe fn test1_1() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
     }
     {
         let mut sv: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unimplemented!())
+                <= ((u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64))))
+        );
         const _: () = assert!(true, "");;
     }
 }
@@ -70,14 +76,17 @@ pub unsafe fn test1_2() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
     }
     {
         let mut sv: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unimplemented!())
+                <= ((u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64))))
+        );
         const _: () = assert!(true, "");;
     }
 }
@@ -95,14 +104,17 @@ pub unsafe fn test1_3() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
     }
     {
         let mut sv: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unimplemented!())
+                <= ((u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64))))
+        );
         const _: () = assert!(true, "");;
     }
 }
@@ -120,75 +132,78 @@ pub unsafe fn test1_4() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
     }
     {
         let mut sv: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unimplemented!())
+                <= ((u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64))))
+        );
         const _: () = assert!(true, "");;
     }
 }
-pub unsafe fn test2_5(mut s: *const (), mut len: ()) {
+pub unsafe fn test2_5(mut s: *const libc::c_char, mut len: usize) {
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == (len)));
+        assert!(((unimplemented!()) == (s)));
+        assert!(((unimplemented!() as i32) == (((len) == (0_usize)) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
-pub unsafe fn test2_6(mut s: *const (), mut len: ()) {
+pub unsafe fn test2_6(mut s: *const i32, mut len: usize) {
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == (len)));
+        assert!(((unimplemented!()) == (s)));
+        assert!(((unimplemented!() as i32) == (((len) == (0_usize)) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
-pub unsafe fn test2_7(mut s: *const (), mut len: ()) {
+pub unsafe fn test2_7(mut s: *const u8, mut len: usize) {
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == (len)));
+        assert!(((unimplemented!()) == (s)));
+        assert!(((unimplemented!() as i32) == (((len) == (0_usize)) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
-pub unsafe fn test2_8(mut s: *const (), mut len: ()) {
+pub unsafe fn test2_8(mut s: *const u16, mut len: usize) {
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == (len)));
+        assert!(((unimplemented!()) == (s)));
+        assert!(((unimplemented!() as i32) == (((len) == (0_usize)) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
-pub unsafe fn test2_9(mut s: *const (), mut len: ()) {
+pub unsafe fn test2_9(mut s: *const u32, mut len: usize) {
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == (len)));
+        assert!(((unimplemented!()) == (s)));
+        assert!(((unimplemented!() as i32) == (((len) == (0_usize)) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) > (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
 pub fn main() {
@@ -206,138 +221,153 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test1_0() });
     (unsafe { test1_1() });
     (unsafe { test1_2() });
     (unsafe { test1_3() });
     (unsafe { test1_4() });
     (unsafe {
-        test2_5 ( c"ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE" .as_ptr() , 105_() , )
+        test2_5 ( c"ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE" .as_ptr() , 105_usize , )
     });
-    (unsafe { test2_5(c"ABCDE".as_ptr(), 5_()) });
-    (unsafe { test2_5(c"a".as_ptr(), 1_()) });
-    (unsafe { test2_5(c"".as_ptr(), 0_()) });
+    (unsafe { test2_5(c"ABCDE".as_ptr(), 5_usize) });
+    (unsafe { test2_5(c"a".as_ptr(), 1_usize) });
+    (unsafe { test2_5(c"".as_ptr(), 0_usize) });
     (unsafe {
         test2_6(
             [
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32,
+                67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32,
+                69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32,
+                66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32,
+                68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32,
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32,
+                67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32,
+                69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32,
+                66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32,
+                68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32,
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32,
+                67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32,
+                69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32,
+                66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32,
+                68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32,
+                0 as i32,
             ]
             .as_ptr(),
-            105_(),
+            105_usize,
         )
     });
     (unsafe {
         test2_6(
-            [65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr(),
-            5_(),
+            [
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 0 as i32,
+            ]
+            .as_ptr(),
+            5_usize,
         )
     });
-    (unsafe { test2_6([97 as (), 0 as ()].as_ptr(), 1_()) });
-    (unsafe { test2_6([0 as ()].as_ptr(), 0_()) });
+    (unsafe { test2_6([97 as i32, 0 as i32].as_ptr(), 1_usize) });
+    (unsafe { test2_6([0 as i32].as_ptr(), 0_usize) });
     (unsafe {
         test2_7(
             [
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
+                65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8,
+                68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8,
+                66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8,
+                69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8,
+                67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8,
+                65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8,
+                68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8,
+                66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8,
+                69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8,
+                67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8,
+                65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8,
+                68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8,
+                66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8,
+                69 as u8, 0 as u8,
             ]
             .as_ptr(),
-            105_(),
+            105_usize,
         )
     });
     (unsafe {
         test2_7(
-            [65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr(),
-            5_(),
+            [65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 0 as u8].as_ptr(),
+            5_usize,
         )
     });
-    (unsafe { test2_7([97 as (), 0 as ()].as_ptr(), 1_()) });
-    (unsafe { test2_7([0 as ()].as_ptr(), 0_()) });
+    (unsafe { test2_7([97 as u8, 0 as u8].as_ptr(), 1_usize) });
+    (unsafe { test2_7([0 as u8].as_ptr(), 0_usize) });
     (unsafe {
         test2_8(
             [
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16,
+                67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16,
+                69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16,
+                66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16,
+                68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16,
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16,
+                67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16,
+                69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16,
+                66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16,
+                68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16,
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16,
+                67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16,
+                69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16,
+                66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16,
+                68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16,
+                0 as u16,
             ]
             .as_ptr(),
-            105_(),
+            105_usize,
         )
     });
     (unsafe {
         test2_8(
-            [65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr(),
-            5_(),
+            [
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 0 as u16,
+            ]
+            .as_ptr(),
+            5_usize,
         )
     });
-    (unsafe { test2_8([97 as (), 0 as ()].as_ptr(), 1_()) });
-    (unsafe { test2_8([0 as ()].as_ptr(), 0_()) });
+    (unsafe { test2_8([97 as u16, 0 as u16].as_ptr(), 1_usize) });
+    (unsafe { test2_8([0 as u16].as_ptr(), 0_usize) });
     (unsafe {
         test2_9(
             [
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32,
+                67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32,
+                69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32,
+                66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32,
+                68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32,
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32,
+                67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32,
+                69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32,
+                66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32,
+                68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32,
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32,
+                67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32,
+                69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32,
+                66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32,
+                68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32,
+                0 as u32,
             ]
             .as_ptr(),
-            105_(),
+            105_usize,
         )
     });
     (unsafe {
         test2_9(
-            [65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as ()].as_ptr(),
-            5_(),
+            [
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 0 as u32,
+            ]
+            .as_ptr(),
+            5_usize,
         )
     });
-    (unsafe { test2_9([97 as (), 0 as ()].as_ptr(), 1_()) });
-    (unsafe { test2_9([0 as ()].as_ptr(), 0_()) });
-    return 0_();
+    (unsafe { test2_9([97 as u32, 0 as u32].as_ptr(), 1_usize) });
+    (unsafe { test2_9([0 as u32].as_ptr(), 0_usize) });
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

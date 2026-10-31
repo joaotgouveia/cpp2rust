@@ -9,7 +9,8 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(A, to_A)]
 #[byte_size(1)]
 pub struct B {
     #[offset(0)]
@@ -19,7 +20,8 @@ pub struct B {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct C {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(C, to_C)]
 #[byte_size(1)]
 pub struct D {
     #[offset(0)]
@@ -45,7 +47,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "(std::is_nothrow_convertible<int, double>::value)");;
     const _: () = assert!(true, "!(std::is_nothrow_convertible<int, char*>::value)");;
     const _: () = assert!(true, "!(std::is_nothrow_convertible<A, B>::value)");;
@@ -69,7 +71,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "!(std::is_nothrow_convertible_v<int[10], A[10]>)");;
     const _: () = assert!(true, "!(std::is_nothrow_convertible_v<V, V>)");;
     const _: () = assert!(true, "!(std::is_nothrow_convertible_v<V, I>)");;
-    return 0_();
+    return 0;
 }
 pub trait BImpl {
     fn to_A(&self) -> A;

@@ -6,19 +6,51 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: Ptr<()>) {
-    let c1: Value<()> = Rc::new(RefCell::new(c1));
+pub fn test_0(
+    c1: Vec<Option<Value<i32>>>,
+    mut j: (),
+    mut x1: Option<Value<i32>>,
+    mut x2: Option<Value<i32>>,
+    mut x3: Option<Value<i32>>,
+    c2: Ptr<Vec<Option<Value<i32>>>>,
+) {
+    let c1: Value<Vec<Option<Value<i32>>>> = Rc::new(RefCell::new(c1));
     let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn insert3at_1(c: Ptr<()>, i: (), mut x1: (), mut x2: (), mut x3: ()) {
-    let i: Value<()> = Rc::new(RefCell::new(i));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn insert3at_1(
+    c: Ptr<Vec<Option<Value<i32>>>>,
+    i: RandomAccessIterator<Option<Value<i32>>>,
+    mut x1: Option<Value<i32>>,
+    mut x2: Option<Value<i32>>,
+    mut x3: Option<Value<i32>>,
+) {
+    let i: Value<RandomAccessIterator<Option<Value<i32>>>> = Rc::new(RefCell::new(i));
+    (*i.borrow_mut()) = {
+        let __it = <RandomAccessIterator<Option<Value<i32>>>>::from((*i.borrow()).clone());
+        let __off = __it.index();
+        c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| __v.insert(__off, (x1).clone()));
+        __it
+    };
+    (*i.borrow_mut()) = {
+        let __it = <RandomAccessIterator<Option<Value<i32>>>>::from(
+            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
+        );
+        let __off = __it.index();
+        c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| __v.insert(__off, (x2).clone()));
+        __it
+    };
+    {
+        let __it = <RandomAccessIterator<Option<Value<i32>>>>::from(
+            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
+        );
+        let __off = __it.index();
+        c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| __v.insert(__off, (x3).clone()));
+        __it
+    };
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -42,127 +74,238 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            0_(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let c1: Value<Vec<Option<Value<i32>>>> = Rc::new(RefCell::new(Vec::new()));
+        let x: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+            0, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
         ])));
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let __a1 = (x.as_pointer() as Ptr<i32>)
+                    .offset((i) as isize)
+                    .to_owned_opt();
+                (*c1.borrow_mut()).push(__a1)
+            };
             i.prefix_inc();
         }
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        let c2: Value<Vec<Option<Value<i32>>>> = Rc::new(RefCell::new(Vec::new()));
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let __a1 = (x.as_pointer() as Ptr<i32>)
+                    .offset((i) as isize)
+                    .to_owned_opt();
+                (*c2.borrow_mut()).push(__a1)
+            };
             i.prefix_inc();
         }
         ({
-            let _c: Ptr<()> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            let _x1: () = unimplemented!();
-            let _x2: () = unimplemented!();
-            let _x3: () = unimplemented!();
+            let _c: Ptr<Vec<Option<Value<i32>>>> = c2.as_pointer();
+            let _i: RandomAccessIterator<Option<Value<i32>>> = c2.decay().begin();
+            let _x1: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((3) as isize)
+                .to_owned_opt();
+            let _x2: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((4) as isize)
+                .to_owned_opt();
+            let _x3: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((5) as isize)
+                .to_owned_opt();
             insert3at_1(_c, _i, _x1, _x2, _x3)
         });
         ({
-            let _x1: () = unimplemented!();
-            let _x2: () = unimplemented!();
-            let _x3: () = unimplemented!();
-            test_0(unimplemented!(), 0_(), _x1, _x2, _x3, c2.as_pointer())
+            let _x1: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((3) as isize)
+                .to_owned_opt();
+            let _x2: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((4) as isize)
+                .to_owned_opt();
+            let _x3: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((5) as isize)
+                .to_owned_opt();
+            test_0(
+                std::mem::take(&mut (*c1.borrow_mut())),
+                0_(),
+                _x1,
+                _x2,
+                _x3,
+                c2.as_pointer(),
+            )
         });
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        (*c1.borrow_mut()).clear();
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let __a1 = (x.as_pointer() as Ptr<i32>)
+                    .offset((i) as isize)
+                    .to_owned_opt();
+                (*c1.borrow_mut()).push(__a1)
+            };
             i.prefix_inc();
         }
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        (*c2.borrow_mut()).clear();
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let __a1 = (x.as_pointer() as Ptr<i32>)
+                    .offset((i) as isize)
+                    .to_owned_opt();
+                (*c2.borrow_mut()).push(__a1)
+            };
             i.prefix_inc();
         }
         ({
-            let _c: Ptr<()> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            let _x1: () = unimplemented!();
-            let _x2: () = unimplemented!();
-            let _x3: () = unimplemented!();
+            let _c: Ptr<Vec<Option<Value<i32>>>> = c2.as_pointer();
+            let _i: RandomAccessIterator<Option<Value<i32>>> = c2.decay().begin().iter_add(1_isize);
+            let _x1: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((3) as isize)
+                .to_owned_opt();
+            let _x2: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((4) as isize)
+                .to_owned_opt();
+            let _x3: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((5) as isize)
+                .to_owned_opt();
             insert3at_1(_c, _i, _x1, _x2, _x3)
         });
         ({
-            let _x1: () = unimplemented!();
-            let _x2: () = unimplemented!();
-            let _x3: () = unimplemented!();
-            test_0(unimplemented!(), 1_(), _x1, _x2, _x3, c2.as_pointer())
+            let _x1: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((3) as isize)
+                .to_owned_opt();
+            let _x2: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((4) as isize)
+                .to_owned_opt();
+            let _x3: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((5) as isize)
+                .to_owned_opt();
+            test_0(
+                std::mem::take(&mut (*c1.borrow_mut())),
+                1_(),
+                _x1,
+                _x2,
+                _x3,
+                c2.as_pointer(),
+            )
         });
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        (*c1.borrow_mut()).clear();
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let __a1 = (x.as_pointer() as Ptr<i32>)
+                    .offset((i) as isize)
+                    .to_owned_opt();
+                (*c1.borrow_mut()).push(__a1)
+            };
             i.prefix_inc();
         }
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        (*c2.borrow_mut()).clear();
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let __a1 = (x.as_pointer() as Ptr<i32>)
+                    .offset((i) as isize)
+                    .to_owned_opt();
+                (*c2.borrow_mut()).push(__a1)
+            };
             i.prefix_inc();
         }
         ({
-            let _c: Ptr<()> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            let _x1: () = unimplemented!();
-            let _x2: () = unimplemented!();
-            let _x3: () = unimplemented!();
+            let _c: Ptr<Vec<Option<Value<i32>>>> = c2.as_pointer();
+            let _i: RandomAccessIterator<Option<Value<i32>>> = c2.decay().begin().iter_add(2_isize);
+            let _x1: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((3) as isize)
+                .to_owned_opt();
+            let _x2: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((4) as isize)
+                .to_owned_opt();
+            let _x3: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((5) as isize)
+                .to_owned_opt();
             insert3at_1(_c, _i, _x1, _x2, _x3)
         });
         ({
-            let _x1: () = unimplemented!();
-            let _x2: () = unimplemented!();
-            let _x3: () = unimplemented!();
-            test_0(unimplemented!(), 2_(), _x1, _x2, _x3, c2.as_pointer())
+            let _x1: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((3) as isize)
+                .to_owned_opt();
+            let _x2: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((4) as isize)
+                .to_owned_opt();
+            let _x3: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((5) as isize)
+                .to_owned_opt();
+            test_0(
+                std::mem::take(&mut (*c1.borrow_mut())),
+                2_(),
+                _x1,
+                _x2,
+                _x3,
+                c2.as_pointer(),
+            )
         });
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        (*c1.borrow_mut()).clear();
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let __a1 = (x.as_pointer() as Ptr<i32>)
+                    .offset((i) as isize)
+                    .to_owned_opt();
+                (*c1.borrow_mut()).push(__a1)
+            };
             i.prefix_inc();
         }
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        (*c2.borrow_mut()).clear();
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let __a1 = (x.as_pointer() as Ptr<i32>)
+                    .offset((i) as isize)
+                    .to_owned_opt();
+                (*c2.borrow_mut()).push(__a1)
+            };
             i.prefix_inc();
         }
         ({
-            let _c: Ptr<()> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            let _x1: () = unimplemented!();
-            let _x2: () = unimplemented!();
-            let _x3: () = unimplemented!();
+            let _c: Ptr<Vec<Option<Value<i32>>>> = c2.as_pointer();
+            let _i: RandomAccessIterator<Option<Value<i32>>> = c2.decay().begin().iter_add(3_isize);
+            let _x1: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((3) as isize)
+                .to_owned_opt();
+            let _x2: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((4) as isize)
+                .to_owned_opt();
+            let _x3: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((5) as isize)
+                .to_owned_opt();
             insert3at_1(_c, _i, _x1, _x2, _x3)
         });
         ({
-            let _x1: () = unimplemented!();
-            let _x2: () = unimplemented!();
-            let _x3: () = unimplemented!();
-            test_0(unimplemented!(), 3_(), _x1, _x2, _x3, c2.as_pointer())
+            let _x1: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((3) as isize)
+                .to_owned_opt();
+            let _x2: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((4) as isize)
+                .to_owned_opt();
+            let _x3: Option<Value<i32>> = (x.as_pointer() as Ptr<i32>)
+                .offset((5) as isize)
+                .to_owned_opt();
+            test_0(
+                std::mem::take(&mut (*c1.borrow_mut())),
+                3_(),
+                _x1,
+                _x2,
+                _x3,
+                c2.as_pointer(),
+            )
         });
     }
-    return 0_();
+    return 0;
 }
 pub trait do_nothingImpl {
-    fn operator_call(&self, _a0: ());
+    fn operator_call(&self, _a0: AnyPtr);
 }
 impl do_nothingImpl for Ptr<do_nothing> {
-    fn operator_call(&self, mut _a0: ()) {}
+    fn operator_call(&self, mut _a0: AnyPtr) {}
 }
 pub fn __cpp2rust_init_globals() {}

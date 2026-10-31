@@ -120,23 +120,35 @@ pub struct Other_1 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Other_3 {}
-pub unsafe fn test_ctor_4() -> () {
-    let mut val: [(); 2] = [unimplemented!(), unimplemented!()];
+pub unsafe fn test_ctor_4() -> bool {
+    let mut val: [i32; 2] = [0_i32, 0_i32];
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ((unimplemented!()) == (unimplemented!()))
+            && ((unimplemented!() as usize) == (unimplemented!()))
+    );
+    assert!(
+        ((unimplemented!()) == (unimplemented!()))
+            && ((unimplemented!() as usize) == (unimplemented!()))
+    );
     return true;
 }
-pub unsafe fn test_ctor_5() -> () {
+pub unsafe fn test_ctor_5() -> bool {
     let mut val: [A_6; 2] = [<A_6>::default(), <A_6>::default()];
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ((unimplemented!()) == (unimplemented!()))
+            && ((unimplemented!() as usize) == (unimplemented!()))
+    );
+    assert!(
+        ((unimplemented!()) == (unimplemented!()))
+            && ((unimplemented!() as usize) == (unimplemented!()))
+    );
     return true;
 }
-pub unsafe fn test_7() -> () {
+pub unsafe fn test_7() -> bool {
     (unsafe { test_constructibility_0() });
     (unsafe { test_constructibility_2() });
     (unsafe { test_ctor_4() });
@@ -161,9 +173,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_7() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

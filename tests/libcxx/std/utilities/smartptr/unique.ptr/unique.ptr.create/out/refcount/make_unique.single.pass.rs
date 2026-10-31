@@ -6,20 +6,60 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
-        let mut p1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let p1: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(1)))));
+        assert!((((*p1.borrow()).as_pointer().read()) == 1));
+        p1.as_pointer()
+            .write(Some(Rc::new(RefCell::new(0_i32))).take());
+        assert!((((*p1.borrow()).as_pointer().read()) == 0));
     }
     {
-        let mut p2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let p2: Value<Option<Value<Vec<i8>>>> =
+            Rc::new(RefCell::new(Some(Rc::new(RefCell::new({
+                let mut __bytes = Ptr::<i8>::from_string_literal(b"Meow!").to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            })))));
+        assert!(Ptr::<i8>::from_string_literal(b"Meow!").with_c_str(|__s| {
+            (*(*p2.borrow()).as_pointer().upgrade().deref())[..(*(*p2.borrow())
+                .as_pointer()
+                .upgrade()
+                .deref())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        p2.as_pointer()
+            .write(Some(Rc::new(RefCell::new(vec![i8::default()]))).take());
+        assert!(Ptr::<i8>::from_string_literal(b"").with_c_str(|__s| {
+            (*(*p2.borrow()).as_pointer().upgrade().deref())[..(*(*p2.borrow())
+                .as_pointer()
+                .upgrade()
+                .deref())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        p2.as_pointer().write(
+            Some(Rc::new(RefCell::new(
+                vec![('z' as i8); (6 as usize) as usize]
+                    .iter()
+                    .cloned()
+                    .chain(std::iter::once(0_i8))
+                    .collect(),
+            )))
+            .take(),
+        );
+        assert!(Ptr::<i8>::from_string_literal(b"zzzzzz").with_c_str(|__s| {
+            (*(*p2.borrow()).as_pointer().upgrade().deref())[..(*(*p2.borrow())
+                .as_pointer()
+                .upgrade()
+                .deref())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
     }
     return true;
 }
@@ -42,9 +82,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

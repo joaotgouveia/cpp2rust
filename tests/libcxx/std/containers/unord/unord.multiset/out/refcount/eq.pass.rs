@@ -10,37 +10,37 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -48,13 +48,13 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-pub fn testEquality_4(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: ()) -> () {
+pub fn testEquality_4(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: bool) -> bool {
     if isEqual {
         if !(unimplemented!()) {
             return false;
@@ -84,7 +84,7 @@ pub fn testEquality_4(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: ()) -> () {
     }
     return true;
 }
-pub fn testEquality_5(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: ()) -> () {
+pub fn testEquality_5(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: bool) -> bool {
     if isEqual {
         if !(unimplemented!()) {
             return false;
@@ -114,20 +114,21 @@ pub fn testEquality_5(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: ()) -> () {
     }
     return true;
 }
-pub fn operator_lt_6(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> () {
+pub fn operator_lt_6(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> bool {
     return ({ lhs.with(|__s| __s.value) } < { rhs.with(|__s| __s.value) });
 }
-pub fn operator_eq_7(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> () {
+pub fn operator_eq_7(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> bool {
     return ({ lhs.with(|__s| __s.value) } == { rhs.with(|__s| __s.value) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct LessAndEqComp {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl LessAndEqComp {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -141,23 +142,25 @@ impl CppEq for LessAndEqComp {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn operator_cmp_8(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
+pub fn operator_cmp_8(mut _a0: StrongOrder, mut _a1: StrongOrder) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        let cmp: Value<std::cmp::Ordering> =
+            Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct StrongOrder {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl StrongOrder {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -180,14 +183,15 @@ pub fn operator_cmp_9(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     }
     return unimplemented!();
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct WeakOrder {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl WeakOrder {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -202,25 +206,26 @@ impl CppEq for WeakOrder {
     }
 }
 pub fn operator_cmp_10(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == i32::MIN) || (rhs.value == i32::MIN) {
         return unimplemented!();
     }
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == i32::MAX) || (rhs.value == i32::MAX) {
         return unimplemented!();
     }
     return unimplemented!();
 }
-pub fn operator_eq_11(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
+pub fn operator_eq_11(mut lhs: PartialOrder, mut rhs: PartialOrder) -> bool {
     return unimplemented!();
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct PartialOrder {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl PartialOrder {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -245,17 +250,18 @@ const _: () = assert!(!(false), "!HasOperatorLessThan<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorLessThanEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorNotEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorSpaceship<NonComparable>");
-pub fn operator_eq_12(_a0: Ptr<EqualityComparable>, _a1: Ptr<EqualityComparable>) -> () {
+pub fn operator_eq_12(_a0: Ptr<EqualityComparable>, _a1: Ptr<EqualityComparable>) -> bool {
     return ({ _a0.with(|__s| __s.value_) } == { _a1.with(|__s| __s.value_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct EqualityComparable {
     #[offset(0)]
-    value_: (),
+    value_: i32,
 }
 impl EqualityComparable {
-    pub fn new(mut value: ()) -> Self {
+    pub fn new(mut value: i32) -> Self {
         Self { value_: value }
     }
 }
@@ -267,29 +273,33 @@ impl CppEq for EqualityComparable {
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
-pub fn operator_eq_13(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> () {
+pub fn operator_eq_13(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> bool {
     return ({ _a0.with(|__s| __s.value_) } == { _a1.with(|__s| __s.value_) });
 }
-pub fn operator_cmp_14(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> () {
+pub fn operator_cmp_14(
+    _a0: Ptr<ThreeWayComparable>,
+    _a1: Ptr<ThreeWayComparable>,
+) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.value_)),
             &(_a1.with(|__s| __s.value_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct ThreeWayComparable {
     #[offset(0)]
-    value_: (),
+    value_: i32,
 }
 impl ThreeWayComparable {
-    pub fn new(mut value: ()) -> Self {
+    pub fn new(mut value: i32) -> Self {
         Self { value_: value }
     }
 }
@@ -316,19 +326,20 @@ const _: () = assert!(true, "HasOperatorSpaceship<ThreeWayComparable>");
 #[byte_size(4)]
 pub struct ImplicitBool_E1 {
     #[offset(0)]
-    pub x: (),
+    pub x: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct ImplicitBool_E2 {
     #[offset(0)]
-    pub y: (),
+    pub y: i32,
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(bool, to_bool_1)]
 #[byte_size(1)]
 pub struct ImplicitBool {
     #[offset(0)]
-    pub val: (),
+    pub val: bool,
 }
 pub fn operator_eq_15(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {
@@ -354,150 +365,90 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut a: [(); 11] = [
-            10_(),
-            20_(),
-            20_(),
-            30_(),
-            40_(),
-            50_(),
-            50_(),
-            50_(),
-            60_(),
-            70_(),
-            80_(),
-        ];
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+            10, 20, 20, 30, 40, 50, 50, 50, 60, 70, 80,
+        ])));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!((!(unimplemented!())));
+    }
+    {
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+            10, 20, 20, 30, 40, 50, 50, 50, 60, 70, 80,
+        ])));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!((unimplemented!()));
+        assert!(!(!(unimplemented!())));
+    }
+    {
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+            10, 20, 20, 30, 40, 50, 50, 50, 60, 70, 80,
+        ])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!((unimplemented!()));
+        assert!(!(!(unimplemented!())));
         unimplemented!();
+        assert!(!(unimplemented!()));
+        assert!((!(unimplemented!())));
+        unimplemented!();
+        assert!((unimplemented!()));
+        assert!(!(!(unimplemented!())));
     }
     {
-        let mut a: [(); 11] = [
-            10_(),
-            20_(),
-            20_(),
-            30_(),
-            40_(),
-            50_(),
-            50_(),
-            50_(),
-            60_(),
-            70_(),
-            80_(),
-        ];
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+            10, 20, 20, 30, 40, 50, 50, 50, 60, 70, 80,
+        ])));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!((!(unimplemented!())));
+    }
+    {
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+            10, 20, 20, 30, 40, 50, 50, 50, 60, 70, 80,
+        ])));
+        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!((unimplemented!()));
+        assert!(!(!(unimplemented!())));
+    }
+    {
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+            10, 20, 20, 30, 40, 50, 50, 50, 60, 70, 80,
+        ])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!((unimplemented!()));
+        assert!(!(!(unimplemented!())));
         unimplemented!();
+        assert!(!(unimplemented!()));
+        assert!((!(unimplemented!())));
+        unimplemented!();
+        assert!((unimplemented!()));
+        assert!(!(!(unimplemented!())));
     }
     {
-        let mut a: [(); 11] = [
-            10_(),
-            20_(),
-            20_(),
-            30_(),
-            40_(),
-            50_(),
-            50_(),
-            50_(),
-            60_(),
-            70_(),
-            80_(),
-        ];
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 2])));
+        let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 1, 2])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ testEquality_4(c1.as_pointer(), c2.as_pointer(), false,) }));
     }
     {
-        let mut a: [(); 11] = [
-            10_(),
-            20_(),
-            20_(),
-            30_(),
-            40_(),
-            50_(),
-            50_(),
-            50_(),
-            60_(),
-            70_(),
-            80_(),
-        ];
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 3])));
+        let b: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(({ testEquality_5(c1.as_pointer(), c2.as_pointer(), false,) }));
     }
-    {
-        let mut a: [(); 11] = [
-            10_(),
-            20_(),
-            20_(),
-            30_(),
-            40_(),
-            50_(),
-            50_(),
-            50_(),
-            60_(),
-            70_(),
-            80_(),
-        ];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 11] = [
-            10_(),
-            20_(),
-            20_(),
-            30_(),
-            40_(),
-            50_(),
-            50_(),
-            50_(),
-            60_(),
-            70_(),
-            80_(),
-        ];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 4] = [1_(), 1_(), 1_(), 2_()];
-        let mut b: [(); 5] = [1_(), 1_(), 1_(), 1_(), 2_()];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    {
-        let mut a: [(); 2] = [1_(), 3_()];
-        let mut b: [(); 2] = [1_(), 1_()];
-        let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-    }
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -506,50 +457,50 @@ pub struct HashModuloOddness_16 {}
 #[byte_size(1)]
 pub struct CompareModuloOddness_17 {}
 pub trait CompareModuloOddness_17Impl {
-    fn operator_call(&self, x: (), y: ()) -> ();
+    fn operator_call(&self, x: i32, y: i32) -> bool;
 }
 impl CompareModuloOddness_17Impl for Ptr<CompareModuloOddness_17> {
-    fn operator_call(&self, mut x: (), mut y: ()) -> () {
-        return ((x % 2_()) == (y % 2_()));
+    fn operator_call(&self, mut x: i32, mut y: i32) -> bool {
+        return ((x % 2) == (y % 2));
     }
 }
 pub trait HashModuloOddness_16Impl {
-    fn operator_call(&self, x: ()) -> ();
+    fn operator_call(&self, x: i32) -> usize;
 }
 impl HashModuloOddness_16Impl for Ptr<HashModuloOddness_16> {
-    fn operator_call(&self, mut x: ()) -> () {
+    fn operator_call(&self, mut x: i32) -> usize {
         return unimplemented!();
     }
 }
 pub trait ImplicitBoolImpl {
-    fn to__1(&self) -> ();
+    fn to_bool_1(&self) -> bool;
 }
 impl ImplicitBoolImpl for Ptr<ImplicitBool> {
-    fn to__1(&self) -> () {
+    fn to_bool_1(&self) -> bool {
         return (*self).with(|__s| __s.val);
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!()
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
@@ -557,7 +508,7 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -566,29 +517,35 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_add(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_sub(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_sub(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
 }
@@ -597,7 +554,7 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
 {
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }

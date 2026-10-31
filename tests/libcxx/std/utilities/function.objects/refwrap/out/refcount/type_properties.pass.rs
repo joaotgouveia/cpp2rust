@@ -6,22 +6,23 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct MoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl MoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(x: Ptr<MoveOnly>) -> Self {
         let __this: MoveOnly = Self {
             data_: x.with(|__s| __s.data_),
         };
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         __this
     }
 }
@@ -69,27 +70,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
     ({ test_3() });
-    return 0_();
+    return 0;
 }
 pub trait MoveOnlyImpl {
     fn copy_assign(&self, _a0: Ptr<MoveOnly>) -> Ptr<MoveOnly> {
         unimplemented!()
     }
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
 }
 impl MoveOnlyImpl for Ptr<MoveOnly> {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly> {
         field!((*self), data_).write({ x.with(|__s| __s.data_) });
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
 }

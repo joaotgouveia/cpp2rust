@@ -10,27 +10,30 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Comp {}
 impl Comp {
-    pub unsafe fn operator_call_1(&self, lhs: *const (), rhs: *const ()) -> () {
-        return unimplemented!();
+    pub unsafe fn operator_call_1(&self, lhs: *const (i32, i32), rhs: *const (i32, i32)) -> bool {
+        return unimplemented!() == std::cmp::Ordering::Less;
     }
-    pub unsafe fn operator_call_2(&self, lhs: *const (), mut rhs: ()) -> () {
-        return (((*lhs).first) < (rhs));
+    pub unsafe fn operator_call_2(&self, lhs: *const (i32, i32), mut rhs: i32) -> bool {
+        return (((*lhs).0) < (rhs));
     }
-    pub unsafe fn operator_call_3(&self, mut lhs: (), rhs: *const ()) -> () {
-        return ((lhs) < ((*rhs).first));
+    pub unsafe fn operator_call_3(&self, mut lhs: i32, rhs: *const (i32, i32)) -> bool {
+        return ((lhs) < ((*rhs).0));
     }
 }
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     let mut s: () = unimplemented!();
-    let mut er: () = unimplemented!();
-    let mut nels: () = 0_();
-    let mut it: () = er.first.clone();
-    'loop_: while !(unimplemented!()) {
-        unimplemented!();
+    let mut er: (
+        UnsafeBidirectionalIterator<(i32, i32)>,
+        UnsafeBidirectionalIterator<(i32, i32)>,
+    ) = unimplemented!();
+    let mut nels: i64 = 0_i64;
+    let mut it: UnsafeBidirectionalIterator<(i32, i32)> = er.0.clone();
+    'loop_: while it != er.1 {
+        assert!((((*it.iter_deref()).0) == (1)));
         nels.postfix_inc();
-        unimplemented!();
+        it.iter_post_inc();
     }
-    unimplemented!();
+    assert!(((nels) == (3_i64)));
     return true;
 }
 pub fn main() {
@@ -48,8 +51,8 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

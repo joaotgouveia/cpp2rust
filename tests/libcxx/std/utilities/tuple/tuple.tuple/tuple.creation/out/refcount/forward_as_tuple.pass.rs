@@ -15,7 +15,7 @@ pub fn test1a_1(t: Ptr<()>) {
         true,
         "std::is_same<typename std::tuple_element<0, Tuple>::type, int&&>::value"
     );;
-    unimplemented!();
+    assert!(((unimplemented!().read()) == 1));
 }
 pub fn test1b_2(t: Ptr<()>) {
     const _: () = assert!(true, "std::tuple_size<Tuple>::value == 1");;
@@ -23,7 +23,7 @@ pub fn test1b_2(t: Ptr<()>) {
         true,
         "std::is_same<typename std::tuple_element<0, Tuple>::type, int&>::value"
     );;
-    unimplemented!();
+    assert!(((unimplemented!().read()) == 2));
 }
 pub fn test2a_3(t: Ptr<()>) {
     const _: () = assert!(true, "std::tuple_size<Tuple>::value == 2");;
@@ -35,11 +35,11 @@ pub fn test2a_3(t: Ptr<()>) {
         true,
         "std::is_same<typename std::tuple_element<1, Tuple>::type, char&>::value"
     );;
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!().read()) == 2.5_f64));
+    assert!((((unimplemented!().read()) as i32) == (('a' as i8) as i32)));
 }
-pub fn test3_4(_a0: Ptr<()>) -> () {
-    return unimplemented!();
+pub fn test3_4(_a0: Ptr<()>) -> i32 {
+    return (unimplemented!() as i32);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -60,7 +60,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({
             let _arg0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -74,21 +74,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         });
     }
     {
-        let mut i: () = 2_();
+        let mut i: i32 = 2;
         ({
             let _t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test1b_2(_t.as_pointer())
         });
     }
     {
-        let mut i: () = 2.5_f64;
-        let c: Value<()> = Rc::new(RefCell::new(('a' as ())));
+        let mut i: f64 = 2.5_f64;
+        let c: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
         ({
             let _t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             test2a_3(_t.as_pointer())
         });
         const _: () = assert!(true, "test3 (std::forward_as_tuple(i, c)) == 2");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

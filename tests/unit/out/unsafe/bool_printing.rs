@@ -25,7 +25,7 @@ unsafe fn main_0() -> i32 {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", true as i32);
+            libcc2rs::write_bool(&mut *__s, true);
             __s
         });
         let __s: *mut ::std::fs::File = __r;
@@ -36,7 +36,7 @@ unsafe fn main_0() -> i32 {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", false as i32);
+            libcc2rs::write_bool(&mut *__s, false);
             __s
         });
         let __s: *mut ::std::fs::File = __r;
@@ -47,7 +47,7 @@ unsafe fn main_0() -> i32 {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", ((i1) != (i2)) as i32);
+            libcc2rs::write_bool(&mut *__s, ((i1) != (i2)));
             __s
         });
         let __s: *mut ::std::fs::File = __r;
@@ -58,7 +58,7 @@ unsafe fn main_0() -> i32 {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", ((i1) == (i2)) as i32);
+            libcc2rs::write_bool(&mut *__s, ((i1) == (i2)));
             __s
         });
         let __s: *mut ::std::fs::File = __r;
@@ -69,7 +69,7 @@ unsafe fn main_0() -> i32 {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", (unsafe { foo_0() }) as i32);
+            libcc2rs::write_bool(&mut *__s, (unsafe { foo_0() }));
             __s
         });
         let __s: *mut ::std::fs::File = __r;
@@ -80,7 +80,7 @@ unsafe fn main_0() -> i32 {
         let __r: &mut ::std::fs::File = &mut (*{
             let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
             let __s: *mut ::std::fs::File = __r;
-            let _ = write!(*__s, "{}", (unsafe { bar_1() }) as i32);
+            libcc2rs::write_bool(&mut *__s, (unsafe { bar_1() }));
             __s
         });
         let __s: *mut ::std::fs::File = __r;

@@ -6,22 +6,22 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
-    let mut i: () = 0_();
-    let mut j: () = 0_();
+pub fn test_0() -> bool {
+    let mut i: i32 = 0;
+    let mut j: f32 = 0_f32;
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    i = 2_();
-    j = 3.5_f64;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!().write(0_());
-    unimplemented!().write(0_());
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!().read()) == 1));
+    assert!(((unimplemented!().read()) == 0));
+    assert!(((unimplemented!().read()) == 0_f32));
+    i = 2;
+    j = (3.5_f64 as f32);
+    assert!(((unimplemented!().read()) == 1));
+    assert!(((unimplemented!().read()) == 2));
+    assert!((((unimplemented!().read()) as f64) == 3.5_f64));
+    unimplemented!().write(0);
+    unimplemented!().write(0_f32);
+    assert!((i == 0));
+    assert!((j == 0_f32));
     return true;
 }
 pub fn main() {
@@ -43,16 +43,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i1: () = (unimplemented!().read());
-        let mut d1: () = (unimplemented!().read());
+        let mut i1: i32 = ((unimplemented!().read()) as i32);
+        let mut d1: f64 = (unimplemented!().read());
         const _: () = assert!(true, "i1 == 1");;
         const _: () = assert!(true, "d1 == 3.14");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -10,24 +10,28 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub unsafe fn lt(mut c1: (), mut c2: ()) -> () {
-        return ((c1) < (c2));
+    pub unsafe fn lt(mut c1: libc::c_char, mut c2: libc::c_char) -> bool {
+        return ((c1 as i32) < (c2 as i32));
     }
-    pub unsafe fn compare(mut s1: *const (), mut s2: *const (), mut n: ()) -> () {
+    pub unsafe fn compare(
+        mut s1: *const libc::c_char,
+        mut s2: *const libc::c_char,
+        mut n: usize,
+    ) -> i32 {
         'loop_: while (n != 0) {
             if (unsafe {
-                let _c1: () = (*s1);
-                let _c2: () = (*s2);
+                let _c1: libc::c_char = (*s1);
+                let _c2: libc::c_char = (*s2);
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return -1_();
+                return -1_i32;
             }
             if (unsafe {
-                let _c1: () = (*s2);
-                let _c2: () = (*s1);
+                let _c1: libc::c_char = (*s2);
+                let _c2: libc::c_char = (*s1);
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return 1_();
+                return 1;
             }
             {
                 {
@@ -37,7 +41,7 @@ impl constexpr_char_traits_char_ {
                 s2.prefix_inc()
             };
         }
-        return 0_();
+        return 0;
     }
 }
 pub fn main() {
@@ -55,9 +59,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut s: *const () = c"abcde".as_ptr();
+        let mut s: *const libc::c_char = c"abcde".as_ptr();
         let mut sv0: () = unimplemented!();
         let mut sv1: () = unimplemented!();
         let mut sv2: () = unimplemented!();
@@ -66,32 +70,32 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut sv5: () = unimplemented!();
         let mut svNot: () = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
     }
     {
-        let s: *const () = c"abcde".as_ptr();
+        let s: *const libc::c_char = c"abcde".as_ptr();
         let sv0: () = unimplemented!();
         let sv1: () = unimplemented!();
         let sv2: () = unimplemented!();
@@ -123,6 +127,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "!svNot.ends_with(sv5)");;
         const _: () = assert!(true, "svNot.ends_with(svNot)");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -26,31 +26,60 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
+            outf.as_pointer(),
+            Ptr::null(),
+        )));
         unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"2").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
+            outf.as_pointer(),
+            Ptr::<i8>::from_string_literal(b", "),
+        )));
         unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"2, ").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
+            outf.as_pointer(),
+            Ptr::null(),
+        )));
         unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[50 as i32, 0 as i32,]).with_c_str(
+                |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
+            )
+        );
     }
     {
         let outf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<OstreamIterator<i32>> = Rc::new(RefCell::new(OstreamIterator::new(
+            outf.as_pointer(),
+            Ptr::<i32>::from_string_literal(&[44 as i32, 32 as i32, 0 as i32]),
+        )));
         unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[50 as i32, 44 as i32, 32 as i32, 0 as i32,])
+                .with_c_str(
+                    |__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s
+                )
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

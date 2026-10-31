@@ -7,75 +7,75 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static powers_0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        1_(),
-        10_(),
-        100_(),
-        1000_(),
-        10000_(),
-        100000_(),
-        1000000_(),
-        10000000_(),
-        100000000_(),
-        1000000000_(),
-        10000000000_(),
-        100000000000_(),
-        1000000000000_(),
-        10000000000000_(),
-        100000000000000_(),
-        1000000000000000_(),
-        10000000000000000_(),
-        100000000000000000_(),
-        1000000000000000000_(),
-        10000000000000000000_(),
+    pub static powers_0: Value<Box<[u64]>> = Rc::new(RefCell::new(Box::new([
+        1_u64,
+        10_u64,
+        100_u64,
+        1000_u64,
+        10000_u64,
+        100000_u64,
+        1000000_u64,
+        10000000_u64,
+        100000000_u64,
+        1000000000_u64,
+        10000000000_u64,
+        100000000000_u64,
+        1000000000000_u64,
+        10000000000000_u64,
+        100000000000000_u64,
+        1000000000000000_u64,
+        10000000000000000_u64,
+        100000000000000000_u64,
+        1000000000000000000_u64,
+        10000000000000000000_u64,
     ])));
 );
-pub fn check_precision_1() -> () {
+pub fn check_precision_1() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_2() -> () {
+pub fn check_precision_2() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_3() -> () {
+pub fn check_precision_3() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_4() -> () {
+pub fn check_precision_4() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_5() -> () {
+pub fn check_precision_5() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_6() -> () {
+pub fn check_precision_6() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_7() -> () {
+pub fn check_precision_7() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_8() -> () {
+pub fn check_precision_8() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_9() -> () {
+pub fn check_precision_9() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_10() -> () {
+pub fn check_precision_10() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_11() -> () {
+pub fn check_precision_11() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_12() -> () {
+pub fn check_precision_12() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_13() -> () {
+pub fn check_precision_13() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_14() -> () {
+pub fn check_precision_14() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_15() -> () {
+pub fn check_precision_15() -> bool {
     return unimplemented!();
 }
-pub fn check_precision_16() -> () {
+pub fn check_precision_16() -> bool {
     return unimplemented!();
 }
 pub fn main() {
@@ -97,7 +97,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(
         true,
         "check_precision<std::chrono::hours,                               0>()"
@@ -162,7 +162,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "check_precision<microfortnights,                                  4>()"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = powers_0.with(|_| ());

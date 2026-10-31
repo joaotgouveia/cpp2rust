@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -30,7 +30,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let Sunday: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -42,23 +42,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "month_weekday{{std::chrono::May, weekday_indexed{{Sunday, 2}}}}.ok()"
     );;
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while (i <= 12_()) {
-        let mut j: () = 0_();
-        'loop_: while (j <= 6_()) {
+    assert!(!(unimplemented!()));
+    assert!((unimplemented!()));
+    let mut i: u32 = 1_u32;
+    'loop_: while (i <= 12_u32) {
+        let mut j: u32 = 0_u32;
+        'loop_: while (j <= 6_u32) {
             let mwd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (((j >= 1_u32) && (j <= 5_u32)) as i32)));
             j.prefix_inc();
         }
         i.prefix_inc();
     }
-    let mut i: () = 1_();
-    'loop_: while (i <= 10_()) {
-        unimplemented!();
+    let mut i: u32 = 1_u32;
+    'loop_: while (i <= 10_u32) {
+        assert!(!(unimplemented!()));
         i.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

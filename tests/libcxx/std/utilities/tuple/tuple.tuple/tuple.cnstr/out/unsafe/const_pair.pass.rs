@@ -22,21 +22,21 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut t0: () = unimplemented!();
+        let mut t0: (i64, libc::c_char) = ((2 as i64), ('a' as libc::c_char));
         let mut t1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2_())));
+        assert!((((*unimplemented!()) as i32) == ((('a' as libc::c_char) as i16) as i32)));
     }
     {
-        let p0: () = unimplemented!();
+        let p0: (i64, libc::c_char) = ((2 as i64), ('a' as libc::c_char));
         let t1: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(t1) == std::get<0>(p0)");;
         const _: () = assert!(true, "std::get<1>(t1) == std::get<1>(p0)");;
         const _: () = assert!(true, "std::get<0>(t1) == 2");;
         const _: () = assert!(true, "std::get<1>(t1) == short(\'a\')");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

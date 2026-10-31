@@ -9,14 +9,15 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct not_an_iterator {}
-pub static mut value_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    ((::std::mem::size_of::<has_value_type_std_iterator_traits_not_an_iterator___two>()) == (1_()))
+pub static mut value_0: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
+    ((::std::mem::size_of::<has_value_type_std_iterator_traits_not_an_iterator___two>())
+        == (1_usize))
 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 struct has_value_type_std_iterator_traits_not_an_iterator___two {
-    pub lx: (),
-    pub lxx: (),
+    pub lx: libc::c_char,
+    pub lxx: libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -36,9 +37,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "!(has_value_type<It>::value)");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const value_0);

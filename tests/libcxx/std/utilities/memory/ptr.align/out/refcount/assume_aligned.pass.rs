@@ -6,71 +6,71 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_char_ptr__char_ptr_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptr__int_ptr_ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_long_ptr__long_ptr_ {}
-pub type anon_3 = ();
+pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_double_ptr__double_ptr_ {}
-pub type anon_4 = ();
+pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_long_double_ptr__long_double_ptr_ {}
-pub type anon_5 = ();
+pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_S_ptr__S_ptr_ {}
-pub type anon_6 = ();
+pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_S4_ptr__S4_ptr_ {}
-pub type anon_7 = ();
+pub type anon_7 = u32;
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_S8_ptr__S8_ptr_ {}
-pub type anon_8 = ();
+pub type anon_8 = u32;
 pub const anon_8_value: anon_8 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_S16_ptr__S16_ptr_ {}
-pub type anon_9 = ();
+pub type anon_9 = u32;
 pub const anon_9_value: anon_9 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_S32_ptr__S32_ptr_ {}
-pub type anon_10 = ();
+pub type anon_10 = u32;
 pub const anon_10_value: anon_10 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_S64_ptr__S64_ptr_ {}
-pub type anon_11 = ();
+pub type anon_11 = u32;
 pub const anon_11_value: anon_11 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_S128_ptr__S128_ptr_ {}
-pub fn check_12(mut p: Ptr<()>) {
+pub fn check_12(mut p: Ptr<i8>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = ::std::mem::align_of::<()>();
+    let mut alignment: usize = ::std::mem::align_of::<i8>();
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
@@ -80,17 +80,17 @@ pub fn check_12(mut p: Ptr<()>) {
     {}
     {}
 }
-pub fn check_13(mut p: Ptr<()>) {
+pub fn check_13(mut p: Ptr<i32>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = ::std::mem::align_of::<()>();
+    let mut alignment: usize = ::std::mem::align_of::<i32>();
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
@@ -98,63 +98,63 @@ pub fn check_13(mut p: Ptr<()>) {
     {}
     {}
 }
-pub fn check_14(mut p: Ptr<()>) {
+pub fn check_14(mut p: Ptr<i64>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = ::std::mem::align_of::<()>();
+    let mut alignment: usize = ::std::mem::align_of::<i64>();
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
     {}
     {}
 }
-pub fn check_15(mut p: Ptr<()>) {
+pub fn check_15(mut p: Ptr<f64>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = ::std::mem::align_of::<()>();
+    let mut alignment: usize = ::std::mem::align_of::<f64>();
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
     {}
     {}
 }
-pub fn check_16(mut p: Ptr<()>) {
+pub fn check_16(mut p: Ptr<f64>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = ::std::mem::align_of::<()>();
+    let mut alignment: usize = ::std::mem::align_of::<f64>();
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
@@ -162,9 +162,9 @@ pub fn check_16(mut p: Ptr<()>) {
 }
 pub fn check_17(mut p: Ptr<S>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = 1usize;
+    let mut alignment: usize = 1usize;
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
@@ -176,15 +176,15 @@ pub fn check_17(mut p: Ptr<S>) {
 }
 pub fn check_18(mut p: Ptr<S4>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = 4usize;
+    let mut alignment: usize = 4usize;
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
@@ -194,18 +194,18 @@ pub fn check_18(mut p: Ptr<S4>) {
 }
 pub fn check_19(mut p: Ptr<S8>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = 8usize;
+    let mut alignment: usize = 8usize;
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
@@ -214,21 +214,21 @@ pub fn check_19(mut p: Ptr<S8>) {
 }
 pub fn check_20(mut p: Ptr<S16>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = 16usize;
+    let mut alignment: usize = 16usize;
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
@@ -236,80 +236,80 @@ pub fn check_20(mut p: Ptr<S16>) {
 }
 pub fn check_21(mut p: Ptr<S32>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = 32usize;
+    let mut alignment: usize = 32usize;
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
     {}
 }
 pub fn check_22(mut p: Ptr<S64>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = 64usize;
+    let mut alignment: usize = 64usize;
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {}
 }
 pub fn check_23(mut p: Ptr<S128>) {
     const _: () = assert!(true, "");;
-    let mut alignment: () = 128usize;
+    let mut alignment: usize = 128usize;
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
     {
-        unimplemented!();
+        assert!(({ (p).clone() } == { unimplemented!() }));
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -333,12 +333,12 @@ pub struct S64 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(128)]
 pub struct S128 {}
-pub fn tests_24() -> () {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ld: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn tests_24() -> bool {
+    let c: Value<i8> = Rc::new(RefCell::new(0_i8));
+    let i: Value<i32> = Rc::new(RefCell::new(0_i32));
+    let l: Value<i64> = Rc::new(RefCell::new(0_i64));
+    let d: Value<f64> = Rc::new(RefCell::new(0_f64));
+    let ld: Value<f64> = Rc::new(RefCell::new(0_f64));
     ({ check_12((c.as_pointer())) });
     ({ check_13((i.as_pointer())) });
     ({ check_14((l.as_pointer())) });
@@ -379,9 +379,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_24() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

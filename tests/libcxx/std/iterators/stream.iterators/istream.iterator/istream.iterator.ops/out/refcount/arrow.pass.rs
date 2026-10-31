@@ -10,9 +10,9 @@ use std::rc::{Rc, Weak};
 #[byte_size(16)]
 pub struct A {
     #[offset(0)]
-    pub d_: (),
+    pub d_: f64,
     #[offset(8)]
-    pub i_: (),
+    pub i_: i32,
 }
 pub fn operator_addr_0(_a0: Ptr<A>) {}
 pub fn operator_shr_1(is: Ptr<()>, a: Ptr<A>) -> Ptr<()> {
@@ -37,11 +37,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(({ unimplemented!().d_ } == 1.5_f64));
+    assert!(({ unimplemented!().i_ } == 23));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

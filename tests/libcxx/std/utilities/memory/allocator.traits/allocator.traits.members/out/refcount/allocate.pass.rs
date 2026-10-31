@@ -10,42 +10,40 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct A_int_ {
     #[offset(0)]
-    pub storage: (),
+    pub storage: i32,
 }
 impl A_int_ {
     pub fn new() -> Self {
-        Self {
-            storage: unimplemented!(),
-        }
+        Self { storage: 0_i32 }
     }
 }
 impl Default for A_int_ {
@@ -72,15 +70,15 @@ impl Default for A_Holder_NS_Incomplete__ptr_ {
         { A_Holder_NS_Incomplete__ptr_::new() }
     }
 }
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     {
         let a: Value<A_int_> = Rc::new(RefCell::new(A_int_::new()));
-        unimplemented!();
+        assert!((unimplemented!() == (field_ptr!(a.as_pointer(), storage))));
     }
     {
         let a: Value<A_Holder_NS_Incomplete__ptr_> =
             Rc::new(RefCell::new(A_Holder_NS_Incomplete__ptr_::new()));
-        unimplemented!();
+        assert!(({ unimplemented!() } == { (field_ptr!(a.as_pointer(), storage)) }));
     }
     return true;
 }
@@ -103,29 +101,29 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct Holder_NS_Incomplete_;
 pub trait A_Holder_NS_Incomplete__ptr_Impl {
-    fn allocate(&self, n: ()) -> Ptr<Ptr<Holder_NS_Incomplete_>>;
+    fn allocate(&self, n: usize) -> Ptr<Ptr<Holder_NS_Incomplete_>>;
 }
 impl A_Holder_NS_Incomplete__ptr_Impl for Ptr<A_Holder_NS_Incomplete__ptr_> {
-    fn allocate(&self, mut n: ()) -> Ptr<Ptr<Holder_NS_Incomplete_>> {
-        unimplemented!();
+    fn allocate(&self, mut n: usize) -> Ptr<Ptr<Holder_NS_Incomplete_>> {
+        assert!((n == 10_usize));
         return (field_ptr!((*self), storage));
     }
 }
 pub trait A_int_Impl {
-    fn allocate(&self, n: ()) -> Ptr<()>;
+    fn allocate(&self, n: usize) -> Ptr<i32>;
 }
 impl A_int_Impl for Ptr<A_int_> {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
-        unimplemented!();
+    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+        assert!((n == 10_usize));
         return (field_ptr!((*self), storage));
     }
 }

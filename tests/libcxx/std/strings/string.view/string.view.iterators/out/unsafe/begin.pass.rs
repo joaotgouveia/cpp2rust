@@ -12,16 +12,16 @@ pub unsafe fn test_0(mut s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*b) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*b) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb1) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*cb1) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb2) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*cb2) as *const ()) == (&(*unimplemented!()) as *const ())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((b) == (cb1)));
+    assert!(((b) == (cb2)));
+    assert!(((cb1) == (cb2)));
 }
 pub unsafe fn test_1(mut s: ()) {
     let cs: *const () = &s;
@@ -29,16 +29,16 @@ pub unsafe fn test_1(mut s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*b) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*b) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb1) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*cb1) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb2) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*cb2) as *const ()) == (&(*unimplemented!()) as *const ())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((b) == (cb1)));
+    assert!(((b) == (cb2)));
+    assert!(((cb1) == (cb2)));
 }
 pub unsafe fn test_2(mut s: ()) {
     let cs: *const () = &s;
@@ -46,16 +46,16 @@ pub unsafe fn test_2(mut s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*b) as u32) == ((*unimplemented!()) as u32)));
+        assert!(((&(*b) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb1) as u32) == ((*unimplemented!()) as u32)));
+        assert!(((&(*cb1) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb2) as u32) == ((*unimplemented!()) as u32)));
+        assert!(((&(*cb2) as *const ()) == (&(*unimplemented!()) as *const ())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((b) == (cb1)));
+    assert!(((b) == (cb2)));
+    assert!(((cb1) == (cb2)));
 }
 pub unsafe fn test_3(mut s: ()) {
     let cs: *const () = &s;
@@ -63,16 +63,16 @@ pub unsafe fn test_3(mut s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*b) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*b) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb1) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*cb1) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb2) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*cb2) as *const ()) == (&(*unimplemented!()) as *const ())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((b) == (cb1)));
+    assert!(((b) == (cb2)));
+    assert!(((cb1) == (cb2)));
 }
 pub unsafe fn test_4(mut s: ()) {
     let cs: *const () = &s;
@@ -80,16 +80,16 @@ pub unsafe fn test_4(mut s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*b) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*b) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb1) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*cb1) as *const ()) == (&(*unimplemented!()) as *const ())));
+        assert!((((*cb2) as i32) == ((*unimplemented!()) as i32)));
+        assert!(((&(*cb2) as *const ()) == (&(*unimplemented!()) as *const ())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((b) == (cb1)));
+    assert!(((b) == (cb2)));
+    assert!(((cb1) == (cb2)));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -106,7 +106,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0(unimplemented!()) });
     (unsafe { test_1(unimplemented!()) });
     (unsafe { test_2(unimplemented!()) });
@@ -135,6 +135,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             const _: () = assert!(true, "*wsv.cbegin() == wsv[0]");;
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

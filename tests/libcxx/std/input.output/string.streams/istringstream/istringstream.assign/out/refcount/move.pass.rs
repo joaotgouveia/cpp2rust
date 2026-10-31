@@ -26,63 +26,100 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let ss0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(!((unimplemented!()).is_null()));
+        assert!(unimplemented!());
+        assert!(
+            Ptr::<i8>::from_string_literal(b" 123 456").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
+        let mut i: i32 = 0;
         unimplemented!();
+        assert!((i == 123));
         unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((i == 456));
     }
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = unimplemented!();
+        let mut s: Vec<i8> = vec![i8::default()];
         unimplemented!();
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"Bbbbb")
+                .with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s)
+        );
         let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"Cccccccccc")
+                .with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s)
+        );
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"Dddddddddddddddddd")
+                .with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let ss0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(!((unimplemented!()).is_null()));
+        assert!(unimplemented!());
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                32 as i32, 49 as i32, 50 as i32, 51 as i32, 32 as i32, 52 as i32, 53 as i32,
+                54 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        );
+        let mut i: i32 = 0;
         unimplemented!();
+        assert!((i == 123));
         unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((i == 456));
     }
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut s: () = unimplemented!();
+        let mut s: Vec<i32> = vec![i32::default()];
         unimplemented!();
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                66 as i32, 98 as i32, 98 as i32, 98 as i32, 98 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s)
+        );
         let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                67 as i32, 99 as i32, 99 as i32, 99 as i32, 99 as i32, 99 as i32, 99 as i32,
+                99 as i32, 99 as i32, 99 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s)
+        );
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                68 as i32, 100 as i32, 100 as i32, 100 as i32, 100 as i32, 100 as i32, 100 as i32,
+                100 as i32, 100 as i32, 100 as i32, 100 as i32, 100 as i32, 100 as i32, 100 as i32,
+                100 as i32, 100 as i32, 100 as i32, 100 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

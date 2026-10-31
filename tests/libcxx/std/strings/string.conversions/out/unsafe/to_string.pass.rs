@@ -10,7 +10,7 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_int_ {}
 impl detail_parse_integer_impl_int_ {
-    pub unsafe fn operator_call_1_char(&self, str: *const ()) -> () {
+    pub unsafe fn operator_call_1_char(&self, str: *const Vec<libc::c_char>) -> i32 {
         return unimplemented!();
     }
 }
@@ -18,7 +18,7 @@ impl detail_parse_integer_impl_int_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_long_ {}
 impl detail_parse_integer_impl_long_ {
-    pub unsafe fn operator_call_1_char(&self, str: *const ()) -> () {
+    pub unsafe fn operator_call_1_char(&self, str: *const Vec<libc::c_char>) -> i64 {
         return unimplemented!();
     }
 }
@@ -26,7 +26,7 @@ impl detail_parse_integer_impl_long_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_long_long_ {}
 impl detail_parse_integer_impl_long_long_ {
-    pub unsafe fn operator_call_1_char(&self, str: *const ()) -> () {
+    pub unsafe fn operator_call_1_char(&self, str: *const Vec<libc::c_char>) -> i64 {
         return unimplemented!();
     }
 }
@@ -34,15 +34,15 @@ impl detail_parse_integer_impl_long_long_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_unsigned_int_ {}
 impl detail_parse_integer_impl_unsigned_int_ {
-    pub unsafe fn operator_call_1_char(&self, str: *const ()) -> () {
-        return unimplemented!();
+    pub unsafe fn operator_call_1_char(&self, str: *const Vec<libc::c_char>) -> u32 {
+        return (unimplemented!() as u32);
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_unsigned_long_ {}
 impl detail_parse_integer_impl_unsigned_long_ {
-    pub unsafe fn operator_call_1_char(&self, str: *const ()) -> () {
+    pub unsafe fn operator_call_1_char(&self, str: *const Vec<libc::c_char>) -> u64 {
         return unimplemented!();
     }
 }
@@ -50,11 +50,11 @@ impl detail_parse_integer_impl_unsigned_long_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_unsigned_long_long_ {}
 impl detail_parse_integer_impl_unsigned_long_long_ {
-    pub unsafe fn operator_call_1_char(&self, str: *const ()) -> () {
+    pub unsafe fn operator_call_1_char(&self, str: *const Vec<libc::c_char>) -> u64 {
         return unimplemented!();
     }
 }
-pub unsafe fn parse_integer_0(str: *const ()) -> () {
+pub unsafe fn parse_integer_0(str: *const Vec<libc::c_char>) -> i32 {
     return (unsafe {
         detail_parse_integer_impl_int_::operator_call_1_char(
             &<detail_parse_integer_impl_int_>::default(),
@@ -62,7 +62,7 @@ pub unsafe fn parse_integer_0(str: *const ()) -> () {
         )
     });
 }
-pub unsafe fn parse_integer_1(str: *const ()) -> () {
+pub unsafe fn parse_integer_1(str: *const Vec<libc::c_char>) -> i64 {
     return (unsafe {
         detail_parse_integer_impl_long_::operator_call_1_char(
             &<detail_parse_integer_impl_long_>::default(),
@@ -70,7 +70,7 @@ pub unsafe fn parse_integer_1(str: *const ()) -> () {
         )
     });
 }
-pub unsafe fn parse_integer_2(str: *const ()) -> () {
+pub unsafe fn parse_integer_2(str: *const Vec<libc::c_char>) -> i64 {
     return (unsafe {
         detail_parse_integer_impl_long_long_::operator_call_1_char(
             &<detail_parse_integer_impl_long_long_>::default(),
@@ -78,7 +78,7 @@ pub unsafe fn parse_integer_2(str: *const ()) -> () {
         )
     });
 }
-pub unsafe fn parse_integer_3(str: *const ()) -> () {
+pub unsafe fn parse_integer_3(str: *const Vec<libc::c_char>) -> u32 {
     return (unsafe {
         detail_parse_integer_impl_unsigned_int_::operator_call_1_char(
             &<detail_parse_integer_impl_unsigned_int_>::default(),
@@ -86,7 +86,7 @@ pub unsafe fn parse_integer_3(str: *const ()) -> () {
         )
     });
 }
-pub unsafe fn parse_integer_4(str: *const ()) -> () {
+pub unsafe fn parse_integer_4(str: *const Vec<libc::c_char>) -> u64 {
     return (unsafe {
         detail_parse_integer_impl_unsigned_long_::operator_call_1_char(
             &<detail_parse_integer_impl_unsigned_long_>::default(),
@@ -94,7 +94,7 @@ pub unsafe fn parse_integer_4(str: *const ()) -> () {
         )
     });
 }
-pub unsafe fn parse_integer_5(str: *const ()) -> () {
+pub unsafe fn parse_integer_5(str: *const Vec<libc::c_char>) -> u64 {
     return (unsafe {
         detail_parse_integer_impl_unsigned_long_long_::operator_call_1_char(
             &<detail_parse_integer_impl_unsigned_long_long_>::default(),
@@ -104,215 +104,341 @@ pub unsafe fn parse_integer_5(str: *const ()) -> () {
 }
 pub unsafe fn test_signed_6() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (1_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(c"0".as_ptr(), libcc2rs::c_str_len(c"0".as_ptr()) + 1)
+                .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (5_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345".as_ptr(),
+                libcc2rs::c_str_len(c"12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (6_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"-12345".as_ptr(),
+                libcc2rs::c_str_len(c"-12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        let mut t: () = (unsafe { parse_integer_0(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (((unimplemented!()) + (1)) as usize)));
+        let mut t: i32 = (unsafe { parse_integer_0(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (i32::MAX)));
     }
     {
-        let mut s: () = unimplemented!();
-        let mut t: () = (unsafe { parse_integer_0(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        let mut t: i32 = (unsafe { parse_integer_0(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (i32::MIN)));
     }
 }
 pub unsafe fn test_signed_7() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (1_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(c"0".as_ptr(), libcc2rs::c_str_len(c"0".as_ptr()) + 1)
+                .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (5_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345".as_ptr(),
+                libcc2rs::c_str_len(c"12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (6_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"-12345".as_ptr(),
+                libcc2rs::c_str_len(c"-12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        let mut t: () = (unsafe { parse_integer_1(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (((unimplemented!()) + (1)) as usize)));
+        let mut t: i64 = (unsafe { parse_integer_1(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (i64::MAX)));
     }
     {
-        let mut s: () = unimplemented!();
-        let mut t: () = (unsafe { parse_integer_1(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        let mut t: i64 = (unsafe { parse_integer_1(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (i64::MIN)));
     }
 }
 pub unsafe fn test_signed_8() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (1_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(c"0".as_ptr(), libcc2rs::c_str_len(c"0".as_ptr()) + 1)
+                .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (5_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345".as_ptr(),
+                libcc2rs::c_str_len(c"12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (6_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"-12345".as_ptr(),
+                libcc2rs::c_str_len(c"-12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        let mut t: () = (unsafe { parse_integer_2(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (((unimplemented!()) + (1)) as usize)));
+        let mut t: i64 = (unsafe { parse_integer_2(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (i64::MAX)));
     }
     {
-        let mut s: () = unimplemented!();
-        let mut t: () = (unsafe { parse_integer_2(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        let mut t: i64 = (unsafe { parse_integer_2(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (i64::MIN)));
     }
 }
 pub unsafe fn test_unsigned_9() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (1_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(c"0".as_ptr(), libcc2rs::c_str_len(c"0".as_ptr()) + 1)
+                .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (5_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345".as_ptr(),
+                libcc2rs::c_str_len(c"12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        let mut t: () = (unsafe { parse_integer_3(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (((unimplemented!()) + (1)) as usize)));
+        let mut t: u32 = (unsafe { parse_integer_3(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (u32::MAX)));
     }
 }
 pub unsafe fn test_unsigned_10() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (1_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(c"0".as_ptr(), libcc2rs::c_str_len(c"0".as_ptr()) + 1)
+                .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (5_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345".as_ptr(),
+                libcc2rs::c_str_len(c"12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        let mut t: () = (unsafe { parse_integer_4(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (((unimplemented!()) + (1)) as usize)));
+        let mut t: u64 = (unsafe { parse_integer_4(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (u64::MAX)));
     }
 }
 pub unsafe fn test_unsigned_11() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (1_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(c"0".as_ptr(), libcc2rs::c_str_len(c"0".as_ptr()) + 1)
+                .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (5_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345".as_ptr(),
+                libcc2rs::c_str_len(c"12345".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        let mut t: () = (unsafe { parse_integer_5(&s) });
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (((unimplemented!()) + (1)) as usize)));
+        let mut t: u64 = (unsafe { parse_integer_5(&*(&raw const s).cast::<Vec<libc::c_char>>()) });
+        assert!(((t) == (unimplemented!())));
     }
 }
 pub unsafe fn test_float_12() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (8_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"0.000000".as_ptr(),
+                libcc2rs::c_str_len(c"0.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (12_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345.000000".as_ptr(),
+                libcc2rs::c_str_len(c"12345.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (13_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"-12345.000000".as_ptr(),
+                libcc2rs::c_str_len(c"-12345.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
 }
 pub unsafe fn test_float_13() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (8_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"0.000000".as_ptr(),
+                libcc2rs::c_str_len(c"0.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (12_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345.000000".as_ptr(),
+                libcc2rs::c_str_len(c"12345.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (13_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"-12345.000000".as_ptr(),
+                libcc2rs::c_str_len(c"-12345.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
 }
 pub unsafe fn test_float_14() {
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (8_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"0.000000".as_ptr(),
+                libcc2rs::c_str_len(c"0.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (12_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"12345.000000".as_ptr(),
+                libcc2rs::c_str_len(c"12345.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s: Vec<libc::c_char> = unimplemented!();
+        assert!(((s.len() - 1) == (13_usize)));
+        assert!((((*(&mut s).as_mut_ptr().add((s.len() - 1) as usize)) as i32) == (0)));
+        assert!(
+            s == std::slice::from_raw_parts(
+                c"-12345.000000".as_ptr(),
+                libcc2rs::c_str_len(c"-12345.000000".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
 }
 pub fn main() {
@@ -330,7 +456,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_signed_6() });
     (unsafe { test_signed_7() });
     (unsafe { test_signed_8() });
@@ -340,6 +466,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_float_12() });
     (unsafe { test_float_13() });
     (unsafe { test_float_14() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

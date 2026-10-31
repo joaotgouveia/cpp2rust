@@ -7,65 +7,65 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 pub fn test_1(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.borrow_mut())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
 }
 pub fn test_2(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.borrow_mut())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
 }
 pub fn test_3(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.borrow_mut())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
 }
 pub fn test_4(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.borrow_mut())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
 }
 pub fn test_5(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.borrow_mut())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
 }
 pub fn test_6(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.borrow_mut())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
 }
 pub fn test_const_7(f: Ptr<()>) {
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.upgrade().deref())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 2)));
 }
 pub fn test_const_8(f: Ptr<()>) {
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.upgrade().deref())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 2)));
 }
 pub fn test_const_9(f: Ptr<()>) {
-    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     ({ (*f.upgrade().deref())() });
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 2)));
 }
 pub fn f_10() {
     (*count_0.with(Value::clone).borrow_mut()).prefix_inc();
 }
-pub fn g_11() -> () {
+pub fn g_11() -> i32 {
     (*count_0.with(Value::clone).borrow_mut()).prefix_inc();
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -92,7 +92,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1(unimplemented!()) });
     ({ test_1(unimplemented!()) });
     ({ test_2(unimplemented!()) });
@@ -114,20 +114,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_const_9(_f.as_pointer())
     });
-    return 0_();
+    return 0;
 }
 pub trait A_int_0Impl {
-    fn operator_call_1(&self) -> ();
-    fn operator_call_2(&self) -> ();
+    fn operator_call_1(&self) -> i32;
+    fn operator_call_2(&self) -> i32;
 }
 impl A_int_0Impl for Ptr<A_int_0> {
-    fn operator_call_1(&self) -> () {
+    fn operator_call_1(&self) -> i32 {
         (*count_0.with(Value::clone).borrow_mut()).prefix_inc();
-        return 4_();
+        return 4;
     }
-    fn operator_call_2(&self) -> () {
-        count_0.with(|rc| *rc.borrow_mut() += 2_());
-        return 5_();
+    fn operator_call_2(&self) -> i32 {
+        count_0.with(|rc| *rc.borrow_mut() += 2);
+        return 5;
     }
 }
 pub trait A_void_0Impl {
@@ -139,7 +139,7 @@ impl A_void_0Impl for Ptr<A_void_0> {
         (*count_0.with(Value::clone).borrow_mut()).prefix_inc();
     }
     fn operator_call_2(&self) {
-        count_0.with(|rc| *rc.borrow_mut() += 2_());
+        count_0.with(|rc| *rc.borrow_mut() += 2);
     }
 }
 pub fn __cpp2rust_init_globals() {

@@ -6,22 +6,22 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
-        let f: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(
-            |mut i: ()| -> () {
+        let f: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(FnPtr::<fn(i32) -> i32>::new(
+            |mut i: i32| -> i32 {
                 {
-                    return (i + 3_());
+                    return (i + 3);
                 }
             },
         )));
-        unimplemented!();
+        assert!((unimplemented!() == 7));
     }
     {
-        let f: Value<FnPtr<fn(()) -> Ptr<()>>> = Rc::new(RefCell::new(
-            FnPtr::<fn(()) -> Ptr<()>>::new(|mut _a0: ()| -> Ptr<()> {
+        let f: Value<FnPtr<fn(i32) -> Ptr<i8>>> = Rc::new(RefCell::new(
+            FnPtr::<fn(i32) -> Ptr<i8>>::new(|mut _a0: i32| -> Ptr<i8> {
                 {
-                    return Ptr::<()>::null();
+                    return Ptr::<i8>::null();
                 }
             }),
         ));
@@ -34,17 +34,17 @@ pub fn test_0() -> () {
         const _: () = assert!(!(false), "!can_invoke_r<void,  decltype(f), void*>");;
     }
     {
-        let f: Value<FnPtr<fn(()) -> Ptr<()>>> = Rc::new(RefCell::new(
-            FnPtr::<fn(()) -> Ptr<()>>::new(|mut _a0: ()| -> Ptr<()> {
+        let f: Value<FnPtr<fn(i32) -> Ptr<i8>>> = Rc::new(RefCell::new(
+            FnPtr::<fn(i32) -> Ptr<i8>>::new(|mut _a0: i32| -> Ptr<i8> {
                 {
-                    return Ptr::<()>::null();
+                    return Ptr::<i8>::null();
                 }
             }),
         ));
-        let g: Value<FnPtr<fn(()) -> Ptr<()>>> = Rc::new(RefCell::new(
-            FnPtr::<fn(()) -> Ptr<()>>::new(|mut _a0: ()| -> Ptr<()> {
+        let g: Value<FnPtr<fn(i32) -> Ptr<i8>>> = Rc::new(RefCell::new(
+            FnPtr::<fn(i32) -> Ptr<i8>>::new(|mut _a0: i32| -> Ptr<i8> {
                 {
-                    return Ptr::<()>::null();
+                    return Ptr::<i8>::null();
                 }
             }),
         ));
@@ -64,36 +64,36 @@ pub fn test_0() -> () {
             Generic,
             {},
             || {
-                let was_called: Value<()> = Rc::new(RefCell::new(false));
-                let f: Value<FnPtr<fn(()) -> Ptr<()>>> = Rc::new(RefCell::new(lambda!(
+                let was_called: Value<bool> = Rc::new(RefCell::new(false));
+                let f: Value<FnPtr<fn(i32) -> Ptr<i8>>> = Rc::new(RefCell::new(lambda!(
                     {
-                        let was_called: Ptr<()> = was_called.as_pointer();
+                        let was_called: Ptr<bool> = was_called.as_pointer();
                     },
-                    |mut _a0: ()| -> Ptr<()> {
+                    |mut _a0: i32| -> Ptr<i8> {
                         was_called.write(true);
-                        return Ptr::<()>::null();
+                        return Ptr::<i8>::null();
                     }
                 )));
                 unimplemented!();
-                unimplemented!();
+                assert!((*was_called.borrow()));
                 const _: () = assert!(
                     true,
                     "std::is_void_v<decltype(std::invoke_r<CV_Void>(f, 3))>"
                 );;
             },
             || {
-                let was_called: Value<()> = Rc::new(RefCell::new(false));
-                let f: Value<FnPtr<fn(()) -> Ptr<()>>> = Rc::new(RefCell::new(lambda!(
+                let was_called: Value<bool> = Rc::new(RefCell::new(false));
+                let f: Value<FnPtr<fn(i32) -> Ptr<i8>>> = Rc::new(RefCell::new(lambda!(
                     {
-                        let was_called: Ptr<()> = was_called.as_pointer();
+                        let was_called: Ptr<bool> = was_called.as_pointer();
                     },
-                    |mut _a0: ()| -> Ptr<()> {
+                    |mut _a0: i32| -> Ptr<i8> {
                         was_called.write(true);
-                        return Ptr::<()>::null();
+                        return Ptr::<i8>::null();
                     }
                 )));
                 unimplemented!();
-                unimplemented!();
+                assert!((*was_called.borrow()));
                 const _: () = assert!(
                     true,
                     "std::is_void_v<decltype(std::invoke_r<CV_Void>(f, 3))>"
@@ -105,41 +105,41 @@ pub fn test_0() -> () {
     }
     {
         {
-            let was_called: Value<()> = Rc::new(RefCell::new(false));
+            let was_called: Value<bool> = Rc::new(RefCell::new(false));
             let f: Value<FnPtr<fn(NonCopyable_2)>> = Rc::new(RefCell::new(lambda!(
                 {
-                    let was_called: Ptr<()> = was_called.as_pointer();
+                    let was_called: Ptr<bool> = was_called.as_pointer();
                 },
                 |mut _a0: NonCopyable_2| {
                     was_called.write(true);
                 }
             )));
             unimplemented!();
-            unimplemented!();
+            assert!((*was_called.borrow()));
         }
         {
-            let was_called: Value<()> = Rc::new(RefCell::new(false));
-            let f: Value<FnPtr<fn(NonCopyable_2) -> ()>> = Rc::new(RefCell::new(lambda!(
+            let was_called: Value<bool> = Rc::new(RefCell::new(false));
+            let f: Value<FnPtr<fn(NonCopyable_2) -> i32>> = Rc::new(RefCell::new(lambda!(
                 {
-                    let was_called: Ptr<()> = was_called.as_pointer();
+                    let was_called: Ptr<bool> = was_called.as_pointer();
                 },
-                |mut _a0: NonCopyable_2| -> () {
+                |mut _a0: NonCopyable_2| -> i32 {
                     was_called.write(true);
-                    return 0_();
+                    return 0;
                 }
             )));
             &(unimplemented!());
-            unimplemented!();
+            assert!((*was_called.borrow()));
         }
         {
-            let was_called: Value<()> = Rc::new(RefCell::new(false));
+            let was_called: Value<bool> = Rc::new(RefCell::new(false));
             unimplemented!();
-            unimplemented!();
+            assert!((*was_called.borrow()));
         }
         {
-            let was_called: Value<()> = Rc::new(RefCell::new(false));
+            let was_called: Value<bool> = Rc::new(RefCell::new(false));
             &(unimplemented!());
-            unimplemented!();
+            assert!((*was_called.borrow()));
         }
     }
     {
@@ -151,16 +151,17 @@ pub fn test_0() -> () {
                     }
                 },
             )));
-        let mut result: () = unimplemented!();
-        unimplemented!();
+        let mut result: i32 = unimplemented!();
+        assert!((result == 42));
     }
     return true;
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Ptr< i8  >  , new, value)]
 #[byte_size(1)]
 pub struct ConversionNotNoexcept_1 {}
 impl ConversionNotNoexcept_1 {
-    pub fn new(mut _a0: Ptr<()>) -> Self {
+    pub fn new(mut _a0: Ptr<i8>) -> Self {
         Self {}
     }
 }
@@ -177,16 +178,17 @@ impl NonCopyable_2 {
 pub struct MoveOnlyVoidFunction_3 {
     #[offset(0)]
     #[byte_size(8)]
-    pub was_called: Ptr<()>,
+    pub was_called: Ptr<bool>,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct MoveOnlyIntFunction_4 {
     #[offset(0)]
     #[byte_size(8)]
-    pub was_called: Ptr<()>,
+    pub was_called: Ptr<bool>,
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct Convertible_5 {}
 pub fn main() {
@@ -208,26 +210,26 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait Convertible_5Impl {
-    fn to_(&self) -> ();
+    fn to_i32(&self) -> i32;
 }
 impl Convertible_5Impl for Ptr<Convertible_5> {
-    fn to_(&self) -> () {
-        return 42_();
+    fn to_i32(&self) -> i32 {
+        return 42;
     }
 }
 pub trait MoveOnlyIntFunction_4Impl {
-    fn operator_call(&self) -> ();
+    fn operator_call(&self) -> i32;
 }
 impl MoveOnlyIntFunction_4Impl for Ptr<MoveOnlyIntFunction_4> {
-    fn operator_call(&self) -> () {
+    fn operator_call(&self) -> i32 {
         (*self).with(|__s| __s.was_called.clone()).write(true);
-        return 0_();
+        return 0;
     }
 }
 pub trait MoveOnlyVoidFunction_3Impl {

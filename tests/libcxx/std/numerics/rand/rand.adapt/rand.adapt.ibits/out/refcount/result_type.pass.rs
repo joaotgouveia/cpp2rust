@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct rand1_unsigned_long__0__10_ {
     #[offset(0)]
-    x_: (),
+    x_: u64,
 }
 impl rand1_unsigned_long__0__10_ {}
 pub fn test1_0() {
@@ -44,13 +44,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_0() });
     ({ test2_1() });
-    return 0_();
+    return 0;
 }
 pub trait rand1_unsigned_long__0__10_Impl {
-    fn operator_call(&self) -> () {
+    fn operator_call(&self) -> u64 {
         unimplemented!()
     }
 }

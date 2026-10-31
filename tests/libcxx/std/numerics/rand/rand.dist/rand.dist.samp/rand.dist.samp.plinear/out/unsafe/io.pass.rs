@@ -22,20 +22,20 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut b: [(); 4] = [10_(), 14_(), 16_(), 17_()];
-        let mut p: [(); 4] = [25_(), 62.5_f64, 12.5_f64, 25_()];
-        let Np: () = (::std::mem::size_of::<[(); 4]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut b: [f64; 4] = [10_f64, 14_f64, 16_f64, 17_f64];
+        let mut p: [f64; 4] = [25_f64, 62.5_f64, 12.5_f64, 25_f64];
+        let Np: usize = (::std::mem::size_of::<[f64; 4]>() as usize)
+            .wrapping_div((::std::mem::size_of::<f64>() as usize));
         let mut d1: () = unimplemented!();
         let mut os: () = unimplemented!();
         unimplemented!();
         let mut is: () = unimplemented!();
         let mut d2: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

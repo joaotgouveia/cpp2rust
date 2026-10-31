@@ -26,17 +26,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_base_of_v<std::locale::facet, F>");;
     const _: () = assert!(true, "std::is_base_of_v<std::codecvt_base, F>");;
     const _: () = assert!(true, "std::is_same_v<F::intern_type, char32_t>");;
     const _: () = assert!(true, "std::is_same_v<F::extern_type, char8_t>");;
     const _: () = assert!(true, "std::is_same_v<F::state_type, std::mbstate_t>");;
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(unimplemented!());
     let f: Ptr<()> = unimplemented!();
     &(unimplemented!());
     &(*f.upgrade().deref());
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

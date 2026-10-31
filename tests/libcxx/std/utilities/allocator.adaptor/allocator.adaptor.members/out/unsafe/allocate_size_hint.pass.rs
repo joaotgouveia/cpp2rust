@@ -6,22 +6,22 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub static mut allocate_called_2: std::cell::LazyCell<()> =
+pub static mut allocate_called_2: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct A1_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A1_int_ {
-    pub unsafe fn new(mut id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut id: Option<i32>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| unsafe { 0 });
         let mut this = Self { id_: id };
         this
     }
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
+    pub unsafe fn allocate(&mut self, mut n: usize) -> *mut i32 {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_2)) = true;
-        return (n as *mut ());
+        return (n as *mut i32);
     }
 }
 impl Default for A1_int_ {
@@ -29,22 +29,22 @@ impl Default for A1_int_ {
         unsafe { A1_int_::new(None) }
     }
 }
-pub static mut allocate_called_6: std::cell::LazyCell<()> =
+pub static mut allocate_called_6: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct A2_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A2_int_ {
-    pub unsafe fn new(mut id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut id: Option<i32>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| unsafe { 0 });
         let mut this = Self { id_: id };
         this
     }
-    pub unsafe fn allocate(&mut self, mut _a0: (), mut hint: ()) -> *mut () {
+    pub unsafe fn allocate(&mut self, mut _a0: usize, mut hint: *const ::libc::c_void) -> *mut i32 {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_6)) = true;
-        return (hint as *mut ());
+        return (hint as *mut i32);
     }
 }
 impl Default for A2_int_ {
@@ -55,11 +55,11 @@ impl Default for A2_int_ {
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct A3_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A3_int_ {
-    pub unsafe fn new(mut id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut id: Option<i32>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| unsafe { 0 });
         let mut this = Self { id_: id };
         this
     }
@@ -84,44 +84,62 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut a: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_2)) = false;
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: () = unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_2)) = false;
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (10 as *mut i32)));
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_2)) as i32)
+                == (true as i32))
+        );
     }
     {
         let mut a: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_2)) = false;
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (10 as *mut i32)));
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_2)) as i32)
+                == (true as i32))
+        );
+    }
+    {
+        let mut a: () = unimplemented!();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_2)) = false;
+        assert!(((unimplemented!()) == (10 as *mut i32)));
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_2)) as i32)
+                == (true as i32))
+        );
     }
     {
         let mut a: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_6)) = false;
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()).is_null());
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_6)) as i32)
+                == (true as i32))
+        );
     }
     {
         let mut a: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_6)) = false;
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (10 as *mut i32)));
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_6)) as i32)
+                == (true as i32))
+        );
     }
     {
         let mut a: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_6)) = false;
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (20 as *mut i32)));
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut allocate_called_6)) as i32)
+                == (true as i32))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const allocate_called_2);

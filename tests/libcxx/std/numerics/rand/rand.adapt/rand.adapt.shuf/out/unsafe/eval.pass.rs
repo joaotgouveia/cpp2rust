@@ -9,29 +9,29 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct rand1_unsigned_long_long__0__18446744073709551615_ {
-    x_: (),
+    x_: u64,
 }
 impl rand1_unsigned_long_long__0__18446744073709551615_ {
-    pub unsafe fn min() -> () {
-        return 0_();
+    pub unsafe fn min() -> u64 {
+        return 0_u64;
     }
-    pub unsafe fn max() -> () {
-        return 18446744073709551615_();
+    pub unsafe fn max() -> u64 {
+        return 18446744073709551615_u64;
     }
-    pub unsafe fn new(mut sd: Option<()>) -> Self {
-        let mut sd: () = sd.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut sd: Option<u64>) -> Self {
+        let mut sd: u64 = sd.unwrap_or_else(|| unsafe { 0_u64 });
         let mut this = Self { x_: sd };
-        if ((this.x_) > (18446744073709551615_())) {
-            this.x_ = 18446744073709551615_();
+        if ((this.x_) > (18446744073709551615_u64)) {
+            this.x_ = 18446744073709551615_u64;
         }
         this
     }
-    pub unsafe fn operator_call(&mut self) -> () {
-        let mut r: () = self.x_;
-        if ((self.x_) < (18446744073709551615_())) {
+    pub unsafe fn operator_call(&mut self) -> u64 {
+        let mut r: u64 = self.x_;
+        if ((self.x_) < (18446744073709551615_u64)) {
             self.x_.prefix_inc();
         } else {
-            self.x_ = 0_();
+            self.x_ = 0_u64;
         }
         return r;
     }
@@ -43,17 +43,17 @@ impl Default for rand1_unsigned_long_long__0__18446744073709551615_ {
 }
 pub unsafe fn test1_0() {
     let mut e: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (152607844_())));
 }
 pub unsafe fn test2_1() {
     let mut e: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (501_())));
 }
 pub unsafe fn test3_2() {
     let mut e: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (500_())));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -70,10 +70,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test1_0() });
     (unsafe { test2_1() });
     (unsafe { test3_2() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

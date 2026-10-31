@@ -95,7 +95,7 @@ impl Default for Union {
 #[byte_size(1)]
 pub struct bit_zero {
     #[offset(0)]
-    pub anon_16: (),
+    pub anon_16: i32,
 }
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -128,7 +128,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_is_copy_constructible_0() });
     ({ test_is_copy_constructible_1() });
     ({ test_is_copy_constructible_2() });
@@ -145,7 +145,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_is_not_copy_constructible_13() });
     ({ test_is_not_copy_constructible_14() });
     ({ test_is_not_copy_constructible_15() });
-    return 0_();
+    return 0;
 }
 pub trait CImpl {
     fn copy_assign(&self, _a0: Ptr<C>) {

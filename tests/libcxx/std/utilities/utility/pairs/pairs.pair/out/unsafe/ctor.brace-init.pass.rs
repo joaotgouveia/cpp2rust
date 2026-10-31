@@ -9,10 +9,10 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, Default)]
 pub struct ExplicitT {
-    pub value: (),
+    pub value: i32,
 }
 impl ExplicitT {
-    pub unsafe fn new(mut x: ()) -> Self {
+    pub unsafe fn new(mut x: i32) -> Self {
         let mut this = Self { value: x };
         this
     }
@@ -31,12 +31,13 @@ impl Clone for ExplicitT {
     }
 }
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, CopyAssignUnsafe, Default)]
+#[derive(VaArg, FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct ImplicitT {
-    pub value: (),
+    pub value: i32,
 }
 impl ImplicitT {
-    pub unsafe fn new(mut x: ()) -> Self {
+    pub unsafe fn new(mut x: i32) -> Self {
         let mut this = Self { value: x };
         this
     }
@@ -54,16 +55,16 @@ impl Clone for ImplicitT {
         unsafe { ImplicitT::copy_from(self as *const ImplicitT) }
     }
 }
-pub unsafe fn can_construct_with_brace_init_0(mut _a0: ()) -> () {
+pub unsafe fn can_construct_with_brace_init_0(mut _a0: i32) -> bool {
     return true;
 }
-pub unsafe fn can_construct_with_brace_init_1(__args: Box<[VaArg]>) -> () {
+pub unsafe fn can_construct_with_brace_init_1(__args: Box<[VaArg]>) -> bool {
     return false;
 }
-pub unsafe fn can_construct_with_ctad_brace_init_2(__args: Box<[VaArg]>) -> () {
+pub unsafe fn can_construct_with_ctad_brace_init_2(__args: Box<[VaArg]>) -> bool {
     return false;
 }
-pub unsafe fn can_construct_with_ctad_brace_init_3(__args: Box<[VaArg]>) -> () {
+pub unsafe fn can_construct_with_ctad_brace_init_3(__args: Box<[VaArg]>) -> bool {
     return false;
 }
 #[repr(C)]
@@ -76,39 +77,41 @@ impl NoBraceInit {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ExplicitBraceInit {}
-pub unsafe fn explicit_vs_implicit_brace_init_4(mut _a0: ()) -> () {
-    return 1_();
+pub unsafe fn explicit_vs_implicit_brace_init_4(
+    mut _a0: (ExplicitBraceInit, ExplicitBraceInit),
+) -> i32 {
+    return 1;
 }
-pub unsafe fn explicit_vs_implicit_brace_init_5(mut _a0: ()) -> () {
-    return 2_();
+pub unsafe fn explicit_vs_implicit_brace_init_5(mut _a0: (BraceInit, BraceInit)) -> i32 {
+    return 2;
 }
-pub unsafe fn test_6() -> () {
+pub unsafe fn test_6() -> bool {
     {
-        let mut p1: () = unimplemented!();
-        unimplemented!();
-        let mut p2: () = unimplemented!();
-        unimplemented!();
+        let mut p1: (ExplicitT, BraceInit) = (ExplicitT::new({ 42 }), <BraceInit>::default());
+        assert!(((p1.0.value) == (42)));
+        let mut p2: (ExplicitT, BraceInit) = (ExplicitT::new({ 42 }), <BraceInit>::default());
+        assert!(((p2.0.value) == (42)));
     }
     {
-        let mut p1: () = unimplemented!();
-        unimplemented!();
-        let mut p2: () = unimplemented!();
-        unimplemented!();
+        let mut p1: (BraceInit, ExplicitT) = (<BraceInit>::default(), ExplicitT::new({ 42 }));
+        assert!(((p1.1.value) == (42)));
+        let mut p2: (BraceInit, ExplicitT) = (<BraceInit>::default(), ExplicitT::new({ 42 }));
+        assert!(((p2.1.value) == (42)));
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: (BraceInit, BraceInit) = (<BraceInit>::default(), <BraceInit>::default());
         &(p);
     }
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
+        let mut p: (ImplicitT, BraceInit) = (ImplicitT::new({ 42 }), <BraceInit>::default());
+        assert!(((p.0.value) == (42)));
     }
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
+        let mut p: (BraceInit, ImplicitT) = (<BraceInit>::default(), ImplicitT::new({ 42 }));
+        assert!(((p.1.value) == (42)));
     }
     {
-        let mut p: () = unimplemented!();
+        let mut p: (BraceInit, BraceInit) = (<BraceInit>::default(), <BraceInit>::default());
         &(p);
     }
     {
@@ -118,7 +121,11 @@ pub unsafe fn test_6() -> () {
         const _: () = assert!(true, "!can_construct_with_ctad_brace_init<int>(0)");;
     }
     {
-        unimplemented!();
+        assert!(
+            ((unsafe {
+                explicit_vs_implicit_brace_init_5((<BraceInit>::default(), <BraceInit>::default()))
+            }) == (2))
+        );
     }
     return true;
 }
@@ -137,9 +144,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_6() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -22,12 +22,18 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut c: () = unimplemented!();
-        let mut t: () = unimplemented!();
-        unimplemented!();
+        let mut c: Vec<Option<Box<f64>>> = Vec::from([Some(Box::from_raw(
+            (Box::leak(Box::new(3.5_f64)) as *mut f64),
+        ))]);
+        let mut t: Option<Box<f64>> = (*unimplemented!()).take();
+        assert!(
+            ((*t.as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const f64 as *mut f64))
+                == (3.5_f64))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

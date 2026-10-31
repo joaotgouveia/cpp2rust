@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(128)]
 pub struct __gnu_test_func_callback {
     #[offset(0)]
-    _M_size: (),
+    _M_size: i32,
     #[offset(8)]
     #[byte_size(120)]
     _M_tests: Box<[FnPtr<fn()>]>,
@@ -18,7 +18,7 @@ pub struct __gnu_test_func_callback {
 impl __gnu_test_func_callback {
     pub fn new() -> Self {
         Self {
-            _M_size: 0_(),
+            _M_size: 0,
             _M_tests: (0..15)
                 .map(|_| FnPtr::<fn()>::null())
                 .collect::<Box<[FnPtr<fn()>]>>(),
@@ -61,7 +61,7 @@ impl Default for __gnu_test_object_counter {
 #[byte_size(1)]
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
-    pub fn count() -> () {
+    pub fn count() -> u32 {
         return count__1.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
@@ -71,10 +71,10 @@ impl __gnu_test_copy_constructor {
         }
     }
     pub fn reset() {
-        count__1.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__2.with(|rc| *rc.borrow_mut() = 0_());
+        count__1.with(|rc| *rc.borrow_mut() = 0_u32);
+        throw_on__2.with(|rc| *rc.borrow_mut() = 0_u32);
     }
-    pub fn throw_on(mut count: ()) {
+    pub fn throw_on(mut count: u32) {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
@@ -82,7 +82,7 @@ impl __gnu_test_copy_constructor {
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
-    pub fn count() -> () {
+    pub fn count() -> u32 {
         return count__3.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
@@ -92,10 +92,10 @@ impl __gnu_test_assignment_operator {
         }
     }
     pub fn reset() {
-        count__3.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__4.with(|rc| *rc.borrow_mut() = 0_());
+        count__3.with(|rc| *rc.borrow_mut() = 0_u32);
+        throw_on__4.with(|rc| *rc.borrow_mut() = 0_u32);
     }
-    pub fn throw_on(mut count: ()) {
+    pub fn throw_on(mut count: u32) {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
@@ -103,29 +103,29 @@ impl __gnu_test_assignment_operator {
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
-    pub fn count() -> () {
+    pub fn count() -> u32 {
         return _M_count_5.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
         (*_M_count_5.with(Value::clone).borrow_mut()).postfix_inc();
     }
     pub fn reset() {
-        _M_count_5.with(|rc| *rc.borrow_mut() = 0_());
+        _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
 #[byte_size(8)]
 pub struct __gnu_test_copy_tracker {
     #[offset(0)]
-    id_: (),
+    id_: i32,
     #[offset(4)]
-    throw_on_copy_: (),
+    throw_on_copy_: bool,
 }
 impl __gnu_test_copy_tracker {
-    pub fn new(id: Option<()>, throw_on_copy: Option<()>) -> Self {
-        let mut id: () =
+    pub fn new(id: Option<i32>, throw_on_copy: Option<bool>) -> Self {
+        let mut id: i32 =
             id.unwrap_or_else(|| (*next_id__6.with(Value::clone).borrow_mut()).postfix_dec());
-        let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| false);
+        let mut throw_on_copy: bool = throw_on_copy.unwrap_or_else(|| false);
         Self {
             id_: id,
             throw_on_copy_: throw_on_copy,
@@ -140,7 +140,7 @@ impl __gnu_test_copy_tracker {
         if this.with(|__s| __s.throw_on_copy_) {
             ({
                 __gnu_test_copy_constructor::throw_on(
-                    ({ __gnu_test_copy_constructor::count() }).wrapping_add(1_()),
+                    ({ __gnu_test_copy_constructor::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -178,12 +178,12 @@ impl Default for __gnu_test_copy_tracker {
         { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> bool {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } == {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
 }
-pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> bool {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } < {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
@@ -192,7 +192,7 @@ pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy
 #[byte_size(8)]
 pub struct __gnu_test_semaphore {
     #[offset(0)]
-    sem_set_: (),
+    sem_set_: i32,
     #[offset(4)]
     pid_: (),
 }
@@ -201,15 +201,15 @@ impl __gnu_test_semaphore {}
 #[byte_size(40)]
 pub struct testcase_ellint_3_double_ {
     #[offset(0)]
-    pub f0: (),
+    pub f0: f64,
     #[offset(8)]
-    pub k: (),
+    pub k: f64,
     #[offset(16)]
-    pub nu: (),
+    pub nu: f64,
     #[offset(24)]
-    pub phi: (),
+    pub phi: f64,
     #[offset(32)]
-    pub f: (),
+    pub f: f64,
 }
 thread_local!(
     pub static data001_9: Value<Box<[testcase_ellint_3_double_]>> =
@@ -287,7 +287,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler001_10: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler001_10: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data002_11: Value<Box<[testcase_ellint_3_double_]>> =
@@ -365,7 +365,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler002_12: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler002_12: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data003_13: Value<Box<[testcase_ellint_3_double_]>> =
@@ -443,7 +443,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler003_14: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler003_14: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data004_15: Value<Box<[testcase_ellint_3_double_]>> =
@@ -521,7 +521,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler004_16: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler004_16: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data005_17: Value<Box<[testcase_ellint_3_double_]>> =
@@ -599,7 +599,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler005_18: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler005_18: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data006_19: Value<Box<[testcase_ellint_3_double_]>> =
@@ -677,7 +677,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler006_20: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler006_20: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data007_21: Value<Box<[testcase_ellint_3_double_]>> =
@@ -755,7 +755,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler007_22: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler007_22: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data008_23: Value<Box<[testcase_ellint_3_double_]>> =
@@ -833,7 +833,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler008_24: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler008_24: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data009_25: Value<Box<[testcase_ellint_3_double_]>> =
@@ -911,7 +911,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler009_26: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler009_26: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data010_27: Value<Box<[testcase_ellint_3_double_]>> =
@@ -989,7 +989,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler010_28: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler010_28: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data011_29: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1067,7 +1067,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler011_30: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler011_30: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data012_31: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1145,7 +1145,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler012_32: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler012_32: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data013_33: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1223,7 +1223,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler013_34: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler013_34: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data014_35: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1301,7 +1301,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler014_36: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler014_36: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data015_37: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1379,7 +1379,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler015_38: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler015_38: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data016_39: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1457,7 +1457,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler016_40: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler016_40: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data017_41: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1535,7 +1535,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler017_42: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler017_42: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data018_43: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1613,7 +1613,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler018_44: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler018_44: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data019_45: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1691,7 +1691,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler019_46: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler019_46: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data020_47: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1769,7 +1769,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler020_48: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler020_48: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data021_49: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1847,7 +1847,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler021_50: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler021_50: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data022_51: Value<Box<[testcase_ellint_3_double_]>> =
@@ -1925,7 +1925,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler022_52: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler022_52: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data023_53: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2003,7 +2003,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler023_54: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler023_54: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data024_55: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2081,7 +2081,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler024_56: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler024_56: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data025_57: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2159,7 +2159,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler025_58: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler025_58: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data026_59: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2237,7 +2237,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler026_60: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler026_60: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data027_61: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2315,7 +2315,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler027_62: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler027_62: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data028_63: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2393,7 +2393,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler028_64: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler028_64: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data029_65: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2471,7 +2471,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler029_66: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler029_66: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data030_67: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2549,7 +2549,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler030_68: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler030_68: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data031_69: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2627,7 +2627,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler031_70: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler031_70: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data032_71: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2705,7 +2705,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler032_72: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler032_72: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data033_73: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2783,7 +2783,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler033_74: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler033_74: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data034_75: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2861,7 +2861,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler034_76: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler034_76: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data035_77: Value<Box<[testcase_ellint_3_double_]>> =
@@ -2939,7 +2939,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler035_78: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler035_78: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data036_79: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3017,7 +3017,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler036_80: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler036_80: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data037_81: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3095,7 +3095,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler037_82: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler037_82: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data038_83: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3173,7 +3173,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler038_84: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler038_84: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data039_85: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3251,7 +3251,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler039_86: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler039_86: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data040_87: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3329,7 +3329,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler040_88: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler040_88: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data041_89: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3407,7 +3407,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler041_90: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler041_90: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data042_91: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3485,7 +3485,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler042_92: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler042_92: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data043_93: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3563,7 +3563,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler043_94: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler043_94: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data044_95: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3641,7 +3641,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler044_96: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler044_96: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data045_97: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3719,7 +3719,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler045_98: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler045_98: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data046_99: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3797,7 +3797,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler046_100: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler046_100: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data047_101: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3875,7 +3875,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler047_102: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler047_102: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data048_103: Value<Box<[testcase_ellint_3_double_]>> =
@@ -3953,7 +3953,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler048_104: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler048_104: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data049_105: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4031,7 +4031,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler049_106: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler049_106: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data050_107: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4109,7 +4109,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler050_108: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler050_108: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data051_109: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4187,7 +4187,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler051_110: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler051_110: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data052_111: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4265,7 +4265,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler052_112: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler052_112: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data053_113: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4343,7 +4343,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler053_114: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler053_114: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data054_115: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4421,7 +4421,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler054_116: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler054_116: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data055_117: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4499,7 +4499,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler055_118: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler055_118: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data056_119: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4577,7 +4577,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler056_120: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler056_120: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data057_121: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4655,7 +4655,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler057_122: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler057_122: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data058_123: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4733,7 +4733,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler058_124: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler058_124: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data059_125: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4811,7 +4811,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler059_126: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler059_126: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data060_127: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4889,7 +4889,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler060_128: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler060_128: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data061_129: Value<Box<[testcase_ellint_3_double_]>> =
@@ -4967,7 +4967,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler061_130: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler061_130: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data062_131: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5045,7 +5045,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler062_132: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler062_132: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data063_133: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5123,7 +5123,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler063_134: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler063_134: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data064_135: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5201,7 +5201,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler064_136: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler064_136: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data065_137: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5279,7 +5279,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler065_138: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler065_138: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data066_139: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5357,7 +5357,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler066_140: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler066_140: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data067_141: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5435,7 +5435,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler067_142: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler067_142: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data068_143: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5513,7 +5513,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler068_144: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler068_144: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data069_145: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5591,7 +5591,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler069_146: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler069_146: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data070_147: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5669,7 +5669,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler070_148: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler070_148: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data071_149: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5747,7 +5747,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler071_150: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler071_150: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data072_151: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5825,7 +5825,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler072_152: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler072_152: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data073_153: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5903,7 +5903,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler073_154: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler073_154: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data074_155: Value<Box<[testcase_ellint_3_double_]>> =
@@ -5981,7 +5981,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler074_156: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler074_156: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data075_157: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6059,7 +6059,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler075_158: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler075_158: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data076_159: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6137,7 +6137,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler076_160: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler076_160: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data077_161: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6215,7 +6215,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler077_162: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler077_162: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data078_163: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6293,7 +6293,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler078_164: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler078_164: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data079_165: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6371,7 +6371,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler079_166: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler079_166: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data080_167: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6449,7 +6449,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler080_168: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler080_168: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data081_169: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6527,7 +6527,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler081_170: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler081_170: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data082_171: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6605,7 +6605,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler082_172: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler082_172: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data083_173: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6683,7 +6683,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler083_174: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler083_174: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data084_175: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6761,7 +6761,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler084_176: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler084_176: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data085_177: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6839,7 +6839,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler085_178: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler085_178: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data086_179: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6917,7 +6917,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler086_180: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler086_180: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data087_181: Value<Box<[testcase_ellint_3_double_]>> =
@@ -6995,7 +6995,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler087_182: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler087_182: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data088_183: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7073,7 +7073,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler088_184: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler088_184: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data089_185: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7151,7 +7151,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler089_186: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler089_186: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data090_187: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7229,7 +7229,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler090_188: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler090_188: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data091_189: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7307,7 +7307,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler091_190: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler091_190: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data092_191: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7385,7 +7385,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler092_192: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler092_192: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data093_193: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7463,7 +7463,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler093_194: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler093_194: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data094_195: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7541,7 +7541,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler094_196: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler094_196: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data095_197: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7619,7 +7619,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler095_198: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler095_198: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data096_199: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7697,7 +7697,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler096_200: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler096_200: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data097_201: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7775,7 +7775,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler097_202: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler097_202: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data098_203: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7853,7 +7853,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler098_204: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler098_204: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data099_205: Value<Box<[testcase_ellint_3_double_]>> =
@@ -7931,7 +7931,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler099_206: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler099_206: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data100_207: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8009,7 +8009,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler100_208: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler100_208: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data101_209: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8087,7 +8087,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler101_210: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler101_210: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data102_211: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8165,7 +8165,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler102_212: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler102_212: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data103_213: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8243,7 +8243,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler103_214: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler103_214: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data104_215: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8321,7 +8321,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler104_216: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler104_216: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data105_217: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8399,7 +8399,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler105_218: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler105_218: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data106_219: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8477,7 +8477,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler106_220: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler106_220: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data107_221: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8555,7 +8555,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler107_222: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler107_222: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data108_223: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8633,7 +8633,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler108_224: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler108_224: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data109_225: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8711,7 +8711,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler109_226: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler109_226: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data110_227: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8789,7 +8789,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler110_228: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler110_228: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data111_229: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8867,7 +8867,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler111_230: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler111_230: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data112_231: Value<Box<[testcase_ellint_3_double_]>> =
@@ -8945,7 +8945,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler112_232: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler112_232: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data113_233: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9023,7 +9023,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler113_234: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler113_234: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data114_235: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9101,7 +9101,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler114_236: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler114_236: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data115_237: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9179,7 +9179,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler115_238: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler115_238: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data116_239: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9257,7 +9257,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler116_240: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler116_240: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data117_241: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9335,7 +9335,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler117_242: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler117_242: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data118_243: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9413,7 +9413,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler118_244: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler118_244: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data119_245: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9491,7 +9491,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler119_246: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler119_246: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data120_247: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9569,7 +9569,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler120_248: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler120_248: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data121_249: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9647,7 +9647,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler121_250: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler121_250: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data122_251: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9725,7 +9725,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler122_252: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler122_252: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data123_253: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9803,7 +9803,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler123_254: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler123_254: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data124_255: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9881,7 +9881,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler124_256: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler124_256: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data125_257: Value<Box<[testcase_ellint_3_double_]>> =
@@ -9959,7 +9959,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler125_258: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler125_258: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data126_259: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10037,7 +10037,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler126_260: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler126_260: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data127_261: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10115,7 +10115,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler127_262: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler127_262: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data128_263: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10193,7 +10193,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler128_264: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler128_264: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data129_265: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10271,7 +10271,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler129_266: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler129_266: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data130_267: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10349,7 +10349,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler130_268: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler130_268: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data131_269: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10427,7 +10427,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler131_270: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler131_270: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data132_271: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10505,7 +10505,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler132_272: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler132_272: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data133_273: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10583,7 +10583,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler133_274: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler133_274: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data134_275: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10661,7 +10661,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler134_276: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler134_276: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data135_277: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10739,7 +10739,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler135_278: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler135_278: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data136_279: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10817,7 +10817,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler136_280: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler136_280: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data137_281: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10895,7 +10895,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler137_282: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler137_282: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data138_283: Value<Box<[testcase_ellint_3_double_]>> =
@@ -10973,7 +10973,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler138_284: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler138_284: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data139_285: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11051,7 +11051,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler139_286: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler139_286: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data140_287: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11129,7 +11129,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler140_288: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler140_288: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data141_289: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11207,7 +11207,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler141_290: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler141_290: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data142_291: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11285,7 +11285,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler142_292: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler142_292: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data143_293: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11363,7 +11363,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler143_294: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler143_294: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data144_295: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11441,7 +11441,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler144_296: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler144_296: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data145_297: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11519,7 +11519,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler145_298: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler145_298: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data146_299: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11597,7 +11597,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler146_300: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler146_300: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data147_301: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11675,7 +11675,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler147_302: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler147_302: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data148_303: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11753,7 +11753,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler148_304: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler148_304: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data149_305: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11831,7 +11831,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler149_306: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler149_306: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data150_307: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11909,7 +11909,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler150_308: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler150_308: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data151_309: Value<Box<[testcase_ellint_3_double_]>> =
@@ -11987,7 +11987,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler151_310: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler151_310: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data152_311: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12065,7 +12065,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler152_312: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler152_312: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data153_313: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12143,7 +12143,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler153_314: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler153_314: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data154_315: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12221,7 +12221,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler154_316: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler154_316: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data155_317: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12299,7 +12299,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler155_318: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler155_318: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data156_319: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12377,7 +12377,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler156_320: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler156_320: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data157_321: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12455,7 +12455,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler157_322: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler157_322: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data158_323: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12533,7 +12533,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler158_324: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler158_324: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data159_325: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12611,7 +12611,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler159_326: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler159_326: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data160_327: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12689,7 +12689,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler160_328: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler160_328: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data161_329: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12767,7 +12767,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler161_330: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler161_330: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data162_331: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12845,7 +12845,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler162_332: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler162_332: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data163_333: Value<Box<[testcase_ellint_3_double_]>> =
@@ -12923,7 +12923,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler163_334: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler163_334: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data164_335: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13001,7 +13001,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler164_336: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler164_336: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data165_337: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13079,7 +13079,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler165_338: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler165_338: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data166_339: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13157,7 +13157,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler166_340: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler166_340: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data167_341: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13235,7 +13235,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler167_342: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler167_342: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data168_343: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13313,7 +13313,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler168_344: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler168_344: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data169_345: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13391,7 +13391,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler169_346: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler169_346: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data170_347: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13469,7 +13469,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler170_348: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler170_348: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data171_349: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13547,7 +13547,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler171_350: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler171_350: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data172_351: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13625,7 +13625,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler172_352: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler172_352: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data173_353: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13703,7 +13703,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler173_354: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler173_354: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data174_355: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13781,7 +13781,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler174_356: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler174_356: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data175_357: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13859,7 +13859,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler175_358: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler175_358: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data176_359: Value<Box<[testcase_ellint_3_double_]>> =
@@ -13937,7 +13937,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler176_360: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler176_360: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data177_361: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14015,7 +14015,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler177_362: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler177_362: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data178_363: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14093,7 +14093,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler178_364: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler178_364: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data179_365: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14171,7 +14171,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler179_366: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler179_366: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data180_367: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14249,7 +14249,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler180_368: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler180_368: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data181_369: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14327,7 +14327,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler181_370: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler181_370: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data182_371: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14405,7 +14405,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler182_372: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler182_372: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data183_373: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14483,7 +14483,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler183_374: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler183_374: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data184_375: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14561,7 +14561,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler184_376: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler184_376: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data185_377: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14639,7 +14639,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler185_378: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler185_378: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data186_379: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14717,7 +14717,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler186_380: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler186_380: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data187_381: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14795,7 +14795,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler187_382: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler187_382: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data188_383: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14873,7 +14873,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler188_384: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler188_384: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data189_385: Value<Box<[testcase_ellint_3_double_]>> =
@@ -14951,7 +14951,7 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler189_386: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler189_386: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
 thread_local!(
     pub static data190_387: Value<Box<[testcase_ellint_3_double_]>> =
@@ -15029,24 +15029,24 @@ thread_local!(
         ])));
 );
 thread_local!(
-    pub static toler190_388: Value<()> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
+    pub static toler190_388: Value<f64> = Rc::new(RefCell::new(2.500000000000002e-13_f64));
 );
-pub fn test_389(data: Ptr<testcase_ellint_3_double_>, mut toler: ()) {
-    let mut test: () = true;
-    let mut eps: () = unimplemented!();
-    let mut max_abs_diff: () = -1_();
-    let mut max_abs_frac: () = -1_();
-    let mut num_datum: () = 10_();
-    let mut i: () = 0_();
+pub fn test_389(data: Ptr<testcase_ellint_3_double_>, mut toler: f64) {
+    let mut test: bool = true;
+    let mut eps: f64 = unimplemented!();
+    let mut max_abs_diff: f64 = -1_f64;
+    let mut max_abs_frac: f64 = -1_f64;
+    let mut num_datum: u32 = 10_u32;
+    let mut i: u32 = 0_u32;
     'loop_: while (i < num_datum) {
-        let mut f: () = unimplemented!();
-        let mut f0: () = elem!((data), i).with(|__s| __s.f0);
-        let mut diff: () = (f - f0);
+        let mut f: f64 = unimplemented!();
+        let mut f0: f64 = elem!((data), i).with(|__s| __s.f0);
+        let mut diff: f64 = (f - f0);
         if (unimplemented!() > max_abs_diff) {
             max_abs_diff = unimplemented!();
         }
-        if (unimplemented!() > (10_() * eps)) && (unimplemented!() > (10_() * eps)) {
-            let mut frac: () = (diff / f0);
+        if (unimplemented!() > (10_f64 * eps)) && (unimplemented!() > (10_f64 * eps)) {
+            let mut frac: f64 = (diff / f0);
             if (unimplemented!() > max_abs_frac) {
                 max_abs_frac = unimplemented!();
             }
@@ -15058,7 +15058,7 @@ pub fn test_389(data: Ptr<testcase_ellint_3_double_>, mut toler: ()) {
         __do_while = false;
         if !(max_abs_frac < toler) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
 }
@@ -15066,7 +15066,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({
         test_389(
             data001_9.with(|v| v.as_pointer()),
@@ -16207,32 +16207,32 @@ fn main_0() -> () {
             toler190_388.with(|rc| *rc.borrow()),
         )
     });
-    return 0_();
+    return 0;
 }
 impl __gnu_test_semaphore {
     pub fn new() -> Self {
         let __this: Value<__gnu_test_semaphore> = Rc::new(RefCell::new(Self {
-            sem_set_: unimplemented!(),
+            sem_set_: 0_i32,
             pid_: unimplemented!(),
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
         field!(this, pid_).write(unimplemented!());
         field!(this, sem_set_).write(unimplemented!());
-        if (this.with(|__s| __s.sem_set_) == -1_()) {
+        if (this.with(|__s| __s.sem_set_) == -1_i32) {
             unimplemented!();
         }
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
-        __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if (unimplemented!() == -1_()) {
+        __gnu_test_semun::val(val.as_pointer()).write(0);
+        if (unimplemented!() == -1_i32) {
             unimplemented!();
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_390(size: Option<()>) {
-    let mut size: () = size.unwrap_or_else(|| 16_f64);
+pub fn set_memory_limits_390(size: Option<f32>) {
+    let mut size: f32 = size.unwrap_or_else(|| (16_f64 as f32));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut limit: () = (size * 1048576_());
+    let mut limit: () = ((size * 1048576_f32) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
@@ -16246,118 +16246,149 @@ pub fn set_memory_limits_390(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_391(mut size: ()) {
+pub fn set_file_limit_391(mut size: u64) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_392(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
-    let status: Value<()> = Rc::new(RefCell::new(0_()));
-    let mut s: Ptr<()> = Ptr::<()>::null();
-    let mut demangled: Ptr<()> = unimplemented!();
+pub fn verify_demangle_392(mut mangled: Ptr<i8>, mut wanted: Ptr<i8>) {
+    let status: Value<i32> = Rc::new(RefCell::new(0));
+    let mut s: Ptr<i8> = Ptr::<i8>::null();
+    let mut demangled: Ptr<i8> = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).clone();
     } else {
         switch!(match (*status.borrow()) {
-            __v if __v == 0_() => {
-                s = Ptr::<()>::from_string_literal(b"error code = 0: success");
+            __v if __v == 0 => {
+                s = Ptr::<i8>::from_string_literal(b"error code = 0: success");
                 break;
             }
-            __v if __v == -1_() => {
-                s = Ptr::<()>::from_string_literal(b"error code = -1: memory allocation failure");
+            __v if __v == -1_i32 => {
+                s = Ptr::<i8>::from_string_literal(b"error code = -1: memory allocation failure");
                 break;
             }
-            __v if __v == -2_() => {
-                s = Ptr::<()>::from_string_literal(b"error code = -2: invalid mangled name");
+            __v if __v == -2_i32 => {
+                s = Ptr::<i8>::from_string_literal(b"error code = -2: invalid mangled name");
                 break;
             }
-            __v if __v == -3_() => {
-                s = Ptr::<()>::from_string_literal(b"error code = -3: invalid arguments");
+            __v if __v == -3_i32 => {
+                s = Ptr::<i8>::from_string_literal(b"error code = -3: invalid arguments");
                 break;
             }
             _ => {
-                s = Ptr::<()>::from_string_literal(b"error code unknown - who knows what happened");
+                s = Ptr::<i8>::from_string_literal(b"error code unknown - who knows what happened");
             }
         });
     }
-    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if !(unimplemented!()) {
+    let w: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = wanted.to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    if !(s.with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)) {
         unimplemented!();
     }
-    unimplemented!();
+    libcc2rs::free_refcount((demangled).to_any());
 }
-pub fn run_tests_wrapped_locale_393(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_393(mut name: Ptr<i8>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut res: Ptr<()> = unimplemented!();
+    let mut res: Ptr<i8> = Ptr::<i8>::from_string_literal(b"C");
     if !(res).is_null() {
-        let mut preLC_ALL: () = unimplemented!();
+        let mut preLC_ALL: Vec<i8> = {
+            let mut __bytes = res.to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () = unimplemented!();
+        let mut postLC_ALL: Vec<i8> = {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"C").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
-        let mut s: () = unimplemented!();
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"LC_ALL for ").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         unimplemented!();
         unimplemented!();
     }
 }
 pub fn run_tests_wrapped_env_394(
-    mut name: Ptr<()>,
-    mut env: Ptr<()>,
+    mut name: Ptr<i8>,
+    mut env: Ptr<i8>,
     l: Ptr<__gnu_test_func_callback>,
 ) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut oldENV: Ptr<()> = unimplemented!();
-    if !(unimplemented!() != 0) {
+    let mut oldENV: Ptr<i8> = match ::std::env::var(env.to_rust_string()) {
+        Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
+        Err(_) => Ptr::null(),
+    };
+    if !(libc::setenv(env, name, 1) != 0) {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        unimplemented!();
+        libc::setenv(
+            env,
+            if !(oldENV).is_null() {
+                (oldENV).clone()
+            } else {
+                Ptr::<i8>::from_string_literal(b"")
+            },
+            1,
+        );
     } else {
-        let mut s: () = unimplemented!();
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = env.to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    static count__1: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__1: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static throw_on__2: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__2: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static count__3: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__3: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static throw_on__4: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__4: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static _M_count_5: Value<()> = Rc::new(RefCell::new(0_()));
+    static _M_count_5: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static next_id__6: Value<()> = Rc::new(RefCell::new(0_()));
+    static next_id__6: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
@@ -16367,13 +16398,13 @@ pub struct __gnu_test_semun {
     __bytes: Box<[u8]>,
 }
 impl __gnu_test_semun {
-    pub fn val(this: Ptr<Self>) -> Ptr<()> {
+    pub fn val(this: Ptr<Self>) -> Ptr<i32> {
         this.reinterpret_cast()
     }
     pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<()>> {
         this.reinterpret_cast()
     }
-    pub fn array(this: Ptr<Self>) -> Ptr<Ptr<()>> {
+    pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
     }
 }
@@ -16386,16 +16417,16 @@ impl Default for __gnu_test_semun {
 }
 impl __gnu_test_semaphore {}
 pub fn test_tm_395(
-    mut sec: (),
-    mut min: (),
-    mut hour: (),
-    mut mday: (),
-    mut mon: (),
-    mut year: (),
-    mut wday: (),
-    mut yday: (),
-    mut isdst: (),
-) -> () {
+    mut sec: i32,
+    mut min: i32,
+    mut hour: i32,
+    mut mday: i32,
+    mut mon: i32,
+    mut year: i32,
+    mut wday: i32,
+    mut yday: i32,
+    mut isdst: i32,
+) -> libcc2rs::Tm {
     (*tmp_396.with(Value::clone).borrow_mut()).tm_sec = sec;
     (*tmp_396.with(Value::clone).borrow_mut()).tm_min = min;
     (*tmp_396.with(Value::clone).borrow_mut()).tm_hour = hour;
@@ -16408,12 +16439,12 @@ pub fn test_tm_395(
     return (*tmp_396.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_396: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_396: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
     fn destructor(&self);
-    fn id(&self) -> ();
+    fn id(&self) -> i32;
 }
 impl __gnu_test_copy_trackerImpl for Ptr<__gnu_test_copy_tracker> {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker> {
@@ -16421,7 +16452,7 @@ impl __gnu_test_copy_trackerImpl for Ptr<__gnu_test_copy_tracker> {
         if rhs.with(|__s| __s.throw_on_copy_) {
             ({
                 __gnu_test_assignment_operator::throw_on(
-                    ({ __gnu_test_assignment_operator::count() }).wrapping_add(1_()),
+                    ({ __gnu_test_assignment_operator::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -16431,7 +16462,7 @@ impl __gnu_test_copy_trackerImpl for Ptr<__gnu_test_copy_tracker> {
     fn destructor(&self) {
         ({ __gnu_test_destructor::mark_call() });
     }
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
 }
@@ -16439,12 +16470,12 @@ pub trait __gnu_test_func_callbackImpl {
     fn copy_assign(&self, _a0: Ptr<__gnu_test_func_callback>) -> Ptr<__gnu_test_func_callback> {
         unimplemented!()
     }
-    fn size(&self) -> ();
+    fn size(&self) -> i32;
     fn tests(&self) -> Ptr<FnPtr<fn()>>;
     fn push_back(&self, test: FnPtr<fn()>);
 }
 impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
-    fn size(&self) -> () {
+    fn size(&self) -> i32 {
         return (*self).with(|__s| __s._M_size);
     }
     fn tests(&self) -> Ptr<FnPtr<fn()>> {
@@ -16481,20 +16512,20 @@ pub trait __gnu_test_semaphoreImpl {
 impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
-        __gnu_test_semun::val(val.as_pointer()).write(0_());
+        __gnu_test_semun::val(val.as_pointer()).write(0);
         if ((*self).with(|__s| __s.pid_) == unimplemented!()) {
             unimplemented!();
         }
     }
     fn signal(&self) {
         let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (unimplemented!() == -1_()) {
+        if (unimplemented!() == -1_i32) {
             unimplemented!();
         }
     }
     fn wait(&self) {
         let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (unimplemented!() == -1_()) {
+        if (unimplemented!() == -1_i32) {
             unimplemented!();
         }
     }

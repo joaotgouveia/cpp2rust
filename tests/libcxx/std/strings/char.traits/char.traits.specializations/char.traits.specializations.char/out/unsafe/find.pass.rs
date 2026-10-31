@@ -6,10 +6,10 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_constexpr_0() -> () {
-    let p: *const () = c"123".as_ptr();
-    return ((((unimplemented!()) == (p)) && ((unimplemented!()) == (p.offset((1_()) as isize))))
-        && ((unimplemented!()) == (p.offset((2_()) as isize))))
+pub unsafe fn test_constexpr_0() -> bool {
+    let p: *const libc::c_char = c"123".as_ptr();
+    return ((((unimplemented!()) == (p)) && ((unimplemented!()) == (p.offset((1) as isize))))
+        && ((unimplemented!()) == (p.offset((2) as isize))))
         && ((unimplemented!()).is_null());
 }
 pub fn main() {
@@ -27,15 +27,19 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut s1: [(); 3] = [1_(), 2_(), 3_()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut s1: [libc::c_char; 3] = [
+        (1 as libc::c_char),
+        (2 as libc::c_char),
+        (3 as libc::c_char),
+    ];
+    assert!(((unimplemented!()) == ((s1.as_mut_ptr()).cast_const())));
+    assert!(((unimplemented!()) == ((s1.as_mut_ptr().offset((1) as isize)).cast_const())));
+    assert!(((unimplemented!()) == ((s1.as_mut_ptr().offset((2) as isize)).cast_const())));
+    assert!((unimplemented!()).is_null());
+    assert!((unimplemented!()).is_null());
+    assert!((unimplemented!()).is_null());
     const _: () = assert!(true, "test_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

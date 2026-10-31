@@ -6,23 +6,23 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_reverse_iterator_const_int_ptr___std_reverse_iterator_const_int_ptr__
 {}
-pub fn test_1() -> () {
-    let il: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn test_1() -> bool {
+    let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-    let cil: Ptr<()> = il.as_pointer();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    let cil: Ptr<Vec<i32>> = il.as_pointer();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!(({ unimplemented!() } == { unimplemented!() }));
+    assert!(({ unimplemented!() } == { unimplemented!() }));
     return true;
 }
 pub fn main() {
@@ -44,9 +44,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

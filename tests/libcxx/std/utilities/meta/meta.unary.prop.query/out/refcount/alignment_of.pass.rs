@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_alignment_of_0() {
-    let mut AlignofResult: () = ::std::mem::align_of::<*mut ()>();
+    let mut AlignofResult: u32 = (::std::mem::align_of::<*mut i32>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -20,7 +20,7 @@ pub fn test_alignment_of_0() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub fn test_alignment_of_1() {
-    let mut AlignofResult: () = 1usize;
+    let mut AlignofResult: u32 = (1usize as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -33,7 +33,7 @@ pub fn test_alignment_of_1() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub fn test_alignment_of_2() {
-    let mut AlignofResult: () = 8usize;
+    let mut AlignofResult: u32 = (8usize as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -46,7 +46,7 @@ pub fn test_alignment_of_2() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub fn test_alignment_of_3() {
-    let mut AlignofResult: () = 8usize;
+    let mut AlignofResult: u32 = (8usize as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -59,7 +59,7 @@ pub fn test_alignment_of_3() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub fn test_alignment_of_4() {
-    let mut AlignofResult: () = ::std::mem::align_of::<[(); 3]>();
+    let mut AlignofResult: u32 = (::std::mem::align_of::<[i8; 3]>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -72,7 +72,7 @@ pub fn test_alignment_of_4() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub fn test_alignment_of_5() {
-    let mut AlignofResult: () = ::std::mem::align_of::<()>();
+    let mut AlignofResult: u32 = (::std::mem::align_of::<i32>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -85,7 +85,7 @@ pub fn test_alignment_of_5() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub fn test_alignment_of_6() {
-    let mut AlignofResult: () = ::std::mem::align_of::<()>();
+    let mut AlignofResult: u32 = (::std::mem::align_of::<f64>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -98,7 +98,7 @@ pub fn test_alignment_of_6() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub fn test_alignment_of_7() {
-    let mut AlignofResult: () = ::std::mem::align_of::<()>();
+    let mut AlignofResult: u32 = (::std::mem::align_of::<bool>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -111,7 +111,7 @@ pub fn test_alignment_of_7() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub fn test_alignment_of_8() {
-    let mut AlignofResult: () = ::std::mem::align_of::<()>();
+    let mut AlignofResult: u32 = (::std::mem::align_of::<u32>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -145,7 +145,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_alignment_of_0() });
     ({ test_alignment_of_1() });
     ({ test_alignment_of_2() });
@@ -155,7 +155,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_alignment_of_6() });
     ({ test_alignment_of_7() });
     ({ test_alignment_of_8() });
-    return 0_();
+    return 0;
 }
 pub trait ClassImpl {
     fn destructor(&self) {

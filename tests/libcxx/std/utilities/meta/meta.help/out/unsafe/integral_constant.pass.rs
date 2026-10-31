@@ -22,12 +22,12 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "_5::value == 5");;
     const _: () = assert!(true, "(std::is_same<_5::value_type, int>::value)");;
     const _: () = assert!(true, "(std::is_same<_5::type, _5>::value)");;
     const _: () = assert!(true, "(_5() == 5)");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (5)));
     const _: () = assert!(true, "_5{{}}() == 5");;
     const _: () = assert!(true, "std::true_type{{}}()");;
     const _: () = assert!(true, "std::false_type::value == false");;
@@ -50,10 +50,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     let mut f1: () = unimplemented!();
     let mut f2: () = f1.clone();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     let mut t1: () = unimplemented!();
     let mut t2: () = t1.clone();
-    unimplemented!();
-    return 0_();
+    assert!((unimplemented!() as bool));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

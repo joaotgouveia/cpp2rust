@@ -6,173 +6,255 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn compare_paths_0(p1: *const (), p2: *const ()) {
+pub unsafe fn compare_paths_0(p1: *const Vec<libc::c_char>, p2: *const Vec<libc::c_char>) {
     if !(unimplemented!()) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
     if !(unimplemented!()) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    if ((unimplemented!()) != (unimplemented!())) {
+    if ((unimplemented!() as i32) != (unimplemented!() as i32)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
-    let mut d1: () = unimplemented!();
-    let mut d2: () = unimplemented!();
+    let mut d1: isize = unimplemented!();
+    let mut d2: isize = unimplemented!();
     if ((d1) != (d2)) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
     if !(unimplemented!()) {
         {
-            unimplemented!();
+            std::process::abort();
             &(unimplemented!())
         };
     }
 }
-pub static mut test_paths_1: std::cell::LazyCell<[(); 18]> = std::cell::LazyCell::new(|| unsafe {
-    [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ]
-});
-pub unsafe fn root_path_2() -> () {
-    return unimplemented!();
+pub static mut test_paths_1: std::cell::LazyCell<[Vec<libc::c_char>; 18]> =
+    std::cell::LazyCell::new(|| unsafe {
+        [
+            std::slice::from_raw_parts(c"".as_ptr(), libcc2rs::c_str_len(c"".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"/".as_ptr(), libcc2rs::c_str_len(c"/".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"//".as_ptr(), libcc2rs::c_str_len(c"//".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"/.".as_ptr(), libcc2rs::c_str_len(c"/.".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"/./".as_ptr(), libcc2rs::c_str_len(c"/./".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"/a".as_ptr(), libcc2rs::c_str_len(c"/a".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"/a/".as_ptr(), libcc2rs::c_str_len(c"/a/".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"/a//".as_ptr(), libcc2rs::c_str_len(c"/a//".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(
+                c"/a/b/c/d".as_ptr(),
+                libcc2rs::c_str_len(c"/a/b/c/d".as_ptr()) + 1,
+            )
+            .to_vec(),
+            std::slice::from_raw_parts(
+                c"/a//b".as_ptr(),
+                libcc2rs::c_str_len(c"/a//b".as_ptr()) + 1,
+            )
+            .to_vec(),
+            std::slice::from_raw_parts(c"a".as_ptr(), libcc2rs::c_str_len(c"a".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"a/b".as_ptr(), libcc2rs::c_str_len(c"a/b".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"a/b/".as_ptr(), libcc2rs::c_str_len(c"a/b/".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(
+                c"a/b/c".as_ptr(),
+                libcc2rs::c_str_len(c"a/b/c".as_ptr()) + 1,
+            )
+            .to_vec(),
+            std::slice::from_raw_parts(
+                c"a/b/c.d".as_ptr(),
+                libcc2rs::c_str_len(c"a/b/c.d".as_ptr()) + 1,
+            )
+            .to_vec(),
+            std::slice::from_raw_parts(
+                c"a/b/..".as_ptr(),
+                libcc2rs::c_str_len(c"a/b/..".as_ptr()) + 1,
+            )
+            .to_vec(),
+            std::slice::from_raw_parts(
+                c"a/b/c.".as_ptr(),
+                libcc2rs::c_str_len(c"a/b/c.".as_ptr()) + 1,
+            )
+            .to_vec(),
+            std::slice::from_raw_parts(
+                c"a/b/.c".as_ptr(),
+                libcc2rs::c_str_len(c"a/b/.c".as_ptr()) + 1,
+            )
+            .to_vec(),
+        ]
+    });
+pub unsafe fn root_path_2() -> Vec<libc::c_char> {
+    return {
+        let mut __v: Vec<libc::c_char> = c"/"
+            .path_bytes()
+            .into_iter()
+            .map(|__b| __b as libc::c_char)
+            .collect();
+        __v.push(0);
+        __v
+    };
 }
-pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
-    let mut file: () = file.unwrap_or_else(|| unsafe { unimplemented!() });
-    if ((unimplemented!()) > (3_())) && ((unimplemented!()) == (0_())) {
-        unimplemented!();
-    }
-    let mut pos: () = unimplemented!();
-    if ((pos) != (unimplemented!())) {
-        unimplemented!();
-    }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut p: () = unimplemented!();
-    unimplemented!();
-    let mut fd: () = unimplemented!();
-    if ((fd) == (-1_())) {
+pub unsafe fn nonexistent_path_3(mut file: Option<Vec<libc::c_char>>) -> Vec<libc::c_char> {
+    let mut file: Vec<libc::c_char> = file.unwrap_or_else(|| unsafe {
+        std::slice::from_raw_parts(
+            concat!(file!(), "\0").as_ptr() as *const libc::c_char,
+            libcc2rs::c_str_len(concat!(file!(), "\0").as_ptr() as *const libc::c_char) + 1,
+        )
+        .to_vec()
+    });
+    if ((file.len() - 1) > (3_usize)) && ((unimplemented!()) == (0)) {
         {
-            unimplemented!();
-            &(unimplemented!())
+            file.pop();
+            file.resize(
+                ((file.len() - 1).wrapping_sub(3_usize)) as usize,
+                (0 as libc::c_char),
+            );
+            file.push((0 as libc::c_char))
         };
+    }
+    let mut pos: usize = {
+        let __n = file.len().saturating_sub(1);
+        let __end = usize::MAX.saturating_add(1).min(__n);
+        let __lookup =
+            ::std::slice::from_raw_parts(c"/\\".as_ptr(), libcc2rs::c_str_len(c"/\\".as_ptr()));
+        match file
+            .iter()
+            .take(__end)
+            .rposition(|__c| __lookup.contains(__c))
+        {
+            Some(__idx) => __idx,
+            None => usize::MAX,
+        }
+    };
+    if ((pos) != (usize::MAX)) {
+        unimplemented!();
     }
     unimplemented!();
     unimplemented!();
     unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut p: Vec<libc::c_char> = unimplemented!();
+    unimplemented!();
+    let mut fd: i32 = unimplemented!();
+    if ((fd) == (-1_i32)) {
+        {
+            std::process::abort();
+            &(unimplemented!())
+        };
+    }
+    libc::unlink(file.as_ptr());
+    libc::close(fd);
+    unimplemented!();
     return unimplemented!();
 }
-pub type __gnu_test_scoped_file_adopt_file_t = ();
+pub type __gnu_test_scoped_file_adopt_file_t = u32;
 pub const __gnu_test_scoped_file_adopt_file_t_adopt_file: __gnu_test_scoped_file_adopt_file_t = 0;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, DestructorUnsafe)]
 pub struct __gnu_test_scoped_file {
-    pub path: (),
+    pub path: Vec<libc::c_char>,
 }
 impl __gnu_test_scoped_file {
-    pub unsafe fn new_1(p: Option<*const ()>) -> Self {
-        let mut __p_default: Option<()> = None;
-        let mut p: *const () = p.unwrap_or_else(|| unsafe {
-            __p_default.insert((unsafe { nonexistent_path_3(None) })) as *const ()
+    pub unsafe fn new_1(p: Option<*const Vec<libc::c_char>>) -> Self {
+        let mut __p_default: Option<Vec<libc::c_char>> = None;
+        let mut p: *const Vec<libc::c_char> = p.unwrap_or_else(|| unsafe {
+            __p_default.insert((unsafe { nonexistent_path_3(None) })) as *const Vec<libc::c_char>
         });
         let mut this = Self {
             path: unimplemented!(),
         };
-        unimplemented!();
+        ::std::fs::File::create(
+            ::std::ffi::CStr::from_ptr((unimplemented!() as *const ()).cast::<libc::c_char>())
+                .to_str()
+                .unwrap(),
+        )
+        .unwrap();
         this
     }
-    pub unsafe fn new_2(mut p: (), mut _a1: __gnu_test_scoped_file_adopt_file_t) -> Self {
+    pub unsafe fn new_2(
+        mut p: Vec<libc::c_char>,
+        mut _a1: __gnu_test_scoped_file_adopt_file_t,
+    ) -> Self {
         let mut this = Self {
             path: unimplemented!(),
         };
@@ -202,37 +284,45 @@ impl Default for __gnu_test_scoped_file {
         unsafe { __gnu_test_scoped_file::new_1(None) }
     }
 }
-pub unsafe fn permissions_are_testable_5(mut print_msg: Option<()>) -> () {
-    let mut print_msg: () = print_msg.unwrap_or_else(|| unsafe { true });
-    let mut testable: () = false;
-    if ((unimplemented!()) != (0_())) {
+pub unsafe fn permissions_are_testable_5(mut print_msg: Option<bool>) -> bool {
+    let mut print_msg: bool = print_msg.unwrap_or_else(|| unsafe { true });
+    let mut testable: bool = false;
+    if ((libc::geteuid()) != (0 as ::libc::uid_t)) {
         testable = true;
     }
     if (print_msg) && (!(testable)) {
-        unimplemented!();
+        libc::puts(c"Skipping tests that depend on filesystem permissions".as_ptr());
     }
     return testable;
 }
-static mut counter_4: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut counter_4: std::cell::LazyCell<u32> =
+    std::cell::LazyCell::new(|| unsafe { (unimplemented!() as u32) });
 pub unsafe fn test01_6() {
     'loop_: for s in IterRange::new(
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1))
             .as_ptr()
-            .offset((18_()) as isize),
+            .offset((18_i64) as isize),
     ) {
-        let mut s: () = unimplemented!();
-        let mut p0: () = unimplemented!();
-        let mut p1: () = unimplemented!();
-        let mut p2: () = unimplemented!();
-        let mut p3: () = unimplemented!();
-        let mut p4: () = unimplemented!();
+        let mut s: Vec<libc::c_char> = (*s).clone();
+        let mut p0: Vec<libc::c_char> = {
+            let mut __v: Vec<libc::c_char> = s
+                .path_bytes()
+                .into_iter()
+                .map(|__b| __b as libc::c_char)
+                .collect();
+            __v.push(0);
+            __v
+        };
+        let mut p1: Vec<libc::c_char> = unimplemented!();
+        let mut p2: Vec<libc::c_char> = unimplemented!();
+        let mut p3: Vec<libc::c_char> = unimplemented!();
+        let mut p4: Vec<libc::c_char> = unimplemented!();
         unimplemented!();
         (unsafe { compare_paths_0(&p0, &p1) });
         unimplemented!();
         (unsafe { compare_paths_0(&p0, &p2) });
-        let mut ws: () = unimplemented!();
+        let mut ws: Vec<i32> = unimplemented!();
         unimplemented!();
         (unsafe { compare_paths_0(&p0, &p3) });
         unimplemented!();
@@ -244,18 +334,26 @@ pub unsafe fn test02_7() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut test_paths_1))
             .as_ptr()
-            .offset((18_()) as isize),
+            .offset((18_i64) as isize),
     ) {
-        let mut s: () = unimplemented!();
-        let mut p0: () = unimplemented!();
-        let mut p1: () = unimplemented!();
-        let mut p2: () = unimplemented!();
-        let mut p3: () = unimplemented!();
-        let mut p4: () = unimplemented!();
-        let mut p5: () = unimplemented!();
-        let mut p6: () = unimplemented!();
-        let mut p7: () = unimplemented!();
-        let mut p8: () = unimplemented!();
+        let mut s: Vec<libc::c_char> = (*s).clone();
+        let mut p0: Vec<libc::c_char> = {
+            let mut __v: Vec<libc::c_char> = s
+                .path_bytes()
+                .into_iter()
+                .map(|__b| __b as libc::c_char)
+                .collect();
+            __v.push(0);
+            __v
+        };
+        let mut p1: Vec<libc::c_char> = unimplemented!();
+        let mut p2: Vec<libc::c_char> = unimplemented!();
+        let mut p3: Vec<libc::c_char> = unimplemented!();
+        let mut p4: Vec<libc::c_char> = unimplemented!();
+        let mut p5: Vec<libc::c_char> = unimplemented!();
+        let mut p6: Vec<libc::c_char> = unimplemented!();
+        let mut p7: Vec<libc::c_char> = unimplemented!();
+        let mut p8: Vec<libc::c_char> = unimplemented!();
         unimplemented!();
         (unsafe { compare_paths_0(&p0, &p1) });
         unimplemented!();
@@ -264,7 +362,7 @@ pub unsafe fn test02_7() {
         (unsafe { compare_paths_0(&p0, &p3) });
         unimplemented!();
         (unsafe { compare_paths_0(&p0, &p4) });
-        let mut ws: () = unimplemented!();
+        let mut ws: Vec<i32> = unimplemented!();
         unimplemented!();
         (unsafe { compare_paths_0(&p0, &p5) });
         unimplemented!();
@@ -281,7 +379,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test01_6() });
     (unsafe { test02_7() });
     0

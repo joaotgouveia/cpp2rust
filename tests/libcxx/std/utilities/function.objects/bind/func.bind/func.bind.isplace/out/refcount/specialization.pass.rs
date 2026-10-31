@@ -28,43 +28,67 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let f: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
-                return ((10_() * x) + 9_());
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: i32| -> i32 {
+                return ((10 * x) + 9);
             })));
         let mut place: My2 = <My2>::default();
         let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
+                (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+            }) == 89)
+        );
     }
     {
         let f: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
-                return ((10_() * x) + 9_());
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: i32| -> i32 {
+                return ((10 * x) + 9);
             })));
         let mut place: My2 = <My2>::default();
         let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
+                (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+            }) == 89)
+        );
     }
     {
         let f: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
-                return ((10_() * x) + 9_());
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: i32| -> i32 {
+                return ((10 * x) + 9);
             })));
         let mut place: My2 = <My2>::default();
         let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
+                (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+            }) == 89)
+        );
     }
     {
         let f: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
-                return ((10_() * x) + 9_());
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: i32| -> i32 {
+                return ((10 * x) + 9);
             })));
         let mut place: My2 = <My2>::default();
         let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (({
+                let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
+                let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
+                (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+            }) == 89)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

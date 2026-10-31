@@ -12,35 +12,31 @@ pub struct C {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct B {
-    pub v: (),
+    pub v: i32,
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(B, new_1, value)]
 pub struct A {
-    pub x: (),
-    pub y: (),
+    pub x: i32,
+    pub y: i32,
 }
 impl A {
     pub unsafe fn new_1(mut b: B) -> Self {
         let mut this = Self {
             x: b.v,
-            y: ((b.v) + (1_())),
+            y: ((b.v) + (1)),
         };
         this
     }
-    pub unsafe fn new_2(mut _x: (), mut _y: ()) -> Self {
+    pub unsafe fn new_2(mut _x: i32, mut _y: i32) -> Self {
         let mut this = Self { x: _x, y: _y };
         this
     }
 }
 impl Default for A {
     fn default() -> Self {
-        unsafe {
-            A {
-                x: 111_(),
-                y: 222_(),
-            }
-        }
+        unsafe { A { x: 111, y: 222 } }
     }
 }
 const _: () = assert!(
@@ -87,45 +83,45 @@ const _: () = assert!(
     !(false),
     "!std::constructible_from<std::ranges::repeat_view<A>, std::piecewise_construct_t, std::tuple<B>, std::tuple<int>>"
 );
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     {
         let mut rv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (3_())));
+        assert!((((*unimplemented!()).x) == (111)));
+        assert!((((*unimplemented!()).y) == (222)));
+        assert!(unimplemented!());
     }
     {
         let mut rv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).x) == (111)));
+        assert!((((*unimplemented!()).y) == (222)));
+        assert!(unimplemented!() != unimplemented!());
     }
     {
         let mut rv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (3_())));
+        assert!((((*unimplemented!()).x) == (1)));
+        assert!((((*unimplemented!()).y) == (2)));
+        assert!(unimplemented!());
     }
     {
         let mut rv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).x) == (1)));
+        assert!((((*unimplemented!()).y) == (2)));
+        assert!(unimplemented!() != unimplemented!());
     }
     {
         let mut rv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (3_())));
+        assert!((((*unimplemented!()).x) == (11)));
+        assert!((((*unimplemented!()).y) == (12)));
+        assert!(unimplemented!());
     }
     {
         let mut rv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).x) == (10)));
+        assert!((((*unimplemented!()).y) == (11)));
+        assert!(unimplemented!() != unimplemented!());
     }
     return true;
 }
@@ -144,9 +140,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

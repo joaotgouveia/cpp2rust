@@ -10,24 +10,24 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub fn lt(mut c1: (), mut c2: ()) -> () {
-        return (c1 < c2);
+    pub fn lt(mut c1: i8, mut c2: i8) -> bool {
+        return ((c1 as i32) < (c2 as i32));
     }
-    pub fn compare(mut s1: Ptr<()>, mut s2: Ptr<()>, mut n: ()) -> () {
+    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: usize) -> i32 {
         'loop_: while (n != 0) {
             if ({
-                let _c1: () = (s1.read());
-                let _c2: () = (s2.read());
+                let _c1: i8 = (s1.read());
+                let _c2: i8 = (s2.read());
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return -1_();
+                return -1_i32;
             }
             if ({
-                let _c1: () = (s2.read());
-                let _c2: () = (s1.read());
+                let _c1: i8 = (s2.read());
+                let _c2: i8 = (s1.read());
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return 1_();
+                return 1;
             }
             {
                 {
@@ -37,21 +37,31 @@ impl constexpr_char_traits_char_ {
                 s2.prefix_inc()
             };
         }
-        return 0_();
+        return 0;
     }
 }
 pub fn test_0(s: Ptr<()>, str: Ptr<()>, mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(({ unimplemented!() } == { x }));
     if (x != unimplemented!()) {
-        unimplemented!();
+        assert!(
+            (x <= pos)
+                && ({ (x as usize).wrapping_add((unimplemented!() as usize)) } <= {
+                    (unimplemented!() as usize)
+                })
+        );
     }
 }
 pub fn test_1(s: Ptr<()>, str: Ptr<()>, mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(({ unimplemented!() } == { x }));
     if (x != unimplemented!()) {
-        unimplemented!();
+        assert!(
+            (0_() <= x)
+                && ({ (x as usize).wrapping_add((unimplemented!() as usize)) } <= {
+                    (unimplemented!() as usize)
+                })
+        );
     }
 }
 pub fn test0_2() {
@@ -557,7 +567,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({ test0_2() });
         ({ test1_3() });
@@ -571,6 +581,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "sv2.rfind(sv2) == 0");;
         const _: () = assert!(true, "sv2.rfind(sv2, 1) == 0");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

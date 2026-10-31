@@ -10,486 +10,486 @@ pub unsafe fn test1_0() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_1() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_2() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_3() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_4() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_5() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_6() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_7() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_8() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_9() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_10() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_11() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_12() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_13() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_14() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_15() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_16() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_17() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_18() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_19() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_20() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_21() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_22() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_23() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_24() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_25() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_26() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_27() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_28() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_29() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_30() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_31() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_32() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_33() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_34() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_35() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_36() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_37() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_38() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_39() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_40() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_41() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_42() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_43() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_44() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_45() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_46() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_47() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_48() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_49() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_50() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_51() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_52() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_53() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_54() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_55() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_56() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_57() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_58() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_59() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_60() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_61() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_62() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_63() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_64() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_65() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_66() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_67() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_68() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_69() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_70() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_71() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_72() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_73() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_74() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_75() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_76() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_77() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_78() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test1_79() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test_80() {
-    let W: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let M: () = -1_();
-    let A: () = (((1_()) << ((W) / (2_()))) - (1_()));
+    let W: i32 = (((::std::mem::size_of::<u16>() as usize).wrapping_mul(8_usize)) as i32);
+    let M: u16 = (-1_i32 as u16);
+    let A: u16 = ((((1_u16 as i32) << ((W) / (2))) - (1)) as u16);
     (unsafe { test1_0() });
     (unsafe { test1_1() });
     (unsafe { test1_2() });
@@ -506,9 +506,9 @@ pub unsafe fn test_80() {
     (unsafe { test1_13() });
 }
 pub unsafe fn test_81() {
-    let W: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let M: () = -1_();
-    let A: () = (((1_()) << ((W) / (2_()))) as ()).wrapping_sub(1_());
+    let W: i32 = (((::std::mem::size_of::<u32>() as usize).wrapping_mul(8_usize)) as i32);
+    let M: u32 = (-1_i32 as u32);
+    let A: u32 = (((1_u32) << ((W) / (2))) as u32).wrapping_sub(1_u32);
     (unsafe { test1_20() });
     (unsafe { test1_21() });
     (unsafe { test1_22() });
@@ -525,9 +525,9 @@ pub unsafe fn test_81() {
     (unsafe { test1_33() });
 }
 pub unsafe fn test_82() {
-    let W: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let M: () = -1_();
-    let A: () = (((1_()) << ((W) / (2_()))) as ()).wrapping_sub(1_());
+    let W: i32 = (((::std::mem::size_of::<u64>() as usize).wrapping_mul(8_usize)) as i32);
+    let M: u64 = (-1_i32 as u64);
+    let A: u64 = (((1_u64) << ((W) / (2))) as u64).wrapping_sub(1_u64);
     (unsafe { test1_40() });
     (unsafe { test1_41() });
     (unsafe { test1_42() });
@@ -544,9 +544,9 @@ pub unsafe fn test_82() {
     (unsafe { test1_53() });
 }
 pub unsafe fn test_83() {
-    let W: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let M: () = -1_();
-    let A: () = (((1_()) << ((W) / (2_()))) as ()).wrapping_sub(1_());
+    let W: i32 = (((::std::mem::size_of::<u64>() as usize).wrapping_mul(8_usize)) as i32);
+    let M: u64 = (-1_i32 as u64);
+    let A: u64 = (((1_u64) << ((W) / (2))) as u64).wrapping_sub(1_u64);
     (unsafe { test1_60() });
     (unsafe { test1_61() });
     (unsafe { test1_62() });
@@ -563,7 +563,7 @@ pub unsafe fn test_83() {
     (unsafe { test1_73() });
 }
 pub unsafe fn test_ext_84() {
-    let M: () = -1_();
+    let M: u16 = (-1_i32 as u16);
     (unsafe { test1_14() });
     (unsafe { test1_15() });
     (unsafe { test1_16() });
@@ -572,7 +572,7 @@ pub unsafe fn test_ext_84() {
     (unsafe { test1_19() });
 }
 pub unsafe fn test_ext_85() {
-    let M: () = -1_();
+    let M: u32 = (-1_i32 as u32);
     (unsafe { test1_34() });
     (unsafe { test1_35() });
     (unsafe { test1_36() });
@@ -581,7 +581,7 @@ pub unsafe fn test_ext_85() {
     (unsafe { test1_39() });
 }
 pub unsafe fn test_ext_86() {
-    let M: () = -1_();
+    let M: u64 = (-1_i32 as u64);
     (unsafe { test1_54() });
     (unsafe { test1_55() });
     (unsafe { test1_56() });
@@ -590,7 +590,7 @@ pub unsafe fn test_ext_86() {
     (unsafe { test1_59() });
 }
 pub unsafe fn test_ext_87() {
-    let M: () = -1_();
+    let M: u64 = (-1_i32 as u64);
     (unsafe { test1_74() });
     (unsafe { test1_75() });
     (unsafe { test1_76() });
@@ -613,7 +613,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_80() });
     (unsafe { test_ext_84() });
     (unsafe { test_81() });
@@ -622,6 +622,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_ext_86() });
     (unsafe { test_83() });
     (unsafe { test_ext_87() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

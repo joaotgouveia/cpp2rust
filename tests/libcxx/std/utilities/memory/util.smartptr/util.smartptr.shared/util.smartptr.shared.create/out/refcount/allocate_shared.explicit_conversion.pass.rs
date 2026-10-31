@@ -28,16 +28,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let ptr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     &(*ptr.borrow_mut());
-    return 0_();
+    return 0;
 }
 pub trait ExplicitAllocator_int_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
+    fn allocate(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut ptr: Ptr<()>, mut n: ()) {
+    fn deallocate(&self, mut ptr: Ptr<i32>, mut n: usize) {
         unimplemented!()
     }
 }

@@ -9,77 +9,77 @@ use std::rc::Rc;
 pub unsafe fn rand0_0() {
     let mut e: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (1043618065_())));
 }
 pub unsafe fn rand0_1() {
     let mut e: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (1043618065_())));
 }
 pub unsafe fn rand0_2() {
     let mut e: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (1043618065_())));
 }
 pub unsafe fn rand_3() {
     let mut e: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (399268537_())));
 }
 pub unsafe fn rand_4() {
     let mut e: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (399268537_())));
 }
 pub unsafe fn rand_5() {
     let mut e: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (399268537_())));
 }
 pub unsafe fn other_6() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn other_7() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn other_8() {
     let mut e1: () = unimplemented!();
     let mut e2: () = unimplemented!();
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
+    assert!(unimplemented!());
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -96,7 +96,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { rand0_0() });
     (unsafe { rand0_1() });
     (unsafe { rand0_2() });
@@ -106,6 +106,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { other_6() });
     (unsafe { other_7() });
     (unsafe { other_8() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

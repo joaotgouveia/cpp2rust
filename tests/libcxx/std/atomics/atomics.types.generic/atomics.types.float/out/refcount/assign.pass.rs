@@ -6,27 +6,27 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_seq_cst_0(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_0(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<fn(Ptr<()>) -> f32>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_1(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_1(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<fn(Ptr<()>) -> f32>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_2(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_2(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<fn(Ptr<()>) -> f64>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_3(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_3(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<fn(Ptr<()>) -> f64>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
@@ -41,24 +41,25 @@ pub fn test_impl_4() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
+        let mut r: f32 = (unimplemented!());
+        assert!((unimplemented!() == (1.2_f64 as f32)));
+        assert!((r == (1.2_f64 as f32)));
     }
     {
-        let assign: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let assign: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut _a1: f32, mut new_val: f32| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    return unimplemented!();
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        return unimplemented!();
+                    }
+                },
+            )));
         ({ test_seq_cst_0((*assign.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
@@ -73,24 +74,25 @@ pub fn test_impl_5() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
+        let mut r: f32 = (unimplemented!());
+        assert!((unimplemented!() == (1.2_f64 as f32)));
+        assert!((r == (1.2_f64 as f32)));
     }
     {
-        let assign: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let assign: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut _a1: f32, mut new_val: f32| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    return unimplemented!();
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        return unimplemented!();
+                    }
+                },
+            )));
         ({ test_seq_cst_1((*assign.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
@@ -105,24 +107,25 @@ pub fn test_impl_6() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
+        let mut r: f64 = (unimplemented!());
+        assert!((unimplemented!() == 1.2_f64));
+        assert!((r == 1.2_f64));
     }
     {
-        let assign: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let assign: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut _a1: f64, mut new_val: f64| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    return unimplemented!();
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        return unimplemented!();
+                    }
+                },
+            )));
         ({ test_seq_cst_2((*assign.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
@@ -137,24 +140,25 @@ pub fn test_impl_7() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
+        let mut r: f64 = (unimplemented!());
+        assert!((unimplemented!() == 1.2_f64));
+        assert!((r == 1.2_f64));
     }
     {
-        let assign: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let assign: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut _a1: f64, mut new_val: f64| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    return unimplemented!();
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        return unimplemented!();
+                    }
+                },
+            )));
         ({ test_seq_cst_3((*assign.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
@@ -189,9 +193,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_8() });
     ({ test_9() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

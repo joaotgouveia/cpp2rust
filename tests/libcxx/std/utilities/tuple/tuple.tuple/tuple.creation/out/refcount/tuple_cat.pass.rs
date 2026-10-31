@@ -6,63 +6,64 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_tuple_Unconstrained___std_tuple_Unconstrained__ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_tuple_int__const_int__int_ref__const_int_ref__int_refref__int__const_int__int_ref__const_int_ref__int_refref__int__const_int__int_ref__const_int_ref__int__const_int__int_ref__const_int_ref___std_tuple_int__const_int__int_ref__const_int_ref__int_refref__int__const_int__int_ref__const_int_ref__int_refref__int__const_int__int_ref__const_int_ref__int__const_int__int_ref__const_int_ref__
 {}
-pub fn operator_eq_2(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_eq_2(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_3(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ne_3(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_4(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_lt_4(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_5(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_le_5(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_6(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_gt_6(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_7(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ge_7(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_8(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
+pub fn operator_cmp_8(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct MoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl MoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(x: Ptr<MoveOnly>) -> Self {
         let __this: MoveOnly = Self {
             data_: x.with(|__s| __s.data_),
         };
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         __this
     }
 }
@@ -81,45 +82,46 @@ impl Default for MoveOnly {
         { MoveOnly::new(None) }
     }
 }
-pub fn operator_eq_9(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_eq_9(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_10(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ne_10(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_11(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_lt_11(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_12(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_le_12(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_13(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_gt_13(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_14(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ge_14(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_15(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_cmp_15(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct TrivialMoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl TrivialMoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(_a0: Ptr<TrivialMoveOnly>) -> Self {
@@ -147,48 +149,49 @@ impl Default for TrivialMoveOnly {
 #[byte_size(4)]
 pub struct NS_Namespaced {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl Unconstrained {
-    pub fn new(mut arg: ()) -> Self {
+    pub fn new(mut arg: i32) -> Self {
         Self { data: arg }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct Unconstrained {
     #[offset(0)]
-    pub data: (),
+    pub data: i32,
 }
-pub fn test_tuple_cat_with_unconstrained_constructor_16() -> () {
+pub fn test_tuple_cat_with_unconstrained_constructor_16() -> bool {
     {
         let tup_src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.data) == 5));
     }
     {
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.data) == 6));
     }
     {
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.data) == 7));
     }
     {
         let tup_src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.data) == 8));
     }
     {
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.data) == 9));
     }
     {
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.data) == 10));
     }
     return true;
 }
@@ -211,7 +214,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (&(*t.borrow_mut()));
@@ -232,7 +235,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 1));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -264,19 +267,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 1));
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 0));
+        assert!(((unimplemented!().read()) == 0));
+        assert!(((unimplemented!().read()) == 0));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -288,116 +303,218 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().read()).is_null());
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!((unimplemented!().read()).is_null());
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().read()).is_null());
+        assert!(((unimplemented!().read()) == 2));
+        assert!(((unimplemented!().read()) == 3.5_f64));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!(((unimplemented!().read()) == 3.5_f64));
+        assert!((unimplemented!().read()).is_null());
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().read()).is_null());
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!(((unimplemented!().read()) == 2));
+        assert!(((unimplemented!().read()) == 3.5_f64));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!(((unimplemented!().read()) == 3.5_f64));
+        assert!((unimplemented!().read()).is_null());
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!((unimplemented!().read()).is_null());
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!((unimplemented!().read()).is_null());
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!((unimplemented!().read()).is_null());
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!((unimplemented!().read()).is_null());
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!((unimplemented!().read()).is_null());
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = unimplemented!();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4) })));
+                operator_eq_2(_x, _y.as_pointer())
+            })
+        );
+        assert!(((unimplemented!().read()) == 5));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let x: Value<()> = Rc::new(RefCell::new(101_()));
+        let x: Value<i32> = Rc::new(RefCell::new(101));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ct: Ptr<()> = t.as_pointer();
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -410,28 +527,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.i) == 1));
+        assert!((unimplemented!().with(|__s| __s.i) == 1));
     }
     {
         ({ test_tuple_cat_with_unconstrained_constructor_16() });
         const _: () = assert!(true, "test_tuple_cat_with_unconstrained_constructor()");;
     }
-    return 0_();
+    return 0;
 }
 pub trait MoveOnlyImpl {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_add(&self, x: Ptr<MoveOnly>) -> MoveOnly;
     fn operator_mul(&self, x: Ptr<MoveOnly>) -> MoveOnly;
 }
 impl MoveOnlyImpl for Ptr<MoveOnly> {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly> {
         field!((*self), data_).write({ x.with(|__s| __s.data_) });
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_add(&self, x: Ptr<MoveOnly>) -> MoveOnly {
@@ -447,7 +564,7 @@ impl MoveOnlyImpl for Ptr<MoveOnly> {
 }
 pub trait TrivialMoveOnlyImpl {
     fn move_assign(&self, _a0: Ptr<TrivialMoveOnly>) -> Ptr<TrivialMoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_add(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly;
     fn operator_mul(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly;
 }
@@ -456,7 +573,7 @@ impl TrivialMoveOnlyImpl for Ptr<TrivialMoveOnly> {
         field!((*self), data_).write({ { (*_a0.upgrade().deref()).data_ } });
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_add(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly {

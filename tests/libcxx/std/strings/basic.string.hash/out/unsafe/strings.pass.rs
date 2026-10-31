@@ -9,47 +9,87 @@ use std::rc::Rc;
 pub unsafe fn test_0() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let mut g1: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567890".as_ptr(),
+        libcc2rs::c_str_len(c"1234567890".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut g2: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567891".as_ptr(),
+        libcc2rs::c_str_len(c"1234567891".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut s1: Vec<libc::c_char> = unimplemented!();
+    let mut s2: Vec<libc::c_char> = unimplemented!();
+    assert!(((unimplemented!()) != (unimplemented!())));
 }
 pub unsafe fn test_1() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let mut g1: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567890".as_ptr(),
+        libcc2rs::c_str_len(c"1234567890".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut g2: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567891".as_ptr(),
+        libcc2rs::c_str_len(c"1234567891".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut s1: Vec<u8> = unimplemented!();
+    let mut s2: Vec<u8> = unimplemented!();
+    assert!(((unimplemented!()) != (unimplemented!())));
 }
 pub unsafe fn test_2() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let mut g1: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567890".as_ptr(),
+        libcc2rs::c_str_len(c"1234567890".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut g2: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567891".as_ptr(),
+        libcc2rs::c_str_len(c"1234567891".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut s1: Vec<u16> = unimplemented!();
+    let mut s2: Vec<u16> = unimplemented!();
+    assert!(((unimplemented!()) != (unimplemented!())));
 }
 pub unsafe fn test_3() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let mut g1: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567890".as_ptr(),
+        libcc2rs::c_str_len(c"1234567890".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut g2: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567891".as_ptr(),
+        libcc2rs::c_str_len(c"1234567891".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut s1: Vec<u32> = unimplemented!();
+    let mut s2: Vec<u32> = unimplemented!();
+    assert!(((unimplemented!()) != (unimplemented!())));
 }
 pub unsafe fn test_4() {
     const _: () = assert!(true, "");;
     let mut h: () = unimplemented!();
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let mut g1: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567890".as_ptr(),
+        libcc2rs::c_str_len(c"1234567890".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut g2: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"1234567891".as_ptr(),
+        libcc2rs::c_str_len(c"1234567891".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut s1: Vec<i32> = unimplemented!();
+    let mut s2: Vec<i32> = unimplemented!();
+    assert!(((unimplemented!()) != (unimplemented!())));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -66,12 +106,12 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     (unsafe { test_1() });
     (unsafe { test_2() });
     (unsafe { test_3() });
     (unsafe { test_4() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

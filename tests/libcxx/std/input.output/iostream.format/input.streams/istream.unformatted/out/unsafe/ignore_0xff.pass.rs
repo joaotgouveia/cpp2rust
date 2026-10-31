@@ -22,17 +22,37 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut bad: () = -1_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut bad: i32 = -1_i32;
     let mut os: () = unimplemented!();
-    unimplemented!();
-    let mut s: () = unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*{
+                let __r: &mut ::std::fs::File = &mut (*{
+                    let __r: &mut ::std::fs::File = &mut os;
+                    let __s: *mut ::std::fs::File = __r;
+                    let _ = (*__s)
+                        .write_all(::std::ffi::CStr::from_ptr(c"aaaabbbb".as_ptr()).to_bytes());
+                    __s
+                });
+                let __s: *mut ::std::fs::File = __r;
+                let _ = (*__s).write_all(&[(bad as libc::c_char) as u8]);
+                __s
+            });
+            let __s: *mut ::std::fs::File = __r;
+            let _ = (*__s).write_all(::std::ffi::CStr::from_ptr(c"ccccdddd".as_ptr()).to_bytes());
+            __s
+        });
+        let __s: *mut ::std::fs::File = __r;
+        (libcc2rs::endl_unsafe as unsafe fn(*mut ::std::fs::File) -> *mut ::std::fs::File)(__s)
+    };
+    let mut s: Vec<libc::c_char> = unimplemented!();
     let mut is: () = unimplemented!();
-    let ignoreLen: () = 10_();
+    let ignoreLen: u32 = 10_u32;
     let mut a: () = unimplemented!();
     unimplemented!();
     let mut b: () = unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((unimplemented!()) == (ignoreLen as ())));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

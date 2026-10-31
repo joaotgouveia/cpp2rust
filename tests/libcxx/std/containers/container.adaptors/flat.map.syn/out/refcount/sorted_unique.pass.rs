@@ -15,7 +15,7 @@ const _: () = assert!(
     "std::is_trivially_default_constructible_v<std::sorted_unique_t>"
 );
 const _: () = assert!(!(false), "!HasImplicitDefaultCtor<std::sorted_unique_t>");
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
@@ -46,9 +46,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

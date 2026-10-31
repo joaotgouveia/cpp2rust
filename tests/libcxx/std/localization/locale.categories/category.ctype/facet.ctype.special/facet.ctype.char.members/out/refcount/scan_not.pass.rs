@@ -26,25 +26,31 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let f: Ptr<()> = unimplemented!();
-        let mut in_: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let in_: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b" A\x07.a1").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
+        let mut m: Vec<u16> = (0..((*in_.borrow()).len() - 1) as usize)
+            .map(|_| 0_u16)
+            .collect::<Vec<_>>();
+        assert!(((unimplemented!() - in_.decay()) as i64 == 1_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 2_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 1_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
+        assert!(((unimplemented!() - in_.decay()) as i64 == 0_i64));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

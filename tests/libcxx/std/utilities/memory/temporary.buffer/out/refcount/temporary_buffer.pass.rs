@@ -26,26 +26,26 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let ip: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let ip: Value<(Value<Ptr<i32>>, Value<i64>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(!(*(*ip.borrow()).0.borrow()).is_null());
+    assert!(((*(*ip.borrow()).1.borrow()) == 5_i64));
     unimplemented!();
     {
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let ret: Value<(Value<Ptr<i32>>, Value<i64>)> = Rc::new(RefCell::new(unimplemented!()));
+        assert!((*(*ret.borrow()).0.borrow()).is_null());
+        assert!(((*(*ret.borrow()).1.borrow()) == 0_i64));
     }
     {
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let ret: Value<(Value<Ptr<i32>>, Value<i64>)> = Rc::new(RefCell::new(unimplemented!()));
+        assert!((*(*ret.borrow()).0.borrow()).is_null());
+        assert!(((*(*ret.borrow()).1.borrow()) == 0_i64));
     }
     {
-        let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let ret: Value<(Value<Ptr<i32>>, Value<i64>)> = Rc::new(RefCell::new(unimplemented!()));
+        assert!((*(*ret.borrow()).0.borrow()).is_null());
+        assert!(((*(*ret.borrow()).1.borrow()) == 0_i64));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

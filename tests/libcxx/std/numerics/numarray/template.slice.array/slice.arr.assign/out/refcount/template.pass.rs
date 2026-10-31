@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -30,15 +30,15 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 0_()])));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let a: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64, 0_f64])));
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!().read()) == 42_f64));
+    assert!(((unimplemented!().read()) == 42_f64));
+    assert!(((unimplemented!().read()) == 42_f64));
     const _: () = assert!(true, "");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

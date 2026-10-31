@@ -7,8 +7,24 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_path_method_0() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __v: Vec<i8> = (b"foo/bar/baz.exe" as Ptr<i8>)
+            .path_bytes()
+            .into_iter()
+            .map(|__b| __b as i8)
+            .collect();
+        __v.push(0);
+        __v
+    }));
+    let p2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __v: Vec<i8> = (b"abc" as Ptr<i8>)
+            .path_bytes()
+            .into_iter()
+            .map(|__b| __b as i8)
+            .collect();
+        __v.push(0);
+        __v
+    }));
     {
         let nce: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -24,17 +40,33 @@ pub fn test_path_method_0() {
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pref: Ptr<()> = unimplemented!();
+        let pref: Ptr<Vec<i8>> = unimplemented!();
+        assert!(unimplemented!());
+        assert!(({ (pref).clone() } == { (unimplemented!()) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(({ (pref).clone() } == { (unimplemented!()) }));
     }
 }
 pub fn test_path_conversion_1() {
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __v: Vec<i8> = (b"foo/bar/baz.exe" as Ptr<i8>)
+            .path_bytes()
+            .into_iter()
+            .map(|__b| __b as i8)
+            .collect();
+        __v.push(0);
+        __v
+    }));
+    let p2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __v: Vec<i8> = (b"abc" as Ptr<i8>)
+            .path_bytes()
+            .into_iter()
+            .map(|__b| __b as i8)
+            .collect();
+        __v.push(0);
+        __v
+    }));
     {
         let nce: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -77,16 +109,16 @@ pub fn test_path_conversion_1() {
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pref: Ptr<()> = unimplemented!();
-        unimplemented!();
+        let pref: Ptr<Vec<i8>> = unimplemented!();
+        assert!(({ (pref).clone() } == { (unimplemented!()) }));
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pref: Ptr<()> = unimplemented!();
+        let pref: Ptr<Vec<i8>> = unimplemented!();
+        assert!(({ (pref).clone() } == { (unimplemented!()) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(({ (pref).clone() } == { (unimplemented!()) }));
     }
 }
 pub fn main() {
@@ -108,9 +140,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_path_method_0() });
     ({ test_path_conversion_1() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

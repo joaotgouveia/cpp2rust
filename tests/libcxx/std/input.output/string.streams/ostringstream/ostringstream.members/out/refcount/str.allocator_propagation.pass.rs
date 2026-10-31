@@ -6,47 +6,52 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(Ptr< i8  >  , to_pconsti8)]
+#[cpp_into(Ptr< i32  >  , to_pconsti32)]
+#[cpp_into(Ptr< u8  >  , to_pconstu8)]
+#[cpp_into(Ptr< u16  >  , to_pconstu16)]
+#[cpp_into(Ptr< u32  >  , to_pconstu32)]
 #[byte_size(80)]
 pub struct MultiStringType {
     #[offset(0)]
     #[byte_size(8)]
-    pub w_: Ptr<()>,
+    pub w_: Ptr<i32>,
     #[offset(8)]
-    pub wn_: (),
+    pub wn_: usize,
     #[offset(16)]
     #[byte_size(8)]
-    pub u8_: Ptr<()>,
+    pub u8_: Ptr<u8>,
     #[offset(24)]
-    pub u8n_: (),
+    pub u8n_: usize,
     #[offset(32)]
     #[byte_size(8)]
-    pub u16_: Ptr<()>,
+    pub u16_: Ptr<u16>,
     #[offset(40)]
-    pub u16n_: (),
+    pub u16n_: usize,
     #[offset(48)]
     #[byte_size(8)]
-    pub u32_: Ptr<()>,
+    pub u32_: Ptr<u32>,
     #[offset(56)]
-    pub u32n_: (),
+    pub u32n_: usize,
     #[offset(64)]
     #[byte_size(8)]
-    pub s_: Ptr<()>,
+    pub s_: Ptr<i8>,
     #[offset(72)]
-    pub sn_: (),
+    pub sn_: usize,
 }
 impl MultiStringType {
     pub fn new(
-        mut w: Ptr<()>,
-        mut wn: (),
-        mut u8: Ptr<()>,
-        mut u8n: (),
-        mut u16: Ptr<()>,
-        mut u16n: (),
-        mut u32: Ptr<()>,
-        mut u32n: (),
-        mut s: Ptr<()>,
-        mut sn: (),
+        mut w: Ptr<i32>,
+        mut wn: usize,
+        mut u8: Ptr<u8>,
+        mut u8n: usize,
+        mut u16: Ptr<u16>,
+        mut u16n: usize,
+        mut u32: Ptr<u32>,
+        mut u32n: usize,
+        mut s: Ptr<i8>,
+        mut sn: usize,
     ) -> Self {
         Self {
             w_: (w).clone(),
@@ -66,57 +71,57 @@ impl MultiStringType {
 #[byte_size(40)]
 pub struct test_allocator_statistics {
     #[offset(0)]
-    pub time_to_throw: (),
+    pub time_to_throw: i32,
     #[offset(4)]
-    pub throw_after: (),
+    pub throw_after: i32,
     #[offset(8)]
-    pub count: (),
+    pub count: i32,
     #[offset(12)]
-    pub alloc_count: (),
+    pub alloc_count: i32,
     #[offset(16)]
-    pub allocated_size: (),
+    pub allocated_size: i32,
     #[offset(20)]
-    pub construct_count: (),
+    pub construct_count: i32,
     #[offset(24)]
-    pub destroy_count: (),
+    pub destroy_count: i32,
     #[offset(28)]
-    pub copied: (),
+    pub copied: i32,
     #[offset(32)]
-    pub moved: (),
+    pub moved: i32,
     #[offset(36)]
-    pub converted: (),
+    pub converted: i32,
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
             test_allocator_statistics {
-                time_to_throw: 0_(),
-                throw_after: 2147483647_(),
-                count: 0_(),
-                alloc_count: 0_(),
-                allocated_size: 0_(),
-                construct_count: 0_(),
-                destroy_count: 0_(),
-                copied: 0_(),
-                moved: 0_(),
-                converted: 0_(),
+                time_to_throw: 0,
+                throw_after: 2147483647,
+                count: 0,
+                alloc_count: 0,
+                allocated_size: 0,
+                construct_count: 0,
+                destroy_count: 0,
+                copied: 0,
+                moved: 0,
+                converted: 0,
             }
         }
     }
 }
 thread_local!(
-    pub static destructed_value_0: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_0: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_1: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_1: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
@@ -127,9 +132,9 @@ pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>)
 #[byte_size(16)]
 pub struct test_allocator_void_ {
     #[offset(0)]
-    data_: (),
+    data_: i32,
     #[offset(4)]
-    id_: (),
+    id_: i32,
     #[offset(8)]
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
@@ -137,33 +142,33 @@ pub struct test_allocator_void_ {
 impl test_allocator_void_ {
     pub fn new_1(mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
-            data_: 0_(),
-            id_: 0_(),
+            data_: 0,
+            id_: 0,
             stats_: (stats).clone(),
         }
     }
-    pub fn new_2(mut data: ()) -> Self {
+    pub fn new_2(mut data: i32) -> Self {
         Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn new_3(mut data: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
+    pub fn new_3(mut data: i32, mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: (stats).clone(),
         }
     }
-    pub fn new_4(mut data: (), mut id: ()) -> Self {
+    pub fn new_4(mut data: i32, mut id: i32) -> Self {
         Self {
             data_: data,
             id_: id,
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn new_5(mut data: (), mut id: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
+    pub fn new_5(mut data: i32, mut id: i32, mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
             data_: data,
             id_: id,
@@ -197,8 +202,8 @@ impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
             test_allocator_void_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -207,7 +212,8 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
-#[derive(Record, ByteRepr, FnPtrArg, CopyAssign, MoveAssign, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
 pub struct Tag_X {}
 impl Tag_X {
@@ -225,10 +231,10 @@ impl Tag_X {
 #[byte_size(4)]
 pub struct SocccAllocator_char_ {
     #[offset(0)]
-    pub count_: (),
+    pub count_: i32,
 }
 impl SocccAllocator_char_ {
-    pub fn new(mut i: ()) -> Self {
+    pub fn new(mut i: i32) -> Self {
         Self { count_: i }
     }
 }
@@ -239,21 +245,17 @@ impl CppEq for SocccAllocator_char_ {
 }
 impl Default for SocccAllocator_char_ {
     fn default() -> Self {
-        {
-            SocccAllocator_char_ {
-                count_: unimplemented!(),
-            }
-        }
+        { SocccAllocator_char_ { count_: 0_i32 } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct SocccAllocator_wchar_t_ {
     #[offset(0)]
-    pub count_: (),
+    pub count_: i32,
 }
 impl SocccAllocator_wchar_t_ {
-    pub fn new(mut i: ()) -> Self {
+    pub fn new(mut i: i32) -> Self {
         Self { count_: i }
     }
 }
@@ -264,107 +266,100 @@ impl CppEq for SocccAllocator_wchar_t_ {
 }
 impl Default for SocccAllocator_wchar_t_ {
     fn default() -> Self {
-        {
-            SocccAllocator_wchar_t_ {
-                count_: unimplemented!(),
-            }
-        }
+        { SocccAllocator_wchar_t_ { count_: 0_i32 } }
     }
 }
 pub fn test_soccc_behavior_4() {
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut copied: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut moved: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut copied: Vec<i8> = unimplemented!();
+        assert!(({ unimplemented!().count_ } == 10));
+        assert!(({ unimplemented!().count_ } == 10));
+        assert!(copied.len() <= 1);
+        assert!(({ unimplemented!().count_ } == 11));
+        let mut moved: Vec<i8> = unimplemented!();
+        assert!(({ unimplemented!().count_ } == 10));
+        assert!(({ unimplemented!().count_ } == 10));
+        assert!(moved.len() <= 1);
     }
 }
 pub fn test_soccc_behavior_5() {
     {
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut copied: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut moved: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut copied: Vec<i32> = unimplemented!();
+        assert!(({ unimplemented!().count_ } == 10));
+        assert!(({ unimplemented!().count_ } == 10));
+        assert!(copied.len() <= 1);
+        assert!(({ unimplemented!().count_ } == 11));
+        let mut moved: Vec<i32> = unimplemented!();
+        assert!(({ unimplemented!().count_ } == 10));
+        assert!(({ unimplemented!().count_ } == 10));
+        assert!(moved.len() <= 1);
     }
 }
 pub fn test_allocation_is_pilfered_6() {
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..80).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut initial: Ptr<()> = ({
-        MultiStringTypeImpl :: as_ptr_2 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_sub ( 1_() )  } , )  )).as_pointer() , Ptr::<()>::null()  , )
+    let buf: Value<Box<[i8]>> = Rc::new(RefCell::new((0..80).map(|_| 0_i8).collect::<Box<[i8]>>()));
+    let mut initial: Ptr<i8> = ({
+        MultiStringTypeImpl :: as_ptr_2 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<i32 >::from_string_literal(&[97 as i32 , 32 as i32 , 118 as i32 , 101 as i32 , 114 as i32 , 121 as i32 , 32 as i32 , 108 as i32 , 111 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 97 as i32 , 116 as i32 , 32 as i32 , 101 as i32 , 120 as i32 , 99 as i32 , 101 as i32 , 101 as i32 , 100 as i32 , 115 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 101 as i32 , 32 as i32 , 115 as i32 , 109 as i32 , 97 as i32 , 108 as i32 , 108 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 111 as i32 , 112 as i32 , 116 as i32 , 105 as i32 , 109 as i32 , 105 as i32 , 122 as i32 , 97 as i32 , 116 as i32 , 105 as i32 , 111 as i32 , 110 as i32 , 32 as i32 , 98 as i32 , 117 as i32 , 102 as i32 , 102 as i32 , 101 as i32 , 114 as i32 , 32 as i32 , 108 as i32 , 101 as i32 , 110 as i32 , 103 as i32 , 116 as i32 , 104 as i32 , 0 as i32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ i32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<i32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u8 >::from_string_literal(&[97 as u8 , 32 as u8 , 118 as u8 , 101 as u8 , 114 as u8 , 121 as u8 , 32 as u8 , 108 as u8 , 111 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 97 as u8 , 116 as u8 , 32 as u8 , 101 as u8 , 120 as u8 , 99 as u8 , 101 as u8 , 101 as u8 , 100 as u8 , 115 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 101 as u8 , 32 as u8 , 115 as u8 , 109 as u8 , 97 as u8 , 108 as u8 , 108 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 111 as u8 , 112 as u8 , 116 as u8 , 105 as u8 , 109 as u8 , 105 as u8 , 122 as u8 , 97 as u8 , 116 as u8 , 105 as u8 , 111 as u8 , 110 as u8 , 32 as u8 , 98 as u8 , 117 as u8 , 102 as u8 , 102 as u8 , 101 as u8 , 114 as u8 , 32 as u8 , 108 as u8 , 101 as u8 , 110 as u8 , 103 as u8 , 116 as u8 , 104 as u8 , 0 as u8 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u8 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u8>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u16 >::from_string_literal(&[97 as u16 , 32 as u16 , 118 as u16 , 101 as u16 , 114 as u16 , 121 as u16 , 32 as u16 , 108 as u16 , 111 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 97 as u16 , 116 as u16 , 32 as u16 , 101 as u16 , 120 as u16 , 99 as u16 , 101 as u16 , 101 as u16 , 100 as u16 , 115 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 101 as u16 , 32 as u16 , 115 as u16 , 109 as u16 , 97 as u16 , 108 as u16 , 108 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 111 as u16 , 112 as u16 , 116 as u16 , 105 as u16 , 109 as u16 , 105 as u16 , 122 as u16 , 97 as u16 , 116 as u16 , 105 as u16 , 111 as u16 , 110 as u16 , 32 as u16 , 98 as u16 , 117 as u16 , 102 as u16 , 102 as u16 , 101 as u16 , 114 as u16 , 32 as u16 , 108 as u16 , 101 as u16 , 110 as u16 , 103 as u16 , 116 as u16 , 104 as u16 , 0 as u16 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u16 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u16>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u32 >::from_string_literal(&[97 as u32 , 32 as u32 , 118 as u32 , 101 as u32 , 114 as u32 , 121 as u32 , 32 as u32 , 108 as u32 , 111 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 97 as u32 , 116 as u32 , 32 as u32 , 101 as u32 , 120 as u32 , 99 as u32 , 101 as u32 , 101 as u32 , 100 as u32 , 115 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 101 as u32 , 32 as u32 , 115 as u32 , 109 as u32 , 97 as u32 , 108 as u32 , 108 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 111 as u32 , 112 as u32 , 116 as u32 , 105 as u32 , 109 as u32 , 105 as u32 , 122 as u32 , 97 as u32 , 116 as u32 , 105 as u32 , 111 as u32 , 110 as u32 , 32 as u32 , 98 as u32 , 117 as u32 , 102 as u32 , 102 as u32 , 101 as u32 , 114 as u32 , 32 as u32 , 108 as u32 , 101 as u32 , 110 as u32 , 103 as u32 , 116 as u32 , 104 as u32 , 0 as u32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<i8 >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ i8 ; 76]>() as usize ) ) . wrapping_sub ( 1_usize )  } , )  )).as_pointer() , Ptr::<i8>::null()  , )
     });
     {
         unimplemented!();
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut s: () = unimplemented!();
-        unimplemented!();
+        assert!(initial.with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s));
     }
 }
 pub fn test_allocation_is_pilfered_7() {
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..320).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut initial: Ptr<()> = ({
-        MultiStringTypeImpl :: as_ptr_3 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_sub ( 1_() )  } , )  )).as_pointer() , Ptr::<()>::null()  , )
+    let buf: Value<Box<[i8]>> =
+        Rc::new(RefCell::new((0..320).map(|_| 0_i8).collect::<Box<[i8]>>()));
+    let mut initial: Ptr<i32> = ({
+        MultiStringTypeImpl :: as_ptr_3 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<i32 >::from_string_literal(&[97 as i32 , 32 as i32 , 118 as i32 , 101 as i32 , 114 as i32 , 121 as i32 , 32 as i32 , 108 as i32 , 111 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 97 as i32 , 116 as i32 , 32 as i32 , 101 as i32 , 120 as i32 , 99 as i32 , 101 as i32 , 101 as i32 , 100 as i32 , 115 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 101 as i32 , 32 as i32 , 115 as i32 , 109 as i32 , 97 as i32 , 108 as i32 , 108 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 111 as i32 , 112 as i32 , 116 as i32 , 105 as i32 , 109 as i32 , 105 as i32 , 122 as i32 , 97 as i32 , 116 as i32 , 105 as i32 , 111 as i32 , 110 as i32 , 32 as i32 , 98 as i32 , 117 as i32 , 102 as i32 , 102 as i32 , 101 as i32 , 114 as i32 , 32 as i32 , 108 as i32 , 101 as i32 , 110 as i32 , 103 as i32 , 116 as i32 , 104 as i32 , 0 as i32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ i32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<i32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u8 >::from_string_literal(&[97 as u8 , 32 as u8 , 118 as u8 , 101 as u8 , 114 as u8 , 121 as u8 , 32 as u8 , 108 as u8 , 111 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 97 as u8 , 116 as u8 , 32 as u8 , 101 as u8 , 120 as u8 , 99 as u8 , 101 as u8 , 101 as u8 , 100 as u8 , 115 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 101 as u8 , 32 as u8 , 115 as u8 , 109 as u8 , 97 as u8 , 108 as u8 , 108 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 111 as u8 , 112 as u8 , 116 as u8 , 105 as u8 , 109 as u8 , 105 as u8 , 122 as u8 , 97 as u8 , 116 as u8 , 105 as u8 , 111 as u8 , 110 as u8 , 32 as u8 , 98 as u8 , 117 as u8 , 102 as u8 , 102 as u8 , 101 as u8 , 114 as u8 , 32 as u8 , 108 as u8 , 101 as u8 , 110 as u8 , 103 as u8 , 116 as u8 , 104 as u8 , 0 as u8 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u8 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u8>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u16 >::from_string_literal(&[97 as u16 , 32 as u16 , 118 as u16 , 101 as u16 , 114 as u16 , 121 as u16 , 32 as u16 , 108 as u16 , 111 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 97 as u16 , 116 as u16 , 32 as u16 , 101 as u16 , 120 as u16 , 99 as u16 , 101 as u16 , 101 as u16 , 100 as u16 , 115 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 101 as u16 , 32 as u16 , 115 as u16 , 109 as u16 , 97 as u16 , 108 as u16 , 108 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 111 as u16 , 112 as u16 , 116 as u16 , 105 as u16 , 109 as u16 , 105 as u16 , 122 as u16 , 97 as u16 , 116 as u16 , 105 as u16 , 111 as u16 , 110 as u16 , 32 as u16 , 98 as u16 , 117 as u16 , 102 as u16 , 102 as u16 , 101 as u16 , 114 as u16 , 32 as u16 , 108 as u16 , 101 as u16 , 110 as u16 , 103 as u16 , 116 as u16 , 104 as u16 , 0 as u16 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u16 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u16>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u32 >::from_string_literal(&[97 as u32 , 32 as u32 , 118 as u32 , 101 as u32 , 114 as u32 , 121 as u32 , 32 as u32 , 108 as u32 , 111 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 97 as u32 , 116 as u32 , 32 as u32 , 101 as u32 , 120 as u32 , 99 as u32 , 101 as u32 , 101 as u32 , 100 as u32 , 115 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 101 as u32 , 32 as u32 , 115 as u32 , 109 as u32 , 97 as u32 , 108 as u32 , 108 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 111 as u32 , 112 as u32 , 116 as u32 , 105 as u32 , 109 as u32 , 105 as u32 , 122 as u32 , 97 as u32 , 116 as u32 , 105 as u32 , 111 as u32 , 110 as u32 , 32 as u32 , 98 as u32 , 117 as u32 , 102 as u32 , 102 as u32 , 101 as u32 , 114 as u32 , 32 as u32 , 108 as u32 , 101 as u32 , 110 as u32 , 103 as u32 , 116 as u32 , 104 as u32 , 0 as u32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<i8 >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ i8 ; 76]>() as usize ) ) . wrapping_sub ( 1_usize )  } , )  )).as_pointer() , Ptr::<i32>::null()  , )
     });
     {
         unimplemented!();
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut s: () = unimplemented!();
-        unimplemented!();
+        assert!(initial.with_c_str(|__s| s[..s.len().saturating_sub(1)] == *__s));
     }
 }
 pub fn test_no_foreign_allocations_8() {
-    let mut initial: Ptr<()> = ({
-        MultiStringTypeImpl :: as_ptr_2 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_sub ( 1_() )  } , )  )).as_pointer() , Ptr::<()>::null()  , )
+    let mut initial: Ptr<i8> = ({
+        MultiStringTypeImpl :: as_ptr_2 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<i32 >::from_string_literal(&[97 as i32 , 32 as i32 , 118 as i32 , 101 as i32 , 114 as i32 , 121 as i32 , 32 as i32 , 108 as i32 , 111 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 97 as i32 , 116 as i32 , 32 as i32 , 101 as i32 , 120 as i32 , 99 as i32 , 101 as i32 , 101 as i32 , 100 as i32 , 115 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 101 as i32 , 32 as i32 , 115 as i32 , 109 as i32 , 97 as i32 , 108 as i32 , 108 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 111 as i32 , 112 as i32 , 116 as i32 , 105 as i32 , 109 as i32 , 105 as i32 , 122 as i32 , 97 as i32 , 116 as i32 , 105 as i32 , 111 as i32 , 110 as i32 , 32 as i32 , 98 as i32 , 117 as i32 , 102 as i32 , 102 as i32 , 101 as i32 , 114 as i32 , 32 as i32 , 108 as i32 , 101 as i32 , 110 as i32 , 103 as i32 , 116 as i32 , 104 as i32 , 0 as i32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ i32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<i32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u8 >::from_string_literal(&[97 as u8 , 32 as u8 , 118 as u8 , 101 as u8 , 114 as u8 , 121 as u8 , 32 as u8 , 108 as u8 , 111 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 97 as u8 , 116 as u8 , 32 as u8 , 101 as u8 , 120 as u8 , 99 as u8 , 101 as u8 , 101 as u8 , 100 as u8 , 115 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 101 as u8 , 32 as u8 , 115 as u8 , 109 as u8 , 97 as u8 , 108 as u8 , 108 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 111 as u8 , 112 as u8 , 116 as u8 , 105 as u8 , 109 as u8 , 105 as u8 , 122 as u8 , 97 as u8 , 116 as u8 , 105 as u8 , 111 as u8 , 110 as u8 , 32 as u8 , 98 as u8 , 117 as u8 , 102 as u8 , 102 as u8 , 101 as u8 , 114 as u8 , 32 as u8 , 108 as u8 , 101 as u8 , 110 as u8 , 103 as u8 , 116 as u8 , 104 as u8 , 0 as u8 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u8 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u8>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u16 >::from_string_literal(&[97 as u16 , 32 as u16 , 118 as u16 , 101 as u16 , 114 as u16 , 121 as u16 , 32 as u16 , 108 as u16 , 111 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 97 as u16 , 116 as u16 , 32 as u16 , 101 as u16 , 120 as u16 , 99 as u16 , 101 as u16 , 101 as u16 , 100 as u16 , 115 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 101 as u16 , 32 as u16 , 115 as u16 , 109 as u16 , 97 as u16 , 108 as u16 , 108 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 111 as u16 , 112 as u16 , 116 as u16 , 105 as u16 , 109 as u16 , 105 as u16 , 122 as u16 , 97 as u16 , 116 as u16 , 105 as u16 , 111 as u16 , 110 as u16 , 32 as u16 , 98 as u16 , 117 as u16 , 102 as u16 , 102 as u16 , 101 as u16 , 114 as u16 , 32 as u16 , 108 as u16 , 101 as u16 , 110 as u16 , 103 as u16 , 116 as u16 , 104 as u16 , 0 as u16 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u16 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u16>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u32 >::from_string_literal(&[97 as u32 , 32 as u32 , 118 as u32 , 101 as u32 , 114 as u32 , 121 as u32 , 32 as u32 , 108 as u32 , 111 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 97 as u32 , 116 as u32 , 32 as u32 , 101 as u32 , 120 as u32 , 99 as u32 , 101 as u32 , 101 as u32 , 100 as u32 , 115 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 101 as u32 , 32 as u32 , 115 as u32 , 109 as u32 , 97 as u32 , 108 as u32 , 108 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 111 as u32 , 112 as u32 , 116 as u32 , 105 as u32 , 109 as u32 , 105 as u32 , 122 as u32 , 97 as u32 , 116 as u32 , 105 as u32 , 111 as u32 , 110 as u32 , 32 as u32 , 98 as u32 , 117 as u32 , 102 as u32 , 102 as u32 , 101 as u32 , 114 as u32 , 32 as u32 , 108 as u32 , 101 as u32 , 110 as u32 , 103 as u32 , 116 as u32 , 104 as u32 , 0 as u32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<i8 >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ i8 ; 76]>() as usize ) ) . wrapping_sub ( 1_usize )  } , )  )).as_pointer() , Ptr::<i8>::null()  , )
     });
     {
         unimplemented!();
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == (mr1.as_pointer())));
         let mut copied: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (mr1.as_pointer())));
+        assert!((unimplemented!() == (mr1.as_pointer())));
+        assert!(initial.with_c_str(|__s| copied[..copied.len().saturating_sub(1)] == *__s));
         let mut moved: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (mr1.as_pointer())));
+        assert!((unimplemented!() == (mr1.as_pointer())));
+        assert!(initial.with_c_str(|__s| moved[..moved.len().saturating_sub(1)] == *__s));
     }
 }
 pub fn test_no_foreign_allocations_9() {
-    let mut initial: Ptr<()> = ({
-        MultiStringTypeImpl :: as_ptr_3 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 118 as () , 101 as () , 114 as () , 121 as () , 32 as () , 108 as () , 111 as () , 110 as () , 103 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 116 as () , 104 as () , 97 as () , 116 as () , 32 as () , 101 as () , 120 as () , 99 as () , 101 as () , 101 as () , 100 as () , 115 as () , 32 as () , 116 as () , 104 as () , 101 as () , 32 as () , 115 as () , 109 as () , 97 as () , 108 as () , 108 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 32 as () , 111 as () , 112 as () , 116 as () , 105 as () , 109 as () , 105 as () , 122 as () , 97 as () , 116 as () , 105 as () , 111 as () , 110 as () , 32 as () , 98 as () , 117 as () , 102 as () , 102 as () , 101 as () , 114 as () , 32 as () , 108 as () , 101 as () , 110 as () , 103 as () , 116 as () , 104 as () , 0 as () , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_div ( ( ::std::mem::size_of::<()>() as () ) ) as () ) ) . wrapping_sub ( 1_() )  } , { Ptr::<() >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ () ; 76]>() as () ) ) . wrapping_sub ( 1_() )  } , )  )).as_pointer() , Ptr::<()>::null()  , )
+    let mut initial: Ptr<i32> = ({
+        MultiStringTypeImpl :: as_ptr_3 ( &Rc::new(RefCell::new(MultiStringType :: new ( { Ptr::<i32 >::from_string_literal(&[97 as i32 , 32 as i32 , 118 as i32 , 101 as i32 , 114 as i32 , 121 as i32 , 32 as i32 , 108 as i32 , 111 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 97 as i32 , 116 as i32 , 32 as i32 , 101 as i32 , 120 as i32 , 99 as i32 , 101 as i32 , 101 as i32 , 100 as i32 , 115 as i32 , 32 as i32 , 116 as i32 , 104 as i32 , 101 as i32 , 32 as i32 , 115 as i32 , 109 as i32 , 97 as i32 , 108 as i32 , 108 as i32 , 32 as i32 , 115 as i32 , 116 as i32 , 114 as i32 , 105 as i32 , 110 as i32 , 103 as i32 , 32 as i32 , 111 as i32 , 112 as i32 , 116 as i32 , 105 as i32 , 109 as i32 , 105 as i32 , 122 as i32 , 97 as i32 , 116 as i32 , 105 as i32 , 111 as i32 , 110 as i32 , 32 as i32 , 98 as i32 , 117 as i32 , 102 as i32 , 102 as i32 , 101 as i32 , 114 as i32 , 32 as i32 , 108 as i32 , 101 as i32 , 110 as i32 , 103 as i32 , 116 as i32 , 104 as i32 , 0 as i32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ i32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<i32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u8 >::from_string_literal(&[97 as u8 , 32 as u8 , 118 as u8 , 101 as u8 , 114 as u8 , 121 as u8 , 32 as u8 , 108 as u8 , 111 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 97 as u8 , 116 as u8 , 32 as u8 , 101 as u8 , 120 as u8 , 99 as u8 , 101 as u8 , 101 as u8 , 100 as u8 , 115 as u8 , 32 as u8 , 116 as u8 , 104 as u8 , 101 as u8 , 32 as u8 , 115 as u8 , 109 as u8 , 97 as u8 , 108 as u8 , 108 as u8 , 32 as u8 , 115 as u8 , 116 as u8 , 114 as u8 , 105 as u8 , 110 as u8 , 103 as u8 , 32 as u8 , 111 as u8 , 112 as u8 , 116 as u8 , 105 as u8 , 109 as u8 , 105 as u8 , 122 as u8 , 97 as u8 , 116 as u8 , 105 as u8 , 111 as u8 , 110 as u8 , 32 as u8 , 98 as u8 , 117 as u8 , 102 as u8 , 102 as u8 , 101 as u8 , 114 as u8 , 32 as u8 , 108 as u8 , 101 as u8 , 110 as u8 , 103 as u8 , 116 as u8 , 104 as u8 , 0 as u8 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u8 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u8>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u16 >::from_string_literal(&[97 as u16 , 32 as u16 , 118 as u16 , 101 as u16 , 114 as u16 , 121 as u16 , 32 as u16 , 108 as u16 , 111 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 97 as u16 , 116 as u16 , 32 as u16 , 101 as u16 , 120 as u16 , 99 as u16 , 101 as u16 , 101 as u16 , 100 as u16 , 115 as u16 , 32 as u16 , 116 as u16 , 104 as u16 , 101 as u16 , 32 as u16 , 115 as u16 , 109 as u16 , 97 as u16 , 108 as u16 , 108 as u16 , 32 as u16 , 115 as u16 , 116 as u16 , 114 as u16 , 105 as u16 , 110 as u16 , 103 as u16 , 32 as u16 , 111 as u16 , 112 as u16 , 116 as u16 , 105 as u16 , 109 as u16 , 105 as u16 , 122 as u16 , 97 as u16 , 116 as u16 , 105 as u16 , 111 as u16 , 110 as u16 , 32 as u16 , 98 as u16 , 117 as u16 , 102 as u16 , 102 as u16 , 101 as u16 , 114 as u16 , 32 as u16 , 108 as u16 , 101 as u16 , 110 as u16 , 103 as u16 , 116 as u16 , 104 as u16 , 0 as u16 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u16 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u16>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<u32 >::from_string_literal(&[97 as u32 , 32 as u32 , 118 as u32 , 101 as u32 , 114 as u32 , 121 as u32 , 32 as u32 , 108 as u32 , 111 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 97 as u32 , 116 as u32 , 32 as u32 , 101 as u32 , 120 as u32 , 99 as u32 , 101 as u32 , 101 as u32 , 100 as u32 , 115 as u32 , 32 as u32 , 116 as u32 , 104 as u32 , 101 as u32 , 32 as u32 , 115 as u32 , 109 as u32 , 97 as u32 , 108 as u32 , 108 as u32 , 32 as u32 , 115 as u32 , 116 as u32 , 114 as u32 , 105 as u32 , 110 as u32 , 103 as u32 , 32 as u32 , 111 as u32 , 112 as u32 , 116 as u32 , 105 as u32 , 109 as u32 , 105 as u32 , 122 as u32 , 97 as u32 , 116 as u32 , 105 as u32 , 111 as u32 , 110 as u32 , 32 as u32 , 98 as u32 , 117 as u32 , 102 as u32 , 102 as u32 , 101 as u32 , 114 as u32 , 32 as u32 , 108 as u32 , 101 as u32 , 110 as u32 , 103 as u32 , 116 as u32 , 104 as u32 , 0 as u32 , ] )  } , { ( ( ( ( ::std::mem::size_of::<[ u32 ; 76]>() as usize ) ) . wrapping_div ( ( ::std::mem::size_of::<u32>() as usize ) ) as usize ) ) . wrapping_sub ( 1_usize )  } , { Ptr::<i8 >::from_string_literal(b"a very long string that exceeds the small string optimization buffer length" )  } , { ( ( ::std::mem::size_of::<[ i8 ; 76]>() as usize ) ) . wrapping_sub ( 1_usize )  } , )  )).as_pointer() , Ptr::<i32>::null()  , )
     });
     {
         unimplemented!();
         let mr1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == (mr1.as_pointer())));
         let mut copied: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (mr1.as_pointer())));
+        assert!((unimplemented!() == (mr1.as_pointer())));
+        assert!(initial.with_c_str(|__s| copied[..copied.len().saturating_sub(1)] == *__s));
         let mut moved: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (mr1.as_pointer())));
+        assert!((unimplemented!() == (mr1.as_pointer())));
+        assert!(initial.with_c_str(|__s| moved[..moved.len().saturating_sub(1)] == *__s));
     }
 }
 pub fn main() {
@@ -386,116 +381,116 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_soccc_behavior_4() });
     ({ test_allocation_is_pilfered_6() });
     ({ test_no_foreign_allocations_8() });
     ({ test_soccc_behavior_5() });
     ({ test_allocation_is_pilfered_7() });
     ({ test_no_foreign_allocations_9() });
-    return 0_();
+    return 0;
 }
 pub trait MultiStringTypeImpl {
-    fn as_ptr_2(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn as_ptr_3(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn as_ptr_4(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn as_ptr_5(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn as_ptr_6(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn length_7(&self, _a0: Ptr<()>) -> ();
-    fn length_8(&self, _a0: Ptr<()>) -> ();
-    fn length_9(&self, _a0: Ptr<()>) -> ();
-    fn length_10(&self, _a0: Ptr<()>) -> ();
-    fn length_11(&self, _a0: Ptr<()>) -> ();
-    fn to_pconst_12(&self) -> Ptr<()>;
-    fn to_pconst_13(&self) -> Ptr<()>;
-    fn to_pconst_14(&self) -> Ptr<()>;
-    fn to_pconst_15(&self) -> Ptr<()>;
-    fn to_pconst_16(&self) -> Ptr<()>;
+    fn as_ptr_2(&self, _a0: Ptr<i8>) -> Ptr<i8>;
+    fn as_ptr_3(&self, _a0: Ptr<i32>) -> Ptr<i32>;
+    fn as_ptr_4(&self, _a0: Ptr<u8>) -> Ptr<u8>;
+    fn as_ptr_5(&self, _a0: Ptr<u16>) -> Ptr<u16>;
+    fn as_ptr_6(&self, _a0: Ptr<u32>) -> Ptr<u32>;
+    fn length_7(&self, _a0: Ptr<i8>) -> usize;
+    fn length_8(&self, _a0: Ptr<i32>) -> usize;
+    fn length_9(&self, _a0: Ptr<u8>) -> usize;
+    fn length_10(&self, _a0: Ptr<u16>) -> usize;
+    fn length_11(&self, _a0: Ptr<u32>) -> usize;
+    fn to_pconsti8(&self) -> Ptr<i8>;
+    fn to_pconsti32(&self) -> Ptr<i32>;
+    fn to_pconstu8(&self) -> Ptr<u8>;
+    fn to_pconstu16(&self) -> Ptr<u16>;
+    fn to_pconstu32(&self) -> Ptr<u32>;
 }
 impl MultiStringTypeImpl for Ptr<MultiStringType> {
-    fn as_ptr_2(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_2(&self, mut _a0: Ptr<i8>) -> Ptr<i8> {
         return (*self).with(|__s| __s.s_.clone());
     }
-    fn as_ptr_3(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_3(&self, mut _a0: Ptr<i32>) -> Ptr<i32> {
         return (*self).with(|__s| __s.w_.clone());
     }
-    fn as_ptr_4(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_4(&self, mut _a0: Ptr<u8>) -> Ptr<u8> {
         return (*self).with(|__s| __s.u8_.clone());
     }
-    fn as_ptr_5(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_5(&self, mut _a0: Ptr<u16>) -> Ptr<u16> {
         return (*self).with(|__s| __s.u16_.clone());
     }
-    fn as_ptr_6(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_6(&self, mut _a0: Ptr<u32>) -> Ptr<u32> {
         return (*self).with(|__s| __s.u32_.clone());
     }
-    fn length_7(&self, mut _a0: Ptr<()>) -> () {
+    fn length_7(&self, mut _a0: Ptr<i8>) -> usize {
         return (*self).with(|__s| __s.sn_);
     }
-    fn length_8(&self, mut _a0: Ptr<()>) -> () {
+    fn length_8(&self, mut _a0: Ptr<i32>) -> usize {
         return (*self).with(|__s| __s.wn_);
     }
-    fn length_9(&self, mut _a0: Ptr<()>) -> () {
+    fn length_9(&self, mut _a0: Ptr<u8>) -> usize {
         return (*self).with(|__s| __s.u8n_);
     }
-    fn length_10(&self, mut _a0: Ptr<()>) -> () {
+    fn length_10(&self, mut _a0: Ptr<u16>) -> usize {
         return (*self).with(|__s| __s.u16n_);
     }
-    fn length_11(&self, mut _a0: Ptr<()>) -> () {
+    fn length_11(&self, mut _a0: Ptr<u32>) -> usize {
         return (*self).with(|__s| __s.u32n_);
     }
-    fn to_pconst_12(&self) -> Ptr<()> {
+    fn to_pconsti8(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.s_.clone());
     }
-    fn to_pconst_13(&self) -> Ptr<()> {
+    fn to_pconsti32(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.w_.clone());
     }
-    fn to_pconst_14(&self) -> Ptr<()> {
+    fn to_pconstu8(&self) -> Ptr<u8> {
         return (*self).with(|__s| __s.u8_.clone());
     }
-    fn to_pconst_15(&self) -> Ptr<()> {
+    fn to_pconstu16(&self) -> Ptr<u16> {
         return (*self).with(|__s| __s.u16_.clone());
     }
-    fn to_pconst_16(&self) -> Ptr<()> {
+    fn to_pconstu32(&self) -> Ptr<u32> {
         return (*self).with(|__s| __s.u32_.clone());
     }
 }
 pub trait SocccAllocator_char_Impl {
-    fn allocate(&self, n: ()) -> Ptr<()>;
-    fn deallocate(&self, p: Ptr<()>, n: ());
+    fn allocate(&self, n: usize) -> Ptr<i8>;
+    fn deallocate(&self, p: Ptr<i8>, n: usize);
     fn select_on_container_copy_construction(&self) -> SocccAllocator_char_;
-    fn operator_eq(&self, _a0: Ptr<SocccAllocator_char_>) -> ();
+    fn operator_eq(&self, _a0: Ptr<SocccAllocator_char_>) -> bool;
 }
 impl SocccAllocator_char_Impl for Ptr<SocccAllocator_char_> {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
+    fn allocate(&self, mut n: usize) -> Ptr<i8> {
         return unimplemented!();
     }
-    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+    fn deallocate(&self, mut p: Ptr<i8>, mut n: usize) {
         unimplemented!();
     }
     fn select_on_container_copy_construction(&self) -> SocccAllocator_char_ {
-        return SocccAllocator_char_::new({ ((*self).with(|__s| __s.count_) + 1_()) });
+        return SocccAllocator_char_::new({ ((*self).with(|__s| __s.count_) + 1) });
     }
-    fn operator_eq(&self, _a0: Ptr<SocccAllocator_char_>) -> () {
+    fn operator_eq(&self, _a0: Ptr<SocccAllocator_char_>) -> bool {
         return true;
     }
 }
 pub trait SocccAllocator_wchar_t_Impl {
-    fn allocate(&self, n: ()) -> Ptr<()>;
-    fn deallocate(&self, p: Ptr<()>, n: ());
+    fn allocate(&self, n: usize) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, n: usize);
     fn select_on_container_copy_construction(&self) -> SocccAllocator_wchar_t_;
-    fn operator_eq(&self, _a0: Ptr<SocccAllocator_wchar_t_>) -> ();
+    fn operator_eq(&self, _a0: Ptr<SocccAllocator_wchar_t_>) -> bool;
 }
 impl SocccAllocator_wchar_t_Impl for Ptr<SocccAllocator_wchar_t_> {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
+    fn allocate(&self, mut n: usize) -> Ptr<i32> {
         return unimplemented!();
     }
-    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
         unimplemented!();
     }
     fn select_on_container_copy_construction(&self) -> SocccAllocator_wchar_t_ {
-        return SocccAllocator_wchar_t_::new({ ((*self).with(|__s| __s.count_) + 1_()) });
+        return SocccAllocator_wchar_t_::new({ ((*self).with(|__s| __s.count_) + 1) });
     }
-    fn operator_eq(&self, _a0: Ptr<SocccAllocator_wchar_t_>) -> () {
+    fn operator_eq(&self, _a0: Ptr<SocccAllocator_wchar_t_>) -> bool {
         return true;
     }
 }
@@ -517,26 +512,30 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        unimplemented!();
-        field!((*self), count).write(0_());
-        field!((*self), time_to_throw).write(0_());
-        field!((*self), alloc_count).write(0_());
-        field!((*self), allocated_size).write(0_());
-        field!((*self), construct_count).write(0_());
-        field!((*self), destroy_count).write(0_());
-        field!((*self), throw_after).write(2147483647_());
+        assert!(
+            ((*self).with(|__s| __s.count) == 0)
+                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                    .is_null())
+        );
+        field!((*self), count).write(0);
+        field!((*self), time_to_throw).write(0);
+        field!((*self), alloc_count).write(0);
+        field!((*self), allocated_size).write(0);
+        field!((*self), construct_count).write(0);
+        field!((*self), destroy_count).write(0);
+        field!((*self), throw_after).write(2147483647);
         ({ test_allocator_statisticsImpl::clear_ctor_counters(self) });
     }
     fn clear_ctor_counters(&self) {
-        field!((*self), copied).write(0_());
-        field!((*self), moved).write(0_());
-        field!((*self), converted).write(0_());
+        field!((*self), copied).write(0);
+        field!((*self), moved).write(0);
+        field!((*self), converted).write(0);
     }
 }
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
-    fn get_id(&self) -> ();
-    fn get_data(&self) -> ();
+    fn get_id(&self) -> i32;
+    fn get_data(&self) -> i32;
     fn copy_assign(&self, _a0: Ptr<test_allocator_void_>) -> Ptr<test_allocator_void_>;
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
@@ -544,10 +543,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
     }
-    fn get_id(&self) -> () {
+    fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
-    fn get_data(&self) -> () {
+    fn get_data(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn copy_assign(&self, _a0: Ptr<test_allocator_void_>) -> Ptr<test_allocator_void_> {

@@ -22,31 +22,46 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut c: () = unimplemented!();
-        let mut n: [(); 4] = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut m: () = unimplemented!();
-        let mut np: *mut () = std::ptr::null_mut();
+        let mut n: [libc::c_char; 4] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+        ];
+        let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut np: *mut libc::c_char = std::ptr::null_mut();
         let mut r: () = unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
     }
     {
         let mut c: () = unimplemented!();
-        let mut n: [(); 4] = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut m: () = unimplemented!();
-        let mut np: *mut () = std::ptr::null_mut();
+        let mut n: [libc::c_char; 4] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+        ];
+        let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut np: *mut libc::c_char = std::ptr::null_mut();
         let mut r: () = unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
     }
     {
         let mut c: () = unimplemented!();
-        let mut n: [(); 4] = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut m: () = unimplemented!();
-        let mut np: *mut () = std::ptr::null_mut();
+        let mut n: [libc::c_char; 4] = [
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+            (0 as libc::c_char),
+        ];
+        let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+        let mut np: *mut libc::c_char = std::ptr::null_mut();
         let mut r: () = unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

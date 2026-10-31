@@ -10,24 +10,24 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub fn lt(mut c1: (), mut c2: ()) -> () {
-        return (c1 < c2);
+    pub fn lt(mut c1: i8, mut c2: i8) -> bool {
+        return ((c1 as i32) < (c2 as i32));
     }
-    pub fn compare(mut s1: Ptr<()>, mut s2: Ptr<()>, mut n: ()) -> () {
+    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: usize) -> i32 {
         'loop_: while (n != 0) {
             if ({
-                let _c1: () = (s1.read());
-                let _c2: () = (s2.read());
+                let _c1: i8 = (s1.read());
+                let _c2: i8 = (s2.read());
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return -1_();
+                return -1_i32;
             }
             if ({
-                let _c1: () = (s2.read());
-                let _c2: () = (s1.read());
+                let _c1: i8 = (s2.read());
+                let _c2: i8 = (s1.read());
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return 1_();
+                return 1;
             }
             {
                 {
@@ -37,52 +37,52 @@ impl constexpr_char_traits_char_ {
                 s2.prefix_inc()
             };
         }
-        return 0_();
+        return 0;
     }
 }
-pub fn sign_0(mut x: ()) -> () {
-    return if (x > 0_()) {
-        1_()
+pub fn sign_0(mut x: i32) -> i32 {
+    return if (x > 0) {
+        1
     } else {
-        (if (x < 0_()) { -1_() } else { 0_() })
+        (if (x < 0) { -1_i32 } else { 0 })
     };
 }
-pub fn test1_1(sv1: (), sv2: (), mut expected: ()) {
+pub fn test1_1(sv1: (), sv2: (), mut expected: i32) {
     let sv1: Value<()> = Rc::new(RefCell::new(sv1));
     let sv2: Value<()> = Rc::new(RefCell::new(sv2));
-    unimplemented!();
+    assert!((({ sign_0(unimplemented!(),) }) == ({ sign_0(expected,) })));
 }
-pub fn test1_2(sv1: (), sv2: (), mut expected: ()) {
+pub fn test1_2(sv1: (), sv2: (), mut expected: i32) {
     let sv1: Value<()> = Rc::new(RefCell::new(sv1));
     let sv2: Value<()> = Rc::new(RefCell::new(sv2));
-    unimplemented!();
+    assert!((({ sign_0(unimplemented!(),) }) == ({ sign_0(expected,) })));
 }
-pub fn test1_3(sv1: (), sv2: (), mut expected: ()) {
+pub fn test1_3(sv1: (), sv2: (), mut expected: i32) {
     let sv1: Value<()> = Rc::new(RefCell::new(sv1));
     let sv2: Value<()> = Rc::new(RefCell::new(sv2));
-    unimplemented!();
+    assert!((({ sign_0(unimplemented!(),) }) == ({ sign_0(expected,) })));
 }
-pub fn test1_4(sv1: (), sv2: (), mut expected: ()) {
+pub fn test1_4(sv1: (), sv2: (), mut expected: i32) {
     let sv1: Value<()> = Rc::new(RefCell::new(sv1));
     let sv2: Value<()> = Rc::new(RefCell::new(sv2));
-    unimplemented!();
+    assert!((({ sign_0(unimplemented!(),) }) == ({ sign_0(expected,) })));
 }
-pub fn test_5(mut s1: Ptr<()>, mut s2: Ptr<()>, mut expected: ()) {
+pub fn test_5(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut expected: i32) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ test1_1(unimplemented!(), unimplemented!(), expected) });
 }
-pub fn test_6(mut s1: Ptr<()>, mut s2: Ptr<()>, mut expected: ()) {
+pub fn test_6(mut s1: Ptr<i32>, mut s2: Ptr<i32>, mut expected: i32) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ test1_2(unimplemented!(), unimplemented!(), expected) });
 }
-pub fn test_7(mut s1: Ptr<()>, mut s2: Ptr<()>, mut expected: ()) {
+pub fn test_7(mut s1: Ptr<u16>, mut s2: Ptr<u16>, mut expected: i32) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ test1_3(unimplemented!(), unimplemented!(), expected) });
 }
-pub fn test_8(mut s1: Ptr<()>, mut s2: Ptr<()>, mut expected: ()) {
+pub fn test_8(mut s1: Ptr<u32>, mut s2: Ptr<u32>, mut expected: i32) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ test1_4(unimplemented!(), unimplemented!(), expected) });
@@ -106,669 +106,669 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b""),
-            Ptr::<()>::from_string_literal(b""),
-            0_(),
-        )
-    });
-    ({
-        test_5(
-            Ptr::<()>::from_string_literal(b""),
-            Ptr::<()>::from_string_literal(b"abcde"),
-            -5_(),
+            Ptr::<i8>::from_string_literal(b""),
+            Ptr::<i8>::from_string_literal(b""),
+            0,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b""),
-            Ptr::<()>::from_string_literal(b"abcdefghij"),
-            -10_(),
+            Ptr::<i8>::from_string_literal(b""),
+            Ptr::<i8>::from_string_literal(b"abcde"),
+            -5_i32,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b""),
-            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
-            -20_(),
+            Ptr::<i8>::from_string_literal(b""),
+            Ptr::<i8>::from_string_literal(b"abcdefghij"),
+            -10_i32,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcde"),
-            Ptr::<()>::from_string_literal(b""),
-            5_(),
+            Ptr::<i8>::from_string_literal(b""),
+            Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
+            -20_i32,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcde"),
-            Ptr::<()>::from_string_literal(b"abcde"),
-            0_(),
+            Ptr::<i8>::from_string_literal(b"abcde"),
+            Ptr::<i8>::from_string_literal(b""),
+            5,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcde"),
-            Ptr::<()>::from_string_literal(b"abcdefghij"),
-            -5_(),
+            Ptr::<i8>::from_string_literal(b"abcde"),
+            Ptr::<i8>::from_string_literal(b"abcde"),
+            0,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcde"),
-            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
-            -15_(),
+            Ptr::<i8>::from_string_literal(b"abcde"),
+            Ptr::<i8>::from_string_literal(b"abcdefghij"),
+            -5_i32,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcdefghij"),
-            Ptr::<()>::from_string_literal(b""),
-            10_(),
+            Ptr::<i8>::from_string_literal(b"abcde"),
+            Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
+            -15_i32,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcdefghij"),
-            Ptr::<()>::from_string_literal(b"abcde"),
-            5_(),
+            Ptr::<i8>::from_string_literal(b"abcdefghij"),
+            Ptr::<i8>::from_string_literal(b""),
+            10,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcdefghij"),
-            Ptr::<()>::from_string_literal(b"abcdefghij"),
-            0_(),
+            Ptr::<i8>::from_string_literal(b"abcdefghij"),
+            Ptr::<i8>::from_string_literal(b"abcde"),
+            5,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcdefghij"),
-            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
-            -10_(),
+            Ptr::<i8>::from_string_literal(b"abcdefghij"),
+            Ptr::<i8>::from_string_literal(b"abcdefghij"),
+            0,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
-            Ptr::<()>::from_string_literal(b""),
-            20_(),
+            Ptr::<i8>::from_string_literal(b"abcdefghij"),
+            Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
+            -10_i32,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
-            Ptr::<()>::from_string_literal(b"abcde"),
-            15_(),
+            Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
+            Ptr::<i8>::from_string_literal(b""),
+            20,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
-            Ptr::<()>::from_string_literal(b"abcdefghij"),
-            10_(),
+            Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
+            Ptr::<i8>::from_string_literal(b"abcde"),
+            15,
         )
     });
     ({
         test_5(
-            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
-            Ptr::<()>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_(),
+            Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
+            Ptr::<i8>::from_string_literal(b"abcdefghij"),
+            10,
+        )
+    });
+    ({
+        test_5(
+            Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
+            Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
+            0,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            0_(),
+            Ptr::<i32>::from_string_literal(&[0 as i32]),
+            Ptr::<i32>::from_string_literal(&[0 as i32]),
+            0,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[0 as i32]),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
-            -5_(),
+            -5_i32,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[0 as i32]),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 0 as i32,
             ]),
-            -10_(),
+            -10_i32,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[0 as i32]),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32, 109 as i32, 110 as i32,
+                111 as i32, 112 as i32, 113 as i32, 114 as i32, 115 as i32, 116 as i32, 0 as i32,
             ]),
-            -20_(),
+            -20_i32,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            5_(),
+            Ptr::<i32>::from_string_literal(&[0 as i32]),
+            5,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
-            0_(),
+            0,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 0 as i32,
             ]),
-            -5_(),
+            -5_i32,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32, 109 as i32, 110 as i32,
+                111 as i32, 112 as i32, 113 as i32, 114 as i32, 115 as i32, 116 as i32, 0 as i32,
             ]),
-            -15_(),
+            -15_i32,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            10_(),
+            Ptr::<i32>::from_string_literal(&[0 as i32]),
+            10,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
-            5_(),
+            5,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 0 as i32,
             ]),
-            0_(),
+            0,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32, 109 as i32, 110 as i32,
+                111 as i32, 112 as i32, 113 as i32, 114 as i32, 115 as i32, 116 as i32, 0 as i32,
             ]),
-            -10_(),
+            -10_i32,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32, 109 as i32, 110 as i32,
+                111 as i32, 112 as i32, 113 as i32, 114 as i32, 115 as i32, 116 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            20_(),
+            Ptr::<i32>::from_string_literal(&[0 as i32]),
+            20,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32, 109 as i32, 110 as i32,
+                111 as i32, 112 as i32, 113 as i32, 114 as i32, 115 as i32, 116 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
-            15_(),
+            15,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32, 109 as i32, 110 as i32,
+                111 as i32, 112 as i32, 113 as i32, 114 as i32, 115 as i32, 116 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 0 as i32,
             ]),
-            10_(),
+            10,
         )
     });
     ({
         test_6(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32, 109 as i32, 110 as i32,
+                111 as i32, 112 as i32, 113 as i32, 114 as i32, 115 as i32, 116 as i32, 0 as i32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32, 103 as i32,
+                104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32, 109 as i32, 110 as i32,
+                111 as i32, 112 as i32, 113 as i32, 114 as i32, 115 as i32, 116 as i32, 0 as i32,
             ]),
-            0_(),
+            0,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            0_(),
+            Ptr::<u16>::from_string_literal(&[0 as u16]),
+            Ptr::<u16>::from_string_literal(&[0 as u16]),
+            0,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[0 as u16]),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
             ]),
-            -5_(),
+            -5_i32,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[0 as u16]),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 0 as u16,
             ]),
-            -10_(),
+            -10_i32,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[0 as u16]),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16, 109 as u16, 110 as u16,
+                111 as u16, 112 as u16, 113 as u16, 114 as u16, 115 as u16, 116 as u16, 0 as u16,
             ]),
-            -20_(),
+            -20_i32,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            5_(),
+            Ptr::<u16>::from_string_literal(&[0 as u16]),
+            5,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
             ]),
-            0_(),
+            0,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 0 as u16,
             ]),
-            -5_(),
+            -5_i32,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16, 109 as u16, 110 as u16,
+                111 as u16, 112 as u16, 113 as u16, 114 as u16, 115 as u16, 116 as u16, 0 as u16,
             ]),
-            -15_(),
+            -15_i32,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            10_(),
+            Ptr::<u16>::from_string_literal(&[0 as u16]),
+            10,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
             ]),
-            5_(),
+            5,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 0 as u16,
             ]),
-            0_(),
+            0,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16, 109 as u16, 110 as u16,
+                111 as u16, 112 as u16, 113 as u16, 114 as u16, 115 as u16, 116 as u16, 0 as u16,
             ]),
-            -10_(),
+            -10_i32,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16, 109 as u16, 110 as u16,
+                111 as u16, 112 as u16, 113 as u16, 114 as u16, 115 as u16, 116 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            20_(),
+            Ptr::<u16>::from_string_literal(&[0 as u16]),
+            20,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16, 109 as u16, 110 as u16,
+                111 as u16, 112 as u16, 113 as u16, 114 as u16, 115 as u16, 116 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
             ]),
-            15_(),
+            15,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16, 109 as u16, 110 as u16,
+                111 as u16, 112 as u16, 113 as u16, 114 as u16, 115 as u16, 116 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 0 as u16,
             ]),
-            10_(),
+            10,
         )
     });
     ({
         test_7(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16, 109 as u16, 110 as u16,
+                111 as u16, 112 as u16, 113 as u16, 114 as u16, 115 as u16, 116 as u16, 0 as u16,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16, 103 as u16,
+                104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16, 109 as u16, 110 as u16,
+                111 as u16, 112 as u16, 113 as u16, 114 as u16, 115 as u16, 116 as u16, 0 as u16,
             ]),
-            0_(),
+            0,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            0_(),
+            Ptr::<u32>::from_string_literal(&[0 as u32]),
+            Ptr::<u32>::from_string_literal(&[0 as u32]),
+            0,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[0 as u32]),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
             ]),
-            -5_(),
+            -5_i32,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[0 as u32]),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 0 as u32,
             ]),
-            -10_(),
+            -10_i32,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[0 as u32]),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32, 109 as u32, 110 as u32,
+                111 as u32, 112 as u32, 113 as u32, 114 as u32, 115 as u32, 116 as u32, 0 as u32,
             ]),
-            -20_(),
+            -20_i32,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            5_(),
+            Ptr::<u32>::from_string_literal(&[0 as u32]),
+            5,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
             ]),
-            0_(),
+            0,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 0 as u32,
             ]),
-            -5_(),
+            -5_i32,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32, 109 as u32, 110 as u32,
+                111 as u32, 112 as u32, 113 as u32, 114 as u32, 115 as u32, 116 as u32, 0 as u32,
             ]),
-            -15_(),
+            -15_i32,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            10_(),
+            Ptr::<u32>::from_string_literal(&[0 as u32]),
+            10,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
             ]),
-            5_(),
+            5,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 0 as u32,
             ]),
-            0_(),
+            0,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32, 109 as u32, 110 as u32,
+                111 as u32, 112 as u32, 113 as u32, 114 as u32, 115 as u32, 116 as u32, 0 as u32,
             ]),
-            -10_(),
+            -10_i32,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32, 109 as u32, 110 as u32,
+                111 as u32, 112 as u32, 113 as u32, 114 as u32, 115 as u32, 116 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[0 as ()]),
-            20_(),
+            Ptr::<u32>::from_string_literal(&[0 as u32]),
+            20,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32, 109 as u32, 110 as u32,
+                111 as u32, 112 as u32, 113 as u32, 114 as u32, 115 as u32, 116 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
             ]),
-            15_(),
+            15,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32, 109 as u32, 110 as u32,
+                111 as u32, 112 as u32, 113 as u32, 114 as u32, 115 as u32, 116 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 0 as u32,
             ]),
-            10_(),
+            10,
         )
     });
     ({
         test_8(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32, 109 as u32, 110 as u32,
+                111 as u32, 112 as u32, 113 as u32, 114 as u32, 115 as u32, 116 as u32, 0 as u32,
             ]),
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 98 as (), 99 as (), 100 as (), 101 as (), 102 as (), 103 as (),
-                104 as (), 105 as (), 106 as (), 107 as (), 108 as (), 109 as (), 110 as (),
-                111 as (), 112 as (), 113 as (), 114 as (), 115 as (), 116 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32, 103 as u32,
+                104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32, 109 as u32, 110 as u32,
+                111 as u32, 112 as u32, 113 as u32, 114 as u32, 115 as u32, 116 as u32, 0 as u32,
             ]),
-            0_(),
+            0,
         )
     });
     {
@@ -780,6 +780,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "sv3.compare(sv2) > 0");;
         const _: () = assert!(true, "sv2.compare(sv3) < 0");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

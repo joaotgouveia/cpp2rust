@@ -6,31 +6,31 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_month__std_chrono_month_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_2629746__1____std_chrono_duration_long__std_ratio_2629746__1___
 {}
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 1_();
-    'loop_: while (i <= 12_()) {
+    let mut i: u32 = 1_u32;
+    'loop_: while (i <= 12_u32) {
         let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut exp: () = (6_()).wrapping_sub(i);
-        if (exp < 1_()) {
-            exp += 12_();
+        assert!(unimplemented!());
+        let mut exp: i32 = (((6_u32).wrapping_sub(i)) as i32);
+        if (exp < 1) {
+            exp += 12;
         }
-        unimplemented!();
+        assert!((unimplemented!() == (exp as u32)));
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(unimplemented!());
     return true;
 }
 pub fn main() {
@@ -52,13 +52,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,52 +6,53 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_eq_0(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_1(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ne_1(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_2(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_lt_2(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_3(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_le_3(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_4(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_gt_4(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_5(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ge_5(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
+pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct MoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl MoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(x: Ptr<MoveOnly>) -> Self {
         let __this: MoveOnly = Self {
             data_: x.with(|__s| __s.data_),
         };
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         __this
     }
 }
@@ -70,45 +71,46 @@ impl Default for MoveOnly {
         { MoveOnly::new(None) }
     }
 }
-pub fn operator_eq_7(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_eq_7(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_8(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ne_8(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_9(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_lt_9(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_10(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_le_10(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_11(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_gt_11(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_12(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ge_12(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct TrivialMoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl TrivialMoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(_a0: Ptr<TrivialMoveOnly>) -> Self {
@@ -211,50 +213,52 @@ const _: () = assert!(
     true,
     "!std::is_convertible_v<std::ranges::in_fun_result<int, NotConvertible>, std::ranges::in_fun_result<int, int>>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct ConvertibleFrom_int_ {
     #[offset(0)]
-    pub content: (),
+    pub content: i32,
 }
 impl ConvertibleFrom_int_ {
-    pub fn new(mut c: ()) -> Self {
+    pub fn new(mut c: i32) -> Self {
         Self { content: c }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(f64, new, value)]
 #[byte_size(8)]
 pub struct ConvertibleFrom_double_ {
     #[offset(0)]
-    pub content: (),
+    pub content: f64,
 }
 impl ConvertibleFrom_double_ {
-    pub fn new(mut c: ()) -> Self {
+    pub fn new(mut c: f64) -> Self {
         Self { content: c }
     }
 }
-pub fn test_14() -> () {
+pub fn test_14() -> bool {
     {
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (*res.borrow()).in_ } == 10));
+        assert!(({ (*res.borrow()).fun } == 0_f64));
         let res2: Value<()> = Rc::new(RefCell::new(({ (*res.borrow())() })));
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (*res2.borrow()).in_.content } == 10));
+        assert!(({ (*res2.borrow()).fun.content } == 0_f64));
     }
     {
         let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((({ MoveOnlyImpl::get(&field_ptr!(res.as_pointer(), in_),) }) == 1));
+        assert!(({ (*res.borrow()).fun } == 2));
         let res2: Value<()> = Rc::new(RefCell::new((*res.borrow_mut()).clone()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((({ MoveOnlyImpl::get(&field_ptr!(res.as_pointer(), in_),) }) == 0));
+        assert!((({ MoveOnlyImpl::get(&field_ptr!(res2.as_pointer(), in_),) }) == 1));
+        assert!(({ (*res2.borrow()).fun } == 2));
     }
     {
         let __decomp_15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (*__decomp_15.borrow()).in_ } == 1));
+        assert!(({ (*__decomp_15.borrow()).fun } == 2));
     }
     return true;
 }
@@ -277,24 +281,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_14() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait MoveOnlyImpl {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_add(&self, x: Ptr<MoveOnly>) -> MoveOnly;
     fn operator_mul(&self, x: Ptr<MoveOnly>) -> MoveOnly;
 }
 impl MoveOnlyImpl for Ptr<MoveOnly> {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly> {
         field!((*self), data_).write({ x.with(|__s| __s.data_) });
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_add(&self, x: Ptr<MoveOnly>) -> MoveOnly {
@@ -310,7 +314,7 @@ impl MoveOnlyImpl for Ptr<MoveOnly> {
 }
 pub trait TrivialMoveOnlyImpl {
     fn move_assign(&self, _a0: Ptr<TrivialMoveOnly>) -> Ptr<TrivialMoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_add(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly;
     fn operator_mul(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly;
 }
@@ -319,7 +323,7 @@ impl TrivialMoveOnlyImpl for Ptr<TrivialMoveOnly> {
         field!((*self), data_).write({ { (*_a0.upgrade().deref()).data_ } });
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_add(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly {

@@ -22,25 +22,25 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut a1: [(); 5] = [1_(), 2_(), 0_(), 4_(), 10_()];
-        let mut a2: [(); 5] = [6_(), 7_(), 0_(), 9_(), 10_()];
-        let mut a3: [(); 5] = [false, false, true, false, true];
-        let N: () = 5_();
+        let mut a1: [i32; 5] = [1, 2, 0, 4, 10];
+        let mut a2: [i32; 5] = [6, 7, 0, 9, 10];
+        let mut a3: [bool; 5] = [false, false, true, false, true];
+        let N: u32 = 5_u32;
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
         let mut v3: () = unimplemented!();
         let mut v3a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (N)) {
-            unimplemented!();
-            unimplemented!();
+        assert!(((unimplemented!()) == (N as usize)));
+        assert!(((unimplemented!()) == (N as usize)));
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) < (N as usize)) {
+            assert!((((*unimplemented!()) as i32) == (a3[(i)] as i32)));
+            assert!((((*unimplemented!()) as i32) == (a3[(i)] as i32)));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

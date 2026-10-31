@@ -163,224 +163,224 @@ thread_local!(
         unimplemented!(),
     ])));
 );
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_zero: anon_1 = 0;
 pub const anon_1_non_zero: anon_1 = 1;
 pub const anon_1_inf: anon_1 = 2;
 pub const anon_1_NaN: anon_1 = 3;
 pub const anon_1_non_zero_nan: anon_1 = 4;
-pub fn test_isinf_2(mut v: ()) -> () {
+pub fn test_isinf_2(mut v: f64) -> bool {
     return (v == unimplemented!()) || (v == -unimplemented!());
 }
-pub fn test_isnan_3(mut v: ()) -> () {
+pub fn test_isnan_3(mut v: f64) -> bool {
     return (v != v);
 }
-pub fn classify_4(x: Ptr<()>) -> () {
+pub fn classify_4(x: Ptr<()>) -> i32 {
     if unimplemented!() {
-        return (anon_1_zero as ());
+        return (anon_1_zero as i32);
     }
     if ({ test_isinf_2(unimplemented!()) }) || ({ test_isinf_2(unimplemented!()) }) {
-        return (anon_1_inf as ());
+        return (anon_1_inf as i32);
     }
     if ({ test_isnan_3(unimplemented!()) }) && ({ test_isnan_3(unimplemented!()) }) {
-        return (anon_1_NaN as ());
+        return (anon_1_NaN as i32);
     }
     if ({ test_isnan_3(unimplemented!()) }) {
-        if (unimplemented!() == 0_()) {
-            return (anon_1_NaN as ());
+        if (unimplemented!() == 0_f64) {
+            return (anon_1_NaN as i32);
         }
-        return (anon_1_non_zero_nan as ());
+        return (anon_1_non_zero_nan as i32);
     }
     if ({ test_isnan_3(unimplemented!()) }) {
-        if (unimplemented!() == 0_()) {
-            return (anon_1_NaN as ());
+        if (unimplemented!() == 0_f64) {
+            return (anon_1_NaN as i32);
         }
-        return (anon_1_non_zero_nan as ());
+        return (anon_1_non_zero_nan as i32);
     }
-    return (anon_1_non_zero as ());
+    return (anon_1_non_zero as i32);
 }
-pub fn classify_5(mut x: ()) -> () {
-    if (x == 0_()) {
-        return (anon_1_zero as ());
-    }
-    if unimplemented!() {
-        return (anon_1_inf as ());
+pub fn classify_5(mut x: f64) -> i32 {
+    if (x == 0_f64) {
+        return (anon_1_zero as i32);
     }
     if unimplemented!() {
-        return (anon_1_NaN as ());
+        return (anon_1_inf as i32);
     }
-    return (anon_1_non_zero as ());
+    if unimplemented!() {
+        return (anon_1_NaN as i32);
+    }
+    return (anon_1_non_zero as i32);
 }
-pub fn is_about_6(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_6(mut x: f32, mut y: f32) {
+    assert!(((unimplemented!() as f64) < 1e-06_f64));
 }
-pub fn is_about_7(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_7(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn is_about_8(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_8(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn test_9(rho: Ptr<()>, x: ()) {
+pub fn test_9(rho: Ptr<f32>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn test_10(rho: Ptr<()>, x: ()) {
+pub fn test_10(rho: Ptr<f64>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn test_11(rho: Ptr<()>, x: ()) {
+pub fn test_11(rho: Ptr<f64>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn test_12(rho: Ptr<()>, theta: Ptr<()>, x: ()) {
+pub fn test_12(rho: Ptr<f32>, theta: Ptr<f32>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn test_13(rho: Ptr<()>, theta: Ptr<()>, x: ()) {
+pub fn test_13(rho: Ptr<f64>, theta: Ptr<f64>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn test_14(rho: Ptr<()>, theta: Ptr<()>, x: ()) {
+pub fn test_14(rho: Ptr<f64>, theta: Ptr<f64>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_15() {
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f32> = Rc::new(RefCell::new(0_f32));
         test_9(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
+        let _rho: Value<f32> = Rc::new(RefCell::new(1_f32));
         test_9(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
+        let _rho: Value<f32> = Rc::new(RefCell::new(100_f32));
         test_9(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f32> = Rc::new(RefCell::new(0_f32));
+        let _theta: Value<f32> = Rc::new(RefCell::new(0_f32));
         test_12(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f32> = Rc::new(RefCell::new(1_f32));
+        let _theta: Value<f32> = Rc::new(RefCell::new(0_f32));
         test_12(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f32> = Rc::new(RefCell::new(100_f32));
+        let _theta: Value<f32> = Rc::new(RefCell::new(0_f32));
         test_12(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
 }
 pub fn test_16() {
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(0_f64));
         test_10(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(1_f64));
         test_10(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(100_f64));
         test_10(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(0_f64));
+        let _theta: Value<f64> = Rc::new(RefCell::new(0_f64));
         test_13(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(1_f64));
+        let _theta: Value<f64> = Rc::new(RefCell::new(0_f64));
         test_13(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(100_f64));
+        let _theta: Value<f64> = Rc::new(RefCell::new(0_f64));
         test_13(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
 }
 pub fn test_17() {
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(0_f64));
         test_11(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(1_f64));
         test_11(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(100_f64));
         test_11(_rho.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(0_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(0_f64));
+        let _theta: Value<f64> = Rc::new(RefCell::new(0_f64));
         test_14(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(1_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(1_f64));
+        let _theta: Value<f64> = Rc::new(RefCell::new(0_f64));
         test_14(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
     ({
-        let _rho: Value<()> = Rc::new(RefCell::new(100_()));
-        let _theta: Value<()> = Rc::new(RefCell::new(0_()));
+        let _rho: Value<f64> = Rc::new(RefCell::new(100_f64));
+        let _theta: Value<f64> = Rc::new(RefCell::new(0_f64));
         test_14(_rho.as_pointer(), _theta.as_pointer(), unimplemented!())
     });
 }
 pub fn test_edges_18() {
-    let mut N: () = (2448usize as ()).wrapping_div((16usize as ()));
-    let mut i: () = 0_();
+    let mut N: u32 = (((2448usize as usize).wrapping_div((16usize as usize))) as u32);
+    let mut i: u32 = 0_u32;
     'loop_: while (i < N) {
-        let mut r: () = unimplemented!();
-        let mut theta: () = unimplemented!();
+        let mut r: f64 = unimplemented!();
+        let mut theta: f64 = unimplemented!();
         let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         'switch: {
             match { ({ classify_5(r) }) } {
-                __v if __v == (anon_1_zero as ()) => {
-                    if ((unimplemented!()) || (({ classify_5(theta) }) == (anon_1_inf as ())))
-                        || (({ classify_5(theta) }) == (anon_1_NaN as ()))
+                __v if __v == (anon_1_zero as i32) => {
+                    if ((unimplemented!()) || (({ classify_5(theta) }) == (anon_1_inf as i32)))
+                        || (({ classify_5(theta) }) == (anon_1_NaN as i32))
                     {
-                        let mut c: () = ({ classify_4(z.as_pointer()) });
-                        unimplemented!();
+                        let mut c: i32 = ({ classify_4(z.as_pointer()) });
+                        assert!((c == (anon_1_NaN as i32)) || (c == (anon_1_non_zero_nan as i32)));
                     } else {
-                        unimplemented!();
+                        assert!(unimplemented!());
                     }
                     break 'switch;
                 }
-                __v if __v == (anon_1_non_zero as ()) => {
-                    if ((unimplemented!()) || (({ classify_5(theta) }) == (anon_1_inf as ())))
-                        || (({ classify_5(theta) }) == (anon_1_NaN as ()))
+                __v if __v == (anon_1_non_zero as i32) => {
+                    if ((unimplemented!()) || (({ classify_5(theta) }) == (anon_1_inf as i32)))
+                        || (({ classify_5(theta) }) == (anon_1_NaN as i32))
                     {
-                        let mut c: () = ({ classify_4(z.as_pointer()) });
-                        unimplemented!();
+                        let mut c: i32 = ({ classify_4(z.as_pointer()) });
+                        assert!((c == (anon_1_NaN as i32)) || (c == (anon_1_non_zero_nan as i32)));
                     } else {
                         ({ is_about_7(unimplemented!(), r) });
                     }
                     break 'switch;
                 }
-                __v if __v == (anon_1_inf as ()) => {
-                    if (r < 0_()) {
-                        let mut c: () = ({ classify_4(z.as_pointer()) });
-                        unimplemented!();
+                __v if __v == (anon_1_inf as i32) => {
+                    if (r < 0_f64) {
+                        let mut c: i32 = ({ classify_4(z.as_pointer()) });
+                        assert!((c == (anon_1_NaN as i32)) || (c == (anon_1_non_zero_nan as i32)));
                     } else {
-                        unimplemented!();
-                        if (({ classify_5(theta) }) != (anon_1_NaN as ()))
-                            && (({ classify_5(theta) }) != (anon_1_inf as ()))
+                        assert!((({ classify_4(z.as_pointer(),) }) == (anon_1_inf as i32)));
+                        if (({ classify_5(theta) }) != (anon_1_NaN as i32))
+                            && (({ classify_5(theta) }) != (anon_1_inf as i32))
                         {
-                            unimplemented!();
-                            unimplemented!();
+                            assert!((({ classify_5(unimplemented!(),) }) != (anon_1_NaN as i32)));
+                            assert!((({ classify_5(unimplemented!(),) }) != (anon_1_NaN as i32)));
                         }
                     }
                     break 'switch;
                 }
-                __v if __v == (anon_1_NaN as ()) || __v == (anon_1_non_zero_nan as ()) => {
+                __v if __v == (anon_1_NaN as i32) || __v == (anon_1_non_zero_nan as i32) => {
                     {
-                        let mut c: () = ({ classify_4(z.as_pointer()) });
-                        unimplemented!();
+                        let mut c: i32 = ({ classify_4(z.as_pointer()) });
+                        assert!((c == (anon_1_NaN as i32)) || (c == (anon_1_non_zero_nan as i32)));
                     }
                     break 'switch;
                 }
@@ -409,12 +409,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_15() });
     ({ test_16() });
     ({ test_17() });
     ({ test_edges_18() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = testcases_0.with(|_| ());

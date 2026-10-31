@@ -7,6 +7,14 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn use_0() {
+    &(::std::mem::size_of::<i8>());
+    &(::std::mem::size_of::<i16>());
+    &(::std::mem::size_of::<i32>());
+    &(::std::mem::size_of::<i64>());
+    &(::std::mem::size_of::<u8>());
+    &(::std::mem::size_of::<u16>());
+    &(::std::mem::size_of::<u32>());
+    &(::std::mem::size_of::<u64>());
     &(::std::mem::size_of::<()>());
     &(::std::mem::size_of::<()>());
     &(::std::mem::size_of::<()>());
@@ -24,17 +32,9 @@ pub unsafe fn use_0() {
     &(::std::mem::size_of::<()>());
     &(::std::mem::size_of::<()>());
     &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
-    &(::std::mem::size_of::<()>());
+    &(::std::mem::size_of::<usize>());
+    &(::std::mem::size_of::<i64>());
+    &(::std::mem::size_of::<u64>());
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -51,7 +51,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "sizeof(int8_t)*CHAR_BIT == 8");;
     const _: () = assert!(true, "std::is_signed<int8_t>::value");;
     const _: () = assert!(true, "sizeof(int16_t)*CHAR_BIT == 16");;
@@ -101,22 +101,22 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "sizeof(uint_fast64_t)*CHAR_BIT >= 64");;
     const _: () = assert!(true, "std::is_unsigned<uint_fast64_t>::value");;
     const _: () = assert!(
-        ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
+        ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<*mut ::libc::c_void>())),
         "sizeof(intptr_t) >= sizeof(void*)"
     );;
     const _: () = assert!(true, "std::is_signed<intptr_t>::value");;
     const _: () = assert!(
-        ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
+        ((::std::mem::size_of::<usize>()) >= (::std::mem::size_of::<*mut ::libc::c_void>())),
         "sizeof(uintptr_t) >= sizeof(void*)"
     );;
     const _: () = assert!(true, "std::is_unsigned<uintptr_t>::value");;
     const _: () = assert!(
-        ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
+        ((::std::mem::size_of::<i64>()) >= (::std::mem::size_of::<i64>())),
         "sizeof(intmax_t) >= sizeof(long long)"
     );;
     const _: () = assert!(true, "std::is_signed<intmax_t>::value");;
     const _: () = assert!(
-        ((::std::mem::size_of::<()>()) >= (::std::mem::size_of::<()>())),
+        ((::std::mem::size_of::<u64>()) >= (::std::mem::size_of::<u64>())),
         "sizeof(uintmax_t) >= sizeof(unsigned long long)"
     );;
     const _: () = assert!(true, "std::is_unsigned<uintmax_t>::value");;
@@ -124,71 +124,68 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "INT16_MIN == -32768");;
     const _: () = assert!(true, "INT32_MIN == -2147483647 - 1");;
     const _: () = assert!(true, "INT64_MIN == -9223372036854775807LL - 1");;
-    const _: () = assert!(((127_()) == (127_())), "INT8_MAX == 127");;
-    const _: () = assert!(((32767_()) == (32767_())), "INT16_MAX == 32767");;
+    const _: () = assert!(((127) == (127)), "INT8_MAX == 127");;
+    const _: () = assert!(((32767) == (32767)), "INT16_MAX == 32767");;
+    const _: () = assert!(((2147483647) == (2147483647)), "INT32_MAX == 2147483647");;
     const _: () = assert!(
-        ((2147483647_()) == (2147483647_())),
-        "INT32_MAX == 2147483647"
-    );;
-    const _: () = assert!(
-        ((9223372036854775807_()) == (9223372036854775807_())),
+        ((9223372036854775807_i64) == (9223372036854775807_i64)),
         "INT64_MAX == 9223372036854775807LL"
     );;
-    const _: () = assert!(((255_()) == (255_())), "UINT8_MAX == 255");;
-    const _: () = assert!(((65535_()) == (65535_())), "UINT16_MAX == 65535");;
+    const _: () = assert!(((255) == (255)), "UINT8_MAX == 255");;
+    const _: () = assert!(((65535) == (65535)), "UINT16_MAX == 65535");;
     const _: () = assert!(
-        ((4294967295_()) == (4294967295_())),
+        ((4294967295_u32) == (4294967295_u32)),
         "UINT32_MAX == 4294967295U"
     );;
     const _: () = assert!(
-        ((18446744073709551615_()) == (18446744073709551615_())),
+        ((18446744073709551615_u64) == (18446744073709551615_u64)),
         "UINT64_MAX == 18446744073709551615ULL"
     );;
     const _: () = assert!(true, "INT_FAST8_MIN <= -128");;
     const _: () = assert!(true, "INT_FAST16_MIN <= -32768");;
     const _: () = assert!(true, "INT_FAST32_MIN <= -2147483647 - 1");;
     const _: () = assert!(true, "INT_FAST64_MIN <= -9223372036854775807LL - 1");;
-    const _: () = assert!(((127_()) >= (127_())), "INT_FAST8_MAX >= 127");;
+    const _: () = assert!(((127) >= (127)), "INT_FAST8_MAX >= 127");;
     const _: () = assert!(
-        ((9223372036854775807_()) >= (32767_())),
+        ((9223372036854775807_i64) >= (32767_i64)),
         "INT_FAST16_MAX >= 32767"
     );;
     const _: () = assert!(
-        ((9223372036854775807_()) >= (2147483647_())),
+        ((9223372036854775807_i64) >= (2147483647_i64)),
         "INT_FAST32_MAX >= 2147483647"
     );;
     const _: () = assert!(
-        ((9223372036854775807_()) >= (9223372036854775807_())),
+        ((9223372036854775807_i64) >= (9223372036854775807_i64)),
         "INT_FAST64_MAX >= 9223372036854775807LL"
     );;
-    const _: () = assert!(((255_()) >= (255_())), "UINT_FAST8_MAX >= 255");;
+    const _: () = assert!(((255) >= (255)), "UINT_FAST8_MAX >= 255");;
     const _: () = assert!(
-        ((18446744073709551615_()) >= (65535_())),
+        ((18446744073709551615_u64) >= (65535_u64)),
         "UINT_FAST16_MAX >= 65535"
     );;
     const _: () = assert!(
-        ((18446744073709551615_()) >= (4294967295_())),
+        ((18446744073709551615_u64) >= (4294967295_u64)),
         "UINT_FAST32_MAX >= 4294967295U"
     );;
     const _: () = assert!(
-        ((18446744073709551615_()) >= (18446744073709551615_())),
+        ((18446744073709551615_u64) >= (18446744073709551615_u64)),
         "UINT_FAST64_MAX >= 18446744073709551615ULL"
     );;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((((-9223372036854775807_i64) - (1_i64)) == (i64::MIN)));
+    assert!(((9223372036854775807_i64) == (i64::MAX)));
+    assert!(((18446744073709551615_u64) == (u64::MAX)));
+    assert!((((-9223372036854775807_i64) - (1_i64)) == (i64::MIN)));
+    assert!(((9223372036854775807_i64) == (i64::MAX)));
+    assert!(((18446744073709551615_u64) == (u64::MAX)));
+    assert!((((-9223372036854775807_i64) - (1_i64)) == (i64::MIN)));
+    assert!(((9223372036854775807_i64) == (i64::MAX)));
+    assert!((((-2147483647_i32) - (1)) == (i32::MIN)));
+    assert!(((2147483647) == (i32::MAX)));
+    assert!(((18446744073709551615_u64) == (u64::MAX)));
+    assert!((((-2147483647_i32) - (1)) == (i32::MIN)));
+    assert!(((2147483647) == (i32::MAX)));
+    assert!(((0_u32) == (u32::MIN)));
+    assert!(((4294967295_u32) == (u32::MAX)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

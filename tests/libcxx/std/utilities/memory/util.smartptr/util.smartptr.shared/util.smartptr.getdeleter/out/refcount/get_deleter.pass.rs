@@ -10,48 +10,48 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_deleter_base {}
 thread_local!(
-    pub static count_4: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_4: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    pub static dealloc_count_5: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_5: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(4)]
 pub struct test_deleter_A_ {
     #[offset(0)]
-    state_: (),
+    state_: i32,
 }
 impl test_deleter_A_ {
-    pub fn new_1(mut s: ()) -> Self {
+    pub fn new_1(mut s: i32) -> Self {
         let __this: test_deleter_A_ = Self { state_: s };
         (*count_4.with(Value::clone).borrow_mut()).prefix_inc();
         __this
@@ -99,7 +99,7 @@ impl Default for A {
     }
 }
 thread_local!(
-    pub static count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_6: Value<i32> = Rc::new(RefCell::new(0));
 );
 
 pub fn main() {
@@ -121,42 +121,42 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         {
             let mut ptr: Ptr<A> = Ptr::alloc(A::new());
             let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut d: Ptr<test_deleter_A_> = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((count_4.with(|rc| *rc.borrow()) == 1));
+            assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 0));
+            assert!(!(d).is_null());
+            assert!((({ test_deleter_A_Impl::state(&d,) }) == 3));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((count_6.with(|rc| *rc.borrow()) == 0));
+        assert!((count_4.with(|rc| *rc.borrow()) == 0));
+        assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 1));
     }
-    dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
+    dealloc_count_5.with(|rc| *rc.borrow_mut() = 0);
     {
         {
             let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut d: Ptr<test_deleter_A_> = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((count_4.with(|rc| *rc.borrow()) == 1));
+            assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 0));
+            assert!(!(d).is_null());
+            assert!((({ test_deleter_A_Impl::state(&d,) }) == 3));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((count_6.with(|rc| *rc.borrow()) == 0));
+        assert!((count_4.with(|rc| *rc.borrow()) == 0));
+        assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 1));
     }
-    dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
+    dealloc_count_5.with(|rc| *rc.borrow_mut() = 0);
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut d: Ptr<()> = unimplemented!();
-        unimplemented!();
+        assert!((d).is_null());
     }
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn destructor(&self);
@@ -172,23 +172,23 @@ impl AImpl for Ptr<A> {
 }
 pub trait test_deleter_A_Impl {
     fn destructor(&self);
-    fn state(&self) -> ();
-    fn set_state(&self, mut i: ()) {
+    fn state(&self) -> i32;
+    fn set_state(&self, mut i: i32) {
         unimplemented!()
     }
     fn operator_call(&self, p: Ptr<A>);
 }
 impl test_deleter_A_Impl for Ptr<test_deleter_A_> {
     fn destructor(&self) {
-        unimplemented!();
+        assert!(((*self).with(|__s| __s.state_) >= 0));
         (*count_4.with(Value::clone).borrow_mut()).prefix_dec();
-        field!((*self), state_).write(-1_());
+        field!((*self), state_).write(-1_i32);
     }
-    fn state(&self) -> () {
+    fn state(&self) -> i32 {
         return (*self).with(|__s| __s.state_);
     }
     fn operator_call(&self, mut p: Ptr<A>) {
-        unimplemented!();
+        assert!(((*self).with(|__s| __s.state_) >= 0));
         (*dealloc_count_5.with(Value::clone).borrow_mut()).prefix_inc();
         {
             let __p = p;

@@ -6,16 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn make_string_0(in_: Ptr<()>) -> () {
+pub fn make_string_0(in_: Ptr<i8>) -> Vec<i8> {
     return unimplemented!();
 }
-pub fn make_string_1(in_: Ptr<()>) -> () {
+pub fn make_string_1(in_: Ptr<i8>) -> Vec<i32> {
     return unimplemented!();
 }
-pub fn make_string_stream_2(in_: Ptr<()>) -> () {
+pub fn make_string_stream_2(in_: Ptr<i8>) -> () {
     return unimplemented!();
 }
-pub fn make_string_stream_3(in_: Ptr<()>) -> () {
+pub fn make_string_stream_3(in_: Ptr<i8>) -> () {
     return unimplemented!();
 }
 const _: () = assert!(true, "NoexceptEnd<std::ranges::istream_view<int>>");
@@ -24,14 +24,14 @@ const _: () = assert!(true, "NoexceptEnd<std::ranges::wistream_view<int>>");
 const _: () = assert!(true, "NoexceptEnd<const std::ranges::wistream_view<int>>");
 pub fn test_4() {
     let iss: Value<()> = Rc::new(RefCell::new(
-        ({ make_string_stream_2(Ptr::<()>::from_string_literal(b"12")) }),
+        ({ make_string_stream_2(Ptr::<i8>::from_string_literal(b"12")) }),
     ));
     let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 }
 pub fn test_5() {
     let iss: Value<()> = Rc::new(RefCell::new(
-        ({ make_string_stream_3(Ptr::<()>::from_string_literal(b"12")) }),
+        ({ make_string_stream_3(Ptr::<i8>::from_string_literal(b"12")) }),
     ));
     let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -55,9 +55,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     ({ test_5() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

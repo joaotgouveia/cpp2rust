@@ -9,19 +9,19 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct A1_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A1_int_ {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct A2_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A2_int_ {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct A3_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A3_int_ {}
 pub fn main() {
@@ -39,7 +39,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(
         true,
         "(std::is_same< std::scoped_allocator_adaptor<A1<int>>::propagate_on_container_copy_assignment,\n                               std::false_type>::value)"
@@ -52,6 +52,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "(std::is_same< std::scoped_allocator_adaptor<A1<int>, A2<int>, A3<int>>::propagate_on_container_copy_assignment,\n                     std::true_type>::value)"
     );;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

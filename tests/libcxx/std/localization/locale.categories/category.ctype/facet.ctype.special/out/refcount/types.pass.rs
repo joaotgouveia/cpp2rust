@@ -26,10 +26,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        unimplemented!();
+        assert!(unimplemented!());
         let f: Ptr<()> = unimplemented!();
         (&(*f.upgrade().deref()));
         {
@@ -48,6 +48,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "(std::is_base_of<std::locale::facet, std::ctype<char> >::value)"
         );;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

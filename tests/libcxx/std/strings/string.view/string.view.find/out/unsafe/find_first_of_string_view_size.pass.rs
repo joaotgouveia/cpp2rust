@@ -8,16 +8,16 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0(s: *const (), str: *const (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (x)));
     if ((x) != (unimplemented!())) {
-        unimplemented!();
+        assert!(((pos) <= (x)) && ((x) < (unimplemented!())));
     }
 }
 pub unsafe fn test_1(s: *const (), str: *const (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (x)));
     if ((x) != (unimplemented!())) {
-        unimplemented!();
+        assert!(((x) < (unimplemented!())));
     }
 }
 pub unsafe fn test0_2() {
@@ -519,11 +519,11 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         (unsafe { test0_2() });
         (unsafe { test1_3() });
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

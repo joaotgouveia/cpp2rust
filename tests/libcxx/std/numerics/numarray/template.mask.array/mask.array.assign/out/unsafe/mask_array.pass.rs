@@ -22,85 +22,56 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut a1: [(); 16] = [
-            0_(),
-            1_(),
-            2_(),
-            3_(),
-            4_(),
-            5_(),
-            6_(),
-            7_(),
-            8_(),
-            9_(),
-            10_(),
-            11_(),
-            12_(),
-            13_(),
-            14_(),
-            15_(),
+        let mut a1: [i32; 16] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        let N1: usize = (::std::mem::size_of::<[i32; 16]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize));
+        let mut b1: [bool; 16] = [
+            true, false, false, true, true, false, false, true, false, false, false, true, false,
+            false, false, false,
         ];
-        let N1: () = (::std::mem::size_of::<[(); 16]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let mut b1: [(); 16] = [
-            true,
-            false,
-            false,
-            true,
-            true,
-            false,
-            false,
-            true,
-            false,
-            false,
-            false,
-            true,
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut a2: [i32; 8] = [
+            -1_i32, -2_i32, -3_i32, -4_i32, -5_i32, -6_i32, -7_i32, -8_i32,
         ];
-        let mut a2: [(); 8] = [-1_(), -2_(), -3_(), -4_(), -5_(), -6_(), -7_(), -8_()];
-        let N2: () = (::std::mem::size_of::<[(); 8]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let mut b2: [(); 8] = [true, false, true, true, false, false, true, true];
+        let N2: usize = (::std::mem::size_of::<[i32; 8]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize));
+        let mut b2: [bool; 8] = [true, false, true, true, false, false, true, true];
         let mut v1: () = unimplemented!();
         let v2: () = unimplemented!();
         let mut vb1: () = unimplemented!();
         let mut vb2: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (16_usize)));
+        assert!(((*unimplemented!()) == (-1_i32)));
+        assert!(((*unimplemented!()) == (1)));
+        assert!(((*unimplemented!()) == (2)));
+        assert!(((*unimplemented!()) == (-3_i32)));
+        assert!(((*unimplemented!()) == (-4_i32)));
+        assert!(((*unimplemented!()) == (5)));
+        assert!(((*unimplemented!()) == (6)));
+        assert!(((*unimplemented!()) == (-7_i32)));
+        assert!(((*unimplemented!()) == (8)));
+        assert!(((*unimplemented!()) == (9)));
+        assert!(((*unimplemented!()) == (10)));
+        assert!(((*unimplemented!()) == (-8_i32)));
+        assert!(((*unimplemented!()) == (12)));
+        assert!(((*unimplemented!()) == (13)));
+        assert!(((*unimplemented!()) == (14)));
+        assert!(((*unimplemented!()) == (15)));
     }
     {
-        let mut a1: [(); 3] = [0_(), 1_(), 2_()];
-        let mut a2: [(); 3] = [3_(), 4_(), 5_()];
-        let mut b1: [(); 3] = [true, false, true];
+        let mut a1: [i32; 3] = [0, 1, 2];
+        let mut a2: [i32; 3] = [3, 4, 5];
+        let mut b1: [bool; 3] = [true, false, true];
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
         let vb1: () = unimplemented!();
         let mut m1: () = unimplemented!();
         let m2: () = unimplemented!();
         let r: *const () = &(*unimplemented!());
-        unimplemented!();
+        assert!(((r) == ((&mut m1 as *mut ()).cast_const())));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

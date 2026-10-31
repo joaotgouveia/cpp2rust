@@ -28,7 +28,7 @@ impl Default for Union {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct bit_zero {
-    pub anon_0: (),
+    pub anon_0: i32,
 }
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
@@ -38,14 +38,14 @@ impl A {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NonPODClass {}
 impl NonPODClass {}
-pub type Enum = ();
+pub type Enum = u32;
 pub const Enum_EV: Enum = 0;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Base {
     pub e: Enum,
-    pub i: (),
-    pub f: (),
+    pub i: i32,
+    pub f: f32,
     pub p: *mut NonPODClass,
 }
 #[repr(C)]
@@ -124,7 +124,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_has_nothrow_assign_1() });
     (unsafe { test_has_nothrow_assign_2() });
     (unsafe { test_has_nothrow_assign_3() });
@@ -138,6 +138,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_has_not_nothrow_assign_11() });
     (unsafe { test_has_not_nothrow_assign_12() });
     (unsafe { test_has_not_nothrow_assign_13() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

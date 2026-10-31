@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let a1_copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     &(*a1_copy.borrow_mut());
@@ -14,7 +14,7 @@ pub fn test_0() -> () {
     &(*a2.borrow_mut());
     return true;
 }
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let a1_copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     &(*a1_copy.borrow_mut());
@@ -22,7 +22,7 @@ pub fn test_1() -> () {
     &(*a2.borrow_mut());
     return true;
 }
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let a1_copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     &(*a1_copy.borrow_mut());
@@ -49,13 +49,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
     const _: () = assert!(true, "test<char>()");;
     const _: () = assert!(true, "test<int>()");;
     const _: () = assert!(true, "test<void>()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

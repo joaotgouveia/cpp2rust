@@ -9,21 +9,21 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct Rep {
-    data_: (),
+    data_: i32,
 }
 impl Rep {
     pub unsafe fn new_1() -> Self {
-        let mut this = Self { data_: -1_() };
+        let mut this = Self { data_: -1_i32 };
         this
     }
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_2(mut i: i32) -> Self {
         let mut this = Self { data_: i };
         this
     }
-    pub unsafe fn operator_eq_3(&self, mut i: ()) -> () {
+    pub unsafe fn operator_eq_3(&self, mut i: i32) -> bool {
         return ((self.data_) == (i));
     }
-    pub unsafe fn operator_eq_4(&self, r: *const Rep) -> () {
+    pub unsafe fn operator_eq_4(&self, r: *const Rep) -> bool {
         return ((self.data_) == ((*r).data_));
     }
     pub unsafe fn operator_mul_assign(&mut self, mut x: Rep) -> *mut Rep {
@@ -50,11 +50,12 @@ impl Default for Rep {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NotARep {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_into(i64, to_i64_2)]
 pub struct RepConstConvertibleLWG3050 {}
 impl RepConstConvertibleLWG3050 {
-    pub unsafe fn to__2(&self) -> () {
-        return 2_();
+    pub unsafe fn to_i64_2(&self) -> i64 {
+        return 2_i64;
     }
 }
 pub fn main() {
@@ -72,15 +73,15 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    unimplemented!();
-    unimplemented!();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    assert!(((unimplemented!()) == (0)));
+    assert!((unsafe { Rep::operator_eq_3(&unimplemented!(), 0,) }));
     const _: () = assert!(true, "std::chrono::duration_values<int>::zero() == 0");;
     const _: () = assert!(true, "std::chrono::duration_values<Rep>::zero() == 0");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

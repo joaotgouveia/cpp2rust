@@ -120,25 +120,32 @@ pub struct Other_1 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Other_3 {}
-pub fn test_ctor_4() -> () {
-    let val: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+pub fn test_ctor_4() -> bool {
+    let val: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32])));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        (unimplemented!() == unimplemented!()) && ((unimplemented!() as usize) == unimplemented!())
+    );
+    assert!(
+        (unimplemented!() == unimplemented!()) && ((unimplemented!() as usize) == unimplemented!())
+    );
     return true;
 }
-pub fn test_ctor_5() -> () {
+pub fn test_ctor_5() -> bool {
     let val: Value<Box<[A_6]>> =
         Rc::new(RefCell::new(Box::new([<A_6>::default(), <A_6>::default()])));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        (unimplemented!() == unimplemented!()) && ((unimplemented!() as usize) == unimplemented!())
+    );
+    assert!(
+        (unimplemented!() == unimplemented!()) && ((unimplemented!() as usize) == unimplemented!())
+    );
     return true;
 }
-pub fn test_7() -> () {
+pub fn test_7() -> bool {
     ({ test_constructibility_0() });
     ({ test_constructibility_2() });
     ({ test_ctor_4() });
@@ -167,9 +174,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_7() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

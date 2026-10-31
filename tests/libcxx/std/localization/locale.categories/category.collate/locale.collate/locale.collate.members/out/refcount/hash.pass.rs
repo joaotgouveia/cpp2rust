@@ -26,20 +26,42 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let mut x1: () = unimplemented!();
-        let mut x2: () = unimplemented!();
+        let x1: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"1234").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
+        let x2: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"12345").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         let f: Ptr<()> = unimplemented!();
-        unimplemented!();
+        assert!(({ unimplemented!() } != { unimplemented!() }));
     }
     {
-        let mut x1: () = unimplemented!();
-        let mut x2: () = unimplemented!();
+        let x1: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                49 as i32, 50 as i32, 51 as i32, 52 as i32, 0 as i32,
+            ])
+            .to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        let x2: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 0 as i32,
+            ])
+            .to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         let f: Ptr<()> = unimplemented!();
-        unimplemented!();
+        assert!(({ unimplemented!() } != { unimplemented!() }));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -56,10 +56,10 @@ pub struct Union {
     __bytes: Box<[u8]>,
 }
 impl Union {
-    pub fn __(this: Ptr<Self>) -> Ptr<()> {
+    pub fn __(this: Ptr<Self>) -> Ptr<i32> {
         this.reinterpret_cast()
     }
-    pub fn ___(this: Ptr<Self>) -> Ptr<()> {
+    pub fn ___(this: Ptr<Self>) -> Ptr<f64> {
         this.reinterpret_cast()
     }
 }
@@ -89,8 +89,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_union_4() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

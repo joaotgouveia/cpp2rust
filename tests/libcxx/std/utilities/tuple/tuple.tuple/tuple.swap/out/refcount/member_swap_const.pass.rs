@@ -10,38 +10,38 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct ConstSwappable {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 pub fn swap_0(lhs: Ptr<ConstSwappable>, rhs: Ptr<ConstSwappable>) {
-    unimplemented!();
+    cpp_swap!(field_ptr!(lhs, i), field_ptr!(rhs, i));
 }
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.i) == 1));
+        assert!((unimplemented!().with(|__s| __s.i) == 0));
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.i) == 2));
+        assert!((unimplemented!().with(|__s| __s.i) == 3));
+        assert!((unimplemented!().with(|__s| __s.i) == 0));
+        assert!((unimplemented!().with(|__s| __s.i) == 1));
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.i) == 3));
+        assert!((unimplemented!().with(|__s| __s.i) == 4));
+        assert!((unimplemented!().with(|__s| __s.i) == 5));
+        assert!((unimplemented!().with(|__s| __s.i) == 0));
+        assert!((unimplemented!().with(|__s| __s.i) == 1));
+        assert!((unimplemented!().with(|__s| __s.i) == 2));
     }
     return true;
 }
@@ -64,9 +64,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

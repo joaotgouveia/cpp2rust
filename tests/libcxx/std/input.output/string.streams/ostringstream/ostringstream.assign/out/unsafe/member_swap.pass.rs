@@ -22,33 +22,145 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut ss0: () = unimplemented!();
         let mut ss: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 234_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!((unimplemented!()).is_null()));
+        assert!(unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c" 123 456".as_ptr(),
+                    libcc2rs::c_str_len(c" 123 456".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        let mut i: i32 = 234;
+        {
+            let __r: &mut ::std::fs::File = &mut (*{
+                let __r: &mut ::std::fs::File = &mut (*{
+                    let __r: &mut ::std::fs::File = &mut (ss as ::std::fs::File);
+                    let __s: *mut ::std::fs::File = __r;
+                    libcc2rs::write_int(&mut *__s, i);
+                    __s
+                });
+                let __s: *mut ::std::fs::File = __r;
+                let _ = (*__s).write_all(&[(' ' as libc::c_char) as u8]);
+                __s
+            });
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, 567);
+            __s
+        };
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"234 5676".as_ptr(),
+                    libcc2rs::c_str_len(c"234 5676".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        {
+            let __r: &mut ::std::fs::File = &mut (*{
+                let __r: &mut ::std::fs::File = &mut (*{
+                    let __r: &mut ::std::fs::File = &mut (ss0 as ::std::fs::File);
+                    let __s: *mut ::std::fs::File = __r;
+                    libcc2rs::write_int(&mut *__s, i);
+                    __s
+                });
+                let __s: *mut ::std::fs::File = __r;
+                let _ = (*__s).write_all(&[(' ' as libc::c_char) as u8]);
+                __s
+            });
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, 567);
+            __s
+        };
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"234 567".as_ptr(),
+                    libcc2rs::c_str_len(c"234 567".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut ss0: () = unimplemented!();
         let mut ss: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 234_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!((unimplemented!()).is_null()));
+        assert!(unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        32 as i32, 49 as i32, 50 as i32, 51 as i32, 32 as i32, 52 as i32,
+                        53 as i32, 54 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            32 as i32, 49 as i32, 50 as i32, 51 as i32, 32 as i32, 52 as i32,
+                            53 as i32, 54 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
+        let mut i: i32 = 234;
+        {
+            let __r: &mut ::std::fs::File = &mut (*unimplemented!());
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, 567);
+            __s
+        };
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        50 as i32, 51 as i32, 52 as i32, 32 as i32, 53 as i32, 54 as i32,
+                        55 as i32, 54 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            50 as i32, 51 as i32, 52 as i32, 32 as i32, 53 as i32, 54 as i32,
+                            55 as i32, 54 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
+        {
+            let __r: &mut ::std::fs::File = &mut (*unimplemented!());
+            let __s: *mut ::std::fs::File = __r;
+            libcc2rs::write_int(&mut *__s, 567);
+            __s
+        };
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        50 as i32, 51 as i32, 52 as i32, 32 as i32, 53 as i32, 54 as i32,
+                        55 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            50 as i32, 51 as i32, 52 as i32, 32 as i32, 53 as i32, 54 as i32,
+                            55 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

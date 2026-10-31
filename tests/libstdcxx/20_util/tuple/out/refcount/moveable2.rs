@@ -39,9 +39,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test01_1() });
-    return 0_();
+    return 0;
 }
 pub trait MoveOnlyImpl {
     fn move_assign(&self, _a0: Ptr<MoveOnly>) -> Ptr<MoveOnly>;

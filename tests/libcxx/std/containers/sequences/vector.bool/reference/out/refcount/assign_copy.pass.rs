@@ -6,54 +6,111 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
-    let mut vec_: () = unimplemented!();
+pub fn test_0() -> bool {
+    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let ref1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ref2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ref2.borrow_mut()) = (*ref1.borrow()).clone();
+    let mut ref1: Ptr<bool> = vec_.decay().offset(0_usize as isize);
+    let ref2: Value<Ptr<bool>> = Rc::new(RefCell::new(vec_.decay().offset(1_usize as isize)));
     {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
-        unimplemented!();
-        unimplemented!();
+        (*ref2.borrow()).write(ref1.read());
+        (*ref2.borrow()).clone()
+    };
+    {
+        {
+            vec_.decay().offset(0_usize as isize).write(false);
+            vec_.decay().offset(0_usize as isize)
+        };
+        {
+            vec_.decay().offset(1_usize as isize).write(true);
+            vec_.decay().offset(1_usize as isize)
+        };
+        {
+            ref1.write((*ref2.borrow()).read());
+            (ref1).clone()
+        };
+        assert!(vec_.decay().offset(0_usize as isize).read());
+        assert!(vec_.decay().offset(1_usize as isize).read());
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            vec_.decay().offset(0_usize as isize).write(true);
+            vec_.decay().offset(0_usize as isize)
+        };
+        {
+            vec_.decay().offset(1_usize as isize).write(false);
+            vec_.decay().offset(1_usize as isize)
+        };
+        {
+            ref1.write((*ref2.borrow()).read());
+            (ref1).clone()
+        };
+        assert!(!(vec_.decay().offset(0_usize as isize).read()));
+        assert!(!(vec_.decay().offset(1_usize as isize).read()));
     }
     {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            vec_.decay().offset(0_usize as isize).write(false);
+            vec_.decay().offset(0_usize as isize)
+        };
+        {
+            vec_.decay().offset(1_usize as isize).write(true);
+            vec_.decay().offset(1_usize as isize)
+        };
+        {
+            ref1.write((*ref2.borrow()).read());
+            (ref1).clone()
+        };
+        assert!(vec_.decay().offset(0_usize as isize).read());
+        assert!(vec_.decay().offset(1_usize as isize).read());
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            vec_.decay().offset(0_usize as isize).write(true);
+            vec_.decay().offset(0_usize as isize)
+        };
+        {
+            vec_.decay().offset(1_usize as isize).write(false);
+            vec_.decay().offset(1_usize as isize)
+        };
+        {
+            ref1.write((*ref2.borrow()).read());
+            (ref1).clone()
+        };
+        assert!(!(vec_.decay().offset(0_usize as isize).read()));
+        assert!(!(vec_.decay().offset(1_usize as isize).read()));
     }
     {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            vec_.decay().offset(0_usize as isize).write(false);
+            vec_.decay().offset(0_usize as isize)
+        };
+        {
+            vec_.decay().offset(1_usize as isize).write(true);
+            vec_.decay().offset(1_usize as isize)
+        };
+        {
+            ref1.write((*ref2.borrow()).read());
+            (ref1).clone()
+        };
+        assert!(vec_.decay().offset(0_usize as isize).read());
+        assert!(vec_.decay().offset(1_usize as isize).read());
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            vec_.decay().offset(0_usize as isize).write(true);
+            vec_.decay().offset(0_usize as isize)
+        };
+        {
+            vec_.decay().offset(1_usize as isize).write(false);
+            vec_.decay().offset(1_usize as isize)
+        };
+        {
+            ref1.write((*ref2.borrow()).read());
+            (ref1).clone()
+        };
+        assert!(!(vec_.decay().offset(0_usize as isize).read()));
+        assert!(!(vec_.decay().offset(1_usize as isize).read()));
     }
     return true;
 }
@@ -76,9 +133,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

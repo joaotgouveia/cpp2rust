@@ -9,7 +9,12 @@ use std::rc::Rc;
 pub unsafe fn test04_0() {
     let mut b1: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(::std::ffi::CStr::from_ptr(c"hello\n".as_ptr()).to_bytes());
+        __s
+    };
     unimplemented!();
 }
 pub fn main() {
@@ -18,8 +23,8 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test04_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

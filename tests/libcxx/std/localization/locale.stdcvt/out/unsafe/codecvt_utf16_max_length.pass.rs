@@ -13,13 +13,13 @@ impl TestHelper_wchar_t__4_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (4)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (6)));
         }
     }
 }
@@ -30,13 +30,13 @@ impl TestHelper_char16_t__2_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (4)));
         }
     }
 }
@@ -47,13 +47,13 @@ impl TestHelper_char32_t__4_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (4)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (6)));
         }
     }
 }
@@ -72,10 +72,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { TestHelper_wchar_t__4_::test() });
     (unsafe { TestHelper_char16_t__2_::test() });
     (unsafe { TestHelper_char32_t__4_::test() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -26,12 +26,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(argc: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
-    if (argc != 1_()) {
+fn main_0(argc: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!((argc == 1));
+    if (argc != 1) {
         unimplemented!();
     }
     const _: () = assert!(true, "std::is_same_v<decltype(std::unreachable()), void>");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

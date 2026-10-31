@@ -6,65 +6,65 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_convertible_imp_0(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_0(mut _a0: i32) -> bool {
     return true;
 }
-pub unsafe fn test_convertible_imp_1(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_1(mut _a0: i32) -> bool {
     return true;
 }
-pub unsafe fn test_convertible_imp_2(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_2(mut _a0: i32) -> bool {
     return true;
 }
-pub unsafe fn test_convertible_imp_3(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_3(mut _a0: i32) -> bool {
     return true;
 }
-pub unsafe fn test_convertible_imp_4(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_4(mut _a0: i32) -> bool {
     return true;
 }
-pub unsafe fn test_convertible_imp_5(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_5(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn test_convertible_imp_6(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_6(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn test_convertible_imp_7(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_7(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn test_convertible_imp_8(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_8(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn test_convertible_imp_9(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_9(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn test_convertible_10() -> () {
-    return (unsafe { test_convertible_imp_0(0_()) });
+pub unsafe fn test_convertible_10() -> bool {
+    return (unsafe { test_convertible_imp_0(0) });
 }
-pub unsafe fn test_convertible_11() -> () {
-    return (unsafe { test_convertible_imp_5(0_()) });
+pub unsafe fn test_convertible_11() -> bool {
+    return (unsafe { test_convertible_imp_5(0_i64) });
 }
-pub unsafe fn test_convertible_12() -> () {
-    return (unsafe { test_convertible_imp_1(0_()) });
+pub unsafe fn test_convertible_12() -> bool {
+    return (unsafe { test_convertible_imp_1(0) });
 }
-pub unsafe fn test_convertible_13() -> () {
-    return (unsafe { test_convertible_imp_6(0_()) });
+pub unsafe fn test_convertible_13() -> bool {
+    return (unsafe { test_convertible_imp_6(0_i64) });
 }
-pub unsafe fn test_convertible_14() -> () {
-    return (unsafe { test_convertible_imp_2(0_()) });
+pub unsafe fn test_convertible_14() -> bool {
+    return (unsafe { test_convertible_imp_2(0) });
 }
-pub unsafe fn test_convertible_15() -> () {
-    return (unsafe { test_convertible_imp_7(0_()) });
+pub unsafe fn test_convertible_15() -> bool {
+    return (unsafe { test_convertible_imp_7(0_i64) });
 }
-pub unsafe fn test_convertible_16() -> () {
-    return (unsafe { test_convertible_imp_3(0_()) });
+pub unsafe fn test_convertible_16() -> bool {
+    return (unsafe { test_convertible_imp_3(0) });
 }
-pub unsafe fn test_convertible_17() -> () {
-    return (unsafe { test_convertible_imp_8(0_()) });
+pub unsafe fn test_convertible_17() -> bool {
+    return (unsafe { test_convertible_imp_8(0_i64) });
 }
-pub unsafe fn test_convertible_18() -> () {
-    return (unsafe { test_convertible_imp_4(0_()) });
+pub unsafe fn test_convertible_18() -> bool {
+    return (unsafe { test_convertible_imp_4(0) });
 }
-pub unsafe fn test_convertible_19() -> () {
-    return (unsafe { test_convertible_imp_9(0_()) });
+pub unsafe fn test_convertible_19() -> bool {
+    return (unsafe { test_convertible_imp_9(0_i64) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
@@ -97,10 +97,11 @@ impl Default for ExplicitDefault {
 }
 const _: () = assert!(true, "!test_convertible<ExplicitDefault>()");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct ImplicitInt {}
 impl ImplicitInt {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
@@ -110,7 +111,7 @@ const _: () = assert!(true, "test_convertible<ImplicitInt, int>()");
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ExplicitInt {}
 impl ExplicitInt {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
@@ -176,7 +177,7 @@ const _: () = assert!(true, "!test_convertible<ExplicitMove, ExplicitMove>()");
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ImplicitArgs {}
 impl ImplicitArgs {
-    pub unsafe fn new(mut _a0: (), mut _a1: (), mut _a2: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32, mut _a1: i32, mut _a2: i32) -> Self {
         let mut this = Self {};
         this
     }
@@ -186,7 +187,7 @@ const _: () = assert!(true, "test_convertible<ImplicitArgs, int, int, int>()");
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ExplicitArgs {}
 impl ExplicitArgs {
-    pub unsafe fn new(mut _a0: (), mut _a1: (), mut _a2: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32, mut _a1: i32, mut _a2: i32) -> Self {
         let mut this = Self {};
         this
     }
@@ -207,7 +208,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    return 0_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

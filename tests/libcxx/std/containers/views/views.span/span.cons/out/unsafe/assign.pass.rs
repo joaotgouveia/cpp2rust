@@ -6,52 +6,61 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn doAssign_0(mut lhs: (), mut rhs: ()) -> () {
+pub unsafe fn doAssign_0(mut lhs: (), mut rhs: ()) -> bool {
     const _: () = assert!(true, "");;
     unimplemented!();
     return ((unimplemented!()) == (unimplemented!()))
         && ((unimplemented!()) == (unimplemented!()));
 }
-pub unsafe fn doAssign_1(mut lhs: (), mut rhs: ()) -> () {
+pub unsafe fn doAssign_1(mut lhs: (), mut rhs: ()) -> bool {
     const _: () = assert!(true, "");;
     unimplemented!();
     return ((unimplemented!()) == (unimplemented!()))
         && ((unimplemented!()) == (unimplemented!()));
 }
-pub unsafe fn doAssign_2(mut lhs: (), mut rhs: ()) -> () {
+pub unsafe fn doAssign_2(mut lhs: (), mut rhs: ()) -> bool {
     const _: () = assert!(true, "");;
     unimplemented!();
     return ((unimplemented!()) == (unimplemented!()))
         && ((unimplemented!()) == (unimplemented!()));
 }
-pub unsafe fn doAssign_3(mut lhs: (), mut rhs: ()) -> () {
+pub unsafe fn doAssign_3(mut lhs: (), mut rhs: ()) -> bool {
     const _: () = assert!(true, "");;
     unimplemented!();
     return ((unimplemented!()) == (unimplemented!()))
         && ((unimplemented!()) == (unimplemented!()));
 }
-pub unsafe fn doAssign_4(mut lhs: (), mut rhs: ()) -> () {
+pub unsafe fn doAssign_4(mut lhs: (), mut rhs: ()) -> bool {
     const _: () = assert!(true, "");;
     unimplemented!();
     return ((unimplemented!()) == (unimplemented!()))
         && ((unimplemented!()) == (unimplemented!()));
 }
-pub unsafe fn doAssign_5(mut lhs: (), mut rhs: ()) -> () {
+pub unsafe fn doAssign_5(mut lhs: (), mut rhs: ()) -> bool {
     const _: () = assert!(true, "");;
     unimplemented!();
     return ((unimplemented!()) == (unimplemented!()))
         && ((unimplemented!()) == (unimplemented!()));
 }
-pub static mut carr1_6: std::cell::LazyCell<[(); 4]> =
-    std::cell::LazyCell::new(|| unsafe { [1_(), 2_(), 3_(), 4_()] });
-pub static mut carr2_7: std::cell::LazyCell<[(); 3]> =
-    std::cell::LazyCell::new(|| unsafe { [3_(), 4_(), 5_()] });
-pub static mut carr3_8: std::cell::LazyCell<[(); 2]> =
-    std::cell::LazyCell::new(|| unsafe { [7_(), 8_()] });
-pub static mut arr_9: std::cell::LazyCell<[(); 4]> =
-    std::cell::LazyCell::new(|| unsafe { [5_(), 6_(), 7_(), 9_()] });
-pub static mut strs_10: std::cell::LazyCell<[(); 3]> =
-    std::cell::LazyCell::new(|| unsafe { [unimplemented!(), unimplemented!(), unimplemented!()] });
+pub static mut carr1_6: std::cell::LazyCell<[i32; 4]> =
+    std::cell::LazyCell::new(|| unsafe { [1, 2, 3, 4] });
+pub static mut carr2_7: std::cell::LazyCell<[i32; 3]> =
+    std::cell::LazyCell::new(|| unsafe { [3, 4, 5] });
+pub static mut carr3_8: std::cell::LazyCell<[i32; 2]> =
+    std::cell::LazyCell::new(|| unsafe { [7, 8] });
+pub static mut arr_9: std::cell::LazyCell<[i32; 4]> =
+    std::cell::LazyCell::new(|| unsafe { [5, 6, 7, 9] });
+pub static mut strs_10: std::cell::LazyCell<[Vec<libc::c_char>; 3]> =
+    std::cell::LazyCell::new(|| unsafe {
+        [
+            std::slice::from_raw_parts(c"ABC".as_ptr(), libcc2rs::c_str_len(c"ABC".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"DEF".as_ptr(), libcc2rs::c_str_len(c"DEF".as_ptr()) + 1)
+                .to_vec(),
+            std::slice::from_raw_parts(c"GHI".as_ptr(), libcc2rs::c_str_len(c"GHI".as_ptr()) + 1)
+                .to_vec(),
+        ]
+    });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -68,7 +77,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let spans: [(); 13] = [
             unimplemented!(),
@@ -220,11 +229,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut i: () = 0_();
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            let mut j: () = i;
+            let mut j: usize = i;
             'loop_: while ((j) < (unimplemented!())) {
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _lhs: () = unimplemented!();
+                        let _rhs: () = unimplemented!();
+                        doAssign_2(_lhs, _rhs)
+                    })
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -232,11 +247,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut spans: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut i: () = 0_();
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            let mut j: () = i;
+            let mut j: usize = i;
             'loop_: while ((j) < (unimplemented!())) {
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _lhs: () = unimplemented!();
+                        let _rhs: () = unimplemented!();
+                        doAssign_3(_lhs, _rhs)
+                    })
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -255,11 +276,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
             unimplemented!(),
         ];
-        let mut i: () = 0_();
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            let mut j: () = i;
+            let mut j: usize = i;
             'loop_: while ((j) < (unimplemented!())) {
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _lhs: () = unimplemented!();
+                        let _rhs: () = unimplemented!();
+                        doAssign_4(_lhs, _rhs)
+                    })
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -267,17 +294,23 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut spans: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut i: () = 0_();
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            let mut j: () = i;
+            let mut j: usize = i;
             'loop_: while ((j) < (unimplemented!())) {
-                unimplemented!();
+                assert!(
+                    (unsafe {
+                        let _lhs: () = unimplemented!();
+                        let _rhs: () = unimplemented!();
+                        doAssign_5(_lhs, _rhs)
+                    })
+                );
                 j.prefix_inc();
             }
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const carr1_6);

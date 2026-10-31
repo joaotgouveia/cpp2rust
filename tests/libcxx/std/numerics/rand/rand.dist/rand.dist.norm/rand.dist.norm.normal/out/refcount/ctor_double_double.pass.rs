@@ -12,51 +12,51 @@ pub fn make_implicit_0() -> () {
 pub fn make_implicit_1() -> () {
     return unimplemented!();
 }
-pub fn test_convertible_imp_2(mut _a0: ()) -> () {
+pub fn test_convertible_imp_2(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_3(mut _a0: ()) -> () {
+pub fn test_convertible_imp_3(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_4(mut _a0: ()) -> () {
+pub fn test_convertible_imp_4(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_5(mut _a0: ()) -> () {
+pub fn test_convertible_imp_5(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_6(mut _a0: ()) -> () {
+pub fn test_convertible_imp_6(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_7(mut _a0: ()) -> () {
+pub fn test_convertible_imp_7(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_8() -> () {
-    return ({ test_convertible_imp_2(0_()) });
+pub fn test_convertible_8() -> bool {
+    return ({ test_convertible_imp_2(0) });
 }
-pub fn test_convertible_9() -> () {
-    return ({ test_convertible_imp_4(0_()) });
+pub fn test_convertible_9() -> bool {
+    return ({ test_convertible_imp_4(0_i64) });
 }
-pub fn test_convertible_10() -> () {
-    return ({ test_convertible_imp_5(0_()) });
+pub fn test_convertible_10() -> bool {
+    return ({ test_convertible_imp_5(0_i64) });
 }
-pub fn test_convertible_11() -> () {
-    return ({ test_convertible_imp_3(0_()) });
+pub fn test_convertible_11() -> bool {
+    return ({ test_convertible_imp_3(0) });
 }
-pub fn test_convertible_12() -> () {
-    return ({ test_convertible_imp_6(0_()) });
+pub fn test_convertible_12() -> bool {
+    return ({ test_convertible_imp_6(0_i64) });
 }
-pub fn test_convertible_13() -> () {
-    return ({ test_convertible_imp_7(0_()) });
+pub fn test_convertible_13() -> bool {
+    return ({ test_convertible_imp_7(0_i64) });
 }
 pub fn test_implicit_14() {
     const _: () = assert!(true, "test_convertible<D>()");;
-    unimplemented!();
+    assert!(unimplemented!());
     const _: () = assert!(true, "!test_convertible<D, T>()");;
     const _: () = assert!(true, "!test_convertible<D, T, T>()");;
 }
 pub fn test_implicit_15() {
     const _: () = assert!(true, "test_convertible<D>()");;
-    unimplemented!();
+    assert!(unimplemented!());
     const _: () = assert!(true, "!test_convertible<D, T>()");;
     const _: () = assert!(true, "!test_convertible<D, T, T>()");;
 }
@@ -79,24 +79,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_f64));
+        assert!((unimplemented!() == 1_f64));
     }
     {
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 14.5_f64));
+        assert!((unimplemented!() == 1_f64));
     }
     {
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 14.5_f64));
+        assert!((unimplemented!() == 5.25_f64));
     }
     ({ test_implicit_14() });
     ({ test_implicit_15() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

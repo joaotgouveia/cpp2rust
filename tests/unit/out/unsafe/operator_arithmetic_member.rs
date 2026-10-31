@@ -62,6 +62,14 @@ impl S {
         return old;
     }
 }
+impl UnsafeCppAdvance for S {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_8();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_10();
+    }
+}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();

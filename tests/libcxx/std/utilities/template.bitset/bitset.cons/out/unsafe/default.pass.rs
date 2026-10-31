@@ -9,10 +9,10 @@ use std::rc::Rc;
 pub unsafe fn test_default_ctor_0() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (0_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -24,10 +24,10 @@ pub unsafe fn test_default_ctor_0() {
 pub unsafe fn test_default_ctor_1() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (1_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -39,10 +39,10 @@ pub unsafe fn test_default_ctor_1() {
 pub unsafe fn test_default_ctor_2() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (31_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -54,10 +54,10 @@ pub unsafe fn test_default_ctor_2() {
 pub unsafe fn test_default_ctor_3() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (32_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -69,10 +69,10 @@ pub unsafe fn test_default_ctor_3() {
 pub unsafe fn test_default_ctor_4() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (33_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -84,10 +84,10 @@ pub unsafe fn test_default_ctor_4() {
 pub unsafe fn test_default_ctor_5() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (63_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -99,10 +99,10 @@ pub unsafe fn test_default_ctor_5() {
 pub unsafe fn test_default_ctor_6() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (64_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -114,10 +114,10 @@ pub unsafe fn test_default_ctor_6() {
 pub unsafe fn test_default_ctor_7() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (65_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -129,10 +129,10 @@ pub unsafe fn test_default_ctor_7() {
 pub unsafe fn test_default_ctor_8() {
     {
         let v1: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!(((unimplemented!()) == (1000_u64 as usize)));
+        let mut i: usize = 0_usize;
         'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == (false as i32)));
             i.prefix_inc();
         }
     }
@@ -141,7 +141,7 @@ pub unsafe fn test_default_ctor_8() {
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
-pub unsafe fn test_9() -> () {
+pub unsafe fn test_9() -> bool {
     (unsafe { test_default_ctor_0() });
     (unsafe { test_default_ctor_1() });
     (unsafe { test_default_ctor_2() });
@@ -168,9 +168,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_9() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

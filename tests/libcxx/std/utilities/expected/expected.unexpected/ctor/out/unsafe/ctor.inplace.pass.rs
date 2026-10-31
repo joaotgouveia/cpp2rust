@@ -23,12 +23,13 @@ const _: () = assert!(
     "!ImplicitlyConstructible<std::unexpected<int>, std::in_place_t, int>"
 );
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct Arg {
-    pub i: (),
+    pub i: i32,
 }
 impl Arg {
-    pub unsafe fn new(mut ii: ()) -> Self {
+    pub unsafe fn new(mut ii: i32) -> Self {
         let mut this = Self { i: ii };
         this
     }
@@ -38,7 +39,7 @@ impl Arg {
     }
     pub unsafe fn move_from(other: *mut Arg) -> Self {
         let mut this = Self { i: (*other).i };
-        (*other).i = 0_();
+        (*other).i = 0;
         this
     }
 }
@@ -48,28 +49,29 @@ impl Clone for Arg {
     }
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, Default)]
+#[cpp_from(Vec<Error > , new_1, value)]
 pub struct Error {
     pub arg: Arg,
 }
 impl Error {
-    pub unsafe fn new_1(a: *const Arg) -> Self {
+    pub unsafe fn new_2(a: *const Arg) -> Self {
         let mut this = Self {
             arg: Arg::copy_from({ a }),
         };
         this
     }
-    pub unsafe fn new_2(a: *mut Arg) -> Self {
+    pub unsafe fn new_3(a: *mut Arg) -> Self {
         let mut this = Self {
             arg: Arg::move_from({ a }),
         };
         this
     }
-    pub unsafe fn new_3(mut _a0: ()) -> Self {
+    pub unsafe fn new_1(mut _a0: Vec<Error>) -> Self {
         let mut this = Self {
-            arg: Arg::new({ 0_() }),
+            arg: Arg::new({ 0 }),
         };
-        unimplemented!();
+        assert!(false);
         this
     }
     pub unsafe fn move_from(_a0: *mut Error) -> Self {
@@ -79,23 +81,23 @@ impl Error {
         this
     }
 }
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     {
-        let mut a: Arg = Arg::new({ 5_() });
+        let mut a: Arg = Arg::new({ 5 });
         let mut unex: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).arg.i) == (5)));
+        assert!(((a.i) == (5)));
     }
     {
-        let mut a: Arg = Arg::new({ 5_() });
+        let mut a: Arg = Arg::new({ 5 });
         let mut unex: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*unimplemented!()).arg.i) == (5)));
+        assert!(((a.i) == (0)));
     }
     {
         let mut e: Error = {
-            let mut __tmp_0: Arg = Arg::new({ 5_() });
-            Error::new_2({ &mut __tmp_0 })
+            let mut __tmp_0: Arg = Arg::new({ 5 });
+            Error::new_3({ &mut __tmp_0 })
         };
         let mut unex: () = unimplemented!();
     }
@@ -117,10 +119,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
     (unsafe { testException_1() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

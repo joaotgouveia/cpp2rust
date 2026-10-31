@@ -6,19 +6,19 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
-    let s1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (*s1.borrow_mut())[(2_()) as usize] = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_0() -> bool {
+    let s1: Value<Box<[u16]>> = Rc::new(RefCell::new(Box::new([1_u16, 2_u16, 3_u16])));
+    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u16>)));
+    assert!((((*s1.borrow())[(0) as usize] as i32) == (2_u16 as i32)));
+    assert!((((*s1.borrow())[(1) as usize] as i32) == (3_u16 as i32)));
+    assert!((((*s1.borrow())[(2) as usize] as i32) == (3_u16 as i32)));
+    (*s1.borrow_mut())[(2) as usize] = 0_u16;
+    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u16>).offset((1) as isize)));
+    assert!((((*s1.borrow())[(0) as usize] as i32) == (2_u16 as i32)));
+    assert!((((*s1.borrow())[(1) as usize] as i32) == (2_u16 as i32)));
+    assert!((((*s1.borrow())[(2) as usize] as i32) == (3_u16 as i32)));
+    assert!((unimplemented!()).is_null());
+    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<u16>)));
     return true;
 }
 pub fn main() {
@@ -40,9 +40,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

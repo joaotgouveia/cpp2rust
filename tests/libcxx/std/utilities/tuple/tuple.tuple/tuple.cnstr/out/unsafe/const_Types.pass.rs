@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe)]
 pub struct NoValueCtor {
-    pub id: (),
+    pub id: i32,
 }
 impl NoValueCtor {
     pub unsafe fn new() -> Self {
@@ -38,7 +38,7 @@ impl Default for NoValueCtor {
         unsafe { NoValueCtor::new() }
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe)]
 pub struct NoValueCtorEmpty {}
@@ -69,7 +69,7 @@ impl Default for NoValueCtorEmpty {
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, Default)]
 pub struct ImplicitCopy {}
 impl ImplicitCopy {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
@@ -87,15 +87,15 @@ impl Clone for ImplicitCopy {
     }
 }
 pub unsafe fn testImplicitCopy1_1() -> () {
-    let mut i: ImplicitCopy = ImplicitCopy::new({ 42_() });
+    let mut i: ImplicitCopy = ImplicitCopy::new({ 42 });
     return unimplemented!();
 }
 pub unsafe fn testImplicitCopy2_2() -> () {
-    let i: ImplicitCopy = ImplicitCopy::new({ 42_() });
+    let i: ImplicitCopy = ImplicitCopy::new({ 42 });
     return unimplemented!();
 }
 pub unsafe fn testImplicitCopy3_3() -> () {
-    let i: ImplicitCopy = ImplicitCopy::new({ 42_() });
+    let i: ImplicitCopy = ImplicitCopy::new({ 42 });
     return i;
 }
 pub fn main() {
@@ -113,14 +113,14 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut t: () = unimplemented!();
-        unimplemented!();
+        assert!((*unimplemented!()).is_null());
     }
     {
         let mut t: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
     }
     {
         let t: () = unimplemented!();
@@ -132,8 +132,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
+        assert!((*unimplemented!()).is_null());
     }
     {
         let t: () = unimplemented!();
@@ -142,29 +142,36 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
+        assert!((*unimplemented!()).is_null());
     }
     {
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (2)));
+        assert!((*unimplemented!()).is_null());
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"text".as_ptr(),
+                    libcc2rs::c_str_len(c"text".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (1)));
+        assert!((((*unimplemented!()).id) == (1)));
+        assert!(((*unimplemented!()) == (2)));
+        assert!(((*unimplemented!()) == (3)));
     }
     {
         let mut t: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (1)));
+        assert!(((*unimplemented!()) == (2)));
+        assert!(((*unimplemented!()) == (3)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

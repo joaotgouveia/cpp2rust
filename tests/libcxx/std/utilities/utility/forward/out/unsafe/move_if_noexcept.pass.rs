@@ -53,9 +53,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut i: () = 0_();
-    let ci: () = 0_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut i: i32 = 0;
+    let ci: i32 = 0;
     let mut l: legacy = legacy::new();
     let mut a: A = A::new();
     let ca: A = A::new();
@@ -79,9 +79,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "(std::is_same<decltype(std::move_if_noexcept(l)), const legacy&>::value)"
     );;
-    let i1: () = 23_();
-    let i2: () = i1;
+    let i1: i32 = 23;
+    let i2: i32 = i1;
     const _: () = assert!(true, "i2 == 23");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

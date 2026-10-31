@@ -10,18 +10,18 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct adl_A {}
 pub fn cref_0(mut _a0: adl_A) {}
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     {
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        let mut r1: Ptr<i32> = unimplemented!();
+        let mut r2: Ptr<i32> = unimplemented!();
+        assert!(((r2) == (i.as_pointer())));
     }
     {
         let a: Value<adl_A> = Rc::new(RefCell::new(<adl_A>::default()));
-        let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let mut a1: Ptr<adl_A> = unimplemented!();
+        let mut a2: Ptr<adl_A> = unimplemented!();
+        assert!(((a2) == (a.as_pointer())));
     }
     return true;
 }
@@ -44,9 +44,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

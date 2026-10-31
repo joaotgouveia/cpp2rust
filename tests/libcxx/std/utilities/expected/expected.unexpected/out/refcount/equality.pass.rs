@@ -6,36 +6,36 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(_a0: Ptr<Error>, _a1: Ptr<Error>) -> () {
+pub fn operator_eq_0(_a0: Ptr<Error>, _a1: Ptr<Error>) -> bool {
     return ({ _a0.with(|__s| __s.i) } == { _a1.with(|__s| __s.i) });
 }
-pub fn operator_eq_1(lhs: Ptr<Error>, mut rhs: ()) -> () {
+pub fn operator_eq_1(lhs: Ptr<Error>, mut rhs: i32) -> bool {
     return ({ lhs.with(|__s| __s.i) } == { rhs });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Error {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl CppEq for Error {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let unex3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
     let unex_i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let unex_i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
 pub fn main() {
@@ -57,9 +57,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

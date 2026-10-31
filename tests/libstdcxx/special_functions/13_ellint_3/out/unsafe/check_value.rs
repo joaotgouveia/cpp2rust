@@ -9,18 +9,18 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct __gnu_test_func_callback {
-    _M_size: (),
+    _M_size: i32,
     _M_tests: [Option<unsafe fn()>; 15],
 }
 impl __gnu_test_func_callback {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            _M_size: 0_(),
+            _M_size: 0,
             _M_tests: [None; 15],
         };
         this
     }
-    pub unsafe fn size(&self) -> () {
+    pub unsafe fn size(&self) -> i32 {
         return self._M_size;
     }
     pub unsafe fn tests(&self) -> *const Option<unsafe fn()> {
@@ -74,7 +74,7 @@ impl Default for __gnu_test_object_counter {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1));
     }
     pub unsafe fn mark_call() {
@@ -86,10 +86,10 @@ impl __gnu_test_copy_constructor {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = count;
     }
 }
@@ -97,7 +97,7 @@ impl __gnu_test_copy_constructor {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
@@ -109,10 +109,10 @@ impl __gnu_test_assignment_operator {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
@@ -120,28 +120,28 @@ impl __gnu_test_assignment_operator {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_u32;
     }
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct __gnu_test_copy_tracker {
-    id_: (),
-    throw_on_copy_: (),
+    id_: i32,
+    throw_on_copy_: bool,
 }
 impl __gnu_test_copy_tracker {
-    pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| unsafe {
+    pub unsafe fn new(mut id: Option<i32>, mut throw_on_copy: Option<bool>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
-        let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
+        let mut throw_on_copy: bool = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
             id_: id,
             throw_on_copy_: throw_on_copy,
@@ -156,7 +156,7 @@ impl __gnu_test_copy_tracker {
         if this.throw_on_copy_ {
             (unsafe {
                 __gnu_test_copy_constructor::throw_on(
-                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -171,7 +171,7 @@ impl __gnu_test_copy_tracker {
         if (*rhs).throw_on_copy_ {
             (unsafe {
                 __gnu_test_assignment_operator::throw_on(
-                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -181,7 +181,7 @@ impl __gnu_test_copy_tracker {
     pub unsafe fn destructor(&mut self) {
         (unsafe { __gnu_test_destructor::mark_call() });
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
     pub unsafe fn reset() {
@@ -238,32 +238,32 @@ impl Default for __gnu_test_copy_tracker {
 pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         < (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
-    sem_set_: (),
+    sem_set_: i32,
     pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct testcase_ellint_3_double_ {
-    pub f0: (),
-    pub k: (),
-    pub nu: (),
-    pub phi: (),
-    pub f: (),
+    pub f0: f64,
+    pub k: f64,
+    pub nu: f64,
+    pub phi: f64,
+    pub f: f64,
 }
 pub static mut data001_9: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -340,7 +340,7 @@ pub static mut data001_9: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
             },
         ]
     });
-pub static mut toler001_10: std::cell::LazyCell<()> =
+pub static mut toler001_10: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data002_11: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -417,7 +417,7 @@ pub static mut data002_11: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler002_12: std::cell::LazyCell<()> =
+pub static mut toler002_12: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data003_13: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -494,7 +494,7 @@ pub static mut data003_13: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler003_14: std::cell::LazyCell<()> =
+pub static mut toler003_14: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data004_15: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -571,7 +571,7 @@ pub static mut data004_15: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler004_16: std::cell::LazyCell<()> =
+pub static mut toler004_16: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data005_17: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -648,7 +648,7 @@ pub static mut data005_17: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler005_18: std::cell::LazyCell<()> =
+pub static mut toler005_18: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data006_19: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -725,7 +725,7 @@ pub static mut data006_19: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler006_20: std::cell::LazyCell<()> =
+pub static mut toler006_20: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data007_21: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -802,7 +802,7 @@ pub static mut data007_21: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler007_22: std::cell::LazyCell<()> =
+pub static mut toler007_22: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data008_23: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -879,7 +879,7 @@ pub static mut data008_23: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler008_24: std::cell::LazyCell<()> =
+pub static mut toler008_24: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data009_25: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -956,7 +956,7 @@ pub static mut data009_25: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler009_26: std::cell::LazyCell<()> =
+pub static mut toler009_26: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data010_27: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1033,7 +1033,7 @@ pub static mut data010_27: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler010_28: std::cell::LazyCell<()> =
+pub static mut toler010_28: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data011_29: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1110,7 +1110,7 @@ pub static mut data011_29: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler011_30: std::cell::LazyCell<()> =
+pub static mut toler011_30: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data012_31: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1187,7 +1187,7 @@ pub static mut data012_31: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler012_32: std::cell::LazyCell<()> =
+pub static mut toler012_32: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data013_33: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1264,7 +1264,7 @@ pub static mut data013_33: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler013_34: std::cell::LazyCell<()> =
+pub static mut toler013_34: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data014_35: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1341,7 +1341,7 @@ pub static mut data014_35: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler014_36: std::cell::LazyCell<()> =
+pub static mut toler014_36: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data015_37: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1418,7 +1418,7 @@ pub static mut data015_37: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler015_38: std::cell::LazyCell<()> =
+pub static mut toler015_38: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data016_39: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1495,7 +1495,7 @@ pub static mut data016_39: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler016_40: std::cell::LazyCell<()> =
+pub static mut toler016_40: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data017_41: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1572,7 +1572,7 @@ pub static mut data017_41: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler017_42: std::cell::LazyCell<()> =
+pub static mut toler017_42: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data018_43: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1649,7 +1649,7 @@ pub static mut data018_43: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler018_44: std::cell::LazyCell<()> =
+pub static mut toler018_44: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data019_45: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1726,7 +1726,7 @@ pub static mut data019_45: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler019_46: std::cell::LazyCell<()> =
+pub static mut toler019_46: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data020_47: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1803,7 +1803,7 @@ pub static mut data020_47: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler020_48: std::cell::LazyCell<()> =
+pub static mut toler020_48: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data021_49: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1880,7 +1880,7 @@ pub static mut data021_49: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler021_50: std::cell::LazyCell<()> =
+pub static mut toler021_50: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data022_51: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -1957,7 +1957,7 @@ pub static mut data022_51: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler022_52: std::cell::LazyCell<()> =
+pub static mut toler022_52: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data023_53: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2034,7 +2034,7 @@ pub static mut data023_53: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler023_54: std::cell::LazyCell<()> =
+pub static mut toler023_54: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data024_55: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2111,7 +2111,7 @@ pub static mut data024_55: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler024_56: std::cell::LazyCell<()> =
+pub static mut toler024_56: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data025_57: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2188,7 +2188,7 @@ pub static mut data025_57: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler025_58: std::cell::LazyCell<()> =
+pub static mut toler025_58: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data026_59: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2265,7 +2265,7 @@ pub static mut data026_59: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler026_60: std::cell::LazyCell<()> =
+pub static mut toler026_60: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data027_61: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2342,7 +2342,7 @@ pub static mut data027_61: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler027_62: std::cell::LazyCell<()> =
+pub static mut toler027_62: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data028_63: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2419,7 +2419,7 @@ pub static mut data028_63: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler028_64: std::cell::LazyCell<()> =
+pub static mut toler028_64: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data029_65: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2496,7 +2496,7 @@ pub static mut data029_65: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler029_66: std::cell::LazyCell<()> =
+pub static mut toler029_66: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data030_67: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2573,7 +2573,7 @@ pub static mut data030_67: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler030_68: std::cell::LazyCell<()> =
+pub static mut toler030_68: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data031_69: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2650,7 +2650,7 @@ pub static mut data031_69: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler031_70: std::cell::LazyCell<()> =
+pub static mut toler031_70: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data032_71: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2727,7 +2727,7 @@ pub static mut data032_71: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler032_72: std::cell::LazyCell<()> =
+pub static mut toler032_72: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data033_73: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2804,7 +2804,7 @@ pub static mut data033_73: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler033_74: std::cell::LazyCell<()> =
+pub static mut toler033_74: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data034_75: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2881,7 +2881,7 @@ pub static mut data034_75: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler034_76: std::cell::LazyCell<()> =
+pub static mut toler034_76: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data035_77: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -2958,7 +2958,7 @@ pub static mut data035_77: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler035_78: std::cell::LazyCell<()> =
+pub static mut toler035_78: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data036_79: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3035,7 +3035,7 @@ pub static mut data036_79: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler036_80: std::cell::LazyCell<()> =
+pub static mut toler036_80: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data037_81: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3112,7 +3112,7 @@ pub static mut data037_81: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler037_82: std::cell::LazyCell<()> =
+pub static mut toler037_82: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data038_83: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3189,7 +3189,7 @@ pub static mut data038_83: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler038_84: std::cell::LazyCell<()> =
+pub static mut toler038_84: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data039_85: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3266,7 +3266,7 @@ pub static mut data039_85: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler039_86: std::cell::LazyCell<()> =
+pub static mut toler039_86: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data040_87: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3343,7 +3343,7 @@ pub static mut data040_87: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler040_88: std::cell::LazyCell<()> =
+pub static mut toler040_88: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data041_89: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3420,7 +3420,7 @@ pub static mut data041_89: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler041_90: std::cell::LazyCell<()> =
+pub static mut toler041_90: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data042_91: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3497,7 +3497,7 @@ pub static mut data042_91: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler042_92: std::cell::LazyCell<()> =
+pub static mut toler042_92: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data043_93: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3574,7 +3574,7 @@ pub static mut data043_93: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler043_94: std::cell::LazyCell<()> =
+pub static mut toler043_94: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data044_95: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3651,7 +3651,7 @@ pub static mut data044_95: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler044_96: std::cell::LazyCell<()> =
+pub static mut toler044_96: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data045_97: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3728,7 +3728,7 @@ pub static mut data045_97: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler045_98: std::cell::LazyCell<()> =
+pub static mut toler045_98: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data046_99: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3805,7 +3805,7 @@ pub static mut data046_99: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> 
             },
         ]
     });
-pub static mut toler046_100: std::cell::LazyCell<()> =
+pub static mut toler046_100: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data047_101: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3882,7 +3882,7 @@ pub static mut data047_101: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler047_102: std::cell::LazyCell<()> =
+pub static mut toler047_102: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data048_103: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -3959,7 +3959,7 @@ pub static mut data048_103: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler048_104: std::cell::LazyCell<()> =
+pub static mut toler048_104: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data049_105: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4036,7 +4036,7 @@ pub static mut data049_105: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler049_106: std::cell::LazyCell<()> =
+pub static mut toler049_106: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data050_107: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4113,7 +4113,7 @@ pub static mut data050_107: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler050_108: std::cell::LazyCell<()> =
+pub static mut toler050_108: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data051_109: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4190,7 +4190,7 @@ pub static mut data051_109: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler051_110: std::cell::LazyCell<()> =
+pub static mut toler051_110: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data052_111: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4267,7 +4267,7 @@ pub static mut data052_111: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler052_112: std::cell::LazyCell<()> =
+pub static mut toler052_112: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data053_113: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4344,7 +4344,7 @@ pub static mut data053_113: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler053_114: std::cell::LazyCell<()> =
+pub static mut toler053_114: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data054_115: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4421,7 +4421,7 @@ pub static mut data054_115: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler054_116: std::cell::LazyCell<()> =
+pub static mut toler054_116: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data055_117: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4498,7 +4498,7 @@ pub static mut data055_117: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler055_118: std::cell::LazyCell<()> =
+pub static mut toler055_118: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data056_119: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4575,7 +4575,7 @@ pub static mut data056_119: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler056_120: std::cell::LazyCell<()> =
+pub static mut toler056_120: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data057_121: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4652,7 +4652,7 @@ pub static mut data057_121: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler057_122: std::cell::LazyCell<()> =
+pub static mut toler057_122: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data058_123: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4729,7 +4729,7 @@ pub static mut data058_123: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler058_124: std::cell::LazyCell<()> =
+pub static mut toler058_124: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data059_125: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4806,7 +4806,7 @@ pub static mut data059_125: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler059_126: std::cell::LazyCell<()> =
+pub static mut toler059_126: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data060_127: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4883,7 +4883,7 @@ pub static mut data060_127: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler060_128: std::cell::LazyCell<()> =
+pub static mut toler060_128: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data061_129: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -4960,7 +4960,7 @@ pub static mut data061_129: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler061_130: std::cell::LazyCell<()> =
+pub static mut toler061_130: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data062_131: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5037,7 +5037,7 @@ pub static mut data062_131: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler062_132: std::cell::LazyCell<()> =
+pub static mut toler062_132: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data063_133: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5114,7 +5114,7 @@ pub static mut data063_133: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler063_134: std::cell::LazyCell<()> =
+pub static mut toler063_134: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data064_135: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5191,7 +5191,7 @@ pub static mut data064_135: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler064_136: std::cell::LazyCell<()> =
+pub static mut toler064_136: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data065_137: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5268,7 +5268,7 @@ pub static mut data065_137: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler065_138: std::cell::LazyCell<()> =
+pub static mut toler065_138: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data066_139: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5345,7 +5345,7 @@ pub static mut data066_139: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler066_140: std::cell::LazyCell<()> =
+pub static mut toler066_140: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data067_141: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5422,7 +5422,7 @@ pub static mut data067_141: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler067_142: std::cell::LazyCell<()> =
+pub static mut toler067_142: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data068_143: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5499,7 +5499,7 @@ pub static mut data068_143: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler068_144: std::cell::LazyCell<()> =
+pub static mut toler068_144: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data069_145: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5576,7 +5576,7 @@ pub static mut data069_145: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler069_146: std::cell::LazyCell<()> =
+pub static mut toler069_146: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data070_147: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5653,7 +5653,7 @@ pub static mut data070_147: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler070_148: std::cell::LazyCell<()> =
+pub static mut toler070_148: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data071_149: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5730,7 +5730,7 @@ pub static mut data071_149: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler071_150: std::cell::LazyCell<()> =
+pub static mut toler071_150: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data072_151: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5807,7 +5807,7 @@ pub static mut data072_151: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler072_152: std::cell::LazyCell<()> =
+pub static mut toler072_152: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data073_153: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5884,7 +5884,7 @@ pub static mut data073_153: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler073_154: std::cell::LazyCell<()> =
+pub static mut toler073_154: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data074_155: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -5961,7 +5961,7 @@ pub static mut data074_155: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler074_156: std::cell::LazyCell<()> =
+pub static mut toler074_156: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data075_157: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6038,7 +6038,7 @@ pub static mut data075_157: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler075_158: std::cell::LazyCell<()> =
+pub static mut toler075_158: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data076_159: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6115,7 +6115,7 @@ pub static mut data076_159: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler076_160: std::cell::LazyCell<()> =
+pub static mut toler076_160: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data077_161: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6192,7 +6192,7 @@ pub static mut data077_161: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler077_162: std::cell::LazyCell<()> =
+pub static mut toler077_162: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data078_163: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6269,7 +6269,7 @@ pub static mut data078_163: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler078_164: std::cell::LazyCell<()> =
+pub static mut toler078_164: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data079_165: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6346,7 +6346,7 @@ pub static mut data079_165: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler079_166: std::cell::LazyCell<()> =
+pub static mut toler079_166: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data080_167: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6423,7 +6423,7 @@ pub static mut data080_167: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler080_168: std::cell::LazyCell<()> =
+pub static mut toler080_168: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data081_169: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6500,7 +6500,7 @@ pub static mut data081_169: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler081_170: std::cell::LazyCell<()> =
+pub static mut toler081_170: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data082_171: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6577,7 +6577,7 @@ pub static mut data082_171: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler082_172: std::cell::LazyCell<()> =
+pub static mut toler082_172: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data083_173: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6654,7 +6654,7 @@ pub static mut data083_173: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler083_174: std::cell::LazyCell<()> =
+pub static mut toler083_174: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data084_175: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6731,7 +6731,7 @@ pub static mut data084_175: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler084_176: std::cell::LazyCell<()> =
+pub static mut toler084_176: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data085_177: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6808,7 +6808,7 @@ pub static mut data085_177: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler085_178: std::cell::LazyCell<()> =
+pub static mut toler085_178: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data086_179: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6885,7 +6885,7 @@ pub static mut data086_179: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler086_180: std::cell::LazyCell<()> =
+pub static mut toler086_180: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data087_181: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -6962,7 +6962,7 @@ pub static mut data087_181: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler087_182: std::cell::LazyCell<()> =
+pub static mut toler087_182: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data088_183: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7039,7 +7039,7 @@ pub static mut data088_183: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler088_184: std::cell::LazyCell<()> =
+pub static mut toler088_184: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data089_185: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7116,7 +7116,7 @@ pub static mut data089_185: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler089_186: std::cell::LazyCell<()> =
+pub static mut toler089_186: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data090_187: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7193,7 +7193,7 @@ pub static mut data090_187: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler090_188: std::cell::LazyCell<()> =
+pub static mut toler090_188: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data091_189: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7270,7 +7270,7 @@ pub static mut data091_189: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler091_190: std::cell::LazyCell<()> =
+pub static mut toler091_190: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data092_191: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7347,7 +7347,7 @@ pub static mut data092_191: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler092_192: std::cell::LazyCell<()> =
+pub static mut toler092_192: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data093_193: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7424,7 +7424,7 @@ pub static mut data093_193: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler093_194: std::cell::LazyCell<()> =
+pub static mut toler093_194: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data094_195: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7501,7 +7501,7 @@ pub static mut data094_195: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler094_196: std::cell::LazyCell<()> =
+pub static mut toler094_196: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data095_197: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7578,7 +7578,7 @@ pub static mut data095_197: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler095_198: std::cell::LazyCell<()> =
+pub static mut toler095_198: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data096_199: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7655,7 +7655,7 @@ pub static mut data096_199: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler096_200: std::cell::LazyCell<()> =
+pub static mut toler096_200: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data097_201: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7732,7 +7732,7 @@ pub static mut data097_201: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler097_202: std::cell::LazyCell<()> =
+pub static mut toler097_202: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data098_203: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7809,7 +7809,7 @@ pub static mut data098_203: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler098_204: std::cell::LazyCell<()> =
+pub static mut toler098_204: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data099_205: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7886,7 +7886,7 @@ pub static mut data099_205: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler099_206: std::cell::LazyCell<()> =
+pub static mut toler099_206: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data100_207: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -7963,7 +7963,7 @@ pub static mut data100_207: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler100_208: std::cell::LazyCell<()> =
+pub static mut toler100_208: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data101_209: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8040,7 +8040,7 @@ pub static mut data101_209: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler101_210: std::cell::LazyCell<()> =
+pub static mut toler101_210: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data102_211: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8117,7 +8117,7 @@ pub static mut data102_211: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler102_212: std::cell::LazyCell<()> =
+pub static mut toler102_212: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data103_213: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8194,7 +8194,7 @@ pub static mut data103_213: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler103_214: std::cell::LazyCell<()> =
+pub static mut toler103_214: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data104_215: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8271,7 +8271,7 @@ pub static mut data104_215: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler104_216: std::cell::LazyCell<()> =
+pub static mut toler104_216: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data105_217: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8348,7 +8348,7 @@ pub static mut data105_217: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler105_218: std::cell::LazyCell<()> =
+pub static mut toler105_218: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data106_219: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8425,7 +8425,7 @@ pub static mut data106_219: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler106_220: std::cell::LazyCell<()> =
+pub static mut toler106_220: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data107_221: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8502,7 +8502,7 @@ pub static mut data107_221: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler107_222: std::cell::LazyCell<()> =
+pub static mut toler107_222: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data108_223: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8579,7 +8579,7 @@ pub static mut data108_223: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler108_224: std::cell::LazyCell<()> =
+pub static mut toler108_224: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data109_225: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8656,7 +8656,7 @@ pub static mut data109_225: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler109_226: std::cell::LazyCell<()> =
+pub static mut toler109_226: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data110_227: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8733,7 +8733,7 @@ pub static mut data110_227: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler110_228: std::cell::LazyCell<()> =
+pub static mut toler110_228: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data111_229: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8810,7 +8810,7 @@ pub static mut data111_229: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler111_230: std::cell::LazyCell<()> =
+pub static mut toler111_230: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data112_231: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8887,7 +8887,7 @@ pub static mut data112_231: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler112_232: std::cell::LazyCell<()> =
+pub static mut toler112_232: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data113_233: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -8964,7 +8964,7 @@ pub static mut data113_233: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler113_234: std::cell::LazyCell<()> =
+pub static mut toler113_234: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data114_235: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9041,7 +9041,7 @@ pub static mut data114_235: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler114_236: std::cell::LazyCell<()> =
+pub static mut toler114_236: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data115_237: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9118,7 +9118,7 @@ pub static mut data115_237: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler115_238: std::cell::LazyCell<()> =
+pub static mut toler115_238: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data116_239: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9195,7 +9195,7 @@ pub static mut data116_239: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler116_240: std::cell::LazyCell<()> =
+pub static mut toler116_240: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data117_241: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9272,7 +9272,7 @@ pub static mut data117_241: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler117_242: std::cell::LazyCell<()> =
+pub static mut toler117_242: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data118_243: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9349,7 +9349,7 @@ pub static mut data118_243: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler118_244: std::cell::LazyCell<()> =
+pub static mut toler118_244: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data119_245: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9426,7 +9426,7 @@ pub static mut data119_245: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler119_246: std::cell::LazyCell<()> =
+pub static mut toler119_246: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data120_247: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9503,7 +9503,7 @@ pub static mut data120_247: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler120_248: std::cell::LazyCell<()> =
+pub static mut toler120_248: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data121_249: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9580,7 +9580,7 @@ pub static mut data121_249: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler121_250: std::cell::LazyCell<()> =
+pub static mut toler121_250: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data122_251: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9657,7 +9657,7 @@ pub static mut data122_251: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler122_252: std::cell::LazyCell<()> =
+pub static mut toler122_252: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data123_253: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9734,7 +9734,7 @@ pub static mut data123_253: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler123_254: std::cell::LazyCell<()> =
+pub static mut toler123_254: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data124_255: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9811,7 +9811,7 @@ pub static mut data124_255: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler124_256: std::cell::LazyCell<()> =
+pub static mut toler124_256: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data125_257: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9888,7 +9888,7 @@ pub static mut data125_257: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler125_258: std::cell::LazyCell<()> =
+pub static mut toler125_258: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data126_259: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -9965,7 +9965,7 @@ pub static mut data126_259: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler126_260: std::cell::LazyCell<()> =
+pub static mut toler126_260: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data127_261: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10042,7 +10042,7 @@ pub static mut data127_261: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler127_262: std::cell::LazyCell<()> =
+pub static mut toler127_262: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data128_263: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10119,7 +10119,7 @@ pub static mut data128_263: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler128_264: std::cell::LazyCell<()> =
+pub static mut toler128_264: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data129_265: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10196,7 +10196,7 @@ pub static mut data129_265: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler129_266: std::cell::LazyCell<()> =
+pub static mut toler129_266: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data130_267: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10273,7 +10273,7 @@ pub static mut data130_267: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler130_268: std::cell::LazyCell<()> =
+pub static mut toler130_268: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data131_269: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10350,7 +10350,7 @@ pub static mut data131_269: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler131_270: std::cell::LazyCell<()> =
+pub static mut toler131_270: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data132_271: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10427,7 +10427,7 @@ pub static mut data132_271: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler132_272: std::cell::LazyCell<()> =
+pub static mut toler132_272: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data133_273: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10504,7 +10504,7 @@ pub static mut data133_273: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler133_274: std::cell::LazyCell<()> =
+pub static mut toler133_274: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data134_275: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10581,7 +10581,7 @@ pub static mut data134_275: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler134_276: std::cell::LazyCell<()> =
+pub static mut toler134_276: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data135_277: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10658,7 +10658,7 @@ pub static mut data135_277: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler135_278: std::cell::LazyCell<()> =
+pub static mut toler135_278: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data136_279: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10735,7 +10735,7 @@ pub static mut data136_279: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler136_280: std::cell::LazyCell<()> =
+pub static mut toler136_280: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data137_281: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10812,7 +10812,7 @@ pub static mut data137_281: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler137_282: std::cell::LazyCell<()> =
+pub static mut toler137_282: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data138_283: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10889,7 +10889,7 @@ pub static mut data138_283: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler138_284: std::cell::LazyCell<()> =
+pub static mut toler138_284: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data139_285: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -10966,7 +10966,7 @@ pub static mut data139_285: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler139_286: std::cell::LazyCell<()> =
+pub static mut toler139_286: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data140_287: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11043,7 +11043,7 @@ pub static mut data140_287: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler140_288: std::cell::LazyCell<()> =
+pub static mut toler140_288: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data141_289: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11120,7 +11120,7 @@ pub static mut data141_289: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler141_290: std::cell::LazyCell<()> =
+pub static mut toler141_290: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data142_291: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11197,7 +11197,7 @@ pub static mut data142_291: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler142_292: std::cell::LazyCell<()> =
+pub static mut toler142_292: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data143_293: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11274,7 +11274,7 @@ pub static mut data143_293: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler143_294: std::cell::LazyCell<()> =
+pub static mut toler143_294: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data144_295: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11351,7 +11351,7 @@ pub static mut data144_295: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler144_296: std::cell::LazyCell<()> =
+pub static mut toler144_296: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data145_297: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11428,7 +11428,7 @@ pub static mut data145_297: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler145_298: std::cell::LazyCell<()> =
+pub static mut toler145_298: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data146_299: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11505,7 +11505,7 @@ pub static mut data146_299: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler146_300: std::cell::LazyCell<()> =
+pub static mut toler146_300: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data147_301: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11582,7 +11582,7 @@ pub static mut data147_301: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler147_302: std::cell::LazyCell<()> =
+pub static mut toler147_302: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data148_303: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11659,7 +11659,7 @@ pub static mut data148_303: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler148_304: std::cell::LazyCell<()> =
+pub static mut toler148_304: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data149_305: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11736,7 +11736,7 @@ pub static mut data149_305: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler149_306: std::cell::LazyCell<()> =
+pub static mut toler149_306: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data150_307: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11813,7 +11813,7 @@ pub static mut data150_307: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler150_308: std::cell::LazyCell<()> =
+pub static mut toler150_308: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data151_309: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11890,7 +11890,7 @@ pub static mut data151_309: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler151_310: std::cell::LazyCell<()> =
+pub static mut toler151_310: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data152_311: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -11967,7 +11967,7 @@ pub static mut data152_311: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler152_312: std::cell::LazyCell<()> =
+pub static mut toler152_312: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data153_313: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12044,7 +12044,7 @@ pub static mut data153_313: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler153_314: std::cell::LazyCell<()> =
+pub static mut toler153_314: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data154_315: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12121,7 +12121,7 @@ pub static mut data154_315: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler154_316: std::cell::LazyCell<()> =
+pub static mut toler154_316: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data155_317: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12198,7 +12198,7 @@ pub static mut data155_317: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler155_318: std::cell::LazyCell<()> =
+pub static mut toler155_318: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data156_319: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12275,7 +12275,7 @@ pub static mut data156_319: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler156_320: std::cell::LazyCell<()> =
+pub static mut toler156_320: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data157_321: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12352,7 +12352,7 @@ pub static mut data157_321: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler157_322: std::cell::LazyCell<()> =
+pub static mut toler157_322: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data158_323: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12429,7 +12429,7 @@ pub static mut data158_323: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler158_324: std::cell::LazyCell<()> =
+pub static mut toler158_324: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data159_325: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12506,7 +12506,7 @@ pub static mut data159_325: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler159_326: std::cell::LazyCell<()> =
+pub static mut toler159_326: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data160_327: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12583,7 +12583,7 @@ pub static mut data160_327: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler160_328: std::cell::LazyCell<()> =
+pub static mut toler160_328: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data161_329: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12660,7 +12660,7 @@ pub static mut data161_329: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler161_330: std::cell::LazyCell<()> =
+pub static mut toler161_330: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data162_331: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12737,7 +12737,7 @@ pub static mut data162_331: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler162_332: std::cell::LazyCell<()> =
+pub static mut toler162_332: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data163_333: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12814,7 +12814,7 @@ pub static mut data163_333: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler163_334: std::cell::LazyCell<()> =
+pub static mut toler163_334: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data164_335: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12891,7 +12891,7 @@ pub static mut data164_335: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler164_336: std::cell::LazyCell<()> =
+pub static mut toler164_336: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data165_337: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -12968,7 +12968,7 @@ pub static mut data165_337: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler165_338: std::cell::LazyCell<()> =
+pub static mut toler165_338: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data166_339: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13045,7 +13045,7 @@ pub static mut data166_339: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler166_340: std::cell::LazyCell<()> =
+pub static mut toler166_340: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data167_341: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13122,7 +13122,7 @@ pub static mut data167_341: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler167_342: std::cell::LazyCell<()> =
+pub static mut toler167_342: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data168_343: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13199,7 +13199,7 @@ pub static mut data168_343: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler168_344: std::cell::LazyCell<()> =
+pub static mut toler168_344: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data169_345: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13276,7 +13276,7 @@ pub static mut data169_345: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler169_346: std::cell::LazyCell<()> =
+pub static mut toler169_346: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data170_347: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13353,7 +13353,7 @@ pub static mut data170_347: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler170_348: std::cell::LazyCell<()> =
+pub static mut toler170_348: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data171_349: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13430,7 +13430,7 @@ pub static mut data171_349: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler171_350: std::cell::LazyCell<()> =
+pub static mut toler171_350: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data172_351: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13507,7 +13507,7 @@ pub static mut data172_351: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler172_352: std::cell::LazyCell<()> =
+pub static mut toler172_352: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data173_353: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13584,7 +13584,7 @@ pub static mut data173_353: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler173_354: std::cell::LazyCell<()> =
+pub static mut toler173_354: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data174_355: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13661,7 +13661,7 @@ pub static mut data174_355: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler174_356: std::cell::LazyCell<()> =
+pub static mut toler174_356: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data175_357: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13738,7 +13738,7 @@ pub static mut data175_357: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler175_358: std::cell::LazyCell<()> =
+pub static mut toler175_358: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data176_359: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13815,7 +13815,7 @@ pub static mut data176_359: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler176_360: std::cell::LazyCell<()> =
+pub static mut toler176_360: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data177_361: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13892,7 +13892,7 @@ pub static mut data177_361: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler177_362: std::cell::LazyCell<()> =
+pub static mut toler177_362: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data178_363: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -13969,7 +13969,7 @@ pub static mut data178_363: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler178_364: std::cell::LazyCell<()> =
+pub static mut toler178_364: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data179_365: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14046,7 +14046,7 @@ pub static mut data179_365: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler179_366: std::cell::LazyCell<()> =
+pub static mut toler179_366: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data180_367: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14123,7 +14123,7 @@ pub static mut data180_367: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler180_368: std::cell::LazyCell<()> =
+pub static mut toler180_368: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data181_369: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14200,7 +14200,7 @@ pub static mut data181_369: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler181_370: std::cell::LazyCell<()> =
+pub static mut toler181_370: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data182_371: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14277,7 +14277,7 @@ pub static mut data182_371: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler182_372: std::cell::LazyCell<()> =
+pub static mut toler182_372: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data183_373: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14354,7 +14354,7 @@ pub static mut data183_373: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler183_374: std::cell::LazyCell<()> =
+pub static mut toler183_374: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data184_375: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14431,7 +14431,7 @@ pub static mut data184_375: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler184_376: std::cell::LazyCell<()> =
+pub static mut toler184_376: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data185_377: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14508,7 +14508,7 @@ pub static mut data185_377: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler185_378: std::cell::LazyCell<()> =
+pub static mut toler185_378: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data186_379: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14585,7 +14585,7 @@ pub static mut data186_379: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler186_380: std::cell::LazyCell<()> =
+pub static mut toler186_380: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data187_381: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14662,7 +14662,7 @@ pub static mut data187_381: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler187_382: std::cell::LazyCell<()> =
+pub static mut toler187_382: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data188_383: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14739,7 +14739,7 @@ pub static mut data188_383: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler188_384: std::cell::LazyCell<()> =
+pub static mut toler188_384: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data189_385: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14816,7 +14816,7 @@ pub static mut data189_385: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler189_386: std::cell::LazyCell<()> =
+pub static mut toler189_386: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data190_387: std::cell::LazyCell<[testcase_ellint_3_double_; 10]> =
     std::cell::LazyCell::new(|| unsafe {
@@ -14893,24 +14893,24 @@ pub static mut data190_387: std::cell::LazyCell<[testcase_ellint_3_double_; 10]>
             },
         ]
     });
-pub static mut toler190_388: std::cell::LazyCell<()> =
+pub static mut toler190_388: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
-pub unsafe fn test_389(data: *const [testcase_ellint_3_double_; 10], mut toler: ()) {
-    let mut test: () = true;
-    let eps: () = unimplemented!();
-    let mut max_abs_diff: () = -1_();
-    let mut max_abs_frac: () = -1_();
-    let mut num_datum: () = 10_();
-    let mut i: () = 0_();
+pub unsafe fn test_389(data: *const [testcase_ellint_3_double_; 10], mut toler: f64) {
+    let mut test: bool = true;
+    let eps: f64 = unimplemented!();
+    let mut max_abs_diff: f64 = -1_f64;
+    let mut max_abs_frac: f64 = -1_f64;
+    let mut num_datum: u32 = 10_u32;
+    let mut i: u32 = 0_u32;
     'loop_: while ((i) < (num_datum)) {
-        let f: () = unimplemented!();
-        let f0: () = (*data)[(i) as usize].f0;
-        let diff: () = ((f) - (f0));
+        let f: f64 = unimplemented!();
+        let f0: f64 = (*data)[(i) as usize].f0;
+        let diff: f64 = ((f) - (f0));
         if ((unimplemented!()) > (max_abs_diff)) {
             max_abs_diff = unimplemented!();
         }
-        if ((unimplemented!()) > ((10_()) * (eps))) && ((unimplemented!()) > ((10_()) * (eps))) {
-            let frac: () = ((diff) / (f0));
+        if ((unimplemented!()) > ((10_f64) * (eps))) && ((unimplemented!()) > ((10_f64) * (eps))) {
+            let frac: f64 = ((diff) / (f0));
             if ((unimplemented!()) > (max_abs_frac)) {
                 max_abs_frac = unimplemented!();
             }
@@ -14922,7 +14922,7 @@ pub unsafe fn test_389(data: *const [testcase_ellint_3_double_; 10], mut toler: 
         __do_while = false;
         if !((max_abs_frac) < (toler)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
 }
@@ -14932,7 +14932,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe {
         test_389(
             &(*std::cell::LazyCell::force_mut(&mut *&raw mut data001_9)),
@@ -16073,31 +16073,31 @@ unsafe fn main_0() -> () {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut toler190_388)),
         )
     });
-    return 0_();
+    return 0;
 }
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            sem_set_: unimplemented!(),
+            sem_set_: 0_i32,
             pid_: unimplemented!(),
         };
         this.pid_ = unimplemented!();
         this.sem_set_ = unimplemented!();
-        if ((this.sem_set_) == (-1_())) {
+        if ((this.sem_set_) == (-1_i32)) {
             unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
-        if ((unimplemented!()) == (-1_())) {
+        val.val = 0;
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_390(mut size: Option<()>) {
-    let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
+pub unsafe fn set_memory_limits_390(mut size: Option<f32>) {
+    let mut size: f32 = size.unwrap_or_else(|| unsafe { (16_f64 as f32) });
     let mut r: () = unimplemented!();
-    let mut limit: () = ((size) * (1048576_()));
+    let mut limit: () = (((size) * (1048576_f32)) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
@@ -16111,34 +16111,37 @@ pub unsafe fn set_memory_limits_390(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_391(mut size: ()) {
+pub unsafe fn set_file_limit_391(mut size: u64) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_392(mut mangled: *const (), mut wanted: *const ()) {
-    let mut status: () = 0_();
-    let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = unimplemented!();
+pub unsafe fn verify_demangle_392(
+    mut mangled: *const libc::c_char,
+    mut wanted: *const libc::c_char,
+) {
+    let mut status: i32 = 0;
+    let mut s: *const libc::c_char = std::ptr::null();
+    let mut demangled: *mut libc::c_char = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
         switch!(match status {
-            __v if __v == 0_() => {
+            __v if __v == 0 => {
                 s = c"error code = 0: success".as_ptr();
                 break;
             }
-            __v if __v == -1_() => {
+            __v if __v == -1_i32 => {
                 s = c"error code = -1: memory allocation failure".as_ptr();
                 break;
             }
-            __v if __v == -2_() => {
+            __v if __v == -2_i32 => {
                 s = c"error code = -2: invalid mangled name".as_ptr();
                 break;
             }
-            __v if __v == -3_() => {
+            __v if __v == -3_i32 => {
                 s = c"error code = -3: invalid arguments".as_ptr();
                 break;
             }
@@ -16147,80 +16150,99 @@ pub unsafe fn verify_demangle_392(mut mangled: *const (), mut wanted: *const ())
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if !(unimplemented!()) {
+    let mut w: Vec<libc::c_char> =
+        std::slice::from_raw_parts(wanted, libcc2rs::c_str_len(wanted) + 1).to_vec();
+    if !(w == std::slice::from_raw_parts(s, libcc2rs::c_str_len(s) + 1).to_vec()) {
         unimplemented!();
     }
-    unimplemented!();
+    libcc2rs::free_unsafe((demangled as *mut ::libc::c_void));
 }
 pub unsafe fn run_tests_wrapped_locale_393(
-    mut name: *const (),
+    mut name: *const libc::c_char,
     l: *const __gnu_test_func_callback,
 ) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut res: *const () = (unimplemented!()).cast_const();
+    let mut res: *const libc::c_char = (libc::setlocale(6, name)).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () = unimplemented!();
+        let mut preLC_ALL: Vec<libc::c_char> =
+            std::slice::from_raw_parts(res, libcc2rs::c_str_len(res) + 1).to_vec();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () = unimplemented!();
+        let mut postLC_ALL: Vec<libc::c_char> = std::slice::from_raw_parts(
+            (libc::setlocale(6, std::ptr::null())).cast_const(),
+            libcc2rs::c_str_len((libc::setlocale(6, std::ptr::null())).cast_const()) + 1,
+        )
+        .to_vec();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"LC_ALL for ".as_ptr(),
+            libcc2rs::c_str_len(c"LC_ALL for ".as_ptr()) + 1,
+        )
+        .to_vec();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn run_tests_wrapped_env_394(
-    mut name: *const (),
-    mut env: *const (),
+    mut name: *const libc::c_char,
+    mut env: *const libc::c_char,
     l: *const __gnu_test_func_callback,
 ) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut oldENV: *const () = (unimplemented!()).cast_const();
-    if !(unimplemented!() != 0) {
+    let mut oldENV: *const libc::c_char = (libc::getenv(env)).cast_const();
+    if !(libc::setenv(env, name, 1) != 0) {
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        unimplemented!();
+        libc::setenv(
+            env,
+            if !(oldENV).is_null() {
+                oldENV
+            } else {
+                c"".as_ptr()
+            },
+            1,
+        );
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> =
+            std::slice::from_raw_parts(env, libcc2rs::c_str_len(env) + 1).to_vec();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+static mut count__1: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__2: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut count__3: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__4: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut _M_count_5: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut next_id__6: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
-    pub val: (),
+    pub val: i32,
     pub buf: *mut (),
-    pub array: *mut (),
+    pub array: *mut u16,
 }
 impl Default for __gnu_test_semun {
     fn default() -> Self {
@@ -16231,7 +16253,7 @@ impl __gnu_test_semaphore {}
 impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
+        val.val = 0;
         if ((self.pid_) == (unimplemented!())) {
             unimplemented!();
         }
@@ -16240,7 +16262,7 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
@@ -16248,22 +16270,22 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
 }
 pub unsafe fn test_tm_395(
-    mut sec: (),
-    mut min: (),
-    mut hour: (),
-    mut mday: (),
-    mut mon: (),
-    mut year: (),
-    mut wday: (),
-    mut yday: (),
-    mut isdst: (),
-) -> () {
+    mut sec: i32,
+    mut min: i32,
+    mut hour: i32,
+    mut mday: i32,
+    mut mon: i32,
+    mut year: i32,
+    mut wday: i32,
+    mut yday: i32,
+    mut isdst: i32,
+) -> ::libc::tm {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_396)).tm_sec = sec;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_396)).tm_min = min;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_396)).tm_hour = hour;
@@ -16273,10 +16295,10 @@ pub unsafe fn test_tm_395(
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_396)).tm_wday = wday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_396)).tm_yday = yday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_396)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_396)).clone();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_396));
 }
-static mut tmp_396: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut tmp_396: std::cell::LazyCell<::libc::tm> =
+    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const data001_9);
     std::cell::LazyCell::force(&*&raw const toler001_10);

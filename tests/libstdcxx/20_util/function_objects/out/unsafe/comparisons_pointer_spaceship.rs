@@ -9,18 +9,18 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct __gnu_test_func_callback {
-    _M_size: (),
+    _M_size: i32,
     _M_tests: [Option<unsafe fn()>; 15],
 }
 impl __gnu_test_func_callback {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            _M_size: 0_(),
+            _M_size: 0,
             _M_tests: [None; 15],
         };
         this
     }
-    pub unsafe fn size(&self) -> () {
+    pub unsafe fn size(&self) -> i32 {
         return self._M_size;
     }
     pub unsafe fn tests(&self) -> *const Option<unsafe fn()> {
@@ -74,7 +74,7 @@ impl Default for __gnu_test_object_counter {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1));
     }
     pub unsafe fn mark_call() {
@@ -86,10 +86,10 @@ impl __gnu_test_copy_constructor {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = count;
     }
 }
@@ -97,7 +97,7 @@ impl __gnu_test_copy_constructor {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
@@ -109,10 +109,10 @@ impl __gnu_test_assignment_operator {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
@@ -120,28 +120,28 @@ impl __gnu_test_assignment_operator {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_u32;
     }
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct __gnu_test_copy_tracker {
-    id_: (),
-    throw_on_copy_: (),
+    id_: i32,
+    throw_on_copy_: bool,
 }
 impl __gnu_test_copy_tracker {
-    pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| unsafe {
+    pub unsafe fn new(mut id: Option<i32>, mut throw_on_copy: Option<bool>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
-        let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
+        let mut throw_on_copy: bool = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
             id_: id,
             throw_on_copy_: throw_on_copy,
@@ -156,7 +156,7 @@ impl __gnu_test_copy_tracker {
         if this.throw_on_copy_ {
             (unsafe {
                 __gnu_test_copy_constructor::throw_on(
-                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -171,7 +171,7 @@ impl __gnu_test_copy_tracker {
         if (*rhs).throw_on_copy_ {
             (unsafe {
                 __gnu_test_assignment_operator::throw_on(
-                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -181,7 +181,7 @@ impl __gnu_test_copy_tracker {
     pub unsafe fn destructor(&mut self) {
         (unsafe { __gnu_test_destructor::mark_call() });
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
     pub unsafe fn reset() {
@@ -238,60 +238,69 @@ impl Default for __gnu_test_copy_tracker {
 pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         < (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
-    sem_set_: (),
+    sem_set_: i32,
     pid_: (),
 }
 impl __gnu_test_semaphore {}
-pub static mut arr_9: std::cell::LazyCell<[(); 15]> =
+pub static mut arr_9: std::cell::LazyCell<[libc::c_char; 15]> =
     std::cell::LazyCell::new(|| unsafe { std::mem::transmute(*b"efgh\0abcd\0ijkl\0") });
-pub static mut s1_10: std::cell::LazyCell<*const ()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut arr_9)).as_ptr()
-});
-pub static mut s2_11: std::cell::LazyCell<*const ()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut arr_9))
-        .as_ptr()
-        .offset((5_()) as isize)
-});
-pub static mut s3_12: std::cell::LazyCell<*const ()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut arr_9))
-        .as_ptr()
-        .offset((6_()) as isize)
-});
+pub static mut s1_10: std::cell::LazyCell<*const libc::c_char> =
+    std::cell::LazyCell::new(|| unsafe {
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut arr_9)).as_ptr()
+    });
+pub static mut s2_11: std::cell::LazyCell<*const libc::c_char> =
+    std::cell::LazyCell::new(|| unsafe {
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut arr_9))
+            .as_ptr()
+            .offset((5) as isize)
+    });
+pub static mut s3_12: std::cell::LazyCell<*const libc::c_char> =
+    std::cell::LazyCell::new(|| unsafe {
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut arr_9))
+            .as_ptr()
+            .offset((6) as isize)
+    });
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_into(*const libc::c_char , to_pconstlibcc_char)]
 pub struct CStrNone {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl CStrNone {
-    pub unsafe fn to_pconst(&self) -> *const () {
+    pub unsafe fn to_pconstlibcc_char(&self) -> *const libc::c_char {
         return self.str;
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMem_ReturnOrd_std_strong_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl CStrMem_ReturnOrd_std_strong_ordering__ {
-    pub unsafe fn operator_cmp_2(&self, rhs: *const CStrMem_ReturnOrd_std_strong_ordering__) -> () {
-        return (unsafe { ReturnOrd_std_strong_ordering_::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_2(
+        &self,
+        rhs: *const CStrMem_ReturnOrd_std_strong_ordering__,
+    ) -> std::cmp::Ordering {
+        return (unsafe {
+            ReturnOrd_std_strong_ordering_::create(libc::strcmp(self.str, (*rhs).str))
+        });
     }
-    pub unsafe fn operator_cmp_3(&self, mut rhs: *const ()) -> () {
-        return (unsafe { ReturnOrd_std_strong_ordering_::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_3(&self, mut rhs: *const libc::c_char) -> std::cmp::Ordering {
+        return (unsafe { ReturnOrd_std_strong_ordering_::create(libc::strcmp(self.str, rhs)) });
     }
 }
 impl std::cmp::Ord for CStrMem_ReturnOrd_std_strong_ordering__ {
@@ -323,14 +332,16 @@ impl std::cmp::Eq for CStrMem_ReturnOrd_std_strong_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMem_ReturnOrd_std_weak_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl CStrMem_ReturnOrd_std_weak_ordering__ {
     pub unsafe fn operator_cmp_2(&self, rhs: *const CStrMem_ReturnOrd_std_weak_ordering__) -> () {
-        return (unsafe { ReturnOrd_std_weak_ordering_::create(unimplemented!()) });
+        return (unsafe {
+            ReturnOrd_std_weak_ordering_::create(libc::strcmp(self.str, (*rhs).str))
+        });
     }
-    pub unsafe fn operator_cmp_3(&self, mut rhs: *const ()) -> () {
-        return (unsafe { ReturnOrd_std_weak_ordering_::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_3(&self, mut rhs: *const libc::c_char) -> () {
+        return (unsafe { ReturnOrd_std_weak_ordering_::create(libc::strcmp(self.str, rhs)) });
     }
 }
 impl std::cmp::Ord for CStrMem_ReturnOrd_std_weak_ordering__ {
@@ -362,17 +373,19 @@ impl std::cmp::Eq for CStrMem_ReturnOrd_std_weak_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMem_ReturnOrd_std_partial_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl CStrMem_ReturnOrd_std_partial_ordering__ {
     pub unsafe fn operator_cmp_2(
         &self,
         rhs: *const CStrMem_ReturnOrd_std_partial_ordering__,
     ) -> () {
-        return (unsafe { ReturnOrd_std_partial_ordering_::create(unimplemented!()) });
+        return (unsafe {
+            ReturnOrd_std_partial_ordering_::create(libc::strcmp(self.str, (*rhs).str))
+        });
     }
-    pub unsafe fn operator_cmp_3(&self, mut rhs: *const ()) -> () {
-        return (unsafe { ReturnOrd_std_partial_ordering_::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_3(&self, mut rhs: *const libc::c_char) -> () {
+        return (unsafe { ReturnOrd_std_partial_ordering_::create(libc::strcmp(self.str, rhs)) });
     }
 }
 impl std::cmp::Ord for CStrMem_ReturnOrd_std_partial_ordering__ {
@@ -404,73 +417,73 @@ impl std::cmp::Eq for CStrMem_ReturnOrd_std_partial_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMem_ReturnInt_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl CStrMem_ReturnInt_ {
-    pub unsafe fn operator_cmp_2(&self, rhs: *const CStrMem_ReturnInt_) -> () {
-        return (unsafe { ReturnInt::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_2(&self, rhs: *const CStrMem_ReturnInt_) -> i32 {
+        return (unsafe { ReturnInt::create(libc::strcmp(self.str, (*rhs).str)) });
     }
-    pub unsafe fn operator_cmp_3(&self, mut rhs: *const ()) -> () {
-        return (unsafe { ReturnInt::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_3(&self, mut rhs: *const libc::c_char) -> i32 {
+        return (unsafe { ReturnInt::create(libc::strcmp(self.str, rhs)) });
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMem_CustomOrd_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl CStrMem_CustomOrd_ {
     pub unsafe fn operator_cmp_2(&self, rhs: *const CStrMem_CustomOrd_) -> CustomOrd {
-        return (unsafe { CustomOrd::create(unimplemented!()) });
+        return (unsafe { CustomOrd::create(libc::strcmp(self.str, (*rhs).str)) });
     }
-    pub unsafe fn operator_cmp_3(&self, mut rhs: *const ()) -> CustomOrd {
-        return (unsafe { CustomOrd::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_3(&self, mut rhs: *const libc::c_char) -> CustomOrd {
+        return (unsafe { CustomOrd::create(libc::strcmp(self.str, rhs)) });
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMem_ReturnVoid_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl CStrMem_ReturnVoid_ {
     pub unsafe fn operator_cmp_2(&self, rhs: *const CStrMem_ReturnVoid_) {
-        (unsafe { ReturnVoid::create(unimplemented!()) });
+        (unsafe { ReturnVoid::create(libc::strcmp(self.str, (*rhs).str)) });
         return;
     }
-    pub unsafe fn operator_cmp_3(&self, mut rhs: *const ()) {
-        (unsafe { ReturnVoid::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_3(&self, mut rhs: *const libc::c_char) {
+        (unsafe { ReturnVoid::create(libc::strcmp(self.str, rhs)) });
         return;
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMem_NoOperators_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl CStrMem_NoOperators_ {
     pub unsafe fn operator_cmp_2(&self, rhs: *const CStrMem_NoOperators_) -> NoOperators {
-        return (unsafe { NoOperators::create(unimplemented!()) });
+        return (unsafe { NoOperators::create(libc::strcmp(self.str, (*rhs).str)) });
     }
-    pub unsafe fn operator_cmp_3(&self, mut rhs: *const ()) -> NoOperators {
-        return (unsafe { NoOperators::create(unimplemented!()) });
+    pub unsafe fn operator_cmp_3(&self, mut rhs: *const libc::c_char) -> NoOperators {
+        return (unsafe { NoOperators::create(libc::strcmp(self.str, rhs)) });
     }
 }
 pub unsafe fn operator_cmp_13(
     mut lhs: CStrFriend_ReturnOrd_std_strong_ordering__,
     mut rhs: CStrFriend_ReturnOrd_std_strong_ordering__,
-) -> () {
-    return (unsafe { ReturnOrd_std_strong_ordering_::create(unimplemented!()) });
+) -> std::cmp::Ordering {
+    return (unsafe { ReturnOrd_std_strong_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_14(
     mut lhs: CStrFriend_ReturnOrd_std_strong_ordering__,
-    mut rhs: *const (),
-) -> () {
-    return (unsafe { ReturnOrd_std_strong_ordering_::create(unimplemented!()) });
+    mut rhs: *const libc::c_char,
+) -> std::cmp::Ordering {
+    return (unsafe { ReturnOrd_std_strong_ordering_::create(libc::strcmp(lhs.str, rhs)) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFriend_ReturnOrd_std_strong_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrFriend_ReturnOrd_std_strong_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -492,18 +505,18 @@ pub unsafe fn operator_cmp_15(
     mut lhs: CStrFriend_ReturnOrd_std_weak_ordering__,
     mut rhs: CStrFriend_ReturnOrd_std_weak_ordering__,
 ) -> () {
-    return (unsafe { ReturnOrd_std_weak_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_weak_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_16(
     mut lhs: CStrFriend_ReturnOrd_std_weak_ordering__,
-    mut rhs: *const (),
+    mut rhs: *const libc::c_char,
 ) -> () {
-    return (unsafe { ReturnOrd_std_weak_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_weak_ordering_::create(libc::strcmp(lhs.str, rhs)) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFriend_ReturnOrd_std_weak_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrFriend_ReturnOrd_std_weak_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -525,18 +538,18 @@ pub unsafe fn operator_cmp_17(
     mut lhs: CStrFriend_ReturnOrd_std_partial_ordering__,
     mut rhs: CStrFriend_ReturnOrd_std_partial_ordering__,
 ) -> () {
-    return (unsafe { ReturnOrd_std_partial_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_partial_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_18(
     mut lhs: CStrFriend_ReturnOrd_std_partial_ordering__,
-    mut rhs: *const (),
+    mut rhs: *const libc::c_char,
 ) -> () {
-    return (unsafe { ReturnOrd_std_partial_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_partial_ordering_::create(libc::strcmp(lhs.str, rhs)) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFriend_ReturnOrd_std_partial_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrFriend_ReturnOrd_std_partial_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -557,62 +570,68 @@ impl std::cmp::Eq for CStrFriend_ReturnOrd_std_partial_ordering__ {}
 pub unsafe fn operator_cmp_19(
     mut lhs: CStrFriend_ReturnInt_,
     mut rhs: CStrFriend_ReturnInt_,
-) -> () {
-    return (unsafe { ReturnInt::create(unimplemented!()) });
+) -> i32 {
+    return (unsafe { ReturnInt::create(libc::strcmp(lhs.str, rhs.str)) });
 }
-pub unsafe fn operator_cmp_20(mut lhs: CStrFriend_ReturnInt_, mut rhs: *const ()) -> () {
-    return (unsafe { ReturnInt::create(unimplemented!()) });
+pub unsafe fn operator_cmp_20(mut lhs: CStrFriend_ReturnInt_, mut rhs: *const libc::c_char) -> i32 {
+    return (unsafe { ReturnInt::create(libc::strcmp(lhs.str, rhs)) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFriend_ReturnInt_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 pub unsafe fn operator_cmp_21(
     mut lhs: CStrFriend_CustomOrd_,
     mut rhs: CStrFriend_CustomOrd_,
 ) -> CustomOrd {
-    return (unsafe { CustomOrd::create(unimplemented!()) });
+    return (unsafe { CustomOrd::create(libc::strcmp(lhs.str, rhs.str)) });
 }
-pub unsafe fn operator_cmp_22(mut lhs: CStrFriend_CustomOrd_, mut rhs: *const ()) -> CustomOrd {
-    return (unsafe { CustomOrd::create(unimplemented!()) });
+pub unsafe fn operator_cmp_22(
+    mut lhs: CStrFriend_CustomOrd_,
+    mut rhs: *const libc::c_char,
+) -> CustomOrd {
+    return (unsafe { CustomOrd::create(libc::strcmp(lhs.str, rhs)) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFriend_CustomOrd_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 pub unsafe fn operator_cmp_23(mut lhs: CStrFriend_ReturnVoid_, mut rhs: CStrFriend_ReturnVoid_) {
-    (unsafe { ReturnVoid::create(unimplemented!()) });
+    (unsafe { ReturnVoid::create(libc::strcmp(lhs.str, rhs.str)) });
     return;
 }
-pub unsafe fn operator_cmp_24(mut lhs: CStrFriend_ReturnVoid_, mut rhs: *const ()) {
-    (unsafe { ReturnVoid::create(unimplemented!()) });
+pub unsafe fn operator_cmp_24(mut lhs: CStrFriend_ReturnVoid_, mut rhs: *const libc::c_char) {
+    (unsafe { ReturnVoid::create(libc::strcmp(lhs.str, rhs)) });
     return;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFriend_ReturnVoid_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 pub unsafe fn operator_cmp_25(
     mut lhs: CStrFriend_NoOperators_,
     mut rhs: CStrFriend_NoOperators_,
 ) -> NoOperators {
-    return (unsafe { NoOperators::create(unimplemented!()) });
+    return (unsafe { NoOperators::create(libc::strcmp(lhs.str, rhs.str)) });
 }
-pub unsafe fn operator_cmp_26(mut lhs: CStrFriend_NoOperators_, mut rhs: *const ()) -> NoOperators {
-    return (unsafe { NoOperators::create(unimplemented!()) });
+pub unsafe fn operator_cmp_26(
+    mut lhs: CStrFriend_NoOperators_,
+    mut rhs: *const libc::c_char,
+) -> NoOperators {
+    return (unsafe { NoOperators::create(libc::strcmp(lhs.str, rhs)) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFriend_NoOperators_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFree_ReturnOrd_std_strong_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrFree_ReturnOrd_std_strong_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -633,7 +652,7 @@ impl std::cmp::Eq for CStrFree_ReturnOrd_std_strong_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFree_ReturnOrd_std_weak_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrFree_ReturnOrd_std_weak_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -654,7 +673,7 @@ impl std::cmp::Eq for CStrFree_ReturnOrd_std_weak_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFree_ReturnOrd_std_partial_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrFree_ReturnOrd_std_partial_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -675,95 +694,101 @@ impl std::cmp::Eq for CStrFree_ReturnOrd_std_partial_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFree_ReturnInt_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFree_CustomOrd_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFree_ReturnVoid_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrFree_NoOperators_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 pub unsafe fn operator_cmp_27(
     mut lhs: CStrFree_ReturnOrd_std_strong_ordering__,
     mut rhs: CStrFree_ReturnOrd_std_strong_ordering__,
-) -> () {
-    return (unsafe { ReturnOrd_std_strong_ordering_::create(unimplemented!()) });
+) -> std::cmp::Ordering {
+    return (unsafe { ReturnOrd_std_strong_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_28(
     mut lhs: CStrFree_ReturnOrd_std_weak_ordering__,
     mut rhs: CStrFree_ReturnOrd_std_weak_ordering__,
 ) -> () {
-    return (unsafe { ReturnOrd_std_weak_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_weak_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_29(
     mut lhs: CStrFree_ReturnOrd_std_partial_ordering__,
     mut rhs: CStrFree_ReturnOrd_std_partial_ordering__,
 ) -> () {
-    return (unsafe { ReturnOrd_std_partial_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_partial_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
-pub unsafe fn operator_cmp_30(mut lhs: CStrFree_ReturnInt_, mut rhs: CStrFree_ReturnInt_) -> () {
-    return (unsafe { ReturnInt::create(unimplemented!()) });
+pub unsafe fn operator_cmp_30(mut lhs: CStrFree_ReturnInt_, mut rhs: CStrFree_ReturnInt_) -> i32 {
+    return (unsafe { ReturnInt::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_31(
     mut lhs: CStrFree_CustomOrd_,
     mut rhs: CStrFree_CustomOrd_,
 ) -> CustomOrd {
-    return (unsafe { CustomOrd::create(unimplemented!()) });
+    return (unsafe { CustomOrd::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_32(mut lhs: CStrFree_ReturnVoid_, mut rhs: CStrFree_ReturnVoid_) {
-    (unsafe { ReturnVoid::create(unimplemented!()) });
+    (unsafe { ReturnVoid::create(libc::strcmp(lhs.str, rhs.str)) });
     return;
 }
 pub unsafe fn operator_cmp_33(
     mut lhs: CStrFree_NoOperators_,
     mut rhs: CStrFree_NoOperators_,
 ) -> NoOperators {
-    return (unsafe { NoOperators::create(unimplemented!()) });
+    return (unsafe { NoOperators::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_34(
     mut lhs: CStrFree_ReturnOrd_std_strong_ordering__,
-    mut rhs: *const (),
-) -> () {
-    return (unsafe { ReturnOrd_std_strong_ordering_::create(unimplemented!()) });
+    mut rhs: *const libc::c_char,
+) -> std::cmp::Ordering {
+    return (unsafe { ReturnOrd_std_strong_ordering_::create(libc::strcmp(lhs.str, rhs)) });
 }
 pub unsafe fn operator_cmp_35(
     mut lhs: CStrFree_ReturnOrd_std_weak_ordering__,
-    mut rhs: *const (),
+    mut rhs: *const libc::c_char,
 ) -> () {
-    return (unsafe { ReturnOrd_std_weak_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_weak_ordering_::create(libc::strcmp(lhs.str, rhs)) });
 }
 pub unsafe fn operator_cmp_36(
     mut lhs: CStrFree_ReturnOrd_std_partial_ordering__,
-    mut rhs: *const (),
+    mut rhs: *const libc::c_char,
 ) -> () {
-    return (unsafe { ReturnOrd_std_partial_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_partial_ordering_::create(libc::strcmp(lhs.str, rhs)) });
 }
-pub unsafe fn operator_cmp_37(mut lhs: CStrFree_ReturnInt_, mut rhs: *const ()) -> () {
-    return (unsafe { ReturnInt::create(unimplemented!()) });
+pub unsafe fn operator_cmp_37(mut lhs: CStrFree_ReturnInt_, mut rhs: *const libc::c_char) -> i32 {
+    return (unsafe { ReturnInt::create(libc::strcmp(lhs.str, rhs)) });
 }
-pub unsafe fn operator_cmp_38(mut lhs: CStrFree_CustomOrd_, mut rhs: *const ()) -> CustomOrd {
-    return (unsafe { CustomOrd::create(unimplemented!()) });
+pub unsafe fn operator_cmp_38(
+    mut lhs: CStrFree_CustomOrd_,
+    mut rhs: *const libc::c_char,
+) -> CustomOrd {
+    return (unsafe { CustomOrd::create(libc::strcmp(lhs.str, rhs)) });
 }
-pub unsafe fn operator_cmp_39(mut lhs: CStrFree_ReturnVoid_, mut rhs: *const ()) {
-    (unsafe { ReturnVoid::create(unimplemented!()) });
+pub unsafe fn operator_cmp_39(mut lhs: CStrFree_ReturnVoid_, mut rhs: *const libc::c_char) {
+    (unsafe { ReturnVoid::create(libc::strcmp(lhs.str, rhs)) });
     return;
 }
-pub unsafe fn operator_cmp_40(mut lhs: CStrFree_NoOperators_, mut rhs: *const ()) -> NoOperators {
-    return (unsafe { NoOperators::create(unimplemented!()) });
+pub unsafe fn operator_cmp_40(
+    mut lhs: CStrFree_NoOperators_,
+    mut rhs: *const libc::c_char,
+) -> NoOperators {
+    return (unsafe { NoOperators::create(libc::strcmp(lhs.str, rhs)) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMixed_ReturnOrd_std_strong_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrMixed_ReturnOrd_std_strong_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -784,7 +809,7 @@ impl std::cmp::Eq for CStrMixed_ReturnOrd_std_strong_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMixed_ReturnOrd_std_weak_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrMixed_ReturnOrd_std_weak_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -805,7 +830,7 @@ impl std::cmp::Eq for CStrMixed_ReturnOrd_std_weak_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMixed_ReturnOrd_std_partial_ordering__ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 impl std::cmp::Ord for CStrMixed_ReturnOrd_std_partial_ordering__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
@@ -826,98 +851,98 @@ impl std::cmp::Eq for CStrMixed_ReturnOrd_std_partial_ordering__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMixed_ReturnInt_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMixed_CustomOrd_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMixed_ReturnVoid_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CStrMixed_NoOperators_ {
-    pub str: *const (),
+    pub str: *const libc::c_char,
 }
 pub unsafe fn operator_cmp_41(
     mut lhs: CStrMixed_ReturnOrd_std_strong_ordering__,
     mut rhs: CStrMixed_ReturnOrd_std_strong_ordering__,
-) -> () {
-    return (unsafe { ReturnOrd_std_strong_ordering_::create(unimplemented!()) });
+) -> std::cmp::Ordering {
+    return (unsafe { ReturnOrd_std_strong_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_42(
     mut lhs: CStrMixed_ReturnOrd_std_weak_ordering__,
     mut rhs: CStrMixed_ReturnOrd_std_weak_ordering__,
 ) -> () {
-    return (unsafe { ReturnOrd_std_weak_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_weak_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_43(
     mut lhs: CStrMixed_ReturnOrd_std_partial_ordering__,
     mut rhs: CStrMixed_ReturnOrd_std_partial_ordering__,
 ) -> () {
-    return (unsafe { ReturnOrd_std_partial_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_partial_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
-pub unsafe fn operator_cmp_44(mut lhs: CStrMixed_ReturnInt_, mut rhs: CStrMixed_ReturnInt_) -> () {
-    return (unsafe { ReturnInt::create(unimplemented!()) });
+pub unsafe fn operator_cmp_44(mut lhs: CStrMixed_ReturnInt_, mut rhs: CStrMixed_ReturnInt_) -> i32 {
+    return (unsafe { ReturnInt::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_45(
     mut lhs: CStrMixed_CustomOrd_,
     mut rhs: CStrMixed_CustomOrd_,
 ) -> CustomOrd {
-    return (unsafe { CustomOrd::create(unimplemented!()) });
+    return (unsafe { CustomOrd::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_46(
     mut lhs: CStrMixed_ReturnOrd_std_strong_ordering__,
     mut rhs: CStrFree_ReturnOrd_std_strong_ordering__,
-) -> () {
-    return (unsafe { ReturnOrd_std_strong_ordering_::create(unimplemented!()) });
+) -> std::cmp::Ordering {
+    return (unsafe { ReturnOrd_std_strong_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_47(
     mut lhs: CStrMixed_ReturnOrd_std_weak_ordering__,
     mut rhs: CStrFree_ReturnOrd_std_weak_ordering__,
 ) -> () {
-    return (unsafe { ReturnOrd_std_weak_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_weak_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_48(
     mut lhs: CStrMixed_ReturnOrd_std_partial_ordering__,
     mut rhs: CStrFree_ReturnOrd_std_partial_ordering__,
 ) -> () {
-    return (unsafe { ReturnOrd_std_partial_ordering_::create(unimplemented!()) });
+    return (unsafe { ReturnOrd_std_partial_ordering_::create(libc::strcmp(lhs.str, rhs.str)) });
 }
-pub unsafe fn operator_cmp_49(mut lhs: CStrMixed_ReturnInt_, mut rhs: CStrFree_ReturnInt_) -> () {
-    return (unsafe { ReturnInt::create(unimplemented!()) });
+pub unsafe fn operator_cmp_49(mut lhs: CStrMixed_ReturnInt_, mut rhs: CStrFree_ReturnInt_) -> i32 {
+    return (unsafe { ReturnInt::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_50(
     mut lhs: CStrMixed_CustomOrd_,
     mut rhs: CStrFree_CustomOrd_,
 ) -> CustomOrd {
-    return (unsafe { CustomOrd::create(unimplemented!()) });
+    return (unsafe { CustomOrd::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 pub unsafe fn operator_cmp_51(mut lhs: CStrMixed_ReturnVoid_, mut rhs: CStrFree_ReturnVoid_) {
-    (unsafe { ReturnVoid::create(unimplemented!()) });
+    (unsafe { ReturnVoid::create(libc::strcmp(lhs.str, rhs.str)) });
     return;
 }
 pub unsafe fn operator_cmp_52(
     mut lhs: CStrMixed_NoOperators_,
     mut rhs: CStrFree_NoOperators_,
 ) -> NoOperators {
-    return (unsafe { NoOperators::create(unimplemented!()) });
+    return (unsafe { NoOperators::create(libc::strcmp(lhs.str, rhs.str)) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ReturnVoid {}
 impl ReturnVoid {
-    pub unsafe fn create(mut _a0: ()) {}
+    pub unsafe fn create(mut _a0: i32) {}
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NoOperators {}
 impl NoOperators {
-    pub unsafe fn create(mut _a0: ()) -> NoOperators {
+    pub unsafe fn create(mut _a0: i32) -> NoOperators {
         return <NoOperators>::default();
     }
 }
@@ -925,15 +950,15 @@ impl NoOperators {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ReturnOrd_std_strong_ordering_ {}
 impl ReturnOrd_std_strong_ordering_ {
-    pub unsafe fn create(mut cmp: ()) -> () {
-        return std::cmp::Ord::cmp(&(cmp), &(0_()));
+    pub unsafe fn create(mut cmp: i32) -> std::cmp::Ordering {
+        return std::cmp::Ord::cmp(&(cmp), &(0));
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ReturnOrd_std_weak_ordering_ {}
 impl ReturnOrd_std_weak_ordering_ {
-    pub unsafe fn create(mut cmp: ()) -> () {
+    pub unsafe fn create(mut cmp: i32) -> () {
         return unimplemented!();
     }
 }
@@ -941,7 +966,7 @@ impl ReturnOrd_std_weak_ordering_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ReturnOrd_std_partial_ordering_ {}
 impl ReturnOrd_std_partial_ordering_ {
-    pub unsafe fn create(mut cmp: ()) -> () {
+    pub unsafe fn create(mut cmp: i32) -> () {
         return unimplemented!();
     }
 }
@@ -949,60 +974,60 @@ impl ReturnOrd_std_partial_ordering_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ReturnInt {}
 impl ReturnInt {
-    pub unsafe fn create(mut cmp: ()) -> () {
+    pub unsafe fn create(mut cmp: i32) -> i32 {
         return cmp;
     }
 }
-pub unsafe fn operator_lt_53(mut c: CustomOrd, mut _a1: ()) -> () {
-    return ((c.v) < (0_()));
+pub unsafe fn operator_lt_53(mut c: CustomOrd, mut _a1: *mut ::libc::c_void) -> bool {
+    return ((c.v) < (0));
 }
-pub unsafe fn operator_lt_54(mut _a0: (), mut c: CustomOrd) -> () {
-    return ((0_()) < (c.v));
+pub unsafe fn operator_lt_54(mut _a0: *mut ::libc::c_void, mut c: CustomOrd) -> bool {
+    return ((0) < (c.v));
 }
-pub unsafe fn operator_gt_55(mut c: CustomOrd, mut _a1: ()) -> () {
-    return ((c.v) > (0_()));
+pub unsafe fn operator_gt_55(mut c: CustomOrd, mut _a1: *mut ::libc::c_void) -> bool {
+    return ((c.v) > (0));
 }
-pub unsafe fn operator_gt_56(mut _a0: (), mut c: CustomOrd) -> () {
-    return ((0_()) > (c.v));
+pub unsafe fn operator_gt_56(mut _a0: *mut ::libc::c_void, mut c: CustomOrd) -> bool {
+    return ((0) > (c.v));
 }
-pub unsafe fn operator_le_57(mut c: CustomOrd, mut _a1: ()) -> () {
-    return ((c.v) <= (0_()));
+pub unsafe fn operator_le_57(mut c: CustomOrd, mut _a1: *mut ::libc::c_void) -> bool {
+    return ((c.v) <= (0));
 }
-pub unsafe fn operator_le_58(mut _a0: (), mut c: CustomOrd) -> () {
-    return ((0_()) <= (c.v));
+pub unsafe fn operator_le_58(mut _a0: *mut ::libc::c_void, mut c: CustomOrd) -> bool {
+    return ((0) <= (c.v));
 }
-pub unsafe fn operator_ge_59(mut c: CustomOrd, mut _a1: ()) -> () {
-    return ((c.v) >= (0_()));
+pub unsafe fn operator_ge_59(mut c: CustomOrd, mut _a1: *mut ::libc::c_void) -> bool {
+    return ((c.v) >= (0));
 }
-pub unsafe fn operator_ge_60(mut _a0: (), mut c: CustomOrd) -> () {
-    return ((0_()) >= (c.v));
+pub unsafe fn operator_ge_60(mut _a0: *mut ::libc::c_void, mut c: CustomOrd) -> bool {
+    return ((0) >= (c.v));
 }
-pub unsafe fn operator_cmp_61(mut c: CustomOrd, mut _a1: ()) -> CustomOrd {
+pub unsafe fn operator_cmp_61(mut c: CustomOrd, mut _a1: *mut ::libc::c_void) -> CustomOrd {
     return c;
 }
-pub unsafe fn operator_cmp_62(mut _a0: (), mut c: CustomOrd) -> CustomOrd {
+pub unsafe fn operator_cmp_62(mut _a0: *mut ::libc::c_void, mut c: CustomOrd) -> CustomOrd {
     return CustomOrd::new_1({ -c.v });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct CustomOrd {
-    v: (),
+    v: i32,
 }
 impl CustomOrd {
-    pub unsafe fn create(mut cmp: ()) -> CustomOrd {
+    pub unsafe fn create(mut cmp: i32) -> CustomOrd {
         return CustomOrd::new_1({ cmp });
     }
-    pub unsafe fn new_1(mut cmp: ()) -> Self {
+    pub unsafe fn new_1(mut cmp: i32) -> Self {
         let mut this = Self { v: cmp };
         this
     }
 }
 impl Default for CustomOrd {
     fn default() -> Self {
-        unsafe { CustomOrd { v: 0_() } }
+        unsafe { CustomOrd { v: 0 } }
     }
 }
-pub unsafe fn test_relational_63(mut use_overloaded: ()) {
+pub unsafe fn test_relational_63(mut use_overloaded: bool) {
     let mut cs1: CStrMixed_ReturnOrd_std_strong_ordering__ =
         CStrMixed_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -1015,9 +1040,13 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !(!((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1025,7 +1054,7 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1033,7 +1062,19 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1041,7 +1082,7 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1049,15 +1090,19 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1065,7 +1110,7 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1073,31 +1118,19 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1105,16 +1138,28 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1122,7 +1167,7 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1130,7 +1175,19 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1138,7 +1195,7 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1146,15 +1203,19 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1162,7 +1223,7 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1170,31 +1231,19 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1202,12 +1251,20 @@ pub unsafe fn test_relational_63(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_64(mut use_overloaded: ()) {
+pub unsafe fn test_relational_64(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_strong_ordering__ =
         CStrFree_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -1222,7 +1279,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1230,7 +1287,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1238,7 +1295,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1246,7 +1303,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1254,7 +1311,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1262,7 +1319,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1270,7 +1327,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1278,7 +1335,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1286,7 +1343,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1294,7 +1351,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1302,7 +1359,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1310,7 +1367,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -1319,7 +1376,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1327,7 +1384,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1335,7 +1392,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1343,7 +1400,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1351,7 +1408,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1359,7 +1416,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1367,7 +1424,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1375,7 +1432,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1383,7 +1440,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1391,7 +1448,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1399,7 +1456,7 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1407,12 +1464,12 @@ pub unsafe fn test_relational_64(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_65(mut use_overloaded: ()) {
+pub unsafe fn test_relational_65(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_strong_ordering__ =
         CStrMem_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -1425,9 +1482,12 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !(!((unsafe {
+                CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1435,7 +1495,7 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1443,7 +1503,17 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2) })
+                == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1451,7 +1521,7 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1459,15 +1529,18 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1475,7 +1548,7 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1483,23 +1556,17 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2) })
+                == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1507,7 +1574,7 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1515,16 +1582,18 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2) })
+                == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1532,7 +1601,7 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1540,7 +1609,18 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe {
+                CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1548,7 +1628,7 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1556,15 +1636,17 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2) })
+                == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1572,7 +1654,7 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1580,31 +1662,18 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1612,24 +1681,34 @@ pub unsafe fn test_relational_65(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_66(mut use_overloaded: ()) {
+pub unsafe fn test_relational_66(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_strong_ordering__ =
         CStrMem_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !(!((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1637,7 +1716,7 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1645,7 +1724,17 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1653,7 +1742,7 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1661,15 +1750,17 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1677,7 +1768,7 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1685,23 +1776,17 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1709,7 +1794,7 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1717,16 +1802,18 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1734,7 +1821,7 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1742,7 +1829,17 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1750,7 +1847,7 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1758,15 +1855,17 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1774,7 +1873,7 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1782,23 +1881,17 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1806,7 +1899,7 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1814,13 +1907,13 @@ pub unsafe fn test_relational_66(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_67(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_67(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrMem_ReturnOrd_std_strong_ordering__ =
         CStrMem_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -1831,7 +1924,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1839,7 +1932,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1847,7 +1940,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1855,7 +1948,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1863,7 +1956,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1871,7 +1964,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1879,7 +1972,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1887,7 +1980,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1895,7 +1988,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1903,7 +1996,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1911,7 +2004,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1919,7 +2012,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -1928,7 +2021,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1936,7 +2029,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1944,7 +2037,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1952,7 +2045,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1960,7 +2053,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1968,7 +2061,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1976,7 +2069,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1984,7 +2077,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -1992,7 +2085,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2000,7 +2093,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2008,7 +2101,7 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2016,12 +2109,12 @@ pub unsafe fn test_relational_67(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_68(mut use_overloaded: ()) {
+pub unsafe fn test_relational_68(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_strong_ordering__ =
         CStrFriend_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -2034,9 +2127,13 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !(!((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2044,7 +2141,7 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2052,7 +2149,19 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2060,7 +2169,7 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2068,15 +2177,19 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2084,7 +2197,7 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2092,31 +2205,19 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2124,16 +2225,28 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2141,7 +2254,7 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2149,7 +2262,19 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2157,7 +2282,7 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2165,15 +2290,19 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2181,7 +2310,7 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2189,31 +2318,19 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2221,24 +2338,36 @@ pub unsafe fn test_relational_68(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_69(mut use_overloaded: ()) {
+pub unsafe fn test_relational_69(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_strong_ordering__ =
         CStrFriend_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !(!((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2246,7 +2375,7 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2254,7 +2383,19 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2262,7 +2403,7 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2270,15 +2411,19 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2286,7 +2431,7 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2294,31 +2439,19 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2326,16 +2459,28 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2343,7 +2488,7 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2351,7 +2496,19 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2359,7 +2516,7 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2367,15 +2524,19 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2383,7 +2544,7 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2391,31 +2552,19 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2423,13 +2572,21 @@ pub unsafe fn test_relational_69(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_70(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_70(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFriend_ReturnOrd_std_strong_ordering__ =
         CStrFriend_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -2440,7 +2597,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2448,7 +2605,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2456,7 +2613,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2464,7 +2621,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2472,7 +2629,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2480,7 +2637,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2488,7 +2645,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2496,7 +2653,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2504,7 +2661,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2512,7 +2669,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2520,7 +2677,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2528,7 +2685,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -2537,7 +2694,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2545,7 +2702,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2553,7 +2710,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2561,7 +2718,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2569,7 +2726,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2577,7 +2734,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2585,7 +2742,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2593,7 +2750,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2601,7 +2758,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2609,7 +2766,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2617,7 +2774,7 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2625,12 +2782,12 @@ pub unsafe fn test_relational_70(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_71(mut use_overloaded: ()) {
+pub unsafe fn test_relational_71(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_strong_ordering__ =
         CStrFree_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -2643,9 +2800,13 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !(!((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2653,7 +2814,7 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2661,7 +2822,19 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2669,7 +2842,7 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2677,15 +2850,19 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2693,7 +2870,7 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2701,31 +2878,19 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2733,16 +2898,28 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2750,7 +2927,7 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2758,7 +2935,19 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2766,7 +2955,7 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2774,15 +2963,19 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2790,7 +2983,7 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2798,31 +2991,19 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2830,24 +3011,36 @@ pub unsafe fn test_relational_71(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_72(mut use_overloaded: ()) {
+pub unsafe fn test_relational_72(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_strong_ordering__ =
         CStrFree_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !(!((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2855,7 +3048,7 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2863,7 +3056,19 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2871,7 +3076,7 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2879,15 +3084,19 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Less))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2895,7 +3104,7 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2903,31 +3112,19 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2935,16 +3132,28 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2952,7 +3161,7 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2960,7 +3169,19 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2968,7 +3189,7 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2976,15 +3197,19 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!(unimplemented!())) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -2992,7 +3217,7 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3000,31 +3225,19 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(!((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater))
+            {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3032,13 +3245,21 @@ pub unsafe fn test_relational_72(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_73(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_73(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFree_ReturnOrd_std_strong_ordering__ =
         CStrFree_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -3049,7 +3270,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3057,7 +3278,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3065,7 +3286,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3073,7 +3294,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3081,7 +3302,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3089,7 +3310,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3097,7 +3318,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3105,7 +3326,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3113,7 +3334,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3121,7 +3342,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3129,7 +3350,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3137,7 +3358,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -3146,7 +3367,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3154,7 +3375,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3162,7 +3383,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3170,7 +3391,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3178,7 +3399,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3186,7 +3407,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3194,7 +3415,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3202,7 +3423,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3210,7 +3431,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3218,7 +3439,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3226,7 +3447,7 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3234,12 +3455,12 @@ pub unsafe fn test_relational_73(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_74(mut use_overloaded: ()) {
+pub unsafe fn test_relational_74(mut use_overloaded: bool) {
     let mut cs1: CStrMixed_ReturnOrd_std_weak_ordering__ =
         CStrMixed_ReturnOrd_std_weak_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -3253,7 +3474,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3261,7 +3482,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3269,7 +3490,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3277,7 +3498,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3285,7 +3506,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3293,7 +3514,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3301,7 +3522,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3309,7 +3530,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3317,7 +3538,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3325,7 +3546,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3333,7 +3554,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3341,7 +3562,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -3350,7 +3571,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3358,7 +3579,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3366,7 +3587,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3374,7 +3595,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3382,7 +3603,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3390,7 +3611,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3398,7 +3619,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3406,7 +3627,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3414,7 +3635,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3422,7 +3643,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3430,7 +3651,7 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3438,12 +3659,12 @@ pub unsafe fn test_relational_74(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_75(mut use_overloaded: ()) {
+pub unsafe fn test_relational_75(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_weak_ordering__ = CStrFree_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -3457,7 +3678,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3465,7 +3686,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3473,7 +3694,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3481,7 +3702,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3489,7 +3710,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3497,7 +3718,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3505,7 +3726,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3513,7 +3734,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3521,7 +3742,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3529,7 +3750,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3537,7 +3758,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3545,7 +3766,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -3554,7 +3775,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3562,7 +3783,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3570,7 +3791,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3578,7 +3799,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3586,7 +3807,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3594,7 +3815,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3602,7 +3823,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3610,7 +3831,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3618,7 +3839,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3626,7 +3847,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3634,7 +3855,7 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3642,12 +3863,12 @@ pub unsafe fn test_relational_75(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_76(mut use_overloaded: ()) {
+pub unsafe fn test_relational_76(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_weak_ordering__ = CStrMem_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -3660,7 +3881,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3668,7 +3889,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3676,7 +3897,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3684,7 +3905,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3692,7 +3913,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3700,7 +3921,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3708,7 +3929,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3716,7 +3937,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3724,7 +3945,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3732,7 +3953,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3740,7 +3961,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3748,7 +3969,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -3757,7 +3978,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3765,7 +3986,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3773,7 +3994,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3781,7 +4002,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3789,7 +4010,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3797,7 +4018,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3805,7 +4026,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3813,7 +4034,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3821,7 +4042,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3829,7 +4050,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3837,7 +4058,7 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3845,23 +4066,23 @@ pub unsafe fn test_relational_76(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_77(mut use_overloaded: ()) {
+pub unsafe fn test_relational_77(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_weak_ordering__ = CStrMem_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3869,7 +4090,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3877,7 +4098,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3885,7 +4106,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3893,7 +4114,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3901,7 +4122,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3909,7 +4130,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3917,7 +4138,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3925,7 +4146,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3933,7 +4154,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3941,7 +4162,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3949,7 +4170,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -3958,7 +4179,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3966,7 +4187,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3974,7 +4195,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3982,7 +4203,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3990,7 +4211,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -3998,7 +4219,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4006,7 +4227,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4014,7 +4235,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4022,7 +4243,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4030,7 +4251,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4038,7 +4259,7 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4046,13 +4267,13 @@ pub unsafe fn test_relational_77(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_78(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_78(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrMem_ReturnOrd_std_weak_ordering__ = CStrMem_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -4062,7 +4283,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4070,7 +4291,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4078,7 +4299,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4086,7 +4307,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4094,7 +4315,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4102,7 +4323,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4110,7 +4331,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4118,7 +4339,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4126,7 +4347,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4134,7 +4355,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4142,7 +4363,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4150,7 +4371,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -4159,7 +4380,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4167,7 +4388,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4175,7 +4396,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4183,7 +4404,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4191,7 +4412,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4199,7 +4420,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4207,7 +4428,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4215,7 +4436,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4223,7 +4444,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4231,7 +4452,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4239,7 +4460,7 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4247,12 +4468,12 @@ pub unsafe fn test_relational_78(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_79(mut use_overloaded: ()) {
+pub unsafe fn test_relational_79(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_weak_ordering__ =
         CStrFriend_ReturnOrd_std_weak_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -4267,7 +4488,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4275,7 +4496,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4283,7 +4504,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4291,7 +4512,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4299,7 +4520,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4307,7 +4528,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4315,7 +4536,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4323,7 +4544,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4331,7 +4552,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4339,7 +4560,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4347,7 +4568,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4355,7 +4576,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -4364,7 +4585,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4372,7 +4593,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4380,7 +4601,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4388,7 +4609,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4396,7 +4617,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4404,7 +4625,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4412,7 +4633,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4420,7 +4641,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4428,7 +4649,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4436,7 +4657,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4444,7 +4665,7 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4452,24 +4673,24 @@ pub unsafe fn test_relational_79(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_80(mut use_overloaded: ()) {
+pub unsafe fn test_relational_80(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_weak_ordering__ =
         CStrFriend_ReturnOrd_std_weak_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4477,7 +4698,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4485,7 +4706,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4493,7 +4714,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4501,7 +4722,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4509,7 +4730,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4517,7 +4738,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4525,7 +4746,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4533,7 +4754,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4541,7 +4762,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4549,7 +4770,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4557,7 +4778,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -4566,7 +4787,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4574,7 +4795,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4582,7 +4803,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4590,7 +4811,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4598,7 +4819,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4606,7 +4827,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4614,7 +4835,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4622,7 +4843,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4630,7 +4851,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4638,7 +4859,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4646,7 +4867,7 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4654,13 +4875,13 @@ pub unsafe fn test_relational_80(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_81(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_81(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFriend_ReturnOrd_std_weak_ordering__ =
         CStrFriend_ReturnOrd_std_weak_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -4671,7 +4892,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4679,7 +4900,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4687,7 +4908,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4695,7 +4916,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4703,7 +4924,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4711,7 +4932,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4719,7 +4940,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4727,7 +4948,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4735,7 +4956,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4743,7 +4964,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4751,7 +4972,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4759,7 +4980,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -4768,7 +4989,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4776,7 +4997,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4784,7 +5005,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4792,7 +5013,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4800,7 +5021,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4808,7 +5029,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4816,7 +5037,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4824,7 +5045,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4832,7 +5053,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4840,7 +5061,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4848,7 +5069,7 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4856,12 +5077,12 @@ pub unsafe fn test_relational_81(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_82(mut use_overloaded: ()) {
+pub unsafe fn test_relational_82(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_weak_ordering__ = CStrFree_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -4874,7 +5095,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4882,7 +5103,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4890,7 +5111,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4898,7 +5119,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4906,7 +5127,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4914,7 +5135,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4922,7 +5143,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4930,7 +5151,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4938,7 +5159,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4946,7 +5167,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4954,7 +5175,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4962,7 +5183,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -4971,7 +5192,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4979,7 +5200,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4987,7 +5208,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -4995,7 +5216,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5003,7 +5224,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5011,7 +5232,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5019,7 +5240,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5027,7 +5248,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5035,7 +5256,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5043,7 +5264,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5051,7 +5272,7 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5059,23 +5280,23 @@ pub unsafe fn test_relational_82(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_83(mut use_overloaded: ()) {
+pub unsafe fn test_relational_83(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_weak_ordering__ = CStrFree_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5083,7 +5304,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5091,7 +5312,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5099,7 +5320,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5107,7 +5328,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5115,7 +5336,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5123,7 +5344,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5131,7 +5352,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5139,7 +5360,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5147,7 +5368,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5155,7 +5376,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5163,7 +5384,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -5172,7 +5393,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5180,7 +5401,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5188,7 +5409,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5196,7 +5417,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5204,7 +5425,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5212,7 +5433,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5220,7 +5441,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5228,7 +5449,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5236,7 +5457,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5244,7 +5465,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5252,7 +5473,7 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5260,13 +5481,13 @@ pub unsafe fn test_relational_83(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_84(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_84(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFree_ReturnOrd_std_weak_ordering__ = CStrFree_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -5276,7 +5497,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5284,7 +5505,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5292,7 +5513,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5300,7 +5521,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5308,7 +5529,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5316,7 +5537,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5324,7 +5545,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5332,7 +5553,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5340,7 +5561,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5348,7 +5569,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5356,7 +5577,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5364,7 +5585,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -5373,7 +5594,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5381,7 +5602,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5389,7 +5610,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5397,7 +5618,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5405,7 +5626,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5413,7 +5634,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5421,7 +5642,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5429,7 +5650,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5437,7 +5658,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5445,7 +5666,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5453,7 +5674,7 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5461,12 +5682,12 @@ pub unsafe fn test_relational_84(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_85(mut use_overloaded: ()) {
+pub unsafe fn test_relational_85(mut use_overloaded: bool) {
     let mut cs1: CStrMixed_ReturnOrd_std_partial_ordering__ =
         CStrMixed_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -5481,7 +5702,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5489,7 +5710,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5497,7 +5718,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5505,7 +5726,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5513,7 +5734,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5521,7 +5742,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5529,7 +5750,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5537,7 +5758,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5545,7 +5766,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5553,7 +5774,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5561,7 +5782,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5569,7 +5790,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -5578,7 +5799,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5586,7 +5807,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5594,7 +5815,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5602,7 +5823,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5610,7 +5831,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5618,7 +5839,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5626,7 +5847,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5634,7 +5855,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5642,7 +5863,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5650,7 +5871,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5658,7 +5879,7 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5666,12 +5887,12 @@ pub unsafe fn test_relational_85(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_86(mut use_overloaded: ()) {
+pub unsafe fn test_relational_86(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_partial_ordering__ =
         CStrFree_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -5686,7 +5907,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5694,7 +5915,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5702,7 +5923,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5710,7 +5931,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5718,7 +5939,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5726,7 +5947,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5734,7 +5955,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5742,7 +5963,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5750,7 +5971,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5758,7 +5979,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5766,7 +5987,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5774,7 +5995,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -5783,7 +6004,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5791,7 +6012,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5799,7 +6020,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5807,7 +6028,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5815,7 +6036,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5823,7 +6044,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5831,7 +6052,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5839,7 +6060,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5847,7 +6068,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5855,7 +6076,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5863,7 +6084,7 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5871,12 +6092,12 @@ pub unsafe fn test_relational_86(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_87(mut use_overloaded: ()) {
+pub unsafe fn test_relational_87(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_partial_ordering__ =
         CStrMem_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -5891,7 +6112,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5899,7 +6120,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5907,7 +6128,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5915,7 +6136,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5923,7 +6144,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5931,7 +6152,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5939,7 +6160,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5947,7 +6168,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5955,7 +6176,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5963,7 +6184,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5971,7 +6192,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5979,7 +6200,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -5988,7 +6209,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -5996,7 +6217,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6004,7 +6225,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6012,7 +6233,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6020,7 +6241,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6028,7 +6249,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6036,7 +6257,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6044,7 +6265,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6052,7 +6273,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6060,7 +6281,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6068,7 +6289,7 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6076,24 +6297,24 @@ pub unsafe fn test_relational_87(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_88(mut use_overloaded: ()) {
+pub unsafe fn test_relational_88(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_partial_ordering__ =
         CStrMem_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6101,7 +6322,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6109,7 +6330,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6117,7 +6338,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6125,7 +6346,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6133,7 +6354,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6141,7 +6362,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6149,7 +6370,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6157,7 +6378,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6165,7 +6386,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6173,7 +6394,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6181,7 +6402,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -6190,7 +6411,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6198,7 +6419,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6206,7 +6427,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6214,7 +6435,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6222,7 +6443,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6230,7 +6451,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6238,7 +6459,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6246,7 +6467,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6254,7 +6475,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6262,7 +6483,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6270,7 +6491,7 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6278,13 +6499,13 @@ pub unsafe fn test_relational_88(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_89(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_89(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrMem_ReturnOrd_std_partial_ordering__ =
         CStrMem_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -6295,7 +6516,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6303,7 +6524,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6311,7 +6532,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6319,7 +6540,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6327,7 +6548,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6335,7 +6556,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6343,7 +6564,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6351,7 +6572,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6359,7 +6580,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6367,7 +6588,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6375,7 +6596,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6383,7 +6604,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -6392,7 +6613,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6400,7 +6621,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6408,7 +6629,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6416,7 +6637,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6424,7 +6645,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6432,7 +6653,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6440,7 +6661,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6448,7 +6669,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6456,7 +6677,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6464,7 +6685,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6472,7 +6693,7 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6480,12 +6701,12 @@ pub unsafe fn test_relational_89(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_90(mut use_overloaded: ()) {
+pub unsafe fn test_relational_90(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_partial_ordering__ =
         CStrFriend_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -6500,7 +6721,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6508,7 +6729,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6516,7 +6737,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6524,7 +6745,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6532,7 +6753,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6540,7 +6761,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6548,7 +6769,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6556,7 +6777,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6564,7 +6785,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6572,7 +6793,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6580,7 +6801,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6588,7 +6809,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -6597,7 +6818,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6605,7 +6826,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6613,7 +6834,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6621,7 +6842,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6629,7 +6850,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6637,7 +6858,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6645,7 +6866,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6653,7 +6874,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6661,7 +6882,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6669,7 +6890,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6677,7 +6898,7 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6685,24 +6906,24 @@ pub unsafe fn test_relational_90(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_91(mut use_overloaded: ()) {
+pub unsafe fn test_relational_91(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_partial_ordering__ =
         CStrFriend_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6710,7 +6931,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6718,7 +6939,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6726,7 +6947,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6734,7 +6955,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6742,7 +6963,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6750,7 +6971,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6758,7 +6979,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6766,7 +6987,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6774,7 +6995,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6782,7 +7003,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6790,7 +7011,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -6799,7 +7020,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6807,7 +7028,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6815,7 +7036,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6823,7 +7044,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6831,7 +7052,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6839,7 +7060,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6847,7 +7068,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6855,7 +7076,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6863,7 +7084,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6871,7 +7092,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6879,7 +7100,7 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6887,13 +7108,13 @@ pub unsafe fn test_relational_91(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_92(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_92(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFriend_ReturnOrd_std_partial_ordering__ =
         CStrFriend_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -6904,7 +7125,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6912,7 +7133,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6920,7 +7141,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6928,7 +7149,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6936,7 +7157,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6944,7 +7165,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6952,7 +7173,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6960,7 +7181,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6968,7 +7189,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6976,7 +7197,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6984,7 +7205,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -6992,7 +7213,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -7001,7 +7222,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7009,7 +7230,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7017,7 +7238,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7025,7 +7246,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7033,7 +7254,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7041,7 +7262,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7049,7 +7270,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7057,7 +7278,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7065,7 +7286,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7073,7 +7294,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7081,7 +7302,7 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7089,12 +7310,12 @@ pub unsafe fn test_relational_92(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_93(mut use_overloaded: ()) {
+pub unsafe fn test_relational_93(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_partial_ordering__ =
         CStrFree_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -7109,7 +7330,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7117,7 +7338,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7125,7 +7346,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7133,7 +7354,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7141,7 +7362,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7149,7 +7370,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7157,7 +7378,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7165,7 +7386,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7173,7 +7394,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7181,7 +7402,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7189,7 +7410,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7197,7 +7418,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -7206,7 +7427,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7214,7 +7435,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7222,7 +7443,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7230,7 +7451,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7238,7 +7459,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7246,7 +7467,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7254,7 +7475,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7262,7 +7483,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7270,7 +7491,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7278,7 +7499,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7286,7 +7507,7 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7294,24 +7515,24 @@ pub unsafe fn test_relational_93(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_94(mut use_overloaded: ()) {
+pub unsafe fn test_relational_94(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_partial_ordering__ =
         CStrFree_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7319,7 +7540,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7327,7 +7548,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7335,7 +7556,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7343,7 +7564,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7351,7 +7572,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7359,7 +7580,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7367,7 +7588,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7375,7 +7596,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7383,7 +7604,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7391,7 +7612,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7399,7 +7620,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -7408,7 +7629,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7416,7 +7637,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7424,7 +7645,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7432,7 +7653,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7440,7 +7661,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7448,7 +7669,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7456,7 +7677,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7464,7 +7685,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7472,7 +7693,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7480,7 +7701,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7488,7 +7709,7 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7496,13 +7717,13 @@ pub unsafe fn test_relational_94(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_95(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_95(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFree_ReturnOrd_std_partial_ordering__ =
         CStrFree_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -7513,7 +7734,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7521,7 +7742,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7529,7 +7750,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7537,7 +7758,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7545,7 +7766,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7553,7 +7774,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7561,7 +7782,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7569,7 +7790,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7577,7 +7798,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7585,7 +7806,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7593,7 +7814,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7601,7 +7822,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -7610,7 +7831,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7618,7 +7839,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7626,7 +7847,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7634,7 +7855,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7642,7 +7863,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7650,7 +7871,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7658,7 +7879,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7666,7 +7887,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7674,7 +7895,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7682,7 +7903,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7690,7 +7911,7 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7698,12 +7919,12 @@ pub unsafe fn test_relational_95(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_96(mut use_overloaded: ()) {
+pub unsafe fn test_relational_96(mut use_overloaded: bool) {
     let mut cs1: CStrNone = CStrNone {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -7714,10 +7935,11 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrNone::to_pconst(&cs1) }) < (unsafe { CStrNone::to_pconst(&cs2) })))
+            if !(!((unsafe { CStrNone::to_pconstlibcc_char(&cs1) })
+                < (unsafe { CStrNone::to_pconstlibcc_char(&cs2) })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7725,7 +7947,7 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7733,64 +7955,17 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrNone::to_pconst(&cs1) }) > (unsafe { CStrNone::to_pconst(&cs2) })) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!((unsafe { CStrNone::to_pconst(&cs1) }) < (unsafe { CStrNone::to_pconst(&cs2) })))
+            if !((unsafe { CStrNone::to_pconstlibcc_char(&cs1) })
+                > (unsafe { CStrNone::to_pconstlibcc_char(&cs2) }))
             {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((unsafe { CStrNone::to_pconst(&cs1) }) > (unsafe { CStrNone::to_pconst(&cs2) })) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7798,7 +7973,7 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7806,65 +7981,70 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe { CStrNone::to_pconstlibcc_char(&cs1) })
+                < (unsafe { CStrNone::to_pconstlibcc_char(&cs2) })))
+            {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
+                unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
+                unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe { CStrNone::to_pconstlibcc_char(&cs1) })
+                > (unsafe { CStrNone::to_pconstlibcc_char(&cs2) }))
+            {
+                unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
+                unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
+                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrNone::to_pconst(&cs1) }) < (unsafe { CStrNone::to_pconst(&cs2) })) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!((unsafe { CStrNone::to_pconst(&cs1) }) > (unsafe { CStrNone::to_pconst(&cs2) })))
+            if !((unsafe { CStrNone::to_pconstlibcc_char(&cs1) })
+                < (unsafe { CStrNone::to_pconstlibcc_char(&cs2) }))
             {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((unsafe { CStrNone::to_pconst(&cs1) }) < (unsafe { CStrNone::to_pconst(&cs2) })) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7872,7 +8052,7 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7880,16 +8060,17 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrNone::to_pconst(&cs1) }) > (unsafe { CStrNone::to_pconst(&cs2) })))
+            if !(!((unsafe { CStrNone::to_pconstlibcc_char(&cs1) })
+                > (unsafe { CStrNone::to_pconstlibcc_char(&cs2) })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7897,7 +8078,7 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7905,23 +8086,75 @@ pub unsafe fn test_relational_96(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe { CStrNone::to_pconstlibcc_char(&cs1) })
+                < (unsafe { CStrNone::to_pconstlibcc_char(&cs2) }))
+            {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
+                unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
+                unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe { CStrNone::to_pconstlibcc_char(&cs1) })
+                > (unsafe { CStrNone::to_pconstlibcc_char(&cs2) })))
+            {
+                unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
+                unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
+                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_97(mut use_overloaded: ()) {
+pub unsafe fn test_relational_97(mut use_overloaded: bool) {
     let mut cs1: CStrNone = CStrNone {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrNone::to_pconst(&cs1) }) < (cs2))) {
+            if !(!((unsafe { CStrNone::to_pconstlibcc_char(&cs1) }) < (cs2))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7929,7 +8162,7 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7937,23 +8170,15 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrNone::to_pconst(&cs1) }) > (cs2)) {
+            if !((unsafe { CStrNone::to_pconstlibcc_char(&cs1) }) > (cs2)) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7961,15 +8186,23 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrNone::to_pconst(&cs1) }) < (cs2))) {
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe { CStrNone::to_pconstlibcc_char(&cs1) }) < (cs2))) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7977,7 +8210,7 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -7985,23 +8218,15 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrNone::to_pconst(&cs1) }) > (cs2)) {
+            if !((unsafe { CStrNone::to_pconstlibcc_char(&cs1) }) > (cs2)) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8009,16 +8234,24 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrNone::to_pconst(&cs1) }) < (cs2)) {
+            if !((unsafe { CStrNone::to_pconstlibcc_char(&cs1) }) < (cs2)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8026,7 +8259,7 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8034,23 +8267,15 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrNone::to_pconst(&cs1) }) > (cs2))) {
+            if !(!((unsafe { CStrNone::to_pconstlibcc_char(&cs1) }) > (cs2))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8058,15 +8283,23 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrNone::to_pconst(&cs1) }) < (cs2)) {
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe { CStrNone::to_pconstlibcc_char(&cs1) }) < (cs2)) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8074,7 +8307,7 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8082,23 +8315,15 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrNone::to_pconst(&cs1) }) > (cs2))) {
+            if !(!((unsafe { CStrNone::to_pconstlibcc_char(&cs1) }) > (cs2))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8106,13 +8331,21 @@ pub unsafe fn test_relational_97(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_98(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_98(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrNone = CStrNone {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -8120,9 +8353,9 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((cs1) < (unsafe { CStrNone::to_pconst(&cs2) }))) {
+            if !(!((cs1) < (unsafe { CStrNone::to_pconstlibcc_char(&cs2) }))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8130,7 +8363,7 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8138,23 +8371,15 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((cs1) > (unsafe { CStrNone::to_pconst(&cs2) })) {
+            if !((cs1) > (unsafe { CStrNone::to_pconstlibcc_char(&cs2) })) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8162,15 +8387,23 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((cs1) < (unsafe { CStrNone::to_pconst(&cs2) }))) {
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((cs1) < (unsafe { CStrNone::to_pconstlibcc_char(&cs2) }))) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8178,7 +8411,7 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8186,23 +8419,15 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((cs1) > (unsafe { CStrNone::to_pconst(&cs2) })) {
+            if !((cs1) > (unsafe { CStrNone::to_pconstlibcc_char(&cs2) })) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8210,16 +8435,24 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((cs1) < (unsafe { CStrNone::to_pconst(&cs2) })) {
+            if !((cs1) < (unsafe { CStrNone::to_pconstlibcc_char(&cs2) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8227,7 +8460,7 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8235,23 +8468,15 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((cs1) > (unsafe { CStrNone::to_pconst(&cs2) }))) {
+            if !(!((cs1) > (unsafe { CStrNone::to_pconstlibcc_char(&cs2) }))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8259,15 +8484,23 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((cs1) < (unsafe { CStrNone::to_pconst(&cs2) })) {
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((cs1) < (unsafe { CStrNone::to_pconstlibcc_char(&cs2) })) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8275,7 +8508,7 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8283,23 +8516,15 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((cs1) > (unsafe { CStrNone::to_pconst(&cs2) }))) {
+            if !(!((cs1) > (unsafe { CStrNone::to_pconstlibcc_char(&cs2) }))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8307,12 +8532,20 @@ pub unsafe fn test_relational_98(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_99(mut use_overloaded: ()) {
+pub unsafe fn test_relational_99(mut use_overloaded: bool) {
     let mut cs1: CStrMixed_ReturnInt_ = CStrMixed_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -8326,10 +8559,10 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrMixed_ReturnInt_ = cs1;
                 operator_cmp_49(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8337,7 +8570,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8345,7 +8578,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8354,10 +8587,10 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrMixed_ReturnInt_ = cs1;
                 operator_cmp_49(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8365,7 +8598,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8373,7 +8606,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8382,10 +8615,10 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrMixed_ReturnInt_ = cs1;
                 operator_cmp_49(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8393,7 +8626,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8401,7 +8634,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8410,10 +8643,10 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrMixed_ReturnInt_ = cs1;
                 operator_cmp_49(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8421,7 +8654,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8429,7 +8662,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -8439,10 +8672,10 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrMixed_ReturnInt_ = cs1;
                 operator_cmp_49(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8450,7 +8683,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8458,7 +8691,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8467,10 +8700,10 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrMixed_ReturnInt_ = cs1;
                 operator_cmp_49(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8478,7 +8711,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8486,7 +8719,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8495,10 +8728,10 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrMixed_ReturnInt_ = cs1;
                 operator_cmp_49(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8506,7 +8739,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8514,7 +8747,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8523,10 +8756,10 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrMixed_ReturnInt_ = cs1;
                 operator_cmp_49(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8534,7 +8767,7 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8542,12 +8775,12 @@ pub unsafe fn test_relational_99(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_100(mut use_overloaded: ()) {
+pub unsafe fn test_relational_100(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnInt_ = CStrFree_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -8558,14 +8791,14 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 < (unsafe {
                     let _lhs: CStrMixed_ReturnInt_ = cs2;
                     operator_cmp_49(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8573,7 +8806,7 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8581,20 +8814,20 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 > (unsafe {
                     let _lhs: CStrMixed_ReturnInt_ = cs2;
                     operator_cmp_49(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8602,7 +8835,7 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8610,20 +8843,20 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 < (unsafe {
                     let _lhs: CStrMixed_ReturnInt_ = cs2;
                     operator_cmp_49(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8631,7 +8864,7 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8639,20 +8872,20 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 > (unsafe {
                     let _lhs: CStrMixed_ReturnInt_ = cs2;
                     operator_cmp_49(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8660,7 +8893,7 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8668,21 +8901,21 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 < (unsafe {
                     let _lhs: CStrMixed_ReturnInt_ = cs2;
                     operator_cmp_49(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8690,7 +8923,7 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8698,20 +8931,20 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 > (unsafe {
                     let _lhs: CStrMixed_ReturnInt_ = cs2;
                     operator_cmp_49(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8719,7 +8952,7 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8727,20 +8960,20 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 < (unsafe {
                     let _lhs: CStrMixed_ReturnInt_ = cs2;
                     operator_cmp_49(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8748,7 +8981,7 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8756,20 +8989,20 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 > (unsafe {
                     let _lhs: CStrMixed_ReturnInt_ = cs2;
                     operator_cmp_49(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8777,7 +9010,7 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8785,12 +9018,12 @@ pub unsafe fn test_relational_100(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_101(mut use_overloaded: ()) {
+pub unsafe fn test_relational_101(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnInt_ = CStrMem_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -8801,9 +9034,9 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) < (0_()))) {
+            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) < (0))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8811,7 +9044,7 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8819,23 +9052,15 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) > (0_())) {
+            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) > (0)) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8843,15 +9068,23 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) < (0_()))) {
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) < (0))) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8859,7 +9092,7 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8867,23 +9100,15 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) > (0_())) {
+            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) > (0)) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8891,16 +9116,24 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) < (0_())) {
+            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) < (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8908,7 +9141,7 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8916,23 +9149,15 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) > (0_()))) {
+            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) > (0))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8940,15 +9165,23 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) < (0_())) {
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) < (0)) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8956,7 +9189,7 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8964,23 +9197,15 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) > (0_()))) {
+            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_2(&cs1, &cs2) }) > (0))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -8988,23 +9213,31 @@ pub unsafe fn test_relational_101(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_102(mut use_overloaded: ()) {
+pub unsafe fn test_relational_102(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnInt_ = CStrMem_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) < (0_()))) {
+            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) < (0))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9012,7 +9245,7 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9020,23 +9253,15 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) > (0_())) {
+            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) > (0)) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9044,15 +9269,23 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) < (0_()))) {
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) < (0))) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9060,7 +9293,7 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9068,23 +9301,15 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) > (0_())) {
+            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) > (0)) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9092,16 +9317,24 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) < (0_())) {
+            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) < (0)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9109,7 +9342,7 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9117,23 +9350,15 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) > (0_()))) {
+            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) > (0))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9141,15 +9366,23 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) < (0_())) {
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) < (0)) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9157,7 +9390,7 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9165,23 +9398,15 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) > (0_()))) {
+            if !(!((unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs1, cs2) }) > (0))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9189,13 +9414,21 @@ pub unsafe fn test_relational_102(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_103(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_103(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrMem_ReturnInt_ = CStrMem_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -9203,9 +9436,9 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_()) < (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) }))) {
+            if !(!((0) < (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) }))) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9213,7 +9446,7 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9221,23 +9454,15 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_()) > (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) })) {
+            if !((0) > (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) })) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9245,15 +9470,23 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_()) < (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) }))) {
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!((0) < (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) }))) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9261,7 +9494,7 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9269,23 +9502,15 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_()) > (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) })) {
+            if !((0) > (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) })) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9293,16 +9518,24 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(unimplemented!()) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_()) < (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) })) {
+            if !((0) < (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9310,7 +9543,7 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9318,23 +9551,15 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_()) > (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) }))) {
+            if !(!((0) > (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) }))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9342,15 +9567,23 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_()) < (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) })) {
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !((0) < (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) })) {
                 unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9358,7 +9591,7 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9366,23 +9599,15 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_()) > (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) }))) {
+            if !(!((0) > (unsafe { CStrMem_ReturnInt_::operator_cmp_3(&cs2, cs1) }))) {
                 unimplemented!();
-                unimplemented!();
-            }
-        }
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !(!(unimplemented!())) {
-                unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9390,12 +9615,20 @@ pub unsafe fn test_relational_103(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
+            }
+        }
+        let mut __do_while = true;
+        'loop_: while __do_while || (false) {
+            __do_while = false;
+            if !(!(unimplemented!())) {
                 unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_104(mut use_overloaded: ()) {
+pub unsafe fn test_relational_104(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnInt_ = CStrFriend_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -9409,10 +9642,10 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_19(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9420,7 +9653,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9428,7 +9661,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9437,10 +9670,10 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_19(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9448,7 +9681,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9456,7 +9689,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9465,10 +9698,10 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_19(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9476,7 +9709,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9484,7 +9717,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9493,10 +9726,10 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_19(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9504,7 +9737,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9512,7 +9745,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -9522,10 +9755,10 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_19(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9533,7 +9766,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9541,7 +9774,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9550,10 +9783,10 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_19(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9561,7 +9794,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9569,7 +9802,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9578,10 +9811,10 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_19(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9589,7 +9822,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9597,7 +9830,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9606,10 +9839,10 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_19(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9617,7 +9850,7 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9625,16 +9858,16 @@ pub unsafe fn test_relational_104(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_105(mut use_overloaded: ()) {
+pub unsafe fn test_relational_105(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnInt_ = CStrFriend_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -9642,10 +9875,10 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_20(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9653,7 +9886,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9661,7 +9894,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9670,10 +9903,10 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_20(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9681,7 +9914,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9689,7 +9922,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9698,10 +9931,10 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_20(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9709,7 +9942,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9717,7 +9950,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9726,10 +9959,10 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_20(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9737,7 +9970,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9745,7 +9978,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -9755,10 +9988,10 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_20(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9766,7 +9999,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9774,7 +10007,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9783,10 +10016,10 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_20(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9794,7 +10027,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9802,7 +10035,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9811,10 +10044,10 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_20(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9822,7 +10055,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9830,7 +10063,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9839,10 +10072,10 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFriend_ReturnInt_ = cs1;
                 operator_cmp_20(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9850,7 +10083,7 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9858,13 +10091,13 @@ pub unsafe fn test_relational_105(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_106(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_106(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFriend_ReturnInt_ = CStrFriend_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -9872,14 +10105,14 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 < (unsafe {
                     let _lhs: CStrFriend_ReturnInt_ = cs2;
                     operator_cmp_20(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9887,7 +10120,7 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9895,20 +10128,20 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 > (unsafe {
                     let _lhs: CStrFriend_ReturnInt_ = cs2;
                     operator_cmp_20(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9916,7 +10149,7 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9924,20 +10157,20 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 < (unsafe {
                     let _lhs: CStrFriend_ReturnInt_ = cs2;
                     operator_cmp_20(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9945,7 +10178,7 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9953,20 +10186,20 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 > (unsafe {
                     let _lhs: CStrFriend_ReturnInt_ = cs2;
                     operator_cmp_20(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9974,7 +10207,7 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -9982,21 +10215,21 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 < (unsafe {
                     let _lhs: CStrFriend_ReturnInt_ = cs2;
                     operator_cmp_20(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10004,7 +10237,7 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10012,20 +10245,20 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 > (unsafe {
                     let _lhs: CStrFriend_ReturnInt_ = cs2;
                     operator_cmp_20(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10033,7 +10266,7 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10041,20 +10274,20 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 < (unsafe {
                     let _lhs: CStrFriend_ReturnInt_ = cs2;
                     operator_cmp_20(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10062,7 +10295,7 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10070,20 +10303,20 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 > (unsafe {
                     let _lhs: CStrFriend_ReturnInt_ = cs2;
                     operator_cmp_20(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10091,7 +10324,7 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10099,12 +10332,12 @@ pub unsafe fn test_relational_106(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_107(mut use_overloaded: ()) {
+pub unsafe fn test_relational_107(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnInt_ = CStrFree_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -10118,10 +10351,10 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_30(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10129,7 +10362,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10137,7 +10370,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10146,10 +10379,10 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_30(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10157,7 +10390,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10165,7 +10398,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10174,10 +10407,10 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_30(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10185,7 +10418,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10193,7 +10426,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10202,10 +10435,10 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_30(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10213,7 +10446,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10221,7 +10454,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -10231,10 +10464,10 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_30(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10242,7 +10475,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10250,7 +10483,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10259,10 +10492,10 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_30(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10270,7 +10503,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10278,7 +10511,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10287,10 +10520,10 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_30(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10298,7 +10531,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10306,7 +10539,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10315,10 +10548,10 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_30(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10326,7 +10559,7 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10334,16 +10567,16 @@ pub unsafe fn test_relational_107(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_108(mut use_overloaded: ()) {
+pub unsafe fn test_relational_108(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnInt_ = CStrFree_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -10351,10 +10584,10 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_37(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10362,7 +10595,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10370,7 +10603,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10379,10 +10612,10 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_37(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10390,7 +10623,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10398,7 +10631,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10407,10 +10640,10 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_37(_lhs, cs2)
-            }) < (0_())))
+            }) < (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10418,7 +10651,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10426,7 +10659,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10435,10 +10668,10 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_37(_lhs, cs2)
-            }) > (0_()))
+            }) > (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10446,7 +10679,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10454,7 +10687,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -10464,10 +10697,10 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_37(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10475,7 +10708,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10483,7 +10716,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10492,10 +10725,10 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_37(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10503,7 +10736,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10511,7 +10744,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10520,10 +10753,10 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             if !((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_37(_lhs, cs2)
-            }) < (0_()))
+            }) < (0))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10531,7 +10764,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10539,7 +10772,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10548,10 +10781,10 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             if !(!((unsafe {
                 let _lhs: CStrFree_ReturnInt_ = cs1;
                 operator_cmp_37(_lhs, cs2)
-            }) > (0_())))
+            }) > (0)))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10559,7 +10792,7 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10567,13 +10800,13 @@ pub unsafe fn test_relational_108(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_109(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_109(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFree_ReturnInt_ = CStrFree_ReturnInt_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -10581,14 +10814,14 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 < (unsafe {
                     let _lhs: CStrFree_ReturnInt_ = cs2;
                     operator_cmp_37(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10596,7 +10829,7 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10604,20 +10837,20 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 > (unsafe {
                     let _lhs: CStrFree_ReturnInt_ = cs2;
                     operator_cmp_37(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10625,7 +10858,7 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10633,20 +10866,20 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 < (unsafe {
                     let _lhs: CStrFree_ReturnInt_ = cs2;
                     operator_cmp_37(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10654,7 +10887,7 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10662,20 +10895,20 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 > (unsafe {
                     let _lhs: CStrFree_ReturnInt_ = cs2;
                     operator_cmp_37(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10683,7 +10916,7 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10691,21 +10924,21 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 < (unsafe {
                     let _lhs: CStrFree_ReturnInt_ = cs2;
                     operator_cmp_37(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10713,7 +10946,7 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10721,20 +10954,20 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 > (unsafe {
                     let _lhs: CStrFree_ReturnInt_ = cs2;
                     operator_cmp_37(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10742,7 +10975,7 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10750,20 +10983,20 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((0_())
+            if !((0)
                 < (unsafe {
                     let _lhs: CStrFree_ReturnInt_ = cs2;
                     operator_cmp_37(_lhs, cs1)
                 }))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10771,7 +11004,7 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10779,20 +11012,20 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(!((0_())
+            if !(!((0)
                 > (unsafe {
                     let _lhs: CStrFree_ReturnInt_ = cs2;
                     operator_cmp_37(_lhs, cs1)
                 })))
             {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10800,7 +11033,7 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10808,12 +11041,12 @@ pub unsafe fn test_relational_109(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_110(mut use_overloaded: ()) {
+pub unsafe fn test_relational_110(mut use_overloaded: bool) {
     let mut cs1: CStrMixed_CustomOrd_ = CStrMixed_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -10829,10 +11062,10 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
                     let _lhs: CStrMixed_CustomOrd_ = cs1;
                     operator_cmp_50(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10840,7 +11073,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10848,7 +11081,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10859,10 +11092,10 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
                     let _lhs: CStrMixed_CustomOrd_ = cs1;
                     operator_cmp_50(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10870,7 +11103,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10878,7 +11111,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10889,10 +11122,10 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
                     let _lhs: CStrMixed_CustomOrd_ = cs1;
                     operator_cmp_50(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10900,7 +11133,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10908,7 +11141,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10919,10 +11152,10 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
                     let _lhs: CStrMixed_CustomOrd_ = cs1;
                     operator_cmp_50(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10930,7 +11163,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10938,7 +11171,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -10950,10 +11183,10 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
                     let _lhs: CStrMixed_CustomOrd_ = cs1;
                     operator_cmp_50(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10961,7 +11194,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10969,7 +11202,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10980,10 +11213,10 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
                     let _lhs: CStrMixed_CustomOrd_ = cs1;
                     operator_cmp_50(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10991,7 +11224,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -10999,7 +11232,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11010,10 +11243,10 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
                     let _lhs: CStrMixed_CustomOrd_ = cs1;
                     operator_cmp_50(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11021,7 +11254,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11029,7 +11262,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11040,10 +11273,10 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
                     let _lhs: CStrMixed_CustomOrd_ = cs1;
                     operator_cmp_50(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11051,7 +11284,7 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11059,12 +11292,12 @@ pub unsafe fn test_relational_110(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_111(mut use_overloaded: ()) {
+pub unsafe fn test_relational_111(mut use_overloaded: bool) {
     let mut cs1: CStrFree_CustomOrd_ = CStrFree_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -11077,7 +11310,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrMixed_CustomOrd_ = cs2;
                         operator_cmp_50(_lhs, cs1)
@@ -11085,7 +11318,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11093,7 +11326,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11101,7 +11334,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11109,7 +11342,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrMixed_CustomOrd_ = cs2;
                         operator_cmp_50(_lhs, cs1)
@@ -11117,7 +11350,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11125,7 +11358,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11133,7 +11366,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11141,7 +11374,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrMixed_CustomOrd_ = cs2;
                         operator_cmp_50(_lhs, cs1)
@@ -11149,7 +11382,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11157,7 +11390,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11165,7 +11398,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11173,7 +11406,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrMixed_CustomOrd_ = cs2;
                         operator_cmp_50(_lhs, cs1)
@@ -11181,7 +11414,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11189,7 +11422,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11197,7 +11430,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -11206,7 +11439,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrMixed_CustomOrd_ = cs2;
                         operator_cmp_50(_lhs, cs1)
@@ -11214,7 +11447,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11222,7 +11455,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11230,7 +11463,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11238,7 +11471,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrMixed_CustomOrd_ = cs2;
                         operator_cmp_50(_lhs, cs1)
@@ -11246,7 +11479,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11254,7 +11487,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11262,7 +11495,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11270,7 +11503,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrMixed_CustomOrd_ = cs2;
                         operator_cmp_50(_lhs, cs1)
@@ -11278,7 +11511,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11286,7 +11519,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11294,7 +11527,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11302,7 +11535,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrMixed_CustomOrd_ = cs2;
                         operator_cmp_50(_lhs, cs1)
@@ -11310,7 +11543,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11318,7 +11551,7 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11326,12 +11559,12 @@ pub unsafe fn test_relational_111(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_112(mut use_overloaded: ()) {
+pub unsafe fn test_relational_112(mut use_overloaded: bool) {
     let mut cs1: CStrMem_CustomOrd_ = CStrMem_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -11344,10 +11577,10 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_2(&cs1, &cs2) });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11355,7 +11588,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11363,7 +11596,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11371,10 +11604,10 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_2(&cs1, &cs2) });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11382,7 +11615,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11390,7 +11623,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11398,10 +11631,10 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_2(&cs1, &cs2) });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11409,7 +11642,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11417,7 +11650,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11425,10 +11658,10 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_2(&cs1, &cs2) });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11436,7 +11669,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11444,7 +11677,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -11453,10 +11686,10 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_2(&cs1, &cs2) });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11464,7 +11697,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11472,7 +11705,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11480,10 +11713,10 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_2(&cs1, &cs2) });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11491,7 +11724,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11499,7 +11732,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11507,10 +11740,10 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_2(&cs1, &cs2) });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11518,7 +11751,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11526,7 +11759,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11534,10 +11767,10 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_2(&cs1, &cs2) });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11545,7 +11778,7 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11553,26 +11786,26 @@ pub unsafe fn test_relational_112(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_113(mut use_overloaded: ()) {
+pub unsafe fn test_relational_113(mut use_overloaded: bool) {
     let mut cs1: CStrMem_CustomOrd_ = CStrMem_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(!(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs1, cs2) });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11580,7 +11813,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11588,7 +11821,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11596,10 +11829,10 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs1, cs2) });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11607,7 +11840,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11615,7 +11848,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11623,10 +11856,10 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs1, cs2) });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11634,7 +11867,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11642,7 +11875,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11650,10 +11883,10 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs1, cs2) });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11661,7 +11894,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11669,7 +11902,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -11678,10 +11911,10 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs1, cs2) });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11689,7 +11922,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11697,7 +11930,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11705,10 +11938,10 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs1, cs2) });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11716,7 +11949,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11724,7 +11957,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11732,10 +11965,10 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs1, cs2) });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11743,7 +11976,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11751,7 +11984,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11759,10 +11992,10 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 let _c: CustomOrd = (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs1, cs2) });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11770,7 +12003,7 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11778,13 +12011,13 @@ pub unsafe fn test_relational_113(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_114(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_114(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrMem_CustomOrd_ = CStrMem_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -11794,12 +12027,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs2, cs1) }),
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11807,7 +12040,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11815,7 +12048,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11823,12 +12056,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs2, cs1) }),
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11836,7 +12069,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11844,7 +12077,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11852,12 +12085,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs2, cs1) }),
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11865,7 +12098,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11873,7 +12106,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11881,12 +12114,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs2, cs1) }),
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11894,7 +12127,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11902,7 +12135,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -11911,12 +12144,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs2, cs1) }),
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11924,7 +12157,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11932,7 +12165,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11940,12 +12173,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs2, cs1) }),
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11953,7 +12186,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11961,7 +12194,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11969,12 +12202,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs2, cs1) }),
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11982,7 +12215,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11990,7 +12223,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -11998,12 +12231,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe { CStrMem_CustomOrd_::operator_cmp_3(&cs2, cs1) }),
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12011,7 +12244,7 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12019,12 +12252,12 @@ pub unsafe fn test_relational_114(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_115(mut use_overloaded: ()) {
+pub unsafe fn test_relational_115(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_CustomOrd_ = CStrFriend_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -12040,10 +12273,10 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_21(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12051,7 +12284,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12059,7 +12292,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12070,10 +12303,10 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_21(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12081,7 +12314,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12089,7 +12322,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12100,10 +12333,10 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_21(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12111,7 +12344,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12119,7 +12352,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12130,10 +12363,10 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_21(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12141,7 +12374,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12149,7 +12382,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -12161,10 +12394,10 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_21(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12172,7 +12405,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12180,7 +12413,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12191,10 +12424,10 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_21(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12202,7 +12435,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12210,7 +12443,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12221,10 +12454,10 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_21(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12232,7 +12465,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12240,7 +12473,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12251,10 +12484,10 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_21(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12262,7 +12495,7 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12270,16 +12503,16 @@ pub unsafe fn test_relational_115(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_116(mut use_overloaded: ()) {
+pub unsafe fn test_relational_116(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_CustomOrd_ = CStrFriend_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -12289,10 +12522,10 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_22(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12300,7 +12533,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12308,7 +12541,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12319,10 +12552,10 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_22(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12330,7 +12563,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12338,7 +12571,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12349,10 +12582,10 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_22(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12360,7 +12593,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12368,7 +12601,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12379,10 +12612,10 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_22(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12390,7 +12623,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12398,7 +12631,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -12410,10 +12643,10 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_22(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12421,7 +12654,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12429,7 +12662,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12440,10 +12673,10 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_22(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12451,7 +12684,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12459,7 +12692,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12470,10 +12703,10 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_22(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12481,7 +12714,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12489,7 +12722,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12500,10 +12733,10 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
                     let _lhs: CStrFriend_CustomOrd_ = cs1;
                     operator_cmp_22(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12511,7 +12744,7 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12519,13 +12752,13 @@ pub unsafe fn test_relational_116(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_117(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_117(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFriend_CustomOrd_ = CStrFriend_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -12535,7 +12768,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFriend_CustomOrd_ = cs2;
                         operator_cmp_22(_lhs, cs1)
@@ -12543,7 +12776,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12551,7 +12784,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12559,7 +12792,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12567,7 +12800,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFriend_CustomOrd_ = cs2;
                         operator_cmp_22(_lhs, cs1)
@@ -12575,7 +12808,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12583,7 +12816,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12591,7 +12824,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12599,7 +12832,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFriend_CustomOrd_ = cs2;
                         operator_cmp_22(_lhs, cs1)
@@ -12607,7 +12840,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12615,7 +12848,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12623,7 +12856,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12631,7 +12864,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFriend_CustomOrd_ = cs2;
                         operator_cmp_22(_lhs, cs1)
@@ -12639,7 +12872,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12647,7 +12880,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12655,7 +12888,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -12664,7 +12897,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFriend_CustomOrd_ = cs2;
                         operator_cmp_22(_lhs, cs1)
@@ -12672,7 +12905,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12680,7 +12913,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12688,7 +12921,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12696,7 +12929,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFriend_CustomOrd_ = cs2;
                         operator_cmp_22(_lhs, cs1)
@@ -12704,7 +12937,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12712,7 +12945,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12720,7 +12953,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12728,7 +12961,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFriend_CustomOrd_ = cs2;
                         operator_cmp_22(_lhs, cs1)
@@ -12736,7 +12969,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12744,7 +12977,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12752,7 +12985,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12760,7 +12993,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFriend_CustomOrd_ = cs2;
                         operator_cmp_22(_lhs, cs1)
@@ -12768,7 +13001,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12776,7 +13009,7 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12784,12 +13017,12 @@ pub unsafe fn test_relational_117(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_118(mut use_overloaded: ()) {
+pub unsafe fn test_relational_118(mut use_overloaded: bool) {
     let mut cs1: CStrFree_CustomOrd_ = CStrFree_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -12805,10 +13038,10 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_31(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12816,7 +13049,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12824,7 +13057,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12835,10 +13068,10 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_31(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12846,7 +13079,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12854,7 +13087,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12865,10 +13098,10 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_31(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12876,7 +13109,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12884,7 +13117,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12895,10 +13128,10 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_31(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12906,7 +13139,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12914,7 +13147,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -12926,10 +13159,10 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_31(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12937,7 +13170,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12945,7 +13178,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12956,10 +13189,10 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_31(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12967,7 +13200,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12975,7 +13208,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12986,10 +13219,10 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_31(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -12997,7 +13230,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13005,7 +13238,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13016,10 +13249,10 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_31(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13027,7 +13260,7 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13035,16 +13268,16 @@ pub unsafe fn test_relational_118(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_119(mut use_overloaded: ()) {
+pub unsafe fn test_relational_119(mut use_overloaded: bool) {
     let mut cs1: CStrFree_CustomOrd_ = CStrFree_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -13054,10 +13287,10 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_38(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13065,7 +13298,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13073,7 +13306,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13084,10 +13317,10 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_38(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13095,7 +13328,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13103,7 +13336,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13114,10 +13347,10 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_38(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13125,7 +13358,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13133,7 +13366,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13144,10 +13377,10 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_38(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13155,7 +13388,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13163,7 +13396,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -13175,10 +13408,10 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_38(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13186,7 +13419,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13194,7 +13427,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13205,10 +13438,10 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_38(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13216,7 +13449,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13224,7 +13457,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13235,10 +13468,10 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_38(_lhs, cs2)
                 });
-                operator_lt_53(_c, unimplemented!())
+                operator_lt_53(_c, std::ptr::null_mut::<::libc::c_void>())
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13246,7 +13479,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13254,7 +13487,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13265,10 +13498,10 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
                     let _lhs: CStrFree_CustomOrd_ = cs1;
                     operator_cmp_38(_lhs, cs2)
                 });
-                operator_gt_55(_c, unimplemented!())
+                operator_gt_55(_c, std::ptr::null_mut::<::libc::c_void>())
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13276,7 +13509,7 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13284,13 +13517,13 @@ pub unsafe fn test_relational_119(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_120(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_relational_120(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFree_CustomOrd_ = CStrFree_CustomOrd_ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -13300,7 +13533,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFree_CustomOrd_ = cs2;
                         operator_cmp_38(_lhs, cs1)
@@ -13308,7 +13541,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13316,7 +13549,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13324,7 +13557,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13332,7 +13565,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFree_CustomOrd_ = cs2;
                         operator_cmp_38(_lhs, cs1)
@@ -13340,7 +13573,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13348,7 +13581,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13356,7 +13589,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13364,7 +13597,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFree_CustomOrd_ = cs2;
                         operator_cmp_38(_lhs, cs1)
@@ -13372,7 +13605,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13380,7 +13613,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13388,7 +13621,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13396,7 +13629,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFree_CustomOrd_ = cs2;
                         operator_cmp_38(_lhs, cs1)
@@ -13404,7 +13637,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13412,7 +13645,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13420,7 +13653,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -13429,7 +13662,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFree_CustomOrd_ = cs2;
                         operator_cmp_38(_lhs, cs1)
@@ -13437,7 +13670,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13445,7 +13678,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13453,7 +13686,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13461,7 +13694,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFree_CustomOrd_ = cs2;
                         operator_cmp_38(_lhs, cs1)
@@ -13469,7 +13702,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13477,7 +13710,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13485,7 +13718,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13493,7 +13726,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unsafe {
                 operator_lt_54(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFree_CustomOrd_ = cs2;
                         operator_cmp_38(_lhs, cs1)
@@ -13501,7 +13734,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
                 )
             }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13509,7 +13742,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13517,7 +13750,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13525,7 +13758,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unsafe {
                 operator_gt_56(
-                    unimplemented!(),
+                    std::ptr::null_mut::<::libc::c_void>(),
                     (unsafe {
                         let _lhs: CStrFree_CustomOrd_ = cs2;
                         operator_cmp_38(_lhs, cs1)
@@ -13533,7 +13766,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
                 )
             })) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13541,7 +13774,7 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -13549,87 +13782,87 @@ pub unsafe fn test_relational_120(mut use_overloaded: ()) {
             __do_while = false;
             if !(!(unimplemented!())) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_relational_type_121(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_121(mut use_overloaded: bool) {
     (unsafe { test_relational_96(use_overloaded) });
     (unsafe { test_relational_97(use_overloaded) });
     (unsafe { test_relational_98(use_overloaded) });
 }
-pub unsafe fn test_relational_type_122(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_122(mut use_overloaded: bool) {
     (unsafe { test_relational_65(use_overloaded) });
     (unsafe { test_relational_66(use_overloaded) });
     (unsafe { test_relational_67(use_overloaded) });
 }
-pub unsafe fn test_relational_type_123(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_123(mut use_overloaded: bool) {
     (unsafe { test_relational_68(use_overloaded) });
     (unsafe { test_relational_69(use_overloaded) });
     (unsafe { test_relational_70(use_overloaded) });
 }
-pub unsafe fn test_relational_type_124(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_124(mut use_overloaded: bool) {
     (unsafe { test_relational_71(use_overloaded) });
     (unsafe { test_relational_72(use_overloaded) });
     (unsafe { test_relational_73(use_overloaded) });
 }
-pub unsafe fn test_relational_type_125(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_125(mut use_overloaded: bool) {
     (unsafe { test_relational_76(use_overloaded) });
     (unsafe { test_relational_77(use_overloaded) });
     (unsafe { test_relational_78(use_overloaded) });
 }
-pub unsafe fn test_relational_type_126(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_126(mut use_overloaded: bool) {
     (unsafe { test_relational_79(use_overloaded) });
     (unsafe { test_relational_80(use_overloaded) });
     (unsafe { test_relational_81(use_overloaded) });
 }
-pub unsafe fn test_relational_type_127(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_127(mut use_overloaded: bool) {
     (unsafe { test_relational_82(use_overloaded) });
     (unsafe { test_relational_83(use_overloaded) });
     (unsafe { test_relational_84(use_overloaded) });
 }
-pub unsafe fn test_relational_type_128(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_128(mut use_overloaded: bool) {
     (unsafe { test_relational_87(use_overloaded) });
     (unsafe { test_relational_88(use_overloaded) });
     (unsafe { test_relational_89(use_overloaded) });
 }
-pub unsafe fn test_relational_type_129(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_129(mut use_overloaded: bool) {
     (unsafe { test_relational_90(use_overloaded) });
     (unsafe { test_relational_91(use_overloaded) });
     (unsafe { test_relational_92(use_overloaded) });
 }
-pub unsafe fn test_relational_type_130(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_130(mut use_overloaded: bool) {
     (unsafe { test_relational_93(use_overloaded) });
     (unsafe { test_relational_94(use_overloaded) });
     (unsafe { test_relational_95(use_overloaded) });
 }
-pub unsafe fn test_relational_type_131(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_131(mut use_overloaded: bool) {
     (unsafe { test_relational_101(use_overloaded) });
     (unsafe { test_relational_102(use_overloaded) });
     (unsafe { test_relational_103(use_overloaded) });
 }
-pub unsafe fn test_relational_type_132(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_132(mut use_overloaded: bool) {
     (unsafe { test_relational_104(use_overloaded) });
     (unsafe { test_relational_105(use_overloaded) });
     (unsafe { test_relational_106(use_overloaded) });
 }
-pub unsafe fn test_relational_type_133(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_133(mut use_overloaded: bool) {
     (unsafe { test_relational_107(use_overloaded) });
     (unsafe { test_relational_108(use_overloaded) });
     (unsafe { test_relational_109(use_overloaded) });
 }
-pub unsafe fn test_relational_type_134(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_134(mut use_overloaded: bool) {
     (unsafe { test_relational_112(use_overloaded) });
     (unsafe { test_relational_113(use_overloaded) });
     (unsafe { test_relational_114(use_overloaded) });
 }
-pub unsafe fn test_relational_type_135(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_135(mut use_overloaded: bool) {
     (unsafe { test_relational_115(use_overloaded) });
     (unsafe { test_relational_116(use_overloaded) });
     (unsafe { test_relational_117(use_overloaded) });
 }
-pub unsafe fn test_relational_type_136(mut use_overloaded: ()) {
+pub unsafe fn test_relational_type_136(mut use_overloaded: bool) {
     (unsafe { test_relational_118(use_overloaded) });
     (unsafe { test_relational_119(use_overloaded) });
     (unsafe { test_relational_120(use_overloaded) });
@@ -13669,7 +13902,7 @@ pub unsafe fn test_relational_return_141() {
     (unsafe { test_relational_85(true) });
     (unsafe { test_relational_86(true) });
 }
-pub unsafe fn test_spaceship_142(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_142(mut use_overloaded: bool) {
     let mut cs1: CStrMixed_ReturnOrd_std_strong_ordering__ =
         CStrMixed_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -13682,39 +13915,47 @@ pub unsafe fn test_spaceship_142(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrMixed_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_46(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_143(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_143(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_strong_ordering__ =
         CStrFree_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -13727,39 +13968,39 @@ pub unsafe fn test_spaceship_143(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unimplemented!()) == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unimplemented!()) == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_144(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_144(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_strong_ordering__ =
         CStrMem_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -13772,82 +14013,90 @@ pub unsafe fn test_spaceship_144(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2) })
+                == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_2(&cs1, &cs2) })
+                == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_145(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_145(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_strong_ordering__ =
         CStrMem_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe { CStrMem_ReturnOrd_std_strong_ordering__::operator_cmp_3(&cs1, cs2) })
+                == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_146(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_146(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrMem_ReturnOrd_std_strong_ordering__ =
         CStrMem_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -13856,39 +14105,39 @@ pub unsafe fn test_spaceship_146(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unimplemented!()) == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unimplemented!()) == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_147(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_147(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_strong_ordering__ =
         CStrFriend_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -13901,82 +14150,98 @@ pub unsafe fn test_spaceship_147(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_13(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_148(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_148(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_strong_ordering__ =
         CStrFriend_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFriend_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_14(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_149(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_149(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFriend_ReturnOrd_std_strong_ordering__ =
         CStrFriend_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -13985,39 +14250,39 @@ pub unsafe fn test_spaceship_149(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unimplemented!()) == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unimplemented!()) == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_150(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_150(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_strong_ordering__ =
         CStrFree_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -14030,82 +14295,98 @@ pub unsafe fn test_spaceship_150(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_27(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_151(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_151(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_strong_ordering__ =
         CStrFree_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Greater)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unsafe {
+                let _lhs: CStrFree_ReturnOrd_std_strong_ordering__ = cs1;
+                operator_cmp_34(_lhs, cs2)
+            }) == std::cmp::Ordering::Less)
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_152(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_152(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFree_ReturnOrd_std_strong_ordering__ =
         CStrFree_ReturnOrd_std_strong_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -14114,39 +14395,39 @@ pub unsafe fn test_spaceship_152(mut use_overloaded: ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unimplemented!()) == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Greater) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !((unimplemented!()) == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !(unimplemented!()) {
+            if !(unimplemented!() == std::cmp::Ordering::Less) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_153(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_153(mut use_overloaded: bool) {
     let mut cs1: CStrMixed_ReturnOrd_std_weak_ordering__ =
         CStrMixed_ReturnOrd_std_weak_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -14160,7 +14441,7 @@ pub unsafe fn test_spaceship_153(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14168,7 +14449,7 @@ pub unsafe fn test_spaceship_153(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14177,7 +14458,7 @@ pub unsafe fn test_spaceship_153(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14185,12 +14466,12 @@ pub unsafe fn test_spaceship_153(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_154(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_154(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_weak_ordering__ = CStrFree_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -14204,7 +14485,7 @@ pub unsafe fn test_spaceship_154(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14212,7 +14493,7 @@ pub unsafe fn test_spaceship_154(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14221,7 +14502,7 @@ pub unsafe fn test_spaceship_154(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14229,12 +14510,12 @@ pub unsafe fn test_spaceship_154(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_155(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_155(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_weak_ordering__ = CStrMem_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -14247,7 +14528,7 @@ pub unsafe fn test_spaceship_155(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14255,7 +14536,7 @@ pub unsafe fn test_spaceship_155(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14264,7 +14545,7 @@ pub unsafe fn test_spaceship_155(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14272,23 +14553,23 @@ pub unsafe fn test_spaceship_155(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_156(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_156(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_weak_ordering__ = CStrMem_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14296,7 +14577,7 @@ pub unsafe fn test_spaceship_156(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14305,7 +14586,7 @@ pub unsafe fn test_spaceship_156(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14313,13 +14594,13 @@ pub unsafe fn test_spaceship_156(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_157(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_157(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrMem_ReturnOrd_std_weak_ordering__ = CStrMem_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -14329,7 +14610,7 @@ pub unsafe fn test_spaceship_157(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14337,7 +14618,7 @@ pub unsafe fn test_spaceship_157(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14346,7 +14627,7 @@ pub unsafe fn test_spaceship_157(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14354,12 +14635,12 @@ pub unsafe fn test_spaceship_157(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_158(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_158(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_weak_ordering__ =
         CStrFriend_ReturnOrd_std_weak_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -14374,7 +14655,7 @@ pub unsafe fn test_spaceship_158(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14382,7 +14663,7 @@ pub unsafe fn test_spaceship_158(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14391,7 +14672,7 @@ pub unsafe fn test_spaceship_158(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14399,24 +14680,24 @@ pub unsafe fn test_spaceship_158(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_159(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_159(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_weak_ordering__ =
         CStrFriend_ReturnOrd_std_weak_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14424,7 +14705,7 @@ pub unsafe fn test_spaceship_159(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14433,7 +14714,7 @@ pub unsafe fn test_spaceship_159(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14441,13 +14722,13 @@ pub unsafe fn test_spaceship_159(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_160(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_160(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFriend_ReturnOrd_std_weak_ordering__ =
         CStrFriend_ReturnOrd_std_weak_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -14458,7 +14739,7 @@ pub unsafe fn test_spaceship_160(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14466,7 +14747,7 @@ pub unsafe fn test_spaceship_160(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14475,7 +14756,7 @@ pub unsafe fn test_spaceship_160(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14483,12 +14764,12 @@ pub unsafe fn test_spaceship_160(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_161(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_161(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_weak_ordering__ = CStrFree_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
@@ -14501,7 +14782,7 @@ pub unsafe fn test_spaceship_161(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14509,7 +14790,7 @@ pub unsafe fn test_spaceship_161(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14518,7 +14799,7 @@ pub unsafe fn test_spaceship_161(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14526,23 +14807,23 @@ pub unsafe fn test_spaceship_161(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_162(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_162(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_weak_ordering__ = CStrFree_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
     };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14550,7 +14831,7 @@ pub unsafe fn test_spaceship_162(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14559,7 +14840,7 @@ pub unsafe fn test_spaceship_162(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14567,13 +14848,13 @@ pub unsafe fn test_spaceship_162(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_163(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_163(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFree_ReturnOrd_std_weak_ordering__ = CStrFree_ReturnOrd_std_weak_ordering__ {
         str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
     };
@@ -14583,7 +14864,7 @@ pub unsafe fn test_spaceship_163(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14591,7 +14872,7 @@ pub unsafe fn test_spaceship_163(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14600,7 +14881,7 @@ pub unsafe fn test_spaceship_163(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14608,12 +14889,12 @@ pub unsafe fn test_spaceship_163(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_164(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_164(mut use_overloaded: bool) {
     let mut cs1: CStrMixed_ReturnOrd_std_partial_ordering__ =
         CStrMixed_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -14628,7 +14909,7 @@ pub unsafe fn test_spaceship_164(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14636,7 +14917,7 @@ pub unsafe fn test_spaceship_164(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14645,7 +14926,7 @@ pub unsafe fn test_spaceship_164(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14653,12 +14934,12 @@ pub unsafe fn test_spaceship_164(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_165(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_165(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_partial_ordering__ =
         CStrFree_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -14673,7 +14954,7 @@ pub unsafe fn test_spaceship_165(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14681,7 +14962,7 @@ pub unsafe fn test_spaceship_165(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14690,7 +14971,7 @@ pub unsafe fn test_spaceship_165(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14698,12 +14979,12 @@ pub unsafe fn test_spaceship_165(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_166(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_166(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_partial_ordering__ =
         CStrMem_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -14718,7 +14999,7 @@ pub unsafe fn test_spaceship_166(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14726,7 +15007,7 @@ pub unsafe fn test_spaceship_166(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14735,7 +15016,7 @@ pub unsafe fn test_spaceship_166(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14743,24 +15024,24 @@ pub unsafe fn test_spaceship_166(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_167(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_167(mut use_overloaded: bool) {
     let mut cs1: CStrMem_ReturnOrd_std_partial_ordering__ =
         CStrMem_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14768,7 +15049,7 @@ pub unsafe fn test_spaceship_167(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14777,7 +15058,7 @@ pub unsafe fn test_spaceship_167(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14785,13 +15066,13 @@ pub unsafe fn test_spaceship_167(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_168(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_168(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrMem_ReturnOrd_std_partial_ordering__ =
         CStrMem_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -14802,7 +15083,7 @@ pub unsafe fn test_spaceship_168(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14810,7 +15091,7 @@ pub unsafe fn test_spaceship_168(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14819,7 +15100,7 @@ pub unsafe fn test_spaceship_168(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14827,12 +15108,12 @@ pub unsafe fn test_spaceship_168(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_169(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_169(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_partial_ordering__ =
         CStrFriend_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -14847,7 +15128,7 @@ pub unsafe fn test_spaceship_169(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14855,7 +15136,7 @@ pub unsafe fn test_spaceship_169(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14864,7 +15145,7 @@ pub unsafe fn test_spaceship_169(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14872,24 +15153,24 @@ pub unsafe fn test_spaceship_169(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_170(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_170(mut use_overloaded: bool) {
     let mut cs1: CStrFriend_ReturnOrd_std_partial_ordering__ =
         CStrFriend_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14897,7 +15178,7 @@ pub unsafe fn test_spaceship_170(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14906,7 +15187,7 @@ pub unsafe fn test_spaceship_170(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14914,13 +15195,13 @@ pub unsafe fn test_spaceship_170(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_171(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_171(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFriend_ReturnOrd_std_partial_ordering__ =
         CStrFriend_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -14931,7 +15212,7 @@ pub unsafe fn test_spaceship_171(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14939,7 +15220,7 @@ pub unsafe fn test_spaceship_171(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14948,7 +15229,7 @@ pub unsafe fn test_spaceship_171(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14956,12 +15237,12 @@ pub unsafe fn test_spaceship_171(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_172(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_172(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_partial_ordering__ =
         CStrFree_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
@@ -14976,7 +15257,7 @@ pub unsafe fn test_spaceship_172(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -14984,7 +15265,7 @@ pub unsafe fn test_spaceship_172(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -14993,7 +15274,7 @@ pub unsafe fn test_spaceship_172(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -15001,24 +15282,24 @@ pub unsafe fn test_spaceship_172(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_173(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_173(mut use_overloaded: bool) {
     let mut cs1: CStrFree_ReturnOrd_std_partial_ordering__ =
         CStrFree_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10)),
         };
-    let mut cs2: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
+    let mut cs2: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11));
     if use_overloaded {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -15026,7 +15307,7 @@ pub unsafe fn test_spaceship_173(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -15035,7 +15316,7 @@ pub unsafe fn test_spaceship_173(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -15043,13 +15324,13 @@ pub unsafe fn test_spaceship_173(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_174(mut use_overloaded: ()) {
-    let mut cs1: *const () = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
+pub unsafe fn test_spaceship_174(mut use_overloaded: bool) {
+    let mut cs1: *const libc::c_char = (*std::cell::LazyCell::force_mut(&mut *&raw mut s1_10));
     let mut cs2: CStrFree_ReturnOrd_std_partial_ordering__ =
         CStrFree_ReturnOrd_std_partial_ordering__ {
             str: (*std::cell::LazyCell::force_mut(&mut *&raw mut s2_11)),
@@ -15060,7 +15341,7 @@ pub unsafe fn test_spaceship_174(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -15068,7 +15349,7 @@ pub unsafe fn test_spaceship_174(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
@@ -15077,7 +15358,7 @@ pub unsafe fn test_spaceship_174(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -15085,52 +15366,52 @@ pub unsafe fn test_spaceship_174(mut use_overloaded: ()) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
 }
-pub unsafe fn test_spaceship_type_175(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_175(mut use_overloaded: bool) {
     (unsafe { test_spaceship_144(use_overloaded) });
     (unsafe { test_spaceship_145(use_overloaded) });
     (unsafe { test_spaceship_146(use_overloaded) });
 }
-pub unsafe fn test_spaceship_type_176(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_176(mut use_overloaded: bool) {
     (unsafe { test_spaceship_147(use_overloaded) });
     (unsafe { test_spaceship_148(use_overloaded) });
     (unsafe { test_spaceship_149(use_overloaded) });
 }
-pub unsafe fn test_spaceship_type_177(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_177(mut use_overloaded: bool) {
     (unsafe { test_spaceship_150(use_overloaded) });
     (unsafe { test_spaceship_151(use_overloaded) });
     (unsafe { test_spaceship_152(use_overloaded) });
 }
-pub unsafe fn test_spaceship_type_178(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_178(mut use_overloaded: bool) {
     (unsafe { test_spaceship_155(use_overloaded) });
     (unsafe { test_spaceship_156(use_overloaded) });
     (unsafe { test_spaceship_157(use_overloaded) });
 }
-pub unsafe fn test_spaceship_type_179(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_179(mut use_overloaded: bool) {
     (unsafe { test_spaceship_158(use_overloaded) });
     (unsafe { test_spaceship_159(use_overloaded) });
     (unsafe { test_spaceship_160(use_overloaded) });
 }
-pub unsafe fn test_spaceship_type_180(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_180(mut use_overloaded: bool) {
     (unsafe { test_spaceship_161(use_overloaded) });
     (unsafe { test_spaceship_162(use_overloaded) });
     (unsafe { test_spaceship_163(use_overloaded) });
 }
-pub unsafe fn test_spaceship_type_181(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_181(mut use_overloaded: bool) {
     (unsafe { test_spaceship_166(use_overloaded) });
     (unsafe { test_spaceship_167(use_overloaded) });
     (unsafe { test_spaceship_168(use_overloaded) });
 }
-pub unsafe fn test_spaceship_type_182(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_182(mut use_overloaded: bool) {
     (unsafe { test_spaceship_169(use_overloaded) });
     (unsafe { test_spaceship_170(use_overloaded) });
     (unsafe { test_spaceship_171(use_overloaded) });
 }
-pub unsafe fn test_spaceship_type_183(mut use_overloaded: ()) {
+pub unsafe fn test_spaceship_type_183(mut use_overloaded: bool) {
     (unsafe { test_spaceship_172(use_overloaded) });
     (unsafe { test_spaceship_173(use_overloaded) });
     (unsafe { test_spaceship_174(use_overloaded) });
@@ -15185,14 +15466,14 @@ pub unsafe fn test_no_relational_189() {
 }
 pub unsafe fn test_no_relational_190() {
     let mut c1: CStrMem_ReturnVoid_ = <CStrMem_ReturnVoid_>::default();
-    let mut c2: *const () = std::ptr::null();
+    let mut c2: *const libc::c_char = std::ptr::null();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 <= c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 >= c2; }}");;
 }
 pub unsafe fn test_no_relational_191() {
-    let mut c1: *const () = std::ptr::null();
+    let mut c1: *const libc::c_char = std::ptr::null();
     let mut c2: CStrMem_ReturnVoid_ = <CStrMem_ReturnVoid_>::default();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
@@ -15209,14 +15490,14 @@ pub unsafe fn test_no_relational_192() {
 }
 pub unsafe fn test_no_relational_193() {
     let mut c1: CStrFriend_ReturnVoid_ = <CStrFriend_ReturnVoid_>::default();
-    let mut c2: *const () = std::ptr::null();
+    let mut c2: *const libc::c_char = std::ptr::null();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 <= c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 >= c2; }}");;
 }
 pub unsafe fn test_no_relational_194() {
-    let mut c1: *const () = std::ptr::null();
+    let mut c1: *const libc::c_char = std::ptr::null();
     let mut c2: CStrFriend_ReturnVoid_ = <CStrFriend_ReturnVoid_>::default();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
@@ -15233,14 +15514,14 @@ pub unsafe fn test_no_relational_195() {
 }
 pub unsafe fn test_no_relational_196() {
     let mut c1: CStrFree_ReturnVoid_ = <CStrFree_ReturnVoid_>::default();
-    let mut c2: *const () = std::ptr::null();
+    let mut c2: *const libc::c_char = std::ptr::null();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 <= c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 >= c2; }}");;
 }
 pub unsafe fn test_no_relational_197() {
-    let mut c1: *const () = std::ptr::null();
+    let mut c1: *const libc::c_char = std::ptr::null();
     let mut c2: CStrFree_ReturnVoid_ = <CStrFree_ReturnVoid_>::default();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
@@ -15273,14 +15554,14 @@ pub unsafe fn test_no_relational_200() {
 }
 pub unsafe fn test_no_relational_201() {
     let mut c1: CStrMem_NoOperators_ = <CStrMem_NoOperators_>::default();
-    let mut c2: *const () = std::ptr::null();
+    let mut c2: *const libc::c_char = std::ptr::null();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 <= c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 >= c2; }}");;
 }
 pub unsafe fn test_no_relational_202() {
-    let mut c1: *const () = std::ptr::null();
+    let mut c1: *const libc::c_char = std::ptr::null();
     let mut c2: CStrMem_NoOperators_ = <CStrMem_NoOperators_>::default();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
@@ -15297,14 +15578,14 @@ pub unsafe fn test_no_relational_203() {
 }
 pub unsafe fn test_no_relational_204() {
     let mut c1: CStrFriend_NoOperators_ = <CStrFriend_NoOperators_>::default();
-    let mut c2: *const () = std::ptr::null();
+    let mut c2: *const libc::c_char = std::ptr::null();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 <= c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 >= c2; }}");;
 }
 pub unsafe fn test_no_relational_205() {
-    let mut c1: *const () = std::ptr::null();
+    let mut c1: *const libc::c_char = std::ptr::null();
     let mut c2: CStrFriend_NoOperators_ = <CStrFriend_NoOperators_>::default();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
@@ -15321,14 +15602,14 @@ pub unsafe fn test_no_relational_206() {
 }
 pub unsafe fn test_no_relational_207() {
     let mut c1: CStrFree_NoOperators_ = <CStrFree_NoOperators_>::default();
-    let mut c2: *const () = std::ptr::null();
+    let mut c2: *const libc::c_char = std::ptr::null();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 <= c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 >= c2; }}");;
 }
 pub unsafe fn test_no_relational_208() {
-    let mut c1: *const () = std::ptr::null();
+    let mut c1: *const libc::c_char = std::ptr::null();
     let mut c2: CStrFree_NoOperators_ = <CStrFree_NoOperators_>::default();
     const _: () = assert!(true, "!requires {{ c1 < c2; }}");;
     const _: () = assert!(true, "!requires {{ c1 > c2; }}");;
@@ -15385,7 +15666,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test_std_ordering_184() });
     (unsafe { test_std_ordering_185() });
     (unsafe { test_std_ordering_186() });
@@ -15399,26 +15680,26 @@ unsafe fn main_0() -> () {
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            sem_set_: unimplemented!(),
+            sem_set_: 0_i32,
             pid_: unimplemented!(),
         };
         this.pid_ = unimplemented!();
         this.sem_set_ = unimplemented!();
-        if ((this.sem_set_) == (-1_())) {
+        if ((this.sem_set_) == (-1_i32)) {
             unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
-        if ((unimplemented!()) == (-1_())) {
+        val.val = 0;
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_217(mut size: Option<()>) {
-    let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
+pub unsafe fn set_memory_limits_217(mut size: Option<f32>) {
+    let mut size: f32 = size.unwrap_or_else(|| unsafe { (16_f64 as f32) });
     let mut r: () = unimplemented!();
-    let mut limit: () = ((size) * (1048576_()));
+    let mut limit: () = (((size) * (1048576_f32)) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
@@ -15432,34 +15713,37 @@ pub unsafe fn set_memory_limits_217(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_218(mut size: ()) {
+pub unsafe fn set_file_limit_218(mut size: u64) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_219(mut mangled: *const (), mut wanted: *const ()) {
-    let mut status: () = 0_();
-    let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = unimplemented!();
+pub unsafe fn verify_demangle_219(
+    mut mangled: *const libc::c_char,
+    mut wanted: *const libc::c_char,
+) {
+    let mut status: i32 = 0;
+    let mut s: *const libc::c_char = std::ptr::null();
+    let mut demangled: *mut libc::c_char = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
         switch!(match status {
-            __v if __v == 0_() => {
+            __v if __v == 0 => {
                 s = c"error code = 0: success".as_ptr();
                 break;
             }
-            __v if __v == -1_() => {
+            __v if __v == -1_i32 => {
                 s = c"error code = -1: memory allocation failure".as_ptr();
                 break;
             }
-            __v if __v == -2_() => {
+            __v if __v == -2_i32 => {
                 s = c"error code = -2: invalid mangled name".as_ptr();
                 break;
             }
-            __v if __v == -3_() => {
+            __v if __v == -3_i32 => {
                 s = c"error code = -3: invalid arguments".as_ptr();
                 break;
             }
@@ -15468,80 +15752,99 @@ pub unsafe fn verify_demangle_219(mut mangled: *const (), mut wanted: *const ())
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if !(unimplemented!()) {
+    let mut w: Vec<libc::c_char> =
+        std::slice::from_raw_parts(wanted, libcc2rs::c_str_len(wanted) + 1).to_vec();
+    if !(w == std::slice::from_raw_parts(s, libcc2rs::c_str_len(s) + 1).to_vec()) {
         unimplemented!();
     }
-    unimplemented!();
+    libcc2rs::free_unsafe((demangled as *mut ::libc::c_void));
 }
 pub unsafe fn run_tests_wrapped_locale_220(
-    mut name: *const (),
+    mut name: *const libc::c_char,
     l: *const __gnu_test_func_callback,
 ) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut res: *const () = (unimplemented!()).cast_const();
+    let mut res: *const libc::c_char = (libc::setlocale(6, name)).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () = unimplemented!();
+        let mut preLC_ALL: Vec<libc::c_char> =
+            std::slice::from_raw_parts(res, libcc2rs::c_str_len(res) + 1).to_vec();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () = unimplemented!();
+        let mut postLC_ALL: Vec<libc::c_char> = std::slice::from_raw_parts(
+            (libc::setlocale(6, std::ptr::null())).cast_const(),
+            libcc2rs::c_str_len((libc::setlocale(6, std::ptr::null())).cast_const()) + 1,
+        )
+        .to_vec();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"LC_ALL for ".as_ptr(),
+            libcc2rs::c_str_len(c"LC_ALL for ".as_ptr()) + 1,
+        )
+        .to_vec();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn run_tests_wrapped_env_221(
-    mut name: *const (),
-    mut env: *const (),
+    mut name: *const libc::c_char,
+    mut env: *const libc::c_char,
     l: *const __gnu_test_func_callback,
 ) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut oldENV: *const () = (unimplemented!()).cast_const();
-    if !(unimplemented!() != 0) {
+    let mut oldENV: *const libc::c_char = (libc::getenv(env)).cast_const();
+    if !(libc::setenv(env, name, 1) != 0) {
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        unimplemented!();
+        libc::setenv(
+            env,
+            if !(oldENV).is_null() {
+                oldENV
+            } else {
+                c"".as_ptr()
+            },
+            1,
+        );
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> =
+            std::slice::from_raw_parts(env, libcc2rs::c_str_len(env) + 1).to_vec();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+static mut count__1: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__2: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut count__3: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__4: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut _M_count_5: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut next_id__6: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
-    pub val: (),
+    pub val: i32,
     pub buf: *mut (),
-    pub array: *mut (),
+    pub array: *mut u16,
 }
 impl Default for __gnu_test_semun {
     fn default() -> Self {
@@ -15552,7 +15855,7 @@ impl __gnu_test_semaphore {}
 impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
+        val.val = 0;
         if ((self.pid_) == (unimplemented!())) {
             unimplemented!();
         }
@@ -15561,7 +15864,7 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
@@ -15569,22 +15872,22 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
 }
 pub unsafe fn test_tm_222(
-    mut sec: (),
-    mut min: (),
-    mut hour: (),
-    mut mday: (),
-    mut mon: (),
-    mut year: (),
-    mut wday: (),
-    mut yday: (),
-    mut isdst: (),
-) -> () {
+    mut sec: i32,
+    mut min: i32,
+    mut hour: i32,
+    mut mday: i32,
+    mut mon: i32,
+    mut year: i32,
+    mut wday: i32,
+    mut yday: i32,
+    mut isdst: i32,
+) -> ::libc::tm {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_223)).tm_sec = sec;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_223)).tm_min = min;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_223)).tm_hour = hour;
@@ -15594,10 +15897,10 @@ pub unsafe fn test_tm_222(
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_223)).tm_wday = wday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_223)).tm_yday = yday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_223)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_223)).clone();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_223));
 }
-static mut tmp_223: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut tmp_223: std::cell::LazyCell<::libc::tm> =
+    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const arr_9);
     std::cell::LazyCell::force(&*&raw const s1_10);

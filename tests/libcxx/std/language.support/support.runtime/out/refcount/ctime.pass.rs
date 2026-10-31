@@ -26,11 +26,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut c: () = 0_();
-    let mut s: () = 0_();
-    let t: Value<()> = Rc::new(RefCell::new(0_()));
-    let tm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: usize = 0_usize;
+    let t: Value<::libc::time_t> = Rc::new(RefCell::new((0 as ::libc::time_t)));
+    let tm: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
     (&(c));
     (&(s));
     (&(*t.borrow_mut()));
@@ -67,14 +67,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "(std::is_same<decltype(std::localtime(&t)), std::tm*>::value)"
     );;
-    let mut c1: Ptr<()> = Ptr::<()>::null();
-    let mut c2: Ptr<()> = Ptr::<()>::null();
+    let mut c1: Ptr<i8> = Ptr::<i8>::null();
+    let mut c2: Ptr<i8> = Ptr::<i8>::null();
     (&(c1));
     (&(c2));
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::strftime(c1,s,c2,&tm)), std::size_t>::value)"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -13,20 +13,20 @@ pub fn test_0(s: ()) {
     let ce1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ce2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((*e.borrow()) != unimplemented!());
+        assert!((*ce1.borrow()) != unimplemented!());
+        assert!((*ce2.borrow()) != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(({ (unimplemented!() as usize) } == { (unimplemented!() as usize) }));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_1(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -35,20 +35,20 @@ pub fn test_1(s: ()) {
     let ce1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ce2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((*e.borrow()) != unimplemented!());
+        assert!((*ce1.borrow()) != unimplemented!());
+        assert!((*ce2.borrow()) != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(({ (unimplemented!() as usize) } == { (unimplemented!() as usize) }));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_2(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -57,20 +57,20 @@ pub fn test_2(s: ()) {
     let ce1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ce2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((*e.borrow()) != unimplemented!());
+        assert!((*ce1.borrow()) != unimplemented!());
+        assert!((*ce2.borrow()) != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(({ (unimplemented!() as usize) } == { (unimplemented!() as usize) }));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_3(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -79,20 +79,20 @@ pub fn test_3(s: ()) {
     let ce1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ce2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((*e.borrow()) != unimplemented!());
+        assert!((*ce1.borrow()) != unimplemented!());
+        assert!((*ce2.borrow()) != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(({ (unimplemented!() as usize) } == { (unimplemented!() as usize) }));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_4(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -101,20 +101,20 @@ pub fn test_4(s: ()) {
     let ce1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ce2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((*e.borrow()) != unimplemented!());
+        assert!((*ce1.borrow()) != unimplemented!());
+        assert!((*ce2.borrow()) != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(({ (unimplemented!() as usize) } == { (unimplemented!() as usize) }));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -135,7 +135,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0(unimplemented!()) });
     ({ test_1(unimplemented!()) });
     ({ test_2(unimplemented!()) });
@@ -164,6 +164,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             const _: () = assert!(true, "*--wsv.crend() == wsv[0]");;
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

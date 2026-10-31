@@ -52,8 +52,8 @@ pub unsafe fn lehmer_2(mut sigma: *const u32, mut len: u32, mut code: *mut u32) 
             }
             __it
         };
-        assert!(!(it == items.end()));
-        (*code.offset((i) as isize)) = (it.iter_distance(&items.begin().into()) as u32);
+        assert!(it != items.end());
+        (*code.offset((i) as isize)) = (it.iter_distance(&items.begin().into()) as i64 as u32);
         {
             let __it = <UnsafeRandomAccessIterator<u32>>::from((it).clone());
             let pos =
@@ -67,7 +67,7 @@ pub unsafe fn lehmer_2(mut sigma: *const u32, mut len: u32, mut code: *mut u32) 
 pub unsafe fn sum_3(v: *mut Vec<i32>) -> i32 {
     let mut s: i32 = 0;
     let mut it: UnsafeRandomAccessIterator<i32> = (*v).begin();
-    'loop_: while !(it == (*v).end()) {
+    'loop_: while it != (*v).end() {
         s += (*it.iter_deref());
         it.iter_inc();
     }

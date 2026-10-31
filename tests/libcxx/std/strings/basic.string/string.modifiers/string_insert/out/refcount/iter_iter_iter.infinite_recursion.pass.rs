@@ -6,16 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i8, new_1, value)]
 #[byte_size(1)]
 pub struct char_ascii {
     #[offset(0)]
-    pub char_: (),
+    pub char_: i8,
 }
 impl char_ascii {
-    pub fn new_1(mut ch: ()) -> Self {
+    pub fn new_1(mut ch: i8) -> Self {
         let __this: char_ascii = Self { char_: ch };
-        unimplemented!();
+        assert!(((ch as i32) <= 127));
         __this
     }
 }
@@ -38,13 +39,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut str: () = unimplemented!();
-    let ch: Value<char_ascii> = Rc::new(RefCell::new(char_ascii::new_1({ ('A' as ()) })));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let str: Value<Vec<char_ascii>> = Rc::new(RefCell::new(vec![char_ascii::default()]));
+    let ch: Value<char_ascii> = Rc::new(RefCell::new(char_ascii::new_1({ ('A' as i8) })));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((((*str.borrow()).len() - 1) == 1_usize));
+    assert!(
+        ((str.decay().offset(0_usize as isize).with(|__s| __s.char_) as i32)
+            == (('A' as i8) as i32))
+    );
     const _: () = assert!(true, "");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

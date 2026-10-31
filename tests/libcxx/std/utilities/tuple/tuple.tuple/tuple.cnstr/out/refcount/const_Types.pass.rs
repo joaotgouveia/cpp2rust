@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct NoValueCtor {
     #[offset(0)]
-    pub id: (),
+    pub id: i32,
 }
 impl NoValueCtor {
     pub fn new() -> Self {
@@ -40,7 +40,7 @@ impl Default for NoValueCtor {
     }
 }
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(1)]
@@ -68,7 +68,7 @@ impl Default for NoValueCtorEmpty {
 #[byte_size(1)]
 pub struct ImplicitCopy {}
 impl ImplicitCopy {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         Self {}
     }
     pub fn copy_from(_a0: Ptr<ImplicitCopy>) -> Self {
@@ -82,15 +82,15 @@ impl Clone for ImplicitCopy {
     }
 }
 pub fn testImplicitCopy1_1() -> () {
-    let mut i: ImplicitCopy = ImplicitCopy::new({ 42_() });
+    let mut i: ImplicitCopy = ImplicitCopy::new({ 42 });
     return unimplemented!();
 }
 pub fn testImplicitCopy2_2() -> () {
-    let mut i: ImplicitCopy = ImplicitCopy::new({ 42_() });
+    let mut i: ImplicitCopy = ImplicitCopy::new({ 42 });
     return unimplemented!();
 }
 pub fn testImplicitCopy3_3() -> () {
-    let i: Value<ImplicitCopy> = Rc::new(RefCell::new(ImplicitCopy::new({ 42_() })));
+    let i: Value<ImplicitCopy> = Rc::new(RefCell::new(ImplicitCopy::new({ 42 })));
     return (*i.borrow_mut()).clone();
 }
 pub fn main() {
@@ -112,14 +112,14 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!().read()).is_null());
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -131,8 +131,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!((unimplemented!().read()).is_null());
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -141,29 +141,34 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!((unimplemented!().read()).is_null());
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!((unimplemented!().read()).is_null());
+        assert!(Ptr::<i8>::from_string_literal(b"text").with_c_str(|__s| {
+            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s
+        }));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 1));
+        assert!((unimplemented!().with(|__s| __s.id) == 1));
+        assert!(((unimplemented!().read()) == 2));
+        assert!(((unimplemented!().read()) == 3));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 1));
+        assert!(((unimplemented!().read()) == 2));
+        assert!(((unimplemented!().read()) == 3));
     }
-    return 0_();
+    return 0;
 }
 pub trait ImplicitCopyImpl {
     fn copy_assign(&self, _a0: Ptr<ImplicitCopy>) -> Ptr<ImplicitCopy>;

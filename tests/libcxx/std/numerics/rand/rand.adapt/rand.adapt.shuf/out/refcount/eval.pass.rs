@@ -10,22 +10,22 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct rand1_unsigned_long_long__0__18446744073709551615_ {
     #[offset(0)]
-    x_: (),
+    x_: u64,
 }
 impl rand1_unsigned_long_long__0__18446744073709551615_ {
-    pub fn min() -> () {
-        return 0_();
+    pub fn min() -> u64 {
+        return 0_u64;
     }
-    pub fn max() -> () {
-        return 18446744073709551615_();
+    pub fn max() -> u64 {
+        return 18446744073709551615_u64;
     }
-    pub fn new(sd: Option<()>) -> Self {
-        let mut sd: () = sd.unwrap_or_else(|| 0_());
+    pub fn new(sd: Option<u64>) -> Self {
+        let mut sd: u64 = sd.unwrap_or_else(|| 0_u64);
         let __this: Value<rand1_unsigned_long_long__0__18446744073709551615_> =
             Rc::new(RefCell::new(Self { x_: sd }));
         let this: Ptr<rand1_unsigned_long_long__0__18446744073709551615_> = __this.as_pointer();
-        if (this.with(|__s| __s.x_) > 18446744073709551615_()) {
-            field!(this, x_).write(18446744073709551615_());
+        if (this.with(|__s| __s.x_) > 18446744073709551615_u64) {
+            field!(this, x_).write(18446744073709551615_u64);
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -37,17 +37,17 @@ impl Default for rand1_unsigned_long_long__0__18446744073709551615_ {
 }
 pub fn test1_0() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 152607844_()));
 }
 pub fn test2_1() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 501_()));
 }
 pub fn test3_2() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 500_()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -68,24 +68,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_0() });
     ({ test2_1() });
     ({ test3_2() });
-    return 0_();
+    return 0;
 }
 pub trait rand1_unsigned_long_long__0__18446744073709551615_Impl {
-    fn operator_call(&self) -> ();
+    fn operator_call(&self) -> u64;
 }
 impl rand1_unsigned_long_long__0__18446744073709551615_Impl
     for Ptr<rand1_unsigned_long_long__0__18446744073709551615_>
 {
-    fn operator_call(&self) -> () {
-        let r: Value<()> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
-        if ((*self).with(|__s| __s.x_) < 18446744073709551615_()) {
+    fn operator_call(&self) -> u64 {
+        let r: Value<u64> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
+        if ((*self).with(|__s| __s.x_) < 18446744073709551615_u64) {
             field!((*self), x_).with_mut(|__v| __v.prefix_inc());
         } else {
-            field!((*self), x_).write(0_());
+            field!((*self), x_).write(0_u64);
         }
         return (*r.borrow());
     }

@@ -8,39 +8,39 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut a: Ptr<()> = (z.as_pointer()).reinterpret_cast::<()>();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    elem!(a, 0_()).write(5_());
-    elem!(a, 1_()).write(6_());
-    unimplemented!();
-    unimplemented!();
+    let mut a: Ptr<f32> = (z.as_pointer()).reinterpret_cast::<f32>();
+    assert!((0_f32 == unimplemented!()));
+    assert!((0_f32 == unimplemented!()));
+    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
+    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    elem!(a, 0).write(5_f32);
+    elem!(a, 1).write(6_f32);
+    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
+    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
 }
 pub fn test_1() {
     let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut a: Ptr<()> = (z.as_pointer()).reinterpret_cast::<()>();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    elem!(a, 0_()).write(5_());
-    elem!(a, 1_()).write(6_());
-    unimplemented!();
-    unimplemented!();
+    let mut a: Ptr<f64> = (z.as_pointer()).reinterpret_cast::<f64>();
+    assert!((0_f64 == unimplemented!()));
+    assert!((0_f64 == unimplemented!()));
+    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
+    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    elem!(a, 0).write(5_f64);
+    elem!(a, 1).write(6_f64);
+    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
+    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
 }
 pub fn test_2() {
     let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut a: Ptr<()> = (z.as_pointer()).reinterpret_cast::<()>();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    elem!(a, 0_()).write(5_());
-    elem!(a, 1_()).write(6_());
-    unimplemented!();
-    unimplemented!();
+    let mut a: Ptr<f64> = (z.as_pointer()).reinterpret_cast::<f64>();
+    assert!((0_f64 == unimplemented!()));
+    assert!((0_f64 == unimplemented!()));
+    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
+    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
+    elem!(a, 0).write(5_f64);
+    elem!(a, 1).write(6_f64);
+    assert!(({ (elem!(a, 0).read()) } == { unimplemented!() }));
+    assert!(({ (elem!(a, 1).read()) } == { unimplemented!() }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -61,10 +61,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

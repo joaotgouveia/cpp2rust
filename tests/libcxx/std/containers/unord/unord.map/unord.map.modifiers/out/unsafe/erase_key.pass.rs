@@ -10,54 +10,57 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_3)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_0: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_1: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_2: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_3: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__
 {
-    ptr_: *mut (),
+    ptr_: *mut (i32, Vec<libc::c_char>),
 }
 impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
-pub unsafe fn only_deletions_4(whole: *const (), part: *const ()) -> () {
+pub unsafe fn only_deletions_4(whole: *const (), part: *const ()) -> bool {
     let mut w: () = unimplemented!();
     let mut p: () = unimplemented!();
-    'loop_: while (!(unimplemented!())) && (!(unimplemented!())) {
+    'loop_: while (w != unimplemented!()) && (p != unimplemented!()) {
         if unimplemented!() {
-            unimplemented!();
+            p.iter_post_inc();
         }
-        unimplemented!();
+        w.iter_post_inc();
     }
-    return unimplemented!();
+    return p == unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -74,118 +77,426 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut a: [(); 6] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut a: [(i32, Vec<libc::c_char>); 6] = [
+            (
+                1,
+                std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                2,
+                std::slice::from_raw_parts(
+                    c"two".as_ptr(),
+                    libcc2rs::c_str_len(c"two".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                3,
+                std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                4,
+                std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                1,
+                std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                2,
+                std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
         ];
         let mut c: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (4_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"two".as_ptr(),
+                    libcc2rs::c_str_len(c"two".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((unimplemented!()) == (2_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (2_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((unimplemented!()) == (1_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (1_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (0_())));
     }
     {
-        let mut a: [(); 6] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut a: [(i32, Vec<libc::c_char>); 6] = [
+            (
+                1,
+                std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                2,
+                std::slice::from_raw_parts(
+                    c"two".as_ptr(),
+                    libcc2rs::c_str_len(c"two".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                3,
+                std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                4,
+                std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                1,
+                std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
+            (
+                2,
+                std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1,
+                )
+                .to_vec(),
+            ),
         ];
         let mut c: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (4_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"two".as_ptr(),
+                    libcc2rs::c_str_len(c"two".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"four".as_ptr(),
+                    libcc2rs::c_str_len(c"four".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((unimplemented!()) == (2_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (2_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"one".as_ptr(),
+                    libcc2rs::c_str_len(c"one".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((unimplemented!()) == (1_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (1_())));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"three".as_ptr(),
+                    libcc2rs::c_str_len(c"three".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (0_())));
     }
     {
         let mut m: () = unimplemented!();
         let mut m2: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (10_())) {
-            (*unimplemented!()) = i;
-            (*unimplemented!()) = i;
+        let mut i: i32 = 0;
+        'loop_: while ((i) < (10)) {
+            (*unimplemented!()) = (i as ());
+            (*unimplemented!()) = (i as ());
             i.prefix_inc();
         }
         let mut i: () = unimplemented!();
-        let mut ctr: () = 0_();
-        'loop_: while !(unimplemented!()) {
-            if (((ctr.postfix_inc()) % (2_())) == (0_())) {
+        let mut ctr: i32 = 0;
+        'loop_: while i != unimplemented!() {
+            if (((ctr.postfix_inc()) % (2)) == (0)) {
                 unimplemented!();
             } else {
-                unimplemented!();
+                i.iter_inc();
             }
         }
-        unimplemented!();
+        assert!((unsafe { only_deletions_4(&m, &m2,) }));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);

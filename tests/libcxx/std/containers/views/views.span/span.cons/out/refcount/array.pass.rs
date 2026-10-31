@@ -7,23 +7,32 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn checkCV_0() {
-    let mut arr: [(); 3] = [1_(), 2_(), 3_()];
-    let mut carr: [(); 3] = [4_(), 5_(), 6_()];
-    let mut varr: [(); 3] = [7_(), 8_(), 9_()];
-    let mut cvarr: [(); 3] = [1_(), 3_(), 5_()];
+    let mut arr: [i32; 3] = [1, 2, 3];
+    let mut carr: [i32; 3] = [4, 5, 6];
+    let mut varr: [i32; 3] = [7, 8, 9];
+    let mut cvarr: [i32; 3] = [1, 3, 5];
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            ((((unimplemented!()).wrapping_add(unimplemented!())).wrapping_add(unimplemented!()))
+                .wrapping_add(unimplemented!())
+                == 12_())
+        );
     }
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            ((((unimplemented!() as ()).wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ()))
+                == 12_())
+        );
     }
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -32,7 +41,14 @@ pub fn checkCV_0() {
         let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            ((((((unimplemented!()).wrapping_add(unimplemented!()))
+                .wrapping_add(unimplemented!()))
+            .wrapping_add(unimplemented!()))
+            .wrapping_add(unimplemented!()))
+            .wrapping_add(unimplemented!())
+                == 18_())
+        );
     }
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -41,12 +57,18 @@ pub fn checkCV_0() {
         let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            ((((((unimplemented!() as ()).wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ()))
+                == 18_())
+        );
     }
 }
-pub fn testSpan_1() -> () {
-    let val: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+pub fn testSpan_1() -> bool {
+    let val: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -55,19 +77,18 @@ pub fn testSpan_1() -> () {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (val.as_pointer() as Ptr::<i32>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr::<i32>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr::<i32>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr::<i32>)) && (unimplemented!() == 2_()));
     let s5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 2_()));
+    assert!((unimplemented!() == 2_()));
     return true;
 }
-pub fn testSpan_2() -> () {
-    let val: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+pub fn testSpan_2() -> bool {
+    let val: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([0_f64, 0_f64])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -76,17 +97,17 @@ pub fn testSpan_2() -> () {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (val.as_pointer() as Ptr::<f64>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr::<f64>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr::<f64>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr::<f64>)) && (unimplemented!() == 2_()));
     let s5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 2_()));
+    assert!((unimplemented!() == 2_()));
     return true;
 }
-pub fn testSpan_3() -> () {
+pub fn testSpan_3() -> bool {
     let val: Value<Box<[A]>> = Rc::new(RefCell::new(Box::new([<A>::default(), <A>::default()])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -96,19 +117,21 @@ pub fn testSpan_3() -> () {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (val.as_pointer() as Ptr<A>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr<A>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr<A>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr<A>)) && (unimplemented!() == 2_()));
     let s5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 2_()));
+    assert!((unimplemented!() == 2_()));
     return true;
 }
-pub fn testSpan_4() -> () {
-    let val: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([unimplemented!(), unimplemented!()])));
+pub fn testSpan_4() -> bool {
+    let val: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+        vec![i8::default()],
+        vec![i8::default()],
+    ])));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -117,14 +140,14 @@ pub fn testSpan_4() -> () {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (val.as_pointer() as Ptr<Vec<i8>>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr<Vec<i8>>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr<Vec<i8>>)) && (unimplemented!() == 2_()));
+    assert!((unimplemented!() == (val.as_pointer() as Ptr<Vec<i8>>)) && (unimplemented!() == 2_()));
     let s5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 2_()));
+    assert!((unimplemented!() == 2_()));
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -149,7 +172,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ testSpan_1() });
     ({ testSpan_2() });
     ({ testSpan_3() });
@@ -234,6 +257,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "!std::is_constructible_v<std::span<volatile int, 3>, const volatile int (&)[3]>"
         );;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

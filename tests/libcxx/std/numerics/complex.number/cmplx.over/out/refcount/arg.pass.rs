@@ -163,92 +163,92 @@ thread_local!(
         unimplemented!(),
     ])));
 );
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_zero: anon_1 = 0;
 pub const anon_1_non_zero: anon_1 = 1;
 pub const anon_1_inf: anon_1 = 2;
 pub const anon_1_NaN: anon_1 = 3;
 pub const anon_1_non_zero_nan: anon_1 = 4;
-pub fn classify_2(mut x: ()) -> () {
-    if (x == 0_()) {
-        return (anon_1_zero as ());
+pub fn classify_2(mut x: f64) -> i32 {
+    if (x == 0_f64) {
+        return (anon_1_zero as i32);
     }
     if unimplemented!() {
-        return (anon_1_inf as ());
+        return (anon_1_inf as i32);
     }
     if unimplemented!() {
-        return (anon_1_NaN as ());
+        return (anon_1_NaN as i32);
     }
-    return (anon_1_non_zero as ());
+    return (anon_1_non_zero as i32);
 }
-pub fn is_about_3(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_3(mut x: f32, mut y: f32) {
+    assert!(((unimplemented!() as f64) < 1e-06_f64));
 }
-pub fn is_about_4(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_4(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn is_about_5(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_5(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn test_6(mut x: (), _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+pub fn test_6(mut x: i32, _a1: Option<AnyPtr>) {
+    let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
-pub fn test_7(mut x: (), _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+pub fn test_7(mut x: u32, _a1: Option<AnyPtr>) {
+    let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
-pub fn test_8(mut x: (), _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+pub fn test_8(mut x: i64, _a1: Option<AnyPtr>) {
+    let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), double>::value)");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
-pub fn test_9(mut x: (), _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+pub fn test_9(mut x: f32, _a1: Option<AnyPtr>) {
+    let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
-pub fn test_10(mut x: (), _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+pub fn test_10(mut x: f64, _a1: Option<AnyPtr>) {
+    let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
-pub fn test_11(mut x: (), _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
+pub fn test_11(mut x: f64, _a1: Option<AnyPtr>) {
+    let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
     const _: () = assert!(true, "(std::is_same<decltype(std::arg(x)), T>::value)");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn test_12() {
-    ({ test_9(0_(), None) });
-    ({ test_9(1_(), None) });
-    ({ test_9(10_(), None) });
+    ({ test_9(0_f32, None) });
+    ({ test_9(1_f32, None) });
+    ({ test_9(10_f32, None) });
 }
 pub fn test_13() {
-    ({ test_10(0_(), None) });
-    ({ test_10(1_(), None) });
-    ({ test_10(10_(), None) });
+    ({ test_10(0_f64, None) });
+    ({ test_10(1_f64, None) });
+    ({ test_10(10_f64, None) });
 }
 pub fn test_14() {
-    ({ test_11(0_(), None) });
-    ({ test_11(1_(), None) });
-    ({ test_11(10_(), None) });
+    ({ test_11(0_f64, None) });
+    ({ test_11(1_f64, None) });
+    ({ test_11(10_f64, None) });
 }
 pub fn test_15() {
-    ({ test_6(0_(), None) });
-    ({ test_6(1_(), None) });
-    ({ test_6(10_(), None) });
+    ({ test_6(0, None) });
+    ({ test_6(1, None) });
+    ({ test_6(10, None) });
 }
 pub fn test_16() {
-    ({ test_7(0_(), None) });
-    ({ test_7(1_(), None) });
-    ({ test_7(10_(), None) });
+    ({ test_7(0_u32, None) });
+    ({ test_7(1_u32, None) });
+    ({ test_7(10_u32, None) });
 }
 pub fn test_17() {
-    ({ test_8(0_(), None) });
-    ({ test_8(1_(), None) });
-    ({ test_8(10_(), None) });
+    ({ test_8(0_i64, None) });
+    ({ test_8(1_i64, None) });
+    ({ test_8(10_i64, None) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -269,14 +269,14 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_12() });
     ({ test_13() });
     ({ test_14() });
     ({ test_15() });
     ({ test_16() });
     ({ test_17() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = testcases_0.with(|_| ());

@@ -10,37 +10,37 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -48,31 +48,39 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-pub fn rehash_postcondition_4(c: Ptr<()>, mut n: ()) {
-    unimplemented!();
+pub fn rehash_postcondition_4(c: Ptr<()>, mut n: usize) {
+    assert!(
+        ({ (unimplemented!() as f32) } >= {
+            ({ (unimplemented!() as f32) } / { unimplemented!() })
+        }) && ({ (unimplemented!() as usize) } >= { n })
+    );
 }
-pub fn rehash_postcondition_5(c: Ptr<()>, mut n: ()) {
-    unimplemented!();
+pub fn rehash_postcondition_5(c: Ptr<()>, mut n: usize) {
+    assert!(
+        ({ (unimplemented!() as f32) } >= {
+            ({ (unimplemented!() as f32) } / { unimplemented!() })
+        }) && ({ (unimplemented!() as usize) } >= { n })
+    );
 }
 pub fn test_6(c: Ptr<()>) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 6_()));
+    assert!((unimplemented!() == 2_()));
+    assert!((unimplemented!() == 2_()));
+    assert!((unimplemented!() == 1_()));
+    assert!((unimplemented!() == 1_()));
 }
 pub fn test_7(c: Ptr<()>) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 6_()));
+    assert!((unimplemented!() == 2_()));
+    assert!((unimplemented!() == 2_()));
+    assert!((unimplemented!() == 1_()));
+    assert!((unimplemented!() == 1_()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -93,70 +101,68 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 1_(), 2_()])));
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 1, 2])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_6(c.as_pointer()) });
+        assert!((unimplemented!() >= 7_()));
         unimplemented!();
-        unimplemented!();
-        ({ rehash_postcondition_4(c.as_pointer(), 3_()) });
+        ({ rehash_postcondition_4(c.as_pointer(), 3_usize) });
         const _: () = assert!(true, "");;
         ({ test_6(c.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        ({ rehash_postcondition_4(c.as_pointer(), 3_()) });
+        ({ rehash_postcondition_4(c.as_pointer(), 3_usize) });
         const _: () = assert!(true, "");;
         ({ test_6(c.as_pointer()) });
         unimplemented!();
-        ({ rehash_postcondition_4(c.as_pointer(), 31_()) });
+        ({ rehash_postcondition_4(c.as_pointer(), 31_usize) });
         const _: () = assert!(true, "");;
         ({ test_6(c.as_pointer()) });
     }
     {
-        let a: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 1_(), 2_()])));
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 1, 2])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ test_7(c.as_pointer()) });
+        assert!((unimplemented!() >= 7_()));
         unimplemented!();
-        unimplemented!();
-        ({ rehash_postcondition_5(c.as_pointer(), 3_()) });
+        ({ rehash_postcondition_5(c.as_pointer(), 3_usize) });
         const _: () = assert!(true, "");;
         ({ test_7(c.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        ({ rehash_postcondition_5(c.as_pointer(), 3_()) });
+        ({ rehash_postcondition_5(c.as_pointer(), 3_usize) });
         const _: () = assert!(true, "");;
         ({ test_7(c.as_pointer()) });
         unimplemented!();
-        ({ rehash_postcondition_5(c.as_pointer(), 31_()) });
+        ({ rehash_postcondition_5(c.as_pointer(), 31_usize) });
         const _: () = assert!(true, "");;
         ({ test_7(c.as_pointer()) });
     }
-    return 0_();
+    return 0;
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!()
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
@@ -164,7 +170,7 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -173,29 +179,35 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_add(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_sub(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_sub(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
 }
@@ -204,7 +216,7 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
 {
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }

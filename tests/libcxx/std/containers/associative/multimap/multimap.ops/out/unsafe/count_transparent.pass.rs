@@ -10,20 +10,20 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Comp {}
 impl Comp {
-    pub unsafe fn operator_call_1(&self, lhs: *const (), rhs: *const ()) -> () {
-        return unimplemented!();
+    pub unsafe fn operator_call_1(&self, lhs: *const (i32, i32), rhs: *const (i32, i32)) -> bool {
+        return unimplemented!() == std::cmp::Ordering::Less;
     }
-    pub unsafe fn operator_call_2(&self, lhs: *const (), mut rhs: ()) -> () {
-        return (((*lhs).first) < (rhs));
+    pub unsafe fn operator_call_2(&self, lhs: *const (i32, i32), mut rhs: i32) -> bool {
+        return (((*lhs).0) < (rhs));
     }
-    pub unsafe fn operator_call_3(&self, mut lhs: (), rhs: *const ()) -> () {
-        return ((lhs) < ((*rhs).first));
+    pub unsafe fn operator_call_3(&self, mut lhs: i32, rhs: *const (i32, i32)) -> bool {
+        return ((lhs) < ((*rhs).0));
     }
 }
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     let mut s: () = unimplemented!();
-    let mut cnt: () = unimplemented!();
-    unimplemented!();
+    let mut cnt: usize = unimplemented!();
+    assert!(((cnt) == (3_usize)));
     return true;
 }
 pub fn main() {
@@ -41,8 +41,8 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

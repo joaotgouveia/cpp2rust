@@ -6,15 +6,15 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_constexpr_0() -> () {
-    let mut v: () = 12_();
-    if (12_() != unimplemented!()) || (v != 23_()) {
+pub fn test_constexpr_0() -> bool {
+    let mut v: i32 = 12;
+    if (12 != unimplemented!()) || (v != 23) {
         return false;
     }
-    if (23_() != unimplemented!()) || (v != 67_()) {
+    if (23 != unimplemented!()) || (v != 67) {
         return false;
     }
-    if (67_() != unimplemented!()) || (v != 0_()) {
+    if (67 != unimplemented!()) || (v != 0) {
         return false;
     }
     return true;
@@ -31,9 +31,9 @@ impl TestNoexcept_true__false_ {}
 #[byte_size(1)]
 pub struct TestNoexcept_false__true_ {}
 impl TestNoexcept_false__true_ {}
-pub fn test_noexcept_1() -> () {
+pub fn test_noexcept_1() -> bool {
     {
-        let mut x: () = 42_();
+        let mut x: i32 = 42;
         const _: () = assert!(true, "");;
     }
     {
@@ -70,39 +70,47 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut v: () = 12_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut v: i32 = 12;
+        assert!((unimplemented!() == 12));
+        assert!((v == 23));
+        assert!((unimplemented!() == 23));
+        assert!((v == 67));
+        assert!(((unimplemented!()) == 67));
+        assert!((v == 0));
     }
     {
-        let mut b: () = false;
-        unimplemented!();
-        unimplemented!();
+        let mut b: bool = false;
+        assert!(!(unimplemented!()));
+        assert!(b);
     }
     {
-        let mut s1: () = unimplemented!();
-        let mut s2: () = unimplemented!();
-        let mut s3: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut s1: Vec<i8> = {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"Hi Mom!").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        let mut s2: Vec<i8> = {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"Yo Dad!").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        let s3: Value<Vec<i8>> = Rc::new(RefCell::new((s1).clone()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        s3.as_pointer().write((s2).clone());
+        assert!(unimplemented!());
+        assert!((((*s3.borrow()).len() - 1) == 0_usize));
+        s3.as_pointer().write((s2).clone());
+        assert!(unimplemented!());
+        assert!((((*s3.borrow()).len() - 1) == 0_usize));
     }
     const _: () = assert!(true, "test_constexpr()");;
     const _: () = assert!(true, "test_noexcept()");;
-    return 0_();
+    return 0;
 }
 pub trait TestNoexcept_false__true_Impl {
     fn copy_assign(&self, _a0: Ptr<TestNoexcept_false__true_>) -> Ptr<TestNoexcept_false__true_> {

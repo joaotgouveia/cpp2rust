@@ -12,6 +12,14 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppAdvance for S {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_8();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_10();
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

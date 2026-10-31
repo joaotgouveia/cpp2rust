@@ -7,16 +7,17 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct S {
-    pub i_: (),
+    pub i_: i32,
 }
 impl S {
-    pub unsafe fn new(mut i: ()) -> Self {
+    pub unsafe fn new(mut i: i32) -> Self {
         let mut this = Self { i_: i };
         this
     }
-    pub unsafe fn operator_lt(&self, mut lhs: S) -> () {
+    pub unsafe fn operator_lt(&self, mut lhs: S) -> bool {
         return ((lhs.i_) < (self.i_));
     }
 }
@@ -44,100 +45,100 @@ impl std::cmp::PartialEq for S {
     }
 }
 impl std::cmp::Eq for S {}
-pub unsafe fn test_0(container: *mut ()) {
+pub unsafe fn test_0(container: *mut UnsafeMap<*mut S, (*mut S, *mut ::libc::c_void)>) {
     {
-        let c: *mut () = container;
-        let mut v: S = S::new({ 1_() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let c: *mut UnsafeMap<*mut S, (*mut S, *mut ::libc::c_void)> = container;
+        let mut v: S = S::new({ 1 });
+        assert!((*c).find(&&mut v) == (*c).end());
+        assert!(((unimplemented!()) == (0_usize)));
+        assert!(unimplemented!() == (*c).end());
+        assert!(unimplemented!() == (*c).end());
+        assert!(unimplemented!().0 == (*c).end());
+        assert!(unimplemented!().1 == (*c).end());
+        assert!(!(unimplemented!()));
     }
     {
-        let c: *const () = container;
-        let mut v: S = S::new({ 1_() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let c: *const UnsafeMap<*mut S, (*mut S, *mut ::libc::c_void)> = container;
+        let mut v: S = S::new({ 1 });
+        assert!((*c).find(&&mut v) == (*c).end());
+        assert!(((unimplemented!()) == (0_usize)));
+        assert!(unimplemented!() == (*c).end());
+        assert!(unimplemented!() == (*c).end());
+        assert!(unimplemented!().0 == (*c).end());
+        assert!(unimplemented!().1 == (*c).end());
+        assert!(!(unimplemented!()));
     }
 }
 pub unsafe fn test_1(container: *mut ()) {
     {
         let c: *mut () = container;
-        let mut v: S = S::new({ 1_() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut v: S = S::new({ 1 });
+        assert!(unimplemented!() == unimplemented!());
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!().0 == unimplemented!());
+        assert!(unimplemented!().1 == unimplemented!());
+        assert!(!(unimplemented!()));
     }
     {
         let c: *const () = container;
-        let mut v: S = S::new({ 1_() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut v: S = S::new({ 1 });
+        assert!(unimplemented!() == unimplemented!());
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!().0 == unimplemented!());
+        assert!(unimplemented!().1 == unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub unsafe fn test_2(container: *mut ()) {
     {
         let c: *mut () = container;
-        let mut v: S = S::new({ 1_() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut v: S = S::new({ 1 });
+        assert!(unimplemented!() == unimplemented!());
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!().0 == unimplemented!());
+        assert!(unimplemented!().1 == unimplemented!());
+        assert!(!(unimplemented!()));
     }
     {
         let c: *const () = container;
-        let mut v: S = S::new({ 1_() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut v: S = S::new({ 1 });
+        assert!(unimplemented!() == unimplemented!());
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!().0 == unimplemented!());
+        assert!(unimplemented!().1 == unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub unsafe fn test_3(container: *mut ()) {
     {
         let c: *mut () = container;
-        let mut v: S = S::new({ 1_() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut v: S = S::new({ 1 });
+        assert!(unimplemented!() == unimplemented!());
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!().0 == unimplemented!());
+        assert!(unimplemented!().1 == unimplemented!());
+        assert!(!(unimplemented!()));
     }
     {
         let c: *const () = container;
-        let mut v: S = S::new({ 1_() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut v: S = S::new({ 1 });
+        assert!(unimplemented!() == unimplemented!());
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!() == unimplemented!());
+        assert!(unimplemented!().0 == unimplemented!());
+        assert!(unimplemented!().1 == unimplemented!());
+        assert!(!(unimplemented!()));
     }
 }
 pub fn main() {
@@ -155,9 +156,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut m: () = unimplemented!();
+        let mut m: UnsafeMap<*mut S, (*mut S, *mut ::libc::c_void)> = UnsafeMap::new();
         (unsafe { test_0(&mut m) });
     }
     {
@@ -172,6 +173,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut s: () = unimplemented!();
         (unsafe { test_3(&mut s) });
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

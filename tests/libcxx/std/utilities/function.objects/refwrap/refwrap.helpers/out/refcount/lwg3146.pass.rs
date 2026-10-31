@@ -6,50 +6,50 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_reference_wrapper_std_reference_wrapper_int____std_reference_wrapper_std_reference_wrapper_int___
 {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_reference_wrapper_const_std_reference_wrapper_int____std_reference_wrapper_const_std_reference_wrapper_int___
 {}
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     {
-        let mut i: () = 0_();
-        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rrj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
+        let mut rri: Ptr<Ptr<i32>> = (*ri.borrow()).clone();
+        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*rrj.borrow()) == (ri.as_pointer())));
     }
     {
-        let mut i: () = 0_();
-        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rrj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
+        let mut rri: Ptr<Ptr<i32>> = (*ri.borrow()).clone();
+        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*rrj.borrow()) == (ri.as_pointer())));
     }
     {
-        let mut i: () = 0_();
-        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rrj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
+        let mut rri: Ptr<Ptr<i32>> = (*ri.borrow()).clone();
+        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*rrj.borrow()) == (ri.as_pointer())));
     }
     {
-        let mut i: () = 0_();
-        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rrj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
+        let mut rri: Ptr<Ptr<i32>> = (*ri.borrow()).clone();
+        let rrj: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*rrj.borrow()) == (ri.as_pointer())));
     }
     return true;
 }
@@ -72,9 +72,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

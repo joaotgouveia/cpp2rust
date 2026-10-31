@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn __asan_default_options_0() -> Ptr<()> {
-    return Ptr::<()>::from_string_literal(
+pub fn __asan_default_options_0() -> Ptr<i8> {
+    return Ptr::<i8>::from_string_literal(
         b"check_initialization_order=true:strict_init_order=true",
     );
 }
@@ -17,7 +17,13 @@ pub struct Global {}
 impl Global {
     pub fn new() -> Self {
         let __this: Global = Self {};
-        unimplemented!();
+        {
+            let __s = libcc2rs::cout();
+            let _ = Ptr::<i8>::from_string_literal(b"Hello!").with_c_str(|__cs| {
+                __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+            });
+            __s
+        };
         __this
     }
 }
@@ -49,8 +55,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = global_1.with(|_| ());

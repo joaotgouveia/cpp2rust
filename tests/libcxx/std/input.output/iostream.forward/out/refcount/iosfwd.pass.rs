@@ -39,11 +39,11 @@ pub fn test_7() {
     (&(p));
 }
 pub fn test_8() {
-    let mut p: Ptr<()> = Ptr::<()>::null();
+    let mut p: Ptr<::std::fs::File> = Ptr::<::std::fs::File>::null();
     (&(p));
 }
 pub fn test_9() {
-    let mut p: Ptr<()> = Ptr::<()>::null();
+    let mut p: Ptr<::std::fs::File> = Ptr::<::std::fs::File>::null();
     (&(p));
 }
 pub fn test_10() {
@@ -157,7 +157,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
@@ -219,6 +219,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_32() });
     ({ test_32() });
     ({ test_32() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

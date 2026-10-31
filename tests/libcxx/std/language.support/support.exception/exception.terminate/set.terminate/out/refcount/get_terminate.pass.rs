@@ -27,11 +27,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     unimplemented!();
+    assert!((unimplemented!() == FnPtr::<fn()>::new(f1_0)));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((unimplemented!() == FnPtr::<fn()>::new(f2_1)));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

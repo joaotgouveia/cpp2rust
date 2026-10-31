@@ -15,8 +15,8 @@ pub unsafe fn test_0() {
     }
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_1() {
@@ -28,8 +28,8 @@ pub unsafe fn test_1() {
     }
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_2() {
@@ -41,8 +41,8 @@ pub unsafe fn test_2() {
     }
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_3() {
@@ -54,8 +54,8 @@ pub unsafe fn test_3() {
     }
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_4() {
@@ -67,8 +67,8 @@ pub unsafe fn test_4() {
     }
     {
         let mut sv1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_())));
+        assert!(unimplemented!());
     }
 }
 pub fn main() {
@@ -86,12 +86,12 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     (unsafe { test_1() });
     (unsafe { test_2() });
     (unsafe { test_3() });
     (unsafe { test_4() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

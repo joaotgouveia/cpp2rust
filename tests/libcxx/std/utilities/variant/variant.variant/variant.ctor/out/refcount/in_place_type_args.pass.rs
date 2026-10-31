@@ -6,41 +6,41 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: ()) -> () {
+pub fn test_convertible_imp_0(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_1(mut _a0: ()) -> () {
+pub fn test_convertible_imp_1(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_2(mut _a0: ()) -> () {
+pub fn test_convertible_imp_2(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_3(mut _a0: ()) -> () {
+pub fn test_convertible_imp_3(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_4(mut _a0: ()) -> () {
+pub fn test_convertible_imp_4(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_5(mut _a0: ()) -> () {
+pub fn test_convertible_imp_5(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_6() -> () {
-    return ({ test_convertible_imp_0(0_()) });
+pub fn test_convertible_6() -> bool {
+    return ({ test_convertible_imp_0(0_i64) });
 }
-pub fn test_convertible_7() -> () {
-    return ({ test_convertible_imp_1(0_()) });
+pub fn test_convertible_7() -> bool {
+    return ({ test_convertible_imp_1(0_i64) });
 }
-pub fn test_convertible_8() -> () {
-    return ({ test_convertible_imp_2(0_()) });
+pub fn test_convertible_8() -> bool {
+    return ({ test_convertible_imp_2(0_i64) });
 }
-pub fn test_convertible_9() -> () {
-    return ({ test_convertible_imp_3(0_()) });
+pub fn test_convertible_9() -> bool {
+    return ({ test_convertible_imp_3(0_i64) });
 }
-pub fn test_convertible_10() -> () {
-    return ({ test_convertible_imp_4(0_()) });
+pub fn test_convertible_10() -> bool {
+    return ({ test_convertible_imp_4(0_i64) });
 }
-pub fn test_convertible_11() -> () {
-    return ({ test_convertible_imp_5(0_()) });
+pub fn test_convertible_11() -> bool {
+    return ({ test_convertible_imp_5(0_i64) });
 }
 pub fn test_ctor_sfinae_12() {
     {
@@ -121,22 +121,22 @@ pub fn test_ctor_basic_13() {
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let mut x: () = 42_();
+        let mut x: i32 = 42;
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
+        assert!(((unimplemented!().read()) == x));
     }
     {
-        let mut x: () = 42_();
+        let mut x: i32 = 42;
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 1_usize));
+        assert!(((unimplemented!().read()) == x));
     }
     {
-        let mut x: () = 42_();
+        let mut x: i32 = 42;
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 2_usize));
+        assert!(((unimplemented!().read()) == x));
     }
 }
 pub fn main() {
@@ -158,9 +158,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_ctor_basic_13() });
     ({ test_ctor_sfinae_12() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

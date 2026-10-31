@@ -6,13 +6,13 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_back_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_back_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -37,19 +37,19 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<i8> = vec![i8::default()];
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let mut v: () = unimplemented!();
+        let mut v: Vec<i32> = Vec::new();
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new((*it.borrow()).clone()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

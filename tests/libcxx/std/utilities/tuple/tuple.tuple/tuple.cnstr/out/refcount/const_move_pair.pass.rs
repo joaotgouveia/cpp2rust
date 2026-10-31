@@ -10,57 +10,57 @@ use std::rc::{Rc, Weak};
 #[byte_size(40)]
 pub struct test_allocator_statistics {
     #[offset(0)]
-    pub time_to_throw: (),
+    pub time_to_throw: i32,
     #[offset(4)]
-    pub throw_after: (),
+    pub throw_after: i32,
     #[offset(8)]
-    pub count: (),
+    pub count: i32,
     #[offset(12)]
-    pub alloc_count: (),
+    pub alloc_count: i32,
     #[offset(16)]
-    pub allocated_size: (),
+    pub allocated_size: i32,
     #[offset(20)]
-    pub construct_count: (),
+    pub construct_count: i32,
     #[offset(24)]
-    pub destroy_count: (),
+    pub destroy_count: i32,
     #[offset(28)]
-    pub copied: (),
+    pub copied: i32,
     #[offset(32)]
-    pub moved: (),
+    pub moved: i32,
     #[offset(36)]
-    pub converted: (),
+    pub converted: i32,
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
             test_allocator_statistics {
-                time_to_throw: 0_(),
-                throw_after: 2147483647_(),
-                count: 0_(),
-                alloc_count: 0_(),
-                allocated_size: 0_(),
-                construct_count: 0_(),
-                destroy_count: 0_(),
-                copied: 0_(),
-                moved: 0_(),
-                converted: 0_(),
+                time_to_throw: 0,
+                throw_after: 2147483647,
+                count: 0,
+                alloc_count: 0,
+                allocated_size: 0,
+                construct_count: 0,
+                destroy_count: 0,
+                copied: 0,
+                moved: 0,
+                converted: 0,
             }
         }
     }
 }
 thread_local!(
-    pub static destructed_value_0: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_0: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_1: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_1: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
@@ -71,9 +71,9 @@ pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>)
 #[byte_size(16)]
 pub struct test_allocator_void_ {
     #[offset(0)]
-    data_: (),
+    data_: i32,
     #[offset(4)]
-    id_: (),
+    id_: i32,
     #[offset(8)]
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
@@ -81,33 +81,33 @@ pub struct test_allocator_void_ {
 impl test_allocator_void_ {
     pub fn new_1(mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
-            data_: 0_(),
-            id_: 0_(),
+            data_: 0,
+            id_: 0,
             stats_: (stats).clone(),
         }
     }
-    pub fn new_2(mut data: ()) -> Self {
+    pub fn new_2(mut data: i32) -> Self {
         Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn new_3(mut data: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
+    pub fn new_3(mut data: i32, mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: (stats).clone(),
         }
     }
-    pub fn new_4(mut data: (), mut id: ()) -> Self {
+    pub fn new_4(mut data: i32, mut id: i32) -> Self {
         Self {
             data_: data,
             id_: id,
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn new_5(mut data: (), mut id: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
+    pub fn new_5(mut data: i32, mut id: i32, mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
             data_: data,
             id_: id,
@@ -141,8 +141,8 @@ impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
             test_allocator_void_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -151,7 +151,8 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
-#[derive(Record, ByteRepr, FnPtrArg, CopyAssign, MoveAssign, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
 pub struct Tag_X {}
 impl Tag_X {
@@ -165,16 +166,17 @@ impl Tag_X {
         Self {}
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(8)]
 pub struct MutableCopy {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
     #[offset(4)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl MutableCopy {
-    pub fn new_1(mut _val: ()) -> Self {
+    pub fn new_1(mut _val: i32) -> Self {
         Self {
             val: _val,
             alloc_constructed: false,
@@ -192,22 +194,23 @@ impl Default for MutableCopy {
     fn default() -> Self {
         {
             MutableCopy {
-                val: unimplemented!(),
+                val: 0_i32,
                 alloc_constructed: false,
             }
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(8)]
 pub struct ConstCopy {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
     #[offset(4)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl ConstCopy {
-    pub fn new_1(mut _val: ()) -> Self {
+    pub fn new_1(mut _val: i32) -> Self {
         Self {
             val: _val,
             alloc_constructed: false,
@@ -225,22 +228,23 @@ impl Default for ConstCopy {
     fn default() -> Self {
         {
             ConstCopy {
-                val: unimplemented!(),
+                val: 0_i32,
                 alloc_constructed: false,
             }
         }
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(8)]
 pub struct MutableMove {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
     #[offset(4)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl MutableMove {
-    pub fn new_1(mut _val: ()) -> Self {
+    pub fn new_1(mut _val: i32) -> Self {
         Self {
             val: _val,
             alloc_constructed: false,
@@ -264,22 +268,23 @@ impl Default for MutableMove {
     fn default() -> Self {
         {
             MutableMove {
-                val: unimplemented!(),
+                val: 0_i32,
                 alloc_constructed: false,
             }
         }
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(8)]
 pub struct ConstMove {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
     #[offset(4)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl ConstMove {
-    pub fn new_1(mut _val: ()) -> Self {
+    pub fn new_1(mut _val: i32) -> Self {
         Self {
             val: _val,
             alloc_constructed: false,
@@ -303,7 +308,7 @@ impl Default for ConstMove {
     fn default() -> Self {
         {
             ConstMove {
-                val: unimplemented!(),
+                val: 0_i32,
                 alloc_constructed: false,
             }
         }
@@ -317,14 +322,15 @@ impl ConvertibleFrom_ConstMove_ {
         }
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom)]
+#[cpp_from_move(ConstMove, new_1, ptr)]
 #[byte_size(12)]
 pub struct ConvertibleFrom_ConstMove_ {
     #[offset(0)]
     #[byte_size(8)]
     pub v: ConstMove,
     #[offset(8)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl Default for ConvertibleFrom_ConstMove_ {
     fn default() -> Self {
@@ -337,26 +343,27 @@ impl Default for ConvertibleFrom_ConstMove_ {
     }
 }
 impl ConvertibleFrom_int_ {
-    pub fn new_1(_v: Ptr<()>) -> Self {
+    pub fn new_1(_v: Ptr<i32>) -> Self {
         Self {
             v: (_v.read()),
             alloc_constructed: false,
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from_move(i32, new_1, ptr)]
 #[byte_size(8)]
 pub struct ConvertibleFrom_int_ {
     #[offset(0)]
-    pub v: (),
+    pub v: i32,
     #[offset(4)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl Default for ConvertibleFrom_int_ {
     fn default() -> Self {
         {
             ConvertibleFrom_int_ {
-                v: unimplemented!(),
+                v: 0_i32,
                 alloc_constructed: false,
             }
         }
@@ -370,14 +377,15 @@ impl ConvertibleFrom_TracedCopyMove_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from_move(TracedCopyMove, new_1, ptr)]
 #[byte_size(24)]
 pub struct ConvertibleFrom_TracedCopyMove_ {
     #[offset(0)]
     #[byte_size(20)]
     pub v: TracedCopyMove,
     #[offset(20)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl Default for ConvertibleFrom_TracedCopyMove_ {
     fn default() -> Self {
@@ -404,7 +412,7 @@ pub struct ExplicitConstructibleFrom_ConstMove_ {
     #[byte_size(8)]
     pub v: ConstMove,
     #[offset(8)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl Default for ExplicitConstructibleFrom_ConstMove_ {
     fn default() -> Self {
@@ -417,7 +425,7 @@ impl Default for ExplicitConstructibleFrom_ConstMove_ {
     }
 }
 impl ExplicitConstructibleFrom_int_ {
-    pub fn new_1(_v: Ptr<()>) -> Self {
+    pub fn new_1(_v: Ptr<i32>) -> Self {
         Self {
             v: (_v.read()),
             alloc_constructed: false,
@@ -428,15 +436,15 @@ impl ExplicitConstructibleFrom_int_ {
 #[byte_size(8)]
 pub struct ExplicitConstructibleFrom_int_ {
     #[offset(0)]
-    pub v: (),
+    pub v: i32,
     #[offset(4)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl Default for ExplicitConstructibleFrom_int_ {
     fn default() -> Self {
         {
             ExplicitConstructibleFrom_int_ {
-                v: unimplemented!(),
+                v: 0_i32,
                 alloc_constructed: false,
             }
         }
@@ -446,21 +454,21 @@ impl Default for ExplicitConstructibleFrom_int_ {
 #[byte_size(20)]
 pub struct TracedCopyMove {
     #[offset(0)]
-    pub nonConstCopy: (),
+    pub nonConstCopy: i32,
     #[offset(4)]
-    pub constCopy: (),
+    pub constCopy: i32,
     #[offset(8)]
-    pub nonConstMove: (),
+    pub nonConstMove: i32,
     #[offset(12)]
-    pub constMove: (),
+    pub constMove: i32,
     #[offset(16)]
-    pub alloc_constructed: (),
+    pub alloc_constructed: bool,
 }
 impl TracedCopyMove {
     pub fn new_2(other: Ptr<TracedCopyMove>) -> Self {
         Self {
             nonConstCopy: other.with(|__s| __s.nonConstCopy),
-            constCopy: (other.with(|__s| __s.constCopy) + 1_()),
+            constCopy: (other.with(|__s| __s.constCopy) + 1),
             nonConstMove: other.with(|__s| __s.nonConstMove),
             constMove: other.with(|__s| __s.constMove),
             alloc_constructed: false,
@@ -468,7 +476,7 @@ impl TracedCopyMove {
     }
     pub fn new_3(other: Ptr<TracedCopyMove>) -> Self {
         Self {
-            nonConstCopy: (other.with(|__s| __s.nonConstCopy) + 1_()),
+            nonConstCopy: (other.with(|__s| __s.nonConstCopy) + 1),
             constCopy: other.with(|__s| __s.constCopy),
             nonConstMove: other.with(|__s| __s.nonConstMove),
             constMove: other.with(|__s| __s.constMove),
@@ -479,7 +487,7 @@ impl TracedCopyMove {
         Self {
             nonConstCopy: other.with(|__s| __s.nonConstCopy),
             constCopy: other.with(|__s| __s.constCopy),
-            nonConstMove: (other.with(|__s| __s.nonConstMove) + 1_()),
+            nonConstMove: (other.with(|__s| __s.nonConstMove) + 1),
             constMove: other.with(|__s| __s.constMove),
             alloc_constructed: false,
         }
@@ -489,7 +497,7 @@ impl TracedCopyMove {
             nonConstCopy: other.with(|__s| __s.nonConstCopy),
             constCopy: other.with(|__s| __s.constCopy),
             nonConstMove: other.with(|__s| __s.nonConstMove),
-            constMove: (other.with(|__s| __s.constMove) + 1_()),
+            constMove: (other.with(|__s| __s.constMove) + 1),
             alloc_constructed: false,
         }
     }
@@ -510,31 +518,30 @@ impl Default for TracedCopyMove {
     fn default() -> Self {
         {
             TracedCopyMove {
-                nonConstCopy: 0_(),
-                constCopy: 0_(),
-                nonConstMove: 0_(),
-                constMove: 0_(),
+                nonConstCopy: 0,
+                constCopy: 0,
+                nonConstMove: 0,
+                constMove: 0,
                 alloc_constructed: false,
             }
         }
     }
 }
-pub fn nonConstCopyCtrCalled_4(obj: Ptr<TracedCopyMove>) -> () {
-    return (((obj.with(|__s| __s.nonConstCopy) == 1_())
-        && (obj.with(|__s| __s.constCopy) == 0_()))
-        && (obj.with(|__s| __s.constMove) == 0_()))
-        && (obj.with(|__s| __s.nonConstMove) == 0_());
+pub fn nonConstCopyCtrCalled_4(obj: Ptr<TracedCopyMove>) -> bool {
+    return (((obj.with(|__s| __s.nonConstCopy) == 1) && (obj.with(|__s| __s.constCopy) == 0))
+        && (obj.with(|__s| __s.constMove) == 0))
+        && (obj.with(|__s| __s.nonConstMove) == 0);
 }
-pub fn constMoveCtrCalled_5(obj: Ptr<TracedCopyMove>) -> () {
-    return (((obj.with(|__s| __s.nonConstMove) == 0_())
-        && (obj.with(|__s| __s.constMove) == 1_()))
-        && (obj.with(|__s| __s.constCopy) == 0_()))
-        && (obj.with(|__s| __s.nonConstCopy) == 0_());
+pub fn constMoveCtrCalled_5(obj: Ptr<TracedCopyMove>) -> bool {
+    return (((obj.with(|__s| __s.nonConstMove) == 0) && (obj.with(|__s| __s.constMove) == 1))
+        && (obj.with(|__s| __s.constCopy) == 0))
+        && (obj.with(|__s| __s.nonConstCopy) == 0);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoConstructorFromInt {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(()  , new_1, mut_ptr)]
 #[byte_size(20)]
 pub struct CvtFromTupleRef {}
 impl CvtFromTupleRef {
@@ -550,7 +557,8 @@ impl ExplicitCtrFromTupleRef {
         Self {}
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from_move(()  , new_1, ptr)]
 #[byte_size(20)]
 pub struct CvtFromConstTupleRefRef {}
 impl CvtFromConstTupleRefRef {
@@ -566,47 +574,51 @@ impl ExplicitCtrFromConstTupleRefRef {
         Self {}
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
 pub struct CopyAssign {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
 }
 impl CopyAssign {
-    pub fn new_1(mut v: ()) -> Self {
+    pub fn new_1(mut v: i32) -> Self {
         Self { val: v }
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, CopyAssign, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, Default)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
 pub struct ConstCopyAssign {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
 }
 impl ConstCopyAssign {
-    pub fn new_1(mut v: ()) -> Self {
+    pub fn new_1(mut v: i32) -> Self {
         Self { val: v }
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveAssign, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, MoveAssign, Default)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
 pub struct MoveAssign {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
 }
 impl MoveAssign {
-    pub fn new_1(mut v: ()) -> Self {
+    pub fn new_1(mut v: i32) -> Self {
         Self { val: v }
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveAssign, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, MoveAssign, Default)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
 pub struct ConstMoveAssign {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
 }
 impl ConstMoveAssign {
-    pub fn new_1(mut v: ()) -> Self {
+    pub fn new_1(mut v: i32) -> Self {
         Self { val: v }
     }
 }
@@ -614,22 +626,22 @@ impl ConstMoveAssign {
 #[byte_size(16)]
 pub struct TracedAssignment {
     #[offset(0)]
-    pub copyAssign: (),
+    pub copyAssign: i32,
     #[offset(4)]
-    pub constCopyAssign: (),
+    pub constCopyAssign: i32,
     #[offset(8)]
-    pub moveAssign: (),
+    pub moveAssign: i32,
     #[offset(12)]
-    pub constMoveAssign: (),
+    pub constMoveAssign: i32,
 }
 impl Default for TracedAssignment {
     fn default() -> Self {
         {
             TracedAssignment {
-                copyAssign: 0_(),
-                constCopyAssign: 0_(),
-                moveAssign: 0_(),
-                constMoveAssign: 0_(),
+                copyAssign: 0,
+                constCopyAssign: 0,
+                moveAssign: 0,
+                constMoveAssign: 0,
             }
         }
     }
@@ -674,24 +686,31 @@ const _: () = assert!(
     true,
     "!std::is_convertible_v<const std::pair<ConstMove, ConstMove>&&,\n                                     std::tuple<ConvertibleFrom<ConstMove>, ExplicitConstructibleFrom<ConstMove>>>"
 );
-pub fn test_6() -> () {
+pub fn test_6() -> bool {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<(Value<ConstMove>, Value<i32>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(ConstMove::new_1({ 1 }))),
+            Rc::new(RefCell::new(2)),
+        )));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
+        assert!((unimplemented!().with(|__s| __s.v) == 2));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<(Value<ConstMove>, Value<i32>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(ConstMove::new_1({ 1 }))),
+            Rc::new(RefCell::new(2)),
+        )));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
+        assert!((unimplemented!().with(|__s| __s.v) == 2));
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<(Value<TracedCopyMove>, Value<TracedCopyMove>)> =
+            Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(({ constMoveCtrCalled_5(field_ptr!(unimplemented!(), v),) }));
+        assert!(({ constMoveCtrCalled_5(unimplemented!(),) }));
     }
     return true;
 }
@@ -714,10 +733,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_6() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
@@ -791,26 +810,30 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        unimplemented!();
-        field!((*self), count).write(0_());
-        field!((*self), time_to_throw).write(0_());
-        field!((*self), alloc_count).write(0_());
-        field!((*self), allocated_size).write(0_());
-        field!((*self), construct_count).write(0_());
-        field!((*self), destroy_count).write(0_());
-        field!((*self), throw_after).write(2147483647_());
+        assert!(
+            ((*self).with(|__s| __s.count) == 0)
+                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                    .is_null())
+        );
+        field!((*self), count).write(0);
+        field!((*self), time_to_throw).write(0);
+        field!((*self), alloc_count).write(0);
+        field!((*self), allocated_size).write(0);
+        field!((*self), construct_count).write(0);
+        field!((*self), destroy_count).write(0);
+        field!((*self), throw_after).write(2147483647);
         ({ test_allocator_statisticsImpl::clear_ctor_counters(self) });
     }
     fn clear_ctor_counters(&self) {
-        field!((*self), copied).write(0_());
-        field!((*self), moved).write(0_());
-        field!((*self), converted).write(0_());
+        field!((*self), copied).write(0);
+        field!((*self), moved).write(0);
+        field!((*self), converted).write(0);
     }
 }
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
-    fn get_id(&self) -> ();
-    fn get_data(&self) -> ();
+    fn get_id(&self) -> i32;
+    fn get_data(&self) -> i32;
     fn copy_assign(&self, _a0: Ptr<test_allocator_void_>) -> Ptr<test_allocator_void_>;
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
@@ -818,10 +841,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
         field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
     }
-    fn get_id(&self) -> () {
+    fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
-    fn get_data(&self) -> () {
+    fn get_data(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn copy_assign(&self, _a0: Ptr<test_allocator_void_>) -> Ptr<test_allocator_void_> {

@@ -6,9 +6,9 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn make_0(mut n: ()) -> () {
+pub fn make_0(mut n: i32) -> () {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
+    let mut i: i32 = 0;
     'loop_: while (i < n) {
         unimplemented!();
         i.prefix_inc();
@@ -34,13 +34,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let q1: Value<()> = Rc::new(RefCell::new(({ make_0(5_()) })));
-    let q2: Value<()> = Rc::new(RefCell::new(({ make_0(10_()) })));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let q1: Value<()> = Rc::new(RefCell::new(({ make_0(5) })));
+    let q2: Value<()> = Rc::new(RefCell::new(({ make_0(10) })));
+    assert!(unimplemented!() == std::cmp::Ordering::Less);
+    assert!(unimplemented!() == std::cmp::Ordering::Greater);
+    assert!(unimplemented!() != std::cmp::Ordering::Greater);
+    assert!(unimplemented!() != std::cmp::Ordering::Less);
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

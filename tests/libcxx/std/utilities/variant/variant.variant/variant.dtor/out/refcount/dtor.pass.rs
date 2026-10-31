@@ -11,10 +11,10 @@ use std::rc::{Rc, Weak};
 pub struct NonTDtor {
     #[offset(0)]
     #[byte_size(8)]
-    pub count: Ptr<()>,
+    pub count: Ptr<i32>,
 }
 impl NonTDtor {
-    pub fn new(mut a: Ptr<()>, mut _a1: Ptr<()>) -> Self {
+    pub fn new(mut a: Ptr<i32>, mut _a1: Ptr<i32>) -> Self {
         Self { count: (a).clone() }
     }
 }
@@ -24,10 +24,10 @@ const _: () = assert!(true, "!std::is_trivially_destructible<NonTDtor>::value");
 pub struct NonTDtor1 {
     #[offset(0)]
     #[byte_size(8)]
-    pub count: Ptr<()>,
+    pub count: Ptr<i32>,
 }
 impl NonTDtor1 {
-    pub fn new(mut _a0: Ptr<()>, mut b: Ptr<()>) -> Self {
+    pub fn new(mut _a0: Ptr<i32>, mut b: Ptr<i32>) -> Self {
         Self { count: (b).clone() }
     }
 }
@@ -48,7 +48,7 @@ impl Clone for TDtor {
 }
 const _: () = assert!(true, "!std::is_trivially_copy_constructible<TDtor>::value");
 const _: () = assert!(true, "std::is_trivially_destructible<TDtor>::value");
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         const _: () = assert!(true, "std::is_trivially_destructible<V>::value");;
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -56,35 +56,35 @@ pub fn test_0() -> () {
     {
         const _: () = assert!(true, "!std::is_trivially_destructible<V>::value");;
         {
-            let count0: Value<()> = Rc::new(RefCell::new(0_()));
-            let count1: Value<()> = Rc::new(RefCell::new(0_()));
+            let count0: Value<i32> = Rc::new(RefCell::new(0));
+            let count1: Value<i32> = Rc::new(RefCell::new(0));
             {
                 let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
+                assert!(((*count0.borrow()) == 0));
+                assert!(((*count1.borrow()) == 0));
             }
-            unimplemented!();
-            unimplemented!();
+            assert!(((*count0.borrow()) == 1));
+            assert!(((*count1.borrow()) == 0));
         }
         {
-            let mut count0: () = 0_();
-            let mut count1: () = 0_();
+            let mut count0: i32 = 0;
+            let mut count1: i32 = 0;
             {
                 let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             }
-            unimplemented!();
-            unimplemented!();
+            assert!((count0 == 0));
+            assert!((count1 == 0));
         }
         {
-            let count0: Value<()> = Rc::new(RefCell::new(0_()));
-            let count1: Value<()> = Rc::new(RefCell::new(0_()));
+            let count0: Value<i32> = Rc::new(RefCell::new(0));
+            let count1: Value<i32> = Rc::new(RefCell::new(0));
             {
                 let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
+                assert!(((*count0.borrow()) == 0));
+                assert!(((*count1.borrow()) == 0));
             }
-            unimplemented!();
-            unimplemented!();
+            assert!(((*count0.borrow()) == 0));
+            assert!(((*count1.borrow()) == 1));
         }
     }
     return true;
@@ -108,10 +108,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait NonTDtorImpl {
     fn destructor(&self);

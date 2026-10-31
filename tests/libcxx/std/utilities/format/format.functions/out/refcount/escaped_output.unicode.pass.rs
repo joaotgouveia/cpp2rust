@@ -6,47 +6,52 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(Ptr< i8  >  , to_pconsti8)]
+#[cpp_into(Ptr< i32  >  , to_pconsti32)]
+#[cpp_into(Ptr< u8  >  , to_pconstu8)]
+#[cpp_into(Ptr< u16  >  , to_pconstu16)]
+#[cpp_into(Ptr< u32  >  , to_pconstu32)]
 #[byte_size(80)]
 pub struct MultiStringType {
     #[offset(0)]
     #[byte_size(8)]
-    pub w_: Ptr<()>,
+    pub w_: Ptr<i32>,
     #[offset(8)]
-    pub wn_: (),
+    pub wn_: usize,
     #[offset(16)]
     #[byte_size(8)]
-    pub u8_: Ptr<()>,
+    pub u8_: Ptr<u8>,
     #[offset(24)]
-    pub u8n_: (),
+    pub u8n_: usize,
     #[offset(32)]
     #[byte_size(8)]
-    pub u16_: Ptr<()>,
+    pub u16_: Ptr<u16>,
     #[offset(40)]
-    pub u16n_: (),
+    pub u16n_: usize,
     #[offset(48)]
     #[byte_size(8)]
-    pub u32_: Ptr<()>,
+    pub u32_: Ptr<u32>,
     #[offset(56)]
-    pub u32n_: (),
+    pub u32n_: usize,
     #[offset(64)]
     #[byte_size(8)]
-    pub s_: Ptr<()>,
+    pub s_: Ptr<i8>,
     #[offset(72)]
-    pub sn_: (),
+    pub sn_: usize,
 }
 impl MultiStringType {
     pub fn new(
-        mut w: Ptr<()>,
-        mut wn: (),
-        mut u8: Ptr<()>,
-        mut u8n: (),
-        mut u16: Ptr<()>,
-        mut u16n: (),
-        mut u32: Ptr<()>,
-        mut u32n: (),
-        mut s: Ptr<()>,
-        mut sn: (),
+        mut w: Ptr<i32>,
+        mut wn: usize,
+        mut u8: Ptr<u8>,
+        mut u8n: usize,
+        mut u16: Ptr<u16>,
+        mut u16n: usize,
+        mut u32: Ptr<u32>,
+        mut u32n: usize,
+        mut s: Ptr<i8>,
+        mut sn: usize,
     ) -> Self {
         Self {
             w_: (w).clone(),
@@ -63,39 +68,67 @@ impl MultiStringType {
     }
 }
 pub fn test_eprintf_0(
-    mut fmt: Ptr<()>,
-    args_1: Ptr<Ptr<()>>,
-    args_2: Ptr<Ptr<()>>,
-    args_3: Ptr<Ptr<()>>,
-    args_4: Ptr<()>,
-    args_5: Ptr<Ptr<()>>,
+    mut fmt: Ptr<i8>,
+    args_1: Ptr<Ptr<i8>>,
+    args_2: Ptr<Ptr<i8>>,
+    args_3: Ptr<Ptr<i8>>,
+    args_4: Ptr<i32>,
+    args_5: Ptr<Ptr<i8>>,
 ) {
-    unimplemented!();
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([
+                (args_1.read()).into(),
+                (args_2.read()).into(),
+                (args_3.read()).into(),
+                (args_4.read()).into(),
+                (args_5.read()).into(),
+            ]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
 pub fn test_eprintf_1(
-    mut fmt: Ptr<()>,
-    args_1: Ptr<Ptr<()>>,
-    args_2: Ptr<Ptr<()>>,
-    args_3: Ptr<()>,
+    mut fmt: Ptr<i8>,
+    args_1: Ptr<Ptr<i8>>,
+    args_2: Ptr<Ptr<i8>>,
+    args_3: Ptr<i32>,
 ) {
-    unimplemented!();
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([
+                (args_1.read()).into(),
+                (args_2.read()).into(),
+                (args_3.read()).into(),
+            ]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
-pub fn test_eprintf_2(mut fmt: Ptr<()>, args: Ptr<Ptr<()>>) {
-    unimplemented!();
+pub fn test_eprintf_2(mut fmt: Ptr<i8>, args: Ptr<Ptr<i8>>) {
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([(args.read()).into()]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
-pub fn test_log_3(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
-    let message: Value<Ptr<()>> = Rc::new(RefCell::new(message));
-    let msg: Value<Ptr<()>> = Rc::new(RefCell::new(if !(*condition.borrow()).is_null() {
-        Ptr::<()>::from_string_literal(b"Assertion failure: ")
+pub fn test_log_3(condition: Ptr<i8>, file: Ptr<i8>, line: i32, message: Ptr<i8>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
+    let message: Value<Ptr<i8>> = Rc::new(RefCell::new(message));
+    let msg: Value<Ptr<i8>> = Rc::new(RefCell::new(if !(*condition.borrow()).is_null() {
+        Ptr::<i8>::from_string_literal(b"Assertion failure: ")
     } else {
-        Ptr::<()>::from_string_literal(b"Unconditional failure:")
+        Ptr::<i8>::from_string_literal(b"Unconditional failure:")
     }));
     ({
         test_eprintf_0(
-            Ptr::<()>::from_string_literal(b"%s%s %s %d\n%s"),
+            Ptr::<i8>::from_string_literal(b"%s%s %s %d\n%s"),
             msg.as_pointer(),
             condition.as_pointer(),
             file.as_pointer(),
@@ -104,13 +137,13 @@ pub fn test_log_3(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>)
         )
     });
 }
-pub fn test_log_4(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_4(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -118,13 +151,13 @@ pub fn test_log_4(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_5(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_5(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -132,13 +165,13 @@ pub fn test_log_5(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_6(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_6(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -146,13 +179,13 @@ pub fn test_log_6(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_7(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_7(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -160,13 +193,13 @@ pub fn test_log_7(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_8(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_8(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -174,13 +207,13 @@ pub fn test_log_8(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_9(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_9(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -188,13 +221,13 @@ pub fn test_log_9(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_10(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_10(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -202,13 +235,13 @@ pub fn test_log_10(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_11(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_11(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -216,13 +249,13 @@ pub fn test_log_11(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_12(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_12(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -230,13 +263,13 @@ pub fn test_log_12(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_13(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_13(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -244,13 +277,13 @@ pub fn test_log_13(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_14(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_14(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -258,13 +291,13 @@ pub fn test_log_14(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_15(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_15(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -272,13 +305,13 @@ pub fn test_log_15(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_16(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_16(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -286,13 +319,13 @@ pub fn test_log_16(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_17(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_17(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -300,13 +333,13 @@ pub fn test_log_17(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_18(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_18(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -315,312 +348,312 @@ pub fn test_log_18(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     ({ (*functor.upgrade().deref()).call() });
 }
 pub fn test_require_19(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_4(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_20(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_5(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_21(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_6(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_22(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_7(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_23(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_8(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_24(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_9(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_25(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_10(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_26(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_11(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_27(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_12(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_28(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_13(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_29(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_14(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_30(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_15(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_31(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_16(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_32(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_17(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_33(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_18(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
-pub fn test_is_high_surrogate_34(mut value: ()) -> () {
-    return (value >= 55296_()) && (value <= 56319_());
+pub fn test_is_high_surrogate_34(mut value: u32) -> bool {
+    return (value >= 55296_u32) && (value <= 56319_u32);
 }
-pub fn test_is_low_surrogate_35(mut value: ()) -> () {
-    return (value >= 56320_()) && (value <= 57343_());
+pub fn test_is_low_surrogate_35(mut value: u32) -> bool {
+    return (value >= 56320_u32) && (value <= 57343_u32);
 }
-pub fn test_is_surrogate_36(mut value: ()) -> () {
-    return (value >= 55296_()) && (value <= 57343_());
+pub fn test_is_surrogate_36(mut value: u32) -> bool {
+    return (value >= 55296_u32) && (value <= 57343_u32);
 }
-pub fn test_is_code_point_37(mut value: ()) -> () {
-    return (value <= 1114111_());
+pub fn test_is_code_point_37(mut value: u32) -> bool {
+    return (value <= 1114111_u32);
 }
-pub fn test_is_scalar_value_38(mut value: ()) -> () {
+pub fn test_is_scalar_value_38(mut value: u32) -> bool {
     return ({ test_is_code_point_37(value) }) && (!({ test_is_surrogate_36(value) }));
 }
 thread_local!(
-    pub static test_replacement_character_39: Value<()> = Rc::new(RefCell::new((65533 as ())));
+    pub static test_replacement_character_39: Value<u32> = Rc::new(RefCell::new((65533 as u32)));
 );
-pub fn test_encode_40(out_it: Ptr<()>, mut value: ()) {
-    if (value < 128_()) {
+pub fn test_encode_40(out_it: Ptr<OstreamIterator<i8>>, mut value: u16) {
+    if ((value as i32) < 128) {
         unimplemented!();
-    } else if (value < 2048_()) {
+    } else if ((value as i32) < 2048) {
         unimplemented!();
         unimplemented!();
     } else {
@@ -629,11 +662,11 @@ pub fn test_encode_40(out_it: Ptr<()>, mut value: ()) {
         unimplemented!();
     }
 }
-pub fn test_encode_41(out_it: Ptr<()>, mut value: ()) {
-    if ((value & 4294901760_()) == 0_()) {
+pub fn test_encode_41(out_it: Ptr<OstreamIterator<i8>>, mut value: u32) {
+    if ((value & 4294901760_u32) == 0_u32) {
         ({
-            let _out_it: Ptr<()> = (out_it).clone();
-            let _value: () = value;
+            let _out_it: Ptr<OstreamIterator<i8>> = (out_it).clone();
+            let _value: u16 = (value as u16);
             test_encode_40(_out_it, _value)
         });
     } else {
@@ -643,143 +676,205 @@ pub fn test_encode_41(out_it: Ptr<()>, mut value: ()) {
         unimplemented!();
     }
 }
-pub fn test_transcode_42(first: (), last: (), out_it: ()) -> () {
-    let first: Value<()> = Rc::new(RefCell::new(first));
-    let last: Value<()> = Rc::new(RefCell::new(last));
-    let out_it: Value<()> = Rc::new(RefCell::new(out_it));
-    'loop_: while !(unimplemented!()) {
-        let mut value: () = (unimplemented!().read());
+pub fn test_transcode_42(
+    first: RandomAccessIterator<i32>,
+    last: RandomAccessIterator<i32>,
+    out_it: OstreamIterator<i8>,
+) -> OstreamIterator<i8> {
+    let first: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(first));
+    let last: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(last));
+    let out_it: Value<OstreamIterator<i8>> = Rc::new(RefCell::new(out_it));
+    'loop_: while (*first.borrow()) != (*last.borrow()) {
+        let mut value: u32 = (((*first.borrow_mut()).iter_post_inc().iter_deref().read()) as u32);
         if ({ test_is_code_point_37(value) }) {
             ({ test_encode_41(out_it.as_pointer(), value) });
         } else {
             ({
                 test_encode_40(
                     out_it.as_pointer(),
-                    test_replacement_character_39.with(|rc| *rc.borrow()),
+                    (test_replacement_character_39.with(|rc| *rc.borrow()) as u16),
                 )
             });
         }
     }
-    return unimplemented!();
+    return (*out_it.borrow()).clone();
 }
-pub fn test_transcode_43(mut first: Ptr<()>, mut last: Ptr<()>, out_it: ()) -> () {
-    let out_it: Value<()> = Rc::new(RefCell::new(out_it));
+pub fn test_transcode_43(
+    mut first: Ptr<i32>,
+    mut last: Ptr<i32>,
+    out_it: OstreamIterator<i8>,
+) -> OstreamIterator<i8> {
+    let out_it: Value<OstreamIterator<i8>> = Rc::new(RefCell::new(out_it));
     'loop_: while ({ (first).clone() } != { (last).clone() }) {
-        let mut value: () = (first.postfix_inc().read());
+        let mut value: u32 = ((first.postfix_inc().read()) as u32);
         if ({ test_is_code_point_37(value) }) {
             ({ test_encode_41(out_it.as_pointer(), value) });
         } else {
             ({
                 test_encode_40(
                     out_it.as_pointer(),
-                    test_replacement_character_39.with(|rc| *rc.borrow()),
+                    (test_replacement_character_39.with(|rc| *rc.borrow()) as u16),
                 )
             });
         }
     }
+    return (*out_it.borrow()).clone();
+}
+pub fn operator_shl_44(os: Ptr<::std::fs::File>, loc: Ptr<()>) -> Ptr<::std::fs::File> {
+    return {
+        let __s = {
+            let __s = {
+                let __s = {
+                    let __s = {
+                        let __s = (os).clone();
+                        let _ = unimplemented!().with_c_str(|__cs| {
+                            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+                        });
+                        __s
+                    };
+                    let _ = __s.write_all(&[(':' as i8) as u8]);
+                    __s
+                };
+                write_int_refcount(&__s, unimplemented!());
+                __s
+            };
+            let _ = __s.write_all(&[(':' as i8) as u8]);
+            __s
+        };
+        write_int_refcount(&__s, unimplemented!());
+        __s
+    };
+}
+pub fn test_concat_45(stream: Ptr<::std::fs::File>, value: Ptr<i8>) -> Ptr<::std::fs::File> {
+    return {
+        let __s = (stream).clone();
+        let _ = __s.write_all(&[(value.read()) as u8]);
+        __s
+    };
+}
+pub fn test_concat_46(stream: Ptr<::std::fs::File>, value: Ptr<Vec<i8>>) -> Ptr<::std::fs::File> {
+    return {
+        let __s = (stream).clone();
+        let mut __bytes = Vec::new();
+        for &__c in
+            &(*value.upgrade().deref())[..(*value.upgrade().deref()).len().saturating_sub(1)]
+        {
+            __c.push_stream_bytes(&mut __bytes);
+        }
+        let _ = __s.write_all(&__bytes);
+        __s
+    };
+}
+pub fn test_concat_47(stream: Ptr<::std::fs::File>, value: Ptr<i8>) -> Ptr<::std::fs::File> {
+    return {
+        let __s = (stream).clone();
+        let _ = (value).with_c_str(|__cs| {
+            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+        });
+        __s
+    };
+}
+pub fn test_concat_48(stream: Ptr<::std::fs::File>, value: Ptr<()>) -> Ptr<::std::fs::File> {
     return unimplemented!();
 }
-pub fn operator_shl_44(os: Ptr<()>, loc: Ptr<()>) -> Ptr<()> {
+pub fn test_concat_49(stream: Ptr<::std::fs::File>, value: Ptr<()>) -> Ptr<::std::fs::File> {
     return unimplemented!();
 }
-pub fn test_concat_45(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
-    return unimplemented!();
-}
-pub fn test_concat_46(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
-    return unimplemented!();
-}
-pub fn test_concat_47(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
-    return unimplemented!();
-}
-pub fn test_concat_48(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
-    return unimplemented!();
-}
-pub fn test_concat_49(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
-    return unimplemented!();
-}
-pub fn test_concat_50(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
-    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if !(unimplemented!()) {
+pub fn test_concat_50(stream: Ptr<::std::fs::File>, value: Ptr<Vec<i32>>) -> Ptr<::std::fs::File> {
+    let b: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
+    let e: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
+    if (*b.borrow()) != (*e.borrow()) {
         {}
         ({
             test_transcode_42(
                 (*b.borrow()).clone(),
                 (*e.borrow()).clone(),
-                unimplemented!(),
+                OstreamIterator::new((stream).clone(), Ptr::null()),
             )
         });
     }
     return (stream).clone();
 }
-pub fn test_concat_51(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
+pub fn test_concat_51(stream: Ptr<::std::fs::File>, value: Ptr<()>) -> Ptr<::std::fs::File> {
     let mut b: () = unimplemented!();
     let mut e: () = unimplemented!();
     if ({ (b).clone() } != { (e).clone() }) {
         {}
-        ({ test_transcode_43((b).clone(), (e).clone(), unimplemented!()) });
+        ({
+            test_transcode_43(
+                (b).reinterpret_cast::<i32>(),
+                (e).reinterpret_cast::<i32>(),
+                OstreamIterator::new((stream).clone(), Ptr::null()),
+            )
+        });
     }
     return (stream).clone();
 }
-pub fn test_concat_52(stream: Ptr<()>, value: Ptr<()>) -> Ptr<()> {
+pub fn test_concat_52(stream: Ptr<::std::fs::File>, value: Ptr<()>) -> Ptr<::std::fs::File> {
     let mut b: () = unimplemented!();
     let mut e: () = unimplemented!();
     if ({ (b).clone() } != { (e).clone() }) {
         {}
-        ({ test_transcode_43((b).clone(), (e).clone(), unimplemented!()) });
+        ({
+            test_transcode_43(
+                (b).reinterpret_cast::<i32>(),
+                (e).reinterpret_cast::<i32>(),
+                OstreamIterator::new((stream).clone(), Ptr::null()),
+            )
+        });
     }
     return (stream).clone();
 }
 pub fn test_concat_message_53(
-    args_0: Ptr<()>,
+    args_0: Ptr<i8>,
     args_1: Ptr<()>,
-    args_2: Ptr<()>,
+    args_2: Ptr<i8>,
     args_3: Ptr<()>,
-    args_4: Ptr<()>,
-    args_5: Ptr<()>,
-    args_6: Ptr<()>,
-) -> () {
+    args_4: Ptr<i8>,
+    args_5: Ptr<Vec<i8>>,
+    args_6: Ptr<i8>,
+) -> Vec<i8> {
     {
         let sstr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             ({
-                let _stream: Ptr<()> = sstr.as_pointer();
-                let _value: Ptr<()> = (args_0).clone();
+                let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                let _value: Ptr<i8> = (args_0).clone();
                 test_concat_47(_stream, _value)
             });
             {
                 ({
-                    let _stream: Ptr<()> = sstr.as_pointer();
+                    let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
                     let _value: Ptr<()> = (args_1).clone();
                     test_concat_49(_stream, _value)
                 });
                 {
                     ({
-                        let _stream: Ptr<()> = sstr.as_pointer();
-                        let _value: Ptr<()> = (args_2).clone();
+                        let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                        let _value: Ptr<i8> = (args_2).clone();
                         test_concat_47(_stream, _value)
                     });
                     {
                         ({
-                            let _stream: Ptr<()> = sstr.as_pointer();
+                            let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
                             let _value: Ptr<()> = (args_3).clone();
                             test_concat_48(_stream, _value)
                         });
                         {
                             ({
-                                let _stream: Ptr<()> = sstr.as_pointer();
-                                let _value: Ptr<()> = (args_4).clone();
+                                let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                                let _value: Ptr<i8> = (args_4).clone();
                                 test_concat_47(_stream, _value)
                             });
                             {
                                 ({
-                                    let _stream: Ptr<()> = sstr.as_pointer();
-                                    let _value: Ptr<()> = (args_5).clone();
+                                    let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                                    let _value: Ptr<Vec<i8>> = (args_5).clone();
                                     test_concat_46(_stream, _value)
                                 });
                                 ({
-                                    let _stream: Ptr<()> = sstr.as_pointer();
-                                    let _value: Ptr<()> = (args_6).clone();
+                                    let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                                    let _value: Ptr<i8> = (args_6).clone();
                                     test_concat_45(_stream, _value)
                                 })
                             }
@@ -793,55 +888,55 @@ pub fn test_concat_message_53(
     panic!("ub: non-void function does not return a value")
 }
 pub fn test_concat_message_54(
-    args_0: Ptr<()>,
+    args_0: Ptr<i8>,
     args_1: Ptr<()>,
-    args_2: Ptr<()>,
+    args_2: Ptr<i8>,
     args_3: Ptr<()>,
-    args_4: Ptr<()>,
-    args_5: Ptr<()>,
-    args_6: Ptr<()>,
-) -> () {
+    args_4: Ptr<i8>,
+    args_5: Ptr<Vec<i32>>,
+    args_6: Ptr<i8>,
+) -> Vec<i8> {
     {
         let sstr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             ({
-                let _stream: Ptr<()> = sstr.as_pointer();
-                let _value: Ptr<()> = (args_0).clone();
+                let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                let _value: Ptr<i8> = (args_0).clone();
                 test_concat_47(_stream, _value)
             });
             {
                 ({
-                    let _stream: Ptr<()> = sstr.as_pointer();
+                    let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
                     let _value: Ptr<()> = (args_1).clone();
                     test_concat_52(_stream, _value)
                 });
                 {
                     ({
-                        let _stream: Ptr<()> = sstr.as_pointer();
-                        let _value: Ptr<()> = (args_2).clone();
+                        let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                        let _value: Ptr<i8> = (args_2).clone();
                         test_concat_47(_stream, _value)
                     });
                     {
                         ({
-                            let _stream: Ptr<()> = sstr.as_pointer();
+                            let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
                             let _value: Ptr<()> = (args_3).clone();
                             test_concat_51(_stream, _value)
                         });
                         {
                             ({
-                                let _stream: Ptr<()> = sstr.as_pointer();
-                                let _value: Ptr<()> = (args_4).clone();
+                                let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                                let _value: Ptr<i8> = (args_4).clone();
                                 test_concat_47(_stream, _value)
                             });
                             {
                                 ({
-                                    let _stream: Ptr<()> = sstr.as_pointer();
-                                    let _value: Ptr<()> = (args_5).clone();
+                                    let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                                    let _value: Ptr<Vec<i32>> = (args_5).clone();
                                     test_concat_50(_stream, _value)
                                 });
                                 ({
-                                    let _stream: Ptr<()> = sstr.as_pointer();
-                                    let _value: Ptr<()> = (args_6).clone();
+                                    let _stream: Ptr<::std::fs::File> = sstr.as_pointer();
+                                    let _value: Ptr<i8> = (args_6).clone();
                                     test_concat_45(_stream, _value)
                                 })
                             }
@@ -858,24 +953,49 @@ thread_local!(
     pub static test_format_55: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i8>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i8>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_53(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -883,36 +1003,61 @@ thread_local!(
                     )));
                     test_require_19(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i8> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i8>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i8>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_53(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -920,36 +1065,61 @@ thread_local!(
                     )));
                     test_require_20(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i8> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i8>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i8>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_53(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -957,36 +1127,61 @@ thread_local!(
                     )));
                     test_require_21(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i8> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i8>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i8>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_53(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -994,36 +1189,61 @@ thread_local!(
                     )));
                     test_require_22(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i8> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i8>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i8>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_53(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1031,36 +1251,61 @@ thread_local!(
                     )));
                     test_require_23(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i8> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i32>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i32>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_54(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1068,36 +1313,61 @@ thread_local!(
                     )));
                     test_require_24(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i32> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args_2: Ptr<()>, args_3: Ptr<()>| {
+        |expected: (), fmt: (), args_2: Ptr<i8>, args_3: Ptr<i8>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i8>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_53(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1105,36 +1375,61 @@ thread_local!(
                     )));
                     test_require_25(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i8> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i8>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i8>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_53(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1142,36 +1437,61 @@ thread_local!(
                     )));
                     test_require_26(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i8> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
         |expected: (), fmt: (), args: Ptr<()>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i8>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_53(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1179,36 +1499,61 @@ thread_local!(
                     )));
                     test_require_27(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i8> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args_2: Ptr<()>, args_3: Ptr<()>| {
+        |expected: (), fmt: (), args_2: Ptr<i32>, args_3: Ptr<i32>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i32>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_54(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1216,36 +1561,61 @@ thread_local!(
                     )));
                     test_require_28(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i32> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i32>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i32>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_54(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1253,36 +1623,61 @@ thread_local!(
                     )));
                     test_require_29(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i32> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
         |expected: (), fmt: (), args: Ptr<()>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i32>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_54(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1290,36 +1685,61 @@ thread_local!(
                     )));
                     test_require_30(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i32> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i32>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i32>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_54(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1327,36 +1747,61 @@ thread_local!(
                     )));
                     test_require_31(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i32> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i32>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i32>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_54(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1364,36 +1809,61 @@ thread_local!(
                     )));
                     test_require_32(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i32> = unimplemented!();
+                assert!(unimplemented!());
             }
         },
-        |expected: (), fmt: (), args: Ptr<()>| {
+        |expected: (), fmt: (), args: Ptr<i32>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
                 ({
-                    let _condition: () = unimplemented!();
+                    let _condition: bool = unimplemented!();
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let fmt: Ptr<()> = fmt.as_pointer();
                             let expected: Ptr<()> = expected.as_pointer();
-                            let out: Ptr<()> = out.as_pointer();
+                            let out: Ptr<Vec<i32>> = out.as_pointer();
                         },
                         || {
                             ({
-                                let _args: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+                                let _args: Value<Ptr<i8>> = Rc::new(RefCell::new(
+                                    Rc::new(RefCell::new(
+                                        ({
+                                            let _args_1: Value<()> =
+                                                Rc::new(RefCell::new(unimplemented!()));
+                                            let _args_6: Value<i8> =
+                                                Rc::new(RefCell::new(('\n' as i8)));
+                                            test_concat_message_54(
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nFormat string   ",
+                                                ),
+                                                _args_1.as_pointer(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nExpected output ",
+                                                ),
+                                                (expected).clone(),
+                                                Ptr::<i8>::from_string_literal(
+                                                    b"\nActual output   ",
+                                                ),
+                                                (out).clone(),
+                                                _args_6.as_pointer(),
+                                            )
+                                        }),
+                                    ))
+                                    .decay(),
+                                ));
                                 test_eprintf_2(
-                                    Ptr::<()>::from_string_literal(b"%s"),
+                                    Ptr::<i8>::from_string_literal(b"%s"),
                                     _args.as_pointer(),
                                 )
                             });
@@ -1401,16 +1871,16 @@ thread_local!(
                     )));
                     test_require_33(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"out == expected"),
-                        Ptr::<()>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
-                        50_(),
+                        Ptr::<i8>::from_string_literal(b"out == expected"),
+                        Ptr::<i8>::from_string_literal(b"escaped_output.unicode.pass.cpp"),
+                        50,
                         _arg.as_pointer(),
                     )
                 });
             }
             {
-                let mut out: () = unimplemented!();
-                unimplemented!();
+                let mut out: Vec<i32> = unimplemented!();
+                assert!(unimplemented!());
             }
         }
     )));
@@ -1423,70 +1893,101 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
-                let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(
+                    vec![(' ' as i8); (unimplemented!() as usize) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i8))
+                        .collect(),
+                ));
+                let it: Value<RandomAccessIterator<i8>> = Rc::new(RefCell::new(unimplemented!()));
+                assert!((*it.borrow()) == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
             {
-                let mut out: () = unimplemented!();
-                let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(
+                    vec![(' ' as i8); (unimplemented!() as usize) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i8))
+                        .collect(),
+                ));
+                let it: Value<RandomAccessIterator<i8>> = Rc::new(RefCell::new(unimplemented!()));
+                assert!((*it.borrow()) == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
             {
                 let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
-                unimplemented!();
+                assert!(unimplemented!());
             }
             {
-                let mut out: () = unimplemented!();
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(Vec::new()));
                 unimplemented!();
-                unimplemented!();
+                assert!(unimplemented!());
             }
             {
-                unimplemented!();
-                let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-                    (0..4096).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-                ));
-                let mut it: Ptr<()> = unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!(
+                    (unimplemented!() < 4096_())
+                        && (!(Ptr::<i8>::from_string_literal(b"Update the size of the buffer."))
+                            .is_null())
+                );
+                let out: Value<Box<[i8]>> =
+                    Rc::new(RefCell::new((0..4096).map(|_| 0_i8).collect::<Box<[i8]>>()));
+                let mut it: Ptr<i8> = unimplemented!();
+                assert!(({ unimplemented!() } == { ((unimplemented!() as i32) as isize) }));
+                assert!(unimplemented!());
             }
         },
         |expected: (), fmt: (), args: Ptr<()>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
-                let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(
+                    vec![((' ' as i8) as i32); (unimplemented!() as usize) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i32))
+                        .collect(),
+                ));
+                let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
+                assert!((*it.borrow()) == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
             {
-                let mut out: () = unimplemented!();
-                let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(
+                    vec![((' ' as i8) as i32); (unimplemented!() as usize) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i32))
+                        .collect(),
+                ));
+                let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(unimplemented!()));
+                assert!((*it.borrow()) == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
             {
                 let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
-                unimplemented!();
+                assert!(unimplemented!());
             }
             {
-                let mut out: () = unimplemented!();
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
                 unimplemented!();
-                unimplemented!();
+                assert!(unimplemented!());
             }
             {
-                unimplemented!();
-                let out: Value<Box<[()]>> = Rc::new(RefCell::new(
-                    (0..4096).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+                assert!(
+                    (unimplemented!() < 4096_())
+                        && (!(Ptr::<i8>::from_string_literal(b"Update the size of the buffer."))
+                            .is_null())
+                );
+                let out: Value<Box<[i32]>> = Rc::new(RefCell::new(
+                    (0..4096).map(|_| 0_i32).collect::<Box<[i32]>>(),
                 ));
-                let mut it: Ptr<()> = unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                let mut it: Ptr<i32> = unimplemented!();
+                assert!(({ unimplemented!() } == { ((unimplemented!() as i32) as isize) }));
+                assert!(unimplemented!());
             }
         }
     )));
@@ -1499,24 +2000,24 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut size: () = unimplemented!();
-                unimplemented!();
+                let mut size: usize = unimplemented!();
+                assert!((size == (unimplemented!() as usize)));
             }
             {
-                let mut size: () = unimplemented!();
-                unimplemented!();
+                let mut size: usize = unimplemented!();
+                assert!((size == (unimplemented!() as usize)));
             }
         },
         |expected: (), fmt: (), args: Ptr<()>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut size: () = unimplemented!();
-                unimplemented!();
+                let mut size: usize = unimplemented!();
+                assert!((size == (unimplemented!() as usize)));
             }
             {
-                let mut size: () = unimplemented!();
-                unimplemented!();
+                let mut size: usize = unimplemented!();
+                assert!((size == (unimplemented!() as usize)));
             }
         }
     )));
@@ -1529,72 +2030,108 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut n: () = unimplemented!();
-                let mut out: () = unimplemented!();
+                let mut n: usize = (unimplemented!() as usize);
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(
+                    vec![(' ' as i8); (n) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i8))
+                        .collect(),
+                ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
             {
-                let mut n: () = unimplemented!();
-                let mut out: () = unimplemented!();
+                let mut n: usize = (unimplemented!() as usize);
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(
+                    vec![(' ' as i8); (n) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i8))
+                        .collect(),
+                ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
             {
-                let mut n: () = 0_();
-                let mut out: () = unimplemented!();
+                let mut n: isize = 0_isize;
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!((*out.borrow()).len() <= 1);
             }
             {
-                let mut n: () = (unimplemented!()).wrapping_div(2_());
-                let mut out: () = unimplemented!();
+                let mut n: isize = (((unimplemented!()).wrapping_div(2_())) as isize);
+                let out: Value<Vec<i8>> = Rc::new(RefCell::new(
+                    vec![(' ' as i8); (n as usize) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i8))
+                        .collect(),
+                ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
         },
         |expected: (), fmt: (), args: Ptr<()>| {
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut n: () = unimplemented!();
-                let mut out: () = unimplemented!();
+                let mut n: usize = (unimplemented!() as usize);
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(
+                    vec![((' ' as i8) as i32); (n) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i32))
+                        .collect(),
+                ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
             {
-                let mut n: () = unimplemented!();
-                let mut out: () = unimplemented!();
+                let mut n: usize = (unimplemented!() as usize);
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(
+                    vec![((' ' as i8) as i32); (n) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i32))
+                        .collect(),
+                ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
             {
-                let mut n: () = 0_();
-                let mut out: () = unimplemented!();
+                let mut n: isize = 0_isize;
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(vec![i32::default()]));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!((*out.borrow()).len() <= 1);
             }
             {
-                let mut n: () = (unimplemented!()).wrapping_div(2_());
-                let mut out: () = unimplemented!();
+                let mut n: isize = (((unimplemented!()).wrapping_div(2_())) as isize);
+                let out: Value<Vec<i32>> = Rc::new(RefCell::new(
+                    vec![((' ' as i8) as i32); (n as usize) as usize]
+                        .iter()
+                        .cloned()
+                        .chain(std::iter::once(0_i32))
+                        .collect(),
+                ));
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                unimplemented!();
-                unimplemented!();
-                unimplemented!();
+                assert!((({ (*result.borrow()).size } as isize) == (unimplemented!() as isize)));
+                assert!((*result.borrow()).out == RandomAccessIterator::Vec(out.decay().to_last()));
+                assert!(unimplemented!());
             }
         }
     )));
@@ -1603,115 +2140,115 @@ pub fn test_char_59() {
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args_2: Value<()> = Rc::new(RefCell::new(('\'' as ())));
-        let _args_3: Value<()> = Rc::new(RefCell::new(('\"' as ())));
+        let _args_2: Value<i8> = Rc::new(RefCell::new(('\'' as i8)));
+        let _args_3: Value<i8> = Rc::new(RefCell::new(('\"' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>, Ptr<()>)>(6)
+            .spec::<fn((), (), Ptr<i8>, Ptr<i8>)>(6)
             .call(_expected, _fmt, _args_2.as_pointer(), _args_3.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\t' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('\t' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\n' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('\n' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\r' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('\r' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\\' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('\\' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\'' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('\'' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\"' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('\"' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new((' ' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new((' ' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('a' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('a' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('b' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('b' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('c' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('c' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\0' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('\0' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\x1f' as ())));
+        let _args: Value<i8> = Rc::new(RefCell::new(('\x1f' as i8)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(7)
+            .spec::<fn((), (), Ptr<i8>)>(7)
             .call(_expected, _fmt, _args.as_pointer())
     });
     {
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            let _args: Value<()> = Rc::new(RefCell::new((b'\x80' as ())));
+            let _args: Value<i8> = Rc::new(RefCell::new((b'\x80' as i8)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(7)
+                .spec::<fn((), (), Ptr<i8>)>(7)
                 .call(_expected, _fmt, _args.as_pointer())
         });
     }
@@ -1722,288 +2259,291 @@ pub fn test_char_60() {
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args_2: Value<()> = Rc::new(RefCell::new(('\'' as ())));
-        let _args_3: Value<()> = Rc::new(RefCell::new(('\"' as ())));
+        let _args_2: Value<i32> = Rc::new(RefCell::new((('\'' as i8) as i32)));
+        let _args_3: Value<i32> = Rc::new(RefCell::new((('\"' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>, Ptr<()>)>(9)
+            .spec::<fn((), (), Ptr<i32>, Ptr<i32>)>(9)
             .call(_expected, _fmt, _args_2.as_pointer(), _args_3.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\t' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('\t' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\n' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('\n' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\r' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('\r' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\\' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('\\' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\'' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('\'' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\"' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('\"' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new((' ' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new(((' ' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('a' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('a' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('b' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('b' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('c' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('c' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\0' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('\0' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     ({
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        let _args: Value<()> = Rc::new(RefCell::new(('\x1f' as ())));
+        let _args: Value<i32> = Rc::new(RefCell::new((('\x1f' as i8) as i32)));
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(10)
+            .spec::<fn((), (), Ptr<i32>)>(10)
             .call(_expected, _fmt, _args.as_pointer())
     });
     {}
     {
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((160 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((160 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((12288 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((12288 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((8232 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((8232 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((8233 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((8233 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((173 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((173 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((1536 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((1536 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((65279 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((65279 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((55296 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((55296 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((57343 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((57343 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((57344 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((57344 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((63743 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((63743 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((888 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((888 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((6004 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((6004 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((65535 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((65535 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((768 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((768 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((65056 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((65056 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
     }
     {
-        const _: () = assert!((::std::mem::size_of::<()>() == 4_()), "sizeof(CharT) == 4");;
-        let mut x: () = 131071_();
-        let mut y: () = 131071_();
+        const _: () = assert!(
+            (::std::mem::size_of::<i32>() == 4_usize),
+            "sizeof(CharT) == 4"
+        );;
+        let mut x: i32 = 131071_i32;
+        let mut y: u32 = 131071_u32;
         const _: () = assert!(true, "x == y");;
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((69821 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((69821 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((917631 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((917631 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((983040 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((983040 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((1048573 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((1048573 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((1048576 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((1048576 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((1114109 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((1114109 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((65548 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((65548 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((1048575 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((1048575 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((1114110 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((1114110 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((66045 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((66045 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((917760 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((917760 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((1114112 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((1114112 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
         ({
-            let _args: Value<()> = Rc::new(RefCell::new((4294967295 as ())));
+            let _args: Value<i32> = Rc::new(RefCell::new((4294967295 as i32)));
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(10)
+                .spec::<fn((), (), Ptr<i32>)>(10)
                 .call(unimplemented!(), unimplemented!(), _args.as_pointer())
         });
     }
@@ -2046,266 +2586,266 @@ pub fn test_string_61() {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(0)
-                .call(_expected, _fmt, Ptr::<()>::from_string_literal(b"\xc3"))
+                .spec::<fn((), (), Ptr<i8>)>(0)
+                .call(_expected, _fmt, Ptr::<i8>::from_string_literal(b"\xc3"))
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(1)
-                .call(_expected, _fmt, Ptr::<()>::from_string_literal(b"\xc3("))
+                .spec::<fn((), (), Ptr<i8>)>(1)
+                .call(_expected, _fmt, Ptr::<i8>::from_string_literal(b"\xc3("))
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(1)
-                .call(_expected, _fmt, Ptr::<()>::from_string_literal(b"\xc0\x80"))
+                .spec::<fn((), (), Ptr<i8>)>(1)
+                .call(_expected, _fmt, Ptr::<i8>::from_string_literal(b"\xc0\x80"))
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(1)
-                .call(_expected, _fmt, Ptr::<()>::from_string_literal(b"\xc1\xbf"))
+                .spec::<fn((), (), Ptr<i8>)>(1)
+                .call(_expected, _fmt, Ptr::<i8>::from_string_literal(b"\xc1\xbf"))
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(1)
-                .call(_expected, _fmt, Ptr::<()>::from_string_literal(b"\xc2\x80"))
+                .spec::<fn((), (), Ptr<i8>)>(1)
+                .call(_expected, _fmt, Ptr::<i8>::from_string_literal(b"\xc2\x80"))
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xe0\x80\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xe0\x80\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xe0\x81\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xe0\x81\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xe0\x82\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xe0\x82\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xe0\x9f\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xe0\x9f\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xe0\xa0\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xe0\xa0\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xed\x9f\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xed\x9f\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xed\xa0\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xed\xa0\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xed\xaf\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xed\xaf\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xed\xbf\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xed\xbf\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xed\xbf\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xed\xbf\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(2)
+                .spec::<fn((), (), Ptr<i8>)>(2)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xee\x80\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xee\x80\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf0\x80\x80\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xf0\x80\x80\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf0\x80\x81\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xf0\x80\x81\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf0\x80\x82\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xf0\x80\x82\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf0\x80\x9f\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xf0\x80\x9f\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf0\x80\xa0\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xf0\x80\xa0\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf0\x8f\xbf\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xf0\x8f\xbf\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf0\x90\x80\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xf0\x90\x80\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf4\x8f\xbf\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xf4\x8f\xbf\xbf"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf4\x90\x80\x80"),
+                    Ptr::<i8>::from_string_literal(b"\xf4\x90\x80\x80"),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(3)
+                .spec::<fn((), (), Ptr<i8>)>(3)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(b"\xf4\xbf\xbf\xbf"),
+                    Ptr::<i8>::from_string_literal(b"\xf4\xbf\xbf\xbf"),
                 )
         });
     }
@@ -2346,8 +2886,8 @@ pub fn test_string_61() {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(0)
-                .call(_expected, _fmt, Ptr::<()>::from_string_literal(b"\x80"))
+                .spec::<fn((), (), Ptr<i8>)>(0)
+                .call(_expected, _fmt, Ptr::<i8>::from_string_literal(b"\x80"))
         });
     }
     ({
@@ -2415,22 +2955,22 @@ pub fn test_string_62() {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(5)
+                .spec::<fn((), (), Ptr<i32>)>(5)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(&[195 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[195 as i32, 0 as i32]),
                 )
         });
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(12)
+                .spec::<fn((), (), Ptr<i32>)>(12)
                 .call(
                     _expected,
                     _fmt,
-                    Ptr::<()>::from_string_literal(&[195 as (), 40 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[195 as i32, 40 as i32, 0 as i32]),
                 )
         });
     }
@@ -2494,136 +3034,149 @@ pub fn test_string_62() {
     {
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(12)
+                .spec::<fn((), (), Ptr<i32>)>(12)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[160 as (), 12288 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[160 as i32, 12288 as i32, 0 as i32]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(5)
+                .spec::<fn((), (), Ptr<i32>)>(5)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[8232 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[8232 as i32, 0 as i32]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(5)
+                .spec::<fn((), (), Ptr<i32>)>(5)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[8233 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[8233 as i32, 0 as i32]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(13)
+                .spec::<fn((), (), Ptr<i32>)>(13)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[173 as (), 1536 as (), 65279 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[
+                        173 as i32,
+                        1536 as i32,
+                        65279 as i32,
+                        0 as i32,
+                    ]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(5)
+                .spec::<fn((), (), Ptr<i32>)>(5)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[55296 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[55296 as i32, 0 as i32]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(12)
+                .spec::<fn((), (), Ptr<i32>)>(12)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[57344 as (), 63743 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[57344 as i32, 63743 as i32, 0 as i32]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(13)
+                .spec::<fn((), (), Ptr<i32>)>(13)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[888 as (), 6004 as (), 65535 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[
+                        888 as i32,
+                        6004 as i32,
+                        65535 as i32,
+                        0 as i32,
+                    ]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(12)
+                .spec::<fn((), (), Ptr<i32>)>(12)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[768 as (), 65056 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[768 as i32, 65056 as i32, 0 as i32]),
                 )
         });
     }
     {
-        const _: () = assert!((::std::mem::size_of::<()>() == 4_()), "sizeof(CharT) == 4");;
-        let mut x: () = 131071_();
-        let mut y: () = 131071_();
+        const _: () = assert!(
+            (::std::mem::size_of::<i32>() == 4_usize),
+            "sizeof(CharT) == 4"
+        );;
+        let mut x: i32 = 131071_i32;
+        let mut y: u32 = 131071_u32;
         const _: () = assert!(true, "x == y");;
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(12)
+                .spec::<fn((), (), Ptr<i32>)>(12)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[69821 as (), 917631 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[69821 as i32, 917631 as i32, 0 as i32]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(14)
+                .spec::<fn((), (), Ptr<i32>)>(14)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[
-                        983040 as (),
-                        1048573 as (),
-                        1048576 as (),
-                        1114109 as (),
-                        0 as (),
+                    Ptr::<i32>::from_string_literal(&[
+                        983040 as i32,
+                        1048573 as i32,
+                        1048576 as i32,
+                        1114109 as i32,
+                        0 as i32,
                     ]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(13)
+                .spec::<fn((), (), Ptr<i32>)>(13)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[
-                        65548 as (),
-                        1048575 as (),
-                        1114110 as (),
-                        0 as (),
+                    Ptr::<i32>::from_string_literal(&[
+                        65548 as i32,
+                        1048575 as i32,
+                        1114110 as i32,
+                        0 as i32,
                     ]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(12)
+                .spec::<fn((), (), Ptr<i32>)>(12)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[66045 as (), 917760 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[66045 as i32, 917760 as i32, 0 as i32]),
                 )
         });
         ({
             (*test_format_55.with(Value::clone).borrow())
-                .spec::<fn((), (), Ptr<()>)>(12)
+                .spec::<fn((), (), Ptr<i32>)>(12)
                 .call(
                     unimplemented!(),
                     unimplemented!(),
-                    Ptr::<()>::from_string_literal(&[1114112 as (), 4294967295 as (), 0 as ()]),
+                    Ptr::<i32>::from_string_literal(&[1114112 as i32, 4294967295 as i32, 0 as i32]),
                 )
         });
     }
@@ -4723,184 +5276,184 @@ pub fn test_72() {
 pub fn test_ill_formed_utf8_73() {
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(0)
+            .spec::<fn((), (), Ptr<i8>)>(0)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xdf"),
+                Ptr::<i8>::from_string_literal(b"\xdf"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(0)
+            .spec::<fn((), (), Ptr<i8>)>(0)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xef"),
+                Ptr::<i8>::from_string_literal(b"\xef"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(1)
+            .spec::<fn((), (), Ptr<i8>)>(1)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xef\xbf"),
+                Ptr::<i8>::from_string_literal(b"\xef\xbf"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(0)
+            .spec::<fn((), (), Ptr<i8>)>(0)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf7"),
+                Ptr::<i8>::from_string_literal(b"\xf7"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(1)
+            .spec::<fn((), (), Ptr<i8>)>(1)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf7\xbf"),
+                Ptr::<i8>::from_string_literal(b"\xf7\xbf"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(2)
+            .spec::<fn((), (), Ptr<i8>)>(2)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf7\xbf\xbf"),
+                Ptr::<i8>::from_string_literal(b"\xf7\xbf\xbf"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(1)
+            .spec::<fn((), (), Ptr<i8>)>(1)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xdfa"),
+                Ptr::<i8>::from_string_literal(b"\xdfa"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(1)
+            .spec::<fn((), (), Ptr<i8>)>(1)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xefa"),
+                Ptr::<i8>::from_string_literal(b"\xefa"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(2)
+            .spec::<fn((), (), Ptr<i8>)>(2)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xef\xbfa"),
+                Ptr::<i8>::from_string_literal(b"\xef\xbfa"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(1)
+            .spec::<fn((), (), Ptr<i8>)>(1)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf7a"),
+                Ptr::<i8>::from_string_literal(b"\xf7a"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(2)
+            .spec::<fn((), (), Ptr<i8>)>(2)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf7\xbfa"),
+                Ptr::<i8>::from_string_literal(b"\xf7\xbfa"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(3)
+            .spec::<fn((), (), Ptr<i8>)>(3)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf7\xbf\xbfa"),
+                Ptr::<i8>::from_string_literal(b"\xf7\xbf\xbfa"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(4)
+            .spec::<fn((), (), Ptr<i8>)>(4)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"a\xf1\x80\x80\xe1\x80\xc2b"),
+                Ptr::<i8>::from_string_literal(b"a\xf1\x80\x80\xe1\x80\xc2b"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(3)
+            .spec::<fn((), (), Ptr<i8>)>(3)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf4\x8f\xbf\xbf"),
+                Ptr::<i8>::from_string_literal(b"\xf4\x8f\xbf\xbf"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(3)
+            .spec::<fn((), (), Ptr<i8>)>(3)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf4\x90\x80\x80"),
+                Ptr::<i8>::from_string_literal(b"\xf4\x90\x80\x80"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(3)
+            .spec::<fn((), (), Ptr<i8>)>(3)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf5\xb1\xb2\xb3"),
+                Ptr::<i8>::from_string_literal(b"\xf5\xb1\xb2\xb3"),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(3)
+            .spec::<fn((), (), Ptr<i8>)>(3)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(b"\xf7\xbf\xbf\xbf"),
+                Ptr::<i8>::from_string_literal(b"\xf7\xbf\xbf\xbf"),
             )
     });
 }
 pub fn test_ill_formed_utf32_74() {
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(5)
+            .spec::<fn((), (), Ptr<i32>)>(5)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(&[1114111 as (), 0 as ()]),
+                Ptr::<i32>::from_string_literal(&[1114111 as i32, 0 as i32]),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(5)
+            .spec::<fn((), (), Ptr<i32>)>(5)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(&[1114112 as (), 0 as ()]),
+                Ptr::<i32>::from_string_literal(&[1114112 as i32, 0 as i32]),
             )
     });
     ({
         (*test_format_55.with(Value::clone).borrow())
-            .spec::<fn((), (), Ptr<()>)>(5)
+            .spec::<fn((), (), Ptr<i32>)>(5)
             .call(
                 unimplemented!(),
                 unimplemented!(),
-                Ptr::<()>::from_string_literal(&[4294967295 as (), 0 as ()]),
+                Ptr::<i32>::from_string_literal(&[4294967295 as i32, 0 as i32]),
             )
     });
 }
@@ -4923,74 +5476,74 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_71() });
     ({ test_72() });
     ({ test_ill_formed_utf8_73() });
     ({ test_ill_formed_utf32_74() });
-    return 0_();
+    return 0;
 }
 pub trait MultiStringTypeImpl {
-    fn as_ptr_2(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn as_ptr_3(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn as_ptr_4(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn as_ptr_5(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn as_ptr_6(&self, _a0: Ptr<()>) -> Ptr<()>;
-    fn length_7(&self, _a0: Ptr<()>) -> ();
-    fn length_8(&self, _a0: Ptr<()>) -> ();
-    fn length_9(&self, _a0: Ptr<()>) -> ();
-    fn length_10(&self, _a0: Ptr<()>) -> ();
-    fn length_11(&self, _a0: Ptr<()>) -> ();
-    fn to_pconst_12(&self) -> Ptr<()>;
-    fn to_pconst_13(&self) -> Ptr<()>;
-    fn to_pconst_14(&self) -> Ptr<()>;
-    fn to_pconst_15(&self) -> Ptr<()>;
-    fn to_pconst_16(&self) -> Ptr<()>;
+    fn as_ptr_2(&self, _a0: Ptr<i8>) -> Ptr<i8>;
+    fn as_ptr_3(&self, _a0: Ptr<i32>) -> Ptr<i32>;
+    fn as_ptr_4(&self, _a0: Ptr<u8>) -> Ptr<u8>;
+    fn as_ptr_5(&self, _a0: Ptr<u16>) -> Ptr<u16>;
+    fn as_ptr_6(&self, _a0: Ptr<u32>) -> Ptr<u32>;
+    fn length_7(&self, _a0: Ptr<i8>) -> usize;
+    fn length_8(&self, _a0: Ptr<i32>) -> usize;
+    fn length_9(&self, _a0: Ptr<u8>) -> usize;
+    fn length_10(&self, _a0: Ptr<u16>) -> usize;
+    fn length_11(&self, _a0: Ptr<u32>) -> usize;
+    fn to_pconsti8(&self) -> Ptr<i8>;
+    fn to_pconsti32(&self) -> Ptr<i32>;
+    fn to_pconstu8(&self) -> Ptr<u8>;
+    fn to_pconstu16(&self) -> Ptr<u16>;
+    fn to_pconstu32(&self) -> Ptr<u32>;
 }
 impl MultiStringTypeImpl for Ptr<MultiStringType> {
-    fn as_ptr_2(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_2(&self, mut _a0: Ptr<i8>) -> Ptr<i8> {
         return (*self).with(|__s| __s.s_.clone());
     }
-    fn as_ptr_3(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_3(&self, mut _a0: Ptr<i32>) -> Ptr<i32> {
         return (*self).with(|__s| __s.w_.clone());
     }
-    fn as_ptr_4(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_4(&self, mut _a0: Ptr<u8>) -> Ptr<u8> {
         return (*self).with(|__s| __s.u8_.clone());
     }
-    fn as_ptr_5(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_5(&self, mut _a0: Ptr<u16>) -> Ptr<u16> {
         return (*self).with(|__s| __s.u16_.clone());
     }
-    fn as_ptr_6(&self, mut _a0: Ptr<()>) -> Ptr<()> {
+    fn as_ptr_6(&self, mut _a0: Ptr<u32>) -> Ptr<u32> {
         return (*self).with(|__s| __s.u32_.clone());
     }
-    fn length_7(&self, mut _a0: Ptr<()>) -> () {
+    fn length_7(&self, mut _a0: Ptr<i8>) -> usize {
         return (*self).with(|__s| __s.sn_);
     }
-    fn length_8(&self, mut _a0: Ptr<()>) -> () {
+    fn length_8(&self, mut _a0: Ptr<i32>) -> usize {
         return (*self).with(|__s| __s.wn_);
     }
-    fn length_9(&self, mut _a0: Ptr<()>) -> () {
+    fn length_9(&self, mut _a0: Ptr<u8>) -> usize {
         return (*self).with(|__s| __s.u8n_);
     }
-    fn length_10(&self, mut _a0: Ptr<()>) -> () {
+    fn length_10(&self, mut _a0: Ptr<u16>) -> usize {
         return (*self).with(|__s| __s.u16n_);
     }
-    fn length_11(&self, mut _a0: Ptr<()>) -> () {
+    fn length_11(&self, mut _a0: Ptr<u32>) -> usize {
         return (*self).with(|__s| __s.u32n_);
     }
-    fn to_pconst_12(&self) -> Ptr<()> {
+    fn to_pconsti8(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.s_.clone());
     }
-    fn to_pconst_13(&self) -> Ptr<()> {
+    fn to_pconsti32(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.w_.clone());
     }
-    fn to_pconst_14(&self) -> Ptr<()> {
+    fn to_pconstu8(&self) -> Ptr<u8> {
         return (*self).with(|__s| __s.u8_.clone());
     }
-    fn to_pconst_15(&self) -> Ptr<()> {
+    fn to_pconstu16(&self) -> Ptr<u16> {
         return (*self).with(|__s| __s.u16_.clone());
     }
-    fn to_pconst_16(&self) -> Ptr<()> {
+    fn to_pconstu32(&self) -> Ptr<u32> {
         return (*self).with(|__s| __s.u32_.clone());
     }
 }

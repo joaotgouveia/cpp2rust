@@ -20,14 +20,17 @@ pub fn test1_0() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_()));
+        assert!(unimplemented!());
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
     }
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (unimplemented!()
+                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+        );
         const _: () = assert!(true, "");;
     }
 }
@@ -45,14 +48,17 @@ pub fn test1_1() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_()));
+        assert!(unimplemented!());
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
     }
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (unimplemented!()
+                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+        );
         const _: () = assert!(true, "");;
     }
 }
@@ -70,14 +76,17 @@ pub fn test1_2() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_()));
+        assert!(unimplemented!());
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
     }
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (unimplemented!()
+                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+        );
         const _: () = assert!(true, "");;
     }
 }
@@ -95,14 +104,17 @@ pub fn test1_3() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_()));
+        assert!(unimplemented!());
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
     }
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (unimplemented!()
+                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+        );
         const _: () = assert!(true, "");;
     }
 }
@@ -120,75 +132,78 @@ pub fn test1_4() {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_()));
+        assert!(unimplemented!());
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
     }
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            (unimplemented!()
+                <= (u64::MAX as u64).wrapping_div((::std::mem::size_of::<()>() as u64)))
+        );
         const _: () = assert!(true, "");;
     }
 }
-pub fn test2_5(mut s: Ptr<()>, mut len: ()) {
+pub fn test2_5(mut s: Ptr<i8>, mut len: usize) {
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == len));
+        assert!(({ unimplemented!() } == { (s).clone() }));
+        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
-pub fn test2_6(mut s: Ptr<()>, mut len: ()) {
+pub fn test2_6(mut s: Ptr<i32>, mut len: usize) {
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == len));
+        assert!(({ unimplemented!() } == { (s).clone() }));
+        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
-pub fn test2_7(mut s: Ptr<()>, mut len: ()) {
+pub fn test2_7(mut s: Ptr<u8>, mut len: usize) {
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == len));
+        assert!(({ unimplemented!() } == { (s).clone() }));
+        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
-pub fn test2_8(mut s: Ptr<()>, mut len: ()) {
+pub fn test2_8(mut s: Ptr<u16>, mut len: usize) {
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == len));
+        assert!(({ unimplemented!() } == { (s).clone() }));
+        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
-pub fn test2_9(mut s: Ptr<()>, mut len: ()) {
+pub fn test2_9(mut s: Ptr<u32>, mut len: usize) {
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as usize) == len));
+        assert!(({ unimplemented!() } == { (s).clone() }));
+        assert!(((unimplemented!() as i32) == ((len == 0_usize) as i32)));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() > unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
+        assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
     }
 }
 pub fn main() {
@@ -210,142 +225,168 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_0() });
     ({ test1_1() });
     ({ test1_2() });
     ({ test1_3() });
     ({ test1_4() });
     ({
-        test2_5 ( Ptr::<() >::from_string_literal(b"ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE" )  , 105_()  , )
+        test2_5 ( Ptr::<i8 >::from_string_literal(b"ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE" )  , 105_usize  , )
     });
-    ({ test2_5(Ptr::<()>::from_string_literal(b"ABCDE"), 5_()) });
-    ({ test2_5(Ptr::<()>::from_string_literal(b"a"), 1_()) });
-    ({ test2_5(Ptr::<()>::from_string_literal(b""), 0_()) });
+    ({ test2_5(Ptr::<i8>::from_string_literal(b"ABCDE"), 5_usize) });
+    ({ test2_5(Ptr::<i8>::from_string_literal(b"a"), 1_usize) });
+    ({ test2_5(Ptr::<i8>::from_string_literal(b""), 0_usize) });
     ({
         test2_6(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32,
+                67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32,
+                69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32,
+                66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32,
+                68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32,
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32,
+                67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32,
+                69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32,
+                66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32,
+                68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32,
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32,
+                67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32,
+                69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32,
+                66 as i32, 67 as i32, 68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32,
+                68 as i32, 69 as i32, 65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32,
+                0 as i32,
             ]),
-            105_(),
+            105_usize,
         )
     });
     ({
         test2_6(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 0 as i32,
             ]),
-            5_(),
+            5_usize,
         )
     });
-    ({ test2_6(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()]), 1_()) });
-    ({ test2_6(Ptr::<()>::from_string_literal(&[0 as ()]), 0_()) });
+    ({
+        test2_6(
+            Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]),
+            1_usize,
+        )
+    });
+    ({ test2_6(Ptr::<i32>::from_string_literal(&[0 as i32]), 0_usize) });
     ({
         test2_7(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
+            Ptr::<u8>::from_string_literal(&[
+                65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8,
+                68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8,
+                66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8,
+                69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8,
+                67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8,
+                65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8,
+                68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8,
+                66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8,
+                69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8,
+                67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8,
+                65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8,
+                68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8,
+                66 as u8, 67 as u8, 68 as u8, 69 as u8, 65 as u8, 66 as u8, 67 as u8, 68 as u8,
+                69 as u8, 0 as u8,
             ]),
-            105_(),
+            105_usize,
         )
     });
     ({
         test2_7(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+            Ptr::<u8>::from_string_literal(&[
+                65 as u8, 66 as u8, 67 as u8, 68 as u8, 69 as u8, 0 as u8,
             ]),
-            5_(),
+            5_usize,
         )
     });
-    ({ test2_7(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()]), 1_()) });
-    ({ test2_7(Ptr::<()>::from_string_literal(&[0 as ()]), 0_()) });
+    ({
+        test2_7(
+            Ptr::<u8>::from_string_literal(&[97 as u8, 0 as u8]),
+            1_usize,
+        )
+    });
+    ({ test2_7(Ptr::<u8>::from_string_literal(&[0 as u8]), 0_usize) });
     ({
         test2_8(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16,
+                67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16,
+                69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16,
+                66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16,
+                68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16,
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16,
+                67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16,
+                69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16,
+                66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16,
+                68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16,
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16,
+                67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16,
+                69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16,
+                66 as u16, 67 as u16, 68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16,
+                68 as u16, 69 as u16, 65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16,
+                0 as u16,
             ]),
-            105_(),
+            105_usize,
         )
     });
     ({
         test2_8(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 0 as u16,
             ]),
-            5_(),
-        )
-    });
-    ({ test2_8(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()]), 1_()) });
-    ({ test2_8(Ptr::<()>::from_string_literal(&[0 as ()]), 0_()) });
-    ({
-        test2_9(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (),
-                67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (),
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (),
-                68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 65 as (),
-                66 as (), 67 as (), 68 as (), 69 as (), 65 as (), 66 as (), 67 as (), 68 as (),
-                69 as (), 0 as (),
-            ]),
-            105_(),
+            5_usize,
         )
     });
     ({
-        test2_9(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
-            ]),
-            5_(),
+        test2_8(
+            Ptr::<u16>::from_string_literal(&[97 as u16, 0 as u16]),
+            1_usize,
         )
     });
-    ({ test2_9(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()]), 1_()) });
-    ({ test2_9(Ptr::<()>::from_string_literal(&[0 as ()]), 0_()) });
-    return 0_();
+    ({ test2_8(Ptr::<u16>::from_string_literal(&[0 as u16]), 0_usize) });
+    ({
+        test2_9(
+            Ptr::<u32>::from_string_literal(&[
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32,
+                67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32,
+                69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32,
+                66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32,
+                68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32,
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32,
+                67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32,
+                69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32,
+                66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32,
+                68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32,
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32,
+                67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32,
+                69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32,
+                66 as u32, 67 as u32, 68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32,
+                68 as u32, 69 as u32, 65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32,
+                0 as u32,
+            ]),
+            105_usize,
+        )
+    });
+    ({
+        test2_9(
+            Ptr::<u32>::from_string_literal(&[
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 0 as u32,
+            ]),
+            5_usize,
+        )
+    });
+    ({
+        test2_9(
+            Ptr::<u32>::from_string_literal(&[97 as u32, 0 as u32]),
+            1_usize,
+        )
+    });
+    ({ test2_9(Ptr::<u32>::from_string_literal(&[0 as u32]), 0_usize) });
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

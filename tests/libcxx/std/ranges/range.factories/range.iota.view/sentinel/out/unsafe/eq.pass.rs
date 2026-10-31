@@ -14,58 +14,58 @@ pub unsafe fn operator_sub_assign_1(lhs: *mut SomeInt, rhs: *const SomeInt) -> *
     (*lhs).value_ -= (*rhs).value_;
     return lhs;
 }
-pub unsafe fn operator_add_assign_2(lhs: *mut SomeInt, mut rhs: ()) -> *mut SomeInt {
+pub unsafe fn operator_add_assign_2(lhs: *mut SomeInt, mut rhs: i32) -> *mut SomeInt {
     (*lhs).value_ += rhs;
     return lhs;
 }
-pub unsafe fn operator_sub_assign_3(lhs: *mut SomeInt, mut rhs: ()) -> *mut SomeInt {
+pub unsafe fn operator_sub_assign_3(lhs: *mut SomeInt, mut rhs: i32) -> *mut SomeInt {
     (*lhs).value_ -= rhs;
     return lhs;
 }
 pub unsafe fn operator_add_4(mut lhs: SomeInt, mut rhs: SomeInt) -> SomeInt {
     return SomeInt::new({ Some(((lhs.value_) + (rhs.value_))) });
 }
-pub unsafe fn operator_sub_5(mut lhs: SomeInt, mut rhs: SomeInt) -> () {
+pub unsafe fn operator_sub_5(mut lhs: SomeInt, mut rhs: SomeInt) -> i32 {
     return ((lhs.value_) - (rhs.value_));
 }
-pub unsafe fn operator_add_6(mut lhs: SomeInt, mut rhs: ()) -> SomeInt {
+pub unsafe fn operator_add_6(mut lhs: SomeInt, mut rhs: i32) -> SomeInt {
     return SomeInt::new({ Some(((lhs.value_) + (rhs))) });
 }
-pub unsafe fn operator_sub_7(mut lhs: SomeInt, mut rhs: ()) -> () {
+pub unsafe fn operator_sub_7(mut lhs: SomeInt, mut rhs: i32) -> i32 {
     return ((lhs.value_) - (rhs));
 }
-pub unsafe fn operator_add_8(mut lhs: (), mut rhs: SomeInt) -> SomeInt {
+pub unsafe fn operator_add_8(mut lhs: i32, mut rhs: SomeInt) -> SomeInt {
     return SomeInt::new({ Some(((lhs) + (rhs.value_))) });
 }
-pub unsafe fn operator_sub_9(mut lhs: (), mut rhs: SomeInt) -> () {
+pub unsafe fn operator_sub_9(mut lhs: i32, mut rhs: SomeInt) -> i32 {
     return ((lhs) - (rhs.value_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct SomeInt {
-    pub value_: (),
+    pub value_: i32,
 }
 impl SomeInt {
-    pub unsafe fn new(mut value: Option<()>) -> Self {
-        let mut value: () = value.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut value: Option<i32>) -> Self {
+        let mut value: i32 = value.unwrap_or_else(|| unsafe { 0 });
         let mut this = Self { value_: value };
         this
     }
-    pub unsafe fn operator_cmp(&self, _a0: *const SomeInt) -> () {
+    pub unsafe fn operator_cmp(&self, _a0: *const SomeInt) -> std::cmp::Ordering {
         {
-            let mut cmp: () =
+            let mut cmp: std::cmp::Ordering =
                 std::cmp::Ord::cmp(&((*(self as *const SomeInt)).value_), &((*_a0).value_));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !(cmp == std::cmp::Ordering::Equal) {
+                return cmp;
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
     pub unsafe fn operator_inc_3(&mut self) -> *mut SomeInt {
         self.value_.prefix_inc();
         return &mut (*(self as *mut SomeInt));
     }
-    pub unsafe fn operator_post_inc_4(&mut self, mut _a0: ()) -> SomeInt {
+    pub unsafe fn operator_post_inc_4(&mut self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(self as *mut SomeInt));
         self.value_.prefix_inc();
         return tmp;
@@ -74,12 +74,12 @@ impl SomeInt {
         self.value_.prefix_dec();
         return &mut (*(self as *mut SomeInt));
     }
-    pub unsafe fn operator_post_dec_6(&mut self, mut _a0: ()) -> SomeInt {
+    pub unsafe fn operator_post_dec_6(&mut self, mut _a0: i32) -> SomeInt {
         let mut tmp: SomeInt = (*(self as *mut SomeInt));
         self.value_.prefix_dec();
         return tmp;
     }
-    pub unsafe fn operator_eq(&self, _a0: *const SomeInt) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const SomeInt) -> bool {
         return (((*(self as *const SomeInt)).value_) == ((*_a0).value_));
     }
 }
@@ -99,22 +99,30 @@ impl std::cmp::PartialEq for SomeInt {
     }
 }
 impl std::cmp::Eq for SomeInt {}
+impl UnsafeCppAdvance for SomeInt {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_3();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_5();
+    }
+}
 impl Default for SomeInt {
     fn default() -> Self {
         unsafe { SomeInt::new(None) }
     }
 }
-pub unsafe fn operator_eq_10(mut lhs: (), mut rhs: IntComparableWith_int_) -> () {
+pub unsafe fn operator_eq_10(mut lhs: i32, mut rhs: IntComparableWith_int_) -> bool {
     return ((lhs) == (rhs.value_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct IntComparableWith_int_ {
-    pub value_: (),
+    pub value_: i32,
 }
 impl IntComparableWith_int_ {
-    pub unsafe fn new(mut value: Option<()>) -> Self {
-        let mut value: () = value.unwrap_or_else(|| unsafe { unimplemented!() });
+    pub unsafe fn new(mut value: Option<i32>) -> Self {
+        let mut value: i32 = value.unwrap_or_else(|| unsafe { 0_i32 });
         let mut this = Self { value_: value };
         this
     }
@@ -124,7 +132,7 @@ impl Default for IntComparableWith_int_ {
         unsafe { IntComparableWith_int_::new(None) }
     }
 }
-pub unsafe fn operator_eq_11(mut lhs: SomeInt, mut rhs: IntComparableWith_SomeInt_) -> () {
+pub unsafe fn operator_eq_11(mut lhs: SomeInt, mut rhs: IntComparableWith_SomeInt_) -> bool {
     return (unsafe { SomeInt::operator_eq(&lhs, &rhs.value_) });
 }
 #[repr(C)]
@@ -164,28 +172,28 @@ pub unsafe fn operator_add_14(
 ) -> NotIncrementable {
     return NotIncrementable::new({ Some(((lhs.value_) + (rhs.value_))) });
 }
-pub unsafe fn operator_sub_15(mut lhs: NotIncrementable, mut rhs: NotIncrementable) -> () {
+pub unsafe fn operator_sub_15(mut lhs: NotIncrementable, mut rhs: NotIncrementable) -> i32 {
     return ((lhs.value_) - (rhs.value_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct NotIncrementable {
-    pub value_: (),
+    pub value_: i32,
 }
 impl NotIncrementable {
-    pub unsafe fn new(mut value: Option<()>) -> Self {
-        let mut value: () = value.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut value: Option<i32>) -> Self {
+        let mut value: i32 = value.unwrap_or_else(|| unsafe { 0 });
         let mut this = Self { value_: value };
         this
     }
-    pub unsafe fn operator_eq(&self, _a0: *const NotIncrementable) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const NotIncrementable) -> bool {
         return (((*(self as *const NotIncrementable)).value_) == ((*_a0).value_));
     }
     pub unsafe fn operator_inc_3(&mut self) -> *mut NotIncrementable {
         self.value_.prefix_inc();
         return &mut (*(self as *mut NotIncrementable));
     }
-    pub unsafe fn operator_post_inc_4(&mut self, mut _a0: ()) {
+    pub unsafe fn operator_post_inc_4(&mut self, mut _a0: i32) {
         self.value_.prefix_inc();
     }
     pub unsafe fn operator_dec(&mut self) -> *mut NotIncrementable {
@@ -199,6 +207,14 @@ impl std::cmp::PartialEq for NotIncrementable {
     }
 }
 impl std::cmp::Eq for NotIncrementable {}
+impl UnsafeCppAdvance for NotIncrementable {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_3();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec();
+    }
+}
 impl Default for NotIncrementable {
     fn default() -> Self {
         unsafe { NotIncrementable::new(None) }
@@ -225,28 +241,28 @@ pub unsafe fn operator_add_18(
 ) -> NotDecrementable {
     return NotDecrementable::new({ Some(((lhs.value_) + (rhs.value_))) });
 }
-pub unsafe fn operator_sub_19(mut lhs: NotDecrementable, mut rhs: NotDecrementable) -> () {
+pub unsafe fn operator_sub_19(mut lhs: NotDecrementable, mut rhs: NotDecrementable) -> i32 {
     return ((lhs.value_) - (rhs.value_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct NotDecrementable {
-    pub value_: (),
+    pub value_: i32,
 }
 impl NotDecrementable {
-    pub unsafe fn new(mut value: Option<()>) -> Self {
-        let mut value: () = value.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut value: Option<i32>) -> Self {
+        let mut value: i32 = value.unwrap_or_else(|| unsafe { 0 });
         let mut this = Self { value_: value };
         this
     }
-    pub unsafe fn operator_eq(&self, _a0: *const NotDecrementable) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const NotDecrementable) -> bool {
         return (((*(self as *const NotDecrementable)).value_) == ((*_a0).value_));
     }
     pub unsafe fn operator_inc_3(&mut self) -> *mut NotDecrementable {
         self.value_.prefix_inc();
         return &mut (*(self as *mut NotDecrementable));
     }
-    pub unsafe fn operator_post_inc_4(&mut self, mut _a0: ()) {
+    pub unsafe fn operator_post_inc_4(&mut self, mut _a0: i32) {
         self.value_.prefix_inc();
     }
 }
@@ -256,42 +272,47 @@ impl std::cmp::PartialEq for NotDecrementable {
     }
 }
 impl std::cmp::Eq for NotDecrementable {}
+impl UnsafeCppAdvance for NotDecrementable {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_3();
+    }
+}
 impl Default for NotDecrementable {
     fn default() -> Self {
         unsafe { NotDecrementable::new(None) }
     }
 }
-pub type CtorKind = ();
+pub type CtorKind = u32;
 pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
-pub unsafe fn test_20() -> () {
+pub unsafe fn test_20() -> bool {
     {
         let io: () = unimplemented!();
         let mut iter: () = unimplemented!();
         let mut sent: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(iter != sent);
+        assert!(unimplemented!() == sent);
     }
     {
         let mut io: () = unimplemented!();
         let mut iter: () = unimplemented!();
         let mut sent: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(iter != sent);
+        assert!(unimplemented!() == sent);
     }
     {
         let io: () = unimplemented!();
         let mut iter: () = unimplemented!();
         let mut sent: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(iter != sent);
+        assert!(unimplemented!() == sent);
     }
     {
         let mut io: () = unimplemented!();
         let mut iter: () = unimplemented!();
         let mut sent: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(iter != sent);
+        assert!(unimplemented!() == sent);
     }
     return true;
 }
@@ -310,9 +331,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_20() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

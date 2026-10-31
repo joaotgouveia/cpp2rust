@@ -37,7 +37,7 @@ impl Default for B {
         unsafe { B::new() }
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct A {}
@@ -69,7 +69,7 @@ impl Default for A {
         unsafe { A::new() }
     }
 }
-pub static mut count_1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_1: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -86,50 +86,50 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut pA: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1_i64)));
         {
             let mut b: B = B::new();
             let _dtor_b = ScopedDestructorUnsafe::new(&raw mut b, B::destructor);
             let mut pB: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_1)) == (1)));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
+            assert!(((unimplemented!()) == (2_i64)));
+            assert!(((unimplemented!()) == (2_i64)));
+            assert!(((unimplemented!()) == (&mut b as *mut B)));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1_i64)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_1)) == (1)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_1)) == (0)));
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     {
         let mut pA: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1_i64)));
         {
             let mut b: B = B::new();
             let _dtor_b = ScopedDestructorUnsafe::new(&raw mut b, B::destructor);
             let mut pB: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_1)) == (1)));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
+            assert!(((unimplemented!()) == (2_i64)));
+            assert!(((unimplemented!()) == (2_i64)));
+            assert!(((unimplemented!()) == (&b as *const B)));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1_i64)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_1)) == (1)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     }
-    unimplemented!();
-    unimplemented!();
-    let mut pi: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_1)) == (0)));
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
+    let mut pi: *mut i32 = (Box::leak(Box::new(0_i32)) as *mut i32);
     {
         let mut p1: () = unimplemented!();
         let mut p2: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (pi)));
     }
     {
         let __p = pi;
@@ -140,9 +140,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut p1: () = unimplemented!();
         let mut p2: () = unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()).is_null());
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

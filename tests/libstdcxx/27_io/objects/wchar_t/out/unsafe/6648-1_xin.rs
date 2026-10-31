@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test08_0() {
-    let mut buff: [(); 2048] = [unimplemented!(); 2048];
+    let mut buff: [i32; 2048] = [0_i32; 2048];
     unimplemented!();
     unimplemented!();
 }
@@ -17,8 +17,8 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test08_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

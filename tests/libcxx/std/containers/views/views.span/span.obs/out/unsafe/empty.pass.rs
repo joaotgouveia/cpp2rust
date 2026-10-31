@@ -9,23 +9,10 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {}
-pub static mut iArr1_0: std::cell::LazyCell<[(); 10]> = std::cell::LazyCell::new(|| unsafe {
-    [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()]
-});
-pub static mut iArr2_1: std::cell::LazyCell<[(); 10]> = std::cell::LazyCell::new(|| unsafe {
-    [
-        10_(),
-        11_(),
-        12_(),
-        13_(),
-        14_(),
-        15_(),
-        16_(),
-        17_(),
-        18_(),
-        19_(),
-    ]
-});
+pub static mut iArr1_0: std::cell::LazyCell<[i32; 10]> =
+    std::cell::LazyCell::new(|| unsafe { [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] });
+pub static mut iArr2_1: std::cell::LazyCell<[i32; 10]> =
+    std::cell::LazyCell::new(|| unsafe { [10, 11, 12, 13, 14, 15, 16, 17, 18, 19] });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -42,7 +29,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "noexcept(std::span<int>().empty())");;
     const _: () = assert!(true, "noexcept(std::span<int, 0>().empty())");;
     const _: () = assert!(true, "std::span<int>().empty()");;
@@ -60,25 +47,25 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "!std::span<const int>(iArr1, 3).empty()");;
     const _: () = assert!(true, "!std::span<const int>(iArr1, 4).empty()");;
     const _: () = assert!(true, "!std::span<const int>(iArr1, 5).empty()");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut s: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!((unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    let mut s: Vec<libc::c_char> = vec![libc::c_char::default()];
+    assert!((unimplemented!()));
+    assert!(!(unimplemented!()));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const iArr1_0);

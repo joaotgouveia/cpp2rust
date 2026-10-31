@@ -29,16 +29,16 @@ const _: () = assert!(true, "");
 const _: () = assert!(true, "");
 const _: () = assert!(true, "");
 thread_local!(
-    pub static line_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static line_1: Value<u32> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static column_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static column_2: Value<u32> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static file_3: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+    pub static file_3: Value<Ptr<i8>> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static function_4: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
+    pub static function_4: Value<Ptr<i8>> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
     pub static cur_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -69,23 +69,117 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let local: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let mut __it1 = unimplemented!().to_c_string_iterator();
+            let mut __it2 = Ptr::<i8>::from_string_literal(b"ss").to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } == 0)
+    );
+    assert!(
+        !(({
+            let __needle = Ptr::<i8>::from_string_literal(b"main");
+            let mut __p = unimplemented!();
+            loop {
+                let mut __h = __p.to_c_string_iterator();
+                if __needle
+                    .to_c_string_iterator()
+                    .all(|__c| __h.next() == Some(__c))
+                {
+                    break __p;
+                }
+                if __p.read() == 0 {
+                    break Ptr::null();
+                }
+                __p += 1;
+            }
+        })
+        .is_null())
+    );
+    assert!((unimplemented!() == 2000_u32));
+    assert!((unimplemented!() > 0_u32));
     let local2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(
+        ({
+            let mut __it1 = unimplemented!().to_c_string_iterator();
+            let mut __it2 = unimplemented!().to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } == 0)
+    );
+    assert!(
+        ({
+            let mut __it1 = unimplemented!().to_c_string_iterator();
+            let mut __it2 = unimplemented!().to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } == 0)
+    );
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(
+        ({
+            let mut __it1 = unimplemented!().to_c_string_iterator();
+            let mut __it2 = unimplemented!().to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } == 0)
+    );
+    assert!(
+        ({
+            let mut __it1 = unimplemented!().to_c_string_iterator();
+            let mut __it2 = unimplemented!().to_c_string_iterator();
+            loop {
+                let __c1 = __it1.next();
+                let __c2 = __it2.next();
+                if __c1 != __c2 {
+                    break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                }
+                if __c1.is_none() {
+                    break 0;
+                }
+            }
+        } == 0)
+    );
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = empty_0.with(|_| ());

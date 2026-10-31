@@ -6,10 +6,10 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(p: Ptr<()>, mut mc: ()) {
+pub fn test_0(p: Ptr<Vec<i8>>, mut mc: u32) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as u32) == (unimplemented!() as u32)));
+    assert!((unimplemented!() == mc));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -30,23 +30,39 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
-        let _p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(_p.as_pointer(), 0_())
+        let _p: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\\(a\\)").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
+        test_0(_p.as_pointer(), 0_u32)
     });
     ({
-        let _p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(_p.as_pointer(), 0_())
+        let _p: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
+        test_0(_p.as_pointer(), 0_u32)
     });
     ({
-        let _p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(_p.as_pointer(), 0_())
+        let _p: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
+        test_0(_p.as_pointer(), 0_u32)
     });
     ({
-        let _p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(_p.as_pointer(), 2_())
+        let _p: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"(a([bc]))").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
+        test_0(_p.as_pointer(), 2_u32)
     });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

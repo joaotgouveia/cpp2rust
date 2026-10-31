@@ -6,18 +6,18 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int__int_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___std_allocator_char____std_basic_string_char__std_char_traits_char___std_allocator_char___
 {}
-pub fn testConstexprSpan_2(sp: ()) -> () {
+pub fn testConstexprSpan_2(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -30,7 +30,7 @@ pub fn testConstexprSpan_2(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_3(sp: ()) -> () {
+pub fn testConstexprSpan_3(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -43,7 +43,7 @@ pub fn testConstexprSpan_3(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_4(sp: ()) -> () {
+pub fn testConstexprSpan_4(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -56,7 +56,7 @@ pub fn testConstexprSpan_4(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_5(sp: ()) -> () {
+pub fn testConstexprSpan_5(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -69,7 +69,7 @@ pub fn testConstexprSpan_5(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_6(sp: ()) -> () {
+pub fn testConstexprSpan_6(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -82,7 +82,7 @@ pub fn testConstexprSpan_6(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_7(sp: ()) -> () {
+pub fn testConstexprSpan_7(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -95,7 +95,7 @@ pub fn testConstexprSpan_7(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_8(sp: ()) -> () {
+pub fn testConstexprSpan_8(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -108,7 +108,7 @@ pub fn testConstexprSpan_8(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_9(sp: ()) -> () {
+pub fn testConstexprSpan_9(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -121,7 +121,7 @@ pub fn testConstexprSpan_9(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_10(sp: ()) -> () {
+pub fn testConstexprSpan_10(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -134,7 +134,7 @@ pub fn testConstexprSpan_10(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_11(sp: ()) -> () {
+pub fn testConstexprSpan_11(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -147,7 +147,7 @@ pub fn testConstexprSpan_11(sp: ()) -> () {
     return ((unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!()))
         && (unimplemented!());
 }
-pub fn testConstexprSpan_12(sp: ()) -> () {
+pub fn testConstexprSpan_12(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -170,9 +170,9 @@ pub fn testRuntimeSpan_13(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_14(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -184,9 +184,9 @@ pub fn testRuntimeSpan_14(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_15(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -198,9 +198,9 @@ pub fn testRuntimeSpan_15(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_16(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -212,9 +212,9 @@ pub fn testRuntimeSpan_16(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_17(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -226,9 +226,9 @@ pub fn testRuntimeSpan_17(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_18(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -240,9 +240,9 @@ pub fn testRuntimeSpan_18(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_19(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -254,9 +254,9 @@ pub fn testRuntimeSpan_19(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_20(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -268,9 +268,9 @@ pub fn testRuntimeSpan_20(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_21(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -282,9 +282,9 @@ pub fn testRuntimeSpan_21(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_22(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -296,9 +296,9 @@ pub fn testRuntimeSpan_22(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_23(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -310,9 +310,9 @@ pub fn testRuntimeSpan_23(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_24(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -324,9 +324,9 @@ pub fn testRuntimeSpan_24(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_25(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -338,9 +338,9 @@ pub fn testRuntimeSpan_25(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_26(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -352,9 +352,9 @@ pub fn testRuntimeSpan_26(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_27(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -366,9 +366,9 @@ pub fn testRuntimeSpan_27(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_28(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -380,9 +380,9 @@ pub fn testRuntimeSpan_28(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_29(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -394,9 +394,9 @@ pub fn testRuntimeSpan_29(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_30(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -408,9 +408,9 @@ pub fn testRuntimeSpan_30(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_31(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -422,9 +422,9 @@ pub fn testRuntimeSpan_31(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn testRuntimeSpan_32(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -436,24 +436,43 @@ pub fn testRuntimeSpan_32(sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!(unimplemented!());
 }
 thread_local!(
-    pub static carr1_33: Value<Box<[()]>> =
-        Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
+    pub static carr1_33: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
 );
 thread_local!(
-    pub static arr_34: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([5_(), 6_(), 7_()])));
+    pub static arr_34: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 6, 7])));
 );
 thread_local!(
-    pub static sarr_35: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    pub static sarr_35: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"ABC").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        },
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"DEF").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        },
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"GHI").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        },
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"JKL").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        },
+        {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"MNO").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        },
     ])));
 );
 
@@ -476,7 +495,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "testConstexprSpan<Sp, 0>(Sp{{}})");;
         const _: () = assert!(true, "testConstexprSpan<Sp, 0>(Sp{{carr1}})");;
@@ -522,7 +541,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({ testRuntimeSpan_31(unimplemented!()) });
         ({ testRuntimeSpan_32(unimplemented!()) });
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = carr1_33.with(|_| ());

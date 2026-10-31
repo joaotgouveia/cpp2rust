@@ -26,9 +26,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut G: Ptr<()> = (unimplemented!());
-    unimplemented!();
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let mut G: Ptr<usize> = (unimplemented!());
+    assert!(((G.read()) >= 256_usize));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

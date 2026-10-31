@@ -26,7 +26,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(
         true,
         "(std::is_base_of<std::exception, std::bad_cast>::value)"
@@ -35,8 +35,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let mut w: Ptr<()> = unimplemented!();
-    unimplemented!();
-    return 0_();
+    let mut w: Ptr<i8> = unimplemented!();
+    assert!(!(w).is_null());
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

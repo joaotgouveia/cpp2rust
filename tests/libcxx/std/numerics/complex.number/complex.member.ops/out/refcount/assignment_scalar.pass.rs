@@ -6,40 +6,40 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() == 0_f32));
+    assert!((unimplemented!() == 0_f32));
     unimplemented!();
+    assert!(((unimplemented!() as f64) == 1.5_f64));
+    assert!((unimplemented!() == 0_f32));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as f64) == -1.5_f64));
+    assert!((unimplemented!() == 0_f32));
     return true;
 }
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() == 0_f64));
+    assert!((unimplemented!() == 0_f64));
     unimplemented!();
+    assert!((unimplemented!() == 1.5_f64));
+    assert!((unimplemented!() == 0_f64));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == -1.5_f64));
+    assert!((unimplemented!() == 0_f64));
     return true;
 }
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() == 0_f64));
+    assert!((unimplemented!() == 0_f64));
     unimplemented!();
+    assert!((unimplemented!() == 1.5_f64));
+    assert!((unimplemented!() == 0_f64));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == -1.5_f64));
+    assert!((unimplemented!() == 0_f64));
     return true;
 }
 pub fn main() {
@@ -61,13 +61,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
     const _: () = assert!(true, "test<float>()");;
     const _: () = assert!(true, "test<double>()");;
     const _: () = assert!(true, "test<long double>()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

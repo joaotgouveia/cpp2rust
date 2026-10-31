@@ -7,35 +7,35 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let mut t: () = 0_();
+    let mut t: i8 = 0_i8;
     (&(t));
 }
 pub fn test_1() {
-    let mut t: () = 0_();
+    let mut t: i16 = 0_i16;
     (&(t));
 }
 pub fn test_2() {
-    let mut t: () = 0_();
+    let mut t: i32 = 0;
     (&(t));
 }
 pub fn test_3() {
-    let mut t: () = 0_();
+    let mut t: i64 = 0_i64;
     (&(t));
 }
 pub fn test_4() {
-    let mut t: () = 0_();
+    let mut t: u8 = 0_u8;
     (&(t));
 }
 pub fn test_5() {
-    let mut t: () = 0_();
+    let mut t: u16 = 0_u16;
     (&(t));
 }
 pub fn test_6() {
-    let mut t: () = 0_();
+    let mut t: u32 = 0_u32;
     (&(t));
 }
 pub fn test_7() {
-    let mut t: () = 0_();
+    let mut t: u64 = 0_u64;
     (&(t));
 }
 pub fn main() {
@@ -57,7 +57,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
@@ -90,7 +90,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (&(*i1.borrow_mut()));
     }
-    let mut i: () = 0_();
+    let mut i: i64 = 0_i64;
     (&(i));
     const _: () = assert!(
         true,
@@ -116,6 +116,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "(std::is_same<decltype(std::wcstoumax(L\"\", (wchar_t**)0, 0)), std::uintmax_t>::value)"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

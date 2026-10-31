@@ -13,117 +13,151 @@ impl TestHelper_wchar_t__4_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (4)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (0)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (0)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 6] = [-2_(), -1_(), -40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 6] = [
+                (-2 as libc::c_char),
+                (-1 as libc::c_char),
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (6)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (4)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (0)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (0)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 6] = [-1_(), -2_(), -64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 6] = [
+                (-1 as libc::c_char),
+                (-2 as libc::c_char),
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (6)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
     }
 }
@@ -134,117 +168,151 @@ impl TestHelper_char16_t__2_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (0)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (0)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (0)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 6] = [-2_(), -1_(), -40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 6] = [
+                (-2 as libc::c_char),
+                (-1 as libc::c_char),
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (0)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (0)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (0)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 6] = [-1_(), -2_(), -64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 6] = [
+                (-1 as libc::c_char),
+                (-2 as libc::c_char),
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
     }
 }
@@ -255,117 +323,151 @@ impl TestHelper_char32_t__4_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (4)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (0)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (0)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 6] = [-2_(), -1_(), -40_(), -64_(), -36_(), 3_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 16_();
-            n[(1_()) as usize] = 5_();
+            let mut n: [libc::c_char; 6] = [
+                (-2 as libc::c_char),
+                (-1 as libc::c_char),
+                (-40 as libc::c_char),
+                (-64 as libc::c_char),
+                (-36 as libc::c_char),
+                (3 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (6)));
+            n[(0) as usize] = (16 as libc::c_char);
+            n[(1) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 4_();
-            n[(1_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (4 as libc::c_char);
+            n[(1) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(0_()) as usize] = 0_();
-            n[(1_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(0) as usize] = (0 as libc::c_char);
+            n[(1) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (4)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 4] = [-64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 4] = [
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (0)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (0)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
         {
             let mut c: () = unimplemented!();
-            let mut n: [(); 6] = [-1_(), -2_(), -64_(), -40_(), 3_(), -36_()];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 16_();
-            n[(0_()) as usize] = 5_();
+            let mut n: [libc::c_char; 6] = [
+                (-1 as libc::c_char),
+                (-2 as libc::c_char),
+                (-64 as libc::c_char),
+                (-40 as libc::c_char),
+                (3 as libc::c_char),
+                (-36 as libc::c_char),
+            ];
+            let mut m: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+            let mut r: i32 = unimplemented!();
+            assert!(((r) == (6)));
+            n[(1) as usize] = (16 as libc::c_char);
+            n[(0) as usize] = (5 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 4_();
-            n[(0_()) as usize] = 83_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (4 as libc::c_char);
+            n[(0) as usize] = (83 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
-            n[(1_()) as usize] = 0_();
-            n[(0_()) as usize] = 86_();
+            assert!(((r) == (2)));
+            n[(1) as usize] = (0 as libc::c_char);
+            n[(0) as usize] = (86 as libc::c_char);
             r = unimplemented!();
-            unimplemented!();
+            assert!(((r) == (2)));
         }
     }
 }
@@ -384,10 +486,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { TestHelper_wchar_t__4_::test() });
     (unsafe { TestHelper_char16_t__2_::test() });
     (unsafe { TestHelper_char32_t__4_::test() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

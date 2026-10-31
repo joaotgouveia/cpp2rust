@@ -26,13 +26,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
         (*t2.borrow_mut()) = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -41,6 +41,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "t3.time_since_epoch() == Duration2(3006)");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

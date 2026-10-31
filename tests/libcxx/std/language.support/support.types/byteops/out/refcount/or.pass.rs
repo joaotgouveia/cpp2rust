@@ -11,16 +11,16 @@ const _: () = assert!(
     true,
     "std::is_same_v<decltype(std::byte{{}} | std::byte{{}}), std::byte>"
 );
-pub fn test_0() -> () {
-    let mut b1: () = 1_();
-    let mut b2: () = 2_();
-    let mut b8: () = 8_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_0() -> bool {
+    let mut b1: u8 = 1_u8;
+    let mut b2: u8 = 2_u8;
+    let mut b8: u8 = 8_u8;
+    assert!((<i32>::cpp_to_integer(b1 | b2) == 3));
+    assert!((<i32>::cpp_to_integer(b1 | b8) == 9));
+    assert!((<i32>::cpp_to_integer(b2 | b8) == 10));
+    assert!((<i32>::cpp_to_integer(b2 | b1) == 3));
+    assert!((<i32>::cpp_to_integer(b8 | b1) == 9));
+    assert!((<i32>::cpp_to_integer(b8 | b2) == 10));
     return true;
 }
 pub fn main() {
@@ -42,9 +42,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

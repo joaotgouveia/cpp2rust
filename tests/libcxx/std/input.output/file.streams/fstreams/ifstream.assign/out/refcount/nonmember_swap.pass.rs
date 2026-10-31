@@ -26,27 +26,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let fs1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let fs2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let fs1: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let fs2: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut x: () = 0_();
+        let mut x: f64 = 0_f64;
         unimplemented!();
+        assert!((x == 4.5_f64));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((x == 3.25_f64));
     }
     {
         let fs1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let fs2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let mut x: () = 0_();
+        let mut x: f64 = 0_f64;
         unimplemented!();
+        assert!((x == 4.5_f64));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((x == 3.25_f64));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

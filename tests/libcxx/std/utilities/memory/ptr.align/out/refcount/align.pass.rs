@@ -26,66 +26,82 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let N: Value<()> = Rc::new(RefCell::new(20_()));
-    let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..20).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut r: () = unimplemented!();
-    let mut p: () = (((buf.as_pointer() as Ptr<()>).offset(0_())) as Ptr<()>).to_any();
-    let mut s: () = (*N.borrow());
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let N: Value<u32> = Rc::new(RefCell::new(20_u32));
+    let buf: Value<Box<[i8]>> = Rc::new(RefCell::new((0..20).map(|_| 0_i8).collect::<Box<[i8]>>()));
+    let mut r: AnyPtr = AnyPtr::default();
+    let mut p: AnyPtr = (((buf.as_pointer() as Ptr<i8>).offset(0)) as Ptr<i8>).to_any();
+    let mut s: usize = ((*N.borrow()) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    p = (((buf.as_pointer() as Ptr<()>).offset(1_())) as Ptr<()>).to_any();
-    s = (*N.borrow());
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(0)) as Ptr<i8>).to_any() })
+    );
+    assert!(({ (r).clone() } == { (p).clone() }));
+    assert!((s == ((*N.borrow()) as usize)));
+    p = (((buf.as_pointer() as Ptr<i8>).offset(1)) as Ptr<i8>).to_any();
+    s = ((*N.borrow()) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    p = (((buf.as_pointer() as Ptr<()>).offset(2_())) as Ptr<()>).to_any();
-    s = (*N.borrow());
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(4)) as Ptr<i8>).to_any() })
+    );
+    assert!(({ (r).clone() } == { (p).clone() }));
+    assert!((s == (((*N.borrow()).wrapping_sub(3_u32)) as usize)));
+    p = (((buf.as_pointer() as Ptr<i8>).offset(2)) as Ptr<i8>).to_any();
+    s = ((*N.borrow()) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    p = (((buf.as_pointer() as Ptr<()>).offset(3_())) as Ptr<()>).to_any();
-    s = (*N.borrow());
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(4)) as Ptr<i8>).to_any() })
+    );
+    assert!(({ (r).clone() } == { (p).clone() }));
+    assert!((s == (((*N.borrow()).wrapping_sub(2_u32)) as usize)));
+    p = (((buf.as_pointer() as Ptr<i8>).offset(3)) as Ptr<i8>).to_any();
+    s = ((*N.borrow()) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    p = (((buf.as_pointer() as Ptr<()>).offset(4_())) as Ptr<()>).to_any();
-    s = (*N.borrow());
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(4)) as Ptr<i8>).to_any() })
+    );
+    assert!(({ (r).clone() } == { (p).clone() }));
+    assert!((s == (((*N.borrow()).wrapping_sub(1_u32)) as usize)));
+    p = (((buf.as_pointer() as Ptr<i8>).offset(4)) as Ptr<i8>).to_any();
+    s = ((*N.borrow()) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    p = (((buf.as_pointer() as Ptr<()>).offset(0_())) as Ptr<()>).to_any();
-    s = (*N.borrow());
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(4)) as Ptr<i8>).to_any() })
+    );
+    assert!(({ (r).clone() } == { (p).clone() }));
+    assert!((s == ((*N.borrow()) as usize)));
+    p = (((buf.as_pointer() as Ptr<i8>).offset(0)) as Ptr<i8>).to_any();
+    s = ((*N.borrow()) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    p = (((buf.as_pointer() as Ptr<()>).offset(1_())) as Ptr<()>).to_any();
-    s = (*N.borrow()).wrapping_sub(1_());
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(0)) as Ptr<i8>).to_any() })
+    );
+    assert!(({ (r).clone() } == { (p).clone() }));
+    assert!((s == ((*N.borrow()) as usize)));
+    p = (((buf.as_pointer() as Ptr<i8>).offset(1)) as Ptr<i8>).to_any();
+    s = (((*N.borrow()).wrapping_sub(1_u32)) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    p = (((buf.as_pointer() as Ptr<()>).offset(1_())) as Ptr<()>).to_any();
-    s = (*N.borrow()).wrapping_sub(1_());
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(4)) as Ptr<i8>).to_any() })
+    );
+    assert!(({ (r).clone() } == { (p).clone() }));
+    assert!((s == (((*N.borrow()).wrapping_sub(4_u32)) as usize)));
+    p = (((buf.as_pointer() as Ptr<i8>).offset(1)) as Ptr<i8>).to_any();
+    s = (((*N.borrow()).wrapping_sub(1_u32)) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    p = (((buf.as_pointer() as Ptr<()>).offset(0_())) as Ptr<()>).to_any();
-    s = (*N.borrow());
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(1)) as Ptr<i8>).to_any() })
+    );
+    assert!((r).is_null());
+    assert!((s == (((*N.borrow()).wrapping_sub(1_u32)) as usize)));
+    p = (((buf.as_pointer() as Ptr<i8>).offset(0)) as Ptr<i8>).to_any();
+    s = ((*N.borrow()) as usize);
     r = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(
+        ({ (p).clone() } == { (((buf.as_pointer() as Ptr<i8>).offset(0)) as Ptr<i8>).to_any() })
+    );
+    assert!((r).is_null());
+    assert!((s == ((*N.borrow()) as usize)));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

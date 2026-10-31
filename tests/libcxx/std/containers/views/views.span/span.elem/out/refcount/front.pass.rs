@@ -6,27 +6,27 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn testConstexprSpan_0(sp: ()) -> () {
+pub fn testConstexprSpan_0(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
-pub fn testConstexprSpan_1(sp: ()) -> () {
+pub fn testConstexprSpan_1(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
-pub fn testConstexprSpan_2(sp: ()) -> () {
+pub fn testConstexprSpan_2(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
-pub fn testConstexprSpan_3(sp: ()) -> () {
+pub fn testConstexprSpan_3(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
 }
-pub fn testConstexprSpan_4(sp: ()) -> () {
+pub fn testConstexprSpan_4(sp: ()) -> bool {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
     return (unimplemented!() == unimplemented!());
@@ -34,37 +34,37 @@ pub fn testConstexprSpan_4(sp: ()) -> () {
 pub fn testRuntimeSpan_5(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn testRuntimeSpan_6(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn testRuntimeSpan_7(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn testRuntimeSpan_8(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn testRuntimeSpan_9(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn testRuntimeSpan_10(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn testRuntimeSpan_11(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn testEmptySpan_12(sp: ()) {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
@@ -74,31 +74,12 @@ pub fn testEmptySpan_12(sp: ()) {
 #[byte_size(1)]
 pub struct A {}
 thread_local!(
-    pub static iArr1_13: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-    ])));
+    pub static iArr1_13: Value<Box<[i32]>> =
+        Rc::new(RefCell::new(Box::new([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])));
 );
 thread_local!(
-    pub static iArr2_14: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        10_(),
-        11_(),
-        12_(),
-        13_(),
-        14_(),
-        15_(),
-        16_(),
-        17_(),
-        18_(),
-        19_(),
+    pub static iArr2_14: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+        10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     ])));
 );
 
@@ -121,7 +102,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 1))");;
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 2))");;
     const _: () = assert!(true, "testConstexprSpan(std::span<const int>(iArr1, 3))");;
@@ -138,12 +119,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ testRuntimeSpan_7(unimplemented!()) });
     ({ testRuntimeSpan_8(unimplemented!()) });
     ({ testRuntimeSpan_9(unimplemented!()) });
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
     ({ testRuntimeSpan_10(unimplemented!()) });
     ({ testRuntimeSpan_11(unimplemented!()) });
     let sp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ testEmptySpan_12(unimplemented!()) });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = iArr1_13.with(|_| ());

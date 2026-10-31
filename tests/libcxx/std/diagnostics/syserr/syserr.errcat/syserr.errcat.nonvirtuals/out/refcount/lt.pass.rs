@@ -26,12 +26,18 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let e_cat1: Ptr<()> = unimplemented!();
     let e_cat2: Ptr<()> = unimplemented!();
     let e_cat3: Ptr<()> = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(
+        (!(unimplemented!() == std::cmp::Ordering::Less))
+            && (!(unimplemented!() == std::cmp::Ordering::Less))
+    );
+    assert!(
+        (unimplemented!() == std::cmp::Ordering::Less)
+            || (unimplemented!() == std::cmp::Ordering::Less)
+    );
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

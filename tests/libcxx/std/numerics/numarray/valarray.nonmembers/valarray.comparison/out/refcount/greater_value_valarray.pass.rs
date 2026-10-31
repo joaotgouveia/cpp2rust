@@ -26,23 +26,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 0_()])));
-        let mut a3: [(); 5] = [true, false, false, false, true];
-        let mut N: () = 5_();
+        let a2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 0])));
+        let mut a3: [bool; 5] = [true, false, false, false, true];
+        let mut N: u32 = 5_u32;
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v3a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < N) {
-            unimplemented!();
-            unimplemented!();
+        assert!((unimplemented!() == (N as usize)));
+        assert!((unimplemented!() == (N as usize)));
+        let mut i: usize = 0_usize;
+        'loop_: while (i < (N as usize)) {
+            assert!((((unimplemented!().read()) as i32) == (a3[(i) as usize] as i32)));
+            assert!((((unimplemented!().read()) as i32) == (a3[(i) as usize] as i32)));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,65 +6,65 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: ()) -> () {
+pub fn test_convertible_imp_0(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_1(mut _a0: ()) -> () {
+pub fn test_convertible_imp_1(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_2(mut _a0: ()) -> () {
+pub fn test_convertible_imp_2(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_3(mut _a0: ()) -> () {
+pub fn test_convertible_imp_3(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_4(mut _a0: ()) -> () {
+pub fn test_convertible_imp_4(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_5(mut _a0: ()) -> () {
+pub fn test_convertible_imp_5(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_6(mut _a0: ()) -> () {
+pub fn test_convertible_imp_6(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_7(mut _a0: ()) -> () {
+pub fn test_convertible_imp_7(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_8(mut _a0: ()) -> () {
+pub fn test_convertible_imp_8(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_9(mut _a0: ()) -> () {
+pub fn test_convertible_imp_9(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_10() -> () {
-    return ({ test_convertible_imp_0(0_()) });
+pub fn test_convertible_10() -> bool {
+    return ({ test_convertible_imp_0(0) });
 }
-pub fn test_convertible_11() -> () {
-    return ({ test_convertible_imp_5(0_()) });
+pub fn test_convertible_11() -> bool {
+    return ({ test_convertible_imp_5(0_i64) });
 }
-pub fn test_convertible_12() -> () {
-    return ({ test_convertible_imp_1(0_()) });
+pub fn test_convertible_12() -> bool {
+    return ({ test_convertible_imp_1(0) });
 }
-pub fn test_convertible_13() -> () {
-    return ({ test_convertible_imp_6(0_()) });
+pub fn test_convertible_13() -> bool {
+    return ({ test_convertible_imp_6(0_i64) });
 }
-pub fn test_convertible_14() -> () {
-    return ({ test_convertible_imp_2(0_()) });
+pub fn test_convertible_14() -> bool {
+    return ({ test_convertible_imp_2(0) });
 }
-pub fn test_convertible_15() -> () {
-    return ({ test_convertible_imp_7(0_()) });
+pub fn test_convertible_15() -> bool {
+    return ({ test_convertible_imp_7(0_i64) });
 }
-pub fn test_convertible_16() -> () {
-    return ({ test_convertible_imp_3(0_()) });
+pub fn test_convertible_16() -> bool {
+    return ({ test_convertible_imp_3(0) });
 }
-pub fn test_convertible_17() -> () {
-    return ({ test_convertible_imp_8(0_()) });
+pub fn test_convertible_17() -> bool {
+    return ({ test_convertible_imp_8(0_i64) });
 }
-pub fn test_convertible_18() -> () {
-    return ({ test_convertible_imp_4(0_()) });
+pub fn test_convertible_18() -> bool {
+    return ({ test_convertible_imp_4(0) });
 }
-pub fn test_convertible_19() -> () {
-    return ({ test_convertible_imp_9(0_()) });
+pub fn test_convertible_19() -> bool {
+    return ({ test_convertible_imp_9(0_i64) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
@@ -94,11 +94,12 @@ impl Default for ExplicitDefault {
     }
 }
 const _: () = assert!(true, "!test_convertible<ExplicitDefault>()");
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(1)]
 pub struct ImplicitInt {}
 impl ImplicitInt {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         Self {}
     }
 }
@@ -107,7 +108,7 @@ const _: () = assert!(true, "test_convertible<ImplicitInt, int>()");
 #[byte_size(1)]
 pub struct ExplicitInt {}
 impl ExplicitInt {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         Self {}
     }
 }
@@ -164,7 +165,7 @@ const _: () = assert!(true, "!test_convertible<ExplicitMove, ExplicitMove>()");
 #[byte_size(1)]
 pub struct ImplicitArgs {}
 impl ImplicitArgs {
-    pub fn new(mut _a0: (), mut _a1: (), mut _a2: ()) -> Self {
+    pub fn new(mut _a0: i32, mut _a1: i32, mut _a2: i32) -> Self {
         Self {}
     }
 }
@@ -173,7 +174,7 @@ const _: () = assert!(true, "test_convertible<ImplicitArgs, int, int, int>()");
 #[byte_size(1)]
 pub struct ExplicitArgs {}
 impl ExplicitArgs {
-    pub fn new(mut _a0: (), mut _a1: (), mut _a2: ()) -> Self {
+    pub fn new(mut _a0: i32, mut _a1: i32, mut _a2: i32) -> Self {
         Self {}
     }
 }
@@ -197,8 +198,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    return 0;
 }
 pub trait ExplicitCopyImpl {
     fn copy_assign(&self, _a0: Ptr<ExplicitCopy>) -> Ptr<ExplicitCopy>;

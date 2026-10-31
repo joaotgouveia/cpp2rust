@@ -6,164 +6,272 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub unsafe fn test_0(
+    mut bad: libc::c_char,
+    mut args_1: (libc::c_char, i32),
+    mut args_2: (libc::c_char, i32),
+    mut args_3: (libc::c_char, i32),
+    mut args_4: (libc::c_char, i32),
+) {
     let mut map: () = unimplemented!();
-    let mut pairs: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut pairs: [(libc::c_char, i32); 4] = [
+        {
+            let __a0 = (args_1).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_2).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_3).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_4).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
     ];
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
+        let p: *mut (libc::c_char, i32) = &mut (*p);
         unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
-        unimplemented!();
+        let p: *mut (libc::c_char, i32) = &mut (*p);
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
-pub unsafe fn test_1(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub unsafe fn test_1(
+    mut bad: libc::c_char,
+    mut args_1: (libc::c_char, libc::c_char),
+    mut args_2: (libc::c_char, libc::c_char),
+    mut args_3: (libc::c_char, libc::c_char),
+    mut args_4: (libc::c_char, libc::c_char),
+) {
     let mut map: () = unimplemented!();
-    let mut pairs: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut pairs: [(libc::c_char, libc::c_char); 4] = [
+        {
+            let __a0 = (args_1).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_2).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_3).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_4).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
     ];
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
+        let p: *mut (libc::c_char, libc::c_char) = &mut (*p);
         unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
-        unimplemented!();
+        let p: *mut (libc::c_char, libc::c_char) = &mut (*p);
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
-pub unsafe fn test_2(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub unsafe fn test_2(
+    mut bad: i32,
+    mut args_1: (i32, E),
+    mut args_2: (i32, E),
+    mut args_3: (i32, E),
+    mut args_4: (i32, E),
+) {
     let mut map: () = unimplemented!();
-    let mut pairs: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut pairs: [(i32, E); 4] = [
+        {
+            let __a0 = (args_1).clone();
+            ((*&__a0.0), <E as CppFromUnsafe<E>>::cpp_from(&__a0.1))
+        },
+        {
+            let __a0 = (args_2).clone();
+            ((*&__a0.0), <E as CppFromUnsafe<E>>::cpp_from(&__a0.1))
+        },
+        {
+            let __a0 = (args_3).clone();
+            ((*&__a0.0), <E as CppFromUnsafe<E>>::cpp_from(&__a0.1))
+        },
+        {
+            let __a0 = (args_4).clone();
+            ((*&__a0.0), <E as CppFromUnsafe<E>>::cpp_from(&__a0.1))
+        },
     ];
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
+        let p: *mut (i32, E) = &mut (*p);
         unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
-        unimplemented!();
+        let p: *mut (i32, E) = &mut (*p);
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
-pub unsafe fn test_3(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub unsafe fn test_3(
+    mut bad: libc::c_char,
+    mut args_1: (libc::c_char, i32),
+    mut args_2: (libc::c_char, i32),
+    mut args_3: (libc::c_char, i32),
+    mut args_4: (libc::c_char, i32),
+) {
     let mut map: () = unimplemented!();
-    let mut pairs: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut pairs: [(libc::c_char, i32); 4] = [
+        {
+            let __a0 = (args_1).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_2).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_3).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_4).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
     ];
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
+        let p: *mut (libc::c_char, i32) = &mut (*p);
         unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
-        unimplemented!();
+        let p: *mut (libc::c_char, i32) = &mut (*p);
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
-pub unsafe fn test_4(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub unsafe fn test_4(
+    mut bad: libc::c_char,
+    mut args_1: (libc::c_char, libc::c_char),
+    mut args_2: (libc::c_char, libc::c_char),
+    mut args_3: (libc::c_char, libc::c_char),
+    mut args_4: (libc::c_char, libc::c_char),
+) {
     let mut map: () = unimplemented!();
-    let mut pairs: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut pairs: [(libc::c_char, libc::c_char); 4] = [
+        {
+            let __a0 = (args_1).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_2).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_3).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
+        {
+            let __a0 = (args_4).clone();
+            ((*&__a0.0), (*&__a0.1))
+        },
     ];
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
+        let p: *mut (libc::c_char, libc::c_char) = &mut (*p);
         unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
-        unimplemented!();
+        let p: *mut (libc::c_char, libc::c_char) = &mut (*p);
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
-pub unsafe fn test_5(mut bad: (), mut args_1: (), mut args_2: (), mut args_3: (), mut args_4: ()) {
+pub unsafe fn test_5(
+    mut bad: i32,
+    mut args_1: (i32, E),
+    mut args_2: (i32, E),
+    mut args_3: (i32, E),
+    mut args_4: (i32, E),
+) {
     let mut map: () = unimplemented!();
-    let mut pairs: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut pairs: [(i32, E); 4] = [
+        {
+            let __a0 = (args_1).clone();
+            ((*&__a0.0), <E as CppFromUnsafe<E>>::cpp_from(&__a0.1))
+        },
+        {
+            let __a0 = (args_2).clone();
+            ((*&__a0.0), <E as CppFromUnsafe<E>>::cpp_from(&__a0.1))
+        },
+        {
+            let __a0 = (args_3).clone();
+            ((*&__a0.0), <E as CppFromUnsafe<E>>::cpp_from(&__a0.1))
+        },
+        {
+            let __a0 = (args_4).clone();
+            ((*&__a0.0), <E as CppFromUnsafe<E>>::cpp_from(&__a0.1))
+        },
     ];
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
+        let p: *mut (i32, E) = &mut (*p);
         unimplemented!();
     }
     'loop_: for p in IterRange::new(
         pairs.as_mut_ptr(),
-        pairs.as_mut_ptr().offset((4_()) as isize),
+        pairs.as_mut_ptr().offset((4_i64) as isize),
     ) {
-        let p: *mut () = &mut (*p);
-        unimplemented!();
+        let p: *mut (i32, E) = &mut (*p);
+        assert!(unimplemented!());
     }
-    unimplemented!();
+    assert!(!(unimplemented!()));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct E {
-    pub a: (),
-    pub b: (),
-    pub c: (),
+    pub a: i32,
+    pub b: f64,
+    pub c: libc::c_char,
 }
 impl Default for E {
     fn default() -> Self {
         unsafe {
             E {
-                a: 1_(),
-                b: 1_(),
-                c: 1_(),
+                a: 1,
+                b: 1_f64,
+                c: (1 as libc::c_char),
             }
         }
     }
@@ -183,53 +291,61 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         (unsafe {
-            let _args_1: () = unimplemented!();
-            let _args_2: () = unimplemented!();
-            let _args_3: () = unimplemented!();
-            let _args_4: () = unimplemented!();
-            test_0(('e' as ()), _args_1, _args_2, _args_3, _args_4)
+            let _args_1: (libc::c_char, i32) = (('a' as libc::c_char), 10);
+            let _args_2: (libc::c_char, i32) = (('b' as libc::c_char), 11);
+            let _args_3: (libc::c_char, i32) = (('c' as libc::c_char), 12);
+            let _args_4: (libc::c_char, i32) = (('d' as libc::c_char), 13);
+            test_0(('e' as libc::c_char), _args_1, _args_2, _args_3, _args_4)
         });
         (unsafe {
-            let _args_1: () = unimplemented!();
-            let _args_2: () = unimplemented!();
-            let _args_3: () = unimplemented!();
-            let _args_4: () = unimplemented!();
-            test_1(('e' as ()), _args_1, _args_2, _args_3, _args_4)
+            let _args_1: (libc::c_char, libc::c_char) =
+                (('a' as libc::c_char), ('a' as libc::c_char));
+            let _args_2: (libc::c_char, libc::c_char) =
+                (('b' as libc::c_char), ('a' as libc::c_char));
+            let _args_3: (libc::c_char, libc::c_char) =
+                (('c' as libc::c_char), ('a' as libc::c_char));
+            let _args_4: (libc::c_char, libc::c_char) =
+                (('d' as libc::c_char), ('b' as libc::c_char));
+            test_1(('e' as libc::c_char), _args_1, _args_2, _args_3, _args_4)
         });
         (unsafe {
-            let _args_1: () = unimplemented!();
-            let _args_2: () = unimplemented!();
-            let _args_3: () = unimplemented!();
-            let _args_4: () = unimplemented!();
-            test_2(-1_(), _args_1, _args_2, _args_3, _args_4)
+            let _args_1: (i32, E) = (1, <E>::default());
+            let _args_2: (i32, E) = (2, <E>::default());
+            let _args_3: (i32, E) = (3, <E>::default());
+            let _args_4: (i32, E) = (4, <E>::default());
+            test_2(-1_i32, _args_1, _args_2, _args_3, _args_4)
         });
     }
     {
         (unsafe {
-            let _args_1: () = unimplemented!();
-            let _args_2: () = unimplemented!();
-            let _args_3: () = unimplemented!();
-            let _args_4: () = unimplemented!();
-            test_3(('e' as ()), _args_1, _args_2, _args_3, _args_4)
+            let _args_1: (libc::c_char, i32) = (('a' as libc::c_char), 10);
+            let _args_2: (libc::c_char, i32) = (('b' as libc::c_char), 11);
+            let _args_3: (libc::c_char, i32) = (('c' as libc::c_char), 12);
+            let _args_4: (libc::c_char, i32) = (('d' as libc::c_char), 13);
+            test_3(('e' as libc::c_char), _args_1, _args_2, _args_3, _args_4)
         });
         (unsafe {
-            let _args_1: () = unimplemented!();
-            let _args_2: () = unimplemented!();
-            let _args_3: () = unimplemented!();
-            let _args_4: () = unimplemented!();
-            test_4(('e' as ()), _args_1, _args_2, _args_3, _args_4)
+            let _args_1: (libc::c_char, libc::c_char) =
+                (('a' as libc::c_char), ('a' as libc::c_char));
+            let _args_2: (libc::c_char, libc::c_char) =
+                (('b' as libc::c_char), ('a' as libc::c_char));
+            let _args_3: (libc::c_char, libc::c_char) =
+                (('c' as libc::c_char), ('a' as libc::c_char));
+            let _args_4: (libc::c_char, libc::c_char) =
+                (('d' as libc::c_char), ('b' as libc::c_char));
+            test_4(('e' as libc::c_char), _args_1, _args_2, _args_3, _args_4)
         });
         (unsafe {
-            let _args_1: () = unimplemented!();
-            let _args_2: () = unimplemented!();
-            let _args_3: () = unimplemented!();
-            let _args_4: () = unimplemented!();
-            test_5(-1_(), _args_1, _args_2, _args_3, _args_4)
+            let _args_1: (i32, E) = (1, <E>::default());
+            let _args_2: (i32, E) = (2, <E>::default());
+            let _args_3: (i32, E) = (3, <E>::default());
+            let _args_4: (i32, E) = (4, <E>::default());
+            test_5(-1_i32, _args_1, _args_2, _args_3, _args_4)
         });
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

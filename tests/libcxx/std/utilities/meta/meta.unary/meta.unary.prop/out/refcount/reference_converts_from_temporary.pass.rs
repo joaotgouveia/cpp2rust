@@ -34,7 +34,7 @@ impl Default for Union {
 #[byte_size(1)]
 pub struct bit_zero {
     #[offset(0)]
-    pub anon_0: (),
+    pub anon_0: i32,
 }
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -44,7 +44,7 @@ impl A {}
 #[byte_size(1)]
 pub struct NonPODClass {}
 impl NonPODClass {}
-pub type Enum = ();
+pub type Enum = u32;
 pub const Enum_EV: Enum = 0;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(24)]
@@ -52,9 +52,9 @@ pub struct Base {
     #[offset(0)]
     pub e: Enum,
     #[offset(4)]
-    pub i: (),
+    pub i: i32,
     #[offset(8)]
-    pub f: (),
+    pub f: f32,
     #[offset(16)]
     #[byte_size(8)]
     pub p: Ptr<NonPODClass>,
@@ -66,75 +66,55 @@ pub struct Derived {}
 #[byte_size(4)]
 pub struct ConvertsToRef_int__int_ref_ {
     #[offset(0)]
-    pub obj: (),
+    pub obj: i32,
 }
 impl Default for ConvertsToRef_int__int_ref_ {
     fn default() -> Self {
-        {
-            ConvertsToRef_int__int_ref_ {
-                obj: unimplemented!(),
-            }
-        }
+        { ConvertsToRef_int__int_ref_ { obj: 0_i32 } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct ConvertsToRef_int__int_refref_ {
     #[offset(0)]
-    pub obj: (),
+    pub obj: i32,
 }
 impl Default for ConvertsToRef_int__int_refref_ {
     fn default() -> Self {
-        {
-            ConvertsToRef_int__int_refref_ {
-                obj: unimplemented!(),
-            }
-        }
+        { ConvertsToRef_int__int_refref_ { obj: 0_i32 } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct ConvertsToRef_int__const_int_ref_ {
     #[offset(0)]
-    pub obj: (),
+    pub obj: i32,
 }
 impl Default for ConvertsToRef_int__const_int_ref_ {
     fn default() -> Self {
-        {
-            ConvertsToRef_int__const_int_ref_ {
-                obj: unimplemented!(),
-            }
-        }
+        { ConvertsToRef_int__const_int_ref_ { obj: 0_i32 } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
 pub struct ConvertsToRef_long__long_ref_ {
     #[offset(0)]
-    pub obj: (),
+    pub obj: i64,
 }
 impl Default for ConvertsToRef_long__long_ref_ {
     fn default() -> Self {
-        {
-            ConvertsToRef_long__long_ref_ {
-                obj: unimplemented!(),
-            }
-        }
+        { ConvertsToRef_long__long_ref_ { obj: 0_i64 } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
 pub struct ConvertsToRefPrivate_long__long_ref_ {
     #[offset(0)]
-    obj: (),
+    obj: i64,
 }
 impl Default for ConvertsToRefPrivate_long__long_ref_ {
     fn default() -> Self {
-        {
-            ConvertsToRefPrivate_long__long_ref_ {
-                obj: unimplemented!(),
-            }
-        }
+        { ConvertsToRefPrivate_long__long_ref_ { obj: 0_i64 } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -144,106 +124,106 @@ pub struct ExplicitConversionRvalueRef {}
 #[byte_size(1)]
 pub struct ExplicitConversionRef {}
 pub fn test_reference_converts_from_temporary_1() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_2() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_3() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_4() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_5() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_6() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_7() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_8() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_9() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_10() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_11() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_12() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_13() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_14() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_15() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_16() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_17() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_18() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_19() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_20() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_21() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_22() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_23() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_reference_converts_from_temporary_24() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn test_reference_converts_from_temporary_25() {
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
-pub fn test_26() -> () {
+pub fn test_26() -> bool {
     ({ test_reference_converts_from_temporary_1() });
     ({ test_reference_converts_from_temporary_1() });
     ({ test_reference_converts_from_temporary_2() });
@@ -254,13 +234,13 @@ pub fn test_26() -> () {
     ({ test_reference_converts_from_temporary_7() });
     ({ test_reference_converts_from_temporary_8() });
     ({ test_reference_converts_from_temporary_9() });
-    unimplemented!();
+    assert!((unimplemented!()));
     ({ test_reference_converts_from_temporary_10() });
-    unimplemented!();
+    assert!((unimplemented!()));
     ({ test_reference_converts_from_temporary_11() });
-    unimplemented!();
+    assert!((unimplemented!()));
     ({ test_reference_converts_from_temporary_12() });
-    unimplemented!();
+    assert!((unimplemented!()));
     ({ test_reference_converts_from_temporary_13() });
     ({ test_reference_converts_from_temporary_14() });
     ({ test_reference_converts_from_temporary_15() });
@@ -296,10 +276,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_26() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn copy_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
@@ -308,49 +288,49 @@ pub trait AImpl {
 }
 impl AImpl for Ptr<A> {}
 pub trait ConvertsToRefPrivate_long__long_ref_Impl {
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti64(&self) -> Ptr<i64> {
         unimplemented!()
     }
 }
 impl ConvertsToRefPrivate_long__long_ref_Impl for Ptr<ConvertsToRefPrivate_long__long_ref_> {}
 pub trait ConvertsToRef_int__const_int_ref_Impl {
-    fn to_pconst(&self) -> Ptr<()> {
+    fn to_pconsti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl ConvertsToRef_int__const_int_ref_Impl for Ptr<ConvertsToRef_int__const_int_ref_> {}
 pub trait ConvertsToRef_int__int_ref_Impl {
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl ConvertsToRef_int__int_ref_Impl for Ptr<ConvertsToRef_int__int_ref_> {}
 pub trait ConvertsToRef_int__int_refref_Impl {
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl ConvertsToRef_int__int_refref_Impl for Ptr<ConvertsToRef_int__int_refref_> {}
 pub trait ConvertsToRef_long__long_ref_Impl {
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti64(&self) -> Ptr<i64> {
         unimplemented!()
     }
 }
 impl ConvertsToRef_long__long_ref_Impl for Ptr<ConvertsToRef_long__long_ref_> {}
 pub trait ExplicitConversionRefImpl {
-    fn to_(&self) -> () {
+    fn to_i32(&self) -> i32 {
         unimplemented!()
     }
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl ExplicitConversionRefImpl for Ptr<ExplicitConversionRef> {}
 pub trait ExplicitConversionRvalueRefImpl {
-    fn to_(&self) -> () {
+    fn to_i32(&self) -> i32 {
         unimplemented!()
     }
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }

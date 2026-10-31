@@ -22,13 +22,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(
-        ((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>())),
+        ((::std::mem::size_of::<usize>()) == (::std::mem::size_of::<*mut ::libc::c_void>())),
         "sizeof(std::size_t) == sizeof(void*)"
     );;
     const _: () = assert!(true, "std::is_unsigned<std::size_t>::value");;
     const _: () = assert!(true, "std::is_integral<std::size_t>::value");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

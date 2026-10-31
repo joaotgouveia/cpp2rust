@@ -9,47 +9,87 @@ use std::rc::{Rc, Weak};
 pub fn test_0() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let g2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567891").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let mut s1: Vec<i8> = unimplemented!();
+    let mut s2: Vec<i8> = unimplemented!();
+    assert!((unimplemented!() != unimplemented!()));
 }
 pub fn test_1() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let g2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567891").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let mut s1: Vec<u8> = unimplemented!();
+    let mut s2: Vec<u8> = unimplemented!();
+    assert!((unimplemented!() != unimplemented!()));
 }
 pub fn test_2() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let g2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567891").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let mut s1: Vec<u16> = unimplemented!();
+    let mut s2: Vec<u16> = unimplemented!();
+    assert!((unimplemented!() != unimplemented!()));
 }
 pub fn test_3() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let g2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567891").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let mut s1: Vec<u32> = unimplemented!();
+    let mut s2: Vec<u32> = unimplemented!();
+    assert!((unimplemented!() != unimplemented!()));
 }
 pub fn test_4() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut g1: () = unimplemented!();
-    let mut g2: () = unimplemented!();
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    unimplemented!();
+    let g1: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567890").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let g2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"1234567891").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let mut s1: Vec<i32> = unimplemented!();
+    let mut s2: Vec<i32> = unimplemented!();
+    assert!((unimplemented!() != unimplemented!()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -70,12 +110,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
     ({ test_3() });
     ({ test_4() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -350,7 +350,7 @@ impl Default for Union {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct bit_zero {
-    pub anon_13: (),
+    pub anon_13: i32,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -371,7 +371,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_has_not_trivial_default_constructor_8() });
     (unsafe { test_has_not_trivial_default_constructor_9() });
     (unsafe { test_has_not_trivial_default_constructor_10() });
@@ -385,6 +385,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_is_trivially_default_constructible_5() });
     (unsafe { test_is_trivially_default_constructible_6() });
     (unsafe { test_is_trivially_default_constructible_7() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

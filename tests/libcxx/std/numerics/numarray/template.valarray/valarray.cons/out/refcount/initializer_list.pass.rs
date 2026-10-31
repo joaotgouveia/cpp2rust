@@ -26,31 +26,33 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut a: [i32; 5] = [1, 2, 3, 4, 5];
+        let mut N: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!((unimplemented!() == (N as usize)));
+        let mut i: u32 = 0_u32;
         'loop_: while (i < N) {
-            unimplemented!();
+            assert!(((unimplemented!().read()) == a[(i) as usize]));
             i.prefix_inc();
         }
     }
     {
-        let mut a: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-        let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut a: [f64; 5] = [1_f64, 2_f64, 3_f64, 4_f64, 5_f64];
+        let mut N: u32 = (((::std::mem::size_of::<[f64; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<f64>() as usize)))
+            as u32);
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!((unimplemented!() == (N as usize)));
+        let mut i: u32 = 0_u32;
         'loop_: while (i < N) {
-            unimplemented!();
+            assert!(((unimplemented!().read()) == a[(i) as usize]));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

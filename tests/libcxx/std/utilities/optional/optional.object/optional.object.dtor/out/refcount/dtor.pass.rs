@@ -10,15 +10,15 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct PODType {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
     #[offset(4)]
-    pub value2: (),
+    pub value2: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct X {}
 thread_local!(
-    pub static dtor_called_0: Value<()> = Rc::new(RefCell::new(false));
+    pub static dtor_called_0: Value<bool> = Rc::new(RefCell::new(false));
 );
 
 pub fn main() {
@@ -40,7 +40,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "std::is_trivially_destructible<T>::value");;
         const _: () = assert!(true, "std::is_trivially_destructible<optional<T>>::value");;
@@ -60,11 +60,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let x: Value<X> = Rc::new(RefCell::new(<X>::default()));
             let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
             let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
         }
-        unimplemented!();
+        assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));
     }
-    return 0_();
+    return 0;
 }
 pub trait XImpl {
     fn destructor(&self);

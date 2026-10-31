@@ -9,11 +9,11 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct A {
-    pub i_: (),
+    pub i_: i32,
 }
 impl A {
     pub unsafe fn new() -> Self {
-        let mut this = Self { i_: 7_() };
+        let mut this = Self { i_: 7 };
         this
     }
 }
@@ -22,9 +22,14 @@ impl Default for A {
         unsafe { A::new() }
     }
 }
-pub unsafe fn test_0() -> () {
-    let mut p: () = unimplemented!();
-    unimplemented!();
+pub unsafe fn test_0() -> bool {
+    let mut p: Option<Box<A>> = Some(Box::from_raw((Box::leak(Box::new(A::new())) as *mut A)));
+    assert!(
+        (((*p
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const A as *mut A))
+        .i_) == (7))
+    );
     return true;
 }
 pub fn main() {
@@ -42,9 +47,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

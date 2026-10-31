@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct support_double_move_tracker {
     #[offset(0)]
-    moved_from_: (),
+    moved_from_: bool,
 }
 impl support_double_move_tracker {
     pub fn new() -> Self {
@@ -18,7 +18,7 @@ impl support_double_move_tracker {
     }
     pub fn move_from(other: Ptr<support_double_move_tracker>) -> Self {
         let __this: support_double_move_tracker = Self { moved_from_: false };
-        unimplemented!();
+        assert!(!(other.with(|__s| __s.moved_from_)));
         field!(other, moved_from_).write(true);
         __this
     }
@@ -49,7 +49,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct cpp17_output_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -71,7 +71,7 @@ const _: () = assert!(
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -88,7 +88,7 @@ const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub fn operator_ne_0(
     x: Ptr<forward_iterator_const_char_ptr_>,
     y: Ptr<forward_iterator_const_char_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -96,13 +96,13 @@ pub fn operator_ne_0(
 pub struct forward_iterator_const_char_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i8>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_const_char_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i8>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -115,10 +115,15 @@ impl forward_iterator_const_char_ptr_ {
         }
     }
 }
+impl CppAdvance for forward_iterator_const_char_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 pub fn operator_ne_1(
     x: Ptr<forward_iterator_const_wchar_t_ptr_>,
     y: Ptr<forward_iterator_const_wchar_t_ptr_>,
-) -> () {
+) -> bool {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -126,13 +131,13 @@ pub fn operator_ne_1(
 pub struct forward_iterator_const_wchar_t_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_const_wchar_t_ptr_ {
-    pub fn new_1(mut it: Ptr<()>) -> Self {
+    pub fn new_1(mut it: Ptr<i32>) -> Self {
         Self {
             it_: (it).clone(),
             tracker_: support_double_move_tracker::new(),
@@ -145,12 +150,17 @@ impl forward_iterator_const_wchar_t_ptr_ {
         }
     }
 }
+impl CppAdvance for forward_iterator_const_wchar_t_ptr_ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_6();
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -172,7 +182,7 @@ const _: () = assert!(
 pub struct cpp20_input_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -191,7 +201,7 @@ const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 pub struct cpp20_output_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<()>,
+    it_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(1)]
     tracker_: support_double_move_tracker,
@@ -212,22 +222,22 @@ const _: () = assert!(
 #[byte_size(32)]
 pub struct IteratorOpCounts {
     #[offset(0)]
-    pub increments: (),
+    pub increments: usize,
     #[offset(8)]
-    pub decrements: (),
+    pub decrements: usize,
     #[offset(16)]
-    pub zero_moves: (),
+    pub zero_moves: usize,
     #[offset(24)]
-    pub equal_cmps: (),
+    pub equal_cmps: usize,
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
         {
             IteratorOpCounts {
-                increments: 0_(),
-                decrements: 0_(),
-                zero_moves: 0_(),
-                equal_cmps: 0_(),
+                increments: 0_usize,
+                decrements: 0_usize,
+                zero_moves: 0_usize,
+                equal_cmps: 0_usize,
             }
         }
     }
@@ -235,7 +245,7 @@ impl Default for IteratorOpCounts {
 pub fn operator_eq_2(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
-) -> () {
+) -> bool {
     return ({ _a0.with(|__s| __s.it_.clone()) } == { _a1.with(|__s| __s.it_.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -243,7 +253,7 @@ pub fn operator_eq_2(
 pub struct forward_sized_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    pub it_: Ptr<()>,
+    pub it_: Ptr<i32>,
 }
 impl forward_sized_iterator_int_ptr_ {}
 impl CppEq for forward_sized_iterator_int_ptr_ {
@@ -255,7 +265,7 @@ impl Default for forward_sized_iterator_int_ptr_ {
     fn default() -> Self {
         {
             forward_sized_iterator_int_ptr_ {
-                it_: Ptr::<()>::null(),
+                it_: Ptr::<i32>::null(),
             }
         }
     }
@@ -265,36 +275,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_3(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_3(mut i: adl_Iterator, mut n: isize) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_4(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
         operator_add_3(_i, n)
     });
 }
 pub fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    cpp_swap!((a.ptr_).clone(), (b.ptr_).clone());
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_6(iter: adl_Iterator) -> Ptr<i32> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) });
 }
-pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> bool {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> std::cmp::Ordering {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -305,34 +315,34 @@ pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
 pub struct adl_Iterator {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
     #[offset(8)]
     #[byte_size(8)]
-    iter_moves_: Ptr<()>,
+    iter_moves_: Ptr<i32>,
     #[offset(16)]
     #[byte_size(8)]
-    iter_swaps_: Ptr<()>,
+    iter_swaps_: Ptr<i32>,
 }
 impl adl_Iterator {
-    fn new_1(mut p: Ptr<()>, mut iter_moves: Ptr<()>, mut iter_swaps: Ptr<()>) -> Self {
+    fn new_1(mut p: Ptr<i32>, mut iter_moves: Ptr<i32>, mut iter_swaps: Ptr<i32>) -> Self {
         Self {
             ptr_: (p).clone(),
             iter_moves_: (iter_moves).clone(),
             iter_swaps_: (iter_swaps).clone(),
         }
     }
-    pub fn TrackMoves(mut p: Ptr<()>, iter_moves: Ptr<()>) -> adl_Iterator {
+    pub fn TrackMoves(mut p: Ptr<i32>, iter_moves: Ptr<i32>) -> adl_Iterator {
         return adl_Iterator::new_1({ (p).clone() }, { (iter_moves).clone() }, {
-            Ptr::<()>::null()
+            Ptr::<i32>::null()
         });
     }
-    pub fn TrackSwaps_4(iter_swaps: Ptr<()>) -> adl_Iterator {
-        return adl_Iterator::new_1({ Ptr::<()>::null() }, { Ptr::<()>::null() }, {
+    pub fn TrackSwaps_4(iter_swaps: Ptr<i32>) -> adl_Iterator {
+        return adl_Iterator::new_1({ Ptr::<i32>::null() }, { Ptr::<i32>::null() }, {
             (iter_swaps).clone()
         });
     }
-    pub fn TrackSwaps_5(mut p: Ptr<()>, iter_swaps: Ptr<()>) -> adl_Iterator {
-        return adl_Iterator::new_1({ (p).clone() }, { Ptr::<()>::null() }, {
+    pub fn TrackSwaps_5(mut p: Ptr<i32>, iter_swaps: Ptr<i32>) -> adl_Iterator {
+        return adl_Iterator::new_1({ (p).clone() }, { Ptr::<i32>::null() }, {
             (iter_swaps).clone()
         });
     }
@@ -347,13 +357,21 @@ impl CppEq for adl_Iterator {
         operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppAdvance for adl_Iterator {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_14();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_16();
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         {
             adl_Iterator {
-                ptr_: Ptr::<()>::null(),
-                iter_moves_: Ptr::<()>::null(),
-                iter_swaps_: Ptr::<()>::null(),
+                ptr_: Ptr::<i32>::null(),
+                iter_moves_: Ptr::<i32>::null(),
+                iter_swaps_: Ptr::<i32>::null(),
             }
         }
     }
@@ -363,7 +381,7 @@ impl Default for adl_Iterator {
 pub struct rvalue_iterator_int_ptr_ {
     #[offset(0)]
     #[byte_size(8)]
-    it_: Ptr<Ptr<()>>,
+    it_: Ptr<Ptr<i32>>,
 }
 impl rvalue_iterator_int_ptr_ {}
 impl CppLess for rvalue_iterator_int_ptr_ {
@@ -378,21 +396,22 @@ impl CppEq for rvalue_iterator_int_ptr_ {
     }
 }
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Ptr< i8  >  , new, value)]
 #[byte_size(16)]
 pub struct util_iterator_error {}
 impl util_iterator_error {
-    pub fn new(mut what: Ptr<()>) -> Self {
+    pub fn new(mut what: Ptr<i8>) -> Self {
         Self {}
     }
 }
-pub fn test_9(mut A: Ptr<()>, expected: Ptr<()>) {
+pub fn test_9(mut A: Ptr<i8>, expected: Ptr<Vec<i8>>) {
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn test_10(mut A: Ptr<()>, expected: Ptr<()>) {
+pub fn test_10(mut A: Ptr<i32>, expected: Ptr<Vec<i32>>) {
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -413,1100 +432,1620 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __v = Vec::with_capacity(1_usize as usize + 1);
+            Ptr::<i8>::from_string_literal(b"\0")
+                .with_slice(1_usize as usize, |__s| __v.extend_from_slice(__s));
+            __v.push(0_i8);
+            __v
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"NUL"),
+            Ptr::<i8>::from_string_literal(b"NUL"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\x07").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"alert"),
+            Ptr::<i8>::from_string_literal(b"alert"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\x08").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"backspace"),
+            Ptr::<i8>::from_string_literal(b"backspace"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\t").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"tab"),
+            Ptr::<i8>::from_string_literal(b"tab"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\r").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"carriage-return"),
+            Ptr::<i8>::from_string_literal(b"carriage-return"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\n").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"newline"),
+            Ptr::<i8>::from_string_literal(b"newline"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\x0b").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"vertical-tab"),
+            Ptr::<i8>::from_string_literal(b"vertical-tab"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\x0c").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"form-feed"),
+            Ptr::<i8>::from_string_literal(b"form-feed"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b" ").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"space"),
+            Ptr::<i8>::from_string_literal(b"space"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"!").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"exclamation-mark"),
+            Ptr::<i8>::from_string_literal(b"exclamation-mark"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\"").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"quotation-mark"),
+            Ptr::<i8>::from_string_literal(b"quotation-mark"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"#").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"number-sign"),
+            Ptr::<i8>::from_string_literal(b"number-sign"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"$").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"dollar-sign"),
+            Ptr::<i8>::from_string_literal(b"dollar-sign"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"%").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"percent-sign"),
+            Ptr::<i8>::from_string_literal(b"percent-sign"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"&").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"ampersand"),
+            Ptr::<i8>::from_string_literal(b"ampersand"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\'").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"apostrophe"),
+            Ptr::<i8>::from_string_literal(b"apostrophe"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"(").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"left-parenthesis"),
+            Ptr::<i8>::from_string_literal(b"left-parenthesis"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b")").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"right-parenthesis"),
+            Ptr::<i8>::from_string_literal(b"right-parenthesis"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"*").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"asterisk"),
+            Ptr::<i8>::from_string_literal(b"asterisk"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"+").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"plus-sign"),
+            Ptr::<i8>::from_string_literal(b"plus-sign"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b",").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"comma"),
+            Ptr::<i8>::from_string_literal(b"comma"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"-").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"hyphen-minus"),
+            Ptr::<i8>::from_string_literal(b"hyphen-minus"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"-").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"hyphen"),
+            Ptr::<i8>::from_string_literal(b"hyphen"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b".").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"full-stop"),
+            Ptr::<i8>::from_string_literal(b"full-stop"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b".").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"period"),
+            Ptr::<i8>::from_string_literal(b"period"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"/").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"slash"),
+            Ptr::<i8>::from_string_literal(b"slash"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"/").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"solidus"),
+            Ptr::<i8>::from_string_literal(b"solidus"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"0").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"zero"),
+            Ptr::<i8>::from_string_literal(b"zero"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"1").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"one"),
+            Ptr::<i8>::from_string_literal(b"one"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"2").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"two"),
+            Ptr::<i8>::from_string_literal(b"two"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"3").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"three"),
+            Ptr::<i8>::from_string_literal(b"three"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"4").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"four"),
+            Ptr::<i8>::from_string_literal(b"four"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"5").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"five"),
+            Ptr::<i8>::from_string_literal(b"five"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"6").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"six"),
+            Ptr::<i8>::from_string_literal(b"six"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"7").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"seven"),
+            Ptr::<i8>::from_string_literal(b"seven"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"8").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"eight"),
+            Ptr::<i8>::from_string_literal(b"eight"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"9").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"nine"),
+            Ptr::<i8>::from_string_literal(b"nine"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b":").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"colon"),
+            Ptr::<i8>::from_string_literal(b"colon"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b";").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"semicolon"),
+            Ptr::<i8>::from_string_literal(b"semicolon"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"<").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"less-than-sign"),
+            Ptr::<i8>::from_string_literal(b"less-than-sign"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"=").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"equals-sign"),
+            Ptr::<i8>::from_string_literal(b"equals-sign"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b">").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"greater-than-sign"),
+            Ptr::<i8>::from_string_literal(b"greater-than-sign"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"?").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"question-mark"),
+            Ptr::<i8>::from_string_literal(b"question-mark"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"@").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"commercial-at"),
+            Ptr::<i8>::from_string_literal(b"commercial-at"),
             _expected.as_pointer(),
         )
     });
-    let mut c: () = ('A' as ());
-    'loop_: while (c <= ('Z' as ())) {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([c, unimplemented!()])));
+    let mut c: i8 = ('A' as i8);
+    'loop_: while ((c as i32) <= (('Z' as i8) as i32)) {
+        let a: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([c, 0_i8])));
         ({
-            let _A: Ptr<()> = (a.as_pointer() as Ptr<()>);
-            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let _A: Ptr<i8> = (a.as_pointer() as Ptr<i8>);
+            let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+                let mut __bytes = (a.as_pointer() as Ptr<i8>).to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }));
             test_9(_A, _expected.as_pointer())
         });
         c.prefix_inc();
     }
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"[").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"left-square-bracket"),
+            Ptr::<i8>::from_string_literal(b"left-square-bracket"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\\").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"backslash"),
+            Ptr::<i8>::from_string_literal(b"backslash"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"\\").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"reverse-solidus"),
+            Ptr::<i8>::from_string_literal(b"reverse-solidus"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"]").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"right-square-bracket"),
+            Ptr::<i8>::from_string_literal(b"right-square-bracket"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"^").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"circumflex-accent"),
+            Ptr::<i8>::from_string_literal(b"circumflex-accent"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"^").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"circumflex"),
+            Ptr::<i8>::from_string_literal(b"circumflex"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"_").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"low-line"),
+            Ptr::<i8>::from_string_literal(b"low-line"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"_").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"underscore"),
+            Ptr::<i8>::from_string_literal(b"underscore"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"`").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"grave-accent"),
+            Ptr::<i8>::from_string_literal(b"grave-accent"),
             _expected.as_pointer(),
         )
     });
-    let mut c: () = ('a' as ());
-    'loop_: while (c <= ('z' as ())) {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([c, unimplemented!()])));
+    let mut c: i8 = ('a' as i8);
+    'loop_: while ((c as i32) <= (('z' as i8) as i32)) {
+        let a: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([c, 0_i8])));
         ({
-            let _A: Ptr<()> = (a.as_pointer() as Ptr<()>);
-            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let _A: Ptr<i8> = (a.as_pointer() as Ptr<i8>);
+            let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+                let mut __bytes = (a.as_pointer() as Ptr<i8>).to_c_bytes();
+                __bytes.push(0_i8);
+                __bytes
+            }));
             test_9(_A, _expected.as_pointer())
         });
         c.prefix_inc();
     }
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"{").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"left-brace"),
+            Ptr::<i8>::from_string_literal(b"left-brace"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"{").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"left-curly-bracket"),
+            Ptr::<i8>::from_string_literal(b"left-curly-bracket"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"|").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"vertical-line"),
+            Ptr::<i8>::from_string_literal(b"vertical-line"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"}").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"right-brace"),
+            Ptr::<i8>::from_string_literal(b"right-brace"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"}").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"right-curly-bracket"),
+            Ptr::<i8>::from_string_literal(b"right-curly-bracket"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"~").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"tilde"),
+            Ptr::<i8>::from_string_literal(b"tilde"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"tild"),
+            Ptr::<i8>::from_string_literal(b"tild"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         test_9(
-            Ptr::<()>::from_string_literal(b"ch"),
+            Ptr::<i8>::from_string_literal(b"ch"),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __v = Vec::with_capacity(1_usize as usize + 1);
+            Ptr::<i32>::from_string_literal(&[0 as i32, 0 as i32])
+                .with_slice(1_usize as usize, |__s| __v.extend_from_slice(__s));
+            __v.push(0_i32);
+            __v
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[78 as (), 85 as (), 76 as (), 0 as ()]),
+            Ptr::<i32>::from_string_literal(&[78 as i32, 85 as i32, 76 as i32, 0 as i32]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[7 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 108 as (), 101 as (), 114 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 108 as i32, 101 as i32, 114 as i32, 116 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[8 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                98 as (), 97 as (), 99 as (), 107 as (), 115 as (), 112 as (), 97 as (), 99 as (),
-                101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                98 as i32, 97 as i32, 99 as i32, 107 as i32, 115 as i32, 112 as i32, 97 as i32,
+                99 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[9 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[116 as (), 97 as (), 98 as (), 0 as ()]),
+            Ptr::<i32>::from_string_literal(&[116 as i32, 97 as i32, 98 as i32, 0 as i32]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[13 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                99 as (), 97 as (), 114 as (), 114 as (), 105 as (), 97 as (), 103 as (),
-                101 as (), 45 as (), 114 as (), 101 as (), 116 as (), 117 as (), 114 as (),
-                110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                99 as i32, 97 as i32, 114 as i32, 114 as i32, 105 as i32, 97 as i32, 103 as i32,
+                101 as i32, 45 as i32, 114 as i32, 101 as i32, 116 as i32, 117 as i32, 114 as i32,
+                110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[10 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                110 as (), 101 as (), 119 as (), 108 as (), 105 as (), 110 as (), 101 as (),
-                0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                110 as i32, 101 as i32, 119 as i32, 108 as i32, 105 as i32, 110 as i32, 101 as i32,
+                0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[11 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                118 as (), 101 as (), 114 as (), 116 as (), 105 as (), 99 as (), 97 as (),
-                108 as (), 45 as (), 116 as (), 97 as (), 98 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                118 as i32, 101 as i32, 114 as i32, 116 as i32, 105 as i32, 99 as i32, 97 as i32,
+                108 as i32, 45 as i32, 116 as i32, 97 as i32, 98 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[12 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                102 as (), 111 as (), 114 as (), 109 as (), 45 as (), 102 as (), 101 as (),
-                101 as (), 100 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                102 as i32, 111 as i32, 114 as i32, 109 as i32, 45 as i32, 102 as i32, 101 as i32,
+                101 as i32, 100 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[32 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                115 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                115 as i32, 112 as i32, 97 as i32, 99 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[33 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                101 as (), 120 as (), 99 as (), 108 as (), 97 as (), 109 as (), 97 as (),
-                116 as (), 105 as (), 111 as (), 110 as (), 45 as (), 109 as (), 97 as (),
-                114 as (), 107 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                101 as i32, 120 as i32, 99 as i32, 108 as i32, 97 as i32, 109 as i32, 97 as i32,
+                116 as i32, 105 as i32, 111 as i32, 110 as i32, 45 as i32, 109 as i32, 97 as i32,
+                114 as i32, 107 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[34 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                113 as (), 117 as (), 111 as (), 116 as (), 97 as (), 116 as (), 105 as (),
-                111 as (), 110 as (), 45 as (), 109 as (), 97 as (), 114 as (), 107 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                113 as i32, 117 as i32, 111 as i32, 116 as i32, 97 as i32, 116 as i32, 105 as i32,
+                111 as i32, 110 as i32, 45 as i32, 109 as i32, 97 as i32, 114 as i32, 107 as i32,
+                0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[35 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                110 as (), 117 as (), 109 as (), 98 as (), 101 as (), 114 as (), 45 as (),
-                115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                110 as i32, 117 as i32, 109 as i32, 98 as i32, 101 as i32, 114 as i32, 45 as i32,
+                115 as i32, 105 as i32, 103 as i32, 110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[36 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                100 as (), 111 as (), 108 as (), 108 as (), 97 as (), 114 as (), 45 as (),
-                115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                100 as i32, 111 as i32, 108 as i32, 108 as i32, 97 as i32, 114 as i32, 45 as i32,
+                115 as i32, 105 as i32, 103 as i32, 110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[37 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                112 as (), 101 as (), 114 as (), 99 as (), 101 as (), 110 as (), 116 as (),
-                45 as (), 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                112 as i32, 101 as i32, 114 as i32, 99 as i32, 101 as i32, 110 as i32, 116 as i32,
+                45 as i32, 115 as i32, 105 as i32, 103 as i32, 110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[38 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 109 as (), 112 as (), 101 as (), 114 as (), 115 as (), 97 as (),
-                110 as (), 100 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 109 as i32, 112 as i32, 101 as i32, 114 as i32, 115 as i32, 97 as i32,
+                110 as i32, 100 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[39 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 112 as (), 111 as (), 115 as (), 116 as (), 114 as (), 111 as (),
-                112 as (), 104 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 112 as i32, 111 as i32, 115 as i32, 116 as i32, 114 as i32, 111 as i32,
+                112 as i32, 104 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[40 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 112 as (), 97 as (),
-                114 as (), 101 as (), 110 as (), 116 as (), 104 as (), 101 as (), 115 as (),
-                105 as (), 115 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                108 as i32, 101 as i32, 102 as i32, 116 as i32, 45 as i32, 112 as i32, 97 as i32,
+                114 as i32, 101 as i32, 110 as i32, 116 as i32, 104 as i32, 101 as i32, 115 as i32,
+                105 as i32, 115 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[41 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 112 as (),
-                97 as (), 114 as (), 101 as (), 110 as (), 116 as (), 104 as (), 101 as (),
-                115 as (), 105 as (), 115 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                114 as i32, 105 as i32, 103 as i32, 104 as i32, 116 as i32, 45 as i32, 112 as i32,
+                97 as i32, 114 as i32, 101 as i32, 110 as i32, 116 as i32, 104 as i32, 101 as i32,
+                115 as i32, 105 as i32, 115 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[42 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                97 as (), 115 as (), 116 as (), 101 as (), 114 as (), 105 as (), 115 as (),
-                107 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                97 as i32, 115 as i32, 116 as i32, 101 as i32, 114 as i32, 105 as i32, 115 as i32,
+                107 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[43 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                112 as (), 108 as (), 117 as (), 115 as (), 45 as (), 115 as (), 105 as (),
-                103 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                112 as i32, 108 as i32, 117 as i32, 115 as i32, 45 as i32, 115 as i32, 105 as i32,
+                103 as i32, 110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[44 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                99 as (), 111 as (), 109 as (), 109 as (), 97 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                99 as i32, 111 as i32, 109 as i32, 109 as i32, 97 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[45 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                104 as (), 121 as (), 112 as (), 104 as (), 101 as (), 110 as (), 45 as (),
-                109 as (), 105 as (), 110 as (), 117 as (), 115 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                104 as i32, 121 as i32, 112 as i32, 104 as i32, 101 as i32, 110 as i32, 45 as i32,
+                109 as i32, 105 as i32, 110 as i32, 117 as i32, 115 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[45 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                104 as (), 121 as (), 112 as (), 104 as (), 101 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                104 as i32, 121 as i32, 112 as i32, 104 as i32, 101 as i32, 110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[46 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                102 as (), 117 as (), 108 as (), 108 as (), 45 as (), 115 as (), 116 as (),
-                111 as (), 112 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                102 as i32, 117 as i32, 108 as i32, 108 as i32, 45 as i32, 115 as i32, 116 as i32,
+                111 as i32, 112 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[46 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                112 as (), 101 as (), 114 as (), 105 as (), 111 as (), 100 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                112 as i32, 101 as i32, 114 as i32, 105 as i32, 111 as i32, 100 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[47 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                115 as (), 108 as (), 97 as (), 115 as (), 104 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                115 as i32, 108 as i32, 97 as i32, 115 as i32, 104 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[47 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                115 as (), 111 as (), 108 as (), 105 as (), 100 as (), 117 as (), 115 as (),
-                0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                115 as i32, 111 as i32, 108 as i32, 105 as i32, 100 as i32, 117 as i32, 115 as i32,
+                0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[48 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[122 as (), 101 as (), 114 as (), 111 as (), 0 as ()]),
-            _expected.as_pointer(),
-        )
-    });
-    ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
-            Ptr::<()>::from_string_literal(&[111 as (), 110 as (), 101 as (), 0 as ()]),
-            _expected.as_pointer(),
-        )
-    });
-    ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
-            Ptr::<()>::from_string_literal(&[116 as (), 119 as (), 111 as (), 0 as ()]),
-            _expected.as_pointer(),
-        )
-    });
-    ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
-            Ptr::<()>::from_string_literal(&[
-                116 as (), 104 as (), 114 as (), 101 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                122 as i32, 101 as i32, 114 as i32, 111 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[49 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[102 as (), 111 as (), 117 as (), 114 as (), 0 as ()]),
+            Ptr::<i32>::from_string_literal(&[111 as i32, 110 as i32, 101 as i32, 0 as i32]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[50 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[102 as (), 105 as (), 118 as (), 101 as (), 0 as ()]),
+            Ptr::<i32>::from_string_literal(&[116 as i32, 119 as i32, 111 as i32, 0 as i32]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[51 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[115 as (), 105 as (), 120 as (), 0 as ()]),
-            _expected.as_pointer(),
-        )
-    });
-    ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
-            Ptr::<()>::from_string_literal(&[
-                115 as (), 101 as (), 118 as (), 101 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                116 as i32, 104 as i32, 114 as i32, 101 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[52 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                101 as (), 105 as (), 103 as (), 104 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                102 as i32, 111 as i32, 117 as i32, 114 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[53 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[110 as (), 105 as (), 110 as (), 101 as (), 0 as ()]),
-            _expected.as_pointer(),
-        )
-    });
-    ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
-            Ptr::<()>::from_string_literal(&[
-                99 as (), 111 as (), 108 as (), 111 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                102 as i32, 105 as i32, 118 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[54 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                115 as (), 101 as (), 109 as (), 105 as (), 99 as (), 111 as (), 108 as (),
-                111 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[115 as i32, 105 as i32, 120 as i32, 0 as i32]),
+            _expected.as_pointer(),
+        )
+    });
+    ({
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[55 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        test_10(
+            Ptr::<i32>::from_string_literal(&[
+                115 as i32, 101 as i32, 118 as i32, 101 as i32, 110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[56 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                108 as (), 101 as (), 115 as (), 115 as (), 45 as (), 116 as (), 104 as (),
-                97 as (), 110 as (), 45 as (), 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                101 as i32, 105 as i32, 103 as i32, 104 as i32, 116 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[57 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                101 as (), 113 as (), 117 as (), 97 as (), 108 as (), 115 as (), 45 as (),
-                115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                110 as i32, 105 as i32, 110 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[58 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                103 as (), 114 as (), 101 as (), 97 as (), 116 as (), 101 as (), 114 as (),
-                45 as (), 116 as (), 104 as (), 97 as (), 110 as (), 45 as (), 115 as (),
-                105 as (), 103 as (), 110 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                99 as i32, 111 as i32, 108 as i32, 111 as i32, 110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[59 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                113 as (), 117 as (), 101 as (), 115 as (), 116 as (), 105 as (), 111 as (),
-                110 as (), 45 as (), 109 as (), 97 as (), 114 as (), 107 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                115 as i32, 101 as i32, 109 as i32, 105 as i32, 99 as i32, 111 as i32, 108 as i32,
+                111 as i32, 110 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[60 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                99 as (), 111 as (), 109 as (), 109 as (), 101 as (), 114 as (), 99 as (),
-                105 as (), 97 as (), 108 as (), 45 as (), 97 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                108 as i32, 101 as i32, 115 as i32, 115 as i32, 45 as i32, 116 as i32, 104 as i32,
+                97 as i32, 110 as i32, 45 as i32, 115 as i32, 105 as i32, 103 as i32, 110 as i32,
+                0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
-    let mut c: () = (65 as ());
-    'loop_: while (c <= (90 as ())) {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([c, unimplemented!()])));
+    ({
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[61 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        test_10(
+            Ptr::<i32>::from_string_literal(&[
+                101 as i32, 113 as i32, 117 as i32, 97 as i32, 108 as i32, 115 as i32, 45 as i32,
+                115 as i32, 105 as i32, 103 as i32, 110 as i32, 0 as i32,
+            ]),
+            _expected.as_pointer(),
+        )
+    });
+    ({
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[62 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        test_10(
+            Ptr::<i32>::from_string_literal(&[
+                103 as i32, 114 as i32, 101 as i32, 97 as i32, 116 as i32, 101 as i32, 114 as i32,
+                45 as i32, 116 as i32, 104 as i32, 97 as i32, 110 as i32, 45 as i32, 115 as i32,
+                105 as i32, 103 as i32, 110 as i32, 0 as i32,
+            ]),
+            _expected.as_pointer(),
+        )
+    });
+    ({
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[63 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        test_10(
+            Ptr::<i32>::from_string_literal(&[
+                113 as i32, 117 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32, 111 as i32,
+                110 as i32, 45 as i32, 109 as i32, 97 as i32, 114 as i32, 107 as i32, 0 as i32,
+            ]),
+            _expected.as_pointer(),
+        )
+    });
+    ({
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[64 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        test_10(
+            Ptr::<i32>::from_string_literal(&[
+                99 as i32, 111 as i32, 109 as i32, 109 as i32, 101 as i32, 114 as i32, 99 as i32,
+                105 as i32, 97 as i32, 108 as i32, 45 as i32, 97 as i32, 116 as i32, 0 as i32,
+            ]),
+            _expected.as_pointer(),
+        )
+    });
+    let mut c: i32 = (65 as i32);
+    'loop_: while (c <= (90 as i32)) {
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([c, 0_i32])));
         ({
-            let _A: Ptr<()> = (a.as_pointer() as Ptr<()>);
-            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let _A: Ptr<i32> = (a.as_pointer() as Ptr<i32>);
+            let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes = (a.as_pointer() as Ptr<i32>).to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
             test_10(_A, _expected.as_pointer())
         });
         c.prefix_inc();
     }
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[91 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 115 as (), 113 as (),
-                117 as (), 97 as (), 114 as (), 101 as (), 45 as (), 98 as (), 114 as (), 97 as (),
-                99 as (), 107 as (), 101 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                108 as i32, 101 as i32, 102 as i32, 116 as i32, 45 as i32, 115 as i32, 113 as i32,
+                117 as i32, 97 as i32, 114 as i32, 101 as i32, 45 as i32, 98 as i32, 114 as i32,
+                97 as i32, 99 as i32, 107 as i32, 101 as i32, 116 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[92 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                98 as (), 97 as (), 99 as (), 107 as (), 115 as (), 108 as (), 97 as (), 115 as (),
-                104 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                98 as i32, 97 as i32, 99 as i32, 107 as i32, 115 as i32, 108 as i32, 97 as i32,
+                115 as i32, 104 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[92 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                114 as (), 101 as (), 118 as (), 101 as (), 114 as (), 115 as (), 101 as (),
-                45 as (), 115 as (), 111 as (), 108 as (), 105 as (), 100 as (), 117 as (),
-                115 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                114 as i32, 101 as i32, 118 as i32, 101 as i32, 114 as i32, 115 as i32, 101 as i32,
+                45 as i32, 115 as i32, 111 as i32, 108 as i32, 105 as i32, 100 as i32, 117 as i32,
+                115 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[93 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 115 as (),
-                113 as (), 117 as (), 97 as (), 114 as (), 101 as (), 45 as (), 98 as (),
-                114 as (), 97 as (), 99 as (), 107 as (), 101 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                114 as i32, 105 as i32, 103 as i32, 104 as i32, 116 as i32, 45 as i32, 115 as i32,
+                113 as i32, 117 as i32, 97 as i32, 114 as i32, 101 as i32, 45 as i32, 98 as i32,
+                114 as i32, 97 as i32, 99 as i32, 107 as i32, 101 as i32, 116 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[94 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                99 as (), 105 as (), 114 as (), 99 as (), 117 as (), 109 as (), 102 as (),
-                108 as (), 101 as (), 120 as (), 45 as (), 97 as (), 99 as (), 99 as (), 101 as (),
-                110 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                99 as i32, 105 as i32, 114 as i32, 99 as i32, 117 as i32, 109 as i32, 102 as i32,
+                108 as i32, 101 as i32, 120 as i32, 45 as i32, 97 as i32, 99 as i32, 99 as i32,
+                101 as i32, 110 as i32, 116 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[94 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                99 as (), 105 as (), 114 as (), 99 as (), 117 as (), 109 as (), 102 as (),
-                108 as (), 101 as (), 120 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                99 as i32, 105 as i32, 114 as i32, 99 as i32, 117 as i32, 109 as i32, 102 as i32,
+                108 as i32, 101 as i32, 120 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[95 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                108 as (), 111 as (), 119 as (), 45 as (), 108 as (), 105 as (), 110 as (),
-                101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                108 as i32, 111 as i32, 119 as i32, 45 as i32, 108 as i32, 105 as i32, 110 as i32,
+                101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[95 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                117 as (), 110 as (), 100 as (), 101 as (), 114 as (), 115 as (), 99 as (),
-                111 as (), 114 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                117 as i32, 110 as i32, 100 as i32, 101 as i32, 114 as i32, 115 as i32, 99 as i32,
+                111 as i32, 114 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[96 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                103 as (), 114 as (), 97 as (), 118 as (), 101 as (), 45 as (), 97 as (), 99 as (),
-                99 as (), 101 as (), 110 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                103 as i32, 114 as i32, 97 as i32, 118 as i32, 101 as i32, 45 as i32, 97 as i32,
+                99 as i32, 99 as i32, 101 as i32, 110 as i32, 116 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
-    let mut c: () = (97 as ());
-    'loop_: while (c <= (122 as ())) {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([c, unimplemented!()])));
+    let mut c: i32 = (97 as i32);
+    'loop_: while (c <= (122 as i32)) {
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([c, 0_i32])));
         ({
-            let _A: Ptr<()> = (a.as_pointer() as Ptr<()>);
-            let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let _A: Ptr<i32> = (a.as_pointer() as Ptr<i32>);
+            let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __bytes = (a.as_pointer() as Ptr<i32>).to_c_bytes();
+                __bytes.push(0_i32);
+                __bytes
+            }));
             test_10(_A, _expected.as_pointer())
         });
         c.prefix_inc();
     }
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[123 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 98 as (), 114 as (),
-                97 as (), 99 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                108 as i32, 101 as i32, 102 as i32, 116 as i32, 45 as i32, 98 as i32, 114 as i32,
+                97 as i32, 99 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[123 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 99 as (), 117 as (),
-                114 as (), 108 as (), 121 as (), 45 as (), 98 as (), 114 as (), 97 as (), 99 as (),
-                107 as (), 101 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                108 as i32, 101 as i32, 102 as i32, 116 as i32, 45 as i32, 99 as i32, 117 as i32,
+                114 as i32, 108 as i32, 121 as i32, 45 as i32, 98 as i32, 114 as i32, 97 as i32,
+                99 as i32, 107 as i32, 101 as i32, 116 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[124 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                118 as (), 101 as (), 114 as (), 116 as (), 105 as (), 99 as (), 97 as (),
-                108 as (), 45 as (), 108 as (), 105 as (), 110 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                118 as i32, 101 as i32, 114 as i32, 116 as i32, 105 as i32, 99 as i32, 97 as i32,
+                108 as i32, 45 as i32, 108 as i32, 105 as i32, 110 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[125 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 98 as (),
-                114 as (), 97 as (), 99 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                114 as i32, 105 as i32, 103 as i32, 104 as i32, 116 as i32, 45 as i32, 98 as i32,
+                114 as i32, 97 as i32, 99 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[125 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 99 as (),
-                117 as (), 114 as (), 108 as (), 121 as (), 45 as (), 98 as (), 114 as (),
-                97 as (), 99 as (), 107 as (), 101 as (), 116 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                114 as i32, 105 as i32, 103 as i32, 104 as i32, 116 as i32, 45 as i32, 99 as i32,
+                117 as i32, 114 as i32, 108 as i32, 121 as i32, 45 as i32, 98 as i32, 114 as i32,
+                97 as i32, 99 as i32, 107 as i32, 101 as i32, 116 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[126 as i32, 0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[
-                116 as (), 105 as (), 108 as (), 100 as (), 101 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                116 as i32, 105 as i32, 108 as i32, 100 as i32, 101 as i32, 0 as i32,
             ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[116 as (), 105 as (), 108 as (), 100 as (), 0 as ()]),
+            Ptr::<i32>::from_string_literal(&[
+                116 as i32, 105 as i32, 108 as i32, 100 as i32, 0 as i32,
+            ]),
             _expected.as_pointer(),
         )
     });
     ({
-        let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _expected: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[0 as i32]).to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
         test_10(
-            Ptr::<()>::from_string_literal(&[99 as (), 104 as (), 0 as ()]),
+            Ptr::<i32>::from_string_literal(&[99 as i32, 104 as i32, 0 as i32]),
             _expected.as_pointer(),
         )
     });
-    return 0_();
+    return 0;
 }
 pub trait adl_IteratorImpl {
-    fn iter_moves(&self) -> ();
-    fn iter_swaps(&self) -> ();
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_index(&self, n: ()) -> Ptr<()>;
-    fn operator_sub_10(&self, n: ()) -> adl_Iterator;
-    fn operator_sub_11(&self, rhs: adl_Iterator) -> ();
-    fn operator_add_assign(&self, n: ()) -> Ptr<adl_Iterator>;
-    fn operator_sub_assign(&self, n: ()) -> Ptr<adl_Iterator>;
+    fn iter_moves(&self) -> i32;
+    fn iter_swaps(&self) -> i32;
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_index(&self, n: isize) -> Ptr<i32>;
+    fn operator_sub_10(&self, n: isize) -> adl_Iterator;
+    fn operator_sub_11(&self, rhs: adl_Iterator) -> isize;
+    fn operator_add_assign(&self, n: isize) -> Ptr<adl_Iterator>;
+    fn operator_sub_assign(&self, n: isize) -> Ptr<adl_Iterator>;
     fn operator_inc_14(&self) -> Ptr<adl_Iterator>;
-    fn operator_post_inc_15(&self, _a0: ()) -> adl_Iterator;
+    fn operator_post_inc_15(&self, _a0: i32) -> adl_Iterator;
     fn operator_dec_16(&self) -> Ptr<adl_Iterator>;
-    fn operator_post_dec_17(&self, _a0: ()) -> adl_Iterator;
+    fn operator_post_dec_17(&self, _a0: i32) -> adl_Iterator;
 }
 impl adl_IteratorImpl for Ptr<adl_Iterator> {
-    fn iter_moves(&self) -> () {
-        unimplemented!();
+    fn iter_moves(&self) -> i32 {
+        assert!(!((*self).with(|__s| __s.iter_moves_.clone())).is_null());
         return ((*self).with(|__s| __s.iter_moves_.clone()).read());
     }
-    fn iter_swaps(&self) -> () {
-        unimplemented!();
+    fn iter_swaps(&self) -> i32 {
+        assert!(!((*self).with(|__s| __s.iter_swaps_.clone())).is_null());
         return ((*self).with(|__s| __s.iter_swaps_.clone()).read());
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone()).offset((n) as isize);
     }
-    fn operator_sub_10(&self, mut n: ()) -> adl_Iterator {
+    fn operator_sub_10(&self, mut n: isize) -> adl_Iterator {
         return adl_Iterator::new_1(
             { (*self).with(|__s| __s.ptr_.clone()).offset(-((n) as isize)) },
             { (*self).with(|__s| __s.iter_moves_.clone()) },
             { (*self).with(|__s| __s.iter_swaps_.clone()) },
         );
     }
-    fn operator_sub_11(&self, mut rhs: adl_Iterator) -> () {
-        return (((*self).with(|__s| __s.ptr_.clone()) - (rhs.ptr_).clone()) as () as ());
+    fn operator_sub_11(&self, mut rhs: adl_Iterator) -> isize {
+        return (((*self).with(|__s| __s.ptr_.clone()) - (rhs.ptr_).clone()) as i64 as isize);
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<adl_Iterator> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<adl_Iterator> {
         {
             let _ptr = field!((*self), ptr_);
             _ptr.write(_ptr.read() + n)
         };
         return (*self).clone();
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<adl_Iterator> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<adl_Iterator> {
         {
             let _ptr = field!((*self), ptr_);
             _ptr.write(_ptr.read() - n)
@@ -1517,7 +2056,7 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
-    fn operator_post_inc_15(&self, mut _a0: ()) -> adl_Iterator {
+    fn operator_post_inc_15(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
         field!((*self), ptr_).with_mut(|__v| __v.prefix_inc());
         return prev;
@@ -1526,20 +2065,20 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
         field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
         return (*self).clone();
     }
-    fn operator_post_dec_17(&self, mut _a0: ()) -> adl_Iterator {
+    fn operator_post_dec_17(&self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(*self).upgrade().deref()).clone();
         field!((*self), ptr_).with_mut(|__v| __v.prefix_dec());
         return prev;
     }
 }
 pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn operator_post_inc_6(&self, mut _a0: i32) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -1561,13 +2100,13 @@ impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int
     }
 }
 pub trait cpp17_output_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_5(&self) -> Ptr<cpp17_output_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, mut _a0: ()) -> cpp17_output_iterator_int_ptr_ {
+    fn operator_post_inc_6(&self, mut _a0: i32) -> cpp17_output_iterator_int_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -1593,11 +2132,11 @@ pub trait cpp20_input_iterator_int_ptr_Impl {
         &self,
         _a0: Ptr<cpp20_input_iterator_int_ptr_>,
     ) -> Ptr<cpp20_input_iterator_int_ptr_>;
-    fn operator_deref(&self) -> Ptr<()>;
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_5(&self) -> Ptr<cpp20_input_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, mut _a0: ()) {
+    fn operator_post_inc_6(&self, mut _a0: i32) {
         unimplemented!()
     }
 }
@@ -1613,7 +2152,7 @@ impl cpp20_input_iterator_int_ptr_Impl for Ptr<cpp20_input_iterator_int_ptr_> {
         });
         return (*self).clone();
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
 }
@@ -1622,11 +2161,11 @@ pub trait cpp20_output_iterator_int_ptr_Impl {
         &self,
         _a0: Ptr<cpp20_output_iterator_int_ptr_>,
     ) -> Ptr<cpp20_output_iterator_int_ptr_>;
-    fn operator_deref(&self) -> Ptr<()>;
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_5(&self) -> Ptr<cpp20_output_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_6(&self, mut _a0: ()) -> cpp20_output_iterator_int_ptr_ {
+    fn operator_post_inc_6(&self, mut _a0: i32) -> cpp20_output_iterator_int_ptr_ {
         unimplemented!()
     }
 }
@@ -1642,29 +2181,29 @@ impl cpp20_output_iterator_int_ptr_Impl for Ptr<cpp20_output_iterator_int_ptr_> 
         });
         return (*self).clone();
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
 }
 pub trait cpp20_random_access_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_index(&self, n: ()) -> Ptr<()>;
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_index(&self, n: isize) -> Ptr<i32>;
     fn operator_inc_7(&self) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
     fn operator_dec_8(&self) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_9(&self, mut _a0: ()) -> cpp20_random_access_iterator_int_ptr_ {
+    fn operator_post_inc_9(&self, mut _a0: i32) -> cpp20_random_access_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_10(&self, mut _a0: ()) -> cpp20_random_access_iterator_int_ptr_ {
+    fn operator_post_dec_10(&self, mut _a0: i32) -> cpp20_random_access_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<cpp20_random_access_iterator_int_ptr_> {
         unimplemented!()
     }
     fn move_assign(
@@ -1673,10 +2212,10 @@ pub trait cpp20_random_access_iterator_int_ptr_Impl {
     ) -> Ptr<cpp20_random_access_iterator_int_ptr_>;
 }
 impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_iterator_int_ptr_> {
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
     fn move_assign(
@@ -1692,9 +2231,9 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     }
 }
 pub trait forward_iterator_const_char_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i8>;
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_char_ptr_>;
-    fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_const_char_ptr_ {
+    fn operator_post_inc_7(&self, mut _a0: i32) -> forward_iterator_const_char_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -1703,7 +2242,7 @@ pub trait forward_iterator_const_char_ptr_Impl {
     ) -> Ptr<forward_iterator_const_char_ptr_>;
 }
 impl forward_iterator_const_char_ptr_Impl for Ptr<forward_iterator_const_char_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_char_ptr_> {
@@ -1723,9 +2262,9 @@ impl forward_iterator_const_char_ptr_Impl for Ptr<forward_iterator_const_char_pt
     }
 }
 pub trait forward_iterator_const_wchar_t_ptr_Impl {
-    fn operator_deref(&self) -> ();
+    fn operator_deref(&self) -> Ptr<i32>;
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_wchar_t_ptr_>;
-    fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_const_wchar_t_ptr_ {
+    fn operator_post_inc_7(&self, mut _a0: i32) -> forward_iterator_const_wchar_t_ptr_ {
         unimplemented!()
     }
     fn move_assign(
@@ -1734,7 +2273,7 @@ pub trait forward_iterator_const_wchar_t_ptr_Impl {
     ) -> Ptr<forward_iterator_const_wchar_t_ptr_>;
 }
 impl forward_iterator_const_wchar_t_ptr_Impl for Ptr<forward_iterator_const_wchar_t_ptr_> {
-    fn operator_deref(&self) -> () {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.it_.clone());
     }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_const_wchar_t_ptr_> {
@@ -1754,68 +2293,68 @@ impl forward_iterator_const_wchar_t_ptr_Impl for Ptr<forward_iterator_const_wcha
     }
 }
 pub trait forward_sized_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_4(&self) -> Ptr<forward_sized_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_5(&self, mut _a0: ()) -> forward_sized_iterator_int_ptr_ {
+    fn operator_post_inc_5(&self, mut _a0: i32) -> forward_sized_iterator_int_ptr_ {
         unimplemented!()
     }
 }
 impl forward_sized_iterator_int_ptr_Impl for Ptr<forward_sized_iterator_int_ptr_> {}
 pub trait rvalue_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> Ptr<Ptr<()>> {
+    fn operator_deref(&self) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
     fn operator_inc_4(&self) -> Ptr<rvalue_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_inc_5(&self, mut _a0: ()) -> rvalue_iterator_int_ptr_ {
+    fn operator_post_inc_5(&self, mut _a0: i32) -> rvalue_iterator_int_ptr_ {
         unimplemented!()
     }
     fn operator_dec_6(&self) -> Ptr<rvalue_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_post_dec_7(&self, mut _a0: ()) -> rvalue_iterator_int_ptr_ {
+    fn operator_post_dec_7(&self, mut _a0: i32) -> rvalue_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_add(&self, mut n: ()) -> rvalue_iterator_int_ptr_ {
+    fn operator_add(&self, mut n: isize) -> rvalue_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_sub_9(&self, mut n: ()) -> rvalue_iterator_int_ptr_ {
+    fn operator_sub_9(&self, mut n: isize) -> rvalue_iterator_int_ptr_ {
         unimplemented!()
     }
-    fn operator_sub_10(&self, other: Ptr<rvalue_iterator_int_ptr_>) -> () {
+    fn operator_sub_10(&self, other: Ptr<rvalue_iterator_int_ptr_>) -> isize {
         unimplemented!()
     }
-    fn operator_add_assign(&self, mut n: ()) -> Ptr<rvalue_iterator_int_ptr_> {
+    fn operator_add_assign(&self, mut n: isize) -> Ptr<rvalue_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_sub_assign(&self, mut n: ()) -> Ptr<rvalue_iterator_int_ptr_> {
+    fn operator_sub_assign(&self, mut n: isize) -> Ptr<rvalue_iterator_int_ptr_> {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<Ptr<()>> {
+    fn operator_index(&self, mut n: isize) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
-    fn operator_cmp(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> ();
-    fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> ();
+    fn operator_cmp(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> std::cmp::Ordering;
+    fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool;
 }
 impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
-    fn operator_cmp(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> () {
+    fn operator_cmp(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> std::cmp::Ordering {
         {
-            let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+            let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
                 &((*self).with(|__s| __s.it_.clone())),
                 &(_a0.with(|__s| __s.it_.clone())),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
-    fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> () {
+    fn operator_eq(&self, _a0: Ptr<rvalue_iterator_int_ptr_>) -> bool {
         return ({ (*self).with(|__s| __s.it_.clone()) } == { _a0.with(|__s| __s.it_.clone()) });
     }
 }
@@ -1830,7 +2369,7 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
         &self,
         other: Ptr<support_double_move_tracker>,
     ) -> Ptr<support_double_move_tracker> {
-        unimplemented!();
+        assert!(!(other.with(|__s| __s.moved_from_)));
         field!(other, moved_from_).write(true);
         field!((*self), moved_from_).write(false);
         return (*self).clone();

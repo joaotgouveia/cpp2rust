@@ -11,13 +11,11 @@ use std::rc::{Rc, Weak};
 pub struct nasty_vector_int_ {
     #[offset(0)]
     #[byte_size(24)]
-    pub v_: (),
+    pub v_: Vec<i32>,
 }
 impl nasty_vector_int_ {
     pub fn new_1() -> Self {
-        Self {
-            v_: unimplemented!(),
-        }
+        Self { v_: Vec::new() }
     }
 }
 impl CppEq for nasty_vector_int_ {
@@ -30,7 +28,7 @@ impl Default for nasty_vector_int_ {
         { nasty_vector_int_::new_1() }
     }
 }
-pub fn operator_eq_0(x: Ptr<nasty_vector_int_>, y: Ptr<nasty_vector_int_>) -> () {
+pub fn operator_eq_0(x: Ptr<nasty_vector_int_>, y: Ptr<nasty_vector_int_>) -> bool {
     return unimplemented!();
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -42,7 +40,7 @@ impl nasty_mutex {
     }
     fn copy_from(_a0: Ptr<nasty_mutex>) -> Self {
         let __this: nasty_mutex = Self {};
-        unimplemented!();
+        assert!(false);
         __this
     }
 }
@@ -57,19 +55,20 @@ impl Default for nasty_mutex {
         { nasty_mutex::new() }
     }
 }
-pub fn test_1(mut c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: Ptr<()>) {
+pub fn test_1(c1: Vec<i32>, mut j: (), mut x1: i32, mut x2: i32, mut x3: i32, c2: Ptr<Vec<i32>>) {
+    let c1: Value<Vec<i32>> = Rc::new(RefCell::new(c1));
     let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_2(
     c1: nasty_vector_int_,
     mut j: (),
-    mut x1: (),
-    mut x2: (),
-    mut x3: (),
+    mut x1: i32,
+    mut x2: i32,
+    mut x3: i32,
     c2: Ptr<nasty_vector_int_>,
 ) {
     let c1: Value<nasty_vector_int_> = Rc::new(RefCell::new(c1));
@@ -77,24 +76,74 @@ pub fn test_2(
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _x: Ptr<nasty_vector_int_> = c1.as_pointer();
+            let _y: Ptr<nasty_vector_int_> = (c2).clone();
+            operator_eq_0(_x, _y)
+        })
+    );
 }
-pub fn insert3at_3(c: Ptr<()>, i: (), mut x1: (), mut x2: (), mut x3: ()) {
-    let i: Value<()> = Rc::new(RefCell::new(i));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn insert3at_3(
+    c: Ptr<Vec<i32>>,
+    i: RandomAccessIterator<i32>,
+    mut x1: i32,
+    mut x2: i32,
+    mut x3: i32,
+) {
+    let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(i));
+    (*i.borrow_mut()) = {
+        let __it = <RandomAccessIterator<i32>>::from((*i.borrow()).clone());
+        let __off = __it.index();
+        c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x1));
+        __it
+    };
+    (*i.borrow_mut()) = {
+        let __it = <RandomAccessIterator<i32>>::from(
+            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
+        );
+        let __off = __it.index();
+        c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x2));
+        __it
+    };
+    {
+        let __it = <RandomAccessIterator<i32>>::from(
+            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
+        );
+        let __off = __it.index();
+        c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x3));
+        __it
+    };
 }
-pub fn insert3at_4(c: Ptr<nasty_vector_int_>, i: (), x1: (), x2: (), x3: ()) {
-    let i: Value<()> = Rc::new(RefCell::new(i));
-    let x1: Value<()> = Rc::new(RefCell::new(x1));
-    let x2: Value<()> = Rc::new(RefCell::new(x2));
-    let x3: Value<()> = Rc::new(RefCell::new(x3));
-    unimplemented!();
-    unimplemented!();
+pub fn insert3at_4(
+    c: Ptr<nasty_vector_int_>,
+    i: RandomAccessIterator<i32>,
+    x1: i32,
+    x2: i32,
+    x3: i32,
+) {
+    let i: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(i));
+    let x1: Value<i32> = Rc::new(RefCell::new(x1));
+    let x2: Value<i32> = Rc::new(RefCell::new(x2));
+    let x3: Value<i32> = Rc::new(RefCell::new(x3));
+    (*i.borrow_mut()) = ({
+        let _pos: RandomAccessIterator<i32> =
+            <RandomAccessIterator<i32>>::from((*i.borrow()).clone());
+        let _x: Ptr<i32> = x1.as_pointer();
+        nasty_vector_int_Impl::insert_45(&c, _pos, _x)
+    });
+    (*i.borrow_mut()) = ({
+        let _pos: RandomAccessIterator<i32> = <RandomAccessIterator<i32>>::from(
+            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
+        );
+        let _x: Ptr<i32> = x2.as_pointer();
+        nasty_vector_int_Impl::insert_45(&c, _pos, _x)
+    });
     ({
-        let _pos: () = unimplemented!();
-        let _x: Ptr<()> = x3.as_pointer();
+        let _pos: RandomAccessIterator<i32> = <RandomAccessIterator<i32>>::from(
+            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
+        );
+        let _x: Ptr<i32> = x3.as_pointer();
         nasty_vector_int_Impl::insert_45(&c, _pos, _x)
     });
 }
@@ -117,75 +166,102 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut c1: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 3_()) {
-            unimplemented!();
+        let mut c1: Vec<i32> = Vec::new();
+        let mut i: i32 = 0;
+        'loop_: while (i < 3) {
+            {
+                let a0_clone = i.clone();
+                c1.push(a0_clone)
+            };
             i.prefix_inc();
         }
-        let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c2: Value<Vec<i32>> = Rc::new(RefCell::new(c1.clone()));
         ({
-            let _c: Ptr<()> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            insert3at_3(_c, _i, ('a' as ()), ('b' as ()), ('c' as ()))
+            let _c: Ptr<Vec<i32>> = c2.as_pointer();
+            let _i: RandomAccessIterator<i32> = c2.decay().begin();
+            insert3at_3(
+                _c,
+                _i,
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
+            )
         });
         ({
             test_1(
-                unimplemented!(),
+                c1.clone(),
                 0_(),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
                 c2.as_pointer(),
             )
         });
-        unimplemented!();
+        c2.as_pointer().write((c1).clone());
         ({
-            let _c: Ptr<()> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            insert3at_3(_c, _i, ('a' as ()), ('b' as ()), ('c' as ()))
+            let _c: Ptr<Vec<i32>> = c2.as_pointer();
+            let _i: RandomAccessIterator<i32> = c2.decay().begin().iter_add(1_isize);
+            insert3at_3(
+                _c,
+                _i,
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
+            )
         });
         ({
             test_1(
-                unimplemented!(),
+                c1.clone(),
                 1_(),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
                 c2.as_pointer(),
             )
         });
-        unimplemented!();
+        c2.as_pointer().write((c1).clone());
         ({
-            let _c: Ptr<()> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            insert3at_3(_c, _i, ('a' as ()), ('b' as ()), ('c' as ()))
+            let _c: Ptr<Vec<i32>> = c2.as_pointer();
+            let _i: RandomAccessIterator<i32> = c2.decay().begin().iter_add(2_isize);
+            insert3at_3(
+                _c,
+                _i,
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
+            )
         });
         ({
             test_1(
-                unimplemented!(),
+                c1.clone(),
                 2_(),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
                 c2.as_pointer(),
             )
         });
-        unimplemented!();
+        c2.as_pointer().write((c1).clone());
         ({
-            let _c: Ptr<()> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            insert3at_3(_c, _i, ('a' as ()), ('b' as ()), ('c' as ()))
+            let _c: Ptr<Vec<i32>> = c2.as_pointer();
+            let _i: RandomAccessIterator<i32> = c2.decay().begin().iter_add(3_isize);
+            insert3at_3(
+                _c,
+                _i,
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
+            )
         });
         ({
             test_1(
-                unimplemented!(),
+                c1.clone(),
                 3_(),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
                 c2.as_pointer(),
             )
         });
@@ -193,8 +269,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let c1: Value<nasty_vector_int_> = Rc::new(RefCell::new(nasty_vector_int_::new_1()));
         let _dtor_c1 = ScopedDestructor::new(&c1, |__p| __p.destructor());
-        let i: Value<()> = Rc::new(RefCell::new(0_()));
-        'loop_: while ((*i.borrow()) < 3_()) {
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        'loop_: while ((*i.borrow()) < 3) {
             ({ nasty_vector_int_Impl::push_back_40(&c1.as_pointer(), i.as_pointer()) });
             (*i.borrow_mut()).prefix_inc();
         }
@@ -202,118 +278,146 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let _dtor_c2 = ScopedDestructor::new(&c2, |__p| __p.destructor());
         ({
             let _c: Ptr<nasty_vector_int_> = c2.as_pointer();
-            let _i: () = ({ nasty_vector_int_Impl::begin_12(&c2.as_pointer()) });
-            insert3at_4(_c, _i, ('a' as ()), ('b' as ()), ('c' as ()))
+            let _i: RandomAccessIterator<i32> =
+                ({ nasty_vector_int_Impl::begin_12(&c2.as_pointer()) });
+            insert3at_4(
+                _c,
+                _i,
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
+            )
         });
         ({
             test_2(
                 (*c1.borrow()).clone(),
                 0_(),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
                 c2.as_pointer(),
             )
         });
         (*c2.borrow_mut()) = (*c1.borrow()).clone();
         ({
             let _c: Ptr<nasty_vector_int_> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            insert3at_4(_c, _i, ('a' as ()), ('b' as ()), ('c' as ()))
+            let _i: RandomAccessIterator<i32> =
+                ({ nasty_vector_int_Impl::begin_12(&c2.as_pointer()) }).iter_add(1_isize);
+            insert3at_4(
+                _c,
+                _i,
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
+            )
         });
         ({
             test_2(
                 (*c1.borrow()).clone(),
                 1_(),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
                 c2.as_pointer(),
             )
         });
         (*c2.borrow_mut()) = (*c1.borrow()).clone();
         ({
             let _c: Ptr<nasty_vector_int_> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            insert3at_4(_c, _i, ('a' as ()), ('b' as ()), ('c' as ()))
+            let _i: RandomAccessIterator<i32> =
+                ({ nasty_vector_int_Impl::begin_12(&c2.as_pointer()) }).iter_add(2_isize);
+            insert3at_4(
+                _c,
+                _i,
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
+            )
         });
         ({
             test_2(
                 (*c1.borrow()).clone(),
                 2_(),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
                 c2.as_pointer(),
             )
         });
         (*c2.borrow_mut()) = (*c1.borrow()).clone();
         ({
             let _c: Ptr<nasty_vector_int_> = c2.as_pointer();
-            let _i: () = unimplemented!();
-            insert3at_4(_c, _i, ('a' as ()), ('b' as ()), ('c' as ()))
+            let _i: RandomAccessIterator<i32> =
+                ({ nasty_vector_int_Impl::begin_12(&c2.as_pointer()) }).iter_add(3_isize);
+            insert3at_4(
+                _c,
+                _i,
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
+            )
         });
         ({
             test_2(
                 (*c1.borrow()).clone(),
                 3_(),
-                ('a' as ()),
-                ('b' as ()),
-                ('c' as ()),
+                (('a' as i8) as i32),
+                (('b' as i8) as i32),
+                (('c' as i8) as i32),
                 c2.as_pointer(),
             )
         });
     }
-    return 0_();
+    return 0;
 }
 pub trait nasty_mutexImpl {
     fn destructor(&self);
     fn operator_addr(&self) -> Ptr<nasty_mutex>;
     fn copy_assign(&self, _a0: Ptr<nasty_mutex>) -> Ptr<nasty_mutex>;
     fn lock(&self);
-    fn try_lock(&self) -> ();
+    fn try_lock(&self) -> bool;
     fn unlock(&self);
     fn lock_shared(&self);
-    fn try_lock_shared(&self) -> ();
+    fn try_lock_shared(&self) -> bool;
     fn unlock_shared(&self);
 }
 impl nasty_mutexImpl for Ptr<nasty_mutex> {
     fn destructor(&self) {}
     fn operator_addr(&self) -> Ptr<nasty_mutex> {
-        unimplemented!();
+        assert!(false);
         return Ptr::<nasty_mutex>::null();
     }
     fn copy_assign(&self, _a0: Ptr<nasty_mutex>) -> Ptr<nasty_mutex> {
-        unimplemented!();
+        assert!(false);
         return (*self).clone();
     }
     fn lock(&self) {}
-    fn try_lock(&self) -> () {
+    fn try_lock(&self) -> bool {
         return true;
     }
     fn unlock(&self) {}
     fn lock_shared(&self) {}
-    fn try_lock_shared(&self) -> () {
+    fn try_lock_shared(&self) -> bool {
         return true;
     }
     fn unlock_shared(&self) {}
 }
 pub trait nasty_vector_int_Impl {
     fn destructor(&self);
-    fn assign_10(&self, mut n: (), u: Ptr<()>) {
+    fn assign_10(&self, mut n: usize, u: Ptr<i32>) {
         unimplemented!()
     }
-    fn assign_11(&self, il: ()) {
+    fn assign_11(&self, il: Vec<i32>) {
         unimplemented!()
     }
-    fn begin_12(&self) -> ();
-    fn begin_13(&self) -> () {
+    fn begin_12(&self) -> RandomAccessIterator<i32>;
+    fn begin_13(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn end_14(&self) -> () {
+    fn end_14(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn end_15(&self) -> () {
+    fn end_15(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
     fn rbegin_16(&self) -> () {
@@ -328,10 +432,10 @@ pub trait nasty_vector_int_Impl {
     fn rend_19(&self) -> () {
         unimplemented!()
     }
-    fn cbegin(&self) -> () {
+    fn cbegin(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn cend(&self) -> () {
+    fn cend(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
     fn crbegin(&self) -> () {
@@ -340,84 +444,93 @@ pub trait nasty_vector_int_Impl {
     fn crend(&self) -> () {
         unimplemented!()
     }
-    fn size(&self) -> () {
+    fn size(&self) -> usize {
         unimplemented!()
     }
-    fn max_size(&self) -> () {
+    fn max_size(&self) -> usize {
         unimplemented!()
     }
-    fn capacity(&self) -> () {
+    fn capacity(&self) -> usize {
         unimplemented!()
     }
-    fn empty(&self) -> () {
+    fn empty(&self) -> bool {
         unimplemented!()
     }
-    fn reserve(&self, mut n: ()) {
+    fn reserve(&self, mut n: usize) {
         unimplemented!()
     }
     fn shrink_to_fit(&self) {
         unimplemented!()
     }
-    fn operator_index_30(&self, mut n: ()) -> () {
+    fn operator_index_30(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_index_31(&self, mut n: ()) -> () {
+    fn operator_index_31(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn at_32(&self, mut n: ()) -> () {
+    fn at_32(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn at_33(&self, mut n: ()) -> () {
+    fn at_33(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn front_34(&self) -> () {
+    fn front_34(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn front_35(&self) -> () {
+    fn front_35(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn back_36(&self) -> () {
+    fn back_36(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn back_37(&self) -> () {
+    fn back_37(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn data_38(&self) -> Ptr<()> {
+    fn data_38(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn data_39(&self) -> Ptr<()> {
+    fn data_39(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn push_back_40(&self, x: Ptr<()>);
-    fn push_back_41(&self, x: Ptr<()>) {
+    fn push_back_40(&self, x: Ptr<i32>);
+    fn push_back_41(&self, x: Ptr<i32>) {
         unimplemented!()
     }
     fn pop_back(&self) {
         unimplemented!()
     }
-    fn insert_45(&self, pos: (), x: Ptr<()>) -> ();
-    fn insert_46(&self, pos: (), x: Ptr<()>) -> () {
+    fn insert_45(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32>;
+    fn insert_46(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn insert_47(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+    fn insert_47(
+        &self,
+        pos: RandomAccessIterator<i32>,
+        mut n: usize,
+        x: Ptr<i32>,
+    ) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn insert_49(&self, pos: (), il: ()) -> () {
+    fn insert_49(&self, pos: RandomAccessIterator<i32>, il: Vec<i32>) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn erase_50(&self, pos: ()) -> () {
+    fn erase_50(&self, pos: RandomAccessIterator<i32>) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn erase_51(&self, first: (), last: ()) -> () {
+    fn erase_51(
+        &self,
+        first: RandomAccessIterator<i32>,
+        last: RandomAccessIterator<i32>,
+    ) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
     fn clear(&self) {
         unimplemented!()
     }
-    fn resize_53(&self, mut sz: ()) {
+    fn resize_53(&self, mut sz: usize) {
         unimplemented!()
     }
-    fn resize_54(&self, mut sz: (), c: Ptr<()>) {
+    fn resize_54(&self, mut sz: usize, c: Ptr<i32>) {
         unimplemented!()
     }
     fn swap(&self, nv: Ptr<nasty_vector_int_>) {
@@ -432,15 +545,23 @@ pub trait nasty_vector_int_Impl {
 }
 impl nasty_vector_int_Impl for Ptr<nasty_vector_int_> {
     fn destructor(&self) {}
-    fn begin_12(&self) -> () {
-        return unimplemented!();
+    fn begin_12(&self) -> RandomAccessIterator<i32> {
+        return field_ref!((*self), v_).decay().begin();
     }
-    fn push_back_40(&self, x: Ptr<()>) {
-        unimplemented!();
+    fn push_back_40(&self, x: Ptr<i32>) {
+        {
+            let a0_clone = (x.read()).clone();
+            field!((*self), v_).with_mut(|__v: &mut Vec<i32>| __v.push(a0_clone))
+        };
     }
-    fn insert_45(&self, pos: (), x: Ptr<()>) -> () {
-        let pos: Value<()> = Rc::new(RefCell::new(pos));
-        return unimplemented!();
+    fn insert_45(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32> {
+        let pos: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(pos));
+        return {
+            let __it = (*pos.borrow()).clone();
+            let __off = __it.index();
+            field!((*self), v_).with_mut(|__v: &mut Vec<i32>| __v.insert(__off, (x.read())));
+            __it
+        };
     }
 }
 pub fn __cpp2rust_init_globals() {}

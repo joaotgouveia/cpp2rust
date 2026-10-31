@@ -9,18 +9,19 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct DefaultInt42 {
-    pub value: (),
+    pub value: i32,
 }
 impl Default for DefaultInt42 {
     fn default() -> Self {
-        unsafe { DefaultInt42 { value: 42_() } }
+        unsafe { DefaultInt42 { value: 42 } }
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct Int {}
 impl Int {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
@@ -33,9 +34,9 @@ const _: () = assert!(
     !(false),
     "!std::default_initializable<std::ranges::repeat_view<Int>>"
 );
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     let mut rv: () = unimplemented!();
-    unimplemented!();
+    assert!((((*unimplemented!()).value) == (42)));
     return true;
 }
 pub fn main() {
@@ -53,9 +54,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

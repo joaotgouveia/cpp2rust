@@ -8,150 +8,150 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_imp_0(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_imp_1(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_imp_2(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_imp_3(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
+    assert!(((unimplemented!() as i32) == (false as i32)));
 }
 pub fn test_imp_4(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
 }
 pub fn test_imp_5(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i8 as i32)));
 }
 pub fn test_imp_6(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
 }
 pub fn test_imp_7(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == 0_i32));
+    assert!(((unimplemented!() as i32) == 0_i32));
+    assert!(((unimplemented!() as i32) == 0_i32));
+    assert!(((unimplemented!() as i32) == 0_i32));
 }
 pub fn test_imp_8(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u8 as i32)));
 }
 pub fn test_imp_9(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
 }
 pub fn test_imp_10(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as u32) == 0_u32));
+    assert!(((unimplemented!() as u32) == 0_u32));
+    assert!(((unimplemented!() as u32) == 0_u32));
+    assert!(((unimplemented!() as u32) == 0_u32));
 }
 pub fn test_imp_11(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_i16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_i16 as i32)));
 }
 pub fn test_imp_12(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
+    assert!(((unimplemented!() as i32) == (0_u16 as i32)));
 }
 pub fn test_imp_13(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i32));
+    assert!((unimplemented!() == 0_i32));
+    assert!((unimplemented!() == 0_i32));
+    assert!((unimplemented!() == 0_i32));
 }
 pub fn test_imp_14(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_u32));
+    assert!((unimplemented!() == 0_u32));
+    assert!((unimplemented!() == 0_u32));
+    assert!((unimplemented!() == 0_u32));
 }
 pub fn test_imp_15(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!() == 0_i64));
 }
 pub fn test_imp_16(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_u64));
+    assert!((unimplemented!() == 0_u64));
+    assert!((unimplemented!() == 0_u64));
+    assert!((unimplemented!() == 0_u64));
 }
 pub fn test_imp_17(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!() == 0_i64));
 }
 pub fn test_imp_18(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_u64));
+    assert!((unimplemented!() == 0_u64));
+    assert!((unimplemented!() == 0_u64));
+    assert!((unimplemented!() == 0_u64));
 }
 pub fn test_imp_19(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i128));
+    assert!((unimplemented!() == 0_i128));
+    assert!((unimplemented!() == 0_i128));
+    assert!((unimplemented!() == 0_i128));
 }
 pub fn test_imp_20(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_u128));
+    assert!((unimplemented!() == 0_u128));
+    assert!((unimplemented!() == 0_u128));
+    assert!((unimplemented!() == 0_u128));
 }
 pub fn test_21() {
     ({ test_imp_3(unimplemented!()) });
@@ -235,7 +235,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_21() });
     ({ test_22() });
     ({ test_23() });
@@ -257,6 +257,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_39() });
     ({ test_40() });
     ({ test_41() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

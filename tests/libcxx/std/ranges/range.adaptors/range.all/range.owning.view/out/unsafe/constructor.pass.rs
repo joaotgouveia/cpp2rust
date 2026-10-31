@@ -9,11 +9,11 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct DefaultConstructible {
-    pub i: (),
+    pub i: i32,
 }
 impl DefaultConstructible {
-    pub unsafe fn new(mut j: Option<()>) -> Self {
-        let mut j: () = j.unwrap_or_else(|| unsafe { 42_() });
+    pub unsafe fn new(mut j: Option<i32>) -> Self {
+        let mut j: i32 = j.unwrap_or_else(|| unsafe { 42 });
         let mut this = Self { i: j };
         this
     }
@@ -26,10 +26,10 @@ impl Default for DefaultConstructible {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NotDefaultConstructible {
-    pub i: (),
+    pub i: i32,
 }
 impl NotDefaultConstructible {
-    pub unsafe fn new(mut j: ()) -> Self {
+    pub unsafe fn new(mut j: i32) -> Self {
         let mut this = Self { i: j };
         this
     }
@@ -37,10 +37,10 @@ impl NotDefaultConstructible {
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct MoveChecker {
-    pub i: (),
+    pub i: i32,
 }
 impl MoveChecker {
-    pub unsafe fn new(mut j: ()) -> Self {
+    pub unsafe fn new(mut j: i32) -> Self {
         let mut this = Self { i: j };
         this
     }
@@ -54,7 +54,7 @@ impl MoveChecker {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NoexceptChecker {}
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     {
         const _: () = assert!(true, "std::is_constructible_v<OwningView>");;
         const _: () = assert!(true, "std::default_initializable<OwningView>");;
@@ -79,11 +79,11 @@ pub unsafe fn test_0() -> () {
         );;
         {
             let mut ov: () = unimplemented!();
-            unimplemented!();
+            assert!((((*unimplemented!()).i) == (42)));
         }
         {
             let mut ov: () = unimplemented!();
-            unimplemented!();
+            assert!((((*unimplemented!()).i) == (1)));
         }
     }
     {
@@ -110,7 +110,7 @@ pub unsafe fn test_0() -> () {
         );;
         {
             let mut ov: () = unimplemented!();
-            unimplemented!();
+            assert!((((*unimplemented!()).i) == (1)));
         }
     }
     {
@@ -127,10 +127,10 @@ pub unsafe fn test_0() -> () {
         const _: () = assert!(true, "!std::is_convertible_v<int, OwningView>");;
         const _: () = assert!(true, "std::is_convertible_v<MoveChecker&&, OwningView>");;
         {
-            let mut m: MoveChecker = MoveChecker::new({ 42_() });
+            let mut m: MoveChecker = MoveChecker::new({ 42 });
             let mut ov: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((((*unimplemented!()).i) == (42)));
+            assert!(((m.i) == (-1_i32)));
         }
     }
     {
@@ -178,9 +178,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

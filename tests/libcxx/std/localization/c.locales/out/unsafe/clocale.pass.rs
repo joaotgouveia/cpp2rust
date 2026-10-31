@@ -22,8 +22,8 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut lc: lconv = unsafe { std::mem::zeroed::<lconv>() };
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut lc: ::libc::lconv = unsafe { std::mem::zeroed() };
     (&(lc));
     const _: () = assert!(
         true,
@@ -33,6 +33,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "(std::is_same<decltype(std::localeconv()), std::lconv*>::value)"
     );;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

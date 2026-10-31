@@ -31,7 +31,7 @@ unsafe fn main_0() -> i32 {
         }
         __it
     };
-    assert!(!(it == v.end()));
+    assert!(it != v.end());
     assert!(((*it.iter_deref()) == (7)));
     {
         let __first = v.begin();

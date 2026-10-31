@@ -6,7 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Ptr< Sink  >  , new_1, value)]
 #[byte_size(1)]
 pub struct Sink {}
 impl Sink {
@@ -14,41 +15,43 @@ impl Sink {
         Self {}
     }
 }
-pub fn count_0(sp: ()) -> () {
+pub fn count_0(sp: ()) -> usize {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    return unimplemented!();
+    return (unimplemented!() as usize);
 }
-pub fn count_n_1(sp: ()) -> () {
+pub fn count_n_1(sp: ()) -> usize {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    return unimplemented!();
+    return (unimplemented!() as usize);
 }
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     let a: Value<Box<[Sink]>> = Rc::new(RefCell::new(
         (0..10).map(|_| <Sink>::default()).collect::<Box<[Sink]>>(),
     ));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((({ count_0(unimplemented!(),) }) == 10_usize));
+    assert!((({ count_0(unimplemented!(),) }) == 10_usize));
+    assert!((({ count_n_1(unimplemented!(),) }) == 10_usize));
     return true;
 }
-pub fn three_3(sp: ()) -> () {
+pub fn three_3(sp: ()) -> i32 {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    return unimplemented!();
+    return (unimplemented!() as i32);
 }
-pub fn four_4(sp: ()) -> () {
+pub fn four_4(sp: ()) -> i32 {
     let sp: Value<()> = Rc::new(RefCell::new(sp));
-    return unimplemented!();
+    return (unimplemented!() as i32);
 }
-pub fn test_P2447R4_annex_c_examples_5() -> () {
+pub fn test_P2447R4_annex_c_examples_5() -> bool {
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(
-            (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+        let a: Value<Box<[AnyPtr]>> = Rc::new(RefCell::new(
+            (0..10)
+                .map(|_| AnyPtr::default())
+                .collect::<Box<[AnyPtr]>>(),
         ));
-        unimplemented!();
+        assert!((({ three_3(unimplemented!(),) }) == 0));
     }
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((({ four_4(unimplemented!(),) }) == 10));
     }
     return true;
 }
@@ -71,10 +74,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(({ test_2() }));
     const _: () = assert!(true, "test()");;
-    unimplemented!();
-    return 0_();
+    assert!(({ test_P2447R4_annex_c_examples_5() }));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,23 +6,19 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        3_(),
-        5_(),
-        2_(),
-        0_(),
-        6_(),
-        8_(),
-        1_(),
-    ])));
-    let mut an: Ptr<()> = (a.as_pointer() as Ptr<()>).offset(
-        ((::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ())))
-            as isize,
+pub fn test_0() -> bool {
+    let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([3, 5, 2, 0, 6, 8, 1])));
+    let mut an: Ptr<i32> = (a.as_pointer() as Ptr<i32>).offset(
+        ((::std::mem::size_of::<[i32; 7]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as isize,
     );
     let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({ (unimplemented!() as usize) } == {
+            ((((an).clone() - (a.as_pointer() as Ptr<i32>)) as i64) as usize)
+        })
+    );
+    assert!(((unimplemented!().read()) == 0));
     return true;
 }
 pub fn main() {
@@ -44,8 +40,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(({ test_0() }));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

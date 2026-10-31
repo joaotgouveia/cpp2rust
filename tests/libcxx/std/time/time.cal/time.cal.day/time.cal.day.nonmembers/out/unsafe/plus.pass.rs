@@ -6,20 +6,20 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_chrono_day__std_chrono_day_ {}
-pub unsafe fn test_1() -> () {
-    let mut dy: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) <= (10_())) {
-        let mut d1: () = unimplemented!();
-        let mut d2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+pub unsafe fn test_1() -> bool {
+    let mut dy: u32 = 12_u32;
+    let mut i: u32 = 0_u32;
+    'loop_: while ((i) <= (10_u32)) {
+        let mut d1: u32 = unimplemented!();
+        let mut d2: u32 = unimplemented!();
+        assert!(unimplemented!());
+        assert!(((d1) == ((i).wrapping_add(12_u32))));
+        assert!(((d2) == ((i).wrapping_add(12_u32))));
         i.prefix_inc();
     }
     return true;
@@ -39,13 +39,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     (unsafe { test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

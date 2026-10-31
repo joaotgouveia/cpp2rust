@@ -6,42 +6,44 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, Destructor, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, Destructor, Default)]
+#[cpp_from(usize, new, value)]
 #[byte_size(56)]
 pub struct UserManagedBuffer {
     #[offset(0)]
-    size_: (),
+    size_: usize,
     #[offset(8)]
     #[byte_size(24)]
-    buffers_: (),
+    buffers_: Vec<Ptr<i8>>,
     #[offset(32)]
     #[byte_size(24)]
-    wbuffers_: (),
+    wbuffers_: Vec<Ptr<i32>>,
 }
 impl UserManagedBuffer {
-    pub fn new(mut size: ()) -> Self {
+    pub fn new(mut size: usize) -> Self {
         Self {
             size_: size,
-            buffers_: unimplemented!(),
-            wbuffers_: unimplemented!(),
+            buffers_: Vec::new(),
+            wbuffers_: Vec::new(),
         }
     }
     pub fn move_from(_a0: Ptr<UserManagedBuffer>) -> Self {
         Self {
             size_: { (*_a0.upgrade().deref()).size_ },
-            buffers_: unimplemented!(),
-            wbuffers_: unimplemented!(),
+            buffers_: field!(_a0, buffers_).with_mut(std::mem::take),
+            wbuffers_: field!(_a0, wbuffers_).with_mut(std::mem::take),
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(usize, new, value)]
 #[byte_size(8)]
 pub struct LibraryManagedBuffer {
     #[offset(0)]
-    size_: (),
+    size_: usize,
 }
 impl LibraryManagedBuffer {
-    pub fn new(mut size: ()) -> Self {
+    pub fn new(mut size: usize) -> Self {
         Self { size_: size }
     }
 }
@@ -59,55 +61,115 @@ impl Default for LibraryDefaultBuffer {
     }
 }
 pub fn test_eprintf_0(
-    mut fmt: Ptr<()>,
-    args_1: Ptr<Ptr<()>>,
-    args_2: Ptr<Ptr<()>>,
-    args_3: Ptr<Ptr<()>>,
-    args_4: Ptr<()>,
-    args_5: Ptr<Ptr<()>>,
+    mut fmt: Ptr<i8>,
+    args_1: Ptr<Ptr<i8>>,
+    args_2: Ptr<Ptr<i8>>,
+    args_3: Ptr<Ptr<i8>>,
+    args_4: Ptr<i32>,
+    args_5: Ptr<Ptr<i8>>,
 ) {
-    unimplemented!();
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([
+                (args_1.read()).into(),
+                (args_2.read()).into(),
+                (args_3.read()).into(),
+                (args_4.read()).into(),
+                (args_5.read()).into(),
+            ]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
 pub fn test_eprintf_1(
-    mut fmt: Ptr<()>,
-    args_1: Ptr<Ptr<()>>,
-    args_2: Ptr<Ptr<()>>,
-    args_3: Ptr<()>,
+    mut fmt: Ptr<i8>,
+    args_1: Ptr<Ptr<i8>>,
+    args_2: Ptr<Ptr<i8>>,
+    args_3: Ptr<i32>,
 ) {
-    unimplemented!();
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([
+                (args_1.read()).into(),
+                (args_2.read()).into(),
+                (args_3.read()).into(),
+            ]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
-pub fn test_eprintf_2(mut fmt: Ptr<()>, args_1: Ptr<()>, args_2: Ptr<()>, args_3: Ptr<()>) {
-    unimplemented!();
+pub fn test_eprintf_2(mut fmt: Ptr<i8>, args_1: Ptr<i64>, args_2: Ptr<i8>, args_3: Ptr<i8>) {
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([
+                (args_1.read()).into(),
+                ((args_2.read()) as i32).into(),
+                ((args_3.read()) as i32).into(),
+            ]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
-pub fn test_eprintf_3(mut fmt: Ptr<()>, args_1: Ptr<()>, args_2: Ptr<()>) {
-    unimplemented!();
+pub fn test_eprintf_3(mut fmt: Ptr<i8>, args_1: Ptr<i64>, args_2: Ptr<i64>) {
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([(args_1.read()).into(), (args_2.read()).into()]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
 pub fn test_eprintf_4(
-    mut fmt: Ptr<()>,
-    args_1: Ptr<()>,
-    args_2: Ptr<()>,
-    args_3: Ptr<()>,
-    args_4: Ptr<()>,
-    args_5: Ptr<()>,
+    mut fmt: Ptr<i8>,
+    args_1: Ptr<u64>,
+    args_2: Ptr<i64>,
+    args_3: Ptr<i64>,
+    args_4: Ptr<i8>,
+    args_5: Ptr<i8>,
 ) {
-    unimplemented!();
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([
+                (args_1.read()).into(),
+                (args_2.read()).into(),
+                (args_3.read()).into(),
+                ((args_4.read()) as i32).into(),
+                ((args_5.read()) as i32).into(),
+            ]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
-pub fn test_eprintf_5(mut fmt: Ptr<()>, args_1: Ptr<()>, args_2: Ptr<()>, args_3: Ptr<()>) {
-    unimplemented!();
+pub fn test_eprintf_5(mut fmt: Ptr<i8>, args_1: Ptr<i64>, args_2: Ptr<i32>, args_3: Ptr<i32>) {
+    {
+        let __s = libcc2rs::format_c(
+            &fmt.to_rust_string(),
+            &Box::<[VaArg]>::from([
+                (args_1.read()).into(),
+                (args_2.read()).into(),
+                (args_3.read()).into(),
+            ]),
+        );
+        libcc2rs::c_stderr().with_mut(|__f| __f.write(__s.as_bytes())) as i32
+    };
 }
-pub fn test_log_6(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
-    let message: Value<Ptr<()>> = Rc::new(RefCell::new(message));
-    let msg: Value<Ptr<()>> = Rc::new(RefCell::new(if !(*condition.borrow()).is_null() {
-        Ptr::<()>::from_string_literal(b"Assertion failure: ")
+pub fn test_log_6(condition: Ptr<i8>, file: Ptr<i8>, line: i32, message: Ptr<i8>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
+    let message: Value<Ptr<i8>> = Rc::new(RefCell::new(message));
+    let msg: Value<Ptr<i8>> = Rc::new(RefCell::new(if !(*condition.borrow()).is_null() {
+        Ptr::<i8>::from_string_literal(b"Assertion failure: ")
     } else {
-        Ptr::<()>::from_string_literal(b"Unconditional failure:")
+        Ptr::<i8>::from_string_literal(b"Unconditional failure:")
     }));
     ({
         test_eprintf_0(
-            Ptr::<()>::from_string_literal(b"%s%s %s %d\n%s"),
+            Ptr::<i8>::from_string_literal(b"%s%s %s %d\n%s"),
             msg.as_pointer(),
             condition.as_pointer(),
             file.as_pointer(),
@@ -116,13 +178,13 @@ pub fn test_log_6(condition: Ptr<()>, file: Ptr<()>, line: (), message: Ptr<()>)
         )
     });
 }
-pub fn test_log_7(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_7(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -130,13 +192,13 @@ pub fn test_log_7(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_8(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_8(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -144,13 +206,13 @@ pub fn test_log_8(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_9(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_9(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -158,13 +220,13 @@ pub fn test_log_9(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPt
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_10(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_10(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -172,13 +234,13 @@ pub fn test_log_10(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_11(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_11(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -186,13 +248,13 @@ pub fn test_log_11(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_12(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_12(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -200,13 +262,13 @@ pub fn test_log_12(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_13(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_13(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -214,13 +276,13 @@ pub fn test_log_13(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_14(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_14(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -228,13 +290,13 @@ pub fn test_log_14(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_15(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_15(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -242,13 +304,13 @@ pub fn test_log_15(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_16(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_16(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -256,13 +318,13 @@ pub fn test_log_16(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_17(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_17(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -270,13 +332,13 @@ pub fn test_log_17(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_18(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_18(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -284,13 +346,13 @@ pub fn test_log_18(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_19(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_19(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -298,13 +360,13 @@ pub fn test_log_19(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_20(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_20(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -312,13 +374,13 @@ pub fn test_log_20(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     });
     ({ (*functor.upgrade().deref()).call() });
 }
-pub fn test_log_21(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnPtr<fn()>>) {
-    let condition: Value<Ptr<()>> = Rc::new(RefCell::new(condition));
-    let file: Value<Ptr<()>> = Rc::new(RefCell::new(file));
-    let line: Value<()> = Rc::new(RefCell::new(line));
+pub fn test_log_21(condition: Ptr<i8>, file: Ptr<i8>, line: i32, functor: Ptr<FnPtr<fn()>>) {
+    let condition: Value<Ptr<i8>> = Rc::new(RefCell::new(condition));
+    let file: Value<Ptr<i8>> = Rc::new(RefCell::new(file));
+    let line: Value<i32> = Rc::new(RefCell::new(line));
     ({
         test_eprintf_1(
-            Ptr::<()>::from_string_literal(b"Assertion failure: %s %s %d\n"),
+            Ptr::<i8>::from_string_literal(b"Assertion failure: %s %s %d\n"),
             condition.as_pointer(),
             file.as_pointer(),
             line.as_pointer(),
@@ -327,348 +389,373 @@ pub fn test_log_21(condition: Ptr<()>, file: Ptr<()>, line: (), functor: Ptr<FnP
     ({ (*functor.upgrade().deref()).call() });
 }
 pub fn test_require_22(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_7(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_23(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_8(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_24(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_9(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_25(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_10(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_26(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_11(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_27(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_12(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_28(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_13(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_29(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_14(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_30(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_15(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_31(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_16(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_32(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_17(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_33(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_18(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_34(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_19(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_35(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_20(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
 pub fn test_require_36(
-    mut condition: (),
-    mut condition_str: Ptr<()>,
-    mut file: Ptr<()>,
-    mut line: (),
+    mut condition: bool,
+    mut condition_str: Ptr<i8>,
+    mut file: Ptr<i8>,
+    mut line: i32,
     arg: Ptr<FnPtr<fn()>>,
 ) {
     if condition {
         return;
     }
     ({
-        let _condition: Ptr<()> = (condition_str).clone();
-        let _file: Ptr<()> = (file).clone();
-        let _line: () = line;
+        let _condition: Ptr<i8> = (condition_str).clone();
+        let _file: Ptr<i8> = (file).clone();
+        let _line: i32 = line;
         let _functor: Ptr<FnPtr<fn()>> = (arg).clone();
         test_log_21(_condition, _file, _line, _functor)
     });
-    unimplemented!();
+    std::process::abort();
 }
-pub fn get_temp_file_name_37() -> () {
-    let mut Name: () = unimplemented!();
-    let mut FD: () = unimplemented!();
-    if (FD == -1_()) {
+pub fn get_temp_file_name_37() -> Vec<i8> {
+    let Name: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"libcxx.XXXXXX").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let mut FD: i32 = unimplemented!();
+    if (FD == -1_i32) {
         unimplemented!();
-        unimplemented!();
+        std::process::abort();
     }
-    unimplemented!();
-    return unimplemented!();
+    FdRegistry::close(FD);
+    return std::mem::take(&mut (*Name.borrow_mut()));
 }
-pub fn glibc_version_less_than_38(mut version: Ptr<()>) -> () {
-    let mut test_version: () = unimplemented!();
-    let mut n: () = unimplemented!();
-    let mut current_version: Ptr<()> =
-        Ptr::alloc_array((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>());
+pub fn glibc_version_less_than_38(mut version: Ptr<i8>) -> bool {
+    let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __tmp2 = {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"glibc ").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        __tmp2.pop();
+        version.with_c_str(|__s| __tmp2.extend_from_slice(__s));
+        __tmp2.push(0_i8);
+        __tmp2
+    }));
+    let mut n: usize = unimplemented!();
+    let mut current_version: Ptr<i8> =
+        Ptr::alloc_array((0..n).map(|_| 0_i8).collect::<Box<[i8]>>());
     unimplemented!();
-    let result: Value<()> = Rc::new(RefCell::new((unimplemented!() < 0_())));
+    let result: Value<bool> = Rc::new(RefCell::new((unimplemented!() < 0)));
     current_version.delete();
     return (*result.borrow());
 }
-pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
+pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>) {
     let policy: Value<LibraryDefaultBuffer> = Rc::new(RefCell::new(policy));
-    let total_size: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs =
-            (i).wrapping_rem((1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ()))));
-        unimplemented!().write(__rhs);
+    let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
+    let data: Value<Vec<i8>> = Rc::new(RefCell::new(
+        (0..((*total_size.borrow()) as usize) as usize)
+            .map(|_| 0_i8)
+            .collect::<Vec<_>>(),
+    ));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < (*data.borrow()).len()) {
+        let __rhs = (((i).wrapping_rem(
+            ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize))) as usize),
+        )) as i8);
+        data.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_37() });
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_37() })));
     {
-        let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ofs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
         let j: Value<()> = Rc::new(RefCell::new(0_()));
         'loop_: while ((*j.borrow()) < (*total_size.borrow())) {
-            let exp: Value<()> = Rc::new(RefCell::new(
-                ((*j.borrow())
-                    % (1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ())))),
+            let exp: Value<i8> = Rc::new(RefCell::new(
+                (((*j.borrow())
+                    % ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize))) as ()))
+                    as i8),
             ));
             ({
-                let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                let _condition: bool = (((data
+                    .decay()
+                    .offset(((*j.borrow()) as usize) as isize)
+                    .read()) as i32)
+                    == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
                         let j: Ptr<()> = j.as_pointer();
-                        let data: Ptr<()> = data.as_pointer();
-                        let exp: Ptr<()> = exp.as_pointer();
+                        let data: Ptr<Vec<i8>> = data.as_pointer();
+                        let exp: Ptr<i8> = exp.as_pointer();
                     },
                     || {
                         ({
-                            let _args_1: Ptr<()> = (j).clone();
-                            let _args_2: Ptr<()> = unimplemented!();
+                            let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                            let _args_2: Ptr<i8> =
+                                data.decay().offset(((j.read()) as usize) as isize);
                             test_eprintf_2(
-                                Ptr::<()>::from_string_literal(
+                                Ptr::<i8>::from_string_literal(
                                     b"failed after write() at offset %zu: got=%x, expected=%x\n",
                                 ),
                                 _args_1,
@@ -680,9 +767,9 @@ pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
                 )));
                 test_require_22(
                     _condition,
-                    Ptr::<()>::from_string_literal(b"data[j] == exp"),
-                    Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                    67_(),
+                    Ptr::<i8>::from_string_literal(b"data[j] == exp"),
+                    Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                    67,
                     _arg.as_pointer(),
                 )
             });
@@ -691,15 +778,18 @@ pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
         unimplemented!();
     }
     {
-        let ifs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            LibraryDefaultBufferImpl::operator_call_3_char(&policy.as_pointer(), ifs.as_pointer())
+            LibraryDefaultBufferImpl::operator_call_3_char(
+                &policy.as_pointer(),
+                (ifs.as_pointer()).reinterpret_cast::<()>(),
+            )
         });
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
         let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            let _condition: () = ((*in_sz.borrow()) == (*total_size.borrow()));
+            let _condition: bool = ((*in_sz.borrow()) == (*total_size.borrow()));
             let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                 {
                     let total_size: Ptr<()> = total_size.as_pointer();
@@ -708,112 +798,142 @@ pub fn test_read_39(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
                 || {
                     ({
                         test_eprintf_3(
-                            Ptr::<()>::from_string_literal(b"out_sz = %zu, in_sz = %ld\n"),
-                            (total_size).clone(),
-                            (in_sz).clone(),
+                            Ptr::<i8>::from_string_literal(b"out_sz = %zu, in_sz = %ld\n"),
+                            (total_size).reinterpret_cast::<i64>(),
+                            (in_sz).reinterpret_cast::<i64>(),
                         )
                     });
                 }
             )));
             test_require_23(
                 _condition,
-                Ptr::<()>::from_string_literal(b"in_sz == total_size"),
-                Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                77_(),
+                Ptr::<i8>::from_string_literal(b"in_sz == total_size"),
+                Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                77,
                 _arg.as_pointer(),
             )
         });
         unimplemented!();
-        let previously_read: Value<()> = Rc::new(RefCell::new(0_()));
-        let in_buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: for payload_sz in IterRange::new(unimplemented!(), unimplemented!()) {
-            let payload_sz: Ptr<()> = unimplemented!();
+        let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
+        let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
+            (0..((*total_size.borrow()) as usize) as usize)
+                .map(|_| 0_i8)
+                .collect::<Vec<_>>(),
+        ));
+        'loop_: for payload_sz in
+            IterRange::new(payload_sizes.decay().begin(), payload_sizes.decay().end())
+        {
+            let payload_sz: Ptr<i64> = payload_sz.iter_deref();
             unimplemented!();
-            unimplemented!();
+            assert!(unimplemented!());
             let j: Value<()> = Rc::new(RefCell::new(0_()));
             'loop_: while ({ (*j.borrow()) } < { (payload_sz.read()) }) {
-                let exp: Value<()> = Rc::new(RefCell::new(
-                    ((*previously_read.borrow()).wrapping_add((*j.borrow()))).wrapping_rem(
-                        (1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ()))),
-                    ),
+                let exp: Value<i8> = Rc::new(RefCell::new(
+                    ((((*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize)))
+                        .wrapping_rem(
+                            ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize)))
+                                as usize),
+                        )) as i8),
                 ));
                 ({
-                    let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                    let _condition: bool = (((in_buffer
+                        .decay()
+                        .offset(
+                            (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize))
+                                as isize,
+                        )
+                        .read()) as i32)
+                        == ((*exp.borrow()) as i32));
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
-                            let previously_read: Ptr<()> = previously_read.as_pointer();
+                            let previously_read: Ptr<usize> = previously_read.as_pointer();
                             let j: Ptr<()> = j.as_pointer();
-                            let payload_sz: Ptr<()> = (payload_sz).clone();
-                            let in_buffer: Ptr<()> = in_buffer.as_pointer();
-                            let exp: Ptr<()> = exp.as_pointer();
+                            let payload_sz: Ptr<i64> = (payload_sz).clone();
+                            let in_buffer: Ptr<Vec<i8>> = in_buffer.as_pointer();
+                            let exp: Ptr<i8> = exp.as_pointer();
                         },
                         || {
                             ({
-                                let _args_1: Value<()> = Rc::new(RefCell::new(
-                                    (previously_read.read()).wrapping_add((j.read())),
+                                let _args_1: Value<u64> = Rc::new(RefCell::new(
+                                    ((previously_read.read()).wrapping_add(((j.read()) as usize))
+                                        as u64),
                                 ));
-                                let _args_2: Ptr<()> = (j).clone();
-                                let _args_3: Ptr<()> = (payload_sz).clone();
-                                let _args_4: Ptr<()> = unimplemented!();
-                                let _args_5: Ptr<()> = (exp).clone();
-                                test_eprintf_4 ( Ptr::<() >::from_string_literal(b"failed after read() at offset %zu (offset %zu in chunk size %zu): got=%x, expected=%x\n" )  , _args_1.as_pointer() , _args_2 , _args_3 , _args_4 , _args_5 , )
+                                let _args_2: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                                let _args_3: Ptr<i64> = (payload_sz).clone();
+                                let _args_4: Ptr<i8> = in_buffer.decay().offset(
+                                    (previously_read.read()).wrapping_add(((j.read()) as usize))
+                                        as isize,
+                                );
+                                let _args_5: Ptr<i8> = (exp).clone();
+                                test_eprintf_4 ( Ptr::<i8 >::from_string_literal(b"failed after read() at offset %zu (offset %zu in chunk size %zu): got=%x, expected=%x\n" )  , _args_1.as_pointer() , _args_2 , _args_3 , _args_4 , _args_5 , )
                             });
                         }
                     )));
                     test_require_24(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"in_buffer[previously_read + j] == exp"),
-                        Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                        94_(),
+                        Ptr::<i8>::from_string_literal(b"in_buffer[previously_read + j] == exp"),
+                        Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                        94,
                         _arg.as_pointer(),
                     )
                 });
                 (*j.borrow_mut()).prefix_inc();
             }
             (*previously_read.borrow_mut()) =
-                { (*previously_read.borrow()).wrapping_add((payload_sz.read())) };
+                { (*previously_read.borrow()).wrapping_add(((payload_sz.read()) as usize)) };
         }
     }
     unimplemented!();
 }
-pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
+pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
     let policy: Value<LibraryManagedBuffer> = Rc::new(RefCell::new(policy));
-    let total_size: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs =
-            (i).wrapping_rem((1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ()))));
-        unimplemented!().write(__rhs);
+    let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
+    let data: Value<Vec<i8>> = Rc::new(RefCell::new(
+        (0..((*total_size.borrow()) as usize) as usize)
+            .map(|_| 0_i8)
+            .collect::<Vec<_>>(),
+    ));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < (*data.borrow()).len()) {
+        let __rhs = (((i).wrapping_rem(
+            ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize))) as usize),
+        )) as i8);
+        data.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_37() });
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_37() })));
     {
-        let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ofs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
         let j: Value<()> = Rc::new(RefCell::new(0_()));
         'loop_: while ((*j.borrow()) < (*total_size.borrow())) {
-            let exp: Value<()> = Rc::new(RefCell::new(
-                ((*j.borrow())
-                    % (1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ())))),
+            let exp: Value<i8> = Rc::new(RefCell::new(
+                (((*j.borrow())
+                    % ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize))) as ()))
+                    as i8),
             ));
             ({
-                let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                let _condition: bool = (((data
+                    .decay()
+                    .offset(((*j.borrow()) as usize) as isize)
+                    .read()) as i32)
+                    == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
                         let j: Ptr<()> = j.as_pointer();
-                        let data: Ptr<()> = data.as_pointer();
-                        let exp: Ptr<()> = exp.as_pointer();
+                        let data: Ptr<Vec<i8>> = data.as_pointer();
+                        let exp: Ptr<i8> = exp.as_pointer();
                     },
                     || {
                         ({
-                            let _args_1: Ptr<()> = (j).clone();
-                            let _args_2: Ptr<()> = unimplemented!();
+                            let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                            let _args_2: Ptr<i8> =
+                                data.decay().offset(((j.read()) as usize) as isize);
                             test_eprintf_2(
-                                Ptr::<()>::from_string_literal(
+                                Ptr::<i8>::from_string_literal(
                                     b"failed after write() at offset %zu: got=%x, expected=%x\n",
                                 ),
                                 _args_1,
@@ -825,9 +945,9 @@ pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
                 )));
                 test_require_27(
                     _condition,
-                    Ptr::<()>::from_string_literal(b"data[j] == exp"),
-                    Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                    67_(),
+                    Ptr::<i8>::from_string_literal(b"data[j] == exp"),
+                    Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                    67,
                     _arg.as_pointer(),
                 )
             });
@@ -836,15 +956,18 @@ pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
         unimplemented!();
     }
     {
-        let ifs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            LibraryManagedBufferImpl::operator_call_3_char(&policy.as_pointer(), ifs.as_pointer())
+            LibraryManagedBufferImpl::operator_call_3_char(
+                &policy.as_pointer(),
+                (ifs.as_pointer()).reinterpret_cast::<()>(),
+            )
         });
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
         let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            let _condition: () = ((*in_sz.borrow()) == (*total_size.borrow()));
+            let _condition: bool = ((*in_sz.borrow()) == (*total_size.borrow()));
             let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                 {
                     let total_size: Ptr<()> = total_size.as_pointer();
@@ -853,112 +976,142 @@ pub fn test_read_40(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
                 || {
                     ({
                         test_eprintf_3(
-                            Ptr::<()>::from_string_literal(b"out_sz = %zu, in_sz = %ld\n"),
-                            (total_size).clone(),
-                            (in_sz).clone(),
+                            Ptr::<i8>::from_string_literal(b"out_sz = %zu, in_sz = %ld\n"),
+                            (total_size).reinterpret_cast::<i64>(),
+                            (in_sz).reinterpret_cast::<i64>(),
                         )
                     });
                 }
             )));
             test_require_28(
                 _condition,
-                Ptr::<()>::from_string_literal(b"in_sz == total_size"),
-                Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                77_(),
+                Ptr::<i8>::from_string_literal(b"in_sz == total_size"),
+                Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                77,
                 _arg.as_pointer(),
             )
         });
         unimplemented!();
-        let previously_read: Value<()> = Rc::new(RefCell::new(0_()));
-        let in_buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: for payload_sz in IterRange::new(unimplemented!(), unimplemented!()) {
-            let payload_sz: Ptr<()> = unimplemented!();
+        let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
+        let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
+            (0..((*total_size.borrow()) as usize) as usize)
+                .map(|_| 0_i8)
+                .collect::<Vec<_>>(),
+        ));
+        'loop_: for payload_sz in
+            IterRange::new(payload_sizes.decay().begin(), payload_sizes.decay().end())
+        {
+            let payload_sz: Ptr<i64> = payload_sz.iter_deref();
             unimplemented!();
-            unimplemented!();
+            assert!(unimplemented!());
             let j: Value<()> = Rc::new(RefCell::new(0_()));
             'loop_: while ({ (*j.borrow()) } < { (payload_sz.read()) }) {
-                let exp: Value<()> = Rc::new(RefCell::new(
-                    ((*previously_read.borrow()).wrapping_add((*j.borrow()))).wrapping_rem(
-                        (1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ()))),
-                    ),
+                let exp: Value<i8> = Rc::new(RefCell::new(
+                    ((((*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize)))
+                        .wrapping_rem(
+                            ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize)))
+                                as usize),
+                        )) as i8),
                 ));
                 ({
-                    let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                    let _condition: bool = (((in_buffer
+                        .decay()
+                        .offset(
+                            (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize))
+                                as isize,
+                        )
+                        .read()) as i32)
+                        == ((*exp.borrow()) as i32));
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
-                            let previously_read: Ptr<()> = previously_read.as_pointer();
+                            let previously_read: Ptr<usize> = previously_read.as_pointer();
                             let j: Ptr<()> = j.as_pointer();
-                            let payload_sz: Ptr<()> = (payload_sz).clone();
-                            let in_buffer: Ptr<()> = in_buffer.as_pointer();
-                            let exp: Ptr<()> = exp.as_pointer();
+                            let payload_sz: Ptr<i64> = (payload_sz).clone();
+                            let in_buffer: Ptr<Vec<i8>> = in_buffer.as_pointer();
+                            let exp: Ptr<i8> = exp.as_pointer();
                         },
                         || {
                             ({
-                                let _args_1: Value<()> = Rc::new(RefCell::new(
-                                    (previously_read.read()).wrapping_add((j.read())),
+                                let _args_1: Value<u64> = Rc::new(RefCell::new(
+                                    ((previously_read.read()).wrapping_add(((j.read()) as usize))
+                                        as u64),
                                 ));
-                                let _args_2: Ptr<()> = (j).clone();
-                                let _args_3: Ptr<()> = (payload_sz).clone();
-                                let _args_4: Ptr<()> = unimplemented!();
-                                let _args_5: Ptr<()> = (exp).clone();
-                                test_eprintf_4 ( Ptr::<() >::from_string_literal(b"failed after read() at offset %zu (offset %zu in chunk size %zu): got=%x, expected=%x\n" )  , _args_1.as_pointer() , _args_2 , _args_3 , _args_4 , _args_5 , )
+                                let _args_2: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                                let _args_3: Ptr<i64> = (payload_sz).clone();
+                                let _args_4: Ptr<i8> = in_buffer.decay().offset(
+                                    (previously_read.read()).wrapping_add(((j.read()) as usize))
+                                        as isize,
+                                );
+                                let _args_5: Ptr<i8> = (exp).clone();
+                                test_eprintf_4 ( Ptr::<i8 >::from_string_literal(b"failed after read() at offset %zu (offset %zu in chunk size %zu): got=%x, expected=%x\n" )  , _args_1.as_pointer() , _args_2 , _args_3 , _args_4 , _args_5 , )
                             });
                         }
                     )));
                     test_require_29(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"in_buffer[previously_read + j] == exp"),
-                        Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                        94_(),
+                        Ptr::<i8>::from_string_literal(b"in_buffer[previously_read + j] == exp"),
+                        Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                        94,
                         _arg.as_pointer(),
                     )
                 });
                 (*j.borrow_mut()).prefix_inc();
             }
             (*previously_read.borrow_mut()) =
-                { (*previously_read.borrow()).wrapping_add((payload_sz.read())) };
+                { (*previously_read.borrow()).wrapping_add(((payload_sz.read()) as usize)) };
         }
     }
     unimplemented!();
 }
-pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
+pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
     let policy: Value<UserManagedBuffer> = Rc::new(RefCell::new(policy));
-    let total_size: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs =
-            (i).wrapping_rem((1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ()))));
-        unimplemented!().write(__rhs);
+    let total_size: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
+    let data: Value<Vec<i8>> = Rc::new(RefCell::new(
+        (0..((*total_size.borrow()) as usize) as usize)
+            .map(|_| 0_i8)
+            .collect::<Vec<_>>(),
+    ));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < (*data.borrow()).len()) {
+        let __rhs = (((i).wrapping_rem(
+            ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize))) as usize),
+        )) as i8);
+        data.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_37() });
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_37() })));
     {
-        let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let ofs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
         let j: Value<()> = Rc::new(RefCell::new(0_()));
         'loop_: while ((*j.borrow()) < (*total_size.borrow())) {
-            let exp: Value<()> = Rc::new(RefCell::new(
-                ((*j.borrow())
-                    % (1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ())))),
+            let exp: Value<i8> = Rc::new(RefCell::new(
+                (((*j.borrow())
+                    % ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize))) as ()))
+                    as i8),
             ));
             ({
-                let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                let _condition: bool = (((data
+                    .decay()
+                    .offset(((*j.borrow()) as usize) as isize)
+                    .read()) as i32)
+                    == ((*exp.borrow()) as i32));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
                         let j: Ptr<()> = j.as_pointer();
-                        let data: Ptr<()> = data.as_pointer();
-                        let exp: Ptr<()> = exp.as_pointer();
+                        let data: Ptr<Vec<i8>> = data.as_pointer();
+                        let exp: Ptr<i8> = exp.as_pointer();
                     },
                     || {
                         ({
-                            let _args_1: Ptr<()> = (j).clone();
-                            let _args_2: Ptr<()> = unimplemented!();
+                            let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                            let _args_2: Ptr<i8> =
+                                data.decay().offset(((j.read()) as usize) as isize);
                             test_eprintf_2(
-                                Ptr::<()>::from_string_literal(
+                                Ptr::<i8>::from_string_literal(
                                     b"failed after write() at offset %zu: got=%x, expected=%x\n",
                                 ),
                                 _args_1,
@@ -970,9 +1123,9 @@ pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
                 )));
                 test_require_32(
                     _condition,
-                    Ptr::<()>::from_string_literal(b"data[j] == exp"),
-                    Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                    67_(),
+                    Ptr::<i8>::from_string_literal(b"data[j] == exp"),
+                    Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                    67,
                     _arg.as_pointer(),
                 )
             });
@@ -981,13 +1134,18 @@ pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
         unimplemented!();
     }
     {
-        let ifs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ UserManagedBufferImpl::operator_call_5(&policy.as_pointer(), ifs.as_pointer()) });
+        let ifs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        ({
+            UserManagedBufferImpl::operator_call_5(
+                &policy.as_pointer(),
+                (ifs.as_pointer()).reinterpret_cast::<()>(),
+            )
+        });
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
         let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
-            let _condition: () = ((*in_sz.borrow()) == (*total_size.borrow()));
+            let _condition: bool = ((*in_sz.borrow()) == (*total_size.borrow()));
             let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                 {
                     let total_size: Ptr<()> = total_size.as_pointer();
@@ -996,109 +1154,137 @@ pub fn test_read_41(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
                 || {
                     ({
                         test_eprintf_3(
-                            Ptr::<()>::from_string_literal(b"out_sz = %zu, in_sz = %ld\n"),
-                            (total_size).clone(),
-                            (in_sz).clone(),
+                            Ptr::<i8>::from_string_literal(b"out_sz = %zu, in_sz = %ld\n"),
+                            (total_size).reinterpret_cast::<i64>(),
+                            (in_sz).reinterpret_cast::<i64>(),
                         )
                     });
                 }
             )));
             test_require_33(
                 _condition,
-                Ptr::<()>::from_string_literal(b"in_sz == total_size"),
-                Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                77_(),
+                Ptr::<i8>::from_string_literal(b"in_sz == total_size"),
+                Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                77,
                 _arg.as_pointer(),
             )
         });
         unimplemented!();
-        let previously_read: Value<()> = Rc::new(RefCell::new(0_()));
-        let in_buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: for payload_sz in IterRange::new(unimplemented!(), unimplemented!()) {
-            let payload_sz: Ptr<()> = unimplemented!();
+        let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
+        let in_buffer: Value<Vec<i8>> = Rc::new(RefCell::new(
+            (0..((*total_size.borrow()) as usize) as usize)
+                .map(|_| 0_i8)
+                .collect::<Vec<_>>(),
+        ));
+        'loop_: for payload_sz in
+            IterRange::new(payload_sizes.decay().begin(), payload_sizes.decay().end())
+        {
+            let payload_sz: Ptr<i64> = payload_sz.iter_deref();
             unimplemented!();
-            unimplemented!();
+            assert!(unimplemented!());
             let j: Value<()> = Rc::new(RefCell::new(0_()));
             'loop_: while ({ (*j.borrow()) } < { (payload_sz.read()) }) {
-                let exp: Value<()> = Rc::new(RefCell::new(
-                    ((*previously_read.borrow()).wrapping_add((*j.borrow()))).wrapping_rem(
-                        (1_() << (8_()).wrapping_mul((::std::mem::size_of::<()>() as ()))),
-                    ),
+                let exp: Value<i8> = Rc::new(RefCell::new(
+                    ((((*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize)))
+                        .wrapping_rem(
+                            ((1 << (8_usize).wrapping_mul((::std::mem::size_of::<i8>() as usize)))
+                                as usize),
+                        )) as i8),
                 ));
                 ({
-                    let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                    let _condition: bool = (((in_buffer
+                        .decay()
+                        .offset(
+                            (*previously_read.borrow()).wrapping_add(((*j.borrow()) as usize))
+                                as isize,
+                        )
+                        .read()) as i32)
+                        == ((*exp.borrow()) as i32));
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
-                            let previously_read: Ptr<()> = previously_read.as_pointer();
+                            let previously_read: Ptr<usize> = previously_read.as_pointer();
                             let j: Ptr<()> = j.as_pointer();
-                            let payload_sz: Ptr<()> = (payload_sz).clone();
-                            let in_buffer: Ptr<()> = in_buffer.as_pointer();
-                            let exp: Ptr<()> = exp.as_pointer();
+                            let payload_sz: Ptr<i64> = (payload_sz).clone();
+                            let in_buffer: Ptr<Vec<i8>> = in_buffer.as_pointer();
+                            let exp: Ptr<i8> = exp.as_pointer();
                         },
                         || {
                             ({
-                                let _args_1: Value<()> = Rc::new(RefCell::new(
-                                    (previously_read.read()).wrapping_add((j.read())),
+                                let _args_1: Value<u64> = Rc::new(RefCell::new(
+                                    ((previously_read.read()).wrapping_add(((j.read()) as usize))
+                                        as u64),
                                 ));
-                                let _args_2: Ptr<()> = (j).clone();
-                                let _args_3: Ptr<()> = (payload_sz).clone();
-                                let _args_4: Ptr<()> = unimplemented!();
-                                let _args_5: Ptr<()> = (exp).clone();
-                                test_eprintf_4 ( Ptr::<() >::from_string_literal(b"failed after read() at offset %zu (offset %zu in chunk size %zu): got=%x, expected=%x\n" )  , _args_1.as_pointer() , _args_2 , _args_3 , _args_4 , _args_5 , )
+                                let _args_2: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                                let _args_3: Ptr<i64> = (payload_sz).clone();
+                                let _args_4: Ptr<i8> = in_buffer.decay().offset(
+                                    (previously_read.read()).wrapping_add(((j.read()) as usize))
+                                        as isize,
+                                );
+                                let _args_5: Ptr<i8> = (exp).clone();
+                                test_eprintf_4 ( Ptr::<i8 >::from_string_literal(b"failed after read() at offset %zu (offset %zu in chunk size %zu): got=%x, expected=%x\n" )  , _args_1.as_pointer() , _args_2 , _args_3 , _args_4 , _args_5 , )
                             });
                         }
                     )));
                     test_require_34(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"in_buffer[previously_read + j] == exp"),
-                        Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                        94_(),
+                        Ptr::<i8>::from_string_literal(b"in_buffer[previously_read + j] == exp"),
+                        Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                        94,
                         _arg.as_pointer(),
                     )
                 });
                 (*j.borrow_mut()).prefix_inc();
             }
             (*previously_read.borrow_mut()) =
-                { (*previously_read.borrow()).wrapping_add((payload_sz.read())) };
+                { (*previously_read.borrow()).wrapping_add(((payload_sz.read()) as usize)) };
         }
     }
     unimplemented!();
 }
-pub fn test_read_codecvt_42(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
+pub fn test_read_codecvt_42(policy: LibraryDefaultBuffer, payload_sizes: Ptr<Vec<i64>>) {
     let policy: Value<LibraryDefaultBuffer> = Rc::new(RefCell::new(policy));
-    let mut total_size: () = unimplemented!();
-    let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = i;
-        unimplemented!().write(__rhs);
+    let mut total_size: () = (unimplemented!() as ());
+    let data: Value<Vec<i32>> = Rc::new(RefCell::new(
+        (0..(total_size as usize) as usize)
+            .map(|_| 0_i32)
+            .collect::<Vec<_>>(),
+    ));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < (*data.borrow()).len()) {
+        let __rhs = (i as i32);
+        data.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_37() });
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_37() })));
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
         let j: Value<()> = Rc::new(RefCell::new(0_()));
         'loop_: while ((*j.borrow()) < total_size) {
-            let exp: Value<()> = Rc::new(RefCell::new((*j.borrow())));
+            let exp: Value<i32> = Rc::new(RefCell::new(((*j.borrow()) as i32)));
             ({
-                let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                let _condition: bool = (((data
+                    .decay()
+                    .offset(((*j.borrow()) as usize) as isize)
+                    .read()) as i32)
+                    == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
                         let j: Ptr<()> = j.as_pointer();
-                        let data: Ptr<()> = data.as_pointer();
-                        let exp: Ptr<()> = exp.as_pointer();
+                        let data: Ptr<Vec<i32>> = data.as_pointer();
+                        let exp: Ptr<i32> = exp.as_pointer();
                     },
                     || {
                         ({
-                            let _args_1: Ptr<()> = (j).clone();
-                            let _args_2: Ptr<()> = unimplemented!();
+                            let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                            let _args_2: Ptr<i32> =
+                                data.decay().offset(((j.read()) as usize) as isize);
                             test_eprintf_5(
-                                Ptr::<()>::from_string_literal(
+                                Ptr::<i8>::from_string_literal(
                                     b"failed after write() at offset %zu: got=%x, expected=%x\n",
                                 ),
                                 _args_1,
@@ -1110,9 +1296,9 @@ pub fn test_read_codecvt_42(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>
                 )));
                 test_require_25(
                     _condition,
-                    Ptr::<()>::from_string_literal(b"data[j] == exp"),
-                    Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                    123_(),
+                    Ptr::<i8>::from_string_literal(b"data[j] == exp"),
+                    Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                    123,
                     _arg.as_pointer(),
                 )
             });
@@ -1130,34 +1316,50 @@ pub fn test_read_codecvt_42(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>
             )
         });
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        let previously_read: Value<()> = Rc::new(RefCell::new(0_()));
-        let in_buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: for payload_sz in IterRange::new(unimplemented!(), unimplemented!()) {
-            let payload_sz: Ptr<()> = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+        let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
+        let in_buffer: Value<Vec<i32>> = Rc::new(RefCell::new(
+            (0..(total_size as usize) as usize)
+                .map(|_| 0_i32)
+                .collect::<Vec<_>>(),
+        ));
+        'loop_: for payload_sz in
+            IterRange::new(payload_sizes.decay().begin(), payload_sizes.decay().end())
+        {
+            let payload_sz: Ptr<i64> = payload_sz.iter_deref();
+            assert!(unimplemented!());
+            assert!(unimplemented!());
             let j: Value<()> = Rc::new(RefCell::new(0_()));
             'loop_: while ({ (*j.borrow()) } < { (payload_sz.read()) }) {
-                let exp: Value<()> = Rc::new(RefCell::new(
-                    (*j.borrow()).wrapping_add((*previously_read.borrow())),
+                let exp: Value<i32> = Rc::new(RefCell::new(
+                    ((((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))) as i32),
                 ));
                 ({
-                    let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                    let _condition: bool = (((in_buffer
+                        .decay()
+                        .offset(
+                            ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))
+                                as isize,
+                        )
+                        .read()) as i32)
+                        == (*exp.borrow()));
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let j: Ptr<()> = j.as_pointer();
-                            let in_buffer: Ptr<()> = in_buffer.as_pointer();
-                            let previously_read: Ptr<()> = previously_read.as_pointer();
-                            let exp: Ptr<()> = exp.as_pointer();
+                            let in_buffer: Ptr<Vec<i32>> = in_buffer.as_pointer();
+                            let previously_read: Ptr<usize> = previously_read.as_pointer();
+                            let exp: Ptr<i32> = exp.as_pointer();
                         },
                         || {
                             ({
-                                let _args_1: Ptr<()> = (j).clone();
-                                let _args_2: Ptr<()> = unimplemented!();
+                                let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                                let _args_2: Ptr<i32> = in_buffer.decay().offset(
+                                    ((j.read()) as usize).wrapping_add((previously_read.read()))
+                                        as isize,
+                                );
                                 test_eprintf_5(
-                                    Ptr::<()>::from_string_literal(
+                                    Ptr::<i8>::from_string_literal(
                                         b"failed after read() at offset %zu: got=%x, expected=%x\n",
                                     ),
                                     _args_1,
@@ -1169,55 +1371,64 @@ pub fn test_read_codecvt_42(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>
                     )));
                     test_require_26(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"in_buffer[j + previously_read] == exp"),
-                        Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                        144_(),
+                        Ptr::<i8>::from_string_literal(b"in_buffer[j + previously_read] == exp"),
+                        Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                        144,
                         _arg.as_pointer(),
                     )
                 });
                 (*j.borrow_mut()).prefix_inc();
             }
             (*previously_read.borrow_mut()) =
-                { (*previously_read.borrow()).wrapping_add((payload_sz.read())) };
+                { (*previously_read.borrow()).wrapping_add(((payload_sz.read()) as usize)) };
         }
     }
     unimplemented!();
 }
-pub fn test_read_codecvt_43(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
+pub fn test_read_codecvt_43(policy: LibraryManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
     let policy: Value<LibraryManagedBuffer> = Rc::new(RefCell::new(policy));
-    let mut total_size: () = unimplemented!();
-    let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = i;
-        unimplemented!().write(__rhs);
+    let mut total_size: () = (unimplemented!() as ());
+    let data: Value<Vec<i32>> = Rc::new(RefCell::new(
+        (0..(total_size as usize) as usize)
+            .map(|_| 0_i32)
+            .collect::<Vec<_>>(),
+    ));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < (*data.borrow()).len()) {
+        let __rhs = (i as i32);
+        data.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_37() });
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_37() })));
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
         let j: Value<()> = Rc::new(RefCell::new(0_()));
         'loop_: while ((*j.borrow()) < total_size) {
-            let exp: Value<()> = Rc::new(RefCell::new((*j.borrow())));
+            let exp: Value<i32> = Rc::new(RefCell::new(((*j.borrow()) as i32)));
             ({
-                let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                let _condition: bool = (((data
+                    .decay()
+                    .offset(((*j.borrow()) as usize) as isize)
+                    .read()) as i32)
+                    == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
                         let j: Ptr<()> = j.as_pointer();
-                        let data: Ptr<()> = data.as_pointer();
-                        let exp: Ptr<()> = exp.as_pointer();
+                        let data: Ptr<Vec<i32>> = data.as_pointer();
+                        let exp: Ptr<i32> = exp.as_pointer();
                     },
                     || {
                         ({
-                            let _args_1: Ptr<()> = (j).clone();
-                            let _args_2: Ptr<()> = unimplemented!();
+                            let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                            let _args_2: Ptr<i32> =
+                                data.decay().offset(((j.read()) as usize) as isize);
                             test_eprintf_5(
-                                Ptr::<()>::from_string_literal(
+                                Ptr::<i8>::from_string_literal(
                                     b"failed after write() at offset %zu: got=%x, expected=%x\n",
                                 ),
                                 _args_1,
@@ -1229,9 +1440,9 @@ pub fn test_read_codecvt_43(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>
                 )));
                 test_require_30(
                     _condition,
-                    Ptr::<()>::from_string_literal(b"data[j] == exp"),
-                    Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                    123_(),
+                    Ptr::<i8>::from_string_literal(b"data[j] == exp"),
+                    Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                    123,
                     _arg.as_pointer(),
                 )
             });
@@ -1249,34 +1460,50 @@ pub fn test_read_codecvt_43(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>
             )
         });
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        let previously_read: Value<()> = Rc::new(RefCell::new(0_()));
-        let in_buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: for payload_sz in IterRange::new(unimplemented!(), unimplemented!()) {
-            let payload_sz: Ptr<()> = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+        let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
+        let in_buffer: Value<Vec<i32>> = Rc::new(RefCell::new(
+            (0..(total_size as usize) as usize)
+                .map(|_| 0_i32)
+                .collect::<Vec<_>>(),
+        ));
+        'loop_: for payload_sz in
+            IterRange::new(payload_sizes.decay().begin(), payload_sizes.decay().end())
+        {
+            let payload_sz: Ptr<i64> = payload_sz.iter_deref();
+            assert!(unimplemented!());
+            assert!(unimplemented!());
             let j: Value<()> = Rc::new(RefCell::new(0_()));
             'loop_: while ({ (*j.borrow()) } < { (payload_sz.read()) }) {
-                let exp: Value<()> = Rc::new(RefCell::new(
-                    (*j.borrow()).wrapping_add((*previously_read.borrow())),
+                let exp: Value<i32> = Rc::new(RefCell::new(
+                    ((((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))) as i32),
                 ));
                 ({
-                    let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                    let _condition: bool = (((in_buffer
+                        .decay()
+                        .offset(
+                            ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))
+                                as isize,
+                        )
+                        .read()) as i32)
+                        == (*exp.borrow()));
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let j: Ptr<()> = j.as_pointer();
-                            let in_buffer: Ptr<()> = in_buffer.as_pointer();
-                            let previously_read: Ptr<()> = previously_read.as_pointer();
-                            let exp: Ptr<()> = exp.as_pointer();
+                            let in_buffer: Ptr<Vec<i32>> = in_buffer.as_pointer();
+                            let previously_read: Ptr<usize> = previously_read.as_pointer();
+                            let exp: Ptr<i32> = exp.as_pointer();
                         },
                         || {
                             ({
-                                let _args_1: Ptr<()> = (j).clone();
-                                let _args_2: Ptr<()> = unimplemented!();
+                                let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                                let _args_2: Ptr<i32> = in_buffer.decay().offset(
+                                    ((j.read()) as usize).wrapping_add((previously_read.read()))
+                                        as isize,
+                                );
                                 test_eprintf_5(
-                                    Ptr::<()>::from_string_literal(
+                                    Ptr::<i8>::from_string_literal(
                                         b"failed after read() at offset %zu: got=%x, expected=%x\n",
                                     ),
                                     _args_1,
@@ -1288,55 +1515,64 @@ pub fn test_read_codecvt_43(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>
                     )));
                     test_require_31(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"in_buffer[j + previously_read] == exp"),
-                        Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                        144_(),
+                        Ptr::<i8>::from_string_literal(b"in_buffer[j + previously_read] == exp"),
+                        Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                        144,
                         _arg.as_pointer(),
                     )
                 });
                 (*j.borrow_mut()).prefix_inc();
             }
             (*previously_read.borrow_mut()) =
-                { (*previously_read.borrow()).wrapping_add((payload_sz.read())) };
+                { (*previously_read.borrow()).wrapping_add(((payload_sz.read()) as usize)) };
         }
     }
     unimplemented!();
 }
-pub fn test_read_codecvt_44(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
+pub fn test_read_codecvt_44(policy: UserManagedBuffer, payload_sizes: Ptr<Vec<i64>>) {
     let policy: Value<UserManagedBuffer> = Rc::new(RefCell::new(policy));
-    let mut total_size: () = unimplemented!();
-    let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = i;
-        unimplemented!().write(__rhs);
+    let mut total_size: () = (unimplemented!() as ());
+    let data: Value<Vec<i32>> = Rc::new(RefCell::new(
+        (0..(total_size as usize) as usize)
+            .map(|_| 0_i32)
+            .collect::<Vec<_>>(),
+    ));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < (*data.borrow()).len()) {
+        let __rhs = (i as i32);
+        data.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    let mut p: () = ({ get_temp_file_name_37() });
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new(({ get_temp_file_name_37() })));
     {
         let ofs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
         let j: Value<()> = Rc::new(RefCell::new(0_()));
         'loop_: while ((*j.borrow()) < total_size) {
-            let exp: Value<()> = Rc::new(RefCell::new((*j.borrow())));
+            let exp: Value<i32> = Rc::new(RefCell::new(((*j.borrow()) as i32)));
             ({
-                let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                let _condition: bool = (((data
+                    .decay()
+                    .offset(((*j.borrow()) as usize) as isize)
+                    .read()) as i32)
+                    == (*exp.borrow()));
                 let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                     {
                         let j: Ptr<()> = j.as_pointer();
-                        let data: Ptr<()> = data.as_pointer();
-                        let exp: Ptr<()> = exp.as_pointer();
+                        let data: Ptr<Vec<i32>> = data.as_pointer();
+                        let exp: Ptr<i32> = exp.as_pointer();
                     },
                     || {
                         ({
-                            let _args_1: Ptr<()> = (j).clone();
-                            let _args_2: Ptr<()> = unimplemented!();
+                            let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                            let _args_2: Ptr<i32> =
+                                data.decay().offset(((j.read()) as usize) as isize);
                             test_eprintf_5(
-                                Ptr::<()>::from_string_literal(
+                                Ptr::<i8>::from_string_literal(
                                     b"failed after write() at offset %zu: got=%x, expected=%x\n",
                                 ),
                                 _args_1,
@@ -1348,9 +1584,9 @@ pub fn test_read_codecvt_44(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
                 )));
                 test_require_35(
                     _condition,
-                    Ptr::<()>::from_string_literal(b"data[j] == exp"),
-                    Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                    123_(),
+                    Ptr::<i8>::from_string_literal(b"data[j] == exp"),
+                    Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                    123,
                     _arg.as_pointer(),
                 )
             });
@@ -1363,34 +1599,50 @@ pub fn test_read_codecvt_44(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
         unimplemented!();
         ({ UserManagedBufferImpl::operator_call_7(&policy.as_pointer(), ifs.as_pointer()) });
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        let previously_read: Value<()> = Rc::new(RefCell::new(0_()));
-        let in_buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        'loop_: for payload_sz in IterRange::new(unimplemented!(), unimplemented!()) {
-            let payload_sz: Ptr<()> = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+        let previously_read: Value<usize> = Rc::new(RefCell::new(0_usize));
+        let in_buffer: Value<Vec<i32>> = Rc::new(RefCell::new(
+            (0..(total_size as usize) as usize)
+                .map(|_| 0_i32)
+                .collect::<Vec<_>>(),
+        ));
+        'loop_: for payload_sz in
+            IterRange::new(payload_sizes.decay().begin(), payload_sizes.decay().end())
+        {
+            let payload_sz: Ptr<i64> = payload_sz.iter_deref();
+            assert!(unimplemented!());
+            assert!(unimplemented!());
             let j: Value<()> = Rc::new(RefCell::new(0_()));
             'loop_: while ({ (*j.borrow()) } < { (payload_sz.read()) }) {
-                let exp: Value<()> = Rc::new(RefCell::new(
-                    (*j.borrow()).wrapping_add((*previously_read.borrow())),
+                let exp: Value<i32> = Rc::new(RefCell::new(
+                    ((((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))) as i32),
                 ));
                 ({
-                    let _condition: () = ((unimplemented!().read()) == (*exp.borrow()));
+                    let _condition: bool = (((in_buffer
+                        .decay()
+                        .offset(
+                            ((*j.borrow()) as usize).wrapping_add((*previously_read.borrow()))
+                                as isize,
+                        )
+                        .read()) as i32)
+                        == (*exp.borrow()));
                     let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
                         {
                             let j: Ptr<()> = j.as_pointer();
-                            let in_buffer: Ptr<()> = in_buffer.as_pointer();
-                            let previously_read: Ptr<()> = previously_read.as_pointer();
-                            let exp: Ptr<()> = exp.as_pointer();
+                            let in_buffer: Ptr<Vec<i32>> = in_buffer.as_pointer();
+                            let previously_read: Ptr<usize> = previously_read.as_pointer();
+                            let exp: Ptr<i32> = exp.as_pointer();
                         },
                         || {
                             ({
-                                let _args_1: Ptr<()> = (j).clone();
-                                let _args_2: Ptr<()> = unimplemented!();
+                                let _args_1: Ptr<i64> = (j).reinterpret_cast::<i64>();
+                                let _args_2: Ptr<i32> = in_buffer.decay().offset(
+                                    ((j.read()) as usize).wrapping_add((previously_read.read()))
+                                        as isize,
+                                );
                                 test_eprintf_5(
-                                    Ptr::<()>::from_string_literal(
+                                    Ptr::<i8>::from_string_literal(
                                         b"failed after read() at offset %zu: got=%x, expected=%x\n",
                                     ),
                                     _args_1,
@@ -1402,128 +1654,194 @@ pub fn test_read_codecvt_44(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
                     )));
                     test_require_36(
                         _condition,
-                        Ptr::<()>::from_string_literal(b"in_buffer[j + previously_read] == exp"),
-                        Ptr::<()>::from_string_literal(b"buffered_reads.pass.cpp"),
-                        144_(),
+                        Ptr::<i8>::from_string_literal(b"in_buffer[j + previously_read] == exp"),
+                        Ptr::<i8>::from_string_literal(b"buffered_reads.pass.cpp"),
+                        144,
                         _arg.as_pointer(),
                     )
                 });
                 (*j.borrow_mut()).prefix_inc();
             }
             (*previously_read.borrow_mut()) =
-                { (*previously_read.borrow()).wrapping_add((payload_sz.read())) };
+                { (*previously_read.borrow()).wrapping_add(((payload_sz.read()) as usize)) };
         }
     }
     unimplemented!();
 }
 thread_local!(
-    pub static buffer_sizes_45: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static buffer_sizes_45: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([
+        0_i64, 3_i64, 8_i64, 9_i64, 11_i64,
+    ])));
 );
 thread_local!(
-    pub static io_sizes_46: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static io_sizes_46: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([
+        0_i64, 1_i64, 2_i64, 3_i64, 4_i64, 9_i64, 10_i64, 11_i64, 12_i64, 13_i64, 21_i64, 22_i64,
+        23_i64,
+    ])));
 );
 thread_local!(
-    pub static io_sizes_default_47: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static io_sizes_default_47: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([
+        0_i64, 1_i64, 2_i64, 3_i64, 4_i64, 4094_i64, 4095_i64, 4096_i64, 4097_i64, 4098_i64,
+        8190_i64, 8191_i64, 8192_i64, 8193_i64, 8194_i64,
+    ])));
 );
 pub fn test_1_read_48() {
-    'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut x: () = (unimplemented!().read());
+    'loop_: for x in IterRange::new(
+        io_sizes_default_47.with(|v| v.decay()).begin(),
+        io_sizes_default_47.with(|v| v.decay()).end(),
+    ) {
+        let mut x: () = ((x.iter_deref().read()) as ());
         ({
-            let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let _payload_sizes: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([(x as i64)])));
             test_read_39(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
         });
         ({
-            let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let _payload_sizes: Value<Vec<i64>> = Rc::new(RefCell::new(Vec::from([(x as i64)])));
             test_read_codecvt_42(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
         });
     }
-    'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut b: () = (unimplemented!().read());
-        'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut x: () = (unimplemented!().read());
+    'loop_: for b in IterRange::new(
+        buffer_sizes_45.with(|v| v.decay()).begin(),
+        buffer_sizes_45.with(|v| v.decay()).end(),
+    ) {
+        let mut b: () = ((b.iter_deref().read()) as ());
+        'loop_: for x in IterRange::new(
+            io_sizes_46.with(|v| v.decay()).begin(),
+            io_sizes_46.with(|v| v.decay()).end(),
+        ) {
+            let mut x: () = ((x.iter_deref().read()) as ());
             ({
-                let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let _payload_sizes: Value<Vec<i64>> =
+                    Rc::new(RefCell::new(Vec::from([(x as i64)])));
                 test_read_40(
-                    LibraryManagedBuffer::new({ b }),
+                    LibraryManagedBuffer::new({ (b as usize) }),
                     _payload_sizes.as_pointer(),
                 )
             });
             ({
-                let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let _payload_sizes: Value<Vec<i64>> =
+                    Rc::new(RefCell::new(Vec::from([(x as i64)])));
                 test_read_codecvt_43(
-                    LibraryManagedBuffer::new({ b }),
+                    LibraryManagedBuffer::new({ (b as usize) }),
                     _payload_sizes.as_pointer(),
                 )
             });
         }
     }
-    'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut b: () = (unimplemented!().read());
-        'loop_: for x in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut x: () = (unimplemented!().read());
+    'loop_: for b in IterRange::new(
+        buffer_sizes_45.with(|v| v.decay()).begin(),
+        buffer_sizes_45.with(|v| v.decay()).end(),
+    ) {
+        let mut b: () = ((b.iter_deref().read()) as ());
+        'loop_: for x in IterRange::new(
+            io_sizes_46.with(|v| v.decay()).begin(),
+            io_sizes_46.with(|v| v.decay()).end(),
+        ) {
+            let mut x: () = ((x.iter_deref().read()) as ());
             ({
-                let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                test_read_41(UserManagedBuffer::new({ b }), _payload_sizes.as_pointer())
+                let _payload_sizes: Value<Vec<i64>> =
+                    Rc::new(RefCell::new(Vec::from([(x as i64)])));
+                test_read_41(
+                    UserManagedBuffer::new({ (b as usize) }),
+                    _payload_sizes.as_pointer(),
+                )
             });
             ({
-                let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                test_read_codecvt_44(UserManagedBuffer::new({ b }), _payload_sizes.as_pointer())
+                let _payload_sizes: Value<Vec<i64>> =
+                    Rc::new(RefCell::new(Vec::from([(x as i64)])));
+                test_read_codecvt_44(
+                    UserManagedBuffer::new({ (b as usize) }),
+                    _payload_sizes.as_pointer(),
+                )
             });
         }
     }
 }
 pub fn test_2_reads_49() {
-    'loop_: for a in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut a: () = (unimplemented!().read());
-        'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut b: () = (unimplemented!().read());
+    'loop_: for a in IterRange::new(
+        io_sizes_default_47.with(|v| v.decay()).begin(),
+        io_sizes_default_47.with(|v| v.decay()).end(),
+    ) {
+        let mut a: () = ((a.iter_deref().read()) as ());
+        'loop_: for b in IterRange::new(
+            io_sizes_default_47.with(|v| v.decay()).begin(),
+            io_sizes_default_47.with(|v| v.decay()).end(),
+        ) {
+            let mut b: () = ((b.iter_deref().read()) as ());
             ({
-                let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let _payload_sizes: Value<Vec<i64>> =
+                    Rc::new(RefCell::new(Vec::from([(a as i64), (b as i64)])));
                 test_read_39(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
             });
             ({
-                let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let _payload_sizes: Value<Vec<i64>> =
+                    Rc::new(RefCell::new(Vec::from([(a as i64), (b as i64)])));
                 test_read_codecvt_42(LibraryDefaultBuffer::new(), _payload_sizes.as_pointer())
             });
         }
     }
-    'loop_: for buf in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut buf: () = (unimplemented!().read());
-        'loop_: for a in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut a: () = (unimplemented!().read());
-            'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
-                let mut b: () = (unimplemented!().read());
+    'loop_: for buf in IterRange::new(
+        buffer_sizes_45.with(|v| v.decay()).begin(),
+        buffer_sizes_45.with(|v| v.decay()).end(),
+    ) {
+        let mut buf: () = ((buf.iter_deref().read()) as ());
+        'loop_: for a in IterRange::new(
+            io_sizes_46.with(|v| v.decay()).begin(),
+            io_sizes_46.with(|v| v.decay()).end(),
+        ) {
+            let mut a: () = ((a.iter_deref().read()) as ());
+            'loop_: for b in IterRange::new(
+                io_sizes_46.with(|v| v.decay()).begin(),
+                io_sizes_46.with(|v| v.decay()).end(),
+            ) {
+                let mut b: () = ((b.iter_deref().read()) as ());
                 ({
-                    let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                    let _payload_sizes: Value<Vec<i64>> =
+                        Rc::new(RefCell::new(Vec::from([(a as i64), (b as i64)])));
                     test_read_40(
-                        LibraryManagedBuffer::new({ buf }),
+                        LibraryManagedBuffer::new({ (buf as usize) }),
                         _payload_sizes.as_pointer(),
                     )
                 });
                 ({
-                    let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                    let _payload_sizes: Value<Vec<i64>> =
+                        Rc::new(RefCell::new(Vec::from([(a as i64), (b as i64)])));
                     test_read_codecvt_43(
-                        LibraryManagedBuffer::new({ buf }),
+                        LibraryManagedBuffer::new({ (buf as usize) }),
                         _payload_sizes.as_pointer(),
                     )
                 });
             }
         }
     }
-    'loop_: for buf in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut buf: () = (unimplemented!().read());
-        'loop_: for a in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut a: () = (unimplemented!().read());
-            'loop_: for b in IterRange::new(unimplemented!(), unimplemented!()) {
-                let mut b: () = (unimplemented!().read());
+    'loop_: for buf in IterRange::new(
+        buffer_sizes_45.with(|v| v.decay()).begin(),
+        buffer_sizes_45.with(|v| v.decay()).end(),
+    ) {
+        let mut buf: () = ((buf.iter_deref().read()) as ());
+        'loop_: for a in IterRange::new(
+            io_sizes_46.with(|v| v.decay()).begin(),
+            io_sizes_46.with(|v| v.decay()).end(),
+        ) {
+            let mut a: () = ((a.iter_deref().read()) as ());
+            'loop_: for b in IterRange::new(
+                io_sizes_46.with(|v| v.decay()).begin(),
+                io_sizes_46.with(|v| v.decay()).end(),
+            ) {
+                let mut b: () = ((b.iter_deref().read()) as ());
                 ({
-                    let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    test_read_41(UserManagedBuffer::new({ buf }), _payload_sizes.as_pointer())
+                    let _payload_sizes: Value<Vec<i64>> =
+                        Rc::new(RefCell::new(Vec::from([(a as i64), (b as i64)])));
+                    test_read_41(
+                        UserManagedBuffer::new({ (buf as usize) }),
+                        _payload_sizes.as_pointer(),
+                    )
                 });
                 ({
-                    let _payload_sizes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                    let _payload_sizes: Value<Vec<i64>> =
+                        Rc::new(RefCell::new(Vec::from([(a as i64), (b as i64)])));
                     test_read_codecvt_44(
-                        UserManagedBuffer::new({ buf }),
+                        UserManagedBuffer::new({ (buf as usize) }),
                         _payload_sizes.as_pointer(),
                     )
                 });
@@ -1550,10 +1868,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1_read_48() });
     ({ test_2_reads_49() });
-    return 0_();
+    return 0;
 }
 pub trait LibraryDefaultBufferImpl {
     fn operator_call_3_char(&self, _a0: Ptr<()>);
@@ -1584,28 +1902,62 @@ pub trait UserManagedBufferImpl {
 }
 impl UserManagedBufferImpl for Ptr<UserManagedBuffer> {
     fn operator_call_4(&self, stream: Ptr<()>) {
-        unimplemented!();
+        {
+            let __init = Ptr::alloc_array(
+                (0..(*self).with(|__s| __s.size_))
+                    .map(|_| 0_i8)
+                    .collect::<Box<[i8]>>(),
+            );
+            field!((*self), buffers_).with_mut(|__v: &mut Vec<Ptr<i8>>| __v.push(__init))
+        };
         unimplemented!();
     }
     fn operator_call_5(&self, stream: Ptr<()>) {
-        unimplemented!();
+        {
+            let __init = Ptr::alloc_array(
+                (0..(*self).with(|__s| __s.size_))
+                    .map(|_| 0_i8)
+                    .collect::<Box<[i8]>>(),
+            );
+            field!((*self), buffers_).with_mut(|__v: &mut Vec<Ptr<i8>>| __v.push(__init))
+        };
         unimplemented!();
     }
     fn operator_call_6(&self, stream: Ptr<()>) {
-        unimplemented!();
+        {
+            let __init = Ptr::alloc_array(
+                (0..(*self).with(|__s| __s.size_))
+                    .map(|_| 0_i32)
+                    .collect::<Box<[i32]>>(),
+            );
+            field!((*self), wbuffers_).with_mut(|__v: &mut Vec<Ptr<i32>>| __v.push(__init))
+        };
         unimplemented!();
     }
     fn operator_call_7(&self, stream: Ptr<()>) {
-        unimplemented!();
+        {
+            let __init = Ptr::alloc_array(
+                (0..(*self).with(|__s| __s.size_))
+                    .map(|_| 0_i32)
+                    .collect::<Box<[i32]>>(),
+            );
+            field!((*self), wbuffers_).with_mut(|__v: &mut Vec<Ptr<i32>>| __v.push(__init))
+        };
         unimplemented!();
     }
     fn destructor(&self) {
-        'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut p: Ptr<()> = (unimplemented!().read());
+        'loop_: for p in IterRange::new(
+            field_ref!((*self), buffers_).decay().begin(),
+            field_ref!((*self), buffers_).decay().end(),
+        ) {
+            let mut p: Ptr<i8> = (p.iter_deref().read());
             p.delete();
         }
-        'loop_: for p in IterRange::new(unimplemented!(), unimplemented!()) {
-            let mut p: Ptr<()> = (unimplemented!().read());
+        'loop_: for p in IterRange::new(
+            field_ref!((*self), wbuffers_).decay().begin(),
+            field_ref!((*self), wbuffers_).decay().end(),
+        ) {
+            let mut p: Ptr<i32> = (p.iter_deref().read());
             p.delete();
         }
     }

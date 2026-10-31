@@ -26,25 +26,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() & 65535) == 5482));
+    assert!(((unimplemented!() & 65535) == 42796));
+    assert!(((unimplemented!() & 65535) == 65535));
+    assert!(((unimplemented!() & 65535) == 0));
     let f2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut foo: () = (unimplemented!() & 65535_());
+    assert!(((unimplemented!() & 65535) == 5482));
+    assert!(((unimplemented!() & 65535_i64) == 5482_i64));
+    assert!(((unimplemented!() & 65535) == 42796));
+    assert!(((unimplemented!() & 65535_i64) == 42796_i64));
+    assert!(((unimplemented!() & 65535) == 65535));
+    assert!(((unimplemented!() & 65535_i64) == 65535_i64));
+    assert!(((unimplemented!() & 65535) == 0));
+    assert!(((unimplemented!() & 65535_i64) == 0_i64));
+    let mut foo: i32 = (unimplemented!() & 65535);
     const _: () = assert!(true, "foo == 0x156A");;
-    let mut bar: () = (unimplemented!() & 65535_());
+    let mut bar: i32 = (unimplemented!() & 65535);
     const _: () = assert!(true, "bar == 0x156A");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

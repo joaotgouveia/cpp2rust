@@ -13,35 +13,31 @@ pub struct C {}
 #[byte_size(4)]
 pub struct B {
     #[offset(0)]
-    pub v: (),
+    pub v: i32,
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(B, new_1, value)]
 #[byte_size(8)]
 pub struct A {
     #[offset(0)]
-    pub x: (),
+    pub x: i32,
     #[offset(4)]
-    pub y: (),
+    pub y: i32,
 }
 impl A {
     pub fn new_1(mut b: B) -> Self {
         Self {
             x: b.v,
-            y: (b.v + 1_()),
+            y: (b.v + 1),
         }
     }
-    pub fn new_2(mut _x: (), mut _y: ()) -> Self {
+    pub fn new_2(mut _x: i32, mut _y: i32) -> Self {
         Self { x: _x, y: _y }
     }
 }
 impl Default for A {
     fn default() -> Self {
-        {
-            A {
-                x: 111_(),
-                y: 222_(),
-            }
-        }
+        { A { x: 111, y: 222 } }
     }
 }
 const _: () = assert!(
@@ -88,45 +84,45 @@ const _: () = assert!(
     !(false),
     "!std::constructible_from<std::ranges::repeat_view<A>, std::piecewise_construct_t, std::tuple<B>, std::tuple<int>>"
 );
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!().with(|__s| __s.x) == 111));
+        assert!((unimplemented!().with(|__s| __s.y) == 222));
+        assert!(unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.x) == 111));
+        assert!((unimplemented!().with(|__s| __s.y) == 222));
+        assert!(unimplemented!() != unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!().with(|__s| __s.x) == 1));
+        assert!((unimplemented!().with(|__s| __s.y) == 2));
+        assert!(unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.x) == 1));
+        assert!((unimplemented!().with(|__s| __s.y) == 2));
+        assert!(unimplemented!() != unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!().with(|__s| __s.x) == 11));
+        assert!((unimplemented!().with(|__s| __s.y) == 12));
+        assert!(unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.x) == 10));
+        assert!((unimplemented!().with(|__s| __s.y) == 11));
+        assert!(unimplemented!() != unimplemented!());
     }
     return true;
 }
@@ -149,9 +145,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

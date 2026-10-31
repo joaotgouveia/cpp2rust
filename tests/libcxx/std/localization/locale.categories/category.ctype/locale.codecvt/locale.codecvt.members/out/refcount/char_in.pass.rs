@@ -26,17 +26,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut from: () = unimplemented!();
-    let mut to: () = unimplemented!();
+    let from: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"some text").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let to: Value<Vec<i8>> = Rc::new(RefCell::new(
+        (0..((*from.borrow()).len() - 1) as usize)
+            .map(|_| 0_i8)
+            .collect::<Vec<_>>(),
+    ));
     let f: Ptr<()> = unimplemented!();
-    let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut from_next: Ptr<()> = Ptr::<()>::null();
-    let mut to_next: Ptr<()> = Ptr::<()>::null();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let mut from_next: Ptr<i8> = Ptr::<i8>::null();
+    let mut to_next: Ptr<i8> = Ptr::<i8>::null();
+    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+    assert!(({ (from_next).clone() } == { from.decay() }));
+    assert!(({ (to_next).clone() } == { to.decay() }));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

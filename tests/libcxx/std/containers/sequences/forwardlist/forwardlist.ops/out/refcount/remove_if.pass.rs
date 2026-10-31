@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -15,37 +15,37 @@ pub struct test_macros_detail_is_same_unsigned_long__unsigned_long_ {}
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_2.with(|rc| *rc.borrow()) >= dealloc_count_3.with(|rc| *rc.borrow())));
         return ((alloc_count_2.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_3.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_4.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_3: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_3: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_4: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_4: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -53,234 +53,263 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor, Default)]
+#[cpp_from(FnPtr<fn(i32  ,) -> bool  >  , new, value)]
 #[byte_size(16)]
 pub struct unary_counting_predicate_bool__ptr__int___int_ {
     #[offset(0)]
     #[byte_size(8)]
-    p_: FnPtr<fn(()) -> ()>,
+    p_: FnPtr<fn(i32) -> bool>,
     #[offset(8)]
-    count_: (),
+    count_: usize,
 }
 impl unary_counting_predicate_bool__ptr__int___int_ {
-    pub fn new(mut p: FnPtr<fn(()) -> ()>) -> Self {
+    pub fn new(mut p: FnPtr<fn(i32) -> bool>) -> Self {
         Self {
             p_: (p).clone(),
-            count_: 0_(),
+            count_: 0_usize,
         }
     }
 }
-pub fn do_remove_if_5(l: Ptr<()>, pred: (), mut expected: ()) {
-    let pred: Value<()> = Rc::new(RefCell::new(pred));
+pub fn do_remove_if_5(
+    l: Ptr<()>,
+    mut pred: Ptr<unary_counting_predicate_bool__ptr__int___int_>,
+    mut expected: (),
+) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!(({ unimplemented!() } == { expected }));
+    assert!(({ (old_size).wrapping_sub(unimplemented!()) } == { expected }));
 }
-pub fn do_remove_if_6(l: Ptr<()>, pred: (), mut expected: ()) {
-    let pred: Value<()> = Rc::new(RefCell::new(pred));
+pub fn do_remove_if_6(l: Ptr<()>, mut pred: Ptr<PredLWG526>, mut expected: ()) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!(({ unimplemented!() } == { expected }));
+    assert!(({ (old_size).wrapping_sub(unimplemented!()) } == { expected }));
 }
-pub fn do_remove_if_7(l: Ptr<()>, pred: (), mut expected: ()) {
-    let pred: Value<()> = Rc::new(RefCell::new(pred));
+pub fn do_remove_if_7(
+    l: Ptr<()>,
+    mut pred: Ptr<unary_counting_predicate_bool__ptr__int___int_>,
+    mut expected: (),
+) {
     let mut old_size: () = unimplemented!();
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!(({ unimplemented!() } == { expected }));
+    assert!(({ (old_size).wrapping_sub(unimplemented!()) } == { expected }));
 }
-pub fn g_8(mut i: ()) -> () {
-    return (i < 3_());
+pub fn g_8(mut i: i32) -> bool {
+    return (i < 3);
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct PredLWG526 {
     #[offset(0)]
-    pub i_: (),
+    pub i_: i32,
 }
 impl PredLWG526 {
-    pub fn new(mut i: ()) -> Self {
+    pub fn new(mut i: i32) -> Self {
         Self { i_: i }
     }
 }
-pub fn test_9() -> () {
+pub fn test_9() -> bool {
     {
-        let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 5, 5, 0, 0, 0, 5])));
+        let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_5(c1.as_pointer(), unimplemented!(), 4_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == (unimplemented!() as usize))
+        );
     }
     {
-        let mut t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
+        let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_5(c1.as_pointer(), unimplemented!(), 4_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == (unimplemented!() as usize))
+        );
     }
     {
-        let mut t1: [(); 3] = [5_(), 5_(), 5_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5])));
+        let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_5(c1.as_pointer(), unimplemented!(), 0_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == (unimplemented!() as usize))
+        );
     }
     {
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_5(c1.as_pointer(), unimplemented!(), 0_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == 0_usize)
+        );
     }
     {
-        let mut t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5, 0])));
+        let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_5(c1.as_pointer(), unimplemented!(), 1_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == (unimplemented!() as usize))
+        );
     }
     {
-        let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            1_(),
-            2_(),
-            1_(),
-            3_(),
-            5_(),
-            8_(),
-            11_(),
-        ])));
-        let mut a2: [(); 5] = [2_(), 3_(), 5_(), 8_(), 11_()];
+        let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 1, 3, 5, 8, 11])));
+        let mut a2: [i32; 5] = [2, 3, 5, 8, 11];
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _l: Ptr<()> = c.as_pointer();
-            let _pred: () = unimplemented!();
+            let _pred: Ptr<PredLWG526> = unimplemented!();
             do_remove_if_6(_l, _pred, 2_())
         });
-        let mut i: () = 0_();
-        'loop_: while (i < 5_()) {
-            unimplemented!();
-            unimplemented!();
+        let mut i: usize = 0_usize;
+        'loop_: while (i < 5_usize) {
+            assert!(!(unimplemented!()));
+            assert!(({ PredLWG526Impl::operator_eq(&unimplemented!(), a2[(i) as usize],) }));
             unimplemented!();
             i.prefix_inc();
         }
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let mut t1: [(); 7] = [0_(), 5_(), 5_(), 0_(), 0_(), 0_(), 5_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 5, 5, 0, 0, 0, 5])));
+        let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_7(c1.as_pointer(), unimplemented!(), 4_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == (unimplemented!() as usize))
+        );
     }
     {
-        let mut t1: [(); 4] = [0_(), 0_(), 0_(), 0_()];
+        let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 0, 0, 0])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_7(c1.as_pointer(), unimplemented!(), 4_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == (unimplemented!() as usize))
+        );
     }
     {
-        let mut t1: [(); 3] = [5_(), 5_(), 5_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5])));
+        let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_7(c1.as_pointer(), unimplemented!(), 0_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == (unimplemented!() as usize))
+        );
     }
     {
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_7(c1.as_pointer(), unimplemented!(), 0_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == 0_usize)
+        );
     }
     {
-        let mut t1: [(); 4] = [5_(), 5_(), 5_(), 0_()];
-        let mut t2: [(); 3] = [5_(), 5_(), 5_()];
+        let t1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5, 0])));
+        let t2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 5, 5])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
             unary_counting_predicate_bool__ptr__int___int_::new({
-                FnPtr::<fn(()) -> ()>::new(g_8)
+                FnPtr::<fn(i32) -> bool>::new(g_8)
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
         ({ do_remove_if_7(c1.as_pointer(), unimplemented!(), 1_()) });
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
+                == (unimplemented!() as usize))
+        );
     }
     return true;
 }
@@ -303,47 +332,47 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(({ test_9() }));
+    return 0;
 }
 pub trait PredLWG526Impl {
     fn destructor(&self);
-    fn operator_call(&self, p: Ptr<PredLWG526>) -> ();
-    fn operator_eq(&self, i: ()) -> ();
+    fn operator_call(&self, p: Ptr<PredLWG526>) -> bool;
+    fn operator_eq(&self, i: i32) -> bool;
 }
 impl PredLWG526Impl for Ptr<PredLWG526> {
     fn destructor(&self) {
-        field!((*self), i_).write(-32767_());
+        field!((*self), i_).write(-32767_i32);
     }
-    fn operator_call(&self, p: Ptr<PredLWG526>) -> () {
+    fn operator_call(&self, p: Ptr<PredLWG526>) -> bool {
         return ({ p.with(|__s| __s.i_) } == { (*self).with(|__s| __s.i_) });
     }
-    fn operator_eq(&self, mut i: ()) -> () {
+    fn operator_eq(&self, mut i: i32) -> bool {
         return (i == (*self).with(|__s| __s.i_));
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!()
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
@@ -351,7 +380,7 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -360,29 +389,35 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_add(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_sub(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_sub(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
 }
@@ -391,7 +426,7 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
 {
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }
@@ -401,8 +436,8 @@ impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
 }
 pub trait unary_counting_predicate_bool__ptr__int___int_Impl {
     fn destructor(&self);
-    fn operator_call(&self, a: Ptr<()>) -> ();
-    fn count(&self) -> ();
+    fn operator_call(&self, a: Ptr<i32>) -> bool;
+    fn count(&self) -> usize;
     fn reset(&self) {
         unimplemented!()
     }
@@ -411,11 +446,11 @@ impl unary_counting_predicate_bool__ptr__int___int_Impl
     for Ptr<unary_counting_predicate_bool__ptr__int___int_>
 {
     fn destructor(&self) {}
-    fn operator_call(&self, a: Ptr<()>) -> () {
+    fn operator_call(&self, a: Ptr<i32>) -> bool {
         field!((*self), count_).with_mut(|__v| __v.prefix_inc());
         return ({ (*self).with(|__s| __s.p_.clone()).call((a.read())) });
     }
-    fn count(&self) -> () {
+    fn count(&self) -> usize {
         return (*self).with(|__s| __s.count_);
     }
 }

@@ -6,19 +6,19 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_char__std_char_traits_char____std_basic_string_view_char__std_char_traits_char___
 {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t____std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t___
 {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -28,27 +28,27 @@ pub struct test_macros_detail_is_same_std_basic_string_view_wchar_t__std_char_tr
 #[byte_size(1)]
 pub struct constexpr_char_traits_wchar_t_ {}
 impl constexpr_char_traits_wchar_t_ {
-    pub fn eq(mut c1: (), mut c2: ()) -> () {
+    pub fn eq(mut c1: i32, mut c2: i32) -> bool {
         return (c1 == c2);
     }
-    pub fn lt(mut c1: (), mut c2: ()) -> () {
+    pub fn lt(mut c1: i32, mut c2: i32) -> bool {
         return (c1 < c2);
     }
-    pub fn compare(mut s1: Ptr<()>, mut s2: Ptr<()>, mut n: ()) -> () {
+    pub fn compare(mut s1: Ptr<i32>, mut s2: Ptr<i32>, mut n: usize) -> i32 {
         'loop_: while (n != 0) {
             if ({
-                let _c1: () = (s1.read());
-                let _c2: () = (s2.read());
+                let _c1: i32 = (s1.read());
+                let _c2: i32 = (s2.read());
                 constexpr_char_traits_wchar_t_::lt(_c1, _c2)
             }) {
-                return -1_();
+                return -1_i32;
             }
             if ({
-                let _c1: () = (s2.read());
-                let _c2: () = (s1.read());
+                let _c1: i32 = (s2.read());
+                let _c2: i32 = (s1.read());
                 constexpr_char_traits_wchar_t_::lt(_c1, _c2)
             }) {
-                return 1_();
+                return 1;
             }
             {
                 {
@@ -58,13 +58,13 @@ impl constexpr_char_traits_wchar_t_ {
                 s2.prefix_inc()
             };
         }
-        return 0_();
+        return 0;
     }
-    pub fn length(mut s: Ptr<()>) -> () {
-        let len: Value<()> = Rc::new(RefCell::new(0_()));
+    pub fn length(mut s: Ptr<i32>) -> usize {
+        let len: Value<usize> = Rc::new(RefCell::new(0_usize));
         'loop_: while !({
-            let _c1: () = (s.read());
-            let _c2: () = 0_();
+            let _c1: i32 = (s.read());
+            let _c2: i32 = 0_i32;
             constexpr_char_traits_wchar_t_::eq(_c1, _c2)
         }) {
             (*len.borrow_mut()).prefix_inc();
@@ -92,34 +92,34 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {}
     {
         let sin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(unimplemented!());
         let win: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(unimplemented!());
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(unimplemented!());
         let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

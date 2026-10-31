@@ -8,15 +8,15 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(z: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_1(z: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_2(z: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_3() {
     ({
@@ -91,10 +91,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_3() });
     ({ test_4() });
     ({ test_5() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -22,55 +22,55 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    assert!(((unimplemented!()) == (0_f64)));
+    assert!(((unimplemented!()) == (0_f64)));
+    assert!(((unimplemented!()) == (-10_i32 as f64)));
+    assert!(((unimplemented!()) == (10_f64)));
     {
-        let mut idx: () = 0_();
-        unimplemented!();
-        unimplemented!();
+        let mut idx: usize = 0_usize;
+        assert!(((unimplemented!()) == (10_f64)));
+        assert!(((idx) == (2_usize)));
     }
     {
-        let mut idx: () = 0_();
-        unimplemented!();
-        unimplemented!();
+        let mut idx: usize = 0_usize;
+        assert!(((unimplemented!()) == (1e+60_f64)));
+        assert!(((idx) == (5_usize)));
     }
     {
-        let mut idx: () = 0_();
-        unimplemented!();
-        unimplemented!();
+        let mut idx: usize = 0_usize;
+        assert!(((unimplemented!()) == ((f32::INFINITY) as f64)));
+        assert!(((idx) == (3_usize)));
     }
     {
-        let mut idx: () = 0_();
-        unimplemented!();
-        unimplemented!();
+        let mut idx: usize = 0_usize;
+        assert!(unimplemented!());
+        assert!(((idx) == (3_usize)));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_f64)));
+    assert!(((unimplemented!()) == (0_f64)));
+    assert!(((unimplemented!()) == (-10.5_f64)));
+    assert!(((unimplemented!()) == (10_f64)));
     {
-        let mut idx: () = 0_();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut idx: () = 0_();
-        unimplemented!();
-        unimplemented!();
+        let mut idx: usize = 0_usize;
+        assert!(((unimplemented!()) == (10_f64)));
+        assert!(((idx) == (2_usize)));
     }
     {
-        let mut idx: () = 0_();
-        unimplemented!();
-        unimplemented!();
+        let mut idx: usize = 0_usize;
+        assert!(((unimplemented!()) == (1e+60_f64)));
+        assert!(((idx) == (5_usize)));
     }
     {
-        let mut idx: () = 0_();
-        unimplemented!();
-        unimplemented!();
+        let mut idx: usize = 0_usize;
+        assert!(((unimplemented!()) == ((f32::INFINITY) as f64)));
+        assert!(((idx) == (3_usize)));
     }
-    return 0_();
+    {
+        let mut idx: usize = 0_usize;
+        assert!(unimplemented!());
+        assert!(((idx) == (3_usize)));
+    }
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

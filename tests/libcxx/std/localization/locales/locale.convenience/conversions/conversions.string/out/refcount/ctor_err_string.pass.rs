@@ -26,21 +26,33 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "!std::is_convertible<std::string, Myconv>::value");;
     const _: () = assert!(true, "std::is_constructible<Myconv, std::string>::value");;
     {
         let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut bs: () = unimplemented!();
-        unimplemented!();
+        let mut bs: Vec<i8> = unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"byte error")
+                .with_c_str(|__s| bs[..bs.len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut bs: () = unimplemented!();
-        unimplemented!();
-        let mut ws: () = unimplemented!();
-        unimplemented!();
+        let mut bs: Vec<i8> = unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"byte error")
+                .with_c_str(|__s| bs[..bs.len().saturating_sub(1)] == *__s)
+        );
+        let mut ws: Vec<i32> = unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                119 as i32, 105 as i32, 100 as i32, 101 as i32, 32 as i32, 101 as i32, 114 as i32,
+                114 as i32, 111 as i32, 114 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| ws[..ws.len().saturating_sub(1)] == *__s)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

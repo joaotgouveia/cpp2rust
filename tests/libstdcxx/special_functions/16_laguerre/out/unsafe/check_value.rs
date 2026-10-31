@@ -9,18 +9,18 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct __gnu_test_func_callback {
-    _M_size: (),
+    _M_size: i32,
     _M_tests: [Option<unsafe fn()>; 15],
 }
 impl __gnu_test_func_callback {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            _M_size: 0_(),
+            _M_size: 0,
             _M_tests: [None; 15],
         };
         this
     }
-    pub unsafe fn size(&self) -> () {
+    pub unsafe fn size(&self) -> i32 {
         return self._M_size;
     }
     pub unsafe fn tests(&self) -> *const Option<unsafe fn()> {
@@ -74,7 +74,7 @@ impl Default for __gnu_test_object_counter {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1));
     }
     pub unsafe fn mark_call() {
@@ -86,10 +86,10 @@ impl __gnu_test_copy_constructor {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = count;
     }
 }
@@ -97,7 +97,7 @@ impl __gnu_test_copy_constructor {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
@@ -109,10 +109,10 @@ impl __gnu_test_assignment_operator {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
@@ -120,28 +120,28 @@ impl __gnu_test_assignment_operator {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_u32;
     }
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct __gnu_test_copy_tracker {
-    id_: (),
-    throw_on_copy_: (),
+    id_: i32,
+    throw_on_copy_: bool,
 }
 impl __gnu_test_copy_tracker {
-    pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| unsafe {
+    pub unsafe fn new(mut id: Option<i32>, mut throw_on_copy: Option<bool>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
-        let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
+        let mut throw_on_copy: bool = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
             id_: id,
             throw_on_copy_: throw_on_copy,
@@ -156,7 +156,7 @@ impl __gnu_test_copy_tracker {
         if this.throw_on_copy_ {
             (unsafe {
                 __gnu_test_copy_constructor::throw_on(
-                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -171,7 +171,7 @@ impl __gnu_test_copy_tracker {
         if (*rhs).throw_on_copy_ {
             (unsafe {
                 __gnu_test_assignment_operator::throw_on(
-                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -181,7 +181,7 @@ impl __gnu_test_copy_tracker {
     pub unsafe fn destructor(&mut self) {
         (unsafe { __gnu_test_destructor::mark_call() });
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
     pub unsafe fn reset() {
@@ -238,1112 +238,1112 @@ impl Default for __gnu_test_copy_tracker {
 pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         < (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
-    sem_set_: (),
+    sem_set_: i32,
     pid_: (),
 }
 impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct testcase_laguerre_double_ {
-    pub f0: (),
-    pub n: (),
-    pub x: (),
-    pub f: (),
+    pub f0: f64,
+    pub n: u32,
+    pub x: f64,
+    pub f: f64,
 }
 pub static mut data001_9: std::cell::LazyCell<[testcase_laguerre_double_; 21]> =
     std::cell::LazyCell::new(|| unsafe {
         [
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 0_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 5_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 10_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 15_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 20_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 25_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 30_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 35_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 40_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 45_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 50_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 55_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 60_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 65_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 70_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 75_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 80_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 85_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 90_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 95_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 0_(),
+                n: 0_u32,
                 x: 100_f64,
                 f: 0_f64,
             },
         ]
     });
-pub static mut toler001_10: std::cell::LazyCell<()> =
+pub static mut toler001_10: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data002_11: std::cell::LazyCell<[testcase_laguerre_double_; 21]> =
     std::cell::LazyCell::new(|| unsafe {
         [
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 0_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -4_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 5_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -9_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 10_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -14_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 15_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -19_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 20_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -24_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 25_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -29_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 30_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -34_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 35_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -39_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 40_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -44_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 45_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -49_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 50_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -54_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 55_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -59_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 60_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -64_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 65_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -69_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 70_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -74_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 75_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -79_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 80_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -84_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 85_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -89_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 90_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -94_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 95_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -99_f64,
-                n: 1_(),
+                n: 1_u32,
                 x: 100_f64,
                 f: 0_f64,
             },
         ]
     });
-pub static mut toler002_12: std::cell::LazyCell<()> =
+pub static mut toler002_12: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data003_13: std::cell::LazyCell<[testcase_laguerre_double_; 21]> =
     std::cell::LazyCell::new(|| unsafe {
         [
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 0_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 3.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 5_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 31_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 10_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 83.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 15_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 161_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 20_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 263.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 25_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 391_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 30_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 543.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 35_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 721_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 40_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 923.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 45_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1151_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 50_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1403.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 55_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1681_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 60_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1983.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 65_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2311_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 70_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2663.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 75_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 3041_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 80_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 3443.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 85_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 3871_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 90_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 4323.5_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 95_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 4801_f64,
-                n: 2_(),
+                n: 2_u32,
                 x: 100_f64,
                 f: 0_f64,
             },
         ]
     });
-pub static mut toler003_14: std::cell::LazyCell<()> =
+pub static mut toler003_14: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data004_15: std::cell::LazyCell<[testcase_laguerre_double_; 21]> =
     std::cell::LazyCell::new(|| unsafe {
         [
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 0_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -3.1666666666666665_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 5_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 34.33333333333333_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 10_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -355.25_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 15_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -4765.666666666667_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 20_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -23040.666666666664_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 25_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -74399_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 30_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -190559.41666666663_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 35_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -418865.6666666666_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 40_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -825411.5_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 45_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -1498165.6666666665_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 50_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -2550096.916666667_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 55_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -4122299_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 60_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -6387115.666666667_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 65_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -9551265.666666668_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 70_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -13858967.75_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 75_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -19595065.666666664_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 80_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -27088153.166666668_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 85_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -36713699_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 90_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -48897171.91666666_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 95_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -64117165.666666664_f64,
-                n: 5_(),
+                n: 5_u32,
                 x: 100_f64,
                 f: 0_f64,
             },
         ]
     });
-pub static mut toler004_16: std::cell::LazyCell<()> =
+pub static mut toler004_16: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data005_17: std::cell::LazyCell<[testcase_laguerre_double_; 21]> =
     std::cell::LazyCell::new(|| unsafe {
         [
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 0_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1.756276179453263_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 5_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 27.984126984126977_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 10_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -237.51841517857147_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 15_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 3227.8077601410932_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 20_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -45786.19979745369_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 25_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 15129.571428571455_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 30_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 7764800.817949459_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 35_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 79724066.60846558_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 40_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 469865425.65122765_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 45_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2037190065.373898_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 50_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 7187828002.982576_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 55_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 21804200401_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 60_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 58854343015.61621_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 65_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 144688291819.51855_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 70_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 329425241736.7004_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 75_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 703324772760.0828_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 80_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1421627560118.6157_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 85_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2741055412243.857_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 90_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 5071986977681.865_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 95_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 9051283795429.572_f64,
-                n: 10_(),
+                n: 10_u32,
                 x: 100_f64,
                 f: 0_f64,
             },
         ]
     });
-pub static mut toler005_18: std::cell::LazyCell<()> =
+pub static mut toler005_18: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 5.000000000000004e-13_f64 });
 pub static mut data006_19: std::cell::LazyCell<[testcase_laguerre_double_; 21]> =
     std::cell::LazyCell::new(|| unsafe {
         [
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 0_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2.0202257444769134_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 5_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -11.961333867812119_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 10_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -50.151037960139455_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 15_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2829.4728613531743_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 20_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -11583.94789911354_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 25_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -18439.42450252094_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 30_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -38838.223606979285_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 35_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 24799805.877530713_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 40_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -673953823.5991328_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 45_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 7551960453.767255_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 50_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 31286508510.614746_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 55_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -1379223608444.9155_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 60_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -6692517968212.972_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 65_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 165423821874449.94_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 70_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 3082390018008546.5_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 75_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 29500368536981676_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 80_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 203535263549741856_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 85_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1129230951443290112_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 90_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 5323926285556310016_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 95_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 22061882785931735040_f64,
-                n: 20_(),
+                n: 20_u32,
                 x: 100_f64,
                 f: 0_f64,
             },
         ]
     });
-pub static mut toler006_20: std::cell::LazyCell<()> =
+pub static mut toler006_20: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 5.000000000000004e-13_f64 });
 pub static mut data007_21: std::cell::LazyCell<[testcase_laguerre_double_; 21]> =
     std::cell::LazyCell::new(|| unsafe {
         [
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 0_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1.4735258819430543_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 5_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 17.534183446338233_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 10_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -195.6243661907738_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 15_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 980.2696188979103_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 20_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 24812.277673870878_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 25_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 293000.5073596236_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 30_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2316195.5013375278_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 35_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -14896937.968694873_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 40_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -502066598.00813466_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 45_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2513677852.691687_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 50_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 45129675503.53891_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 55_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -883876565337.9922_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 60_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 9361319947203.842_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 65_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -80967880733583.23_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 70_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 717391079438942.6_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 75_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -8217471769564841_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 80_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 125952762290099776_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 85_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -2114003130804889088_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 90_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 32438187475835133952_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 95_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -397101034870946922496_f64,
-                n: 50_(),
+                n: 50_u32,
                 x: 100_f64,
                 f: 0_f64,
             },
         ]
     });
-pub static mut toler007_22: std::cell::LazyCell<()> =
+pub static mut toler007_22: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
 pub static mut data008_23: std::cell::LazyCell<[testcase_laguerre_double_; 21]> =
     std::cell::LazyCell::new(|| unsafe {
         [
             testcase_laguerre_double_ {
                 f0: 1_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 0_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1.45552716253288_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 5_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 13.27766284430345_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 10_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 91.73703845434245_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 15_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 1854.0367283243388_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 20_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -11281.698886837261_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 25_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 170141.8698704655_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 30_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -2950092.7025822806_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 35_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -7272442.315600696_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 40_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 295697471.9087616_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 45_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 4847420871.269051_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 50_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 59406998102.39229_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 55_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 693492765740.2969_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 60_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 6606192010150.315_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 65_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 17125518672239.77_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 70_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -870493767065150.1_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 75_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -13763178176383768_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 80_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 30667078414479584_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 85_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: 2130722049038017280_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 90_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -7270652300900782080_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 95_f64,
                 f: 0_f64,
             },
             testcase_laguerre_double_ {
                 f0: -262922606930689163264_f64,
-                n: 100_(),
+                n: 100_u32,
                 x: 100_f64,
                 f: 0_f64,
             },
         ]
     });
-pub static mut toler008_24: std::cell::LazyCell<()> =
+pub static mut toler008_24: std::cell::LazyCell<f64> =
     std::cell::LazyCell::new(|| unsafe { 2.500000000000002e-13_f64 });
-pub unsafe fn test_25(data: *const [testcase_laguerre_double_; 21], mut toler: ()) {
-    let mut test: () = true;
-    let eps: () = unimplemented!();
-    let mut max_abs_diff: () = -1_();
-    let mut max_abs_frac: () = -1_();
-    let mut num_datum: () = 21_();
-    let mut i: () = 0_();
+pub unsafe fn test_25(data: *const [testcase_laguerre_double_; 21], mut toler: f64) {
+    let mut test: bool = true;
+    let eps: f64 = unimplemented!();
+    let mut max_abs_diff: f64 = -1_f64;
+    let mut max_abs_frac: f64 = -1_f64;
+    let mut num_datum: u32 = 21_u32;
+    let mut i: u32 = 0_u32;
     'loop_: while ((i) < (num_datum)) {
-        let f: () = unimplemented!();
-        let f0: () = (*data)[(i) as usize].f0;
-        let diff: () = ((f) - (f0));
+        let f: f64 = unimplemented!();
+        let f0: f64 = (*data)[(i) as usize].f0;
+        let diff: f64 = ((f) - (f0));
         if ((unimplemented!()) > (max_abs_diff)) {
             max_abs_diff = unimplemented!();
         }
-        if ((unimplemented!()) > ((10_()) * (eps))) && ((unimplemented!()) > ((10_()) * (eps))) {
-            let frac: () = ((diff) / (f0));
+        if ((unimplemented!()) > ((10_f64) * (eps))) && ((unimplemented!()) > ((10_f64) * (eps))) {
+            let frac: f64 = ((diff) / (f0));
             if ((unimplemented!()) > (max_abs_frac)) {
                 max_abs_frac = unimplemented!();
             }
@@ -1355,7 +1355,7 @@ pub unsafe fn test_25(data: *const [testcase_laguerre_double_; 21], mut toler: (
         __do_while = false;
         if !((max_abs_frac) < (toler)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
 }
@@ -1365,7 +1365,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe {
         test_25(
             &(*std::cell::LazyCell::force_mut(&mut *&raw mut data001_9)),
@@ -1414,31 +1414,31 @@ unsafe fn main_0() -> () {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut toler008_24)),
         )
     });
-    return 0_();
+    return 0;
 }
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            sem_set_: unimplemented!(),
+            sem_set_: 0_i32,
             pid_: unimplemented!(),
         };
         this.pid_ = unimplemented!();
         this.sem_set_ = unimplemented!();
-        if ((this.sem_set_) == (-1_())) {
+        if ((this.sem_set_) == (-1_i32)) {
             unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
-        if ((unimplemented!()) == (-1_())) {
+        val.val = 0;
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_26(mut size: Option<()>) {
-    let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
+pub unsafe fn set_memory_limits_26(mut size: Option<f32>) {
+    let mut size: f32 = size.unwrap_or_else(|| unsafe { (16_f64 as f32) });
     let mut r: () = unimplemented!();
-    let mut limit: () = ((size) * (1048576_()));
+    let mut limit: () = (((size) * (1048576_f32)) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
@@ -1452,34 +1452,37 @@ pub unsafe fn set_memory_limits_26(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_27(mut size: ()) {
+pub unsafe fn set_file_limit_27(mut size: u64) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_28(mut mangled: *const (), mut wanted: *const ()) {
-    let mut status: () = 0_();
-    let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = unimplemented!();
+pub unsafe fn verify_demangle_28(
+    mut mangled: *const libc::c_char,
+    mut wanted: *const libc::c_char,
+) {
+    let mut status: i32 = 0;
+    let mut s: *const libc::c_char = std::ptr::null();
+    let mut demangled: *mut libc::c_char = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
         switch!(match status {
-            __v if __v == 0_() => {
+            __v if __v == 0 => {
                 s = c"error code = 0: success".as_ptr();
                 break;
             }
-            __v if __v == -1_() => {
+            __v if __v == -1_i32 => {
                 s = c"error code = -1: memory allocation failure".as_ptr();
                 break;
             }
-            __v if __v == -2_() => {
+            __v if __v == -2_i32 => {
                 s = c"error code = -2: invalid mangled name".as_ptr();
                 break;
             }
-            __v if __v == -3_() => {
+            __v if __v == -3_i32 => {
                 s = c"error code = -3: invalid arguments".as_ptr();
                 break;
             }
@@ -1488,77 +1491,99 @@ pub unsafe fn verify_demangle_28(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if !(unimplemented!()) {
+    let mut w: Vec<libc::c_char> =
+        std::slice::from_raw_parts(wanted, libcc2rs::c_str_len(wanted) + 1).to_vec();
+    if !(w == std::slice::from_raw_parts(s, libcc2rs::c_str_len(s) + 1).to_vec()) {
         unimplemented!();
     }
-    unimplemented!();
+    libcc2rs::free_unsafe((demangled as *mut ::libc::c_void));
 }
-pub unsafe fn run_tests_wrapped_locale_29(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_29(
+    mut name: *const libc::c_char,
+    l: *const __gnu_test_func_callback,
+) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut res: *const () = (unimplemented!()).cast_const();
+    let mut res: *const libc::c_char = (libc::setlocale(6, name)).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () = unimplemented!();
+        let mut preLC_ALL: Vec<libc::c_char> =
+            std::slice::from_raw_parts(res, libcc2rs::c_str_len(res) + 1).to_vec();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () = unimplemented!();
+        let mut postLC_ALL: Vec<libc::c_char> = std::slice::from_raw_parts(
+            (libc::setlocale(6, std::ptr::null())).cast_const(),
+            libcc2rs::c_str_len((libc::setlocale(6, std::ptr::null())).cast_const()) + 1,
+        )
+        .to_vec();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"LC_ALL for ".as_ptr(),
+            libcc2rs::c_str_len(c"LC_ALL for ".as_ptr()) + 1,
+        )
+        .to_vec();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn run_tests_wrapped_env_30(
-    mut name: *const (),
-    mut env: *const (),
+    mut name: *const libc::c_char,
+    mut env: *const libc::c_char,
     l: *const __gnu_test_func_callback,
 ) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut oldENV: *const () = (unimplemented!()).cast_const();
-    if !(unimplemented!() != 0) {
+    let mut oldENV: *const libc::c_char = (libc::getenv(env)).cast_const();
+    if !(libc::setenv(env, name, 1) != 0) {
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        unimplemented!();
+        libc::setenv(
+            env,
+            if !(oldENV).is_null() {
+                oldENV
+            } else {
+                c"".as_ptr()
+            },
+            1,
+        );
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> =
+            std::slice::from_raw_parts(env, libcc2rs::c_str_len(env) + 1).to_vec();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+static mut count__1: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__2: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut count__3: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__4: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut _M_count_5: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut next_id__6: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
-    pub val: (),
+    pub val: i32,
     pub buf: *mut (),
-    pub array: *mut (),
+    pub array: *mut u16,
 }
 impl Default for __gnu_test_semun {
     fn default() -> Self {
@@ -1569,7 +1594,7 @@ impl __gnu_test_semaphore {}
 impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
+        val.val = 0;
         if ((self.pid_) == (unimplemented!())) {
             unimplemented!();
         }
@@ -1578,7 +1603,7 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
@@ -1586,22 +1611,22 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
 }
 pub unsafe fn test_tm_31(
-    mut sec: (),
-    mut min: (),
-    mut hour: (),
-    mut mday: (),
-    mut mon: (),
-    mut year: (),
-    mut wday: (),
-    mut yday: (),
-    mut isdst: (),
-) -> () {
+    mut sec: i32,
+    mut min: i32,
+    mut hour: i32,
+    mut mday: i32,
+    mut mon: i32,
+    mut year: i32,
+    mut wday: i32,
+    mut yday: i32,
+    mut isdst: i32,
+) -> ::libc::tm {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_sec = sec;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_min = min;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_hour = hour;
@@ -1611,10 +1636,10 @@ pub unsafe fn test_tm_31(
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_wday = wday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_yday = yday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32)).clone();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_32));
 }
-static mut tmp_32: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut tmp_32: std::cell::LazyCell<::libc::tm> =
+    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const data001_9);
     std::cell::LazyCell::force(&*&raw const toler001_10);

@@ -26,52 +26,19 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-    ])));
-    let ia1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        2_(),
-        7_(),
-        1_(),
-        4_(),
-        3_(),
-        6_(),
-        5_(),
-        10_(),
-        9_(),
-        8_(),
-    ])));
-    let ia2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        1_(),
-        8_(),
-        3_(),
-        4_(),
-        6_(),
-        9_(),
-        5_(),
-        7_(),
-        2_(),
-        10_(),
-    ])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 10]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let ia: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])));
+    let ia1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([2, 7, 1, 4, 3, 6, 5, 10, 9, 8])));
+    let ia2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 8, 3, 4, 6, 9, 5, 7, 2, 10])));
+    let mut sa: u32 = (((::std::mem::size_of::<[i32; 10]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(unimplemented!());
     unimplemented!();
     const _: () = assert!(true, "");;
-    unimplemented!();
-    return 0_();
+    assert!(unimplemented!());
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

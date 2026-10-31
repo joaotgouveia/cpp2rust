@@ -6,17 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: ()) -> () {
+pub fn test_convertible_imp_0(mut _a0: i32) -> bool {
     return true;
 }
-pub fn test_convertible_imp_1(mut _a0: ()) -> () {
+pub fn test_convertible_imp_1(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_2() -> () {
-    return ({ test_convertible_imp_0(0_()) });
+pub fn test_convertible_2() -> bool {
+    return ({ test_convertible_imp_0(0) });
 }
-pub fn test_convertible_3() -> () {
-    return ({ test_convertible_imp_1(0_()) });
+pub fn test_convertible_3() -> bool {
+    return ({ test_convertible_imp_1(0_i64) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -37,14 +37,14 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
     }
     {
         let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
         const _: () = assert!(true, "!std::is_convertible<Codecvt*, Myconv>::value");;
         const _: () = assert!(true, "std::is_constructible<Myconv, Codecvt*>::value");;
     }
@@ -52,6 +52,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "test_convertible<B>()");;
         const _: () = assert!(true, "!test_convertible<B, Codecvt*>()");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

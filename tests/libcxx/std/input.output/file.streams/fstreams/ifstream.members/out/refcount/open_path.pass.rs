@@ -26,31 +26,31 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(!(unimplemented!()));
+        let mut c: i8 = ('a' as i8);
         unimplemented!();
-        let mut c: () = ('a' as ());
+        assert!(unimplemented!());
+        assert!(((c as i32) == (('a' as i8) as i32)));
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((c as i32) == (('r' as i8) as i32)));
     }
     {
         let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(!(unimplemented!()));
+        let mut c: i32 = (97 as i32);
         unimplemented!();
-        let mut c: () = (97 as ());
+        assert!(unimplemented!());
+        assert!((c == (97 as i32)));
         unimplemented!();
+        assert!(unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((c == (114 as i32)));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

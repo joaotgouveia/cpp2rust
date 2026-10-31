@@ -11,43 +11,43 @@ use std::rc::Rc;
 pub struct A {}
 pub unsafe fn test_0() {
     let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!((unimplemented!()).is_null());
 }
 pub unsafe fn test_1() {
     let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!((unimplemented!()).is_null());
 }
 pub unsafe fn test_2() {
     let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!((unimplemented!()).is_null());
 }
 pub unsafe fn test_3() {
     let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!((unimplemented!()).is_null());
 }
 pub unsafe fn test_4() {
     let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!((unimplemented!()).is_null());
 }
 pub unsafe fn test_5() {
     let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!((unimplemented!()).is_null());
 }
 pub unsafe fn test_6() {
     let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!((unimplemented!()).is_null());
 }
 pub unsafe fn test_7() {
     let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!((unimplemented!()).is_null());
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -64,7 +64,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     (unsafe { test_1() });
     (unsafe { test_2() });
@@ -73,6 +73,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_5() });
     (unsafe { test_6() });
     (unsafe { test_7() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,22 +10,22 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub unsafe fn eq(mut c1: (), mut c2: ()) -> () {
-        return ((c1) == (c2));
+    pub unsafe fn eq(mut c1: libc::c_char, mut c2: libc::c_char) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
 }
 pub unsafe fn test_0(s: *const (), mut c: (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (x)));
     if ((x) != (unimplemented!())) {
-        unimplemented!();
+        assert!(((x) <= (pos)) && (((x).wrapping_add(1_())) <= (unimplemented!())));
     }
 }
 pub unsafe fn test_1(s: *const (), mut c: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (x)));
     if ((x) != (unimplemented!())) {
-        unimplemented!();
+        assert!((((x).wrapping_add(1_())) <= (unimplemented!())));
     }
 }
 pub fn main() {
@@ -43,103 +43,128 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 0_(), unimplemented!())
+            test_0(
+                &mut _s,
+                (('b' as libc::c_char) as ()),
+                0_(),
+                unimplemented!(),
+            )
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 1_(), unimplemented!())
+            test_0(
+                &mut _s,
+                (('b' as libc::c_char) as ()),
+                1_(),
+                unimplemented!(),
+            )
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 0_(), unimplemented!())
+            test_0(
+                &mut _s,
+                (('b' as libc::c_char) as ()),
+                0_(),
+                unimplemented!(),
+            )
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 1_(), 1_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 1_(), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 2_(), 1_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 2_(), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 4_(), 1_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 4_(), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 5_(), 1_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 5_(), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 6_(), 1_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 6_(), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 0_(), unimplemented!())
+            test_0(
+                &mut _s,
+                (('b' as libc::c_char) as ()),
+                0_(),
+                unimplemented!(),
+            )
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 1_(), 1_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 1_(), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 5_(), 1_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 5_(), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 9_(), 6_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 9_(), 6_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 10_(), 6_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 10_(), 6_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 11_(), 6_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 11_(), 6_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 0_(), unimplemented!())
+            test_0(
+                &mut _s,
+                (('b' as libc::c_char) as ()),
+                0_(),
+                unimplemented!(),
+            )
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 1_(), 1_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 1_(), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 10_(), 6_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 10_(), 6_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 19_(), 16_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 19_(), 16_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 20_(), 16_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 20_(), 16_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_0(&mut _s, ('b' as ()), 21_(), 16_())
+            test_0(&mut _s, (('b' as libc::c_char) as ()), 21_(), 16_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_1(&mut _s, ('b' as ()), unimplemented!())
+            test_1(&mut _s, (('b' as libc::c_char) as ()), unimplemented!())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_1(&mut _s, ('b' as ()), 1_())
+            test_1(&mut _s, (('b' as libc::c_char) as ()), 1_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_1(&mut _s, ('b' as ()), 6_())
+            test_1(&mut _s, (('b' as libc::c_char) as ()), 6_())
         });
         (unsafe {
             let mut _s: () = unimplemented!();
-            test_1(&mut _s, ('b' as ()), 16_())
+            test_1(&mut _s, (('b' as libc::c_char) as ()), 16_())
         });
     }
     {
@@ -153,6 +178,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "sv2.rfind(\'b\', 3) == 1");;
         const _: () = assert!(true, "sv2.rfind(\'b\', 4) == 1");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

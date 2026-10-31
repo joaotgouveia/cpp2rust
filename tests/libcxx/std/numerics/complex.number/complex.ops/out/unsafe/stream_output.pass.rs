@@ -22,23 +22,37 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let c: () = unimplemented!();
         let mut os: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"(1,2)".as_ptr(),
+                    libcc2rs::c_str_len(c"(1,2)".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
-        let mut width: () = 0_();
-        'loop_: while ((width) <= (5_())) {
+        let mut width: i32 = 0;
+        'loop_: while ((width) <= (5)) {
             let c: () = unimplemented!();
             let mut os: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_())));
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"(1,2)".as_ptr(),
+                        libcc2rs::c_str_len(c"(1,2)".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
             width.prefix_inc();
         }
         {
@@ -47,8 +61,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_())));
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"_(1,2)".as_ptr(),
+                        libcc2rs::c_str_len(c"_(1,2)".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
         }
         {
             let c: () = unimplemented!();
@@ -56,8 +77,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_())));
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"__(1,2)".as_ptr(),
+                        libcc2rs::c_str_len(c"__(1,2)".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
         }
         {
             let c: () = unimplemented!();
@@ -65,8 +93,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_())));
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"___(1,2)".as_ptr(),
+                        libcc2rs::c_str_len(c"___(1,2)".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
         }
         {
             let c: () = unimplemented!();
@@ -74,9 +109,21 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_())));
+            {
+                let __r: &mut ::std::fs::File = &mut os;
+                let __s: *mut ::std::fs::File = __r;
+                let _ = (*__s).write_all(::std::ffi::CStr::from_ptr(c"hello".as_ptr()).to_bytes());
+                __s
+            };
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"___(1,2)hello".as_ptr(),
+                        libcc2rs::c_str_len(c"___(1,2)hello".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
         }
         {
             let c: () = unimplemented!();
@@ -84,8 +131,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_())));
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"(123,456)".as_ptr(),
+                        libcc2rs::c_str_len(c"(123,456)".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
         }
         {
             let c: () = unimplemented!();
@@ -93,10 +147,29 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_())));
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"___(123,456)".as_ptr(),
+                        libcc2rs::c_str_len(c"___(123,456)".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
+            {
+                let __r: &mut ::std::fs::File = &mut os;
+                let __s: *mut ::std::fs::File = __r;
+                let _ = (*__s).write_all(::std::ffi::CStr::from_ptr(c"hello".as_ptr()).to_bytes());
+                __s
+            };
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"___(123,456)hello".as_ptr(),
+                        libcc2rs::c_str_len(c"___(123,456)hello".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
         }
         {
             let c: () = unimplemented!();
@@ -104,12 +177,31 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_())));
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"(123,456)___".as_ptr(),
+                        libcc2rs::c_str_len(c"(123,456)___".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
+            {
+                let __r: &mut ::std::fs::File = &mut os;
+                let __s: *mut ::std::fs::File = __r;
+                let _ = (*__s).write_all(::std::ffi::CStr::from_ptr(c"xy".as_ptr()).to_bytes());
+                __s
+            };
+            assert!(
+                unimplemented!()
+                    == std::slice::from_raw_parts(
+                        c"(123,456)___xy".as_ptr(),
+                        libcc2rs::c_str_len(c"(123,456)___xy".as_ptr()) + 1
+                    )
+                    .to_vec()
+            );
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

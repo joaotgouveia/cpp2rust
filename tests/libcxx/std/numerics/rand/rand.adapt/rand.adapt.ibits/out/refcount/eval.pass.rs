@@ -10,21 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct rand1_unsigned_int__0__10_ {
     #[offset(0)]
-    x_: (),
+    x_: u32,
 }
 impl rand1_unsigned_int__0__10_ {
-    pub fn min() -> () {
-        return 0_();
+    pub fn min() -> u32 {
+        return 0_u32;
     }
-    pub fn max() -> () {
-        return 10_();
+    pub fn max() -> u32 {
+        return 10_u32;
     }
-    pub fn new(sd: Option<()>) -> Self {
-        let mut sd: () = sd.unwrap_or_else(|| 0_());
+    pub fn new(sd: Option<u32>) -> Self {
+        let mut sd: u32 = sd.unwrap_or_else(|| 0_u32);
         let __this: Value<rand1_unsigned_int__0__10_> = Rc::new(RefCell::new(Self { x_: sd }));
         let this: Ptr<rand1_unsigned_int__0__10_> = __this.as_pointer();
-        if (this.with(|__s| __s.x_) > 10_()) {
-            field!(this, x_).write(10_());
+        if (this.with(|__s| __s.x_) > 10_u32) {
+            field!(this, x_).write(10_u32);
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -38,21 +38,21 @@ impl Default for rand1_unsigned_int__0__10_ {
 #[byte_size(4)]
 pub struct rand1_unsigned_int__0__100_ {
     #[offset(0)]
-    x_: (),
+    x_: u32,
 }
 impl rand1_unsigned_int__0__100_ {
-    pub fn min() -> () {
-        return 0_();
+    pub fn min() -> u32 {
+        return 0_u32;
     }
-    pub fn max() -> () {
-        return 100_();
+    pub fn max() -> u32 {
+        return 100_u32;
     }
-    pub fn new(sd: Option<()>) -> Self {
-        let mut sd: () = sd.unwrap_or_else(|| 0_());
+    pub fn new(sd: Option<u32>) -> Self {
+        let mut sd: u32 = sd.unwrap_or_else(|| 0_u32);
         let __this: Value<rand1_unsigned_int__0__100_> = Rc::new(RefCell::new(Self { x_: sd }));
         let this: Ptr<rand1_unsigned_int__0__100_> = __this.as_pointer();
-        if (this.with(|__s| __s.x_) > 100_()) {
-            field!(this, x_).write(100_());
+        if (this.with(|__s| __s.x_) > 100_u32) {
+            field!(this, x_).write(100_u32);
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -66,21 +66,21 @@ impl Default for rand1_unsigned_int__0__100_ {
 #[byte_size(4)]
 pub struct rand1_unsigned_int__0__4294967295_ {
     #[offset(0)]
-    x_: (),
+    x_: u32,
 }
 impl rand1_unsigned_int__0__4294967295_ {
-    pub fn min() -> () {
-        return 0_();
+    pub fn min() -> u32 {
+        return 0_u32;
     }
-    pub fn max() -> () {
-        return 4294967295_();
+    pub fn max() -> u32 {
+        return 4294967295_u32;
     }
-    pub fn new(mut sd: ()) -> Self {
+    pub fn new(mut sd: u32) -> Self {
         let __this: Value<rand1_unsigned_int__0__4294967295_> =
             Rc::new(RefCell::new(Self { x_: sd }));
         let this: Ptr<rand1_unsigned_int__0__4294967295_> = __this.as_pointer();
-        if (this.with(|__s| __s.x_) > 4294967295_()) {
-            field!(this, x_).write(4294967295_());
+        if (this.with(|__s| __s.x_) > 4294967295_u32) {
+            field!(this, x_).write(4294967295_u32);
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -89,55 +89,55 @@ impl rand1_unsigned_int__0__4294967295_ {
 #[byte_size(4)]
 pub struct rand1_unsigned_int__2__3_ {
     #[offset(0)]
-    x_: (),
+    x_: u32,
 }
 impl rand1_unsigned_int__2__3_ {
-    pub fn min() -> () {
-        return 2_();
+    pub fn min() -> u32 {
+        return 2_u32;
     }
-    pub fn max() -> () {
-        return 3_();
+    pub fn max() -> u32 {
+        return 3_u32;
     }
-    pub fn new(mut sd: ()) -> Self {
+    pub fn new(mut sd: u32) -> Self {
         let __this: Value<rand1_unsigned_int__2__3_> = Rc::new(RefCell::new(Self { x_: sd }));
         let this: Ptr<rand1_unsigned_int__2__3_> = __this.as_pointer();
-        if (this.with(|__s| __s.x_) > 3_()) {
-            field!(this, x_).write(3_());
+        if (this.with(|__s| __s.x_) > 3_u32) {
+            field!(this, x_).write(3_u32);
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 pub fn test1_0() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 6958_()));
 }
 pub fn test2_1() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 66_()));
 }
 pub fn test3_2() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 5_()));
 }
 pub fn test4_3() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 1_()));
 }
 pub fn test5_4() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 1_()));
 }
 pub fn test6_5() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 1365_()));
 }
 pub fn test7_6() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 2863311530_u32));
 }
 pub fn test8_7() {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!() == 16470362623952407241_u64));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -158,7 +158,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_0() });
     ({ test2_1() });
     ({ test3_2() });
@@ -167,60 +167,60 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test6_5() });
     ({ test7_6() });
     ({ test8_7() });
-    return 0_();
+    return 0;
 }
 pub trait rand1_unsigned_int__0__100_Impl {
-    fn operator_call(&self) -> ();
+    fn operator_call(&self) -> u32;
 }
 impl rand1_unsigned_int__0__100_Impl for Ptr<rand1_unsigned_int__0__100_> {
-    fn operator_call(&self) -> () {
-        let r: Value<()> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
-        if ((*self).with(|__s| __s.x_) < 100_()) {
+    fn operator_call(&self) -> u32 {
+        let r: Value<u32> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
+        if ((*self).with(|__s| __s.x_) < 100_u32) {
             field!((*self), x_).with_mut(|__v| __v.prefix_inc());
         } else {
-            field!((*self), x_).write(0_());
+            field!((*self), x_).write(0_u32);
         }
         return (*r.borrow());
     }
 }
 pub trait rand1_unsigned_int__0__10_Impl {
-    fn operator_call(&self) -> ();
+    fn operator_call(&self) -> u32;
 }
 impl rand1_unsigned_int__0__10_Impl for Ptr<rand1_unsigned_int__0__10_> {
-    fn operator_call(&self) -> () {
-        let r: Value<()> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
-        if ((*self).with(|__s| __s.x_) < 10_()) {
+    fn operator_call(&self) -> u32 {
+        let r: Value<u32> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
+        if ((*self).with(|__s| __s.x_) < 10_u32) {
             field!((*self), x_).with_mut(|__v| __v.prefix_inc());
         } else {
-            field!((*self), x_).write(0_());
+            field!((*self), x_).write(0_u32);
         }
         return (*r.borrow());
     }
 }
 pub trait rand1_unsigned_int__0__4294967295_Impl {
-    fn operator_call(&self) -> ();
+    fn operator_call(&self) -> u32;
 }
 impl rand1_unsigned_int__0__4294967295_Impl for Ptr<rand1_unsigned_int__0__4294967295_> {
-    fn operator_call(&self) -> () {
-        let r: Value<()> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
-        if ((*self).with(|__s| __s.x_) < 4294967295_()) {
+    fn operator_call(&self) -> u32 {
+        let r: Value<u32> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
+        if ((*self).with(|__s| __s.x_) < 4294967295_u32) {
             field!((*self), x_).with_mut(|__v| __v.prefix_inc());
         } else {
-            field!((*self), x_).write(0_());
+            field!((*self), x_).write(0_u32);
         }
         return (*r.borrow());
     }
 }
 pub trait rand1_unsigned_int__2__3_Impl {
-    fn operator_call(&self) -> ();
+    fn operator_call(&self) -> u32;
 }
 impl rand1_unsigned_int__2__3_Impl for Ptr<rand1_unsigned_int__2__3_> {
-    fn operator_call(&self) -> () {
-        let r: Value<()> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
-        if ((*self).with(|__s| __s.x_) < 3_()) {
+    fn operator_call(&self) -> u32 {
+        let r: Value<u32> = Rc::new(RefCell::new((*self).with(|__s| __s.x_)));
+        if ((*self).with(|__s| __s.x_) < 3_u32) {
             field!((*self), x_).with_mut(|__v| __v.prefix_inc());
         } else {
-            field!((*self), x_).write(2_());
+            field!((*self), x_).write(2_u32);
         }
         return (*r.borrow());
     }

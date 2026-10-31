@@ -6,41 +6,41 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {}
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     {
-        let il: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([3, 2, 1])));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let mut b: Ptr<()> = unimplemented!();
-        let mut e: Ptr<()> = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut b: Ptr<i32> = unimplemented!();
+        let mut e: Ptr<i32> = unimplemented!();
+        assert!(((*il.borrow()).len() == 3_usize));
+        assert!(({ ((((e).clone() - (b).clone()) as i64) as usize) } == { (*il.borrow()).len() }));
+        assert!(((b.postfix_inc().read()) == 3));
+        assert!(((b.postfix_inc().read()) == 2));
+        assert!(((b.postfix_inc().read()) == 1));
     }
     {
-        let il: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        let cil: Ptr<()> = il.as_pointer();
+        assert!((unimplemented!() == unimplemented!()));
+        assert!((unimplemented!() == unimplemented!()));
+        let cil: Ptr<Vec<i32>> = il.as_pointer();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
+        assert!(({ unimplemented!() } == { unimplemented!() }));
+        assert!(({ unimplemented!() } == { unimplemented!() }));
     }
     return true;
 }
@@ -63,9 +63,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -22,27 +22,39 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(
         true,
         "(std::is_base_of<std::system_error, std::ios_base::failure>::value)"
     );;
     {
-        let mut what_arg: () = unimplemented!();
+        let mut what_arg: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"io test message".as_ptr(),
+            libcc2rs::c_str_len(c"io test message".as_ptr()) + 1,
+        )
+        .to_vec();
         let mut se: () = unimplemented!();
-        unimplemented!();
-        let mut what_message: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        let mut what_message: Vec<libc::c_char> =
+            std::slice::from_raw_parts(unimplemented!(), libcc2rs::c_str_len(unimplemented!()) + 1)
+                .to_vec();
+        assert!(((unimplemented!()) != (usize::MAX)));
+        assert!(((unimplemented!()) != (usize::MAX)));
     }
     {
-        let mut what_arg: () = unimplemented!();
+        let mut what_arg: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"io test message".as_ptr(),
+            libcc2rs::c_str_len(c"io test message".as_ptr()) + 1,
+        )
+        .to_vec();
         let mut se: () = unimplemented!();
-        unimplemented!();
-        let mut what_message: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        let mut what_message: Vec<libc::c_char> =
+            std::slice::from_raw_parts(unimplemented!(), libcc2rs::c_str_len(unimplemented!()) + 1)
+                .to_vec();
+        assert!(((unimplemented!()) != (usize::MAX)));
+        assert!(((unimplemented!()) != (usize::MAX)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

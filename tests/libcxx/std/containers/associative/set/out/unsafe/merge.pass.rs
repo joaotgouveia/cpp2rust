@@ -10,12 +10,13 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Counter_base {}
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, DestructorUnsafe, Default)]
+#[derive(VaArg, FnPtrArg, CppFromUnsafe, DestructorUnsafe, Default)]
+#[cpp_from(i32, new_1, ptr)]
 pub struct Counter_int_ {
-    data_: (),
+    data_: i32,
 }
 impl Counter_int_ {
-    pub unsafe fn new_1(data: *const ()) -> Self {
+    pub unsafe fn new_1(data: *const i32) -> Self {
         let mut this = Self { data_: (*data) };
         (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)).prefix_inc();
         this
@@ -30,10 +31,10 @@ impl Counter_int_ {
     pub unsafe fn destructor(&mut self) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)).prefix_dec();
     }
-    pub unsafe fn operator_eq(&self, x: *const Counter_int_) -> () {
+    pub unsafe fn operator_eq(&self, x: *const Counter_int_) -> bool {
         return ((self.data_) == ((*x).data_));
     }
-    pub unsafe fn operator_lt(&self, x: *const Counter_int_) -> () {
+    pub unsafe fn operator_lt(&self, x: *const Counter_int_) -> bool {
         return ((self.data_) < ((*x).data_));
     }
 }
@@ -66,58 +67,57 @@ impl Clone for Counter_int_ {
         unsafe { Counter_int_::copy_from(self as *const Counter_int_) }
     }
 }
-pub static mut gConstructed_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn set_equal_1(set: *const (), mut other: ()) -> () {
+pub static mut gConstructed_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+pub unsafe fn set_equal_1(set: *const (), mut other: ()) -> bool {
     return unimplemented!();
 }
-pub unsafe fn set_equal_2(set: *const (), mut other: ()) -> () {
+pub unsafe fn set_equal_2(set: *const (), mut other: ()) -> bool {
     return unimplemented!();
 }
-pub unsafe fn set_equal_3(set: *const (), mut other: ()) -> () {
+pub unsafe fn set_equal_3(set: *const (), mut other: ()) -> bool {
     return unimplemented!();
 }
-pub unsafe fn set_equal_4(set: *const (), mut other: ()) -> () {
+pub unsafe fn set_equal_4(set: *const (), mut other: ()) -> bool {
     return unimplemented!();
 }
-pub unsafe fn test_5() -> () {
+pub unsafe fn test_5() -> bool {
     {
         let mut src: () = unimplemented!();
         let mut dst: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unsafe { set_equal_1(&src, unimplemented!(),) }));
+        assert!((unsafe { set_equal_1(&dst, unimplemented!(),) }));
     }
     {
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)) == (0)));
     };
     {
         {
             let mut first: () = unimplemented!();
             let mut second: () = unimplemented!();
             let mut third: () = unimplemented!();
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)) == (8)));
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unsafe { set_equal_2(&first, unimplemented!(),) }));
+            assert!((unsafe { set_equal_3(&second, unimplemented!(),) }));
+            assert!((unsafe { set_equal_4(&third, unimplemented!(),) }));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)) == (8)));
         }
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)) == (0)));
         {
             let mut first: () = unimplemented!();
             let mut second: () = unimplemented!();
             let mut third: () = unimplemented!();
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)) == (8)));
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unsafe { set_equal_2(&first, unimplemented!(),) }));
+            assert!((unsafe { set_equal_3(&second, unimplemented!(),) }));
+            assert!((unsafe { set_equal_4(&third, unimplemented!(),) }));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)) == (8)));
         }
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_0)) == (0)));
     }
     {
         let mut first: () = unimplemented!();
@@ -138,7 +138,7 @@ pub unsafe fn test_5() -> () {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct comparator_6 {}
 impl comparator_6 {
-    pub unsafe fn operator_call(&self, lhs: *const Counter_int_, rhs: *const Counter_int_) -> () {
+    pub unsafe fn operator_call(&self, lhs: *const Counter_int_, rhs: *const Counter_int_) -> bool {
         return (unsafe {
             let _x: *const Counter_int_ = rhs;
             Counter_int_::operator_lt(&(*lhs), _x)
@@ -160,9 +160,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_5() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const gConstructed_0);

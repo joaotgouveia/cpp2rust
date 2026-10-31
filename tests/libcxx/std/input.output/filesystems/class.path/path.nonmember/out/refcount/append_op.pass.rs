@@ -26,13 +26,29 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let p4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let p1: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __v: Vec<i8> = (b"abc" as Ptr<i8>)
+            .path_bytes()
+            .into_iter()
+            .map(|__b| __b as i8)
+            .collect();
+        __v.push(0);
+        __v
+    }));
+    let p2: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __v: Vec<i8> = (b"def" as Ptr<i8>)
+            .path_bytes()
+            .into_iter()
+            .map(|__b| __b as i8)
+            .collect();
+        __v.push(0);
+        __v
+    }));
+    let p3: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(unimplemented!());
+    let p4: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(unimplemented!());
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

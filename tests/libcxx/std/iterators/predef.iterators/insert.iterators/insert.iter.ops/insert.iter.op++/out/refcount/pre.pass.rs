@@ -11,13 +11,11 @@ use std::rc::{Rc, Weak};
 pub struct nasty_vector_int_ {
     #[offset(0)]
     #[byte_size(24)]
-    pub v_: (),
+    pub v_: Vec<i32>,
 }
 impl nasty_vector_int_ {
     pub fn new_1() -> Self {
-        Self {
-            v_: unimplemented!(),
-        }
+        Self { v_: Vec::new() }
     }
 }
 impl Default for nasty_vector_int_ {
@@ -34,7 +32,7 @@ impl nasty_mutex {
     }
     fn copy_from(_a0: Ptr<nasty_mutex>) -> Self {
         let __this: nasty_mutex = Self {};
-        unimplemented!();
+        assert!(false);
         __this
     }
 }
@@ -54,38 +52,39 @@ impl Default for nasty_mutex {
 pub struct ConstexprFixedCapacityDeque_int__10_ {
     #[offset(0)]
     #[byte_size(40)]
-    data_: Box<[()]>,
+    data_: Box<[i32]>,
     #[offset(40)]
-    size_: (),
+    size_: i32,
 }
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
         {
             ConstexprFixedCapacityDeque_int__10_ {
-                data_: (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-                size_: 0_(),
+                data_: (0..10).map(|_| 0_i32).collect::<Box<[i32]>>(),
+                size_: 0,
             }
         }
     }
 }
-pub fn test_0(mut c: ()) -> () {
+pub fn test_0(c: Vec<i32>) -> bool {
+    let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Ptr<()> = unimplemented!();
-    unimplemented!();
+    assert!(({ (r).clone() } == { (i.as_pointer()) }));
     return true;
 }
-pub fn test_1(c: nasty_vector_int_) -> () {
+pub fn test_1(c: nasty_vector_int_) -> bool {
     let c: Value<nasty_vector_int_> = Rc::new(RefCell::new(c));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Ptr<()> = unimplemented!();
-    unimplemented!();
+    assert!(({ (r).clone() } == { (i.as_pointer()) }));
     return true;
 }
-pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> () {
+pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Ptr<()> = unimplemented!();
-    unimplemented!();
+    assert!(({ (r).clone() } == { (i.as_pointer()) }));
     return true;
 }
 pub fn main() {
@@ -107,47 +106,47 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_0(unimplemented!()) });
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    ({ test_0(Vec::new()) });
     ({ test_1(nasty_vector_int_::new_1()) });
     ({ test_2(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
-    return 0_();
+    return 0;
 }
 pub trait ConstexprFixedCapacityDeque_int__10_Impl {
-    fn begin_2(&self) -> Ptr<()>;
-    fn end_3(&self) -> Ptr<()>;
-    fn begin_4(&self) -> Ptr<()> {
+    fn begin_2(&self) -> Ptr<i32>;
+    fn end_3(&self) -> Ptr<i32>;
+    fn begin_4(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn end_5(&self) -> Ptr<()> {
+    fn end_5(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn size(&self) -> () {
+    fn size(&self) -> usize {
         unimplemented!()
     }
-    fn front(&self) -> Ptr<()> {
+    fn front(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn back(&self) -> Ptr<()> {
+    fn back(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn insert(&self, mut pos: Ptr<()>, mut t: ()) -> Ptr<()> {
+    fn insert(&self, mut pos: Ptr<i32>, mut t: i32) -> Ptr<i32> {
         unimplemented!()
     }
-    fn push_back(&self, mut t: ()) {
+    fn push_back(&self, mut t: i32) {
         unimplemented!()
     }
-    fn push_front(&self, mut t: ()) {
+    fn push_front(&self, mut t: i32) {
         unimplemented!()
     }
 }
 impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDeque_int__10_> {
-    fn begin_2(&self) -> Ptr<()> {
-        return (array_field_ptr!((*self), data_) as Ptr<()>);
+    fn begin_2(&self) -> Ptr<i32> {
+        return (array_field_ptr!((*self), data_) as Ptr<i32>);
     }
-    fn end_3(&self) -> Ptr<()> {
-        return (array_field_ptr!((*self), data_) as Ptr<()>)
+    fn end_3(&self) -> Ptr<i32> {
+        return (array_field_ptr!((*self), data_) as Ptr<i32>)
             .offset(((*self).with(|__s| __s.size_)) as isize);
     }
 }
@@ -156,47 +155,47 @@ pub trait nasty_mutexImpl {
     fn operator_addr(&self) -> Ptr<nasty_mutex>;
     fn copy_assign(&self, _a0: Ptr<nasty_mutex>) -> Ptr<nasty_mutex>;
     fn lock(&self);
-    fn try_lock(&self) -> ();
+    fn try_lock(&self) -> bool;
     fn unlock(&self);
     fn lock_shared(&self);
-    fn try_lock_shared(&self) -> ();
+    fn try_lock_shared(&self) -> bool;
     fn unlock_shared(&self);
 }
 impl nasty_mutexImpl for Ptr<nasty_mutex> {
     fn destructor(&self) {}
     fn operator_addr(&self) -> Ptr<nasty_mutex> {
-        unimplemented!();
+        assert!(false);
         return Ptr::<nasty_mutex>::null();
     }
     fn copy_assign(&self, _a0: Ptr<nasty_mutex>) -> Ptr<nasty_mutex> {
-        unimplemented!();
+        assert!(false);
         return (*self).clone();
     }
     fn lock(&self) {}
-    fn try_lock(&self) -> () {
+    fn try_lock(&self) -> bool {
         return true;
     }
     fn unlock(&self) {}
     fn lock_shared(&self) {}
-    fn try_lock_shared(&self) -> () {
+    fn try_lock_shared(&self) -> bool {
         return true;
     }
     fn unlock_shared(&self) {}
 }
 pub trait nasty_vector_int_Impl {
     fn destructor(&self);
-    fn assign_10(&self, mut n: (), u: Ptr<()>) {
+    fn assign_10(&self, mut n: usize, u: Ptr<i32>) {
         unimplemented!()
     }
-    fn assign_11(&self, il: ()) {
+    fn assign_11(&self, il: Vec<i32>) {
         unimplemented!()
     }
-    fn begin_12(&self) -> ();
-    fn begin_13(&self) -> () {
+    fn begin_12(&self) -> RandomAccessIterator<i32>;
+    fn begin_13(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn end_14(&self) -> ();
-    fn end_15(&self) -> () {
+    fn end_14(&self) -> RandomAccessIterator<i32>;
+    fn end_15(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
     fn rbegin_16(&self) -> () {
@@ -211,10 +210,10 @@ pub trait nasty_vector_int_Impl {
     fn rend_19(&self) -> () {
         unimplemented!()
     }
-    fn cbegin(&self) -> () {
+    fn cbegin(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn cend(&self) -> () {
+    fn cend(&self) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
     fn crbegin(&self) -> () {
@@ -223,88 +222,97 @@ pub trait nasty_vector_int_Impl {
     fn crend(&self) -> () {
         unimplemented!()
     }
-    fn size(&self) -> () {
+    fn size(&self) -> usize {
         unimplemented!()
     }
-    fn max_size(&self) -> () {
+    fn max_size(&self) -> usize {
         unimplemented!()
     }
-    fn capacity(&self) -> () {
+    fn capacity(&self) -> usize {
         unimplemented!()
     }
-    fn empty(&self) -> () {
+    fn empty(&self) -> bool {
         unimplemented!()
     }
-    fn reserve(&self, mut n: ()) {
+    fn reserve(&self, mut n: usize) {
         unimplemented!()
     }
     fn shrink_to_fit(&self) {
         unimplemented!()
     }
-    fn operator_index_30(&self, mut n: ()) -> () {
+    fn operator_index_30(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_index_31(&self, mut n: ()) -> () {
+    fn operator_index_31(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn at_32(&self, mut n: ()) -> () {
+    fn at_32(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn at_33(&self, mut n: ()) -> () {
+    fn at_33(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn front_34(&self) -> () {
+    fn front_34(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn front_35(&self) -> () {
+    fn front_35(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn back_36(&self) -> () {
+    fn back_36(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn back_37(&self) -> () {
+    fn back_37(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn data_38(&self) -> Ptr<()> {
+    fn data_38(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn data_39(&self) -> Ptr<()> {
+    fn data_39(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn push_back_40(&self, x: Ptr<()>) {
+    fn push_back_40(&self, x: Ptr<i32>) {
         unimplemented!()
     }
-    fn push_back_41(&self, x: Ptr<()>) {
+    fn push_back_41(&self, x: Ptr<i32>) {
         unimplemented!()
     }
     fn pop_back(&self) {
         unimplemented!()
     }
-    fn insert_45(&self, pos: (), x: Ptr<()>) -> () {
+    fn insert_45(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn insert_46(&self, pos: (), x: Ptr<()>) -> () {
+    fn insert_46(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn insert_47(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+    fn insert_47(
+        &self,
+        pos: RandomAccessIterator<i32>,
+        mut n: usize,
+        x: Ptr<i32>,
+    ) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn insert_49(&self, pos: (), il: ()) -> () {
+    fn insert_49(&self, pos: RandomAccessIterator<i32>, il: Vec<i32>) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn erase_50(&self, pos: ()) -> () {
+    fn erase_50(&self, pos: RandomAccessIterator<i32>) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
-    fn erase_51(&self, first: (), last: ()) -> () {
+    fn erase_51(
+        &self,
+        first: RandomAccessIterator<i32>,
+        last: RandomAccessIterator<i32>,
+    ) -> RandomAccessIterator<i32> {
         unimplemented!()
     }
     fn clear(&self) {
         unimplemented!()
     }
-    fn resize_53(&self, mut sz: ()) {
+    fn resize_53(&self, mut sz: usize) {
         unimplemented!()
     }
-    fn resize_54(&self, mut sz: (), c: Ptr<()>) {
+    fn resize_54(&self, mut sz: usize, c: Ptr<i32>) {
         unimplemented!()
     }
     fn swap(&self, nv: Ptr<nasty_vector_int_>) {
@@ -319,11 +327,11 @@ pub trait nasty_vector_int_Impl {
 }
 impl nasty_vector_int_Impl for Ptr<nasty_vector_int_> {
     fn destructor(&self) {}
-    fn begin_12(&self) -> () {
-        return unimplemented!();
+    fn begin_12(&self) -> RandomAccessIterator<i32> {
+        return field_ref!((*self), v_).decay().begin();
     }
-    fn end_14(&self) -> () {
-        return unimplemented!();
+    fn end_14(&self) -> RandomAccessIterator<i32> {
+        return field_ref!((*self), v_).decay().end();
     }
 }
 pub fn __cpp2rust_init_globals() {}

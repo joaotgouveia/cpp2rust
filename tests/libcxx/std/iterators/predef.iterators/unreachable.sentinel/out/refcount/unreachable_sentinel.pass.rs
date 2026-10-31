@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     const _: () = assert!(true, "std::is_empty_v<std::unreachable_sentinel_t>");;
     const _: () = assert!(true, "std::semiregular<std::unreachable_sentinel_t>");;
     const _: () = assert!(
@@ -14,20 +14,20 @@ pub fn test_0() -> () {
         "std::same_as<decltype(std::unreachable_sentinel), const std::unreachable_sentinel_t>"
     );;
     let sentinel: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(42_()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let p: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let i: Value<i32> = Rc::new(RefCell::new(42));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    let p: Value<Ptr<i32>> = Rc::new(RefCell::new(Ptr::<i32>::null()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
     const _: () = assert!(
         true,
         "weakly_equality_comparable_with<std::unreachable_sentinel_t, int>"
@@ -63,9 +63,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

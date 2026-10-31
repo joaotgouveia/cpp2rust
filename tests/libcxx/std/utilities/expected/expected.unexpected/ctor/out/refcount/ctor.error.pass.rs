@@ -32,14 +32,16 @@ const _: () = assert!(
 );
 const _: () = assert!(true, "std::convertible_to<int, int>");
 const _: () = assert!(!(false), "!std::convertible_to<int, std::unexpected<int>>");
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, CppFrom, Default)]
+#[cpp_from(i32, new_1, value)]
+#[cpp_from(Vec<Error  >  , new_2, value)]
 #[byte_size(4)]
 pub struct Error {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl Error {
-    pub fn new_1(mut ii: ()) -> Self {
+    pub fn new_1(mut ii: i32) -> Self {
         Self { i: ii }
     }
     pub fn copy_from(other: Ptr<Error>) -> Self {
@@ -51,15 +53,13 @@ impl Error {
         let __this: Error = Self {
             i: other.with(|__s| __s.i),
         };
-        field!(other, i).write(0_());
+        field!(other, i).write(0);
         __this
     }
-    pub fn new_2(_a0: ()) -> Self {
-        let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-        let __this: Error = Self {
-            i: unimplemented!(),
-        };
-        unimplemented!();
+    pub fn new_2(_a0: Vec<Error>) -> Self {
+        let _a0: Value<Vec<Error>> = Rc::new(RefCell::new(_a0));
+        let __this: Error = Self { i: 0_i32 };
+        assert!(false);
         __this
     }
 }
@@ -69,27 +69,27 @@ impl Clone for Error {
         Error::copy_from(__src.as_pointer())
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
-        let mut e: Error = Error::new_1({ 5_() });
+        let mut e: Error = Error::new_1({ 5 });
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.i) == 5));
+        assert!((e.i == 5));
     }
     {
-        let mut e: Error = Error::new_1({ 5_() });
+        let e: Value<Error> = Rc::new(RefCell::new(Error::new_1({ 5 })));
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.i) == 5));
+        assert!(({ (*e.borrow()).i } == 0));
     }
     {
-        let mut e: Error = Error::new_1({ 5_() });
+        let mut e: Error = Error::new_1({ 5 });
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
         let ue: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.i) == 5));
+        assert!((unimplemented!().with(|__s| __s.j) == 6));
     }
     return true;
 }
@@ -97,12 +97,12 @@ pub fn test_0() -> () {
 #[byte_size(8)]
 pub struct Bar_1 {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
     #[offset(4)]
-    pub j: (),
+    pub j: i32,
 }
 impl Bar_1 {
-    pub fn new(mut ii: (), mut jj: ()) -> Self {
+    pub fn new(mut ii: i32, mut jj: i32) -> Self {
         Self { i: ii, j: jj }
     }
 }
@@ -126,10 +126,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
     ({ testException_2() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -34,7 +34,7 @@ impl IncompleteReturnType {
         return &mut (*(self as *mut IncompleteReturnType));
     }
 }
-pub static mut called_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut called_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 pub unsafe fn test_fn_1() -> IncompleteReturnType {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut called_0)).prefix_inc();
     let mut I: IncompleteReturnType = <IncompleteReturnType>::default();
@@ -51,15 +51,15 @@ pub unsafe fn test_pr34298_2() {
         unimplemented!();
         let CX: *const IncompleteReturnType = &X;
         let mut X2: IncompleteReturnType = (*CX).clone();
+        assert!(unimplemented!());
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut called_0)) == (0)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut called_0)) == (1)));
     }
     {
         let mut Empty: IncompleteReturnType = <IncompleteReturnType>::default();
         let mut X2: IncompleteReturnType = Empty.clone();
-        unimplemented!();
+        assert!(!(unimplemented!()));
     }
 }
 pub fn main() {
@@ -77,9 +77,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_pr34298_2() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const called_0);

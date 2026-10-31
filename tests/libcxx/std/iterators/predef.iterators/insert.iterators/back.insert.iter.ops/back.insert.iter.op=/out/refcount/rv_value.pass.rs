@@ -11,32 +11,34 @@ use std::rc::{Rc, Weak};
 pub struct ConstexprFixedCapacityDeque_int__10_ {
     #[offset(0)]
     #[byte_size(40)]
-    data_: Box<[()]>,
+    data_: Box<[i32]>,
     #[offset(40)]
-    size_: (),
+    size_: i32,
 }
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
         {
             ConstexprFixedCapacityDeque_int__10_ {
-                data_: (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-                size_: 0_(),
+                data_: (0..10).map(|_| 0_i32).collect::<Box<[i32]>>(),
+                size_: 0,
             }
         }
     }
 }
-pub fn test_0(c: ()) -> () {
-    let c: Value<()> = Rc::new(RefCell::new(c));
+pub fn test_0(c: Vec<Option<Value<i32>>>) -> bool {
+    let c: Value<Vec<Option<Value<i32>>>> = Rc::new(RefCell::new(c));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     return true;
 }
-pub fn test_1(c: ConstexprFixedCapacityDeque_int__10_) -> () {
+pub fn test_1(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!(
+        ((({ ConstexprFixedCapacityDeque_int__10_Impl::back(&c.as_pointer(),) }).read()) == 0_i32)
+    );
     return true;
 }
 pub fn main() {
@@ -58,60 +60,61 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_0(unimplemented!()) });
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    ({ test_0(Vec::new()) });
     ({ test_1(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
-    return 0_();
+    return 0;
 }
 pub trait ConstexprFixedCapacityDeque_int__10_Impl {
-    fn begin_2(&self) -> Ptr<()> {
+    fn begin_2(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn end_3(&self) -> Ptr<()>;
-    fn begin_4(&self) -> Ptr<()> {
+    fn end_3(&self) -> Ptr<i32>;
+    fn begin_4(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn end_5(&self) -> Ptr<()> {
+    fn end_5(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn size(&self) -> () {
+    fn size(&self) -> usize {
         unimplemented!()
     }
-    fn front(&self) -> Ptr<()> {
+    fn front(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn back(&self) -> Ptr<()>;
-    fn insert(&self, pos: Ptr<()>, t: ()) -> Ptr<()>;
-    fn push_back(&self, t: ());
-    fn push_front(&self, mut t: ()) {
+    fn back(&self) -> Ptr<i32>;
+    fn insert(&self, pos: Ptr<i32>, t: i32) -> Ptr<i32>;
+    fn push_back(&self, t: i32);
+    fn push_front(&self, mut t: i32) {
         unimplemented!()
     }
 }
 impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDeque_int__10_> {
-    fn end_3(&self) -> Ptr<()> {
-        return (array_field_ptr!((*self), data_) as Ptr<()>)
+    fn end_3(&self) -> Ptr<i32> {
+        return (array_field_ptr!((*self), data_) as Ptr<i32>)
             .offset(((*self).with(|__s| __s.size_)) as isize);
     }
-    fn back(&self) -> Ptr<()> {
-        unimplemented!();
-        return (array_field_ptr!((*self), data_) as Ptr<()>)
-            .offset(((*self).with(|__s| __s.size_) - 1_()) as isize);
+    fn back(&self) -> Ptr<i32> {
+        assert!(((*self).with(|__s| __s.size_) >= 1));
+        return (array_field_ptr!((*self), data_) as Ptr<i32>)
+            .offset(((*self).with(|__s| __s.size_) - 1) as isize);
     }
-    fn insert(&self, mut pos: Ptr<()>, mut t: ()) -> Ptr<()> {
-        let mut i: () = ((pos).clone() - (array_field_ptr!((*self), data_) as Ptr<()>)) as ();
+    fn insert(&self, mut pos: Ptr<i32>, mut t: i32) -> Ptr<i32> {
+        let mut i: i32 =
+            ((((pos).clone() - (array_field_ptr!((*self), data_) as Ptr<i32>)) as i64) as i32);
         if (i != (*self).with(|__s| __s.size_)) {
             unimplemented!();
         }
         array_elem!((*self), data_, i).write(t);
         {
-            field!((*self), size_).with_mut(|__v| *__v = *__v + 1_())
+            field!((*self), size_).with_mut(|__v| *__v = *__v + 1)
         };
-        return (array_field_ptr!((*self), data_) as Ptr<()>).offset((i) as isize);
+        return (array_field_ptr!((*self), data_) as Ptr<i32>).offset((i) as isize);
     }
-    fn push_back(&self, mut t: ()) {
+    fn push_back(&self, mut t: i32) {
         ({
-            let _pos: Ptr<()> = ({ ConstexprFixedCapacityDeque_int__10_Impl::end_3(self) });
+            let _pos: Ptr<i32> = ({ ConstexprFixedCapacityDeque_int__10_Impl::end_3(self) });
             ConstexprFixedCapacityDeque_int__10_Impl::insert(self, _pos, t)
         });
     }

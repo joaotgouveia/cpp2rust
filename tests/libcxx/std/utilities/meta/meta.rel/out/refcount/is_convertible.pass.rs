@@ -766,11 +766,12 @@ pub fn test_is_not_convertible_75() {
     const _: () = assert!(true, "(!std::is_convertible_v<T, const U>)");;
     const _: () = assert!(true, "(!std::is_convertible_v<const T, const U>)");;
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Ptr< i8  >  , new, value)]
 #[byte_size(1)]
 pub struct StringType {}
 impl StringType {
-    pub fn new(mut _a0: Ptr<()>) -> Self {
+    pub fn new(mut _a0: Ptr<i8>) -> Self {
         Self {}
     }
 }
@@ -779,7 +780,7 @@ impl StringType {
 pub struct NonCopyable {}
 impl NonCopyable {}
 pub trait abstract_ {
-    fn f(&mut self) -> ();
+    fn f(&mut self) -> i32;
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -800,7 +801,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_is_convertible_0() });
     ({ test_is_not_convertible_9() });
     ({ test_is_not_convertible_10() });
@@ -1035,6 +1036,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         "(std::is_convertible<CannotInstantiate<int>*, CannotInstantiate<int>*>::value)"
     );;
     const _: () = assert!(true, "!std::is_convertible<abstract, abstract>::value");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

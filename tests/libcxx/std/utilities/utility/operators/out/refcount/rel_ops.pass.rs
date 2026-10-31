@@ -10,11 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct A {
     #[offset(0)]
-    pub data_: (),
+    pub data_: i32,
 }
 impl A {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| -1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| -1_i32);
         Self { data_: data }
     }
 }
@@ -33,10 +33,10 @@ impl Default for A {
         { A::new(None) }
     }
 }
-pub fn operator_eq_1(x: Ptr<A>, y: Ptr<A>) -> () {
+pub fn operator_eq_1(x: Ptr<A>, y: Ptr<A>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_0(x: Ptr<A>, y: Ptr<A>) -> () {
+pub fn operator_lt_0(x: Ptr<A>, y: Ptr<A>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
 pub fn main() {
@@ -58,17 +58,33 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let a1: Value<A> = Rc::new(RefCell::new(A::new({ Some(1_()) })));
-    let a2: Value<A> = Rc::new(RefCell::new(A::new({ Some(2_()) })));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let a1: Value<A> = Rc::new(RefCell::new(A::new({ Some(1) })));
+    let a2: Value<A> = Rc::new(RefCell::new(A::new({ Some(2) })));
+    assert!(
+        ({
+            let _x: Ptr<A> = a1.as_pointer();
+            let _y: Ptr<A> = a1.as_pointer();
+            operator_eq_1(_x, _y)
+        })
+    );
+    assert!(
+        !({
+            let _x: Ptr<A> = a1.as_pointer();
+            operator_eq_1(_x, a2.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _x: Ptr<A> = a1.as_pointer();
+            operator_lt_0(_x, a2.as_pointer())
+        })
+    );
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

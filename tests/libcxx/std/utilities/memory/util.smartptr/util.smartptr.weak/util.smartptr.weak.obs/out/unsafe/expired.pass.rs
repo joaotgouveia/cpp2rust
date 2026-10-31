@@ -37,7 +37,7 @@ impl Default for A {
         unsafe { A::new() }
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -54,22 +54,22 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut wp: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_i64)));
+        assert!(((unimplemented!() as i32) == (((unimplemented!()) == (0_i64)) as i32)));
     }
     {
         let mut sp0: () = unimplemented!();
         let mut wp: () = unimplemented!();
+        assert!(((unimplemented!()) == (1_i64)));
+        assert!(((unimplemented!() as i32) == (((unimplemented!()) == (0_i64)) as i32)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_i64)));
+        assert!(((unimplemented!() as i32) == (((unimplemented!()) == (0_i64)) as i32)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

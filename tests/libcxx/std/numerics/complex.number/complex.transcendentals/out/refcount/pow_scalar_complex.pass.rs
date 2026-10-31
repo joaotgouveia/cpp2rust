@@ -163,101 +163,101 @@ thread_local!(
         unimplemented!(),
     ])));
 );
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_zero: anon_1 = 0;
 pub const anon_1_non_zero: anon_1 = 1;
 pub const anon_1_inf: anon_1 = 2;
 pub const anon_1_NaN: anon_1 = 3;
 pub const anon_1_non_zero_nan: anon_1 = 4;
-pub fn classify_2(mut x: ()) -> () {
-    if (x == 0_()) {
-        return (anon_1_zero as ());
+pub fn classify_2(mut x: f64) -> i32 {
+    if (x == 0_f64) {
+        return (anon_1_zero as i32);
     }
     if unimplemented!() {
-        return (anon_1_inf as ());
+        return (anon_1_inf as i32);
     }
     if unimplemented!() {
-        return (anon_1_NaN as ());
+        return (anon_1_NaN as i32);
     }
-    return (anon_1_non_zero as ());
+    return (anon_1_non_zero as i32);
 }
-pub fn is_about_3(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_3(mut x: f32, mut y: f32) {
+    assert!(((unimplemented!() as f64) < 1e-06_f64));
 }
-pub fn is_about_4(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_4(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn is_about_5(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_5(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn test_6(a: Ptr<()>, b: Ptr<()>, x: ()) {
+pub fn test_6(a: Ptr<f32>, b: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
-        let _x: () = unimplemented!();
-        let _y: () = unimplemented!();
+        let _x: f32 = unimplemented!();
+        let _y: f32 = unimplemented!();
         is_about_3(_x, _y)
     });
-    unimplemented!();
+    assert!(((unimplemented!() as f64) < 1e-06_f64));
 }
-pub fn test_7(a: Ptr<()>, b: Ptr<()>, x: ()) {
+pub fn test_7(a: Ptr<f64>, b: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
-        let _x: () = unimplemented!();
-        let _y: () = unimplemented!();
+        let _x: f64 = unimplemented!();
+        let _y: f64 = unimplemented!();
         is_about_4(_x, _y)
     });
-    unimplemented!();
+    assert!((unimplemented!() < 1e-06_f64));
 }
-pub fn test_8(a: Ptr<()>, b: Ptr<()>, x: ()) {
+pub fn test_8(a: Ptr<f64>, b: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
-        let _x: () = unimplemented!();
-        let _y: () = unimplemented!();
+        let _x: f64 = unimplemented!();
+        let _y: f64 = unimplemented!();
         is_about_5(_x, _y)
     });
-    unimplemented!();
+    assert!((unimplemented!() < 1e-06_f64));
 }
 pub fn test_9() {
     ({
-        let _a: Value<()> = Rc::new(RefCell::new(2_()));
+        let _a: Value<f32> = Rc::new(RefCell::new(2_f32));
         let _b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_6(_a.as_pointer(), _b.as_pointer(), unimplemented!())
     });
 }
 pub fn test_10() {
     ({
-        let _a: Value<()> = Rc::new(RefCell::new(2_()));
+        let _a: Value<f64> = Rc::new(RefCell::new(2_f64));
         let _b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_7(_a.as_pointer(), _b.as_pointer(), unimplemented!())
     });
 }
 pub fn test_11() {
     ({
-        let _a: Value<()> = Rc::new(RefCell::new(2_()));
+        let _a: Value<f64> = Rc::new(RefCell::new(2_f64));
         let _b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_8(_a.as_pointer(), _b.as_pointer(), unimplemented!())
     });
 }
 pub fn test_edges_12() {
-    let mut N: () = (2448usize as ()).wrapping_div((16usize as ()));
-    let mut i: () = 0_();
+    let mut N: u32 = (((2448usize as usize).wrapping_div((16usize as usize))) as u32);
+    let mut i: u32 = 0_u32;
     'loop_: while (i < N) {
-        let mut j: () = 0_();
+        let mut j: u32 = 0_u32;
         'loop_: while (j < N) {
             let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             if unimplemented!() {
-                unimplemented!();
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!((unimplemented!() == unimplemented!()));
             }
             if unimplemented!() {
-                unimplemented!();
+                assert!(unimplemented!());
             } else {
-                unimplemented!();
+                assert!((unimplemented!() == unimplemented!()));
             }
             j.prefix_inc();
         }
@@ -283,12 +283,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_9() });
     ({ test_10() });
     ({ test_11() });
     ({ test_edges_12() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = testcases_0.with(|_| ());

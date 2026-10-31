@@ -26,7 +26,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     {
         let ymdl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -55,11 +55,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let ymdl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ymd: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

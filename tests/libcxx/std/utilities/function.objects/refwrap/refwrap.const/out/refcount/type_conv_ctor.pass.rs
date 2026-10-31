@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -15,46 +15,45 @@ pub struct test_macros_detail_is_same_int__int_ {}
 #[byte_size(4)]
 pub struct convertible_to_int_ref {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
 }
 impl Default for convertible_to_int_ref {
     fn default() -> Self {
-        { convertible_to_int_ref { val: 0_() } }
+        { convertible_to_int_ref { val: 0 } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct nothrow_convertible_true_ {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
 }
 impl Default for nothrow_convertible_true_ {
     fn default() -> Self {
-        { nothrow_convertible_true_ { val: 0_() } }
+        { nothrow_convertible_true_ { val: 0 } }
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct nothrow_convertible_false_ {
     #[offset(0)]
-    pub val: (),
+    pub val: i32,
 }
 impl Default for nothrow_convertible_false_ {
     fn default() -> Self {
-        { nothrow_convertible_false_ { val: 0_() } }
+        { nothrow_convertible_false_ { val: 0 } }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(1)]
 pub struct convertible_from_int {}
 impl convertible_from_int {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         Self {}
     }
 }
-pub fn meow_1(_a0: ()) {
-    let _a0: Value<()> = Rc::new(RefCell::new(_a0));
-}
+pub fn meow_1(mut _a0: Ptr<i32>) {}
 pub fn meow_2(mut _a0: convertible_from_int) {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -75,63 +74,63 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<convertible_to_int_ref> =
             Rc::new(RefCell::new(<convertible_to_int_ref>::default()));
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let mut r: Ptr<convertible_to_int_ref> = t.as_pointer();
+        assert!(((r) == (t.as_pointer())));
     }
     {
         let t: Value<convertible_to_int_ref> =
             Rc::new(RefCell::new(<convertible_to_int_ref>::default()));
-        let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let mut r: Ptr<convertible_to_int_ref> = t.as_pointer();
+        assert!(((r) == (t.as_pointer())));
     }
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
-    ({ meow_2(convertible_from_int::new({ 0_() })) });
+    ({ meow_2(convertible_from_int::new({ 0 })) });
     const _: () = assert!(true, "");;
     {
-        let mut i: () = 0_();
-        let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
         const _: () = assert!(
             true,
             "(std::is_same<decltype(ri), std::reference_wrapper<int>>::value)"
         );;
     }
     {
-        let mut j: () = 0_();
-        let rj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let j: Value<i32> = Rc::new(RefCell::new(0));
+        let rj: Value<Ptr<i32>> = Rc::new(RefCell::new(j.as_pointer()));
         const _: () = assert!(
             true,
             "(std::is_same<decltype(rj), std::reference_wrapper<const int>>::value)"
         );;
     }
-    return 0_();
+    return 0;
 }
 pub trait convertible_to_int_refImpl {
-    fn to_pmut(&self) -> Ptr<()>;
-    fn to_pconst(&self) -> Ptr<()>;
+    fn to_pmuti32(&self) -> Ptr<i32>;
+    fn to_pconsti32(&self) -> Ptr<i32>;
 }
 impl convertible_to_int_refImpl for Ptr<convertible_to_int_ref> {
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         return field_ptr!((*self), val);
     }
-    fn to_pconst(&self) -> Ptr<()> {
+    fn to_pconsti32(&self) -> Ptr<i32> {
         return field_ptr!((*self), val);
     }
 }
 pub trait nothrow_convertible_false_Impl {
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl nothrow_convertible_false_Impl for Ptr<nothrow_convertible_false_> {}
 pub trait nothrow_convertible_true_Impl {
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }

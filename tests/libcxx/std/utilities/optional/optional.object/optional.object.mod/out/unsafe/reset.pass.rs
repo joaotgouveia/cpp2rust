@@ -14,19 +14,19 @@ impl X {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) = true;
     }
 }
-pub static mut dtor_called_0: std::cell::LazyCell<()> =
+pub static mut dtor_called_0: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub unsafe fn check_reset_1() -> () {
+pub unsafe fn check_reset_1() -> bool {
     {
         let mut opt: () = unimplemented!();
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
         unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (false as i32)));
     }
     {
         let mut opt: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (false as i32)));
     }
     return true;
 }
@@ -45,26 +45,35 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { check_reset_1() });
     const _: () = assert!(true, "check_reset()");;
     {
         let mut opt: () = unimplemented!();
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) as i32)
+                == (false as i32))
+        );
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) as i32)
+                == (false as i32))
+        );
+        assert!(((unimplemented!() as i32) == (false as i32)));
     }
     {
         let mut opt: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) = false;
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) as i32)
+                == (true as i32))
+        );
+        assert!(((unimplemented!() as i32) == (false as i32)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) = false;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const dtor_called_0);

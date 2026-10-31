@@ -6,28 +6,28 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_0() -> bool {
+    assert!((unimplemented!() == 0));
+    assert!((unimplemented!() == 0));
+    assert!((unimplemented!() == 0));
+    assert!((unimplemented!() < 0));
+    assert!((unimplemented!() > 0));
+    assert!((unimplemented!() == 0));
+    assert!((unimplemented!() < 0));
+    assert!((unimplemented!() < 0));
+    assert!((unimplemented!() > 0));
+    assert!((unimplemented!() > 0));
+    assert!((unimplemented!() == 0));
+    assert!((unimplemented!() < 0));
+    assert!((unimplemented!() < 0));
+    assert!((unimplemented!() < 0));
+    assert!((unimplemented!() > 0));
+    assert!((unimplemented!() > 0));
+    assert!((unimplemented!() > 0));
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), 0_()])));
-        let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 0_()])));
-        unimplemented!();
+        let a: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([(-1_i32 as i8), 0_i8])));
+        let b: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 0_i8])));
+        assert!((unimplemented!() > 0));
     }
     return true;
 }
@@ -50,9 +50,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

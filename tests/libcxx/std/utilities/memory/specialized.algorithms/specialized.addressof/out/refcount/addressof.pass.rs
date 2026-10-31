@@ -13,7 +13,7 @@ pub struct A {}
 #[byte_size(1)]
 pub struct nothing {}
 thread_local!(
-    static c_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static c_0: Value<i8> = Rc::new(RefCell::new(0_i8));
 );
 
 pub fn main() {
@@ -35,23 +35,26 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let i: Value<i32> = Rc::new(RefCell::new(0_i32));
+        let d: Value<f64> = Rc::new(RefCell::new(0_f64));
+        assert!((unimplemented!() == (i.as_pointer())));
+        assert!((unimplemented!() == (d.as_pointer())));
         let mut tp: Ptr<A> = Ptr::alloc(<A>::default());
         let mut ctp: Ptr<A> = (tp).clone();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ unimplemented!() } == { (tp).clone() }));
+        assert!(({ unimplemented!() } == { (tp).clone() }));
         tp.delete();
     }
     {
         let anon_1: Value<anon_1> = Rc::new(RefCell::new(<anon_1>::default()));
-        unimplemented!();
+        assert!(
+            ((unimplemented!() as Ptr<nothing>).to_any()
+                == (unimplemented!() as Ptr<i32>).to_any())
+        );
     }
-    return 0_();
+    return 0;
 }
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(4)]
@@ -64,7 +67,7 @@ impl anon_1 {
     pub fn n(this: Ptr<Self>) -> Ptr<nothing> {
         this.reinterpret_cast()
     }
-    pub fn i(this: Ptr<Self>) -> Ptr<()> {
+    pub fn i(this: Ptr<Self>) -> Ptr<i32> {
         this.reinterpret_cast()
     }
 }
@@ -82,10 +85,10 @@ impl AImpl for Ptr<A> {
     fn operator_addr(&self) {}
 }
 pub trait nothingImpl {
-    fn to_pmut(&self) -> Ptr<()>;
+    fn to_pmuti8(&self) -> Ptr<i8>;
 }
 impl nothingImpl for Ptr<nothing> {
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti8(&self) -> Ptr<i8> {
         return c_0.with(|v| v.as_pointer());
     }
 }

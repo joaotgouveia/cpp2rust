@@ -6,77 +6,77 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1____std_chrono_duration_long__std_ratio_1__1___
 {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000____std_chrono_duration_long__std_ratio_1__1000___
 {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000____std_chrono_duration_long__std_ratio_1__1000000___
 {}
-pub type anon_3 = ();
+pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__1000000000____std_chrono_duration_long__std_ratio_1__1000000000___
 {}
-pub type anon_4 = ();
+pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_duration_long__std_ratio_1__10000____std_chrono_duration_long__std_ratio_1__10000___
 {}
-pub fn check_subseconds_5(d: ()) -> () {
+pub fn check_subseconds_5(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_subseconds_6(d: ()) -> () {
+pub fn check_subseconds_6(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_subseconds_7(d: ()) -> () {
+pub fn check_subseconds_7(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_subseconds_8(d: ()) -> () {
+pub fn check_subseconds_8(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_subseconds_9(d: ()) -> () {
+pub fn check_subseconds_9(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_subseconds_10(d: ()) -> () {
+pub fn check_subseconds_10(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
-pub fn check_subseconds_11(d: ()) -> () {
+pub fn check_subseconds_11(d: ()) -> i64 {
     let d: Value<()> = Rc::new(RefCell::new(d));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    return unimplemented!();
+    return (unimplemented!() as i64);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -97,25 +97,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "check_subseconds(std::chrono::seconds( 1)) == 0");;
     const _: () = assert!(true, "check_subseconds(std::chrono::seconds(-1)) == 0");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((({ check_subseconds_5(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_subseconds_5(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_subseconds_6(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_subseconds_6(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_subseconds_7(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_subseconds_7(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_subseconds_8(unimplemented!(),) }) == 789_i64));
+    assert!((({ check_subseconds_8(unimplemented!(),) }) == 789_i64));
+    assert!((({ check_subseconds_9(unimplemented!(),) }) == 456789_i64));
+    assert!((({ check_subseconds_9(unimplemented!(),) }) == 456789_i64));
+    assert!((({ check_subseconds_10(unimplemented!(),) }) == 123456789_i64));
+    assert!((({ check_subseconds_10(unimplemented!(),) }) == 123456789_i64));
+    assert!((({ check_subseconds_11(unimplemented!(),) }) == 6000_i64));
+    assert!((({ check_subseconds_11(unimplemented!(),) }) == 6000_i64));
+    assert!((({ check_subseconds_11(unimplemented!(),) }) == 0_i64));
+    assert!((({ check_subseconds_11(unimplemented!(),) }) == 0_i64));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

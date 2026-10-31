@@ -6,23 +6,23 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: ()) -> () {
+pub fn test_convertible_imp_0(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_imp_1(mut _a0: ()) -> () {
+pub fn test_convertible_imp_1(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_2() -> () {
-    return ({ test_convertible_imp_0(0_()) });
+pub fn test_convertible_2() -> bool {
+    return ({ test_convertible_imp_0(0_i64) });
 }
-pub fn test_convertible_3() -> () {
-    return ({ test_convertible_imp_1(0_()) });
+pub fn test_convertible_3() -> bool {
+    return ({ test_convertible_imp_1(0_i64) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(1)]
 pub struct MoveOnlyDeleter_int_ {
     #[offset(0)]
-    pub wasMoveInitialized: (),
+    pub wasMoveInitialized: bool,
 }
 impl MoveOnlyDeleter_int_ {
     pub fn move_from(_a0: Ptr<MoveOnlyDeleter_int_>) -> Self {
@@ -45,12 +45,12 @@ impl Default for MoveOnlyDeleter_int_ {
 pub struct ConstructiblePtr_int_ {
     #[offset(0)]
     #[byte_size(8)]
-    pub ptr: (),
+    pub ptr: Option<Value<i32>>,
 }
 impl ConstructiblePtr_int_ {
     pub fn move_from(_a0: Ptr<ConstructiblePtr_int_>) -> Self {
         Self {
-            ptr: unimplemented!(),
+            ptr: field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
         }
     }
 }
@@ -67,12 +67,12 @@ pub struct ResetArg {}
 pub struct ResettablePtr_int_ {
     #[offset(0)]
     #[byte_size(8)]
-    pub ptr: (),
+    pub ptr: Option<Value<i32>>,
 }
 impl ResettablePtr_int_ {
     pub fn move_from(_a0: Ptr<ResettablePtr_int_>) -> Self {
         Self {
-            ptr: unimplemented!(),
+            ptr: field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
         }
     }
 }
@@ -106,35 +106,35 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut uPtr: () = unimplemented!();
+        let mut uPtr: Option<Value<i32>> = None;
         unimplemented!();
         const _: () = assert!(
             true,
             "!test_convertible<std::inout_ptr_t<std::unique_ptr<int>, int*>>()"
         );;
-        unimplemented!();
+        assert!(uPtr.is_none());
     }
     {
         let deleter: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut p: Ptr<()>| {
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut p: Ptr<i32>| {
                 p.delete();
             })));
-        let mut uPtr: () = unimplemented!();
+        let mut uPtr: Option<Value<i32>> = None;
         unimplemented!();
         const _: () = assert!(
             true,
             "!test_convertible<std::inout_ptr_t<std::unique_ptr<int, decltype(deleter)>, int*>>()"
         );;
-        unimplemented!();
+        assert!(uPtr.is_none());
     }
     {
-        let uPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let uPtr: Value<Option<Value<i32>>> = Rc::new(RefCell::new(None));
         unimplemented!();
-        unimplemented!();
+        assert!((*uPtr.borrow()).is_none());
     }
-    return 0_();
+    return 0;
 }
 pub trait ConstructiblePtr_int_Impl {
     fn release(&self) {
@@ -144,13 +144,14 @@ pub trait ConstructiblePtr_int_Impl {
 }
 impl ConstructiblePtr_int_Impl for Ptr<ConstructiblePtr_int_> {
     fn move_assign(&self, _a0: Ptr<ConstructiblePtr_int_>) -> Ptr<ConstructiblePtr_int_> {
-        unimplemented!();
+        field_ptr!((*self), ptr)
+            .write(field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
         return (*self).clone();
     }
 }
 pub trait MoveOnlyDeleter_int_Impl {
     fn move_assign(&self, _a0: Ptr<MoveOnlyDeleter_int_>) -> Ptr<MoveOnlyDeleter_int_>;
-    fn operator_call(&self, p: Ptr<()>);
+    fn operator_call(&self, p: Ptr<i32>);
 }
 impl MoveOnlyDeleter_int_Impl for Ptr<MoveOnlyDeleter_int_> {
     fn move_assign(&self, _a0: Ptr<MoveOnlyDeleter_int_>) -> Ptr<MoveOnlyDeleter_int_> {
@@ -158,12 +159,12 @@ impl MoveOnlyDeleter_int_Impl for Ptr<MoveOnlyDeleter_int_> {
             .write({ { (*_a0.upgrade().deref()).wasMoveInitialized } });
         return (*self).clone();
     }
-    fn operator_call(&self, mut p: Ptr<()>) {
+    fn operator_call(&self, mut p: Ptr<i32>) {
         p.delete();
     }
 }
 pub trait NonConstructiblePtr_int_Impl {
-    fn reset(&self, mut p: Ptr<()>) {
+    fn reset(&self, mut p: Ptr<i32>) {
         unimplemented!()
     }
 }
@@ -172,7 +173,7 @@ pub trait ResettablePtr_int_Impl {
     fn reset_4(&self) {
         unimplemented!()
     }
-    fn reset_5(&self, mut p: Ptr<()>, mut _a1: ResetArg) {
+    fn reset_5(&self, mut p: Ptr<i32>, mut _a1: ResetArg) {
         unimplemented!()
     }
     fn release(&self) {
@@ -182,7 +183,8 @@ pub trait ResettablePtr_int_Impl {
 }
 impl ResettablePtr_int_Impl for Ptr<ResettablePtr_int_> {
     fn move_assign(&self, _a0: Ptr<ResettablePtr_int_>) -> Ptr<ResettablePtr_int_> {
-        unimplemented!();
+        field_ptr!((*self), ptr)
+            .write(field!(_a0, ptr).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
         return (*self).clone();
     }
 }

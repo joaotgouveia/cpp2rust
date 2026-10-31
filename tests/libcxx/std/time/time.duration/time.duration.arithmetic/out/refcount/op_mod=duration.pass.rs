@@ -10,13 +10,13 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct Rep {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl Rep {
     pub fn new_1() -> Self {
-        Self { data_: -1_() }
+        Self { data_: -1_i32 }
     }
-    pub fn new_2(mut i: ()) -> Self {
+    pub fn new_2(mut i: i32) -> Self {
         Self { data_: i }
     }
 }
@@ -33,13 +33,14 @@ impl Default for Rep {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NotARep {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(i64, to_i64_2)]
 #[byte_size(1)]
 pub struct RepConstConvertibleLWG3050 {}
 pub fn operator_rem_assign_0(d: Ptr<()>, mut _a1: NotARep) -> Ptr<()> {
     return (d).clone();
 }
-pub fn test_constexpr_1() -> () {
+pub fn test_constexpr_1() -> bool {
     let us1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let us2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -64,14 +65,14 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let us1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let us2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!((unimplemented!() == 2_()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 2_()));
     }
     const _: () = assert!(true, "test_constexpr()");;
     {
@@ -81,21 +82,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _d: Ptr<()> = d.as_pointer();
             operator_rem_assign_0(_d, (n).clone())
         });
-        unimplemented!();
+        assert!((unimplemented!() == 5_()));
     }
-    return 0_();
+    return 0;
 }
 pub trait RepImpl {
-    fn operator_eq_3(&self, i: ()) -> ();
-    fn operator_eq_4(&self, r: Ptr<Rep>) -> ();
+    fn operator_eq_3(&self, i: i32) -> bool;
+    fn operator_eq_4(&self, r: Ptr<Rep>) -> bool;
     fn operator_mul_assign(&self, x: Rep) -> Ptr<Rep>;
     fn operator_div_assign(&self, x: Rep) -> Ptr<Rep>;
 }
 impl RepImpl for Ptr<Rep> {
-    fn operator_eq_3(&self, mut i: ()) -> () {
+    fn operator_eq_3(&self, mut i: i32) -> bool {
         return ((*self).with(|__s| __s.data_) == i);
     }
-    fn operator_eq_4(&self, r: Ptr<Rep>) -> () {
+    fn operator_eq_4(&self, r: Ptr<Rep>) -> bool {
         return ({ (*self).with(|__s| __s.data_) } == { r.with(|__s| __s.data_) });
     }
     fn operator_mul_assign(&self, mut x: Rep) -> Ptr<Rep> {
@@ -114,11 +115,11 @@ impl RepImpl for Ptr<Rep> {
     }
 }
 pub trait RepConstConvertibleLWG3050Impl {
-    fn to__2(&self) -> ();
+    fn to_i64_2(&self) -> i64;
 }
 impl RepConstConvertibleLWG3050Impl for Ptr<RepConstConvertibleLWG3050> {
-    fn to__2(&self) -> () {
-        return 2_();
+    fn to_i64_2(&self) -> i64 {
+        return 2_i64;
     }
 }
 pub fn __cpp2rust_init_globals() {}

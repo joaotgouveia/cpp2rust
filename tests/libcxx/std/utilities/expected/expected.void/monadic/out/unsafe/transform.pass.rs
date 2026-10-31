@@ -16,93 +16,93 @@ const _: () = assert!(
 );
 pub unsafe fn test_val_types_0() {
     {
-        let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
+        let mut l: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(|| -> i32 {
             unsafe {
-                return 1_();
+                return 1;
             }
         });
         let mut v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
+        let mut l: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(|| -> i32 {
             unsafe {
-                return 1_();
+                return 1;
             }
         });
         let v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
+        let mut l: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(|| -> i32 {
             unsafe {
-                return 1_();
+                return 1;
             }
         });
         let mut v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
+        let mut l: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(|| -> i32 {
             unsafe {
-                return 1_();
+                return 1;
             }
         });
         let v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_fail_1() {
     {
-        let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
+        let mut l: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(|| -> i32 {
             unsafe {
-                unimplemented!();
-                return 0_();
+                assert!(false);
+                return 0;
             }
         });
         let mut v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (5)));
     }
     {
-        let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
+        let mut l: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(|| -> i32 {
             unsafe {
-                unimplemented!();
-                return 0_();
+                assert!(false);
+                return 0;
             }
         });
         let v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (5)));
     }
     {
-        let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
+        let mut l: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(|| -> i32 {
             unsafe {
-                unimplemented!();
-                return 0_();
+                assert!(false);
+                return 0;
             }
         });
         let mut v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (5)));
     }
     {
-        let mut l: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(|| -> () {
+        let mut l: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(|| -> i32 {
             unsafe {
-                unimplemented!();
-                return 0_();
+                assert!(false);
+                return 0;
             }
         });
         let v: () = unimplemented!();
         let mut val: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (5)));
     }
 }
-pub unsafe fn test_2() -> () {
+pub unsafe fn test_2() -> bool {
     (unsafe { test_fail_1() });
     (unsafe { test_val_types_0() });
     return true;
@@ -122,9 +122,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

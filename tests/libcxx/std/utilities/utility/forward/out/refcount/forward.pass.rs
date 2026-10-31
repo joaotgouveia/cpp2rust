@@ -15,16 +15,15 @@ pub fn source_0() -> A {
 pub fn csource_1() -> A {
     return <A>::default();
 }
-pub fn test_constexpr_forward_2() -> () {
-    let x: Value<()> = Rc::new(RefCell::new(42_()));
-    let mut cx: () = 101_();
-    return ((((((((*x.borrow()) == 42_()) && ((*x.borrow()) == 42_()))
-        && ((*x.borrow()) == 42_()))
-        && ((*x.borrow()) == 42_()))
-        && ((*x.borrow()) == 42_()))
-        && ((*x.borrow()) == 42_()))
-        && (cx == 101_()))
-        && (cx == 101_());
+pub fn test_constexpr_forward_2() -> bool {
+    let x: Value<i32> = Rc::new(RefCell::new(42));
+    let mut cx: i32 = 101;
+    return ((((((((*x.borrow()) == 42) && ((*x.borrow()) == 42)) && ((*x.borrow()) == 42))
+        && ((*x.borrow()) == 42))
+        && ((*x.borrow()) == 42))
+        && ((*x.borrow()) == 42))
+        && (cx == 101))
+        && (cx == 101);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -45,7 +44,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let a: Value<A> = Rc::new(RefCell::new(<A>::default()));
     let ca: Value<A> = Rc::new(RefCell::new(<A>::default()));
     (&(*a.borrow_mut()));
@@ -96,11 +95,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     {
-        let mut i2: () = 42_();
+        let mut i2: i32 = 42;
         const _: () = assert!(true, "std::forward<int>(42) == 42");;
         const _: () = assert!(true, "std::forward<const int&>(i2) == 42");;
         const _: () = assert!(true, "test_constexpr_forward()");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,33 +6,33 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_partial_ordering__std_partial_ordering_ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {}
-pub fn test_3() -> () {
+pub fn test_3() -> bool {
     {
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Less);
+        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
+        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
     }
     {
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
         const _: () = assert!(
@@ -42,33 +42,33 @@ pub fn test_3() -> () {
     }
     {
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Less);
+        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
+        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
     }
     {
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
-        let mut nan: () = unimplemented!();
+        let mut nan: f64 = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
-        let mut nan: () = unimplemented!();
+        let mut nan: f64 = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
         const _: () = assert!(true, "HasEqual<std::pair<int, NoRelative>>");;
@@ -82,12 +82,12 @@ pub fn test_3() -> () {
     }
     {
         {
-            let mut nan: () = unimplemented!();
-            unimplemented!();
+            let mut nan: f64 = unimplemented!();
+            assert!(unimplemented!());
         }
         {
-            let mut nan: () = unimplemented!();
-            unimplemented!();
+            let mut nan: f64 = unimplemented!();
+            assert!(unimplemented!());
         }
     }
     return true;
@@ -96,7 +96,7 @@ pub fn test_3() -> () {
 #[byte_size(4)]
 pub struct NoSpaceship_4 {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl CppLess for NoSpaceship_4 {
     fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
@@ -133,35 +133,35 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_3() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait NoLessThan_6Impl {
-    fn operator_eq(&self, _a0: Ptr<NoLessThan_6>) -> () {
+    fn operator_eq(&self, _a0: Ptr<NoLessThan_6>) -> bool {
         unimplemented!()
     }
-    fn operator_gt(&self, _a0: Ptr<NoLessThan_6>) -> () {
+    fn operator_gt(&self, _a0: Ptr<NoLessThan_6>) -> bool {
         unimplemented!()
     }
 }
 impl NoLessThan_6Impl for Ptr<NoLessThan_6> {}
 pub trait NoRelative_5Impl {
-    fn operator_eq(&self, _a0: Ptr<NoRelative_5>) -> () {
+    fn operator_eq(&self, _a0: Ptr<NoRelative_5>) -> bool {
         unimplemented!()
     }
 }
 impl NoRelative_5Impl for Ptr<NoRelative_5> {}
 pub trait NoSpaceship_4Impl {
-    fn operator_eq(&self, _a0: Ptr<NoSpaceship_4>) -> ();
-    fn operator_lt(&self, other: Ptr<NoSpaceship_4>) -> ();
+    fn operator_eq(&self, _a0: Ptr<NoSpaceship_4>) -> bool;
+    fn operator_lt(&self, other: Ptr<NoSpaceship_4>) -> bool;
 }
 impl NoSpaceship_4Impl for Ptr<NoSpaceship_4> {
-    fn operator_eq(&self, _a0: Ptr<NoSpaceship_4>) -> () {
+    fn operator_eq(&self, _a0: Ptr<NoSpaceship_4>) -> bool {
         return ({ (*self).with(|__s| __s.value) } == { _a0.with(|__s| __s.value) });
     }
-    fn operator_lt(&self, other: Ptr<NoSpaceship_4>) -> () {
+    fn operator_lt(&self, other: Ptr<NoSpaceship_4>) -> bool {
         return ({ (*self).with(|__s| __s.value) } < { other.with(|__s| __s.value) });
     }
 }

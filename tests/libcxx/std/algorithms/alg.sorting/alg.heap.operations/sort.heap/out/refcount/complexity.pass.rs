@@ -10,19 +10,19 @@ use std::rc::{Rc, Weak};
 #[byte_size(12)]
 pub struct Stats {
     #[offset(0)]
-    pub compared: (),
+    pub compared: i32,
     #[offset(4)]
-    pub copied: (),
+    pub copied: i32,
     #[offset(8)]
-    pub moved: (),
+    pub moved: i32,
 }
 impl Default for Stats {
     fn default() -> Self {
         {
             Stats {
-                compared: 0_(),
-                copied: 0_(),
-                moved: 0_(),
+                compared: 0,
+                copied: 0,
+                moved: 0,
             }
         }
     }
@@ -30,7 +30,7 @@ impl Default for Stats {
 thread_local!(
     pub static stats_0: Value<Stats> = Rc::new(RefCell::new(<Stats>::default()));
 );
-pub fn operator_lt_1(a: Ptr<MyInt>, b: Ptr<MyInt>) -> () {
+pub fn operator_lt_1(a: Ptr<MyInt>, b: Ptr<MyInt>) -> bool {
     (*stats_0.with(Value::clone).borrow_mut())
         .compared
         .prefix_inc();
@@ -40,10 +40,10 @@ pub fn operator_lt_1(a: Ptr<MyInt>, b: Ptr<MyInt>) -> () {
 #[byte_size(4)]
 pub struct MyInt {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl MyInt {
-    pub fn new(mut xval: ()) -> Self {
+    pub fn new(mut xval: i32) -> Self {
         Self { value: xval }
     }
     pub fn copy_from(other: Ptr<MyInt>) -> Self {
@@ -103,23 +103,39 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut N: () = (1_() << 20_());
-    let mut v: () = unimplemented!();
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let mut N: i32 = (1 << 20);
+    let v: Value<Vec<MyInt>> = Rc::new(RefCell::new(Vec::new()));
+    if (N as usize) as usize > (*v.borrow()).capacity() as usize {
+        let len_0 = (*v.borrow()).len();
+        (*v.borrow_mut()).reserve_exact((N as usize) as usize - len_0 as usize);
+    };
     let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i < N) {
-        unimplemented!();
-        i.prefix_inc();
+    let i: Value<i32> = Rc::new(RefCell::new(0));
+    'loop_: while ((*i.borrow()) < N) {
+        {
+            let __init = MyInt::new({ (*i.borrow()) });
+            (*v.borrow_mut()).push(__init)
+        };
+        (*i.borrow_mut()).prefix_inc();
     }
-    let mut logn: () = 10_();
-    'loop_: while (logn <= 20_()) {
-        let mut n: () = (1_() << logn);
-        let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut debug_elements: () = (unimplemented!().read());
-        let mut debug_comparisons: () = ((2_() * (debug_elements + 1_())) * debug_elements);
+    let mut logn: i32 = 10;
+    'loop_: while (logn <= 20) {
+        let n: Value<i32> = Rc::new(RefCell::new((1 << logn)));
+        let first: Value<RandomAccessIterator<MyInt>> = Rc::new(RefCell::new(v.decay().begin()));
+        let last: Value<RandomAccessIterator<MyInt>> = Rc::new(RefCell::new(
+            v.decay().begin().iter_add(((*n.borrow()) as isize)),
+        ));
+        let mut debug_elements: i32 = {
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(100));
+            ({
+                let __a = __tmp_0.as_pointer();
+                let __b = n.as_pointer();
+                if CppLess::less(&__b, &__a) { __b } else { __a }
+            }
+            .read())
+        };
+        let mut debug_comparisons: i32 = ((2 * (debug_elements + 1)) * debug_elements);
         &(debug_comparisons);
         unimplemented!();
         unimplemented!();
@@ -131,7 +147,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "");;
         logn.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub trait MyIntImpl {
     fn copy_assign(&self, other: Ptr<MyInt>) -> Ptr<MyInt>;

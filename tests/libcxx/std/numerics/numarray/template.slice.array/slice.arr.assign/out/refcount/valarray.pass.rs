@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -30,55 +30,42 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-        11_(),
-        12_(),
-        13_(),
-        14_(),
-        15_(),
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
     ])));
-    let a2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), -2_(), -3_(), -4_(), -5_()])));
+    let a2: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+        -1_i32, -2_i32, -3_i32, -4_i32, -5_i32,
+    ])));
     let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 16_usize));
+    assert!(((unimplemented!().read()) == 0));
+    assert!(((unimplemented!().read()) == -1_i32));
+    assert!(((unimplemented!().read()) == 2));
+    assert!(((unimplemented!().read()) == 3));
+    assert!(((unimplemented!().read()) == -2_i32));
+    assert!(((unimplemented!().read()) == 5));
+    assert!(((unimplemented!().read()) == 6));
+    assert!(((unimplemented!().read()) == -3_i32));
+    assert!(((unimplemented!().read()) == 8));
+    assert!(((unimplemented!().read()) == 9));
+    assert!(((unimplemented!().read()) == -4_i32));
+    assert!(((unimplemented!().read()) == 11));
+    assert!(((unimplemented!().read()) == 12));
+    assert!(((unimplemented!().read()) == -5_i32));
+    assert!(((unimplemented!().read()) == 14));
+    assert!(((unimplemented!().read()) == 15));
     const _: () = assert!(true, "");;
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!().read()) == 1_f64));
+    assert!(((unimplemented!().read()) == 2_f64));
+    assert!(((unimplemented!().read()) == 3_f64));
     const _: () = assert!(true, "");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

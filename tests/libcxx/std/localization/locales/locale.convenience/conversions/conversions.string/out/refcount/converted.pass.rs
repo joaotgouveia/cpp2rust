@@ -14,13 +14,13 @@ impl TestHelper_wchar_t__4_ {
         const _: () = assert!(true, "(std::is_same<CharT, wchar_t>::value)");;
         {
             let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            let mut bs: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            let mut ws: () = unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_usize));
+            let bs: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+            assert!((unimplemented!() == 1_usize));
+            bs.as_pointer().write(unimplemented!());
+            assert!((unimplemented!() == 2_usize));
+            let mut ws: Vec<i32> = unimplemented!();
+            assert!((unimplemented!() == 4_usize));
         }
     }
 }
@@ -43,8 +43,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ TestHelper_wchar_t__4_::test() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

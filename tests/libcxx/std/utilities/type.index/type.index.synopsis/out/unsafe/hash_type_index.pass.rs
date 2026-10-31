@@ -26,83 +26,83 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool__float__double__long_double___types_type_list_Enum__EnumClass__void_ptr__const_void_ptr__Class_ptr__std_nullptr_t__
 {}
-pub unsafe fn can_hash_impl_0(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_0(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_1(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_1(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_2(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_2(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_3(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_3(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_4(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_4(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_5(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_5(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_6(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_6(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_7(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_7(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_8(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_8(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_9(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_9(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_10(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_10(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_11(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_11(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_impl_12(mut _a0: ()) -> () {
+pub unsafe fn can_hash_impl_12(mut _a0: i32) -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_hash_13() -> () {
-    return (unsafe { can_hash_impl_0(0_()) });
+pub unsafe fn can_hash_13() -> bool {
+    return (unsafe { can_hash_impl_0(0) });
 }
-pub unsafe fn can_hash_14() -> () {
-    return (unsafe { can_hash_impl_1(0_()) });
+pub unsafe fn can_hash_14() -> bool {
+    return (unsafe { can_hash_impl_1(0) });
 }
-pub unsafe fn can_hash_15() -> () {
-    return (unsafe { can_hash_impl_2(0_()) });
+pub unsafe fn can_hash_15() -> bool {
+    return (unsafe { can_hash_impl_2(0) });
 }
-pub unsafe fn can_hash_16() -> () {
-    return (unsafe { can_hash_impl_3(0_()) });
+pub unsafe fn can_hash_16() -> bool {
+    return (unsafe { can_hash_impl_3(0) });
 }
-pub unsafe fn can_hash_17() -> () {
-    return (unsafe { can_hash_impl_4(0_()) });
+pub unsafe fn can_hash_17() -> bool {
+    return (unsafe { can_hash_impl_4(0) });
 }
-pub unsafe fn can_hash_18() -> () {
-    return (unsafe { can_hash_impl_5(0_()) });
+pub unsafe fn can_hash_18() -> bool {
+    return (unsafe { can_hash_impl_5(0) });
 }
-pub unsafe fn can_hash_19() -> () {
-    return (unsafe { can_hash_impl_6(0_()) });
+pub unsafe fn can_hash_19() -> bool {
+    return (unsafe { can_hash_impl_6(0) });
 }
-pub unsafe fn can_hash_20() -> () {
-    return (unsafe { can_hash_impl_7(0_()) });
+pub unsafe fn can_hash_20() -> bool {
+    return (unsafe { can_hash_impl_7(0) });
 }
-pub unsafe fn can_hash_21() -> () {
-    return (unsafe { can_hash_impl_8(0_()) });
+pub unsafe fn can_hash_21() -> bool {
+    return (unsafe { can_hash_impl_8(0) });
 }
-pub unsafe fn can_hash_22() -> () {
-    return (unsafe { can_hash_impl_9(0_()) });
+pub unsafe fn can_hash_22() -> bool {
+    return (unsafe { can_hash_impl_9(0) });
 }
-pub unsafe fn can_hash_23() -> () {
-    return (unsafe { can_hash_impl_10(0_()) });
+pub unsafe fn can_hash_23() -> bool {
+    return (unsafe { can_hash_impl_10(0) });
 }
-pub unsafe fn can_hash_24() -> () {
-    return (unsafe { can_hash_impl_11(0_()) });
+pub unsafe fn can_hash_24() -> bool {
+    return (unsafe { can_hash_impl_11(0) });
 }
-pub unsafe fn can_hash_25() -> () {
-    return (unsafe { can_hash_impl_12(0_()) });
+pub unsafe fn can_hash_25() -> bool {
+    return (unsafe { can_hash_impl_12(0) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -143,10 +143,10 @@ pub unsafe fn test_hash_enabled_26(key: *const ()) {
     const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
     const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
     let h: () = unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
 }
-pub type Enum = ();
-pub type EnumClass = ();
+pub type Enum = u32;
+pub type EnumClass = bool;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Class {}
@@ -168,7 +168,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {}
     {
         (unsafe {
@@ -176,6 +176,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             test_hash_enabled_26(&mut _key)
         });
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

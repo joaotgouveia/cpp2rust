@@ -14,22 +14,22 @@ const _: () = assert!(
     true,
     "std::is_trivially_default_constructible<decltype(std::ignore)>::value"
 );
-pub fn test_nodiscard_0() -> () {
-    return 8294_();
+pub fn test_nodiscard_0() -> i32 {
+    return 8294;
 }
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     {
         let ignore_v: Ptr<()> = unimplemented!();
     }
     {
         let res: Ptr<()> = (unimplemented!());
         const _: () = assert!(true, "noexcept(res = (std::ignore = 42))");;
-        unimplemented!();
+        assert!(({ (res).clone() } == { (unimplemented!()) }));
     }
     {
-        let mut s: S_2 = S_2 { bf: 2_() };
+        let mut s: S_2 = S_2 { bf: 2_u32 };
         let res: Ptr<()> = (unimplemented!());
-        unimplemented!();
+        assert!(({ (res).clone() } == { (unimplemented!()) }));
     }
     {
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -50,7 +50,7 @@ pub fn test_1() -> () {
 #[byte_size(4)]
 pub struct S_2 {
     #[offset(0)]
-    pub bf: (),
+    pub bf: u32,
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -71,9 +71,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

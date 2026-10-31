@@ -10,18 +10,18 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct adl_A {}
 pub unsafe fn cref_0(mut _a0: adl_A) {}
-pub unsafe fn test_1() -> () {
+pub unsafe fn test_1() -> bool {
     {
-        let i: () = 0_();
-        let mut r1: () = unimplemented!();
-        let mut r2: () = unimplemented!();
-        unimplemented!();
+        let i: i32 = 0;
+        let mut r1: *const i32 = unimplemented!();
+        let mut r2: *const i32 = unimplemented!();
+        assert!(((r2) == (&i as *const i32)));
     }
     {
         let mut a: adl_A = <adl_A>::default();
-        let mut a1: () = unimplemented!();
-        let mut a2: () = unimplemented!();
-        unimplemented!();
+        let mut a1: *const adl_A = unimplemented!();
+        let mut a2: *const adl_A = unimplemented!();
+        assert!(((a2) == ((&mut a as *mut adl_A).cast_const())));
     }
     return true;
 }
@@ -40,9 +40,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

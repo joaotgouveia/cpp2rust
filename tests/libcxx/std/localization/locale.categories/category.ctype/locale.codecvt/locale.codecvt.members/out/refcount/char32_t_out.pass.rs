@@ -26,45 +26,39 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let f: Ptr<()> = unimplemented!();
     {
         let from: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            ('s' as ()),
-            ('o' as ()),
-            ('m' as ()),
-            ('e' as ()),
-            (' ' as ()),
-            ('t' as ()),
-            ('e' as ()),
-            ('x' as ()),
-            ('t' as ()),
+            (('s' as i8) as ()),
+            (('o' as i8) as ()),
+            (('m' as i8) as ()),
+            (('e' as i8) as ()),
+            ((' ' as i8) as ()),
+            (('t' as i8) as ()),
+            (('e' as i8) as ()),
+            (('x' as i8) as ()),
+            (('t' as i8) as ()),
         ])));
-        let to: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            0_(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let to: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
+            0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
         ])));
-        let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
         let mut from_next: Ptr<()> = Ptr::<()>::null();
-        let mut to_next: Ptr<()> = Ptr::<()>::null();
+        let mut to_next: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 9_()) {
-            unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!((((from_next).clone() - (from.as_pointer() as Ptr::<()>)) as i64 == 9_i64));
+        assert!((((to_next).clone() - (to.as_pointer() as Ptr::<i8>)) as i64 == 9_i64));
+        let mut i: u32 = 0_u32;
+        'loop_: while (i < 9_u32) {
+            assert!(
+                (((*to.borrow())[(i) as usize] as u32) == ((*from.borrow())[(i) as usize] as u32))
+            );
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

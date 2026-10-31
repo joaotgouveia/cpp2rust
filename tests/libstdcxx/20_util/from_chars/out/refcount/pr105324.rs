@@ -10,10 +10,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut s: () = unimplemented!();
-    unimplemented!().write(('.' as ()));
-    let mut d: () = unimplemented!();
+fn main_0() -> i32 {
+    let s: Value<Vec<i8>> = Rc::new(RefCell::new(
+        vec![('1' as i8); (512_usize) as usize]
+            .iter()
+            .cloned()
+            .chain(std::iter::once(0_i8))
+            .collect(),
+    ));
+    s.decay().offset(1_usize as isize).write(('.' as i8));
+    let mut d: f64 = 0_f64;
     unimplemented!();
     0
 }

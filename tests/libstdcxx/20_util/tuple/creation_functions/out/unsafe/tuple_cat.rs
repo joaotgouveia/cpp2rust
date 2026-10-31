@@ -88,17 +88,17 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut a3: () = unimplemented!();
+    let mut a3: Vec<i32> = std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec();
     unimplemented!();
-    let mut pdb: () = unimplemented!();
+    let mut pdb: (f64, bool) = unimplemented!();
     let mut t: () = unimplemented!();
-    let mut i: () = unimplemented!();
-    let mut d: () = unimplemented!();
-    let mut pi: *mut () = std::ptr::null_mut();
+    let mut i: i32 = 0_i32;
+    let mut d: f64 = 0_f64;
+    let mut pi: *mut i32 = std::ptr::null_mut();
     let mut to: () = unimplemented!();
     unimplemented!();
     unimplemented!();

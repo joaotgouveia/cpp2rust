@@ -10,49 +10,52 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_3)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_0: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_1: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_2: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_3: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut (i32, f64),
 }
 impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut i32,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_double__std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut f64,
 }
 impl min_pointer_double__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
@@ -60,59 +63,59 @@ impl min_pointer_double__std_integral_constant_unsigned_long__0__ {}
 pub struct min_allocator_std_pair_const_int__double__ {}
 pub unsafe fn do_insert_hint_test_4() {
     let mut m: () = unimplemented!();
-    let v1: () = unimplemented!();
+    let v1: () = (2, 2.5_f64);
     let mut r: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let v3: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let v4: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(r == unimplemented!());
+    assert!(((unimplemented!()) == (1_())));
+    assert!((((*r.iter_deref()).0) == (2)));
+    assert!((((*r.iter_deref()).1) == (2.5_f64)));
+    let v2: () = (1, 1.5_f64);
+    r = unimplemented!();
+    assert!(r == unimplemented!());
+    assert!(((unimplemented!()) == (2_())));
+    assert!((((*r.iter_deref()).0) == (1)));
+    assert!((((*r.iter_deref()).1) == (1.5_f64)));
+    let v3: () = (3, 3.5_f64);
+    r = unimplemented!();
+    assert!(r == libcc2rs::prev_unsafe(unimplemented!(), 1_isize));
+    assert!(((unimplemented!()) == (3_())));
+    assert!((((*r.iter_deref()).0) == (3)));
+    assert!((((*r.iter_deref()).1) == (3.5_f64)));
+    let v4: () = (3, 4.5_f64);
+    r = unimplemented!();
+    assert!(r == libcc2rs::prev_unsafe(unimplemented!(), 2_isize));
+    assert!(((unimplemented!()) == (4_())));
+    assert!((((*r.iter_deref()).0) == (3)));
+    assert!((((*r.iter_deref()).1) == (4.5_f64)));
 }
 pub unsafe fn do_insert_hint_test_5() {
     let mut m: () = unimplemented!();
-    let v1: () = unimplemented!();
+    let v1: () = (2, 2.5_f64);
     let mut r: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let v3: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let v4: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(r == unimplemented!());
+    assert!(((unimplemented!()) == (1_())));
+    assert!((((*r.iter_deref()).0) == (2)));
+    assert!((((*r.iter_deref()).1) == (2.5_f64)));
+    let v2: () = (1, 1.5_f64);
+    r = unimplemented!().clone();
+    assert!(r == unimplemented!());
+    assert!(((unimplemented!()) == (2_())));
+    assert!((((*r.iter_deref()).0) == (1)));
+    assert!((((*r.iter_deref()).1) == (1.5_f64)));
+    let v3: () = (3, 3.5_f64);
+    r = unimplemented!().clone();
+    assert!(r == libcc2rs::prev_unsafe(unimplemented!(), 1_isize));
+    assert!(((unimplemented!()) == (3_())));
+    assert!((((*r.iter_deref()).0) == (3)));
+    assert!((((*r.iter_deref()).1) == (3.5_f64)));
+    let v4: () = (3, 4.5_f64);
+    r = unimplemented!().clone();
+    assert!(r == libcc2rs::prev_unsafe(unimplemented!(), 2_isize));
+    assert!(((unimplemented!()) == (4_())));
+    assert!((((*r.iter_deref()).0) == (3)));
+    assert!((((*r.iter_deref()).1) == (4.5_f64)));
 }
-pub unsafe fn test_6() -> () {
+pub unsafe fn test_6() -> bool {
     (unsafe { do_insert_hint_test_4() });
     {
         (unsafe { do_insert_hint_test_5() });
@@ -134,9 +137,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_6() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);

@@ -10,62 +10,66 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_3)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_0: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_1: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_2: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_3: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut (i32, i32),
 }
 impl min_pointer_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(*mut ::libc::c_void , new_1, value)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut i32,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *mut ()) -> Self {
+    unsafe fn new_2(mut p: *mut i32) -> Self {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn new_2(mut _a0: ()) -> Self {
+    pub unsafe fn new_1(mut _a0: *mut ::libc::c_void) -> Self {
         let mut this = Self {
             ptr_: std::ptr::null_mut(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.ptr_);
     }
     pub unsafe fn pointer_to(
-        t: *mut (),
+        t: *mut i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
-        return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
+        return min_pointer_int__std_integral_constant_unsigned_long__0__::new_2({
             unimplemented!()
         });
     }
@@ -73,74 +77,84 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_std_pair_const_int__int__ {}
-pub unsafe fn node_factory_4(c: *mut (), key: *const (), mapped: *const ()) -> () {
-    let mut p: () = unimplemented!();
-    unimplemented!();
+pub unsafe fn node_factory_4(
+    c: *mut UnsafeMap<i32, (i32, i32)>,
+    key: *const i32,
+    mapped: *const i32,
+) -> () {
+    let mut p: (UnsafeBidirectionalIterator<(i32, i32)>, bool) = unimplemented!();
+    assert!((p.1 as bool));
     return unimplemented!();
 }
-pub unsafe fn node_factory_5(c: *mut (), key: *const (), mapped: *const ()) -> () {
-    let mut p: () = unimplemented!();
-    unimplemented!();
+pub unsafe fn node_factory_5(
+    c: *mut UnsafeMap<i32, (i32, i32)>,
+    key: *const i32,
+    mapped: *const i32,
+) -> () {
+    let mut p: (UnsafeBidirectionalIterator<(i32, i32)>, bool) = unimplemented!();
+    assert!((p.1 as bool));
     return unimplemented!();
 }
-pub unsafe fn test_6(c: *mut ()) {
-    let mut nf: Option<unsafe fn(*mut (), *const (), *const ()) -> ()> = (Some(node_factory_4));
-    let mut c2: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) != (10_())) {
+pub unsafe fn test_6(c: *mut UnsafeMap<i32, (i32, i32)>) {
+    let mut nf: Option<unsafe fn(*mut UnsafeMap<i32, (i32, i32)>, *const i32, *const i32) -> ()> =
+        (Some(node_factory_4));
+    let mut c2: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
+    let mut i: i32 = 0;
+    'loop_: while ((i) != (10)) {
         let mut node: () = (unsafe {
-            let _arg1: *const () = &i;
-            let mut _arg2: () = ((i) + (1_()));
+            let _arg1: *const i32 = &i;
+            let mut _arg2: i32 = ((i) + (1));
             (nf).unwrap()(&mut c2, _arg1, &mut _arg2)
         });
-        unimplemented!();
-        let mut prev: () = unimplemented!();
-        let mut it: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
+        let mut prev: usize = (*c).len();
+        let mut it: UnsafeBidirectionalIterator<(i32, i32)> = unimplemented!();
+        assert!(unimplemented!());
+        assert!((((prev).wrapping_add(1_usize)) == ((*c).len())));
+        assert!((((*it.iter_deref()).0) == (i)));
+        assert!((((*it.iter_deref()).1) == ((i) + (1))));
         i.prefix_inc();
     }
-    unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) != (10_())) {
-        unimplemented!();
-        unimplemented!();
+    assert!((((*c).len()) == (10_usize)));
+    let mut i: i32 = 0;
+    'loop_: while ((i) != (10)) {
+        assert!(((unimplemented!()) == (1_usize)));
+        assert!(((*(*c).subscript(&i)) == ((i) + (1))));
         i.prefix_inc();
     }
 }
-pub unsafe fn test_7(c: *mut ()) {
-    let mut nf: Option<unsafe fn(*mut (), *const (), *const ()) -> ()> = (Some(node_factory_5));
-    let mut c2: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) != (10_())) {
+pub unsafe fn test_7(c: *mut UnsafeMap<i32, (i32, i32)>) {
+    let mut nf: Option<unsafe fn(*mut UnsafeMap<i32, (i32, i32)>, *const i32, *const i32) -> ()> =
+        (Some(node_factory_5));
+    let mut c2: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
+    let mut i: i32 = 0;
+    'loop_: while ((i) != (10)) {
         let mut node: () = (unsafe {
-            let _arg1: *const () = &i;
-            let mut _arg2: () = ((i) + (1_()));
+            let _arg1: *const i32 = &i;
+            let mut _arg2: i32 = ((i) + (1));
             (nf).unwrap()(&mut c2, _arg1, &mut _arg2)
         });
-        unimplemented!();
-        let mut prev: () = unimplemented!();
-        let mut it: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
+        let mut prev: usize = (*c).len();
+        let mut it: UnsafeBidirectionalIterator<(i32, i32)> = unimplemented!();
+        assert!(unimplemented!());
+        assert!((((prev).wrapping_add(1_usize)) == ((*c).len())));
+        assert!((((*it.iter_deref()).0) == (i)));
+        assert!((((*it.iter_deref()).1) == ((i) + (1))));
         i.prefix_inc();
     }
-    unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) != (10_())) {
-        unimplemented!();
-        unimplemented!();
+    assert!((((*c).len()) == (10_usize)));
+    let mut i: i32 = 0;
+    'loop_: while ((i) != (10)) {
+        assert!(((unimplemented!()) == (1_usize)));
+        assert!(((*(*c).subscript(&i)) == ((i) + (1))));
         i.prefix_inc();
     }
 }
-pub unsafe fn test_8() -> () {
-    let mut m: () = unimplemented!();
+pub unsafe fn test_8() -> bool {
+    let mut m: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
     (unsafe { test_6(&mut m) });
-    let mut m2: () = unimplemented!();
+    let mut m2: UnsafeMap<i32, (i32, i32)> = UnsafeMap::new();
     (unsafe { test_7(&mut m2) });
     return true;
 }
@@ -159,9 +173,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_8() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);

@@ -22,34 +22,34 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut v: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (100_())) {
-            unimplemented!();
+        assert!(((unimplemented!()) == (100_usize)));
+        let mut i: i32 = 0;
+        'loop_: while ((i) < (100)) {
+            assert!(((*unimplemented!()) == (5)));
             i.prefix_inc();
         }
     }
     {
         let mut v: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (100_())) {
-            unimplemented!();
+        assert!(((unimplemented!()) == (100_usize)));
+        let mut i: i32 = 0;
+        'loop_: while ((i) < (100)) {
+            assert!(((*unimplemented!()) == (2.5_f64)));
             i.prefix_inc();
         }
     }
     {
         let mut v: () = unimplemented!();
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (100_())) {
-            unimplemented!();
+        assert!(((unimplemented!()) == (100_usize)));
+        let mut i: i32 = 0;
+        'loop_: while ((i) < (100)) {
+            assert!(((unimplemented!()) == (10_usize)));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

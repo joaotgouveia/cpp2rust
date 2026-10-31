@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct A {
-    pub data: (),
+    pub data: i32,
     pub m: (),
     pub it: (),
     pub cit: (),
@@ -27,8 +27,8 @@ impl A {
     pub unsafe fn move_assign(&mut self, _a0: *mut A) -> *mut A {
         self.data = (*_a0).data;
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        self.it = ((*_a0).it).clone();
+        self.cit = ((*_a0).cit).clone();
         return &mut (*(self as *mut A));
     }
 }
@@ -56,13 +56,13 @@ impl std::cmp::PartialEq for A {
     }
 }
 impl std::cmp::Eq for A {}
-pub unsafe fn operator_eq_1(L: *const A, R: *const A) -> () {
+pub unsafe fn operator_eq_1(L: *const A, R: *const A) -> bool {
     return ((L) == (R));
 }
-pub unsafe fn operator_lt_0(L: *const A, R: *const A) -> () {
+pub unsafe fn operator_lt_0(L: *const A, R: *const A) -> bool {
     return (((*L).data) < ((*R).data));
 }
-pub unsafe fn test_2() -> () {
+pub unsafe fn test_2() -> bool {
     let mut a: A = <A>::default();
     return true;
 }
@@ -81,8 +81,8 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_2() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

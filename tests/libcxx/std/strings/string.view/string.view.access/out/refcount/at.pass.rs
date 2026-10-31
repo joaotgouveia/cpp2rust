@@ -6,43 +6,43 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(mut s: Ptr<()>, mut len: ()) {
+pub fn test_0(mut s: Ptr<i8>, mut len: usize) {
     let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut i: () = 0_();
+    assert!(((unimplemented!() as usize) == len));
+    let mut i: usize = 0_usize;
     'loop_: while (i < len) {
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((unimplemented!().read()) as i32) } == { ((elem!(s, i).read()) as i32) }));
+        assert!(({ (unimplemented!()) } == { s.offset((i) as isize) }));
         i.prefix_inc();
     }
 }
-pub fn test_1(mut s: Ptr<()>, mut len: ()) {
+pub fn test_1(mut s: Ptr<i32>, mut len: usize) {
     let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut i: () = 0_();
+    assert!(((unimplemented!() as usize) == len));
+    let mut i: usize = 0_usize;
     'loop_: while (i < len) {
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((unimplemented!().read()) as i32) } == { (elem!(s, i).read()) }));
+        assert!(({ (unimplemented!()) } == { s.offset((i) as isize) }));
         i.prefix_inc();
     }
 }
-pub fn test_2(mut s: Ptr<()>, mut len: ()) {
+pub fn test_2(mut s: Ptr<u16>, mut len: usize) {
     let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut i: () = 0_();
+    assert!(((unimplemented!() as usize) == len));
+    let mut i: usize = 0_usize;
     'loop_: while (i < len) {
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((unimplemented!().read()) as i32) } == { ((elem!(s, i).read()) as i32) }));
+        assert!(({ (unimplemented!()) } == { s.offset((i) as isize) }));
         i.prefix_inc();
     }
 }
-pub fn test_3(mut s: Ptr<()>, mut len: ()) {
+pub fn test_3(mut s: Ptr<u32>, mut len: usize) {
     let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut i: () = 0_();
+    assert!(((unimplemented!() as usize) == len));
+    let mut i: usize = 0_usize;
     'loop_: while (i < len) {
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((unimplemented!().read()) as u32) } == { (elem!(s, i).read()) }));
+        assert!(({ (unimplemented!()) } == { s.offset((i) as isize) }));
         i.prefix_inc();
     }
 }
@@ -65,42 +65,57 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_0(Ptr::<()>::from_string_literal(b"ABCDE"), 5_()) });
-    ({ test_0(Ptr::<()>::from_string_literal(b"a"), 1_()) });
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    ({ test_0(Ptr::<i8>::from_string_literal(b"ABCDE"), 5_usize) });
+    ({ test_0(Ptr::<i8>::from_string_literal(b"a"), 1_usize) });
     ({
         test_1(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+            Ptr::<i32>::from_string_literal(&[
+                65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 0 as i32,
             ]),
-            5_(),
+            5_usize,
         )
     });
-    ({ test_1(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()]), 1_()) });
+    ({
+        test_1(
+            Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]),
+            1_usize,
+        )
+    });
     ({
         test_2(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+            Ptr::<u16>::from_string_literal(&[
+                65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 0 as u16,
             ]),
-            5_(),
+            5_usize,
         )
     });
-    ({ test_2(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()]), 1_()) });
+    ({
+        test_2(
+            Ptr::<u16>::from_string_literal(&[97 as u16, 0 as u16]),
+            1_usize,
+        )
+    });
     ({
         test_3(
-            Ptr::<()>::from_string_literal(&[
-                65 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+            Ptr::<u32>::from_string_literal(&[
+                65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 0 as u32,
             ]),
-            5_(),
+            5_usize,
         )
     });
-    ({ test_3(Ptr::<()>::from_string_literal(&[97 as (), 0 as ()]), 1_()) });
+    ({
+        test_3(
+            Ptr::<u32>::from_string_literal(&[97 as u32, 0 as u32]),
+            1_usize,
+        )
+    });
     {
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "sv.length() == 2");;
         const _: () = assert!(true, "sv.at(0) == \'A\'");;
         const _: () = assert!(true, "sv.at(1) == \'B\'");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -14,17 +14,42 @@ impl TestHelper_wchar_t__4_ {
         const _: () = assert!(true, "(std::is_same<CharT, wchar_t>::value)");;
         {
             let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut ws: () = unimplemented!();
-            let mut bs: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let ws: Value<Vec<i32>> = Rc::new(RefCell::new(
+                vec![
+                    (Ptr::<i32>::from_string_literal(&[262147 as i32, 0 as i32,]).read());
+                    (1_usize) as usize
+                ]
+                .iter()
+                .cloned()
+                .chain(std::iter::once(0_i32))
+                .collect(),
+            ));
+            let bs: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+            assert!(
+                Ptr::<i8>::from_string_literal(b"\xf1\x80\x80\x83").with_c_str(|__s| (*bs
+                    .borrow())[..(*bs.borrow()).len().saturating_sub(1)]
+                    == *__s)
+            );
+            bs.as_pointer().write(unimplemented!());
+            assert!(
+                Ptr::<i8>::from_string_literal(b"\xf1\x80\x80\x83").with_c_str(|__s| (*bs
+                    .borrow())[..(*bs.borrow()).len().saturating_sub(1)]
+                    == *__s)
+            );
+            bs.as_pointer().write(unimplemented!());
+            assert!(
+                Ptr::<i8>::from_string_literal(b"\xf1\x80\x80\x83").with_c_str(|__s| (*bs
+                    .borrow())[..(*bs.borrow()).len().saturating_sub(1)]
+                    == *__s)
+            );
+            bs.as_pointer().write(unimplemented!());
+            assert!(
+                Ptr::<i8>::from_string_literal(b"\xf1\x80\x80\x83").with_c_str(|__s| (*bs
+                    .borrow())[..(*bs.borrow()).len().saturating_sub(1)]
+                    == *__s)
+            );
+            bs.as_pointer().write(unimplemented!());
+            assert!((((*bs.borrow()).len() - 1) == 0_usize));
         }
     }
 }
@@ -47,8 +72,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ TestHelper_wchar_t__4_::test() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

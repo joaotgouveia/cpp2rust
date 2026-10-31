@@ -6,82 +6,82 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ref__int_ref_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ref__const_int_ref_ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_refref__int_refref_ {}
-pub type anon_3 = ();
+pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_refref__const_int_refref_ {}
-pub type anon_4 = ();
+pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_float_ref__float_ref_ {}
-pub type anon_5 = ();
+pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_float_ref__const_float_ref_ {}
-pub type anon_6 = ();
+pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_float_refref__float_refref_ {}
-pub type anon_7 = ();
+pub type anon_7 = u32;
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_float_refref__const_float_refref_ {}
-pub type anon_8 = ();
+pub type anon_8 = u32;
 pub const anon_8_value: anon_8 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_double_ref__double_ref_ {}
-pub type anon_9 = ();
+pub type anon_9 = u32;
 pub const anon_9_value: anon_9 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_double_ref__const_double_ref_ {}
-pub type anon_10 = ();
+pub type anon_10 = u32;
 pub const anon_10_value: anon_10 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_double_refref__double_refref_ {}
-pub type anon_11 = ();
+pub type anon_11 = u32;
 pub const anon_11_value: anon_11 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_double_refref__const_double_refref_ {}
-pub type anon_12 = ();
+pub type anon_12 = u32;
 pub const anon_12_value: anon_12 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_X_ref__X_ref_ {}
-pub type anon_13 = ();
+pub type anon_13 = u32;
 pub const anon_13_value: anon_13 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_X_ref__const_X_ref_ {}
-pub type anon_14 = ();
+pub type anon_14 = u32;
 pub const anon_14_value: anon_14 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_X_refref__X_refref_ {}
-pub type anon_15 = ();
+pub type anon_15 = u32;
 pub const anon_15_value: anon_15 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -177,7 +177,7 @@ pub fn test_contract_23() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub fn test_24() -> () {
+pub fn test_24() -> bool {
     ({ test_contract_16() });
     ({ test_contract_17() });
     ({ test_contract_18() });
@@ -188,10 +188,10 @@ pub fn test_24() -> () {
     ({ test_contract_23() });
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((({ XImpl::test_2(&unimplemented!(),) }) == 3));
+        assert!((({ XImpl::test_3(&unimplemented!(),) }) == 4));
+        assert!((({ XImpl::test_4(&unimplemented!(),) }) == 5));
+        assert!((({ XImpl::test_5(&unimplemented!(),) }) == 6));
     }
     return true;
 }
@@ -214,29 +214,29 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(({ test_24() }));
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait XImpl {
-    fn test_2(&self) -> ();
-    fn test_3(&self) -> ();
-    fn test_4(&self) -> ();
-    fn test_5(&self) -> ();
+    fn test_2(&self) -> i32;
+    fn test_3(&self) -> i32;
+    fn test_4(&self) -> i32;
+    fn test_5(&self) -> i32;
 }
 impl XImpl for Ptr<X> {
-    fn test_2(&self) -> () {
-        return 3_();
+    fn test_2(&self) -> i32 {
+        return 3;
     }
-    fn test_3(&self) -> () {
-        return 4_();
+    fn test_3(&self) -> i32 {
+        return 4;
     }
-    fn test_4(&self) -> () {
-        return 5_();
+    fn test_4(&self) -> i32 {
+        return 5;
     }
-    fn test_5(&self) -> () {
-        return 6_();
+    fn test_5(&self) -> i32 {
+        return 6;
     }
 }
 pub fn __cpp2rust_init_globals() {}

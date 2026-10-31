@@ -6,10 +6,29 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn operator_eq_0(lhs: *const S_1_, rhs: *const S_1_) -> () {
-    return ((unimplemented!()) == (0_()));
+pub unsafe fn operator_eq_0(lhs: *const S_1_, rhs: *const S_1_) -> bool {
+    return (({
+        let sa = core::slice::from_raw_parts(
+            ((&(*lhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 1]>() as usize,
+        );
+        let sb = core::slice::from_raw_parts(
+            ((&(*rhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 1]>() as usize,
+        );
+        let mut diff = 0_i32;
+        for (x, y) in sa.iter().zip(sb.iter()) {
+            if x != y {
+                diff = (*x as i32) - (*y as i32);
+                break;
+            }
+        }
+        diff
+    }) == (0));
 }
-pub unsafe fn operator_ne_1(lhs: *const S_1_, rhs: *const S_1_) -> () {
+pub unsafe fn operator_ne_1(lhs: *const S_1_, rhs: *const S_1_) -> bool {
     return !(unsafe {
         let _lhs: *const S_1_ = lhs;
         let _rhs: *const S_1_ = rhs;
@@ -19,15 +38,22 @@ pub unsafe fn operator_ne_1(lhs: *const S_1_, rhs: *const S_1_) -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_1_ {
-    pub data: [(); 1],
+    pub data: [libc::c_char; 1],
 }
 impl S_1_ {
-    pub unsafe fn new(mut v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut v: Option<libc::c_char>) -> Self {
+        let mut v: libc::c_char = v.unwrap_or_else(|| unsafe { (0 as libc::c_char) });
         let mut this = Self {
-            data: [unimplemented!(); 1],
+            data: [(0 as libc::c_char); 1],
         };
-        unimplemented!();
+        {
+            let byte_0 = ((&mut this.data[(0) as usize] as *mut libc::c_char)
+                as *mut ::libc::c_void) as *mut u8;
+            for offset in 0..::std::mem::size_of::<[libc::c_char; 1]>() {
+                *byte_0.offset(offset as isize) = (v as i32) as u8;
+            }
+            ((&mut this.data[(0) as usize] as *mut libc::c_char) as *mut ::libc::c_void)
+        };
         this
     }
 }
@@ -42,10 +68,29 @@ impl Default for S_1_ {
         unsafe { S_1_::new(None) }
     }
 }
-pub unsafe fn operator_eq_2(lhs: *const S_2_, rhs: *const S_2_) -> () {
-    return ((unimplemented!()) == (0_()));
+pub unsafe fn operator_eq_2(lhs: *const S_2_, rhs: *const S_2_) -> bool {
+    return (({
+        let sa = core::slice::from_raw_parts(
+            ((&(*lhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 2]>() as usize,
+        );
+        let sb = core::slice::from_raw_parts(
+            ((&(*rhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 2]>() as usize,
+        );
+        let mut diff = 0_i32;
+        for (x, y) in sa.iter().zip(sb.iter()) {
+            if x != y {
+                diff = (*x as i32) - (*y as i32);
+                break;
+            }
+        }
+        diff
+    }) == (0));
 }
-pub unsafe fn operator_ne_3(lhs: *const S_2_, rhs: *const S_2_) -> () {
+pub unsafe fn operator_ne_3(lhs: *const S_2_, rhs: *const S_2_) -> bool {
     return !(unsafe {
         let _lhs: *const S_2_ = lhs;
         let _rhs: *const S_2_ = rhs;
@@ -55,15 +100,22 @@ pub unsafe fn operator_ne_3(lhs: *const S_2_, rhs: *const S_2_) -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_2_ {
-    pub data: [(); 2],
+    pub data: [libc::c_char; 2],
 }
 impl S_2_ {
-    pub unsafe fn new(mut v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut v: Option<libc::c_char>) -> Self {
+        let mut v: libc::c_char = v.unwrap_or_else(|| unsafe { (0 as libc::c_char) });
         let mut this = Self {
-            data: [unimplemented!(); 2],
+            data: [(0 as libc::c_char); 2],
         };
-        unimplemented!();
+        {
+            let byte_0 = ((&mut this.data[(0) as usize] as *mut libc::c_char)
+                as *mut ::libc::c_void) as *mut u8;
+            for offset in 0..::std::mem::size_of::<[libc::c_char; 2]>() {
+                *byte_0.offset(offset as isize) = (v as i32) as u8;
+            }
+            ((&mut this.data[(0) as usize] as *mut libc::c_char) as *mut ::libc::c_void)
+        };
         this
     }
 }
@@ -78,10 +130,29 @@ impl Default for S_2_ {
         unsafe { S_2_::new(None) }
     }
 }
-pub unsafe fn operator_eq_4(lhs: *const S_3_, rhs: *const S_3_) -> () {
-    return ((unimplemented!()) == (0_()));
+pub unsafe fn operator_eq_4(lhs: *const S_3_, rhs: *const S_3_) -> bool {
+    return (({
+        let sa = core::slice::from_raw_parts(
+            ((&(*lhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 3]>() as usize,
+        );
+        let sb = core::slice::from_raw_parts(
+            ((&(*rhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 3]>() as usize,
+        );
+        let mut diff = 0_i32;
+        for (x, y) in sa.iter().zip(sb.iter()) {
+            if x != y {
+                diff = (*x as i32) - (*y as i32);
+                break;
+            }
+        }
+        diff
+    }) == (0));
 }
-pub unsafe fn operator_ne_5(lhs: *const S_3_, rhs: *const S_3_) -> () {
+pub unsafe fn operator_ne_5(lhs: *const S_3_, rhs: *const S_3_) -> bool {
     return !(unsafe {
         let _lhs: *const S_3_ = lhs;
         let _rhs: *const S_3_ = rhs;
@@ -91,15 +162,22 @@ pub unsafe fn operator_ne_5(lhs: *const S_3_, rhs: *const S_3_) -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_3_ {
-    pub data: [(); 3],
+    pub data: [libc::c_char; 3],
 }
 impl S_3_ {
-    pub unsafe fn new(mut v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut v: Option<libc::c_char>) -> Self {
+        let mut v: libc::c_char = v.unwrap_or_else(|| unsafe { (0 as libc::c_char) });
         let mut this = Self {
-            data: [unimplemented!(); 3],
+            data: [(0 as libc::c_char); 3],
         };
-        unimplemented!();
+        {
+            let byte_0 = ((&mut this.data[(0) as usize] as *mut libc::c_char)
+                as *mut ::libc::c_void) as *mut u8;
+            for offset in 0..::std::mem::size_of::<[libc::c_char; 3]>() {
+                *byte_0.offset(offset as isize) = (v as i32) as u8;
+            }
+            ((&mut this.data[(0) as usize] as *mut libc::c_char) as *mut ::libc::c_void)
+        };
         this
     }
 }
@@ -114,10 +192,29 @@ impl Default for S_3_ {
         unsafe { S_3_::new(None) }
     }
 }
-pub unsafe fn operator_eq_6(lhs: *const S_4_, rhs: *const S_4_) -> () {
-    return ((unimplemented!()) == (0_()));
+pub unsafe fn operator_eq_6(lhs: *const S_4_, rhs: *const S_4_) -> bool {
+    return (({
+        let sa = core::slice::from_raw_parts(
+            ((&(*lhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 4]>() as usize,
+        );
+        let sb = core::slice::from_raw_parts(
+            ((&(*rhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 4]>() as usize,
+        );
+        let mut diff = 0_i32;
+        for (x, y) in sa.iter().zip(sb.iter()) {
+            if x != y {
+                diff = (*x as i32) - (*y as i32);
+                break;
+            }
+        }
+        diff
+    }) == (0));
 }
-pub unsafe fn operator_ne_7(lhs: *const S_4_, rhs: *const S_4_) -> () {
+pub unsafe fn operator_ne_7(lhs: *const S_4_, rhs: *const S_4_) -> bool {
     return !(unsafe {
         let _lhs: *const S_4_ = lhs;
         let _rhs: *const S_4_ = rhs;
@@ -127,15 +224,22 @@ pub unsafe fn operator_ne_7(lhs: *const S_4_, rhs: *const S_4_) -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_4_ {
-    pub data: [(); 4],
+    pub data: [libc::c_char; 4],
 }
 impl S_4_ {
-    pub unsafe fn new(mut v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut v: Option<libc::c_char>) -> Self {
+        let mut v: libc::c_char = v.unwrap_or_else(|| unsafe { (0 as libc::c_char) });
         let mut this = Self {
-            data: [unimplemented!(); 4],
+            data: [(0 as libc::c_char); 4],
         };
-        unimplemented!();
+        {
+            let byte_0 = ((&mut this.data[(0) as usize] as *mut libc::c_char)
+                as *mut ::libc::c_void) as *mut u8;
+            for offset in 0..::std::mem::size_of::<[libc::c_char; 4]>() {
+                *byte_0.offset(offset as isize) = (v as i32) as u8;
+            }
+            ((&mut this.data[(0) as usize] as *mut libc::c_char) as *mut ::libc::c_void)
+        };
         this
     }
 }
@@ -150,10 +254,29 @@ impl Default for S_4_ {
         unsafe { S_4_::new(None) }
     }
 }
-pub unsafe fn operator_eq_8(lhs: *const S_5_, rhs: *const S_5_) -> () {
-    return ((unimplemented!()) == (0_()));
+pub unsafe fn operator_eq_8(lhs: *const S_5_, rhs: *const S_5_) -> bool {
+    return (({
+        let sa = core::slice::from_raw_parts(
+            ((&(*lhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 5]>() as usize,
+        );
+        let sb = core::slice::from_raw_parts(
+            ((&(*rhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 5]>() as usize,
+        );
+        let mut diff = 0_i32;
+        for (x, y) in sa.iter().zip(sb.iter()) {
+            if x != y {
+                diff = (*x as i32) - (*y as i32);
+                break;
+            }
+        }
+        diff
+    }) == (0));
 }
-pub unsafe fn operator_ne_9(lhs: *const S_5_, rhs: *const S_5_) -> () {
+pub unsafe fn operator_ne_9(lhs: *const S_5_, rhs: *const S_5_) -> bool {
     return !(unsafe {
         let _lhs: *const S_5_ = lhs;
         let _rhs: *const S_5_ = rhs;
@@ -163,15 +286,22 @@ pub unsafe fn operator_ne_9(lhs: *const S_5_, rhs: *const S_5_) -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_5_ {
-    pub data: [(); 5],
+    pub data: [libc::c_char; 5],
 }
 impl S_5_ {
-    pub unsafe fn new(mut v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut v: Option<libc::c_char>) -> Self {
+        let mut v: libc::c_char = v.unwrap_or_else(|| unsafe { (0 as libc::c_char) });
         let mut this = Self {
-            data: [unimplemented!(); 5],
+            data: [(0 as libc::c_char); 5],
         };
-        unimplemented!();
+        {
+            let byte_0 = ((&mut this.data[(0) as usize] as *mut libc::c_char)
+                as *mut ::libc::c_void) as *mut u8;
+            for offset in 0..::std::mem::size_of::<[libc::c_char; 5]>() {
+                *byte_0.offset(offset as isize) = (v as i32) as u8;
+            }
+            ((&mut this.data[(0) as usize] as *mut libc::c_char) as *mut ::libc::c_void)
+        };
         this
     }
 }
@@ -186,10 +316,29 @@ impl Default for S_5_ {
         unsafe { S_5_::new(None) }
     }
 }
-pub unsafe fn operator_eq_10(lhs: *const S_6_, rhs: *const S_6_) -> () {
-    return ((unimplemented!()) == (0_()));
+pub unsafe fn operator_eq_10(lhs: *const S_6_, rhs: *const S_6_) -> bool {
+    return (({
+        let sa = core::slice::from_raw_parts(
+            ((&(*lhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 6]>() as usize,
+        );
+        let sb = core::slice::from_raw_parts(
+            ((&(*rhs).data[(0) as usize] as *const libc::c_char) as *const ::libc::c_void)
+                as *const u8,
+            ::std::mem::size_of::<[libc::c_char; 6]>() as usize,
+        );
+        let mut diff = 0_i32;
+        for (x, y) in sa.iter().zip(sb.iter()) {
+            if x != y {
+                diff = (*x as i32) - (*y as i32);
+                break;
+            }
+        }
+        diff
+    }) == (0));
 }
-pub unsafe fn operator_ne_11(lhs: *const S_6_, rhs: *const S_6_) -> () {
+pub unsafe fn operator_ne_11(lhs: *const S_6_, rhs: *const S_6_) -> bool {
     return !(unsafe {
         let _lhs: *const S_6_ = lhs;
         let _rhs: *const S_6_ = rhs;
@@ -199,15 +348,22 @@ pub unsafe fn operator_ne_11(lhs: *const S_6_, rhs: *const S_6_) -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct S_6_ {
-    pub data: [(); 6],
+    pub data: [libc::c_char; 6],
 }
 impl S_6_ {
-    pub unsafe fn new(mut v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut v: Option<libc::c_char>) -> Self {
+        let mut v: libc::c_char = v.unwrap_or_else(|| unsafe { (0 as libc::c_char) });
         let mut this = Self {
-            data: [unimplemented!(); 6],
+            data: [(0 as libc::c_char); 6],
         };
-        unimplemented!();
+        {
+            let byte_0 = ((&mut this.data[(0) as usize] as *mut libc::c_char)
+                as *mut ::libc::c_void) as *mut u8;
+            for offset in 0..::std::mem::size_of::<[libc::c_char; 6]>() {
+                *byte_0.offset(offset as isize) = (v as i32) as u8;
+            }
+            ((&mut this.data[(0) as usize] as *mut libc::c_char) as *mut ::libc::c_void)
+        };
         this
     }
 }
@@ -223,10 +379,11 @@ impl Default for S_6_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(S_1_, new, value)]
 pub struct Expected_1_ {
     pub s: S_1_,
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_1_ {
     pub unsafe fn new(mut ss: S_1_) -> Self {
@@ -245,10 +402,11 @@ impl Default for Expected_1_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(S_2_, new, value)]
 pub struct Expected_2_ {
     pub s: S_2_,
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_2_ {
     pub unsafe fn new(mut ss: S_2_) -> Self {
@@ -267,10 +425,11 @@ impl Default for Expected_2_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(S_3_, new, value)]
 pub struct Expected_3_ {
     pub s: S_3_,
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_3_ {
     pub unsafe fn new(mut ss: S_3_) -> Self {
@@ -289,10 +448,11 @@ impl Default for Expected_3_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(S_4_, new, value)]
 pub struct Expected_4_ {
     pub s: S_4_,
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_4_ {
     pub unsafe fn new(mut ss: S_4_) -> Self {
@@ -311,10 +471,11 @@ impl Default for Expected_4_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(S_5_, new, value)]
 pub struct Expected_5_ {
     pub s: S_5_,
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_5_ {
     pub unsafe fn new(mut ss: S_5_) -> Self {
@@ -333,10 +494,11 @@ impl Default for Expected_5_ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(S_6_, new, value)]
 pub struct Expected_6_ {
     pub s: S_6_,
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_6_ {
     pub unsafe fn new(mut ss: S_6_) -> Self {
@@ -356,99 +518,273 @@ impl Default for Expected_6_ {
 }
 pub unsafe fn test_12() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_1_ = Expected_1_::new({ S_1_::new({ Some(17_()) }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut expected: Expected_1_ = Expected_1_::new({ S_1_::new({ Some((17 as libc::c_char)) }) });
+    assert!(
+        (unsafe {
+            let mut _lhs: S_1_ = unimplemented!();
+            operator_ne_1(&mut _lhs, &expected.s)
+        })
+    );
+    assert!(expected.b);
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        (unsafe {
+            let _lhs: *const S_1_ = &expected.s;
+            let mut _rhs: S_1_ = S_1_::new({ Some((0 as libc::c_char)) });
+            operator_eq_0(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
+    assert!(
+        (unsafe {
+            let mut _lhs: S_1_ = unimplemented!();
+            let mut _rhs: S_1_ = S_1_::new({ Some((0 as libc::c_char)) });
+            operator_eq_0(&mut _lhs, &mut _rhs)
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        (unsafe {
+            let mut _lhs: S_1_ = unimplemented!();
+            let mut _rhs: S_1_ = S_1_::new({ Some((18 as libc::c_char)) });
+            operator_eq_0(&mut _lhs, &mut _rhs)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _lhs: *const S_1_ = &expected.s;
+            let mut _rhs: S_1_ = S_1_::new({ Some((0 as libc::c_char)) });
+            operator_eq_0(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
 }
 pub unsafe fn test_13() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_2_ = Expected_2_::new({ S_2_::new({ Some(17_()) }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut expected: Expected_2_ = Expected_2_::new({ S_2_::new({ Some((17 as libc::c_char)) }) });
+    assert!(
+        (unsafe {
+            let mut _lhs: S_2_ = unimplemented!();
+            operator_ne_3(&mut _lhs, &expected.s)
+        })
+    );
+    assert!(expected.b);
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        (unsafe {
+            let _lhs: *const S_2_ = &expected.s;
+            let mut _rhs: S_2_ = S_2_::new({ Some((0 as libc::c_char)) });
+            operator_eq_2(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
+    assert!(
+        (unsafe {
+            let mut _lhs: S_2_ = unimplemented!();
+            let mut _rhs: S_2_ = S_2_::new({ Some((0 as libc::c_char)) });
+            operator_eq_2(&mut _lhs, &mut _rhs)
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        (unsafe {
+            let mut _lhs: S_2_ = unimplemented!();
+            let mut _rhs: S_2_ = S_2_::new({ Some((18 as libc::c_char)) });
+            operator_eq_2(&mut _lhs, &mut _rhs)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _lhs: *const S_2_ = &expected.s;
+            let mut _rhs: S_2_ = S_2_::new({ Some((0 as libc::c_char)) });
+            operator_eq_2(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
 }
 pub unsafe fn test_14() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_3_ = Expected_3_::new({ S_3_::new({ Some(17_()) }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut expected: Expected_3_ = Expected_3_::new({ S_3_::new({ Some((17 as libc::c_char)) }) });
+    assert!(
+        (unsafe {
+            let mut _lhs: S_3_ = unimplemented!();
+            operator_ne_5(&mut _lhs, &expected.s)
+        })
+    );
+    assert!(expected.b);
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        (unsafe {
+            let _lhs: *const S_3_ = &expected.s;
+            let mut _rhs: S_3_ = S_3_::new({ Some((0 as libc::c_char)) });
+            operator_eq_4(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
+    assert!(
+        (unsafe {
+            let mut _lhs: S_3_ = unimplemented!();
+            let mut _rhs: S_3_ = S_3_::new({ Some((0 as libc::c_char)) });
+            operator_eq_4(&mut _lhs, &mut _rhs)
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        (unsafe {
+            let mut _lhs: S_3_ = unimplemented!();
+            let mut _rhs: S_3_ = S_3_::new({ Some((18 as libc::c_char)) });
+            operator_eq_4(&mut _lhs, &mut _rhs)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _lhs: *const S_3_ = &expected.s;
+            let mut _rhs: S_3_ = S_3_::new({ Some((0 as libc::c_char)) });
+            operator_eq_4(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
 }
 pub unsafe fn test_15() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_4_ = Expected_4_::new({ S_4_::new({ Some(17_()) }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut expected: Expected_4_ = Expected_4_::new({ S_4_::new({ Some((17 as libc::c_char)) }) });
+    assert!(
+        (unsafe {
+            let mut _lhs: S_4_ = unimplemented!();
+            operator_ne_7(&mut _lhs, &expected.s)
+        })
+    );
+    assert!(expected.b);
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        (unsafe {
+            let _lhs: *const S_4_ = &expected.s;
+            let mut _rhs: S_4_ = S_4_::new({ Some((0 as libc::c_char)) });
+            operator_eq_6(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
+    assert!(
+        (unsafe {
+            let mut _lhs: S_4_ = unimplemented!();
+            let mut _rhs: S_4_ = S_4_::new({ Some((0 as libc::c_char)) });
+            operator_eq_6(&mut _lhs, &mut _rhs)
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        (unsafe {
+            let mut _lhs: S_4_ = unimplemented!();
+            let mut _rhs: S_4_ = S_4_::new({ Some((18 as libc::c_char)) });
+            operator_eq_6(&mut _lhs, &mut _rhs)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _lhs: *const S_4_ = &expected.s;
+            let mut _rhs: S_4_ = S_4_::new({ Some((0 as libc::c_char)) });
+            operator_eq_6(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
 }
 pub unsafe fn test_16() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_5_ = Expected_5_::new({ S_5_::new({ Some(17_()) }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut expected: Expected_5_ = Expected_5_::new({ S_5_::new({ Some((17 as libc::c_char)) }) });
+    assert!(
+        (unsafe {
+            let mut _lhs: S_5_ = unimplemented!();
+            operator_ne_9(&mut _lhs, &expected.s)
+        })
+    );
+    assert!(expected.b);
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        (unsafe {
+            let _lhs: *const S_5_ = &expected.s;
+            let mut _rhs: S_5_ = S_5_::new({ Some((0 as libc::c_char)) });
+            operator_eq_8(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
+    assert!(
+        (unsafe {
+            let mut _lhs: S_5_ = unimplemented!();
+            let mut _rhs: S_5_ = S_5_::new({ Some((0 as libc::c_char)) });
+            operator_eq_8(&mut _lhs, &mut _rhs)
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        (unsafe {
+            let mut _lhs: S_5_ = unimplemented!();
+            let mut _rhs: S_5_ = S_5_::new({ Some((18 as libc::c_char)) });
+            operator_eq_8(&mut _lhs, &mut _rhs)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _lhs: *const S_5_ = &expected.s;
+            let mut _rhs: S_5_ = S_5_::new({ Some((0 as libc::c_char)) });
+            operator_eq_8(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
 }
 pub unsafe fn test_17() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_6_ = Expected_6_::new({ S_6_::new({ Some(17_()) }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut expected: Expected_6_ = Expected_6_::new({ S_6_::new({ Some((17 as libc::c_char)) }) });
+    assert!(
+        (unsafe {
+            let mut _lhs: S_6_ = unimplemented!();
+            operator_ne_11(&mut _lhs, &expected.s)
+        })
+    );
+    assert!(expected.b);
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        (unsafe {
+            let _lhs: *const S_6_ = &expected.s;
+            let mut _rhs: S_6_ = S_6_::new({ Some((0 as libc::c_char)) });
+            operator_eq_10(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
+    assert!(
+        (unsafe {
+            let mut _lhs: S_6_ = unimplemented!();
+            let mut _rhs: S_6_ = S_6_::new({ Some((0 as libc::c_char)) });
+            operator_eq_10(&mut _lhs, &mut _rhs)
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        (unsafe {
+            let mut _lhs: S_6_ = unimplemented!();
+            let mut _rhs: S_6_ = S_6_::new({ Some((18 as libc::c_char)) });
+            operator_eq_10(&mut _lhs, &mut _rhs)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _lhs: *const S_6_ = &expected.s;
+            let mut _rhs: S_6_ = S_6_::new({ Some((0 as libc::c_char)) });
+            operator_eq_10(_lhs, &mut _rhs)
+        })
+    );
+    assert!(expected.b);
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -465,13 +801,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_12() });
     (unsafe { test_13() });
     (unsafe { test_14() });
     (unsafe { test_15() });
     (unsafe { test_16() });
     (unsafe { test_17() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

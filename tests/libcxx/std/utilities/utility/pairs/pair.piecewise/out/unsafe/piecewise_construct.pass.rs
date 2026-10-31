@@ -9,30 +9,30 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {
-    i_: (),
-    c_: (),
+    i_: i32,
+    c_: libc::c_char,
 }
 impl A {
-    pub unsafe fn new(mut i: (), mut c: ()) -> Self {
+    pub unsafe fn new(mut i: i32, mut c: libc::c_char) -> Self {
         let mut this = Self { i_: i, c_: c };
         this
     }
-    pub unsafe fn get_i(&self) -> () {
+    pub unsafe fn get_i(&self) -> i32 {
         return self.i_;
     }
-    pub unsafe fn get_c(&self) -> () {
+    pub unsafe fn get_c(&self) -> libc::c_char {
         return self.c_;
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct B {
-    d_: (),
-    u1_: (),
-    u2_: (),
+    d_: f64,
+    u1_: u32,
+    u2_: u32,
 }
 impl B {
-    pub unsafe fn new(mut d: (), mut u1: (), mut u2: ()) -> Self {
+    pub unsafe fn new(mut d: f64, mut u1: u32, mut u2: u32) -> Self {
         let mut this = Self {
             d_: d,
             u1_: u1,
@@ -40,23 +40,23 @@ impl B {
         };
         this
     }
-    pub unsafe fn get_d(&self) -> () {
+    pub unsafe fn get_d(&self) -> f64 {
         return self.d_;
     }
-    pub unsafe fn get_u1(&self) -> () {
+    pub unsafe fn get_u1(&self) -> u32 {
         return self.u1_;
     }
-    pub unsafe fn get_u2(&self) -> () {
+    pub unsafe fn get_u2(&self) -> u32 {
         return self.u2_;
     }
 }
-pub unsafe fn test_0() -> () {
-    let mut p: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_0() -> bool {
+    let mut p: (A, B) = unimplemented!();
+    assert!(((unsafe { A::get_i(&p.0,) }) == (4)));
+    assert!((((unsafe { A::get_c(&p.0,) }) as i32) == (('a' as libc::c_char) as i32)));
+    assert!(((unsafe { B::get_d(&p.1,) }) == (3.5_f64)));
+    assert!(((unsafe { B::get_u1(&p.1,) }) == (6_u32)));
+    assert!(((unsafe { B::get_u2(&p.1,) }) == (2_u32)));
     return true;
 }
 pub fn main() {
@@ -74,9 +74,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

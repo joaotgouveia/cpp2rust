@@ -28,7 +28,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -37,20 +37,27 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!((((unimplemented!().read()) as i32) == (('a' as i8) as i32)));
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2));
+        assert!((((unimplemented!().read()) as i32) == (('a' as i8) as i32)));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"some text").with_c_str(|__s| (*unimplemented!()
+                .upgrade()
+                .deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -63,6 +70,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut e: Empty = (*unimplemented!().upgrade().deref()).clone();
         (&(e));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

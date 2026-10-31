@@ -10,11 +10,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
-    let mut i: () = -1_();
-    let mut j: () = 9_();
-    let mut ans: () = unimplemented!();
-    ans = unimplemented!();
+fn main_0() -> i32 {
+    let mut i: i32 = -1_i32;
+    let mut j: i32 = 9;
+    let mut ans: f64 = 0_f64;
+    ans = (i.abs() as f64);
     ans = unimplemented!();
     ans = unimplemented!();
     ans = unimplemented!();

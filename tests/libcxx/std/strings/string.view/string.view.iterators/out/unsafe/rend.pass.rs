@@ -12,20 +12,20 @@ pub unsafe fn test_0(mut s: ()) {
     let mut ce1: () = unimplemented!();
     let mut ce2: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(e != unimplemented!());
+        assert!(ce1 != unimplemented!());
+        assert!(ce2 != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub unsafe fn test_1(mut s: ()) {
     let cs: *const () = &s;
@@ -33,20 +33,20 @@ pub unsafe fn test_1(mut s: ()) {
     let mut ce1: () = unimplemented!();
     let mut ce2: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(e != unimplemented!());
+        assert!(ce1 != unimplemented!());
+        assert!(ce2 != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub unsafe fn test_2(mut s: ()) {
     let cs: *const () = &s;
@@ -54,20 +54,20 @@ pub unsafe fn test_2(mut s: ()) {
     let mut ce1: () = unimplemented!();
     let mut ce2: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(e != unimplemented!());
+        assert!(ce1 != unimplemented!());
+        assert!(ce2 != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub unsafe fn test_3(mut s: ()) {
     let cs: *const () = &s;
@@ -75,20 +75,20 @@ pub unsafe fn test_3(mut s: ()) {
     let mut ce1: () = unimplemented!();
     let mut ce2: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(e != unimplemented!());
+        assert!(ce1 != unimplemented!());
+        assert!(ce2 != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub unsafe fn test_4(mut s: ()) {
     let cs: *const () = &s;
@@ -96,20 +96,20 @@ pub unsafe fn test_4(mut s: ()) {
     let mut ce1: () = unimplemented!();
     let mut ce2: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(e != unimplemented!());
+        assert!(ce1 != unimplemented!());
+        assert!(ce2 != unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -126,7 +126,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0(unimplemented!()) });
     (unsafe { test_1(unimplemented!()) });
     (unsafe { test_2(unimplemented!()) });
@@ -155,6 +155,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             const _: () = assert!(true, "*--wsv.crend() == wsv[0]");;
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

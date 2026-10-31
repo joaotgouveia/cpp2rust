@@ -26,13 +26,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::is_swappable_v<T>");;
     }
     {
-        let t1: Value<Box<[Box<[()]>]>> = Rc::new(RefCell::new(Box::new([
+        let t1: Value<Box<[Box<[f64]>]>> = Rc::new(RefCell::new(Box::new([
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
@@ -51,7 +51,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
         ])));
-        let t2: Value<Box<[Box<[()]>]>> = Rc::new(RefCell::new(Box::new([
+        let t2: Value<Box<[Box<[f64]>]>> = Rc::new(RefCell::new(Box::new([
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
             Box::new(std::array::from_fn::<_, 29, _>(|_| Default::default())),
@@ -73,6 +73,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

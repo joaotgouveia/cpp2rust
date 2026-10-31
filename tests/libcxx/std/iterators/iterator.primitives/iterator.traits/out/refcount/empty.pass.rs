@@ -10,15 +10,15 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct not_an_iterator {}
 thread_local!(
-    pub static value_0: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_0: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct has_value_type_std_iterator_traits_not_an_iterator___two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -42,9 +42,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "!(has_value_type<It>::value)");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = value_0.with(|_| ());

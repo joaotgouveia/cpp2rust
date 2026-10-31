@@ -7,14 +7,14 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test01_0() {
-    let mut v: () = unimplemented!();
+    let v: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test01_0() });
     0
 }

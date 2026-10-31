@@ -10,15 +10,15 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub fn eq(mut c1: (), mut c2: ()) -> () {
-        return (c1 == c2);
+    pub fn eq(mut c1: i8, mut c2: i8) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
-    pub fn find(s: Ptr<()>, mut n: (), a: Ptr<()>) -> Ptr<()> {
-        let s: Value<Ptr<()>> = Rc::new(RefCell::new(s));
+    pub fn find(s: Ptr<i8>, mut n: usize, a: Ptr<i8>) -> Ptr<i8> {
+        let s: Value<Ptr<i8>> = Rc::new(RefCell::new(s));
         'loop_: while (n != 0) {
             if ({
-                let _c1: () = ((*s.borrow()).read());
-                let _c2: () = (a.read());
+                let _c1: i8 = ((*s.borrow()).read());
+                let _c2: i8 = (a.read());
                 constexpr_char_traits_char_::eq(_c1, _c2)
             }) {
                 return (*s.borrow()).clone();
@@ -26,20 +26,20 @@ impl constexpr_char_traits_char_ {
             (*s.borrow_mut()).prefix_inc();
             n.prefix_dec();
         }
-        return Ptr::<()>::null();
+        return Ptr::<i8>::null();
     }
 }
 pub fn test_0(s: Ptr<()>, mut c: (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(({ unimplemented!() } == { x }));
     if (x != unimplemented!()) {
-        unimplemented!();
+        assert!((pos <= x) && ({ x } < { unimplemented!() }));
     }
 }
 pub fn test_1(s: Ptr<()>, mut c: (), mut x: ()) {
-    unimplemented!();
+    assert!(({ unimplemented!() } == { x }));
     if (x != unimplemented!()) {
-        unimplemented!();
+        assert!(({ x } < { unimplemented!() }));
     }
 }
 pub fn main() {
@@ -61,103 +61,133 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 0_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 0_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 1_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 1_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 0_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 0_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 1_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 1_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 2_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 2_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 4_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 4_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 5_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 5_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 6_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 6_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 0_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 0_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 1_(), 4_())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 1_(), 4_())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 5_(), 6_())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 5_(), 6_())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 9_(), unimplemented!())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 9_(), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 10_(), unimplemented!())
+            test_0(
+                _s.as_pointer(),
+                (('e' as i8) as ()),
+                10_(),
+                unimplemented!(),
+            )
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 11_(), unimplemented!())
+            test_0(
+                _s.as_pointer(),
+                (('e' as i8) as ()),
+                11_(),
+                unimplemented!(),
+            )
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 0_(), 7_())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 0_(), 7_())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 1_(), 4_())
+            test_0(_s.as_pointer(), (('e' as i8) as ()), 1_(), 4_())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 10_(), unimplemented!())
+            test_0(
+                _s.as_pointer(),
+                (('e' as i8) as ()),
+                10_(),
+                unimplemented!(),
+            )
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 19_(), unimplemented!())
+            test_0(
+                _s.as_pointer(),
+                (('e' as i8) as ()),
+                19_(),
+                unimplemented!(),
+            )
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 20_(), unimplemented!())
+            test_0(
+                _s.as_pointer(),
+                (('e' as i8) as ()),
+                20_(),
+                unimplemented!(),
+            )
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_0(_s.as_pointer(), ('e' as ()), 21_(), unimplemented!())
+            test_0(
+                _s.as_pointer(),
+                (('e' as i8) as ()),
+                21_(),
+                unimplemented!(),
+            )
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_1(_s.as_pointer(), ('e' as ()), unimplemented!())
+            test_1(_s.as_pointer(), (('e' as i8) as ()), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_1(_s.as_pointer(), ('e' as ()), 4_())
+            test_1(_s.as_pointer(), (('e' as i8) as ()), 4_())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_1(_s.as_pointer(), ('e' as ()), unimplemented!())
+            test_1(_s.as_pointer(), (('e' as i8) as ()), unimplemented!())
         });
         ({
             let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_1(_s.as_pointer(), ('e' as ()), 2_())
+            test_1(_s.as_pointer(), (('e' as i8) as ()), 2_())
         });
     }
     {
@@ -169,6 +199,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "sv2.find_first_of(\'e\', 1) == 4");;
         const _: () = assert!(true, "sv2.find_first_of(\'e\', 5) == SV::npos");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

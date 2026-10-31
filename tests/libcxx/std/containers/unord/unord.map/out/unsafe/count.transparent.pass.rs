@@ -29,23 +29,24 @@ pub struct transparent_less_private {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct transparent_less_not_a_type {
-    pub is_transparent: (),
+    pub is_transparent: i32,
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(i32, new_1, value)]
 pub struct C2Int {
-    i_: (),
+    i_: i32,
 }
 impl C2Int {
-    pub unsafe fn new_1() -> Self {
-        let mut this = Self { i_: 0_() };
+    pub unsafe fn new_2() -> Self {
+        let mut this = Self { i_: 0 };
         this
     }
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_1(mut i: i32) -> Self {
         let mut this = Self { i_: i };
         this
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.i_;
     }
 }
@@ -78,35 +79,36 @@ impl std::cmp::PartialEq for C2Int {
 impl std::cmp::Eq for C2Int {}
 impl Default for C2Int {
     fn default() -> Self {
-        unsafe { C2Int::new_1() }
+        unsafe { C2Int::new_2() }
     }
 }
-pub unsafe fn operator_lt_1(mut rhs: (), lhs: *const C2Int) -> () {
+pub unsafe fn operator_lt_1(mut rhs: i32, lhs: *const C2Int) -> bool {
     return ((rhs) < (unsafe { C2Int::get(&(*lhs)) }));
 }
-pub unsafe fn operator_lt_0(rhs: *const C2Int, lhs: *const C2Int) -> () {
+pub unsafe fn operator_lt_0(rhs: *const C2Int, lhs: *const C2Int) -> bool {
     return ((unsafe { C2Int::get(&(*rhs)) }) < (unsafe { C2Int::get(&(*lhs)) }));
 }
-pub unsafe fn operator_lt_2(rhs: *const C2Int, mut lhs: ()) -> () {
+pub unsafe fn operator_lt_2(rhs: *const C2Int, mut lhs: i32) -> bool {
     return ((unsafe { C2Int::get(&(*rhs)) }) < (lhs));
 }
-pub unsafe fn operator_eq_3(lhs: *const StoredType_int_, rhs: *const StoredType_int_) -> () {
+pub unsafe fn operator_eq_3(lhs: *const StoredType_int_, rhs: *const StoredType_int_) -> bool {
     return (((*lhs).value_) == ((*rhs).value_));
 }
-pub unsafe fn operator_eq_4(lhs: *const StoredType_int_, rhs: *const SearchedType_int_) -> () {
+pub unsafe fn operator_eq_4(lhs: *const StoredType_int_, rhs: *const SearchedType_int_) -> bool {
     return (((*lhs).value_) == (unsafe { SearchedType_int_::get_value(&(*rhs)) }));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new_1, value)]
 pub struct StoredType_int_ {
-    value_: (),
+    value_: i32,
 }
 impl StoredType_int_ {
-    pub unsafe fn new_1(mut value: ()) -> Self {
+    pub unsafe fn new_1(mut value: i32) -> Self {
         let mut this = Self { value_: value };
         this
     }
-    pub unsafe fn get_value(&self) -> () {
+    pub unsafe fn get_value(&self) -> i32 {
         return self.value_;
     }
 }
@@ -122,13 +124,14 @@ impl std::cmp::PartialEq for StoredType_int_ {
 }
 impl std::cmp::Eq for StoredType_int_ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_into(StoredType_int_, to_StoredType_int_)]
 pub struct SearchedType_int_ {
-    value_: (),
-    conversions_: *mut (),
+    value_: i32,
+    conversions_: *mut i32,
 }
 impl SearchedType_int_ {
-    pub unsafe fn new(mut value: (), mut counter: *mut ()) -> Self {
+    pub unsafe fn new(mut value: i32, mut counter: *mut i32) -> Self {
         let mut this = Self {
             value_: value,
             conversions_: counter,
@@ -139,7 +142,7 @@ impl SearchedType_int_ {
         (*self.conversions_).prefix_inc();
         return StoredType_int_::new_1({ self.value_ });
     }
-    pub unsafe fn get_value(&self) -> () {
+    pub unsafe fn get_value(&self) -> i32 {
         return self.value_;
     }
 }
@@ -147,11 +150,11 @@ impl SearchedType_int_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct hash_impl {}
 impl hash_impl {
-    pub unsafe fn operator_call_1_int(&self, t: *const SearchedType_int_) -> () {
-        return (unsafe { SearchedType_int_::get_value(&(*t)) });
+    pub unsafe fn operator_call_1_int(&self, t: *const SearchedType_int_) -> usize {
+        return ((unsafe { SearchedType_int_::get_value(&(*t)) }) as usize);
     }
-    pub unsafe fn operator_call_2_int(&self, t: *const StoredType_int_) -> () {
-        return (unsafe { StoredType_int_::get_value(&(*t)) });
+    pub unsafe fn operator_call_2_int(&self, t: *const StoredType_int_) -> usize {
+        return ((unsafe { StoredType_int_::get_value(&(*t)) }) as usize);
     }
 }
 #[repr(C)]
@@ -167,86 +170,86 @@ pub struct transparent_hash_final {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct transparent_equal_final {}
 pub unsafe fn test_transparent_count_5(mut c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_usize)));
+    assert!(((unimplemented!()) > (0_usize)));
+    assert!(((unimplemented!()) == (0_usize)));
+    assert!(((conversions) == (0)));
 }
 pub unsafe fn test_transparent_count_6(c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_usize)));
+    assert!(((unimplemented!()) > (0_usize)));
+    assert!(((unimplemented!()) == (0_usize)));
+    assert!(((conversions) == (0)));
 }
 pub unsafe fn test_transparent_count_7(mut c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_usize)));
+    assert!(((unimplemented!()) > (0_usize)));
+    assert!(((unimplemented!()) == (0_usize)));
+    assert!(((conversions) == (0)));
 }
 pub unsafe fn test_transparent_count_8(c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_usize)));
+    assert!(((unimplemented!()) > (0_usize)));
+    assert!(((unimplemented!()) == (0_usize)));
+    assert!(((conversions) == (0)));
 }
 pub unsafe fn test_non_transparent_count_9(mut c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (1)));
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (2)));
+    assert!(((unimplemented!()) == (0_())));
+    assert!(((conversions) == (3)));
 }
 pub unsafe fn test_non_transparent_count_10(c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (1)));
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (2)));
+    assert!(((unimplemented!()) == (0_())));
+    assert!(((conversions) == (3)));
 }
 pub unsafe fn test_non_transparent_count_11(mut c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (1)));
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (2)));
+    assert!(((unimplemented!()) == (0_())));
+    assert!(((conversions) == (3)));
 }
 pub unsafe fn test_non_transparent_count_12(c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (1)));
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (2)));
+    assert!(((unimplemented!()) == (0_())));
+    assert!(((conversions) == (3)));
 }
 pub unsafe fn test_non_transparent_count_13(mut c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (1)));
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (2)));
+    assert!(((unimplemented!()) == (0_())));
+    assert!(((conversions) == (3)));
 }
 pub unsafe fn test_non_transparent_count_14(c: ()) {
-    let mut conversions: () = 0_();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut conversions: i32 = 0;
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (1)));
+    assert!(((unimplemented!()) > (0_())));
+    assert!(((conversions) == (2)));
+    assert!(((unimplemented!()) == (0_())));
+    assert!(((conversions) == (3)));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -263,7 +266,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         (unsafe { test_transparent_count_5(unimplemented!()) });
         (unsafe { test_transparent_count_6(unimplemented!()) });
@@ -284,6 +287,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe { test_non_transparent_count_13(unimplemented!()) });
         (unsafe { test_non_transparent_count_14(unimplemented!()) });
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

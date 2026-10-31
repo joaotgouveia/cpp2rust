@@ -13,8 +13,8 @@ impl DummyUnaryFunction {
     pub unsafe fn operator_call_1_struct_BadUnaryFunction(
         &self,
         _a0: *const BadUnaryFunction,
-    ) -> () {
-        return 0_();
+    ) -> i32 {
+        return 0;
     }
 }
 #[repr(C)]
@@ -35,17 +35,17 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut b: () = unimplemented!();
     (unsafe {
-        let mut ___args: () = 0_();
+        let mut ___args: i32 = 0;
         b(&mut ___args)
     });
     let mut b2: () = unimplemented!();
     (unsafe {
-        let mut ___args: () = 0_();
+        let mut ___args: i32 = 0;
         b2(&mut ___args)
     });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

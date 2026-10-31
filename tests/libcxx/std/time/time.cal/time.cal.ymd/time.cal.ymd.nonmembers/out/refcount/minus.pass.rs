@@ -6,12 +6,12 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_year_month_day__std_chrono_year_month_day_ {}
-pub fn test_constexpr_1() -> () {
+pub fn test_constexpr_1() -> bool {
     let ym0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return ((unimplemented!()) && (unimplemented!())) && (unimplemented!());
@@ -35,20 +35,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let January: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "test_constexpr()");;
     let ym: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i <= 10_()) {
+    let mut i: i32 = 0;
+    'loop_: while (i <= 10) {
         let ym1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (1234 - i)));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
         i.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

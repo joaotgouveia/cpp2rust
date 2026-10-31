@@ -6,25 +6,25 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         const _: () = assert!(true, "!std::is_convertible_v<int, std::move_sentinel<int>>");;
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 42));
     }
     {
         const _: () = assert!(
             true,
             "!std::is_convertible_v<int*, std::move_sentinel<int*>>"
         );;
-        let i: Value<()> = Rc::new(RefCell::new(42_()));
+        let i: Value<i32> = Rc::new(RefCell::new(42));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == (i.as_pointer())));
     }
     {
         const _: () = assert!(true, "!std::is_convertible_v<S, std::move_sentinel<S>>");;
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(({ unimplemented!().i } == 42));
     }
     return true;
 }
@@ -32,16 +32,16 @@ pub fn test_0() -> () {
 #[byte_size(4)]
 pub struct S_1 {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl S_1 {
-    pub fn new_1(mut j: ()) -> Self {
+    pub fn new_1(mut j: i32) -> Self {
         Self { i: j }
     }
 }
 impl Default for S_1 {
     fn default() -> Self {
-        { S_1 { i: 3_() } }
+        { S_1 { i: 3 } }
     }
 }
 pub fn main() {
@@ -63,9 +63,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,12 +6,12 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_int__int_ {}
-pub unsafe fn testConstexprSpan_1(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_1(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -24,7 +24,7 @@ pub unsafe fn testConstexprSpan_1(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_2(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_2(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -37,7 +37,7 @@ pub unsafe fn testConstexprSpan_2(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_3(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_3(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -50,7 +50,7 @@ pub unsafe fn testConstexprSpan_3(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_4(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_4(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -63,7 +63,7 @@ pub unsafe fn testConstexprSpan_4(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_5(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_5(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -76,7 +76,7 @@ pub unsafe fn testConstexprSpan_5(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_6(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_6(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -89,7 +89,7 @@ pub unsafe fn testConstexprSpan_6(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_7(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_7(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -102,7 +102,7 @@ pub unsafe fn testConstexprSpan_7(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_8(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_8(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -115,7 +115,7 @@ pub unsafe fn testConstexprSpan_8(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_9(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_9(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -128,7 +128,7 @@ pub unsafe fn testConstexprSpan_9(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_10(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_10(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -141,7 +141,7 @@ pub unsafe fn testConstexprSpan_10(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_11(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_11(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -154,7 +154,7 @@ pub unsafe fn testConstexprSpan_11(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_12(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_12(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -167,7 +167,7 @@ pub unsafe fn testConstexprSpan_12(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_13(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_13(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -180,7 +180,7 @@ pub unsafe fn testConstexprSpan_13(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_14(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_14(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -193,7 +193,7 @@ pub unsafe fn testConstexprSpan_14(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_15(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_15(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -206,7 +206,7 @@ pub unsafe fn testConstexprSpan_15(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_16(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_16(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -219,7 +219,7 @@ pub unsafe fn testConstexprSpan_16(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_17(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_17(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -232,7 +232,7 @@ pub unsafe fn testConstexprSpan_17(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_18(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_18(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -245,7 +245,7 @@ pub unsafe fn testConstexprSpan_18(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_19(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_19(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -261,7 +261,7 @@ pub unsafe fn testConstexprSpan_19(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_20(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_20(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -277,7 +277,7 @@ pub unsafe fn testConstexprSpan_20(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_21(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_21(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -293,7 +293,7 @@ pub unsafe fn testConstexprSpan_21(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_22(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_22(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -309,7 +309,7 @@ pub unsafe fn testConstexprSpan_22(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_23(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_23(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -325,7 +325,7 @@ pub unsafe fn testConstexprSpan_23(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_24(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_24(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -341,7 +341,7 @@ pub unsafe fn testConstexprSpan_24(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_25(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_25(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -357,7 +357,7 @@ pub unsafe fn testConstexprSpan_25(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_26(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_26(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -373,7 +373,7 @@ pub unsafe fn testConstexprSpan_26(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_27(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_27(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -389,7 +389,7 @@ pub unsafe fn testConstexprSpan_27(mut sp: ()) -> () {
         && ((unimplemented!()) == (unimplemented!())))
         && (unimplemented!());
 }
-pub unsafe fn testConstexprSpan_28(mut sp: ()) -> () {
+pub unsafe fn testConstexprSpan_28(mut sp: ()) -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let mut s1: () = (unsafe { sp.subspan() });
@@ -414,9 +414,9 @@ pub unsafe fn testRuntimeSpan_29(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_30(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -427,9 +427,9 @@ pub unsafe fn testRuntimeSpan_30(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_31(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -440,9 +440,9 @@ pub unsafe fn testRuntimeSpan_31(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_32(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -453,9 +453,9 @@ pub unsafe fn testRuntimeSpan_32(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_33(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -466,9 +466,9 @@ pub unsafe fn testRuntimeSpan_33(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_34(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -479,9 +479,9 @@ pub unsafe fn testRuntimeSpan_34(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_35(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -492,9 +492,9 @@ pub unsafe fn testRuntimeSpan_35(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_36(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -505,9 +505,9 @@ pub unsafe fn testRuntimeSpan_36(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_37(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -518,9 +518,9 @@ pub unsafe fn testRuntimeSpan_37(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_38(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -531,9 +531,9 @@ pub unsafe fn testRuntimeSpan_38(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_39(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -544,9 +544,9 @@ pub unsafe fn testRuntimeSpan_39(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_40(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -557,9 +557,9 @@ pub unsafe fn testRuntimeSpan_40(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_41(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -570,9 +570,9 @@ pub unsafe fn testRuntimeSpan_41(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_42(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -583,9 +583,9 @@ pub unsafe fn testRuntimeSpan_42(mut sp: ()) {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "S1::extent == Count");;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_43(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -599,9 +599,9 @@ pub unsafe fn testRuntimeSpan_43(mut sp: ()) {
         "S1::extent == (Span::extent == std::dynamic_extent ? std::dynamic_extent : Span::extent - Offset)"
     );;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_44(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -615,9 +615,9 @@ pub unsafe fn testRuntimeSpan_44(mut sp: ()) {
         "S1::extent == (Span::extent == std::dynamic_extent ? std::dynamic_extent : Span::extent - Offset)"
     );;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_45(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -631,9 +631,9 @@ pub unsafe fn testRuntimeSpan_45(mut sp: ()) {
         "S1::extent == (Span::extent == std::dynamic_extent ? std::dynamic_extent : Span::extent - Offset)"
     );;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_46(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -647,9 +647,9 @@ pub unsafe fn testRuntimeSpan_46(mut sp: ()) {
         "S1::extent == (Span::extent == std::dynamic_extent ? std::dynamic_extent : Span::extent - Offset)"
     );;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_47(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -663,9 +663,9 @@ pub unsafe fn testRuntimeSpan_47(mut sp: ()) {
         "S1::extent == (Span::extent == std::dynamic_extent ? std::dynamic_extent : Span::extent - Offset)"
     );;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_48(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -679,9 +679,9 @@ pub unsafe fn testRuntimeSpan_48(mut sp: ()) {
         "S1::extent == (Span::extent == std::dynamic_extent ? std::dynamic_extent : Span::extent - Offset)"
     );;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_49(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -695,9 +695,9 @@ pub unsafe fn testRuntimeSpan_49(mut sp: ()) {
         "S1::extent == (Span::extent == std::dynamic_extent ? std::dynamic_extent : Span::extent - Offset)"
     );;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
 pub unsafe fn testRuntimeSpan_50(mut sp: ()) {
     const _: () = assert!(true, "");;
@@ -711,14 +711,14 @@ pub unsafe fn testRuntimeSpan_50(mut sp: ()) {
         "S1::extent == (Span::extent == std::dynamic_extent ? std::dynamic_extent : Span::extent - Offset)"
     );;
     const _: () = assert!(true, "S2::extent == std::dynamic_extent");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(((unimplemented!()) == (unimplemented!())));
+    assert!(unimplemented!());
 }
-pub static mut carr1_51: std::cell::LazyCell<[(); 4]> =
-    std::cell::LazyCell::new(|| unsafe { [1_(), 2_(), 3_(), 4_()] });
-pub static mut arr1_52: std::cell::LazyCell<[(); 3]> =
-    std::cell::LazyCell::new(|| unsafe { [5_(), 6_(), 7_()] });
+pub static mut carr1_51: std::cell::LazyCell<[i32; 4]> =
+    std::cell::LazyCell::new(|| unsafe { [1, 2, 3, 4] });
+pub static mut arr1_52: std::cell::LazyCell<[i32; 3]> =
+    std::cell::LazyCell::new(|| unsafe { [5, 6, 7] });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -735,7 +735,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         const _: () = assert!(true, "testConstexprSpan<Sp, 0>(Sp{{}})");;
         const _: () = assert!(true, "testConstexprSpan<Sp, 0, 4>(Sp{{carr1}})");;
@@ -806,7 +806,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe { testRuntimeSpan_49(unimplemented!()) });
         (unsafe { testRuntimeSpan_50(unimplemented!()) });
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const carr1_51);

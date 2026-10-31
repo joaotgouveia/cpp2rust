@@ -14,106 +14,47 @@ pub struct Empty {}
 pub struct BigType {
     #[offset(0)]
     #[byte_size(64)]
-    pub buffer: Box<[()]>,
+    pub buffer: Box<[i8]>,
 }
 impl Default for BigType {
     fn default() -> Self {
         {
             BigType {
                 buffer: Box::new([
-                    10_(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
-                    unimplemented!(),
+                    10_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
+                    0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
+                    0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
+                    0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
+                    0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
                 ]),
             }
         }
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         let mut bt: BigType = <BigType>::default();
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
+        assert!((unimplemented!() == 1_usize));
     }
     {
         let mut bt: BigType = <BigType>::default();
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
+        assert!((unimplemented!() == 1_usize));
     }
     {
         let mut bt: BigType = <BigType>::default();
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
+        assert!((unimplemented!() == 1_usize));
     }
     {
         let mut bt: BigType = <BigType>::default();
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((((array_elem!(unimplemented!(), buffer, 0).read()) as i32) == 10));
+        assert!((unimplemented!() == 1_usize));
     }
     return true;
 }
@@ -136,9 +77,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

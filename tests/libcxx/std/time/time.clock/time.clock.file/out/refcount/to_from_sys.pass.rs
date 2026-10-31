@@ -26,27 +26,33 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let ft: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ft: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let file_now: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sys_now: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let diff: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!(
+                (unimplemented!() == std::cmp::Ordering::Less)
+                    && (unimplemented!() == std::cmp::Ordering::Less)
+            );
         }
         {
             let diff: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!(
+                (unimplemented!() == std::cmp::Ordering::Less)
+                    && (unimplemented!() == std::cmp::Ordering::Less)
+            );
         }
     }
     {
@@ -54,8 +60,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sys_diff: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let file_diff: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -10,27 +10,31 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub unsafe fn eq(mut c1: (), mut c2: ()) -> () {
-        return ((c1) == (c2));
+    pub unsafe fn eq(mut c1: libc::c_char, mut c2: libc::c_char) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
-    pub unsafe fn lt(mut c1: (), mut c2: ()) -> () {
-        return ((c1) < (c2));
+    pub unsafe fn lt(mut c1: libc::c_char, mut c2: libc::c_char) -> bool {
+        return ((c1 as i32) < (c2 as i32));
     }
-    pub unsafe fn compare(mut s1: *const (), mut s2: *const (), mut n: ()) -> () {
+    pub unsafe fn compare(
+        mut s1: *const libc::c_char,
+        mut s2: *const libc::c_char,
+        mut n: usize,
+    ) -> i32 {
         'loop_: while (n != 0) {
             if (unsafe {
-                let _c1: () = (*s1);
-                let _c2: () = (*s2);
+                let _c1: libc::c_char = (*s1);
+                let _c2: libc::c_char = (*s2);
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return -1_();
+                return -1_i32;
             }
             if (unsafe {
-                let _c1: () = (*s2);
-                let _c2: () = (*s1);
+                let _c1: libc::c_char = (*s2);
+                let _c2: libc::c_char = (*s1);
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return 1_();
+                return 1;
             }
             {
                 {
@@ -40,13 +44,17 @@ impl constexpr_char_traits_char_ {
                 s2.prefix_inc()
             };
         }
-        return 0_();
+        return 0;
     }
-    pub unsafe fn find(mut s: *const (), mut n: (), a: *const ()) -> *const () {
+    pub unsafe fn find(
+        mut s: *const libc::c_char,
+        mut n: usize,
+        a: *const libc::c_char,
+    ) -> *const libc::c_char {
         'loop_: while (n != 0) {
             if (unsafe {
-                let _c1: () = (*s);
-                let _c2: () = (*a);
+                let _c1: libc::c_char = (*s);
+                let _c2: libc::c_char = (*a);
                 constexpr_char_traits_char_::eq(_c1, _c2)
             }) {
                 return s;
@@ -59,16 +67,24 @@ impl constexpr_char_traits_char_ {
 }
 pub unsafe fn test_0(s: *const (), str: *const (), mut pos: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (x)));
     if ((x) != (unimplemented!())) {
-        unimplemented!();
+        assert!(
+            ((pos) <= (x))
+                && (((x as usize).wrapping_add((unimplemented!() as usize)))
+                    <= (unimplemented!() as usize))
+        );
     }
 }
 pub unsafe fn test_1(s: *const (), str: *const (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (x)));
     if ((x) != (unimplemented!())) {
-        unimplemented!();
+        assert!(
+            ((0_()) <= (x))
+                && (((x as usize).wrapping_add((unimplemented!() as usize)))
+                    <= (unimplemented!() as usize))
+        );
     }
 }
 pub unsafe fn test0_2() {
@@ -570,7 +586,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         (unsafe { test0_2() });
         (unsafe { test1_3() });
@@ -584,6 +600,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "sv2.find(sv2) == 0");;
         const _: () = assert!(true, "sv2.find(sv2, 1) == SV::npos");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

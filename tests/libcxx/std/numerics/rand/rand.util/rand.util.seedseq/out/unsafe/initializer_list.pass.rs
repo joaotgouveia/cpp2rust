@@ -22,22 +22,16 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut s: () = unimplemented!();
+    assert!(((unimplemented!()) == (5_usize)));
+    let mut b: [u32; 5] = [0_u32, 0_u32, 0_u32, 0_u32, 0_u32];
     unimplemented!();
-    let mut b: [(); 5] = [
-        0_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((b[(0) as usize]) == (5_u32)));
+    assert!(((b[(1) as usize]) == (4_u32)));
+    assert!(((b[(2) as usize]) == (3_u32)));
+    assert!(((b[(3) as usize]) == (2_u32)));
+    assert!(((b[(4) as usize]) == (1_u32)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

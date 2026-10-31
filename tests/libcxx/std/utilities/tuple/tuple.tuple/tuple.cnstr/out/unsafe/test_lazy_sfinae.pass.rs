@@ -9,10 +9,10 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NonConstCopyable {
-    pub value: (),
+    pub value: i32,
 }
 impl NonConstCopyable {
-    pub unsafe fn new_1(mut v: ()) -> Self {
+    pub unsafe fn new_1(mut v: i32) -> Self {
         let mut this = Self { value: v };
         this
     }
@@ -36,11 +36,11 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut v: NonConstCopyable = NonConstCopyable::new_1({ 42_() });
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut v: NonConstCopyable = NonConstCopyable::new_1({ 42 });
     let mut b: BlowsUpOnConstCopy_int_ = <BlowsUpOnConstCopy_int_>::default();
     let mut t: () = unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((((*unimplemented!()).value) == (42)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

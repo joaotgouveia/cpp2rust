@@ -258,7 +258,7 @@ impl test_allocator_int_ {
             (*self.stats_).allocated_size =
                 (((*self.stats_).allocated_size as u32).wrapping_add(n)) as i32;
         }
-        return (unsafe { <std_allocator_int_>::default().allocate((n as usize)) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut i32, mut s: u32) {
         assert!(
@@ -269,7 +269,7 @@ impl test_allocator_int_ {
             (*self.stats_).allocated_size =
                 (((*self.stats_).allocated_size as u32).wrapping_sub(s)) as i32;
         }
-        (unsafe { <std_allocator_int_>::default().deallocate(p, (s as usize)) });
+        unimplemented!();
     }
     pub unsafe fn max_size(&self) -> u32 {
         return ((((((2147483647_u32).wrapping_mul((2_u32 as u32)) as u32)
@@ -285,21 +285,13 @@ impl test_allocator_int_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).construct_count.prefix_inc();
         }
-        (unsafe {
-            let ___location: *mut i32 = (unsafe { to_address_5(p) });
-            let ___args: *const i32 = val;
-            construct_at_6(___location, ___args)
-        });
+        unimplemented!();
     }
     pub unsafe fn construct_16_int(&mut self, mut p: *mut i32, val: *mut i32) {
         if !((self.stats_).is_null()) {
             (*self.stats_).construct_count.prefix_inc();
         }
-        (unsafe {
-            let ___location: *mut i32 = (unsafe { to_address_5(p) });
-            let ___args: *mut i32 = val;
-            construct_at_7(___location, ___args)
-        });
+        unimplemented!();
     }
 }
 impl Default for test_allocator_int_ {
@@ -328,7 +320,8 @@ impl test_allocator_int_ptr_ {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(FnPtrArg, CppFromUnsafe, DestructorUnsafe)]
+#[cpp_from(test_allocator_int_, new_1, ptr)]
 pub struct test_allocator_int_ptr_ {
     data_: i32,
     id_: i32,
@@ -366,7 +359,7 @@ impl test_allocator_int_ptr_ {
             (*self.stats_).allocated_size =
                 (((*self.stats_).allocated_size as u32).wrapping_add(n)) as i32;
         }
-        return (unsafe { <std_allocator_int_ptr_>::default().allocate((n as usize)) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut i32, mut s: u32) {
         assert!(
@@ -377,15 +370,15 @@ impl test_allocator_int_ptr_ {
             (*self.stats_).allocated_size =
                 (((*self.stats_).allocated_size as u32).wrapping_sub(s)) as i32;
         }
-        (unsafe { <std_allocator_int_ptr_>::default().deallocate(p, (s as usize)) });
+        unimplemented!();
     }
 }
 impl Default for test_allocator_int_ptr_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ptr_ {
-                data_: <i32>::default(),
-                id_: <i32>::default(),
+                data_: 0_i32,
+                id_: 0_i32,
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -395,7 +388,8 @@ impl Default for test_allocator_int_ptr_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
-#[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 pub struct Tag_X {}
 impl Tag_X {
     pub unsafe fn new_1(mut _a0: Ctor_Tag) -> Self {
@@ -423,28 +417,293 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> usize {
         assert!(
-            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_9))
-                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_10)))
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_6))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_7)))
         );
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_9))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_10))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_6))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_7))));
     }
     pub unsafe fn reset() {
         assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_11)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_8)) = 0_usize;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_9)) = 0_usize;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_10)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_8)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_5)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_6)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_7)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_8: std::cell::LazyCell<usize> =
+pub static mut outstanding_bytes_5: std::cell::LazyCell<usize> =
     std::cell::LazyCell::new(|| unsafe { 0_usize });
-pub static mut alloc_count_9: std::cell::LazyCell<usize> =
+pub static mut alloc_count_6: std::cell::LazyCell<usize> =
     std::cell::LazyCell::new(|| unsafe { 0_usize });
-pub static mut dealloc_count_10: std::cell::LazyCell<usize> =
+pub static mut dealloc_count_7: std::cell::LazyCell<usize> =
     std::cell::LazyCell::new(|| unsafe { 0_usize });
-pub static mut disable_default_constructor_11: std::cell::LazyCell<bool> =
+pub static mut disable_default_constructor_8: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
+pub unsafe fn operator_sub_9(
+    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
+}
+pub unsafe fn operator_lt_10(
+    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) < (y.ptr_));
+}
+pub unsafe fn operator_eq_11(
+    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_12(
+    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return !(unsafe {
+        let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
+        operator_eq_11(_x, y)
+    });
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut i32,
+}
+impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn new_1(mut p: *mut i32) -> Self {
+        let mut this = Self { ptr_: p };
+        this
+    }
+    pub unsafe fn to_bool(&self) -> bool {
+        return !((self.ptr_).is_null());
+    }
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
+        return &mut (*self.ptr_);
+    }
+    pub unsafe fn operator_arrow(&self) -> *mut i32 {
+        return self.ptr_;
+    }
+    pub unsafe fn operator_inc_8(
+        &mut self,
+    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_.prefix_inc();
+        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_dec_10(
+        &mut self,
+    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_.prefix_dec();
+        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_add_assign(
+        &mut self,
+        mut n: isize,
+    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_ = (self.ptr_).wrapping_add(n as usize);
+        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_sub_assign(
+        &mut self,
+        mut n: isize,
+    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
+        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        let mut tmp: min_pointer_int__std_integral_constant_unsigned_long__0__ =
+            (*(self as *const min_pointer_int__std_integral_constant_unsigned_long__0__));
+        (unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_add_assign(
+                &mut tmp, n,
+            )
+        });
+        return tmp;
+    }
+    pub unsafe fn operator_sub(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        let mut tmp: min_pointer_int__std_integral_constant_unsigned_long__0__ =
+            (*(self as *const min_pointer_int__std_integral_constant_unsigned_long__0__));
+        (unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_sub_assign(
+                &mut tmp, n,
+            )
+        });
+        return tmp;
+    }
+}
+impl std::cmp::Ord for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        unsafe {
+            if operator_lt_10(self.clone(), other.clone()) {
+                std::cmp::Ordering::Less
+            } else if operator_lt_10(other.clone(), self.clone()) {
+                std::cmp::Ordering::Greater
+            } else {
+                std::cmp::Ordering::Equal
+            }
+        }
+    }
+}
+impl std::cmp::PartialOrd for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { operator_eq_11(self.clone(), other.clone()) }
+    }
+}
+impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_8();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_10();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut ::libc::c_void,
+}
+impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+pub unsafe fn operator_sub_13(
+    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
+}
+pub unsafe fn operator_eq_14(
+    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_15(
+    mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) != (y.ptr_));
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(
+    min_pointer_int__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
+pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    ptr_: *const i32,
+}
+impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    pub unsafe fn new_1(mut p: min_pointer_int__std_integral_constant_unsigned_long__0__) -> Self {
+        let mut this = Self {
+            ptr_: (p.ptr_).cast_const(),
+        };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> *const i32 {
+        return &(*self.ptr_);
+    }
+    pub unsafe fn operator_inc_9(
+        &mut self,
+    ) -> *mut min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_.prefix_inc();
+        return &mut (*(self
+            as *mut min_pointer_const_int__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_index(&self, mut n: isize) -> *const i32 {
+        return &(*self.ptr_.offset((n) as isize));
+    }
+}
+impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { operator_eq_14(self.clone(), other.clone()) }
+    }
+}
+impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
+    ptr_: *const ::libc::c_void,
+}
+impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
+pub unsafe fn operator_sub_16(
+    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize)
+        / ::std::mem::size_of::<min_pointer_int__std_integral_constant_unsigned_long__0__>())
+        as i64 as isize);
+}
+pub unsafe fn operator_lt_17(
+    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) < (y.ptr_));
+}
+pub unsafe fn operator_eq_18(
+    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_19(
+    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return !(unsafe {
+        let _x: min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  = x ;
+        operator_eq_18(_x, y)
+    });
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
+{
+    ptr_: *mut min_pointer_int__std_integral_constant_unsigned_long__0__,
+}
+impl min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut min_pointer_int__std_integral_constant_unsigned_long__0__ , ) -> Self { let mut this = Self { ptr_ : p , } ;
+ this } pub unsafe fn to_bool ( &self , ) -> bool { return ! ( ( self . ptr_  ).is_null() )  ;
+ } pub unsafe fn operator_deref ( &self , ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ { return & mut ( * self . ptr_   )  ;
+ } pub unsafe fn operator_inc_8 ( &mut self , ) -> *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  .prefix_inc() ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_dec_10 ( &mut self , ) -> *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  .prefix_dec() ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_add_assign ( &mut self , mut n : isize , ) -> *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  = ( self . ptr_  ) . wrapping_add ( n as usize ) ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_sub_assign ( &mut self , mut n : isize , ) -> *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  = ( self . ptr_  ) . wrapping_sub ( n as usize ) ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_add ( &self , mut n : isize , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { let mut tmp : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ = ( * ( self as *const min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  ) ;
+  ;
+ ;
+ ( unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: operator_add_assign ( &mut tmp  , n , ) } )  ;
+ return tmp  ;
+ } pub unsafe fn operator_sub ( &self , mut n : isize , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { let mut tmp : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ = ( * ( self as *const min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  ) ;
+  ;
+ ;
+ ( unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: operator_sub_assign ( &mut tmp  , n , ) } )  ;
+ return tmp  ;
+ } }
+impl std::cmp::Ord for  min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn cmp(&self, other: &Self) -> std::cmp::Ordering { unsafe { if operator_lt_17(self.clone(), other.clone()) { std::cmp::Ordering::Less } else if operator_lt_17(other.clone(), self.clone()) { std::cmp::Ordering::Greater } else { std::cmp::Ordering::Equal } }}}
+impl std::cmp::PartialOrd for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> { Some(self.cmp(other)) }}
+impl std::cmp::PartialEq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_18(self.clone(), other.clone()) }}}
+impl std::cmp::Eq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn cpp_inc(&mut self) { self.operator_inc_8(); } unsafe fn cpp_dec(&mut self) { self.operator_dec_10(); } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
@@ -454,7 +713,7 @@ impl min_allocator_int_ {
         mut n: usize,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
-            (unsafe { <std_allocator_int_>::default().allocate(n) })
+            unimplemented!()
         });
     }
     pub unsafe fn deallocate(
@@ -462,7 +721,7 @@ impl min_allocator_int_ {
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
         mut n: usize,
     ) {
-        (unsafe { <std_allocator_int_>::default().deallocate(p.ptr_, n) });
+        unimplemented!();
     }
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
@@ -472,26 +731,619 @@ impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(min_allocator_int_, new_1, value)]
 pub struct min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
     pub unsafe fn allocate ( &mut self , mut n : usize , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { ( unsafe { <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ >::default() . allocate  ( n , ) } )  } , )   ;
+        return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
     }
     pub unsafe fn deallocate(
         &mut self,
         mut p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
         mut n: usize,
     ) {
-        (unsafe {
-            <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>::default()
-                .deallocate(p.ptr_, n)
-        });
+        unimplemented!();
     }
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 const _: () = assert!(true, "HasStdErase<std::vector<int>>");
 const _: () = assert!(!(false), "!HasStdErase<std::flat_multiset<int>>");
+pub unsafe fn make_20(mut vals: Vec<i32>) -> () {
+    let mut ret: () = unimplemented!();
+    'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut v: i32 = (*v);
+        unimplemented!();
+    }
+    return ret;
+}
+pub unsafe fn make_21(mut vals: Vec<i32>) -> () {
+    let mut ret: () = unimplemented!();
+    'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut v: i32 = (*v);
+        unimplemented!();
+    }
+    return ret;
+}
+pub unsafe fn make_22(mut vals: Vec<i32>) -> () {
+    let mut ret: () = unimplemented!();
+    'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut v: i32 = (*v);
+        unimplemented!();
+    }
+    return ret;
+}
+pub unsafe fn make_23(mut vals: Vec<i32>) -> () {
+    let mut ret: () = unimplemented!();
+    'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut v: i32 = (*v);
+        unimplemented!();
+    }
+    return ret;
+}
+pub unsafe fn make_24(mut vals: Vec<i32>) -> () {
+    let mut ret: () = unimplemented!();
+    'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut v: i32 = (*v);
+        unimplemented!();
+    }
+    return ret;
+}
+pub unsafe fn make_25(mut vals: Vec<i32>) -> () {
+    let mut ret: () = unimplemented!();
+    'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut v: i32 = (*v);
+        unimplemented!();
+    }
+    return ret;
+}
+pub unsafe fn make_26(mut vals: Vec<i32>) -> () {
+    let mut ret: () = unimplemented!();
+    'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
+        let mut v: i32 = (*v);
+        unimplemented!();
+    }
+    return ret;
+}
+pub unsafe fn test0_27(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_20(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_28(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_20(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_29(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_20(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_30(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_20(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_31(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_20(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_32(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_20(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_33(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_20(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_34(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_21(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_35(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_21(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_36(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_21(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_37(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_21(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_38(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_21(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_39(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_21(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_40(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_21(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_41(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_22(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_42(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_22(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_43(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_22(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_44(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_22(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_45(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_22(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_46(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_22(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_47(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_22(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_48(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_23(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_49(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_23(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_50(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_23(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_51(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_23(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_52(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_23(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_53(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_23(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_54(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_23(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_55(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_24(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_56(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_24(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_57(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i32) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_24(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_58(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_24(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_59(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_24(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_60(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_24(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_61(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_24(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_62(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i64) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_25(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_63(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(i64) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_25(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_64(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const i64) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_25(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_65(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_25(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_66(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_25(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_67(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_25(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_68(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_25(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_69(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const f64) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_26(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_70(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(f64) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_26(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_71(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<fn(*const f64) -> bool>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_26(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_72(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_26(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_73(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_26(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_74(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_26(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
+pub unsafe fn test0_75(
+    mut vals: Vec<i32>,
+    mut p: FnPtr<Generic>,
+    mut expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let mut s: () = (unsafe { make_26(vals.clone()) });
+    const _: () = assert!(true, "");;
+    assert!(((expected_erased_count) == (unimplemented!())));
+    assert!(unimplemented!());
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NotBool {
@@ -502,16 +1354,1392 @@ impl NotBool {
         return self.b;
     }
 }
-pub unsafe fn test_12() -> bool {
-    (unsafe { test_one_13() });
-    (unsafe { test_one_14() });
-    (unsafe { test_one_15() });
+pub unsafe fn test_one_76() {
+    let mut is1: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (1));
+            }
+        });
+    let mut is2: FnPtr<fn(i32) -> bool> = FnPtr::<fn(i32) -> bool>::new(|mut v: i32| -> bool {
+        unsafe {
+            return ((v) == (2));
+        }
+    });
+    let mut is3: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (3));
+            }
+        });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: i32| -> bool {
+        return ((v) == (4));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *const i32| -> bool {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *mut i32| -> bool {
+        return false;
+    });
+    let mut nonBoolIs1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |v: *const i32| -> NotBool {
+        return NotBool { b: ((*v) == (1)) };
+    });
+    (unsafe { test0_27(unimplemented!(), is1.copy_from(), unimplemented!(), 0_usize) });
+    (unsafe { test0_27(Vec::from([1]), is1.copy_from(), unimplemented!(), 1_usize) });
+    (unsafe {
+        test0_27(
+            Vec::from([1, 1, 1]),
+            is1.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe { test0_28(Vec::from([1]), is2.copy_from(), Vec::from([1]), 0_usize) });
+    (unsafe {
+        test0_28(
+            Vec::from([1, 1, 1]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            0_usize,
+        )
+    });
+    (unsafe { test0_27(Vec::from([1, 2]), is1.copy_from(), Vec::from([2]), 1_usize) });
+    (unsafe {
+        test0_27(
+            Vec::from([1, 1, 1, 2, 2]),
+            is1.copy_from(),
+            Vec::from([2, 2]),
+            3_usize,
+        )
+    });
+    (unsafe { test0_28(Vec::from([1, 2]), is2.copy_from(), Vec::from([1]), 1_usize) });
+    (unsafe {
+        test0_28(
+            Vec::from([1, 1, 1, 2, 2]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_29(
+            Vec::from([1, 2]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_29(
+            Vec::from([1, 1, 1, 2, 2]),
+            is3.copy_from(),
+            Vec::from([1, 1, 1, 2, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_27(
+            Vec::from([1, 2, 3]),
+            is1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_27(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is1.copy_from(),
+            Vec::from([2, 2, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_28(
+            Vec::from([1, 2, 3]),
+            is2.copy_from(),
+            Vec::from([1, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_28(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is2.copy_from(),
+            Vec::from([1, 1, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_29(
+            Vec::from([1, 2, 3]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_29(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is3.copy_from(),
+            Vec::from([1, 1, 2, 2]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_30(
+            Vec::from([1, 2, 3]),
+            is4.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_30(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is4.copy_from(),
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_31(
+            Vec::from([1, 2, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe {
+        test0_31(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            6_usize,
+        )
+    });
+    (unsafe {
+        test0_32(
+            Vec::from([1, 2, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_32(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_33(
+            Vec::from([1, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_33(
+            Vec::from([1, 1, 2, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 2, 3]),
+            2_usize,
+        )
+    });
+}
+pub unsafe fn test_one_77() {
+    let mut is1: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (1));
+            }
+        });
+    let mut is2: FnPtr<fn(i32) -> bool> = FnPtr::<fn(i32) -> bool>::new(|mut v: i32| -> bool {
+        unsafe {
+            return ((v) == (2));
+        }
+    });
+    let mut is3: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (3));
+            }
+        });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: i32| -> bool {
+        return ((v) == (4));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *const i32| -> bool {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *mut i32| -> bool {
+        return false;
+    });
+    let mut nonBoolIs1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |v: *const i32| -> NotBool {
+        return NotBool { b: ((*v) == (1)) };
+    });
+    (unsafe { test0_34(unimplemented!(), is1.copy_from(), unimplemented!(), 0_usize) });
+    (unsafe { test0_34(Vec::from([1]), is1.copy_from(), unimplemented!(), 1_usize) });
+    (unsafe {
+        test0_34(
+            Vec::from([1, 1, 1]),
+            is1.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe { test0_35(Vec::from([1]), is2.copy_from(), Vec::from([1]), 0_usize) });
+    (unsafe {
+        test0_35(
+            Vec::from([1, 1, 1]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            0_usize,
+        )
+    });
+    (unsafe { test0_34(Vec::from([1, 2]), is1.copy_from(), Vec::from([2]), 1_usize) });
+    (unsafe {
+        test0_34(
+            Vec::from([1, 1, 1, 2, 2]),
+            is1.copy_from(),
+            Vec::from([2, 2]),
+            3_usize,
+        )
+    });
+    (unsafe { test0_35(Vec::from([1, 2]), is2.copy_from(), Vec::from([1]), 1_usize) });
+    (unsafe {
+        test0_35(
+            Vec::from([1, 1, 1, 2, 2]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_36(
+            Vec::from([1, 2]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_36(
+            Vec::from([1, 1, 1, 2, 2]),
+            is3.copy_from(),
+            Vec::from([1, 1, 1, 2, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_34(
+            Vec::from([1, 2, 3]),
+            is1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_34(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is1.copy_from(),
+            Vec::from([2, 2, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_35(
+            Vec::from([1, 2, 3]),
+            is2.copy_from(),
+            Vec::from([1, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_35(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is2.copy_from(),
+            Vec::from([1, 1, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_36(
+            Vec::from([1, 2, 3]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_36(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is3.copy_from(),
+            Vec::from([1, 1, 2, 2]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_37(
+            Vec::from([1, 2, 3]),
+            is4.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_37(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is4.copy_from(),
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_38(
+            Vec::from([1, 2, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe {
+        test0_38(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            6_usize,
+        )
+    });
+    (unsafe {
+        test0_39(
+            Vec::from([1, 2, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_39(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_40(
+            Vec::from([1, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_40(
+            Vec::from([1, 1, 2, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 2, 3]),
+            2_usize,
+        )
+    });
+}
+pub unsafe fn test_one_78() {
+    let mut is1: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (1));
+            }
+        });
+    let mut is2: FnPtr<fn(i32) -> bool> = FnPtr::<fn(i32) -> bool>::new(|mut v: i32| -> bool {
+        unsafe {
+            return ((v) == (2));
+        }
+    });
+    let mut is3: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (3));
+            }
+        });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: i32| -> bool {
+        return ((v) == (4));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *const i32| -> bool {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *mut i32| -> bool {
+        return false;
+    });
+    let mut nonBoolIs1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |v: *const i32| -> NotBool {
+        return NotBool { b: ((*v) == (1)) };
+    });
+    (unsafe { test0_41(unimplemented!(), is1.copy_from(), unimplemented!(), 0_usize) });
+    (unsafe { test0_41(Vec::from([1]), is1.copy_from(), unimplemented!(), 1_usize) });
+    (unsafe {
+        test0_41(
+            Vec::from([1, 1, 1]),
+            is1.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe { test0_42(Vec::from([1]), is2.copy_from(), Vec::from([1]), 0_usize) });
+    (unsafe {
+        test0_42(
+            Vec::from([1, 1, 1]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            0_usize,
+        )
+    });
+    (unsafe { test0_41(Vec::from([1, 2]), is1.copy_from(), Vec::from([2]), 1_usize) });
+    (unsafe {
+        test0_41(
+            Vec::from([1, 1, 1, 2, 2]),
+            is1.copy_from(),
+            Vec::from([2, 2]),
+            3_usize,
+        )
+    });
+    (unsafe { test0_42(Vec::from([1, 2]), is2.copy_from(), Vec::from([1]), 1_usize) });
+    (unsafe {
+        test0_42(
+            Vec::from([1, 1, 1, 2, 2]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_43(
+            Vec::from([1, 2]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_43(
+            Vec::from([1, 1, 1, 2, 2]),
+            is3.copy_from(),
+            Vec::from([1, 1, 1, 2, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_41(
+            Vec::from([1, 2, 3]),
+            is1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_41(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is1.copy_from(),
+            Vec::from([2, 2, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_42(
+            Vec::from([1, 2, 3]),
+            is2.copy_from(),
+            Vec::from([1, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_42(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is2.copy_from(),
+            Vec::from([1, 1, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_43(
+            Vec::from([1, 2, 3]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_43(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is3.copy_from(),
+            Vec::from([1, 1, 2, 2]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_44(
+            Vec::from([1, 2, 3]),
+            is4.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_44(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is4.copy_from(),
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_45(
+            Vec::from([1, 2, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe {
+        test0_45(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            6_usize,
+        )
+    });
+    (unsafe {
+        test0_46(
+            Vec::from([1, 2, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_46(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_47(
+            Vec::from([1, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_47(
+            Vec::from([1, 1, 2, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 2, 3]),
+            2_usize,
+        )
+    });
+}
+pub unsafe fn test_one_79() {
+    let mut is1: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (1));
+            }
+        });
+    let mut is2: FnPtr<fn(i32) -> bool> = FnPtr::<fn(i32) -> bool>::new(|mut v: i32| -> bool {
+        unsafe {
+            return ((v) == (2));
+        }
+    });
+    let mut is3: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (3));
+            }
+        });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: i32| -> bool {
+        return ((v) == (4));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *const i32| -> bool {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *mut i32| -> bool {
+        return false;
+    });
+    let mut nonBoolIs1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |v: *const i32| -> NotBool {
+        return NotBool { b: ((*v) == (1)) };
+    });
+    (unsafe { test0_48(unimplemented!(), is1.copy_from(), unimplemented!(), 0_usize) });
+    (unsafe { test0_48(Vec::from([1]), is1.copy_from(), unimplemented!(), 1_usize) });
+    (unsafe {
+        test0_48(
+            Vec::from([1, 1, 1]),
+            is1.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe { test0_49(Vec::from([1]), is2.copy_from(), Vec::from([1]), 0_usize) });
+    (unsafe {
+        test0_49(
+            Vec::from([1, 1, 1]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            0_usize,
+        )
+    });
+    (unsafe { test0_48(Vec::from([1, 2]), is1.copy_from(), Vec::from([2]), 1_usize) });
+    (unsafe {
+        test0_48(
+            Vec::from([1, 1, 1, 2, 2]),
+            is1.copy_from(),
+            Vec::from([2, 2]),
+            3_usize,
+        )
+    });
+    (unsafe { test0_49(Vec::from([1, 2]), is2.copy_from(), Vec::from([1]), 1_usize) });
+    (unsafe {
+        test0_49(
+            Vec::from([1, 1, 1, 2, 2]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_50(
+            Vec::from([1, 2]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_50(
+            Vec::from([1, 1, 1, 2, 2]),
+            is3.copy_from(),
+            Vec::from([1, 1, 1, 2, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_48(
+            Vec::from([1, 2, 3]),
+            is1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_48(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is1.copy_from(),
+            Vec::from([2, 2, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_49(
+            Vec::from([1, 2, 3]),
+            is2.copy_from(),
+            Vec::from([1, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_49(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is2.copy_from(),
+            Vec::from([1, 1, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_50(
+            Vec::from([1, 2, 3]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_50(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is3.copy_from(),
+            Vec::from([1, 1, 2, 2]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_51(
+            Vec::from([1, 2, 3]),
+            is4.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_51(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is4.copy_from(),
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_52(
+            Vec::from([1, 2, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe {
+        test0_52(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            6_usize,
+        )
+    });
+    (unsafe {
+        test0_53(
+            Vec::from([1, 2, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_53(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_54(
+            Vec::from([1, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_54(
+            Vec::from([1, 1, 2, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 2, 3]),
+            2_usize,
+        )
+    });
+}
+pub unsafe fn test_one_80() {
+    let mut is1: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (1));
+            }
+        });
+    let mut is2: FnPtr<fn(i32) -> bool> = FnPtr::<fn(i32) -> bool>::new(|mut v: i32| -> bool {
+        unsafe {
+            return ((v) == (2));
+        }
+    });
+    let mut is3: FnPtr<fn(*const i32) -> bool> =
+        FnPtr::<fn(*const i32) -> bool>::new(|v: *const i32| -> bool {
+            unsafe {
+                return ((*v) == (3));
+            }
+        });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: i32| -> bool {
+        return ((v) == (4));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *const i32| -> bool {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *mut i32| -> bool {
+        return false;
+    });
+    let mut nonBoolIs1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |v: *const i32| -> NotBool {
+        return NotBool { b: ((*v) == (1)) };
+    });
+    (unsafe { test0_55(unimplemented!(), is1.copy_from(), unimplemented!(), 0_usize) });
+    (unsafe { test0_55(Vec::from([1]), is1.copy_from(), unimplemented!(), 1_usize) });
+    (unsafe {
+        test0_55(
+            Vec::from([1, 1, 1]),
+            is1.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe { test0_56(Vec::from([1]), is2.copy_from(), Vec::from([1]), 0_usize) });
+    (unsafe {
+        test0_56(
+            Vec::from([1, 1, 1]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            0_usize,
+        )
+    });
+    (unsafe { test0_55(Vec::from([1, 2]), is1.copy_from(), Vec::from([2]), 1_usize) });
+    (unsafe {
+        test0_55(
+            Vec::from([1, 1, 1, 2, 2]),
+            is1.copy_from(),
+            Vec::from([2, 2]),
+            3_usize,
+        )
+    });
+    (unsafe { test0_56(Vec::from([1, 2]), is2.copy_from(), Vec::from([1]), 1_usize) });
+    (unsafe {
+        test0_56(
+            Vec::from([1, 1, 1, 2, 2]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_57(
+            Vec::from([1, 2]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_57(
+            Vec::from([1, 1, 1, 2, 2]),
+            is3.copy_from(),
+            Vec::from([1, 1, 1, 2, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_55(
+            Vec::from([1, 2, 3]),
+            is1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_55(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is1.copy_from(),
+            Vec::from([2, 2, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_56(
+            Vec::from([1, 2, 3]),
+            is2.copy_from(),
+            Vec::from([1, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_56(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is2.copy_from(),
+            Vec::from([1, 1, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_57(
+            Vec::from([1, 2, 3]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_57(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is3.copy_from(),
+            Vec::from([1, 1, 2, 2]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_58(
+            Vec::from([1, 2, 3]),
+            is4.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_58(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is4.copy_from(),
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_59(
+            Vec::from([1, 2, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe {
+        test0_59(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            6_usize,
+        )
+    });
+    (unsafe {
+        test0_60(
+            Vec::from([1, 2, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_60(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_61(
+            Vec::from([1, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_61(
+            Vec::from([1, 1, 2, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 2, 3]),
+            2_usize,
+        )
+    });
+}
+pub unsafe fn test_one_81() {
+    let mut is1: FnPtr<fn(*const i64) -> bool> =
+        FnPtr::<fn(*const i64) -> bool>::new(|v: *const i64| -> bool {
+            unsafe {
+                return ((*v) == (1_i64));
+            }
+        });
+    let mut is2: FnPtr<fn(i64) -> bool> = FnPtr::<fn(i64) -> bool>::new(|mut v: i64| -> bool {
+        unsafe {
+            return ((v) == (2_i64));
+        }
+    });
+    let mut is3: FnPtr<fn(*const i64) -> bool> =
+        FnPtr::<fn(*const i64) -> bool>::new(|v: *const i64| -> bool {
+            unsafe {
+                return ((*v) == (3_i64));
+            }
+        });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: i64| -> bool {
+        return ((v) == (4_i64));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *const i64| -> bool {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *mut i64| -> bool {
+        return false;
+    });
+    let mut nonBoolIs1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |v: *const i64| -> NotBool {
+        return NotBool {
+            b: ((*v) == (1_i64)),
+        };
+    });
+    (unsafe { test0_62(unimplemented!(), is1.copy_from(), unimplemented!(), 0_usize) });
+    (unsafe { test0_62(Vec::from([1]), is1.copy_from(), unimplemented!(), 1_usize) });
+    (unsafe {
+        test0_62(
+            Vec::from([1, 1, 1]),
+            is1.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe { test0_63(Vec::from([1]), is2.copy_from(), Vec::from([1]), 0_usize) });
+    (unsafe {
+        test0_63(
+            Vec::from([1, 1, 1]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            0_usize,
+        )
+    });
+    (unsafe { test0_62(Vec::from([1, 2]), is1.copy_from(), Vec::from([2]), 1_usize) });
+    (unsafe {
+        test0_62(
+            Vec::from([1, 1, 1, 2, 2]),
+            is1.copy_from(),
+            Vec::from([2, 2]),
+            3_usize,
+        )
+    });
+    (unsafe { test0_63(Vec::from([1, 2]), is2.copy_from(), Vec::from([1]), 1_usize) });
+    (unsafe {
+        test0_63(
+            Vec::from([1, 1, 1, 2, 2]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_64(
+            Vec::from([1, 2]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_64(
+            Vec::from([1, 1, 1, 2, 2]),
+            is3.copy_from(),
+            Vec::from([1, 1, 1, 2, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_62(
+            Vec::from([1, 2, 3]),
+            is1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_62(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is1.copy_from(),
+            Vec::from([2, 2, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_63(
+            Vec::from([1, 2, 3]),
+            is2.copy_from(),
+            Vec::from([1, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_63(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is2.copy_from(),
+            Vec::from([1, 1, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_64(
+            Vec::from([1, 2, 3]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_64(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is3.copy_from(),
+            Vec::from([1, 1, 2, 2]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_65(
+            Vec::from([1, 2, 3]),
+            is4.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_65(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is4.copy_from(),
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_66(
+            Vec::from([1, 2, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe {
+        test0_66(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            6_usize,
+        )
+    });
+    (unsafe {
+        test0_67(
+            Vec::from([1, 2, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_67(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_68(
+            Vec::from([1, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_68(
+            Vec::from([1, 1, 2, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 2, 3]),
+            2_usize,
+        )
+    });
+}
+pub unsafe fn test_one_82() {
+    let mut is1: FnPtr<fn(*const f64) -> bool> =
+        FnPtr::<fn(*const f64) -> bool>::new(|v: *const f64| -> bool {
+            unsafe {
+                return ((*v) == (1_f64));
+            }
+        });
+    let mut is2: FnPtr<fn(f64) -> bool> = FnPtr::<fn(f64) -> bool>::new(|mut v: f64| -> bool {
+        unsafe {
+            return ((v) == (2_f64));
+        }
+    });
+    let mut is3: FnPtr<fn(*const f64) -> bool> =
+        FnPtr::<fn(*const f64) -> bool>::new(|v: *const f64| -> bool {
+            unsafe {
+                return ((*v) == (3_f64));
+            }
+        });
+    let mut is4: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut v: f64| -> bool {
+        return ((v) == (4_f64));
+    });
+    let mut True: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *const f64| -> bool {
+        return true;
+    });
+    let mut False: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |_a0: *mut f64| -> bool {
+        return false;
+    });
+    let mut nonBoolIs1: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |v: *const f64| -> NotBool {
+        return NotBool {
+            b: ((*v) == (1_f64)),
+        };
+    });
+    (unsafe { test0_69(unimplemented!(), is1.copy_from(), unimplemented!(), 0_usize) });
+    (unsafe { test0_69(Vec::from([1]), is1.copy_from(), unimplemented!(), 1_usize) });
+    (unsafe {
+        test0_69(
+            Vec::from([1, 1, 1]),
+            is1.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe { test0_70(Vec::from([1]), is2.copy_from(), Vec::from([1]), 0_usize) });
+    (unsafe {
+        test0_70(
+            Vec::from([1, 1, 1]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            0_usize,
+        )
+    });
+    (unsafe { test0_69(Vec::from([1, 2]), is1.copy_from(), Vec::from([2]), 1_usize) });
+    (unsafe {
+        test0_69(
+            Vec::from([1, 1, 1, 2, 2]),
+            is1.copy_from(),
+            Vec::from([2, 2]),
+            3_usize,
+        )
+    });
+    (unsafe { test0_70(Vec::from([1, 2]), is2.copy_from(), Vec::from([1]), 1_usize) });
+    (unsafe {
+        test0_70(
+            Vec::from([1, 1, 1, 2, 2]),
+            is2.copy_from(),
+            Vec::from([1, 1, 1]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_71(
+            Vec::from([1, 2]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_71(
+            Vec::from([1, 1, 1, 2, 2]),
+            is3.copy_from(),
+            Vec::from([1, 1, 1, 2, 2]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_69(
+            Vec::from([1, 2, 3]),
+            is1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_69(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is1.copy_from(),
+            Vec::from([2, 2, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_70(
+            Vec::from([1, 2, 3]),
+            is2.copy_from(),
+            Vec::from([1, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_70(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is2.copy_from(),
+            Vec::from([1, 1, 3, 3]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_71(
+            Vec::from([1, 2, 3]),
+            is3.copy_from(),
+            Vec::from([1, 2]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_71(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is3.copy_from(),
+            Vec::from([1, 1, 2, 2]),
+            2_usize,
+        )
+    });
+    (unsafe {
+        test0_72(
+            Vec::from([1, 2, 3]),
+            is4.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_72(
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            is4.copy_from(),
+            Vec::from([1, 1, 2, 2, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_73(
+            Vec::from([1, 2, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            3_usize,
+        )
+    });
+    (unsafe {
+        test0_73(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            True.copy_from(),
+            unimplemented!(),
+            6_usize,
+        )
+    });
+    (unsafe {
+        test0_74(
+            Vec::from([1, 2, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_74(
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            False.copy_from(),
+            Vec::from([1, 2, 2, 3, 3, 3]),
+            0_usize,
+        )
+    });
+    (unsafe {
+        test0_75(
+            Vec::from([1, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 3]),
+            1_usize,
+        )
+    });
+    (unsafe {
+        test0_75(
+            Vec::from([1, 1, 2, 2, 3]),
+            nonBoolIs1.copy_from(),
+            Vec::from([2, 2, 3]),
+            2_usize,
+        )
+    });
+}
+pub unsafe fn test_83() -> bool {
+    (unsafe { test_one_76() });
+    (unsafe { test_one_77() });
+    (unsafe { test_one_78() });
     {
-        (unsafe { test_one_16() });
-        (unsafe { test_one_17() });
+        (unsafe { test_one_79() });
+        (unsafe { test_one_80() });
     }
-    (unsafe { test_one_18() });
-    (unsafe { test_one_19() });
+    (unsafe { test_one_81() });
+    (unsafe { test_one_82() });
     return true;
 }
 pub fn main() {
@@ -530,18 +2758,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
-    (unsafe { test_12() });
+    (unsafe { test_83() });
     return 0;
 }
-#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
-pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__;
-#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const destructed_value_1);
     std::cell::LazyCell::force(&*&raw const moved_value_2);
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_8);
-    std::cell::LazyCell::force(&*&raw const alloc_count_9);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_10);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_11);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_5);
+    std::cell::LazyCell::force(&*&raw const alloc_count_6);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_7);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_8);
 }

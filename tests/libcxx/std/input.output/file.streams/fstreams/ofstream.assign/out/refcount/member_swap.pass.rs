@@ -6,35 +6,65 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn get_temp_file_name_0() -> () {
-    let mut Name: () = unimplemented!();
-    let mut FD: () = unimplemented!();
-    if (FD == -1_()) {
+pub fn get_temp_file_name_0() -> Vec<i8> {
+    let Name: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"libcxx.XXXXXX").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let mut FD: i32 = unimplemented!();
+    if (FD == -1_i32) {
         unimplemented!();
-        unimplemented!();
+        std::process::abort();
     }
-    unimplemented!();
-    return unimplemented!();
+    FdRegistry::close(FD);
+    return std::mem::take(&mut (*Name.borrow_mut()));
 }
-pub fn glibc_version_less_than_1(mut version: Ptr<()>) -> () {
-    let mut test_version: () = unimplemented!();
-    let mut n: () = unimplemented!();
-    let mut current_version: Ptr<()> =
-        Ptr::alloc_array((0..n).map(|_| unimplemented!()).collect::<Box<[()]>>());
+pub fn glibc_version_less_than_1(mut version: Ptr<i8>) -> bool {
+    let test_version: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __tmp2 = {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"glibc ").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        __tmp2.pop();
+        version.with_c_str(|__s| __tmp2.extend_from_slice(__s));
+        __tmp2.push(0_i8);
+        __tmp2
+    }));
+    let mut n: usize = unimplemented!();
+    let mut current_version: Ptr<i8> =
+        Ptr::alloc_array((0..n).map(|_| 0_i8).collect::<Box<[i8]>>());
     unimplemented!();
-    let result: Value<()> = Rc::new(RefCell::new((unimplemented!() < 0_())));
+    let result: Value<bool> = Rc::new(RefCell::new((unimplemented!() < 0)));
     current_version.delete();
     return (*result.borrow());
 }
-pub fn get_temp_file_names_2() -> () {
-    let names: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+pub fn get_temp_file_names_2() -> (Value<Vec<i8>>, Value<Vec<i8>>) {
+    let names: Value<(Value<Vec<i8>>, Value<Vec<i8>>)> = Rc::new(RefCell::new(unimplemented!()));
+    (*names.borrow())
+        .0
+        .as_pointer()
+        .write(({ get_temp_file_name_0() }));
+    let mut fd1: Ptr<CFile> = match CFile::open(
+        &(*names.borrow()).0.decay().to_rust_string(),
+        &Ptr::<i8>::from_string_literal(b"w").to_rust_string(),
+    ) {
+        Some(__f) => Ptr::alloc(__f),
+        None => Ptr::null(),
+    };
+    (*names.borrow())
+        .1
+        .as_pointer()
+        .write(({ get_temp_file_name_0() }));
+    assert!(!(unimplemented!()));
+    {
+        let __r = fd1.with(|__f| __f.close());
+        fd1.delete();
+        __r
+    };
     unimplemented!();
-    let mut fd1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+    return std::mem::take(&mut (*names.borrow_mut()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -55,14 +85,50 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let temp_files: Value<()> = Rc::new(RefCell::new(({ get_temp_file_names_2() })));
-    let temp1: Ptr<()> = field_ptr!(temp_files.as_pointer(), first);
-    let temp2: Ptr<()> = field_ptr!(temp_files.as_pointer(), second);
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let temp_files: Value<(Value<Vec<i8>>, Value<Vec<i8>>)> =
+        Rc::new(RefCell::new(({ get_temp_file_names_2() })));
+    let temp1: Ptr<Vec<i8>> = ((*temp_files.borrow()).0.as_pointer()).reinterpret_cast::<Vec<i8>>();
+    let temp2: Ptr<Vec<i8>> = ((*temp_files.borrow()).1.as_pointer()).reinterpret_cast::<Vec<i8>>();
+    assert!(!(unimplemented!()));
+    {
+        let fs1: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::create(temp1.decay().to_string()).expect("Failed to open file"),
+        ));
+        let fs2: Value<::std::fs::File> = Rc::new(RefCell::new(
+            ::std::fs::File::create(temp2.decay().to_string()).expect("Failed to open file"),
+        ));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let mut x: f64 = 0_f64;
+        unimplemented!();
+        assert!((x == 3.25_f64));
+        unimplemented!();
+        assert!((x == 4.5_f64));
+    }
     unimplemented!();
     {
-        let fs1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let fs2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let fs: Value<::std::fs::File> = Rc::new(RefCell::new(unimplemented!()));
+        let mut x: f64 = 0_f64;
+        unimplemented!();
+        assert!((x == 4.5_f64));
+        unimplemented!();
+        assert!((x == 3.25_f64));
+    }
+    unimplemented!();
+    {
+        let fs1: Value<()> = Rc::new(RefCell::new(
+            ::std::fs::File::create(temp1.decay().to_string()).expect("Failed to open file"),
+        ));
+        let fs2: Value<()> = Rc::new(RefCell::new(
+            ::std::fs::File::create(temp2.decay().to_string()).expect("Failed to open file"),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -71,49 +137,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: () = 0_();
+        let mut x: f64 = 0_f64;
         unimplemented!();
+        assert!((x == 3.25_f64));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((x == 4.5_f64));
     }
     unimplemented!();
     {
         let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: () = 0_();
+        let mut x: f64 = 0_f64;
         unimplemented!();
+        assert!((x == 4.5_f64));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((x == 3.25_f64));
     }
     unimplemented!();
-    {
-        let fs1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let fs2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: () = 0_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    unimplemented!();
-    {
-        let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut x: () = 0_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    unimplemented!();
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

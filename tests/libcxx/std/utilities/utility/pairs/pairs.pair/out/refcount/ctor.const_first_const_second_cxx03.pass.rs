@@ -6,14 +6,15 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct A {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl A {
-    pub fn new(mut data: ()) -> Self {
+    pub fn new(mut data: i32) -> Self {
         Self { data_: data }
     }
 }
@@ -41,24 +42,32 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let p: Value<(Value<f32>, Value<Ptr<i16>>)> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*(*p.borrow()).0.borrow()) == 3.5_f32));
+        assert!((*(*p.borrow()).1.borrow()).is_null());
     }
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let p: Value<(Value<A>, Value<i32>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(A::new({ 1 }))),
+            Rc::new(RefCell::new(2)),
+        )));
+        assert!(
+            ({
+                let _a: Value<A> = Rc::new(RefCell::new(A::new({ 1 })));
+                AImpl::operator_eq(&(*p.borrow()).0.as_pointer(), _a.as_pointer())
+            })
+        );
+        assert!(((*(*p.borrow()).1.borrow()) == 2));
     }
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
-    fn operator_eq(&self, a: Ptr<A>) -> ();
+    fn operator_eq(&self, a: Ptr<A>) -> bool;
 }
 impl AImpl for Ptr<A> {
-    fn operator_eq(&self, a: Ptr<A>) -> () {
+    fn operator_eq(&self, a: Ptr<A>) -> bool {
         return ({ (*self).with(|__s| __s.data_) } == { a.with(|__s| __s.data_) });
     }
 }

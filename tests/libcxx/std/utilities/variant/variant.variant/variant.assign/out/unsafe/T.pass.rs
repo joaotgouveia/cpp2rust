@@ -6,22 +6,22 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn operator_eq_0(LHS: *const TypeID, RHS: *const TypeID) -> () {
+pub unsafe fn operator_eq_0(LHS: *const TypeID, RHS: *const TypeID) -> bool {
     return (((*LHS).m_id) == ((*RHS).m_id));
 }
-pub unsafe fn operator_ne_1(LHS: *const TypeID, RHS: *const TypeID) -> () {
+pub unsafe fn operator_ne_1(LHS: *const TypeID, RHS: *const TypeID) -> bool {
     return (((*LHS).m_id) != ((*RHS).m_id));
 }
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct TypeID {
-    m_id: *const (),
+    m_id: *const libc::c_char,
 }
 impl TypeID {
-    pub unsafe fn name(&self) -> () {
-        return unimplemented!();
+    pub unsafe fn name(&self) -> Vec<libc::c_char> {
+        return std::slice::from_raw_parts(self.m_id, libcc2rs::c_str_len(self.m_id) + 1).to_vec();
     }
-    unsafe fn new(mut xid: *const ()) -> Self {
+    unsafe fn new(mut xid: *const libc::c_char) -> Self {
         let mut this = Self { m_id: xid };
         this
     }
@@ -32,21 +32,22 @@ impl std::cmp::PartialEq for TypeID {
     }
 }
 impl std::cmp::Eq for TypeID {}
-pub type CallType = ();
+pub type CallType = u32;
 pub const CallType_CT_None: CallType = 0;
 pub const CallType_CT_NonConst: CallType = 1;
 pub const CallType_CT_Const: CallType = 2;
 pub const CallType_CT_LValue: CallType = 4;
 pub const CallType_CT_RValue: CallType = 8;
 pub unsafe fn operator_bitor_2(mut LHS: CallType, mut RHS: CallType) -> CallType {
-    return (((LHS as ()) | (RHS as ())) as CallType);
+    return (((LHS as u32) | (RHS as u32)) as CallType);
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_into(i32, to_i32)]
 pub struct ForwardingCallObject {}
 impl ForwardingCallObject {
-    pub unsafe fn to_(&self) -> () {
-        return 0_();
+    pub unsafe fn to_i32(&self) -> i32 {
+        return 0;
     }
 }
 pub static mut last_call_type_3: std::cell::LazyCell<CallType> =
@@ -63,38 +64,41 @@ pub struct ReturnArity {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MetaHelpers_Dummy {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct MetaHelpers_ThrowsCtorT {}
 impl MetaHelpers_ThrowsCtorT {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
-    pub unsafe fn operator_assign_2(&mut self, mut _a0: ()) -> *mut MetaHelpers_ThrowsCtorT {
+    pub unsafe fn operator_assign_2(&mut self, mut _a0: i32) -> *mut MetaHelpers_ThrowsCtorT {
         return &mut (*(self as *mut MetaHelpers_ThrowsCtorT));
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct MetaHelpers_ThrowsAssignT {}
 impl MetaHelpers_ThrowsAssignT {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
-    pub unsafe fn operator_assign_2(&mut self, mut _a0: ()) -> *mut MetaHelpers_ThrowsAssignT {
+    pub unsafe fn operator_assign_2(&mut self, mut _a0: i32) -> *mut MetaHelpers_ThrowsAssignT {
         return &mut (*(self as *mut MetaHelpers_ThrowsAssignT));
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct MetaHelpers_NoThrowT {}
 impl MetaHelpers_NoThrowT {
-    pub unsafe fn new(mut _a0: ()) -> Self {
+    pub unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
-    pub unsafe fn operator_assign_2(&mut self, mut _a0: ()) -> *mut MetaHelpers_NoThrowT {
+    pub unsafe fn operator_assign_2(&mut self, mut _a0: i32) -> *mut MetaHelpers_NoThrowT {
         return &mut (*(self as *mut MetaHelpers_NoThrowT));
     }
 }
@@ -144,64 +148,71 @@ pub unsafe fn test_T_assignment_basic_10() {
     {
         let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
+        assert!(((*unimplemented!()) == (42)));
     }
     {
         let mut v: () = unimplemented!();
         unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
+        assert!(((*unimplemented!()) == (42)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1_usize)));
+        assert!(((*unimplemented!()) == (43_())));
     }
     {
         let mut v: () = unimplemented!();
         unimplemented!();
+        assert!(((unimplemented!()) == (1_usize)));
+        assert!(((*unimplemented!()) == (42_())));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
+        assert!(((*unimplemented!()) == (43_())));
     }
     {
         let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_usize)));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"bar".as_ptr(),
+                    libcc2rs::c_str_len(c"bar".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
 }
 pub unsafe fn test_T_assignment_basic_no_constexpr_11() {
     let mut v: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (1_usize)));
+    assert!((*unimplemented!()).is_none());
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct TraceStat {
-    pub construct: (),
-    pub copy_construct: (),
-    pub copy_assign: (),
-    pub move_construct: (),
-    pub move_assign: (),
-    pub T_copy_assign: (),
-    pub T_move_assign: (),
-    pub destroy: (),
+    pub construct: i32,
+    pub copy_construct: i32,
+    pub copy_assign: i32,
+    pub move_construct: i32,
+    pub move_assign: i32,
+    pub T_copy_assign: i32,
+    pub T_move_assign: i32,
+    pub destroy: i32,
 }
 impl Default for TraceStat {
     fn default() -> Self {
         unsafe {
             TraceStat {
-                construct: 0_(),
-                copy_construct: 0_(),
-                copy_assign: 0_(),
-                move_construct: 0_(),
-                move_assign: 0_(),
-                T_copy_assign: 0_(),
-                T_move_assign: 0_(),
-                destroy: 0_(),
+                construct: 0,
+                copy_construct: 0,
+                copy_assign: 0,
+                move_construct: 0,
+                move_assign: 0,
+                T_copy_assign: 0,
+                T_move_assign: 0,
+                destroy: 0,
             }
         }
     }
@@ -210,7 +221,9 @@ impl Default for TraceStat {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Trace_false__false__T {}
 #[repr(C)]
-#[derive(FnPtrArg, MoveAssignUnsafe, DestructorUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, MoveAssignUnsafe, DestructorUnsafe, Default)]
+#[cpp_from(*mut TraceStat , new_1, value)]
+#[cpp_from(Trace_false__false__T, new_2, value)]
 pub struct Trace_false__false_ {
     pub stat: *mut TraceStat,
 }
@@ -255,7 +268,8 @@ impl Trace_false__false_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Trace_false__true__T {}
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, DestructorUnsafe, Default)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, MoveAssignUnsafe, DestructorUnsafe, Default)]
+#[cpp_from(*mut TraceStat , new_1, value)]
 pub struct Trace_false__true_ {
     pub stat: *mut TraceStat,
 }
@@ -282,7 +296,8 @@ impl Trace_false__true_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Trace_true__false__T {}
 #[repr(C)]
-#[derive(FnPtrArg, MoveAssignUnsafe, DestructorUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, MoveAssignUnsafe, DestructorUnsafe, Default)]
+#[cpp_from(*mut TraceStat , new_1, value)]
 pub struct Trace_true__false_ {
     pub stat: *mut TraceStat,
 }
@@ -304,7 +319,8 @@ impl Trace_true__false_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Trace_true__true__T {}
 #[repr(C)]
-#[derive(FnPtrArg, MoveAssignUnsafe, DestructorUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, MoveAssignUnsafe, DestructorUnsafe, Default)]
+#[cpp_from(*mut TraceStat , new_1, value)]
 pub struct Trace_true__true_ {
     pub stat: *mut TraceStat,
 }
@@ -327,45 +343,45 @@ pub unsafe fn test_T_assignment_performs_construction_12() {
         let mut stat: TraceStat = <TraceStat>::default();
         let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((stat.construct) == (1)));
+        assert!(((stat.copy_construct) == (0)));
+        assert!(((stat.move_construct) == (0)));
+        assert!(((stat.copy_assign) == (0)));
+        assert!(((stat.move_assign) == (0)));
+        assert!(((stat.destroy) == (0)));
     }
     {
         let mut stat: TraceStat = <TraceStat>::default();
         let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((stat.construct) == (1)));
+        assert!(((stat.copy_construct) == (0)));
+        assert!(((stat.move_construct) == (1)));
+        assert!(((stat.copy_assign) == (0)));
+        assert!(((stat.move_assign) == (0)));
+        assert!(((stat.destroy) == (1)));
     }
     {
         let mut stat: TraceStat = <TraceStat>::default();
         let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((stat.construct) == (1)));
+        assert!(((stat.copy_construct) == (0)));
+        assert!(((stat.move_construct) == (0)));
+        assert!(((stat.copy_assign) == (0)));
+        assert!(((stat.move_assign) == (0)));
+        assert!(((stat.destroy) == (0)));
     }
     {
         let mut stat: TraceStat = <TraceStat>::default();
         let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((stat.construct) == (1)));
+        assert!(((stat.copy_construct) == (0)));
+        assert!(((stat.move_construct) == (0)));
+        assert!(((stat.copy_assign) == (0)));
+        assert!(((stat.move_assign) == (0)));
+        assert!(((stat.destroy) == (0)));
     }
 }
 pub unsafe fn test_T_assignment_performs_assignment_13() {
@@ -373,45 +389,45 @@ pub unsafe fn test_T_assignment_performs_assignment_13() {
         let mut stat: TraceStat = <TraceStat>::default();
         let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((stat.construct) == (1)));
+        assert!(((stat.copy_construct) == (0)));
+        assert!(((stat.move_construct) == (0)));
+        assert!(((stat.copy_assign) == (0)));
+        assert!(((stat.move_assign) == (0)));
+        assert!(((stat.T_copy_assign) == (0)));
+        assert!(((stat.T_move_assign) == (1)));
+        assert!(((stat.destroy) == (0)));
     }
     {
         let mut stat: TraceStat = <TraceStat>::default();
         let mut v: () = unimplemented!();
         let mut t: Trace_false__false__T = <Trace_false__false__T>::default();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((stat.construct) == (1)));
+        assert!(((stat.copy_construct) == (0)));
+        assert!(((stat.move_construct) == (0)));
+        assert!(((stat.copy_assign) == (0)));
+        assert!(((stat.move_assign) == (0)));
+        assert!(((stat.T_copy_assign) == (1)));
+        assert!(((stat.T_move_assign) == (0)));
+        assert!(((stat.destroy) == (0)));
     }
 }
 pub unsafe fn test_T_assignment_performs_construction_throw_14() {}
 pub unsafe fn test_T_assignment_performs_assignment_throw_15() {}
 pub unsafe fn test_T_assignment_vector_bool_16() {
-    let mut vec_: () = unimplemented!();
+    let mut vec_: Vec<bool> = Vec::from([true]);
     let mut v: () = unimplemented!();
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
+    assert!((((*unimplemented!()) as i32) == (true as i32)));
 }
 pub unsafe fn non_constexpr_test_17() {
     (unsafe { test_T_assignment_basic_no_constexpr_11() });
     (unsafe { test_T_assignment_performs_construction_throw_14() });
     (unsafe { test_T_assignment_performs_assignment_throw_15() });
 }
-pub unsafe fn test_18() -> () {
+pub unsafe fn test_18() -> bool {
     (unsafe { test_T_assignment_basic_10() });
     (unsafe { test_T_assignment_performs_construction_12() });
     (unsafe { test_T_assignment_performs_assignment_13() });
@@ -435,11 +451,11 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_18() });
     (unsafe { non_constexpr_test_17() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const last_call_type_3);

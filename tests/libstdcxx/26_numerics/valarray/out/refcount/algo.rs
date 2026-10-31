@@ -10,10 +10,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut m: () = unimplemented!();
-    return 0_();
+    let mut m: f64 = unimplemented!();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

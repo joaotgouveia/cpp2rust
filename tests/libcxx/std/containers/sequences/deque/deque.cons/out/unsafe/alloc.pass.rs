@@ -270,7 +270,7 @@ impl test_allocator_NotConstructible_ {
             (*self.stats_).allocated_size =
                 (((*self.stats_).allocated_size as u32).wrapping_add(n)) as i32;
         }
-        return (unsafe { <std_allocator_NotConstructible_>::default().allocate((n as usize)) });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut NotConstructible, mut s: u32) {
         assert!(
@@ -281,7 +281,7 @@ impl test_allocator_NotConstructible_ {
             (*self.stats_).allocated_size =
                 (((*self.stats_).allocated_size as u32).wrapping_sub(s)) as i32;
         }
-        (unsafe { <std_allocator_NotConstructible_>::default().deallocate(p, (s as usize)) });
+        unimplemented!();
     }
     pub unsafe fn max_size(&self) -> u32 {
         return ((((((2147483647_u32).wrapping_mul((2_u32 as u32)) as u32)
@@ -319,7 +319,7 @@ impl Default for test_allocator_NotConstructible_ {
     fn default() -> Self {
         unsafe {
             test_allocator_NotConstructible_ {
-                data_: <i32>::default(),
+                data_: 0_i32,
                 id_: 0,
                 stats_: std::ptr::null_mut(),
             }
@@ -341,7 +341,8 @@ impl test_allocator_NotConstructible_ptr_ {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, DestructorUnsafe)]
+#[derive(FnPtrArg, CppFromUnsafe, DestructorUnsafe)]
+#[cpp_from(test_allocator_NotConstructible_, new_1, ptr)]
 pub struct test_allocator_NotConstructible_ptr_ {
     data_: i32,
     id_: i32,
@@ -379,9 +380,7 @@ impl test_allocator_NotConstructible_ptr_ {
             (*self.stats_).allocated_size =
                 (((*self.stats_).allocated_size as u32).wrapping_add(n)) as i32;
         }
-        return (unsafe {
-            <std_allocator_NotConstructible_ptr_>::default().allocate((n as usize))
-        });
+        return unimplemented!();
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut NotConstructible, mut s: u32) {
         assert!(
@@ -392,15 +391,15 @@ impl test_allocator_NotConstructible_ptr_ {
             (*self.stats_).allocated_size =
                 (((*self.stats_).allocated_size as u32).wrapping_sub(s)) as i32;
         }
-        (unsafe { <std_allocator_NotConstructible_ptr_>::default().deallocate(p, (s as usize)) });
+        unimplemented!();
     }
 }
 impl Default for test_allocator_NotConstructible_ptr_ {
     fn default() -> Self {
         unsafe {
             test_allocator_NotConstructible_ptr_ {
-                data_: <i32>::default(),
-                id_: <i32>::default(),
+                data_: 0_i32,
+                id_: 0_i32,
                 stats_: std::ptr::null_mut(),
             }
         }
@@ -410,7 +409,8 @@ impl Default for test_allocator_NotConstructible_ptr_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
-#[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 pub struct Tag_X {}
 impl Tag_X {
     pub unsafe fn new_1(mut _a0: Ctor_Tag) -> Self {
@@ -478,7 +478,282 @@ pub static mut dealloc_count_9: std::cell::LazyCell<usize> =
     std::cell::LazyCell::new(|| unsafe { 0_usize });
 pub static mut disable_default_constructor_10: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub unsafe fn operator_eq_11(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
+pub unsafe fn operator_sub_11(
+    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
+}
+pub unsafe fn operator_eq_12(
+    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_13(
+    mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return !(unsafe {
+        let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
+        operator_eq_12(_x, y)
+    });
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut i32,
+}
+impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn new_1(mut p: *mut i32) -> Self {
+        let mut this = Self { ptr_: p };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
+        return &mut (*self.ptr_);
+    }
+    pub unsafe fn operator_inc_8(
+        &mut self,
+    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_.prefix_inc();
+        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_add_assign(
+        &mut self,
+        mut n: isize,
+    ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        self.ptr_ = (self.ptr_).wrapping_add(n as usize);
+        return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+        let mut tmp: min_pointer_int__std_integral_constant_unsigned_long__0__ =
+            (*(self as *const min_pointer_int__std_integral_constant_unsigned_long__0__));
+        (unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_add_assign(
+                &mut tmp, n,
+            )
+        });
+        return tmp;
+    }
+}
+impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { operator_eq_12(self.clone(), other.clone()) }
+    }
+}
+impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_8();
+    }
+}
+pub unsafe fn operator_sub_14(
+    mut x: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<NotConstructible>()) as i64
+        as isize);
+}
+pub unsafe fn operator_eq_15(
+    mut x: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_16(
+    mut x: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
+    mut y: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return !(unsafe {
+        let _x: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ = x;
+        operator_eq_15(_x, y)
+    });
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut NotConstructible,
+}
+impl min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {
+    unsafe fn new_1(mut p: *mut NotConstructible) -> Self {
+        let mut this = Self { ptr_: p };
+        this
+    }
+    pub unsafe fn operator_deref(&self) -> *mut NotConstructible {
+        return &mut (*self.ptr_);
+    }
+    pub unsafe fn operator_inc_8(
+        &mut self,
+    ) -> *mut min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {
+        self.ptr_.prefix_inc();
+        return &mut (*(self
+            as *mut min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_add_assign(
+        &mut self,
+        mut n: isize,
+    ) -> *mut min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {
+        self.ptr_ = (self.ptr_).wrapping_add(n as usize);
+        return &mut (*(self
+            as *mut min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__));
+    }
+    pub unsafe fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {
+        let mut tmp: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ =
+            (*(self
+                as *const min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__));
+        (unsafe {
+            min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ :: operator_add_assign ( &mut tmp  , n , )
+        });
+        return tmp;
+    }
+}
+impl std::cmp::PartialEq
+    for min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__
+{
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { operator_eq_15(self.clone(), other.clone()) }
+    }
+}
+impl std::cmp::Eq for min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_8();
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut ::libc::c_void,
+}
+impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
+pub unsafe fn operator_sub_17(
+    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize)
+        / ::std::mem::size_of::<min_pointer_int__std_integral_constant_unsigned_long__0__>())
+        as i64 as isize);
+}
+pub unsafe fn operator_lt_18(
+    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) < (y.ptr_));
+}
+pub unsafe fn operator_eq_19(
+    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_20(
+    mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return !(unsafe {
+        let _x: min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  = x ;
+        operator_eq_19(_x, y)
+    });
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
+{
+    ptr_: *mut min_pointer_int__std_integral_constant_unsigned_long__0__,
+}
+impl min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut min_pointer_int__std_integral_constant_unsigned_long__0__ , ) -> Self { let mut this = Self { ptr_ : p , } ;
+ this } pub unsafe fn to_bool ( &self , ) -> bool { return ! ( ( self . ptr_  ).is_null() )  ;
+ } pub unsafe fn operator_deref ( &self , ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ { return & mut ( * self . ptr_   )  ;
+ } pub unsafe fn operator_inc_8 ( &mut self , ) -> *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  .prefix_inc() ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_add_assign ( &mut self , mut n : isize , ) -> *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  = ( self . ptr_  ) . wrapping_add ( n as usize ) ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_sub_assign ( &mut self , mut n : isize , ) -> *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  = ( self . ptr_  ) . wrapping_sub ( n as usize ) ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_add ( &self , mut n : isize , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { let mut tmp : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ = ( * ( self as *const min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  ) ;
+  ;
+ ;
+ ( unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: operator_add_assign ( &mut tmp  , n , ) } )  ;
+ return tmp  ;
+ } pub unsafe fn operator_sub ( &self , mut n : isize , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { let mut tmp : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ = ( * ( self as *const min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  ) ;
+  ;
+ ;
+ ( unsafe { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: operator_sub_assign ( &mut tmp  , n , ) } )  ;
+ return tmp  ;
+ } }
+impl std::cmp::Ord for  min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn cmp(&self, other: &Self) -> std::cmp::Ordering { unsafe { if operator_lt_18(self.clone(), other.clone()) { std::cmp::Ordering::Less } else if operator_lt_18(other.clone(), self.clone()) { std::cmp::Ordering::Greater } else { std::cmp::Ordering::Equal } }}}
+impl std::cmp::PartialOrd for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> { Some(self.cmp(other)) }}
+impl std::cmp::PartialEq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_19(self.clone(), other.clone()) }}}
+impl std::cmp::Eq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn cpp_inc(&mut self) { self.operator_inc_8(); } }
+pub unsafe fn operator_sub_21(
+    mut x : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize)
+        / ::std::mem::size_of::<
+            min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
+        >()) as i64 as isize);
+}
+pub unsafe fn operator_lt_22(
+    mut x : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) < (y.ptr_));
+}
+pub unsafe fn operator_eq_23(
+    mut x : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return ((x.ptr_) == (y.ptr_));
+}
+pub unsafe fn operator_ne_24(
+    mut x : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+    mut y : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
+) -> bool {
+    return !(unsafe {
+        let _x: min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  = x ;
+        operator_eq_23(_x, y)
+    });
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
+{
+    ptr_: *mut min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
+}
+impl min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ , ) -> Self { let mut this = Self { ptr_ : p , } ;
+ this } pub unsafe fn to_bool ( &self , ) -> bool { return ! ( ( self . ptr_  ).is_null() )  ;
+ } pub unsafe fn operator_deref ( &self , ) -> *mut min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ { return & mut ( * self . ptr_   )  ;
+ } pub unsafe fn operator_inc_8 ( &mut self , ) -> *mut min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  .prefix_inc() ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_add_assign ( &mut self , mut n : isize , ) -> *mut min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  = ( self . ptr_  ) . wrapping_add ( n as usize ) ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_sub_assign ( &mut self , mut n : isize , ) -> *mut min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { self . ptr_  = ( self . ptr_  ) . wrapping_sub ( n as usize ) ;
+ return & mut ( * ( self as *mut min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  )  ;
+ } pub unsafe fn operator_add ( &self , mut n : isize , ) -> min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { let mut tmp : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ = ( * ( self as *const min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  ) ;
+  ;
+ ;
+ ( unsafe { min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: operator_add_assign ( &mut tmp  , n , ) } )  ;
+ return tmp  ;
+ } pub unsafe fn operator_sub ( &self , mut n : isize , ) -> min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { let mut tmp : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ = ( * ( self as *const min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  )  ) ;
+  ;
+ ;
+ ( unsafe { min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: operator_sub_assign ( &mut tmp  , n , ) } )  ;
+ return tmp  ;
+ } }
+impl std::cmp::Ord for  min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn cmp(&self, other: &Self) -> std::cmp::Ordering { unsafe { if operator_lt_22(self.clone(), other.clone()) { std::cmp::Ordering::Less } else if operator_lt_22(other.clone(), self.clone()) { std::cmp::Ordering::Greater } else { std::cmp::Ordering::Equal } }}}
+impl std::cmp::PartialOrd for min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> { Some(self.cmp(other)) }}
+impl std::cmp::PartialEq for min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_23(self.clone(), other.clone()) }}}
+impl std::cmp::Eq for min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { unsafe fn cpp_inc(&mut self) { self.operator_inc_8(); } }
+pub unsafe fn operator_eq_25(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
     return true;
 }
 #[repr(C)]
@@ -490,7 +765,7 @@ impl min_allocator_int_ {
         mut n: usize,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
-            (unsafe { <std_allocator_int_>::default().allocate(n) })
+            unimplemented!()
         });
     }
     pub unsafe fn deallocate(
@@ -498,16 +773,16 @@ impl min_allocator_int_ {
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
         mut n: usize,
     ) {
-        (unsafe { <std_allocator_int_>::default().deallocate(p.ptr_, n) });
+        unimplemented!();
     }
 }
 impl std::cmp::PartialEq for min_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_11(self.clone(), other.clone()) }
+        unsafe { operator_eq_25(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_int_ {}
-pub unsafe fn operator_eq_12(
+pub unsafe fn operator_eq_26(
     mut _a0: min_allocator_NotConstructible_,
     mut _a1: min_allocator_NotConstructible_,
 ) -> bool {
@@ -522,7 +797,7 @@ impl min_allocator_NotConstructible_ {
         mut n: usize,
     ) -> min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {
         return min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__::new_1({
-            (unsafe { <std_allocator_NotConstructible_>::default().allocate(n) })
+            unimplemented!()
         });
     }
     pub unsafe fn deallocate(
@@ -530,12 +805,12 @@ impl min_allocator_NotConstructible_ {
         mut p: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
         mut n: usize,
     ) {
-        (unsafe { <std_allocator_NotConstructible_>::default().deallocate(p.ptr_, n) });
+        unimplemented!();
     }
 }
 impl std::cmp::PartialEq for min_allocator_NotConstructible_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self.clone(), other.clone()) }
+        unsafe { operator_eq_26(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_NotConstructible_ {}
@@ -546,21 +821,19 @@ impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(min_allocator_int_, new_1, value)]
 pub struct min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
     pub unsafe fn allocate ( &mut self , mut n : usize , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { ( unsafe { <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ >::default() . allocate  ( n , ) } )  } , )   ;
+        return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
     }
     pub unsafe fn deallocate(
         &mut self,
         mut p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
         mut n: usize,
     ) {
-        (unsafe {
-            <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>::default()
-                .deallocate(p.ptr_, n)
-        });
+        unimplemented!();
     }
 }
 impl min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___ {
@@ -570,26 +843,25 @@ impl min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(min_allocator_NotConstructible_, new_1, value)]
 pub struct min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___ {
 }
 impl min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___ {
     pub unsafe fn allocate ( &mut self , mut n : usize , ) -> min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
-        return min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { ( unsafe { <std_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___ >::default() . allocate  ( n , ) } )  } , )   ;
+        return min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
     }
     pub unsafe fn deallocate(
         &mut self,
         mut p : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
         mut n: usize,
     ) {
-        (unsafe {
-            <std_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___ >::default() . deallocate  ( p . ptr_  , n , )
-        });
+        unimplemented!();
     }
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 impl min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___ {}
-pub unsafe fn operator_eq_13(
+pub unsafe fn operator_eq_27(
     mut _a0: explicit_allocator_int_,
     mut _a1: explicit_allocator_int_,
 ) -> bool {
@@ -604,15 +876,15 @@ impl explicit_allocator_int_ {
         this
     }
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut i32 {
-        return ((unsafe { <std_allocator_int_>::default().allocate(n) }) as *mut i32);
+        return (unimplemented!() as *mut i32);
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut i32, mut n: usize) {
-        (unsafe { <std_allocator_int_>::default().deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl std::cmp::PartialEq for explicit_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_13(self.clone(), other.clone()) }
+        unsafe { operator_eq_27(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for explicit_allocator_int_ {}
@@ -621,7 +893,7 @@ impl Default for explicit_allocator_int_ {
         unsafe { explicit_allocator_int_::new() }
     }
 }
-pub unsafe fn operator_eq_14(
+pub unsafe fn operator_eq_28(
     mut _a0: explicit_allocator_NotConstructible_,
     mut _a1: explicit_allocator_NotConstructible_,
 ) -> bool {
@@ -636,16 +908,15 @@ impl explicit_allocator_NotConstructible_ {
         this
     }
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut NotConstructible {
-        return ((unsafe { <std_allocator_NotConstructible_>::default().allocate(n) })
-            as *mut NotConstructible);
+        return (unimplemented!() as *mut NotConstructible);
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut NotConstructible, mut n: usize) {
-        (unsafe { <std_allocator_NotConstructible_>::default().deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl std::cmp::PartialEq for explicit_allocator_NotConstructible_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_14(self.clone(), other.clone()) }
+        unsafe { operator_eq_28(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for explicit_allocator_NotConstructible_ {}
@@ -665,10 +936,10 @@ impl explicit_allocator_int_ptr_ {
 pub struct explicit_allocator_int_ptr_ {}
 impl explicit_allocator_int_ptr_ {
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut *mut i32 {
-        return ((unsafe { <std_allocator_int_ptr_>::default().allocate(n) }) as *mut *mut i32);
+        return (unimplemented!() as *mut *mut i32);
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut i32, mut n: usize) {
-        (unsafe { <std_allocator_int_ptr_>::default().deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl explicit_allocator_NotConstructible_ptr_ {
@@ -682,14 +953,13 @@ impl explicit_allocator_NotConstructible_ptr_ {
 pub struct explicit_allocator_NotConstructible_ptr_ {}
 impl explicit_allocator_NotConstructible_ptr_ {
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut *mut NotConstructible {
-        return ((unsafe { <std_allocator_NotConstructible_ptr_>::default().allocate(n) })
-            as *mut *mut NotConstructible);
+        return (unimplemented!() as *mut *mut NotConstructible);
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut *mut NotConstructible, mut n: usize) {
-        (unsafe { <std_allocator_NotConstructible_ptr_>::default().deallocate(p, n) });
+        unimplemented!();
     }
 }
-pub unsafe fn operator_eq_15(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> bool {
+pub unsafe fn operator_eq_29(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> bool {
     return true;
 }
 #[repr(C)]
@@ -701,7 +971,7 @@ impl safe_allocator_int_ {
         this
     }
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut i32 {
-        let mut memory: *mut i32 = (unsafe { <std_allocator_int_>::default().allocate(n) });
+        let mut memory: *mut i32 = unimplemented!();
         {
             {
                 let byte_0 = (memory as *mut ::libc::c_void) as *mut u8;
@@ -730,12 +1000,12 @@ impl safe_allocator_int_ {
                 DoNotOptimize_0(&mut _value)
             });
         }
-        (unsafe { <std_allocator_int_>::default().deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl std::cmp::PartialEq for safe_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_15(self.clone(), other.clone()) }
+        unsafe { operator_eq_29(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for safe_allocator_int_ {}
@@ -744,7 +1014,7 @@ impl Default for safe_allocator_int_ {
         unsafe { safe_allocator_int_::new() }
     }
 }
-pub unsafe fn operator_eq_16(
+pub unsafe fn operator_eq_30(
     mut _a0: safe_allocator_NotConstructible_,
     mut _a1: safe_allocator_NotConstructible_,
 ) -> bool {
@@ -759,8 +1029,7 @@ impl safe_allocator_NotConstructible_ {
         this
     }
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut NotConstructible {
-        let mut memory: *mut NotConstructible =
-            (unsafe { <std_allocator_NotConstructible_>::default().allocate(n) });
+        let mut memory: *mut NotConstructible = unimplemented!();
         {
             {
                 let byte_0 = (memory as *mut ::libc::c_void) as *mut u8;
@@ -789,12 +1058,12 @@ impl safe_allocator_NotConstructible_ {
                 DoNotOptimize_0(&mut _value)
             });
         }
-        (unsafe { <std_allocator_NotConstructible_>::default().deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl std::cmp::PartialEq for safe_allocator_NotConstructible_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self.clone(), other.clone()) }
+        unsafe { operator_eq_30(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for safe_allocator_NotConstructible_ {}
@@ -814,8 +1083,7 @@ impl safe_allocator_int_ptr_ {
 pub struct safe_allocator_int_ptr_ {}
 impl safe_allocator_int_ptr_ {
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut *mut i32 {
-        let mut memory: *mut *mut i32 =
-            (unsafe { <std_allocator_int_ptr_>::default().allocate(n) });
+        let mut memory: *mut *mut i32 = unimplemented!();
         {
             {
                 let byte_0 = (memory as *mut ::libc::c_void) as *mut u8;
@@ -844,7 +1112,7 @@ impl safe_allocator_int_ptr_ {
                 DoNotOptimize_0(&mut _value)
             });
         }
-        (unsafe { <std_allocator_int_ptr_>::default().deallocate(p, n) });
+        unimplemented!();
     }
 }
 impl safe_allocator_NotConstructible_ptr_ {
@@ -858,8 +1126,7 @@ impl safe_allocator_NotConstructible_ptr_ {
 pub struct safe_allocator_NotConstructible_ptr_ {}
 impl safe_allocator_NotConstructible_ptr_ {
     pub unsafe fn allocate(&mut self, mut n: usize) -> *mut *mut NotConstructible {
-        let mut memory: *mut *mut NotConstructible =
-            (unsafe { <std_allocator_NotConstructible_ptr_>::default().allocate(n) });
+        let mut memory: *mut *mut NotConstructible = unimplemented!();
         {
             {
                 let byte_0 = (memory as *mut ::libc::c_void) as *mut u8;
@@ -888,96 +1155,95 @@ impl safe_allocator_NotConstructible_ptr_ {
                 DoNotOptimize_0(&mut _value)
             });
         }
-        (unsafe { <std_allocator_NotConstructible_ptr_>::default().deallocate(p, n) });
+        unimplemented!();
     }
 }
-pub unsafe fn test_17(a: *const test_allocator_NotConstructible_) {
-    let mut d: std_deque_NotConstructible__test_allocator_NotConstructible__ =
-        std_deque_NotConstructible__test_allocator_NotConstructible__::new_1({ a });
-    assert!(((unsafe { d.size() }) == (0_u64)));
+pub unsafe fn test_31(a: *const ()) {
+    let mut d: Vec<i32> = unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
+    assert!(unimplemented!());
+    const _: () = assert!(true, "");;
+}
+pub unsafe fn test_32(a: *const test_allocator_NotConstructible_) {
+    let mut d: Vec<NotConstructible> = unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
     assert!(
         (unsafe {
-            let mut _x: test_allocator_NotConstructible_ = (unsafe { d.get_allocator() });
+            let mut _x: test_allocator_NotConstructible_ = unimplemented!();
             let _y: *const test_allocator_NotConstructible_ = a;
             operator_eq_5(&mut _x, _y)
         })
     );
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_18(a: *const min_allocator_int_) {
-    let mut d: std_deque_int__min_allocator_int__ =
-        std_deque_int__min_allocator_int__::new_1({ a });
-    assert!(((unsafe { d.size() }) == (0_u64)));
+pub unsafe fn test_33(a: *const min_allocator_int_) {
+    let mut d: Vec<i32> = unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
     assert!(
         (unsafe {
-            let _arg0: min_allocator_int_ = (unsafe { d.get_allocator() });
+            let _arg0: min_allocator_int_ = unimplemented!();
             let _arg1: min_allocator_int_ = (*a);
-            operator_eq_11(_arg0, _arg1)
+            operator_eq_25(_arg0, _arg1)
         })
     );
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_19(a: *const safe_allocator_int_) {
-    let mut d: std_deque_int__safe_allocator_int__ =
-        std_deque_int__safe_allocator_int__::new_1({ a });
-    assert!(((unsafe { d.size() }) == (0_u64)));
+pub unsafe fn test_34(a: *const safe_allocator_int_) {
+    let mut d: Vec<i32> = unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
     assert!(
         (unsafe {
-            let _arg0: safe_allocator_int_ = (unsafe { d.get_allocator() });
+            let _arg0: safe_allocator_int_ = unimplemented!();
             let _arg1: safe_allocator_int_ = (*a);
-            operator_eq_15(_arg0, _arg1)
+            operator_eq_29(_arg0, _arg1)
         })
     );
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_20(a: *const min_allocator_NotConstructible_) {
-    let mut d: std_deque_NotConstructible__min_allocator_NotConstructible__ =
-        std_deque_NotConstructible__min_allocator_NotConstructible__::new_1({ a });
-    assert!(((unsafe { d.size() }) == (0_u64)));
+pub unsafe fn test_35(a: *const min_allocator_NotConstructible_) {
+    let mut d: Vec<NotConstructible> = unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
     assert!(
         (unsafe {
-            let _arg0: min_allocator_NotConstructible_ = (unsafe { d.get_allocator() });
+            let _arg0: min_allocator_NotConstructible_ = unimplemented!();
             let _arg1: min_allocator_NotConstructible_ = (*a);
-            operator_eq_12(_arg0, _arg1)
+            operator_eq_26(_arg0, _arg1)
         })
     );
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_21(a: *const safe_allocator_NotConstructible_) {
-    let mut d: std_deque_NotConstructible__safe_allocator_NotConstructible__ =
-        std_deque_NotConstructible__safe_allocator_NotConstructible__::new_1({ a });
-    assert!(((unsafe { d.size() }) == (0_u64)));
+pub unsafe fn test_36(a: *const safe_allocator_NotConstructible_) {
+    let mut d: Vec<NotConstructible> = unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
     assert!(
         (unsafe {
-            let _arg0: safe_allocator_NotConstructible_ = (unsafe { d.get_allocator() });
+            let _arg0: safe_allocator_NotConstructible_ = unimplemented!();
             let _arg1: safe_allocator_NotConstructible_ = (*a);
-            operator_eq_16(_arg0, _arg1)
+            operator_eq_30(_arg0, _arg1)
         })
     );
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_22(a: *const explicit_allocator_int_) {
-    let mut d: std_deque_int__explicit_allocator_int__ =
-        std_deque_int__explicit_allocator_int__::new_1({ a });
-    assert!(((unsafe { d.size() }) == (0_u64)));
+pub unsafe fn test_37(a: *const explicit_allocator_int_) {
+    let mut d: Vec<i32> = unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
     assert!(
         (unsafe {
-            let _arg0: explicit_allocator_int_ = (unsafe { d.get_allocator() });
+            let _arg0: explicit_allocator_int_ = unimplemented!();
             let _arg1: explicit_allocator_int_ = (*a);
-            operator_eq_13(_arg0, _arg1)
+            operator_eq_27(_arg0, _arg1)
         })
     );
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_23(a: *const explicit_allocator_NotConstructible_) {
-    let mut d: std_deque_NotConstructible__explicit_allocator_NotConstructible__ =
-        std_deque_NotConstructible__explicit_allocator_NotConstructible__::new_1({ a });
-    assert!(((unsafe { d.size() }) == (0_u64)));
+pub unsafe fn test_38(a: *const explicit_allocator_NotConstructible_) {
+    let mut d: Vec<NotConstructible> = unimplemented!();
+    assert!(((unimplemented!()) == (0_usize)));
     assert!(
         (unsafe {
-            let _arg0: explicit_allocator_NotConstructible_ = (unsafe { d.get_allocator() });
+            let _arg0: explicit_allocator_NotConstructible_ = unimplemented!();
             let _arg1: explicit_allocator_NotConstructible_ = (*a);
-            operator_eq_14(_arg0, _arg1)
+            operator_eq_28(_arg0, _arg1)
         })
     );
     const _: () = assert!(true, "");;
@@ -999,49 +1265,41 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe {
-        let mut _a: std_allocator_int_ = <std_allocator_int_>::default();
-        test_24(&mut _a)
+        let mut _a: () = unimplemented!();
+        test_31(&mut _a)
     });
     (unsafe {
         let mut _a: test_allocator_NotConstructible_ =
             test_allocator_NotConstructible_::new_1({ 3 });
-        test_17(&mut _a)
+        test_32(&mut _a)
     });
     (unsafe {
         let mut _a: min_allocator_int_ = <min_allocator_int_>::default();
-        test_18(&mut _a)
+        test_33(&mut _a)
     });
     (unsafe {
         let mut _a: safe_allocator_int_ = safe_allocator_int_::new();
-        test_19(&mut _a)
+        test_34(&mut _a)
     });
     (unsafe {
         let mut _a: min_allocator_NotConstructible_ = <min_allocator_NotConstructible_>::default();
-        test_20(&mut _a)
+        test_35(&mut _a)
     });
     (unsafe {
         let mut _a: safe_allocator_NotConstructible_ = safe_allocator_NotConstructible_::new();
-        test_21(&mut _a)
+        test_36(&mut _a)
     });
     (unsafe {
         let mut _a: explicit_allocator_int_ = explicit_allocator_int_::new();
-        test_22(&mut _a)
+        test_37(&mut _a)
     });
     (unsafe {
         let mut _a: explicit_allocator_NotConstructible_ =
             explicit_allocator_NotConstructible_::new();
-        test_23(&mut _a)
+        test_38(&mut _a)
     });
     return 0;
 }
-#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
-pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__;
-#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
-pub struct min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__;
-#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
-pub struct min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__;
-#[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
-pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const destructed_value_1);
     std::cell::LazyCell::force(&*&raw const moved_value_2);

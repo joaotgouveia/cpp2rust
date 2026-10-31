@@ -22,33 +22,33 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let f: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()) == (60053)));
+    assert!(((unimplemented!()) == (18577)));
+    assert!(((unimplemented!()) == (18577)));
+    assert!(((unimplemented!()) == (0)));
+    assert!(((unimplemented!()) == (22739)));
     let f2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let foo: () = unimplemented!();
+    assert!(((unimplemented!()) == (60053)));
+    assert!(((unimplemented!()) == (60053_i64)));
+    assert!(((unimplemented!()) == (60053_i64)));
+    assert!(((unimplemented!()) == (18577)));
+    assert!(((unimplemented!()) == (18577_i64)));
+    assert!(((unimplemented!()) == (18577_i64)));
+    assert!(((unimplemented!()) == (18577)));
+    assert!(((unimplemented!()) == (18577_i64)));
+    assert!(((unimplemented!()) == (18577_i64)));
+    assert!(((unimplemented!()) == (0)));
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!(((unimplemented!()) == (0_i64)));
+    assert!(((unimplemented!()) == (22739)));
+    assert!(((unimplemented!()) == (22739_i64)));
+    assert!(((unimplemented!()) == (22739_i64)));
+    let foo: i32 = unimplemented!();
     const _: () = assert!(true, "foo == 0x4891");;
-    let bar: () = unimplemented!();
+    let bar: i32 = (unimplemented!() as i32);
     const _: () = assert!(true, "bar == 0x4891");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

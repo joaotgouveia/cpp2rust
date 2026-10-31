@@ -9,23 +9,23 @@ use std::rc::{Rc, Weak};
 pub fn test_0() {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_f32));
+        assert!((unimplemented!() == 0_f32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as f64) == 7.5_f64));
+        assert!((unimplemented!() == 0_f32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as f64) == 8.5_f64));
+        assert!((unimplemented!() == 0_f32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as f64) == 10.5_f64));
+        assert!(((unimplemented!() as f64) == -9.5_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -51,23 +51,23 @@ pub fn test_0() {
 pub fn test_1() {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_f64));
+        assert!((unimplemented!() == 0_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 7.5_f64));
+        assert!((unimplemented!() == 0_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 8.5_f64));
+        assert!((unimplemented!() == 0_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 10.5_f64));
+        assert!((unimplemented!() == -9.5_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -93,23 +93,23 @@ pub fn test_1() {
 pub fn test_2() {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_f64));
+        assert!((unimplemented!() == 0_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 7.5_f64));
+        assert!((unimplemented!() == 0_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 8.5_f64));
+        assert!((unimplemented!() == 0_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 10.5_f64));
+        assert!((unimplemented!() == -9.5_f64));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -151,10 +151,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

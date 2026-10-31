@@ -9,18 +9,18 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg)]
 pub struct __gnu_test_func_callback {
-    _M_size: (),
+    _M_size: i32,
     _M_tests: [Option<unsafe fn()>; 15],
 }
 impl __gnu_test_func_callback {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            _M_size: 0_(),
+            _M_size: 0,
             _M_tests: [None; 15],
         };
         this
     }
-    pub unsafe fn size(&self) -> () {
+    pub unsafe fn size(&self) -> i32 {
         return self._M_size;
     }
     pub unsafe fn tests(&self) -> *const Option<unsafe fn()> {
@@ -74,7 +74,7 @@ impl Default for __gnu_test_object_counter {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1));
     }
     pub unsafe fn mark_call() {
@@ -86,10 +86,10 @@ impl __gnu_test_copy_constructor {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__1)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__2)) = count;
     }
 }
@@ -97,7 +97,7 @@ impl __gnu_test_copy_constructor {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3));
     }
     pub unsafe fn mark_call() {
@@ -109,10 +109,10 @@ impl __gnu_test_assignment_operator {
         }
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count__3)) = 0_u32;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = 0_u32;
     }
-    pub unsafe fn throw_on(mut count: ()) {
+    pub unsafe fn throw_on(mut count: u32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_on__4)) = count;
     }
 }
@@ -120,28 +120,28 @@ impl __gnu_test_assignment_operator {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
-    pub unsafe fn count() -> () {
+    pub unsafe fn count() -> u32 {
         return (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5));
     }
     pub unsafe fn mark_call() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)).postfix_inc();
     }
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut _M_count_5)) = 0_u32;
     }
 }
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct __gnu_test_copy_tracker {
-    id_: (),
-    throw_on_copy_: (),
+    id_: i32,
+    throw_on_copy_: bool,
 }
 impl __gnu_test_copy_tracker {
-    pub unsafe fn new(mut id: Option<()>, mut throw_on_copy: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| unsafe {
+    pub unsafe fn new(mut id: Option<i32>, mut throw_on_copy: Option<bool>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut next_id__6)).postfix_dec()
         });
-        let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| unsafe { false });
+        let mut throw_on_copy: bool = throw_on_copy.unwrap_or_else(|| unsafe { false });
         let mut this = Self {
             id_: id,
             throw_on_copy_: throw_on_copy,
@@ -156,7 +156,7 @@ impl __gnu_test_copy_tracker {
         if this.throw_on_copy_ {
             (unsafe {
                 __gnu_test_copy_constructor::throw_on(
-                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_copy_constructor::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -171,7 +171,7 @@ impl __gnu_test_copy_tracker {
         if (*rhs).throw_on_copy_ {
             (unsafe {
                 __gnu_test_assignment_operator::throw_on(
-                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_()),
+                    (unsafe { __gnu_test_assignment_operator::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -181,7 +181,7 @@ impl __gnu_test_copy_tracker {
     pub unsafe fn destructor(&mut self) {
         (unsafe { __gnu_test_destructor::mark_call() });
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
     pub unsafe fn reset() {
@@ -238,21 +238,21 @@ impl Default for __gnu_test_copy_tracker {
 pub unsafe fn operator_eq_8(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         == (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 pub unsafe fn operator_lt_7(
     lhs: *const __gnu_test_copy_tracker,
     rhs: *const __gnu_test_copy_tracker,
-) -> () {
+) -> bool {
     return ((unsafe { __gnu_test_copy_tracker::id(&(*lhs)) })
         < (unsafe { __gnu_test_copy_tracker::id(&(*rhs)) }));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_semaphore {
-    sem_set_: (),
+    sem_set_: i32,
     pid_: (),
 }
 impl __gnu_test_semaphore {}
@@ -263,7 +263,7 @@ pub unsafe fn test01_9() {
         __do_while = false;
         if !(unimplemented!()) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let cvt: *const () = (unimplemented!());
@@ -272,109 +272,109 @@ pub unsafe fn test01_9() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (4_())) {
+        if !((unimplemented!()) == (4)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!()) == (0_())) {
+        if !((unimplemented!()) == (0)) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
-    let u8dat_: [(); 81] = [
-        72 as (), 195 as (), 164 as (), 108 as (), 108 as (), 195 as (), 182 as (), 32 as (),
-        240 as (), 159 as (), 152 as (), 191 as (), 32 as (), 229 as (), 155 as (), 189 as (),
-        32 as (), 226 as (), 136 as (), 171 as (), 32 as (), 102 as (), 40 as (), 206 as (),
-        186 as (), 41 as (), 32 as (), 101 as (), 120 as (), 112 as (), 40 as (), 45 as (),
-        50 as (), 207 as (), 128 as (), 207 as (), 137 as (), 41 as (), 32 as (), 100 as (),
-        206 as (), 186 as (), 32 as (), 240 as (), 159 as (), 154 as (), 191 as (), 32 as (),
-        240 as (), 159 as (), 154 as (), 191 as (), 32 as (), 240 as (), 159 as (), 153 as (),
-        136 as (), 32 as (), 208 as (), 147 as (), 208 as (), 181 as (), 208 as (), 190 as (),
-        208 as (), 179 as (), 209 as (), 128 as (), 208 as (), 176 as (), 209 as (), 132 as (),
-        208 as (), 184 as (), 209 as (), 143 as (), 32 as (), 239 as (), 172 as (), 133 as (),
-        0 as (),
+    let u8dat_: [u8; 81] = [
+        72 as u8, 195 as u8, 164 as u8, 108 as u8, 108 as u8, 195 as u8, 182 as u8, 32 as u8,
+        240 as u8, 159 as u8, 152 as u8, 191 as u8, 32 as u8, 229 as u8, 155 as u8, 189 as u8,
+        32 as u8, 226 as u8, 136 as u8, 171 as u8, 32 as u8, 102 as u8, 40 as u8, 206 as u8,
+        186 as u8, 41 as u8, 32 as u8, 101 as u8, 120 as u8, 112 as u8, 40 as u8, 45 as u8,
+        50 as u8, 207 as u8, 128 as u8, 207 as u8, 137 as u8, 41 as u8, 32 as u8, 100 as u8,
+        206 as u8, 186 as u8, 32 as u8, 240 as u8, 159 as u8, 154 as u8, 191 as u8, 32 as u8,
+        240 as u8, 159 as u8, 154 as u8, 191 as u8, 32 as u8, 240 as u8, 159 as u8, 153 as u8,
+        136 as u8, 32 as u8, 208 as u8, 147 as u8, 208 as u8, 181 as u8, 208 as u8, 190 as u8,
+        208 as u8, 179 as u8, 209 as u8, 128 as u8, 208 as u8, 176 as u8, 209 as u8, 132 as u8,
+        208 as u8, 184 as u8, 209 as u8, 143 as u8, 32 as u8, 239 as u8, 172 as u8, 133 as u8,
+        0 as u8,
     ];
-    let u8dat: *const () = (u8dat_.as_ptr() as *const ());
-    let u8dat_end: *const () = (unimplemented!() as *const ());
-    let u32dat: [(); 48] = [
-        72 as (),
-        228 as (),
-        108 as (),
-        108 as (),
-        246 as (),
-        32 as (),
-        128575 as (),
-        32 as (),
-        22269 as (),
-        32 as (),
-        8747 as (),
-        32 as (),
-        102 as (),
-        40 as (),
-        954 as (),
-        41 as (),
-        32 as (),
-        101 as (),
-        120 as (),
-        112 as (),
-        40 as (),
-        45 as (),
-        50 as (),
-        960 as (),
-        969 as (),
-        41 as (),
-        32 as (),
-        100 as (),
-        954 as (),
-        32 as (),
-        128703 as (),
-        32 as (),
-        128703 as (),
-        32 as (),
-        128584 as (),
-        32 as (),
-        1043 as (),
-        1077 as (),
-        1086 as (),
-        1075 as (),
-        1088 as (),
-        1072 as (),
-        1092 as (),
-        1080 as (),
-        1103 as (),
-        32 as (),
-        64261 as (),
-        0 as (),
+    let u8dat: *const libc::c_char = (u8dat_.as_ptr() as *const libc::c_char);
+    let u8dat_end: *const libc::c_char = (u8dat_.as_ptr().add(u8dat_.len()) as *const libc::c_char);
+    let u32dat: [u32; 48] = [
+        72 as u32,
+        228 as u32,
+        108 as u32,
+        108 as u32,
+        246 as u32,
+        32 as u32,
+        128575 as u32,
+        32 as u32,
+        22269 as u32,
+        32 as u32,
+        8747 as u32,
+        32 as u32,
+        102 as u32,
+        40 as u32,
+        954 as u32,
+        41 as u32,
+        32 as u32,
+        101 as u32,
+        120 as u32,
+        112 as u32,
+        40 as u32,
+        45 as u32,
+        50 as u32,
+        960 as u32,
+        969 as u32,
+        41 as u32,
+        32 as u32,
+        100 as u32,
+        954 as u32,
+        32 as u32,
+        128703 as u32,
+        32 as u32,
+        128703 as u32,
+        32 as u32,
+        128584 as u32,
+        32 as u32,
+        1043 as u32,
+        1077 as u32,
+        1086 as u32,
+        1075 as u32,
+        1088 as u32,
+        1072 as u32,
+        1092 as u32,
+        1080 as u32,
+        1103 as u32,
+        32 as u32,
+        64261 as u32,
+        0 as u32,
     ];
-    let u32dat_end: *const () = unimplemented!();
+    let u32dat_end: *const u32 = u32dat.as_ptr().add(u32dat.len());
     {
-        let len: () = ((((u32dat_end as usize - u32dat.as_ptr() as usize)
-            / ::std::mem::size_of::<()>()) as ())
-            + (1_()));
-        let buffer: *mut () =
-            Box::leak((0..len).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-        let buffer_end: *mut () = buffer.offset((len) as isize);
-        let mut from_next: *const () = std::ptr::null();
-        let mut to_next: *mut () = std::ptr::null_mut();
+        let len: usize = (((((u32dat_end as usize - u32dat.as_ptr() as usize)
+            / ::std::mem::size_of::<u32>()) as i64)
+            + (1_i64)) as usize);
+        let buffer: *mut u32 =
+            Box::leak((0..len).map(|_| 0_u32).collect::<Box<[u32]>>()).as_mut_ptr();
+        let buffer_end: *mut u32 = buffer.offset((len) as isize);
+        let mut from_next: *const libc::c_char = std::ptr::null();
+        let mut to_next: *mut u32 = std::ptr::null_mut();
         let mut state01: () = unimplemented!();
-        state01 = unsafe { std::mem::zeroed::<__mbstate_t>() };
+        state01 = unsafe { std::mem::zeroed() };
         let mut res: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -382,15 +382,33 @@ pub unsafe fn test01_9() {
             __do_while = false;
             if !((from_next) == (u8dat_end)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !(({
+                let sa = core::slice::from_raw_parts(
+                    (buffer as *mut ::libc::c_void).cast_const() as *const u8,
+                    ::std::mem::size_of::<[u32; 48]>() as usize,
+                );
+                let sb = core::slice::from_raw_parts(
+                    (u32dat.as_ptr() as *mut ::libc::c_void).cast_const() as *const u8,
+                    ::std::mem::size_of::<[u32; 48]>() as usize,
+                );
+                let mut diff = 0_i32;
+                for (x, y) in sa.iter().zip(sb.iter()) {
+                    if x != y {
+                        diff = (*x as i32) - (*y as i32);
+                        break;
+                    }
+                }
+                diff
+            }) == (0))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         {
@@ -399,29 +417,33 @@ pub unsafe fn test01_9() {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<u32>(),
                 )))
             }
         };
     }
     {
-        let len: () = ((((u8dat_end as usize - u8dat as usize) / ::std::mem::size_of::<()>())
-            as ())
-            + (1_()));
-        let buffer: *mut () =
-            Box::leak((0..len).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-        let buffer_end: *mut () = buffer.offset((len) as isize);
-        let mut from_next: *const () = std::ptr::null();
-        let mut to_next: *mut () = std::ptr::null_mut();
+        let len: usize = (((((u8dat_end as usize - u8dat as usize)
+            / ::std::mem::size_of::<libc::c_char>()) as i64)
+            + (1_i64)) as usize);
+        let buffer: *mut libc::c_char = Box::leak(
+            (0..len)
+                .map(|_| (0 as libc::c_char))
+                .collect::<Box<[libc::c_char]>>(),
+        )
+        .as_mut_ptr();
+        let buffer_end: *mut libc::c_char = buffer.offset((len) as isize);
+        let mut from_next: *const u32 = std::ptr::null();
+        let mut to_next: *mut libc::c_char = std::ptr::null_mut();
         let mut state01: () = unimplemented!();
-        state01 = unsafe { std::mem::zeroed::<__mbstate_t>() };
+        state01 = unsafe { std::mem::zeroed() };
         let mut res: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (unimplemented!())) {
+            if !((res as i32) == (unimplemented!() as i32)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
@@ -429,15 +451,33 @@ pub unsafe fn test01_9() {
             __do_while = false;
             if !((from_next) == (u32dat_end)) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((unimplemented!()) == (0_())) {
+            if !(({
+                let sa = core::slice::from_raw_parts(
+                    (buffer as *mut ::libc::c_void).cast_const() as *const u8,
+                    ::std::mem::size_of::<[u8; 81]>() as usize,
+                );
+                let sb = core::slice::from_raw_parts(
+                    (u8dat_.as_ptr() as *mut ::libc::c_void).cast_const() as *const u8,
+                    ::std::mem::size_of::<[u8; 81]>() as usize,
+                );
+                let mut diff = 0_i32;
+                for (x, y) in sa.iter().zip(sb.iter()) {
+                    if x != y {
+                        diff = (*x as i32) - (*y as i32);
+                        break;
+                    }
+                }
+                diff
+            }) == (0))
+            {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
         {
@@ -446,7 +486,7 @@ pub unsafe fn test01_9() {
                 ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
                     __p,
                     libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
+                        / ::std::mem::size_of::<libc::c_char>(),
                 )))
             }
         };
@@ -458,33 +498,33 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test01_9() });
     0
 }
 impl __gnu_test_semaphore {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            sem_set_: unimplemented!(),
+            sem_set_: 0_i32,
             pid_: unimplemented!(),
         };
         this.pid_ = unimplemented!();
         this.sem_set_ = unimplemented!();
-        if ((this.sem_set_) == (-1_())) {
+        if ((this.sem_set_) == (-1_i32)) {
             unimplemented!();
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
-        if ((unimplemented!()) == (-1_())) {
+        val.val = 0;
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_10(mut size: Option<()>) {
-    let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
+pub unsafe fn set_memory_limits_10(mut size: Option<f32>) {
+    let mut size: f32 = size.unwrap_or_else(|| unsafe { (16_f64 as f32) });
     let mut r: () = unimplemented!();
-    let mut limit: () = ((size) * (1048576_()));
+    let mut limit: () = (((size) * (1048576_f32)) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
@@ -498,34 +538,37 @@ pub unsafe fn set_memory_limits_10(mut size: Option<()>) {
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn set_file_limit_11(mut size: ()) {
+pub unsafe fn set_file_limit_11(mut size: u64) {
     let mut r: () = unimplemented!();
     let mut limit: () = ((size) as ());
     unimplemented!();
     r.rlim_cur = limit;
     unimplemented!();
 }
-pub unsafe fn verify_demangle_12(mut mangled: *const (), mut wanted: *const ()) {
-    let mut status: () = 0_();
-    let mut s: *const () = std::ptr::null();
-    let mut demangled: *mut () = unimplemented!();
+pub unsafe fn verify_demangle_12(
+    mut mangled: *const libc::c_char,
+    mut wanted: *const libc::c_char,
+) {
+    let mut status: i32 = 0;
+    let mut s: *const libc::c_char = std::ptr::null();
+    let mut demangled: *mut libc::c_char = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).cast_const();
     } else {
         switch!(match status {
-            __v if __v == 0_() => {
+            __v if __v == 0 => {
                 s = c"error code = 0: success".as_ptr();
                 break;
             }
-            __v if __v == -1_() => {
+            __v if __v == -1_i32 => {
                 s = c"error code = -1: memory allocation failure".as_ptr();
                 break;
             }
-            __v if __v == -2_() => {
+            __v if __v == -2_i32 => {
                 s = c"error code = -2: invalid mangled name".as_ptr();
                 break;
             }
-            __v if __v == -3_() => {
+            __v if __v == -3_i32 => {
                 s = c"error code = -3: invalid arguments".as_ptr();
                 break;
             }
@@ -534,77 +577,99 @@ pub unsafe fn verify_demangle_12(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () = unimplemented!();
-    if !(unimplemented!()) {
+    let mut w: Vec<libc::c_char> =
+        std::slice::from_raw_parts(wanted, libcc2rs::c_str_len(wanted) + 1).to_vec();
+    if !(w == std::slice::from_raw_parts(s, libcc2rs::c_str_len(s) + 1).to_vec()) {
         unimplemented!();
     }
-    unimplemented!();
+    libcc2rs::free_unsafe((demangled as *mut ::libc::c_void));
 }
-pub unsafe fn run_tests_wrapped_locale_13(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_13(
+    mut name: *const libc::c_char,
+    l: *const __gnu_test_func_callback,
+) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut res: *const () = (unimplemented!()).cast_const();
+    let mut res: *const libc::c_char = (libc::setlocale(6, name)).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () = unimplemented!();
+        let mut preLC_ALL: Vec<libc::c_char> =
+            std::slice::from_raw_parts(res, libcc2rs::c_str_len(res) + 1).to_vec();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () = unimplemented!();
+        let mut postLC_ALL: Vec<libc::c_char> = std::slice::from_raw_parts(
+            (libc::setlocale(6, std::ptr::null())).cast_const(),
+            libcc2rs::c_str_len((libc::setlocale(6, std::ptr::null())).cast_const()) + 1,
+        )
+        .to_vec();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"LC_ALL for ".as_ptr(),
+            libcc2rs::c_str_len(c"LC_ALL for ".as_ptr()) + 1,
+        )
+        .to_vec();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn run_tests_wrapped_env_14(
-    mut name: *const (),
-    mut env: *const (),
+    mut name: *const libc::c_char,
+    mut env: *const libc::c_char,
     l: *const __gnu_test_func_callback,
 ) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
-    let mut oldENV: *const () = (unimplemented!()).cast_const();
-    if !(unimplemented!() != 0) {
+    let mut oldENV: *const libc::c_char = (libc::getenv(env)).cast_const();
+    if !(libc::setenv(env, name, 1) != 0) {
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (unsafe { __gnu_test_func_callback::size(&(*l)) })) {
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        unimplemented!();
+        libc::setenv(
+            env,
+            if !(oldENV).is_null() {
+                oldENV
+            } else {
+                c"".as_ptr()
+            },
+            1,
+        );
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> =
+            std::slice::from_raw_parts(env, libcc2rs::c_str_len(env) + 1).to_vec();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__1: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut count__3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut throw_on__4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut _M_count_5: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-static mut next_id__6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+static mut count__1: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__2: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut count__3: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut throw_on__4: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut _M_count_5: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });
+static mut next_id__6: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(Copy, Clone, FnPtrArg, VaArg)]
 pub union __gnu_test_semun {
-    pub val: (),
+    pub val: i32,
     pub buf: *mut (),
-    pub array: *mut (),
+    pub array: *mut u16,
 }
 impl Default for __gnu_test_semun {
     fn default() -> Self {
@@ -615,7 +680,7 @@ impl __gnu_test_semaphore {}
 impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
-        val.val = 0_();
+        val.val = 0;
         if ((self.pid_) == (unimplemented!())) {
             unimplemented!();
         }
@@ -624,7 +689,7 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
@@ -632,22 +697,22 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
         let mut op: [(); 1] = [unimplemented!()];
-        if ((unimplemented!()) == (-1_())) {
+        if ((unimplemented!()) == (-1_i32)) {
             unimplemented!();
         }
     }
 }
 pub unsafe fn test_tm_15(
-    mut sec: (),
-    mut min: (),
-    mut hour: (),
-    mut mday: (),
-    mut mon: (),
-    mut year: (),
-    mut wday: (),
-    mut yday: (),
-    mut isdst: (),
-) -> () {
+    mut sec: i32,
+    mut min: i32,
+    mut hour: i32,
+    mut mday: i32,
+    mut mon: i32,
+    mut year: i32,
+    mut wday: i32,
+    mut yday: i32,
+    mut isdst: i32,
+) -> ::libc::tm {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_sec = sec;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_min = min;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_hour = hour;
@@ -657,10 +722,10 @@ pub unsafe fn test_tm_15(
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_wday = wday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_yday = yday;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16)).clone();
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_16));
 }
-static mut tmp_16: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut tmp_16: std::cell::LazyCell<::libc::tm> =
+    std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);
     std::cell::LazyCell::force(&*&raw const count__1);

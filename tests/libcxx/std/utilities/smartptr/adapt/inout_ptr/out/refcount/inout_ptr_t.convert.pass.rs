@@ -26,28 +26,29 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut uPtr: () = unimplemented!();
+        let mut uPtr: Option<Value<i32>> = Some(Rc::new(RefCell::new(84)));
         let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(ioPtr.operator int**())");;
-        let mut pPtr: Ptr<Ptr<()>> = unimplemented!();
-        unimplemented!();
+        let mut pPtr: Ptr<Ptr<i32>> = unimplemented!();
+        assert!((((pPtr.read()).read()) == 84));
     }
     {
-        let uPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let uPtr: Value<Option<Value<i32>>> =
+            Rc::new(RefCell::new(Some(Rc::new(RefCell::new(84)))));
         let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(ioPtr.operator int**())");;
-        let mut pPtr: Ptr<Ptr<()>> = unimplemented!();
-        unimplemented!();
+        let mut pPtr: Ptr<Ptr<i32>> = unimplemented!();
+        assert!((((pPtr.read()).read()) == 84));
     }
     {
-        let mut uPtr: () = unimplemented!();
+        let mut uPtr: Option<Value<i32>> = Some(Rc::new(RefCell::new(84)));
         let ioPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(ioPtr.operator void**())");;
-        let mut pPtr: Ptr<()> = unimplemented!();
-        unimplemented!();
+        let mut pPtr: Ptr<AnyPtr> = unimplemented!();
+        assert!((((pPtr.reinterpret_cast::<*mut i32>().read()).read()) == 84));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

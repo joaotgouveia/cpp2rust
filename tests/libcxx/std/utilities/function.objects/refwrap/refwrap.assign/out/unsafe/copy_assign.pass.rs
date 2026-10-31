@@ -12,70 +12,70 @@ pub struct functor1 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct convertible_to_int_ref {
-    pub val: (),
+    pub val: i32,
 }
 impl convertible_to_int_ref {
-    pub unsafe fn to_pmut(&mut self) -> *mut () {
+    pub unsafe fn to_pmuti32(&mut self) -> *mut i32 {
         return &mut self.val;
     }
-    pub unsafe fn to_pconst(&self) -> *const () {
+    pub unsafe fn to_pconsti32(&self) -> *const i32 {
         return &self.val;
     }
 }
 impl Default for convertible_to_int_ref {
     fn default() -> Self {
-        unsafe { convertible_to_int_ref { val: 0_() } }
+        unsafe { convertible_to_int_ref { val: 0 } }
     }
 }
 pub unsafe fn test_0(t: *mut Option<unsafe fn()>) {
-    let mut r: () = unimplemented!();
+    let mut r: *mut Option<unsafe fn()> = t;
     let mut t2: Option<unsafe fn()> = (*t);
-    let mut r2: () = unimplemented!();
+    let mut r2: *mut Option<unsafe fn()> = &mut t2;
     unimplemented!();
-    unimplemented!();
+    assert!(((r2) == (t)));
 }
 pub unsafe fn test_1(t: *mut functor1) {
-    let mut r: () = unimplemented!();
+    let mut r: *mut functor1 = t;
     let mut t2: functor1 = (*t);
-    let mut r2: () = unimplemented!();
+    let mut r2: *mut functor1 = &mut t2;
     unimplemented!();
-    unimplemented!();
+    assert!(((r2) == (t)));
 }
-pub unsafe fn test_2(t: *mut ()) {
-    let mut r: () = unimplemented!();
-    let mut t2: () = (*t);
-    let mut r2: () = unimplemented!();
+pub unsafe fn test_2(t: *mut i32) {
+    let mut r: *mut i32 = t;
+    let mut t2: i32 = (*t);
+    let mut r2: *mut i32 = &mut t2;
     unimplemented!();
-    unimplemented!();
+    assert!(((r2) == (t)));
 }
-pub unsafe fn test_3(t: *const ()) {
-    let mut r: () = unimplemented!();
-    let t2: () = (*t);
-    let mut r2: () = unimplemented!();
+pub unsafe fn test_3(t: *const i32) {
+    let mut r: *const i32 = t;
+    let t2: i32 = (*t);
+    let mut r2: *const i32 = &t2;
     unimplemented!();
-    unimplemented!();
+    assert!(((r2) == (t)));
 }
 pub unsafe fn test_4(t: *mut convertible_to_int_ref) {
-    let mut r: () = unimplemented!();
+    let mut r: *mut convertible_to_int_ref = t;
     let mut t2: convertible_to_int_ref = (*t);
-    let mut r2: () = unimplemented!();
+    let mut r2: *mut convertible_to_int_ref = &mut t2;
     unimplemented!();
-    unimplemented!();
+    assert!(((r2) == (t)));
 }
 pub unsafe fn test_5(t: *const convertible_to_int_ref) {
-    let mut r: () = unimplemented!();
+    let mut r: *const convertible_to_int_ref = t;
     let t2: convertible_to_int_ref = (*t);
-    let mut r2: () = unimplemented!();
+    let mut r2: *const convertible_to_int_ref = &t2;
     unimplemented!();
-    unimplemented!();
+    assert!(((r2) == (t)));
 }
 pub unsafe fn f_6() {}
 pub unsafe fn g_7() {}
 pub unsafe fn test_function_8() {
-    let mut r: () = unimplemented!();
-    let mut r2: () = unimplemented!();
+    let mut r: Option<unsafe fn()> = Some(f_6);
+    let mut r2: Option<unsafe fn()> = Some(g_7);
     unimplemented!();
-    unimplemented!();
+    assert!(((r2) == (Some(f_6))));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -92,15 +92,15 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut fp: Option<unsafe fn()> = Some(f_6);
     (unsafe { test_0(&mut fp) });
     (unsafe { test_function_8() });
     let mut f1: functor1 = <functor1>::default();
     (unsafe { test_1(&mut f1) });
-    let mut i: () = 0_();
+    let mut i: i32 = 0;
     (unsafe { test_2(&mut i) });
-    let j: () = 0_();
+    let j: i32 = 0;
     (unsafe { test_3(&j) });
     let mut convi: convertible_to_int_ref = <convertible_to_int_ref>::default();
     (unsafe { test_4(&mut convi) });
@@ -111,6 +111,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "(!std::is_assignable<Ref&, int>::value)");;
         const _: () = assert!(true, "(!std::is_assignable<Ref&, int&&>::value)");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -6,60 +6,60 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn hash_identity_0(val: ()) -> () {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    return (*val.borrow());
+pub fn hash_identity_0(val: u64) -> usize {
+    let val: Value<u64> = Rc::new(RefCell::new(val));
+    return ((*val.borrow()) as usize);
 }
-pub fn hash_identity_1(val: ()) -> () {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    return (*val.borrow());
+pub fn hash_identity_1(val: bool) -> usize {
+    let val: Value<bool> = Rc::new(RefCell::new(val));
+    return ((*val.borrow()) as usize);
 }
-pub fn hash_neg_2(mut val: ()) -> () {
-    return (unimplemented!() as ()).wrapping_sub(val);
+pub fn hash_neg_2(mut val: u64) -> usize {
+    return ((u64::MAX as u64).wrapping_sub(val) as usize);
 }
-pub fn hash_neg_3(mut val: ()) -> () {
-    return (unimplemented!() - val);
+pub fn hash_neg_3(mut val: bool) -> usize {
+    return (((true as i32) - (val as i32)) as usize);
 }
-pub fn hash_scale_4(mut val: ()) -> () {
-    return ((val << 1_()) as ());
+pub fn hash_scale_4(mut val: u64) -> usize {
+    return ((val << 1) as usize);
 }
-pub fn hash_scale_5(mut val: ()) -> () {
-    return (val << 1_());
+pub fn hash_scale_5(mut val: bool) -> usize {
+    return (((val as i32) << 1) as usize);
 }
-pub fn hash_even_6(mut val: ()) -> () {
-    return if ((val & 1_()) != 0) { 1_() } else { 0_() };
+pub fn hash_even_6(mut val: u64) -> usize {
+    return (if ((val & 1_u64) != 0) { 1 } else { 0 } as usize);
 }
-pub fn hash_even_7(mut val: ()) -> () {
-    return if ((val & 1_()) != 0) { 1_() } else { 0_() };
+pub fn hash_even_7(mut val: bool) -> usize {
+    return (if (((val as i32) & 1) != 0) { 1 } else { 0 } as usize);
 }
-pub fn hash_same_8(mut _a0: ()) -> () {
-    return 1_();
+pub fn hash_same_8(mut _a0: u64) -> usize {
+    return 1_usize;
 }
-pub fn hash_same_9(mut _a0: ()) -> () {
-    return 1_();
+pub fn hash_same_9(mut _a0: bool) -> usize {
+    return 1_usize;
 }
-pub fn hash_same_10(mut _a0: Ptr<()>) -> () {
-    return 1_();
+pub fn hash_same_10(mut _a0: Ptr<i8>) -> usize {
+    return 1_usize;
 }
-pub fn hash_identity_11(mut val: Ptr<()>) -> () {
-    return (val.read());
+pub fn hash_identity_11(mut val: Ptr<i8>) -> usize {
+    return ((val.read()) as usize);
 }
-pub fn hash_neg_12(mut val: Ptr<()>) -> () {
-    return ({ unimplemented!() } - { (val.read()) });
+pub fn hash_neg_12(mut val: Ptr<i8>) -> usize {
+    return (({ (libc::c_char::MAX as i32) } - { ((val.read()) as i32) }) as usize);
 }
-pub fn hash_scale_13(mut val: Ptr<()>) -> () {
-    return ((val.read()) << 1_());
+pub fn hash_scale_13(mut val: Ptr<i8>) -> usize {
+    return ((((val.read()) as i32) << 1) as usize);
 }
-pub fn hash_even_14(mut val: Ptr<()>) -> () {
-    return if (((val.read()) & 1_()) != 0) {
-        1_()
+pub fn hash_even_14(mut val: Ptr<i8>) -> usize {
+    return (if ((((val.read()) as i32) & 1) != 0) {
+        1
     } else {
-        0_()
-    };
+        0
+    } as usize);
 }
-pub fn populate_15(m: Ptr<()>, mut start: Ptr<()>, mut end: Ptr<()>) {
-    let mut p1: Ptr<()> = (start).clone();
-    let mut p2: Ptr<()> = end.offset(-((1_()) as isize));
+pub fn populate_15(m: Ptr<()>, mut start: Ptr<u64>, mut end: Ptr<u64>) {
+    let mut p1: Ptr<u64> = (start).clone();
+    let mut p2: Ptr<u64> = end.offset(-((1) as isize));
     'loop_: while ({ (p1).clone() } != { (end).clone() }) {
         unimplemented!();
         {
@@ -68,9 +68,9 @@ pub fn populate_15(m: Ptr<()>, mut start: Ptr<()>, mut end: Ptr<()>) {
         };
     }
 }
-pub fn populate_16(m: Ptr<()>, mut start: Ptr<()>, mut end: Ptr<()>) {
-    let mut p1: Ptr<()> = (start).clone();
-    let mut p2: Ptr<()> = end.offset(-((1_()) as isize));
+pub fn populate_16(m: Ptr<()>, mut start: Ptr<bool>, mut end: Ptr<bool>) {
+    let mut p1: Ptr<bool> = (start).clone();
+    let mut p2: Ptr<bool> = end.offset(-((1) as isize));
     'loop_: while ({ (p1).clone() } != { (end).clone() }) {
         unimplemented!();
         {
@@ -79,9 +79,9 @@ pub fn populate_16(m: Ptr<()>, mut start: Ptr<()>, mut end: Ptr<()>) {
         };
     }
 }
-pub fn populate_17(m: Ptr<()>, mut start: Ptr<Ptr<()>>, mut end: Ptr<Ptr<()>>) {
-    let mut p1: Ptr<Ptr<()>> = (start).clone();
-    let mut p2: Ptr<Ptr<()>> = end.offset(-((1_()) as isize));
+pub fn populate_17(m: Ptr<()>, mut start: Ptr<Ptr<i8>>, mut end: Ptr<Ptr<i8>>) {
+    let mut p1: Ptr<Ptr<i8>> = (start).clone();
+    let mut p2: Ptr<Ptr<i8>> = end.offset(-((1) as isize));
     'loop_: while ({ (p1).clone() } != { (end).clone() }) {
         unimplemented!();
         {
@@ -90,176 +90,176 @@ pub fn populate_17(m: Ptr<()>, mut start: Ptr<Ptr<()>>, mut end: Ptr<Ptr<()>>) {
         };
     }
 }
-pub fn test_18(vals: Ptr<()>) {
+pub fn test_18(vals: Ptr<u64>) {
     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<u64> = unimplemented!();
+        let _end: Ptr<u64> = ((vals).clone() as Ptr<u64>).to_end();
         populate_15(c1.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<u64> = unimplemented!();
+        let _end: Ptr<u64> = ((vals).clone() as Ptr<u64>).to_end();
         populate_15(c2.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<u64> = unimplemented!();
+        let _end: Ptr<u64> = ((vals).clone() as Ptr<u64>).to_end();
         populate_15(c3.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<u64> = unimplemented!();
+        let _end: Ptr<u64> = ((vals).clone() as Ptr<u64>).to_end();
         populate_15(c4.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<u64> = unimplemented!();
+        let _end: Ptr<u64> = ((vals).clone() as Ptr<u64>).to_end();
         populate_15(c5.as_pointer(), _start, _end)
     });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub fn test_19(vals: Ptr<()>) {
+pub fn test_19(vals: Ptr<bool>) {
     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<bool> = unimplemented!();
+        let _end: Ptr<bool> = ((vals).clone() as Ptr<bool>).to_end();
         populate_16(c1.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<bool> = unimplemented!();
+        let _end: Ptr<bool> = ((vals).clone() as Ptr<bool>).to_end();
         populate_16(c2.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<bool> = unimplemented!();
+        let _end: Ptr<bool> = ((vals).clone() as Ptr<bool>).to_end();
         populate_16(c3.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<bool> = unimplemented!();
+        let _end: Ptr<bool> = ((vals).clone() as Ptr<bool>).to_end();
         populate_16(c4.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<()> = unimplemented!();
-        let _end: Ptr<()> = unimplemented!();
+        let _start: Ptr<bool> = unimplemented!();
+        let _end: Ptr<bool> = ((vals).clone() as Ptr<bool>).to_end();
         populate_16(c5.as_pointer(), _start, _end)
     });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub fn test_20(vals: Ptr<Ptr<()>>) {
+pub fn test_20(vals: Ptr<Ptr<i8>>) {
     let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
-        let _start: Ptr<Ptr<()>> = unimplemented!();
-        let _end: Ptr<Ptr<()>> = unimplemented!();
+        let _start: Ptr<Ptr<i8>> = unimplemented!();
+        let _end: Ptr<Ptr<i8>> = ((vals).clone() as Ptr<Ptr<i8>>).to_end();
         populate_17(c1.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<Ptr<()>> = unimplemented!();
-        let _end: Ptr<Ptr<()>> = unimplemented!();
+        let _start: Ptr<Ptr<i8>> = unimplemented!();
+        let _end: Ptr<Ptr<i8>> = ((vals).clone() as Ptr<Ptr<i8>>).to_end();
         populate_17(c2.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<Ptr<()>> = unimplemented!();
-        let _end: Ptr<Ptr<()>> = unimplemented!();
+        let _start: Ptr<Ptr<i8>> = unimplemented!();
+        let _end: Ptr<Ptr<i8>> = ((vals).clone() as Ptr<Ptr<i8>>).to_end();
         populate_17(c3.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<Ptr<()>> = unimplemented!();
-        let _end: Ptr<Ptr<()>> = unimplemented!();
+        let _start: Ptr<Ptr<i8>> = unimplemented!();
+        let _end: Ptr<Ptr<i8>> = ((vals).clone() as Ptr<Ptr<i8>>).to_end();
         populate_17(c4.as_pointer(), _start, _end)
     });
     ({
-        let _start: Ptr<Ptr<()>> = unimplemented!();
-        let _end: Ptr<Ptr<()>> = unimplemented!();
+        let _start: Ptr<Ptr<i8>> = unimplemented!();
+        let _end: Ptr<Ptr<i8>> = ((vals).clone() as Ptr<Ptr<i8>>).to_end();
         populate_17(c5.as_pointer(), _start, _end)
     });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -280,70 +280,30 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let vals: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            1_(),
-            2_(),
-            2_(),
-            3_(),
-            3_(),
-            3_(),
-            4_(),
-            4_(),
-            4_(),
-            4_(),
-            5_(),
-            5_(),
-            5_(),
-            5_(),
-            5_(),
-            6_(),
-            6_(),
-            6_(),
-            6_(),
-            6_(),
-            6_(),
-            7_(),
-            7_(),
-            7_(),
-            7_(),
-            7_(),
-            7_(),
-            7_(),
-            8_(),
-            8_(),
-            8_(),
-            8_(),
-            8_(),
-            8_(),
-            8_(),
-            8_(),
-            9_(),
-            9_(),
-            9_(),
-            9_(),
-            9_(),
-            9_(),
-            9_(),
-            9_(),
-            9_(),
-            10_(),
+        let vals: Value<Box<[usize]>> = Rc::new(RefCell::new(Box::new([
+            1_usize, 2_usize, 2_usize, 3_usize, 3_usize, 3_usize, 4_usize, 4_usize, 4_usize,
+            4_usize, 5_usize, 5_usize, 5_usize, 5_usize, 5_usize, 6_usize, 6_usize, 6_usize,
+            6_usize, 6_usize, 6_usize, 7_usize, 7_usize, 7_usize, 7_usize, 7_usize, 7_usize,
+            7_usize, 8_usize, 8_usize, 8_usize, 8_usize, 8_usize, 8_usize, 8_usize, 8_usize,
+            9_usize, 9_usize, 9_usize, 9_usize, 9_usize, 9_usize, 9_usize, 9_usize, 9_usize,
+            10_usize,
         ])));
-        ({ test_18(vals.as_pointer()) });
+        ({ test_18((vals.as_pointer() as Ptr<usize>).reinterpret_cast::<u64>()) });
     }
     {
-        let vals: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([true, false])));
+        let vals: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([true, false])));
         ({ test_19(vals.as_pointer()) });
     }
     {
-        let vals: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(Box::new([
-            Ptr::<()>::from_string_literal(b"a").reinterpret_cast::<()>(),
-            Ptr::<()>::from_string_literal(b"b").reinterpret_cast::<()>(),
-            Ptr::<()>::from_string_literal(b"cde").reinterpret_cast::<()>(),
+        let vals: Value<Box<[Ptr<i8>]>> = Rc::new(RefCell::new(Box::new([
+            Ptr::<i8>::from_string_literal(b"a").reinterpret_cast::<i8>(),
+            Ptr::<i8>::from_string_literal(b"b").reinterpret_cast::<i8>(),
+            Ptr::<i8>::from_string_literal(b"cde").reinterpret_cast::<i8>(),
         ])));
         ({ test_20(vals.as_pointer()) });
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

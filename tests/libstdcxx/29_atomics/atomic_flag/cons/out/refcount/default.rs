@@ -10,8 +10,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

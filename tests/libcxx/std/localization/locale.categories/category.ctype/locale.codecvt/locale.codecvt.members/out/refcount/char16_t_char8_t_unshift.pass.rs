@@ -26,15 +26,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let f: Ptr<()> = unimplemented!();
-    let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let to: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
-    let mut to_next: Ptr<()> = Ptr::<()>::null();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let to: Value<Box<[u8]>> = Rc::new(RefCell::new((0..3).map(|_| 0_u8).collect::<Box<[u8]>>()));
+    let mut to_next: Ptr<u8> = Ptr::<u8>::null();
+    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+    assert!(({ (to_next).clone() } == { (to.as_pointer() as Ptr::<u8>) }));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

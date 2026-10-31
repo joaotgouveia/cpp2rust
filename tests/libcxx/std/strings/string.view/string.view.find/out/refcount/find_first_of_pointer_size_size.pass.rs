@@ -10,15 +10,15 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub fn eq(mut c1: (), mut c2: ()) -> () {
-        return (c1 == c2);
+    pub fn eq(mut c1: i8, mut c2: i8) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
-    pub fn find(s: Ptr<()>, mut n: (), a: Ptr<()>) -> Ptr<()> {
-        let s: Value<Ptr<()>> = Rc::new(RefCell::new(s));
+    pub fn find(s: Ptr<i8>, mut n: usize, a: Ptr<i8>) -> Ptr<i8> {
+        let s: Value<Ptr<i8>> = Rc::new(RefCell::new(s));
         'loop_: while (n != 0) {
             if ({
-                let _c1: () = ((*s.borrow()).read());
-                let _c2: () = (a.read());
+                let _c1: i8 = ((*s.borrow()).read());
+                let _c2: i8 = (a.read());
                 constexpr_char_traits_char_::eq(_c1, _c2)
             }) {
                 return (*s.borrow()).clone();
@@ -26,14 +26,14 @@ impl constexpr_char_traits_char_ {
             (*s.borrow_mut()).prefix_inc();
             n.prefix_dec();
         }
-        return Ptr::<()>::null();
+        return Ptr::<i8>::null();
     }
 }
 pub fn test_0(s: Ptr<()>, mut str: Ptr<()>, mut pos: (), mut n: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(({ unimplemented!() } == { x }));
     if (x != unimplemented!()) {
-        unimplemented!();
+        assert!((pos <= x) && ({ x } < { unimplemented!() }));
     }
 }
 pub fn test0_1() {
@@ -41,7 +41,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -51,7 +51,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"irkhs"),
+            (Ptr::<i8>::from_string_literal(b"irkhs")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -61,7 +61,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kante"),
+            (Ptr::<i8>::from_string_literal(b"kante")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -71,7 +71,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oknlr"),
+            (Ptr::<i8>::from_string_literal(b"oknlr")).reinterpret_cast::<()>(),
             0_(),
             2_(),
             unimplemented!(),
@@ -81,7 +81,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pcdro"),
+            (Ptr::<i8>::from_string_literal(b"pcdro")).reinterpret_cast::<()>(),
             0_(),
             4_(),
             unimplemented!(),
@@ -91,7 +91,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bnrpe"),
+            (Ptr::<i8>::from_string_literal(b"bnrpe")).reinterpret_cast::<()>(),
             0_(),
             5_(),
             unimplemented!(),
@@ -101,7 +101,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jtdaefblso"),
+            (Ptr::<i8>::from_string_literal(b"jtdaefblso")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -111,7 +111,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oselktgbca"),
+            (Ptr::<i8>::from_string_literal(b"oselktgbca")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -121,7 +121,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"eqgaplhckj"),
+            (Ptr::<i8>::from_string_literal(b"eqgaplhckj")).reinterpret_cast::<()>(),
             0_(),
             5_(),
             unimplemented!(),
@@ -131,7 +131,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bjahtcmnlp"),
+            (Ptr::<i8>::from_string_literal(b"bjahtcmnlp")).reinterpret_cast::<()>(),
             0_(),
             9_(),
             unimplemented!(),
@@ -141,7 +141,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"hjlcmgpket"),
+            (Ptr::<i8>::from_string_literal(b"hjlcmgpket")).reinterpret_cast::<()>(),
             0_(),
             10_(),
             unimplemented!(),
@@ -151,7 +151,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"htaobedqikfplcgjsmrn"),
+            (Ptr::<i8>::from_string_literal(b"htaobedqikfplcgjsmrn")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -161,7 +161,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"hpqiarojkcdlsgnmfetb"),
+            (Ptr::<i8>::from_string_literal(b"hpqiarojkcdlsgnmfetb")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -171,7 +171,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dfkaprhjloqetcsimnbg"),
+            (Ptr::<i8>::from_string_literal(b"dfkaprhjloqetcsimnbg")).reinterpret_cast::<()>(),
             0_(),
             10_(),
             unimplemented!(),
@@ -181,7 +181,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ihqrfebgadntlpmjksoc"),
+            (Ptr::<i8>::from_string_literal(b"ihqrfebgadntlpmjksoc")).reinterpret_cast::<()>(),
             0_(),
             19_(),
             unimplemented!(),
@@ -191,7 +191,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ngtjfcalbseiqrphmkdo"),
+            (Ptr::<i8>::from_string_literal(b"ngtjfcalbseiqrphmkdo")).reinterpret_cast::<()>(),
             0_(),
             20_(),
             unimplemented!(),
@@ -201,7 +201,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -211,7 +211,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lbtqd"),
+            (Ptr::<i8>::from_string_literal(b"lbtqd")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -221,7 +221,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tboim"),
+            (Ptr::<i8>::from_string_literal(b"tboim")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -231,7 +231,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"slcer"),
+            (Ptr::<i8>::from_string_literal(b"slcer")).reinterpret_cast::<()>(),
             1_(),
             2_(),
             unimplemented!(),
@@ -241,7 +241,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"cbjfs"),
+            (Ptr::<i8>::from_string_literal(b"cbjfs")).reinterpret_cast::<()>(),
             1_(),
             4_(),
             unimplemented!(),
@@ -251,7 +251,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"aqibs"),
+            (Ptr::<i8>::from_string_literal(b"aqibs")).reinterpret_cast::<()>(),
             1_(),
             5_(),
             unimplemented!(),
@@ -261,7 +261,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gtfblmqinc"),
+            (Ptr::<i8>::from_string_literal(b"gtfblmqinc")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -271,7 +271,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"mkqpbtdalg"),
+            (Ptr::<i8>::from_string_literal(b"mkqpbtdalg")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -281,7 +281,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kphatlimcd"),
+            (Ptr::<i8>::from_string_literal(b"kphatlimcd")).reinterpret_cast::<()>(),
             1_(),
             5_(),
             unimplemented!(),
@@ -291,7 +291,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pblasqogic"),
+            (Ptr::<i8>::from_string_literal(b"pblasqogic")).reinterpret_cast::<()>(),
             1_(),
             9_(),
             unimplemented!(),
@@ -301,7 +301,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"arosdhcfme"),
+            (Ptr::<i8>::from_string_literal(b"arosdhcfme")).reinterpret_cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -311,7 +311,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"blkhjeogicatqfnpdmsr"),
+            (Ptr::<i8>::from_string_literal(b"blkhjeogicatqfnpdmsr")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -321,7 +321,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bmhineprjcoadgstflqk"),
+            (Ptr::<i8>::from_string_literal(b"bmhineprjcoadgstflqk")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -331,7 +331,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"djkqcmetslnghpbarfoi"),
+            (Ptr::<i8>::from_string_literal(b"djkqcmetslnghpbarfoi")).reinterpret_cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -341,7 +341,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lgokshjtpbemarcdqnfi"),
+            (Ptr::<i8>::from_string_literal(b"lgokshjtpbemarcdqnfi")).reinterpret_cast::<()>(),
             1_(),
             19_(),
             unimplemented!(),
@@ -351,7 +351,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bqjhtkfepimcnsgrlado"),
+            (Ptr::<i8>::from_string_literal(b"bqjhtkfepimcnsgrlado")).reinterpret_cast::<()>(),
             1_(),
             20_(),
             unimplemented!(),
@@ -361,7 +361,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -371,7 +371,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gfsrt"),
+            (Ptr::<i8>::from_string_literal(b"gfsrt")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -381,7 +381,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pfsoc"),
+            (Ptr::<i8>::from_string_literal(b"pfsoc")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -391,7 +391,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tpflm"),
+            (Ptr::<i8>::from_string_literal(b"tpflm")).reinterpret_cast::<()>(),
             0_(),
             2_(),
             unimplemented!(),
@@ -401,7 +401,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sgkec"),
+            (Ptr::<i8>::from_string_literal(b"sgkec")).reinterpret_cast::<()>(),
             0_(),
             4_(),
             0_(),
@@ -411,7 +411,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"romds"),
+            (Ptr::<i8>::from_string_literal(b"romds")).reinterpret_cast::<()>(),
             0_(),
             5_(),
             1_(),
@@ -421,7 +421,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qhjistlgmr"),
+            (Ptr::<i8>::from_string_literal(b"qhjistlgmr")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -431,7 +431,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pedfirsglo"),
+            (Ptr::<i8>::from_string_literal(b"pedfirsglo")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -441,7 +441,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"aqcoslgrmk"),
+            (Ptr::<i8>::from_string_literal(b"aqcoslgrmk")).reinterpret_cast::<()>(),
             0_(),
             5_(),
             unimplemented!(),
@@ -451,7 +451,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dabckmepqj"),
+            (Ptr::<i8>::from_string_literal(b"dabckmepqj")).reinterpret_cast::<()>(),
             0_(),
             9_(),
             0_(),
@@ -461,7 +461,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pqscrjthli"),
+            (Ptr::<i8>::from_string_literal(b"pqscrjthli")).reinterpret_cast::<()>(),
             0_(),
             10_(),
             1_(),
@@ -471,7 +471,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kfphdcsjqmobliagtren"),
+            (Ptr::<i8>::from_string_literal(b"kfphdcsjqmobliagtren")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -481,7 +481,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rokpefncljibsdhqtagm"),
+            (Ptr::<i8>::from_string_literal(b"rokpefncljibsdhqtagm")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -491,7 +491,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"afionmkphlebtcjqsgrd"),
+            (Ptr::<i8>::from_string_literal(b"afionmkphlebtcjqsgrd")).reinterpret_cast::<()>(),
             0_(),
             10_(),
             unimplemented!(),
@@ -501,7 +501,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"aenmqplidhkofrjbctsg"),
+            (Ptr::<i8>::from_string_literal(b"aenmqplidhkofrjbctsg")).reinterpret_cast::<()>(),
             0_(),
             19_(),
             0_(),
@@ -511,7 +511,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"osjmbtcadhiklegrpqnf"),
+            (Ptr::<i8>::from_string_literal(b"osjmbtcadhiklegrpqnf")).reinterpret_cast::<()>(),
             0_(),
             20_(),
             0_(),
@@ -521,7 +521,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -531,7 +531,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"osmia"),
+            (Ptr::<i8>::from_string_literal(b"osmia")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -541,7 +541,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ckonl"),
+            (Ptr::<i8>::from_string_literal(b"ckonl")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -551,7 +551,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ilcaj"),
+            (Ptr::<i8>::from_string_literal(b"ilcaj")).reinterpret_cast::<()>(),
             1_(),
             2_(),
             unimplemented!(),
@@ -561,7 +561,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lasiq"),
+            (Ptr::<i8>::from_string_literal(b"lasiq")).reinterpret_cast::<()>(),
             1_(),
             4_(),
             2_(),
@@ -571,7 +571,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kfqmr"),
+            (Ptr::<i8>::from_string_literal(b"kfqmr")).reinterpret_cast::<()>(),
             1_(),
             5_(),
             unimplemented!(),
@@ -581,7 +581,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"klnitfaobg"),
+            (Ptr::<i8>::from_string_literal(b"klnitfaobg")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -591,7 +591,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gjhmdlqikp"),
+            (Ptr::<i8>::from_string_literal(b"gjhmdlqikp")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             3_(),
@@ -601,7 +601,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"skbgtahqej"),
+            (Ptr::<i8>::from_string_literal(b"skbgtahqej")).reinterpret_cast::<()>(),
             1_(),
             5_(),
             unimplemented!(),
@@ -611,7 +611,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bjsdgtlpkf"),
+            (Ptr::<i8>::from_string_literal(b"bjsdgtlpkf")).reinterpret_cast::<()>(),
             1_(),
             9_(),
             2_(),
@@ -621,7 +621,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bjgfmnlkio"),
+            (Ptr::<i8>::from_string_literal(b"bjgfmnlkio")).reinterpret_cast::<()>(),
             1_(),
             10_(),
             4_(),
@@ -631,7 +631,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lbhepotfsjdqigcnamkr"),
+            (Ptr::<i8>::from_string_literal(b"lbhepotfsjdqigcnamkr")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -641,7 +641,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tebangckmpsrqdlfojhi"),
+            (Ptr::<i8>::from_string_literal(b"tebangckmpsrqdlfojhi")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -651,7 +651,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"joflqbdkhtegimscpanr"),
+            (Ptr::<i8>::from_string_literal(b"joflqbdkhtegimscpanr")).reinterpret_cast::<()>(),
             1_(),
             10_(),
             1_(),
@@ -661,7 +661,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"adpmcohetfbsrjinlqkg"),
+            (Ptr::<i8>::from_string_literal(b"adpmcohetfbsrjinlqkg")).reinterpret_cast::<()>(),
             1_(),
             19_(),
             1_(),
@@ -671,7 +671,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"iacldqjpfnogbsrhmetk"),
+            (Ptr::<i8>::from_string_literal(b"iacldqjpfnogbsrhmetk")).reinterpret_cast::<()>(),
             1_(),
             20_(),
             1_(),
@@ -681,7 +681,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             2_(),
             0_(),
             unimplemented!(),
@@ -691,7 +691,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"otkgb"),
+            (Ptr::<i8>::from_string_literal(b"otkgb")).reinterpret_cast::<()>(),
             2_(),
             0_(),
             unimplemented!(),
@@ -701,7 +701,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"cqsjl"),
+            (Ptr::<i8>::from_string_literal(b"cqsjl")).reinterpret_cast::<()>(),
             2_(),
             1_(),
             unimplemented!(),
@@ -711,7 +711,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dpifl"),
+            (Ptr::<i8>::from_string_literal(b"dpifl")).reinterpret_cast::<()>(),
             2_(),
             2_(),
             4_(),
@@ -721,7 +721,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oapht"),
+            (Ptr::<i8>::from_string_literal(b"oapht")).reinterpret_cast::<()>(),
             2_(),
             4_(),
             unimplemented!(),
@@ -731,7 +731,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"cifts"),
+            (Ptr::<i8>::from_string_literal(b"cifts")).reinterpret_cast::<()>(),
             2_(),
             5_(),
             3_(),
@@ -741,7 +741,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nmsckbgalo"),
+            (Ptr::<i8>::from_string_literal(b"nmsckbgalo")).reinterpret_cast::<()>(),
             2_(),
             0_(),
             unimplemented!(),
@@ -751,7 +751,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tpksqhamle"),
+            (Ptr::<i8>::from_string_literal(b"tpksqhamle")).reinterpret_cast::<()>(),
             2_(),
             1_(),
             unimplemented!(),
@@ -761,7 +761,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tpdrchmkji"),
+            (Ptr::<i8>::from_string_literal(b"tpdrchmkji")).reinterpret_cast::<()>(),
             2_(),
             5_(),
             2_(),
@@ -771,7 +771,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ijagfkblst"),
+            (Ptr::<i8>::from_string_literal(b"ijagfkblst")).reinterpret_cast::<()>(),
             2_(),
             9_(),
             2_(),
@@ -781,7 +781,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kpocsignjb"),
+            (Ptr::<i8>::from_string_literal(b"kpocsignjb")).reinterpret_cast::<()>(),
             2_(),
             10_(),
             3_(),
@@ -791,7 +791,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pecqtkjsnbdrialgmohf"),
+            (Ptr::<i8>::from_string_literal(b"pecqtkjsnbdrialgmohf")).reinterpret_cast::<()>(),
             2_(),
             0_(),
             unimplemented!(),
@@ -801,7 +801,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"aiortphfcmkjebgsndql"),
+            (Ptr::<i8>::from_string_literal(b"aiortphfcmkjebgsndql")).reinterpret_cast::<()>(),
             2_(),
             1_(),
             unimplemented!(),
@@ -811,7 +811,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sdbkeamglhipojqftrcn"),
+            (Ptr::<i8>::from_string_literal(b"sdbkeamglhipojqftrcn")).reinterpret_cast::<()>(),
             2_(),
             10_(),
             3_(),
@@ -821,7 +821,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ljqncehgmfktroapidbs"),
+            (Ptr::<i8>::from_string_literal(b"ljqncehgmfktroapidbs")).reinterpret_cast::<()>(),
             2_(),
             19_(),
             2_(),
@@ -831,7 +831,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rtcfodilamkbenjghqps"),
+            (Ptr::<i8>::from_string_literal(b"rtcfodilamkbenjghqps")).reinterpret_cast::<()>(),
             2_(),
             20_(),
             2_(),
@@ -841,7 +841,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             4_(),
             0_(),
             unimplemented!(),
@@ -851,7 +851,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"mabns"),
+            (Ptr::<i8>::from_string_literal(b"mabns")).reinterpret_cast::<()>(),
             4_(),
             0_(),
             unimplemented!(),
@@ -861,7 +861,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bdnrp"),
+            (Ptr::<i8>::from_string_literal(b"bdnrp")).reinterpret_cast::<()>(),
             4_(),
             1_(),
             unimplemented!(),
@@ -871,7 +871,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"scidp"),
+            (Ptr::<i8>::from_string_literal(b"scidp")).reinterpret_cast::<()>(),
             4_(),
             2_(),
             unimplemented!(),
@@ -881,7 +881,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"agbjl"),
+            (Ptr::<i8>::from_string_literal(b"agbjl")).reinterpret_cast::<()>(),
             4_(),
             4_(),
             unimplemented!(),
@@ -891,7 +891,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jfmpr"),
+            (Ptr::<i8>::from_string_literal(b"jfmpr")).reinterpret_cast::<()>(),
             4_(),
             5_(),
             4_(),
@@ -901,7 +901,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rbpefghsmj"),
+            (Ptr::<i8>::from_string_literal(b"rbpefghsmj")).reinterpret_cast::<()>(),
             4_(),
             0_(),
             unimplemented!(),
@@ -911,7 +911,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"apsfntdoqc"),
+            (Ptr::<i8>::from_string_literal(b"apsfntdoqc")).reinterpret_cast::<()>(),
             4_(),
             1_(),
             unimplemented!(),
@@ -921,7 +921,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ndkjeisgcl"),
+            (Ptr::<i8>::from_string_literal(b"ndkjeisgcl")).reinterpret_cast::<()>(),
             4_(),
             5_(),
             unimplemented!(),
@@ -931,7 +931,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rnfpqatdeo"),
+            (Ptr::<i8>::from_string_literal(b"rnfpqatdeo")).reinterpret_cast::<()>(),
             4_(),
             9_(),
             4_(),
@@ -941,7 +941,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bntjlqrfik"),
+            (Ptr::<i8>::from_string_literal(b"bntjlqrfik")).reinterpret_cast::<()>(),
             4_(),
             10_(),
             4_(),
@@ -951,7 +951,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kcrtmpolnaqejghsfdbi"),
+            (Ptr::<i8>::from_string_literal(b"kcrtmpolnaqejghsfdbi")).reinterpret_cast::<()>(),
             4_(),
             0_(),
             unimplemented!(),
@@ -961,7 +961,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lobheanpkmqidsrtcfgj"),
+            (Ptr::<i8>::from_string_literal(b"lobheanpkmqidsrtcfgj")).reinterpret_cast::<()>(),
             4_(),
             1_(),
             unimplemented!(),
@@ -971,7 +971,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"athdkljcnreqbgpmisof"),
+            (Ptr::<i8>::from_string_literal(b"athdkljcnreqbgpmisof")).reinterpret_cast::<()>(),
             4_(),
             10_(),
             4_(),
@@ -981,7 +981,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qkdmjialrscpbhefgont"),
+            (Ptr::<i8>::from_string_literal(b"qkdmjialrscpbhefgont")).reinterpret_cast::<()>(),
             4_(),
             19_(),
             4_(),
@@ -991,7 +991,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dmasojntqleribkgfchp"),
+            (Ptr::<i8>::from_string_literal(b"dmasojntqleribkgfchp")).reinterpret_cast::<()>(),
             4_(),
             20_(),
             4_(),
@@ -1001,7 +1001,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             5_(),
             0_(),
             unimplemented!(),
@@ -1011,7 +1011,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"psthd"),
+            (Ptr::<i8>::from_string_literal(b"psthd")).reinterpret_cast::<()>(),
             5_(),
             0_(),
             unimplemented!(),
@@ -1021,7 +1021,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rpmjd"),
+            (Ptr::<i8>::from_string_literal(b"rpmjd")).reinterpret_cast::<()>(),
             5_(),
             1_(),
             unimplemented!(),
@@ -1031,7 +1031,7 @@ pub fn test0_1() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dfsmk"),
+            (Ptr::<i8>::from_string_literal(b"dfsmk")).reinterpret_cast::<()>(),
             5_(),
             2_(),
             unimplemented!(),
@@ -1043,7 +1043,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"skqne"),
+            (Ptr::<i8>::from_string_literal(b"skqne")).reinterpret_cast::<()>(),
             5_(),
             4_(),
             unimplemented!(),
@@ -1053,7 +1053,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kipnf"),
+            (Ptr::<i8>::from_string_literal(b"kipnf")).reinterpret_cast::<()>(),
             5_(),
             5_(),
             unimplemented!(),
@@ -1063,7 +1063,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"hmrnqdgifl"),
+            (Ptr::<i8>::from_string_literal(b"hmrnqdgifl")).reinterpret_cast::<()>(),
             5_(),
             0_(),
             unimplemented!(),
@@ -1073,7 +1073,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"fsmjcdairn"),
+            (Ptr::<i8>::from_string_literal(b"fsmjcdairn")).reinterpret_cast::<()>(),
             5_(),
             1_(),
             unimplemented!(),
@@ -1083,7 +1083,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pcdgltbrfj"),
+            (Ptr::<i8>::from_string_literal(b"pcdgltbrfj")).reinterpret_cast::<()>(),
             5_(),
             5_(),
             unimplemented!(),
@@ -1093,7 +1093,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"aekfctpirg"),
+            (Ptr::<i8>::from_string_literal(b"aekfctpirg")).reinterpret_cast::<()>(),
             5_(),
             9_(),
             unimplemented!(),
@@ -1103,7 +1103,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ledihrsgpf"),
+            (Ptr::<i8>::from_string_literal(b"ledihrsgpf")).reinterpret_cast::<()>(),
             5_(),
             10_(),
             unimplemented!(),
@@ -1113,7 +1113,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"mqcklahsbtirgopefndj"),
+            (Ptr::<i8>::from_string_literal(b"mqcklahsbtirgopefndj")).reinterpret_cast::<()>(),
             5_(),
             0_(),
             unimplemented!(),
@@ -1123,7 +1123,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kmlthaoqgecrnpdbjfis"),
+            (Ptr::<i8>::from_string_literal(b"kmlthaoqgecrnpdbjfis")).reinterpret_cast::<()>(),
             5_(),
             1_(),
             unimplemented!(),
@@ -1133,7 +1133,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sfhbamcdptojlkrenqgi"),
+            (Ptr::<i8>::from_string_literal(b"sfhbamcdptojlkrenqgi")).reinterpret_cast::<()>(),
             5_(),
             10_(),
             unimplemented!(),
@@ -1143,7 +1143,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pbniofmcedrkhlstgaqj"),
+            (Ptr::<i8>::from_string_literal(b"pbniofmcedrkhlstgaqj")).reinterpret_cast::<()>(),
             5_(),
             19_(),
             unimplemented!(),
@@ -1153,7 +1153,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"mongjratcskbhqiepfdl"),
+            (Ptr::<i8>::from_string_literal(b"mongjratcskbhqiepfdl")).reinterpret_cast::<()>(),
             5_(),
             20_(),
             unimplemented!(),
@@ -1163,7 +1163,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             6_(),
             0_(),
             unimplemented!(),
@@ -1173,7 +1173,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"hrnat"),
+            (Ptr::<i8>::from_string_literal(b"hrnat")).reinterpret_cast::<()>(),
             6_(),
             0_(),
             unimplemented!(),
@@ -1183,7 +1183,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gsqdt"),
+            (Ptr::<i8>::from_string_literal(b"gsqdt")).reinterpret_cast::<()>(),
             6_(),
             1_(),
             unimplemented!(),
@@ -1193,7 +1193,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bspkd"),
+            (Ptr::<i8>::from_string_literal(b"bspkd")).reinterpret_cast::<()>(),
             6_(),
             2_(),
             unimplemented!(),
@@ -1203,7 +1203,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ohcmb"),
+            (Ptr::<i8>::from_string_literal(b"ohcmb")).reinterpret_cast::<()>(),
             6_(),
             4_(),
             unimplemented!(),
@@ -1213,7 +1213,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"heatr"),
+            (Ptr::<i8>::from_string_literal(b"heatr")).reinterpret_cast::<()>(),
             6_(),
             5_(),
             unimplemented!(),
@@ -1223,7 +1223,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pmblckedfn"),
+            (Ptr::<i8>::from_string_literal(b"pmblckedfn")).reinterpret_cast::<()>(),
             6_(),
             0_(),
             unimplemented!(),
@@ -1233,7 +1233,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"aceqmsrbik"),
+            (Ptr::<i8>::from_string_literal(b"aceqmsrbik")).reinterpret_cast::<()>(),
             6_(),
             1_(),
             unimplemented!(),
@@ -1243,7 +1243,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lmbtdehjrn"),
+            (Ptr::<i8>::from_string_literal(b"lmbtdehjrn")).reinterpret_cast::<()>(),
             6_(),
             5_(),
             unimplemented!(),
@@ -1253,7 +1253,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"teqmcrlgib"),
+            (Ptr::<i8>::from_string_literal(b"teqmcrlgib")).reinterpret_cast::<()>(),
             6_(),
             9_(),
             unimplemented!(),
@@ -1263,7 +1263,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"njolbmspac"),
+            (Ptr::<i8>::from_string_literal(b"njolbmspac")).reinterpret_cast::<()>(),
             6_(),
             10_(),
             unimplemented!(),
@@ -1273,7 +1273,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pofnhidklamecrbqjgst"),
+            (Ptr::<i8>::from_string_literal(b"pofnhidklamecrbqjgst")).reinterpret_cast::<()>(),
             6_(),
             0_(),
             unimplemented!(),
@@ -1283,7 +1283,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jbhckmtgrqnosafedpli"),
+            (Ptr::<i8>::from_string_literal(b"jbhckmtgrqnosafedpli")).reinterpret_cast::<()>(),
             6_(),
             1_(),
             unimplemented!(),
@@ -1293,7 +1293,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dobntpmqklicsahgjerf"),
+            (Ptr::<i8>::from_string_literal(b"dobntpmqklicsahgjerf")).reinterpret_cast::<()>(),
             6_(),
             10_(),
             unimplemented!(),
@@ -1303,7 +1303,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tpdshainjkbfoemlrgcq"),
+            (Ptr::<i8>::from_string_literal(b"tpdshainjkbfoemlrgcq")).reinterpret_cast::<()>(),
             6_(),
             19_(),
             unimplemented!(),
@@ -1313,7 +1313,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oldpfgeakrnitscbjmqh"),
+            (Ptr::<i8>::from_string_literal(b"oldpfgeakrnitscbjmqh")).reinterpret_cast::<()>(),
             6_(),
             20_(),
             unimplemented!(),
@@ -1323,7 +1323,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -1333,7 +1333,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rqegt"),
+            (Ptr::<i8>::from_string_literal(b"rqegt")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -1343,7 +1343,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dashm"),
+            (Ptr::<i8>::from_string_literal(b"dashm")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             8_(),
@@ -1353,7 +1353,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jqirk"),
+            (Ptr::<i8>::from_string_literal(b"jqirk")).reinterpret_cast::<()>(),
             0_(),
             2_(),
             8_(),
@@ -1363,7 +1363,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rckeg"),
+            (Ptr::<i8>::from_string_literal(b"rckeg")).reinterpret_cast::<()>(),
             0_(),
             4_(),
             1_(),
@@ -1373,7 +1373,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jscie"),
+            (Ptr::<i8>::from_string_literal(b"jscie")).reinterpret_cast::<()>(),
             0_(),
             5_(),
             3_(),
@@ -1383,7 +1383,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"efsphndliq"),
+            (Ptr::<i8>::from_string_literal(b"efsphndliq")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -1393,7 +1393,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gdicosleja"),
+            (Ptr::<i8>::from_string_literal(b"gdicosleja")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             5_(),
@@ -1403,7 +1403,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qcpjibosfl"),
+            (Ptr::<i8>::from_string_literal(b"qcpjibosfl")).reinterpret_cast::<()>(),
             0_(),
             5_(),
             0_(),
@@ -1413,7 +1413,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lrhmefnjcq"),
+            (Ptr::<i8>::from_string_literal(b"lrhmefnjcq")).reinterpret_cast::<()>(),
             0_(),
             9_(),
             0_(),
@@ -1423,7 +1423,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dtablcrseo"),
+            (Ptr::<i8>::from_string_literal(b"dtablcrseo")).reinterpret_cast::<()>(),
             0_(),
             10_(),
             1_(),
@@ -1433,7 +1433,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"apckjsftedbhgomrnilq"),
+            (Ptr::<i8>::from_string_literal(b"apckjsftedbhgomrnilq")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -1443,7 +1443,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pcbrgflehjtiadnsokqm"),
+            (Ptr::<i8>::from_string_literal(b"pcbrgflehjtiadnsokqm")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -1453,7 +1453,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nsiadegjklhobrmtqcpf"),
+            (Ptr::<i8>::from_string_literal(b"nsiadegjklhobrmtqcpf")).reinterpret_cast::<()>(),
             0_(),
             10_(),
             4_(),
@@ -1463,7 +1463,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"cpmajdqnolikhgsbretf"),
+            (Ptr::<i8>::from_string_literal(b"cpmajdqnolikhgsbretf")).reinterpret_cast::<()>(),
             0_(),
             19_(),
             0_(),
@@ -1473,7 +1473,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jcflkntmgiqrphdosaeb"),
+            (Ptr::<i8>::from_string_literal(b"jcflkntmgiqrphdosaeb")).reinterpret_cast::<()>(),
             0_(),
             20_(),
             0_(),
@@ -1483,7 +1483,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -1493,7 +1493,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ontrs"),
+            (Ptr::<i8>::from_string_literal(b"ontrs")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -1503,7 +1503,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pfkna"),
+            (Ptr::<i8>::from_string_literal(b"pfkna")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -1513,7 +1513,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ekosa"),
+            (Ptr::<i8>::from_string_literal(b"ekosa")).reinterpret_cast::<()>(),
             1_(),
             2_(),
             1_(),
@@ -1523,7 +1523,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"anqhk"),
+            (Ptr::<i8>::from_string_literal(b"anqhk")).reinterpret_cast::<()>(),
             1_(),
             4_(),
             4_(),
@@ -1533,7 +1533,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jekca"),
+            (Ptr::<i8>::from_string_literal(b"jekca")).reinterpret_cast::<()>(),
             1_(),
             5_(),
             1_(),
@@ -1543,7 +1543,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ikemsjgacf"),
+            (Ptr::<i8>::from_string_literal(b"ikemsjgacf")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -1553,7 +1553,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"arolgsjkhm"),
+            (Ptr::<i8>::from_string_literal(b"arolgsjkhm")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -1563,7 +1563,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oftkbldhre"),
+            (Ptr::<i8>::from_string_literal(b"oftkbldhre")).reinterpret_cast::<()>(),
             1_(),
             5_(),
             1_(),
@@ -1573,7 +1573,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gbkqdoeftl"),
+            (Ptr::<i8>::from_string_literal(b"gbkqdoeftl")).reinterpret_cast::<()>(),
             1_(),
             9_(),
             4_(),
@@ -1583,7 +1583,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sqcflrgtim"),
+            (Ptr::<i8>::from_string_literal(b"sqcflrgtim")).reinterpret_cast::<()>(),
             1_(),
             10_(),
             1_(),
@@ -1593,7 +1593,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"fmhbkislrjdpanogqcet"),
+            (Ptr::<i8>::from_string_literal(b"fmhbkislrjdpanogqcet")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -1603,7 +1603,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rnioadktqlgpbcjsmhef"),
+            (Ptr::<i8>::from_string_literal(b"rnioadktqlgpbcjsmhef")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -1613,7 +1613,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oakgtnldpsefihqmjcbr"),
+            (Ptr::<i8>::from_string_literal(b"oakgtnldpsefihqmjcbr")).reinterpret_cast::<()>(),
             1_(),
             10_(),
             1_(),
@@ -1623,7 +1623,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gbnaelosidmcjqktfhpr"),
+            (Ptr::<i8>::from_string_literal(b"gbnaelosidmcjqktfhpr")).reinterpret_cast::<()>(),
             1_(),
             19_(),
             1_(),
@@ -1633,7 +1633,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"akbripjhlosndcmqgfet"),
+            (Ptr::<i8>::from_string_literal(b"akbripjhlosndcmqgfet")).reinterpret_cast::<()>(),
             1_(),
             20_(),
             1_(),
@@ -1643,7 +1643,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             5_(),
             0_(),
             unimplemented!(),
@@ -1653,7 +1653,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pijag"),
+            (Ptr::<i8>::from_string_literal(b"pijag")).reinterpret_cast::<()>(),
             5_(),
             0_(),
             unimplemented!(),
@@ -1663,7 +1663,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jrckd"),
+            (Ptr::<i8>::from_string_literal(b"jrckd")).reinterpret_cast::<()>(),
             5_(),
             1_(),
             unimplemented!(),
@@ -1673,7 +1673,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qcloh"),
+            (Ptr::<i8>::from_string_literal(b"qcloh")).reinterpret_cast::<()>(),
             5_(),
             2_(),
             6_(),
@@ -1683,7 +1683,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"thlmp"),
+            (Ptr::<i8>::from_string_literal(b"thlmp")).reinterpret_cast::<()>(),
             5_(),
             4_(),
             unimplemented!(),
@@ -1693,7 +1693,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qidmo"),
+            (Ptr::<i8>::from_string_literal(b"qidmo")).reinterpret_cast::<()>(),
             5_(),
             5_(),
             6_(),
@@ -1703,7 +1703,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lnegpsjqrd"),
+            (Ptr::<i8>::from_string_literal(b"lnegpsjqrd")).reinterpret_cast::<()>(),
             5_(),
             0_(),
             unimplemented!(),
@@ -1713,7 +1713,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rjqdablmfs"),
+            (Ptr::<i8>::from_string_literal(b"rjqdablmfs")).reinterpret_cast::<()>(),
             5_(),
             1_(),
             5_(),
@@ -1723,7 +1723,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"enkgpbsjaq"),
+            (Ptr::<i8>::from_string_literal(b"enkgpbsjaq")).reinterpret_cast::<()>(),
             5_(),
             5_(),
             7_(),
@@ -1733,7 +1733,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kdsgoaijfh"),
+            (Ptr::<i8>::from_string_literal(b"kdsgoaijfh")).reinterpret_cast::<()>(),
             5_(),
             9_(),
             5_(),
@@ -1743,7 +1743,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"trfqgmckbe"),
+            (Ptr::<i8>::from_string_literal(b"trfqgmckbe")).reinterpret_cast::<()>(),
             5_(),
             10_(),
             unimplemented!(),
@@ -1753,7 +1753,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"igetsracjfkdnpoblhqm"),
+            (Ptr::<i8>::from_string_literal(b"igetsracjfkdnpoblhqm")).reinterpret_cast::<()>(),
             5_(),
             0_(),
             unimplemented!(),
@@ -1763,7 +1763,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nqctfaogirshlekbdjpm"),
+            (Ptr::<i8>::from_string_literal(b"nqctfaogirshlekbdjpm")).reinterpret_cast::<()>(),
             5_(),
             1_(),
             unimplemented!(),
@@ -1773,7 +1773,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"csehfgomljdqinbartkp"),
+            (Ptr::<i8>::from_string_literal(b"csehfgomljdqinbartkp")).reinterpret_cast::<()>(),
             5_(),
             10_(),
             5_(),
@@ -1783,7 +1783,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qahoegcmplkfsjbdnitr"),
+            (Ptr::<i8>::from_string_literal(b"qahoegcmplkfsjbdnitr")).reinterpret_cast::<()>(),
             5_(),
             19_(),
             5_(),
@@ -1793,7 +1793,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dpteiajrqmsognhlfbkc"),
+            (Ptr::<i8>::from_string_literal(b"dpteiajrqmsognhlfbkc")).reinterpret_cast::<()>(),
             5_(),
             20_(),
             5_(),
@@ -1803,7 +1803,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             9_(),
             0_(),
             unimplemented!(),
@@ -1813,7 +1813,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tqbnh"),
+            (Ptr::<i8>::from_string_literal(b"tqbnh")).reinterpret_cast::<()>(),
             9_(),
             0_(),
             unimplemented!(),
@@ -1823,7 +1823,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"akmle"),
+            (Ptr::<i8>::from_string_literal(b"akmle")).reinterpret_cast::<()>(),
             9_(),
             1_(),
             unimplemented!(),
@@ -1833,7 +1833,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"iqfkm"),
+            (Ptr::<i8>::from_string_literal(b"iqfkm")).reinterpret_cast::<()>(),
             9_(),
             2_(),
             unimplemented!(),
@@ -1843,7 +1843,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tqjsr"),
+            (Ptr::<i8>::from_string_literal(b"tqjsr")).reinterpret_cast::<()>(),
             9_(),
             4_(),
             unimplemented!(),
@@ -1853,7 +1853,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jplqg"),
+            (Ptr::<i8>::from_string_literal(b"jplqg")).reinterpret_cast::<()>(),
             9_(),
             5_(),
             9_(),
@@ -1863,7 +1863,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oilnrbcgtj"),
+            (Ptr::<i8>::from_string_literal(b"oilnrbcgtj")).reinterpret_cast::<()>(),
             9_(),
             0_(),
             unimplemented!(),
@@ -1873,7 +1873,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"morkglpesn"),
+            (Ptr::<i8>::from_string_literal(b"morkglpesn")).reinterpret_cast::<()>(),
             9_(),
             1_(),
             unimplemented!(),
@@ -1883,7 +1883,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dmicerngat"),
+            (Ptr::<i8>::from_string_literal(b"dmicerngat")).reinterpret_cast::<()>(),
             9_(),
             5_(),
             9_(),
@@ -1893,7 +1893,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"radgeskbtc"),
+            (Ptr::<i8>::from_string_literal(b"radgeskbtc")).reinterpret_cast::<()>(),
             9_(),
             9_(),
             unimplemented!(),
@@ -1903,7 +1903,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ljikprsmqo"),
+            (Ptr::<i8>::from_string_literal(b"ljikprsmqo")).reinterpret_cast::<()>(),
             9_(),
             10_(),
             unimplemented!(),
@@ -1913,7 +1913,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"trqihkcgsjamfdbolnpe"),
+            (Ptr::<i8>::from_string_literal(b"trqihkcgsjamfdbolnpe")).reinterpret_cast::<()>(),
             9_(),
             0_(),
             unimplemented!(),
@@ -1923,7 +1923,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lqmthbsrekajgnofcipd"),
+            (Ptr::<i8>::from_string_literal(b"lqmthbsrekajgnofcipd")).reinterpret_cast::<()>(),
             9_(),
             1_(),
             unimplemented!(),
@@ -1933,7 +1933,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jtalmedribkgqsopcnfh"),
+            (Ptr::<i8>::from_string_literal(b"jtalmedribkgqsopcnfh")).reinterpret_cast::<()>(),
             9_(),
             10_(),
             unimplemented!(),
@@ -1943,7 +1943,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"spqfoiclmtagejbndkrh"),
+            (Ptr::<i8>::from_string_literal(b"spqfoiclmtagejbndkrh")).reinterpret_cast::<()>(),
             9_(),
             19_(),
             9_(),
@@ -1953,7 +1953,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nmotklspigjrdhcfaebq"),
+            (Ptr::<i8>::from_string_literal(b"nmotklspigjrdhcfaebq")).reinterpret_cast::<()>(),
             9_(),
             20_(),
             9_(),
@@ -1963,7 +1963,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             10_(),
             0_(),
             unimplemented!(),
@@ -1973,7 +1973,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"hpmsd"),
+            (Ptr::<i8>::from_string_literal(b"hpmsd")).reinterpret_cast::<()>(),
             10_(),
             0_(),
             unimplemented!(),
@@ -1983,7 +1983,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qnpor"),
+            (Ptr::<i8>::from_string_literal(b"qnpor")).reinterpret_cast::<()>(),
             10_(),
             1_(),
             unimplemented!(),
@@ -1993,7 +1993,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"otdma"),
+            (Ptr::<i8>::from_string_literal(b"otdma")).reinterpret_cast::<()>(),
             10_(),
             2_(),
             unimplemented!(),
@@ -2003,7 +2003,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"efhjg"),
+            (Ptr::<i8>::from_string_literal(b"efhjg")).reinterpret_cast::<()>(),
             10_(),
             4_(),
             unimplemented!(),
@@ -2013,7 +2013,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"odpte"),
+            (Ptr::<i8>::from_string_literal(b"odpte")).reinterpret_cast::<()>(),
             10_(),
             5_(),
             unimplemented!(),
@@ -2023,7 +2023,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bctdgfmolr"),
+            (Ptr::<i8>::from_string_literal(b"bctdgfmolr")).reinterpret_cast::<()>(),
             10_(),
             0_(),
             unimplemented!(),
@@ -2033,7 +2033,7 @@ pub fn test1_2() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oaklidrbqg"),
+            (Ptr::<i8>::from_string_literal(b"oaklidrbqg")).reinterpret_cast::<()>(),
             10_(),
             1_(),
             unimplemented!(),
@@ -2045,7 +2045,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dnjfsagktr"),
+            (Ptr::<i8>::from_string_literal(b"dnjfsagktr")).reinterpret_cast::<()>(),
             10_(),
             5_(),
             unimplemented!(),
@@ -2055,7 +2055,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nejaktmiqg"),
+            (Ptr::<i8>::from_string_literal(b"nejaktmiqg")).reinterpret_cast::<()>(),
             10_(),
             9_(),
             unimplemented!(),
@@ -2065,7 +2065,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pjqonlebsf"),
+            (Ptr::<i8>::from_string_literal(b"pjqonlebsf")).reinterpret_cast::<()>(),
             10_(),
             10_(),
             unimplemented!(),
@@ -2075,7 +2075,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dshmnbtolcjepgaikfqr"),
+            (Ptr::<i8>::from_string_literal(b"dshmnbtolcjepgaikfqr")).reinterpret_cast::<()>(),
             10_(),
             0_(),
             unimplemented!(),
@@ -2085,7 +2085,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"iogfhpabtjkqlrnemcds"),
+            (Ptr::<i8>::from_string_literal(b"iogfhpabtjkqlrnemcds")).reinterpret_cast::<()>(),
             10_(),
             1_(),
             unimplemented!(),
@@ -2095,7 +2095,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ngridfabjsecpqltkmoh"),
+            (Ptr::<i8>::from_string_literal(b"ngridfabjsecpqltkmoh")).reinterpret_cast::<()>(),
             10_(),
             10_(),
             unimplemented!(),
@@ -2105,7 +2105,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"athmknplcgofrqejsdib"),
+            (Ptr::<i8>::from_string_literal(b"athmknplcgofrqejsdib")).reinterpret_cast::<()>(),
             10_(),
             19_(),
             unimplemented!(),
@@ -2115,7 +2115,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ldobhmqcafnjtkeisgrp"),
+            (Ptr::<i8>::from_string_literal(b"ldobhmqcafnjtkeisgrp")).reinterpret_cast::<()>(),
             10_(),
             20_(),
             unimplemented!(),
@@ -2125,7 +2125,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             11_(),
             0_(),
             unimplemented!(),
@@ -2135,7 +2135,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"aocjb"),
+            (Ptr::<i8>::from_string_literal(b"aocjb")).reinterpret_cast::<()>(),
             11_(),
             0_(),
             unimplemented!(),
@@ -2145,7 +2145,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jbrnk"),
+            (Ptr::<i8>::from_string_literal(b"jbrnk")).reinterpret_cast::<()>(),
             11_(),
             1_(),
             unimplemented!(),
@@ -2155,7 +2155,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tqedg"),
+            (Ptr::<i8>::from_string_literal(b"tqedg")).reinterpret_cast::<()>(),
             11_(),
             2_(),
             unimplemented!(),
@@ -2165,7 +2165,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nqskp"),
+            (Ptr::<i8>::from_string_literal(b"nqskp")).reinterpret_cast::<()>(),
             11_(),
             4_(),
             unimplemented!(),
@@ -2175,7 +2175,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"eaqkl"),
+            (Ptr::<i8>::from_string_literal(b"eaqkl")).reinterpret_cast::<()>(),
             11_(),
             5_(),
             unimplemented!(),
@@ -2185,7 +2185,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"reaoicljqm"),
+            (Ptr::<i8>::from_string_literal(b"reaoicljqm")).reinterpret_cast::<()>(),
             11_(),
             0_(),
             unimplemented!(),
@@ -2195,7 +2195,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lsftgajqpm"),
+            (Ptr::<i8>::from_string_literal(b"lsftgajqpm")).reinterpret_cast::<()>(),
             11_(),
             1_(),
             unimplemented!(),
@@ -2205,7 +2205,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rlpfogmits"),
+            (Ptr::<i8>::from_string_literal(b"rlpfogmits")).reinterpret_cast::<()>(),
             11_(),
             5_(),
             unimplemented!(),
@@ -2215,7 +2215,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"shkncmiaqj"),
+            (Ptr::<i8>::from_string_literal(b"shkncmiaqj")).reinterpret_cast::<()>(),
             11_(),
             9_(),
             unimplemented!(),
@@ -2225,7 +2225,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"fpnatrhqgs"),
+            (Ptr::<i8>::from_string_literal(b"fpnatrhqgs")).reinterpret_cast::<()>(),
             11_(),
             10_(),
             unimplemented!(),
@@ -2235,7 +2235,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sjclemqhnpdbgikarfot"),
+            (Ptr::<i8>::from_string_literal(b"sjclemqhnpdbgikarfot")).reinterpret_cast::<()>(),
             11_(),
             0_(),
             unimplemented!(),
@@ -2245,7 +2245,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"otcmedjikgsfnqbrhpla"),
+            (Ptr::<i8>::from_string_literal(b"otcmedjikgsfnqbrhpla")).reinterpret_cast::<()>(),
             11_(),
             1_(),
             unimplemented!(),
@@ -2255,7 +2255,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bonsaefdqiprkhlgtjcm"),
+            (Ptr::<i8>::from_string_literal(b"bonsaefdqiprkhlgtjcm")).reinterpret_cast::<()>(),
             11_(),
             10_(),
             unimplemented!(),
@@ -2265,7 +2265,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"egpscmahijlfnkrodqtb"),
+            (Ptr::<i8>::from_string_literal(b"egpscmahijlfnkrodqtb")).reinterpret_cast::<()>(),
             11_(),
             19_(),
             unimplemented!(),
@@ -2275,7 +2275,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kmqbfepjthgilscrndoa"),
+            (Ptr::<i8>::from_string_literal(b"kmqbfepjthgilscrndoa")).reinterpret_cast::<()>(),
             11_(),
             20_(),
             unimplemented!(),
@@ -2285,7 +2285,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -2295,7 +2295,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"prboq"),
+            (Ptr::<i8>::from_string_literal(b"prboq")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -2305,7 +2305,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"fjcqh"),
+            (Ptr::<i8>::from_string_literal(b"fjcqh")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             4_(),
@@ -2315,7 +2315,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"fmosa"),
+            (Ptr::<i8>::from_string_literal(b"fmosa")).reinterpret_cast::<()>(),
             0_(),
             2_(),
             3_(),
@@ -2325,7 +2325,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qdbok"),
+            (Ptr::<i8>::from_string_literal(b"qdbok")).reinterpret_cast::<()>(),
             0_(),
             4_(),
             3_(),
@@ -2335,7 +2335,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"amslg"),
+            (Ptr::<i8>::from_string_literal(b"amslg")).reinterpret_cast::<()>(),
             0_(),
             5_(),
             3_(),
@@ -2345,7 +2345,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"smpltjneqb"),
+            (Ptr::<i8>::from_string_literal(b"smpltjneqb")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -2355,7 +2355,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"flitskrnge"),
+            (Ptr::<i8>::from_string_literal(b"flitskrnge")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             19_(),
@@ -2365,7 +2365,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"pgqihmlbef"),
+            (Ptr::<i8>::from_string_literal(b"pgqihmlbef")).reinterpret_cast::<()>(),
             0_(),
             5_(),
             2_(),
@@ -2375,7 +2375,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"cfpdqjtgsb"),
+            (Ptr::<i8>::from_string_literal(b"cfpdqjtgsb")).reinterpret_cast::<()>(),
             0_(),
             9_(),
             2_(),
@@ -2385,7 +2385,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"htpsiaflom"),
+            (Ptr::<i8>::from_string_literal(b"htpsiaflom")).reinterpret_cast::<()>(),
             0_(),
             10_(),
             2_(),
@@ -2395,7 +2395,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kpjfiaceghsrdtlbnomq"),
+            (Ptr::<i8>::from_string_literal(b"kpjfiaceghsrdtlbnomq")).reinterpret_cast::<()>(),
             0_(),
             0_(),
             unimplemented!(),
@@ -2405,7 +2405,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qhtbomidljgafneksprc"),
+            (Ptr::<i8>::from_string_literal(b"qhtbomidljgafneksprc")).reinterpret_cast::<()>(),
             0_(),
             1_(),
             16_(),
@@ -2415,7 +2415,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nhtjobkcefldimpsaqgr"),
+            (Ptr::<i8>::from_string_literal(b"nhtjobkcefldimpsaqgr")).reinterpret_cast::<()>(),
             0_(),
             10_(),
             1_(),
@@ -2425,7 +2425,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"prabcjfqnoeskilmtgdh"),
+            (Ptr::<i8>::from_string_literal(b"prabcjfqnoeskilmtgdh")).reinterpret_cast::<()>(),
             0_(),
             19_(),
             0_(),
@@ -2435,7 +2435,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dtrgmchilkasqoebfpjn"),
+            (Ptr::<i8>::from_string_literal(b"dtrgmchilkasqoebfpjn")).reinterpret_cast::<()>(),
             0_(),
             20_(),
             0_(),
@@ -2445,7 +2445,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -2455,7 +2455,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sqome"),
+            (Ptr::<i8>::from_string_literal(b"sqome")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -2465,7 +2465,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"smfte"),
+            (Ptr::<i8>::from_string_literal(b"smfte")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             6_(),
@@ -2475,7 +2475,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ciboh"),
+            (Ptr::<i8>::from_string_literal(b"ciboh")).reinterpret_cast::<()>(),
             1_(),
             2_(),
             1_(),
@@ -2485,7 +2485,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"haois"),
+            (Ptr::<i8>::from_string_literal(b"haois")).reinterpret_cast::<()>(),
             1_(),
             4_(),
             1_(),
@@ -2495,7 +2495,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abfki"),
+            (Ptr::<i8>::from_string_literal(b"abfki")).reinterpret_cast::<()>(),
             1_(),
             5_(),
             6_(),
@@ -2505,7 +2505,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"frdkocntmq"),
+            (Ptr::<i8>::from_string_literal(b"frdkocntmq")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -2515,7 +2515,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oasbpedlnr"),
+            (Ptr::<i8>::from_string_literal(b"oasbpedlnr")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             19_(),
@@ -2525,7 +2525,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kltqmhgand"),
+            (Ptr::<i8>::from_string_literal(b"kltqmhgand")).reinterpret_cast::<()>(),
             1_(),
             5_(),
             4_(),
@@ -2535,7 +2535,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gdtfjchpmr"),
+            (Ptr::<i8>::from_string_literal(b"gdtfjchpmr")).reinterpret_cast::<()>(),
             1_(),
             9_(),
             1_(),
@@ -2545,7 +2545,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ponmcqblet"),
+            (Ptr::<i8>::from_string_literal(b"ponmcqblet")).reinterpret_cast::<()>(),
             1_(),
             10_(),
             1_(),
@@ -2555,7 +2555,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sgphqdnofeiklatbcmjr"),
+            (Ptr::<i8>::from_string_literal(b"sgphqdnofeiklatbcmjr")).reinterpret_cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -2565,7 +2565,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ljqprsmigtfoneadckbh"),
+            (Ptr::<i8>::from_string_literal(b"ljqprsmigtfoneadckbh")).reinterpret_cast::<()>(),
             1_(),
             1_(),
             7_(),
@@ -2575,7 +2575,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ligeojhafnkmrcsqtbdp"),
+            (Ptr::<i8>::from_string_literal(b"ligeojhafnkmrcsqtbdp")).reinterpret_cast::<()>(),
             1_(),
             10_(),
             1_(),
@@ -2585,7 +2585,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lsimqfnjarbopedkhcgt"),
+            (Ptr::<i8>::from_string_literal(b"lsimqfnjarbopedkhcgt")).reinterpret_cast::<()>(),
             1_(),
             19_(),
             1_(),
@@ -2595,7 +2595,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"abedmfjlghniorcqptks"),
+            (Ptr::<i8>::from_string_literal(b"abedmfjlghniorcqptks")).reinterpret_cast::<()>(),
             1_(),
             20_(),
             1_(),
@@ -2605,7 +2605,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             10_(),
             0_(),
             unimplemented!(),
@@ -2615,7 +2615,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"hqtoa"),
+            (Ptr::<i8>::from_string_literal(b"hqtoa")).reinterpret_cast::<()>(),
             10_(),
             0_(),
             unimplemented!(),
@@ -2625,7 +2625,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"cahif"),
+            (Ptr::<i8>::from_string_literal(b"cahif")).reinterpret_cast::<()>(),
             10_(),
             1_(),
             12_(),
@@ -2635,7 +2635,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kehis"),
+            (Ptr::<i8>::from_string_literal(b"kehis")).reinterpret_cast::<()>(),
             10_(),
             2_(),
             unimplemented!(),
@@ -2645,7 +2645,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kdlmh"),
+            (Ptr::<i8>::from_string_literal(b"kdlmh")).reinterpret_cast::<()>(),
             10_(),
             4_(),
             10_(),
@@ -2655,7 +2655,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"paeql"),
+            (Ptr::<i8>::from_string_literal(b"paeql")).reinterpret_cast::<()>(),
             10_(),
             5_(),
             15_(),
@@ -2665,7 +2665,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"aghoqiefnb"),
+            (Ptr::<i8>::from_string_literal(b"aghoqiefnb")).reinterpret_cast::<()>(),
             10_(),
             0_(),
             unimplemented!(),
@@ -2675,7 +2675,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jrbqaikpdo"),
+            (Ptr::<i8>::from_string_literal(b"jrbqaikpdo")).reinterpret_cast::<()>(),
             10_(),
             1_(),
             unimplemented!(),
@@ -2685,7 +2685,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"smjonaeqcl"),
+            (Ptr::<i8>::from_string_literal(b"smjonaeqcl")).reinterpret_cast::<()>(),
             10_(),
             5_(),
             11_(),
@@ -2695,7 +2695,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"eqbdrkcfah"),
+            (Ptr::<i8>::from_string_literal(b"eqbdrkcfah")).reinterpret_cast::<()>(),
             10_(),
             9_(),
             10_(),
@@ -2705,7 +2705,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"kapmsienhf"),
+            (Ptr::<i8>::from_string_literal(b"kapmsienhf")).reinterpret_cast::<()>(),
             10_(),
             10_(),
             11_(),
@@ -2715,7 +2715,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jpqotrlenfcsbhkaimdg"),
+            (Ptr::<i8>::from_string_literal(b"jpqotrlenfcsbhkaimdg")).reinterpret_cast::<()>(),
             10_(),
             0_(),
             unimplemented!(),
@@ -2725,7 +2725,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jlbmhnfgtcqprikeados"),
+            (Ptr::<i8>::from_string_literal(b"jlbmhnfgtcqprikeados")).reinterpret_cast::<()>(),
             10_(),
             1_(),
             18_(),
@@ -2735,7 +2735,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"stgbhfmdaljnpqoicker"),
+            (Ptr::<i8>::from_string_literal(b"stgbhfmdaljnpqoicker")).reinterpret_cast::<()>(),
             10_(),
             10_(),
             10_(),
@@ -2745,7 +2745,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"oihcetflbjagdsrkmqpn"),
+            (Ptr::<i8>::from_string_literal(b"oihcetflbjagdsrkmqpn")).reinterpret_cast::<()>(),
             10_(),
             19_(),
             10_(),
@@ -2755,7 +2755,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"adtclebmnpjsrqfkigoh"),
+            (Ptr::<i8>::from_string_literal(b"adtclebmnpjsrqfkigoh")).reinterpret_cast::<()>(),
             10_(),
             20_(),
             10_(),
@@ -2765,7 +2765,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             19_(),
             0_(),
             unimplemented!(),
@@ -2775,7 +2775,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"beafg"),
+            (Ptr::<i8>::from_string_literal(b"beafg")).reinterpret_cast::<()>(),
             19_(),
             0_(),
             unimplemented!(),
@@ -2785,7 +2785,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"iclat"),
+            (Ptr::<i8>::from_string_literal(b"iclat")).reinterpret_cast::<()>(),
             19_(),
             1_(),
             unimplemented!(),
@@ -2795,7 +2795,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rkhnf"),
+            (Ptr::<i8>::from_string_literal(b"rkhnf")).reinterpret_cast::<()>(),
             19_(),
             2_(),
             unimplemented!(),
@@ -2805,7 +2805,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"clshq"),
+            (Ptr::<i8>::from_string_literal(b"clshq")).reinterpret_cast::<()>(),
             19_(),
             4_(),
             unimplemented!(),
@@ -2815,7 +2815,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dtcoj"),
+            (Ptr::<i8>::from_string_literal(b"dtcoj")).reinterpret_cast::<()>(),
             19_(),
             5_(),
             19_(),
@@ -2825,7 +2825,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rqosnjmfth"),
+            (Ptr::<i8>::from_string_literal(b"rqosnjmfth")).reinterpret_cast::<()>(),
             19_(),
             0_(),
             unimplemented!(),
@@ -2835,7 +2835,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"siatdfqglh"),
+            (Ptr::<i8>::from_string_literal(b"siatdfqglh")).reinterpret_cast::<()>(),
             19_(),
             1_(),
             unimplemented!(),
@@ -2845,7 +2845,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"mrlshtpgjq"),
+            (Ptr::<i8>::from_string_literal(b"mrlshtpgjq")).reinterpret_cast::<()>(),
             19_(),
             5_(),
             unimplemented!(),
@@ -2855,7 +2855,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"adlcskgqjt"),
+            (Ptr::<i8>::from_string_literal(b"adlcskgqjt")).reinterpret_cast::<()>(),
             19_(),
             9_(),
             unimplemented!(),
@@ -2865,7 +2865,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"drshcjknaf"),
+            (Ptr::<i8>::from_string_literal(b"drshcjknaf")).reinterpret_cast::<()>(),
             19_(),
             10_(),
             unimplemented!(),
@@ -2875,7 +2875,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"etsaqroinghpkjdlfcbm"),
+            (Ptr::<i8>::from_string_literal(b"etsaqroinghpkjdlfcbm")).reinterpret_cast::<()>(),
             19_(),
             0_(),
             unimplemented!(),
@@ -2885,7 +2885,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sgepdnkqliambtrocfhj"),
+            (Ptr::<i8>::from_string_literal(b"sgepdnkqliambtrocfhj")).reinterpret_cast::<()>(),
             19_(),
             1_(),
             unimplemented!(),
@@ -2895,7 +2895,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nlmcjaqgbsortfdihkpe"),
+            (Ptr::<i8>::from_string_literal(b"nlmcjaqgbsortfdihkpe")).reinterpret_cast::<()>(),
             19_(),
             10_(),
             19_(),
@@ -2905,7 +2905,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"racfnpmosldibqkghjet"),
+            (Ptr::<i8>::from_string_literal(b"racfnpmosldibqkghjet")).reinterpret_cast::<()>(),
             19_(),
             19_(),
             19_(),
@@ -2915,7 +2915,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"fjhdsctkqeiolagrnmbp"),
+            (Ptr::<i8>::from_string_literal(b"fjhdsctkqeiolagrnmbp")).reinterpret_cast::<()>(),
             19_(),
             20_(),
             19_(),
@@ -2925,17 +2925,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
-            20_(),
-            0_(),
-            unimplemented!(),
-        )
-    });
-    ({
-        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_0(
-            _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ejanp"),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             20_(),
             0_(),
             unimplemented!(),
@@ -2945,7 +2935,17 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"odife"),
+            (Ptr::<i8>::from_string_literal(b"ejanp")).reinterpret_cast::<()>(),
+            20_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    ({
+        let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_0(
+            _s.as_pointer(),
+            (Ptr::<i8>::from_string_literal(b"odife")).reinterpret_cast::<()>(),
             20_(),
             1_(),
             unimplemented!(),
@@ -2955,7 +2955,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"okaqd"),
+            (Ptr::<i8>::from_string_literal(b"okaqd")).reinterpret_cast::<()>(),
             20_(),
             2_(),
             unimplemented!(),
@@ -2965,7 +2965,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"lcdbi"),
+            (Ptr::<i8>::from_string_literal(b"lcdbi")).reinterpret_cast::<()>(),
             20_(),
             4_(),
             unimplemented!(),
@@ -2975,7 +2975,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"fsqbj"),
+            (Ptr::<i8>::from_string_literal(b"fsqbj")).reinterpret_cast::<()>(),
             20_(),
             5_(),
             unimplemented!(),
@@ -2985,7 +2985,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"bigdomnplq"),
+            (Ptr::<i8>::from_string_literal(b"bigdomnplq")).reinterpret_cast::<()>(),
             20_(),
             0_(),
             unimplemented!(),
@@ -2995,7 +2995,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"apiblotgcd"),
+            (Ptr::<i8>::from_string_literal(b"apiblotgcd")).reinterpret_cast::<()>(),
             20_(),
             1_(),
             unimplemented!(),
@@ -3005,7 +3005,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"acfhdenops"),
+            (Ptr::<i8>::from_string_literal(b"acfhdenops")).reinterpret_cast::<()>(),
             20_(),
             5_(),
             unimplemented!(),
@@ -3015,7 +3015,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jopdeamcrk"),
+            (Ptr::<i8>::from_string_literal(b"jopdeamcrk")).reinterpret_cast::<()>(),
             20_(),
             9_(),
             unimplemented!(),
@@ -3025,7 +3025,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"trqncbkgmh"),
+            (Ptr::<i8>::from_string_literal(b"trqncbkgmh")).reinterpret_cast::<()>(),
             20_(),
             10_(),
             unimplemented!(),
@@ -3035,7 +3035,7 @@ pub fn test2_3() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"tomglrkencbsfjqpihda"),
+            (Ptr::<i8>::from_string_literal(b"tomglrkencbsfjqpihda")).reinterpret_cast::<()>(),
             20_(),
             0_(),
             unimplemented!(),
@@ -3047,7 +3047,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"gbkhdnpoietfcmrslajq"),
+            (Ptr::<i8>::from_string_literal(b"gbkhdnpoietfcmrslajq")).reinterpret_cast::<()>(),
             20_(),
             1_(),
             unimplemented!(),
@@ -3057,7 +3057,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"rtfnmbsglkjaichoqedp"),
+            (Ptr::<i8>::from_string_literal(b"rtfnmbsglkjaichoqedp")).reinterpret_cast::<()>(),
             20_(),
             10_(),
             unimplemented!(),
@@ -3067,7 +3067,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ohkmdpfqbsacrtjnlgei"),
+            (Ptr::<i8>::from_string_literal(b"ohkmdpfqbsacrtjnlgei")).reinterpret_cast::<()>(),
             20_(),
             19_(),
             unimplemented!(),
@@ -3077,7 +3077,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"dlbrteoisgphmkncajfq"),
+            (Ptr::<i8>::from_string_literal(b"dlbrteoisgphmkncajfq")).reinterpret_cast::<()>(),
             20_(),
             20_(),
             unimplemented!(),
@@ -3087,7 +3087,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b""),
+            (Ptr::<i8>::from_string_literal(b"")).reinterpret_cast::<()>(),
             21_(),
             0_(),
             unimplemented!(),
@@ -3097,7 +3097,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"sjrlo"),
+            (Ptr::<i8>::from_string_literal(b"sjrlo")).reinterpret_cast::<()>(),
             21_(),
             0_(),
             unimplemented!(),
@@ -3107,7 +3107,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qjpor"),
+            (Ptr::<i8>::from_string_literal(b"qjpor")).reinterpret_cast::<()>(),
             21_(),
             1_(),
             unimplemented!(),
@@ -3117,7 +3117,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"odhfn"),
+            (Ptr::<i8>::from_string_literal(b"odhfn")).reinterpret_cast::<()>(),
             21_(),
             2_(),
             unimplemented!(),
@@ -3127,7 +3127,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qtfin"),
+            (Ptr::<i8>::from_string_literal(b"qtfin")).reinterpret_cast::<()>(),
             21_(),
             4_(),
             unimplemented!(),
@@ -3137,7 +3137,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"hpqfo"),
+            (Ptr::<i8>::from_string_literal(b"hpqfo")).reinterpret_cast::<()>(),
             21_(),
             5_(),
             unimplemented!(),
@@ -3147,7 +3147,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"fabmertkos"),
+            (Ptr::<i8>::from_string_literal(b"fabmertkos")).reinterpret_cast::<()>(),
             21_(),
             0_(),
             unimplemented!(),
@@ -3157,7 +3157,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"brqtgkmaej"),
+            (Ptr::<i8>::from_string_literal(b"brqtgkmaej")).reinterpret_cast::<()>(),
             21_(),
             1_(),
             unimplemented!(),
@@ -3167,7 +3167,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"nfrdeihsgl"),
+            (Ptr::<i8>::from_string_literal(b"nfrdeihsgl")).reinterpret_cast::<()>(),
             21_(),
             5_(),
             unimplemented!(),
@@ -3177,7 +3177,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"hlfrosekpi"),
+            (Ptr::<i8>::from_string_literal(b"hlfrosekpi")).reinterpret_cast::<()>(),
             21_(),
             9_(),
             unimplemented!(),
@@ -3187,7 +3187,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"atgbkrjdsm"),
+            (Ptr::<i8>::from_string_literal(b"atgbkrjdsm")).reinterpret_cast::<()>(),
             21_(),
             10_(),
             unimplemented!(),
@@ -3197,7 +3197,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"blnrptjgqmaifsdkhoec"),
+            (Ptr::<i8>::from_string_literal(b"blnrptjgqmaifsdkhoec")).reinterpret_cast::<()>(),
             21_(),
             0_(),
             unimplemented!(),
@@ -3207,7 +3207,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"ctpmdahebfqjgknloris"),
+            (Ptr::<i8>::from_string_literal(b"ctpmdahebfqjgknloris")).reinterpret_cast::<()>(),
             21_(),
             1_(),
             unimplemented!(),
@@ -3217,7 +3217,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"apnkeqthrmlbfodiscgj"),
+            (Ptr::<i8>::from_string_literal(b"apnkeqthrmlbfodiscgj")).reinterpret_cast::<()>(),
             21_(),
             10_(),
             unimplemented!(),
@@ -3227,7 +3227,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"jdgictpframeoqlsbknh"),
+            (Ptr::<i8>::from_string_literal(b"jdgictpframeoqlsbknh")).reinterpret_cast::<()>(),
             21_(),
             19_(),
             unimplemented!(),
@@ -3237,7 +3237,7 @@ pub fn test3_4() {
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_0(
             _s.as_pointer(),
-            Ptr::<()>::from_string_literal(b"qprlsfojamgndekthibc"),
+            (Ptr::<i8>::from_string_literal(b"qprlsfojamgndekthibc")).reinterpret_cast::<()>(),
             21_(),
             20_(),
             unimplemented!(),
@@ -3263,7 +3263,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({ test0_1() });
         ({ test1_2() });
@@ -3279,6 +3279,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "sv2.find_first_of(\"gfsrt\", 0, 5) == SV::npos");;
         const _: () = assert!(true, "sv2.find_first_of(\"lecar\", 0, 5) == 0");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

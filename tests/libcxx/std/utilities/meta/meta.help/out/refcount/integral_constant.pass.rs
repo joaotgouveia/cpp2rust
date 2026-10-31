@@ -26,12 +26,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "_5::value == 5");;
     const _: () = assert!(true, "(std::is_same<_5::value_type, int>::value)");;
     const _: () = assert!(true, "(std::is_same<_5::type, _5>::value)");;
     const _: () = assert!(true, "(_5() == 5)");;
-    unimplemented!();
+    assert!((unimplemented!() == 5));
     const _: () = assert!(true, "_5{{}}() == 5");;
     const _: () = assert!(true, "std::true_type{{}}()");;
     const _: () = assert!(true, "std::false_type::value == false");;
@@ -54,10 +54,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );;
     let f1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let f2: Value<()> = Rc::new(RefCell::new((*f1.borrow()).clone()));
-    unimplemented!();
+    assert!(!(unimplemented!()));
     let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t2: Value<()> = Rc::new(RefCell::new((*t1.borrow()).clone()));
-    unimplemented!();
-    return 0_();
+    assert!((unimplemented!() as bool));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

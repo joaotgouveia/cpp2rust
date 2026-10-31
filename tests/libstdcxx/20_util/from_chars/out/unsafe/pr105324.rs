@@ -12,10 +12,14 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut s: () = unimplemented!();
-    (*unimplemented!()) = ('.' as ());
-    let mut d: () = unimplemented!();
+unsafe fn main_0() -> i32 {
+    let mut s: Vec<libc::c_char> = vec![('1' as libc::c_char); (512_usize) as usize]
+        .iter()
+        .cloned()
+        .chain(std::iter::once((0 as libc::c_char)))
+        .collect();
+    (*(&mut s).as_mut_ptr().add(1_usize as usize)) = ('.' as libc::c_char);
+    let mut d: f64 = 0_f64;
     unimplemented!();
     0
 }

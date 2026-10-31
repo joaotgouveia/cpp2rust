@@ -6,52 +6,53 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_eq_0(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_1(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ne_1(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_2(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_lt_2(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_3(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_le_3(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_4(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_gt_4(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_5(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ge_5(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
+pub fn operator_cmp_6(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct MoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl MoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(x: Ptr<MoveOnly>) -> Self {
         let __this: MoveOnly = Self {
             data_: x.with(|__s| __s.data_),
         };
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         __this
     }
 }
@@ -70,45 +71,46 @@ impl Default for MoveOnly {
         { MoveOnly::new(None) }
     }
 }
-pub fn operator_eq_7(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_eq_7(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_8(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ne_8(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_9(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_lt_9(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_10(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_le_10(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_11(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_gt_11(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_12(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ge_12(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_cmp_13(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct TrivialMoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl TrivialMoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(_a0: Ptr<TrivialMoveOnly>) -> Self {
@@ -136,78 +138,144 @@ impl Default for TrivialMoveOnly {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!(
+            (alloc_count_15.with(|rc| *rc.borrow()) >= dealloc_count_16.with(|rc| *rc.borrow()))
+        );
         return ((alloc_count_15.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_16.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_17.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_14.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_15.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_16.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_14.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_15.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_16.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_14: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_14: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_15: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_15: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_16: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_16: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_17: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_17: Value<bool> = Rc::new(RefCell::new(false));
 );
 pub fn do_insert_rv_test_18() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((*r.borrow()) == unimplemented!());
+    assert!((unimplemented!() == 1_()));
+    assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
+    assert!(
+        ({
+            let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                .1
+                .as_pointer();
+            let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
+    (*r.borrow_mut()) = unimplemented!();
+    assert!((*r.borrow()) == unimplemented!());
+    assert!((unimplemented!() == 2_()));
+    assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
+    assert!(
+        ({
+            let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                .1
+                .as_pointer();
+            let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
+    (*r.borrow_mut()) = unimplemented!();
+    assert!((*r.borrow()) == libcc2rs::prev_refcount(unimplemented!(), 1_isize));
+    assert!((unimplemented!() == 3_()));
+    assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+    assert!(
+        ({
+            let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                .1
+                .as_pointer();
+            let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
+    (*r.borrow_mut()) = unimplemented!();
+    assert!((*r.borrow()) == libcc2rs::prev_refcount(unimplemented!(), 1_isize));
+    assert!((unimplemented!() == 4_()));
+    assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+    assert!(
+        ({
+            let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                .1
+                .as_pointer();
+            let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
 }
 pub fn do_insert_rv_test_19() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((*r.borrow()) == unimplemented!());
+    assert!((unimplemented!() == 1_()));
+    assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
+    assert!(
+        ({
+            let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                .1
+                .as_pointer();
+            let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
+    (*r.borrow_mut()) = unimplemented!();
+    assert!((*r.borrow()) == unimplemented!());
+    assert!((unimplemented!() == 2_()));
+    assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
+    assert!(
+        ({
+            let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                .1
+                .as_pointer();
+            let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
+    (*r.borrow_mut()) = unimplemented!();
+    assert!((*r.borrow()) == libcc2rs::prev_refcount(unimplemented!(), 1_isize));
+    assert!((unimplemented!() == 3_()));
+    assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+    assert!(
+        ({
+            let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                .1
+                .as_pointer();
+            let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
+    (*r.borrow_mut()) = unimplemented!();
+    assert!((*r.borrow()) == libcc2rs::prev_refcount(unimplemented!(), 1_isize));
+    assert!((unimplemented!() == 4_()));
+    assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+    assert!(
+        ({
+            let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                .1
+                .as_pointer();
+            let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
 }
-pub fn test_20() -> () {
+pub fn test_20() -> bool {
     ({ do_insert_rv_test_18() });
     {
         ({ do_insert_rv_test_19() });
@@ -215,25 +283,57 @@ pub fn test_20() -> () {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((*r.borrow()) == unimplemented!());
+        assert!((unimplemented!() == 1_()));
+        assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2));
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                operator_eq_0(_x, _y.as_pointer())
+            })
+        );
+        (*r.borrow_mut()) = unimplemented!();
+        assert!((*r.borrow()) == unimplemented!());
+        assert!((unimplemented!() == 2_()));
+        assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1));
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1) })));
+                operator_eq_0(_x, _y.as_pointer())
+            })
+        );
+        (*r.borrow_mut()) = unimplemented!();
+        assert!((*r.borrow()) == libcc2rs::prev_refcount(unimplemented!(), 1_isize));
+        assert!((unimplemented!() == 3_()));
+        assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                operator_eq_0(_x, _y.as_pointer())
+            })
+        );
+        (*r.borrow_mut()) = unimplemented!();
+        assert!((*r.borrow()) == libcc2rs::prev_refcount(unimplemented!(), 1_isize));
+        assert!((unimplemented!() == 4_()));
+        assert!(((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(
+            ({
+                let _x: Ptr<MoveOnly> = (*(*r.borrow()).iter_deref().upgrade().deref())
+                    .1
+                    .as_pointer();
+                let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                operator_eq_0(_x, _y.as_pointer())
+            })
+        );
     }
     return true;
 }
@@ -256,23 +356,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_20() });
-    return 0_();
+    return 0;
 }
 pub trait MoveOnlyImpl {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_add(&self, x: Ptr<MoveOnly>) -> MoveOnly;
     fn operator_mul(&self, x: Ptr<MoveOnly>) -> MoveOnly;
 }
 impl MoveOnlyImpl for Ptr<MoveOnly> {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly> {
         field!((*self), data_).write({ x.with(|__s| __s.data_) });
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_add(&self, x: Ptr<MoveOnly>) -> MoveOnly {
@@ -288,7 +388,7 @@ impl MoveOnlyImpl for Ptr<MoveOnly> {
 }
 pub trait TrivialMoveOnlyImpl {
     fn move_assign(&self, _a0: Ptr<TrivialMoveOnly>) -> Ptr<TrivialMoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_add(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly;
     fn operator_mul(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly;
 }
@@ -297,7 +397,7 @@ impl TrivialMoveOnlyImpl for Ptr<TrivialMoveOnly> {
         field!((*self), data_).write({ { (*_a0.upgrade().deref()).data_ } });
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_add(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly {

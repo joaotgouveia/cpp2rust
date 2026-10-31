@@ -8,17 +8,17 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test1_0() {
     let mut m: () = unimplemented!();
-    let s: [(); 12] = std::mem::transmute(*b"abcdefghijk\0");
+    let s: [libc::c_char; 12] = std::mem::transmute(*b"abcdefghijk\0");
+    assert!(((unimplemented!() as i32) == (false as i32)));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub unsafe fn test2_1() {
     let mut m: () = unimplemented!();
-    let s: [(); 12] = std::mem::transmute(*b"abcdefghijk\0");
+    let s: [libc::c_char; 12] = std::mem::transmute(*b"abcdefghijk\0");
+    assert!(((unimplemented!() as i32) == (false as i32)));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -35,9 +35,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test1_0() });
     (unsafe { test2_1() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

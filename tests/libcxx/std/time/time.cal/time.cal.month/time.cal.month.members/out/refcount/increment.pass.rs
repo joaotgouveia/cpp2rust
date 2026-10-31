@@ -6,42 +6,42 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_month__std_chrono_month_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_month_ref__std_chrono_month_ref_ {}
-pub fn test_2() -> () {
-    let mut i: () = 0_();
-    'loop_: while (i <= 15_()) {
+pub fn test_2() -> bool {
+    let mut i: u32 = 0_u32;
+    'loop_: while (i <= 15_u32) {
         let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        let mut exp: () = (i).wrapping_add(1_());
-        'loop_: while (exp > 12_()) {
-            exp = { (exp).wrapping_sub(12_()) };
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        let mut exp: u32 = (i).wrapping_add(1_u32);
+        'loop_: while (exp > 12_u32) {
+            exp = { (exp).wrapping_sub(12_u32) };
         }
-        unimplemented!();
+        assert!((unimplemented!() == exp));
         i.prefix_inc();
     }
-    let mut i: () = 0_();
-    'loop_: while (i <= 15_()) {
+    let mut i: u32 = 0_u32;
+    'loop_: while (i <= 15_u32) {
         let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut exp: () = (i).wrapping_add(1_());
-        'loop_: while (exp > 12_()) {
-            exp = { (exp).wrapping_sub(12_()) };
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        let mut exp: u32 = (i).wrapping_add(1_u32);
+        'loop_: while (exp > 12_u32) {
+            exp = { (exp).wrapping_sub(12_u32) };
         }
-        unimplemented!();
+        assert!((unimplemented!() == exp));
         i.prefix_inc();
     }
     return true;
@@ -65,13 +65,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(128)]
 pub struct __gnu_test_func_callback {
     #[offset(0)]
-    _M_size: (),
+    _M_size: i32,
     #[offset(8)]
     #[byte_size(120)]
     _M_tests: Box<[FnPtr<fn()>]>,
@@ -18,7 +18,7 @@ pub struct __gnu_test_func_callback {
 impl __gnu_test_func_callback {
     pub fn new() -> Self {
         Self {
-            _M_size: 0_(),
+            _M_size: 0,
             _M_tests: (0..15)
                 .map(|_| FnPtr::<fn()>::null())
                 .collect::<Box<[FnPtr<fn()>]>>(),
@@ -61,7 +61,7 @@ impl Default for __gnu_test_object_counter {
 #[byte_size(1)]
 pub struct __gnu_test_copy_constructor {}
 impl __gnu_test_copy_constructor {
-    pub fn count() -> () {
+    pub fn count() -> u32 {
         return count__1.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
@@ -71,10 +71,10 @@ impl __gnu_test_copy_constructor {
         }
     }
     pub fn reset() {
-        count__1.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__2.with(|rc| *rc.borrow_mut() = 0_());
+        count__1.with(|rc| *rc.borrow_mut() = 0_u32);
+        throw_on__2.with(|rc| *rc.borrow_mut() = 0_u32);
     }
-    pub fn throw_on(mut count: ()) {
+    pub fn throw_on(mut count: u32) {
         throw_on__2.with(|rc| *rc.borrow_mut() = count);
     }
 }
@@ -82,7 +82,7 @@ impl __gnu_test_copy_constructor {
 #[byte_size(1)]
 pub struct __gnu_test_assignment_operator {}
 impl __gnu_test_assignment_operator {
-    pub fn count() -> () {
+    pub fn count() -> u32 {
         return count__3.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
@@ -92,10 +92,10 @@ impl __gnu_test_assignment_operator {
         }
     }
     pub fn reset() {
-        count__3.with(|rc| *rc.borrow_mut() = 0_());
-        throw_on__4.with(|rc| *rc.borrow_mut() = 0_());
+        count__3.with(|rc| *rc.borrow_mut() = 0_u32);
+        throw_on__4.with(|rc| *rc.borrow_mut() = 0_u32);
     }
-    pub fn throw_on(mut count: ()) {
+    pub fn throw_on(mut count: u32) {
         throw_on__4.with(|rc| *rc.borrow_mut() = count);
     }
 }
@@ -103,29 +103,29 @@ impl __gnu_test_assignment_operator {
 #[byte_size(1)]
 pub struct __gnu_test_destructor {}
 impl __gnu_test_destructor {
-    pub fn count() -> () {
+    pub fn count() -> u32 {
         return _M_count_5.with(|rc| *rc.borrow());
     }
     pub fn mark_call() {
         (*_M_count_5.with(Value::clone).borrow_mut()).postfix_inc();
     }
     pub fn reset() {
-        _M_count_5.with(|rc| *rc.borrow_mut() = 0_());
+        _M_count_5.with(|rc| *rc.borrow_mut() = 0_u32);
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
 #[byte_size(8)]
 pub struct __gnu_test_copy_tracker {
     #[offset(0)]
-    id_: (),
+    id_: i32,
     #[offset(4)]
-    throw_on_copy_: (),
+    throw_on_copy_: bool,
 }
 impl __gnu_test_copy_tracker {
-    pub fn new(id: Option<()>, throw_on_copy: Option<()>) -> Self {
-        let mut id: () =
+    pub fn new(id: Option<i32>, throw_on_copy: Option<bool>) -> Self {
+        let mut id: i32 =
             id.unwrap_or_else(|| (*next_id__6.with(Value::clone).borrow_mut()).postfix_dec());
-        let mut throw_on_copy: () = throw_on_copy.unwrap_or_else(|| false);
+        let mut throw_on_copy: bool = throw_on_copy.unwrap_or_else(|| false);
         Self {
             id_: id,
             throw_on_copy_: throw_on_copy,
@@ -140,7 +140,7 @@ impl __gnu_test_copy_tracker {
         if this.with(|__s| __s.throw_on_copy_) {
             ({
                 __gnu_test_copy_constructor::throw_on(
-                    ({ __gnu_test_copy_constructor::count() }).wrapping_add(1_()),
+                    ({ __gnu_test_copy_constructor::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -178,12 +178,12 @@ impl Default for __gnu_test_copy_tracker {
         { __gnu_test_copy_tracker::new(None, None) }
     }
 }
-pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_eq_8(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> bool {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } == {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
 }
-pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> () {
+pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy_tracker>) -> bool {
     return ({ ({ __gnu_test_copy_trackerImpl::id(&lhs) }) } < {
         ({ __gnu_test_copy_trackerImpl::id(&rhs) })
     });
@@ -192,86 +192,86 @@ pub fn operator_lt_7(lhs: Ptr<__gnu_test_copy_tracker>, rhs: Ptr<__gnu_test_copy
 #[byte_size(8)]
 pub struct __gnu_test_semaphore {
     #[offset(0)]
-    sem_set_: (),
+    sem_set_: i32,
     #[offset(4)]
     pid_: (),
 }
 impl __gnu_test_semaphore {}
 const _: () = assert!(true, "! std::is_default_constructible_v<std::format_args>");
 const _: () = assert!(true, "! std::is_default_constructible_v<std::wformat_args>");
-pub fn equals_9(fmt_arg: (), expected: ()) -> () {
+pub fn equals_9(fmt_arg: (), expected: ()) -> bool {
     let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     return unimplemented!();
 }
-pub fn equals_10(fmt_arg: (), expected: ()) -> () {
+pub fn equals_10(fmt_arg: (), expected: ()) -> bool {
     let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     return unimplemented!();
 }
-pub fn equals_11(fmt_arg: (), expected: ()) -> () {
+pub fn equals_11(fmt_arg: (), expected: bool) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<bool> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_12(fmt_arg: (), expected: i32) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<i32> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_13(fmt_arg: (), expected: i8) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<i8> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_14(fmt_arg: (), expected: f64) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<f64> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_15(fmt_arg: (), expected: i64) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<i64> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_16(fmt_arg: (), expected: u64) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<u64> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_17(fmt_arg: (), expected: f32) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<f32> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_18(fmt_arg: (), expected: ()) -> bool {
     let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     return unimplemented!();
 }
-pub fn equals_12(fmt_arg: (), expected: ()) -> () {
+pub fn equals_19(fmt_arg: (), expected: i32) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<i32> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_20(fmt_arg: (), expected: Ptr<i32>) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<Ptr<i32>> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_21(fmt_arg: (), expected: f64) -> bool {
+    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
+    let expected: Value<f64> = Rc::new(RefCell::new(expected));
+    return unimplemented!();
+}
+pub fn equals_22(fmt_arg: (), expected: ()) -> bool {
     let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     return unimplemented!();
 }
-pub fn equals_13(fmt_arg: (), expected: ()) -> () {
+pub fn equals_23(fmt_arg: (), expected: AnyPtr) -> bool {
     let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_14(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_15(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_16(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_17(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_18(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_19(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_20(fmt_arg: (), expected: Ptr<()>) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<Ptr<()>> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_21(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_22(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
-    return unimplemented!();
-}
-pub fn equals_23(fmt_arg: (), expected: ()) -> () {
-    let fmt_arg: Value<()> = Rc::new(RefCell::new(fmt_arg));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<AnyPtr> = Rc::new(RefCell::new(expected));
     return unimplemented!();
 }
 pub fn test_empty_24() {
@@ -281,7 +281,7 @@ pub fn test_empty_24() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -289,7 +289,7 @@ pub fn test_empty_24() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -297,7 +297,7 @@ pub fn test_empty_24() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -305,7 +305,7 @@ pub fn test_empty_24() {
         __do_while = false;
         if !({ equals_9(unimplemented!(), unimplemented!()) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let cargs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -314,7 +314,7 @@ pub fn test_empty_24() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -322,7 +322,7 @@ pub fn test_empty_24() {
         __do_while = false;
         if !({ equals_9(unimplemented!(), unimplemented!()) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let wargs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -331,7 +331,7 @@ pub fn test_empty_24() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -339,17 +339,17 @@ pub fn test_empty_24() {
         __do_while = false;
         if !({ equals_10(unimplemented!(), unimplemented!()) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
 }
-pub type E = ();
+pub type E = u32;
 pub const E_ByGum: E = 0;
 pub fn test_args_25() {
-    let mut b: () = false;
-    let i: Value<()> = Rc::new(RefCell::new(1_()));
-    let c: Value<()> = Rc::new(RefCell::new(('2' as ())));
-    let d: Value<()> = Rc::new(RefCell::new(3.4_f64));
+    let mut b: bool = false;
+    let i: Value<i32> = Rc::new(RefCell::new(1));
+    let c: Value<i8> = Rc::new(RefCell::new(('2' as i8)));
+    let d: Value<f64> = Rc::new(RefCell::new(3.4_f64));
     let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
@@ -357,23 +357,23 @@ pub fn test_args_25() {
         __do_while = false;
         if !({ equals_11(unimplemented!(), false) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ equals_12(unimplemented!(), 1_()) }) {
+        if !({ equals_12(unimplemented!(), 1) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ equals_13(unimplemented!(), ('2' as ())) }) {
+        if !({ equals_13(unimplemented!(), ('2' as i8)) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -381,7 +381,7 @@ pub fn test_args_25() {
         __do_while = false;
         if !({ equals_14(unimplemented!(), 3.4_f64) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -389,30 +389,30 @@ pub fn test_args_25() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
-    let mut l: () = 5_();
-    let ull: Value<()> = Rc::new(RefCell::new(6_()));
-    let f: Value<()> = Rc::new(RefCell::new(7.8_f32));
+    let mut l: i64 = 5_i64;
+    let ull: Value<u64> = Rc::new(RefCell::new(6_u64));
+    let f: Value<f32> = Rc::new(RefCell::new(7.8_f32));
     let cstore: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cargs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !({ equals_15(unimplemented!(), 5_()) }) {
+            if !({ equals_15(unimplemented!(), 5_i64) }) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ equals_16(unimplemented!(), 6_()) }) {
+        if !({ equals_16(unimplemented!(), 6_u64) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -420,7 +420,7 @@ pub fn test_args_25() {
         __do_while = false;
         if !({ equals_17(unimplemented!(), 7.8_f32) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -428,41 +428,53 @@ pub fn test_args_25() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
-    let mut s: () = unimplemented!();
+    let mut s: Vec<i8> = {
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"tenfour").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    };
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !({ equals_18(unimplemented!(), unimplemented!()) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
-    let mut nine: () = ('9' as ());
-    let ten: Value<()> = Rc::new(RefCell::new((88 as ())));
-    let eleven: Value<Box<[()]>> = Rc::new(RefCell::new(Box::from([
-        101 as (), 108 as (), 101 as (), 118 as (), 101 as (), 110 as (), 0 as (),
+    let mut nine: i8 = ('9' as i8);
+    let ten: Value<i32> = Rc::new(RefCell::new((88 as i32)));
+    let eleven: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::from([
+        101 as i32, 108 as i32, 101 as i32, 118 as i32, 101 as i32, 110 as i32, 0 as i32,
     ])));
-    let twelve13: Value<()> = Rc::new(RefCell::new(12.13_f64));
-    let tenfour: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let twelve13: Value<f64> = Rc::new(RefCell::new(12.13_f64));
+    let tenfour: Value<Vec<i32>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i32>::from_string_literal(&[
+            116 as i32, 101 as i32, 110 as i32, 102 as i32, 111 as i32, 117 as i32, 114 as i32,
+            0 as i32,
+        ])
+        .to_c_bytes();
+        __bytes.push(0_i32);
+        __bytes
+    }));
     let wstore: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let wargs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ equals_19(unimplemented!(), ('9' as ())) }) {
+        if !({ equals_19(unimplemented!(), (('9' as i8) as i32)) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ equals_19(unimplemented!(), (88 as ())) }) {
+        if !({ equals_19(unimplemented!(), (88 as i32)) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -471,11 +483,11 @@ pub fn test_args_25() {
         if !({
             equals_20(
                 unimplemented!(),
-                (eleven.as_pointer() as Ptr<()>).reinterpret_cast::<()>(),
+                (eleven.as_pointer() as Ptr<i32>).reinterpret_cast::<i32>(),
             )
         }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -483,7 +495,7 @@ pub fn test_args_25() {
         __do_while = false;
         if !({ equals_21(unimplemented!(), 12.13_f64) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -491,7 +503,7 @@ pub fn test_args_25() {
         __do_while = false;
         if !({ equals_22(unimplemented!(), unimplemented!()) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let mut __do_while = true;
@@ -499,67 +511,67 @@ pub fn test_args_25() {
         __do_while = false;
         if !(!(unimplemented!())) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
-    let mut null: () = unimplemented!();
+    let mut null: AnyPtr = AnyPtr::default();
     let eebygum: Value<E> = Rc::new(RefCell::new(E_ByGum));
     let another_store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*args.borrow_mut()) = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ equals_23(unimplemented!(), unimplemented!()) }) {
+        if !({ equals_23(unimplemented!(), AnyPtr::default()) }) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
     let is_handle: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |_a0: ()| -> () {
+        |_a0: ()| -> bool {
             let _a0: Value<()> = Rc::new(RefCell::new(_a0));
             return unimplemented!();
         },
-        |_a0: ()| -> () {
+        |_a0: ()| -> bool {
             let _a0: Value<()> = Rc::new(RefCell::new(_a0));
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: bool| -> bool {
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: i8| -> bool {
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: i32| -> bool {
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: u32| -> bool {
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: i64| -> bool {
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: u64| -> bool {
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: f32| -> bool {
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: f64| -> bool {
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: f64| -> bool {
             return unimplemented!();
         },
-        |mut _a0: Ptr<()>| -> () {
+        |mut _a0: Ptr<i8>| -> bool {
             return unimplemented!();
         },
-        |_a0: ()| -> () {
+        |_a0: ()| -> bool {
             let _a0: Value<()> = Rc::new(RefCell::new(_a0));
             return unimplemented!();
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: AnyPtr| -> bool {
             return unimplemented!();
         }
     )));
@@ -568,72 +580,72 @@ pub fn test_args_25() {
         __do_while = false;
         if !(unimplemented!()) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
 }
 pub fn test_member_visit_26() {}
 pub fn test_visited_as_handle_27() {
-    let mut v: () = unimplemented!();
+    let mut v: i128 = 0_i128;
     let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_handle: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |arg: ()| -> () {
+        |arg: ()| -> bool {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
             return unimplemented!();
         },
-        |arg: ()| -> () {
+        |arg: ()| -> bool {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
             return unimplemented!();
         },
-        |arg: ()| -> () {
+        |arg: bool| -> bool {
+            let arg: Value<bool> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: i8| -> bool {
+            let arg: Value<i8> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: i32| -> bool {
+            let arg: Value<i32> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: u32| -> bool {
+            let arg: Value<u32> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: i64| -> bool {
+            let arg: Value<i64> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: u64| -> bool {
+            let arg: Value<u64> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: f32| -> bool {
+            let arg: Value<f32> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: f64| -> bool {
+            let arg: Value<f64> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: f64| -> bool {
+            let arg: Value<f64> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: Ptr<i8>| -> bool {
+            let arg: Value<Ptr<i8>> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: ()| -> bool {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
             return unimplemented!();
         },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: Ptr<()>| -> () {
-            let arg: Value<Ptr<()>> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
+        |arg: AnyPtr| -> bool {
+            let arg: Value<AnyPtr> = Rc::new(RefCell::new(arg));
             return unimplemented!();
         }
     )));
@@ -642,71 +654,71 @@ pub fn test_visited_as_handle_27() {
         __do_while = false;
         if !(unimplemented!()) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
 }
 pub fn test_visited_as_handle_28() {
-    let mut v: () = unimplemented!();
+    let mut v: u128 = 0_u128;
     let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_handle: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |arg: ()| -> () {
+        |arg: ()| -> bool {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
             return unimplemented!();
         },
-        |arg: ()| -> () {
+        |arg: ()| -> bool {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
             return unimplemented!();
         },
-        |arg: ()| -> () {
+        |arg: bool| -> bool {
+            let arg: Value<bool> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: i8| -> bool {
+            let arg: Value<i8> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: i32| -> bool {
+            let arg: Value<i32> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: u32| -> bool {
+            let arg: Value<u32> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: i64| -> bool {
+            let arg: Value<i64> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: u64| -> bool {
+            let arg: Value<u64> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: f32| -> bool {
+            let arg: Value<f32> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: f64| -> bool {
+            let arg: Value<f64> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: f64| -> bool {
+            let arg: Value<f64> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: Ptr<i8>| -> bool {
+            let arg: Value<Ptr<i8>> = Rc::new(RefCell::new(arg));
+            return unimplemented!();
+        },
+        |arg: ()| -> bool {
             let arg: Value<()> = Rc::new(RefCell::new(arg));
             return unimplemented!();
         },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: Ptr<()>| -> () {
-            let arg: Value<Ptr<()>> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
-            return unimplemented!();
-        },
-        |arg: ()| -> () {
-            let arg: Value<()> = Rc::new(RefCell::new(arg));
+        |arg: AnyPtr| -> bool {
+            let arg: Value<AnyPtr> = Rc::new(RefCell::new(arg));
             return unimplemented!();
         }
     )));
@@ -715,7 +727,7 @@ pub fn test_visited_as_handle_28() {
         __do_while = false;
         if !(unimplemented!()) {
             unimplemented!();
-            unimplemented!();
+            std::process::abort();
         }
     }
 }
@@ -723,7 +735,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test_empty_24() });
     ({ test_args_25() });
     ({ test_member_visit_26() });
@@ -734,27 +746,27 @@ fn main_0() -> () {
 impl __gnu_test_semaphore {
     pub fn new() -> Self {
         let __this: Value<__gnu_test_semaphore> = Rc::new(RefCell::new(Self {
-            sem_set_: unimplemented!(),
+            sem_set_: 0_i32,
             pid_: unimplemented!(),
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
         field!(this, pid_).write(unimplemented!());
         field!(this, sem_set_).write(unimplemented!());
-        if (this.with(|__s| __s.sem_set_) == -1_()) {
+        if (this.with(|__s| __s.sem_set_) == -1_i32) {
             unimplemented!();
         }
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
-        __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if (unimplemented!() == -1_()) {
+        __gnu_test_semun::val(val.as_pointer()).write(0);
+        if (unimplemented!() == -1_i32) {
             unimplemented!();
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_29(size: Option<()>) {
-    let mut size: () = size.unwrap_or_else(|| 16_f64);
+pub fn set_memory_limits_29(size: Option<f32>) {
+    let mut size: f32 = size.unwrap_or_else(|| (16_f64 as f32));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut limit: () = (size * 1048576_());
+    let mut limit: () = ((size * 1048576_f32) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
@@ -768,118 +780,149 @@ pub fn set_memory_limits_29(size: Option<()>) {
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn set_file_limit_30(mut size: ()) {
+pub fn set_file_limit_30(mut size: u64) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut limit: () = ((size) as ());
     unimplemented!();
     (*r.borrow_mut()).rlim_cur = limit;
     unimplemented!();
 }
-pub fn verify_demangle_31(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
-    let status: Value<()> = Rc::new(RefCell::new(0_()));
-    let mut s: Ptr<()> = Ptr::<()>::null();
-    let mut demangled: Ptr<()> = unimplemented!();
+pub fn verify_demangle_31(mut mangled: Ptr<i8>, mut wanted: Ptr<i8>) {
+    let status: Value<i32> = Rc::new(RefCell::new(0));
+    let mut s: Ptr<i8> = Ptr::<i8>::null();
+    let mut demangled: Ptr<i8> = unimplemented!();
     if !(demangled).is_null() {
         s = (demangled).clone();
     } else {
         switch!(match (*status.borrow()) {
-            __v if __v == 0_() => {
-                s = Ptr::<()>::from_string_literal(b"error code = 0: success");
+            __v if __v == 0 => {
+                s = Ptr::<i8>::from_string_literal(b"error code = 0: success");
                 break;
             }
-            __v if __v == -1_() => {
-                s = Ptr::<()>::from_string_literal(b"error code = -1: memory allocation failure");
+            __v if __v == -1_i32 => {
+                s = Ptr::<i8>::from_string_literal(b"error code = -1: memory allocation failure");
                 break;
             }
-            __v if __v == -2_() => {
-                s = Ptr::<()>::from_string_literal(b"error code = -2: invalid mangled name");
+            __v if __v == -2_i32 => {
+                s = Ptr::<i8>::from_string_literal(b"error code = -2: invalid mangled name");
                 break;
             }
-            __v if __v == -3_() => {
-                s = Ptr::<()>::from_string_literal(b"error code = -3: invalid arguments");
+            __v if __v == -3_i32 => {
+                s = Ptr::<i8>::from_string_literal(b"error code = -3: invalid arguments");
                 break;
             }
             _ => {
-                s = Ptr::<()>::from_string_literal(b"error code unknown - who knows what happened");
+                s = Ptr::<i8>::from_string_literal(b"error code unknown - who knows what happened");
             }
         });
     }
-    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    if !(unimplemented!()) {
+    let w: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = wanted.to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    if !(s.with_c_str(|__s| (*w.borrow())[..(*w.borrow()).len().saturating_sub(1)] == *__s)) {
         unimplemented!();
     }
-    unimplemented!();
+    libcc2rs::free_refcount((demangled).to_any());
 }
-pub fn run_tests_wrapped_locale_32(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_32(mut name: Ptr<i8>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut res: Ptr<()> = unimplemented!();
+    let mut res: Ptr<i8> = Ptr::<i8>::from_string_literal(b"C");
     if !(res).is_null() {
-        let mut preLC_ALL: () = unimplemented!();
+        let mut preLC_ALL: Vec<i8> = {
+            let mut __bytes = res.to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () = unimplemented!();
+        let mut postLC_ALL: Vec<i8> = {
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"C").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 unimplemented!();
-                unimplemented!();
+                std::process::abort();
             }
         }
     } else {
-        let mut s: () = unimplemented!();
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i8>::from_string_literal(b"LC_ALL for ").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         unimplemented!();
         unimplemented!();
     }
 }
 pub fn run_tests_wrapped_env_33(
-    mut name: Ptr<()>,
-    mut env: Ptr<()>,
+    mut name: Ptr<i8>,
+    mut env: Ptr<i8>,
     l: Ptr<__gnu_test_func_callback>,
 ) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut oldENV: Ptr<()> = unimplemented!();
-    if !(unimplemented!() != 0) {
+    let mut oldENV: Ptr<i8> = match ::std::env::var(env.to_rust_string()) {
+        Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
+        Err(_) => Ptr::null(),
+    };
+    if !(libc::setenv(env, name, 1) != 0) {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
-        let mut i: () = 0_();
+        let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        unimplemented!();
+        libc::setenv(
+            env,
+            if !(oldENV).is_null() {
+                (oldENV).clone()
+            } else {
+                Ptr::<i8>::from_string_literal(b"")
+            },
+            1,
+        );
     } else {
-        let mut s: () = unimplemented!();
+        let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes = env.to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    static count__1: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__1: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static throw_on__2: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__2: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static count__3: Value<()> = Rc::new(RefCell::new(0_()));
+    static count__3: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static throw_on__4: Value<()> = Rc::new(RefCell::new(0_()));
+    static throw_on__4: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static _M_count_5: Value<()> = Rc::new(RefCell::new(0_()));
+    static _M_count_5: Value<u32> = Rc::new(RefCell::new(0_u32));
 );
 thread_local!(
-    static next_id__6: Value<()> = Rc::new(RefCell::new(0_()));
+    static next_id__6: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(8)]
@@ -889,13 +932,13 @@ pub struct __gnu_test_semun {
     __bytes: Box<[u8]>,
 }
 impl __gnu_test_semun {
-    pub fn val(this: Ptr<Self>) -> Ptr<()> {
+    pub fn val(this: Ptr<Self>) -> Ptr<i32> {
         this.reinterpret_cast()
     }
     pub fn buf(this: Ptr<Self>) -> Ptr<Ptr<()>> {
         this.reinterpret_cast()
     }
-    pub fn array(this: Ptr<Self>) -> Ptr<Ptr<()>> {
+    pub fn array(this: Ptr<Self>) -> Ptr<Ptr<u16>> {
         this.reinterpret_cast()
     }
 }
@@ -908,16 +951,16 @@ impl Default for __gnu_test_semun {
 }
 impl __gnu_test_semaphore {}
 pub fn test_tm_34(
-    mut sec: (),
-    mut min: (),
-    mut hour: (),
-    mut mday: (),
-    mut mon: (),
-    mut year: (),
-    mut wday: (),
-    mut yday: (),
-    mut isdst: (),
-) -> () {
+    mut sec: i32,
+    mut min: i32,
+    mut hour: i32,
+    mut mday: i32,
+    mut mon: i32,
+    mut year: i32,
+    mut wday: i32,
+    mut yday: i32,
+    mut isdst: i32,
+) -> libcc2rs::Tm {
     (*tmp_35.with(Value::clone).borrow_mut()).tm_sec = sec;
     (*tmp_35.with(Value::clone).borrow_mut()).tm_min = min;
     (*tmp_35.with(Value::clone).borrow_mut()).tm_hour = hour;
@@ -930,12 +973,12 @@ pub fn test_tm_34(
     return (*tmp_35.with(Value::clone).borrow()).clone();
 }
 thread_local!(
-    static tmp_35: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    static tmp_35: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
 );
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;
     fn destructor(&self);
-    fn id(&self) -> ();
+    fn id(&self) -> i32;
 }
 impl __gnu_test_copy_trackerImpl for Ptr<__gnu_test_copy_tracker> {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker> {
@@ -943,7 +986,7 @@ impl __gnu_test_copy_trackerImpl for Ptr<__gnu_test_copy_tracker> {
         if rhs.with(|__s| __s.throw_on_copy_) {
             ({
                 __gnu_test_assignment_operator::throw_on(
-                    ({ __gnu_test_assignment_operator::count() }).wrapping_add(1_()),
+                    ({ __gnu_test_assignment_operator::count() }).wrapping_add(1_u32),
                 )
             });
         }
@@ -953,7 +996,7 @@ impl __gnu_test_copy_trackerImpl for Ptr<__gnu_test_copy_tracker> {
     fn destructor(&self) {
         ({ __gnu_test_destructor::mark_call() });
     }
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
 }
@@ -961,12 +1004,12 @@ pub trait __gnu_test_func_callbackImpl {
     fn copy_assign(&self, _a0: Ptr<__gnu_test_func_callback>) -> Ptr<__gnu_test_func_callback> {
         unimplemented!()
     }
-    fn size(&self) -> ();
+    fn size(&self) -> i32;
     fn tests(&self) -> Ptr<FnPtr<fn()>>;
     fn push_back(&self, test: FnPtr<fn()>);
 }
 impl __gnu_test_func_callbackImpl for Ptr<__gnu_test_func_callback> {
-    fn size(&self) -> () {
+    fn size(&self) -> i32 {
         return (*self).with(|__s| __s._M_size);
     }
     fn tests(&self) -> Ptr<FnPtr<fn()>> {
@@ -1003,20 +1046,20 @@ pub trait __gnu_test_semaphoreImpl {
 impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
-        __gnu_test_semun::val(val.as_pointer()).write(0_());
+        __gnu_test_semun::val(val.as_pointer()).write(0);
         if ((*self).with(|__s| __s.pid_) == unimplemented!()) {
             unimplemented!();
         }
     }
     fn signal(&self) {
         let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (unimplemented!() == -1_()) {
+        if (unimplemented!() == -1_i32) {
             unimplemented!();
         }
     }
     fn wait(&self) {
         let op: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
-        if (unimplemented!() == -1_()) {
+        if (unimplemented!() == -1_i32) {
             unimplemented!();
         }
     }

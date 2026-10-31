@@ -26,17 +26,36 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut bad: () = -1_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let mut bad: i32 = -1_i32;
     let os: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut s: () = unimplemented!();
+    {
+        let __s = {
+            let __s = {
+                let __s = {
+                    let __s = os.as_pointer();
+                    let _ = Ptr::<i8>::from_string_literal(b"aaaabbbb").with_c_str(|__cs| {
+                        __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+                    });
+                    __s
+                };
+                let _ = __s.write_all(&[(bad as i8) as u8]);
+                __s
+            };
+            let _ = Ptr::<i8>::from_string_literal(b"ccccdddd").with_c_str(|__cs| {
+                __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+            });
+            __s
+        };
+        libcc2rs::endl_refcount.call(__s)
+    };
+    let mut s: Vec<i8> = unimplemented!();
     let is: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ignoreLen: () = 10_();
+    let mut ignoreLen: u32 = 10_u32;
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return 0_();
+    assert!(((unimplemented!()) == (ignoreLen as ())));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

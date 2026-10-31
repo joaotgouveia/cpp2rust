@@ -30,16 +30,16 @@ pub fn csource_1() -> move_only {
 }
 pub fn test_2(mut _a0: move_only) {}
 thread_local!(
-    pub static x_3: Value<()> = Rc::new(RefCell::new(42_()));
+    pub static x_3: Value<i32> = Rc::new(RefCell::new(42));
 );
 thread_local!(
-    pub static cx_4: Ptr<()> = x_3.with(|v| v.as_pointer());
+    pub static cx_4: Ptr<i32> = x_3.with(|v| v.as_pointer());
 );
 thread_local!(
-    pub static copy_ctor_5: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static copy_ctor_5: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    pub static move_ctor_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static move_ctor_6: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
 #[byte_size(1)]
@@ -70,11 +70,11 @@ impl Default for A {
         { A::new() }
     }
 }
-pub fn test_constexpr_move_7() -> () {
-    let y: Value<()> = Rc::new(RefCell::new(42_()));
-    let mut cy: () = (*y.borrow());
-    return ((((*y.borrow()) == 42_()) && (cy == 42_())) && ((*y.borrow()) == 42_()))
-        && ((*y.borrow()) == 42_());
+pub fn test_constexpr_move_7() -> bool {
+    let y: Value<i32> = Rc::new(RefCell::new(42));
+    let mut cy: i32 = (*y.borrow());
+    return ((((*y.borrow()) == 42) && (cy == 42)) && ((*y.borrow()) == 42))
+        && ((*y.borrow()) == 42);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -95,7 +95,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "std::is_same<decltype(std::move(x)), int&&>::value");;
         const _: () = assert!(true, "");;
@@ -115,24 +115,24 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let a: Value<A> = Rc::new(RefCell::new(A::new()));
         let ca: Value<A> = Rc::new(RefCell::new(A::new()));
-        unimplemented!();
-        unimplemented!();
+        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 0));
+        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 0));
         let mut a2: A = A::copy_from({ a.as_pointer() });
         &(a2);
-        unimplemented!();
-        unimplemented!();
+        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 1));
+        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 0));
         let mut a3: A = A::move_from({ a.as_pointer() });
         &(a3);
-        unimplemented!();
-        unimplemented!();
+        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 1));
+        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 1));
         let mut a4: A = A::copy_from({ ca.as_pointer() });
         &(a4);
-        unimplemented!();
-        unimplemented!();
+        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 2));
+        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 1));
         let mut a5: A = A::copy_from({ ca.as_pointer() });
         &(a5);
-        unimplemented!();
-        unimplemented!();
+        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 3));
+        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 1));
     }
     {
         let mo: Value<move_only> = Rc::new(RefCell::new(move_only::new()));
@@ -140,11 +140,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({ test_2(({ source_0() })) });
     }
     {
-        let mut y: () = 42_();
+        let mut y: i32 = 42;
         const _: () = assert!(true, "std::move(y) == 42");;
         const _: () = assert!(true, "test_constexpr_move()");;
     }
-    return 0_();
+    return 0;
 }
 pub trait move_onlyImpl {
     fn copy_assign(&self, _a0: Ptr<move_only>) -> Ptr<move_only> {

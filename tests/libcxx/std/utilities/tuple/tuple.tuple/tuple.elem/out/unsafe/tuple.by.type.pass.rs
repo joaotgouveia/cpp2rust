@@ -22,18 +22,32 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut t1: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42)));
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"Hi".as_ptr(),
+                    libcc2rs::c_str_len(c"Hi".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (1_f32)));
+        assert!(((unimplemented!()) == (2_f32)));
     }
     {
         let mut t2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (*unimplemented!())
+                == std::slice::from_raw_parts(
+                    c"Hi".as_ptr(),
+                    libcc2rs::c_str_len(c"Hi".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!((unimplemented!()));
     }
     {
         let p5: () = unimplemented!();
@@ -42,26 +56,35 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let p5: () = unimplemented!();
-        let i1: *const () = unimplemented!();
-        let i2: *const () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let i1: *const i32 = unimplemented!();
+        let i2: *const i32 = unimplemented!();
+        assert!(((*i1) == (1)));
+        assert!(((*i2) == (2)));
     }
     {
         let mut t: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Option<Box<i32>> = (*unimplemented!()).take();
+        assert!(
+            ((*p.as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+                == (4))
+        );
+        assert!((*unimplemented!()).is_none());
     }
     {
         let t: () = unimplemented!();
-        let p: *const () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let p: *const Option<Box<i32>> = unimplemented!();
+        assert!(
+            ((*(*p)
+                .as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+                == (4))
+        );
+        assert!(!((*unimplemented!()).is_none()));
     }
     {
-        let mut x: () = 42_();
-        let mut y: () = 43_();
+        let mut x: i32 = 42;
+        let mut y: i32 = 43;
         let t: () = unimplemented!();
         const _: () = assert!(
             true,
@@ -75,8 +98,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "noexcept(std::get<int const&>(std::move(t)))");;
     }
     {
-        let mut x: () = 42_();
-        let mut y: () = 43_();
+        let mut x: i32 = 42;
+        let mut y: i32 = 43;
         let t: () = unimplemented!();
         const _: () = assert!(
             true,
@@ -94,6 +117,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::get<int>(std::move(t)) == 1");;
         const _: () = assert!(true, "std::get<const int>(std::move(t)) == 2");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

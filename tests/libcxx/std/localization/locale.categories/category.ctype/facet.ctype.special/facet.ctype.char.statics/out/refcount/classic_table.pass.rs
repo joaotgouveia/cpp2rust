@@ -26,39 +26,85 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(!((unimplemented!()).is_null()));
+    assert!((unimplemented!() >= 256_usize));
     let mut p: Ptr<()> = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < 128_()) {
-        let mut expect_cntrl: () = ((i < 32_()) || (126_() < i));
-        let mut expect_print: () = ((32_() <= i) && (i <= 126_()));
-        let mut expect_space: () = ((9_() <= i) && (i <= 13_())) || (i == (' ' as ()));
-        let mut expect_blank: () = ((i == ('\t' as ())) || (i == (' ' as ())));
-        let mut expect_upper: () = ((('A' as ()) <= i) && (i <= ('Z' as ())));
-        let mut expect_lower: () = ((('a' as ()) <= i) && (i <= ('z' as ())));
-        let mut expect_alpha: () = (expect_upper) || (expect_lower);
-        let mut expect_digit: () = ((('0' as ()) <= i) && (i <= ('9' as ())));
-        let mut expect_xdigit: () = (((('A' as ()) <= i) && (i <= ('F' as ())))
-            || ((('a' as ()) <= i) && (i <= ('f' as ()))))
+    let mut i: usize = 0_usize;
+    'loop_: while (i < 128_usize) {
+        let mut expect_cntrl: bool = ((i < 32_usize) || (126_usize < i));
+        let mut expect_print: bool = ((32_usize <= i) && (i <= 126_usize));
+        let mut expect_space: bool =
+            ((9_usize <= i) && (i <= 13_usize)) || (i == ((' ' as i8) as usize));
+        let mut expect_blank: bool =
+            ((i == (('\t' as i8) as usize)) || (i == ((' ' as i8) as usize)));
+        let mut expect_upper: bool =
+            (((('A' as i8) as usize) <= i) && (i <= (('Z' as i8) as usize)));
+        let mut expect_lower: bool =
+            (((('a' as i8) as usize) <= i) && (i <= (('z' as i8) as usize)));
+        let mut expect_alpha: bool = (expect_upper) || (expect_lower);
+        let mut expect_digit: bool =
+            (((('0' as i8) as usize) <= i) && (i <= (('9' as i8) as usize)));
+        let mut expect_xdigit: bool = ((((('A' as i8) as usize) <= i)
+            && (i <= (('F' as i8) as usize)))
+            || (((('a' as i8) as usize) <= i) && (i <= (('f' as i8) as usize))))
             || (expect_digit);
-        let mut expect_punct: () = ((((33_() <= i) && (i <= 47_()))
-            || ((58_() <= i) && (i <= 64_())))
-            || ((91_() <= i) && (i <= 96_())))
-            || ((123_() <= i) && (i <= 126_()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expect_punct: bool = ((((33_usize <= i) && (i <= 47_usize))
+            || ((58_usize <= i) && (i <= 64_usize)))
+            || ((91_usize <= i) && (i <= 96_usize)))
+            || ((123_usize <= i) && (i <= 126_usize));
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_cntrl as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_print as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_space as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_blank as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_lower as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_upper as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_alpha as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_digit as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_xdigit as i32) })
+        );
+        assert!(
+            ({
+                ((({ ((elem!(p, i).read()) as i32) } & { (unimplemented!() as i32) }) != 0) as i32)
+            } == { (expect_punct as i32) })
+        );
         i.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

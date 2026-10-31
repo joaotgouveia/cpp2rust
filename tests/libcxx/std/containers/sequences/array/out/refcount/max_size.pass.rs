@@ -6,16 +6,20 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn tests_0() -> () {
+pub fn tests_0() -> bool {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<Vec<i32>> = Rc::new(RefCell::new(
+            std::array::from_fn::<_, 2, _>(|_| 0_i32).to_vec(),
+        ));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!((unimplemented!() == 2_usize));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<Vec<i32>> = Rc::new(RefCell::new(
+            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
+        ));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
     }
     return true;
 }
@@ -38,13 +42,15 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_0() });
     const _: () = assert!(true, "tests()");;
     {
-        let array: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let array: Value<Vec<i32>> = Rc::new(RefCell::new(
+            std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
+        ));
         const _: () = assert!(true, "array.max_size() == 3");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

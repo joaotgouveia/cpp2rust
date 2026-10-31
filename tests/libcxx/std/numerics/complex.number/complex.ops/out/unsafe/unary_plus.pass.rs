@@ -6,19 +6,19 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0() -> () {
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_0() -> bool {
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_1() -> () {
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_1() -> bool {
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_2() -> () {
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn test_2() -> bool {
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
 pub fn main() {
@@ -36,13 +36,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     (unsafe { test_1() });
     (unsafe { test_2() });
     const _: () = assert!(true, "test<float>()");;
     const _: () = assert!(true, "test<double>()");;
     const _: () = assert!(true, "test<long double>()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

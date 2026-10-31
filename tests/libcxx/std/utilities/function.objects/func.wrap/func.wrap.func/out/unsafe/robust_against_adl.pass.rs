@@ -55,7 +55,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut x: *mut Holder_Incomplete_ = std::ptr::null_mut();
     let mut f: () = unimplemented!();
     unimplemented!();
@@ -64,7 +64,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut h: () = unimplemented!();
     unimplemented!();
     let mut i: () = unimplemented!();
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
 pub struct Holder_Incomplete_;

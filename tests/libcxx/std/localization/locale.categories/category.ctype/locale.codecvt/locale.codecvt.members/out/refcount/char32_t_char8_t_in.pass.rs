@@ -26,7 +26,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let from: Value<Box<[()]>> = Rc::new(RefCell::new(Box::from([
         115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (), 120 as (),
         116 as (), 0 as (),
@@ -35,17 +35,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let f: Ptr<()> = unimplemented!();
-    let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mbs: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
     let mut from_next: Ptr<()> = Ptr::<()>::null();
     let mut to_next: Ptr<()> = Ptr::<()>::null();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < 9_()) {
-        unimplemented!();
+    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+    assert!((((from_next).clone() - (from.as_pointer() as Ptr::<()>)) as i64 == 9_i64));
+    assert!((((to_next).clone() - (to.as_pointer() as Ptr::<()>)) as i64 == 9_i64));
+    let mut i: u32 = 0_u32;
+    'loop_: while (i < 9_u32) {
+        assert!((((*to.borrow())[(i) as usize] as u32) == ((*from.borrow())[(i) as usize] as u32)));
         i.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

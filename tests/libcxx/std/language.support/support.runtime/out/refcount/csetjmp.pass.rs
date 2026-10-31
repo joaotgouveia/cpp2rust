@@ -26,18 +26,18 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let jb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'switch: {
         match { unimplemented!() } {
-            __v if __v == 0_() => {
+            __v if __v == 0 => {
                 break 'switch;
             }
-            __v if __v == 42_() => {
-                return 0_();
+            __v if __v == 42 => {
+                return 0;
             }
             _ => {
-                return 1_();
+                return 1;
             }
         }
     };
@@ -46,6 +46,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::is_same<decltype(std::longjmp(jb, 0)), void>::value"
     );;
-    return 1_();
+    return 1;
 }
 pub fn __cpp2rust_init_globals() {}

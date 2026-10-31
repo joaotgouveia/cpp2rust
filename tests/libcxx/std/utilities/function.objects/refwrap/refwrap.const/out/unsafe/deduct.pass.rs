@@ -22,29 +22,29 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut i: () = 0_();
-    let mut ri: () = unimplemented!();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut i: i32 = 0;
+    let mut ri: *mut i32 = &mut i;
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri), std::reference_wrapper<int>>"
     );;
-    let mut ri2: () = unimplemented!();
+    let mut ri2: *mut i32 = ri;
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri2), std::reference_wrapper<int>>"
     );;
-    let j: () = 0_();
-    let mut rj: () = unimplemented!();
+    let j: i32 = 0;
+    let mut rj: *const i32 = &j;
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj), std::reference_wrapper<const int>>"
     );;
-    let mut rj2: () = unimplemented!();
+    let mut rj2: *const i32 = rj;
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj2), std::reference_wrapper<const int>>"
     );;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

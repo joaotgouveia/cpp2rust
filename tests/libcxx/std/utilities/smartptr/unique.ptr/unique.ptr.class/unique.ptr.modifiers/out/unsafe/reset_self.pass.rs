@@ -9,26 +9,33 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct A {
-    pub ptr_: (),
+    pub ptr_: Option<Box<A>>,
 }
 impl A {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            ptr_: unimplemented!(),
+            ptr_: Some(Box::from_raw(&raw mut this)),
         };
         this
     }
     pub unsafe fn reset(&mut self) {
-        unimplemented!();
+        {
+            let _a0: *mut A = ::std::ptr::null_mut();
+            self.ptr_ = if _a0.is_null() {
+                None
+            } else {
+                Some(Box::from_raw(_a0))
+            }
+        };
     }
     pub unsafe fn move_from(_a0: *mut A) -> Self {
         let mut this = Self {
-            ptr_: unimplemented!(),
+            ptr_: (*_a0).ptr_.take(),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut A) -> *mut A {
-        unimplemented!();
+        self.ptr_ = (*_a0).ptr_.take();
         return &mut (*(self as *mut A));
     }
 }
@@ -37,7 +44,7 @@ impl Default for A {
         unsafe { A::new() }
     }
 }
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     (unsafe { A::reset(&mut (*(Box::leak(Box::new(A::new())) as *mut A))) });
     return true;
 }
@@ -56,9 +63,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

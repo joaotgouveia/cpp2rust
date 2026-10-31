@@ -26,30 +26,92 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(
         true,
         "(std::is_base_of<std::runtime_error, std::overflow_error>::value)"
     );;
     const _: () = assert!(true, "std::is_polymorphic<std::overflow_error>::value");;
     {
-        let mut msg: Ptr<()> = Ptr::<()>::from_string_literal(b"overflow_error message");
+        let mut msg: Ptr<i8> = Ptr::<i8>::from_string_literal(b"overflow_error message");
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            ({
+                let mut __it1 = unimplemented!().to_c_string_iterator();
+                let mut __it2 = msg.to_c_string_iterator();
+                loop {
+                    let __c1 = __it1.next();
+                    let __c2 = __it2.next();
+                    if __c1 != __c2 {
+                        break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                    }
+                    if __c1.is_none() {
+                        break 0;
+                    }
+                }
+            } == 0)
+        );
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(
+            ({
+                let mut __it1 = unimplemented!().to_c_string_iterator();
+                let mut __it2 = msg.to_c_string_iterator();
+                loop {
+                    let __c1 = __it1.next();
+                    let __c2 = __it2.next();
+                    if __c1 != __c2 {
+                        break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                    }
+                    if __c1.is_none() {
+                        break 0;
+                    }
+                }
+            } == 0)
+        );
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ({
+                let mut __it1 = unimplemented!().to_c_string_iterator();
+                let mut __it2 = msg.to_c_string_iterator();
+                loop {
+                    let __c1 = __it1.next();
+                    let __c2 = __it2.next();
+                    if __c1 != __c2 {
+                        break (__c1.unwrap_or(0) as u8 as i32) - (__c2.unwrap_or(0) as u8 as i32);
+                    }
+                    if __c1.is_none() {
+                        break 0;
+                    }
+                }
+            } == 0)
+        );
     }
     {
-        let msg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let msg: Value<Vec<i8>> = Rc::new(RefCell::new({
+            let mut __bytes =
+                Ptr::<i8>::from_string_literal(b"another overflow_error message").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        }));
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            unimplemented!().with_c_str(|__s| (*msg.borrow())
+                [..(*msg.borrow()).len().saturating_sub(1)]
+                == *__s)
+        );
         let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(
+            unimplemented!().with_c_str(|__s| (*msg.borrow())
+                [..(*msg.borrow()).len().saturating_sub(1)]
+                == *__s)
+        );
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            unimplemented!().with_c_str(|__s| (*msg.borrow())
+                [..(*msg.borrow()).len().saturating_sub(1)]
+                == *__s)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

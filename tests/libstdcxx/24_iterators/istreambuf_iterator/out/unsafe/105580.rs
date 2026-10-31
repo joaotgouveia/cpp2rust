@@ -12,11 +12,11 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut in_: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut end: () = unimplemented!();
-    let mut ss: () = unimplemented!();
-    return 0_();
+    let mut ss: Vec<libc::c_char> = unimplemented!();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -6,22 +6,22 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let b: Value<Box<[Ptr<()>]>> = Rc::new(RefCell::new(Box::new([
-        ((a.as_pointer() as Ptr<()>).offset(2_())),
-        ((a.as_pointer() as Ptr<()>).offset(0_())),
-        ((a.as_pointer() as Ptr<()>).offset(1_())),
+pub fn test_0() -> bool {
+    let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+    let b: Value<Box<[Ptr<i32>]>> = Rc::new(RefCell::new(Box::new([
+        ((a.as_pointer() as Ptr<i32>).offset(2)),
+        ((a.as_pointer() as Ptr<i32>).offset(0)),
+        ((a.as_pointer() as Ptr<i32>).offset(1)),
     ])));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize)));
+    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)));
     let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize)));
+    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)));
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((0) as isize)));
+    assert!((unimplemented!() == (b.as_pointer() as Ptr<Ptr<i32>>).offset((3) as isize)));
     return true;
 }
 pub fn main() {
@@ -43,9 +43,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

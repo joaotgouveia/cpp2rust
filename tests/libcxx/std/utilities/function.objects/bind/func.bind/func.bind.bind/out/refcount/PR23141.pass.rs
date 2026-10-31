@@ -9,8 +9,8 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Fun {}
-pub fn test_0() -> () {
-    ({ unimplemented!()(Ptr::<()>::from_string_literal(b"hello")) });
+pub fn test_0() -> bool {
+    ({ unimplemented!()(Ptr::<i8>::from_string_literal(b"hello")) });
     return true;
 }
 pub fn main() {
@@ -32,16 +32,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait FunImpl {
-    fn operator_call_1_const_char__ref_arr6arr_int_ref(&self, _a0: Ptr<()>, _a1: Ptr<()>);
+    fn operator_call_1_const_char__ref_arr6arr_int_ref(&self, _a0: Ptr<i8>, _a1: Ptr<i32>);
 }
 impl FunImpl for Ptr<Fun> {
-    fn operator_call_1_const_char__ref_arr6arr_int_ref(&self, _a0: Ptr<()>, _a1: Ptr<()>) {
+    fn operator_call_1_const_char__ref_arr6arr_int_ref(&self, _a0: Ptr<i8>, _a1: Ptr<i32>) {
         const _: () = assert!(true, "std::is_same<U, int &>::value");;
     }
 }

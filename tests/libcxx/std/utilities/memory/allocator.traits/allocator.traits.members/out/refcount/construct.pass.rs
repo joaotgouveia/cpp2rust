@@ -10,30 +10,30 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -47,53 +47,57 @@ pub struct A_A2_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_Holder_NS_Incomplete__ptr_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, mut_ptr)]
 #[byte_size(8)]
 pub struct B_A0_ {
     #[offset(0)]
     #[byte_size(8)]
-    pub count_: Ptr<()>,
+    pub count_: Ptr<i32>,
 }
 impl B_A0_ {
-    pub fn new(count: Ptr<()>) -> Self {
+    pub fn new(count: Ptr<i32>) -> Self {
         Self {
             count_: (count).clone(),
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, mut_ptr)]
 #[byte_size(8)]
 pub struct B_A1_ {
     #[offset(0)]
     #[byte_size(8)]
-    pub count_: Ptr<()>,
+    pub count_: Ptr<i32>,
 }
 impl B_A1_ {
-    pub fn new(count: Ptr<()>) -> Self {
+    pub fn new(count: Ptr<i32>) -> Self {
         Self {
             count_: (count).clone(),
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, mut_ptr)]
 #[byte_size(8)]
 pub struct B_A2_ {
     #[offset(0)]
     #[byte_size(8)]
-    pub count_: Ptr<()>,
+    pub count_: Ptr<i32>,
 }
 impl B_A2_ {
-    pub fn new(count: Ptr<()>) -> Self {
+    pub fn new(count: Ptr<i32>) -> Self {
         Self {
             count_: (count).clone(),
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Ptr< i32  >  , new, value)]
 #[byte_size(1)]
 pub struct A0 {}
 impl A0 {
-    pub fn new(mut count: Ptr<()>) -> Self {
+    pub fn new(mut count: Ptr<i32>) -> Self {
         let __this: A0 = Self {};
         count.with_mut(|__v| __v.prefix_inc());
         __this
@@ -103,9 +107,9 @@ impl A0 {
 #[byte_size(1)]
 pub struct A1 {}
 impl A1 {
-    pub fn new(mut count: Ptr<()>, mut c: ()) -> Self {
+    pub fn new(mut count: Ptr<i32>, mut c: i8) -> Self {
         let __this: A1 = Self {};
-        unimplemented!();
+        assert!(((c as i32) == (('c' as i8) as i32)));
         count.with_mut(|__v| __v.prefix_inc());
         __this
     }
@@ -114,43 +118,43 @@ impl A1 {
 #[byte_size(1)]
 pub struct A2 {}
 impl A2 {
-    pub fn new(mut count: Ptr<()>, mut c: (), mut i: ()) -> Self {
+    pub fn new(mut count: Ptr<i32>, mut c: i8, mut i: i32) -> Self {
         let __this: A2 = Self {};
-        unimplemented!();
-        unimplemented!();
+        assert!(((c as i32) == (('d' as i8) as i32)));
+        assert!((i == 5));
         count.with_mut(|__v| __v.prefix_inc());
         __this
     }
 }
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     {
-        let A0_count: Value<()> = Rc::new(RefCell::new(0_()));
+        let A0_count: Value<i32> = Rc::new(RefCell::new(0));
         let mut a: A_A0_ = <A_A0_>::default();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut a0: Ptr<A0> = unimplemented!();
+        assert!(((*A0_count.borrow()) == 0));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*A0_count.borrow()) == 1));
         unimplemented!();
     }
     {
-        let A1_count: Value<()> = Rc::new(RefCell::new(0_()));
+        let A1_count: Value<i32> = Rc::new(RefCell::new(0));
         let mut a: A_A1_ = <A_A1_>::default();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut a1: Ptr<A1> = unimplemented!();
+        assert!(((*A1_count.borrow()) == 0));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*A1_count.borrow()) == 1));
         unimplemented!();
     }
     {
-        let A2_count: Value<()> = Rc::new(RefCell::new(0_()));
+        let A2_count: Value<i32> = Rc::new(RefCell::new(0));
         let mut a: A_A2_ = <A_A2_>::default();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut a2: Ptr<A2> = unimplemented!();
+        assert!(((*A2_count.borrow()) == 0));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*A2_count.borrow()) == 1));
         unimplemented!();
     }
     {
@@ -161,42 +165,42 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let A0_count: Value<()> = Rc::new(RefCell::new(0_()));
-        let b_construct: Value<()> = Rc::new(RefCell::new(0_()));
+        let A0_count: Value<i32> = Rc::new(RefCell::new(0));
+        let b_construct: Value<i32> = Rc::new(RefCell::new(0));
         let mut b: B_A0_ = B_A0_::new({ b_construct.as_pointer() });
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut a0: Ptr<A0> = unimplemented!();
+        assert!(((*A0_count.borrow()) == 0));
+        assert!(((*b_construct.borrow()) == 0));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*A0_count.borrow()) == 1));
+        assert!(((*b_construct.borrow()) == 1));
         unimplemented!();
     }
     {
-        let A1_count: Value<()> = Rc::new(RefCell::new(0_()));
-        let b_construct: Value<()> = Rc::new(RefCell::new(0_()));
+        let A1_count: Value<i32> = Rc::new(RefCell::new(0));
+        let b_construct: Value<i32> = Rc::new(RefCell::new(0));
         let mut b: B_A1_ = B_A1_::new({ b_construct.as_pointer() });
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut a1: Ptr<A1> = unimplemented!();
+        assert!(((*A1_count.borrow()) == 0));
+        assert!(((*b_construct.borrow()) == 0));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*A1_count.borrow()) == 1));
+        assert!(((*b_construct.borrow()) == 1));
         unimplemented!();
     }
     {
-        let A2_count: Value<()> = Rc::new(RefCell::new(0_()));
-        let b_construct: Value<()> = Rc::new(RefCell::new(0_()));
+        let A2_count: Value<i32> = Rc::new(RefCell::new(0));
+        let b_construct: Value<i32> = Rc::new(RefCell::new(0));
         let mut b: B_A2_ = B_A2_::new({ b_construct.as_pointer() });
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut a2: Ptr<A2> = unimplemented!();
+        assert!(((*A2_count.borrow()) == 0));
+        assert!(((*b_construct.borrow()) == 0));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*A2_count.borrow()) == 1));
+        assert!(((*b_construct.borrow()) == 1));
         unimplemented!();
     }
     return true;
@@ -220,19 +224,19 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct Holder_NS_Incomplete_;
 pub trait B_A0_Impl {
-    fn construct_2_struct_A0_int_ptr(&self, p: Ptr<A0>, args: Ptr<Ptr<()>>);
+    fn construct_2_struct_A0_int_ptr(&self, p: Ptr<A0>, args: Ptr<Ptr<i32>>);
 }
 impl B_A0_Impl for Ptr<B_A0_> {
-    fn construct_2_struct_A0_int_ptr(&self, mut p: Ptr<A0>, args: Ptr<Ptr<()>>) {
+    fn construct_2_struct_A0_int_ptr(&self, mut p: Ptr<A0>, args: Ptr<Ptr<i32>>) {
         (*self)
             .with(|__s| __s.count_.clone())
             .with_mut(|__v| __v.prefix_inc());
@@ -240,14 +244,19 @@ impl B_A0_Impl for Ptr<B_A0_> {
     }
 }
 pub trait B_A1_Impl {
-    fn construct_2_struct_A1_int_ptr_char(&self, p: Ptr<A1>, args_1: Ptr<Ptr<()>>, args_2: Ptr<()>);
+    fn construct_2_struct_A1_int_ptr_char(
+        &self,
+        p: Ptr<A1>,
+        args_1: Ptr<Ptr<i32>>,
+        args_2: Ptr<i8>,
+    );
 }
 impl B_A1_Impl for Ptr<B_A1_> {
     fn construct_2_struct_A1_int_ptr_char(
         &self,
         mut p: Ptr<A1>,
-        args_1: Ptr<Ptr<()>>,
-        args_2: Ptr<()>,
+        args_1: Ptr<Ptr<i32>>,
+        args_2: Ptr<i8>,
     ) {
         (*self)
             .with(|__s| __s.count_.clone())
@@ -259,18 +268,18 @@ pub trait B_A2_Impl {
     fn construct_2_struct_A2_int_ptr_char_int(
         &self,
         p: Ptr<A2>,
-        args_1: Ptr<Ptr<()>>,
-        args_2: Ptr<()>,
-        args_3: Ptr<()>,
+        args_1: Ptr<Ptr<i32>>,
+        args_2: Ptr<i8>,
+        args_3: Ptr<i32>,
     );
 }
 impl B_A2_Impl for Ptr<B_A2_> {
     fn construct_2_struct_A2_int_ptr_char_int(
         &self,
         mut p: Ptr<A2>,
-        args_1: Ptr<Ptr<()>>,
-        args_2: Ptr<()>,
-        args_3: Ptr<()>,
+        args_1: Ptr<Ptr<i32>>,
+        args_2: Ptr<i8>,
+        args_3: Ptr<i32>,
     ) {
         (*self)
             .with(|__s| __s.count_.clone())

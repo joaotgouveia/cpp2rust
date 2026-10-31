@@ -6,96 +6,96 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn make_string_0(in_: Ptr<()>) -> () {
+pub fn make_string_0(in_: Ptr<i8>) -> Vec<i8> {
     return unimplemented!();
 }
-pub fn make_string_1(in_: Ptr<()>) -> () {
+pub fn make_string_1(in_: Ptr<i8>) -> Vec<i8> {
     return unimplemented!();
 }
-pub fn make_string_2(in_: Ptr<()>) -> () {
+pub fn make_string_2(in_: Ptr<i8>) -> Vec<i8> {
     return unimplemented!();
 }
-pub fn make_string_3(in_: Ptr<()>) -> () {
+pub fn make_string_3(in_: Ptr<i8>) -> Vec<i32> {
     return unimplemented!();
 }
-pub fn make_string_4(in_: Ptr<()>) -> () {
+pub fn make_string_4(in_: Ptr<i8>) -> Vec<i32> {
     return unimplemented!();
 }
-pub fn make_string_5(in_: Ptr<()>) -> () {
+pub fn make_string_5(in_: Ptr<i8>) -> Vec<i32> {
     return unimplemented!();
 }
-pub fn make_string_stream_6(in_: Ptr<()>) -> () {
+pub fn make_string_stream_6(in_: Ptr<i8>) -> () {
     return unimplemented!();
 }
-pub fn make_string_stream_7(in_: Ptr<()>) -> () {
+pub fn make_string_stream_7(in_: Ptr<i8>) -> () {
     return unimplemented!();
 }
-pub fn make_string_stream_8(in_: Ptr<()>) -> () {
+pub fn make_string_stream_8(in_: Ptr<i8>) -> () {
     return unimplemented!();
 }
-pub fn make_string_stream_9(in_: Ptr<()>) -> () {
+pub fn make_string_stream_9(in_: Ptr<i8>) -> () {
     return unimplemented!();
 }
-pub fn make_string_stream_10(in_: Ptr<()>) -> () {
+pub fn make_string_stream_10(in_: Ptr<i8>) -> () {
     return unimplemented!();
 }
-pub fn make_string_stream_11(in_: Ptr<()>) -> () {
+pub fn make_string_stream_11(in_: Ptr<i8>) -> () {
     return unimplemented!();
 }
 pub fn test_12() {
     {
         let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_6(Ptr::<()>::from_string_literal(b"a123 4")) }),
+            ({ make_string_stream_6(Ptr::<i8>::from_string_literal(b"a123 4")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_7(Ptr::<()>::from_string_literal(b"123 ")) }),
+            ({ make_string_stream_7(Ptr::<i8>::from_string_literal(b"123 ")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!((*it.borrow()) != unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_8(Ptr::<()>::from_string_literal(b"")) }),
+            ({ make_string_stream_8(Ptr::<i8>::from_string_literal(b"")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn test_13() {
     {
         let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_9(Ptr::<()>::from_string_literal(b"a123 4")) }),
+            ({ make_string_stream_9(Ptr::<i8>::from_string_literal(b"a123 4")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_10(Ptr::<()>::from_string_literal(b"123 ")) }),
+            ({ make_string_stream_10(Ptr::<i8>::from_string_literal(b"123 ")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!((*it.borrow()) != unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let iss: Value<()> = Rc::new(RefCell::new(
-            ({ make_string_stream_11(Ptr::<()>::from_string_literal(b"")) }),
+            ({ make_string_stream_11(Ptr::<i8>::from_string_literal(b"")) }),
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn main() {
@@ -117,9 +117,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_12() });
     ({ test_13() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

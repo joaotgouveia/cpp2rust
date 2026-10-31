@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(_a0: Ptr<()>) {}
-pub fn test_1(_a0: Ptr<()>) {}
+pub fn test_0(_a0: Ptr<bool>) {}
+pub fn test_1(_a0: Ptr<i32>) {}
 pub fn test_2(_a0: Ptr<()>) {}
 pub fn test_3(_a0: Ptr<()>) {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -32,7 +32,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0(unimplemented!()) });
     ({ test_1(unimplemented!()) });
     ({ test_1(unimplemented!()) });
@@ -2057,6 +2057,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_0(unimplemented!()) });
     ({ test_0(unimplemented!()) });
     ({ test_3(unimplemented!()) });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

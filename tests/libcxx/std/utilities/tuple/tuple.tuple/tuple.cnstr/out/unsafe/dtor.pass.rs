@@ -9,10 +9,10 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, DestructorUnsafe, Default)]
 pub struct TrackDtor {
-    pub count_: *mut (),
+    pub count_: *mut i32,
 }
 impl TrackDtor {
-    pub unsafe fn new(mut count: *mut ()) -> Self {
+    pub unsafe fn new(mut count: *mut i32) -> Self {
         let mut this = Self { count_: count };
         this
     }
@@ -47,13 +47,13 @@ const _: () = assert!(
     true,
     "!std::is_trivially_destructible<std::tuple<int, std::string>>::value"
 );
-pub unsafe fn test_0() -> () {
-    let mut count: () = 0_();
+pub unsafe fn test_0() -> bool {
+    let mut count: i32 = 0;
     {
         let mut tuple: () = unimplemented!();
-        unimplemented!();
+        assert!(((count) == (0)));
     }
-    unimplemented!();
+    assert!(((count) == (1)));
     return true;
 }
 pub fn main() {
@@ -71,9 +71,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

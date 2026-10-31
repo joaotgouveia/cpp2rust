@@ -22,17 +22,17 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "(std::is_base_of<std::locale::facet, F>::value)");;
     const _: () = assert!(true, "(std::is_base_of<std::codecvt_base, F>::value)");;
     const _: () = assert!(true, "(std::is_same<F::intern_type, wchar_t>::value)");;
     const _: () = assert!(true, "(std::is_same<F::extern_type, char>::value)");;
     const _: () = assert!(true, "(std::is_same<F::state_type, std::mbstate_t>::value)");;
     let mut l: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let f: *const () = unimplemented!();
     (&(*f));
     &(*unimplemented!());
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

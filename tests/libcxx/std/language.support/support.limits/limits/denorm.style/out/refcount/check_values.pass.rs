@@ -11,13 +11,13 @@ use std::rc::{Rc, Weak};
 pub struct two {
     #[offset(0)]
     #[byte_size(2)]
-    pub __: Box<[()]>,
+    pub __: Box<[i8]>,
 }
 impl Default for two {
     fn default() -> Self {
         {
             two {
-                __: (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+                __: (0..2).map(|_| 0_i8).collect::<Box<[i8]>>(),
             }
         }
     }
@@ -41,17 +41,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::round_indeterminate == -1");;
     const _: () = assert!(true, "std::round_toward_zero == 0");;
     const _: () = assert!(true, "std::round_to_nearest == 1");;
     const _: () = assert!(true, "std::round_toward_infinity == 2");;
     const _: () = assert!(true, "std::round_toward_neg_infinity == 3");;
     const _: () = assert!(
-        (::std::mem::size_of::<()>() == 1_()),
+        (::std::mem::size_of::<i8>() == 1_usize),
         "sizeof(test(std::round_to_nearest)) == 1"
     );;
-    const _: () = assert!((2usize == 2_()), "sizeof(test(1)) == 2");;
-    return 0_();
+    const _: () = assert!((2usize == 2_usize), "sizeof(test(1)) == 2");;
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

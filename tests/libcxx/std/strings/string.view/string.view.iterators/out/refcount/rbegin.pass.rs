@@ -13,17 +13,17 @@ pub fn test_0(s: ()) {
     let cb1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cb2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if !(unimplemented!()) {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut last: usize = ((unimplemented!()).wrapping_sub(1_()) as usize);
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_1(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -32,17 +32,17 @@ pub fn test_1(s: ()) {
     let cb1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cb2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if !(unimplemented!()) {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut last: usize = ((unimplemented!()).wrapping_sub(1_()) as usize);
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_2(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -51,17 +51,17 @@ pub fn test_2(s: ()) {
     let cb1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cb2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if !(unimplemented!()) {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut last: usize = ((unimplemented!()).wrapping_sub(1_()) as usize);
+        assert!((((unimplemented!().read()) as u32) == ((unimplemented!().read()) as u32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as u32) == ((unimplemented!().read()) as u32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as u32) == ((unimplemented!().read()) as u32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_3(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -70,17 +70,17 @@ pub fn test_3(s: ()) {
     let cb1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cb2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if !(unimplemented!()) {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut last: usize = ((unimplemented!()).wrapping_sub(1_()) as usize);
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn test_4(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -89,17 +89,17 @@ pub fn test_4(s: ()) {
     let cb1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let cb2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if !(unimplemented!()) {
-        let mut last: () = (unimplemented!()).wrapping_sub(1_());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut last: usize = ((unimplemented!()).wrapping_sub(1_()) as usize);
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!((((unimplemented!().read()) as i32) == ((unimplemented!().read()) as i32)));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -120,7 +120,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0(unimplemented!()) });
     ({ test_1(unimplemented!()) });
     ({ test_2(unimplemented!()) });
@@ -149,6 +149,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             const _: () = assert!(true, "*wsv.crbegin() == wsv[2]");;
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

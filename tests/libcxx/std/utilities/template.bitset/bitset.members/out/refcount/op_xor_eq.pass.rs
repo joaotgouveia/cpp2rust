@@ -6,180 +6,526 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn get_test_cases_0() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_0() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_1() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_1() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_2() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_2() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_3() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_3() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_4() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_4() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_5() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_5() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_6() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_6() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_7() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_7() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_8() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_8() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn get_test_cases_9() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_9() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn str_repeat_10(mut s: (), mut n: ()) -> () {
-    let mut res: () = unimplemented!();
-    'loop_: while (n != 0_()) {
+pub fn str_repeat_10(mut s: Vec<i8>, mut n: u32) -> Vec<i8> {
+    let mut res: Vec<i8> = (s).clone();
+    'loop_: while (n != 0_u32) {
         unimplemented!();
         n.prefix_dec();
     }
-    return unimplemented!();
+    return std::mem::take(&mut res);
 }
-pub fn get_test_cases_11() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return unimplemented!();
+pub fn get_test_cases_11() -> Vec<()> {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    {
+        let __a1 = unimplemented!();
+        (*cases.borrow_mut()).push(__a1)
+    };
+    return std::mem::take(&mut (*cases.borrow_mut()));
 }
-pub fn test_op_xor_eq_12() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_0() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_12() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_0() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -188,21 +534,46 @@ pub fn test_op_xor_eq_12() -> () {
     }
     return true;
 }
-pub fn test_op_xor_eq_13() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_1() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_13() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_1() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -211,21 +582,46 @@ pub fn test_op_xor_eq_13() -> () {
     }
     return true;
 }
-pub fn test_op_xor_eq_14() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_4() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_14() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_4() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -234,21 +630,46 @@ pub fn test_op_xor_eq_14() -> () {
     }
     return true;
 }
-pub fn test_op_xor_eq_15() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_5() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_15() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_5() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -257,21 +678,46 @@ pub fn test_op_xor_eq_15() -> () {
     }
     return true;
 }
-pub fn test_op_xor_eq_16() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_6() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_16() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_6() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -280,21 +726,46 @@ pub fn test_op_xor_eq_16() -> () {
     }
     return true;
 }
-pub fn test_op_xor_eq_17() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_7() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_17() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_7() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -303,21 +774,46 @@ pub fn test_op_xor_eq_17() -> () {
     }
     return true;
 }
-pub fn test_op_xor_eq_18() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_8() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_18() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_8() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -326,21 +822,46 @@ pub fn test_op_xor_eq_18() -> () {
     }
     return true;
 }
-pub fn test_op_xor_eq_19() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_9() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_19() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_9() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -349,21 +870,46 @@ pub fn test_op_xor_eq_19() -> () {
     }
     return true;
 }
-pub fn test_op_xor_eq_20() -> () {
-    let cases: Value<()> = Rc::new(RefCell::new(({ get_test_cases_11() })));
-    let mut c1: () = 0_();
-    'loop_: while (c1 != unimplemented!()) {
-        let mut c2: () = 0_();
-        'loop_: while (c2 != unimplemented!()) {
-            let v1: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
-            let v2: Value<()> =
-                Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+pub fn test_op_xor_eq_20() -> bool {
+    let cases: Value<Vec<()>> = Rc::new(RefCell::new(({ get_test_cases_11() })));
+    let mut c1: usize = 0_usize;
+    'loop_: while (c1 != (*cases.borrow()).len()) {
+        let mut c2: usize = 0_usize;
+        'loop_: while (c2 != (*cases.borrow()).len()) {
+            let v1: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c1;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
+            let v2: Value<()> = Rc::new(RefCell::new(
+                (*{
+                    let __idx = c2;
+                    if __idx as usize >= (*cases.as_pointer().upgrade().deref()).len() {
+                        panic!("out of bounds access")
+                    } else {
+                        cases.as_pointer().decay().offset(__idx as isize)
+                    }
+                }
+                .upgrade()
+                .deref())
+                .clone(),
+            ));
             let v3: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: usize = 0_usize;
             'loop_: while (i < unimplemented!()) {
-                unimplemented!();
+                assert!(
+                    ((unimplemented!() as i32)
+                        == (((unimplemented!() as i32) != (unimplemented!() as i32)) as i32))
+                );
                 i.prefix_inc();
             }
             c2.prefix_inc();
@@ -391,7 +937,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_op_xor_eq_12() });
     ({ test_op_xor_eq_13() });
     ({ test_op_xor_eq_14() });
@@ -409,6 +955,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test_op_xor_eq<63>()");;
     const _: () = assert!(true, "test_op_xor_eq<64>()");;
     const _: () = assert!(true, "test_op_xor_eq<65>()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

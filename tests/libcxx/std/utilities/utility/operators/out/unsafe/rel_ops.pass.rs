@@ -9,11 +9,11 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct A {
-    pub data_: (),
+    pub data_: i32,
 }
 impl A {
-    pub unsafe fn new(mut data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| unsafe { -1_() });
+    pub unsafe fn new(mut data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| unsafe { -1_i32 });
         let mut this = Self { data_: data };
         this
     }
@@ -47,10 +47,10 @@ impl Default for A {
         unsafe { A::new(None) }
     }
 }
-pub unsafe fn operator_eq_1(x: *const A, y: *const A) -> () {
+pub unsafe fn operator_eq_1(x: *const A, y: *const A) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_lt_0(x: *const A, y: *const A) -> () {
+pub unsafe fn operator_lt_0(x: *const A, y: *const A) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
 pub fn main() {
@@ -68,17 +68,33 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut a1: A = A::new({ Some(1_()) });
-    let mut a2: A = A::new({ Some(2_()) });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut a1: A = A::new({ Some(1) });
+    let mut a2: A = A::new({ Some(2) });
+    assert!(
+        (unsafe {
+            let _x: *const A = &a1;
+            let _y: *const A = &a1;
+            operator_eq_1(_x, _y)
+        })
+    );
+    assert!(
+        !(unsafe {
+            let _x: *const A = &a1;
+            operator_eq_1(_x, &a2)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _x: *const A = &a1;
+            operator_lt_0(_x, &a2)
+        })
+    );
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

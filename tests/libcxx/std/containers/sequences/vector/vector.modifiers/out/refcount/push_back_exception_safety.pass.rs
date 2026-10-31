@@ -6,22 +6,23 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn is_contiguous_container_asan_correct_0(_a0: Ptr<()>) -> () {
+pub fn is_contiguous_container_asan_correct_0(_a0: Ptr<Vec<CMyClass>>) -> bool {
     return true;
 }
 thread_local!(
-    pub static gCopyConstructorShouldThrow_1: Value<()> = Rc::new(RefCell::new(false));
+    pub static gCopyConstructorShouldThrow_1: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor, Default)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Destructor, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(8)]
 pub struct CMyClass {
     #[offset(0)]
-    fMagicValue: (),
+    fMagicValue: i32,
     #[offset(4)]
-    fTag: (),
+    fTag: i32,
 }
 impl CMyClass {
-    pub fn new(mut tag: ()) -> Self {
+    pub fn new(mut tag: i32) -> Self {
         let __this: Value<CMyClass> = Rc::new(RefCell::new(Self {
             fMagicValue: kStartedConstructionMagicValue_2.with(|rc| *rc.borrow()),
             fTag: tag,
@@ -37,7 +38,7 @@ impl CMyClass {
         }));
         let this: Ptr<CMyClass> = __this.as_pointer();
         if gCopyConstructorShouldThrow_1.with(|rc| *rc.borrow()) {
-            unimplemented!();
+            std::process::abort();
         }
         field!(this, fMagicValue).write(kFinishedConstructionMagicValue_3.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -58,14 +59,14 @@ impl Clone for CMyClass {
     }
 }
 thread_local!(
-    static kStartedConstructionMagicValue_2: Value<()> = Rc::new(RefCell::new(0_()));
+    static kStartedConstructionMagicValue_2: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    static kFinishedConstructionMagicValue_3: Value<()> = Rc::new(RefCell::new(12345_()));
+    static kFinishedConstructionMagicValue_3: Value<i32> = Rc::new(RefCell::new(12345));
 );
 impl CMyClass {}
 impl CMyClass {}
-pub fn operator_eq_4(lhs: Ptr<CMyClass>, rhs: Ptr<CMyClass>) -> () {
+pub fn operator_eq_4(lhs: Ptr<CMyClass>, rhs: Ptr<CMyClass>) -> bool {
     return ({
         let _rhs: Ptr<CMyClass> = (rhs).clone();
         CMyClassImpl::equal(&lhs, _rhs)
@@ -90,23 +91,26 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let instance: Value<CMyClass> = Rc::new(RefCell::new(CMyClass::new({ 42_() })));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let instance: Value<CMyClass> = Rc::new(RefCell::new(CMyClass::new({ 42 })));
     let _dtor_instance = ScopedDestructor::new(&instance, |__p| __p.destructor());
-    let vec_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let vec2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    let vec_: Value<Vec<CMyClass>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let a0_clone = (*instance.borrow()).clone();
+        (*vec_.borrow_mut()).push(a0_clone)
+    };
+    let vec2: Value<Vec<CMyClass>> = Rc::new(RefCell::new((*vec_.borrow()).clone()));
+    assert!(({ is_contiguous_container_asan_correct_0(vec_.as_pointer(),) }));
+    assert!(({ is_contiguous_container_asan_correct_0(vec2.as_pointer(),) }));
+    return 0;
 }
 pub trait CMyClassImpl {
     fn destructor(&self);
-    fn equal(&self, rhs: Ptr<CMyClass>) -> ();
+    fn equal(&self, rhs: Ptr<CMyClass>) -> bool;
     fn copy_assign(&self, _a0: Ptr<CMyClass>) -> Ptr<CMyClass>;
 }
 impl CMyClassImpl for Ptr<CMyClass> {
-    fn equal(&self, rhs: Ptr<CMyClass>) -> () {
+    fn equal(&self, rhs: Ptr<CMyClass>) -> bool {
         return ({ (*self).with(|__s| __s.fTag) } == { rhs.with(|__s| __s.fTag) })
             && ({ (*self).with(|__s| __s.fMagicValue) } == { rhs.with(|__s| __s.fMagicValue) });
     }
@@ -116,7 +120,10 @@ impl CMyClassImpl for Ptr<CMyClass> {
         return (*self).clone();
     }
     fn destructor(&self) {
-        unimplemented!();
+        assert!(
+            ((*self).with(|__s| __s.fMagicValue)
+                == kFinishedConstructionMagicValue_3.with(|rc| *rc.borrow()))
+        );
     }
 }
 pub fn __cpp2rust_init_globals() {

@@ -9,17 +9,17 @@ use std::rc::Rc;
 pub unsafe fn make_implicit_0() -> () {
     return unimplemented!();
 }
-pub unsafe fn test_convertible_imp_1(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_1(mut _a0: i32) -> bool {
     return true;
 }
-pub unsafe fn test_convertible_imp_2(mut _a0: ()) -> () {
+pub unsafe fn test_convertible_imp_2(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn test_convertible_3() -> () {
-    return (unsafe { test_convertible_imp_1(0_()) });
+pub unsafe fn test_convertible_3() -> bool {
+    return (unsafe { test_convertible_imp_1(0) });
 }
-pub unsafe fn test_convertible_4() -> () {
-    return (unsafe { test_convertible_imp_2(0_()) });
+pub unsafe fn test_convertible_4() -> bool {
+    return (unsafe { test_convertible_imp_2(0_i64) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -36,24 +36,24 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut d: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0.5_f64)));
     }
     {
         let mut d: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_f64)));
     }
     {
         let mut d: () = unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0.75_f64)));
     }
     {
         const _: () = assert!(true, "test_convertible<D>()");;
-        unimplemented!();
+        assert!(unimplemented!());
         const _: () = assert!(true, "!test_convertible<D, double>()");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,14 +10,14 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub fn eq(mut c1: (), mut c2: ()) -> () {
-        return (c1 == c2);
+    pub fn eq(mut c1: i8, mut c2: i8) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
-    pub fn length(mut s: Ptr<()>) -> () {
-        let len: Value<()> = Rc::new(RefCell::new(0_()));
+    pub fn length(mut s: Ptr<i8>) -> usize {
+        let len: Value<usize> = Rc::new(RefCell::new(0_usize));
         'loop_: while !({
-            let _c1: () = (s.read());
-            let _c2: () = 0_();
+            let _c1: i8 = (s.read());
+            let _c2: i8 = 0_i8;
             constexpr_char_traits_char_::eq(_c1, _c2)
         }) {
             (*len.borrow_mut()).prefix_inc();
@@ -26,57 +26,57 @@ impl constexpr_char_traits_char_ {
         return (*len.borrow());
     }
 }
-pub fn StrLen_0(mut s: Ptr<()>) -> () {
-    let retVal: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((s.read()) != 0_()) {
+pub fn StrLen_0(mut s: Ptr<i8>) -> usize {
+    let retVal: Value<usize> = Rc::new(RefCell::new(0_usize));
+    'loop_: while (((s.read()) as i32) != 0) {
         (*retVal.borrow_mut()).prefix_inc();
         s.prefix_inc();
     }
     return (*retVal.borrow());
 }
-pub fn StrLen_1(mut s: Ptr<()>) -> () {
-    let retVal: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((s.read()) != 0_()) {
+pub fn StrLen_1(mut s: Ptr<i32>) -> usize {
+    let retVal: Value<usize> = Rc::new(RefCell::new(0_usize));
+    'loop_: while ((s.read()) != 0) {
         (*retVal.borrow_mut()).prefix_inc();
         s.prefix_inc();
     }
     return (*retVal.borrow());
 }
-pub fn StrLen_2(mut s: Ptr<()>) -> () {
-    let retVal: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((s.read()) != 0_()) {
+pub fn StrLen_2(mut s: Ptr<u16>) -> usize {
+    let retVal: Value<usize> = Rc::new(RefCell::new(0_usize));
+    'loop_: while (((s.read()) as i32) != 0) {
         (*retVal.borrow_mut()).prefix_inc();
         s.prefix_inc();
     }
     return (*retVal.borrow());
 }
-pub fn StrLen_3(mut s: Ptr<()>) -> () {
-    let retVal: Value<()> = Rc::new(RefCell::new(0_()));
-    'loop_: while ((s.read()) != 0_()) {
+pub fn StrLen_3(mut s: Ptr<u32>) -> usize {
+    let retVal: Value<usize> = Rc::new(RefCell::new(0_usize));
+    'loop_: while ((s.read()) != 0_u32) {
         (*retVal.borrow_mut()).prefix_inc();
         s.prefix_inc();
     }
     return (*retVal.borrow());
 }
-pub fn test_4(mut s: Ptr<()>) {
+pub fn test_4(mut s: Ptr<i8>) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (unimplemented!() as usize) } == { ({ StrLen_0((s).clone(),) }) }));
+    assert!(({ unimplemented!() } == { (s).clone() }));
 }
-pub fn test_5(mut s: Ptr<()>) {
+pub fn test_5(mut s: Ptr<i32>) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (unimplemented!() as usize) } == { ({ StrLen_1((s).clone(),) }) }));
+    assert!(({ unimplemented!() } == { (s).clone() }));
 }
-pub fn test_6(mut s: Ptr<()>) {
+pub fn test_6(mut s: Ptr<u16>) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (unimplemented!() as usize) } == { ({ StrLen_2((s).clone(),) }) }));
+    assert!(({ unimplemented!() } == { (s).clone() }));
 }
-pub fn test_7(mut s: Ptr<()>) {
+pub fn test_7(mut s: Ptr<u32>) {
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (unimplemented!() as usize) } == { ({ StrLen_3((s).clone(),) }) }));
+    assert!(({ unimplemented!() } == { (s).clone() }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -97,35 +97,35 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_4(Ptr::<()>::from_string_literal(b"QBCDE")) });
-    ({ test_4(Ptr::<()>::from_string_literal(b"A")) });
-    ({ test_4(Ptr::<()>::from_string_literal(b"")) });
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    ({ test_4(Ptr::<i8>::from_string_literal(b"QBCDE")) });
+    ({ test_4(Ptr::<i8>::from_string_literal(b"A")) });
+    ({ test_4(Ptr::<i8>::from_string_literal(b"")) });
     ({
-        test_5(Ptr::<()>::from_string_literal(&[
-            81 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+        test_5(Ptr::<i32>::from_string_literal(&[
+            81 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 0 as i32,
         ]))
     });
-    ({ test_5(Ptr::<()>::from_string_literal(&[65 as (), 0 as ()])) });
-    ({ test_5(Ptr::<()>::from_string_literal(&[0 as ()])) });
+    ({ test_5(Ptr::<i32>::from_string_literal(&[65 as i32, 0 as i32])) });
+    ({ test_5(Ptr::<i32>::from_string_literal(&[0 as i32])) });
     ({
-        test_6(Ptr::<()>::from_string_literal(&[
-            81 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+        test_6(Ptr::<u16>::from_string_literal(&[
+            81 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 0 as u16,
         ]))
     });
-    ({ test_6(Ptr::<()>::from_string_literal(&[65 as (), 0 as ()])) });
-    ({ test_6(Ptr::<()>::from_string_literal(&[0 as ()])) });
+    ({ test_6(Ptr::<u16>::from_string_literal(&[65 as u16, 0 as u16])) });
+    ({ test_6(Ptr::<u16>::from_string_literal(&[0 as u16])) });
     ({
-        test_7(Ptr::<()>::from_string_literal(&[
-            81 as (), 66 as (), 67 as (), 68 as (), 69 as (), 0 as (),
+        test_7(Ptr::<u32>::from_string_literal(&[
+            81 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 0 as u32,
         ]))
     });
-    ({ test_7(Ptr::<()>::from_string_literal(&[65 as (), 0 as ()])) });
-    ({ test_7(Ptr::<()>::from_string_literal(&[0 as ()])) });
+    ({ test_7(Ptr::<u32>::from_string_literal(&[65 as u32, 0 as u32])) });
+    ({ test_7(Ptr::<u32>::from_string_literal(&[0 as u32])) });
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "sv1.size() == 5");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -12,10 +12,20 @@ pub struct multiply {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct plus_one {}
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        (({
+            let ___args: Value<i32> = Rc::new(RefCell::new(5));
+            (*g.borrow_mut())(___args.as_pointer())
+        }) == 10)
+    );
+    assert!(
+        (({
+            let ___args: Value<i32> = Rc::new(RefCell::new(5));
+            unimplemented!()(___args.as_pointer())
+        }) == 11)
+    );
     return true;
 }
 pub fn main() {
@@ -37,25 +47,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait multiplyImpl {
-    fn operator_call_1_int(&self, a: (), b: ()) -> ();
+    fn operator_call_1_int(&self, a: i32, b: i32) -> i32;
 }
 impl multiplyImpl for Ptr<multiply> {
-    fn operator_call_1_int(&self, mut a: (), mut b: ()) -> () {
+    fn operator_call_1_int(&self, mut a: i32, mut b: i32) -> i32 {
         return (a * b);
     }
 }
 pub trait plus_oneImpl {
-    fn operator_call_1_int(&self, a: ()) -> ();
+    fn operator_call_1_int(&self, a: i32) -> i32;
 }
 impl plus_oneImpl for Ptr<plus_one> {
-    fn operator_call_1_int(&self, mut a: ()) -> () {
-        return (a + 1_());
+    fn operator_call_1_int(&self, mut a: i32) -> i32 {
+        return (a + 1);
     }
 }
 pub fn __cpp2rust_init_globals() {}

@@ -12,42 +12,42 @@ pub unsafe fn test_0() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let mut array: [i32; 2] = [0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_1() {
@@ -56,42 +56,42 @@ pub unsafe fn test_1() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let array: [i32; 2] = [0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_2() {
@@ -100,42 +100,42 @@ pub unsafe fn test_2() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let mut array: [i32; 2] = [0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_3() {
@@ -144,42 +144,42 @@ pub unsafe fn test_3() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i32; 3] = [0_i32, 0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let array: [i32; 2] = [0_i32, 0_i32];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_4() {
@@ -188,42 +188,42 @@ pub unsafe fn test_4() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let mut array: [i64; 2] = [0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_5() {
@@ -232,42 +232,42 @@ pub unsafe fn test_5() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let array: [i64; 2] = [0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_6() {
@@ -276,42 +276,42 @@ pub unsafe fn test_6() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let mut array: [i64; 2] = [0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_7() {
@@ -320,42 +320,42 @@ pub unsafe fn test_7() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [i64; 3] = [0_i64, 0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let array: [i64; 2] = [0_i64, 0_i64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_8() {
@@ -364,42 +364,42 @@ pub unsafe fn test_8() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let mut array: [f64; 2] = [0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_9() {
@@ -408,42 +408,42 @@ pub unsafe fn test_9() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let array: [f64; 2] = [0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_10() {
@@ -452,42 +452,42 @@ pub unsafe fn test_10() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let mut array: [f64; 2] = [0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_11() {
@@ -496,42 +496,42 @@ pub unsafe fn test_11() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [f64; 3] = [0_f64, 0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let array: [f64; 2] = [0_f64, 0_f64];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_12() {
@@ -540,42 +540,42 @@ pub unsafe fn test_12() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
         let mut array: [Foo; 3] = [<Foo>::default(), <Foo>::default(), <Foo>::default()];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
         let mut array: [Foo; 3] = [<Foo>::default(), <Foo>::default(), <Foo>::default()];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
         let mut array: [Foo; 3] = [<Foo>::default(), <Foo>::default(), <Foo>::default()];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
         let mut array: [Foo; 2] = [<Foo>::default(), <Foo>::default()];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_13() {
@@ -584,42 +584,42 @@ pub unsafe fn test_13() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
         let array: [Foo; 3] = [<Foo>::default(), <Foo>::default(), <Foo>::default()];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
         let array: [Foo; 3] = [<Foo>::default(), <Foo>::default(), <Foo>::default()];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
         let array: [Foo; 3] = [<Foo>::default(), <Foo>::default(), <Foo>::default()];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
         let array: [Foo; 2] = [<Foo>::default(), <Foo>::default()];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_14() {
@@ -628,42 +628,55 @@ pub unsafe fn test_14() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [Vec<libc::c_char>; 3] = [
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+        ];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [Vec<libc::c_char>; 3] = [
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+        ];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let mut array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut array: [Vec<libc::c_char>; 3] = [
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+        ];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let mut array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let mut array: [Vec<libc::c_char>; 2] =
+            [vec![libc::c_char::default()], vec![libc::c_char::default()]];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_mut_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 pub unsafe fn test_15() {
@@ -672,48 +685,61 @@ pub unsafe fn test_15() {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [Vec<libc::c_char>; 3] = [
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+        ];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [Vec<libc::c_char>; 3] = [
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+        ];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     {
-        let array: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let array: [Vec<libc::c_char>; 3] = [
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+            vec![libc::c_char::default()],
+        ];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (3_())));
     }
     {
-        let array: [(); 2] = [unimplemented!(), unimplemented!()];
+        let array: [Vec<libc::c_char>; 2] =
+            [vec![libc::c_char::default()], vec![libc::c_char::default()]];
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (array.as_ptr())));
+        assert!(((unimplemented!()) == (2_())));
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Foo {}
-pub unsafe fn test_all_16() -> () {
+pub unsafe fn test_all_16() -> bool {
     (unsafe { test_0() });
     (unsafe { test_1() });
     (unsafe { test_2() });
@@ -733,8 +759,8 @@ pub unsafe fn test_all_16() -> () {
     {
         let mut x: () = unimplemented!();
         let mut copy: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (unimplemented!())));
+        assert!(((unimplemented!()) == (unimplemented!())));
     }
     return true;
 }
@@ -753,9 +779,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_all_16() });
     const _: () = assert!(true, "test_all()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -7,11 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 impl Key {
-    pub fn new(_a0: Ptr<()>) -> Self {
+    pub fn new(_a0: Ptr<i32>) -> Self {
         Self {}
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, ptr)]
 #[byte_size(1)]
 pub struct Key {}
 impl CppLess for Key {
@@ -25,24 +26,90 @@ impl CppEq for Key {
             && !(KeyImpl::operator_lt(__rhs, __lhs.clone()))
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
-        let m_empty: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m_contains: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!().write(42_());
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let m_empty: Value<Map<Key, (Value<Key>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
+        let m_contains: Value<Map<Key, (Value<Key>, Value<i32>)>> =
+            Rc::new(RefCell::new(Map::new()));
+        Map::subscript_move(
+            m_contains.as_pointer(),
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(0));
+                Key::new({ __tmp_0.as_pointer() })
+            }))
+            .as_pointer(),
+            |__k| cpp_move!(__k),
+        )
+        .write(42);
+        let it: Value<BidirectionalIterator<(Value<Key>, Value<i32>)>> = Rc::new(RefCell::new(
+            ({
+                let __tmp_1: Value<Key> = Rc::new(RefCell::new({
+                    let __tmp_2: Value<i32> = Rc::new(RefCell::new(0));
+                    Key::new({ __tmp_2.as_pointer() })
+                }));
+                m_empty
+                    .as_pointer()
+                    .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| {
+                        __m.find(&__tmp_1.as_pointer())
+                    })
+            }),
+        ));
+        assert!(
+            (*it.borrow())
+                == m_empty
+                    .as_pointer()
+                    .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.end())
+        );
+        (*it.borrow_mut()) = ({
+            let __tmp_3: Value<Key> = Rc::new(RefCell::new({
+                let __tmp_4: Value<i32> = Rc::new(RefCell::new(0));
+                Key::new({ __tmp_4.as_pointer() })
+            }));
+            m_contains
+                .as_pointer()
+                .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&__tmp_3.as_pointer()))
+        });
+        assert!(
+            (*it.borrow())
+                != m_contains
+                    .as_pointer()
+                    .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.end())
+        );
     }
     {
-        let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        let result2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let map: Value<Map<Key, (Value<Key>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
+        let result: Value<(
+            Value<BidirectionalIterator<(Value<Key>, Value<i32>)>>,
+            Value<bool>,
+        )> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*(*result.borrow()).1.borrow()) as bool));
+        assert!(
+            ((*(*(*(*result.borrow()).0.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+                == 42)
+        );
+        let result2: Value<(
+            Value<BidirectionalIterator<(Value<Key>, Value<i32>)>>,
+            Value<bool>,
+        )> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(!(*(*result2.borrow()).1.borrow()));
+        assert!(
+            ((Map::subscript_move(
+                map.as_pointer(),
+                Rc::new(RefCell::new({
+                    let __tmp_5: Value<i32> = Rc::new(RefCell::new(0));
+                    Key::new({ __tmp_5.as_pointer() })
+                }))
+                .as_pointer(),
+                |__k| cpp_move!(__k)
+            )
+            .read())
+                == 42)
+        );
     }
     return true;
 }
@@ -65,15 +132,15 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
-    return 0_();
+    return 0;
 }
 pub trait KeyImpl {
-    fn operator_lt(&self, _a0: Ptr<Key>) -> ();
+    fn operator_lt(&self, _a0: Ptr<Key>) -> bool;
 }
 impl KeyImpl for Ptr<Key> {
-    fn operator_lt(&self, _a0: Ptr<Key>) -> () {
+    fn operator_lt(&self, _a0: Ptr<Key>) -> bool {
         return false;
     }
 }

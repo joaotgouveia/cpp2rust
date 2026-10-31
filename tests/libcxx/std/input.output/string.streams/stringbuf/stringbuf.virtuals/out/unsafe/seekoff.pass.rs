@@ -22,151 +22,343 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (0_())));
     }
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (0_())));
+        assert!(((unimplemented!()) == (0_())));
     }
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == (('3' as libc::c_char) as i32)));
+        assert!(((unimplemented!()) == (6_())));
+        assert!(((unimplemented!()) == (('6' as libc::c_char) as i32)));
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == (('7' as libc::c_char) as i32)));
     }
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == (('a' as libc::c_char) as i32)));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"012a456789".as_ptr(),
+                    libcc2rs::c_str_len(c"012a456789".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == (('b' as libc::c_char) as i32)));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"012a456b89".as_ptr(),
+                    libcc2rs::c_str_len(c"012a456b89".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == (('c' as libc::c_char) as i32)));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"012a456c89".as_ptr(),
+                    libcc2rs::c_str_len(c"012a456c89".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == (('3' as libc::c_char) as i32)));
+        assert!(((unimplemented!()) == (6_())));
+        assert!(((unimplemented!()) == (('6' as libc::c_char) as i32)));
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == (('7' as libc::c_char) as i32)));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == (('3' as libc::c_char) as i32)));
+        assert!(((unimplemented!()) == (('a' as libc::c_char) as i32)));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"012a456789".as_ptr(),
+                    libcc2rs::c_str_len(c"012a456789".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == (('7' as libc::c_char) as i32)));
+        assert!(((unimplemented!()) == (('c' as libc::c_char) as i32)));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"012a456c89".as_ptr(),
+                    libcc2rs::c_str_len(c"012a456c89".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == (('3' as libc::c_char) as i32)));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"0123456c89".as_ptr(),
+                    libcc2rs::c_str_len(c"0123456c89".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == (('7' as libc::c_char) as i32)));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"0123456789".as_ptr(),
+                    libcc2rs::c_str_len(c"0123456789".as_ptr()) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == (('c' as libc::c_char) as i32)));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"0123456c89".as_ptr(),
+                    libcc2rs::c_str_len(c"0123456c89".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == ((51 as i32) as ())));
+        assert!(((unimplemented!()) == (6_())));
+        assert!(((unimplemented!()) == ((54 as i32) as ())));
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == ((55 as i32) as ())));
     }
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == ((97 as i32) as ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == ((98 as i32) as ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 98 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 98 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == ((99 as i32) as ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 99 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 99 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == ((51 as i32) as ())));
+        assert!(((unimplemented!()) == (6_())));
+        assert!(((unimplemented!()) == ((54 as i32) as ())));
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == ((55 as i32) as ())));
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == ((51 as i32) as ())));
+        assert!(((unimplemented!()) == ((97 as i32) as ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (-1_i32 as ())));
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == ((55 as i32) as ())));
+        assert!(((unimplemented!()) == ((99 as i32) as ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 99 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 99 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (3_())));
+        assert!(((unimplemented!()) == ((51 as i32) as ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 99 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 99 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == ((55 as i32) as ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
+        assert!(((unimplemented!()) == (7_())));
+        assert!(((unimplemented!()) == ((99 as i32) as ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 99 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 99 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

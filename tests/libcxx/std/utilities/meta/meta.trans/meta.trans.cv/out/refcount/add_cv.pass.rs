@@ -6,37 +6,37 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_volatile_void__const_volatile_void_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_volatile_int__const_volatile_int_ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_volatile_intarr3arr__const_volatile_intarr3arr_ {}
-pub type anon_3 = ();
+pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ref__int_ref_ {}
-pub type anon_4 = ();
+pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ref__const_int_ref_ {}
-pub type anon_5 = ();
+pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptrconst_volatile__int_ptrconst_volatile_ {}
-pub type anon_6 = ();
+pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -190,7 +190,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_add_cv_29() });
     ({ test_add_cv_30() });
     ({ test_add_cv_31() });
@@ -198,6 +198,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_add_cv_33() });
     ({ test_add_cv_34() });
     ({ test_add_cv_35() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

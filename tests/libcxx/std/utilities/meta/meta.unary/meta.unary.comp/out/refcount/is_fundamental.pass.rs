@@ -381,9 +381,9 @@ impl Default for Union {
 #[byte_size(1)]
 pub struct bit_zero {
     #[offset(0)]
-    pub anon_35: (),
+    pub anon_35: i32,
 }
-pub type Enum = ();
+pub type Enum = u32;
 pub const Enum_zero: Enum = 0;
 pub const Enum_one: Enum = 1;
 pub fn main() {
@@ -405,7 +405,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_is_fundamental_0() });
     ({ test_is_fundamental_1() });
     ({ test_is_fundamental_2() });
@@ -442,6 +442,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_is_not_fundamental_32() });
     ({ test_is_not_fundamental_33() });
     ({ test_is_not_fundamental_34() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

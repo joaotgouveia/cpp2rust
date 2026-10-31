@@ -49,7 +49,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_same<int3::value_type, int>::value");;
     const _: () = assert!(true, "int3::size () == 3");;
     const _: () = assert!(true, "std::is_same<size7::value_type, std::size_t>::value");;
@@ -73,7 +73,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::tuple_size<decltype(t3)>::value == int3::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let t7: Value<()> = Rc::new(RefCell::new(
         ({ extract_1(tup.as_pointer(), unimplemented!()) }),
     ));
@@ -81,7 +81,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::tuple_size<decltype(t7)>::value == size7::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let t4: Value<()> = Rc::new(RefCell::new(
         ({ extract_2(tup.as_pointer(), unimplemented!()) }),
     ));
@@ -89,7 +89,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::tuple_size<decltype(t4)>::value == size4::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let t2: Value<()> = Rc::new(RefCell::new(
         ({ extract_3(tup.as_pointer(), unimplemented!()) }),
     ));
@@ -97,7 +97,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::tuple_size<decltype(t2)>::value == size2::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let tintmix: Value<()> = Rc::new(RefCell::new(
         ({ extract_4(tup.as_pointer(), unimplemented!()) }),
     ));
@@ -105,7 +105,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::tuple_size<decltype(tintmix)>::value == intmix::size ()"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
     let tsizemix: Value<()> = Rc::new(RefCell::new(
         ({ extract_5(tup.as_pointer(), unimplemented!()) }),
     ));
@@ -113,7 +113,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::tuple_size<decltype(tsizemix)>::value == sizemix::size ()"
     );;
-    unimplemented!();
-    return 0_();
+    assert!(unimplemented!());
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

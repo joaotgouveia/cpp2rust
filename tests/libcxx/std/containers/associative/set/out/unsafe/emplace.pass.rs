@@ -9,18 +9,18 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Emplaceable {
-    int_: (),
-    double_: (),
+    int_: i32,
+    double_: f64,
 }
 impl Emplaceable {
     pub unsafe fn new_1() -> Self {
         let mut this = Self {
-            int_: 0_(),
-            double_: 0_(),
+            int_: 0,
+            double_: 0_f64,
         };
         this
     }
-    pub unsafe fn new_2(mut i: (), mut d: ()) -> Self {
+    pub unsafe fn new_2(mut i: i32, mut d: f64) -> Self {
         let mut this = Self {
             int_: i,
             double_: d,
@@ -32,25 +32,25 @@ impl Emplaceable {
             int_: (*x).int_,
             double_: (*x).double_,
         };
-        (*x).int_ = 0_();
-        (*x).double_ = 0_();
+        (*x).int_ = 0;
+        (*x).double_ = 0_f64;
         this
     }
     pub unsafe fn move_assign(&mut self, x: *mut Emplaceable) -> *mut Emplaceable {
         self.int_ = (*x).int_;
-        (*x).int_ = 0_();
+        (*x).int_ = 0;
         self.double_ = (*x).double_;
-        (*x).double_ = 0_();
+        (*x).double_ = 0_f64;
         return &mut (*(self as *mut Emplaceable));
     }
-    pub unsafe fn operator_eq(&self, x: *const Emplaceable) -> () {
+    pub unsafe fn operator_eq(&self, x: *const Emplaceable) -> bool {
         return ((self.int_) == ((*x).int_)) && ((self.double_) == ((*x).double_));
     }
-    pub unsafe fn operator_lt(&self, x: *const Emplaceable) -> () {
+    pub unsafe fn operator_lt(&self, x: *const Emplaceable) -> bool {
         return ((self.int_) < ((*x).int_))
             || (((self.int_) == ((*x).int_)) && ((self.double_) < ((*x).double_)));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.int_;
     }
 }
@@ -83,25 +83,25 @@ impl Default for Emplaceable {
         unsafe { Emplaceable::new_1() }
     }
 }
-pub unsafe fn operator_eq_1(x: *const DefaultOnly, y: *const DefaultOnly) -> () {
+pub unsafe fn operator_eq_1(x: *const DefaultOnly, y: *const DefaultOnly) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_lt_2(x: *const DefaultOnly, y: *const DefaultOnly) -> () {
+pub unsafe fn operator_lt_2(x: *const DefaultOnly, y: *const DefaultOnly) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
 #[repr(C)]
 #[derive(FnPtrArg, DestructorUnsafe)]
 pub struct DefaultOnly {
-    data_: (),
+    data_: i32,
 }
 impl DefaultOnly {
     pub unsafe fn new() -> Self {
-        let mut this = Self { data_: -1_() };
+        let mut this = Self { data_: -1_i32 };
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)).prefix_inc();
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = 0_();
+        self.data_ = 0;
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)).prefix_dec();
     }
 }
@@ -134,56 +134,57 @@ impl Default for DefaultOnly {
         unsafe { DefaultOnly::new() }
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn operator_eq_3(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+pub unsafe fn operator_eq_3(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_4(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ne_4(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_5(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_lt_5(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_6(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_le_6(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_7(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_gt_7(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_8(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ge_8(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_9(_a0: *const MoveOnly, _a1: *const MoveOnly) -> () {
+pub unsafe fn operator_cmp_9(_a0: *const MoveOnly, _a1: *const MoveOnly) -> std::cmp::Ordering {
     {
-        let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
+        if !(cmp == std::cmp::Ordering::Equal) {
+            return cmp;
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, MoveAssignUnsafe)]
+#[cpp_from(i32, new, some_value)]
 pub struct MoveOnly {
-    data_: (),
+    data_: i32,
 }
 impl MoveOnly {
-    pub unsafe fn new(mut data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| unsafe { 1_() });
+    pub unsafe fn new(mut data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| unsafe { 1 });
         let mut this = Self { data_: data };
         this
     }
     pub unsafe fn move_from(x: *mut MoveOnly) -> Self {
         let mut this = Self { data_: (*x).data_ };
-        (*x).data_ = 0_();
+        (*x).data_ = 0;
         this
     }
     pub unsafe fn move_assign(&mut self, x: *mut MoveOnly) -> *mut MoveOnly {
         self.data_ = (*x).data_;
-        (*x).data_ = 0_();
+        (*x).data_ = 0;
         return &mut (*(self as *mut MoveOnly));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn operator_add(&self, x: *const MoveOnly) -> MoveOnly {
@@ -214,41 +215,45 @@ impl Default for MoveOnly {
         unsafe { MoveOnly::new(None) }
     }
 }
-pub unsafe fn operator_eq_10(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_eq_10(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_11(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ne_11(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_12(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_lt_12(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_13(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_le_13(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_14(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_gt_14(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_15(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ge_15(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_16(_a0: *const TrivialMoveOnly, _a1: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_cmp_16(
+    _a0: *const TrivialMoveOnly,
+    _a1: *const TrivialMoveOnly,
+) -> std::cmp::Ordering {
     {
-        let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
+        if !(cmp == std::cmp::Ordering::Equal) {
+            return cmp;
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, MoveAssignUnsafe)]
+#[cpp_from(i32, new, some_value)]
 pub struct TrivialMoveOnly {
-    data_: (),
+    data_: i32,
 }
 impl TrivialMoveOnly {
-    pub unsafe fn new(mut data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| unsafe { 1_() });
+    pub unsafe fn new(mut data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| unsafe { 1 });
         let mut this = Self { data_: data };
         this
     }
@@ -262,7 +267,7 @@ impl TrivialMoveOnly {
         self.data_ = (*_a0).data_;
         return &mut (*(self as *mut TrivialMoveOnly));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn operator_add(&self, x: *const TrivialMoveOnly) -> TrivialMoveOnly {
@@ -307,101 +312,131 @@ impl Default for TrivialMoveOnly {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_18))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_19)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_18))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_19))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_20)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_17)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_18)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_19)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_17)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_18)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_19)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_17: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_18: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_19: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_20: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_17: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_18: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_19: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_20: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut i32,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_int_ {}
-pub unsafe fn test_21() -> () {
+pub unsafe fn test_21() -> bool {
     {
         let mut m: () = unimplemented!();
-        unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
+        let mut r: (UnsafeBidirectionalIterator<DefaultOnly>, bool) = unimplemented!();
+        assert!((r.1 as bool));
+        assert!(r.0 == unimplemented!());
+        assert!(((unimplemented!()) == (1_())));
+        assert!(
+            (unsafe {
+                let _x: *const DefaultOnly = &(*unimplemented!().iter_deref());
+                let mut _y: DefaultOnly = DefaultOnly::new();
+                operator_eq_1(_x, &mut _y)
+            })
+        );
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
+        r = unimplemented!();
+        assert!(!(r.1));
+        assert!(r.0 == unimplemented!());
+        assert!(((unimplemented!()) == (1_())));
+        assert!(
+            (unsafe {
+                let _x: *const DefaultOnly = &(*unimplemented!().iter_deref());
+                let mut _y: DefaultOnly = DefaultOnly::new();
+                operator_eq_1(_x, &mut _y)
+            })
+        );
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
     }
     {
-        unimplemented!();
-    }
-    {
-        let mut m: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     }
     {
         let mut m: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: (UnsafeBidirectionalIterator<Emplaceable>, bool) = unimplemented!();
+        assert!((r.1 as bool));
+        assert!(r.0 == unimplemented!());
+        assert!(((unimplemented!()) == (1_())));
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_1();
+                Emplaceable::operator_eq(&(*unimplemented!().iter_deref()), &mut _x)
+            })
+        );
+        r = unimplemented!();
+        assert!((r.1 as bool));
+        assert!(r.0 == libcc2rs::next_unsafe(unimplemented!(), 1_isize));
+        assert!(((unimplemented!()) == (2_())));
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_2({ 2 }, { 3.5_f64 });
+                Emplaceable::operator_eq(&(*r.0.iter_deref()), &mut _x)
+            })
+        );
+        r = unimplemented!();
+        assert!(!(r.1));
+        assert!(r.0 == libcc2rs::next_unsafe(unimplemented!(), 1_isize));
+        assert!(((unimplemented!()) == (2_())));
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_2({ 2 }, { 3.5_f64 });
+                Emplaceable::operator_eq(&(*r.0.iter_deref()), &mut _x)
+            })
+        );
     }
     {
         let mut m: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: (UnsafeBidirectionalIterator<i32>, bool) = unimplemented!();
+        assert!((r.1 as bool));
+        assert!(r.0 == unimplemented!());
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((*r.0.iter_deref()) == (2)));
+    }
+    {
+        let mut m: () = unimplemented!();
+        let mut r: (UnsafeBidirectionalIterator<i32>, bool) = unimplemented!();
+        assert!((r.1 as bool));
+        assert!(r.0 == unimplemented!());
+        assert!(((unimplemented!()) == (1_())));
+        assert!(((*r.0.iter_deref()) == (2)));
     }
     {
         let mut set: () = unimplemented!();
-        let mut res: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut res: (UnsafeBidirectionalIterator<(MoveOnly, MoveOnly)>, bool) = unimplemented!();
+        assert!(( ( * <(UnsafeBidirectionalIterator<(MoveOnly , MoveOnly ) > , bool ) as PairGet<1>>::pair_get_mut(&mut res )  )  as bool ) );
+        assert!(unimplemented!()   == ( * <(UnsafeBidirectionalIterator<(MoveOnly , MoveOnly ) > , bool ) as PairGet<0>>::pair_get_mut(&mut res )  )    );
     }
     return true;
 }
@@ -420,9 +455,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_21() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

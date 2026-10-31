@@ -33,13 +33,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         const _: () = assert!(true, "std::is_move_constructible<P1>::value");;
-        let mut p1: () = unimplemented!();
-        let mut p2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p1: (i32, i16) = (3, 4_i16);
+        let mut p2: (i32, i16) = std::mem::take(&mut p1);
+        assert!(((p2.0) == (3)));
+        assert!(((p2.1 as i32) == (4)));
     }
     {
         const _: () = assert!(true, "!std::is_copy_constructible<P>::value");;
@@ -49,20 +49,20 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             const _: () = assert!(true, "std::is_move_constructible<P>::value");;
             let mut obj: NotCopyOrMoveConstructible = <NotCopyOrMoveConstructible>::default();
-            let mut p2: () = unimplemented!();
-            let mut p1: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let mut p2: (*mut NotCopyOrMoveConstructible, i32) = (obj, 3);
+            let mut p1: (*mut NotCopyOrMoveConstructible, i32) = std::mem::take(&mut p2);
+            assert!(((p1.0) == (&mut obj as *mut NotCopyOrMoveConstructible)));
+            assert!(((p2.0) == (&mut obj as *mut NotCopyOrMoveConstructible)));
         }
         {
             const _: () = assert!(true, "std::is_move_constructible<P>::value");;
             let mut obj: NotCopyOrMoveConstructible = <NotCopyOrMoveConstructible>::default();
-            let mut p2: () = unimplemented!();
-            let mut p1: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let mut p2: (*mut NotCopyOrMoveConstructible, i32) = (obj, 3);
+            let mut p1: (*mut NotCopyOrMoveConstructible, i32) = std::mem::take(&mut p2);
+            assert!(((p1.0) == (&mut obj as *mut NotCopyOrMoveConstructible)));
+            assert!(((p2.0) == (&mut obj as *mut NotCopyOrMoveConstructible)));
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

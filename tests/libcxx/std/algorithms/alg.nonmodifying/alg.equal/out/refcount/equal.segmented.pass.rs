@@ -8,140 +8,188 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_containers_0() {
     {
-        let mut lhs: () = unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ret: () = unimplemented!();
-        unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3, 4])));
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let mut ret: bool = unimplemented!();
+        assert!((ret as bool));
     }
     {
-        let mut lhs: () = unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ret: () = unimplemented!();
-        unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3, 4])));
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let mut ret: bool = unimplemented!();
+        assert!(!(ret));
     }
     {
-        let mut lhs: () = unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(unimplemented!());
     }
     {
-        let mut lhs: () = unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!().write(-1_());
-        unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        rhs.decay().to_last().write(-1_i32);
+        assert!(!(unimplemented!()));
     }
     {
-        let mut lhs: () = unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
         unimplemented!();
+        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let mut lhs: () = unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!().write(-1_());
-        unimplemented!();
+        rhs.decay().to_last().write(-1_i32);
+        assert!(!(unimplemented!()));
     }
 }
 pub fn test_containers_1() {
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: () = unimplemented!();
-        let mut ret: () = unimplemented!();
-        unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3, 4])));
+        let mut ret: bool = unimplemented!();
+        assert!((ret as bool));
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: () = unimplemented!();
-        let mut ret: () = unimplemented!();
-        unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([2, 2, 3, 4])));
+        let mut ret: bool = unimplemented!();
+        assert!(!(ret));
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let mut rhs: () = unimplemented!();
-        unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __v = Vec::new();
+            let mut __it = unimplemented!();
+            while __it != unimplemented!() {
+                __v.push((__it.iter_deref().read()));
+                __it.iter_inc();
+            }
+            __v
+        }));
+        assert!(unimplemented!());
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let mut rhs: () = unimplemented!();
-        unimplemented!().write(-1_());
-        unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __v = Vec::new();
+            let mut __it = unimplemented!();
+            while __it != unimplemented!() {
+                __v.push((__it.iter_deref().read()));
+                __it.iter_inc();
+            }
+            __v
+        }));
+        rhs.decay().to_last().write(-1_i32);
+        assert!(!(unimplemented!()));
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let mut rhs: () = unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        {
+            let __a0 = 10_usize as usize;
+            (*rhs.borrow_mut()).resize_with(__a0, || 0_i32)
+        };
+        {
+            let __pos = <RandomAccessIterator<i32>>::from(rhs.decay().end());
+            let __start = __pos.index();
+            let mut __tmp: Vec<i32> = Vec::new();
+            let mut __it = unimplemented!();
+            while __it != unimplemented!() {
+                __tmp.push((__it.iter_deref().read()));
+                __it.iter_inc();
+            }
+            rhs.as_pointer().with_mut(|__v: &mut Vec<i32>| {
+                __v.splice(__start..__start, __tmp);
+            });
+            __pos
+        };
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let mut rhs: () = unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        {
+            let __a0 = 10_usize as usize;
+            (*rhs.borrow_mut()).resize_with(__a0, || 0_i32)
+        };
+        {
+            let __pos = <RandomAccessIterator<i32>>::from(rhs.decay().end());
+            let __start = __pos.index();
+            let mut __tmp: Vec<i32> = Vec::new();
+            let mut __it = unimplemented!();
+            while __it != unimplemented!() {
+                __tmp.push((__it.iter_deref().read()));
+                __it.iter_inc();
+            }
+            rhs.as_pointer().with_mut(|__v: &mut Vec<i32>| {
+                __v.splice(__start..__start, __tmp);
+            });
+            __pos
+        };
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!().write(-1_());
-        unimplemented!();
+        rhs.decay().to_last().write(-1_i32);
+        assert!(!(unimplemented!()));
     }
 }
 pub fn test_containers_2() {
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ret: () = unimplemented!();
-        unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let mut ret: bool = unimplemented!();
+        assert!((ret as bool));
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ret: () = unimplemented!();
-        unimplemented!();
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        let mut ret: bool = unimplemented!();
+        assert!(!(ret));
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(unimplemented!());
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!().write(-1_());
-        unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
+        rhs.decay().to_last().write(-1_i32);
+        assert!(!(unimplemented!()));
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
         unimplemented!();
+        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let rhs: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!().write(-1_());
-        unimplemented!();
+        rhs.decay().to_last().write(-1_i32);
+        assert!(!(unimplemented!()));
     }
 }
 pub fn main() {
@@ -163,10 +211,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_containers_0() });
     ({ test_containers_1() });
     ({ test_containers_2() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

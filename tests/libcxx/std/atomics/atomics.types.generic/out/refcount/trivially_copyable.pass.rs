@@ -10,10 +10,10 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct TriviallyCopyable {
     #[offset(0)]
-    pub i_: (),
+    pub i_: i32,
 }
 impl TriviallyCopyable {
-    pub fn new(mut i: ()) -> Self {
+    pub fn new(mut i: i32) -> Self {
         Self { i_: i }
     }
 }
@@ -43,9 +43,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_0(TriviallyCopyable::new({ 42_() })) });
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    ({ test_0(TriviallyCopyable::new({ 42 })) });
     ({ test_1(unimplemented!()) });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

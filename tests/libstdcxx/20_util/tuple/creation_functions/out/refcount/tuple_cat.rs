@@ -86,17 +86,19 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let a3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let a3: Value<Vec<i32>> = Rc::new(RefCell::new(
+        std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
+    ));
     unimplemented!();
-    let pdb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let pdb: Value<(Value<f64>, Value<bool>)> = Rc::new(RefCell::new(unimplemented!()));
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = unimplemented!();
-    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let pi: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut i: i32 = 0_i32;
+    let d: Value<f64> = Rc::new(RefCell::new(0_f64));
+    let pi: Value<Ptr<i32>> = Rc::new(RefCell::new(Ptr::<i32>::null()));
     let to: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();

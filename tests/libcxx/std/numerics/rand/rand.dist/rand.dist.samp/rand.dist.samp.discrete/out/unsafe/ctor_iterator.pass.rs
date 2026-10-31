@@ -22,64 +22,64 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut p0: [(); 1] = [1_()];
+        let mut p0: [f64; 1] = [1_f64];
         let mut d: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Vec<f64> = unimplemented!();
+        assert!(((p.len()) == (1_usize)));
+        assert!(((*(&mut p).as_mut_ptr().add(0_usize as usize)) == (1_f64)));
     }
     {
-        let mut p0: [(); 1] = [10_()];
+        let mut p0: [f64; 1] = [10_f64];
         let mut d: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Vec<f64> = unimplemented!();
+        assert!(((p.len()) == (1_usize)));
+        assert!(((*(&mut p).as_mut_ptr().add(0_usize as usize)) == (1_f64)));
     }
     {
-        let mut p0: [(); 2] = [10_(), 30_()];
+        let mut p0: [f64; 2] = [10_f64, 30_f64];
         let mut d: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Vec<f64> = unimplemented!();
+        assert!(((p.len()) == (2_usize)));
+        assert!(((*(&mut p).as_mut_ptr().add(0_usize as usize)) == (0.25_f64)));
+        assert!(((*(&mut p).as_mut_ptr().add(1_usize as usize)) == (0.75_f64)));
     }
     {
-        let mut p0: [(); 2] = [30_(), 10_()];
+        let mut p0: [f64; 2] = [30_f64, 10_f64];
         let mut d: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Vec<f64> = unimplemented!();
+        assert!(((p.len()) == (2_usize)));
+        assert!(((*(&mut p).as_mut_ptr().add(0_usize as usize)) == (0.75_f64)));
+        assert!(((*(&mut p).as_mut_ptr().add(1_usize as usize)) == (0.25_f64)));
     }
     {
-        let mut p0: [(); 3] = [30_(), 0_(), 10_()];
+        let mut p0: [f64; 3] = [30_f64, 0_f64, 10_f64];
         let mut d: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Vec<f64> = unimplemented!();
+        assert!(((p.len()) == (3_usize)));
+        assert!(((*(&mut p).as_mut_ptr().add(0_usize as usize)) == (0.75_f64)));
+        assert!(((*(&mut p).as_mut_ptr().add(1_usize as usize)) == (0_f64)));
+        assert!(((*(&mut p).as_mut_ptr().add(2_usize as usize)) == (0.25_f64)));
     }
     {
-        let mut p0: [(); 3] = [0_(), 30_(), 10_()];
+        let mut p0: [f64; 3] = [0_f64, 30_f64, 10_f64];
         let mut d: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Vec<f64> = unimplemented!();
+        assert!(((p.len()) == (3_usize)));
+        assert!(((*(&mut p).as_mut_ptr().add(0_usize as usize)) == (0_f64)));
+        assert!(((*(&mut p).as_mut_ptr().add(1_usize as usize)) == (0.75_f64)));
+        assert!(((*(&mut p).as_mut_ptr().add(2_usize as usize)) == (0.25_f64)));
     }
     {
-        let mut p0: [(); 3] = [0_(), 0_(), 10_()];
+        let mut p0: [f64; 3] = [0_f64, 0_f64, 10_f64];
         let mut d: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut p: Vec<f64> = unimplemented!();
+        assert!(((p.len()) == (3_usize)));
+        assert!(((*(&mut p).as_mut_ptr().add(0_usize as usize)) == (0_f64)));
+        assert!(((*(&mut p).as_mut_ptr().add(1_usize as usize)) == (0_f64)));
+        assert!(((*(&mut p).as_mut_ptr().add(2_usize as usize)) == (1_f64)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

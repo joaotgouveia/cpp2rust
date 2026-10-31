@@ -11,17 +11,17 @@ use std::rc::{Rc, Weak};
 pub struct A {
     #[offset(0)]
     #[byte_size(40)]
-    data_: Box<[()]>,
+    data_: Box<[i32]>,
 }
 impl A {
     pub fn new() -> Self {
         let __this: Value<A> = Rc::new(RefCell::new(Self {
-            data_: (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            data_: (0..10).map(|_| 0_i32).collect::<Box<[i32]>>(),
         }));
         let this: Ptr<A> = __this.as_pointer();
         (*count_0.with(Value::clone).borrow_mut()).prefix_inc();
-        let mut i: () = 0_();
-        'loop_: while (i < 10_()) {
+        let mut i: i32 = 0;
+        'loop_: while (i < 10) {
             array_elem!(this, data_, i).write({ i });
             i.prefix_inc();
         }
@@ -29,7 +29,7 @@ impl A {
     }
     pub fn copy_from(_a0: Ptr<A>) -> Self {
         let __this: A = Self {
-            data_: (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            data_: (0..10).map(|_| 0_i32).collect::<Box<[i32]>>(),
         };
         (*count_0.with(Value::clone).borrow_mut()).prefix_inc();
         __this
@@ -49,10 +49,10 @@ impl Default for A {
     }
 }
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
-pub fn g_1(mut _a0: ()) -> () {
-    return 0_();
+pub fn g_1(mut _a0: i32) -> i32 {
+    return 0;
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -73,65 +73,73 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((count_0.with(|rc| *rc.borrow()) == 1));
+        assert!(!({ (*f.borrow()).target() }).is_null());
+        assert!(({ (*f.borrow()).target() }).is_null());
+        assert!(({ (*f.borrow()).target() }).is_null());
     }
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((count_0.with(|rc| *rc.borrow()) == 0));
+        assert!(!({ (*f.borrow()).target() }).is_null());
+        assert!(({ (*f.borrow()).target() }).is_null());
+        assert!(({ (*f.borrow()).target() }).is_null());
     }
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((count_0.with(|rc| *rc.borrow()) == 1));
+        assert!(!({ (*f.borrow()).target() }).is_null());
+        assert!(({ (*f.borrow()).target() }).is_null());
+        assert!(({ (*f.borrow()).target() }).is_null());
     }
-    unimplemented!();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((count_0.with(|rc| *rc.borrow()) == 0));
+        assert!(!({ (*f.borrow()).target() }).is_null());
+        assert!(({ (*f.borrow()).target() }).is_null());
+        assert!(({ (*f.borrow()).target() }).is_null());
     }
-    unimplemented!();
-    return 0_();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    return 0;
 }
 pub trait AImpl {
     fn destructor(&self);
-    fn operator_call(&self, i: ()) -> ();
-    fn foo(&self, _a0: ()) -> ();
+    fn operator_call(&self, i: i32) -> i32;
+    fn foo(&self, _a0: i32) -> i32;
     fn copy_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
 }
 impl AImpl for Ptr<A> {
     fn destructor(&self) {
         (*count_0.with(Value::clone).borrow_mut()).prefix_dec();
     }
-    fn operator_call(&self, i: ()) -> () {
-        let i: Value<()> = Rc::new(RefCell::new(i));
-        let mut j: () = 0_();
-        'loop_: while (j < 10_()) {
+    fn operator_call(&self, i: i32) -> i32 {
+        let i: Value<i32> = Rc::new(RefCell::new(i));
+        let mut j: i32 = 0;
+        'loop_: while (j < 10) {
             (*i.borrow_mut()) += (array_elem!((*self), data_, j).read());
             j.prefix_inc();
         }
         return (*i.borrow());
     }
-    fn foo(&self, mut _a0: ()) -> () {
-        return 1_();
+    fn foo(&self, mut _a0: i32) -> i32 {
+        return 1;
     }
     fn copy_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
-        unimplemented!();
+        {
+            ((array_field_ptr!((*self), data_)) as Ptr<i32>)
+                .to_any()
+                .memcpy(
+                    &((array_field_ptr!(_a0, data_)) as Ptr<i32>).to_any(),
+                    40_usize as usize,
+                );
+            ((array_field_ptr!((*self), data_)) as Ptr<i32>).to_any()
+        };
         return (*self).clone();
     }
 }

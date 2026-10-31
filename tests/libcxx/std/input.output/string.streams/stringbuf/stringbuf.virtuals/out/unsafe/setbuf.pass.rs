@@ -22,17 +22,41 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (&mut sb as *mut ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"0123456789".as_ptr(),
+                    libcc2rs::c_str_len(c"0123456789".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut sb: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (&mut sb as *mut ())));
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [
+                        48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                        54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                    libcc2rs::c_str_len(
+                        [
+                            48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32,
+                            54 as i32, 55 as i32, 56 as i32, 57 as i32, 0 as i32,
+                        ]
+                        .as_ptr()
+                    ) + 1
+                )
+                .to_vec()
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

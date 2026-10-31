@@ -26,14 +26,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_copy_constructible<path>::value");;
     const _: () = assert!(true, "!std::is_nothrow_copy_constructible<path>::value");;
-    let mut s: () = unimplemented!();
-    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    let s: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"foo").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    }));
+    let p: Value<Vec<i8>> = Rc::new(RefCell::new({
+        let mut __v: Vec<i8> = s
+            .as_pointer()
+            .path_bytes()
+            .into_iter()
+            .map(|__b| __b as i8)
+            .collect();
+        __v.push(0);
+        __v
+    }));
+    let p2: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

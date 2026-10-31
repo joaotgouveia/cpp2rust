@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(88)]
 pub struct A {
     #[offset(0)]
-    pub data: (),
+    pub data: i32,
     #[offset(8)]
     #[byte_size(48)]
     pub m: (),
@@ -42,7 +42,7 @@ impl CppEq for A {
             && !(operator_lt_0(__rhs.clone(), __lhs.clone()))
     }
 }
-pub fn operator_lt_0(L: Ptr<A>, R: Ptr<A>) -> () {
+pub fn operator_lt_0(L: Ptr<A>, R: Ptr<A>) -> bool {
     return ({ L.with(|__s| __s.data) } < { R.with(|__s| __s.data) });
 }
 pub fn main() {
@@ -64,9 +64,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut a: A = <A>::default();
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
@@ -75,8 +75,8 @@ impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
         field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
-        unimplemented!();
-        unimplemented!();
+        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
+        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
         return (*self).clone();
     }
 }

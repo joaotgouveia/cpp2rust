@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let t: () = unimplemented!();
         const _: () = assert!(
@@ -30,8 +30,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             "std::is_same<const int&&, decltype(std::get<0>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(t)))");;
-        let i: *const () = unimplemented!();
-        unimplemented!();
+        let i: *const i32 = (unimplemented!() as *const ()).cast::<i32>();
+        assert!(((*i) == (3)));
     }
     {
         let t: () = unimplemented!();
@@ -45,14 +45,21 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             "std::is_same<const int&&, decltype(std::get<1>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(t)))");;
-        let s: *const () = unimplemented!();
-        let i: *const () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let s: *const Vec<libc::c_char> =
+            (unimplemented!() as *const ()).cast::<Vec<libc::c_char>>();
+        let i: *const i32 = (unimplemented!() as *const ()).cast::<i32>();
+        assert!(
+            (*s) == std::slice::from_raw_parts(
+                c"high".as_ptr(),
+                libcc2rs::c_str_len(c"high".as_ptr()) + 1
+            )
+            .to_vec()
+        );
+        assert!(((*i) == (5)));
     }
     {
-        let mut x: () = 42_();
-        let y: () = 43_();
+        let mut x: i32 = 42;
+        let y: i32 = 43;
         let p: () = unimplemented!();
         const _: () = assert!(
             true,
@@ -66,8 +73,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let mut x: () = 42_();
-        let y: () = 43_();
+        let mut x: i32 = 42;
+        let y: i32 = 43;
         let p: () = unimplemented!();
         const _: () = assert!(
             true,
@@ -85,6 +92,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::get<0>(std::move(t)) == 2.718");;
         const _: () = assert!(true, "std::get<1>(std::move(t)) == 5");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

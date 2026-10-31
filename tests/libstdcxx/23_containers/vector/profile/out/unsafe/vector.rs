@@ -12,13 +12,16 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
-    let mut tmp: () = unimplemented!();
-    let mut j: () = 0_();
-    'loop_: while ((j) < (2000_())) {
-        let mut i: () = 0_();
-        'loop_: while ((i) < (10000_())) {
-            unimplemented!();
+unsafe fn main_0() -> i32 {
+    let mut tmp: Vec<i32> = Vec::new();
+    let mut j: i32 = 0;
+    'loop_: while ((j) < (2000)) {
+        let mut i: i32 = 0;
+        'loop_: while ((i) < (10000)) {
+            {
+                let a0_clone = i.clone();
+                tmp.push(a0_clone)
+            };
             i.postfix_inc();
         }
         j.postfix_inc();

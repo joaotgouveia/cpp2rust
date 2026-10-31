@@ -10,18 +10,19 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct DefaultInt42 {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl Default for DefaultInt42 {
     fn default() -> Self {
-        { DefaultInt42 { value: 42_() } }
+        { DefaultInt42 { value: 42 } }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(1)]
 pub struct Int {}
 impl Int {
-    pub fn new(mut _a0: ()) -> Self {
+    pub fn new(mut _a0: i32) -> Self {
         Self {}
     }
 }
@@ -33,9 +34,9 @@ const _: () = assert!(
     !(false),
     "!std::default_initializable<std::ranges::repeat_view<Int>>"
 );
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((unimplemented!().with(|__s| (__s).value) == 42));
     return true;
 }
 pub fn main() {
@@ -57,9 +58,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -9,10 +9,10 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TriviallyCopyable {
-    pub i_: (),
+    pub i_: i32,
 }
 impl TriviallyCopyable {
-    pub unsafe fn new(mut i: ()) -> Self {
+    pub unsafe fn new(mut i: i32) -> Self {
         let mut this = Self { i_: i };
         this
     }
@@ -38,9 +38,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_0(TriviallyCopyable::new({ 42_() })) });
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    (unsafe { test_0(TriviallyCopyable::new({ 42 })) });
     (unsafe { test_1(unimplemented!()) });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

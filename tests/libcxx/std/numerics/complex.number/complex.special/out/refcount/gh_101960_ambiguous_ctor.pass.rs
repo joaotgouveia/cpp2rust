@@ -6,26 +6,28 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(f32, to_f32_1_float)]
+#[cpp_into(f64, to_f64_1_double)]
 #[byte_size(1)]
 pub struct NastyConvertible {}
 pub fn test_0() {
     let nasty: Value<NastyConvertible> = Rc::new(RefCell::new(<NastyConvertible>::default()));
     let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_f32));
+    assert!((unimplemented!() == 0_f32));
 }
 pub fn test_1() {
     let nasty: Value<NastyConvertible> = Rc::new(RefCell::new(<NastyConvertible>::default()));
     let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_f64));
+    assert!((unimplemented!() == 0_f64));
 }
 pub fn test_2() {
     let nasty: Value<NastyConvertible> = Rc::new(RefCell::new(<NastyConvertible>::default()));
     let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_f64));
+    assert!((unimplemented!() == 0_f64));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -46,26 +48,26 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
-    return 0_();
+    return 0;
 }
 pub trait NastyConvertibleImpl {
-    fn to__1_float(&self) -> ();
-    fn to__1_double(&self) -> ();
-    fn to__1_long_double(&self) -> ();
+    fn to_f32_1_float(&self) -> f32;
+    fn to_f64_1_double(&self) -> f64;
+    fn to_f64_1_long_double(&self) -> f64;
 }
 impl NastyConvertibleImpl for Ptr<NastyConvertible> {
-    fn to__1_float(&self) -> () {
-        return 0_();
+    fn to_f32_1_float(&self) -> f32 {
+        return 0_f32;
     }
-    fn to__1_double(&self) -> () {
-        return 0_();
+    fn to_f64_1_double(&self) -> f64 {
+        return 0_f64;
     }
-    fn to__1_long_double(&self) -> () {
-        return 0_();
+    fn to_f64_1_long_double(&self) -> f64 {
+        return 0_f64;
     }
 }
 pub fn __cpp2rust_init_globals() {}

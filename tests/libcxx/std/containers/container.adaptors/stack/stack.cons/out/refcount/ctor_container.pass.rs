@@ -6,20 +6,20 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_convertible_imp_0(mut _a0: ()) -> () {
+pub fn test_convertible_imp_0(mut _a0: i64) -> bool {
     return false;
 }
-pub fn test_convertible_1() -> () {
-    return ({ test_convertible_imp_0(0_()) });
+pub fn test_convertible_1() -> bool {
+    return ({ test_convertible_imp_0(0_i64) });
 }
-pub fn make_2(mut n: ()) -> () {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
+pub fn make_2(mut n: i32) -> Vec<i32> {
+    let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+    let mut i: i32 = 0;
     'loop_: while (i < n) {
-        unimplemented!();
+        (*c.borrow_mut()).push(i);
         i.prefix_inc();
     }
-    return unimplemented!();
+    return std::mem::take(&mut (*c.borrow_mut()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -40,17 +40,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let d: Value<()> = Rc::new(RefCell::new(({ make_2(5_()) })));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let d: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_2(5) })));
     let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut i: () = 0_();
+    assert!((unimplemented!() == 5_()));
+    let mut i: usize = 0_usize;
     'loop_: while (i < unimplemented!()) {
-        unimplemented!();
+        assert!(((unimplemented!().read()) == (unimplemented!().read())));
         unimplemented!();
         i.prefix_inc();
     }
     const _: () = assert!(true, "!test_convertible<Q, const Container&>()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

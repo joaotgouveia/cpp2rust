@@ -22,25 +22,183 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut what_arg: () = unimplemented!();
+        let mut what_arg: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"test message".as_ptr(),
+            libcc2rs::c_str_len(c"test message".as_ptr()) + 1,
+        )
+        .to_vec();
         let mut se: () = unimplemented!();
-        unimplemented!();
-        let mut what_message: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        let mut what_message: Vec<libc::c_char> =
+            std::slice::from_raw_parts(unimplemented!(), libcc2rs::c_str_len(unimplemented!()) + 1)
+                .to_vec();
+        assert!(((unimplemented!()) != (usize::MAX)));
+        assert!(
+            (({
+                let __hay = &what_message[..what_message.len() - 1];
+                let __needle = ::std::slice::from_raw_parts(
+                    what_arg.as_ptr(),
+                    libcc2rs::c_str_len(what_arg.as_ptr()),
+                );
+                (0_usize..=__hay.len().saturating_sub(__needle.len()))
+                    .find(|&__i| __hay[__i..].starts_with(__needle))
+                    .unwrap_or(usize::MAX)
+            }) != (usize::MAX))
+        );
+        assert!(
+            (({
+                let __hay = &what_message[..what_message.len() - 1];
+                let __needle = ::std::slice::from_raw_parts(
+                    c"Not a directory".as_ptr(),
+                    libcc2rs::c_str_len(c"Not a directory".as_ptr()),
+                );
+                (0_usize..=__hay.len().saturating_sub(__needle.len()))
+                    .find(|&__i| __hay[__i..].starts_with(__needle))
+                    .unwrap_or(usize::MAX)
+            }) != (usize::MAX))
+        );
     }
     {
-        let mut what_arg: () = unimplemented!();
+        let mut what_arg: Vec<libc::c_char> = std::slice::from_raw_parts(
+            (&[
+                (116 as libc::c_char),
+                (101 as libc::c_char),
+                (115 as libc::c_char),
+                (116 as libc::c_char),
+                (32 as libc::c_char),
+                (76 as libc::c_char),
+                (87 as libc::c_char),
+                (71 as libc::c_char),
+                (51 as libc::c_char),
+                (49 as libc::c_char),
+                (49 as libc::c_char),
+                (50 as libc::c_char),
+                (32 as libc::c_char),
+                (119 as libc::c_char),
+                (105 as libc::c_char),
+                (116 as libc::c_char),
+                (104 as libc::c_char),
+                (32 as libc::c_char),
+                (97 as libc::c_char),
+                (110 as libc::c_char),
+                (100 as libc::c_char),
+                (32 as libc::c_char),
+                (87 as libc::c_char),
+                (105 as libc::c_char),
+                (116 as libc::c_char),
+                (104 as libc::c_char),
+                (32 as libc::c_char),
+                (101 as libc::c_char),
+                (109 as libc::c_char),
+                (98 as libc::c_char),
+                (101 as libc::c_char),
+                (100 as libc::c_char),
+                (100 as libc::c_char),
+                (101 as libc::c_char),
+                (100 as libc::c_char),
+                (32 as libc::c_char),
+                (0 as libc::c_char),
+                (32 as libc::c_char),
+                (99 as libc::c_char),
+                (104 as libc::c_char),
+                (97 as libc::c_char),
+                (114 as libc::c_char),
+                (97 as libc::c_char),
+                (99 as libc::c_char),
+                (116 as libc::c_char),
+                (101 as libc::c_char),
+                (114 as libc::c_char),
+                (0 as libc::c_char),
+            ])
+                .as_ptr(),
+            libcc2rs::c_str_len(
+                (&[
+                    (116 as libc::c_char),
+                    (101 as libc::c_char),
+                    (115 as libc::c_char),
+                    (116 as libc::c_char),
+                    (32 as libc::c_char),
+                    (76 as libc::c_char),
+                    (87 as libc::c_char),
+                    (71 as libc::c_char),
+                    (51 as libc::c_char),
+                    (49 as libc::c_char),
+                    (49 as libc::c_char),
+                    (50 as libc::c_char),
+                    (32 as libc::c_char),
+                    (119 as libc::c_char),
+                    (105 as libc::c_char),
+                    (116 as libc::c_char),
+                    (104 as libc::c_char),
+                    (32 as libc::c_char),
+                    (97 as libc::c_char),
+                    (110 as libc::c_char),
+                    (100 as libc::c_char),
+                    (32 as libc::c_char),
+                    (87 as libc::c_char),
+                    (105 as libc::c_char),
+                    (116 as libc::c_char),
+                    (104 as libc::c_char),
+                    (32 as libc::c_char),
+                    (101 as libc::c_char),
+                    (109 as libc::c_char),
+                    (98 as libc::c_char),
+                    (101 as libc::c_char),
+                    (100 as libc::c_char),
+                    (100 as libc::c_char),
+                    (101 as libc::c_char),
+                    (100 as libc::c_char),
+                    (32 as libc::c_char),
+                    (0 as libc::c_char),
+                    (32 as libc::c_char),
+                    (99 as libc::c_char),
+                    (104 as libc::c_char),
+                    (97 as libc::c_char),
+                    (114 as libc::c_char),
+                    (97 as libc::c_char),
+                    (99 as libc::c_char),
+                    (116 as libc::c_char),
+                    (101 as libc::c_char),
+                    (114 as libc::c_char),
+                    (0 as libc::c_char),
+                ])
+                    .as_ptr(),
+            ) + 1,
+        )
+        .to_vec();
         let mut se: () = unimplemented!();
-        unimplemented!();
-        let mut what_message: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        let mut what_message: Vec<libc::c_char> =
+            std::slice::from_raw_parts(unimplemented!(), libcc2rs::c_str_len(unimplemented!()) + 1)
+                .to_vec();
+        assert!(((unimplemented!()) != (usize::MAX)));
+        assert!(
+            (({
+                let __hay = &what_message[..what_message.len() - 1];
+                let __needle = ::std::slice::from_raw_parts(
+                    what_arg.as_ptr(),
+                    libcc2rs::c_str_len(what_arg.as_ptr()),
+                );
+                (0_usize..=__hay.len().saturating_sub(__needle.len()))
+                    .find(|&__i| __hay[__i..].starts_with(__needle))
+                    .unwrap_or(usize::MAX)
+            }) != (usize::MAX))
+        );
+        assert!(
+            (({
+                let __hay = &what_message[..what_message.len() - 1];
+                let __needle = ::std::slice::from_raw_parts(
+                    c"Not a directory".as_ptr(),
+                    libcc2rs::c_str_len(c"Not a directory".as_ptr()),
+                );
+                (0_usize..=__hay.len().saturating_sub(__needle.len()))
+                    .find(|&__i| __hay[__i..].starts_with(__needle))
+                    .unwrap_or(usize::MAX)
+            }) != (usize::MAX))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

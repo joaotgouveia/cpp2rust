@@ -9,11 +9,11 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct value_type {
-    pub i: (),
+    pub i: i32,
 }
 impl value_type {
-    pub unsafe fn operator_addr(&mut self) -> () {
-        return unimplemented!();
+    pub unsafe fn operator_addr(&mut self) -> *mut ::libc::c_void {
+        return std::ptr::null_mut();
     }
 }
 pub fn main() {
@@ -22,7 +22,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let o: () = unimplemented!();
     const _: () = assert!(true, "o->i == 51");;
     const _: () = assert!(true, "o->i == (*o).i");;

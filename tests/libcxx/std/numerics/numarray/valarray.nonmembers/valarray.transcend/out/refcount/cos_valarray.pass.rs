@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn is_about_0(mut x: (), mut y: (), mut significant_digits: ()) -> () {
-    let mut epsilon: () = unimplemented!();
+pub fn is_about_0(mut x: f64, mut y: f64, mut significant_digits: i32) -> bool {
+    let mut epsilon: f64 = unimplemented!();
     return (unimplemented!() < epsilon);
 }
 pub fn main() {
@@ -29,29 +29,36 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        let a1: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([
             -0.9_f64, -0.5_f64, 0_f64, 0.5_f64, 0.75_f64,
         ])));
-        let mut a3: [(); 5] = [
+        let mut a3: [f64; 5] = [
             0.6216099682706645_f64,
             0.8775825618903728_f64,
             1_f64,
             0.8775825618903728_f64,
             0.7316888688738209_f64,
         ];
-        let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let mut N: u32 = (((::std::mem::size_of::<[f64; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<f64>() as usize)))
+            as u32);
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!((unimplemented!() == unimplemented!()));
+        let mut i: usize = 0_usize;
         'loop_: while (i < unimplemented!()) {
-            unimplemented!();
+            assert!(
+                ({
+                    let _x: f64 = (unimplemented!().read());
+                    let _y: f64 = a3[(i) as usize];
+                    is_about_0(_x, _y, 10)
+                })
+            );
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

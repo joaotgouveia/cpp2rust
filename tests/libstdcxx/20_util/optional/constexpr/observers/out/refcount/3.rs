@@ -10,13 +10,13 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct value_type {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let o: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "o.value().i == 51");;
     const _: () = assert!(true, "o.value().i == (*o).i");;

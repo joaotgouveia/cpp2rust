@@ -6,17 +6,17 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
-    let mut vec_: () = unimplemented!();
+pub fn test_0() -> bool {
+    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_convertible<Ref, bool>::value");;
     unimplemented!();
     unimplemented!();
-    let true_ref: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let false_ref: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut b: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut true_ref: Ptr<bool> = vec_.decay().offset(0_usize as isize);
+    let mut false_ref: Ptr<bool> = vec_.decay().offset(1_usize as isize);
+    let mut b: bool = true_ref.read();
+    assert!(b);
+    assert!(true_ref.read());
+    assert!(!(false_ref.read()));
     return true;
 }
 pub fn main() {
@@ -38,9 +38,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

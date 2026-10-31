@@ -322,10 +322,11 @@ pub unsafe fn test_is_not_default_constructible_23() {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Empty {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct NoDefaultConstructor {}
 impl NoDefaultConstructor {
-    unsafe fn new(mut _a0: ()) -> Self {
+    unsafe fn new(mut _a0: i32) -> Self {
         let mut this = Self {};
         this
     }
@@ -346,7 +347,7 @@ impl Default for Union {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct bit_zero {
-    pub anon_24: (),
+    pub anon_24: i32,
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -371,7 +372,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_is_default_constructible_0() });
     (unsafe { test_is_default_constructible_1() });
     (unsafe { test_is_default_constructible_2() });
@@ -396,6 +397,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_is_not_default_constructible_21() });
     (unsafe { test_is_not_default_constructible_22() });
     (unsafe { test_is_not_default_constructible_23() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

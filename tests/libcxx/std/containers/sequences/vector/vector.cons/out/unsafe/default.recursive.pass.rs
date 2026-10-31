@@ -9,17 +9,17 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct X {
-    pub q: (),
+    pub q: Vec<X>,
 }
 impl X {
     pub unsafe fn move_from(_a0: *mut X) -> Self {
         let mut this = Self {
-            q: unimplemented!(),
+            q: std::mem::take(&mut (*_a0).q),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut X) -> *mut X {
-        unimplemented!();
+        self.q = std::mem::take(&mut (*_a0).q);
         return &mut (*(self as *mut X));
     }
 }
@@ -38,7 +38,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    return 0_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

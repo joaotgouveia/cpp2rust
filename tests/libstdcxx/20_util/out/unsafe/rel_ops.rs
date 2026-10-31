@@ -7,14 +7,17 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test01_0() {
-    let mut v: () = unimplemented!();
-    let mut vi: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    !(unimplemented!());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut v: Vec<i32> = Vec::new();
+    let mut vi: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
+    {
+        let __a1 = 1;
+        v.push(__a1)
+    };
+    vi = v.end();
+    vi != v.begin();
+    vi > v.begin();
+    vi <= v.begin();
+    vi >= v.begin();
 }
 pub fn main() {
     unsafe {
@@ -22,8 +25,8 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test01_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -26,21 +26,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<(Value<Option<Value<i32>>>, Value<i16>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(Ptr::alloc(3).to_owned_opt())),
+            Rc::new(RefCell::new(4_i16)),
+        )));
         const _: () = assert!(
             true,
             "std::is_same<const std::unique_ptr<int>&&, decltype(std::get<0>(std::move(p)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(p)))");;
-        let ptr: Ptr<()> = unimplemented!();
-        unimplemented!();
+        let ptr: Ptr<Option<Value<i32>>> =
+            <(Value<Option<Value<i32>>>, Value<i16>) as PairGetRef<0>>::pair_get(&(*p.borrow()));
+        assert!((((*ptr.upgrade().deref()).as_pointer().read()) == 3));
     }
     {
-        let mut x: () = 42_();
-        let mut y: () = 43_();
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut x: i32 = 42;
+        let mut y: i32 = 43;
+        let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<0>(std::move(p)))>::value"
@@ -53,9 +57,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let mut x: () = 42_();
-        let mut y: () = 43_();
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let x: Value<i32> = Rc::new(RefCell::new(42));
+        let y: Value<i32> = Rc::new(RefCell::new(43));
+        let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new((*x.borrow()))),
+            Rc::new(RefCell::new((*y.borrow()))),
+        )));
         const _: () = assert!(
             true,
             "std::is_same<int&&, decltype(std::get<0>(std::move(p)))>::value"
@@ -68,10 +75,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(3)),
+            Rc::new(RefCell::new(4_i16)),
+        )));
         const _: () = assert!(true, "std::get<0>(std::move(p1)) == 3");;
         const _: () = assert!(true, "std::get<1>(std::move(p1)) == 4");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

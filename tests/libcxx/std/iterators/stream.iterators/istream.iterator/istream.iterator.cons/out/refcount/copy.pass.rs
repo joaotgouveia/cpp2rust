@@ -6,9 +6,9 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_constexpr_0() -> () {
+pub fn test_constexpr_0() -> bool {
     let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
     return true;
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
@@ -53,11 +53,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
+        assert!(unimplemented!());
         const _: () = assert!(
             true,
             "std::is_nothrow_copy_constructible<std::istream_iterator<int>>::value"
@@ -65,8 +65,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
+        assert!(unimplemented!());
         const _: () = assert!(
             true,
             "!std::is_nothrow_copy_constructible<std::istream_iterator<throwing_copy_constructor>>::value"
@@ -75,14 +75,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut j: () = 0_();
+        let i: Value<()> = Rc::new(RefCell::new((*io.borrow()).try_clone().unwrap()));
+        assert!((*i.borrow()) != unimplemented!());
+        let mut j: i32 = 0;
         j = (unimplemented!().read());
-        unimplemented!();
+        assert!((j == 1));
     }
     const _: () = assert!(true, "test_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub trait throwing_copy_constructorImpl {
     fn copy_assign(&self, _a0: Ptr<throwing_copy_constructor>) -> Ptr<throwing_copy_constructor>;

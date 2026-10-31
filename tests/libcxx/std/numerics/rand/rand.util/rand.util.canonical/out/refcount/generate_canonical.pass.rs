@@ -6,16 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn truncate_fp_0(mut val: ()) -> () {
-    let mut sink: () = val;
+pub fn truncate_fp_0(mut val: f64) -> f64 {
+    let mut sink: f64 = val;
     return sink;
 }
-pub fn truncate_fp_1(mut val: ()) -> () {
-    let mut sink: () = val;
+pub fn truncate_fp_1(mut val: f64) -> f64 {
+    let mut sink: f64 = val;
     return sink;
 }
-pub fn truncate_fp_2(mut val: ()) -> () {
-    let mut sink: () = val;
+pub fn truncate_fp_2(mut val: f32) -> f32 {
+    let mut sink: f32 = val;
     return sink;
 }
 pub fn main() {
@@ -37,57 +37,168 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f32 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_2(
+                    ((((16807_()).wrapping_sub((unimplemented!() as ()))) as f32)
+                        / ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f32)
+                            + 1_f32)),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f32 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_2(
+                    ((((16807_()).wrapping_sub((unimplemented!() as ()))) as f32)
+                        / ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f32)
+                            + 1_f32)),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f32 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_2(
+                    ((((16807_()).wrapping_sub((unimplemented!() as ()))) as f32)
+                        / ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f32)
+                            + 1_f32)),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f32 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_2(
+                    ((((16807_()).wrapping_sub((unimplemented!() as ()))) as f32)
+                        / ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f32)
+                            + 1_f32)),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f32 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_2(
+                    ((((16807_()).wrapping_sub((unimplemented!() as ()))) as f32)
+                        / ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f32)
+                            + 1_f32)),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f64 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_1(
+                    ((((16807_()).wrapping_sub((unimplemented!() as ()))) as f64)
+                        / ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f64)
+                            + 1_f64)),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f64 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_1(
+                    ((((16807_()).wrapping_sub((unimplemented!() as ()))) as f64)
+                        / ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f64)
+                            + 1_f64)),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f64 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_1(
+                    (((((16807_()).wrapping_sub((unimplemented!() as ()))) as f64)
+                        + ((((282475249_()).wrapping_sub((unimplemented!() as ()))) as f64)
+                            * ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                                as f64)
+                                + 1_f64)))
+                        / (((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f64)
+                            + 1_f64)
+                            * ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                                as f64)
+                                + 1_f64))),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f64 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_1(
+                    (((((16807_()).wrapping_sub((unimplemented!() as ()))) as f64)
+                        + ((((282475249_()).wrapping_sub((unimplemented!() as ()))) as f64)
+                            * ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                                as f64)
+                                + 1_f64)))
+                        / (((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f64)
+                            + 1_f64)
+                            * ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                                as f64)
+                                + 1_f64))),
+                )
+            }))
+        );
     }
     {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut f: () = unimplemented!();
-        unimplemented!();
+        let mut f: f64 = unimplemented!();
+        assert!(
+            (f == ({
+                truncate_fp_1(
+                    (((((16807_()).wrapping_sub((unimplemented!() as ()))) as f64)
+                        + ((((282475249_()).wrapping_sub((unimplemented!() as ()))) as f64)
+                            * ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                                as f64)
+                                + 1_f64)))
+                        / (((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                            as f64)
+                            + 1_f64)
+                            * ((((unimplemented!() as ()).wrapping_sub((unimplemented!() as ())))
+                                as f64)
+                                + 1_f64))),
+                )
+            }))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

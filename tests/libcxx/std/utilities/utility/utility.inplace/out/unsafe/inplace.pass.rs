@@ -6,25 +6,25 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn check_tag_0(mut _a0: ()) -> () {
+pub unsafe fn check_tag_0(mut _a0: ()) -> bool {
     return (unimplemented!()) && (unimplemented!());
 }
-pub unsafe fn check_tag_1(mut _a0: ()) -> () {
+pub unsafe fn check_tag_1(mut _a0: ()) -> bool {
     return (unimplemented!()) && (unimplemented!());
 }
-pub unsafe fn check_tag_2(mut _a0: ()) -> () {
+pub unsafe fn check_tag_2(mut _a0: ()) -> bool {
     return (unimplemented!()) && (unimplemented!());
 }
-pub unsafe fn check_tag_3(mut _a0: ()) -> () {
+pub unsafe fn check_tag_3(mut _a0: ()) -> bool {
     return (unimplemented!()) && (unimplemented!());
 }
-pub unsafe fn check_tag_4(mut _a0: ()) -> () {
+pub unsafe fn check_tag_4(mut _a0: ()) -> bool {
     return (unimplemented!()) && (unimplemented!());
 }
-pub unsafe fn check_tag_5(mut _a0: ()) -> () {
+pub unsafe fn check_tag_5(mut _a0: ()) -> bool {
     return (unimplemented!()) && (unimplemented!());
 }
-pub unsafe fn check_tag_6(mut _a0: ()) -> () {
+pub unsafe fn check_tag_6(mut _a0: ()) -> bool {
     return (unimplemented!()) && (unimplemented!());
 }
 pub fn main() {
@@ -42,7 +42,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         const _: () = assert!(true, "check_tag<T>(std::in_place)");;
     }
@@ -69,6 +69,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             "check_tag<T3>(std::in_place_index<static_cast<std::size_t>(-1)>)"
         );;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

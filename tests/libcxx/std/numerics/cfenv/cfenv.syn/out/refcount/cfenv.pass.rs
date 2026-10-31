@@ -26,7 +26,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let fenv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let fex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (&(*fenv.borrow_mut()));
@@ -75,6 +75,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "(std::is_same<decltype(std::feupdateenv(&fenv)), int>::value)"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

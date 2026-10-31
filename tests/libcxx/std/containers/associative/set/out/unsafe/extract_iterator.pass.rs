@@ -10,40 +10,43 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_3)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_0: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_1: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_2: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_3: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut i32,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_4(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
+pub unsafe fn operator_eq_4(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
     return true;
 }
 #[repr(C)]
@@ -59,12 +62,13 @@ impl std::cmp::Eq for min_allocator_int_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Counter_base {}
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, DestructorUnsafe, Default)]
+#[derive(VaArg, FnPtrArg, CppFromUnsafe, DestructorUnsafe, Default)]
+#[cpp_from(i32, new_1, ptr)]
 pub struct Counter_int_ {
-    data_: (),
+    data_: i32,
 }
 impl Counter_int_ {
-    pub unsafe fn new_1(data: *const ()) -> Self {
+    pub unsafe fn new_1(data: *const i32) -> Self {
         let mut this = Self { data_: (*data) };
         (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_5)).prefix_inc();
         this
@@ -79,10 +83,10 @@ impl Counter_int_ {
     pub unsafe fn destructor(&mut self) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_5)).prefix_dec();
     }
-    pub unsafe fn operator_eq(&self, x: *const Counter_int_) -> () {
+    pub unsafe fn operator_eq(&self, x: *const Counter_int_) -> bool {
         return ((self.data_) == ((*x).data_));
     }
-    pub unsafe fn operator_lt(&self, x: *const Counter_int_) -> () {
+    pub unsafe fn operator_lt(&self, x: *const Counter_int_) -> bool {
         return ((self.data_) < ((*x).data_));
     }
 }
@@ -115,59 +119,63 @@ impl Clone for Counter_int_ {
         unsafe { Counter_int_::copy_from(self as *const Counter_int_) }
     }
 }
-pub static mut gConstructed_5: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut gConstructed_5: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 pub unsafe fn test_6(c: *mut ()) {
-    let mut sz: () = unimplemented!();
+    let mut sz: usize = (unimplemented!() as usize);
     let mut first: () = unimplemented!();
-    'loop_: while !(unimplemented!()) {
-        let mut key_value: () = (*unimplemented!());
+    'loop_: while first != unimplemented!() {
+        let mut key_value: i32 = (*first.iter_deref());
         let mut t: () = unimplemented!();
         sz.prefix_dec();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (key_value)));
+        assert!(unimplemented!());
+        assert!(((sz) == (unimplemented!() as usize)));
     }
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_())));
 }
 pub unsafe fn test_7(c: *mut ()) {
-    let mut sz: () = unimplemented!();
+    let mut sz: usize = (unimplemented!() as usize);
     let mut first: () = unimplemented!();
-    'loop_: while !(unimplemented!()) {
-        let mut key_value: Counter_int_ = Counter_int_::copy_from({ &(*unimplemented!()) });
+    'loop_: while first != unimplemented!() {
+        let mut key_value: Counter_int_ = Counter_int_::copy_from({ &(*first.iter_deref()) });
         let _dtor_key_value =
             ScopedDestructorUnsafe::new(&raw mut key_value, Counter_int_::destructor);
         let mut t: () = unimplemented!();
         sz.prefix_dec();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unsafe { Counter_int_::operator_eq(&(*unimplemented!()), &key_value,) }));
+        assert!(unimplemented!());
+        assert!(((sz) == (unimplemented!() as usize)));
     }
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_())));
 }
 pub unsafe fn test_8(c: *mut ()) {
-    let mut sz: () = unimplemented!();
+    let mut sz: usize = (unimplemented!() as usize);
     let mut first: () = unimplemented!();
-    'loop_: while !(unimplemented!()) {
-        let mut key_value: () = (*unimplemented!());
+    'loop_: while first != unimplemented!() {
+        let mut key_value: i32 = (*first.iter_deref());
         let mut t: () = unimplemented!();
         sz.prefix_dec();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (key_value)));
+        assert!(
+            (unsafe {
+                let _arg0: min_allocator_int_ = unimplemented!();
+                operator_eq_4(_arg0, unimplemented!())
+            })
+        );
+        assert!(((sz) == (unimplemented!() as usize)));
     }
-    unimplemented!();
+    assert!(((unimplemented!()) == (0_())));
 }
-pub unsafe fn test_9() -> () {
+pub unsafe fn test_9() -> bool {
     {
         let mut m: () = unimplemented!();
         (unsafe { test_6(&mut m) });
     }
     {
         let mut m: () = unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_5)) == (6)));
         (unsafe { test_7(&mut m) });
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut gConstructed_5)) == (0)));
     }
     {
         let mut m: () = unimplemented!();
@@ -190,9 +198,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_9() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);

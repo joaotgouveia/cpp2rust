@@ -7,16 +7,17 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 impl Key {
-    pub unsafe fn new(_a0: *const ()) -> Self {
+    pub unsafe fn new(_a0: *const i32) -> Self {
         let mut this = Self {};
         this
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, ptr)]
 pub struct Key {}
 impl Key {
-    pub unsafe fn operator_lt(&self, _a0: *const Key) -> () {
+    pub unsafe fn operator_lt(&self, _a0: *const Key) -> bool {
         return false;
     }
 }
@@ -47,24 +48,44 @@ impl std::cmp::PartialEq for Key {
     }
 }
 impl std::cmp::Eq for Key {}
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     {
-        let mut m_empty: () = unimplemented!();
-        let mut m_contains: () = unimplemented!();
-        (*unimplemented!()) = 42_();
-        let mut it: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut m_empty: UnsafeMap<Key, (Key, i32)> = UnsafeMap::new();
+        let mut m_contains: UnsafeMap<Key, (Key, i32)> = UnsafeMap::new();
+        (*m_contains.subscript_move(
+            &mut {
+                let mut __tmp_0: i32 = 0;
+                Key::new({ &mut __tmp_0 })
+            },
+            |__k| cpp_move_unsafe!(__k),
+        )) = 42;
+        let mut it: UnsafeBidirectionalIterator<(Key, i32)> = m_empty.find(&{
+            let mut __tmp_1: i32 = 0;
+            Key::new({ &mut __tmp_1 })
+        });
+        assert!(it == m_empty.end());
+        it = m_contains.find(&{
+            let mut __tmp_2: i32 = 0;
+            Key::new({ &mut __tmp_2 })
+        });
+        assert!(it != m_contains.end());
     }
     {
-        let mut map: () = unimplemented!();
-        let mut result: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut result2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut map: UnsafeMap<Key, (Key, i32)> = UnsafeMap::new();
+        let mut result: (UnsafeBidirectionalIterator<(Key, i32)>, bool) = unimplemented!();
+        assert!((result.1 as bool));
+        assert!((((*result.0.iter_deref()).1) == (42)));
+        let mut result2: (UnsafeBidirectionalIterator<(Key, i32)>, bool) = unimplemented!();
+        assert!(!(result2.1));
+        assert!(
+            ((*map.subscript_move(
+                &mut {
+                    let mut __tmp_3: i32 = 0;
+                    Key::new({ &mut __tmp_3 })
+                },
+                |__k| cpp_move_unsafe!(__k)
+            )) == (42))
+        );
     }
     return true;
 }
@@ -83,8 +104,8 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -26,7 +26,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test01_0() });
     ({ test02_1() });
     0

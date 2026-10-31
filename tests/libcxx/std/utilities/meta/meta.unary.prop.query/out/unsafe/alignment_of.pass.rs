@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_alignment_of_0() {
-    let AlignofResult: () = ::std::mem::align_of::<*mut ()>();
+    let AlignofResult: u32 = (::std::mem::align_of::<*mut i32>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -20,7 +20,7 @@ pub unsafe fn test_alignment_of_0() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub unsafe fn test_alignment_of_1() {
-    let AlignofResult: () = ::std::mem::align_of::<Class>();
+    let AlignofResult: u32 = (::std::mem::align_of::<Class>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -33,7 +33,7 @@ pub unsafe fn test_alignment_of_1() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub unsafe fn test_alignment_of_2() {
-    let AlignofResult: () = ::std::mem::align_of::<*mut ()>();
+    let AlignofResult: u32 = (::std::mem::align_of::<*mut i32>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -46,7 +46,7 @@ pub unsafe fn test_alignment_of_2() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub unsafe fn test_alignment_of_3() {
-    let AlignofResult: () = ::std::mem::align_of::<*const ()>();
+    let AlignofResult: u32 = (::std::mem::align_of::<*const i32>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -59,7 +59,7 @@ pub unsafe fn test_alignment_of_3() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub unsafe fn test_alignment_of_4() {
-    let AlignofResult: () = ::std::mem::align_of::<[(); 3]>();
+    let AlignofResult: u32 = (::std::mem::align_of::<[libc::c_char; 3]>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -72,7 +72,7 @@ pub unsafe fn test_alignment_of_4() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub unsafe fn test_alignment_of_5() {
-    let AlignofResult: () = ::std::mem::align_of::<()>();
+    let AlignofResult: u32 = (::std::mem::align_of::<i32>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -85,7 +85,7 @@ pub unsafe fn test_alignment_of_5() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub unsafe fn test_alignment_of_6() {
-    let AlignofResult: () = ::std::mem::align_of::<()>();
+    let AlignofResult: u32 = (::std::mem::align_of::<f64>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -98,7 +98,7 @@ pub unsafe fn test_alignment_of_6() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub unsafe fn test_alignment_of_7() {
-    let AlignofResult: () = ::std::mem::align_of::<()>();
+    let AlignofResult: u32 = (::std::mem::align_of::<bool>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -111,7 +111,7 @@ pub unsafe fn test_alignment_of_7() {
     const _: () = assert!(true, "std::alignment_of_v<const volatile T> == A");;
 }
 pub unsafe fn test_alignment_of_8() {
-    let AlignofResult: () = ::std::mem::align_of::<()>();
+    let AlignofResult: u32 = (::std::mem::align_of::<u32>() as u32);
     const _: () = assert!(true, "AlignofResult == A");;
     const _: () = assert!(true, "std::alignment_of<T>::value == AlignofResult");;
     const _: () = assert!(true, "std::alignment_of<T>::value == A");;
@@ -141,7 +141,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_alignment_of_0() });
     (unsafe { test_alignment_of_1() });
     (unsafe { test_alignment_of_2() });
@@ -151,6 +151,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_alignment_of_6() });
     (unsafe { test_alignment_of_7() });
     (unsafe { test_alignment_of_8() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

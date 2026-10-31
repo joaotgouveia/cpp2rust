@@ -6,17 +6,17 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     {
         {
-            let mut x: () = 91_();
-            let mut y: () = 92_();
-            let mut a: () = unimplemented!();
-            let p: () = unimplemented!();
-            let result: *const () = &(*unimplemented!());
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let mut x: i32 = 91;
+            let mut y: i32 = 92;
+            let mut a: Vec<i32> = Vec::from([1, 2]);
+            let p: (*mut i32, *mut i32) = unimplemented!();
+            let result: *const (*mut i32, *mut i32) = &(*unimplemented!());
+            assert!(((result) == (&p as *const (*mut i32, *mut i32))));
+            assert!(((x) == (1)));
+            assert!(((y) == (2)));
             const _: () = assert!(
                 true,
                 "!std::is_assignable_v<std::pair<int&, int&> const&, std::array<int, 1>>"
@@ -31,14 +31,14 @@ pub unsafe fn test_0() -> () {
             );;
         }
         {
-            let mut x: () = 91_();
-            let mut y: () = 92_();
+            let mut x: i32 = 91;
+            let mut y: i32 = 92;
             let mut a: () = unimplemented!();
-            let p: () = unimplemented!();
-            let result: *const () = &(*unimplemented!());
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let p: (*mut i32, *mut i32) = unimplemented!();
+            let result: *const (*mut i32, *mut i32) = &(*unimplemented!());
+            assert!(((result) == (&p as *const (*mut i32, *mut i32))));
+            assert!(((x) == (1)));
+            assert!(((y) == (2)));
             const _: () = assert!(
                 true,
                 "!std::is_assignable_v<std::pair<int&, int&> const&, std::tuple<int>>"
@@ -53,22 +53,22 @@ pub unsafe fn test_0() -> () {
             );;
         }
         {
-            let mut data: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
+            let mut data: [i32; 5] = [1, 2, 3, 4, 5];
             let mut a: () = unimplemented!();
-            let p: () = unimplemented!();
-            let result: *const () = &(*unimplemented!());
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let p: (ConstAssignable_1, ConstAssignable_1) = unimplemented!();
+            let result: *const (ConstAssignable_1, ConstAssignable_1) = &(*unimplemented!());
+            assert!(((result) == (&p as *const (ConstAssignable_1, ConstAssignable_1))));
+            assert!(((p.0.ptr) == (data.as_mut_ptr())));
+            assert!(((p.1.ptr) == (data.as_mut_ptr().offset((5) as isize))));
         }
     }
     {
         let mut a: () = unimplemented!();
-        let p: () = unimplemented!();
-        let result: *const () = &(*unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let p: (ConstAssignable_2, ConstAssignable_2) = unimplemented!();
+        let result: *const (ConstAssignable_2, ConstAssignable_2) = &(*unimplemented!());
+        assert!(((result) == (&p as *const (ConstAssignable_2, ConstAssignable_2))));
+        assert!(((p.0.val) == (1)));
+        assert!(((p.1.val) == (2)));
         const _: () = assert!(
             true,
             "!std::is_assignable_v<std::pair<ConstAssignable, ConstAssignable> const&, std::tuple<void*, int>>"
@@ -84,18 +84,19 @@ pub unsafe fn test_0() -> () {
     }
     {
         let mut a: () = unimplemented!();
-        let p: () = unimplemented!();
+        let p: (NoCopy_3, NoCopy_3) = unimplemented!();
         unimplemented!();
     }
     return true;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(*mut i32 , new_1, value)]
 pub struct ConstAssignable_1 {
-    pub ptr: *mut (),
+    pub ptr: *mut i32,
 }
 impl ConstAssignable_1 {
-    pub unsafe fn new_1(mut p: *mut ()) -> Self {
+    pub unsafe fn new_1(mut p: *mut i32) -> Self {
         let mut this = Self { ptr: p };
         this
     }
@@ -119,17 +120,17 @@ impl Default for ConstAssignable_1 {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct ConstAssignable_2 {
-    pub val: (),
+    pub val: i32,
 }
 impl ConstAssignable_2 {
-    pub unsafe fn operator_assign_2(&self, mut v: ()) -> *const ConstAssignable_2 {
+    pub unsafe fn operator_assign_2(&self, mut v: i32) -> *const ConstAssignable_2 {
         (*(&raw const self.val).cast_mut()) = v;
         return &(*(self as *const ConstAssignable_2));
     }
 }
 impl Default for ConstAssignable_2 {
     fn default() -> Self {
-        unsafe { ConstAssignable_2 { val: 0_() } }
+        unsafe { ConstAssignable_2 { val: 0 } }
     }
 }
 #[repr(C)]
@@ -159,9 +160,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

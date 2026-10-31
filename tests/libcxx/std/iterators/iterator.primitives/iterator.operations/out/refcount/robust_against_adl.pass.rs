@@ -6,7 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(i32, to_i32)]
 #[byte_size(1)]
 pub struct Intable_Holder_Incomplete__ {}
 pub fn main() {
@@ -28,33 +29,33 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let a: Value<Box<[Ptr<Holder_Incomplete_>]>> = Rc::new(RefCell::new(Box::new([
         Ptr::<Holder_Incomplete_>::null(),
         Ptr::<Holder_Incomplete_>::null(),
     ])));
     let mut p: Ptr<Ptr<Holder_Incomplete_>> = (a.as_pointer() as Ptr<Ptr<Holder_Incomplete_>>);
-    let __rhs = unimplemented!();
+    let __rhs = libcc2rs::next_refcount((p).clone(), 1_isize);
     p = __rhs;
-    let __rhs = unimplemented!();
+    let __rhs = libcc2rs::prev_refcount((p).clone(), 1_isize);
     p = __rhs;
-    let __rhs = unimplemented!();
+    let __rhs = libcc2rs::next_refcount((p).clone(), 2_isize);
     p = __rhs;
-    let __rhs = unimplemented!();
+    let __rhs = libcc2rs::prev_refcount((p).clone(), 2_isize);
     p = __rhs;
     unimplemented!();
     &(unimplemented!());
-    return 0_();
+    return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct Holder_Incomplete_;
 pub trait Intable_Holder_Incomplete__Impl {
-    fn to_(&self) -> ();
+    fn to_i32(&self) -> i32;
 }
 impl Intable_Holder_Incomplete__Impl for Ptr<Intable_Holder_Incomplete__> {
-    fn to_(&self) -> () {
-        return 1_();
+    fn to_i32(&self) -> i32 {
+        return 1;
     }
 }
 pub fn __cpp2rust_init_globals() {}

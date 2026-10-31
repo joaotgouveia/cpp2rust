@@ -6,46 +6,46 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn tempArray_0(mut args_0: (), mut args_1: (), mut args_2: ()) -> () {
-    return unimplemented!();
+pub fn tempArray_0(mut args_0: i32, mut args_1: i32, mut args_2: i32) -> Vec<i32> {
+    return Vec::from([args_0, args_1, args_2]);
 }
-pub fn tests_1() -> () {
+pub fn tests_1() -> bool {
     {
-        let array: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64])));
+        assert!(((unimplemented!().read()) == 3.3_f64));
         unimplemented!().write(99.1_f64);
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 99.1_f64));
     }
     {
-        let array: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64, 4.4_f64])));
+        assert!(((unimplemented!().read()) == 3.3_f64));
+        assert!(((unimplemented!().read()) == 4.4_f64));
         unimplemented!().write(99.1_f64);
         unimplemented!().write(99.2_f64);
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 99.1_f64));
+        assert!(((unimplemented!().read()) == 99.2_f64));
     }
     {
-        let array: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64, 4.4_f64, 5.5_f64])));
+        assert!(((unimplemented!().read()) == 3.3_f64));
+        assert!(((unimplemented!().read()) == 4.4_f64));
+        assert!(((unimplemented!().read()) == 5.5_f64));
         unimplemented!().write(99.2_f64);
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 3.3_f64));
+        assert!(((unimplemented!().read()) == 99.2_f64));
+        assert!(((unimplemented!().read()) == 5.5_f64));
     }
     {
-        let array: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let array: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([3.3_f64])));
         const _: () = assert!(
             true,
             "std::is_same<double&, decltype(std::get<0>(array))>::value"
         );;
     }
     {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 1));
+        assert!(((unimplemented!().read()) == 2));
+        assert!(((unimplemented!().read()) == 3));
     }
     return true;
 }
@@ -68,9 +68,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_1() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -34,7 +34,7 @@ impl nasty_mutex {
     }
     fn copy_from(_a0: Ptr<nasty_mutex>) -> Self {
         let __this: nasty_mutex = Self {};
-        unimplemented!();
+        assert!(false);
         __this
     }
 }
@@ -54,63 +54,75 @@ impl Default for nasty_mutex {
 pub struct ConstexprFixedCapacityDeque_int__10_ {
     #[offset(0)]
     #[byte_size(40)]
-    data_: Box<[()]>,
+    data_: Box<[i32]>,
     #[offset(40)]
-    size_: (),
+    size_: i32,
 }
 impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
         {
             ConstexprFixedCapacityDeque_int__10_ {
-                data_: (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-                size_: 0_(),
+                data_: (0..10).map(|_| 0_i32).collect::<Box<[i32]>>(),
+                size_: 0,
             }
         }
     }
 }
-pub fn test_0(c: ()) -> () {
+pub fn test_0(c: ()) -> bool {
     let c: Value<()> = Rc::new(RefCell::new(c));
     let v: Value<Copyable> = Rc::new(RefCell::new(Copyable::new()));
     let _dtor_v = ScopedDestructor::new(&v, |__p| __p.destructor());
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _x: Ptr<Copyable> = unimplemented!();
+            operator_eq_1(_x, v.as_pointer())
+        })
+    );
     return true;
 }
-pub fn test_1(c: nasty_list_Copyable_) -> () {
+pub fn test_2(c: nasty_list_Copyable_) -> bool {
     let c: Value<nasty_list_Copyable_> = Rc::new(RefCell::new(c));
     let v: Value<Copyable> = Rc::new(RefCell::new(Copyable::new()));
     let _dtor_v = ScopedDestructor::new(&v, |__p| __p.destructor());
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _x: Ptr<Copyable> = ({ nasty_list_Copyable_Impl::front_25(&c.as_pointer()) });
+            operator_eq_1(_x, v.as_pointer())
+        })
+    );
     return true;
 }
-pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> () {
+pub fn test_3(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
-    let mut v: () = unimplemented!();
+    let mut v: i32 = 0_i32;
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!(
+        ((({ ConstexprFixedCapacityDeque_int__10_Impl::front(&c.as_pointer(),) }).read()) == v)
+    );
     return true;
 }
-pub fn operator_eq_3(x: Ptr<Copyable>, y: Ptr<Copyable>) -> () {
+pub fn operator_eq_1(x: Ptr<Copyable>, y: Ptr<Copyable>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(4)]
 pub struct Copyable {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl Copyable {
     pub fn new() -> Self {
-        Self { data_: 0_() }
+        Self { data_: 0 }
     }
 }
 impl CppEq for Copyable {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_3(__lhs.clone(), __rhs.clone())
+        operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
 impl Default for Copyable {
@@ -137,59 +149,60 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0(unimplemented!()) });
-    ({ test_1(nasty_list_Copyable_::new_1()) });
-    ({ test_2(<ConstexprFixedCapacityDeque_int__10_>::default()) });
+    ({ test_2(nasty_list_Copyable_::new_1()) });
+    ({ test_3(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
-    return 0_();
+    return 0;
 }
 pub trait ConstexprFixedCapacityDeque_int__10_Impl {
-    fn begin_2(&self) -> Ptr<()>;
-    fn end_3(&self) -> Ptr<()> {
+    fn begin_2(&self) -> Ptr<i32>;
+    fn end_3(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn begin_4(&self) -> Ptr<()> {
+    fn begin_4(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn end_5(&self) -> Ptr<()> {
+    fn end_5(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn size(&self) -> () {
+    fn size(&self) -> usize {
         unimplemented!()
     }
-    fn front(&self) -> Ptr<()>;
-    fn back(&self) -> Ptr<()> {
+    fn front(&self) -> Ptr<i32>;
+    fn back(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn insert(&self, pos: Ptr<()>, t: ()) -> Ptr<()>;
-    fn push_back(&self, mut t: ()) {
+    fn insert(&self, pos: Ptr<i32>, t: i32) -> Ptr<i32>;
+    fn push_back(&self, mut t: i32) {
         unimplemented!()
     }
-    fn push_front(&self, t: ());
+    fn push_front(&self, t: i32);
 }
 impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDeque_int__10_> {
-    fn begin_2(&self) -> Ptr<()> {
-        return (array_field_ptr!((*self), data_) as Ptr<()>);
+    fn begin_2(&self) -> Ptr<i32> {
+        return (array_field_ptr!((*self), data_) as Ptr<i32>);
     }
-    fn front(&self) -> Ptr<()> {
-        unimplemented!();
-        return (array_field_ptr!((*self), data_) as Ptr<()>).offset((0_()) as isize);
+    fn front(&self) -> Ptr<i32> {
+        assert!(((*self).with(|__s| __s.size_) >= 1));
+        return (array_field_ptr!((*self), data_) as Ptr<i32>).offset((0) as isize);
     }
-    fn insert(&self, mut pos: Ptr<()>, mut t: ()) -> Ptr<()> {
-        let mut i: () = ((pos).clone() - (array_field_ptr!((*self), data_) as Ptr<()>)) as ();
+    fn insert(&self, mut pos: Ptr<i32>, mut t: i32) -> Ptr<i32> {
+        let mut i: i32 =
+            ((((pos).clone() - (array_field_ptr!((*self), data_) as Ptr<i32>)) as i64) as i32);
         if (i != (*self).with(|__s| __s.size_)) {
             unimplemented!();
         }
         array_elem!((*self), data_, i).write(t);
         {
-            field!((*self), size_).with_mut(|__v| *__v = *__v + 1_())
+            field!((*self), size_).with_mut(|__v| *__v = *__v + 1)
         };
-        return (array_field_ptr!((*self), data_) as Ptr<()>).offset((i) as isize);
+        return (array_field_ptr!((*self), data_) as Ptr<i32>).offset((i) as isize);
     }
-    fn push_front(&self, mut t: ()) {
+    fn push_front(&self, mut t: i32) {
         ({
-            let _pos: Ptr<()> = ({ ConstexprFixedCapacityDeque_int__10_Impl::begin_2(self) });
+            let _pos: Ptr<i32> = ({ ConstexprFixedCapacityDeque_int__10_Impl::begin_2(self) });
             ConstexprFixedCapacityDeque_int__10_Impl::insert(self, _pos, t)
         });
     }
@@ -199,18 +212,18 @@ pub trait CopyableImpl {
 }
 impl CopyableImpl for Ptr<Copyable> {
     fn destructor(&self) {
-        field!((*self), data_).write(-1_());
+        field!((*self), data_).write(-1_i32);
     }
 }
 pub trait nasty_list_Copyable_Impl {
     fn destructor(&self);
-    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_Copyable_> {
+    fn operator_assign_9(&self, il: Vec<Copyable>) -> Ptr<nasty_list_Copyable_> {
         unimplemented!()
     }
     fn assign_11(&self, mut n: (), t: Ptr<Copyable>) {
         unimplemented!()
     }
-    fn assign_12(&self, il: ()) {
+    fn assign_12(&self, il: Vec<Copyable>) {
         unimplemented!()
     }
     fn begin_13(&self) -> () {
@@ -265,7 +278,7 @@ pub trait nasty_list_Copyable_Impl {
     fn max_size(&self) -> () {
         unimplemented!()
     }
-    fn empty(&self) -> () {
+    fn empty(&self) -> bool {
         unimplemented!()
     }
     fn push_front_32(&self, x: Ptr<Copyable>);
@@ -293,7 +306,7 @@ pub trait nasty_list_Copyable_Impl {
     fn insert_43(&self, pos: (), mut n: (), x: Ptr<Copyable>) -> () {
         unimplemented!()
     }
-    fn insert_45(&self, pos: (), il: ()) -> () {
+    fn insert_45(&self, pos: (), il: Vec<Copyable>) -> () {
         unimplemented!()
     }
     fn erase_46(&self, pos: ()) -> () {
@@ -335,29 +348,29 @@ pub trait nasty_mutexImpl {
     fn operator_addr(&self) -> Ptr<nasty_mutex>;
     fn copy_assign(&self, _a0: Ptr<nasty_mutex>) -> Ptr<nasty_mutex>;
     fn lock(&self);
-    fn try_lock(&self) -> ();
+    fn try_lock(&self) -> bool;
     fn unlock(&self);
     fn lock_shared(&self);
-    fn try_lock_shared(&self) -> ();
+    fn try_lock_shared(&self) -> bool;
     fn unlock_shared(&self);
 }
 impl nasty_mutexImpl for Ptr<nasty_mutex> {
     fn destructor(&self) {}
     fn operator_addr(&self) -> Ptr<nasty_mutex> {
-        unimplemented!();
+        assert!(false);
         return Ptr::<nasty_mutex>::null();
     }
     fn copy_assign(&self, _a0: Ptr<nasty_mutex>) -> Ptr<nasty_mutex> {
-        unimplemented!();
+        assert!(false);
         return (*self).clone();
     }
     fn lock(&self) {}
-    fn try_lock(&self) -> () {
+    fn try_lock(&self) -> bool {
         return true;
     }
     fn unlock(&self) {}
     fn lock_shared(&self) {}
-    fn try_lock_shared(&self) -> () {
+    fn try_lock_shared(&self) -> bool {
         return true;
     }
     fn unlock_shared(&self) {}

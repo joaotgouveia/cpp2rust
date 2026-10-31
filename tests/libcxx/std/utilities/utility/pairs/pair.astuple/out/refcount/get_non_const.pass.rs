@@ -11,16 +11,21 @@ use std::rc::{Rc, Weak};
 pub struct S {
     #[offset(0)]
     #[byte_size(8)]
-    pub a: (),
+    pub a: (Value<i32>, Value<i32>),
     #[offset(8)]
-    pub k: (),
+    pub k: i32,
 }
 impl S {
     pub fn new() -> Self {
-        Self {
-            a: unimplemented!(),
-            k: (unimplemented!().read()),
-        }
+        let __this: Value<S> = Rc::new(RefCell::new(Self {
+            a: (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
+            k: (<(Value<i32>, Value<i32>) as PairGetRef<0>>::pair_get(
+                &(*this.upgrade().deref()).a,
+            )
+            .read()),
+        }));
+        let this: Ptr<S> = __this.as_pointer();
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl Default for S {
@@ -28,8 +33,8 @@ impl Default for S {
         { S::new() }
     }
 }
-pub fn getP_0() -> () {
-    return unimplemented!();
+pub fn getP_0() -> (Value<i32>, Value<i32>) {
+    return (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(4)));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -50,28 +55,43 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!().write(5_());
-        unimplemented!().write(6_());
-        unimplemented!();
-        unimplemented!();
+        let p: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(3)),
+            Rc::new(RefCell::new(4_i16)),
+        )));
+        assert!(
+            ((<(Value<i32>, Value<i16>) as PairGetRef<0>>::pair_get(&(*p.borrow())).read()) == 3)
+        );
+        assert!(
+            (((<(Value<i32>, Value<i16>) as PairGetRef<1>>::pair_get(&(*p.borrow())).read())
+                as i32)
+                == 4)
+        );
+        <(Value<i32>, Value<i16>) as PairGetRef<0>>::pair_get(&(*p.borrow())).write(5);
+        <(Value<i32>, Value<i16>) as PairGetRef<1>>::pair_get(&(*p.borrow())).write(6_i16);
+        assert!(
+            ((<(Value<i32>, Value<i16>) as PairGetRef<0>>::pair_get(&(*p.borrow())).read()) == 5)
+        );
+        assert!(
+            (((<(Value<i32>, Value<i16>) as PairGetRef<1>>::pair_get(&(*p.borrow())).read())
+                as i32)
+                == 6)
+        );
     }
     {
         const _: () = assert!(true, "S().k == 1");;
         const _: () = assert!(true, "std::get<1>(getP()) == 4");;
     }
-    return 0_();
+    return 0;
 }
 pub trait SImpl {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S>;
 }
 impl SImpl for Ptr<S> {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
-        unimplemented!();
+        field_ptr!((*self), a).write(field!(_a0, a).with_mut(std::mem::take));
         field!((*self), k).write({ { (*_a0.upgrade().deref()).k } });
         return (*self).clone();
     }

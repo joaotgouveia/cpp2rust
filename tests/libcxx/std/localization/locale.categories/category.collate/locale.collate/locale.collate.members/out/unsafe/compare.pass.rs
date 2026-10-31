@@ -22,36 +22,37 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut l: () = unimplemented!();
     {
-        let ia: [(); 5] = std::mem::transmute(*b"1234\0");
-        let sa: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: [(); 4] = std::mem::transmute(*b"123\0");
+        let ia: [libc::c_char; 5] = std::mem::transmute(*b"1234\0");
+        let sa: u32 = (((::std::mem::size_of::<[libc::c_char; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<libc::c_char>() as usize)))
+            as u32);
+        let ib: [libc::c_char; 4] = std::mem::transmute(*b"123\0");
         let f: *const () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1)));
+        assert!(((unimplemented!()) == (-1_i32)));
+        assert!(((unimplemented!()) == (1)));
+        assert!(((unimplemented!()) == (-1_i32)));
+        assert!(((unimplemented!()) == (-1_i32)));
+        assert!(((unimplemented!()) == (1)));
+        assert!(((unimplemented!()) == (0)));
     }
     {
-        let ia: [(); 5] = [49 as (), 50 as (), 51 as (), 52 as (), 0 as ()];
-        let sa: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let ib: [(); 4] = [49 as (), 50 as (), 51 as (), 0 as ()];
+        let ia: [i32; 5] = [49 as i32, 50 as i32, 51 as i32, 52 as i32, 0 as i32];
+        let sa: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
+        let ib: [i32; 4] = [49 as i32, 50 as i32, 51 as i32, 0 as i32];
         let f: *const () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1)));
+        assert!(((unimplemented!()) == (-1_i32)));
+        assert!(((unimplemented!()) == (1)));
+        assert!(((unimplemented!()) == (-1_i32)));
+        assert!(((unimplemented!()) == (-1_i32)));
+        assert!(((unimplemented!()) == (1)));
+        assert!(((unimplemented!()) == (0)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

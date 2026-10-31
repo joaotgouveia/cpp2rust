@@ -6,62 +6,62 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_void__void_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_void__const_void_ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int__int_ {}
-pub type anon_3 = ();
+pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int__const_int_ {}
-pub type anon_4 = ();
+pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_intarr3arr__intarr3arr_ {}
-pub type anon_5 = ();
+pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_intarr3arr__const_intarr3arr_ {}
-pub type anon_6 = ();
+pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ref__int_ref_ {}
-pub type anon_7 = ();
+pub type anon_7 = u32;
 pub const anon_7_value: anon_7 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ref__const_int_ref_ {}
-pub type anon_8 = ();
+pub type anon_8 = u32;
 pub const anon_8_value: anon_8 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptr__int_ptr_ {}
-pub type anon_9 = ();
+pub type anon_9 = u32;
 pub const anon_9_value: anon_9 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int_ptrconst__int_ptrconst_ {}
-pub type anon_10 = ();
+pub type anon_10 = u32;
 pub const anon_10_value: anon_10 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_volatile_int_ptr__volatile_int_ptr_ {}
-pub type anon_11 = ();
+pub type anon_11 = u32;
 pub const anon_11_value: anon_11 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -215,7 +215,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_remove_volatile_34() });
     ({ test_remove_volatile_35() });
     ({ test_remove_volatile_36() });
@@ -223,6 +223,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_remove_volatile_38() });
     ({ test_remove_volatile_39() });
     ({ test_remove_volatile_40() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

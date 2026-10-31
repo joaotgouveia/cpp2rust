@@ -6,31 +6,31 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(sv0: ()) -> () {
+pub fn test_0(sv0: ()) -> bool {
     let sv0: Value<()> = Rc::new(RefCell::new(sv0));
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn test_1(sv0: ()) -> () {
+pub fn test_1(sv0: ()) -> bool {
     let sv0: Value<()> = Rc::new(RefCell::new(sv0));
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn test_2(sv0: ()) -> () {
+pub fn test_2(sv0: ()) -> bool {
     let sv0: Value<()> = Rc::new(RefCell::new(sv0));
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn test_3(sv0: ()) -> () {
+pub fn test_3(sv0: ()) -> bool {
     let sv0: Value<()> = Rc::new(RefCell::new(sv0));
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return (unimplemented!() == unimplemented!()) && (unimplemented!() == unimplemented!());
 }
-pub fn test_4(sv0: ()) -> () {
+pub fn test_4(sv0: ()) -> bool {
     let sv0: Value<()> = Rc::new(RefCell::new(sv0));
     let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -55,17 +55,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(({ test_0(unimplemented!(),) }));
+    assert!(({ test_1(unimplemented!(),) }));
+    assert!(({ test_2(unimplemented!(),) }));
+    assert!(({ test_3(unimplemented!(),) }));
+    assert!(({ test_4(unimplemented!(),) }));
     const _: () = assert!(true, "test<std::string_view>({{\"abc\", 3}})");;
     const _: () = assert!(true, "test<std::u8string_view>({{u8\"abc\", 3}})");;
     const _: () = assert!(true, "test<std::u16string_view>({{u\"abc\", 3}})");;
     const _: () = assert!(true, "test<std::u32string_view>({{U\"abc\", 3}})");;
     const _: () = assert!(true, "test<std::wstring_view>({{L\"abc\", 3}})");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

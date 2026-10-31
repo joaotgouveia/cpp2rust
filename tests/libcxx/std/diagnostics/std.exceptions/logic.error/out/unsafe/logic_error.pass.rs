@@ -22,30 +22,52 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(
         true,
         "(std::is_base_of<std::exception, std::logic_error>::value)"
     );;
     const _: () = assert!(true, "std::is_polymorphic<std::logic_error>::value");;
     {
-        let mut msg: *const () = c"logic_error message".as_ptr();
+        let mut msg: *const libc::c_char = c"logic_error message".as_ptr();
         let mut e: () = unimplemented!();
-        unimplemented!();
+        assert!(((libc::strcmp(unimplemented!(), msg)) == (0)));
         let mut e2: () = unimplemented!();
+        assert!(((libc::strcmp(unimplemented!(), msg)) == (0)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((libc::strcmp(unimplemented!(), msg)) == (0)));
     }
     {
-        let mut msg: () = unimplemented!();
+        let mut msg: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"another logic_error message".as_ptr(),
+            libcc2rs::c_str_len(c"another logic_error message".as_ptr()) + 1,
+        )
+        .to_vec();
         let mut e: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            msg == std::slice::from_raw_parts(
+                unimplemented!(),
+                libcc2rs::c_str_len(unimplemented!()) + 1
+            )
+            .to_vec()
+        );
         let mut e2: () = unimplemented!();
+        assert!(
+            msg == std::slice::from_raw_parts(
+                unimplemented!(),
+                libcc2rs::c_str_len(unimplemented!()) + 1
+            )
+            .to_vec()
+        );
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            msg == std::slice::from_raw_parts(
+                unimplemented!(),
+                libcc2rs::c_str_len(unimplemented!()) + 1
+            )
+            .to_vec()
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

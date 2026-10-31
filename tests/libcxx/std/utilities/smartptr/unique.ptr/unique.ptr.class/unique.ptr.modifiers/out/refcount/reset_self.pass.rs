@@ -11,17 +11,19 @@ use std::rc::{Rc, Weak};
 pub struct A {
     #[offset(0)]
     #[byte_size(8)]
-    pub ptr_: (),
+    pub ptr_: Option<Value<A>>,
 }
 impl A {
     pub fn new() -> Self {
-        Self {
-            ptr_: unimplemented!(),
-        }
+        let __this: Value<A> = Rc::new(RefCell::new(Self {
+            ptr_: this.to_owned_opt(),
+        }));
+        let this: Ptr<A> = __this.as_pointer();
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
-            ptr_: unimplemented!(),
+            ptr_: field!(_a0, ptr_).with_mut(|__v: &mut Option<Value<A>>| __v.take()),
         }
     }
 }
@@ -30,7 +32,7 @@ impl Default for A {
         { A::new() }
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     ({ AImpl::reset(&(Ptr::alloc(A::new()))) });
     return true;
 }
@@ -53,10 +55,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn reset(&self);
@@ -64,10 +66,14 @@ pub trait AImpl {
 }
 impl AImpl for Ptr<A> {
     fn reset(&self) {
-        unimplemented!();
+        {
+            let _p: Ptr<_> = Ptr::null();
+            field_ptr!((*self), ptr_).write(_p.to_owned_opt())
+        };
     }
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
-        unimplemented!();
+        field_ptr!((*self), ptr_)
+            .write(field!(_a0, ptr_).with_mut(|__v: &mut Option<Value<A>>| __v.take()));
         return (*self).clone();
     }
 }

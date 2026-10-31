@@ -10,11 +10,11 @@ pub fn test02_0() {
     let it01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let it02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    !(unimplemented!());
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (*it01.borrow()) != (*it02.borrow());
+    (*it01.borrow()) < (*it02.borrow());
+    (*it01.borrow()) <= (*it02.borrow());
+    (*it01.borrow()) > (*it02.borrow());
+    (*it01.borrow()) >= (*it02.borrow());
     unimplemented!();
     unimplemented!();
 }
@@ -22,8 +22,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test02_0() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

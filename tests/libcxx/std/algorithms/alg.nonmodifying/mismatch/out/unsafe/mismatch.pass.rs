@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct support_double_move_tracker {
-    moved_from_: (),
+    moved_from_: bool,
 }
 impl support_double_move_tracker {
     pub unsafe fn new() -> Self {
@@ -18,7 +18,7 @@ impl support_double_move_tracker {
     }
     pub unsafe fn move_from(other: *mut support_double_move_tracker) -> Self {
         let mut this = Self { moved_from_: false };
-        unimplemented!();
+        assert!(!((*other).moved_from_));
         (*other).moved_from_ = true;
         this
     }
@@ -26,7 +26,7 @@ impl support_double_move_tracker {
         &mut self,
         other: *mut support_double_move_tracker,
     ) -> *mut support_double_move_tracker {
-        unimplemented!();
+        assert!(!((*other).moved_from_));
         (*other).moved_from_ = true;
         self.moved_from_ = false;
         return &mut (*(self as *mut support_double_move_tracker));
@@ -74,46 +74,46 @@ pub unsafe fn for_each_0(
     mut f: Test,
 ) {
     (unsafe {
-        let _arg0: () = {
+        let _arg0: i32 = {
             (unsafe { Test::operator_call_1_int_ptr(&mut f) });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             (unsafe { Test::operator_call_1_class_contiguous_iterator_int_ptr_(&mut f) });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             (unsafe { Test::operator_call_1_class_random_access_iterator_int_ptr_(&mut f) });
-            0_()
+            0
         };
-        let _arg3: () = {
+        let _arg3: i32 = {
             (unsafe { Test::operator_call_1_class_bidirectional_iterator_int_ptr_(&mut f) });
-            0_()
+            0
         };
-        let _arg4: () = {
+        let _arg4: i32 = {
             (unsafe { Test::operator_call_1_class_forward_iterator_int_ptr_(&mut f) });
-            0_()
+            0
         };
-        let _arg5: () = {
+        let _arg5: i32 = {
             (unsafe { Test::operator_call_1_class_cpp17_input_iterator_int_ptr_(&mut f) });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2, _arg3, _arg4, _arg5)
     });
 }
 pub unsafe fn swallow_1(
-    mut _a0: (),
-    mut _a1: (),
-    mut _a2: (),
-    mut _a3: (),
-    mut _a4: (),
-    mut _a5: (),
+    mut _a0: i32,
+    mut _a1: i32,
+    mut _a2: i32,
+    mut _a3: i32,
+    mut _a4: i32,
+    mut _a5: i32,
 ) {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp17_output_iterator_int_ptr_ {
@@ -143,30 +143,30 @@ const _: () = assert!(
 pub unsafe fn operator_eq_2(
     x: *const cpp17_input_iterator_int_ptr__int_ptr_,
     y: *const cpp17_input_iterator_int_ptr__int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_3(
     x: *const cpp17_input_iterator_int_ptr__int_ptr_,
     y: *const cpp17_input_iterator_int_ptr__int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_ {
-    pub unsafe fn new(mut it: *mut ()) -> Self {
+    pub unsafe fn new(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_5(&mut self) -> *mut cpp17_input_iterator_int_ptr__int_ptr_ {
@@ -203,34 +203,39 @@ impl std::cmp::PartialEq for cpp17_input_iterator_int_ptr__int_ptr_ {
     }
 }
 impl std::cmp::Eq for cpp17_input_iterator_int_ptr__int_ptr_ {}
+impl UnsafeCppAdvance for cpp17_input_iterator_int_ptr__int_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_5();
+    }
+}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_eq_4(
     x: *const forward_iterator_int_ptr_,
     y: *const forward_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_5(
     x: *const forward_iterator_int_ptr_,
     y: *const forward_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_6(&mut self) -> *mut forward_iterator_int_ptr_ {
@@ -267,33 +272,38 @@ impl std::cmp::PartialEq for forward_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for forward_iterator_int_ptr_ {}
+impl UnsafeCppAdvance for forward_iterator_int_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_6();
+    }
+}
 pub unsafe fn operator_eq_6(
     x: *const bidirectional_iterator_int_ptr_,
     y: *const bidirectional_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_7(
     x: *const bidirectional_iterator_int_ptr_,
     y: *const bidirectional_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct bidirectional_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl bidirectional_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_6(&mut self) -> *mut bidirectional_iterator_int_ptr_ {
@@ -330,33 +340,38 @@ impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for bidirectional_iterator_int_ptr_ {}
+impl UnsafeCppAdvance for bidirectional_iterator_int_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_6();
+    }
+}
 pub unsafe fn operator_eq_8(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_9(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_int_ptr_ {
@@ -393,17 +408,22 @@ impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_int_ptr_ {}
+impl UnsafeCppAdvance for random_access_iterator_int_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_7();
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_random_access_iterator_int_ptr_ {
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+    pub unsafe fn operator_index(&self, mut n: isize) -> *mut i32 {
         return &mut (*self.it_.offset((n) as isize));
     }
     pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
@@ -432,30 +452,30 @@ const _: () = assert!(
 pub unsafe fn operator_eq_10(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_11(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_9(&mut self) -> *mut contiguous_iterator_int_ptr_ {
@@ -492,10 +512,15 @@ impl std::cmp::PartialEq for contiguous_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for contiguous_iterator_int_ptr_ {}
+impl UnsafeCppAdvance for contiguous_iterator_int_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+}
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_input_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_input_iterator_int_ptr_ {
@@ -517,7 +542,7 @@ impl cpp20_input_iterator_int_ptr_ {
         });
         return &mut (*(self as *mut cpp20_input_iterator_int_ptr_));
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
 }
@@ -525,7 +550,7 @@ const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_output_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_output_iterator_int_ptr_ {
@@ -547,7 +572,7 @@ impl cpp20_output_iterator_int_ptr_ {
         });
         return &mut (*(self as *mut cpp20_output_iterator_int_ptr_));
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
 }
@@ -558,19 +583,19 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct IteratorOpCounts {
-    pub increments: (),
-    pub decrements: (),
-    pub zero_moves: (),
-    pub equal_cmps: (),
+    pub increments: usize,
+    pub decrements: usize,
+    pub zero_moves: usize,
+    pub equal_cmps: usize,
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
         unsafe {
             IteratorOpCounts {
-                increments: 0_(),
-                decrements: 0_(),
-                zero_moves: 0_(),
-                equal_cmps: 0_(),
+                increments: 0_usize,
+                decrements: 0_usize,
+                zero_moves: 0_usize,
+                equal_cmps: 0_usize,
             }
         }
     }
@@ -578,13 +603,13 @@ impl Default for IteratorOpCounts {
 pub unsafe fn operator_eq_12(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*_a0).it_) == ((*_a1).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct forward_sized_iterator_int_ptr_ {
-    pub it_: *mut (),
+    pub it_: *mut i32,
 }
 impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
@@ -612,44 +637,47 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_13(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_13(mut i: adl_Iterator, mut n: isize) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_14(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
         operator_add_13(_i, n)
     });
 }
 pub unsafe fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    cpp_swap_unsafe!(a.ptr_, b.ptr_);
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut i32 {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> bool {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_18(
+    lhs: *const adl_Iterator,
+    rhs: *const adl_Iterator,
+) -> std::cmp::Ordering {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct adl_Iterator {
-    ptr_: *mut (),
-    iter_moves_: *mut (),
-    iter_swaps_: *mut (),
+    ptr_: *mut i32,
+    iter_moves_: *mut i32,
+    iter_swaps_: *mut i32,
 }
 impl adl_Iterator {
-    unsafe fn new_1(mut p: *mut (), mut iter_moves: *mut (), mut iter_swaps: *mut ()) -> Self {
+    unsafe fn new_1(mut p: *mut i32, mut iter_moves: *mut i32, mut iter_swaps: *mut i32) -> Self {
         let mut this = Self {
             ptr_: p,
             iter_moves_: iter_moves,
@@ -657,47 +685,47 @@ impl adl_Iterator {
         };
         this
     }
-    pub unsafe fn TrackMoves(mut p: *mut (), iter_moves: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackMoves(mut p: *mut i32, iter_moves: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ p }, { (iter_moves) }, { std::ptr::null_mut() });
     }
-    pub unsafe fn TrackSwaps_4(iter_swaps: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackSwaps_4(iter_swaps: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ std::ptr::null_mut() }, { std::ptr::null_mut() }, {
             (iter_swaps)
         });
     }
-    pub unsafe fn TrackSwaps_5(mut p: *mut (), iter_swaps: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackSwaps_5(mut p: *mut i32, iter_swaps: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ p }, { std::ptr::null_mut() }, { (iter_swaps) });
     }
-    pub unsafe fn iter_moves(&self) -> () {
-        unimplemented!();
+    pub unsafe fn iter_moves(&self) -> i32 {
+        assert!(!(self.iter_moves_).is_null());
         return (*self.iter_moves_);
     }
-    pub unsafe fn iter_swaps(&self) -> () {
-        unimplemented!();
+    pub unsafe fn iter_swaps(&self) -> i32 {
+        assert!(!(self.iter_swaps_).is_null());
         return (*self.iter_swaps_);
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.ptr_);
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+    pub unsafe fn operator_index(&self, mut n: isize) -> *mut i32 {
         return &mut (*self.ptr_.offset((n) as isize));
     }
-    pub unsafe fn operator_sub_10(&self, mut n: ()) -> adl_Iterator {
+    pub unsafe fn operator_sub_10(&self, mut n: isize) -> adl_Iterator {
         return adl_Iterator::new_1(
             { self.ptr_.offset(-((n) as isize)) },
             { self.iter_moves_ },
             { self.iter_swaps_ },
         );
     }
-    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> () {
-        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<()>()) as ()
-            as ());
+    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> isize {
+        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64
+            as isize);
     }
-    pub unsafe fn operator_add_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+    pub unsafe fn operator_add_assign(&mut self, mut n: isize) -> *mut adl_Iterator {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_sub_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+    pub unsafe fn operator_sub_assign(&mut self, mut n: isize) -> *mut adl_Iterator {
         self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
         return &mut (*(self as *mut adl_Iterator));
     }
@@ -705,7 +733,7 @@ impl adl_Iterator {
         self.ptr_.prefix_inc();
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: ()) -> adl_Iterator {
+    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
         self.ptr_.prefix_inc();
         return prev;
@@ -714,7 +742,7 @@ impl adl_Iterator {
         self.ptr_.prefix_dec();
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: ()) -> adl_Iterator {
+    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
         self.ptr_.prefix_dec();
         return prev;
@@ -736,6 +764,14 @@ impl std::cmp::PartialEq for adl_Iterator {
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
+impl UnsafeCppAdvance for adl_Iterator {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_14();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_16();
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -750,22 +786,22 @@ impl Default for adl_Iterator {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct rvalue_iterator_int_ptr_ {
-    it_: *mut *mut (),
+    it_: *mut *mut i32,
 }
 impl rvalue_iterator_int_ptr_ {
-    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> std::cmp::Ordering {
         {
-            let mut cmp: () = std::cmp::Ord::cmp(
+            let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(
                 &((*(self as *const rvalue_iterator_int_ptr_)).it_),
                 &((*_a0).it_),
             );
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !(cmp == std::cmp::Ordering::Equal) {
+                return cmp;
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
-    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> bool {
         return (((*(self as *const rvalue_iterator_int_ptr_)).it_) == ((*_a0).it_));
     }
 }
@@ -792,218 +828,231 @@ impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
 impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(*const libc::c_char , new, value)]
 pub struct util_iterator_error {}
 impl util_iterator_error {
-    pub unsafe fn new(mut what: *const ()) -> Self {
+    pub unsafe fn new(mut what: *const libc::c_char) -> Self {
         let mut this = Self {};
         this
     }
 }
-pub unsafe fn check_19(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_19(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_20(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_20(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_21(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_21(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_22(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_22(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_23(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_23(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_24(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_24(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_25(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_25(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_26(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_26(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_27(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_27(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_28(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_28(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_29(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_29(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_30(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_30(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_31(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_31(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_32(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_32(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_33(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_33(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_34(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_34(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_35(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_35(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_36(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_36(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_37(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_37(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_38(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_38(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_39(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_39(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_40(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_40(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_41(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_41(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_42(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_42(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
     {}
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_43(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_43(
+    mut lhs: Vec<NonTrivialMod4Comp>,
+    mut rhs: Vec<NonTrivialMod4Comp>,
+    mut offset: usize,
+) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_44(mut lhs: (), mut rhs: (), mut offset: ()) {
+pub unsafe fn check_44(
+    mut lhs: Vec<TriviallyEqualityComparable>,
+    mut rhs: Vec<TriviallyEqualityComparable>,
+    mut offset: usize,
+) {
     {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_45(mut lhs: (), mut rhs: (), mut offset: ()) {
-    if ((unimplemented!()) == (unimplemented!())) {
-        unimplemented!();
-        unimplemented!();
+pub unsafe fn check_45(mut lhs: Vec<libc::c_char>, mut rhs: Vec<libc::c_char>, mut offset: usize) {
+    if ((lhs.len()) == (rhs.len())) {
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn check_46(mut lhs: (), mut rhs: (), mut offset: ()) {
-    if ((unimplemented!()) == (unimplemented!())) {
-        unimplemented!();
-        unimplemented!();
+pub unsafe fn check_46(mut lhs: Vec<i32>, mut rhs: Vec<i32>, mut offset: usize) {
+    if ((lhs.len()) == (rhs.len())) {
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
 }
-pub unsafe fn operator_eq_47(lhs: *const NonTrivialMod4Comp, rhs: *const NonTrivialMod4Comp) -> () {
-    return ((((*lhs).i_) % (4_())) == (((*rhs).i_) % (4_())));
+pub unsafe fn operator_eq_47(
+    lhs: *const NonTrivialMod4Comp,
+    rhs: *const NonTrivialMod4Comp,
+) -> bool {
+    return ((((*lhs).i_) % (4)) == (((*rhs).i_) % (4)));
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct NonTrivialMod4Comp {
-    pub i_: (),
+    pub i_: i32,
 }
 impl NonTrivialMod4Comp {
-    pub unsafe fn new(mut i: ()) -> Self {
+    pub unsafe fn new(mut i: i32) -> Self {
         let mut this = Self { i_: i };
         this
     }
     pub unsafe fn move_from(other: *mut NonTrivialMod4Comp) -> Self {
         let mut this = Self { i_: (*other).i_ };
-        (*other).i_ = 0_();
+        (*other).i_ = 0;
         this
     }
 }
@@ -1021,16 +1070,17 @@ impl std::cmp::Eq for NonTrivialMod4Comp {}
 pub unsafe fn operator_eq_48(
     mut _a0: TriviallyEqualityComparable,
     mut _a1: TriviallyEqualityComparable,
-) -> () {
+) -> bool {
     return ((_a0.i_) == (_a1.i_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct TriviallyEqualityComparable {
-    pub i_: (),
+    pub i_: i32,
 }
 impl TriviallyEqualityComparable {
-    pub unsafe fn new(mut i: ()) -> Self {
+    pub unsafe fn new(mut i: i32) -> Self {
         let mut this = Self { i_: i };
         this
     }
@@ -1045,211 +1095,211 @@ impl std::cmp::Eq for TriviallyEqualityComparable {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ModTwoComp {}
 impl ModTwoComp {
-    pub unsafe fn operator_call(&mut self, mut lhs: (), mut rhs: ()) -> () {
-        return (((lhs) % (2_())) == ((rhs) % (2_())));
+    pub unsafe fn operator_call(&mut self, mut lhs: i32, mut rhs: i32) -> bool {
+        return (((lhs) % (2)) == ((rhs) % (2)));
     }
 }
-pub unsafe fn test_49() -> () {
+pub unsafe fn test_49() -> bool {
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_19(lhs.clone(), rhs.clone(), 0_()) });
+        let mut lhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        let mut rhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        (unsafe { check_19(lhs.clone(), rhs.clone(), 0_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_20(lhs.clone(), rhs.clone(), 8_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_20(lhs.clone(), rhs.clone(), 8_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_20(lhs.clone(), rhs.clone(), 3_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_20(lhs.clone(), rhs.clone(), 3_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_21(lhs.clone(), rhs.clone(), 2_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1]);
+        (unsafe { check_21(lhs.clone(), rhs.clone(), 2_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_22(lhs.clone(), rhs.clone(), 2_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        (unsafe { check_22(lhs.clone(), rhs.clone(), 2_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut lhs: Vec<i32> = Vec::from([0, 2, 3, 4]);
+        let mut rhs: Vec<i32> = Vec::from([0, 0, 4, 4]);
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     return true;
 }
-pub unsafe fn test_50() -> () {
+pub unsafe fn test_50() -> bool {
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_23(lhs.clone(), rhs.clone(), 0_()) });
+        let mut lhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        let mut rhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        (unsafe { check_23(lhs.clone(), rhs.clone(), 0_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_24(lhs.clone(), rhs.clone(), 8_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_24(lhs.clone(), rhs.clone(), 8_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_24(lhs.clone(), rhs.clone(), 3_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_24(lhs.clone(), rhs.clone(), 3_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_25(lhs.clone(), rhs.clone(), 2_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1]);
+        (unsafe { check_25(lhs.clone(), rhs.clone(), 2_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_26(lhs.clone(), rhs.clone(), 2_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        (unsafe { check_26(lhs.clone(), rhs.clone(), 2_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
-}
-pub unsafe fn test_51() -> () {
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_27(lhs.clone(), rhs.clone(), 0_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_28(lhs.clone(), rhs.clone(), 8_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_28(lhs.clone(), rhs.clone(), 3_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_29(lhs.clone(), rhs.clone(), 2_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_30(lhs.clone(), rhs.clone(), 2_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut lhs: Vec<i32> = Vec::from([0, 2, 3, 4]);
+        let mut rhs: Vec<i32> = Vec::from([0, 0, 4, 4]);
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     return true;
 }
-pub unsafe fn test_52() -> () {
+pub unsafe fn test_51() -> bool {
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_31(lhs.clone(), rhs.clone(), 0_()) });
+        let mut lhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        let mut rhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        (unsafe { check_27(lhs.clone(), rhs.clone(), 0_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_32(lhs.clone(), rhs.clone(), 8_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_28(lhs.clone(), rhs.clone(), 8_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_32(lhs.clone(), rhs.clone(), 3_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_28(lhs.clone(), rhs.clone(), 3_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_33(lhs.clone(), rhs.clone(), 2_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1]);
+        (unsafe { check_29(lhs.clone(), rhs.clone(), 2_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_34(lhs.clone(), rhs.clone(), 2_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        (unsafe { check_30(lhs.clone(), rhs.clone(), 2_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
-}
-pub unsafe fn test_53() -> () {
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_35(lhs.clone(), rhs.clone(), 0_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_36(lhs.clone(), rhs.clone(), 8_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_36(lhs.clone(), rhs.clone(), 3_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_37(lhs.clone(), rhs.clone(), 2_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_38(lhs.clone(), rhs.clone(), 2_()) });
-    }
-    {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut lhs: Vec<i32> = Vec::from([0, 2, 3, 4]);
+        let mut rhs: Vec<i32> = Vec::from([0, 0, 4, 4]);
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     return true;
 }
-pub unsafe fn test_54() -> () {
+pub unsafe fn test_52() -> bool {
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_39(lhs.clone(), rhs.clone(), 0_()) });
+        let mut lhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        let mut rhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        (unsafe { check_31(lhs.clone(), rhs.clone(), 0_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_40(lhs.clone(), rhs.clone(), 8_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_32(lhs.clone(), rhs.clone(), 8_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_40(lhs.clone(), rhs.clone(), 3_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_32(lhs.clone(), rhs.clone(), 3_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_41(lhs.clone(), rhs.clone(), 2_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1]);
+        (unsafe { check_33(lhs.clone(), rhs.clone(), 2_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        (unsafe { check_42(lhs.clone(), rhs.clone(), 2_()) });
+        let mut lhs: Vec<i32> = Vec::from([0, 1]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        (unsafe { check_34(lhs.clone(), rhs.clone(), 2_usize) });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut lhs: Vec<i32> = Vec::from([0, 2, 3, 4]);
+        let mut rhs: Vec<i32> = Vec::from([0, 0, 4, 4]);
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+    }
+    return true;
+}
+pub unsafe fn test_53() -> bool {
+    {
+        let mut lhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        let mut rhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        (unsafe { check_35(lhs.clone(), rhs.clone(), 0_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_36(lhs.clone(), rhs.clone(), 8_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_36(lhs.clone(), rhs.clone(), 3_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1]);
+        (unsafe { check_37(lhs.clone(), rhs.clone(), 2_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 1]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        (unsafe { check_38(lhs.clone(), rhs.clone(), 2_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 2, 3, 4]);
+        let mut rhs: Vec<i32> = Vec::from([0, 0, 4, 4]);
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+    }
+    return true;
+}
+pub unsafe fn test_54() -> bool {
+    {
+        let mut lhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        let mut rhs: Vec<i32> = std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec();
+        (unsafe { check_39(lhs.clone(), rhs.clone(), 0_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_40(lhs.clone(), rhs.clone(), 8_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 3, 0, 1, 2, 3]);
+        (unsafe { check_40(lhs.clone(), rhs.clone(), 3_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1]);
+        (unsafe { check_41(lhs.clone(), rhs.clone(), 2_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 1]);
+        let mut rhs: Vec<i32> = Vec::from([0, 1, 2, 2, 0, 1, 2, 3]);
+        (unsafe { check_42(lhs.clone(), rhs.clone(), 2_usize) });
+    }
+    {
+        let mut lhs: Vec<i32> = Vec::from([0, 2, 3, 4]);
+        let mut rhs: Vec<i32> = Vec::from([0, 0, 4, 4]);
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     return true;
 }
@@ -1276,44 +1326,116 @@ impl Test {
         (unsafe { test_54() });
     }
 }
-pub unsafe fn test_55() -> () {
+pub unsafe fn test_55() -> bool {
     (unsafe {
         for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__ >::default() , <Test >::default() , )
     });
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
+        let mut lhs: Vec<NonTrivialMod4Comp> = Vec::from([
+            NonTrivialMod4Comp::new({ 1 }),
+            NonTrivialMod4Comp::new({ 2 }),
+            NonTrivialMod4Comp::new({ 3 }),
+            NonTrivialMod4Comp::new({ 4 }),
+            NonTrivialMod4Comp::new({ 5 }),
+            NonTrivialMod4Comp::new({ 6 }),
+            NonTrivialMod4Comp::new({ 7 }),
+            NonTrivialMod4Comp::new({ 8 }),
+        ]);
+        let mut rhs: Vec<NonTrivialMod4Comp> = Vec::from([
+            NonTrivialMod4Comp::new({ 1 }),
+            NonTrivialMod4Comp::new({ 2 }),
+            NonTrivialMod4Comp::new({ 3 }),
+            NonTrivialMod4Comp::new({ 4 }),
+            NonTrivialMod4Comp::new({ 1 }),
+            NonTrivialMod4Comp::new({ 6 }),
+            NonTrivialMod4Comp::new({ 7 }),
+            NonTrivialMod4Comp::new({ 8 }),
+        ]);
         (unsafe {
-            let _lhs: () = lhs;
-            let _rhs: () = rhs;
-            check_43(_lhs, _rhs, 8_())
+            let _lhs: Vec<NonTrivialMod4Comp> = std::mem::take(&mut lhs);
+            let _rhs: Vec<NonTrivialMod4Comp> = std::mem::take(&mut rhs);
+            check_43(_lhs, _rhs, 8_usize)
         });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
+        let mut lhs: Vec<NonTrivialMod4Comp> = Vec::from([
+            NonTrivialMod4Comp::new({ 1 }),
+            NonTrivialMod4Comp::new({ 2 }),
+            NonTrivialMod4Comp::new({ 3 }),
+            NonTrivialMod4Comp::new({ 4 }),
+            NonTrivialMod4Comp::new({ 7 }),
+            NonTrivialMod4Comp::new({ 6 }),
+            NonTrivialMod4Comp::new({ 7 }),
+            NonTrivialMod4Comp::new({ 8 }),
+        ]);
+        let mut rhs: Vec<NonTrivialMod4Comp> = Vec::from([
+            NonTrivialMod4Comp::new({ 1 }),
+            NonTrivialMod4Comp::new({ 2 }),
+            NonTrivialMod4Comp::new({ 3 }),
+            NonTrivialMod4Comp::new({ 4 }),
+            NonTrivialMod4Comp::new({ 5 }),
+            NonTrivialMod4Comp::new({ 6 }),
+            NonTrivialMod4Comp::new({ 7 }),
+            NonTrivialMod4Comp::new({ 8 }),
+        ]);
         (unsafe {
-            let _lhs: () = lhs;
-            let _rhs: () = rhs;
-            check_43(_lhs, _rhs, 4_())
+            let _lhs: Vec<NonTrivialMod4Comp> = std::mem::take(&mut lhs);
+            let _rhs: Vec<NonTrivialMod4Comp> = std::mem::take(&mut rhs);
+            check_43(_lhs, _rhs, 4_usize)
         });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
+        let mut lhs: Vec<TriviallyEqualityComparable> = Vec::from([
+            TriviallyEqualityComparable::new({ 1 }),
+            TriviallyEqualityComparable::new({ 2 }),
+            TriviallyEqualityComparable::new({ 3 }),
+            TriviallyEqualityComparable::new({ 4 }),
+            TriviallyEqualityComparable::new({ 5 }),
+            TriviallyEqualityComparable::new({ 6 }),
+            TriviallyEqualityComparable::new({ 7 }),
+            TriviallyEqualityComparable::new({ 8 }),
+        ]);
+        let mut rhs: Vec<TriviallyEqualityComparable> = Vec::from([
+            TriviallyEqualityComparable::new({ 1 }),
+            TriviallyEqualityComparable::new({ 2 }),
+            TriviallyEqualityComparable::new({ 3 }),
+            TriviallyEqualityComparable::new({ 4 }),
+            TriviallyEqualityComparable::new({ 5 }),
+            TriviallyEqualityComparable::new({ 6 }),
+            TriviallyEqualityComparable::new({ 7 }),
+            TriviallyEqualityComparable::new({ 8 }),
+        ]);
         (unsafe {
-            let _lhs: () = lhs;
-            let _rhs: () = rhs;
-            check_44(_lhs, _rhs, 8_())
+            let _lhs: Vec<TriviallyEqualityComparable> = std::mem::take(&mut lhs);
+            let _rhs: Vec<TriviallyEqualityComparable> = std::mem::take(&mut rhs);
+            check_44(_lhs, _rhs, 8_usize)
         });
     }
     {
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
+        let mut lhs: Vec<TriviallyEqualityComparable> = Vec::from([
+            TriviallyEqualityComparable::new({ 1 }),
+            TriviallyEqualityComparable::new({ 2 }),
+            TriviallyEqualityComparable::new({ 3 }),
+            TriviallyEqualityComparable::new({ 4 }),
+            TriviallyEqualityComparable::new({ 7 }),
+            TriviallyEqualityComparable::new({ 6 }),
+            TriviallyEqualityComparable::new({ 7 }),
+            TriviallyEqualityComparable::new({ 8 }),
+        ]);
+        let mut rhs: Vec<TriviallyEqualityComparable> = Vec::from([
+            TriviallyEqualityComparable::new({ 1 }),
+            TriviallyEqualityComparable::new({ 2 }),
+            TriviallyEqualityComparable::new({ 3 }),
+            TriviallyEqualityComparable::new({ 4 }),
+            TriviallyEqualityComparable::new({ 5 }),
+            TriviallyEqualityComparable::new({ 6 }),
+            TriviallyEqualityComparable::new({ 7 }),
+            TriviallyEqualityComparable::new({ 8 }),
+        ]);
         (unsafe {
-            let _lhs: () = lhs;
-            let _rhs: () = rhs;
-            check_44(_lhs, _rhs, 4_())
+            let _lhs: Vec<TriviallyEqualityComparable> = std::mem::take(&mut lhs);
+            let _rhs: Vec<TriviallyEqualityComparable> = std::mem::take(&mut rhs);
+            check_44(_lhs, _rhs, 4_usize)
         });
     }
     return true;
@@ -1333,91 +1455,99 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_55() });
     const _: () = assert!(true, "test()");;
     {
         {
-            let mut lhs: () = unimplemented!();
-            let mut rhs: () = unimplemented!();
-            let mut i: () = 0_();
-            'loop_: while ((i) != (unimplemented!())) {
-                (*unimplemented!()) = 1_();
-                (unsafe { check_45(unimplemented!(), unimplemented!(), i) });
-                (*unimplemented!()) = 0_();
-                (*unimplemented!()) = 1_();
-                (unsafe { check_45(unimplemented!(), unimplemented!(), i) });
-                (*unimplemented!()) = 0_();
+            let mut lhs: Vec<libc::c_char> = (0..(256_usize) as usize)
+                .map(|_| (0 as libc::c_char))
+                .collect::<Vec<_>>();
+            let mut rhs: Vec<libc::c_char> = (0..(256_usize) as usize)
+                .map(|_| (0 as libc::c_char))
+                .collect::<Vec<_>>();
+            let mut i: usize = 0_usize;
+            'loop_: while ((i) != (lhs.len())) {
+                (*(&mut lhs).as_mut_ptr().add(i as usize)) = (1 as libc::c_char);
+                (unsafe { check_45(lhs.clone(), rhs.clone(), i) });
+                (*(&mut lhs).as_mut_ptr().add(i as usize)) = (0 as libc::c_char);
+                (*(&mut rhs).as_mut_ptr().add(i as usize)) = (1 as libc::c_char);
+                (unsafe { check_45(lhs.clone(), rhs.clone(), i) });
+                (*(&mut rhs).as_mut_ptr().add(i as usize)) = (0 as libc::c_char);
                 i.prefix_inc();
             }
         }
         {
-            let mut lhs: () = unimplemented!();
-            let mut rhs: () = unimplemented!();
-            let mut i: () = 0_();
-            'loop_: while ((i) != (unimplemented!())) {
-                (*unimplemented!()) = 1_();
-                (unsafe { check_46(unimplemented!(), unimplemented!(), i) });
-                (*unimplemented!()) = 0_();
-                (*unimplemented!()) = 1_();
-                (unsafe { check_46(unimplemented!(), unimplemented!(), i) });
-                (*unimplemented!()) = 0_();
+            let mut lhs: Vec<i32> = (0..(256_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>();
+            let mut rhs: Vec<i32> = (0..(256_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>();
+            let mut i: usize = 0_usize;
+            'loop_: while ((i) != (lhs.len())) {
+                (*(&mut lhs).as_mut_ptr().add(i as usize)) = 1;
+                (unsafe { check_46(lhs.clone(), rhs.clone(), i) });
+                (*(&mut lhs).as_mut_ptr().add(i as usize)) = 0;
+                (*(&mut rhs).as_mut_ptr().add(i as usize)) = 1;
+                (unsafe { check_46(lhs.clone(), rhs.clone(), i) });
+                (*(&mut rhs).as_mut_ptr().add(i as usize)) = 0;
                 i.prefix_inc();
             }
         }
     }
     {
-        let mut vec_size: () = 1_();
-        'loop_: while ((vec_size) != (256_())) {
+        let mut vec_size: usize = 1_usize;
+        'loop_: while ((vec_size) != (256_usize)) {
             {
-                let mut lhs: () = unimplemented!();
-                let mut rhs: () = unimplemented!();
+                let mut lhs: Vec<libc::c_char> = (0..(vec_size) as usize)
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Vec<_>>();
+                let mut rhs: Vec<libc::c_char> = (0..(vec_size) as usize)
+                    .map(|_| (0 as libc::c_char))
+                    .collect::<Vec<_>>();
                 (unsafe {
-                    let _lhs: () = unimplemented!();
-                    let _offset: () = unimplemented!();
-                    check_45(_lhs, unimplemented!(), _offset)
+                    let _lhs: Vec<libc::c_char> = lhs.clone();
+                    let _offset: usize = lhs.len();
+                    check_45(_lhs, rhs.clone(), _offset)
                 });
-                (*unimplemented!()) = 1_();
+                (*((&mut lhs).last_mut().unwrap())) = (1 as libc::c_char);
                 (unsafe {
-                    let _lhs: () = unimplemented!();
-                    let _offset: () = (unimplemented!()).wrapping_sub(1_());
-                    check_45(_lhs, unimplemented!(), _offset)
+                    let _lhs: Vec<libc::c_char> = lhs.clone();
+                    let _offset: usize = (lhs.len()).wrapping_sub(1_usize);
+                    check_45(_lhs, rhs.clone(), _offset)
                 });
-                (*unimplemented!()) = 0_();
-                (*unimplemented!()) = 1_();
+                (*((&mut lhs).last_mut().unwrap())) = (0 as libc::c_char);
+                (*((&mut rhs).last_mut().unwrap())) = (1 as libc::c_char);
                 (unsafe {
-                    let _lhs: () = unimplemented!();
-                    let _offset: () = (unimplemented!()).wrapping_sub(1_());
-                    check_45(_lhs, unimplemented!(), _offset)
+                    let _lhs: Vec<libc::c_char> = lhs.clone();
+                    let _offset: usize = (lhs.len()).wrapping_sub(1_usize);
+                    check_45(_lhs, rhs.clone(), _offset)
                 });
-                (*unimplemented!()) = 0_();
+                (*((&mut rhs).last_mut().unwrap())) = (0 as libc::c_char);
             }
             {
-                let mut lhs: () = unimplemented!();
-                let mut rhs: () = unimplemented!();
+                let mut lhs: Vec<i32> = (0..(vec_size) as usize).map(|_| 0_i32).collect::<Vec<_>>();
+                let mut rhs: Vec<i32> = (0..(vec_size) as usize).map(|_| 0_i32).collect::<Vec<_>>();
                 (unsafe {
-                    let _lhs: () = unimplemented!();
-                    let _offset: () = unimplemented!();
-                    check_46(_lhs, unimplemented!(), _offset)
+                    let _lhs: Vec<i32> = lhs.clone();
+                    let _offset: usize = lhs.len();
+                    check_46(_lhs, rhs.clone(), _offset)
                 });
-                (*unimplemented!()) = 1_();
+                (*((&mut lhs).last_mut().unwrap())) = 1;
                 (unsafe {
-                    let _lhs: () = unimplemented!();
-                    let _offset: () = (unimplemented!()).wrapping_sub(1_());
-                    check_46(_lhs, unimplemented!(), _offset)
+                    let _lhs: Vec<i32> = lhs.clone();
+                    let _offset: usize = (lhs.len()).wrapping_sub(1_usize);
+                    check_46(_lhs, rhs.clone(), _offset)
                 });
-                (*unimplemented!()) = 0_();
-                (*unimplemented!()) = 1_();
+                (*((&mut lhs).last_mut().unwrap())) = 0;
+                (*((&mut rhs).last_mut().unwrap())) = 1;
                 (unsafe {
-                    let _lhs: () = unimplemented!();
-                    let _offset: () = (unimplemented!()).wrapping_sub(1_());
-                    check_46(_lhs, unimplemented!(), _offset)
+                    let _lhs: Vec<i32> = lhs.clone();
+                    let _offset: usize = (lhs.len()).wrapping_sub(1_usize);
+                    check_46(_lhs, rhs.clone(), _offset)
                 });
-                (*unimplemented!()) = 0_();
+                (*((&mut rhs).last_mut().unwrap())) = 0;
             }
             vec_size.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

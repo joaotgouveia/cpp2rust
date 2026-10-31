@@ -22,44 +22,114 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut phone_numbers: () = unimplemented!();
-        let phone_book: [(); 39] =
+        let phone_book: [libc::c_char; 39] =
             std::mem::transmute(*b"start 555-1234, 555-2345, 555-3456 end\0");
         let mut i: () = unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"start ".as_ptr(),
+                    libcc2rs::c_str_len(c"start ".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"555-1234".as_ptr(),
+                    libcc2rs::c_str_len(c"555-1234".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"1234".as_ptr(),
+                    libcc2rs::c_str_len(c"1234".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c", ".as_ptr(),
+                    libcc2rs::c_str_len(c", ".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"555-2345".as_ptr(),
+                    libcc2rs::c_str_len(c"555-2345".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"2345".as_ptr(),
+                    libcc2rs::c_str_len(c"2345".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c", ".as_ptr(),
+                    libcc2rs::c_str_len(c", ".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"555-3456".as_ptr(),
+                    libcc2rs::c_str_len(c"555-3456".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"3456".as_ptr(),
+                    libcc2rs::c_str_len(c"3456".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
+        assert!(i != unimplemented!());
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c" end".as_ptr(),
+                    libcc2rs::c_str_len(c" end".as_ptr()) + 1
+                )
+                .to_vec()
+        );
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

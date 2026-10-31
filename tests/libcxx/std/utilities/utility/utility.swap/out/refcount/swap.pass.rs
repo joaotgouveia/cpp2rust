@@ -68,26 +68,26 @@ impl NotMoveConstructible {}
 #[byte_size(1)]
 pub struct NotMoveAssignable {}
 impl NotMoveAssignable {}
-pub fn can_swap_0() -> () {
+pub fn can_swap_0() -> bool {
     return unimplemented!();
 }
-pub fn can_swap_1() -> () {
+pub fn can_swap_1() -> bool {
     return unimplemented!();
 }
-pub fn can_swap_2() -> () {
+pub fn can_swap_2() -> bool {
     return unimplemented!();
 }
-pub fn can_swap_3() -> () {
+pub fn can_swap_3() -> bool {
     return unimplemented!();
 }
-pub fn can_swap_4() -> () {
+pub fn can_swap_4() -> bool {
     return unimplemented!();
 }
-pub fn test_swap_constexpr_5() -> () {
-    let mut i: () = 1_();
-    let mut j: () = 2_();
-    unimplemented!();
-    return (i == 2_()) && (j == 1_());
+pub fn test_swap_constexpr_5() -> bool {
+    let i: Value<i32> = Rc::new(RefCell::new(1));
+    let j: Value<i32> = Rc::new(RefCell::new(2));
+    cpp_swap!(i.as_pointer(), j.as_pointer());
+    return ((*i.borrow()) == 2) && ((*j.borrow()) == 1);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -108,20 +108,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut i: () = 1_();
-        let mut j: () = 2_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let i: Value<i32> = Rc::new(RefCell::new(1));
+        let j: Value<i32> = Rc::new(RefCell::new(2));
+        cpp_swap!(i.as_pointer(), j.as_pointer());
+        assert!(((*i.borrow()) == 2));
+        assert!(((*j.borrow()) == 1));
     }
     {
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
+        let mut i: Option<Value<i32>> = Ptr::alloc(1).to_owned_opt();
+        let mut j: Option<Value<i32>> = Ptr::alloc(2).to_owned_opt();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((i.as_pointer().read()) == 2));
+        assert!(((j.as_pointer().read()) == 1));
     }
     {
         const _: () = assert!(true, "can_swap<CopyOnly&>()");;
@@ -129,15 +129,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "can_swap<NoexceptMoveOnly&>()");;
         const _: () = assert!(true, "!can_swap<NotMoveConstructible&>()");;
         const _: () = assert!(true, "!can_swap<NotMoveAssignable&>()");;
-        let mut c: CopyOnly = CopyOnly::new();
-        let mut m: MoveOnly = MoveOnly::new();
-        let mut nm: NoexceptMoveOnly = NoexceptMoveOnly::new();
+        let c: Value<CopyOnly> = Rc::new(RefCell::new(CopyOnly::new()));
+        let m: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new()));
+        let nm: Value<NoexceptMoveOnly> = Rc::new(RefCell::new(NoexceptMoveOnly::new()));
         const _: () = assert!(true, "!noexcept(std::swap(c, c))");;
         const _: () = assert!(true, "!noexcept(std::swap(m, m))");;
         const _: () = assert!(true, "noexcept(std::swap(nm, nm))");;
     }
     const _: () = assert!(true, "test_swap_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub trait CopyOnlyImpl {
     fn copy_assign(&self, _a0: Ptr<CopyOnly>) -> Ptr<CopyOnly>;

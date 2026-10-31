@@ -22,25 +22,25 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut b: [(); 4] = [10_(), 14_(), 16_(), 17_()];
-        let mut p: [(); 4] = [25_(), 62.5_f64, 12.5_f64, 0_()];
+        let mut b: [f64; 4] = [10_f64, 14_f64, 16_f64, 17_f64];
+        let mut p: [f64; 4] = [25_f64, 62.5_f64, 12.5_f64, 0_f64];
         let mut pa: () = unimplemented!();
         let mut d: () = unimplemented!();
-        let mut iv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut dn: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut iv: Vec<f64> = unimplemented!();
+        assert!(((iv.len()) == (4_usize)));
+        assert!(((*(&mut iv).as_mut_ptr().add(0_usize as usize)) == (10_f64)));
+        assert!(((*(&mut iv).as_mut_ptr().add(1_usize as usize)) == (14_f64)));
+        assert!(((*(&mut iv).as_mut_ptr().add(2_usize as usize)) == (16_f64)));
+        assert!(((*(&mut iv).as_mut_ptr().add(3_usize as usize)) == (17_f64)));
+        let mut dn: Vec<f64> = unimplemented!();
+        assert!(((dn.len()) == (4_usize)));
+        assert!(((*(&mut dn).as_mut_ptr().add(0_usize as usize)) == ((25_f64) / (256.25_f64))));
+        assert!(((*(&mut dn).as_mut_ptr().add(1_usize as usize)) == ((62.5_f64) / (256.25_f64))));
+        assert!(((*(&mut dn).as_mut_ptr().add(2_usize as usize)) == ((12.5_f64) / (256.25_f64))));
+        assert!(((*(&mut dn).as_mut_ptr().add(3_usize as usize)) == (0_f64)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

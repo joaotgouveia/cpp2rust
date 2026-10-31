@@ -6,37 +6,37 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_int__int_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_int_ptr__const_int_ptr_ {}
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cm: Ptr<()> = m.as_pointer();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 42));
+        assert!((unimplemented!() == 42));
+        assert!((unimplemented!() == 42));
+        assert!((unimplemented!() == 42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let cm: Ptr<()> = m.as_pointer();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
+        assert!(({ unimplemented!() } == { (a.as_pointer() as Ptr::<i32>) }));
+        assert!((unimplemented!() == (a.as_pointer() as Ptr::<i32>)));
+        assert!(({ unimplemented!() } == { (a.as_pointer() as Ptr::<i32>) }));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -63,9 +63,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -30,23 +30,23 @@ impl cpp20_bidirectional_iterator_with_arrow_B_ptr_ {
         return &mut (*(self as *mut cpp20_bidirectional_iterator_with_arrow_B_ptr_));
     }
 }
-pub unsafe fn operator_eq_0(x: *const A, y: *const A) -> () {
+pub unsafe fn operator_eq_0(x: *const A, y: *const A) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct A {
-    data_: (),
+    data_: i32,
 }
 impl A {
     pub unsafe fn new() -> Self {
-        let mut this = Self { data_: 1_() };
+        let mut this = Self { data_: 1 };
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = -1_();
+        self.data_ = -1_i32;
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
 }
@@ -63,26 +63,29 @@ impl Default for A {
 }
 pub unsafe fn test_1(mut i: *mut A, mut x: A) {
     let mut r: () = unimplemented!();
-    unimplemented!();
+    assert!(
+        ((unsafe { A::get(&(*(unimplemented!()).cast_const()),) }) == (unsafe { A::get(&x,) }))
+    );
 }
-pub unsafe fn operator_eq_2(x: *const B, y: *const B) -> () {
+pub unsafe fn operator_eq_2(x: *const B, y: *const B) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
+#[derive(Clone, VaArg, FnPtrArg, CppFromUnsafe, DestructorUnsafe)]
+#[cpp_from(i32, new, some_value)]
 pub struct B {
-    data_: (),
+    data_: i32,
 }
 impl B {
-    pub unsafe fn new(mut d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| unsafe { 1_() });
+    pub unsafe fn new(mut d: Option<i32>) -> Self {
+        let mut d: i32 = d.unwrap_or_else(|| unsafe { 1 });
         let mut this = Self { data_: d };
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = -1_();
+        self.data_ = -1_i32;
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn operator_addr_6(&self) -> *const B {
@@ -103,20 +106,20 @@ impl Default for B {
         unsafe { B::new(None) }
     }
 }
-pub unsafe fn operator_eq_3(x: *const C, y: *const C) -> () {
+pub unsafe fn operator_eq_3(x: *const C, y: *const C) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct C {
-    data_: (),
+    data_: i32,
 }
 impl C {
     pub unsafe fn new() -> Self {
-        let mut this = Self { data_: 1_() };
+        let mut this = Self { data_: 1 };
         this
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
 }
@@ -148,34 +151,34 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut a: A = A::new();
     let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, A::destructor);
-    (unsafe { test_1((&mut a as *mut A).offset((1_()) as isize), A::new()) });
+    (unsafe { test_1((&mut a as *mut A).offset((1) as isize), A::new()) });
     {
         let mut l: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         {
-            let mut i: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let mut i: () = <UnsafeBidirectionalIterator<B>>::from(unimplemented!());
+            assert!(((unsafe { B::get(&(*i.iter_deref()),) }) == (0)));
+            i.iter_inc();
+            assert!(((unsafe { B::get(&(*i.iter_deref()),) }) == (1)));
+            i.iter_inc();
+            assert!(((unsafe { B::get(&(*i.iter_deref()),) }) == (2)));
+            i.iter_inc();
+            assert!(i == <UnsafeBidirectionalIterator<B>>::from(unimplemented!()));
         }
         {
             let mut ri: () = unimplemented!();
+            assert!(((unsafe { B::get(&(*unimplemented!()),) }) == (2)));
             unimplemented!();
+            assert!(((unsafe { B::get(&(*unimplemented!()),) }) == (1)));
             unimplemented!();
+            assert!(((unsafe { B::get(&(*unimplemented!()),) }) == (0)));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(unimplemented!());
         }
     }
     {
@@ -184,21 +187,21 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut data: [B; 3] = [
-            B::new({ Some(1_()) }),
-            B::new({ Some(2_()) }),
-            B::new({ Some(3_()) }),
+            B::new({ Some(1) }),
+            B::new({ Some(2) }),
+            B::new({ Some(3) }),
         ];
         let mut iter: cpp20_bidirectional_iterator_with_arrow_B_ptr_ =
             cpp20_bidirectional_iterator_with_arrow_B_ptr_::new_1({
-                data.as_mut_ptr().offset((3_()) as isize)
+                data.as_mut_ptr().offset((3) as isize)
             });
         let mut ri: () = unimplemented!();
-        unimplemented!();
+        assert!(((unsafe { B::get(&(*(unimplemented!()).cast_const()),) }) == (3)));
     }
     {
         (&(*std::cell::LazyCell::force_mut(&mut *&raw mut gC_4)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const gC_4);

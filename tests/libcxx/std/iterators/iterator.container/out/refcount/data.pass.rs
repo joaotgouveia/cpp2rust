@@ -6,35 +6,35 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_const_container_0(c: Ptr<()>) {
-    unimplemented!();
+pub fn test_const_container_0(c: Ptr<Vec<i32>>) {
+    assert!(({ unimplemented!() } == { c.decay() }));
 }
-pub fn test_const_container_1(c: Ptr<()>) {
-    unimplemented!();
+pub fn test_const_container_1(c: Ptr<Vec<i32>>) {
+    assert!(({ unimplemented!() } == { c.decay() }));
 }
 pub fn test_const_container_2(c: Ptr<()>) {
-    unimplemented!();
+    assert!(({ unimplemented!() } == { unimplemented!() }));
 }
-pub fn test_const_container_3(c: Ptr<()>) {
+pub fn test_const_container_3(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(({ unimplemented!() } == { unimplemented!() }));
 }
-pub fn test_container_4(c: Ptr<()>) {
-    unimplemented!();
+pub fn test_container_4(c: Ptr<Vec<i32>>) {
+    assert!(({ unimplemented!() } == { c.decay() }));
 }
-pub fn test_container_5(c: Ptr<()>) {
-    unimplemented!();
+pub fn test_container_5(c: Ptr<Vec<i32>>) {
+    assert!(({ unimplemented!() } == { c.decay() }));
 }
 pub fn test_container_6(c: Ptr<()>) {
-    unimplemented!();
+    assert!(({ unimplemented!() } == { unimplemented!() }));
 }
-pub fn test_container_7(c: Ptr<()>) {
+pub fn test_container_7(c: Ptr<Vec<i32>>) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(({ unimplemented!() } == { unimplemented!() }));
 }
-pub fn test_const_array_8(array: Ptr<()>) {
+pub fn test_const_array_8(array: Ptr<i32>) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(({ unimplemented!() } == { ((array).offset((0) as isize)) }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -55,12 +55,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!().write(3_());
-    let il: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = 1;
+        (*v.borrow_mut()).push(__a1)
+    };
+    let a: Value<Vec<i32>> = Rc::new(RefCell::new(
+        std::array::from_fn::<_, 1, _>(|_| 0_i32).to_vec(),
+    ));
+    a.decay().offset(0_usize as isize).write(3);
+    let il: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([4])));
     ({ test_container_4(v.as_pointer()) });
     ({ test_container_5(a.as_pointer()) });
     ({ test_container_7(il.as_pointer()) });
@@ -71,9 +76,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_container_6(sv.as_pointer()) });
     ({ test_const_container_2(sv.as_pointer()) });
     ({ test_const_array_8(arrA_9.with(|v| v.as_pointer())) });
-    return 0_();
+    return 0;
 }
 thread_local!(
-    static arrA_9: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+    static arrA_9: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
 );
 pub fn __cpp2rust_init_globals() {}

@@ -26,7 +26,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (&(*mb.borrow_mut()));
     const _: () = assert!(true, "std::money_base::none == 0");;
@@ -34,10 +34,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::money_base::symbol == 2");;
     const _: () = assert!(true, "std::money_base::sign == 3");;
     const _: () = assert!(true, "std::money_base::value == 4");;
-    const _: () = assert!((4usize == 4_()), "sizeof(std::money_base::pattern) == 4");;
+    const _: () = assert!((4usize == 4_usize), "sizeof(std::money_base::pattern) == 4");;
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     &(*p.borrow_mut());
-    array_elem!(p.as_pointer(), field, 0_()).write(unimplemented!());
-    return 0_();
+    array_elem!(p.as_pointer(), field, 0).write((unimplemented!() as i8));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

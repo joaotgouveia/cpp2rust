@@ -12,38 +12,48 @@ pub unsafe fn checkCV_0() {
         let mut s2: () = unimplemented!();
         let mut s3: () = unimplemented!();
         let mut s4: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            (((((unimplemented!()).wrapping_add(unimplemented!()))
+                .wrapping_add(unimplemented!()))
+            .wrapping_add(unimplemented!()))
+                == (0_()))
+        );
     }
     {
         let mut s1: () = unimplemented!();
         let mut s2: () = unimplemented!();
         let mut s3: () = unimplemented!();
         let mut s4: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            (((((unimplemented!() as ()).wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ())))
+                == (0_()))
+        );
     }
 }
-pub unsafe fn testConstexprSpan_1() -> () {
+pub unsafe fn testConstexprSpan_1() -> bool {
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     return ((((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())))
         && ((unimplemented!()).is_null()))
         && ((unimplemented!()) == (0_()));
 }
-pub unsafe fn testConstexprSpan_2() -> () {
+pub unsafe fn testConstexprSpan_2() -> bool {
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     return ((((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())))
         && ((unimplemented!()).is_null()))
         && ((unimplemented!()) == (0_()));
 }
-pub unsafe fn testConstexprSpan_3() -> () {
+pub unsafe fn testConstexprSpan_3() -> bool {
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     return ((((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())))
         && ((unimplemented!()).is_null()))
         && ((unimplemented!()) == (0_()));
 }
-pub unsafe fn testConstexprSpan_4() -> () {
+pub unsafe fn testConstexprSpan_4() -> bool {
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     return ((((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())))
@@ -54,36 +64,36 @@ pub unsafe fn testRuntimeSpan_5() {
     const _: () = assert!(true, "");;
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
 }
 pub unsafe fn testRuntimeSpan_6() {
     const _: () = assert!(true, "");;
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
 }
 pub unsafe fn testRuntimeSpan_7() {
     const _: () = assert!(true, "");;
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
 }
 pub unsafe fn testRuntimeSpan_8() {
     const _: () = assert!(true, "");;
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
 }
 pub unsafe fn testRuntimeSpan_9() {
     const _: () = assert!(true, "");;
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
+    assert!(((unimplemented!()).is_null()) && ((unimplemented!()) == (0_())));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -103,7 +113,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "testConstexprSpan<int>()");;
     const _: () = assert!(true, "testConstexprSpan<long>()");;
     const _: () = assert!(true, "testConstexprSpan<double>()");;
@@ -120,6 +130,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     const _: () = assert!(true, "std::is_default_constructible_v<std::span<int, 0>>");;
     const _: () = assert!(true, "!std::is_default_constructible_v<std::span<int, 2>>");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -16,7 +16,7 @@ pub struct S {
     #[byte_size(4)]
     pub a: (),
     #[offset(4)]
-    pub k: (),
+    pub k: i32,
     #[offset(8)]
     #[byte_size(1)]
     pub e: Empty,
@@ -25,7 +25,7 @@ impl S {
     pub fn new() -> Self {
         Self {
             a: unimplemented!(),
-            k: (unimplemented!().read()),
+            k: ((unimplemented!().read()) as i32),
             e: (*unimplemented!().upgrade().deref()).clone(),
         }
     }
@@ -64,35 +64,55 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!().write(2_());
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 3));
+        unimplemented!().write((2 as ()));
+        assert!(((unimplemented!().read()) == 2));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
+            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!().read()) == 5));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!().write(4_());
-        unimplemented!();
-        unimplemented!();
+        unimplemented!().write((4 as ()));
+        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!().read()) == 4));
     }
     {
-        let mut d: () = 1.5_f64;
+        let mut d: f64 = 1.5_f64;
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 1.5_f64));
+        assert!(Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
+            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!().read()) == 5));
         unimplemented!().write(2.5_f64);
         unimplemented!();
-        unimplemented!().write(4_());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        unimplemented!().write((4 as ()));
+        assert!(((unimplemented!().read()) == 2.5_f64));
+        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
+                .len()
+                .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!().read()) == 4));
+        assert!((d == 2.5_f64));
     }
     {
         const _: () = assert!(
@@ -114,7 +134,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "S().k == 1");;
         const _: () = assert!(true, "std::get<1>(getP()) == 4");;
     }
-    return 0_();
+    return 0;
 }
 pub trait SImpl {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S>;

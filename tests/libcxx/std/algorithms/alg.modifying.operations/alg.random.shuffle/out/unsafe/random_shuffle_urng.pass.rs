@@ -22,19 +22,19 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut ia: [(); 10] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_(), 10_()];
-    let mut ia1: [(); 10] = [2_(), 7_(), 1_(), 4_(), 3_(), 6_(), 5_(), 10_(), 9_(), 8_()];
-    let mut ia2: [(); 10] = [1_(), 8_(), 3_(), 4_(), 6_(), 9_(), 5_(), 7_(), 2_(), 10_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 10]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut ia: [i32; 10] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let mut ia1: [i32; 10] = [2, 7, 1, 4, 3, 6, 5, 10, 9, 8];
+    let mut ia2: [i32; 10] = [1, 8, 3, 4, 6, 9, 5, 7, 2, 10];
+    let sa: u32 = (((::std::mem::size_of::<[i32; 10]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     let mut g: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(unimplemented!());
     unimplemented!();
     const _: () = assert!(true, "");;
-    unimplemented!();
-    return 0_();
+    assert!(unimplemented!());
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

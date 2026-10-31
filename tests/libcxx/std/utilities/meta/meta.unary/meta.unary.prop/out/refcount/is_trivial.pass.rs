@@ -82,12 +82,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_is_trivial_0() });
     ({ test_is_trivial_1() });
     ({ test_is_not_trivial_2() });
     ({ test_is_not_trivial_3() });
     ({ test_is_not_trivial_4() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

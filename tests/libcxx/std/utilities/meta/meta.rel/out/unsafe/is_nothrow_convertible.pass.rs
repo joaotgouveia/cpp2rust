@@ -10,7 +10,8 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_into(A, to_A)]
 pub struct B {
     pub a: A,
 }
@@ -23,7 +24,8 @@ impl B {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct C {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_into(C, to_C)]
 pub struct D {
     pub c: C,
 }
@@ -47,7 +49,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "(std::is_nothrow_convertible<int, double>::value)");;
     const _: () = assert!(true, "!(std::is_nothrow_convertible<int, char*>::value)");;
     const _: () = assert!(true, "!(std::is_nothrow_convertible<A, B>::value)");;
@@ -71,6 +73,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "!(std::is_nothrow_convertible_v<int[10], A[10]>)");;
     const _: () = assert!(true, "!(std::is_nothrow_convertible_v<V, V>)");;
     const _: () = assert!(true, "!(std::is_nothrow_convertible_v<V, I>)");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

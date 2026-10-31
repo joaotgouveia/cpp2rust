@@ -10,11 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct DefaultConstructible {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl DefaultConstructible {
-    pub fn new(j: Option<()>) -> Self {
-        let mut j: () = j.unwrap_or_else(|| 42_());
+    pub fn new(j: Option<i32>) -> Self {
+        let mut j: i32 = j.unwrap_or_else(|| 42);
         Self { i: j }
     }
 }
@@ -27,10 +27,10 @@ impl Default for DefaultConstructible {
 #[byte_size(4)]
 pub struct NotDefaultConstructible {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl NotDefaultConstructible {
-    pub fn new(mut j: ()) -> Self {
+    pub fn new(mut j: i32) -> Self {
         Self { i: j }
     }
 }
@@ -38,10 +38,10 @@ impl NotDefaultConstructible {
 #[byte_size(4)]
 pub struct MoveChecker {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl MoveChecker {
-    pub fn new(mut j: ()) -> Self {
+    pub fn new(mut j: i32) -> Self {
         Self { i: j }
     }
     pub fn move_from(v: Ptr<MoveChecker>) -> Self {
@@ -53,7 +53,7 @@ impl MoveChecker {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoexceptChecker {}
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         const _: () = assert!(true, "std::is_constructible_v<OwningView>");;
         const _: () = assert!(true, "std::default_initializable<OwningView>");;
@@ -78,11 +78,11 @@ pub fn test_0() -> () {
         );;
         {
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!((unimplemented!().with(|__s| __s.i) == 42));
         }
         {
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!((unimplemented!().with(|__s| __s.i) == 1));
         }
     }
     {
@@ -109,7 +109,7 @@ pub fn test_0() -> () {
         );;
         {
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!((unimplemented!().with(|__s| __s.i) == 1));
         }
     }
     {
@@ -126,10 +126,10 @@ pub fn test_0() -> () {
         const _: () = assert!(true, "!std::is_convertible_v<int, OwningView>");;
         const _: () = assert!(true, "std::is_convertible_v<MoveChecker&&, OwningView>");;
         {
-            let mut m: MoveChecker = MoveChecker::new({ 42_() });
+            let m: Value<MoveChecker> = Rc::new(RefCell::new(MoveChecker::new({ 42 })));
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!().with(|__s| __s.i) == 42));
+            assert!(({ (*m.borrow()).i } == -1_i32));
         }
     }
     {
@@ -181,16 +181,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait DefaultConstructibleImpl {
-    fn begin(&self) -> Ptr<()> {
+    fn begin(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn end(&self) -> Ptr<()> {
+    fn end(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
@@ -199,28 +199,28 @@ pub trait MoveCheckerImpl {
     fn move_assign(&self, _a0: Ptr<MoveChecker>) -> Ptr<MoveChecker> {
         unimplemented!()
     }
-    fn begin(&self) -> Ptr<()> {
+    fn begin(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn end(&self) -> Ptr<()> {
+    fn end(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl MoveCheckerImpl for Ptr<MoveChecker> {}
 pub trait NoexceptCheckerImpl {
-    fn begin(&self) -> Ptr<()> {
+    fn begin(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn end(&self) -> Ptr<()> {
+    fn end(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl NoexceptCheckerImpl for Ptr<NoexceptChecker> {}
 pub trait NotDefaultConstructibleImpl {
-    fn begin(&self) -> Ptr<()> {
+    fn begin(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn end(&self) -> Ptr<()> {
+    fn end(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }

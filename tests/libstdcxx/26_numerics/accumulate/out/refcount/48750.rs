@@ -11,17 +11,17 @@ use std::rc::{Rc, Weak};
 pub struct NaturalParameters {
     #[offset(0)]
     #[byte_size(24)]
-    m_data: (),
+    m_data: Vec<f64>,
 }
 impl NaturalParameters {
     pub fn new() -> Self {
         Self {
-            m_data: unimplemented!(),
+            m_data: (0..(2_usize) as usize).map(|_| 0_f64).collect::<Vec<_>>(),
         }
     }
     pub fn move_from(_a0: Ptr<NaturalParameters>) -> Self {
         Self {
-            m_data: unimplemented!(),
+            m_data: field!(_a0, m_data).with_mut(std::mem::take),
         }
     }
 }
@@ -41,9 +41,13 @@ pub fn operator_add_0(a: Ptr<NaturalParameters>, b: Ptr<NaturalParameters>) -> N
     .clone();
 }
 pub fn test01_1() {
-    let mut i: () = 0_();
-    'loop_: while (i < 1000_()) {
-        let mut ChildrenNP: () = unimplemented!();
+    let mut i: usize = 0_usize;
+    'loop_: while (i < 1000_usize) {
+        let ChildrenNP: Value<Vec<NaturalParameters>> = Rc::new(RefCell::new(
+            (0..(1000_usize) as usize)
+                .map(|_| <NaturalParameters>::default())
+                .collect::<Vec<_>>(),
+        ));
         let init: Value<NaturalParameters> = Rc::new(RefCell::new(NaturalParameters::new()));
         let mut NP: NaturalParameters = unimplemented!();
         i.prefix_inc();
@@ -53,28 +57,30 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test01_1() });
-    return 0_();
+    return 0;
 }
 pub trait NaturalParametersImpl {
-    fn begin(&self) -> ();
-    fn end(&self) -> ();
+    fn begin(&self) -> RandomAccessIterator<f64>;
+    fn end(&self) -> RandomAccessIterator<f64>;
     fn operator_add_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters>;
     fn move_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters>;
 }
 impl NaturalParametersImpl for Ptr<NaturalParameters> {
-    fn begin(&self) -> () {
-        return unimplemented!();
+    fn begin(&self) -> RandomAccessIterator<f64> {
+        return field_ref!((*self), m_data).decay().begin();
     }
-    fn end(&self) -> () {
-        return unimplemented!();
+    fn end(&self) -> RandomAccessIterator<f64> {
+        return field_ref!((*self), m_data).decay().begin();
     }
     fn operator_add_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters> {
         return (*self).clone();
     }
     fn move_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters> {
-        unimplemented!();
+        field_ref!((*self), m_data)
+            .as_pointer()
+            .write(field!(_a0, m_data).with_mut(std::mem::take));
         return (*self).clone();
     }
 }

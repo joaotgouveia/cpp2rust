@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {
-    pub d_: (),
-    pub i_: (),
+    pub d_: f64,
+    pub i_: i32,
 }
 pub unsafe fn operator_addr_0(_a0: *const A) {}
 pub unsafe fn operator_shr_1(is: *mut (), a: *mut A) -> *mut () {
@@ -31,11 +31,11 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut inf: () = unimplemented!();
     let mut i: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((((*unimplemented!()).d_) == (1.5_f64)));
+    assert!((((*unimplemented!()).i_) == (23)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

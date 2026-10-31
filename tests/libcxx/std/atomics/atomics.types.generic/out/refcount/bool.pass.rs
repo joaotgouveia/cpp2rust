@@ -6,20 +6,20 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn cmpxchg_weak_loop_0(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+pub fn cmpxchg_weak_loop_0(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> bool {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
+        if ((unimplemented!() as i32) == (true as i32)) {
             return true;
         }
         i.postfix_inc();
     }
     return false;
 }
-pub fn cmpxchg_weak_loop_1(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+pub fn cmpxchg_weak_loop_1(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> bool {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
+        if ((unimplemented!() as i32) == (true as i32)) {
             return true;
         }
         i.postfix_inc();
@@ -32,10 +32,10 @@ pub fn cmpxchg_weak_loop_2(
     mut desired: (),
     mut success: (),
     mut failure: (),
-) -> () {
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+) -> bool {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
+        if ((unimplemented!() as i32) == (true as i32)) {
             return true;
         }
         i.postfix_inc();
@@ -48,10 +48,10 @@ pub fn cmpxchg_weak_loop_3(
     mut desired: (),
     mut success: (),
     mut failure: (),
-) -> () {
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+) -> bool {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
+        if ((unimplemented!() as i32) == (true as i32)) {
             return true;
         }
         i.postfix_inc();
@@ -77,162 +77,228 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
         {
-            let mut lockfree: () = unimplemented!();
+            let mut lockfree: bool = unimplemented!();
             &(lockfree);
             {
-                unimplemented!();
+                assert!(lockfree);
             }
         }
         unimplemented!();
+        assert!(((unimplemented!() as i32) == (false as i32)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        let x: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(
+            ((({
+                cmpxchg_weak_loop_0(
+                    obj.as_pointer(),
+                    (x.as_pointer()).reinterpret_cast::<()>(),
+                    (false as ()),
+                )
+            }) as i32)
+                == (true as i32))
+        );
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (false as i32)));
         unimplemented!();
         (*x.borrow_mut()) = true;
+        assert!(
+            ((({
+                let _success: () = unimplemented!();
+                let _failure: () = unimplemented!();
+                cmpxchg_weak_loop_2(
+                    obj.as_pointer(),
+                    (x.as_pointer()).reinterpret_cast::<()>(),
+                    (false as ()),
+                    _success,
+                    _failure,
+                )
+            }) as i32)
+                == (true as i32))
+        );
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        (*x.borrow_mut()) = true;
         unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (false as i32)));
+        (*x.borrow_mut()) = true;
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!((((unimplemented!()) as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((unimplemented!()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
     }
     {
         let obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
         {
-            let mut lockfree: () = unimplemented!();
+            let mut lockfree: bool = unimplemented!();
             &(lockfree);
             {
-                unimplemented!();
+                assert!(lockfree);
             }
         }
         unimplemented!();
+        assert!(((unimplemented!() as i32) == (false as i32)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        let x: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(
+            ((({
+                cmpxchg_weak_loop_1(
+                    obj.as_pointer(),
+                    (x.as_pointer()).reinterpret_cast::<()>(),
+                    (false as ()),
+                )
+            }) as i32)
+                == (true as i32))
+        );
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (false as i32)));
         unimplemented!();
         (*x.borrow_mut()) = true;
+        assert!(
+            ((({
+                let _success: () = unimplemented!();
+                let _failure: () = unimplemented!();
+                cmpxchg_weak_loop_3(
+                    obj.as_pointer(),
+                    (x.as_pointer()).reinterpret_cast::<()>(),
+                    (false as ()),
+                    _success,
+                    _failure,
+                )
+            }) as i32)
+                == (true as i32))
+        );
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        (*x.borrow_mut()) = true;
         unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (false as i32)));
+        (*x.borrow_mut()) = true;
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!((((unimplemented!()) as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((unimplemented!()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
     }
     {
         let obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
         {
-            let mut lockfree: () = unimplemented!();
+            let mut lockfree: bool = unimplemented!();
             &(lockfree);
             {
-                unimplemented!();
+                assert!(lockfree);
             }
         }
         unimplemented!();
+        assert!(((unimplemented!() as i32) == (false as i32)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        let x: Value<bool> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(
+            ((({
+                cmpxchg_weak_loop_1(
+                    obj.as_pointer(),
+                    (x.as_pointer()).reinterpret_cast::<()>(),
+                    (false as ()),
+                )
+            }) as i32)
+                == (true as i32))
+        );
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (false as i32)));
         unimplemented!();
         (*x.borrow_mut()) = true;
+        assert!(
+            ((({
+                let _success: () = unimplemented!();
+                let _failure: () = unimplemented!();
+                cmpxchg_weak_loop_3(
+                    obj.as_pointer(),
+                    (x.as_pointer()).reinterpret_cast::<()>(),
+                    (false as ()),
+                    _success,
+                    _failure,
+                )
+            }) as i32)
+                == (true as i32))
+        );
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        (*x.borrow_mut()) = true;
         unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (false as i32)));
+        (*x.borrow_mut()) = true;
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((*x.borrow()) as i32) == (true as i32)));
+        assert!((((unimplemented!()) as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
+        assert!((((unimplemented!()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (true as i32)));
     }
     {
-        let storage: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_()])));
+        let storage: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8])));
         let zero: Ptr<()> = Ptr::alloc(Rc::new(RefCell::new(unimplemented!())).as_pointer());
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (false as i32)));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

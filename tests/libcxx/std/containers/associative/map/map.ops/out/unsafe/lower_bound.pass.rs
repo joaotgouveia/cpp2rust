@@ -10,55 +10,59 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_3)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_0: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_1: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_2: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_3: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut (i32, f64),
 }
 impl min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_std_pair_const_int__double__ {}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(i32, new, value)]
 pub struct PrivateConstructor {
-    val: (),
+    val: i32,
 }
 impl PrivateConstructor {
-    pub unsafe fn make(mut v: ()) -> PrivateConstructor {
+    pub unsafe fn make(mut v: i32) -> PrivateConstructor {
         return PrivateConstructor::new({ v });
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.val;
     }
-    unsafe fn new(mut v: ()) -> Self {
+    unsafe fn new(mut v: i32) -> Self {
         let mut this = Self { val: v };
         this
     }
@@ -101,14 +105,17 @@ impl std::cmp::PartialEq for PrivateConstructor {
     }
 }
 impl std::cmp::Eq for PrivateConstructor {}
-pub unsafe fn operator_lt_4(lhs: *const PrivateConstructor, rhs: *const PrivateConstructor) -> () {
+pub unsafe fn operator_lt_4(
+    lhs: *const PrivateConstructor,
+    rhs: *const PrivateConstructor,
+) -> bool {
     return ((unsafe { PrivateConstructor::get(&(*lhs)) })
         < (unsafe { PrivateConstructor::get(&(*rhs)) }));
 }
-pub unsafe fn operator_lt_5(lhs: *const PrivateConstructor, mut rhs: ()) -> () {
+pub unsafe fn operator_lt_5(lhs: *const PrivateConstructor, mut rhs: i32) -> bool {
     return ((unsafe { PrivateConstructor::get(&(*lhs)) }) < (rhs));
 }
-pub unsafe fn operator_lt_6(mut lhs: (), rhs: *const PrivateConstructor) -> () {
+pub unsafe fn operator_lt_6(mut lhs: i32, rhs: *const PrivateConstructor) -> bool {
     return ((lhs) < (unsafe { PrivateConstructor::get(&(*rhs)) }));
 }
 #[repr(C)]
@@ -134,23 +141,24 @@ pub struct transparent_less_private {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct transparent_less_not_a_type {
-    pub is_transparent: (),
+    pub is_transparent: i32,
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(i32, new_1, value)]
 pub struct C2Int {
-    i_: (),
+    i_: i32,
 }
 impl C2Int {
-    pub unsafe fn new_1() -> Self {
-        let mut this = Self { i_: 0_() };
+    pub unsafe fn new_2() -> Self {
+        let mut this = Self { i_: 0 };
         this
     }
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_1(mut i: i32) -> Self {
         let mut this = Self { i_: i };
         this
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.i_;
     }
 }
@@ -183,336 +191,352 @@ impl std::cmp::PartialEq for C2Int {
 impl std::cmp::Eq for C2Int {}
 impl Default for C2Int {
     fn default() -> Self {
-        unsafe { C2Int::new_1() }
+        unsafe { C2Int::new_2() }
     }
 }
-pub unsafe fn operator_lt_8(mut rhs: (), lhs: *const C2Int) -> () {
+pub unsafe fn operator_lt_8(mut rhs: i32, lhs: *const C2Int) -> bool {
     return ((rhs) < (unsafe { C2Int::get(&(*lhs)) }));
 }
-pub unsafe fn operator_lt_7(rhs: *const C2Int, lhs: *const C2Int) -> () {
+pub unsafe fn operator_lt_7(rhs: *const C2Int, lhs: *const C2Int) -> bool {
     return ((unsafe { C2Int::get(&(*rhs)) }) < (unsafe { C2Int::get(&(*lhs)) }));
 }
-pub unsafe fn operator_lt_9(rhs: *const C2Int, mut lhs: ()) -> () {
+pub unsafe fn operator_lt_9(rhs: *const C2Int, mut lhs: i32) -> bool {
     return ((unsafe { C2Int::get(&(*rhs)) }) < (lhs));
 }
-pub unsafe fn test_10() -> () {
+pub unsafe fn test_10() -> bool {
     {
         {
-            let mut ar: [(); 8] = [
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
+            let mut ar: [(i32, f64); 8] = [
+                (5, (5 as f64)),
+                (7, (6 as f64)),
+                (9, (7 as f64)),
+                (11, (8 as f64)),
+                (13, (9 as f64)),
+                (15, (10 as f64)),
+                (17, (11 as f64)),
+                (19, (12 as f64)),
             ];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let mut m: UnsafeMap<i32, (i32, f64)> = unimplemented!();
+            let mut r: UnsafeBidirectionalIterator<(i32, f64)> = unimplemented!();
+            assert!(r == m.begin());
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 0_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 8_isize));
         }
         {
-            let mut ar: [(); 8] = [
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
+            let mut ar: [(i32, f64); 8] = [
+                (5, (5 as f64)),
+                (7, (6 as f64)),
+                (9, (7 as f64)),
+                (11, (8 as f64)),
+                (13, (9 as f64)),
+                (15, (10 as f64)),
+                (17, (11 as f64)),
+                (19, (12 as f64)),
             ];
-            let m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let m: UnsafeMap<i32, (i32, f64)> = unimplemented!();
+            let mut r: UnsafeBidirectionalIterator<(i32, f64)> = unimplemented!();
+            assert!(r == m.begin());
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 0_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+            r = unimplemented!();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 8_isize));
         }
     }
     {
         {
-            let mut ar: [(); 8] = [
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
+            let mut ar: [(i32, f64); 8] = [
+                (5, (5 as f64)),
+                (7, (6 as f64)),
+                (9, (7 as f64)),
+                (11, (8 as f64)),
+                (13, (9 as f64)),
+                (15, (10 as f64)),
+                (17, (11 as f64)),
+                (19, (12 as f64)),
             ];
-            let mut m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let mut m: UnsafeMap<i32, (i32, f64)> = unimplemented!();
+            let mut r: UnsafeBidirectionalIterator<(i32, f64)> = unimplemented!();
+            assert!(r == m.begin());
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 0_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 8_isize));
         }
         {
-            let mut ar: [(); 8] = [
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
-                unimplemented!(),
+            let mut ar: [(i32, f64); 8] = [
+                (5, (5 as f64)),
+                (7, (6 as f64)),
+                (9, (7 as f64)),
+                (11, (8 as f64)),
+                (13, (9 as f64)),
+                (15, (10 as f64)),
+                (17, (11 as f64)),
+                (19, (12 as f64)),
             ];
-            let m: () = unimplemented!();
-            let mut r: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let m: UnsafeMap<i32, (i32, f64)> = unimplemented!();
+            let mut r: UnsafeBidirectionalIterator<(i32, f64)> = unimplemented!();
+            assert!(r == m.begin());
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 0_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+            r = unimplemented!().clone();
+            assert!(r == libcc2rs::next_unsafe(m.begin(), 8_isize));
         }
     }
     {
-        let mut ar: [(); 8] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let mut ar: [(i32, f64); 8] = [
+            (5, (5 as f64)),
+            (7, (6 as f64)),
+            (9, (7 as f64)),
+            (11, (8 as f64)),
+            (13, (9 as f64)),
+            (15, (10 as f64)),
+            (17, (11 as f64)),
+            (19, (12 as f64)),
         ];
-        let mut m: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut m: UnsafeMap<i32, (i32, f64)> = unimplemented!();
+        let mut r: UnsafeBidirectionalIterator<(i32, f64)> = unimplemented!();
+        assert!(r == m.begin());
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 0_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 8_isize));
+        r = unimplemented!();
+        assert!(r == m.begin());
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 0_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 8_isize));
     }
     {
-        let mut m: () = unimplemented!();
-        (*unimplemented!()) = 5_();
-        (*unimplemented!()) = 6_();
-        (*unimplemented!()) = 7_();
-        (*unimplemented!()) = 8_();
-        (*unimplemented!()) = 9_();
-        (*unimplemented!()) = 10_();
-        (*unimplemented!()) = 11_();
-        (*unimplemented!()) = 12_();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut m: UnsafeMap<PrivateConstructor, (PrivateConstructor, f64)> = UnsafeMap::new();
+        (*m.subscript_move(&mut (unsafe { PrivateConstructor::make(5) }), |__k| {
+            cpp_move_unsafe!(__k)
+        })) = 5_f64;
+        (*m.subscript_move(&mut (unsafe { PrivateConstructor::make(7) }), |__k| {
+            cpp_move_unsafe!(__k)
+        })) = 6_f64;
+        (*m.subscript_move(&mut (unsafe { PrivateConstructor::make(9) }), |__k| {
+            cpp_move_unsafe!(__k)
+        })) = 7_f64;
+        (*m.subscript_move(&mut (unsafe { PrivateConstructor::make(11) }), |__k| {
+            cpp_move_unsafe!(__k)
+        })) = 8_f64;
+        (*m.subscript_move(&mut (unsafe { PrivateConstructor::make(13) }), |__k| {
+            cpp_move_unsafe!(__k)
+        })) = 9_f64;
+        (*m.subscript_move(&mut (unsafe { PrivateConstructor::make(15) }), |__k| {
+            cpp_move_unsafe!(__k)
+        })) = 10_f64;
+        (*m.subscript_move(&mut (unsafe { PrivateConstructor::make(17) }), |__k| {
+            cpp_move_unsafe!(__k)
+        })) = 11_f64;
+        (*m.subscript_move(&mut (unsafe { PrivateConstructor::make(19) }), |__k| {
+            cpp_move_unsafe!(__k)
+        })) = 12_f64;
+        let mut r: UnsafeBidirectionalIterator<(PrivateConstructor, f64)> = unimplemented!();
+        assert!(r == m.begin());
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 0_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 1_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 2_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 3_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 4_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 5_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 6_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 7_isize));
+        r = unimplemented!();
+        assert!(r == libcc2rs::next_unsafe(m.begin(), 8_isize));
     }
     return true;
 }
@@ -531,9 +555,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_10() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);

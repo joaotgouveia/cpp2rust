@@ -10,19 +10,19 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct X {}
 thread_local!(
-    pub static dtor_called_0: Value<()> = Rc::new(RefCell::new(false));
+    pub static dtor_called_0: Value<bool> = Rc::new(RefCell::new(false));
 );
-pub fn check_reset_1() -> () {
+pub fn check_reset_1() -> bool {
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
         unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (false as i32)));
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (false as i32)));
     }
     return true;
 }
@@ -45,26 +45,26 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ check_reset_1() });
     const _: () = assert!(true, "check_reset()");;
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
+        assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));
+        assert!(((unimplemented!() as i32) == (false as i32)));
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);
     }
-    return 0_();
+    return 0;
 }
 pub trait XImpl {
     fn destructor(&self);

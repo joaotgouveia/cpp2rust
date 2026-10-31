@@ -163,74 +163,74 @@ thread_local!(
         unimplemented!(),
     ])));
 );
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_zero: anon_1 = 0;
 pub const anon_1_non_zero: anon_1 = 1;
 pub const anon_1_inf: anon_1 = 2;
 pub const anon_1_NaN: anon_1 = 3;
 pub const anon_1_non_zero_nan: anon_1 = 4;
-pub fn test_isinf_2(mut v: ()) -> () {
+pub fn test_isinf_2(mut v: f64) -> bool {
     return (v == unimplemented!()) || (v == -unimplemented!());
 }
-pub fn test_isnan_3(mut v: ()) -> () {
+pub fn test_isnan_3(mut v: f64) -> bool {
     return (v != v);
 }
-pub fn classify_4(x: Ptr<()>) -> () {
+pub fn classify_4(x: Ptr<()>) -> i32 {
     if unimplemented!() {
-        return (anon_1_zero as ());
+        return (anon_1_zero as i32);
     }
     if ({ test_isinf_2(unimplemented!()) }) || ({ test_isinf_2(unimplemented!()) }) {
-        return (anon_1_inf as ());
+        return (anon_1_inf as i32);
     }
     if ({ test_isnan_3(unimplemented!()) }) && ({ test_isnan_3(unimplemented!()) }) {
-        return (anon_1_NaN as ());
+        return (anon_1_NaN as i32);
     }
     if ({ test_isnan_3(unimplemented!()) }) {
-        if (unimplemented!() == 0_()) {
-            return (anon_1_NaN as ());
+        if (unimplemented!() == 0_f64) {
+            return (anon_1_NaN as i32);
         }
-        return (anon_1_non_zero_nan as ());
+        return (anon_1_non_zero_nan as i32);
     }
     if ({ test_isnan_3(unimplemented!()) }) {
-        if (unimplemented!() == 0_()) {
-            return (anon_1_NaN as ());
+        if (unimplemented!() == 0_f64) {
+            return (anon_1_NaN as i32);
         }
-        return (anon_1_non_zero_nan as ());
+        return (anon_1_non_zero_nan as i32);
     }
-    return (anon_1_non_zero as ());
+    return (anon_1_non_zero as i32);
 }
-pub fn classify_5(mut x: ()) -> () {
-    if (x == 0_()) {
-        return (anon_1_zero as ());
-    }
-    if unimplemented!() {
-        return (anon_1_inf as ());
+pub fn classify_5(mut x: f64) -> i32 {
+    if (x == 0_f64) {
+        return (anon_1_zero as i32);
     }
     if unimplemented!() {
-        return (anon_1_NaN as ());
+        return (anon_1_inf as i32);
     }
-    return (anon_1_non_zero as ());
+    if unimplemented!() {
+        return (anon_1_NaN as i32);
+    }
+    return (anon_1_non_zero as i32);
 }
-pub fn is_about_6(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_6(mut x: f32, mut y: f32) {
+    assert!(((unimplemented!() as f64) < 1e-06_f64));
 }
-pub fn is_about_7(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_7(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
-pub fn is_about_8(mut x: (), mut y: ()) {
-    unimplemented!();
+pub fn is_about_8(mut x: f64, mut y: f64) {
+    assert!((unimplemented!() < 1e-14_f64));
 }
 pub fn test_9(z: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_10(z: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_11(z: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn test_12() {
     ({
@@ -287,27 +287,34 @@ pub fn test_14() {
     });
 }
 pub fn test_edges_15() {
-    let mut N: () = (2448usize as ()).wrapping_div((16usize as ()));
-    let mut i: () = 0_();
+    let mut N: u32 = (((2448usize as usize).wrapping_div((16usize as usize))) as u32);
+    let mut i: u32 = 0_u32;
     'loop_: while (i < N) {
         let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         'switch: {
             match { ({ classify_4((testcases_0.with(|v| v.as_pointer()) as Ptr<()>).offset(i)) }) }
             {
-                __v if __v == (anon_1_zero as ()) || __v == (anon_1_non_zero as ()) => {
-                    unimplemented!();
-                    unimplemented!();
-                    unimplemented!();
+                __v if __v == (anon_1_zero as i32) || __v == (anon_1_non_zero as i32) => {
+                    assert!(unimplemented!());
+                    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+                    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
                     break 'switch;
                 }
-                __v if __v == (anon_1_inf as ()) => {
-                    unimplemented!();
-                    unimplemented!();
-                    unimplemented!();
+                __v if __v == (anon_1_inf as i32) => {
+                    assert!((unimplemented!()) && (unimplemented!() > 0_f64));
+                    assert!((unimplemented!() == 0_f64));
+                    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
                     break 'switch;
                 }
-                __v if __v == (anon_1_NaN as ()) || __v == (anon_1_non_zero_nan as ()) => {
-                    unimplemented!();
+                __v if __v == (anon_1_NaN as i32) || __v == (anon_1_non_zero_nan as i32) => {
+                    assert!(
+                        (({ classify_4(r.as_pointer(),) })
+                            == ({
+                                classify_4(
+                                    (testcases_0.with(|v| v.as_pointer()) as Ptr<()>).offset(i),
+                                )
+                            }))
+                    );
                     break 'switch;
                 }
                 _ => {}
@@ -335,12 +342,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_12() });
     ({ test_13() });
     ({ test_14() });
     ({ test_edges_15() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = testcases_0.with(|_| ());

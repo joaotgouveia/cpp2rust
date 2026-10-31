@@ -58,8 +58,8 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let mut s: usize = 0_usize;
-        let mut vp: AnyPtr = Ptr::<()>::null();
-        let mut vpc: AnyPtr = Ptr::<()>::null();
+        let mut vp: AnyPtr = AnyPtr::default();
+        let mut vpc: AnyPtr = AnyPtr::default();
         let mut cp: Ptr<i8> = Ptr::<i8>::null();
         let mut cpc: Ptr<i8> = Ptr::<i8>::null();
         const _: () = assert!(true, "");;
@@ -106,7 +106,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = ({ strchr_6((s).clone(), (('l' as i8) as i32)) });
+        let mut res: Ptr<i8> = unimplemented!();
         assert!(({ (res).clone() } == { (s.offset((2) as isize)) }));
     }
     {
@@ -229,7 +229,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut count: usize = 11_usize;
         let mut s: AnyPtr = ((storage.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
         const _: () = assert!(true, "");;
-        let mut res: AnyPtr = ({ memchr_7((s).clone(), (('l' as i8) as i32), count) });
+        let mut res: AnyPtr = unimplemented!();
         assert!(
             ({ (res).clone() } == {
                 (((storage.as_pointer() as Ptr<i8>).offset(2)) as Ptr<i8>).to_any()

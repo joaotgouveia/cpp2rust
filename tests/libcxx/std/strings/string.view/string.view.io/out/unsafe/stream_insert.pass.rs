@@ -22,39 +22,57 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut out: () = unimplemented!();
         let mut sv: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
         let mut out: () = unimplemented!();
-        let mut s: () = unimplemented!();
+        let mut s: Vec<libc::c_char> = std::slice::from_raw_parts(
+            c"some text".as_ptr(),
+            libcc2rs::c_str_len(c"some text".as_ptr()) + 1,
+        )
+        .to_vec();
         let mut sv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
         let mut out: () = unimplemented!();
         let mut sv: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
         let mut out: () = unimplemented!();
-        let mut s: () = unimplemented!();
+        let mut s: Vec<i32> = std::slice::from_raw_parts(
+            [
+                115 as i32, 111 as i32, 109 as i32, 101 as i32, 32 as i32, 116 as i32, 101 as i32,
+                120 as i32, 116 as i32, 0 as i32,
+            ]
+            .as_ptr(),
+            libcc2rs::c_str_len(
+                [
+                    115 as i32, 111 as i32, 109 as i32, 101 as i32, 32 as i32, 116 as i32,
+                    101 as i32, 120 as i32, 116 as i32, 0 as i32,
+                ]
+                .as_ptr(),
+            ) + 1,
+        )
+        .to_vec();
         let mut sv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

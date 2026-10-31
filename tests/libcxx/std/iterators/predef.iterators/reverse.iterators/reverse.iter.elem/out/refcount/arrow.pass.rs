@@ -18,18 +18,18 @@ impl cpp20_bidirectional_iterator_with_arrow_B_ptr_ {
         Self { it_: (it).clone() }
     }
 }
-pub fn operator_eq_0(x: Ptr<A>, y: Ptr<A>) -> () {
+pub fn operator_eq_0(x: Ptr<A>, y: Ptr<A>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(4)]
 pub struct A {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl A {
     pub fn new() -> Self {
-        Self { data_: 1_() }
+        Self { data_: 1 }
     }
 }
 impl CppEq for A {
@@ -45,20 +45,21 @@ impl Default for A {
 pub fn test_1(mut i: Ptr<A>, x: A) {
     let x: Value<A> = Rc::new(RefCell::new(x));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((({ AImpl::get(&unimplemented!(),) }) == ({ AImpl::get(&x.as_pointer(),) })));
 }
-pub fn operator_eq_2(x: Ptr<B>, y: Ptr<B>) -> () {
+pub fn operator_eq_2(x: Ptr<B>, y: Ptr<B>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct B {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl B {
-    pub fn new(d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| 1_());
+    pub fn new(d: Option<i32>) -> Self {
+        let mut d: i32 = d.unwrap_or_else(|| 1);
         Self { data_: d }
     }
 }
@@ -72,18 +73,18 @@ impl Default for B {
         { B::new(None) }
     }
 }
-pub fn operator_eq_3(x: Ptr<C>, y: Ptr<C>) -> () {
+pub fn operator_eq_3(x: Ptr<C>, y: Ptr<C>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct C {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl C {
     pub fn new() -> Self {
-        Self { data_: 1_() }
+        Self { data_: 1 }
     }
 }
 impl CppEq for C {
@@ -119,34 +120,36 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let a: Value<A> = Rc::new(RefCell::new(A::new()));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
-    ({ test_1((a.as_pointer()).offset((1_()) as isize), A::new()) });
+    ({ test_1((a.as_pointer()).offset((1) as isize), A::new()) });
     {
         let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         {
-            let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let i: Value<()> = Rc::new(RefCell::new(<BidirectionalIterator<B>>::from(
+                unimplemented!(),
+            )));
+            assert!((({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 0));
+            (*i.borrow_mut()).iter_inc();
+            assert!((({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 1));
+            (*i.borrow_mut()).iter_inc();
+            assert!((({ BImpl::get(&(*i.borrow()).iter_deref(),) }) == 2));
+            (*i.borrow_mut()).iter_inc();
+            assert!((*i.borrow()) == <BidirectionalIterator<B>>::from(unimplemented!()));
         }
         {
             let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            assert!((({ BImpl::get(&unimplemented!(),) }) == 2));
             unimplemented!();
+            assert!((({ BImpl::get(&unimplemented!(),) }) == 1));
             unimplemented!();
+            assert!((({ BImpl::get(&unimplemented!(),) }) == 0));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(unimplemented!());
         }
     }
     {
@@ -155,45 +158,45 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let data: Value<Box<[B]>> = Rc::new(RefCell::new(Box::new([
-            B::new({ Some(1_()) }),
-            B::new({ Some(2_()) }),
-            B::new({ Some(3_()) }),
+            B::new({ Some(1) }),
+            B::new({ Some(2) }),
+            B::new({ Some(3) }),
         ])));
         let mut iter: cpp20_bidirectional_iterator_with_arrow_B_ptr_ =
             cpp20_bidirectional_iterator_with_arrow_B_ptr_::new_1({
-                (data.as_pointer() as Ptr<B>).offset((3_()) as isize)
+                (data.as_pointer() as Ptr<B>).offset((3) as isize)
             });
         let ri: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((({ BImpl::get(&unimplemented!(),) }) == 3));
     }
     {
         (&(*gC_4.with(Value::clone).borrow_mut()));
     }
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn destructor(&self);
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
 }
 impl AImpl for Ptr<A> {
     fn destructor(&self) {
-        field!((*self), data_).write(-1_());
+        field!((*self), data_).write(-1_i32);
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
 }
 pub trait BImpl {
     fn destructor(&self);
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_addr_6(&self) -> Ptr<B>;
     fn operator_addr_7(&self) -> Ptr<B>;
 }
 impl BImpl for Ptr<B> {
     fn destructor(&self) {
-        field!((*self), data_).write(-1_());
+        field!((*self), data_).write(-1_i32);
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_addr_6(&self) -> Ptr<B> {
@@ -204,10 +207,10 @@ impl BImpl for Ptr<B> {
     }
 }
 pub trait CImpl {
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
 }
 impl CImpl for Ptr<C> {
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
 }
@@ -218,10 +221,10 @@ pub trait cpp20_bidirectional_iterator_with_arrow_B_ptr_Impl {
         unimplemented!()
     }
     fn operator_dec_6(&self) -> Ptr<cpp20_bidirectional_iterator_with_arrow_B_ptr_>;
-    fn operator_post_inc_7(&self, mut _a0: ()) -> cpp20_bidirectional_iterator_with_arrow_B_ptr_ {
+    fn operator_post_inc_7(&self, mut _a0: i32) -> cpp20_bidirectional_iterator_with_arrow_B_ptr_ {
         unimplemented!()
     }
-    fn operator_post_dec_8(&self, mut _a0: ()) -> cpp20_bidirectional_iterator_with_arrow_B_ptr_ {
+    fn operator_post_dec_8(&self, mut _a0: i32) -> cpp20_bidirectional_iterator_with_arrow_B_ptr_ {
         unimplemented!()
     }
 }

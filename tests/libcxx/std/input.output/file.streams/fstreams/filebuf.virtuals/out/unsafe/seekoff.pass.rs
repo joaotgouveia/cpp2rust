@@ -22,44 +22,44 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut buf: [(); 10] = [unimplemented!(); 10];
+        let mut buf: [libc::c_char; 10] = [(0 as libc::c_char); 10];
         let mut f: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!((unimplemented!()).is_null()));
+        assert!(unimplemented!());
         unimplemented!();
         let mut p: () = unimplemented!();
+        assert!(((unimplemented!()) == (11_())));
+        assert!(((unimplemented!()) == (('l' as libc::c_char) as i32)));
         unimplemented!();
+        assert!(((unimplemented!()) == (('a' as libc::c_char) as i32)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (('z' as libc::c_char) as i32)));
+        assert!(unimplemented!());
+        assert!(((unimplemented!()) == (('l' as libc::c_char) as i32)));
     }
     unimplemented!();
     {
-        let mut buf: [(); 10] = [unimplemented!(); 10];
+        let mut buf: [i32; 10] = [0_i32; 10];
         let mut f: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!((unimplemented!()).is_null()));
+        assert!(unimplemented!());
         unimplemented!();
         const _: () = assert!(true, "");;
         let mut p: () = unimplemented!();
+        assert!(((unimplemented!()) == (11_())));
+        assert!(((unimplemented!()) == ((108 as i32) as ())));
         unimplemented!();
+        assert!(((unimplemented!()) == ((97 as i32) as ())));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == ((122 as i32) as ())));
+        assert!(unimplemented!());
+        assert!(((unimplemented!()) == ((108 as i32) as ())));
     }
     unimplemented!();
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

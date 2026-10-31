@@ -6,10 +6,10 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn where_0(_a0: *const ()) {}
-pub unsafe fn where_1(_a0: *const ()) {}
-pub unsafe fn where_2(_a0: *const ()) {}
-pub unsafe fn where_3(_a0: *const ()) {}
+pub unsafe fn where_0(_a0: *const u16) {}
+pub unsafe fn where_1(_a0: *const u32) {}
+pub unsafe fn where_2(_a0: *const u64) {}
+pub unsafe fn where_3(_a0: *const u64) {}
 pub unsafe fn test1_4() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
     const _: () = assert!(true, "(LCE::increment == c)");;
@@ -17,10 +17,10 @@ pub unsafe fn test1_4() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_5() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -29,10 +29,10 @@ pub unsafe fn test1_5() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_6() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -41,10 +41,10 @@ pub unsafe fn test1_6() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_7() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -53,10 +53,10 @@ pub unsafe fn test1_7() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_8() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -65,10 +65,10 @@ pub unsafe fn test1_8() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_9() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -77,10 +77,10 @@ pub unsafe fn test1_9() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_10() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -89,10 +89,10 @@ pub unsafe fn test1_10() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_11() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -101,10 +101,10 @@ pub unsafe fn test1_11() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_12() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -113,10 +113,10 @@ pub unsafe fn test1_12() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_13() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -125,10 +125,10 @@ pub unsafe fn test1_13() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_14() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -137,10 +137,10 @@ pub unsafe fn test1_14() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_15() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -149,10 +149,10 @@ pub unsafe fn test1_15() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_16() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -161,10 +161,10 @@ pub unsafe fn test1_16() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_17() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -173,10 +173,10 @@ pub unsafe fn test1_17() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_18() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -185,10 +185,10 @@ pub unsafe fn test1_18() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_19() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -197,10 +197,10 @@ pub unsafe fn test1_19() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_20() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -209,10 +209,10 @@ pub unsafe fn test1_20() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_21() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -221,10 +221,10 @@ pub unsafe fn test1_21() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_22() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -233,10 +233,10 @@ pub unsafe fn test1_22() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_23() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -245,10 +245,10 @@ pub unsafe fn test1_23() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
-    (unsafe { where_0(&unimplemented!()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
+    (unsafe { where_0(&*(&raw const unimplemented!()).cast::<u16>()) });
 }
 pub unsafe fn test1_24() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -257,10 +257,10 @@ pub unsafe fn test1_24() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_25() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -269,10 +269,10 @@ pub unsafe fn test1_25() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_26() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -281,10 +281,10 @@ pub unsafe fn test1_26() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_27() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -293,10 +293,10 @@ pub unsafe fn test1_27() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_28() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -305,10 +305,10 @@ pub unsafe fn test1_28() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_29() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -317,10 +317,10 @@ pub unsafe fn test1_29() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_30() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -329,10 +329,10 @@ pub unsafe fn test1_30() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_31() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -341,10 +341,10 @@ pub unsafe fn test1_31() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_32() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -353,10 +353,10 @@ pub unsafe fn test1_32() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_33() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -365,10 +365,10 @@ pub unsafe fn test1_33() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_34() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -377,10 +377,10 @@ pub unsafe fn test1_34() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_35() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -389,10 +389,10 @@ pub unsafe fn test1_35() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_36() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -401,10 +401,10 @@ pub unsafe fn test1_36() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_37() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -413,10 +413,10 @@ pub unsafe fn test1_37() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_38() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -425,10 +425,10 @@ pub unsafe fn test1_38() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_39() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -437,10 +437,10 @@ pub unsafe fn test1_39() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_40() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -449,10 +449,10 @@ pub unsafe fn test1_40() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_41() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -461,10 +461,10 @@ pub unsafe fn test1_41() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_42() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -473,10 +473,10 @@ pub unsafe fn test1_42() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_43() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -485,10 +485,10 @@ pub unsafe fn test1_43() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
-    (unsafe { where_1(&unimplemented!()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
+    (unsafe { where_1(&*(&raw const unimplemented!()).cast::<u32>()) });
 }
 pub unsafe fn test1_44() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -497,10 +497,10 @@ pub unsafe fn test1_44() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_45() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -509,10 +509,10 @@ pub unsafe fn test1_45() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_46() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -521,10 +521,10 @@ pub unsafe fn test1_46() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_47() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -533,10 +533,10 @@ pub unsafe fn test1_47() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_48() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -545,10 +545,10 @@ pub unsafe fn test1_48() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_49() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -557,10 +557,10 @@ pub unsafe fn test1_49() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_50() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -569,10 +569,10 @@ pub unsafe fn test1_50() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_51() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -581,10 +581,10 @@ pub unsafe fn test1_51() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_52() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -593,10 +593,10 @@ pub unsafe fn test1_52() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_53() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -605,10 +605,10 @@ pub unsafe fn test1_53() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_54() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -617,10 +617,10 @@ pub unsafe fn test1_54() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_55() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -629,10 +629,10 @@ pub unsafe fn test1_55() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_56() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -641,10 +641,10 @@ pub unsafe fn test1_56() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_57() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -653,10 +653,10 @@ pub unsafe fn test1_57() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_58() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -665,10 +665,10 @@ pub unsafe fn test1_58() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_59() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -677,10 +677,10 @@ pub unsafe fn test1_59() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_60() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -689,10 +689,10 @@ pub unsafe fn test1_60() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_61() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -701,10 +701,10 @@ pub unsafe fn test1_61() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_62() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -713,10 +713,10 @@ pub unsafe fn test1_62() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_63() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -725,10 +725,10 @@ pub unsafe fn test1_63() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
-    (unsafe { where_2(&unimplemented!()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_2(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_64() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -737,10 +737,10 @@ pub unsafe fn test1_64() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_65() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -749,10 +749,10 @@ pub unsafe fn test1_65() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_66() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -761,10 +761,10 @@ pub unsafe fn test1_66() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_67() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -773,10 +773,10 @@ pub unsafe fn test1_67() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_68() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -785,10 +785,10 @@ pub unsafe fn test1_68() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_69() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -797,10 +797,10 @@ pub unsafe fn test1_69() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_70() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -809,10 +809,10 @@ pub unsafe fn test1_70() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_71() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -821,10 +821,10 @@ pub unsafe fn test1_71() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_72() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -833,10 +833,10 @@ pub unsafe fn test1_72() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_73() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -845,10 +845,10 @@ pub unsafe fn test1_73() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_74() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -857,10 +857,10 @@ pub unsafe fn test1_74() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_75() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -869,10 +869,10 @@ pub unsafe fn test1_75() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_76() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -881,10 +881,10 @@ pub unsafe fn test1_76() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_77() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -893,10 +893,10 @@ pub unsafe fn test1_77() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_78() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -905,10 +905,10 @@ pub unsafe fn test1_78() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_79() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -917,10 +917,10 @@ pub unsafe fn test1_79() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_80() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -929,10 +929,10 @@ pub unsafe fn test1_80() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_81() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -941,10 +941,10 @@ pub unsafe fn test1_81() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_82() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -953,10 +953,10 @@ pub unsafe fn test1_82() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test1_83() {
     const _: () = assert!(true, "(LCE::multiplier == a)");;
@@ -965,15 +965,15 @@ pub unsafe fn test1_83() {
     const _: () = assert!(true, "(LCE::min() == (c == 0u ? 1u: 0u))");;
     const _: () = assert!(true, "(LCE::max() == result_type(m - 1u))");;
     const _: () = assert!(true, "(LCE::default_seed == 1)");;
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
-    (unsafe { where_3(&unimplemented!()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
+    (unsafe { where_3(&*(&raw const unimplemented!()).cast::<u64>()) });
 }
 pub unsafe fn test_84() {
-    let W: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let M: () = -1_();
-    let A: () = (((1_()) << ((W) / (2_()))) - (1_()));
+    let W: i32 = (((::std::mem::size_of::<u16>() as usize).wrapping_mul(8_usize)) as i32);
+    let M: u16 = (-1_i32 as u16);
+    let A: u16 = ((((1_u16 as i32) << ((W) / (2))) - (1)) as u16);
     (unsafe { test1_4() });
     (unsafe { test1_5() });
     (unsafe { test1_6() });
@@ -990,9 +990,9 @@ pub unsafe fn test_84() {
     (unsafe { test1_17() });
 }
 pub unsafe fn test_85() {
-    let W: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let M: () = -1_();
-    let A: () = (((1_()) << ((W) / (2_()))) as ()).wrapping_sub(1_());
+    let W: i32 = (((::std::mem::size_of::<u32>() as usize).wrapping_mul(8_usize)) as i32);
+    let M: u32 = (-1_i32 as u32);
+    let A: u32 = (((1_u32) << ((W) / (2))) as u32).wrapping_sub(1_u32);
     (unsafe { test1_24() });
     (unsafe { test1_25() });
     (unsafe { test1_26() });
@@ -1009,9 +1009,9 @@ pub unsafe fn test_85() {
     (unsafe { test1_37() });
 }
 pub unsafe fn test_86() {
-    let W: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let M: () = -1_();
-    let A: () = (((1_()) << ((W) / (2_()))) as ()).wrapping_sub(1_());
+    let W: i32 = (((::std::mem::size_of::<u64>() as usize).wrapping_mul(8_usize)) as i32);
+    let M: u64 = (-1_i32 as u64);
+    let A: u64 = (((1_u64) << ((W) / (2))) as u64).wrapping_sub(1_u64);
     (unsafe { test1_44() });
     (unsafe { test1_45() });
     (unsafe { test1_46() });
@@ -1028,9 +1028,9 @@ pub unsafe fn test_86() {
     (unsafe { test1_57() });
 }
 pub unsafe fn test_87() {
-    let W: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
-    let M: () = -1_();
-    let A: () = (((1_()) << ((W) / (2_()))) as ()).wrapping_sub(1_());
+    let W: i32 = (((::std::mem::size_of::<u64>() as usize).wrapping_mul(8_usize)) as i32);
+    let M: u64 = (-1_i32 as u64);
+    let A: u64 = (((1_u64) << ((W) / (2))) as u64).wrapping_sub(1_u64);
     (unsafe { test1_64() });
     (unsafe { test1_65() });
     (unsafe { test1_66() });
@@ -1047,7 +1047,7 @@ pub unsafe fn test_87() {
     (unsafe { test1_77() });
 }
 pub unsafe fn test_ext_88() {
-    let M: () = -1_();
+    let M: u16 = (-1_i32 as u16);
     (unsafe { test1_18() });
     (unsafe { test1_19() });
     (unsafe { test1_20() });
@@ -1056,7 +1056,7 @@ pub unsafe fn test_ext_88() {
     (unsafe { test1_23() });
 }
 pub unsafe fn test_ext_89() {
-    let M: () = -1_();
+    let M: u32 = (-1_i32 as u32);
     (unsafe { test1_38() });
     (unsafe { test1_39() });
     (unsafe { test1_40() });
@@ -1065,7 +1065,7 @@ pub unsafe fn test_ext_89() {
     (unsafe { test1_43() });
 }
 pub unsafe fn test_ext_90() {
-    let M: () = -1_();
+    let M: u64 = (-1_i32 as u64);
     (unsafe { test1_58() });
     (unsafe { test1_59() });
     (unsafe { test1_60() });
@@ -1074,7 +1074,7 @@ pub unsafe fn test_ext_90() {
     (unsafe { test1_63() });
 }
 pub unsafe fn test_ext_91() {
-    let M: () = -1_();
+    let M: u64 = (-1_i32 as u64);
     (unsafe { test1_78() });
     (unsafe { test1_79() });
     (unsafe { test1_80() });
@@ -1097,7 +1097,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_84() });
     (unsafe { test_ext_88() });
     (unsafe { test_85() });
@@ -1106,6 +1106,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_ext_90() });
     (unsafe { test_87() });
     (unsafe { test_ext_91() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

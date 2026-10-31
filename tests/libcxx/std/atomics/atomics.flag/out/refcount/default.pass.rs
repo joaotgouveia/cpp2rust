@@ -26,15 +26,15 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == 0));
     {
-        let storage: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_()])));
+        let storage: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8])));
         let zero: Ptr<()> = Ptr::alloc(Rc::new(RefCell::new(unimplemented!())).as_pointer());
-        unimplemented!();
+        assert!(!(unimplemented!()));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

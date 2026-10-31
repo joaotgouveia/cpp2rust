@@ -6,181 +6,453 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_octal_0(mut expected: Ptr<()>) {
+pub fn test_octal_0(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::oct_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u16));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_octal_1(mut expected: Ptr<()>) {
+pub fn test_octal_1(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::oct_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i16));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_octal_2(mut expected: Ptr<()>) {
+pub fn test_octal_2(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::oct_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u32));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_octal_3(mut expected: Ptr<()>) {
+pub fn test_octal_3(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::oct_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i32));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_octal_4(mut expected: Ptr<()>) {
+pub fn test_octal_4(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::oct_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u64));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_octal_5(mut expected: Ptr<()>) {
+pub fn test_octal_5(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::oct_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i64));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_octal_6(mut expected: Ptr<()>) {
+pub fn test_octal_6(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::oct_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u64));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_octal_7(mut expected: Ptr<()>) {
+pub fn test_octal_7(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::oct_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i64));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_dec_8(mut expected: Ptr<()>) {
+pub fn test_dec_8(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::dec_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u16));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_dec_9(mut expected: Ptr<()>) {
+pub fn test_dec_9(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::dec_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i16));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_dec_10(mut expected: Ptr<()>) {
+pub fn test_dec_10(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::dec_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u32));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_dec_11(mut expected: Ptr<()>) {
+pub fn test_dec_11(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::dec_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i32));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_dec_12(mut expected: Ptr<()>) {
+pub fn test_dec_12(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::dec_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u64));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_dec_13(mut expected: Ptr<()>) {
+pub fn test_dec_13(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::dec_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i64));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_dec_14(mut expected: Ptr<()>) {
+pub fn test_dec_14(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::dec_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u64));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_dec_15(mut expected: Ptr<()>) {
+pub fn test_dec_15(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::dec_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i64));
+        __s
+    };
+    assert!(
+        expected
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_hex_16(mut expected: Ptr<()>) {
+pub fn test_hex_16(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = unimplemented!();
-        unimplemented!().write(__rhs);
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::hex_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u16));
+        __s
+    };
+    let str: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < ((*str.borrow()).len() - 1)) {
+        let __rhs = (if (0..=255).contains(&((str.decay().offset(i as isize).read()) as i32)) {
+            (((str.decay().offset(i as isize).read()) as i32) as u8).to_ascii_uppercase() as i32
+        } else {
+            ((str.decay().offset(i as isize).read()) as i32)
+        } as i8);
+        str.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(
+        expected
+            .with_c_str(|__s| (*str.borrow())[..(*str.borrow()).len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_hex_17(mut expected: Ptr<()>) {
+pub fn test_hex_17(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = unimplemented!();
-        unimplemented!().write(__rhs);
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::hex_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i16));
+        __s
+    };
+    let str: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < ((*str.borrow()).len() - 1)) {
+        let __rhs = (if (0..=255).contains(&((str.decay().offset(i as isize).read()) as i32)) {
+            (((str.decay().offset(i as isize).read()) as i32) as u8).to_ascii_uppercase() as i32
+        } else {
+            ((str.decay().offset(i as isize).read()) as i32)
+        } as i8);
+        str.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(
+        expected
+            .with_c_str(|__s| (*str.borrow())[..(*str.borrow()).len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_hex_18(mut expected: Ptr<()>) {
+pub fn test_hex_18(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = unimplemented!();
-        unimplemented!().write(__rhs);
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::hex_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u32));
+        __s
+    };
+    let str: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < ((*str.borrow()).len() - 1)) {
+        let __rhs = (if (0..=255).contains(&((str.decay().offset(i as isize).read()) as i32)) {
+            (((str.decay().offset(i as isize).read()) as i32) as u8).to_ascii_uppercase() as i32
+        } else {
+            ((str.decay().offset(i as isize).read()) as i32)
+        } as i8);
+        str.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(
+        expected
+            .with_c_str(|__s| (*str.borrow())[..(*str.borrow()).len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_hex_19(mut expected: Ptr<()>) {
+pub fn test_hex_19(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = unimplemented!();
-        unimplemented!().write(__rhs);
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::hex_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i32));
+        __s
+    };
+    let str: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < ((*str.borrow()).len() - 1)) {
+        let __rhs = (if (0..=255).contains(&((str.decay().offset(i as isize).read()) as i32)) {
+            (((str.decay().offset(i as isize).read()) as i32) as u8).to_ascii_uppercase() as i32
+        } else {
+            ((str.decay().offset(i as isize).read()) as i32)
+        } as i8);
+        str.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(
+        expected
+            .with_c_str(|__s| (*str.borrow())[..(*str.borrow()).len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_hex_20(mut expected: Ptr<()>) {
+pub fn test_hex_20(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = unimplemented!();
-        unimplemented!().write(__rhs);
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::hex_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u64));
+        __s
+    };
+    let str: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < ((*str.borrow()).len() - 1)) {
+        let __rhs = (if (0..=255).contains(&((str.decay().offset(i as isize).read()) as i32)) {
+            (((str.decay().offset(i as isize).read()) as i32) as u8).to_ascii_uppercase() as i32
+        } else {
+            ((str.decay().offset(i as isize).read()) as i32)
+        } as i8);
+        str.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(
+        expected
+            .with_c_str(|__s| (*str.borrow())[..(*str.borrow()).len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_hex_21(mut expected: Ptr<()>) {
+pub fn test_hex_21(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = unimplemented!();
-        unimplemented!().write(__rhs);
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::hex_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i64));
+        __s
+    };
+    let str: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < ((*str.borrow()).len() - 1)) {
+        let __rhs = (if (0..=255).contains(&((str.decay().offset(i as isize).read()) as i32)) {
+            (((str.decay().offset(i as isize).read()) as i32) as u8).to_ascii_uppercase() as i32
+        } else {
+            ((str.decay().offset(i as isize).read()) as i32)
+        } as i8);
+        str.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(
+        expected
+            .with_c_str(|__s| (*str.borrow())[..(*str.borrow()).len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_hex_22(mut expected: Ptr<()>) {
+pub fn test_hex_22(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = unimplemented!();
-        unimplemented!().write(__rhs);
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::hex_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as u64));
+        __s
+    };
+    let str: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < ((*str.borrow()).len() - 1)) {
+        let __rhs = (if (0..=255).contains(&((str.decay().offset(i as isize).read()) as i32)) {
+            (((str.decay().offset(i as isize).read()) as i32) as u8).to_ascii_uppercase() as i32
+        } else {
+            ((str.decay().offset(i as isize).read()) as i32)
+        } as i8);
+        str.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(
+        expected
+            .with_c_str(|__s| (*str.borrow())[..(*str.borrow()).len().saturating_sub(1)] == *__s)
+    );
 }
-pub fn test_hex_23(mut expected: Ptr<()>) {
+pub fn test_hex_23(mut expected: Ptr<i8>) {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let mut str: () = unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while (i < unimplemented!()) {
-        let __rhs = unimplemented!();
-        unimplemented!().write(__rhs);
+    {
+        let __s = {
+            let __s = (ss.as_pointer() as ::std::fs::File);
+            libcc2rs::hex_refcount.call(__s)
+        };
+        write_int_refcount(&__s, (-1_i32 as i64));
+        __s
+    };
+    let str: Value<Vec<i8>> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: usize = 0_usize;
+    'loop_: while (i < ((*str.borrow()).len() - 1)) {
+        let __rhs = (if (0..=255).contains(&((str.decay().offset(i as isize).read()) as i32)) {
+            (((str.decay().offset(i as isize).read()) as i32) as u8).to_ascii_uppercase() as i32
+        } else {
+            ((str.decay().offset(i as isize).read()) as i32)
+        } as i8);
+        str.decay().offset(i as isize).write(__rhs);
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(
+        expected
+            .with_c_str(|__s| (*str.borrow())[..(*str.borrow()).len().saturating_sub(1)] == *__s)
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -201,52 +473,52 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_octal_0(Ptr::<()>::from_string_literal(b"177777")) });
-    ({ test_octal_1(Ptr::<()>::from_string_literal(b"177777")) });
-    ({ test_octal_2(Ptr::<()>::from_string_literal(b"37777777777")) });
-    ({ test_octal_3(Ptr::<()>::from_string_literal(b"37777777777")) });
-    ({ test_octal_4(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
-    ({ test_octal_5(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
-    ({ test_octal_4(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
-    let mut long_is_64: () = unimplemented!();
-    let mut long_long_is_64: () = unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    ({ test_octal_0(Ptr::<i8>::from_string_literal(b"177777")) });
+    ({ test_octal_1(Ptr::<i8>::from_string_literal(b"177777")) });
+    ({ test_octal_2(Ptr::<i8>::from_string_literal(b"37777777777")) });
+    ({ test_octal_3(Ptr::<i8>::from_string_literal(b"37777777777")) });
+    ({ test_octal_4(Ptr::<i8>::from_string_literal(b"1777777777777777777777")) });
+    ({ test_octal_5(Ptr::<i8>::from_string_literal(b"1777777777777777777777")) });
+    ({ test_octal_4(Ptr::<i8>::from_string_literal(b"1777777777777777777777")) });
+    let mut long_is_64: bool = unimplemented!();
+    let mut long_long_is_64: bool = unimplemented!();
     {
-        ({ test_octal_4(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
-        ({ test_octal_5(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
+        ({ test_octal_4(Ptr::<i8>::from_string_literal(b"1777777777777777777777")) });
+        ({ test_octal_5(Ptr::<i8>::from_string_literal(b"1777777777777777777777")) });
     }
     {
-        ({ test_octal_6(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
-        ({ test_octal_7(Ptr::<()>::from_string_literal(b"1777777777777777777777")) });
+        ({ test_octal_6(Ptr::<i8>::from_string_literal(b"1777777777777777777777")) });
+        ({ test_octal_7(Ptr::<i8>::from_string_literal(b"1777777777777777777777")) });
     }
-    ({ test_dec_8(Ptr::<()>::from_string_literal(b"65535")) });
-    ({ test_dec_9(Ptr::<()>::from_string_literal(b"-1")) });
-    ({ test_dec_10(Ptr::<()>::from_string_literal(b"4294967295")) });
-    ({ test_dec_11(Ptr::<()>::from_string_literal(b"-1")) });
-    ({ test_dec_12(Ptr::<()>::from_string_literal(b"18446744073709551615")) });
-    ({ test_dec_13(Ptr::<()>::from_string_literal(b"-1")) });
+    ({ test_dec_8(Ptr::<i8>::from_string_literal(b"65535")) });
+    ({ test_dec_9(Ptr::<i8>::from_string_literal(b"-1")) });
+    ({ test_dec_10(Ptr::<i8>::from_string_literal(b"4294967295")) });
+    ({ test_dec_11(Ptr::<i8>::from_string_literal(b"-1")) });
+    ({ test_dec_12(Ptr::<i8>::from_string_literal(b"18446744073709551615")) });
+    ({ test_dec_13(Ptr::<i8>::from_string_literal(b"-1")) });
     {
-        ({ test_dec_12(Ptr::<()>::from_string_literal(b"18446744073709551615")) });
-        ({ test_dec_13(Ptr::<()>::from_string_literal(b"-1")) });
-    }
-    {
-        ({ test_dec_14(Ptr::<()>::from_string_literal(b"18446744073709551615")) });
-        ({ test_dec_15(Ptr::<()>::from_string_literal(b"-1")) });
-    }
-    ({ test_hex_16(Ptr::<()>::from_string_literal(b"FFFF")) });
-    ({ test_hex_17(Ptr::<()>::from_string_literal(b"FFFF")) });
-    ({ test_hex_18(Ptr::<()>::from_string_literal(b"FFFFFFFF")) });
-    ({ test_hex_19(Ptr::<()>::from_string_literal(b"FFFFFFFF")) });
-    ({ test_hex_20(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
-    ({ test_hex_21(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
-    {
-        ({ test_hex_20(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
-        ({ test_hex_21(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
+        ({ test_dec_12(Ptr::<i8>::from_string_literal(b"18446744073709551615")) });
+        ({ test_dec_13(Ptr::<i8>::from_string_literal(b"-1")) });
     }
     {
-        ({ test_hex_22(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
-        ({ test_hex_23(Ptr::<()>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
+        ({ test_dec_14(Ptr::<i8>::from_string_literal(b"18446744073709551615")) });
+        ({ test_dec_15(Ptr::<i8>::from_string_literal(b"-1")) });
     }
-    return 0_();
+    ({ test_hex_16(Ptr::<i8>::from_string_literal(b"FFFF")) });
+    ({ test_hex_17(Ptr::<i8>::from_string_literal(b"FFFF")) });
+    ({ test_hex_18(Ptr::<i8>::from_string_literal(b"FFFFFFFF")) });
+    ({ test_hex_19(Ptr::<i8>::from_string_literal(b"FFFFFFFF")) });
+    ({ test_hex_20(Ptr::<i8>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
+    ({ test_hex_21(Ptr::<i8>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
+    {
+        ({ test_hex_20(Ptr::<i8>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
+        ({ test_hex_21(Ptr::<i8>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
+    }
+    {
+        ({ test_hex_22(Ptr::<i8>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
+        ({ test_hex_23(Ptr::<i8>::from_string_literal(b"FFFFFFFFFFFFFFFF")) });
+    }
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

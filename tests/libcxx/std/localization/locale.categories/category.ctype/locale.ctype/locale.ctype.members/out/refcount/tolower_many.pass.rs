@@ -26,19 +26,28 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let f: Ptr<()> = unimplemented!();
-        let mut in_: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let in_: Value<Vec<i32>> = Rc::new(RefCell::new({
+            let mut __bytes = Ptr::<i32>::from_string_literal(&[
+                32 as i32, 65 as i32, 7 as i32, 46 as i32, 97 as i32, 49 as i32, 0 as i32,
+            ])
+            .to_c_bytes();
+            __bytes.push(0_i32);
+            __bytes
+        }));
+        assert!(
+            ({ unimplemented!() } == { in_.decay().offset(((*in_.borrow()).len() - 1) as isize) })
+        );
+        assert!((((in_.decay().offset(0_usize as isize).read()) as i32) == (32 as i32)));
+        assert!((((in_.decay().offset(1_usize as isize).read()) as i32) == (97 as i32)));
+        assert!((((in_.decay().offset(2_usize as isize).read()) as i32) == (7 as i32)));
+        assert!((((in_.decay().offset(3_usize as isize).read()) as i32) == (46 as i32)));
+        assert!((((in_.decay().offset(4_usize as isize).read()) as i32) == (97 as i32)));
+        assert!((((in_.decay().offset(5_usize as isize).read()) as i32) == (49 as i32)));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

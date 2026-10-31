@@ -50,60 +50,60 @@ pub fn test_constexpr_3() {
     const _: () = assert!(true, "c3.real() == 3");;
     const _: () = assert!(true, "c3.imag() == 4");;
 }
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() == 0_f32));
+    assert!((unimplemented!() == 0_f32));
     unimplemented!();
+    assert!(((unimplemented!() as f64) == 3.5_f64));
+    assert!((unimplemented!() == 0_f32));
     unimplemented!();
+    assert!(((unimplemented!() as f64) == 3.5_f64));
+    assert!(((unimplemented!() as f64) == 4.5_f64));
     unimplemented!();
+    assert!(((unimplemented!() as f64) == -4.5_f64));
+    assert!(((unimplemented!() as f64) == 4.5_f64));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as f64) == -4.5_f64));
+    assert!(((unimplemented!() as f64) == -5.5_f64));
     ({ test_constexpr_0() });
     return true;
 }
-pub fn test_5() -> () {
+pub fn test_5() -> bool {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() == 0_f64));
+    assert!((unimplemented!() == 0_f64));
     unimplemented!();
+    assert!((unimplemented!() == 3.5_f64));
+    assert!((unimplemented!() == 0_f64));
     unimplemented!();
+    assert!((unimplemented!() == 3.5_f64));
+    assert!((unimplemented!() == 4.5_f64));
     unimplemented!();
+    assert!((unimplemented!() == -4.5_f64));
+    assert!((unimplemented!() == 4.5_f64));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == -4.5_f64));
+    assert!((unimplemented!() == -5.5_f64));
     ({ test_constexpr_1() });
     return true;
 }
-pub fn test_6() -> () {
+pub fn test_6() -> bool {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() == 0_f64));
+    assert!((unimplemented!() == 0_f64));
     unimplemented!();
+    assert!((unimplemented!() == 3.5_f64));
+    assert!((unimplemented!() == 0_f64));
     unimplemented!();
+    assert!((unimplemented!() == 3.5_f64));
+    assert!((unimplemented!() == 4.5_f64));
     unimplemented!();
+    assert!((unimplemented!() == -4.5_f64));
+    assert!((unimplemented!() == 4.5_f64));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == -4.5_f64));
+    assert!((unimplemented!() == -5.5_f64));
     ({ test_constexpr_2() });
     return true;
 }
@@ -126,7 +126,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_4() });
     ({ test_5() });
     ({ test_6() });
@@ -134,6 +134,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test<float>()");;
     const _: () = assert!(true, "test<double>()");;
     const _: () = assert!(true, "test<long double>()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

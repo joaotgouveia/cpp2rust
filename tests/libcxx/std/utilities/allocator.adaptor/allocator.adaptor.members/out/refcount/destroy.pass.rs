@@ -10,11 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct A1_B_ {
     #[offset(0)]
-    id_: (),
+    id_: i32,
 }
 impl A1_B_ {
-    pub fn new(id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| 0_());
+    pub fn new(id: Option<i32>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| 0);
         Self { id_: id }
     }
 }
@@ -24,20 +24,20 @@ impl Default for A1_B_ {
     }
 }
 thread_local!(
-    pub static constructed_6: Value<()> = Rc::new(RefCell::new(false));
+    pub static constructed_6: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static destroy_called_7: Value<()> = Rc::new(RefCell::new(false));
+    pub static destroy_called_7: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(4)]
 pub struct A3_B_ {
     #[offset(0)]
-    id_: (),
+    id_: i32,
 }
 impl A3_B_ {
-    pub fn new(id: Option<()>) -> Self {
-        let mut id: () = id.unwrap_or_else(|| 0_());
+    pub fn new(id: Option<i32>) -> Self {
+        let mut id: i32 = id.unwrap_or_else(|| 0);
         Self { id_: id }
     }
 }
@@ -62,7 +62,7 @@ impl Default for B {
     }
 }
 thread_local!(
-    pub static constructed_8: Value<()> = Rc::new(RefCell::new(false));
+    pub static constructed_8: Value<bool> = Rc::new(RefCell::new(false));
 );
 
 pub fn main() {
@@ -84,41 +84,39 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
-            (0..100).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-        ));
-        let mut s: Ptr<B> = (buf.as_pointer() as Ptr<()>).reinterpret_cast::<B>();
+        let buf: Value<Box<[i8]>> =
+            Rc::new(RefCell::new((0..100).map(|_| 0_i8).collect::<Box<[i8]>>()));
+        let mut s: Ptr<B> = (buf.as_pointer() as Ptr<i8>).reinterpret_cast::<B>();
+        assert!(!(constructed_8.with(|rc| *rc.borrow())));
         unimplemented!();
+        assert!(constructed_8.with(|rc| *rc.borrow()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(constructed_8.with(|rc| *rc.borrow())));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let buf: Value<Box<[()]>> = Rc::new(RefCell::new(
-            (0..100).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-        ));
-        let mut s: Ptr<B> = (buf.as_pointer() as Ptr<()>).reinterpret_cast::<B>();
+        let buf: Value<Box<[i8]>> =
+            Rc::new(RefCell::new((0..100).map(|_| 0_i8).collect::<Box<[i8]>>()));
+        let mut s: Ptr<B> = (buf.as_pointer() as Ptr<i8>).reinterpret_cast::<B>();
+        assert!(!(constructed_8.with(|rc| *rc.borrow())));
+        assert!(!(constructed_6.with(|rc| *rc.borrow())));
+        assert!(!(destroy_called_7.with(|rc| *rc.borrow())));
         unimplemented!();
+        assert!(constructed_8.with(|rc| *rc.borrow()));
+        assert!(constructed_6.with(|rc| *rc.borrow()));
+        assert!(!(destroy_called_7.with(|rc| *rc.borrow())));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(constructed_8.with(|rc| *rc.borrow())));
+        assert!(constructed_6.with(|rc| *rc.borrow()));
+        assert!(destroy_called_7.with(|rc| *rc.borrow()));
     }
-    return 0_();
+    return 0;
 }
 pub trait A1_B_Impl {
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         unimplemented!()
     }
     fn copy_assign(&self, a: Ptr<A1_B_>) -> Ptr<A1_B_> {
@@ -127,19 +125,19 @@ pub trait A1_B_Impl {
     fn move_assign(&self, a: Ptr<A1_B_>) -> Ptr<A1_B_> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: ()) -> Ptr<B> {
+    fn allocate(&self, mut n: usize) -> Ptr<B> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<B>, mut n: ()) {
+    fn deallocate(&self, mut p: Ptr<B>, mut n: usize) {
         unimplemented!()
     }
-    fn max_size(&self) -> () {
+    fn max_size(&self) -> usize {
         unimplemented!()
     }
 }
 impl A1_B_Impl for Ptr<A1_B_> {}
 pub trait A3_B_Impl {
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         unimplemented!()
     }
     fn copy_assign(&self, a: Ptr<A3_B_>) -> Ptr<A3_B_> {

@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn f_0(t: Ptr<()>) -> () {
-    return ((t.read()) + 5_());
+pub fn f_0(t: Ptr<i32>) -> i32 {
+    return ((t.read()) + 5);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -28,85 +28,45 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            1_(),
-            2_(),
-            3_(),
-            4_(),
-            5_(),
-            6_(),
-            7_(),
-            8_(),
-            9_(),
-            10_(),
-        ])));
-        let mut a2: [(); 10] = [
-            6_(),
-            7_(),
-            8_(),
-            9_(),
-            10_(),
-            11_(),
-            12_(),
-            13_(),
-            14_(),
-            15_(),
-        ];
-        let mut N1: () = (::std::mem::size_of::<[(); 10]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let a1: Value<Box<[i32]>> =
+            Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])));
+        let mut a2: [i32; 10] = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        let mut N1: u32 = (((::std::mem::size_of::<[i32; 10]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!((unimplemented!() == (N1 as usize)));
+        let mut i: u32 = 0_u32;
         'loop_: while (i < N1) {
-            unimplemented!();
+            assert!(((unimplemented!().read()) == a2[(i) as usize]));
             i.prefix_inc();
         }
     }
     {
-        let mut N1: () = 0_();
+        let mut N1: u32 = 0_u32;
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == (N1 as usize)));
     }
     {
-        let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            1_(),
-            2_(),
-            3_(),
-            4_(),
-            5_(),
-            6_(),
-            7_(),
-            8_(),
-            9_(),
-            10_(),
-        ])));
-        let mut a2: [(); 10] = [
-            7_(),
-            9_(),
-            11_(),
-            13_(),
-            15_(),
-            17_(),
-            19_(),
-            21_(),
-            23_(),
-            25_(),
-        ];
-        let mut N1: () = (::std::mem::size_of::<[(); 10]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let a1: Value<Box<[i32]>> =
+            Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])));
+        let mut a2: [i32; 10] = [7, 9, 11, 13, 15, 17, 19, 21, 23, 25];
+        let mut N1: u32 = (((::std::mem::size_of::<[i32; 10]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
+        assert!((unimplemented!() == (N1 as usize)));
+        let mut i: u32 = 0_u32;
         'loop_: while (i < N1) {
-            unimplemented!();
+            assert!(((unimplemented!().read()) == a2[(i) as usize]));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

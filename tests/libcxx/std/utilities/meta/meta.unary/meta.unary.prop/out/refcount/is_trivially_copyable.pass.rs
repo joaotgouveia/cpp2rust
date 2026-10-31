@@ -90,13 +90,13 @@ pub fn test_is_not_trivially_copyable_7() {
 #[byte_size(4)]
 pub struct A {
     #[offset(0)]
-    pub i_: (),
+    pub i_: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(4)]
 pub struct B {
     #[offset(0)]
-    pub i_: (),
+    pub i_: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -121,7 +121,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_is_trivially_copyable_0() });
     ({ test_is_trivially_copyable_1() });
     ({ test_is_trivially_copyable_2() });
@@ -130,14 +130,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_is_not_trivially_copyable_5() });
     ({ test_is_not_trivially_copyable_6() });
     ({ test_is_not_trivially_copyable_7() });
-    return 0_();
+    return 0;
 }
 pub trait BImpl {
     fn destructor(&self);
 }
 impl BImpl for Ptr<B> {
     fn destructor(&self) {
-        unimplemented!();
+        assert!(((*self).with(|__s| __s.i_) == 0));
     }
 }
 pub fn __cpp2rust_init_globals() {}

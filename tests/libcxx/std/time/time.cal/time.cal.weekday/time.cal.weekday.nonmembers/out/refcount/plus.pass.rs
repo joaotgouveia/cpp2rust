@@ -6,34 +6,34 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_chrono_weekday__std_chrono_weekday_ {}
-pub fn euclidian_addition_1(mut rhs: (), mut lhs: ()) -> () {
-    let mut modulus: () = ((6_() as ()).wrapping_sub((0_() as ())) as ()).wrapping_add(1_());
-    let ret: Value<()> = Rc::new(RefCell::new((rhs).wrapping_add(lhs)));
-    if ((*ret.borrow()) > 6_()) {
+pub fn euclidian_addition_1(mut rhs: u32, mut lhs: u32) -> u32 {
+    let mut modulus: u32 = ((6_u32 as u32).wrapping_sub((0_u32 as u32)) as u32).wrapping_add(1_u32);
+    let ret: Value<u32> = Rc::new(RefCell::new((rhs).wrapping_add(lhs)));
+    if ((*ret.borrow()) > 6_u32) {
         (*ret.borrow_mut()) = { (*ret.borrow()).wrapping_sub(modulus) };
     }
     return (*ret.borrow());
 }
-pub fn test_2() -> () {
-    let mut i: () = 0_();
-    'loop_: while (i <= 6_()) {
-        let mut j: () = 0_();
-        'loop_: while (j <= 6_()) {
+pub fn test_2() -> bool {
+    let mut i: u32 = 0_u32;
+    'loop_: while (i <= 6_u32) {
+        let mut j: u32 = 0_u32;
+        'loop_: while (j <= 6_u32) {
             let wd1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let wd2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(unimplemented!());
+            assert!((unimplemented!() == ({ euclidian_addition_1(i, j,) })));
+            assert!((unimplemented!() == ({ euclidian_addition_1(i, j,) })));
             j.prefix_inc();
         }
         i.prefix_inc();
     }
-    unimplemented!();
+    assert!(unimplemented!());
     return true;
 }
 pub fn main() {
@@ -55,13 +55,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

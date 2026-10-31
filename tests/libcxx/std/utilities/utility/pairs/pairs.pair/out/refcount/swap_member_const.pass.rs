@@ -29,36 +29,42 @@ const _: () = assert!(
     "!ConstMemberSwapNoexcept<std::pair<SwapMayThrow<true>, SwapMayThrow<true>>>"
 );
 pub fn swap_0(lhs: Ptr<ConstSwappable>, rhs: Ptr<ConstSwappable>) {
-    unimplemented!();
+    cpp_swap!(field_ptr!(lhs, i), field_ptr!(rhs, i));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct ConstSwappable {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<(Value<ConstSwappable>, Value<ConstSwappable>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(ConstSwappable { i: 0 })),
+            Rc::new(RefCell::new(ConstSwappable { i: 1 })),
+        )));
+        let p2: Value<(Value<ConstSwappable>, Value<ConstSwappable>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(ConstSwappable { i: 2 })),
+            Rc::new(RefCell::new(ConstSwappable { i: 3 })),
+        )));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (*(*p1.borrow()).0.borrow()).i } == 2));
+        assert!(({ (*(*p1.borrow()).1.borrow()).i } == 3));
+        assert!(({ (*(*p2.borrow()).0.borrow()).i } == 0));
+        assert!(({ (*(*p2.borrow()).1.borrow()).i } == 1));
     }
     {
-        let mut i1: () = 0_();
-        let mut i2: () = 1_();
-        let mut i3: () = 2_();
-        let mut i4: () = 3_();
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut i1: i32 = 0;
+        let mut i2: i32 = 1;
+        let mut i3: i32 = 2;
+        let mut i4: i32 = 3;
+        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
+        let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((((*p1.borrow()).0.read()) == 2));
+        assert!((((*p1.borrow()).1.read()) == 3));
+        assert!((((*p2.borrow()).0.read()) == 0));
+        assert!((((*p2.borrow()).1.read()) == 1));
     }
     return true;
 }
@@ -81,9 +87,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

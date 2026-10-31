@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -26,7 +26,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let Sunday: () = unimplemented!();
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -38,23 +38,23 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "month_weekday{{std::chrono::May, weekday_indexed{{Sunday, 2}}}}.ok()"
     );;
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = 1_();
-    'loop_: while ((i) <= (12_())) {
-        let mut j: () = 0_();
-        'loop_: while ((j) <= (6_())) {
+    assert!(!(unimplemented!()));
+    assert!((unimplemented!()));
+    let mut i: u32 = 1_u32;
+    'loop_: while ((i) <= (12_u32)) {
+        let mut j: u32 = 0_u32;
+        'loop_: while ((j) <= (6_u32)) {
             let mut mwd: () = unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!() as i32) == ((((j) >= (1_u32)) && ((j) <= (5_u32))) as i32)));
             j.prefix_inc();
         }
         i.prefix_inc();
     }
-    let mut i: () = 1_();
-    'loop_: while ((i) <= (10_())) {
-        unimplemented!();
+    let mut i: u32 = 1_u32;
+    'loop_: while ((i) <= (10_u32)) {
+        assert!(!(unimplemented!()));
         i.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -6,19 +6,19 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(c: ()) {
-    let c: Value<()> = Rc::new(RefCell::new(c));
-    let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+pub fn test_0(c: Vec<i32>) {
+    let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
+    let it1: Value<()> = Rc::new(RefCell::new(unimplemented!().iter_add(1_isize)));
+    let it2: Value<()> = Rc::new(RefCell::new(unimplemented!().iter_add(-1_isize)));
+    (*c.borrow_mut()).remove(0);
     let it3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let it4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let it4: Value<()> = Rc::new(RefCell::new(unimplemented!().iter_add(-1_isize)));
+    assert!((*it1.borrow()) == (*it3.borrow()));
+    assert!((((*it1.borrow()).iter_deref().read()) == ((*it3.borrow()).iter_deref().read())));
+    assert!((((*it1.borrow()).iter_deref()) == ((*it3.borrow()).iter_deref())));
+    assert!((*it2.borrow()) == (*it4.borrow()));
+    assert!((((*it2.borrow()).iter_deref().read()) == ((*it4.borrow()).iter_deref().read())));
+    assert!((((*it2.borrow()).iter_deref()) == ((*it4.borrow()).iter_deref())));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -39,18 +39,18 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let queue: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut i: () = 0_();
-    'loop_: while (i < 4098_()) {
-        unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let queue: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+    let mut i: i32 = 0;
+    'loop_: while (i < 4098) {
+        (*queue.borrow_mut()).push(i);
         i.prefix_inc();
     }
-    'loop_: while (unimplemented!() > 1_()) {
-        ({ test_0(unimplemented!()) });
+    'loop_: while (unimplemented!() > 1_usize) {
+        ({ test_0((*queue.borrow()).clone()) });
         unimplemented!();
         const _: () = assert!(true, "");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

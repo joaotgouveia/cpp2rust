@@ -9,69 +9,69 @@ use std::rc::{Rc, Weak};
 pub fn test_val_types_0() {
     {
         let l: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: ()| -> () {
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> () {
                 return unimplemented!();
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let l: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: ()| -> () {
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> () {
                 return unimplemented!();
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let l: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: ()| -> () {
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> () {
                 return unimplemented!();
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let l: Value<FnPtr<Generic>> =
-            Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: ()| -> () {
+            Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> () {
                 return unimplemented!();
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn test_fail_1() {
     let never_called: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: ()| -> () {
-            unimplemented!();
+        Rc::new(RefCell::new(lambda!(Generic, {}, |mut _a0: i32| -> () {
+            assert!(false);
             return unimplemented!();
         })));
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     ({ test_fail_1() });
     ({ test_val_types_0() });
     return true;
@@ -95,9 +95,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

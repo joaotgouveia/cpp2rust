@@ -7,19 +7,19 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static copy_called_0: Value<()> = Rc::new(RefCell::new(false));
+    pub static copy_called_0: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static move_called_1: Value<()> = Rc::new(RefCell::new(false));
+    pub static move_called_1: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct A1_int_ {
     #[offset(0)]
-    id_: (),
+    id_: i32,
 }
 impl A1_int_ {
-    pub fn new(mut id: ()) -> Self {
+    pub fn new(mut id: i32) -> Self {
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A1_int_>) -> Self {
@@ -50,23 +50,23 @@ impl Clone for A1_int_ {
         A1_int_::copy_from(__src.as_pointer())
     }
 }
-pub fn operator_eq_4(x: Ptr<A1_int_>, y: Ptr<A1_int_>) -> () {
+pub fn operator_eq_4(x: Ptr<A1_int_>, y: Ptr<A1_int_>) -> bool {
     return ({ ({ A1_int_Impl::id(&x) }) } == { ({ A1_int_Impl::id(&y) }) });
 }
 thread_local!(
-    pub static copy_called_5: Value<()> = Rc::new(RefCell::new(false));
+    pub static copy_called_5: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static move_called_6: Value<()> = Rc::new(RefCell::new(false));
+    pub static move_called_6: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct A2_int_ {
     #[offset(0)]
-    id_: (),
+    id_: i32,
 }
 impl A2_int_ {
-    pub fn new(mut id: ()) -> Self {
+    pub fn new(mut id: i32) -> Self {
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A2_int_>) -> Self {
@@ -90,23 +90,23 @@ impl Clone for A2_int_ {
         A2_int_::copy_from(__src.as_pointer())
     }
 }
-pub fn operator_eq_8(x: Ptr<A2_int_>, y: Ptr<A2_int_>) -> () {
+pub fn operator_eq_8(x: Ptr<A2_int_>, y: Ptr<A2_int_>) -> bool {
     return ({ ({ A2_int_Impl::id(&x) }) } == { ({ A2_int_Impl::id(&y) }) });
 }
 thread_local!(
-    pub static copy_called_9: Value<()> = Rc::new(RefCell::new(false));
+    pub static copy_called_9: Value<bool> = Rc::new(RefCell::new(false));
 );
 thread_local!(
-    pub static move_called_10: Value<()> = Rc::new(RefCell::new(false));
+    pub static move_called_10: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct A3_int_ {
     #[offset(0)]
-    id_: (),
+    id_: i32,
 }
 impl A3_int_ {
-    pub fn new(mut id: ()) -> Self {
+    pub fn new(mut id: i32) -> Self {
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A3_int_>) -> Self {
@@ -130,7 +130,7 @@ impl Clone for A3_int_ {
         A3_int_::copy_from(__src.as_pointer())
     }
 }
-pub fn operator_eq_13(x: Ptr<A3_int_>, y: Ptr<A3_int_>) -> () {
+pub fn operator_eq_13(x: Ptr<A3_int_>, y: Ptr<A3_int_>) -> bool {
     return ({ ({ A3_int_Impl::id(&x) }) } == { ({ A3_int_Impl::id(&y) }) });
 }
 pub fn main() {
@@ -152,15 +152,15 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         copy_called_0.with(|rc| *rc.borrow_mut() = false);
         move_called_1.with(|rc| *rc.borrow_mut() = false);
         let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((copy_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));
+        assert!(((move_called_1.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+        assert!(unimplemented!());
     }
     {
         let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -169,11 +169,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         copy_called_5.with(|rc| *rc.borrow_mut() = false);
         move_called_6.with(|rc| *rc.borrow_mut() = false);
         let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((copy_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));
+        assert!(((move_called_1.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+        assert!(((copy_called_5.with(|rc| *rc.borrow()) as i32) == (true as i32)));
+        assert!(((move_called_6.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+        assert!(unimplemented!());
     }
     {
         let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -184,58 +184,58 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         copy_called_9.with(|rc| *rc.borrow_mut() = false);
         move_called_10.with(|rc| *rc.borrow_mut() = false);
         let a2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((copy_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));
+        assert!(((move_called_1.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+        assert!(((copy_called_5.with(|rc| *rc.borrow()) as i32) == (true as i32)));
+        assert!(((move_called_6.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+        assert!(((copy_called_9.with(|rc| *rc.borrow()) as i32) == (true as i32)));
+        assert!(((move_called_10.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub trait A1_int_Impl {
-    fn id(&self) -> ();
+    fn id(&self) -> i32;
     fn copy_assign(&self, a: Ptr<A1_int_>) -> Ptr<A1_int_> {
         unimplemented!()
     }
     fn move_assign(&self, a: Ptr<A1_int_>) -> Ptr<A1_int_> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
+    fn allocate(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
         unimplemented!()
     }
-    fn max_size(&self) -> () {
+    fn max_size(&self) -> usize {
         unimplemented!()
     }
 }
 impl A1_int_Impl for Ptr<A1_int_> {
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
 }
 pub trait A2_int_Impl {
-    fn id(&self) -> ();
+    fn id(&self) -> i32;
     fn copy_assign(&self, a: Ptr<A2_int_>) -> Ptr<A2_int_> {
         unimplemented!()
     }
     fn move_assign(&self, a: Ptr<A2_int_>) -> Ptr<A2_int_> {
         unimplemented!()
     }
-    fn allocate(&self, mut _a0: (), mut hint: ()) -> Ptr<()> {
+    fn allocate(&self, mut _a0: usize, mut hint: AnyPtr) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl A2_int_Impl for Ptr<A2_int_> {
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
 }
 pub trait A3_int_Impl {
-    fn id(&self) -> ();
+    fn id(&self) -> i32;
     fn copy_assign(&self, a: Ptr<A3_int_>) -> Ptr<A3_int_> {
         unimplemented!()
     }
@@ -247,7 +247,7 @@ pub trait A3_int_Impl {
     }
 }
 impl A3_int_Impl for Ptr<A3_int_> {
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
 }

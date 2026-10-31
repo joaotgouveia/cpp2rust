@@ -10,7 +10,7 @@ pub fn test_0() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = unimplemented!();
+    let mut result: usize = unimplemented!();
     const _: () = assert!(true, "");;
     (&(result));
 }
@@ -18,7 +18,7 @@ pub fn test_1() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = unimplemented!();
+    let mut result: usize = unimplemented!();
     const _: () = assert!(true, "");;
     (&(result));
 }
@@ -26,7 +26,7 @@ pub fn test_2() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = unimplemented!();
+    let mut result: usize = unimplemented!();
     const _: () = assert!(true, "");;
     (&(result));
 }
@@ -34,7 +34,7 @@ pub fn test_3() {
     const _: () = assert!(true, "");;
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let bs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = unimplemented!();
+    let mut result: usize = unimplemented!();
     const _: () = assert!(true, "");;
     (&(result));
 }
@@ -57,11 +57,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
     ({ test_3() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

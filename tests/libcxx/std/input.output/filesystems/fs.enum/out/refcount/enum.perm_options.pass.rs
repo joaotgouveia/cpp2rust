@@ -6,12 +6,12 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_filesystem_perm_options__std_filesystem_perm_options_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -21,9 +21,9 @@ pub struct test_macros_detail_is_same_std_filesystem_perm_options_ref__std_files
 #[byte_size(1)]
 pub struct check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_
 {}
-impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_ { pub fn dcast ( mut e : ()  , ) -> ()  { return ( e as () )   ;
- } pub fn unpromote ( mut promoted : ()  , ) -> ()  { return ( promoted as () )   ;
- } pub fn check ( ) -> ()  { { let mut ValRef : ()  = ( ( 1_() ) as () )  ;
+impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_ { pub fn dcast ( mut e : ()  , ) -> u32  { return ( e as u32 )   ;
+ } pub fn unpromote ( mut promoted : u32  , ) -> u32  { return ( promoted as u32 )   ;
+ } pub fn check ( ) -> bool  { { let mut ValRef : ()  = ( ( 1_u32 ) as () )  ;
   ;
  ;
  const _: () = assert!(true, ""); ;
@@ -58,33 +58,33 @@ impl check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options
  ;
  const _: () = assert!(true, "dcast(~Val1) == unpromote(~UVal1)"); ;
  ;
- { let e : Value<() > = Rc::new(RefCell::new(( ( 1_() ) as () ) )) ;
+ { let e : Value<() > = Rc::new(RefCell::new(( ( 1_u32 ) as () ) )) ;
   ;
  ;
  let eref : Ptr< ()  > = ( unimplemented!()  )  ;
   ;
  ;
- unimplemented!()  ;
- unimplemented!()  ;
- } { let e : Value<() > = Rc::new(RefCell::new(( ( 1_() ) as () ) )) ;
+ assert!(({ (( eref  ) ).clone() } == { ( e .as_pointer()  )  }) )  ;
+ assert!(( ( { check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_::dcast ( (eref.read())  , ) } )  == ( ( 1_u32 & 8_u32 ) ) ) )  ;
+ } { let e : Value<() > = Rc::new(RefCell::new(( ( 1_u32 ) as () ) )) ;
   ;
  ;
  let eref : Ptr< ()  > = ( unimplemented!()  )  ;
   ;
  ;
- unimplemented!()  ;
- unimplemented!()  ;
- } { let e : Value<() > = Rc::new(RefCell::new(( ( 1_() ) as () ) )) ;
+ assert!(({ (( eref  ) ).clone() } == { ( e .as_pointer()  )  }) )  ;
+ assert!(( ( { check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_::dcast ( (eref.read())  , ) } )  == ( ( 1_u32 | 8_u32 ) ) ) )  ;
+ } { let e : Value<() > = Rc::new(RefCell::new(( ( 1_u32 ) as () ) )) ;
   ;
  ;
  let eref : Ptr< ()  > = ( unimplemented!()  )  ;
   ;
  ;
- unimplemented!()  ;
- unimplemented!()  ;
+ assert!(({ (( eref  ) ).clone() } == { ( e .as_pointer()  )  }) )  ;
+ assert!(( ( { check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_::dcast ( (eref.read())  , ) } )  == ( ( 1_u32 ^ 8_u32 ) ) ) )  ;
  } return true   ;
  } }
-pub fn ME_2(mut val: ()) -> () {
+pub fn ME_2(mut val: i32) -> () {
     return ((val) as ());
 }
 pub fn main() {
@@ -106,15 +106,19 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_enum<E>::value");;
     const _: () = assert!(true, "!std::is_convertible<E, UT>::value");;
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(
+        ({
+            check_bitmask_type_std_filesystem_perm_options__std_filesystem_perm_options_replace__std_filesystem_perm_options_nofollow__unsigned_int__1__8__0__0_::check ( )
+        })
+    );
     const _: () = assert!(
         true,
         "E::replace  == ME(1) &&\n        E::add      == ME(2) &&\n        E::remove   == ME(4) &&\n        E::nofollow == ME(8)"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -26,7 +26,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
@@ -34,8 +34,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "std::is_same<const int&&, decltype(std::get<0>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(t)))");;
-        let i: Ptr<()> = unimplemented!();
-        unimplemented!();
+        let i: Ptr<i32> = (unimplemented!()).reinterpret_cast::<i32>();
+        assert!(((i.read()) == 3));
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -49,14 +49,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             "std::is_same<const int&&, decltype(std::get<1>(std::move(t)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(t)))");;
-        let s: Ptr<()> = unimplemented!();
-        let i: Ptr<()> = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let s: Ptr<Vec<i8>> = (unimplemented!()).reinterpret_cast::<Vec<i8>>();
+        let i: Ptr<i32> = (unimplemented!()).reinterpret_cast::<i32>();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| (*s.upgrade().deref())
+                [..(*s.upgrade().deref()).len().saturating_sub(1)]
+                == *__s)
+        );
+        assert!(((i.read()) == 5));
     }
     {
-        let mut x: () = 42_();
-        let y: Value<()> = Rc::new(RefCell::new(43_()));
+        let mut x: i32 = 42;
+        let y: Value<i32> = Rc::new(RefCell::new(43));
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
@@ -70,8 +74,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let mut x: () = 42_();
-        let y: Value<()> = Rc::new(RefCell::new(43_()));
+        let mut x: i32 = 42;
+        let y: Value<i32> = Rc::new(RefCell::new(43));
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
@@ -89,6 +93,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::get<0>(std::move(t)) == 2.718");;
         const _: () = assert!(true, "std::get<1>(std::move(t)) == 5");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

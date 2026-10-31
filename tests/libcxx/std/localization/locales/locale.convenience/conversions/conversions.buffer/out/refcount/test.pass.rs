@@ -26,23 +26,31 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut storage: () = unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let storage: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
     {
         let bytestream: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mybuf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mystr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        {
+            let __s = unimplemented!();
+            libcc2rs::endl_refcount.call(__s)
+        };
+        storage.as_pointer().write(unimplemented!());
     }
     {
         let bytestream: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mybuf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mystr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ws: () = unimplemented!();
+        let mut ws: Vec<i32> = vec![i32::default()];
         unimplemented!();
-        unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                72 as i32, 101 as i32, 108 as i32, 108 as i32, 111 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| ws[..ws.len().saturating_sub(1)] == *__s)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

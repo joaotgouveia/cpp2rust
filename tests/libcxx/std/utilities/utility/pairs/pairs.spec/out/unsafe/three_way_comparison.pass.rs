@@ -6,33 +6,33 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_partial_ordering__std_partial_ordering_ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_weak_ordering__std_weak_ordering_ {}
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_3() -> bool {
     {
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Less);
+        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
+        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
     }
     {
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
         const _: () = assert!(
@@ -42,33 +42,33 @@ pub unsafe fn test_3() -> () {
     }
     {
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Less);
+        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
+        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
     }
     {
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
-        let nan: () = unimplemented!();
+        let nan: f64 = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
-        let nan: () = unimplemented!();
+        let nan: f64 = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
     }
     {
         const _: () = assert!(true, "HasEqual<std::pair<int, NoRelative>>");;
@@ -82,12 +82,12 @@ pub unsafe fn test_3() -> () {
     }
     {
         {
-            let nan: () = unimplemented!();
-            unimplemented!();
+            let nan: f64 = unimplemented!();
+            assert!(unimplemented!());
         }
         {
-            let nan: () = unimplemented!();
-            unimplemented!();
+            let nan: f64 = unimplemented!();
+            assert!(unimplemented!());
         }
     }
     return true;
@@ -95,13 +95,13 @@ pub unsafe fn test_3() -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NoSpaceship_4 {
-    pub value: (),
+    pub value: i32,
 }
 impl NoSpaceship_4 {
-    pub unsafe fn operator_eq(&self, _a0: *const NoSpaceship_4) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const NoSpaceship_4) -> bool {
         return (((*(self as *const NoSpaceship_4)).value) == ((*_a0).value));
     }
-    pub unsafe fn operator_lt(&self, other: *const NoSpaceship_4) -> () {
+    pub unsafe fn operator_lt(&self, other: *const NoSpaceship_4) -> bool {
         return ((self.value) < ((*other).value));
     }
 }
@@ -150,9 +150,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_3() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

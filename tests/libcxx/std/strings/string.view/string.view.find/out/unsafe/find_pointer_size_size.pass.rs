@@ -10,27 +10,31 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub unsafe fn eq(mut c1: (), mut c2: ()) -> () {
-        return ((c1) == (c2));
+    pub unsafe fn eq(mut c1: libc::c_char, mut c2: libc::c_char) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
-    pub unsafe fn lt(mut c1: (), mut c2: ()) -> () {
-        return ((c1) < (c2));
+    pub unsafe fn lt(mut c1: libc::c_char, mut c2: libc::c_char) -> bool {
+        return ((c1 as i32) < (c2 as i32));
     }
-    pub unsafe fn compare(mut s1: *const (), mut s2: *const (), mut n: ()) -> () {
+    pub unsafe fn compare(
+        mut s1: *const libc::c_char,
+        mut s2: *const libc::c_char,
+        mut n: usize,
+    ) -> i32 {
         'loop_: while (n != 0) {
             if (unsafe {
-                let _c1: () = (*s1);
-                let _c2: () = (*s2);
+                let _c1: libc::c_char = (*s1);
+                let _c2: libc::c_char = (*s2);
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return -1_();
+                return -1_i32;
             }
             if (unsafe {
-                let _c1: () = (*s2);
-                let _c2: () = (*s1);
+                let _c1: libc::c_char = (*s2);
+                let _c2: libc::c_char = (*s1);
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return 1_();
+                return 1;
             }
             {
                 {
@@ -40,13 +44,17 @@ impl constexpr_char_traits_char_ {
                 s2.prefix_inc()
             };
         }
-        return 0_();
+        return 0;
     }
-    pub unsafe fn find(mut s: *const (), mut n: (), a: *const ()) -> *const () {
+    pub unsafe fn find(
+        mut s: *const libc::c_char,
+        mut n: usize,
+        a: *const libc::c_char,
+    ) -> *const libc::c_char {
         'loop_: while (n != 0) {
             if (unsafe {
-                let _c1: () = (*s);
-                let _c2: () = (*a);
+                let _c1: libc::c_char = (*s);
+                let _c2: libc::c_char = (*a);
                 constexpr_char_traits_char_::eq(_c1, _c2)
             }) {
                 return s;
@@ -59,45 +67,37 @@ impl constexpr_char_traits_char_ {
 }
 pub unsafe fn test_0(s: *const (), mut str: *const (), mut pos: (), mut n: (), mut x: ()) {
     const _: () = assert!(true, "");;
-    unimplemented!();
+    assert!(((unimplemented!()) == (x)));
     if ((x) != (unimplemented!())) {
-        unimplemented!();
+        assert!(((pos) <= (x)) && (((x).wrapping_add(n)) <= (unimplemented!())));
     }
 }
 pub unsafe fn test0_1() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 0_(), 0_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -107,7 +107,27 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             5_(),
             unimplemented!(),
@@ -117,7 +137,37 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             9_(),
             unimplemented!(),
@@ -127,7 +177,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             10_(),
             unimplemented!(),
@@ -135,13 +185,19 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 0_(), 0_())
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             1_(),
             unimplemented!(),
@@ -151,7 +207,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             10_(),
             unimplemented!(),
@@ -161,7 +217,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             19_(),
             unimplemented!(),
@@ -171,7 +227,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             20_(),
             unimplemented!(),
@@ -179,33 +235,9 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 1_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -215,7 +247,17 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -225,7 +267,27 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             5_(),
             unimplemented!(),
@@ -235,27 +297,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            1_(),
-            9_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            1_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             0_(),
             unimplemented!(),
@@ -265,7 +307,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             1_(),
             unimplemented!(),
@@ -275,169 +317,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            1_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            1_(),
-            19_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            1_(),
-            20_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 2_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 4_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            0_(),
-            9_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            0_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            0_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            0_(),
-            19_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            0_(),
-            20_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            1_(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             5_(),
             unimplemented!(),
@@ -447,7 +327,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             9_(),
             unimplemented!(),
@@ -457,31 +337,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            1_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
-            1_(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -491,7 +347,37 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             19_(),
             unimplemented!(),
@@ -501,7 +387,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             20_(),
             unimplemented!(),
@@ -509,37 +395,349 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 2_(), 0_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 2_(), 0_(), 2_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 2_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 2_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 2_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 2_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 2_(), 0_(), 2_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            2_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            4_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            9_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            19_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            20_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            9_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            19_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            20_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            0_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            0_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             1_(),
             unimplemented!(),
@@ -549,7 +747,27 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             5_(),
             unimplemented!(),
@@ -559,7 +777,37 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            0_(),
+            2_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             9_(),
             unimplemented!(),
@@ -569,7 +817,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             10_(),
             unimplemented!(),
@@ -577,13 +825,19 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 2_(), 0_(), 2_())
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            2_(),
+            0_(),
+            2_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             1_(),
             unimplemented!(),
@@ -593,7 +847,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             10_(),
             unimplemented!(),
@@ -603,7 +857,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             19_(),
             unimplemented!(),
@@ -613,7 +867,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             2_(),
             20_(),
             unimplemented!(),
@@ -621,37 +875,29 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 4_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 4_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 4_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 4_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 4_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 4_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 4_(), 0_(), 4_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            0_(),
+            4_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             4_(),
             1_(),
             unimplemented!(),
@@ -661,7 +907,27 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             4_(),
             5_(),
             unimplemented!(),
@@ -671,31 +937,17 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             4_(),
-            9_(),
-            unimplemented!(),
+            0_(),
+            4_(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            4_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 4_(), 0_(), 4_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             4_(),
             1_(),
             unimplemented!(),
@@ -705,7 +957,27 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            9_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             4_(),
             10_(),
             unimplemented!(),
@@ -715,7 +987,37 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            0_(),
+            4_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            4_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             4_(),
             19_(),
             unimplemented!(),
@@ -725,7 +1027,7 @@ pub unsafe fn test0_1() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             4_(),
             20_(),
             unimplemented!(),
@@ -733,39 +1035,81 @@ pub unsafe fn test0_1() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 5_(), 0_(), 5_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 0_(), 5_())
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 1_(), unimplemented!())
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            unimplemented!(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 2_(), unimplemented!())
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            2_(),
+            unimplemented!(),
+        )
     });
 }
 pub unsafe fn test1_2() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 5_(), 0_(), 5_())
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            4_(),
+            unimplemented!(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             1_(),
             unimplemented!(),
@@ -775,7 +1119,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             5_(),
             unimplemented!(),
@@ -785,7 +1129,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             9_(),
             unimplemented!(),
@@ -795,7 +1139,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             10_(),
             unimplemented!(),
@@ -803,13 +1147,19 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 5_(), 0_(), 5_())
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             1_(),
             unimplemented!(),
@@ -819,7 +1169,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             10_(),
             unimplemented!(),
@@ -829,7 +1179,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             19_(),
             unimplemented!(),
@@ -839,7 +1189,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             20_(),
             unimplemented!(),
@@ -847,33 +1197,9 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 6_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 6_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 6_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 6_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 6_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 6_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             6_(),
             0_(),
             unimplemented!(),
@@ -883,47 +1209,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            6_(),
-            1_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            6_(),
-            5_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            6_(),
-            9_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            6_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             6_(),
             0_(),
             unimplemented!(),
@@ -933,7 +1219,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             6_(),
             1_(),
             unimplemented!(),
@@ -943,7 +1229,77 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            9_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             6_(),
             10_(),
             unimplemented!(),
@@ -953,7 +1309,37 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            6_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             6_(),
             19_(),
             unimplemented!(),
@@ -963,7 +1349,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             6_(),
             20_(),
             unimplemented!(),
@@ -971,65 +1357,149 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 2_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 4_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 9_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 10_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 10_(), 0_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            2_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            4_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            9_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             19_(),
             unimplemented!(),
@@ -1039,7 +1509,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             0_(),
             20_(),
             unimplemented!(),
@@ -1047,45 +1517,99 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 2_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 4_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 5_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 5_(), 5_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            2_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            4_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             9_(),
             unimplemented!(),
@@ -1095,25 +1619,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            1_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 1_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             10_(),
             unimplemented!(),
@@ -1123,7 +1629,37 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             19_(),
             unimplemented!(),
@@ -1133,7 +1669,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             20_(),
             unimplemented!(),
@@ -1141,45 +1677,99 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 5_(), 0_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 0_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 2_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 4_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 5_(), 5_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 5_(), 0_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 5_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 5_(), 5_(), 5_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            2_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            4_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            5_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            5_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             9_(),
             unimplemented!(),
@@ -1189,25 +1779,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            5_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 5_(), 0_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 5_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             10_(),
             unimplemented!(),
@@ -1217,7 +1789,37 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            0_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            5_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             19_(),
             unimplemented!(),
@@ -1227,7 +1829,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             5_(),
             20_(),
             unimplemented!(),
@@ -1235,37 +1837,29 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 9_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 9_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 9_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 9_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 9_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 9_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 9_(), 0_(), 9_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            0_(),
+            9_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             9_(),
             1_(),
             unimplemented!(),
@@ -1275,7 +1869,27 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             9_(),
             5_(),
             unimplemented!(),
@@ -1285,31 +1899,17 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             9_(),
+            0_(),
             9_(),
-            unimplemented!(),
         )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            9_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 9_(), 0_(), 9_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             9_(),
             1_(),
             unimplemented!(),
@@ -1319,7 +1919,27 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            9_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             9_(),
             10_(),
             unimplemented!(),
@@ -1329,7 +1949,37 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            0_(),
+            9_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            9_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             9_(),
             19_(),
             unimplemented!(),
@@ -1339,7 +1989,7 @@ pub unsafe fn test1_2() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             9_(),
             20_(),
             unimplemented!(),
@@ -1347,37 +1997,79 @@ pub unsafe fn test1_2() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 10_(), 0_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 0_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 10_(), 0_(), 10_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             1_(),
             unimplemented!(),
@@ -1389,7 +2081,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             5_(),
             unimplemented!(),
@@ -1399,7 +2091,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             9_(),
             unimplemented!(),
@@ -1409,7 +2101,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             10_(),
             unimplemented!(),
@@ -1419,7 +2111,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             0_(),
             10_(),
@@ -1429,7 +2121,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             1_(),
             unimplemented!(),
@@ -1439,7 +2131,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             10_(),
             unimplemented!(),
@@ -1449,7 +2141,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             19_(),
             unimplemented!(),
@@ -1459,7 +2151,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             20_(),
             unimplemented!(),
@@ -1467,33 +2159,9 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 11_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 11_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 11_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 11_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 11_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 11_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             0_(),
             unimplemented!(),
@@ -1503,7 +2171,17 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             1_(),
             unimplemented!(),
@@ -1513,7 +2191,27 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             5_(),
             unimplemented!(),
@@ -1523,7 +2221,37 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            11_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             9_(),
             unimplemented!(),
@@ -1533,7 +2261,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             10_(),
             unimplemented!(),
@@ -1543,7 +2271,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             0_(),
             unimplemented!(),
@@ -1553,7 +2281,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             1_(),
             unimplemented!(),
@@ -1563,7 +2291,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             10_(),
             unimplemented!(),
@@ -1573,7 +2301,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             19_(),
             unimplemented!(),
@@ -1583,7 +2311,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             11_(),
             20_(),
             unimplemented!(),
@@ -1591,129 +2319,309 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 2_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 4_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 5_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 9_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 0_(), 10_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 0_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 1_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 10_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 19_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 0_(), 20_(), 0_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 2_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 4_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 1_(), 5_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 5_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 9_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 1_(), 10_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 1_(), 0_(), 1_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 1_(), 1_(), 5_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcdeabcdeabcde".as_ptr(), 1_(), 10_(), 5_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            2_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            4_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            5_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            9_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            0_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            1_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            10_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            19_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            0_(),
+            20_(),
+            0_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            2_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            4_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            5_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            9_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            0_(),
+            1_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            1_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            1_(),
+            10_(),
+            5_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             19_(),
             unimplemented!(),
@@ -1723,7 +2631,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             1_(),
             20_(),
             unimplemented!(),
@@ -1731,53 +2639,9 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 10_(), 0_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 0_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 1_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 2_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 4_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 10_(), 5_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 10_(), 0_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 10_(), 1_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 10_(), 5_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 10_(), 9_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 10_(), 10_(), 10_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             0_(),
             10_(),
@@ -1787,7 +2651,17 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             1_(),
             10_(),
@@ -1797,7 +2671,77 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            2_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            4_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            5_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            1_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            5_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            9_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             10_(),
             10_(),
@@ -1807,7 +2751,37 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            0_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            1_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            10_(),
+            10_(),
+            10_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             19_(),
             unimplemented!(),
@@ -1817,7 +2791,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             10_(),
             20_(),
             unimplemented!(),
@@ -1825,37 +2799,29 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 19_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 19_(), 0_(), 19_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 19_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 19_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 19_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 19_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 19_(), 0_(), 19_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            0_(),
+            19_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             1_(),
             unimplemented!(),
@@ -1865,7 +2831,27 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             5_(),
             unimplemented!(),
@@ -1875,27 +2861,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            19_(),
-            9_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            19_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             0_(),
             19_(),
@@ -1905,7 +2871,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             1_(),
             unimplemented!(),
@@ -1915,7 +2881,27 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            9_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             10_(),
             unimplemented!(),
@@ -1925,7 +2911,37 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            0_(),
+            19_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            19_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             19_(),
             unimplemented!(),
@@ -1935,7 +2951,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             19_(),
             20_(),
             unimplemented!(),
@@ -1943,37 +2959,29 @@ pub unsafe fn test2_3() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 20_(), 0_(), 20_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 20_(), 0_(), 20_())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 20_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 20_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 20_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 20_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcdeabcde".as_ptr(), 20_(), 0_(), 20_())
+        test_0(
+            &mut _s,
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            0_(),
+            20_(),
+        )
     });
     (unsafe {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            0_(),
+            20_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             1_(),
             unimplemented!(),
@@ -1983,7 +2991,27 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             5_(),
             unimplemented!(),
@@ -1993,7 +3021,37 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            0_(),
+            20_(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            20_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             9_(),
             unimplemented!(),
@@ -2003,7 +3061,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             10_(),
             unimplemented!(),
@@ -2013,7 +3071,7 @@ pub unsafe fn test2_3() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             0_(),
             20_(),
@@ -2025,7 +3083,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             1_(),
             unimplemented!(),
@@ -2035,7 +3093,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             10_(),
             unimplemented!(),
@@ -2045,7 +3103,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             19_(),
             unimplemented!(),
@@ -2055,7 +3113,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             20_(),
             20_(),
             unimplemented!(),
@@ -2063,33 +3121,9 @@ pub unsafe fn test3_4() {
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"".as_ptr(), 21_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 21_(), 0_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 21_(), 1_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 21_(), 2_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 21_(), 4_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(&mut _s, c"abcde".as_ptr(), 21_(), 5_(), unimplemented!())
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             0_(),
             unimplemented!(),
@@ -2099,7 +3133,17 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             1_(),
             unimplemented!(),
@@ -2109,7 +3153,27 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            2_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            4_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcde".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             5_(),
             unimplemented!(),
@@ -2119,27 +3183,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcde".as_ptr(),
-            21_(),
-            9_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcde".as_ptr(),
-            21_(),
-            10_(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        let mut _s: () = unimplemented!();
-        test_0(
-            &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             0_(),
             unimplemented!(),
@@ -2149,7 +3193,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             1_(),
             unimplemented!(),
@@ -2159,7 +3203,27 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            5_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            9_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             10_(),
             unimplemented!(),
@@ -2169,7 +3233,37 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            0_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            1_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
+            21_(),
+            10_(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        let mut _s: () = unimplemented!();
+        test_0(
+            &mut _s,
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             19_(),
             unimplemented!(),
@@ -2179,7 +3273,7 @@ pub unsafe fn test3_4() {
         let mut _s: () = unimplemented!();
         test_0(
             &mut _s,
-            c"abcdeabcdeabcdeabcde".as_ptr(),
+            (c"abcdeabcdeabcdeabcde".as_ptr() as *const libc::c_char).cast::<()>(),
             21_(),
             20_(),
             unimplemented!(),
@@ -2201,7 +3295,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         (unsafe { test0_1() });
         (unsafe { test1_2() });
@@ -2218,6 +3312,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "sv2.find(\"abcde\", 0, 0) == 0");;
         const _: () = assert!(true, "sv2.find(\"abcde\", 0, 1) == 0");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

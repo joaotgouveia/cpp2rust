@@ -10,11 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
-    pub x: (),
+    pub x: i32,
 }
 impl S {
     pub fn new() -> Self {
-        Self { x: 1_() }
+        Self { x: 1 }
     }
 }
 impl Default for S {
@@ -23,7 +23,7 @@ impl Default for S {
     }
 }
 thread_local!(
-    pub static cnt_dtor_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static cnt_dtor_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 
 pub fn main() {
@@ -45,45 +45,45 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 100_()) {
-            unimplemented!();
+        assert!((unimplemented!() == 100_usize));
+        let mut i: i32 = 0;
+        'loop_: while (i < 100) {
+            assert!(((unimplemented!().read()) == 0));
             i.prefix_inc();
         }
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 100_()) {
-            unimplemented!();
+        assert!((unimplemented!() == 100_usize));
+        let mut i: i32 = 0;
+        'loop_: while (i < 100) {
+            assert!(((unimplemented!().read()) == 0_f64));
             i.prefix_inc();
         }
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 100_()) {
-            unimplemented!();
+        assert!((unimplemented!() == 100_usize));
+        let mut i: i32 = 0;
+        'loop_: while (i < 100) {
+            assert!((unimplemented!() == 0_usize));
             i.prefix_inc();
         }
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 100_()) {
-            unimplemented!();
+        assert!((unimplemented!() == 100_usize));
+        let mut i: i32 = 0;
+        'loop_: while (i < 100) {
+            assert!((unimplemented!().with(|__s| __s.x) == 1));
             i.prefix_inc();
         }
     }
-    unimplemented!();
-    return 0_();
+    assert!((cnt_dtor_0.with(|rc| *rc.borrow()) == 100_usize));
+    return 0;
 }
 pub trait SImpl {
     fn destructor(&self);

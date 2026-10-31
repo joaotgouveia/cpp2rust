@@ -26,41 +26,51 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let ss0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(!((unimplemented!()).is_null()));
+        assert!(unimplemented!());
+        assert!(
+            Ptr::<i8>::from_string_literal(b" 123 456").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
+        let mut i: i32 = 0;
         unimplemented!();
+        assert!((i == 123));
         unimplemented!();
+        assert!((i == 456));
         unimplemented!();
-        let mut i: () = 0_();
+        assert!((i == 789));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((i == 321));
     }
     {
         let ss0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(!((unimplemented!()).is_null()));
+        assert!(unimplemented!());
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                32 as i32, 49 as i32, 50 as i32, 51 as i32, 32 as i32, 52 as i32, 53 as i32,
+                54 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        );
+        let mut i: i32 = 0;
         unimplemented!();
+        assert!((i == 123));
         unimplemented!();
+        assert!((i == 456));
         unimplemented!();
-        let mut i: () = 0_();
+        assert!((i == 789));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((i == 321));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

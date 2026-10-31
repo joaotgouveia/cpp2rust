@@ -6,10 +6,10 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> () {
+pub fn operator_eq_0(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> bool {
     return ({ LHS.with(|__s| __s.m_id.clone()) } == { RHS.with(|__s| __s.m_id.clone()) });
 }
-pub fn operator_ne_1(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> () {
+pub fn operator_ne_1(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> bool {
     return ({ LHS.with(|__s| __s.m_id.clone()) } != { RHS.with(|__s| __s.m_id.clone()) });
 }
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
@@ -17,10 +17,10 @@ pub fn operator_ne_1(LHS: Ptr<TypeID>, RHS: Ptr<TypeID>) -> () {
 pub struct TypeID {
     #[offset(0)]
     #[byte_size(8)]
-    m_id: Ptr<()>,
+    m_id: Ptr<i8>,
 }
 impl TypeID {
-    fn new(mut xid: Ptr<()>) -> Self {
+    fn new(mut xid: Ptr<i8>) -> Self {
         Self {
             m_id: (xid).clone(),
         }
@@ -31,7 +31,7 @@ impl CppEq for TypeID {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-pub type UsesAllocatorType = ();
+pub type UsesAllocatorType = i32;
 pub const UsesAllocatorType_UA_None: UsesAllocatorType = 0;
 pub const UsesAllocatorType_UA_AllocArg: UsesAllocatorType = 2;
 pub const UsesAllocatorType_UA_AllocLast: UsesAllocatorType = 4;
@@ -47,19 +47,19 @@ thread_local!(
     pub static UA_AllocLast_4: Value<UsesAllocatorType> =
         Rc::new(RefCell::new(UsesAllocatorType_UA_AllocLast));
 );
-pub fn toString_5(mut UA: UsesAllocatorType) -> Ptr<()> {
+pub fn toString_5(mut UA: UsesAllocatorType) -> Ptr<i8> {
     switch!(match UA {
         __v if __v == UA_None_2.with(|rc| *rc.borrow()) => {
-            return Ptr::<()>::from_string_literal(b"UA_None");
+            return Ptr::<i8>::from_string_literal(b"UA_None");
         }
         __v if __v == UA_AllocArg_3.with(|rc| *rc.borrow()) => {
-            return Ptr::<()>::from_string_literal(b"UA_AllocArg");
+            return Ptr::<i8>::from_string_literal(b"UA_AllocArg");
         }
         __v if __v == UA_AllocLast_4.with(|rc| *rc.borrow()) => {
-            return Ptr::<()>::from_string_literal(b"UA_AllocLast");
+            return Ptr::<i8>::from_string_literal(b"UA_AllocLast");
         }
         _ => {
-            unimplemented!();
+            std::process::abort();
         }
     });
     panic!("ub: non-void function does not return a value")
@@ -68,17 +68,17 @@ pub fn toString_5(mut UA: UsesAllocatorType) -> Ptr<()> {
 #[byte_size(1)]
 pub struct AllocLastTag {}
 thread_local!(
-    pub static constructed_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static constructed_6: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct default_constructible_0_ {
     #[offset(0)]
-    pub x: (),
+    pub x: i32,
 }
 impl default_constructible_0_ {
     pub fn new() -> Self {
-        let __this: default_constructible_0_ = Self { x: 42_() };
+        let __this: default_constructible_0_ = Self { x: 42 };
         (*constructed_6.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
@@ -92,11 +92,11 @@ impl Default for default_constructible_0_ {
 #[byte_size(4)]
 pub struct default_constructible_1_ {
     #[offset(0)]
-    pub x: (),
+    pub x: i32,
 }
 impl default_constructible_1_ {
     pub fn new() -> Self {
-        let __this: default_constructible_1_ = Self { x: 42_() };
+        let __this: default_constructible_1_ = Self { x: 42 };
         (*constructed_6.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
@@ -125,39 +125,53 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(
-            (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-        ));
-        let mut ptr: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
+        let buffer: Value<Box<[i8]>> =
+            Rc::new(RefCell::new((0..8).map(|_| 0_i8).collect::<Box<[i8]>>()));
+        let mut ptr: Ptr<(
+            Value<default_constructible_0_>,
+            Value<default_constructible_0_>,
+        )> = (buffer.as_pointer() as Ptr<i8>).reinterpret_cast::<(
+            Value<default_constructible_0_>,
+            Value<default_constructible_0_>,
+        )>();
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        constructed_6.with(|rc| *rc.borrow_mut() = 0_());
+        constructed_6.with(|rc| *rc.borrow_mut() = 0);
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((constructed_6.with(|rc| *rc.borrow()) == 2));
+        assert!((ptr.with(|__s| (*__s.0.borrow()).x) == 42));
+        assert!((ptr.with(|__s| (*__s.1.borrow()).x) == 42));
     }
     {
-        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(
-            (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-        ));
-        let mut ptr: Ptr<()> = (buffer.as_pointer() as Ptr<()>).reinterpret_cast::<()>();
+        let buffer: Value<Box<[i8]>> =
+            Rc::new(RefCell::new((0..8).map(|_| 0_i8).collect::<Box<[i8]>>()));
+        let mut ptr: Ptr<(
+            Value<default_constructible_0_>,
+            Value<default_constructible_1_>,
+        )> = (buffer.as_pointer() as Ptr<i8>).reinterpret_cast::<(
+            Value<default_constructible_0_>,
+            Value<default_constructible_1_>,
+        )>();
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        constructed_6.with(|rc| *rc.borrow_mut() = 0_());
+        constructed_6.with(|rc| *rc.borrow_mut() = 0);
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((constructed_6.with(|rc| *rc.borrow()) == 2));
+        assert!((ptr.with(|__s| (*__s.0.borrow()).x) == 42));
+        assert!((ptr.with(|__s| (*__s.1.borrow()).x) == 42));
     }
-    return 0_();
+    return 0;
 }
 pub trait TypeIDImpl {
-    fn name(&self) -> ();
+    fn name(&self) -> Vec<i8>;
 }
 impl TypeIDImpl for Ptr<TypeID> {
-    fn name(&self) -> () {
-        return unimplemented!();
+    fn name(&self) -> Vec<i8> {
+        return {
+            let mut __bytes = (*self).with(|__s| __s.m_id.clone()).to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
     }
 }
 pub fn __cpp2rust_init_globals() {

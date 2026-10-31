@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S {
-    pub i: (),
+    pub i: i32,
 }
 impl std::cmp::PartialEq for S {
     fn eq(&self, other: &Self) -> bool {
@@ -17,13 +17,13 @@ impl std::cmp::PartialEq for S {
     }
 }
 impl std::cmp::Eq for S {}
-pub unsafe fn operator_eq_1(x: *const S, y: *const S) -> () {
+pub unsafe fn operator_eq_1(x: *const S, y: *const S) -> bool {
     return (((*x).i) == ((*y).i));
 }
-pub unsafe fn operator_eq_0(x: *const S, y: *const S) -> () {
+pub unsafe fn operator_eq_0(x: *const S, y: *const S) -> bool {
     return (((*x).i) == ((*y).i));
 }
-pub unsafe fn test_2(t: *mut ()) {
+pub unsafe fn test_2(t: *mut i32) {
     const _: () = assert!(
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const                  (t))>::type>::value"
@@ -44,13 +44,13 @@ pub unsafe fn test_2(t: *mut ()) {
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const<const volatile T>(t))>::type>::value"
     );;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((*t) == (*t)));
+    assert!(((*t) == (*t)));
+    assert!(((*t) == (*t)));
+    assert!(((*t) == (*t)));
+    assert!(((*t) == (*t)));
 }
-pub unsafe fn test_3(t: *mut ()) {
+pub unsafe fn test_3(t: *mut f64) {
     const _: () = assert!(
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const                  (t))>::type>::value"
@@ -71,11 +71,11 @@ pub unsafe fn test_3(t: *mut ()) {
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const<const volatile T>(t))>::type>::value"
     );;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((*t) == (*t)));
+    assert!(((*t) == (*t)));
+    assert!(((*t) == (*t)));
+    assert!(((*t) == (*t)));
+    assert!(((*t) == (*t)));
 }
 pub unsafe fn test_4(t: *mut S) {
     const _: () = assert!(
@@ -98,11 +98,41 @@ pub unsafe fn test_4(t: *mut S) {
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const<const volatile T>(t))>::type>::value"
     );;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        (unsafe {
+            let _x: *const S = t;
+            let _y: *const S = t;
+            operator_eq_1(_x, _y)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _x: *const S = t;
+            let _y: *const S = t;
+            operator_eq_1(_x, _y)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _x: *const S = t;
+            let _y: *const S = t;
+            operator_eq_1(_x, _y)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _x: *const S = t;
+            let _y: *const S = t;
+            operator_eq_0(_x, _y)
+        })
+    );
+    assert!(
+        (unsafe {
+            let _x: *const S = t;
+            let _y: *const S = t;
+            operator_eq_0(_x, _y)
+        })
+    );
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -119,13 +149,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut i: () = 3_();
-    let mut d: () = 4_f64;
-    let mut s: S = S { i: 2_() };
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut i: i32 = 3;
+    let mut d: f64 = 4_f64;
+    let mut s: S = S { i: 2 };
     (unsafe { test_2(&mut i) });
     (unsafe { test_3(&mut d) });
     (unsafe { test_4(&mut s) });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

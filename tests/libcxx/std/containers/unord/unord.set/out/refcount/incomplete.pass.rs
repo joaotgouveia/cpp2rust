@@ -54,7 +54,7 @@ impl CppEq for A {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn operator_eq_0(L: Ptr<A>, R: Ptr<A>) -> () {
+pub fn operator_eq_0(L: Ptr<A>, R: Ptr<A>) -> bool {
     return ({ (L).clone() } == { (R).clone() });
 }
 pub fn main() {
@@ -76,9 +76,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut a: A = <A>::default();
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
@@ -86,15 +86,15 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
+        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
+        field!((*self), lit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).lit.clone() });
+        field!((*self), clit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).clit.clone() });
         return (*self).clone();
     }
 }
 pub trait MyHash_A_Impl {
-    fn operator_call(&self, _a0: Ptr<A>) -> () {
+    fn operator_call(&self, _a0: Ptr<A>) -> usize {
         unimplemented!()
     }
 }

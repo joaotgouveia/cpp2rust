@@ -17,9 +17,9 @@ pub unsafe fn test_impl_0() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: f32 = unimplemented!();
+        assert!(((r) == ((3.1_f64 as f32) + (1.2_f64 as f32))));
+        assert!(((unimplemented!()) == ((3.1_f64 as f32) + (1.2_f64 as f32))));
     }
 }
 pub unsafe fn test_impl_1() {
@@ -33,9 +33,9 @@ pub unsafe fn test_impl_1() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: f32 = unimplemented!();
+        assert!(((r) == ((3.1_f64 as f32) + (1.2_f64 as f32))));
+        assert!(((unimplemented!()) == ((3.1_f64 as f32) + (1.2_f64 as f32))));
     }
 }
 pub unsafe fn test_impl_2() {
@@ -49,9 +49,9 @@ pub unsafe fn test_impl_2() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: f64 = unimplemented!();
+        assert!(((r) == ((3.1_f64) + (1.2_f64))));
+        assert!(((unimplemented!()) == ((3.1_f64) + (1.2_f64))));
     }
 }
 pub unsafe fn test_impl_3() {
@@ -65,9 +65,9 @@ pub unsafe fn test_impl_3() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut r: f64 = unimplemented!();
+        assert!(((r) == ((3.1_f64) + (1.2_f64))));
+        assert!(((unimplemented!()) == ((3.1_f64) + (1.2_f64))));
     }
 }
 pub unsafe fn test_4() {
@@ -97,9 +97,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_4() });
     (unsafe { test_5() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -126,7 +126,7 @@ pub fn test_9(t: Ptr<()>) {
         const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
     }
 }
-pub fn test_all_10() -> () {
+pub fn test_all_10() -> bool {
     ({ test_0(unimplemented!()) });
     ({ test_1(unimplemented!()) });
     ({ test_2(unimplemented!()) });
@@ -158,9 +158,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_all_10() });
     const _: () = assert!(true, "test_all()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

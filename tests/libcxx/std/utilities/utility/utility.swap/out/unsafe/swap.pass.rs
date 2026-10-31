@@ -89,26 +89,26 @@ impl NotMoveConstructible {
 #[derive(FnPtrArg, Default)]
 pub struct NotMoveAssignable {}
 impl NotMoveAssignable {}
-pub unsafe fn can_swap_0() -> () {
+pub unsafe fn can_swap_0() -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_swap_1() -> () {
+pub unsafe fn can_swap_1() -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_swap_2() -> () {
+pub unsafe fn can_swap_2() -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_swap_3() -> () {
+pub unsafe fn can_swap_3() -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_swap_4() -> () {
+pub unsafe fn can_swap_4() -> bool {
     return unimplemented!();
 }
-pub unsafe fn test_swap_constexpr_5() -> () {
-    let mut i: () = 1_();
-    let mut j: () = 2_();
-    unimplemented!();
-    return ((i) == (2_())) && ((j) == (1_()));
+pub unsafe fn test_swap_constexpr_5() -> bool {
+    let mut i: i32 = 1;
+    let mut j: i32 = 2;
+    cpp_swap_unsafe!(&mut i, &mut j);
+    return ((i) == (2)) && ((j) == (1));
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -125,20 +125,28 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut i: () = 1_();
-        let mut j: () = 2_();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut i: i32 = 1;
+        let mut j: i32 = 2;
+        cpp_swap_unsafe!(&mut i, &mut j);
+        assert!(((i) == (2)));
+        assert!(((j) == (1)));
     }
     {
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
+        let mut i: Option<Box<i32>> = Some(Box::from_raw((Box::leak(Box::new(1)) as *mut i32)));
+        let mut j: Option<Box<i32>> = Some(Box::from_raw((Box::leak(Box::new(2)) as *mut i32)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ((*i.as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+                == (2))
+        );
+        assert!(
+            ((*j.as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+                == (1))
+        );
     }
     {
         const _: () = assert!(true, "can_swap<CopyOnly&>()");;
@@ -154,6 +162,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "noexcept(std::swap(nm, nm))");;
     }
     const _: () = assert!(true, "test_swap_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

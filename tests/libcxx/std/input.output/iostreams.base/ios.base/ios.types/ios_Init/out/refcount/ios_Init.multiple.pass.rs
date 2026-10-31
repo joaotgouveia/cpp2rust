@@ -26,15 +26,28 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    {
+        let __s = libcc2rs::cout();
+        let _ = Ptr::<i8>::from_string_literal(b"Hello!").with_c_str(|__cs| {
+            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
+        });
+        __s
+    };
     let mut stock_flags: () = unimplemented!();
-    unimplemented!();
+    {
+        let __s = {
+            let __s = libcc2rs::cout();
+            libcc2rs::boolalpha_refcount.call(__s)
+        };
+        write_bool_refcount(&__s, true);
+        __s
+    };
     let mut ba_flags: () = unimplemented!();
-    unimplemented!();
+    assert!(((stock_flags as i32) != (ba_flags as i32)));
     let init_streams: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut after_init: () = unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((after_init as i32) == (ba_flags as i32)));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

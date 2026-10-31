@@ -9,8 +9,8 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct PODType {
-    pub value: (),
-    pub value2: (),
+    pub value: i32,
+    pub value2: i32,
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
@@ -20,7 +20,7 @@ impl X {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) = true;
     }
 }
-pub static mut dtor_called_0: std::cell::LazyCell<()> =
+pub static mut dtor_called_0: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 
 pub fn main() {
@@ -38,7 +38,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         const _: () = assert!(true, "std::is_trivially_destructible<T>::value");;
         const _: () = assert!(true, "std::is_trivially_destructible<optional<T>>::value");;
@@ -58,11 +58,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let mut x: X = <X>::default();
             let _dtor_x = ScopedDestructorUnsafe::new(&raw mut x, X::destructor);
             let mut opt: () = unimplemented!();
-            unimplemented!();
+            assert!(
+                (((*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) as i32)
+                    == (false as i32))
+            );
         }
-        unimplemented!();
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) as i32)
+                == (true as i32))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const dtor_called_0);

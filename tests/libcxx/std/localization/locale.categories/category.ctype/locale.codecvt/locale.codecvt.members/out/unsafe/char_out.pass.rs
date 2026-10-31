@@ -22,17 +22,23 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut l: () = unimplemented!();
-    let from: () = unimplemented!();
-    let mut to: () = unimplemented!();
+    let from: Vec<libc::c_char> = std::slice::from_raw_parts(
+        c"some text".as_ptr(),
+        libcc2rs::c_str_len(c"some text".as_ptr()) + 1,
+    )
+    .to_vec();
+    let mut to: Vec<libc::c_char> = (0..(from.len() - 1) as usize)
+        .map(|_| (0 as libc::c_char))
+        .collect::<Vec<_>>();
     let f: *const () = unimplemented!();
-    let mut mbs: () = unimplemented!();
-    let mut from_next: *const () = std::ptr::null();
-    let mut to_next: *mut () = std::ptr::null_mut();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    let mut mbs: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
+    let mut from_next: *const libc::c_char = std::ptr::null();
+    let mut to_next: *mut libc::c_char = std::ptr::null_mut();
+    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+    assert!(((from_next) == (from.as_ptr())));
+    assert!(((to_next) == (to.as_mut_ptr())));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

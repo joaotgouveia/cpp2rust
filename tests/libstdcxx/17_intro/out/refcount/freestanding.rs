@@ -10,17 +10,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut str: Ptr<()> = unimplemented!();
+    let mut str: Ptr<i8> = unimplemented!();
     let limit_l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut r: () = unimplemented!();
-    let mut cp: Ptr<()> = Ptr::alloc(Default::default());
+    let mut r: i32 = unimplemented!();
+    let mut cp: Ptr<i8> = Ptr::alloc(Default::default());
     cp.delete();
-    let mut b: () = unimplemented!();
-    let ilisti: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut b: bool = unimplemented!();
+    let ilisti: Value<Vec<i32>> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::has_single_bit(256u)");;
-    const _: () = assert!((201411_() >= 201411_()), "__cpp_lib_void_t >= 201411L");;
-    return 0_();
+    const _: () = assert!((201411_i64 >= 201411_i64), "__cpp_lib_void_t >= 201411L");;
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

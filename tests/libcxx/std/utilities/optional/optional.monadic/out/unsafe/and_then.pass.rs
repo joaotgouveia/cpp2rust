@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -15,7 +15,7 @@ pub struct test_macros_detail_is_same_std_optional_int___std_optional_int__ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct LVal {}
 impl LVal {
-    pub unsafe fn operator_call_1(&mut self, _a0: *mut ()) -> () {
+    pub unsafe fn operator_call_1(&mut self, _a0: *mut i32) -> () {
         return unimplemented!();
     }
 }
@@ -23,7 +23,7 @@ impl LVal {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CLVal {}
 impl CLVal {
-    pub unsafe fn operator_call_2(&mut self, _a0: *const ()) -> () {
+    pub unsafe fn operator_call_2(&mut self, _a0: *const i32) -> () {
         return unimplemented!();
     }
 }
@@ -31,7 +31,7 @@ impl CLVal {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct RVal {}
 impl RVal {
-    pub unsafe fn operator_call_3(&mut self, _a0: *mut ()) -> () {
+    pub unsafe fn operator_call_3(&mut self, _a0: *mut i32) -> () {
         return unimplemented!();
     }
 }
@@ -39,7 +39,7 @@ impl RVal {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CRVal {}
 impl CRVal {
-    pub unsafe fn operator_call_4(&mut self, _a0: *const ()) -> () {
+    pub unsafe fn operator_call_4(&mut self, _a0: *const i32) -> () {
         return unimplemented!();
     }
 }
@@ -47,7 +47,7 @@ impl CRVal {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct RefQual {}
 impl RefQual {
-    pub unsafe fn operator_call_1(&mut self, mut _a0: ()) -> () {
+    pub unsafe fn operator_call_1(&mut self, mut _a0: i32) -> () {
         return unimplemented!();
     }
 }
@@ -55,7 +55,7 @@ impl RefQual {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CRefQual {}
 impl CRefQual {
-    pub unsafe fn operator_call_2(&self, mut _a0: ()) -> () {
+    pub unsafe fn operator_call_2(&self, mut _a0: i32) -> () {
         return unimplemented!();
     }
 }
@@ -63,7 +63,7 @@ impl CRefQual {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct RVRefQual {}
 impl RVRefQual {
-    pub unsafe fn operator_call_3(&mut self, mut _a0: ()) -> () {
+    pub unsafe fn operator_call_3(&mut self, mut _a0: i32) -> () {
         return unimplemented!();
     }
 }
@@ -71,7 +71,7 @@ impl RVRefQual {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct RVCRefQual {}
 impl RVCRefQual {
-    pub unsafe fn operator_call_4(&self, mut _a0: ()) -> () {
+    pub unsafe fn operator_call_4(&self, mut _a0: i32) -> () {
         return unimplemented!();
     }
 }
@@ -79,7 +79,7 @@ impl RVCRefQual {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NOLVal {}
 impl NOLVal {
-    pub unsafe fn operator_call_1(&mut self, _a0: *mut ()) -> () {
+    pub unsafe fn operator_call_1(&mut self, _a0: *mut i32) -> () {
         return unimplemented!();
     }
 }
@@ -87,7 +87,7 @@ impl NOLVal {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NOCLVal {}
 impl NOCLVal {
-    pub unsafe fn operator_call_2(&mut self, _a0: *const ()) -> () {
+    pub unsafe fn operator_call_2(&mut self, _a0: *const i32) -> () {
         return unimplemented!();
     }
 }
@@ -95,7 +95,7 @@ impl NOCLVal {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NORVal {}
 impl NORVal {
-    pub unsafe fn operator_call_3(&mut self, _a0: *mut ()) -> () {
+    pub unsafe fn operator_call_3(&mut self, _a0: *mut i32) -> () {
         return unimplemented!();
     }
 }
@@ -103,7 +103,7 @@ impl NORVal {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NOCRVal {}
 impl NOCRVal {
-    pub unsafe fn operator_call_4(&mut self, _a0: *const ()) -> () {
+    pub unsafe fn operator_call_4(&mut self, _a0: *const i32) -> () {
         return unimplemented!();
     }
 }
@@ -111,7 +111,7 @@ impl NOCRVal {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NORefQual {}
 impl NORefQual {
-    pub unsafe fn operator_call_1(&mut self, mut _a0: ()) -> () {
+    pub unsafe fn operator_call_1(&mut self, mut _a0: i32) -> () {
         return unimplemented!();
     }
 }
@@ -119,7 +119,7 @@ impl NORefQual {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NOCRefQual {}
 impl NOCRefQual {
-    pub unsafe fn operator_call_2(&self, mut _a0: ()) -> () {
+    pub unsafe fn operator_call_2(&self, mut _a0: i32) -> () {
         return unimplemented!();
     }
 }
@@ -127,7 +127,7 @@ impl NOCRefQual {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NORVRefQual {}
 impl NORVRefQual {
-    pub unsafe fn operator_call_3(&mut self, mut _a0: ()) -> () {
+    pub unsafe fn operator_call_3(&mut self, mut _a0: i32) -> () {
         return unimplemented!();
     }
 }
@@ -135,7 +135,7 @@ impl NORVRefQual {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct NORVCRefQual {}
 impl NORVCRefQual {
-    pub unsafe fn operator_call_4(&self, mut _a0: ()) -> () {
+    pub unsafe fn operator_call_4(&self, mut _a0: i32) -> () {
         return unimplemented!();
     }
 }
@@ -145,7 +145,7 @@ pub struct NoCopy {}
 impl NoCopy {
     pub unsafe fn copy_from(_a0: *const NoCopy) -> Self {
         let mut this = Self {};
-        unimplemented!();
+        assert!(false);
         this
     }
     pub unsafe fn operator_call(&mut self, _a0: *const NoCopy) -> () {
@@ -172,62 +172,62 @@ pub unsafe fn test_val_types_1() {
     {
         {
             let mut i: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
+            assert!(unimplemented!());
             const _: () = assert!(true, "");;
         }
         {
             let mut i: () = unimplemented!();
             let mut l: RefQual = <RefQual>::default();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             let mut nl: NORefQual = <NORefQual>::default();
-            unimplemented!();
+            assert!(unimplemented!());
             const _: () = assert!(true, "");;
         }
     }
     {
         {
             let i: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
+            assert!(unimplemented!());
             const _: () = assert!(true, "");;
         }
         {
             let i: () = unimplemented!();
             let l: CRefQual = <CRefQual>::default();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             let nl: NOCRefQual = <NOCRefQual>::default();
-            unimplemented!();
+            assert!(unimplemented!());
             const _: () = assert!(true, "");;
         }
     }
     {
         {
             let mut i: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
+            assert!(unimplemented!());
             const _: () = assert!(true, "");;
         }
         {
             let mut i: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
+            assert!(unimplemented!());
             const _: () = assert!(true, "");;
         }
     }
     {
         {
             let i: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
+            assert!(unimplemented!());
             const _: () = assert!(true, "");;
         }
         {
             let i: () = unimplemented!();
             let l: RVCRefQual = <RVCRefQual>::default();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             let nl: NORVCRefQual = <NORVCRefQual>::default();
-            unimplemented!();
+            assert!(unimplemented!());
             const _: () = assert!(true, "");;
         }
     }
@@ -247,13 +247,13 @@ pub unsafe fn test_sfinae_2() {
     &(unimplemented!());
     &(unimplemented!());
 }
-pub unsafe fn test_3() -> () {
+pub unsafe fn test_3() -> bool {
     (unsafe { test_val_types_1() });
     let mut opt: () = unimplemented!();
     let copt: *const () = &opt;
-    let never_called: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut _a0: ()| -> () {
+    let never_called: FnPtr<fn(i32) -> ()> = FnPtr::<fn(i32) -> ()>::new(|mut _a0: i32| -> () {
         unsafe {
-            unimplemented!();
+            assert!(false);
             return unimplemented!();
         }
     });
@@ -282,9 +282,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_3() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

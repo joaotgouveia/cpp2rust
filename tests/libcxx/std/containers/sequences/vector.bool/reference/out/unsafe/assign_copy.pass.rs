@@ -6,54 +6,111 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0() -> () {
-    let mut vec_: () = unimplemented!();
+pub unsafe fn test_0() -> bool {
+    let mut vec_: Vec<bool> = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut ref1: () = unimplemented!();
-    let mut ref2: () = unimplemented!();
-    ref2 = (ref1).clone();
+    let mut ref1: *mut bool = (&mut vec_).as_mut_ptr().add(0_usize as usize);
+    let mut ref2: *mut bool = (&mut vec_).as_mut_ptr().add(1_usize as usize);
     {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        ref1 = (ref2).clone();
-        unimplemented!();
-        unimplemented!();
+        *ref2 = *ref1;
+        ref2
+    };
+    {
+        {
+            *(&mut vec_).as_mut_ptr().add(0_usize as usize) = false;
+            (&mut vec_).as_mut_ptr().add(0_usize as usize)
+        };
+        {
+            *(&mut vec_).as_mut_ptr().add(1_usize as usize) = true;
+            (&mut vec_).as_mut_ptr().add(1_usize as usize)
+        };
+        {
+            *ref1 = *ref2;
+            ref1
+        };
+        assert!(*(&mut vec_).as_mut_ptr().add(0_usize as usize));
+        assert!(*(&mut vec_).as_mut_ptr().add(1_usize as usize));
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        ref1 = (ref2).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            *(&mut vec_).as_mut_ptr().add(0_usize as usize) = true;
+            (&mut vec_).as_mut_ptr().add(0_usize as usize)
+        };
+        {
+            *(&mut vec_).as_mut_ptr().add(1_usize as usize) = false;
+            (&mut vec_).as_mut_ptr().add(1_usize as usize)
+        };
+        {
+            *ref1 = *ref2;
+            ref1
+        };
+        assert!(!(*(&mut vec_).as_mut_ptr().add(0_usize as usize)));
+        assert!(!(*(&mut vec_).as_mut_ptr().add(1_usize as usize)));
     }
     {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        ref1 = (ref2).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            *(&mut vec_).as_mut_ptr().add(0_usize as usize) = false;
+            (&mut vec_).as_mut_ptr().add(0_usize as usize)
+        };
+        {
+            *(&mut vec_).as_mut_ptr().add(1_usize as usize) = true;
+            (&mut vec_).as_mut_ptr().add(1_usize as usize)
+        };
+        {
+            *ref1 = *ref2;
+            ref1
+        };
+        assert!(*(&mut vec_).as_mut_ptr().add(0_usize as usize));
+        assert!(*(&mut vec_).as_mut_ptr().add(1_usize as usize));
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        ref1 = (ref2).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            *(&mut vec_).as_mut_ptr().add(0_usize as usize) = true;
+            (&mut vec_).as_mut_ptr().add(0_usize as usize)
+        };
+        {
+            *(&mut vec_).as_mut_ptr().add(1_usize as usize) = false;
+            (&mut vec_).as_mut_ptr().add(1_usize as usize)
+        };
+        {
+            *ref1 = *ref2;
+            ref1
+        };
+        assert!(!(*(&mut vec_).as_mut_ptr().add(0_usize as usize)));
+        assert!(!(*(&mut vec_).as_mut_ptr().add(1_usize as usize)));
     }
     {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        ref1 = (ref2).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            *(&mut vec_).as_mut_ptr().add(0_usize as usize) = false;
+            (&mut vec_).as_mut_ptr().add(0_usize as usize)
+        };
+        {
+            *(&mut vec_).as_mut_ptr().add(1_usize as usize) = true;
+            (&mut vec_).as_mut_ptr().add(1_usize as usize)
+        };
+        {
+            *ref1 = *ref2;
+            ref1
+        };
+        assert!(*(&mut vec_).as_mut_ptr().add(0_usize as usize));
+        assert!(*(&mut vec_).as_mut_ptr().add(1_usize as usize));
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        ref1 = (ref2).clone();
-        unimplemented!();
-        unimplemented!();
+        {
+            *(&mut vec_).as_mut_ptr().add(0_usize as usize) = true;
+            (&mut vec_).as_mut_ptr().add(0_usize as usize)
+        };
+        {
+            *(&mut vec_).as_mut_ptr().add(1_usize as usize) = false;
+            (&mut vec_).as_mut_ptr().add(1_usize as usize)
+        };
+        {
+            *ref1 = *ref2;
+            ref1
+        };
+        assert!(!(*(&mut vec_).as_mut_ptr().add(0_usize as usize)));
+        assert!(!(*(&mut vec_).as_mut_ptr().add(1_usize as usize)));
     }
     return true;
 }
@@ -72,9 +129,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -6,76 +6,76 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub static mut powers_0: std::cell::LazyCell<[(); 20]> = std::cell::LazyCell::new(|| unsafe {
+pub static mut powers_0: std::cell::LazyCell<[u64; 20]> = std::cell::LazyCell::new(|| unsafe {
     [
-        1_(),
-        10_(),
-        100_(),
-        1000_(),
-        10000_(),
-        100000_(),
-        1000000_(),
-        10000000_(),
-        100000000_(),
-        1000000000_(),
-        10000000000_(),
-        100000000000_(),
-        1000000000000_(),
-        10000000000000_(),
-        100000000000000_(),
-        1000000000000000_(),
-        10000000000000000_(),
-        100000000000000000_(),
-        1000000000000000000_(),
-        10000000000000000000_(),
+        1_u64,
+        10_u64,
+        100_u64,
+        1000_u64,
+        10000_u64,
+        100000_u64,
+        1000000_u64,
+        10000000_u64,
+        100000000_u64,
+        1000000000_u64,
+        10000000000_u64,
+        100000000000_u64,
+        1000000000000_u64,
+        10000000000000_u64,
+        100000000000000_u64,
+        1000000000000000_u64,
+        10000000000000000_u64,
+        100000000000000000_u64,
+        1000000000000000000_u64,
+        10000000000000000000_u64,
     ]
 });
-pub unsafe fn check_precision_1() -> () {
+pub unsafe fn check_precision_1() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_2() -> () {
+pub unsafe fn check_precision_2() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_3() -> () {
+pub unsafe fn check_precision_3() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_4() -> () {
+pub unsafe fn check_precision_4() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_5() -> () {
+pub unsafe fn check_precision_5() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_6() -> () {
+pub unsafe fn check_precision_6() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_7() -> () {
+pub unsafe fn check_precision_7() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_8() -> () {
+pub unsafe fn check_precision_8() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_9() -> () {
+pub unsafe fn check_precision_9() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_10() -> () {
+pub unsafe fn check_precision_10() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_11() -> () {
+pub unsafe fn check_precision_11() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_12() -> () {
+pub unsafe fn check_precision_12() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_13() -> () {
+pub unsafe fn check_precision_13() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_14() -> () {
+pub unsafe fn check_precision_14() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_15() -> () {
+pub unsafe fn check_precision_15() -> bool {
     return unimplemented!();
 }
-pub unsafe fn check_precision_16() -> () {
+pub unsafe fn check_precision_16() -> bool {
     return unimplemented!();
 }
 pub fn main() {
@@ -93,7 +93,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(
         true,
         "check_precision<std::chrono::hours,                               0>()"
@@ -158,7 +158,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "check_precision<microfortnights,                                  4>()"
     );;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const powers_0);

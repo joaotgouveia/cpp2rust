@@ -22,28 +22,32 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut str1: [(); 3] = std::mem::transmute(*b"\na\0");
-    let mut str1_scnd: *mut () = str1.as_mut_ptr().offset((1_()) as isize);
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut S: () = unimplemented!();
-    let mut Start: () = unimplemented!();
-    let mut End: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut str1: [libc::c_char; 3] = std::mem::transmute(*b"\na\0");
+    let mut str1_scnd: *mut libc::c_char = str1.as_mut_ptr().offset((1) as isize);
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    let mut S: Vec<libc::c_char> =
+        std::slice::from_raw_parts(c" cd".as_ptr(), libcc2rs::c_str_len(c" cd".as_ptr()) + 1)
+            .to_vec();
+    let mut Start: UnsafeRandomAccessIterator<libc::c_char> =
+        UnsafeRandomAccessIterator::Vec(S.as_mut_ptr()).iter_add(1_isize);
+    let mut End: UnsafeRandomAccessIterator<libc::c_char> =
+        UnsafeRandomAccessIterator::Vec(S.as_mut_ptr().add(S.len() - 1));
+    assert!(unimplemented!());
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(!(unimplemented!()));
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    assert!(unimplemented!());
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

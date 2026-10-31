@@ -26,331 +26,314 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let w: Value<u32> = Rc::new(RefCell::new(0_u32));
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let mut wp: Ptr<u32> = Ptr::<u32>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((4) as isize) }));
+        assert!(((*w.borrow()) == 262147_u32));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((3) as isize) }));
+        assert!(((*w.borrow()) == 4101_u32));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((2) as isize) }));
+        assert!(((*w.borrow()) == 1107_u32));
+        (*w.borrow_mut()) = 86_u32;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!(((*w.borrow()) == 86_u32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let w: Value<u32> = Rc::new(RefCell::new(0_u32));
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let mut wp: Ptr<u32> = Ptr::<u32>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>) }));
+        assert!(((*w.borrow()) == 0_u32));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>) }));
+        assert!(((*w.borrow()) == 0_u32));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((2) as isize) }));
+        assert!(((*w.borrow()) == 1107_u32));
+        (*w.borrow_mut()) = 86_u32;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!(((*w.borrow()) == 86_u32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            -17_(),
-            -69_(),
-            -65_(),
-            -15_(),
-            -128_(),
-            -128_(),
-            -125_(),
+        let w: Value<u32> = Rc::new(RefCell::new(0_u32));
+        let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
+            -17_i8, -69_i8, -65_i8, -15_i8, -128_i8, -128_i8, -125_i8,
         ])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let mut wp: Ptr<u32> = Ptr::<u32>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((7) as isize) }));
+        assert!(((*w.borrow()) == 262147_u32));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -17_();
-        (*n.borrow_mut())[(1_()) as usize] = -69_();
-        (*n.borrow_mut())[(2_()) as usize] = -65_();
-        (*n.borrow_mut())[(3_()) as usize] = -47_();
-        (*n.borrow_mut())[(4_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((3) as isize) }));
+        assert!(((*w.borrow()) == 4101_u32));
+        (*n.borrow_mut())[(0) as usize] = -17_i8;
+        (*n.borrow_mut())[(1) as usize] = -69_i8;
+        (*n.borrow_mut())[(2) as usize] = -65_i8;
+        (*n.borrow_mut())[(3) as usize] = -47_i8;
+        (*n.borrow_mut())[(4) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((5) as isize) }));
+        assert!(((*w.borrow()) == 1107_u32));
+        (*w.borrow_mut()) = 86_u32;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!(((*w.borrow()) == 86_u32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let w: Value<u32> = Rc::new(RefCell::new(0_u32));
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let mut wp: Ptr<u32> = Ptr::<u32>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((4) as isize) }));
+        assert!(((*w.borrow()) == 262147_u32));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((3) as isize) }));
+        assert!(((*w.borrow()) == 4101_u32));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((2) as isize) }));
+        assert!(((*w.borrow()) == 1107_u32));
+        (*w.borrow_mut()) = 86_u32;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!(((*w.borrow()) == 86_u32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([-15_(), -128_(), -128_(), -125_()])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let w: Value<u32> = Rc::new(RefCell::new(0_u32));
+        let n: Value<Box<[i8]>> =
+            Rc::new(RefCell::new(Box::new([-15_i8, -128_i8, -128_i8, -125_i8])));
+        let mut wp: Ptr<u32> = Ptr::<u32>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>) }));
+        assert!(((*w.borrow()) == 0_u32));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>) }));
+        assert!(((*w.borrow()) == 0_u32));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((2) as isize) }));
+        assert!(((*w.borrow()) == 1107_u32));
+        (*w.borrow_mut()) = 86_u32;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!(((*w.borrow()) == 86_u32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            -17_(),
-            -69_(),
-            -65_(),
-            -15_(),
-            -128_(),
-            -128_(),
-            -125_(),
+        let w: Value<u32> = Rc::new(RefCell::new(0_u32));
+        let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
+            -17_i8, -69_i8, -65_i8, -15_i8, -128_i8, -128_i8, -125_i8,
         ])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let mut wp: Ptr<u32> = Ptr::<u32>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -31_();
-        (*n.borrow_mut())[(1_()) as usize] = -128_();
-        (*n.borrow_mut())[(2_()) as usize] = -123_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((7) as isize) }));
+        assert!(((*w.borrow()) == 262147_u32));
+        (*n.borrow_mut())[(0) as usize] = -31_i8;
+        (*n.borrow_mut())[(1) as usize] = -128_i8;
+        (*n.borrow_mut())[(2) as usize] = -123_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -17_();
-        (*n.borrow_mut())[(1_()) as usize] = -69_();
-        (*n.borrow_mut())[(2_()) as usize] = -65_();
-        (*n.borrow_mut())[(3_()) as usize] = -47_();
-        (*n.borrow_mut())[(4_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((3) as isize) }));
+        assert!(((*w.borrow()) == 4101_u32));
+        (*n.borrow_mut())[(0) as usize] = -17_i8;
+        (*n.borrow_mut())[(1) as usize] = -69_i8;
+        (*n.borrow_mut())[(2) as usize] = -65_i8;
+        (*n.borrow_mut())[(3) as usize] = -47_i8;
+        (*n.borrow_mut())[(4) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((5) as isize) }));
+        assert!(((*w.borrow()) == 1107_u32));
+        (*w.borrow_mut()) = 86_u32;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!(((*w.borrow()) == 86_u32));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-31_(), -128_(), -123_()])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let w: Value<u16> = Rc::new(RefCell::new(0_u16));
+        let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([-31_i8, -128_i8, -123_i8])));
+        let mut wp: Ptr<u16> = Ptr::<u16>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((3) as isize) }));
+        assert!((((*w.borrow()) as i32) == 4101));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((2) as isize) }));
+        assert!((((*w.borrow()) as i32) == 1107));
+        (*w.borrow_mut()) = 86_u16;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!((((*w.borrow()) as i32) == 86));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-31_(), -128_(), -123_()])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let w: Value<u16> = Rc::new(RefCell::new(0_u16));
+        let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([-31_i8, -128_i8, -123_i8])));
+        let mut wp: Ptr<u16> = Ptr::<u16>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>) }));
+        assert!((((*w.borrow()) as i32) == 0));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((2) as isize) }));
+        assert!((((*w.borrow()) as i32) == 1107));
+        (*w.borrow_mut()) = 86_u16;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!((((*w.borrow()) as i32) == 86));
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let w: Value<()> = Rc::new(RefCell::new(0_()));
-        let n: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            -17_(),
-            -69_(),
-            -65_(),
-            -31_(),
-            -128_(),
-            -123_(),
+        let w: Value<u16> = Rc::new(RefCell::new(0_u16));
+        let n: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
+            -17_i8, -69_i8, -65_i8, -31_i8, -128_i8, -123_i8,
         ])));
-        let mut wp: Ptr<()> = Ptr::<()>::null();
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut np: Ptr<()> = Ptr::<()>::null();
+        let mut wp: Ptr<u16> = Ptr::<u16>::null();
+        let m: Value<::libc::mbstate_t> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+        let mut np: Ptr<i8> = Ptr::<i8>::null();
         let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*n.borrow_mut())[(0_()) as usize] = -47_();
-        (*n.borrow_mut())[(1_()) as usize] = -109_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((6) as isize) }));
+        assert!((((*w.borrow()) as i32) == 4101));
+        (*n.borrow_mut())[(0) as usize] = -47_i8;
+        (*n.borrow_mut())[(1) as usize] = -109_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*w.borrow_mut()) = 86_();
-        (*n.borrow_mut())[(0_()) as usize] = 86_();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((2) as isize) }));
+        assert!((((*w.borrow()) as i32) == 1107));
+        (*w.borrow_mut()) = 86_u16;
+        (*n.borrow_mut())[(0) as usize] = 86_i8;
         r = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((r as i32) == (unimplemented!() as i32)));
+        assert!(({ (wp).clone() } == { (w.as_pointer()).offset((1) as isize) }));
+        assert!(({ (np).clone() } == { (n.as_pointer() as Ptr::<i8>).offset((1) as isize) }));
+        assert!((((*w.borrow()) as i32) == 86));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

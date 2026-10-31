@@ -10,8 +10,8 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub fn eq(mut c1: (), mut c2: ()) -> () {
-        return (c1 == c2);
+    pub fn eq(mut c1: i8, mut c2: i8) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
 }
 pub fn main() {
@@ -33,15 +33,15 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     {
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -51,6 +51,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "sv2.starts_with(\'a\')");;
         const _: () = assert!(true, "!sv2.starts_with(\'x\')");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -26,21 +26,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t0: Value<(Value<i64>, Value<i8>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new((2 as i64))),
+            Rc::new(RefCell::new(('a' as i8))),
+        )));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 2_()));
+        assert!((((unimplemented!().read()) as i32) == ((('a' as i8) as i16) as i32)));
     }
     {
-        let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p0: Value<(Value<i64>, Value<i8>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new((2 as i64))),
+            Rc::new(RefCell::new(('a' as i8))),
+        )));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::get<0>(t1) == std::get<0>(p0)");;
         const _: () = assert!(true, "std::get<1>(t1) == std::get<1>(p0)");;
         const _: () = assert!(true, "std::get<0>(t1) == 2");;
         const _: () = assert!(true, "std::get<1>(t1) == short(\'a\')");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

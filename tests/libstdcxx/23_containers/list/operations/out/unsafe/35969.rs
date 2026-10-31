@@ -10,8 +10,8 @@ pub unsafe fn test01_0() {
     {
         let mut list1: () = unimplemented!();
         let mut list2: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (10_())) {
+        let mut i: i32 = 0;
+        'loop_: while ((i) < (10)) {
             unimplemented!();
             unimplemented!();
             i.prefix_inc();
@@ -27,8 +27,8 @@ pub unsafe fn test01_0() {
     {
         let mut list1: () = unimplemented!();
         let mut list2: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (10_())) {
+        let mut i: i32 = 0;
+        'loop_: while ((i) < (10)) {
             unimplemented!();
             unimplemented!();
             i.prefix_inc();
@@ -48,8 +48,8 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test01_0() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

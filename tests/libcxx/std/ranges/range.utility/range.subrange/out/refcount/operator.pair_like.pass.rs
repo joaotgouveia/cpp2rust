@@ -30,45 +30,88 @@ const _: () = assert!(
     !(false),
     "!std::convertible_to<std::ranges::subrange<int*>, std::array<int*, 2>>"
 );
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
-        let data: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
+        let data: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
-            let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
-            unimplemented!();
-            unimplemented!();
+            let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
+                Rc::new(RefCell::new(({ (*a.borrow())() })));
+            assert!(
+                ({ (*(*p.borrow()).0.borrow()).clone() } == {
+                    (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                })
+            );
+            assert!(
+                ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                })
+            );
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
-            unimplemented!();
-            unimplemented!();
+            let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
+                Rc::new(RefCell::new(({ (*a.borrow())() })));
+            assert!(
+                ({ (*(*p.borrow()).0.borrow()).clone() } == {
+                    (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                })
+            );
+            assert!(
+                ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                })
+            );
         }
         {
-            let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
-            unimplemented!();
-            unimplemented!();
+            let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
+                Rc::new(RefCell::new(({ (*a.borrow())() })));
+            assert!(
+                ({ (*(*p.borrow()).0.borrow()).clone() } == {
+                    (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                })
+            );
+            assert!(
+                ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                })
+            );
         }
     }
     {
-        let data: Value<Box<[()]>> =
-            Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
+        let data: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
-            unimplemented!();
-            unimplemented!();
+            assert!(
+                ((unimplemented!().read())
+                    == (data.as_pointer() as Ptr::<i32>).offset((0) as isize))
+            );
+            assert!(
+                ((unimplemented!().read())
+                    == (data.as_pointer() as Ptr::<i32>).offset((5) as isize))
+            );
         }
         {
             let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
-            unimplemented!();
-            unimplemented!();
+            assert!(
+                ((unimplemented!().read())
+                    == (data.as_pointer() as Ptr::<i32>).offset((0) as isize))
+            );
+            assert!(
+                ((unimplemented!().read())
+                    == (data.as_pointer() as Ptr::<i32>).offset((5) as isize))
+            );
         }
         {
             let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
-            unimplemented!();
-            unimplemented!();
+            assert!(
+                ((unimplemented!().read())
+                    == (data.as_pointer() as Ptr::<i32>).offset((0) as isize))
+            );
+            assert!(
+                ((unimplemented!().read())
+                    == (data.as_pointer() as Ptr::<i32>).offset((5) as isize))
+            );
         }
     }
     return true;
@@ -92,9 +135,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

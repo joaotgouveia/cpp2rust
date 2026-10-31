@@ -6,13 +6,13 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_basic_string_view_char__std_char_traits_char____std_basic_string_view_char__std_char_traits_char___
 {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -37,20 +37,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut str: Ptr<()> = Ptr::<()>::from_string_literal(b"hello world");
+        let mut str: Ptr<i8> = Ptr::<i8>::from_string_literal(b"hello world");
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let mut str: Ptr<()> = Ptr::<()>::from_string_literal(&[
-            104 as (), 101 as (), 108 as (), 108 as (), 111 as (), 32 as (), 119 as (), 111 as (),
-            114 as (), 108 as (), 100 as (), 0 as (),
+        let mut str: Ptr<i32> = Ptr::<i32>::from_string_literal(&[
+            104 as i32, 101 as i32, 108 as i32, 108 as i32, 111 as i32, 32 as i32, 119 as i32,
+            111 as i32, 114 as i32, 108 as i32, 100 as i32, 0 as i32,
         ]);
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -6,7 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn sqr_0(mut x: ()) -> () {
+pub unsafe fn sqr_0(mut x: f64) -> f64 {
     return ((x) * (x));
 }
 pub fn main() {
@@ -24,89 +24,89 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut g: () = unimplemented!();
         let mut d: () = unimplemented!();
         let mut p: () = unimplemented!();
-        let N: () = 100000_();
-        let mut u: () = unimplemented!();
-        let mut i: () = 0_();
+        let N: i32 = 100000;
+        let mut u: Vec<bool> = unimplemented!();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (N)) {
             unimplemented!();
             i.prefix_inc();
         }
-        let mut mean: () = ((unimplemented!()) / (unimplemented!()));
-        let mut var: () = 0_();
-        let mut skew: () = 0_();
-        let mut kurtosis: () = 0_();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (unimplemented!())) {
-            let mut dbl: () = ((unimplemented!()) - (mean));
-            let mut d2: () = (unsafe { sqr_0(dbl) });
+        let mut mean: f64 = ((unimplemented!()) / ((&u).len() as f64));
+        let mut var: f64 = 0_f64;
+        let mut skew: f64 = 0_f64;
+        let mut kurtosis: f64 = 0_f64;
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) < ((&u).len())) {
+            let mut dbl: f64 = (((*(&mut u).as_mut_ptr().add(i as usize) as i32) as f64) - (mean));
+            let mut d2: f64 = (unsafe { sqr_0(dbl) });
             var += d2;
             skew += ((dbl) * (d2));
             kurtosis += ((d2) * (d2));
             i.prefix_inc();
         }
-        var /= unimplemented!();
-        let mut dev: () = unimplemented!();
-        skew /= (((unimplemented!()) * (dev)) * (var));
-        kurtosis /= (((unimplemented!()) * (var)) * (var));
-        kurtosis -= 3_();
-        let mut x_mean: () = unimplemented!();
-        let mut x_var: () = ((unimplemented!()) * ((1_()) - (unimplemented!())));
-        let mut x_skew: () = (((1_()) - ((2_()) * (unimplemented!()))) / (unimplemented!()));
-        let mut x_kurtosis: () = (((((6_()) * (unsafe { sqr_0(unimplemented!()) }))
-            - ((6_()) * (unimplemented!())))
-            + (1_()))
+        var /= ((&u).len() as f64);
+        let mut dev: f64 = unimplemented!();
+        skew /= ((((&u).len() as f64) * (dev)) * (var));
+        kurtosis /= ((((&u).len() as f64) * (var)) * (var));
+        kurtosis -= 3_f64;
+        let mut x_mean: f64 = unimplemented!();
+        let mut x_var: f64 = ((unimplemented!()) * ((1_f64) - (unimplemented!())));
+        let mut x_skew: f64 = (((1_f64) - ((2_f64) * (unimplemented!()))) / (unimplemented!()));
+        let mut x_kurtosis: f64 = (((((6_f64) * (unsafe { sqr_0(unimplemented!()) }))
+            - ((6_f64) * (unimplemented!())))
+            + (1_f64))
             / (x_var));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) < (0.01_f64)));
+        assert!(((unimplemented!()) < (0.01_f64)));
+        assert!(((unimplemented!()) < (0.02_f64)));
+        assert!(((unimplemented!()) < (0.05_f64)));
     }
     {
         let mut g: () = unimplemented!();
         let mut d: () = unimplemented!();
         let mut p: () = unimplemented!();
-        let N: () = 100000_();
-        let mut u: () = unimplemented!();
-        let mut i: () = 0_();
+        let N: i32 = 100000;
+        let mut u: Vec<bool> = unimplemented!();
+        let mut i: i32 = 0;
         'loop_: while ((i) < (N)) {
             unimplemented!();
             i.prefix_inc();
         }
-        let mut mean: () = ((unimplemented!()) / (unimplemented!()));
-        let mut var: () = 0_();
-        let mut skew: () = 0_();
-        let mut kurtosis: () = 0_();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (unimplemented!())) {
-            let mut dbl: () = ((unimplemented!()) - (mean));
-            let mut d2: () = (unsafe { sqr_0(dbl) });
+        let mut mean: f64 = ((unimplemented!()) / ((&u).len() as f64));
+        let mut var: f64 = 0_f64;
+        let mut skew: f64 = 0_f64;
+        let mut kurtosis: f64 = 0_f64;
+        let mut i: usize = 0_usize;
+        'loop_: while ((i) < ((&u).len())) {
+            let mut dbl: f64 = (((*(&mut u).as_mut_ptr().add(i as usize) as i32) as f64) - (mean));
+            let mut d2: f64 = (unsafe { sqr_0(dbl) });
             var += d2;
             skew += ((dbl) * (d2));
             kurtosis += ((d2) * (d2));
             i.prefix_inc();
         }
-        var /= unimplemented!();
-        let mut dev: () = unimplemented!();
-        skew /= (((unimplemented!()) * (dev)) * (var));
-        kurtosis /= (((unimplemented!()) * (var)) * (var));
-        kurtosis -= 3_();
-        let mut x_mean: () = unimplemented!();
-        let mut x_var: () = ((unimplemented!()) * ((1_()) - (unimplemented!())));
-        let mut x_skew: () = (((1_()) - ((2_()) * (unimplemented!()))) / (unimplemented!()));
-        let mut x_kurtosis: () = (((((6_()) * (unsafe { sqr_0(unimplemented!()) }))
-            - ((6_()) * (unimplemented!())))
-            + (1_()))
+        var /= ((&u).len() as f64);
+        let mut dev: f64 = unimplemented!();
+        skew /= ((((&u).len() as f64) * (dev)) * (var));
+        kurtosis /= ((((&u).len() as f64) * (var)) * (var));
+        kurtosis -= 3_f64;
+        let mut x_mean: f64 = unimplemented!();
+        let mut x_var: f64 = ((unimplemented!()) * ((1_f64) - (unimplemented!())));
+        let mut x_skew: f64 = (((1_f64) - ((2_f64) * (unimplemented!()))) / (unimplemented!()));
+        let mut x_kurtosis: f64 = (((((6_f64) * (unsafe { sqr_0(unimplemented!()) }))
+            - ((6_f64) * (unimplemented!())))
+            + (1_f64))
             / (x_var));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) < (0.01_f64)));
+        assert!(((unimplemented!()) < (0.01_f64)));
+        assert!(((unimplemented!()) < (0.02_f64)));
+        assert!(((unimplemented!()) < (0.05_f64)));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

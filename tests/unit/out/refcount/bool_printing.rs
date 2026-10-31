@@ -22,7 +22,7 @@ fn main_0() -> i32 {
     {
         let __s = {
             let __s = libcc2rs::cout();
-            let _ = write!(__s, "{}", true as i32);
+            write_bool_refcount(&__s, true);
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);
@@ -31,7 +31,7 @@ fn main_0() -> i32 {
     {
         let __s = {
             let __s = libcc2rs::cout();
-            let _ = write!(__s, "{}", false as i32);
+            write_bool_refcount(&__s, false);
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);
@@ -40,7 +40,7 @@ fn main_0() -> i32 {
     {
         let __s = {
             let __s = libcc2rs::cout();
-            let _ = write!(__s, "{}", (i1 != i2) as i32);
+            write_bool_refcount(&__s, (i1 != i2));
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);
@@ -49,7 +49,7 @@ fn main_0() -> i32 {
     {
         let __s = {
             let __s = libcc2rs::cout();
-            let _ = write!(__s, "{}", (i1 == i2) as i32);
+            write_bool_refcount(&__s, (i1 == i2));
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);
@@ -58,7 +58,7 @@ fn main_0() -> i32 {
     {
         let __s = {
             let __s = libcc2rs::cout();
-            let _ = write!(__s, "{}", ({ foo_0() }) as i32);
+            write_bool_refcount(&__s, ({ foo_0() }));
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);
@@ -67,7 +67,7 @@ fn main_0() -> i32 {
     {
         let __s = {
             let __s = libcc2rs::cout();
-            let _ = write!(__s, "{}", ({ bar_1() }) as i32);
+            write_bool_refcount(&__s, ({ bar_1() }));
             __s
         };
         let _ = __s.write_all(&[('\n' as i8) as u8]);

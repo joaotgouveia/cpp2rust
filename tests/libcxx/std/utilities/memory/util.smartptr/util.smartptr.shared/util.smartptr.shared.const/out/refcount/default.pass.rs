@@ -11,43 +11,43 @@ use std::rc::{Rc, Weak};
 pub struct A {}
 pub fn test_0() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!()).is_null());
 }
 pub fn test_1() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!()).is_null());
 }
 pub fn test_2() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!()).is_null());
 }
 pub fn test_3() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!()).is_null());
 }
 pub fn test_4() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!()).is_null());
 }
 pub fn test_5() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!()).is_null());
 }
 pub fn test_6() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!()).is_null());
 }
 pub fn test_7() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == 0_i64));
+    assert!((unimplemented!()).is_null());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -68,7 +68,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
@@ -77,6 +77,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_5() });
     ({ test_6() });
     ({ test_7() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

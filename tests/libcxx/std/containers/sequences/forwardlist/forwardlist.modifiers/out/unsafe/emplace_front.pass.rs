@@ -9,18 +9,18 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct Emplaceable {
-    int_: (),
-    double_: (),
+    int_: i32,
+    double_: f64,
 }
 impl Emplaceable {
     pub unsafe fn new_1() -> Self {
         let mut this = Self {
-            int_: 0_(),
-            double_: 0_(),
+            int_: 0,
+            double_: 0_f64,
         };
         this
     }
-    pub unsafe fn new_2(mut i: (), mut d: ()) -> Self {
+    pub unsafe fn new_2(mut i: i32, mut d: f64) -> Self {
         let mut this = Self {
             int_: i,
             double_: d,
@@ -32,25 +32,25 @@ impl Emplaceable {
             int_: (*x).int_,
             double_: (*x).double_,
         };
-        (*x).int_ = 0_();
-        (*x).double_ = 0_();
+        (*x).int_ = 0;
+        (*x).double_ = 0_f64;
         this
     }
     pub unsafe fn move_assign(&mut self, x: *mut Emplaceable) -> *mut Emplaceable {
         self.int_ = (*x).int_;
-        (*x).int_ = 0_();
+        (*x).int_ = 0;
         self.double_ = (*x).double_;
-        (*x).double_ = 0_();
+        (*x).double_ = 0_f64;
         return &mut (*(self as *mut Emplaceable));
     }
-    pub unsafe fn operator_eq(&self, x: *const Emplaceable) -> () {
+    pub unsafe fn operator_eq(&self, x: *const Emplaceable) -> bool {
         return ((self.int_) == ((*x).int_)) && ((self.double_) == ((*x).double_));
     }
-    pub unsafe fn operator_lt(&self, x: *const Emplaceable) -> () {
+    pub unsafe fn operator_lt(&self, x: *const Emplaceable) -> bool {
         return ((self.int_) < ((*x).int_))
             || (((self.int_) == ((*x).int_)) && ((self.double_) < ((*x).double_)));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.int_;
     }
 }
@@ -87,26 +87,29 @@ impl Default for Emplaceable {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_3)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_0: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_1: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_2: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_3: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -117,36 +120,72 @@ impl min_pointer_Emplaceable__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_Emplaceable_ {}
-pub unsafe fn test_4() -> () {
+pub unsafe fn test_4() -> bool {
     {
         let mut c: () = unimplemented!();
         let r1: *mut Emplaceable = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_1();
+                Emplaceable::operator_eq(&(*unimplemented!()), &mut _x)
+            })
+        );
+        assert!(((r1) == (unimplemented!())));
+        assert!(((unimplemented!()) == (1_isize)));
         let r2: *mut Emplaceable = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_2({ 1 }, { 2.5_f64 });
+                Emplaceable::operator_eq(&(*unimplemented!()), &mut _x)
+            })
+        );
+        assert!(((r2) == (unimplemented!())));
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_1();
+                Emplaceable::operator_eq(
+                    &(*libcc2rs::next_unsafe(unimplemented!(), 1_isize).iter_deref()),
+                    &mut _x,
+                )
+            })
+        );
+        assert!(((unimplemented!()) == (2_isize)));
     }
     {
         let mut c: () = unimplemented!();
         let r1: *mut Emplaceable = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_1();
+                Emplaceable::operator_eq(&(*unimplemented!()), &mut _x)
+            })
+        );
+        assert!(((r1) == (unimplemented!())));
+        assert!(((unimplemented!()) == (1_isize)));
         let r2: *mut Emplaceable = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_2({ 1 }, { 2.5_f64 });
+                Emplaceable::operator_eq(&(*unimplemented!()), &mut _x)
+            })
+        );
+        assert!(((r2) == (unimplemented!())));
+        assert!(
+            (unsafe {
+                let mut _x: Emplaceable = Emplaceable::new_1();
+                Emplaceable::operator_eq(
+                    &(*libcc2rs::next_unsafe(unimplemented!(), 1_isize).iter_deref()),
+                    &mut _x,
+                )
+            })
+        );
+        assert!(((unimplemented!()) == (2_isize)));
     }
     return true;
 }
@@ -165,9 +204,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    unimplemented!();
-    return 0_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    assert!((unsafe { test_4() }));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);

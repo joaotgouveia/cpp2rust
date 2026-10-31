@@ -9,14 +9,15 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Counter_base {}
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor, Default)]
+#[cpp_from(i32, new_1, ptr)]
 #[byte_size(4)]
 pub struct Counter_int_ {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl Counter_int_ {
-    pub fn new_1(data: Ptr<()>) -> Self {
+    pub fn new_1(data: Ptr<i32>) -> Self {
         let __this: Counter_int_ = Self {
             data_: (data.read()),
         };
@@ -50,65 +51,71 @@ impl Clone for Counter_int_ {
     }
 }
 thread_local!(
-    pub static gConstructed_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static gConstructed_0: Value<i32> = Rc::new(RefCell::new(0));
 );
-pub fn map_equal_1(map: Ptr<()>, other: ()) -> () {
+pub fn map_equal_1(map: Ptr<()>, other: ()) -> bool {
     let other: Value<()> = Rc::new(RefCell::new(other));
     return unimplemented!();
 }
-pub fn map_equal_2(map: Ptr<()>, other: ()) -> () {
+pub fn map_equal_2(map: Ptr<()>, other: ()) -> bool {
     let other: Value<()> = Rc::new(RefCell::new(other));
     return unimplemented!();
 }
-pub fn map_equal_3(map: Ptr<()>, other: ()) -> () {
+pub fn map_equal_3(map: Ptr<()>, other: ()) -> bool {
     let other: Value<()> = Rc::new(RefCell::new(other));
     return unimplemented!();
 }
-pub fn map_equal_4(map: Ptr<()>, other: ()) -> () {
-    let other: Value<()> = Rc::new(RefCell::new(other));
+pub fn map_equal_4(
+    map: Ptr<Map<Counter_int_, (Value<Counter_int_>, Value<i32>)>>,
+    other: Map<Counter_int_, (Value<Counter_int_>, Value<i32>)>,
+) -> bool {
+    let other: Value<Map<Counter_int_, (Value<Counter_int_>, Value<i32>)>> =
+        Rc::new(RefCell::new(other));
     return unimplemented!();
 }
-pub fn test_5() -> () {
+pub fn test_5() -> bool {
     {
         let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let dst: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ map_equal_1(src.as_pointer(), unimplemented!(),) }));
+        assert!(({ map_equal_1(dst.as_pointer(), unimplemented!(),) }));
     }
     {
-        unimplemented!();
+        assert!((gConstructed_0.with(|rc| *rc.borrow()) == 0));
     };
     {
         {
             let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let second: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let third: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let third: Value<Map<Counter_int_, (Value<Counter_int_>, Value<i32>)>> =
+                Rc::new(RefCell::new(unimplemented!()));
+            assert!((gConstructed_0.with(|rc| *rc.borrow()) == 8));
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(({ map_equal_2(first.as_pointer(), unimplemented!(),) }));
+            assert!(({ map_equal_3(second.as_pointer(), unimplemented!(),) }));
+            assert!(({ map_equal_4(third.as_pointer(), Map::new(),) }));
+            assert!((gConstructed_0.with(|rc| *rc.borrow()) == 8));
         }
-        unimplemented!();
+        assert!((gConstructed_0.with(|rc| *rc.borrow()) == 0));
         {
             let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let second: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let third: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let third: Value<Map<Counter_int_, (Value<Counter_int_>, Value<i32>)>> =
+                Rc::new(RefCell::new(unimplemented!()));
+            assert!((gConstructed_0.with(|rc| *rc.borrow()) == 8));
             unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(({ map_equal_2(first.as_pointer(), unimplemented!(),) }));
+            assert!(({ map_equal_3(second.as_pointer(), unimplemented!(),) }));
+            assert!(({ map_equal_4(third.as_pointer(), Map::new(),) }));
+            assert!((gConstructed_0.with(|rc| *rc.borrow()) == 8));
         }
-        unimplemented!();
+        assert!((gConstructed_0.with(|rc| *rc.borrow()) == 0));
     }
     {
-        unimplemented!();
+        assert!((gConstructed_0.with(|rc| *rc.borrow()) == 0));
     }
     {
         let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -147,9 +154,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_5() });
-    return 0_();
+    return 0;
 }
 pub trait Counter_int_Impl {
     fn copy_assign(&self, rhs: Ptr<Counter_int_>) -> Ptr<Counter_int_> {
@@ -159,28 +166,28 @@ pub trait Counter_int_Impl {
         unimplemented!()
     }
     fn destructor(&self);
-    fn get(&self) -> Ptr<()> {
+    fn get(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_eq(&self, x: Ptr<Counter_int_>) -> ();
-    fn operator_lt(&self, x: Ptr<Counter_int_>) -> ();
+    fn operator_eq(&self, x: Ptr<Counter_int_>) -> bool;
+    fn operator_lt(&self, x: Ptr<Counter_int_>) -> bool;
 }
 impl Counter_int_Impl for Ptr<Counter_int_> {
     fn destructor(&self) {
         (*gConstructed_0.with(Value::clone).borrow_mut()).prefix_dec();
     }
-    fn operator_eq(&self, x: Ptr<Counter_int_>) -> () {
+    fn operator_eq(&self, x: Ptr<Counter_int_>) -> bool {
         return ({ (*self).with(|__s| __s.data_) } == { x.with(|__s| __s.data_) });
     }
-    fn operator_lt(&self, x: Ptr<Counter_int_>) -> () {
+    fn operator_lt(&self, x: Ptr<Counter_int_>) -> bool {
         return ({ (*self).with(|__s| __s.data_) } < { x.with(|__s| __s.data_) });
     }
 }
 pub trait comparator_6Impl {
-    fn operator_call(&self, lhs: Ptr<Counter_int_>, rhs: Ptr<Counter_int_>) -> ();
+    fn operator_call(&self, lhs: Ptr<Counter_int_>, rhs: Ptr<Counter_int_>) -> bool;
 }
 impl comparator_6Impl for Ptr<comparator_6> {
-    fn operator_call(&self, lhs: Ptr<Counter_int_>, rhs: Ptr<Counter_int_>) -> () {
+    fn operator_call(&self, lhs: Ptr<Counter_int_>, rhs: Ptr<Counter_int_>) -> bool {
         return ({
             let _x: Ptr<Counter_int_> = (rhs).clone();
             Counter_int_Impl::operator_lt(&lhs, _x)

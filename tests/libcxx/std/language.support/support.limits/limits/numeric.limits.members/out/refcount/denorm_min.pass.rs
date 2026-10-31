@@ -6,131 +6,131 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_0(mut expected: bool) {
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
 }
-pub fn test_1(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_1(mut expected: i8) {
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
 }
-pub fn test_2(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_2(mut expected: i8) {
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
 }
-pub fn test_3(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_3(mut expected: u8) {
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
 }
-pub fn test_4(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_4(mut expected: i32) {
+    assert!(((unimplemented!() as i32) == expected));
+    assert!(((unimplemented!() as i32) == expected));
+    assert!(((unimplemented!() as i32) == expected));
+    assert!(((unimplemented!() as i32) == expected));
 }
-pub fn test_5(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_5(mut expected: u8) {
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
 }
-pub fn test_6(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_6(mut expected: u16) {
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
 }
-pub fn test_7(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_7(mut expected: u32) {
+    assert!(((unimplemented!() as u32) == expected));
+    assert!(((unimplemented!() as u32) == expected));
+    assert!(((unimplemented!() as u32) == expected));
+    assert!(((unimplemented!() as u32) == expected));
 }
-pub fn test_8(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_8(mut expected: i16) {
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
 }
-pub fn test_9(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_9(mut expected: u16) {
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
+    assert!(((unimplemented!() as i32) == (expected as i32)));
 }
-pub fn test_10(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_10(mut expected: i32) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_11(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_11(mut expected: u32) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_12(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_12(mut expected: i64) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_13(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_13(mut expected: u64) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_14(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_14(mut expected: i64) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_15(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_15(mut expected: u64) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_16(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_16(mut expected: i128) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_17(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_17(mut expected: u128) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_18(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_18(mut expected: f32) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_19(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_19(mut expected: f64) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
-pub fn test_20(mut expected: ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_20(mut expected: f64) {
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
+    assert!((unimplemented!() == expected));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -151,31 +151,31 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0(false) });
-    ({ test_1(0_()) });
-    ({ test_2(0_()) });
-    ({ test_3(0_()) });
-    ({ test_4(0_()) });
-    ({ test_5(0_()) });
-    ({ test_6(0_()) });
-    ({ test_7(0_()) });
-    ({ test_8(0_()) });
-    ({ test_9(0_()) });
-    ({ test_10(0_()) });
-    ({ test_11(0_()) });
-    ({ test_12(0_()) });
-    ({ test_13(0_()) });
-    ({ test_14(0_()) });
-    ({ test_15(0_()) });
-    ({ test_16(0_()) });
-    ({ test_17(0_()) });
+    ({ test_1(0_i8) });
+    ({ test_2(0_i8) });
+    ({ test_3(0_u8) });
+    ({ test_4(0_i32) });
+    ({ test_5(0_u8) });
+    ({ test_6(0_u16) });
+    ({ test_7(0_u32) });
+    ({ test_8(0_i16) });
+    ({ test_9(0_u16) });
+    ({ test_10(0) });
+    ({ test_11(0_u32) });
+    ({ test_12(0_i64) });
+    ({ test_13(0_u64) });
+    ({ test_14(0_i64) });
+    ({ test_15(0_u64) });
+    ({ test_16(0_i128) });
+    ({ test_17(0_u128) });
     ({ test_18(1e-45_f32) });
     ({ test_19(5e-324_f64) });
     ({ test_20(0_f64) });
     ({ test_18(1e-45_f32) });
     ({ test_19(5e-324_f64) });
     ({ test_20(0_f64) });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

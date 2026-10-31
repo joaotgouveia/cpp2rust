@@ -10,58 +10,60 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct A1_int_ {
     #[offset(0)]
-    id_: (),
+    id_: i32,
 }
 impl A1_int_ {}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct A2_int_ {
     #[offset(0)]
-    id_: (),
+    id_: i32,
 }
 impl A2_int_ {}
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct A3_int_ {
     #[offset(0)]
-    id_: (),
+    id_: i32,
 }
 impl A3_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!(
+            (alloc_count_12.with(|rc| *rc.borrow()) >= dealloc_count_13.with(|rc| *rc.borrow()))
+        );
         return ((alloc_count_12.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_13.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_14.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_11.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_12.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_13.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_11.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_12.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_13.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_11: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_11: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_12: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_12: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_13: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_13: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_14: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_14: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -86,7 +88,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(
         true,
         "(std::is_same< std::allocator_traits<A1<int>>::is_always_equal, std::false_type>::value)"
@@ -115,10 +117,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "(std::scoped_allocator_adaptor<A1<int>, A2<int>, A3<int>>::is_always_equal::value ==\n                 (std::allocator_traits<A1<int>>::is_always_equal::value &&\n                  std::allocator_traits<A2<int>>::is_always_equal::value &&\n                  std::allocator_traits<A3<int>>::is_always_equal::value))"
     );;
-    return 0_();
+    return 0;
 }
 pub trait A1_int_Impl {
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         unimplemented!()
     }
     fn copy_assign(&self, a: Ptr<A1_int_>) -> Ptr<A1_int_> {
@@ -127,19 +129,19 @@ pub trait A1_int_Impl {
     fn move_assign(&self, a: Ptr<A1_int_>) -> Ptr<A1_int_> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
+    fn allocate(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
         unimplemented!()
     }
-    fn max_size(&self) -> () {
+    fn max_size(&self) -> usize {
         unimplemented!()
     }
 }
 impl A1_int_Impl for Ptr<A1_int_> {}
 pub trait A2_int_Impl {
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         unimplemented!()
     }
     fn copy_assign(&self, a: Ptr<A2_int_>) -> Ptr<A2_int_> {
@@ -148,13 +150,13 @@ pub trait A2_int_Impl {
     fn move_assign(&self, a: Ptr<A2_int_>) -> Ptr<A2_int_> {
         unimplemented!()
     }
-    fn allocate(&self, mut _a0: (), mut hint: ()) -> Ptr<()> {
+    fn allocate(&self, mut _a0: usize, mut hint: AnyPtr) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl A2_int_Impl for Ptr<A2_int_> {}
 pub trait A3_int_Impl {
-    fn id(&self) -> () {
+    fn id(&self) -> i32 {
         unimplemented!()
     }
     fn copy_assign(&self, a: Ptr<A3_int_>) -> Ptr<A3_int_> {
@@ -169,26 +171,26 @@ pub trait A3_int_Impl {
 }
 impl A3_int_Impl for Ptr<A3_int_> {}
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!()
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
@@ -196,7 +198,7 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -205,29 +207,35 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_add(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_sub(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_sub(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
 }

@@ -22,108 +22,48 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut a: [(); 41] = [
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-        11_(),
-        12_(),
-        13_(),
-        14_(),
-        15_(),
-        16_(),
-        17_(),
-        18_(),
-        19_(),
-        20_(),
-        21_(),
-        22_(),
-        23_(),
-        24_(),
-        25_(),
-        26_(),
-        27_(),
-        28_(),
-        29_(),
-        30_(),
-        31_(),
-        32_(),
-        33_(),
-        34_(),
-        35_(),
-        36_(),
-        37_(),
-        38_(),
-        39_(),
-        40_(),
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    let mut a: [i32; 41] = [
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+        25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
     ];
-    let N1: () =
-        (::std::mem::size_of::<[(); 41]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut s: [(); 24] = [
-        3_(),
-        4_(),
-        5_(),
-        7_(),
-        8_(),
-        9_(),
-        11_(),
-        12_(),
-        13_(),
-        15_(),
-        16_(),
-        17_(),
-        22_(),
-        23_(),
-        24_(),
-        26_(),
-        27_(),
-        28_(),
-        30_(),
-        31_(),
-        32_(),
-        34_(),
-        35_(),
-        36_(),
+    let N1: usize = (::std::mem::size_of::<[i32; 41]>() as usize)
+        .wrapping_div((::std::mem::size_of::<i32>() as usize));
+    let mut s: [usize; 24] = [
+        3_usize, 4_usize, 5_usize, 7_usize, 8_usize, 9_usize, 11_usize, 12_usize, 13_usize,
+        15_usize, 16_usize, 17_usize, 22_usize, 23_usize, 24_usize, 26_usize, 27_usize, 28_usize,
+        30_usize, 31_usize, 32_usize, 34_usize, 35_usize, 36_usize,
     ];
-    let S: () =
-        (::std::mem::size_of::<[(); 24]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let S: usize = (::std::mem::size_of::<[usize; 24]>() as usize)
+        .wrapping_div((::std::mem::size_of::<usize>() as usize));
     let mut v1: () = unimplemented!();
     let mut ia: () = unimplemented!();
     let mut v: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((unimplemented!()) == (24_usize)));
+    assert!(((*unimplemented!()) == (3)));
+    assert!(((*unimplemented!()) == (4)));
+    assert!(((*unimplemented!()) == (5)));
+    assert!(((*unimplemented!()) == (7)));
+    assert!(((*unimplemented!()) == (8)));
+    assert!(((*unimplemented!()) == (9)));
+    assert!(((*unimplemented!()) == (11)));
+    assert!(((*unimplemented!()) == (12)));
+    assert!(((*unimplemented!()) == (13)));
+    assert!(((*unimplemented!()) == (15)));
+    assert!(((*unimplemented!()) == (16)));
+    assert!(((*unimplemented!()) == (17)));
+    assert!(((*unimplemented!()) == (22)));
+    assert!(((*unimplemented!()) == (23)));
+    assert!(((*unimplemented!()) == (24)));
+    assert!(((*unimplemented!()) == (26)));
+    assert!(((*unimplemented!()) == (27)));
+    assert!(((*unimplemented!()) == (28)));
+    assert!(((*unimplemented!()) == (30)));
+    assert!(((*unimplemented!()) == (31)));
+    assert!(((*unimplemented!()) == (32)));
+    assert!(((*unimplemented!()) == (34)));
+    assert!(((*unimplemented!()) == (35)));
+    assert!(((*unimplemented!()) == (36)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

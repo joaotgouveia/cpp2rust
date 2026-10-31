@@ -7,13 +7,13 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0(z: *const (), mut x: ()) {
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test_1(z: *const (), mut x: ()) {
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test_2(z: *const (), mut x: ()) {
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub unsafe fn test_3() {
     (unsafe {
@@ -84,10 +84,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_3() });
     (unsafe { test_4() });
     (unsafe { test_5() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -44,22 +44,22 @@ pub struct types_concatenate_types_type_list_int__long___types_type_list_long_lo
 pub fn for_each_0(mut _a0: types_type_list_NumT_0___NumT_1___NumT_2__, f: ApplyAllTest) {
     let f: Value<ApplyAllTest> = Rc::new(RefCell::new(f));
     ({
-        let _arg0: () = {
+        let _arg0: i32 = {
             ({ ApplyAllTestImpl::operator_call_4_class_NumT_0_(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg1: () = {
+        let _arg1: i32 = {
             ({ ApplyAllTestImpl::operator_call_4_class_NumT_1_(&f.as_pointer()) });
-            0_()
+            0
         };
-        let _arg2: () = {
+        let _arg2: i32 = {
             ({ ApplyAllTestImpl::operator_call_4_class_NumT_2_(&f.as_pointer()) });
-            0_()
+            0
         };
         swallow_1(_arg0, _arg1, _arg2)
     });
 }
-pub fn swallow_1(mut _a0: (), mut _a1: (), mut _a2: ()) {}
+pub fn swallow_1(mut _a0: i32, mut _a1: i32, mut _a2: i32) {}
 const _: () = assert!(
     true,
     "std::is_same<types::concatenate_t<types::type_list<>>,\n                           types::type_list<>>::value"
@@ -85,15 +85,16 @@ pub struct NumT_1_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NumT_2_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Ptr< bool  >  , new, value)]
 #[byte_size(8)]
 pub struct ApplyAllTest {
     #[offset(0)]
     #[byte_size(8)]
-    pub is_called_array_: Ptr<()>,
+    pub is_called_array_: Ptr<bool>,
 }
 impl ApplyAllTest {
-    pub fn new(mut is_called_array: Ptr<()>) -> Self {
+    pub fn new(mut is_called_array: Ptr<bool>) -> Self {
         Self {
             is_called_array_: (is_called_array).clone(),
         }
@@ -103,20 +104,17 @@ impl ApplyAllTest {
 #[byte_size(1)]
 pub struct Identity {}
 pub fn test_for_each_2() {
-    let is_called_array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
+    let is_called_array: Value<Box<[bool]>> =
+        Rc::new(RefCell::new(Box::new([false, false, false])));
     ({
         for_each_0(
             <types_type_list_NumT_0___NumT_1___NumT_2__>::default(),
-            ApplyAllTest::new({ (is_called_array.as_pointer() as Ptr<()>) }),
+            ApplyAllTest::new({ (is_called_array.as_pointer() as Ptr<bool>) }),
         )
     });
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn test_3() -> () {
+pub fn test_3() -> bool {
     ({ test_for_each_2() });
     return true;
 }
@@ -139,10 +137,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_3() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait ApplyAllTestImpl {
     fn check_num_2_0(&self, _a0: NumT_0_);
@@ -154,16 +152,16 @@ pub trait ApplyAllTestImpl {
 }
 impl ApplyAllTestImpl for Ptr<ApplyAllTest> {
     fn check_num_2_0(&self, mut _a0: NumT_0_) {
-        unimplemented!();
-        elem!((*self).with(|__s| __s.is_called_array_.clone()), 0_()).write(true);
+        assert!(!(elem!((*self).with(|__s| __s.is_called_array_.clone()), 0).read()));
+        elem!((*self).with(|__s| __s.is_called_array_.clone()), 0).write(true);
     }
     fn check_num_2_1(&self, mut _a0: NumT_1_) {
-        unimplemented!();
-        elem!((*self).with(|__s| __s.is_called_array_.clone()), 1_()).write(true);
+        assert!(!(elem!((*self).with(|__s| __s.is_called_array_.clone()), 1).read()));
+        elem!((*self).with(|__s| __s.is_called_array_.clone()), 1).write(true);
     }
     fn check_num_2_2(&self, mut _a0: NumT_2_) {
-        unimplemented!();
-        elem!((*self).with(|__s| __s.is_called_array_.clone()), 2_()).write(true);
+        assert!(!(elem!((*self).with(|__s| __s.is_called_array_.clone()), 2).read()));
+        elem!((*self).with(|__s| __s.is_called_array_.clone()), 2).write(true);
     }
     fn operator_call_4_class_NumT_0_(&self) {
         ({ ApplyAllTestImpl::check_num_2_0(self, <NumT_0_>::default()) });
@@ -176,11 +174,11 @@ impl ApplyAllTestImpl for Ptr<ApplyAllTest> {
     }
 }
 pub trait IdentityImpl {
-    fn operator_call(&self, b: ()) -> ();
+    fn operator_call(&self, b: bool) -> bool;
 }
 impl IdentityImpl for Ptr<Identity> {
-    fn operator_call(&self, b: ()) -> () {
-        let b: Value<()> = Rc::new(RefCell::new(b));
+    fn operator_call(&self, b: bool) -> bool {
+        let b: Value<bool> = Rc::new(RefCell::new(b));
         return (*b.borrow());
     }
 }

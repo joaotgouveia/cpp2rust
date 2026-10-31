@@ -6,197 +6,197 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn is_complete_0(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_0(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_1(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_1(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_2(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_2(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_3(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_3(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_4(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_4(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_5(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_5(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_6(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_6(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_7(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_7(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_8(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_8(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_9(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_9(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_10(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_10(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_11(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_11(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_12(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_12(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_13(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_13(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_14(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_14(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_15(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_15(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_16(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_16(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_17(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_17(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_18(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_18(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_19(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_19(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_20(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_20(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_21(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_21(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_22(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_22(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_23(mut _a0: ()) -> () {
-    const _: () = assert!(((1_()) > (0_())), "Size > 0");;
+pub unsafe fn is_complete_23(mut _a0: i32) -> bool {
+    const _: () = assert!(((1_u64) > (0_u64)), "Size > 0");;
     return true;
 }
-pub unsafe fn is_complete_24(mut _a0: ()) -> () {
+pub unsafe fn is_complete_24(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn is_complete_25(mut _a0: ()) -> () {
+pub unsafe fn is_complete_25(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn is_complete_26(mut _a0: ()) -> () {
+pub unsafe fn is_complete_26(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn is_complete_27(mut _a0: ()) -> () {
+pub unsafe fn is_complete_27(mut _a0: i64) -> bool {
     return false;
 }
-pub unsafe fn is_complete_28() -> () {
-    return (unsafe { is_complete_0(0_()) });
+pub unsafe fn is_complete_28() -> bool {
+    return (unsafe { is_complete_0(0) });
 }
-pub unsafe fn is_complete_29() -> () {
-    return (unsafe { is_complete_1(0_()) });
+pub unsafe fn is_complete_29() -> bool {
+    return (unsafe { is_complete_1(0) });
 }
-pub unsafe fn is_complete_30() -> () {
-    return (unsafe { is_complete_2(0_()) });
+pub unsafe fn is_complete_30() -> bool {
+    return (unsafe { is_complete_2(0) });
 }
-pub unsafe fn is_complete_31() -> () {
-    return (unsafe { is_complete_3(0_()) });
+pub unsafe fn is_complete_31() -> bool {
+    return (unsafe { is_complete_3(0) });
 }
-pub unsafe fn is_complete_32() -> () {
-    return (unsafe { is_complete_4(0_()) });
+pub unsafe fn is_complete_32() -> bool {
+    return (unsafe { is_complete_4(0) });
 }
-pub unsafe fn is_complete_33() -> () {
-    return (unsafe { is_complete_5(0_()) });
+pub unsafe fn is_complete_33() -> bool {
+    return (unsafe { is_complete_5(0) });
 }
-pub unsafe fn is_complete_34() -> () {
-    return (unsafe { is_complete_6(0_()) });
+pub unsafe fn is_complete_34() -> bool {
+    return (unsafe { is_complete_6(0) });
 }
-pub unsafe fn is_complete_35() -> () {
-    return (unsafe { is_complete_7(0_()) });
+pub unsafe fn is_complete_35() -> bool {
+    return (unsafe { is_complete_7(0) });
 }
-pub unsafe fn is_complete_36() -> () {
-    return (unsafe { is_complete_8(0_()) });
+pub unsafe fn is_complete_36() -> bool {
+    return (unsafe { is_complete_8(0) });
 }
-pub unsafe fn is_complete_37() -> () {
-    return (unsafe { is_complete_9(0_()) });
+pub unsafe fn is_complete_37() -> bool {
+    return (unsafe { is_complete_9(0) });
 }
-pub unsafe fn is_complete_38() -> () {
-    return (unsafe { is_complete_10(0_()) });
+pub unsafe fn is_complete_38() -> bool {
+    return (unsafe { is_complete_10(0) });
 }
-pub unsafe fn is_complete_39() -> () {
-    return (unsafe { is_complete_11(0_()) });
+pub unsafe fn is_complete_39() -> bool {
+    return (unsafe { is_complete_11(0) });
 }
-pub unsafe fn is_complete_40() -> () {
-    return (unsafe { is_complete_12(0_()) });
+pub unsafe fn is_complete_40() -> bool {
+    return (unsafe { is_complete_12(0) });
 }
-pub unsafe fn is_complete_41() -> () {
-    return (unsafe { is_complete_13(0_()) });
+pub unsafe fn is_complete_41() -> bool {
+    return (unsafe { is_complete_13(0) });
 }
-pub unsafe fn is_complete_42() -> () {
-    return (unsafe { is_complete_14(0_()) });
+pub unsafe fn is_complete_42() -> bool {
+    return (unsafe { is_complete_14(0) });
 }
-pub unsafe fn is_complete_43() -> () {
-    return (unsafe { is_complete_15(0_()) });
+pub unsafe fn is_complete_43() -> bool {
+    return (unsafe { is_complete_15(0) });
 }
-pub unsafe fn is_complete_44() -> () {
-    return (unsafe { is_complete_16(0_()) });
+pub unsafe fn is_complete_44() -> bool {
+    return (unsafe { is_complete_16(0) });
 }
-pub unsafe fn is_complete_45() -> () {
-    return (unsafe { is_complete_17(0_()) });
+pub unsafe fn is_complete_45() -> bool {
+    return (unsafe { is_complete_17(0) });
 }
-pub unsafe fn is_complete_46() -> () {
-    return (unsafe { is_complete_18(0_()) });
+pub unsafe fn is_complete_46() -> bool {
+    return (unsafe { is_complete_18(0) });
 }
-pub unsafe fn is_complete_47() -> () {
-    return (unsafe { is_complete_19(0_()) });
+pub unsafe fn is_complete_47() -> bool {
+    return (unsafe { is_complete_19(0) });
 }
-pub unsafe fn is_complete_48() -> () {
-    return (unsafe { is_complete_20(0_()) });
+pub unsafe fn is_complete_48() -> bool {
+    return (unsafe { is_complete_20(0) });
 }
-pub unsafe fn is_complete_49() -> () {
-    return (unsafe { is_complete_21(0_()) });
+pub unsafe fn is_complete_49() -> bool {
+    return (unsafe { is_complete_21(0) });
 }
-pub unsafe fn is_complete_50() -> () {
-    return (unsafe { is_complete_22(0_()) });
+pub unsafe fn is_complete_50() -> bool {
+    return (unsafe { is_complete_22(0) });
 }
-pub unsafe fn is_complete_51() -> () {
-    return (unsafe { is_complete_23(0_()) });
+pub unsafe fn is_complete_51() -> bool {
+    return (unsafe { is_complete_23(0) });
 }
-pub unsafe fn is_complete_52() -> () {
-    return (unsafe { is_complete_24(0_()) });
+pub unsafe fn is_complete_52() -> bool {
+    return (unsafe { is_complete_24(0_i64) });
 }
-pub unsafe fn is_complete_53() -> () {
-    return (unsafe { is_complete_25(0_()) });
+pub unsafe fn is_complete_53() -> bool {
+    return (unsafe { is_complete_25(0_i64) });
 }
-pub unsafe fn is_complete_54() -> () {
-    return (unsafe { is_complete_26(0_()) });
+pub unsafe fn is_complete_54() -> bool {
+    return (unsafe { is_complete_26(0_i64) });
 }
-pub unsafe fn is_complete_55() -> () {
-    return (unsafe { is_complete_27(0_()) });
+pub unsafe fn is_complete_55() -> bool {
+    return (unsafe { is_complete_27(0_i64) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -279,7 +279,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_complete_56() });
     (unsafe { test_complete_57() });
     (unsafe { test_complete_58() });
@@ -290,6 +290,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_incomplete_63() });
     (unsafe { test_incomplete_64() });
     (unsafe { test_incomplete_65() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

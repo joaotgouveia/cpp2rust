@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test01_0() {
-    let mut v: () = unimplemented!();
+    let mut v: Vec<bool> = unimplemented!();
     unimplemented!();
 }
 pub fn main() {
@@ -16,7 +16,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test01_0() });
     0
 }

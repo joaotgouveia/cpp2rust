@@ -6,71 +6,79 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn DoNotOptimize_0(value: *const ()) -> *const () {
+pub unsafe fn DoNotOptimize_0(value: *const *mut ::libc::c_void) -> *const *mut ::libc::c_void {
     c"";
     return value;
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {
-    pub time_to_throw: (),
-    pub throw_after: (),
-    pub count: (),
-    pub alloc_count: (),
-    pub allocated_size: (),
-    pub construct_count: (),
-    pub destroy_count: (),
-    pub copied: (),
-    pub moved: (),
-    pub converted: (),
+    pub time_to_throw: i32,
+    pub throw_after: i32,
+    pub count: i32,
+    pub alloc_count: i32,
+    pub allocated_size: i32,
+    pub construct_count: i32,
+    pub destroy_count: i32,
+    pub copied: i32,
+    pub moved: i32,
+    pub converted: i32,
 }
 impl test_allocator_statistics {
     pub unsafe fn clear(&mut self) {
-        unimplemented!();
-        self.count = 0_();
-        self.time_to_throw = 0_();
-        self.alloc_count = 0_();
-        self.allocated_size = 0_();
-        self.construct_count = 0_();
-        self.destroy_count = 0_();
-        self.throw_after = 2147483647_();
+        assert!(
+            ((self.count) == (0)) && (!(c"clearing leaking allocator data?".as_ptr()).is_null())
+        );
+        self.count = 0;
+        self.time_to_throw = 0;
+        self.alloc_count = 0;
+        self.allocated_size = 0;
+        self.construct_count = 0;
+        self.destroy_count = 0;
+        self.throw_after = 2147483647;
         (unsafe { test_allocator_statistics::clear_ctor_counters(self) });
     }
     pub unsafe fn clear_ctor_counters(&mut self) {
-        self.copied = 0_();
-        self.moved = 0_();
-        self.converted = 0_();
+        self.copied = 0;
+        self.moved = 0;
+        self.converted = 0;
     }
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         unsafe {
             test_allocator_statistics {
-                time_to_throw: 0_(),
-                throw_after: 2147483647_(),
-                count: 0_(),
-                alloc_count: 0_(),
-                allocated_size: 0_(),
-                construct_count: 0_(),
-                destroy_count: 0_(),
-                copied: 0_(),
-                moved: 0_(),
-                converted: 0_(),
+                time_to_throw: 0,
+                throw_after: 2147483647,
+                count: 0,
+                alloc_count: 0,
+                allocated_size: 0,
+                construct_count: 0,
+                destroy_count: 0,
+                copied: 0,
+                moved: 0,
+                converted: 0,
             }
         }
     }
 }
-pub static mut destructed_value_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 2147483647_() });
+pub static mut destructed_value_1: std::cell::LazyCell<i32> =
+    std::cell::LazyCell::new(|| unsafe { -1_i32 });
+pub static mut moved_value_2: std::cell::LazyCell<i32> =
+    std::cell::LazyCell::new(|| unsafe { 2147483647 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_3(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_3(
+    x: *const test_allocator_void_,
+    y: *const test_allocator_void_,
+) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_4(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_4(
+    x: *const test_allocator_void_,
+    y: *const test_allocator_void_,
+) -> bool {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
@@ -80,36 +88,36 @@ pub unsafe fn operator_ne_4(x: *const test_allocator_void_, y: *const test_alloc
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct test_allocator_void_ {
-    data_: (),
-    id_: (),
+    data_: i32,
+    id_: i32,
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_void_ {
     pub unsafe fn new_1(mut stats: *mut test_allocator_statistics) -> Self {
         let mut this = Self {
-            data_: 0_(),
-            id_: 0_(),
+            data_: 0,
+            id_: 0,
             stats_: stats,
         };
         this
     }
-    pub unsafe fn new_2(mut data: ()) -> Self {
+    pub unsafe fn new_2(mut data: i32) -> Self {
         let mut this = Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: std::ptr::null_mut(),
         };
         this
     }
-    pub unsafe fn new_3(mut data: (), mut stats: *mut test_allocator_statistics) -> Self {
+    pub unsafe fn new_3(mut data: i32, mut stats: *mut test_allocator_statistics) -> Self {
         let mut this = Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: stats,
         };
         this
     }
-    pub unsafe fn new_4(mut data: (), mut id: ()) -> Self {
+    pub unsafe fn new_4(mut data: i32, mut id: i32) -> Self {
         let mut this = Self {
             data_: data,
             id_: id,
@@ -118,8 +126,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn new_5(
-        mut data: (),
-        mut id: (),
+        mut data: i32,
+        mut id: i32,
         mut stats: *mut test_allocator_statistics,
     ) -> Self {
         let mut this = Self {
@@ -141,10 +149,10 @@ impl test_allocator_void_ {
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
     }
-    pub unsafe fn get_id(&self) -> () {
+    pub unsafe fn get_id(&self) -> i32 {
         return self.id_;
     }
-    pub unsafe fn get_data(&self) -> () {
+    pub unsafe fn get_data(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn copy_assign(
@@ -177,14 +185,14 @@ impl Default for test_allocator_void_ {
     fn default() -> Self {
         unsafe {
             test_allocator_void_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: std::ptr::null_mut(),
             }
         }
     }
 }
-pub unsafe fn operator_eq_5(x: *const test_allocator_int_, y: *const test_allocator_int_) -> () {
+pub unsafe fn operator_eq_5(x: *const test_allocator_int_, y: *const test_allocator_int_) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
@@ -193,12 +201,12 @@ pub struct test_allocator_int__rebind_int_ {}
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct test_allocator_int_ {
-    data_: (),
-    id_: (),
+    data_: i32,
+    id_: i32,
     stats_: *mut test_allocator_statistics,
 }
 impl test_allocator_int_ {
-    pub unsafe fn new_1(mut data: (), mut id: ()) -> Self {
+    pub unsafe fn new_1(mut data: i32, mut id: i32) -> Self {
         let mut this = Self {
             data_: data,
             id_: id,
@@ -212,7 +220,13 @@ impl test_allocator_int_ {
             id_: (*a).id_,
             stats_: (*a).stats_,
         };
-        unimplemented!();
+        assert!(
+            ((((*a).data_)
+                != (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1)))
+                && (((*a).id_)
+                    != (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1))))
+                && (!(c"copying from destroyed allocator".as_ptr()).is_null())
+        );
         if !((this.stats_).is_null()) {
             (*this.stats_).count.prefix_inc();
             (*this.stats_).copied.prefix_inc();
@@ -220,48 +234,63 @@ impl test_allocator_int_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            ((self.data_) != (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1)))
+        );
+        assert!(
+            ((self.id_) != (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1)))
+        );
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
         self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
         self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1));
     }
-    pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
-        let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
-        unimplemented!();
+    pub unsafe fn allocate(
+        &mut self,
+        mut n: u32,
+        mut _a1: Option<*const ::libc::c_void>,
+    ) -> *mut i32 {
+        let mut _a1: *const ::libc::c_void = _a1.unwrap_or_else(|| unsafe { std::ptr::null() });
+        assert!(
+            ((self.data_) != (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1)))
+        );
         if !((self.stats_).is_null()) {
             if (((*self.stats_).time_to_throw) >= ((*self.stats_).throw_after)) {
-                unimplemented!();
+                std::process::abort();
             }
             (*self.stats_).time_to_throw.prefix_inc();
             (*self.stats_).alloc_count.prefix_inc();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_add(n);
+            (*self.stats_).allocated_size =
+                (((*self.stats_).allocated_size as u32).wrapping_add(n)) as i32;
         }
         return unimplemented!();
     }
-    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
-        unimplemented!();
+    pub unsafe fn deallocate(&mut self, mut p: *mut i32, mut s: u32) {
+        assert!(
+            ((self.data_) != (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_1)))
+        );
         if !((self.stats_).is_null()) {
             (*self.stats_).alloc_count.prefix_dec();
-            (*self.stats_).allocated_size = ((*self.stats_).allocated_size).wrapping_sub(s);
+            (*self.stats_).allocated_size =
+                (((*self.stats_).allocated_size as u32).wrapping_sub(s)) as i32;
         }
         unimplemented!();
     }
-    pub unsafe fn max_size(&self) -> () {
-        return (((2147483647_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+    pub unsafe fn max_size(&self) -> u32 {
+        return ((((((2147483647_u32).wrapping_mul((2_u32 as u32)) as u32)
+            .wrapping_add((1_u32 as u32))) as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     }
-    pub unsafe fn destroy(&mut self, mut p: *mut ()) {
+    pub unsafe fn destroy(&mut self, mut p: *mut i32) {
         if !((self.stats_).is_null()) {
             (*self.stats_).destroy_count.prefix_inc();
         };
     }
-    pub unsafe fn get_id(&self) -> () {
+    pub unsafe fn get_id(&self) -> i32 {
         return self.id_;
     }
-    pub unsafe fn construct_16_int_ref(&mut self, mut p: *mut (), val: *mut ()) {
+    pub unsafe fn construct_16_int_ref(&mut self, mut p: *mut i32, val: *mut i32) {
         if !((self.stats_).is_null()) {
             (*self.stats_).construct_count.prefix_inc();
         }
@@ -288,34 +317,37 @@ impl Default for test_allocator_int_ {
     fn default() -> Self {
         unsafe {
             test_allocator_int_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: std::ptr::null_mut(),
             }
         }
     }
 }
-pub unsafe fn operator_eq_6(x: *const other_allocator_int_, y: *const other_allocator_int_) -> () {
+pub unsafe fn operator_eq_6(
+    x: *const other_allocator_int_,
+    y: *const other_allocator_int_,
+) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct other_allocator_int_ {
-    data_: (),
+    data_: i32,
 }
 impl other_allocator_int_ {
     pub unsafe fn new_1() -> Self {
-        let mut this = Self { data_: -1_() };
+        let mut this = Self { data_: -1_i32 };
         this
     }
-    pub unsafe fn new_2(mut i: ()) -> Self {
+    pub unsafe fn new_2(mut i: i32) -> Self {
         let mut this = Self { data_: i };
         this
     }
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
+    pub unsafe fn allocate(&mut self, mut n: usize) -> *mut i32 {
         return unimplemented!();
     }
-    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut s: ()) {
+    pub unsafe fn deallocate(&mut self, mut p: *mut i32, mut s: usize) {
         unimplemented!();
     }
 }
@@ -339,7 +371,8 @@ impl Default for other_allocator_int_ {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Ctor_Tag {}
 #[repr(C)]
-#[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[derive(FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 pub struct Tag_X {}
 impl Tag_X {
     pub unsafe fn new_1(mut _a0: Ctor_Tag) -> Self {
@@ -365,43 +398,46 @@ impl Tag_X {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_8))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_9)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_8))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_9))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_10)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_7)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_8)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_9)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_7)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_8)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_9)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_7: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_8: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_9: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_10: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_7: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_8: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_9: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_10: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 pub unsafe fn operator_sub_11(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
+) -> isize {
+    return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
 }
 pub unsafe fn operator_eq_12(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ((x.ptr_) == (y.ptr_));
 }
 pub unsafe fn operator_ne_13(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !(unsafe {
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
         operator_eq_12(_x, y)
@@ -410,17 +446,17 @@ pub unsafe fn operator_ne_13(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *mut (),
+    ptr_: *mut i32,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    unsafe fn new_1(mut p: *mut ()) -> Self {
+    unsafe fn new_1(mut p: *mut i32) -> Self {
         let mut this = Self { ptr_: p };
         this
     }
-    pub unsafe fn to_(&self) -> () {
+    pub unsafe fn to_bool(&self) -> bool {
         return !((self.ptr_).is_null());
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.ptr_);
     }
     pub unsafe fn operator_inc_8(
@@ -431,14 +467,14 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut min_pointer_int__std_integral_constant_unsigned_long__0__ {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
         return &mut (*(self as *mut min_pointer_int__std_integral_constant_unsigned_long__0__));
     }
     pub unsafe fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let mut tmp: min_pointer_int__std_integral_constant_unsigned_long__0__ =
             (*(self as *const min_pointer_int__std_integral_constant_unsigned_long__0__));
@@ -456,28 +492,38 @@ impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_lon
     }
 }
 impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_8();
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *mut ::libc::c_void,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub unsafe fn operator_eq_14(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ((x.ptr_) == (y.ptr_));
 }
 pub unsafe fn operator_ne_15(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ((x.ptr_) != (y.ptr_));
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(
+    min_pointer_int__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
 pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
-    ptr_: *const (),
+    ptr_: *const i32,
 }
 impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     pub unsafe fn new_1(mut p: min_pointer_int__std_integral_constant_unsigned_long__0__) -> Self {
@@ -486,7 +532,7 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> *const () {
+    pub unsafe fn operator_deref(&self) -> *const i32 {
         return &(*self.ptr_);
     }
     pub unsafe fn operator_inc_9(
@@ -503,13 +549,18 @@ impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsign
     }
 }
 impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppAdvance for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
-    ptr_: (),
+    ptr_: *const ::libc::c_void,
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_eq_16(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
+pub unsafe fn operator_eq_16(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
     return true;
 }
 #[repr(C)]
@@ -518,7 +569,7 @@ pub struct min_allocator_int_ {}
 impl min_allocator_int_ {
     pub unsafe fn allocate(
         &mut self,
-        mut n: (),
+        mut n: usize,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             unimplemented!()
@@ -527,7 +578,7 @@ impl min_allocator_int_ {
     pub unsafe fn deallocate(
         &mut self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
@@ -538,7 +589,7 @@ impl std::cmp::PartialEq for min_allocator_int_ {
     }
 }
 impl std::cmp::Eq for min_allocator_int_ {}
-pub unsafe fn operator_eq_17(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> () {
+pub unsafe fn operator_eq_17(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> bool {
     return true;
 }
 #[repr(C)]
@@ -549,17 +600,33 @@ impl safe_allocator_int_ {
         let mut this = Self {};
         this
     }
-    pub unsafe fn allocate(&mut self, mut n: ()) -> *mut () {
-        let mut memory: *mut () = unimplemented!();
+    pub unsafe fn allocate(&mut self, mut n: usize) -> *mut i32 {
+        let mut memory: *mut i32 = unimplemented!();
         {
-            unimplemented!();
+            {
+                let byte_0 = (memory as *mut ::libc::c_void) as *mut u8;
+                for offset in
+                    0..((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
+                {
+                    *byte_0.offset(offset as isize) = 0 as u8;
+                }
+                (memory as *mut ::libc::c_void)
+            };
         }
         return memory;
     }
-    pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
+    pub unsafe fn deallocate(&mut self, mut p: *mut i32, mut n: usize) {
         {
             (unsafe {
-                let mut _value: () = unimplemented!();
+                let mut _value: *mut ::libc::c_void = ({
+                    let byte_0 = (p as *mut ::libc::c_void) as *mut u8;
+                    for offset in
+                        0..((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
+                    {
+                        *byte_0.offset(offset as isize) = 0 as u8;
+                    }
+                    (p as *mut ::libc::c_void)
+                } as *mut ::libc::c_void);
                 DoNotOptimize_0(&mut _value)
             });
         }
@@ -577,246 +644,654 @@ impl Default for safe_allocator_int_ {
         unsafe { safe_allocator_int_::new() }
     }
 }
-pub unsafe fn is_contiguous_container_asan_correct_18(_a0: *const ()) -> () {
+pub unsafe fn is_contiguous_container_asan_correct_18(_a0: *const Vec<i32>) -> bool {
     return true;
 }
-pub unsafe fn is_contiguous_container_asan_correct_19(_a0: *const ()) -> () {
+pub unsafe fn is_contiguous_container_asan_correct_19(_a0: *const Vec<i32>) -> bool {
     return true;
 }
-pub unsafe fn is_contiguous_container_asan_correct_20(_a0: *const ()) -> () {
+pub unsafe fn is_contiguous_container_asan_correct_20(_a0: *const Vec<i32>) -> bool {
     return true;
 }
-pub unsafe fn is_contiguous_container_asan_correct_21(_a0: *const ()) -> () {
+pub unsafe fn is_contiguous_container_asan_correct_21(_a0: *const Vec<i32>) -> bool {
     return true;
 }
 pub unsafe fn test_with_allocator_22() {
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!((unimplemented!()));
+        assert!((unimplemented!()));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it != a1.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!((unimplemented!()));
+        assert!(c2.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it != a2.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!(c1.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!((unimplemented!()));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it != a1.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it != a2.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!(c1.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!(c2.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!((unimplemented!()));
+        assert!(
+            (unsafe {
+                let _arg0: min_allocator_int_ = unimplemented!();
+                operator_eq_16(_arg0, <min_allocator_int_>::default())
+            })
+        );
+        assert!((unimplemented!()));
+        assert!(
+            (unsafe {
+                let _arg0: min_allocator_int_ = unimplemented!();
+                operator_eq_16(_arg0, <min_allocator_int_>::default())
+            })
+        );
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_20(&c2,) }));
     }
 }
 pub unsafe fn test_with_allocator_23() {
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!((unimplemented!()));
+        assert!((unimplemented!()));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it != a1.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!((unimplemented!()));
+        assert!(c2.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it != a2.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!(c1.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!((unimplemented!()));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it != a1.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it != a2.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!(c1.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!(c2.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!((unimplemented!()));
+        assert!(
+            (unsafe {
+                let _arg0: safe_allocator_int_ = unimplemented!();
+                operator_eq_17(_arg0, safe_allocator_int_::new())
+            })
+        );
+        assert!((unimplemented!()));
+        assert!(
+            (unsafe {
+                let _arg0: safe_allocator_int_ = unimplemented!();
+                operator_eq_17(_arg0, safe_allocator_int_::new())
+            })
+        );
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_21(&c2,) }));
     }
 }
-pub unsafe fn tests_24() -> () {
+pub unsafe fn tests_24() -> bool {
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it != a1.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!(unimplemented!());
+        assert!(c2.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it != a2.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!(c1.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!(unimplemented!());
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it != a1.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it != a2.as_mut_ptr() {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!(c1.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!(c2.is_empty());
+        assert!(((unimplemented!()) == (0_isize)));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_18(&c2,) }));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!((unimplemented!()));
+        assert!(((unsafe { test_allocator_int_::get_id(&unimplemented!(),) }) == (1)));
+        assert!((unimplemented!()));
+        assert!(((unsafe { test_allocator_int_::get_id(&unimplemented!(),) }) == (2)));
     }
     {
-        let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
-        let mut a2: [(); 7] = [0_(), 2_(), 4_(), 5_(), 6_(), 8_(), 11_()];
-        let mut c1: () = unimplemented!();
-        let mut c2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a1: [i32; 5] = [1, 3, 7, 9, 10];
+        let mut a2: [i32; 7] = [0, 2, 4, 5, 6, 8, 11];
+        let mut c1: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a1.as_mut_ptr();
+            while __it
+                != a1.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 5]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        let mut c2: Vec<i32> = {
+            let mut __v = Vec::new();
+            let mut __it = a2.as_mut_ptr();
+            while __it
+                != a2.as_mut_ptr().offset(
+                    ((::std::mem::size_of::<[i32; 7]>() as usize)
+                        .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        as isize,
+                )
+            {
+                __v.push((*__it.iter_deref()));
+                __it.iter_inc();
+            }
+            __v
+        };
+        assert!((unsafe { is_contiguous_container_asan_correct_19(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_19(&c2,) }));
+        std::ptr::swap(&mut c1, &mut c2);
+        assert!((unimplemented!()));
+        assert!(
+            (unsafe {
+                let mut _x: other_allocator_int_ = unimplemented!();
+                let mut _y: other_allocator_int_ = other_allocator_int_::new_2({ 2 });
+                operator_eq_6(&mut _x, &mut _y)
+            })
+        );
+        assert!((unimplemented!()));
+        assert!(
+            (unsafe {
+                let mut _x: other_allocator_int_ = unimplemented!();
+                let mut _y: other_allocator_int_ = other_allocator_int_::new_2({ 1 });
+                operator_eq_6(&mut _x, &mut _y)
+            })
+        );
+        assert!((unsafe { is_contiguous_container_asan_correct_19(&c1,) }));
+        assert!((unsafe { is_contiguous_container_asan_correct_19(&c2,) }));
     }
     (unsafe { test_with_allocator_22() });
     (unsafe { test_with_allocator_23() });
@@ -837,10 +1312,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { tests_24() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const destructed_value_1);

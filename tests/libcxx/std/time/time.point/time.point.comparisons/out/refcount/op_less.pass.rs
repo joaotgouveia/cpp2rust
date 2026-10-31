@@ -26,54 +26,38 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!() == std::cmp::Ordering::Less));
+        assert!(!(unimplemented!() == std::cmp::Ordering::Greater));
+        assert!((unimplemented!() != std::cmp::Ordering::Greater));
+        assert!((unimplemented!() != std::cmp::Ordering::Less));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == std::cmp::Ordering::Less));
+        assert!(!(unimplemented!() == std::cmp::Ordering::Greater));
+        assert!((unimplemented!() != std::cmp::Ordering::Greater));
+        assert!(!(unimplemented!() != std::cmp::Ordering::Less));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!() == std::cmp::Ordering::Less));
+        assert!(!(unimplemented!() == std::cmp::Ordering::Greater));
+        assert!((unimplemented!() != std::cmp::Ordering::Greater));
+        assert!((unimplemented!() != std::cmp::Ordering::Less));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "!(t1 <  t2)");;
-        const _: () = assert!(true, "!(t1 >  t2)");;
-        const _: () = assert!(true, "(t1 <= t2)");;
-        const _: () = assert!(true, "(t1 >= t2)");;
-    }
-    {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "(t1 <  t2)");;
-        const _: () = assert!(true, "!(t1 >  t2)");;
-        const _: () = assert!(true, "(t1 <= t2)");;
-        const _: () = assert!(true, "!(t1 >= t2)");;
+        assert!((unimplemented!() == std::cmp::Ordering::Less));
+        assert!(!(unimplemented!() == std::cmp::Ordering::Greater));
+        assert!((unimplemented!() != std::cmp::Ordering::Greater));
+        assert!(!(unimplemented!() != std::cmp::Ordering::Less));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -91,6 +75,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "(t1 <= t2)");;
         const _: () = assert!(true, "!(t1 >= t2)");;
     }
-    return 0_();
+    {
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "!(t1 <  t2)");;
+        const _: () = assert!(true, "!(t1 >  t2)");;
+        const _: () = assert!(true, "(t1 <= t2)");;
+        const _: () = assert!(true, "(t1 >= t2)");;
+    }
+    {
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "(t1 <  t2)");;
+        const _: () = assert!(true, "!(t1 >  t2)");;
+        const _: () = assert!(true, "(t1 <= t2)");;
+        const _: () = assert!(true, "!(t1 >= t2)");;
+    }
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

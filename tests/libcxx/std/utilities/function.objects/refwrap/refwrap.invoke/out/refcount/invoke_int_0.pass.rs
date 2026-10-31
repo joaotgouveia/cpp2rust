@@ -7,31 +7,32 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
-pub fn f_int_0_1() -> () {
-    return 3_();
+pub fn f_int_0_1() -> i32 {
+    return 3;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_int_0 {}
 pub fn test_int_0_2() {
     {
-        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let mut r1: FnPtr<fn() -> i32> = FnPtr::<fn() -> i32>::new(f_int_0_1);
+        assert!((unimplemented!() == 3));
     }
     {
-        let mut fp: FnPtr<fn() -> ()> = FnPtr::<fn() -> ()>::new(f_int_0_1);
-        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let fp: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(f_int_0_1)));
+        let mut r1: Ptr<FnPtr<fn() -> i32>> = fp.as_pointer();
+        assert!((unimplemented!() == 3));
     }
     {
-        let mut a0: A_int_0 = <A_int_0>::default();
-        let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        let a0: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
+        let mut r1: Ptr<A_int_0> = a0.as_pointer();
+        assert!((unimplemented!() == 4));
     }
 }
-pub fn f_void_1_3(mut i: ()) {
+pub fn f_void_1_3(mut i: i32) {
     count_0.with(|rc| *rc.borrow_mut() += i);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -56,23 +57,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_int_0_2() });
-    return 0_();
+    return 0;
 }
 pub trait A_int_0Impl {
-    fn operator_call(&self) -> ();
+    fn operator_call(&self) -> i32;
 }
 impl A_int_0Impl for Ptr<A_int_0> {
-    fn operator_call(&self) -> () {
-        return 4_();
+    fn operator_call(&self) -> i32 {
+        return 4;
     }
 }
 pub trait A_void_1Impl {
-    fn operator_call(&self, i: ());
+    fn operator_call(&self, i: i32);
 }
 impl A_void_1Impl for Ptr<A_void_1> {
-    fn operator_call(&self, mut i: ()) {
+    fn operator_call(&self, mut i: i32) {
         count_0.with(|rc| *rc.borrow_mut() += i);
     }
 }

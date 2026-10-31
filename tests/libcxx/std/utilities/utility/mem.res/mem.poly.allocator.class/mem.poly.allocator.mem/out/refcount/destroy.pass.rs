@@ -6,13 +6,13 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_void__void_ {}
 thread_local!(
-    pub static count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_1: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(1)]
@@ -48,21 +48,20 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(
-            (0..1).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-        ));
+        let buffer: Value<Box<[i8]>> =
+            Rc::new(RefCell::new((0..1).map(|_| 0_i8).collect::<Box<[i8]>>()));
         let mut ptr: Ptr<destroyable> = Ptr::alloc(destroyable::new());
+        assert!((count_1.with(|rc| *rc.borrow()) == 1));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((count_1.with(|rc| *rc.borrow()) == 0));
     }
-    return 0_();
+    return 0;
 }
 pub trait destroyableImpl {
     fn destructor(&self);

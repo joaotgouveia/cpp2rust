@@ -34,7 +34,7 @@ impl Default for Union {
 #[byte_size(1)]
 pub struct bit_zero {
     #[offset(0)]
-    pub anon_0: (),
+    pub anon_0: i32,
 }
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -44,7 +44,7 @@ impl A {}
 #[byte_size(1)]
 pub struct NonPODClass {}
 impl NonPODClass {}
-pub type Enum = ();
+pub type Enum = u32;
 pub const Enum_EV: Enum = 0;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(24)]
@@ -52,9 +52,9 @@ pub struct Base {
     #[offset(0)]
     pub e: Enum,
     #[offset(4)]
-    pub i: (),
+    pub i: i32,
     #[offset(8)]
-    pub f: (),
+    pub f: f32,
     #[offset(16)]
     #[byte_size(8)]
     pub p: Ptr<NonPODClass>,
@@ -386,7 +386,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_has_not_nothrow_default_constructor_9() });
     ({ test_has_not_nothrow_default_constructor_10() });
     ({ test_has_not_nothrow_default_constructor_11() });
@@ -400,7 +400,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_is_nothrow_default_constructible_6() });
     ({ test_is_nothrow_default_constructible_7() });
     ({ test_is_nothrow_default_constructible_8() });
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn copy_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
@@ -415,19 +415,19 @@ impl DThrowsImpl for Ptr<DThrows> {
     fn destructor(&self) {}
 }
 pub trait ExplicitConversionRefImpl {
-    fn to_(&self) -> () {
+    fn to_i32(&self) -> i32 {
         unimplemented!()
     }
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl ExplicitConversionRefImpl for Ptr<ExplicitConversionRef> {}
 pub trait ExplicitConversionRvalueRefImpl {
-    fn to_(&self) -> () {
+    fn to_i32(&self) -> i32 {
         unimplemented!()
     }
-    fn to_pmut(&self) -> Ptr<()> {
+    fn to_pmuti32(&self) -> Ptr<i32> {
         unimplemented!()
     }
 }

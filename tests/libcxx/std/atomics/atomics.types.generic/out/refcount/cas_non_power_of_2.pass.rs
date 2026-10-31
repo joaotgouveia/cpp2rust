@@ -6,10 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(lhs: Ptr<S_1_>, rhs: Ptr<S_1_>) -> () {
-    return (unimplemented!() == 0_());
+pub fn operator_eq_0(lhs: Ptr<S_1_>, rhs: Ptr<S_1_>) -> bool {
+    return ((((array_field_ptr!(lhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+        .to_any()
+        .memcmp(
+            &(((array_field_ptr!(rhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any(),
+            ::std::mem::size_of::<[i8; 1]>(),
+        )
+        == 0);
 }
-pub fn operator_ne_1(lhs: Ptr<S_1_>, rhs: Ptr<S_1_>) -> () {
+pub fn operator_ne_1(lhs: Ptr<S_1_>, rhs: Ptr<S_1_>) -> bool {
     return !({
         let _lhs: Ptr<S_1_> = (lhs).clone();
         let _rhs: Ptr<S_1_> = (rhs).clone();
@@ -21,16 +27,22 @@ pub fn operator_ne_1(lhs: Ptr<S_1_>, rhs: Ptr<S_1_>) -> () {
 pub struct S_1_ {
     #[offset(0)]
     #[byte_size(1)]
-    pub data: Box<[()]>,
+    pub data: Box<[i8]>,
 }
 impl S_1_ {
-    pub fn new(v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| 0_());
-        let __this: S_1_ = Self {
-            data: (0..1).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    pub fn new(v: Option<i8>) -> Self {
+        let mut v: i8 = v.unwrap_or_else(|| 0_i8);
+        let __this: Value<S_1_> = Rc::new(RefCell::new(Self {
+            data: (0..1).map(|_| 0_i8).collect::<Box<[i8]>>(),
+        }));
+        let this: Ptr<S_1_> = __this.as_pointer();
+        {
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+                .to_any()
+                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 1]>() as usize);
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
         };
-        unimplemented!();
-        __this
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl CppEq for S_1_ {
@@ -43,10 +55,16 @@ impl Default for S_1_ {
         { S_1_::new(None) }
     }
 }
-pub fn operator_eq_2(lhs: Ptr<S_2_>, rhs: Ptr<S_2_>) -> () {
-    return (unimplemented!() == 0_());
+pub fn operator_eq_2(lhs: Ptr<S_2_>, rhs: Ptr<S_2_>) -> bool {
+    return ((((array_field_ptr!(lhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+        .to_any()
+        .memcmp(
+            &(((array_field_ptr!(rhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any(),
+            ::std::mem::size_of::<[i8; 2]>(),
+        )
+        == 0);
 }
-pub fn operator_ne_3(lhs: Ptr<S_2_>, rhs: Ptr<S_2_>) -> () {
+pub fn operator_ne_3(lhs: Ptr<S_2_>, rhs: Ptr<S_2_>) -> bool {
     return !({
         let _lhs: Ptr<S_2_> = (lhs).clone();
         let _rhs: Ptr<S_2_> = (rhs).clone();
@@ -58,16 +76,22 @@ pub fn operator_ne_3(lhs: Ptr<S_2_>, rhs: Ptr<S_2_>) -> () {
 pub struct S_2_ {
     #[offset(0)]
     #[byte_size(2)]
-    pub data: Box<[()]>,
+    pub data: Box<[i8]>,
 }
 impl S_2_ {
-    pub fn new(v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| 0_());
-        let __this: S_2_ = Self {
-            data: (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    pub fn new(v: Option<i8>) -> Self {
+        let mut v: i8 = v.unwrap_or_else(|| 0_i8);
+        let __this: Value<S_2_> = Rc::new(RefCell::new(Self {
+            data: (0..2).map(|_| 0_i8).collect::<Box<[i8]>>(),
+        }));
+        let this: Ptr<S_2_> = __this.as_pointer();
+        {
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+                .to_any()
+                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 2]>() as usize);
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
         };
-        unimplemented!();
-        __this
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl CppEq for S_2_ {
@@ -80,10 +104,16 @@ impl Default for S_2_ {
         { S_2_::new(None) }
     }
 }
-pub fn operator_eq_4(lhs: Ptr<S_3_>, rhs: Ptr<S_3_>) -> () {
-    return (unimplemented!() == 0_());
+pub fn operator_eq_4(lhs: Ptr<S_3_>, rhs: Ptr<S_3_>) -> bool {
+    return ((((array_field_ptr!(lhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+        .to_any()
+        .memcmp(
+            &(((array_field_ptr!(rhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any(),
+            ::std::mem::size_of::<[i8; 3]>(),
+        )
+        == 0);
 }
-pub fn operator_ne_5(lhs: Ptr<S_3_>, rhs: Ptr<S_3_>) -> () {
+pub fn operator_ne_5(lhs: Ptr<S_3_>, rhs: Ptr<S_3_>) -> bool {
     return !({
         let _lhs: Ptr<S_3_> = (lhs).clone();
         let _rhs: Ptr<S_3_> = (rhs).clone();
@@ -95,16 +125,22 @@ pub fn operator_ne_5(lhs: Ptr<S_3_>, rhs: Ptr<S_3_>) -> () {
 pub struct S_3_ {
     #[offset(0)]
     #[byte_size(3)]
-    pub data: Box<[()]>,
+    pub data: Box<[i8]>,
 }
 impl S_3_ {
-    pub fn new(v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| 0_());
-        let __this: S_3_ = Self {
-            data: (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    pub fn new(v: Option<i8>) -> Self {
+        let mut v: i8 = v.unwrap_or_else(|| 0_i8);
+        let __this: Value<S_3_> = Rc::new(RefCell::new(Self {
+            data: (0..3).map(|_| 0_i8).collect::<Box<[i8]>>(),
+        }));
+        let this: Ptr<S_3_> = __this.as_pointer();
+        {
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+                .to_any()
+                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 3]>() as usize);
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
         };
-        unimplemented!();
-        __this
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl CppEq for S_3_ {
@@ -117,10 +153,16 @@ impl Default for S_3_ {
         { S_3_::new(None) }
     }
 }
-pub fn operator_eq_6(lhs: Ptr<S_4_>, rhs: Ptr<S_4_>) -> () {
-    return (unimplemented!() == 0_());
+pub fn operator_eq_6(lhs: Ptr<S_4_>, rhs: Ptr<S_4_>) -> bool {
+    return ((((array_field_ptr!(lhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+        .to_any()
+        .memcmp(
+            &(((array_field_ptr!(rhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any(),
+            ::std::mem::size_of::<[i8; 4]>(),
+        )
+        == 0);
 }
-pub fn operator_ne_7(lhs: Ptr<S_4_>, rhs: Ptr<S_4_>) -> () {
+pub fn operator_ne_7(lhs: Ptr<S_4_>, rhs: Ptr<S_4_>) -> bool {
     return !({
         let _lhs: Ptr<S_4_> = (lhs).clone();
         let _rhs: Ptr<S_4_> = (rhs).clone();
@@ -132,16 +174,22 @@ pub fn operator_ne_7(lhs: Ptr<S_4_>, rhs: Ptr<S_4_>) -> () {
 pub struct S_4_ {
     #[offset(0)]
     #[byte_size(4)]
-    pub data: Box<[()]>,
+    pub data: Box<[i8]>,
 }
 impl S_4_ {
-    pub fn new(v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| 0_());
-        let __this: S_4_ = Self {
-            data: (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    pub fn new(v: Option<i8>) -> Self {
+        let mut v: i8 = v.unwrap_or_else(|| 0_i8);
+        let __this: Value<S_4_> = Rc::new(RefCell::new(Self {
+            data: (0..4).map(|_| 0_i8).collect::<Box<[i8]>>(),
+        }));
+        let this: Ptr<S_4_> = __this.as_pointer();
+        {
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+                .to_any()
+                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 4]>() as usize);
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
         };
-        unimplemented!();
-        __this
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl CppEq for S_4_ {
@@ -154,10 +202,16 @@ impl Default for S_4_ {
         { S_4_::new(None) }
     }
 }
-pub fn operator_eq_8(lhs: Ptr<S_5_>, rhs: Ptr<S_5_>) -> () {
-    return (unimplemented!() == 0_());
+pub fn operator_eq_8(lhs: Ptr<S_5_>, rhs: Ptr<S_5_>) -> bool {
+    return ((((array_field_ptr!(lhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+        .to_any()
+        .memcmp(
+            &(((array_field_ptr!(rhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any(),
+            ::std::mem::size_of::<[i8; 5]>(),
+        )
+        == 0);
 }
-pub fn operator_ne_9(lhs: Ptr<S_5_>, rhs: Ptr<S_5_>) -> () {
+pub fn operator_ne_9(lhs: Ptr<S_5_>, rhs: Ptr<S_5_>) -> bool {
     return !({
         let _lhs: Ptr<S_5_> = (lhs).clone();
         let _rhs: Ptr<S_5_> = (rhs).clone();
@@ -169,16 +223,22 @@ pub fn operator_ne_9(lhs: Ptr<S_5_>, rhs: Ptr<S_5_>) -> () {
 pub struct S_5_ {
     #[offset(0)]
     #[byte_size(5)]
-    pub data: Box<[()]>,
+    pub data: Box<[i8]>,
 }
 impl S_5_ {
-    pub fn new(v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| 0_());
-        let __this: S_5_ = Self {
-            data: (0..5).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    pub fn new(v: Option<i8>) -> Self {
+        let mut v: i8 = v.unwrap_or_else(|| 0_i8);
+        let __this: Value<S_5_> = Rc::new(RefCell::new(Self {
+            data: (0..5).map(|_| 0_i8).collect::<Box<[i8]>>(),
+        }));
+        let this: Ptr<S_5_> = __this.as_pointer();
+        {
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+                .to_any()
+                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 5]>() as usize);
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
         };
-        unimplemented!();
-        __this
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl CppEq for S_5_ {
@@ -191,10 +251,16 @@ impl Default for S_5_ {
         { S_5_::new(None) }
     }
 }
-pub fn operator_eq_10(lhs: Ptr<S_6_>, rhs: Ptr<S_6_>) -> () {
-    return (unimplemented!() == 0_());
+pub fn operator_eq_10(lhs: Ptr<S_6_>, rhs: Ptr<S_6_>) -> bool {
+    return ((((array_field_ptr!(lhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+        .to_any()
+        .memcmp(
+            &(((array_field_ptr!(rhs, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any(),
+            ::std::mem::size_of::<[i8; 6]>(),
+        )
+        == 0);
 }
-pub fn operator_ne_11(lhs: Ptr<S_6_>, rhs: Ptr<S_6_>) -> () {
+pub fn operator_ne_11(lhs: Ptr<S_6_>, rhs: Ptr<S_6_>) -> bool {
     return !({
         let _lhs: Ptr<S_6_> = (lhs).clone();
         let _rhs: Ptr<S_6_> = (rhs).clone();
@@ -206,16 +272,22 @@ pub fn operator_ne_11(lhs: Ptr<S_6_>, rhs: Ptr<S_6_>) -> () {
 pub struct S_6_ {
     #[offset(0)]
     #[byte_size(6)]
-    pub data: Box<[()]>,
+    pub data: Box<[i8]>,
 }
 impl S_6_ {
-    pub fn new(v: Option<()>) -> Self {
-        let mut v: () = v.unwrap_or_else(|| 0_());
-        let __this: S_6_ = Self {
-            data: (0..6).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+    pub fn new(v: Option<i8>) -> Self {
+        let mut v: i8 = v.unwrap_or_else(|| 0_i8);
+        let __this: Value<S_6_> = Rc::new(RefCell::new(Self {
+            data: (0..6).map(|_| 0_i8).collect::<Box<[i8]>>(),
+        }));
+        let this: Ptr<S_6_> = __this.as_pointer();
+        {
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>)
+                .to_any()
+                .memset((v as i32) as u8, ::std::mem::size_of::<[i8; 6]>() as usize);
+            (((array_field_ptr!(this, data) as Ptr<i8>).offset((0) as isize)) as Ptr<i8>).to_any()
         };
-        unimplemented!();
-        __this
+        Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
 impl CppEq for S_6_ {
@@ -228,14 +300,15 @@ impl Default for S_6_ {
         { S_6_::new(None) }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(S_1_, new, value)]
 #[byte_size(2)]
 pub struct Expected_1_ {
     #[offset(0)]
     #[byte_size(1)]
     pub s: S_1_,
     #[offset(1)]
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_1_ {
     pub fn new(mut ss: S_1_) -> Self {
@@ -255,14 +328,15 @@ impl Default for Expected_1_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(S_2_, new, value)]
 #[byte_size(3)]
 pub struct Expected_2_ {
     #[offset(0)]
     #[byte_size(2)]
     pub s: S_2_,
     #[offset(2)]
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_2_ {
     pub fn new(mut ss: S_2_) -> Self {
@@ -282,14 +356,15 @@ impl Default for Expected_2_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(S_3_, new, value)]
 #[byte_size(4)]
 pub struct Expected_3_ {
     #[offset(0)]
     #[byte_size(3)]
     pub s: S_3_,
     #[offset(3)]
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_3_ {
     pub fn new(mut ss: S_3_) -> Self {
@@ -309,14 +384,15 @@ impl Default for Expected_3_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(S_4_, new, value)]
 #[byte_size(5)]
 pub struct Expected_4_ {
     #[offset(0)]
     #[byte_size(4)]
     pub s: S_4_,
     #[offset(4)]
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_4_ {
     pub fn new(mut ss: S_4_) -> Self {
@@ -336,14 +412,15 @@ impl Default for Expected_4_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(S_5_, new, value)]
 #[byte_size(6)]
 pub struct Expected_5_ {
     #[offset(0)]
     #[byte_size(5)]
     pub s: S_5_,
     #[offset(5)]
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_5_ {
     pub fn new(mut ss: S_5_) -> Self {
@@ -363,14 +440,15 @@ impl Default for Expected_5_ {
         }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(S_6_, new, value)]
 #[byte_size(7)]
 pub struct Expected_6_ {
     #[offset(0)]
     #[byte_size(6)]
     pub s: S_6_,
     #[offset(6)]
-    pub b: (),
+    pub b: bool,
 }
 impl Expected_6_ {
     pub fn new(mut ss: S_6_) -> Self {
@@ -393,110 +471,284 @@ impl Default for Expected_6_ {
 pub fn test_12() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Expected_1_> = Rc::new(RefCell::new(Expected_1_::new({
-        S_1_::new({ Some(17_()) })
+        S_1_::new({ Some(17_i8) })
     })));
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _lhs: Value<S_1_> = Rc::new(RefCell::new(unimplemented!()));
+            operator_ne_1(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        ({
+            let _lhs: Ptr<S_1_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_1_> = Rc::new(RefCell::new(S_1_::new({ Some(0_i8) })));
+            operator_eq_0(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    assert!(
+        ({
+            let _lhs: Value<S_1_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_1_> = Rc::new(RefCell::new(S_1_::new({ Some(0_i8) })));
+            operator_eq_0(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        ({
+            let _lhs: Value<S_1_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_1_> = Rc::new(RefCell::new(S_1_::new({ Some(18_i8) })));
+            operator_eq_0(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _lhs: Ptr<S_1_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_1_> = Rc::new(RefCell::new(S_1_::new({ Some(0_i8) })));
+            operator_eq_0(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
 }
 pub fn test_13() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Expected_2_> = Rc::new(RefCell::new(Expected_2_::new({
-        S_2_::new({ Some(17_()) })
+        S_2_::new({ Some(17_i8) })
     })));
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _lhs: Value<S_2_> = Rc::new(RefCell::new(unimplemented!()));
+            operator_ne_3(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        ({
+            let _lhs: Ptr<S_2_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_2_> = Rc::new(RefCell::new(S_2_::new({ Some(0_i8) })));
+            operator_eq_2(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    assert!(
+        ({
+            let _lhs: Value<S_2_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_2_> = Rc::new(RefCell::new(S_2_::new({ Some(0_i8) })));
+            operator_eq_2(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        ({
+            let _lhs: Value<S_2_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_2_> = Rc::new(RefCell::new(S_2_::new({ Some(18_i8) })));
+            operator_eq_2(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _lhs: Ptr<S_2_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_2_> = Rc::new(RefCell::new(S_2_::new({ Some(0_i8) })));
+            operator_eq_2(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
 }
 pub fn test_14() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Expected_3_> = Rc::new(RefCell::new(Expected_3_::new({
-        S_3_::new({ Some(17_()) })
+        S_3_::new({ Some(17_i8) })
     })));
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _lhs: Value<S_3_> = Rc::new(RefCell::new(unimplemented!()));
+            operator_ne_5(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        ({
+            let _lhs: Ptr<S_3_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_3_> = Rc::new(RefCell::new(S_3_::new({ Some(0_i8) })));
+            operator_eq_4(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    assert!(
+        ({
+            let _lhs: Value<S_3_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_3_> = Rc::new(RefCell::new(S_3_::new({ Some(0_i8) })));
+            operator_eq_4(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        ({
+            let _lhs: Value<S_3_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_3_> = Rc::new(RefCell::new(S_3_::new({ Some(18_i8) })));
+            operator_eq_4(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _lhs: Ptr<S_3_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_3_> = Rc::new(RefCell::new(S_3_::new({ Some(0_i8) })));
+            operator_eq_4(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
 }
 pub fn test_15() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Expected_4_> = Rc::new(RefCell::new(Expected_4_::new({
-        S_4_::new({ Some(17_()) })
+        S_4_::new({ Some(17_i8) })
     })));
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _lhs: Value<S_4_> = Rc::new(RefCell::new(unimplemented!()));
+            operator_ne_7(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        ({
+            let _lhs: Ptr<S_4_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_4_> = Rc::new(RefCell::new(S_4_::new({ Some(0_i8) })));
+            operator_eq_6(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    assert!(
+        ({
+            let _lhs: Value<S_4_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_4_> = Rc::new(RefCell::new(S_4_::new({ Some(0_i8) })));
+            operator_eq_6(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        ({
+            let _lhs: Value<S_4_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_4_> = Rc::new(RefCell::new(S_4_::new({ Some(18_i8) })));
+            operator_eq_6(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _lhs: Ptr<S_4_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_4_> = Rc::new(RefCell::new(S_4_::new({ Some(0_i8) })));
+            operator_eq_6(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
 }
 pub fn test_16() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Expected_5_> = Rc::new(RefCell::new(Expected_5_::new({
-        S_5_::new({ Some(17_()) })
+        S_5_::new({ Some(17_i8) })
     })));
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _lhs: Value<S_5_> = Rc::new(RefCell::new(unimplemented!()));
+            operator_ne_9(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        ({
+            let _lhs: Ptr<S_5_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_5_> = Rc::new(RefCell::new(S_5_::new({ Some(0_i8) })));
+            operator_eq_8(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    assert!(
+        ({
+            let _lhs: Value<S_5_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_5_> = Rc::new(RefCell::new(S_5_::new({ Some(0_i8) })));
+            operator_eq_8(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        ({
+            let _lhs: Value<S_5_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_5_> = Rc::new(RefCell::new(S_5_::new({ Some(18_i8) })));
+            operator_eq_8(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _lhs: Ptr<S_5_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_5_> = Rc::new(RefCell::new(S_5_::new({ Some(0_i8) })));
+            operator_eq_8(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
 }
 pub fn test_17() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Expected_6_> = Rc::new(RefCell::new(Expected_6_::new({
-        S_6_::new({ Some(17_()) })
+        S_6_::new({ Some(17_i8) })
     })));
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _lhs: Value<S_6_> = Rc::new(RefCell::new(unimplemented!()));
+            operator_ne_11(_lhs.as_pointer(), field_ptr!(expected.as_pointer(), s))
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    let mut r1: bool = unimplemented!();
+    assert!(!(r1));
+    assert!(
+        ({
+            let _lhs: Ptr<S_6_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_6_> = Rc::new(RefCell::new(S_6_::new({ Some(0_i8) })));
+            operator_eq_10(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
+    assert!(
+        ({
+            let _lhs: Value<S_6_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_6_> = Rc::new(RefCell::new(S_6_::new({ Some(0_i8) })));
+            operator_eq_10(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    let mut r2: bool = unimplemented!();
+    assert!((r2 as bool));
+    assert!(
+        ({
+            let _lhs: Value<S_6_> = Rc::new(RefCell::new(unimplemented!()));
+            let _rhs: Value<S_6_> = Rc::new(RefCell::new(S_6_::new({ Some(18_i8) })));
+            operator_eq_10(_lhs.as_pointer(), _rhs.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _lhs: Ptr<S_6_> = field_ptr!(expected.as_pointer(), s);
+            let _rhs: Value<S_6_> = Rc::new(RefCell::new(S_6_::new({ Some(0_i8) })));
+            operator_eq_10(_lhs, _rhs.as_pointer())
+        })
+    );
+    assert!({ (*expected.borrow()).b });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -517,13 +769,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_12() });
     ({ test_13() });
     ({ test_14() });
     ({ test_15() });
     ({ test_16() });
     ({ test_17() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

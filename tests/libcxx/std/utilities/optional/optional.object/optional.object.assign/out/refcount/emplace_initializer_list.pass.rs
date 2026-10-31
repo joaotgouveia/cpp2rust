@@ -6,41 +6,42 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(x: Ptr<X>, y: Ptr<X>) -> () {
+pub fn operator_eq_0(x: Ptr<X>, y: Ptr<X>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) })
         && ({ x.with(|__s| __s.j_) } == { y.with(|__s| __s.j_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor)]
+#[cpp_from(bool, new_1, mut_ptr)]
 #[byte_size(16)]
 pub struct X {
     #[offset(0)]
-    i_: (),
+    i_: i32,
     #[offset(4)]
-    j_: (),
+    j_: i32,
     #[offset(8)]
     #[byte_size(8)]
-    dtor_called_: Ptr<()>,
+    dtor_called_: Ptr<bool>,
 }
 impl X {
-    pub fn new_1(dtor_called: Ptr<()>) -> Self {
+    pub fn new_1(dtor_called: Ptr<bool>) -> Self {
         Self {
-            i_: 0_(),
-            j_: 0_(),
+            i_: 0,
+            j_: 0,
             dtor_called_: (dtor_called).clone(),
         }
     }
-    pub fn new_2(mut i: (), dtor_called: Ptr<()>) -> Self {
+    pub fn new_2(mut i: i32, dtor_called: Ptr<bool>) -> Self {
         Self {
             i_: i,
-            j_: 0_(),
+            j_: 0,
             dtor_called_: (dtor_called).clone(),
         }
     }
-    pub fn new_3(il: (), dtor_called: Ptr<()>) -> Self {
-        let il: Value<()> = Rc::new(RefCell::new(il));
+    pub fn new_3(il: Vec<i32>, dtor_called: Ptr<bool>) -> Self {
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         Self {
-            i_: (elem!(unimplemented!(), 0_()).read()),
-            j_: (elem!(unimplemented!(), 1_()).read()),
+            i_: (elem!(unimplemented!(), 0).read()),
+            j_: (elem!(unimplemented!(), 1).read()),
             dtor_called_: (dtor_called).clone(),
         }
     }
@@ -54,37 +55,39 @@ impl Default for X {
     fn default() -> Self {
         {
             X {
-                i_: unimplemented!(),
-                j_: 0_(),
-                dtor_called_: Ptr::<()>::null(),
+                i_: 0_i32,
+                j_: 0,
+                dtor_called_: Ptr::<bool>::null(),
             }
         }
     }
 }
-pub fn operator_eq_1(x: Ptr<Y>, y: Ptr<Y>) -> () {
+pub fn operator_eq_1(x: Ptr<Y>, y: Ptr<Y>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) })
         && ({ x.with(|__s| __s.j_) } == { y.with(|__s| __s.j_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(i32, new_1, value)]
+#[cpp_from(Vec<i32  >  , new_2, value)]
 #[byte_size(8)]
 pub struct Y {
     #[offset(0)]
-    i_: (),
+    i_: i32,
     #[offset(4)]
-    j_: (),
+    j_: i32,
 }
 impl Y {
-    pub fn new_1() -> Self {
-        Self { i_: 0_(), j_: 0_() }
+    pub fn new_3() -> Self {
+        Self { i_: 0, j_: 0 }
     }
-    pub fn new_2(mut i: ()) -> Self {
-        Self { i_: i, j_: 0_() }
+    pub fn new_1(mut i: i32) -> Self {
+        Self { i_: i, j_: 0 }
     }
-    pub fn new_3(il: ()) -> Self {
-        let il: Value<()> = Rc::new(RefCell::new(il));
+    pub fn new_2(il: Vec<i32>) -> Self {
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         Self {
-            i_: (elem!(unimplemented!(), 0_()).read()),
-            j_: (elem!(unimplemented!(), 1_()).read()),
+            i_: (elem!(unimplemented!(), 0).read()),
+            j_: (elem!(unimplemented!(), 1).read()),
         }
     }
 }
@@ -95,35 +98,37 @@ impl CppEq for Y {
 }
 impl Default for Y {
     fn default() -> Self {
-        { Y::new_1() }
+        { Y::new_3() }
     }
 }
-pub fn operator_eq_3(x: Ptr<Z>, y: Ptr<Z>) -> () {
+pub fn operator_eq_3(x: Ptr<Z>, y: Ptr<Z>) -> bool {
     return ({ x.with(|__s| __s.i_) } == { y.with(|__s| __s.i_) })
         && ({ x.with(|__s| __s.j_) } == { y.with(|__s| __s.j_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor)]
+#[cpp_from(i32, new_1, value)]
+#[cpp_from(Vec<i32  >  , new_2, value)]
 #[byte_size(8)]
 pub struct Z {
     #[offset(0)]
-    i_: (),
+    i_: i32,
     #[offset(4)]
-    j_: (),
+    j_: i32,
 }
 impl Z {
-    pub fn new_1() -> Self {
-        Self { i_: 0_(), j_: 0_() }
+    pub fn new_3() -> Self {
+        Self { i_: 0, j_: 0 }
     }
-    pub fn new_2(mut i: ()) -> Self {
-        Self { i_: i, j_: 0_() }
+    pub fn new_1(mut i: i32) -> Self {
+        Self { i_: i, j_: 0 }
     }
-    pub fn new_3(il: ()) -> Self {
-        let il: Value<()> = Rc::new(RefCell::new(il));
+    pub fn new_2(il: Vec<i32>) -> Self {
+        let il: Value<Vec<i32>> = Rc::new(RefCell::new(il));
         let __this: Z = Self {
-            i_: (elem!(unimplemented!(), 0_()).read()),
-            j_: (elem!(unimplemented!(), 1_()).read()),
+            i_: (elem!(unimplemented!(), 0).read()),
+            j_: (elem!(unimplemented!(), 1).read()),
         };
-        unimplemented!();
+        std::process::abort();
         __this
     }
 }
@@ -134,32 +139,46 @@ impl CppEq for Z {
 }
 impl Default for Z {
     fn default() -> Self {
-        { Z::new_1() }
+        { Z::new_3() }
     }
 }
 thread_local!(
-    pub static dtor_called_2: Value<()> = Rc::new(RefCell::new(false));
+    pub static dtor_called_2: Value<bool> = Rc::new(RefCell::new(false));
 );
-pub fn check_X_4() -> () {
-    let dtor_called: Value<()> = Rc::new(RefCell::new(false));
+pub fn check_X_4() -> bool {
+    let dtor_called: Value<bool> = Rc::new(RefCell::new(false));
     let x: Value<X> = Rc::new(RefCell::new(X::new_1({ dtor_called.as_pointer() })));
     let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
     let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    assert!((((*dtor_called.borrow()) as i32) == (false as i32)));
     let v: Ptr<X> = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<X&, decltype(v)>");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((*dtor_called.borrow()));
+    assert!(
+        ({
+            let _x: Ptr<X> = unimplemented!();
+            let _y: Value<X> = Rc::new(RefCell::new(X::new_3({ Vec::from([1, 2]) }, {
+                dtor_called.as_pointer()
+            })));
+            operator_eq_0(_x, _y.as_pointer())
+        })
+    );
+    assert!(({ (v).clone() } == { (unimplemented!()) }));
     return true;
 }
-pub fn check_Y_5() -> () {
+pub fn check_Y_5() -> bool {
     let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v: Ptr<Y> = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<Y&, decltype(v)>");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as i32) == (true as i32)));
+    assert!(
+        ({
+            let _x: Ptr<Y> = unimplemented!();
+            let _y: Value<Y> = Rc::new(RefCell::new(Y::new_2({ Vec::from([1, 2]) })));
+            operator_eq_1(_x, _y.as_pointer())
+        })
+    );
+    assert!(({ (v).clone() } == { (unimplemented!()) }));
     return true;
 }
 pub fn main() {
@@ -181,24 +200,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({ check_X_4() });
         const _: () = assert!(true, "check_X()");;
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v: Ptr<()> = unimplemented!();
+        let v: Ptr<Vec<i32>> = unimplemented!();
         const _: () = assert!(true, "std::is_same_v<std::vector<int>&, decltype(v)>");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (true as i32)));
+        assert!(unimplemented!());
+        assert!(({ (v).clone() } == { (unimplemented!()) }));
     }
     {
         ({ check_Y_5() });
         const _: () = assert!(true, "check_Y()");;
     }
-    return 0_();
+    return 0;
 }
 pub trait XImpl {
     fn destructor(&self);

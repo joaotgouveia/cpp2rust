@@ -6,11 +6,11 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(il: (), mut f: (), mut mc: ()) {
-    let il: Value<()> = Rc::new(RefCell::new(il));
+pub fn test_0(il: Vec<i8>, mut f: (), mut mc: u32) {
+    let il: Value<Vec<i8>> = Rc::new(RefCell::new(il));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!() as u32) == (f as u32)));
+    assert!((unimplemented!() == mc));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -31,35 +31,435 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut s1: () = unimplemented!();
-    let mut s2: () = unimplemented!();
-    let mut s3: () = unimplemented!();
-    let mut s4: () = unimplemented!();
-    ({ test_0(unimplemented!(), unimplemented!(), 1_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 1_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 2_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 2_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 2_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 2_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 1_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 1_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 2_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 0_()) });
-    ({ test_0(unimplemented!(), unimplemented!(), 2_()) });
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let mut s1: Vec<i8> = {
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"\\(a\\)").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    };
+    let mut s2: Vec<i8> = {
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    };
+    let mut s3: Vec<i8> = {
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    };
+    let mut s4: Vec<i8> = {
+        let mut __bytes = Ptr::<i8>::from_string_literal(b"(a([bc]))").to_c_bytes();
+        __bytes.push(0_i8);
+        __bytes
+    };
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            1_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            1_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            2_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('(' as i8),
+                ('a' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                (')' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('(' as i8),
+                ('a' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                (')' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            2_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('(' as i8),
+                ('a' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                (')' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            2_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('(' as i8),
+                ('a' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                (')' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            2_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            1_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            1_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            2_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('(' as i8),
+                ('a' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                (')' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('\\' as i8),
+                ('(' as i8),
+                ('a' as i8),
+                ('\\' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                ('\\' as i8),
+                (')' as i8),
+                ('\\' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            0_u32,
+        )
+    });
+    ({
+        test_0(
+            Vec::from([
+                ('(' as i8),
+                ('a' as i8),
+                ('(' as i8),
+                ('[' as i8),
+                ('b' as i8),
+                ('c' as i8),
+                (']' as i8),
+                (')' as i8),
+                (')' as i8),
+            ]),
+            unimplemented!(),
+            2_u32,
+        )
+    });
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

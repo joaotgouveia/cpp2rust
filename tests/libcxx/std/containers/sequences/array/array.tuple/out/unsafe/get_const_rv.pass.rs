@@ -22,23 +22,30 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let c: () = unimplemented!();
+        let c: Vec<Option<Box<f64>>> = Vec::from([Some(Box::from_raw(
+            (Box::leak(Box::new(3.5_f64)) as *mut f64),
+        ))]);
         const _: () = assert!(
             true,
             "std::is_same<const T&&, decltype(std::get<0>(std::move(c)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(c)))");;
-        let t: *const () = unimplemented!();
-        unimplemented!();
+        let t: *const Option<Box<f64>> = unimplemented!();
+        assert!(
+            ((*(*t)
+                .as_deref()
+                .map_or(::std::ptr::null_mut(), |v| v as *const f64 as *mut f64))
+                == (3.5_f64))
+        );
     }
     {
-        let c: () = unimplemented!();
+        let c: Vec<f64> = Vec::from([1_f64, 2_f64, 3.5_f64]);
         const _: () = assert!(true, "std::get<0>(std::move(c)) == 1");;
         const _: () = assert!(true, "std::get<1>(std::move(c)) == 2");;
         const _: () = assert!(true, "std::get<2>(std::move(c)) == 3.5");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

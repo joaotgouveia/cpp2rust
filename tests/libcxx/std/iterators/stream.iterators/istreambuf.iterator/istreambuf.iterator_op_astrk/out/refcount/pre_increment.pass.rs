@@ -26,23 +26,23 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (('a' as i8) as i32)));
+        assert!(((unimplemented!() as i32) == (('b' as i8) as i32)));
+        assert!(((unimplemented!() as i32) == (('c' as i8) as i32)));
+        assert!(unimplemented!());
     }
     {
         let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!() as i32) == (97 as i32)));
+        assert!(((unimplemented!() as i32) == (98 as i32)));
+        assert!(((unimplemented!() as i32) == (99 as i32)));
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

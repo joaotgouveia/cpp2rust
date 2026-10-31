@@ -9,44 +9,49 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct A {
-    data_: [(); 10],
+    data_: [i32; 10],
 }
 impl A {
     pub unsafe fn new() -> Self {
-        let mut this = Self {
-            data_: [unimplemented!(); 10],
-        };
+        let mut this = Self { data_: [0_i32; 10] };
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)).prefix_inc();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (10_())) {
+        let mut i: i32 = 0;
+        'loop_: while ((i) < (10)) {
             this.data_[(i) as usize] = i;
             i.prefix_inc();
         }
         this
     }
     pub unsafe fn copy_from(_a0: *const A) -> Self {
-        let mut this = Self {
-            data_: [unimplemented!(); 10],
-        };
+        let mut this = Self { data_: [0_i32; 10] };
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)).prefix_inc();
         this
     }
     pub unsafe fn destructor(&mut self) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)).prefix_dec();
     }
-    pub unsafe fn operator_call(&self, mut i: ()) -> () {
-        let mut j: () = 0_();
-        'loop_: while ((j) < (10_())) {
+    pub unsafe fn operator_call(&self, mut i: i32) -> i32 {
+        let mut j: i32 = 0;
+        'loop_: while ((j) < (10)) {
             i += self.data_[(j) as usize];
             j.prefix_inc();
         }
         return i;
     }
-    pub unsafe fn foo(&self, mut _a0: ()) -> () {
-        return 1_();
+    pub unsafe fn foo(&self, mut _a0: i32) -> i32 {
+        return 1;
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const A) -> *mut A {
-        unimplemented!();
+        {
+            if 40_usize != 0 {
+                ::std::ptr::copy_nonoverlapping(
+                    ((&(*_a0).data_ as *const [i32; 10]) as *const ::libc::c_void),
+                    ((&mut self.data_ as *mut [i32; 10]) as *mut ::libc::c_void),
+                    40_usize as usize,
+                )
+            }
+            ((&mut self.data_ as *mut [i32; 10]) as *mut ::libc::c_void)
+        };
         return &mut (*(self as *mut A));
     }
 }
@@ -60,9 +65,9 @@ impl Default for A {
         unsafe { A::new() }
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn g_1(mut _a0: ()) -> () {
-    return 0_();
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+pub unsafe fn g_1(mut _a0: i32) -> i32 {
+    return 0;
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -79,40 +84,40 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut f: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
+        assert!(!(unsafe { f.target() }).is_null());
+        assert!((unsafe { f.target() }).is_null());
+        assert!((unsafe { f.target() }).is_null());
     }
-    unimplemented!();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     {
         let mut f: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
+        assert!(!(unsafe { f.target() }).is_null());
+        assert!((unsafe { f.target() }).is_null());
+        assert!((unsafe { f.target() }).is_null());
     }
-    unimplemented!();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     {
         let f: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
+        assert!(!(unsafe { f.target() }).is_null());
+        assert!((unsafe { f.target() }).is_null());
+        assert!((unsafe { f.target() }).is_null());
     }
-    unimplemented!();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     {
         let f: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
+        assert!(!(unsafe { f.target() }).is_null());
+        assert!((unsafe { f.target() }).is_null());
+        assert!((unsafe { f.target() }).is_null());
     }
-    unimplemented!();
-    return 0_();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

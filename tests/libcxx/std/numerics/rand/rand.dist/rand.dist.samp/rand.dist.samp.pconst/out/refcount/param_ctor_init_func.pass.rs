@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn f_0(mut x: ()) -> () {
-    return (x * 2_());
+pub fn f_0(mut x: f64) -> f64 {
+    return (x * 2_f64);
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -28,49 +28,49 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut iv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut dn: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*iv.borrow()).len() == 2_usize));
+        assert!(((iv.decay().offset(0_usize as isize).read()) == 0_f64));
+        assert!(((iv.decay().offset(1_usize as isize).read()) == 1_f64));
+        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*dn.borrow()).len() == 1_usize));
+        assert!(((dn.decay().offset(0_usize as isize).read()) == 1_f64));
     }
     {
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut iv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut dn: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*iv.borrow()).len() == 2_usize));
+        assert!(((iv.decay().offset(0_usize as isize).read()) == 0_f64));
+        assert!(((iv.decay().offset(1_usize as isize).read()) == 1_f64));
+        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*dn.borrow()).len() == 1_usize));
+        assert!(((dn.decay().offset(0_usize as isize).read()) == 1_f64));
     }
     {
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut iv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut dn: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*iv.borrow()).len() == 2_usize));
+        assert!(((iv.decay().offset(0_usize as isize).read()) == 12_f64));
+        assert!(((iv.decay().offset(1_usize as isize).read()) == 14_f64));
+        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*dn.borrow()).len() == 1_usize));
+        assert!(((dn.decay().offset(0_usize as isize).read()) == 0.5_f64));
     }
     {
         let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut iv: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut dn: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let iv: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*iv.borrow()).len() == 3_usize));
+        assert!(((iv.decay().offset(0_usize as isize).read()) == 5.5_f64));
+        assert!(((iv.decay().offset(1_usize as isize).read()) == 7.5_f64));
+        assert!(((iv.decay().offset(2_usize as isize).read()) == 11.5_f64));
+        let dn: Value<Vec<f64>> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*dn.borrow()).len() == 2_usize));
+        assert!(((dn.decay().offset(0_usize as isize).read()) == 0.203125_f64));
+        assert!(((dn.decay().offset(1_usize as isize).read()) == 0.1484375_f64));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

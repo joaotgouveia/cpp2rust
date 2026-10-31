@@ -6,15 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(AnyPtr, new, value)]
 #[byte_size(8)]
 pub struct Pointer {
     #[offset(0)]
     #[byte_size(8)]
-    pub value: (),
+    pub value: AnyPtr,
 }
 impl Pointer {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: AnyPtr) -> Self {
         Self { value: (v).clone() }
     }
 }
@@ -22,11 +23,11 @@ impl Pointer {
 #[byte_size(4)]
 pub struct A {
     #[offset(0)]
-    pub n: (),
+    pub n: i32,
 }
 impl A {
     pub fn new() -> Self {
-        Self { n: 42_() }
+        Self { n: 42 }
     }
 }
 impl Default for A {
@@ -35,10 +36,10 @@ impl Default for A {
     }
 }
 thread_local!(
-    pub static i_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static i_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    pub static d_1: Value<()> = Rc::new(RefCell::new(0_f64));
+    pub static d_1: Value<f64> = Rc::new(RefCell::new(0_f64));
 );
 thread_local!(
     pub static a_2: Value<A> = Rc::new(RefCell::new(A::new()));
@@ -63,12 +64,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::addressof(i) == &i");;
     const _: () = assert!(true, "std::addressof(d) == &d");;
     let mut ap: Ptr<A> = unimplemented!();
     const _: () = assert!(true, "&ap->n == &a.n");;
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn operator_addr(&self);

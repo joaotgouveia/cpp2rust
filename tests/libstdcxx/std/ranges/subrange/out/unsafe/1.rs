@@ -7,11 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test01_0() {
-    let mut a: [(); 3] = [1_(), 2_(), 3_()];
-    let mut b: [*mut (); 3] = [
-        (&mut a[(2_()) as usize] as *mut ()),
-        (&mut a[(0_()) as usize] as *mut ()),
-        (&mut a[(1_()) as usize] as *mut ()),
+    let mut a: [i32; 3] = [1, 2, 3];
+    let mut b: [*mut i32; 3] = [
+        (&mut a[(2) as usize] as *mut i32),
+        (&mut a[(0) as usize] as *mut i32),
+        (&mut a[(1) as usize] as *mut i32),
     ];
     let mut c: () = unimplemented!();
 }
@@ -21,7 +21,7 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     (unsafe { test01_0() });
     0
 }

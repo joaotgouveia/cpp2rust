@@ -10,30 +10,30 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_3: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -43,22 +43,23 @@ impl complete_type_allocator_std_pair_const_int__int__ {}
 #[byte_size(72)]
 pub struct A {
     #[offset(0)]
-    pub data: (),
+    pub data: i32,
     #[offset(8)]
     #[byte_size(48)]
-    pub m: (),
+    pub m: Map<A, (Value<A>, Value<A>)>,
     #[offset(56)]
     #[byte_size(8)]
-    pub it: (),
+    pub it: BidirectionalIterator<(Value<A>, Value<A>)>,
     #[offset(64)]
     #[byte_size(8)]
-    pub cit: (),
+    pub cit: BidirectionalIterator<(Value<A>, Value<A>)>,
 }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
             data: { (*_a0.upgrade().deref()).data },
-            m: unimplemented!(),
+            m: field_ptr!(_a0, m)
+                .with_mut(|__m: &mut Map<A, (Value<A>, Value<A>)>| std::mem::take(__m)),
             it: field!(_a0, it).with_mut(std::mem::take),
             cit: field!(_a0, cit).with_mut(std::mem::take),
         }
@@ -74,15 +75,15 @@ impl CppEq for A {
         operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn operator_eq_5(L: Ptr<A>, R: Ptr<A>) -> () {
+pub fn operator_eq_5(L: Ptr<A>, R: Ptr<A>) -> bool {
     return ({ (L).clone() } == { (R).clone() });
 }
-pub fn operator_lt_4(L: Ptr<A>, R: Ptr<A>) -> () {
+pub fn operator_lt_4(L: Ptr<A>, R: Ptr<A>) -> bool {
     return ({ L.with(|__s| __s.data) } < { R.with(|__s| __s.data) });
 }
-pub fn test_6() -> () {
+pub fn test_6() -> bool {
     let mut a: A = <A>::default();
-    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m: Value<Map<i32, (Value<i32>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
     return true;
 }
 pub fn main() {
@@ -104,9 +105,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_6() });
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
@@ -114,17 +115,21 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __src = field_ptr!(_a0, m)
+                .with_mut(|__m: &mut Map<A, (Value<A>, Value<A>)>| std::mem::take(__m));
+            field_ptr!((*self), m).write(__src)
+        };
+        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
+        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
         return (*self).clone();
     }
 }
 pub trait complete_type_allocator_std_pair_const_int__int__Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
+    fn allocate(&self, mut n: usize) -> Ptr<(Value<i32>, Value<i32>)> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
+    fn deallocate(&self, mut p: Ptr<(Value<i32>, Value<i32>)>, mut n: usize) {
         unimplemented!()
     }
 }

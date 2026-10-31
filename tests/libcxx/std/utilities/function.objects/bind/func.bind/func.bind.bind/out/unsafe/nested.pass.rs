@@ -10,7 +10,7 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct multiply {}
 impl multiply {
-    pub unsafe fn operator_call_1_int(&mut self, mut a: (), mut b: ()) -> () {
+    pub unsafe fn operator_call_1_int(&mut self, mut a: i32, mut b: i32) -> i32 {
         return ((a) * (b));
     }
 }
@@ -18,14 +18,24 @@ impl multiply {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct plus_one {}
 impl plus_one {
-    pub unsafe fn operator_call_1_int(&mut self, mut a: ()) -> () {
-        return ((a) + (1_()));
+    pub unsafe fn operator_call_1_int(&mut self, mut a: i32) -> i32 {
+        return ((a) + (1));
     }
 }
-pub unsafe fn test_0() -> () {
+pub unsafe fn test_0() -> bool {
     let mut g: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ((unsafe {
+            let mut ___args: i32 = 5;
+            g(&mut ___args)
+        }) == (10))
+    );
+    assert!(
+        ((unsafe {
+            let mut ___args: i32 = 5;
+            unimplemented!()(&mut ___args)
+        }) == (11))
+    );
     return true;
 }
 pub fn main() {
@@ -43,9 +53,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

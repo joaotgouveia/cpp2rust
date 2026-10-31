@@ -13,8 +13,16 @@ pub struct StaticInit {
 }
 impl StaticInit {
     pub unsafe fn destructor(&mut self) {
-        let mut str: () = unimplemented!();
-        unimplemented!();
+        let mut str: Vec<libc::c_char> =
+            std::slice::from_raw_parts(unimplemented!(), libcc2rs::c_str_len(unimplemented!()) + 1)
+                .to_vec();
+        assert!(
+            str == std::slice::from_raw_parts(
+                c"iostream".as_ptr(),
+                libcc2rs::c_str_len(c"iostream".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
 }
 pub static mut foo_0: std::cell::LazyCell<StaticInit> =
@@ -35,18 +43,34 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let e_cat1: *const () = unimplemented!();
-        let mut m1: () = unimplemented!();
-        unimplemented!();
+        let mut m1: Vec<libc::c_char> =
+            std::slice::from_raw_parts(unimplemented!(), libcc2rs::c_str_len(unimplemented!()) + 1)
+                .to_vec();
+        assert!(
+            m1 == std::slice::from_raw_parts(
+                c"iostream".as_ptr(),
+                libcc2rs::c_str_len(c"iostream".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
     {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut foo_0)).ec = (unimplemented!());
-        let mut m2: () = unimplemented!();
-        unimplemented!();
+        let mut m2: Vec<libc::c_char> =
+            std::slice::from_raw_parts(unimplemented!(), libcc2rs::c_str_len(unimplemented!()) + 1)
+                .to_vec();
+        assert!(
+            m2 == std::slice::from_raw_parts(
+                c"iostream".as_ptr(),
+                libcc2rs::c_str_len(c"iostream".as_ptr()) + 1
+            )
+            .to_vec()
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const foo_0);

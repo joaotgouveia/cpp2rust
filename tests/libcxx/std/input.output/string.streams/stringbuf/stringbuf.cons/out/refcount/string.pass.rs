@@ -26,31 +26,61 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"testing").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"testing").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"testing").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32, 110 as i32, 103 as i32,
+                0 as i32,
+            ])
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32, 110 as i32, 103 as i32,
+                0 as i32,
+            ])
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                116 as i32, 101 as i32, 115 as i32, 116 as i32, 105 as i32, 110 as i32, 103 as i32,
+                0 as i32,
+            ])
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

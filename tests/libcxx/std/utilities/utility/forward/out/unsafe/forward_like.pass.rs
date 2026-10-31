@@ -196,30 +196,30 @@ const _: () = assert!(
     true,
     "noexcept(std::forward_like<T>(std::declval<NoCtorCopyMove>()))"
 );
-pub unsafe fn test_2() -> () {
+pub unsafe fn test_2() -> bool {
     {
-        let mut val: () = 1729_();
-        let result: *const () = &val;
+        let mut val: i32 = 1729;
+        let result: *const i32 = &val;
         const _: () = assert!(true, "std::is_same_v<decltype(result), const int&>");;
-        unimplemented!();
+        assert!(((result) == ((&mut val as *mut i32).cast_const())));
     }
     {
-        let mut val: () = 1729_();
-        let result: *mut () = &mut val;
+        let mut val: i32 = 1729;
+        let result: *mut i32 = &mut val;
         const _: () = assert!(true, "std::is_same_v<decltype(result), int&>");;
-        unimplemented!();
+        assert!(((result) == (&mut val as *mut i32)));
     }
     {
-        let mut val: () = 1729_();
-        let result: *const () = &val;
+        let mut val: i32 = 1729;
+        let result: *const i32 = &val;
         const _: () = assert!(true, "std::is_same_v<decltype(result), const int&&>");;
-        unimplemented!();
+        assert!(((result) == ((&mut val as *mut i32).cast_const())));
     }
     {
-        let mut val: () = 1729_();
-        let result: *mut () = &mut val;
+        let mut val: i32 = 1729;
+        let result: *mut i32 = &mut val;
         const _: () = assert!(true, "std::is_same_v<decltype(result), int&&>");;
-        unimplemented!();
+        assert!(((result) == (&mut val as *mut i32)));
     }
     return true;
 }
@@ -238,10 +238,10 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const u_0);

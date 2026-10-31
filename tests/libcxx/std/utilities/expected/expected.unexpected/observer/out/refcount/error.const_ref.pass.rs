@@ -8,11 +8,11 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 const _: () = assert!(!(false), "!ErrorNoexcept<int>");
 const _: () = assert!(true, "ErrorNoexcept<std::unexpected<int>>");
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Ptr<()> = unimplemented!();
+    let i: Ptr<i32> = unimplemented!();
     const _: () = assert!(true, "std::same_as<decltype(i), const int&>");;
-    unimplemented!();
+    assert!(((i.read()) == 5));
     return true;
 }
 pub fn main() {
@@ -34,9 +34,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

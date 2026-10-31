@@ -7,10 +7,10 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static gi_0: Value<()> = Rc::new(RefCell::new(5_()));
+    pub static gi_0: Value<i32> = Rc::new(RefCell::new(5));
 );
 thread_local!(
-    pub static gf_1: Value<()> = Rc::new(RefCell::new(8_f32));
+    pub static gf_1: Value<f32> = Rc::new(RefCell::new(8_f32));
 );
 
 pub fn main() {
@@ -32,11 +32,11 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::launder(&gi) == &gi");;
     const _: () = assert!(true, "std::launder(&gf) == &gf");;
-    let i: Value<Ptr<()>> = Rc::new(RefCell::new((gi_0.with(|v| v.as_pointer()))));
-    let f: Value<Ptr<()>> = Rc::new(RefCell::new((gf_1.with(|v| v.as_pointer()))));
+    let i: Value<Ptr<i32>> = Rc::new(RefCell::new((gi_0.with(|v| v.as_pointer()))));
+    let f: Value<Ptr<f32>> = Rc::new(RefCell::new((gf_1.with(|v| v.as_pointer()))));
     const _: () = assert!(
         true,
         "std::is_same<decltype(i), decltype(std::launder(i))>::value"
@@ -45,9 +45,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::is_same<decltype(f), decltype(std::launder(f))>::value"
     );;
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(({ (*i.borrow()).clone() } == { (*i.borrow()).clone() }));
+    assert!(({ (*f.borrow()).clone() } == { (*f.borrow()).clone() }));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = gi_0.with(|_| ());

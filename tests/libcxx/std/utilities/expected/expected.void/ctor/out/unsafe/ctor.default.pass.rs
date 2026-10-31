@@ -17,13 +17,13 @@ const _: () = assert!(
     true,
     "std::is_nothrow_default_constructible_v<std::expected<void, NoDefaultCtor>>"
 );
-pub unsafe fn operator_eq_0(_a0: *const MyInt, _a1: *const MyInt) -> () {
+pub unsafe fn operator_eq_0(_a0: *const MyInt, _a1: *const MyInt) -> bool {
     return (((*_a0).i) == ((*_a1).i));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MyInt {
-    pub i: (),
+    pub i: i32,
 }
 impl std::cmp::PartialEq for MyInt {
     fn eq(&self, other: &Self) -> bool {
@@ -31,14 +31,14 @@ impl std::cmp::PartialEq for MyInt {
     }
 }
 impl std::cmp::Eq for MyInt {}
-pub unsafe fn test_1() -> () {
+pub unsafe fn test_1() -> bool {
     {
         let mut e: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
         let mut e: () = unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     return true;
 }
@@ -57,9 +57,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

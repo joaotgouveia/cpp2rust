@@ -13,15 +13,15 @@ impl NonConvertible {}
 const _: () = assert!(true, "std::semiregular<NonConvertible>");
 const _: () = assert!(true, "std::is_convertible_v<long, NonConvertible>");
 const _: () = assert!(!(false), "!std::convertible_to<long, NonConvertible>");
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 42_i64));
     }
     {
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 43_i64));
     }
     {
         const _: () = assert!(
@@ -66,9 +66,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

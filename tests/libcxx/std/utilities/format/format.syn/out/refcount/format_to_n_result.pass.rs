@@ -10,25 +10,25 @@ pub fn test_0() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __decomp_1: Value<()> = Rc::new(RefCell::new((*v.borrow()).clone()));
     const _: () = assert!(true, "std::same_as<decltype(out), CharT*>");;
-    unimplemented!();
+    assert!(({ { (*__decomp_1.borrow()).out.clone() } } == { { (*v.borrow()).out.clone() } }));
     const _: () = assert!(
         true,
         "std::same_as<decltype(size), std::iter_difference_t<CharT*>>"
     );;
-    unimplemented!();
+    assert!(({ (*__decomp_1.borrow()).size } == { (*v.borrow()).size }));
 }
 pub fn test_2() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __decomp_3: Value<()> = Rc::new(RefCell::new((*v.borrow()).clone()));
     const _: () = assert!(true, "std::same_as<decltype(out), CharT*>");;
-    unimplemented!();
+    assert!(({ { (*__decomp_3.borrow()).out.clone() } } == { { (*v.borrow()).out.clone() } }));
     const _: () = assert!(
         true,
         "std::same_as<decltype(size), std::iter_difference_t<CharT*>>"
     );;
-    unimplemented!();
+    assert!(({ (*__decomp_3.borrow()).size } == { (*v.borrow()).size }));
 }
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     ({ test_0() });
     ({ test_2() });
     return true;
@@ -52,9 +52,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(({ test_4() }));
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

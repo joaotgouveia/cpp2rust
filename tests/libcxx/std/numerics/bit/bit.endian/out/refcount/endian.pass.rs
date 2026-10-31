@@ -26,7 +26,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_enum<std::endian>::value");;
     const _: () = assert!(true, "!std::is_convertible<std::endian, UT>::value");;
     const _: () = assert!(true, "std::endian::little == std::endian::little");;
@@ -38,17 +38,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         "std::endian::native == std::endian::little ||\n                   std::endian::native == std::endian::big"
     );;
     {
-        let i: Value<()> = Rc::new(RefCell::new(16909060_()));
-        let c: Value<Box<[()]>> = Rc::new(RefCell::new(
-            (0..4).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-        ));
+        let i: Value<u32> = Rc::new(RefCell::new(16909060_u32));
+        let c: Value<Box<[i8]>> =
+            Rc::new(RefCell::new((0..4).map(|_| 0_i8).collect::<Box<[i8]>>()));
         const _: () = assert!(
-            (::std::mem::size_of::<()>() == ::std::mem::size_of::<[(); 4]>()),
+            (::std::mem::size_of::<u32>() == ::std::mem::size_of::<[i8; 4]>()),
             "sizeof(i) == sizeof(c)"
         );;
-        unimplemented!();
-        unimplemented!();
+        {
+            ((c.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any().memcpy(
+                &((i.as_pointer()) as Ptr<u32>).to_any(),
+                ::std::mem::size_of::<[i8; 4]>() as usize,
+            );
+            ((c.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+        };
+        assert!(
+            (((((*c.borrow())[(0) as usize] as i32) == 1) as i32)
+                == ((unimplemented!() == unimplemented!()) as i32))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

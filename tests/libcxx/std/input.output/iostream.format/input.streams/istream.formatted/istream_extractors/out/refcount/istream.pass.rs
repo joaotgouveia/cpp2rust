@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static f_called_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static f_called_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 pub fn f_1(is: Ptr<()>) -> Ptr<()> {
     (*f_called_0.with(Value::clone).borrow_mut()).prefix_inc();
@@ -32,13 +32,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let is: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!((f_called_0.with(|rc| *rc.borrow()) == 1));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = f_called_0.with(|_| ());

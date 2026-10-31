@@ -8,8 +8,8 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     let foo: Ptr<Foo> = ({ get_foo_1() });
-    let ref_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
+    let mut ref_: Ptr<Foo> = (foo).clone();
+    assert!(({ (ref_).clone() } == { (foo).clone() }));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -40,8 +40,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

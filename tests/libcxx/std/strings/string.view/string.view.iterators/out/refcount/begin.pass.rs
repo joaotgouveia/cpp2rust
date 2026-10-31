@@ -13,16 +13,16 @@ pub fn test_0(s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((b.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (b).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb1.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (cb1).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb2.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (cb2).clone() } == { (unimplemented!()) }));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (b).clone() } == { (cb1).clone() }));
+    assert!(({ (b).clone() } == { (cb2).clone() }));
+    assert!(({ (cb1).clone() } == { (cb2).clone() }));
 }
 pub fn test_1(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -31,16 +31,16 @@ pub fn test_1(s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((b.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (b).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb1.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (cb1).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb2.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (cb2).clone() } == { (unimplemented!()) }));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (b).clone() } == { (cb1).clone() }));
+    assert!(({ (b).clone() } == { (cb2).clone() }));
+    assert!(({ (cb1).clone() } == { (cb2).clone() }));
 }
 pub fn test_2(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -49,16 +49,16 @@ pub fn test_2(s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((b.read()) as u32) } == { ((unimplemented!().read()) as u32) }));
+        assert!(({ (b).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb1.read()) as u32) } == { ((unimplemented!().read()) as u32) }));
+        assert!(({ (cb1).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb2.read()) as u32) } == { ((unimplemented!().read()) as u32) }));
+        assert!(({ (cb2).clone() } == { (unimplemented!()) }));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (b).clone() } == { (cb1).clone() }));
+    assert!(({ (b).clone() } == { (cb2).clone() }));
+    assert!(({ (cb1).clone() } == { (cb2).clone() }));
 }
 pub fn test_3(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -67,16 +67,16 @@ pub fn test_3(s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((b.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (b).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb1.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (cb1).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb2.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (cb2).clone() } == { (unimplemented!()) }));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (b).clone() } == { (cb1).clone() }));
+    assert!(({ (b).clone() } == { (cb2).clone() }));
+    assert!(({ (cb1).clone() } == { (cb2).clone() }));
 }
 pub fn test_4(s: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
@@ -85,16 +85,16 @@ pub fn test_4(s: ()) {
     let mut cb1: () = unimplemented!();
     let mut cb2: () = unimplemented!();
     if !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ ((b.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (b).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb1.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (cb1).clone() } == { (unimplemented!()) }));
+        assert!(({ ((cb2.read()) as i32) } == { ((unimplemented!().read()) as i32) }));
+        assert!(({ (cb2).clone() } == { (unimplemented!()) }));
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (b).clone() } == { (cb1).clone() }));
+    assert!(({ (b).clone() } == { (cb2).clone() }));
+    assert!(({ (cb1).clone() } == { (cb2).clone() }));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -115,7 +115,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0(unimplemented!()) });
     ({ test_1(unimplemented!()) });
     ({ test_2(unimplemented!()) });
@@ -144,6 +144,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             const _: () = assert!(true, "*wsv.cbegin() == wsv[0]");;
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

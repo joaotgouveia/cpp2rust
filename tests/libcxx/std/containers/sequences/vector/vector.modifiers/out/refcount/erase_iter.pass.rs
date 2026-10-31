@@ -6,32 +6,32 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn is_contiguous_container_asan_correct_0(_a0: Ptr<()>) -> () {
+pub fn is_contiguous_container_asan_correct_0(_a0: Ptr<Vec<i32>>) -> bool {
     return true;
 }
-pub fn is_contiguous_container_asan_correct_1(_a0: Ptr<()>) -> () {
+pub fn is_contiguous_container_asan_correct_1(_a0: Ptr<Vec<NonTriviallyRelocatable>>) -> bool {
     return true;
 }
-pub fn is_contiguous_container_asan_correct_2(_a0: Ptr<()>) -> () {
+pub fn is_contiguous_container_asan_correct_2(_a0: Ptr<Vec<i32>>) -> bool {
     return true;
 }
-pub fn is_contiguous_container_asan_correct_3(_a0: Ptr<()>) -> () {
+pub fn is_contiguous_container_asan_correct_3(_a0: Ptr<Vec<NonTriviallyRelocatable>>) -> bool {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
 pub struct Tracker {
     #[offset(0)]
-    pub copy_assignments: (),
+    pub copy_assignments: i32,
     #[offset(4)]
-    pub move_assignments: (),
+    pub move_assignments: i32,
 }
 impl Default for Tracker {
     fn default() -> Self {
         {
             Tracker {
-                copy_assignments: 0_(),
-                move_assignments: 0_(),
+                copy_assignments: 0,
+                move_assignments: 0,
             }
         }
     }
@@ -50,20 +50,20 @@ impl TrackedAssignment {
         }
     }
 }
-pub fn operator_eq_4(a: Ptr<NonTriviallyRelocatable>, b: Ptr<NonTriviallyRelocatable>) -> () {
+pub fn operator_eq_4(a: Ptr<NonTriviallyRelocatable>, b: Ptr<NonTriviallyRelocatable>) -> bool {
     return ({ a.with(|__s| __s.value_) } == { b.with(|__s| __s.value_) });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, CopyAssign, MoveAssign)]
 #[byte_size(4)]
 pub struct NonTriviallyRelocatable {
     #[offset(0)]
-    pub value_: (),
+    pub value_: i32,
 }
 impl NonTriviallyRelocatable {
     pub fn new_1() -> Self {
-        Self { value_: 0_() }
+        Self { value_: 0 }
     }
-    pub fn new_2(mut v: ()) -> Self {
+    pub fn new_2(mut v: i32) -> Self {
         Self { value_: v }
     }
     pub fn copy_from(other: Ptr<NonTriviallyRelocatable>) -> Self {
@@ -101,53 +101,53 @@ const _: () = assert!(true, "");
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_6.with(|rc| *rc.borrow()) >= dealloc_count_7.with(|rc| *rc.borrow())));
         return ((alloc_count_6.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_7.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_8.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_6.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_6.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_5: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_5: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_6: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_7: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_7: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_8: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_8: Value<bool> = Rc::new(RefCell::new(false));
 );
 pub fn operator_sub_9(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_lt_10(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
 pub fn operator_eq_11(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_12(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !({
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
         operator_eq_11(_x, y)
@@ -158,10 +158,10 @@ pub fn operator_ne_12(
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn new_1(mut p: Ptr<()>) -> Self {
+    fn new_1(mut p: Ptr<i32>) -> Self {
         Self { ptr_: (p).clone() }
     }
 }
@@ -175,38 +175,51 @@ impl CppEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
         operator_eq_11(__lhs.read(), __rhs.read())
     }
 }
+impl CppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_8();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_10();
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_sub_13(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_lt_14(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
 pub fn operator_ne_15(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } != { (y.ptr_).clone() });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(
+    min_pointer_int__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
 #[byte_size(8)]
 pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     pub fn new_1(mut p: min_pointer_int__std_integral_constant_unsigned_long__0__) -> Self {
@@ -226,30 +239,35 @@ impl CppEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
             && !(operator_lt_14(__rhs.read(), __lhs.read()))
     }
 }
+impl CppAdvance for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_9();
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_sub_16(
     mut x: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_eq_17(
     mut x: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_18(
     mut x: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !({
         let _x: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ = x;
         operator_eq_17(_x, y)
@@ -272,19 +290,32 @@ impl CppEq for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
         operator_eq_17(__lhs.read(), __rhs.read())
     }
 }
+impl CppAdvance for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_8();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_10();
+    }
+}
 pub fn operator_sub_19(
     mut x: min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_eq_20(
     mut x: min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(
+    min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
 #[byte_size(8)]
 pub struct min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
@@ -306,19 +337,19 @@ impl CppEq for min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__
 pub fn operator_sub_21(
     mut x: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_eq_22(
     mut x: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_23(
     mut x: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !({
         let _x: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ = x;
         operator_eq_22(_x, y)
@@ -341,19 +372,32 @@ impl CppEq for min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long_
         operator_eq_22(__lhs.read(), __rhs.read())
     }
 }
+impl CppAdvance for min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_8();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_10();
+    }
+}
 pub fn operator_sub_24(
     mut x: min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_eq_25(
     mut x: min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(
+    min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
 #[byte_size(8)]
 pub struct min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
@@ -377,25 +421,25 @@ impl CppEq for min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned
 pub fn operator_sub_26(
     mut x: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_lt_27(
     mut x: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
 pub fn operator_eq_28(
     mut x: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_29(
     mut x: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !({
         let _x: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ = x;
         operator_eq_28(_x, y)
@@ -423,25 +467,38 @@ impl CppEq for min_pointer_NonTriviallyRelocatable__std_integral_constant_unsign
         operator_eq_28(__lhs.read(), __rhs.read())
     }
 }
+impl CppAdvance for min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_8();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_10();
+    }
+}
 pub fn operator_sub_30(
     mut x: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_lt_31(
     mut x: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
 pub fn operator_ne_32(
     mut x: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } != { (y.ptr_).clone() });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(
+    min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
 #[byte_size(8)]
 pub struct min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
@@ -470,12 +527,19 @@ impl CppEq for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_
             && !(operator_lt_31(__rhs.read(), __lhs.read()))
     }
 }
+impl CppAdvance
+    for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_9();
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<u64>,
 }
 impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -493,52 +557,53 @@ pub struct min_allocator_NonTriviallyRelocatable_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_unsigned_long_ {}
-pub fn operator_eq_33(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_eq_33(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_34(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ne_34(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_35(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_lt_35(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_36(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_le_36(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_37(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_gt_37(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_38(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ge_38(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_39(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
+pub fn operator_cmp_39(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct MoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl MoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(x: Ptr<MoveOnly>) -> Self {
         let __this: MoveOnly = Self {
             data_: x.with(|__s| __s.data_),
         };
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         __this
     }
 }
@@ -557,45 +622,46 @@ impl Default for MoveOnly {
         { MoveOnly::new(None) }
     }
 }
-pub fn operator_eq_40(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_eq_40(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_41(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ne_41(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_42(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_lt_42(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_43(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_le_43(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_44(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_gt_44(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_45(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ge_45(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> bool {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_46(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_cmp_46(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
             &(_a1.with(|__s| __s.data_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
+#[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct TrivialMoveOnly {
     #[offset(0)]
-    data_: (),
+    data_: i32,
 }
 impl TrivialMoveOnly {
-    pub fn new(data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| 1_());
+    pub fn new(data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| 1);
         Self { data_: data }
     }
     pub fn move_from(_a0: Ptr<TrivialMoveOnly>) -> Self {
@@ -621,245 +687,657 @@ impl Default for TrivialMoveOnly {
 }
 pub fn tests_47() {
     {
-        let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
+        let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<i32>);
+                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
+                    __v.push((__it.iter_deref().read()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
+                let __it = unimplemented!();
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().begin());
+            assert!(({ is_contiguous_container_asan_correct_0(v.as_pointer(),) }));
         }
         {
-            let expected: Value<Box<[()]>> =
-                Rc::new(RefCell::new(Box::new([1_(), 3_(), 4_(), 5_()])));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let expected: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 3, 4, 5])));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<i32>);
+                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
+                    __v.push((__it.iter_deref().read()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
+                let __it = unimplemented!().iter_add(1_isize);
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().begin().iter_add(1_isize));
+            assert!(({ is_contiguous_container_asan_correct_0(v.as_pointer(),) }));
         }
         {
-            let expected: Value<Box<[()]>> =
-                Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let expected: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<i32>);
+                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
+                    __v.push((__it.iter_deref().read()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
+                let __it = unimplemented!().iter_add(4_isize);
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().end());
+            assert!(({ is_contiguous_container_asan_correct_0(v.as_pointer(),) }));
         }
     }
     {
         {
-            let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<MoveOnly>> = Rc::new(RefCell::new(Vec::new()));
+            {
+                let __init = MoveOnly::new({ Some(1) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = MoveOnly::new({ Some(2) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = MoveOnly::new({ Some(3) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __it = <RandomAccessIterator<MoveOnly>>::from(v.decay().begin());
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
+                __it
+            };
+            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(
+                ({
+                    let _x: Ptr<MoveOnly> = v.decay().offset(0_usize as isize);
+                    let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                    operator_eq_33(_x, _y.as_pointer())
+                })
+            );
+            assert!(
+                ({
+                    let _x: Ptr<MoveOnly> = v.decay().offset(1_usize as isize);
+                    let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                    operator_eq_33(_x, _y.as_pointer())
+                })
+            );
         }
         {
-            let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<TrivialMoveOnly>> = Rc::new(RefCell::new(Vec::new()));
+            {
+                let __init = TrivialMoveOnly::new({ Some(1) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = TrivialMoveOnly::new({ Some(2) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = TrivialMoveOnly::new({ Some(3) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __it = <RandomAccessIterator<TrivialMoveOnly>>::from(v.decay().begin());
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
+                __it
+            };
+            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(
+                ({
+                    let _x: Ptr<TrivialMoveOnly> = v.decay().offset(0_usize as isize);
+                    let _y: Value<TrivialMoveOnly> =
+                        Rc::new(RefCell::new(TrivialMoveOnly::new({ Some(2) })));
+                    operator_eq_40(_x, _y.as_pointer())
+                })
+            );
+            assert!(
+                ({
+                    let _x: Ptr<TrivialMoveOnly> = v.decay().offset(1_usize as isize);
+                    let _y: Value<TrivialMoveOnly> =
+                        Rc::new(RefCell::new(TrivialMoveOnly::new({ Some(3) })));
+                    operator_eq_40(_x, _y.as_pointer())
+                })
+            );
         }
     }
 }
 pub fn tests_48() {
     {
         let arr: Value<Box<[NonTriviallyRelocatable]>> = Rc::new(RefCell::new(Box::new([
-            NonTriviallyRelocatable::new_2({ 1_() }),
-            NonTriviallyRelocatable::new_2({ 2_() }),
-            NonTriviallyRelocatable::new_2({ 3_() }),
-            NonTriviallyRelocatable::new_2({ 4_() }),
-            NonTriviallyRelocatable::new_2({ 5_() }),
+            NonTriviallyRelocatable::new_2({ 1 }),
+            NonTriviallyRelocatable::new_2({ 2 }),
+            NonTriviallyRelocatable::new_2({ 3 }),
+            NonTriviallyRelocatable::new_2({ 4 }),
+            NonTriviallyRelocatable::new_2({ 5 }),
         ])));
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                while __it
+                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+                {
+                    __v.push(<NonTriviallyRelocatable as CppFrom<
+                        NonTriviallyRelocatable,
+                    >>::cpp_from(__it.iter_deref()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let __it = unimplemented!();
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().begin());
+            assert!(({ is_contiguous_container_asan_correct_1(v.as_pointer(),) }));
         }
         {
             let expected: Value<Box<[NonTriviallyRelocatable]>> =
                 Rc::new(RefCell::new(Box::new([
-                    NonTriviallyRelocatable::new_2({ 1_() }),
-                    NonTriviallyRelocatable::new_2({ 3_() }),
-                    NonTriviallyRelocatable::new_2({ 4_() }),
-                    NonTriviallyRelocatable::new_2({ 5_() }),
+                    NonTriviallyRelocatable::new_2({ 1 }),
+                    NonTriviallyRelocatable::new_2({ 3 }),
+                    NonTriviallyRelocatable::new_2({ 4 }),
+                    NonTriviallyRelocatable::new_2({ 5 }),
                 ])));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                while __it
+                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+                {
+                    __v.push(<NonTriviallyRelocatable as CppFrom<
+                        NonTriviallyRelocatable,
+                    >>::cpp_from(__it.iter_deref()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let __it = unimplemented!().iter_add(1_isize);
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().begin().iter_add(1_isize));
+            assert!(({ is_contiguous_container_asan_correct_1(v.as_pointer(),) }));
         }
         {
             let expected: Value<Box<[NonTriviallyRelocatable]>> =
                 Rc::new(RefCell::new(Box::new([
-                    NonTriviallyRelocatable::new_2({ 1_() }),
-                    NonTriviallyRelocatable::new_2({ 2_() }),
-                    NonTriviallyRelocatable::new_2({ 3_() }),
-                    NonTriviallyRelocatable::new_2({ 4_() }),
+                    NonTriviallyRelocatable::new_2({ 1 }),
+                    NonTriviallyRelocatable::new_2({ 2 }),
+                    NonTriviallyRelocatable::new_2({ 3 }),
+                    NonTriviallyRelocatable::new_2({ 4 }),
                 ])));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                while __it
+                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+                {
+                    __v.push(<NonTriviallyRelocatable as CppFrom<
+                        NonTriviallyRelocatable,
+                    >>::cpp_from(__it.iter_deref()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let __it = unimplemented!().iter_add(4_isize);
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().end());
+            assert!(({ is_contiguous_container_asan_correct_1(v.as_pointer(),) }));
         }
     }
     {
         {
-            let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<MoveOnly>> = Rc::new(RefCell::new(Vec::new()));
+            {
+                let __init = MoveOnly::new({ Some(1) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = MoveOnly::new({ Some(2) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = MoveOnly::new({ Some(3) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __it = <RandomAccessIterator<MoveOnly>>::from(v.decay().begin());
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
+                __it
+            };
+            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(
+                ({
+                    let _x: Ptr<MoveOnly> = v.decay().offset(0_usize as isize);
+                    let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                    operator_eq_33(_x, _y.as_pointer())
+                })
+            );
+            assert!(
+                ({
+                    let _x: Ptr<MoveOnly> = v.decay().offset(1_usize as isize);
+                    let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                    operator_eq_33(_x, _y.as_pointer())
+                })
+            );
         }
         {
-            let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<TrivialMoveOnly>> = Rc::new(RefCell::new(Vec::new()));
+            {
+                let __init = TrivialMoveOnly::new({ Some(1) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = TrivialMoveOnly::new({ Some(2) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = TrivialMoveOnly::new({ Some(3) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __it = <RandomAccessIterator<TrivialMoveOnly>>::from(v.decay().begin());
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
+                __it
+            };
+            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(
+                ({
+                    let _x: Ptr<TrivialMoveOnly> = v.decay().offset(0_usize as isize);
+                    let _y: Value<TrivialMoveOnly> =
+                        Rc::new(RefCell::new(TrivialMoveOnly::new({ Some(2) })));
+                    operator_eq_40(_x, _y.as_pointer())
+                })
+            );
+            assert!(
+                ({
+                    let _x: Ptr<TrivialMoveOnly> = v.decay().offset(1_usize as isize);
+                    let _y: Value<TrivialMoveOnly> =
+                        Rc::new(RefCell::new(TrivialMoveOnly::new({ Some(3) })));
+                    operator_eq_40(_x, _y.as_pointer())
+                })
+            );
         }
     }
 }
 pub fn tests_49() {
     {
-        let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
+        let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<i32>);
+                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
+                    __v.push((__it.iter_deref().read()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
+                let __it = unimplemented!();
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().begin());
+            assert!(({ is_contiguous_container_asan_correct_2(v.as_pointer(),) }));
         }
         {
-            let expected: Value<Box<[()]>> =
-                Rc::new(RefCell::new(Box::new([1_(), 3_(), 4_(), 5_()])));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let expected: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 3, 4, 5])));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<i32>);
+                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
+                    __v.push((__it.iter_deref().read()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
+                let __it = unimplemented!().iter_add(1_isize);
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().begin().iter_add(1_isize));
+            assert!(({ is_contiguous_container_asan_correct_2(v.as_pointer(),) }));
         }
         {
-            let expected: Value<Box<[()]>> =
-                Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let expected: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4])));
+            let v: Value<Vec<i32>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<i32>);
+                while __it != (arr.as_pointer() as Ptr<i32>).offset((5) as isize) {
+                    __v.push((__it.iter_deref().read()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
+                let __it = unimplemented!().iter_add(4_isize);
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().end());
+            assert!(({ is_contiguous_container_asan_correct_2(v.as_pointer(),) }));
         }
     }
     {
         {
-            let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<MoveOnly>> = Rc::new(RefCell::new(Vec::new()));
+            {
+                let __init = MoveOnly::new({ Some(1) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = MoveOnly::new({ Some(2) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = MoveOnly::new({ Some(3) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __it = <()>::from(v.decay().begin());
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
+                __it
+            };
+            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(
+                ({
+                    let _x: Ptr<MoveOnly> = v.decay().offset(0_usize as isize);
+                    let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                    operator_eq_33(_x, _y.as_pointer())
+                })
+            );
+            assert!(
+                ({
+                    let _x: Ptr<MoveOnly> = v.decay().offset(1_usize as isize);
+                    let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                    operator_eq_33(_x, _y.as_pointer())
+                })
+            );
         }
         {
-            let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<TrivialMoveOnly>> = Rc::new(RefCell::new(Vec::new()));
+            {
+                let __init = TrivialMoveOnly::new({ Some(1) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = TrivialMoveOnly::new({ Some(2) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = TrivialMoveOnly::new({ Some(3) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __it = <()>::from(v.decay().begin());
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
+                __it
+            };
+            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(
+                ({
+                    let _x: Ptr<TrivialMoveOnly> = v.decay().offset(0_usize as isize);
+                    let _y: Value<TrivialMoveOnly> =
+                        Rc::new(RefCell::new(TrivialMoveOnly::new({ Some(2) })));
+                    operator_eq_40(_x, _y.as_pointer())
+                })
+            );
+            assert!(
+                ({
+                    let _x: Ptr<TrivialMoveOnly> = v.decay().offset(1_usize as isize);
+                    let _y: Value<TrivialMoveOnly> =
+                        Rc::new(RefCell::new(TrivialMoveOnly::new({ Some(3) })));
+                    operator_eq_40(_x, _y.as_pointer())
+                })
+            );
         }
     }
 }
 pub fn tests_50() {
     {
         let arr: Value<Box<[NonTriviallyRelocatable]>> = Rc::new(RefCell::new(Box::new([
-            NonTriviallyRelocatable::new_2({ 1_() }),
-            NonTriviallyRelocatable::new_2({ 2_() }),
-            NonTriviallyRelocatable::new_2({ 3_() }),
-            NonTriviallyRelocatable::new_2({ 4_() }),
-            NonTriviallyRelocatable::new_2({ 5_() }),
+            NonTriviallyRelocatable::new_2({ 1 }),
+            NonTriviallyRelocatable::new_2({ 2 }),
+            NonTriviallyRelocatable::new_2({ 3 }),
+            NonTriviallyRelocatable::new_2({ 4 }),
+            NonTriviallyRelocatable::new_2({ 5 }),
         ])));
         {
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                while __it
+                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+                {
+                    __v.push(<NonTriviallyRelocatable as CppFrom<
+                        NonTriviallyRelocatable,
+                    >>::cpp_from(__it.iter_deref()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let __it = unimplemented!();
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().begin());
+            assert!(({ is_contiguous_container_asan_correct_3(v.as_pointer(),) }));
         }
         {
             let expected: Value<Box<[NonTriviallyRelocatable]>> =
                 Rc::new(RefCell::new(Box::new([
-                    NonTriviallyRelocatable::new_2({ 1_() }),
-                    NonTriviallyRelocatable::new_2({ 3_() }),
-                    NonTriviallyRelocatable::new_2({ 4_() }),
-                    NonTriviallyRelocatable::new_2({ 5_() }),
+                    NonTriviallyRelocatable::new_2({ 1 }),
+                    NonTriviallyRelocatable::new_2({ 3 }),
+                    NonTriviallyRelocatable::new_2({ 4 }),
+                    NonTriviallyRelocatable::new_2({ 5 }),
                 ])));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                while __it
+                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+                {
+                    __v.push(<NonTriviallyRelocatable as CppFrom<
+                        NonTriviallyRelocatable,
+                    >>::cpp_from(__it.iter_deref()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let __it = unimplemented!().iter_add(1_isize);
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().begin().iter_add(1_isize));
+            assert!(({ is_contiguous_container_asan_correct_3(v.as_pointer(),) }));
         }
         {
             let expected: Value<Box<[NonTriviallyRelocatable]>> =
                 Rc::new(RefCell::new(Box::new([
-                    NonTriviallyRelocatable::new_2({ 1_() }),
-                    NonTriviallyRelocatable::new_2({ 2_() }),
-                    NonTriviallyRelocatable::new_2({ 3_() }),
-                    NonTriviallyRelocatable::new_2({ 4_() }),
+                    NonTriviallyRelocatable::new_2({ 1 }),
+                    NonTriviallyRelocatable::new_2({ 2 }),
+                    NonTriviallyRelocatable::new_2({ 3 }),
+                    NonTriviallyRelocatable::new_2({ 4 }),
                 ])));
-            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let mut __v = Vec::new();
+                let mut __it = (arr.as_pointer() as Ptr<NonTriviallyRelocatable>);
+                while __it
+                    != (arr.as_pointer() as Ptr<NonTriviallyRelocatable>).offset((5) as isize)
+                {
+                    __v.push(<NonTriviallyRelocatable as CppFrom<
+                        NonTriviallyRelocatable,
+                    >>::cpp_from(__it.iter_deref()));
+                    __it.iter_inc();
+                }
+                __v
+            }));
+            let it: Value<RandomAccessIterator<NonTriviallyRelocatable>> = Rc::new(RefCell::new({
+                let __it = unimplemented!().iter_add(4_isize);
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<NonTriviallyRelocatable>| __v.remove(__off));
+                __it
+            }));
+            assert!(unimplemented!());
+            assert!((*it.borrow()) == v.decay().end());
+            assert!(({ is_contiguous_container_asan_correct_3(v.as_pointer(),) }));
         }
     }
     {
         {
-            let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<MoveOnly>> = Rc::new(RefCell::new(Vec::new()));
+            {
+                let __init = MoveOnly::new({ Some(1) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = MoveOnly::new({ Some(2) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = MoveOnly::new({ Some(3) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __it = <()>::from(v.decay().begin());
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<MoveOnly>| __v.remove(__off));
+                __it
+            };
+            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(
+                ({
+                    let _x: Ptr<MoveOnly> = v.decay().offset(0_usize as isize);
+                    let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2) })));
+                    operator_eq_33(_x, _y.as_pointer())
+                })
+            );
+            assert!(
+                ({
+                    let _x: Ptr<MoveOnly> = v.decay().offset(1_usize as isize);
+                    let _y: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3) })));
+                    operator_eq_33(_x, _y.as_pointer())
+                })
+            );
         }
         {
-            let mut v: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            let v: Value<Vec<TrivialMoveOnly>> = Rc::new(RefCell::new(Vec::new()));
+            {
+                let __init = TrivialMoveOnly::new({ Some(1) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = TrivialMoveOnly::new({ Some(2) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __init = TrivialMoveOnly::new({ Some(3) });
+                (*v.borrow_mut()).push(__init)
+            };
+            {
+                let __it = <()>::from(v.decay().begin());
+                let __off = __it.index();
+                v.as_pointer()
+                    .with_mut(|__v: &mut Vec<TrivialMoveOnly>| __v.remove(__off));
+                __it
+            };
+            assert!(((*v.borrow()).len() == 2_usize));
+            assert!(
+                ({
+                    let _x: Ptr<TrivialMoveOnly> = v.decay().offset(0_usize as isize);
+                    let _y: Value<TrivialMoveOnly> =
+                        Rc::new(RefCell::new(TrivialMoveOnly::new({ Some(2) })));
+                    operator_eq_40(_x, _y.as_pointer())
+                })
+            );
+            assert!(
+                ({
+                    let _x: Ptr<TrivialMoveOnly> = v.decay().offset(1_usize as isize);
+                    let _y: Value<TrivialMoveOnly> =
+                        Rc::new(RefCell::new(TrivialMoveOnly::new({ Some(3) })));
+                    operator_eq_40(_x, _y.as_pointer())
+                })
+            );
         }
     }
 }
-pub fn tests_51() -> () {
+pub fn tests_51() -> bool {
     ({ tests_47() });
     ({ tests_48() });
     ({ tests_49() });
@@ -885,24 +1363,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_51() });
     const _: () = assert!(true, "tests()");;
-    return 0_();
+    return 0;
 }
 pub trait MoveOnlyImpl {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_add(&self, x: Ptr<MoveOnly>) -> MoveOnly;
     fn operator_mul(&self, x: Ptr<MoveOnly>) -> MoveOnly;
 }
 impl MoveOnlyImpl for Ptr<MoveOnly> {
     fn move_assign(&self, x: Ptr<MoveOnly>) -> Ptr<MoveOnly> {
         field!((*self), data_).write({ x.with(|__s| __s.data_) });
-        field!(x, data_).write(0_());
+        field!(x, data_).write(0);
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_add(&self, x: Ptr<MoveOnly>) -> MoveOnly {
@@ -948,7 +1426,7 @@ impl TrackedAssignmentImpl for Ptr<TrackedAssignment> {
 }
 pub trait TrivialMoveOnlyImpl {
     fn move_assign(&self, _a0: Ptr<TrivialMoveOnly>) -> Ptr<TrivialMoveOnly>;
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
     fn operator_add(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly;
     fn operator_mul(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly;
 }
@@ -957,7 +1435,7 @@ impl TrivialMoveOnlyImpl for Ptr<TrivialMoveOnly> {
         field!((*self), data_).write({ { (*_a0.upgrade().deref()).data_ } });
         return (*self).clone();
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn operator_add(&self, x: Ptr<TrivialMoveOnly>) -> TrivialMoveOnly {
@@ -972,13 +1450,17 @@ impl TrivialMoveOnlyImpl for Ptr<TrivialMoveOnly> {
     }
 }
 pub trait min_allocator_MoveOnly_Impl {
-    fn allocate(&self, n: ()) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__, n: ());
+    fn allocate(&self, n: usize) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__;
+    fn deallocate(
+        &self,
+        p: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
+        n: usize,
+    );
 }
 impl min_allocator_MoveOnly_Impl for Ptr<min_allocator_MoveOnly_> {
     fn allocate(
         &self,
-        mut n: (),
+        mut n: usize,
     ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
         return min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__::new_1({
             unimplemented!()
@@ -987,7 +1469,7 @@ impl min_allocator_MoveOnly_Impl for Ptr<min_allocator_MoveOnly_> {
     fn deallocate(
         &self,
         mut p: min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
@@ -995,25 +1477,25 @@ impl min_allocator_MoveOnly_Impl for Ptr<min_allocator_MoveOnly_> {
 pub trait min_allocator_NonTriviallyRelocatable_Impl {
     fn allocate(
         &self,
-        n: (),
+        n: usize,
     ) -> min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__;
     fn deallocate(
         &self,
         p: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-        n: (),
+        n: usize,
     );
 }
 impl min_allocator_NonTriviallyRelocatable_Impl for Ptr<min_allocator_NonTriviallyRelocatable_> {
     fn allocate(
         &self,
-        mut n: (),
+        mut n: usize,
     ) -> min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         return min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
     }
     fn deallocate(
         &self,
         mut p: min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
@@ -1021,18 +1503,18 @@ impl min_allocator_NonTriviallyRelocatable_Impl for Ptr<min_allocator_NonTrivial
 pub trait min_allocator_TrivialMoveOnly_Impl {
     fn allocate(
         &self,
-        n: (),
+        n: usize,
     ) -> min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__;
     fn deallocate(
         &self,
         p: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
-        n: (),
+        n: usize,
     );
 }
 impl min_allocator_TrivialMoveOnly_Impl for Ptr<min_allocator_TrivialMoveOnly_> {
     fn allocate(
         &self,
-        mut n: (),
+        mut n: usize,
     ) -> min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         return min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__::new_1({
             unimplemented!()
@@ -1041,17 +1523,17 @@ impl min_allocator_TrivialMoveOnly_Impl for Ptr<min_allocator_TrivialMoveOnly_> 
     fn deallocate(
         &self,
         mut p: min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: ());
+    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             unimplemented!()
         });
@@ -1059,7 +1541,7 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
@@ -1067,28 +1549,28 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
 pub trait min_allocator_unsigned_long_Impl {
     fn allocate(
         &self,
-        mut n: (),
+        mut n: usize,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!()
     }
 }
 impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {}
 pub trait min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> ();
+    fn to_bool(&self) -> bool;
     fn operator_deref(&self) -> Ptr<MoveOnly>;
     fn operator_arrow(&self) -> Ptr<MoveOnly>;
     fn operator_inc_8(&self)
     -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -1097,30 +1579,34 @@ pub trait min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl {
     ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__>;
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__>;
     fn operator_sub_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__>;
-    fn operator_add(&self, n: ())
-    -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__;
-    fn operator_sub(&self, n: ())
-    -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__;
-    fn operator_index(&self, mut n: ()) -> Ptr<MoveOnly> {
+    fn operator_add(
+        &self,
+        n: isize,
+    ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__;
+    fn operator_sub(
+        &self,
+        n: isize,
+    ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__;
+    fn operator_index(&self, mut n: isize) -> Ptr<MoveOnly> {
         unimplemented!()
     }
 }
 impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__>
 {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         return !(((*self).with(|__s| __s.ptr_.clone())).is_null());
     }
     fn operator_deref(&self) -> Ptr<MoveOnly> {
@@ -1143,7 +1629,7 @@ impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -1153,7 +1639,7 @@ impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -1163,7 +1649,7 @@ impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
@@ -1177,7 +1663,7 @@ impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
@@ -1191,7 +1677,7 @@ impl min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
 }
 pub trait min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> ();
+    fn to_bool(&self) -> bool;
     fn operator_deref(&self) -> Ptr<NonTriviallyRelocatable>;
     fn operator_arrow(&self) -> Ptr<NonTriviallyRelocatable>;
     fn operator_inc_8(
@@ -1199,7 +1685,7 @@ pub trait min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_lo
     ) -> Ptr<min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -1208,38 +1694,38 @@ pub trait min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_lo
     ) -> Ptr<min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>;
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>;
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        n: (),
+        n: isize,
     ) -> min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__;
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<NonTriviallyRelocatable> {
+    fn operator_index(&self, mut n: isize) -> Ptr<NonTriviallyRelocatable> {
         unimplemented!()
     }
 }
 impl min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>
 {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         return !(((*self).with(|__s| __s.ptr_.clone())).is_null());
     }
     fn operator_deref(&self) -> Ptr<NonTriviallyRelocatable> {
@@ -1262,7 +1748,7 @@ impl min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -1272,7 +1758,7 @@ impl min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<
             min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
@@ -1284,7 +1770,7 @@ impl min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0
     }
 }
 pub trait min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> ();
+    fn to_bool(&self) -> bool;
     fn operator_deref(&self) -> Ptr<TrivialMoveOnly>;
     fn operator_arrow(&self) -> Ptr<TrivialMoveOnly>;
     fn operator_inc_8(
@@ -1292,7 +1778,7 @@ pub trait min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__I
     ) -> Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -1301,34 +1787,34 @@ pub trait min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__I
     ) -> Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__>;
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__>;
     fn operator_sub_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__>;
     fn operator_add(
         &self,
-        n: (),
+        n: isize,
     ) -> min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__;
     fn operator_sub(
         &self,
-        n: (),
+        n: isize,
     ) -> min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__;
-    fn operator_index(&self, mut n: ()) -> Ptr<TrivialMoveOnly> {
+    fn operator_index(&self, mut n: isize) -> Ptr<TrivialMoveOnly> {
         unimplemented!()
     }
 }
 impl min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__>
 {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         return !(((*self).with(|__s| __s.ptr_.clone())).is_null());
     }
     fn operator_deref(&self) -> Ptr<TrivialMoveOnly> {
@@ -1351,7 +1837,7 @@ impl min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -1361,7 +1847,7 @@ impl min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -1371,7 +1857,7 @@ impl min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
@@ -1382,7 +1868,7 @@ impl min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
@@ -1393,7 +1879,7 @@ impl min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl
     }
 }
 pub trait min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
     fn operator_deref(&self) -> Ptr<MoveOnly> {
@@ -1409,7 +1895,7 @@ pub trait min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__Im
     }
     fn operator_post_inc_10(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -1420,35 +1906,35 @@ pub trait min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__Im
     }
     fn operator_post_dec_12(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<MoveOnly> {
+    fn operator_index(&self, mut n: isize) -> Ptr<MoveOnly> {
         unimplemented!()
     }
 }
@@ -1457,7 +1943,7 @@ impl min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0__Impl
 {
 }
 pub trait min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
     fn operator_deref(&self) -> Ptr<NonTriviallyRelocatable>;
@@ -1469,7 +1955,7 @@ pub trait min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsig
     ) -> Ptr<min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_10(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -1481,32 +1967,32 @@ pub trait min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsig
     }
     fn operator_post_dec_12(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>;
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>
     {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        n: (),
+        n: isize,
     ) -> min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__;
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<NonTriviallyRelocatable> {
+    fn operator_index(&self, mut n: isize) -> Ptr<NonTriviallyRelocatable> {
         unimplemented!()
     }
 }
@@ -1525,7 +2011,7 @@ impl min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_l
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__>
     {
         {
@@ -1536,7 +2022,7 @@ impl min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_l
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<
             min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
@@ -1548,7 +2034,7 @@ impl min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_l
     }
 }
 pub trait min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
     fn operator_deref(&self) -> Ptr<TrivialMoveOnly> {
@@ -1564,7 +2050,7 @@ pub trait min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long
     }
     fn operator_post_inc_10(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -1575,35 +2061,35 @@ pub trait min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long
     }
     fn operator_post_dec_12(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<TrivialMoveOnly> {
+    fn operator_index(&self, mut n: isize) -> Ptr<TrivialMoveOnly> {
         unimplemented!()
     }
 }
@@ -1612,11 +2098,11 @@ impl min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__
 {
 }
 pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_9(
@@ -1624,7 +2110,7 @@ pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_10(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -1635,38 +2121,38 @@ pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_dec_12(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>;
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        n: (),
+        n: isize,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__;
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>
 {
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_9(
@@ -1677,7 +2163,7 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -1687,7 +2173,7 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_const_int__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
@@ -1701,7 +2187,7 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     }
 }
 pub trait min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }
@@ -1710,51 +2196,54 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl
 {
 }
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> ();
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_arrow(&self) -> Ptr<()>;
+    fn to_bool(&self) -> bool;
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_arrow(&self) -> Ptr<i32>;
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_add(&self, n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn operator_sub(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_add(&self, n: isize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn operator_sub(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
 {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         return !(((*self).with(|__s| __s.ptr_.clone())).is_null());
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
@@ -1767,7 +2256,7 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -1775,7 +2264,10 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         };
         return (*self).clone();
     }
-    fn operator_add(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_int__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
         ({
@@ -1788,13 +2280,13 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
     }
 }
 pub trait min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<u64> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<u64> {
         unimplemented!()
     }
     fn operator_inc_8(
@@ -1804,7 +2296,7 @@ pub trait min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Imp
     }
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -1815,35 +2307,35 @@ pub trait min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Imp
     }
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<u64> {
         unimplemented!()
     }
 }
@@ -1852,7 +2344,7 @@ impl min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__Impl
 {
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }

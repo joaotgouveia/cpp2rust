@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(_a0: Ptr<()>) {}
+pub fn test_0(_a0: Ptr<i32>) {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -26,25 +26,35 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "(std::is_same<std::locale::category, int>::value)");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
-    ({ test_0(unimplemented!()) });
-    return 0_();
+    assert!((unimplemented!() == 0));
+    assert!((unimplemented!() != 0));
+    assert!((unimplemented!() != 0));
+    assert!((unimplemented!() != 0));
+    assert!((unimplemented!() != 0));
+    assert!((unimplemented!() != 0));
+    assert!((unimplemented!() != 0));
+    assert!(
+        ((((((unimplemented!() & unimplemented!()) & unimplemented!()) & unimplemented!())
+            & unimplemented!())
+            & unimplemented!())
+            == 0)
+    );
+    assert!(
+        ((((((unimplemented!() | unimplemented!()) | unimplemented!()) | unimplemented!())
+            | unimplemented!())
+            | unimplemented!())
+            == unimplemented!())
+    );
+    ({ test_0((unimplemented!()).reinterpret_cast::<i32>()) });
+    ({ test_0((unimplemented!()).reinterpret_cast::<i32>()) });
+    ({ test_0((unimplemented!()).reinterpret_cast::<i32>()) });
+    ({ test_0((unimplemented!()).reinterpret_cast::<i32>()) });
+    ({ test_0((unimplemented!()).reinterpret_cast::<i32>()) });
+    ({ test_0((unimplemented!()).reinterpret_cast::<i32>()) });
+    ({ test_0((unimplemented!()).reinterpret_cast::<i32>()) });
+    ({ test_0((unimplemented!()).reinterpret_cast::<i32>()) });
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

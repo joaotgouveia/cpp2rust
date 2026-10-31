@@ -6,158 +6,166 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_char___std_atomic_ref_char__ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_signed_char___std_atomic_ref_signed_char__ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_unsigned_char___std_atomic_ref_unsigned_char__
 {}
-pub type anon_3 = ();
+pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_short___std_atomic_ref_short__ {}
-pub type anon_4 = ();
+pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_unsigned_short___std_atomic_ref_unsigned_short__
 {}
-pub type anon_5 = ();
+pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_int___std_atomic_ref_int__ {}
-pub type anon_6 = ();
+pub type anon_6 = u32;
 pub const anon_6_value: anon_6 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_unsigned_int___std_atomic_ref_unsigned_int__ {
 }
-pub type anon_7 = ();
+pub type anon_7 = u32;
 pub const anon_7_value: anon_7 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_long___std_atomic_ref_long__ {}
-pub type anon_8 = ();
+pub type anon_8 = u32;
 pub const anon_8_value: anon_8 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_unsigned_long___std_atomic_ref_unsigned_long__
 {}
-pub type anon_9 = ();
+pub type anon_9 = u32;
 pub const anon_9_value: anon_9 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_long_long___std_atomic_ref_long_long__ {}
-pub type anon_10 = ();
+pub type anon_10 = u32;
 pub const anon_10_value: anon_10 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_unsigned_long_long___std_atomic_ref_unsigned_long_long__
 {}
-pub type anon_11 = ();
+pub type anon_11 = u32;
 pub const anon_11_value: anon_11 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_wchar_t___std_atomic_ref_wchar_t__ {}
-pub type anon_12 = ();
+pub type anon_12 = u32;
 pub const anon_12_value: anon_12 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_char8_t___std_atomic_ref_char8_t__ {}
-pub type anon_13 = ();
+pub type anon_13 = u32;
 pub const anon_13_value: anon_13 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_char16_t___std_atomic_ref_char16_t__ {}
-pub type anon_14 = ();
+pub type anon_14 = u32;
 pub const anon_14_value: anon_14 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_char32_t___std_atomic_ref_char32_t__ {}
-pub type anon_15 = ();
+pub type anon_15 = u32;
 pub const anon_15_value: anon_15 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_int_ptr___std_atomic_ref_int_ptr__ {}
-pub type anon_16 = ();
+pub type anon_16 = u32;
 pub const anon_16_value: anon_16 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_const_int_ptr___std_atomic_ref_const_int_ptr__
 {}
-pub type anon_17 = ();
+pub type anon_17 = u32;
 pub const anon_17_value: anon_17 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_UserAtomicType___std_atomic_ref_UserAtomicType__
 {}
-pub type anon_18 = ();
+pub type anon_18 = u32;
 pub const anon_18_value: anon_18 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_LargeUserAtomicType___std_atomic_ref_LargeUserAtomicType__
 {}
-pub type anon_19 = ();
+pub type anon_19 = u32;
 pub const anon_19_value: anon_19 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_float___std_atomic_ref_float__ {}
-pub type anon_20 = ();
+pub type anon_20 = u32;
 pub const anon_20_value: anon_20 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_atomic_ref_double___std_atomic_ref_double__ {}
-pub type LockFreeStatus = ();
+pub type LockFreeStatus = i32;
 pub const LockFreeStatus_unknown: LockFreeStatus = -1;
 pub const LockFreeStatus_never: LockFreeStatus = 0;
 pub const LockFreeStatus_sometimes: LockFreeStatus = 1;
 pub const LockFreeStatus_always: LockFreeStatus = 2;
 pub static mut value_21: std::cell::LazyCell<LockFreeStatus> =
     std::cell::LazyCell::new(|| unsafe {
-        ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+        ((if (((::std::mem::size_of::<libc::c_char>()) == (::std::mem::size_of::<libc::c_char>()))
+            && ((::std::mem::align_of::<libc::c_char>())
+                >= (::std::mem::size_of::<libc::c_char>())))
         {
-            2_()
+            2
         } else {
-            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+            (if (((::std::mem::size_of::<libc::c_char>()) == (::std::mem::size_of::<i16>()))
+                && ((::std::mem::align_of::<libc::c_char>())
+                    >= (::std::mem::size_of::<libc::c_char>())))
             {
-                2_()
+                2
             } else {
-                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                (if (((::std::mem::size_of::<libc::c_char>()) == (::std::mem::size_of::<i32>()))
+                    && ((::std::mem::align_of::<libc::c_char>())
+                        >= (::std::mem::size_of::<libc::c_char>())))
                 {
-                    2_()
+                    2
                 } else {
-                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                    (if (((::std::mem::size_of::<libc::c_char>())
+                        == (::std::mem::size_of::<i64>()))
+                        && ((::std::mem::align_of::<libc::c_char>())
+                            >= (::std::mem::size_of::<libc::c_char>())))
                     {
-                        2_()
+                        2
                     } else {
-                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                        (if (((::std::mem::size_of::<libc::c_char>())
+                            == (::std::mem::size_of::<i64>()))
+                            && ((::std::mem::align_of::<libc::c_char>())
+                                >= (::std::mem::size_of::<libc::c_char>())))
                         {
-                            2_()
+                            2
                         } else {
-                            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                                && ((::std::mem::align_of::<()>())
-                                    >= (::std::mem::size_of::<()>())))
+                            (if (((::std::mem::size_of::<libc::c_char>())
+                                == (::std::mem::size_of::<*mut ::libc::c_void>()))
+                                && ((::std::mem::align_of::<libc::c_char>())
+                                    >= (::std::mem::size_of::<libc::c_char>())))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -165,7 +173,7 @@ pub static mut value_21: std::cell::LazyCell<LockFreeStatus> =
             })
         }) as LockFreeStatus)
     });
-pub static mut status_known_22: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_22: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_21)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
@@ -173,38 +181,39 @@ pub static mut status_known_22: std::cell::LazyCell<()> = std::cell::LazyCell::n
 pub struct LockFreeStatusInfo_char_ {}
 pub static mut value_23: std::cell::LazyCell<LockFreeStatus> =
     std::cell::LazyCell::new(|| unsafe {
-        ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+        ((if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<libc::c_char>()))
+            && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
         {
-            2_()
+            2
         } else {
-            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+            (if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<i16>()))
+                && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
             {
-                2_()
+                2
             } else {
-                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                (if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<i32>()))
+                    && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
                 {
-                    2_()
+                    2
                 } else {
-                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                    (if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<i64>()))
+                        && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
                     {
-                        2_()
+                        2
                     } else {
-                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                        (if (((::std::mem::size_of::<i16>()) == (::std::mem::size_of::<i64>()))
+                            && ((::std::mem::align_of::<i16>()) >= (::std::mem::size_of::<i16>())))
                         {
-                            2_()
+                            2
                         } else {
-                            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                                && ((::std::mem::align_of::<()>())
-                                    >= (::std::mem::size_of::<()>())))
+                            (if (((::std::mem::size_of::<i16>())
+                                == (::std::mem::size_of::<*mut ::libc::c_void>()))
+                                && ((::std::mem::align_of::<i16>())
+                                    >= (::std::mem::size_of::<i16>())))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -212,7 +221,7 @@ pub static mut value_23: std::cell::LazyCell<LockFreeStatus> =
             })
         }) as LockFreeStatus)
     });
-pub static mut status_known_24: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_24: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_23)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
@@ -220,38 +229,39 @@ pub static mut status_known_24: std::cell::LazyCell<()> = std::cell::LazyCell::n
 pub struct LockFreeStatusInfo_short_ {}
 pub static mut value_25: std::cell::LazyCell<LockFreeStatus> =
     std::cell::LazyCell::new(|| unsafe {
-        ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+        ((if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<libc::c_char>()))
+            && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
         {
-            2_()
+            2
         } else {
-            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+            (if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<i16>()))
+                && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
             {
-                2_()
+                2
             } else {
-                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                (if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<i32>()))
+                    && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
                 {
-                    2_()
+                    2
                 } else {
-                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                    (if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<i64>()))
+                        && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
                     {
-                        2_()
+                        2
                     } else {
-                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                        (if (((::std::mem::size_of::<i32>()) == (::std::mem::size_of::<i64>()))
+                            && ((::std::mem::align_of::<i32>()) >= (::std::mem::size_of::<i32>())))
                         {
-                            2_()
+                            2
                         } else {
-                            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                                && ((::std::mem::align_of::<()>())
-                                    >= (::std::mem::size_of::<()>())))
+                            (if (((::std::mem::size_of::<i32>())
+                                == (::std::mem::size_of::<*mut ::libc::c_void>()))
+                                && ((::std::mem::align_of::<i32>())
+                                    >= (::std::mem::size_of::<i32>())))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -259,7 +269,7 @@ pub static mut value_25: std::cell::LazyCell<LockFreeStatus> =
             })
         }) as LockFreeStatus)
     });
-pub static mut status_known_26: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_26: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_25)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
@@ -267,38 +277,39 @@ pub static mut status_known_26: std::cell::LazyCell<()> = std::cell::LazyCell::n
 pub struct LockFreeStatusInfo_int_ {}
 pub static mut value_27: std::cell::LazyCell<LockFreeStatus> =
     std::cell::LazyCell::new(|| unsafe {
-        ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+        ((if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<libc::c_char>()))
+            && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
         {
-            2_()
+            2
         } else {
-            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+            (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i16>()))
+                && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
             {
-                2_()
+                2
             } else {
-                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i32>()))
+                    && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
                 {
-                    2_()
+                    2
                 } else {
-                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                    (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i64>()))
+                        && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
                     {
-                        2_()
+                        2
                     } else {
-                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                        (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i64>()))
+                            && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
                         {
-                            2_()
+                            2
                         } else {
-                            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                                && ((::std::mem::align_of::<()>())
-                                    >= (::std::mem::size_of::<()>())))
+                            (if (((::std::mem::size_of::<i64>())
+                                == (::std::mem::size_of::<*mut ::libc::c_void>()))
+                                && ((::std::mem::align_of::<i64>())
+                                    >= (::std::mem::size_of::<i64>())))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -306,7 +317,7 @@ pub static mut value_27: std::cell::LazyCell<LockFreeStatus> =
             })
         }) as LockFreeStatus)
     });
-pub static mut status_known_28: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_28: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_27)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
@@ -314,38 +325,48 @@ pub static mut status_known_28: std::cell::LazyCell<()> = std::cell::LazyCell::n
 pub struct LockFreeStatusInfo_long_ {}
 pub static mut value_29: std::cell::LazyCell<LockFreeStatus> =
     std::cell::LazyCell::new(|| unsafe {
-        ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+        ((if (((::std::mem::size_of::<*mut ::libc::c_void>())
+            == (::std::mem::size_of::<libc::c_char>()))
+            && ((::std::mem::align_of::<*mut ::libc::c_void>())
+                >= (::std::mem::size_of::<*mut ::libc::c_void>())))
         {
-            2_()
+            2
         } else {
-            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+            (if (((::std::mem::size_of::<*mut ::libc::c_void>()) == (::std::mem::size_of::<i16>()))
+                && ((::std::mem::align_of::<*mut ::libc::c_void>())
+                    >= (::std::mem::size_of::<*mut ::libc::c_void>())))
             {
-                2_()
+                2
             } else {
-                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                (if (((::std::mem::size_of::<*mut ::libc::c_void>())
+                    == (::std::mem::size_of::<i32>()))
+                    && ((::std::mem::align_of::<*mut ::libc::c_void>())
+                        >= (::std::mem::size_of::<*mut ::libc::c_void>())))
                 {
-                    2_()
+                    2
                 } else {
-                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                    (if (((::std::mem::size_of::<*mut ::libc::c_void>())
+                        == (::std::mem::size_of::<i64>()))
+                        && ((::std::mem::align_of::<*mut ::libc::c_void>())
+                            >= (::std::mem::size_of::<*mut ::libc::c_void>())))
                     {
-                        2_()
+                        2
                     } else {
-                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                        (if (((::std::mem::size_of::<*mut ::libc::c_void>())
+                            == (::std::mem::size_of::<i64>()))
+                            && ((::std::mem::align_of::<*mut ::libc::c_void>())
+                                >= (::std::mem::size_of::<*mut ::libc::c_void>())))
                         {
-                            2_()
+                            2
                         } else {
-                            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                                && ((::std::mem::align_of::<()>())
-                                    >= (::std::mem::size_of::<()>())))
+                            (if (((::std::mem::size_of::<*mut ::libc::c_void>())
+                                == (::std::mem::size_of::<*mut ::libc::c_void>()))
+                                && ((::std::mem::align_of::<*mut ::libc::c_void>())
+                                    >= (::std::mem::size_of::<*mut ::libc::c_void>())))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -353,7 +374,7 @@ pub static mut value_29: std::cell::LazyCell<LockFreeStatus> =
             })
         }) as LockFreeStatus)
     });
-pub static mut status_known_30: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_30: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_29)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
@@ -361,38 +382,39 @@ pub static mut status_known_30: std::cell::LazyCell<()> = std::cell::LazyCell::n
 pub struct LockFreeStatusInfo_void_ptr_ {}
 pub static mut value_31: std::cell::LazyCell<LockFreeStatus> =
     std::cell::LazyCell::new(|| unsafe {
-        ((if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+        ((if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<libc::c_char>()))
+            && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
         {
-            2_()
+            2
         } else {
-            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+            (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i16>()))
+                && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
             {
-                2_()
+                2
             } else {
-                (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                    && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i32>()))
+                    && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
                 {
-                    2_()
+                    2
                 } else {
-                    (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                        && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                    (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i64>()))
+                        && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
                     {
-                        2_()
+                        2
                     } else {
-                        (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                            && ((::std::mem::align_of::<()>()) >= (::std::mem::size_of::<()>())))
+                        (if (((::std::mem::size_of::<i64>()) == (::std::mem::size_of::<i64>()))
+                            && ((::std::mem::align_of::<i64>()) >= (::std::mem::size_of::<i64>())))
                         {
-                            2_()
+                            2
                         } else {
-                            (if (((::std::mem::size_of::<()>()) == (::std::mem::size_of::<()>()))
-                                && ((::std::mem::align_of::<()>())
-                                    >= (::std::mem::size_of::<()>())))
+                            (if (((::std::mem::size_of::<i64>())
+                                == (::std::mem::size_of::<*mut ::libc::c_void>()))
+                                && ((::std::mem::align_of::<i64>())
+                                    >= (::std::mem::size_of::<i64>())))
                             {
-                                2_()
+                                2
                             } else {
-                                -1_()
+                                -1_i32
                             })
                         })
                     })
@@ -400,7 +422,7 @@ pub static mut value_31: std::cell::LazyCell<LockFreeStatus> =
             })
         }) as LockFreeStatus)
     });
-pub static mut status_known_32: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
+pub static mut status_known_32: std::cell::LazyCell<bool> = std::cell::LazyCell::new(|| unsafe {
     ((*std::cell::LazyCell::force_mut(&mut *&raw mut value_31)) != (LockFreeStatus_unknown))
 });
 #[repr(C)]
@@ -427,17 +449,17 @@ const _: () = assert!(
     true,
     "LockFreeStatusInfo<int>::value == LockFreeStatus::always"
 );
-pub unsafe fn operator_eq_33(x: *const UserAtomicType, y: *const UserAtomicType) -> () {
+pub unsafe fn operator_eq_33(x: *const UserAtomicType, y: *const UserAtomicType) -> bool {
     return (((*x).i) == ((*y).i));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct UserAtomicType {
-    pub i: (),
+    pub i: i32,
 }
 impl UserAtomicType {
-    pub unsafe fn new(mut d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| unsafe { 0_() });
+    pub unsafe fn new(mut d: Option<i32>) -> Self {
+        let mut d: i32 = d.unwrap_or_else(|| unsafe { 0 });
         let mut this = Self { i: d };
         this
     }
@@ -458,9 +480,9 @@ impl Default for UserAtomicType {
         unsafe { UserAtomicType::new(None) }
     }
 }
-pub unsafe fn operator_eq_34(x: *const LargeUserAtomicType, y: *const LargeUserAtomicType) -> () {
-    let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
+pub unsafe fn operator_eq_34(x: *const LargeUserAtomicType, y: *const LargeUserAtomicType) -> bool {
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (128)) {
         if (((*x).a[(i) as usize]) != ((*y).a[(i) as usize])) {
             return false;
         }
@@ -469,21 +491,20 @@ pub unsafe fn operator_eq_34(x: *const LargeUserAtomicType, y: *const LargeUserA
     return true;
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
+#[cpp_from(i32, new, some_value)]
 pub struct LargeUserAtomicType {
-    pub a: [(); 128],
+    pub a: [i32; 128],
 }
 impl LargeUserAtomicType {
-    pub unsafe fn new(mut d: Option<()>) -> Self {
-        let mut d: () = d.unwrap_or_else(|| unsafe { 0_() });
-        let mut this = Self {
-            a: [unimplemented!(); 128],
-        };
+    pub unsafe fn new(mut d: Option<i32>) -> Self {
+        let mut d: i32 = d.unwrap_or_else(|| unsafe { 0 });
+        let mut this = Self { a: [0_i32; 128] };
         'loop_: for e in IterRange::new(
             this.a.as_mut_ptr(),
-            this.a.as_mut_ptr().offset((128_()) as isize),
+            this.a.as_mut_ptr().offset((128_i64) as isize),
         ) {
-            let e: *mut () = &mut (*e);
+            let e: *mut i32 = &mut (*e);
             (*e) = d.postfix_inc();
         }
         this
@@ -604,7 +625,7 @@ impl TestEachAtomicType_TestDeduction_ {
 pub struct TestDeduction_UserAtomicType_ {}
 impl TestDeduction_UserAtomicType_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: UserAtomicType = UserAtomicType::new({ Some(0_()) });
+        let mut x: UserAtomicType = UserAtomicType::new({ Some(0) });
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -614,7 +635,7 @@ impl TestDeduction_UserAtomicType_ {
 pub struct TestDeduction_LargeUserAtomicType_ {}
 impl TestDeduction_LargeUserAtomicType_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: LargeUserAtomicType = LargeUserAtomicType::new({ Some(0_()) });
+        let mut x: LargeUserAtomicType = LargeUserAtomicType::new({ Some(0) });
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -624,7 +645,7 @@ impl TestDeduction_LargeUserAtomicType_ {
 pub struct TestDeduction_float_ {}
 impl TestDeduction_float_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: f32 = 0_f32;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -634,7 +655,7 @@ impl TestDeduction_float_ {
 pub struct TestDeduction_double_ {}
 impl TestDeduction_double_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: f64 = 0_f64;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -644,7 +665,7 @@ impl TestDeduction_double_ {
 pub struct TestDeduction_char_ {}
 impl TestDeduction_char_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: libc::c_char = (0 as libc::c_char);
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -654,7 +675,7 @@ impl TestDeduction_char_ {
 pub struct TestDeduction_signed_char_ {}
 impl TestDeduction_signed_char_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: i8 = 0_i8;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -664,7 +685,7 @@ impl TestDeduction_signed_char_ {
 pub struct TestDeduction_unsigned_char_ {}
 impl TestDeduction_unsigned_char_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: u8 = 0_u8;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -674,7 +695,7 @@ impl TestDeduction_unsigned_char_ {
 pub struct TestDeduction_short_ {}
 impl TestDeduction_short_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: i16 = 0_i16;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -684,7 +705,7 @@ impl TestDeduction_short_ {
 pub struct TestDeduction_unsigned_short_ {}
 impl TestDeduction_unsigned_short_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: u16 = 0_u16;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -694,7 +715,7 @@ impl TestDeduction_unsigned_short_ {
 pub struct TestDeduction_int_ {}
 impl TestDeduction_int_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: i32 = 0;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -704,7 +725,7 @@ impl TestDeduction_int_ {
 pub struct TestDeduction_unsigned_int_ {}
 impl TestDeduction_unsigned_int_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: u32 = 0_u32;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -714,7 +735,7 @@ impl TestDeduction_unsigned_int_ {
 pub struct TestDeduction_long_ {}
 impl TestDeduction_long_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: i64 = 0_i64;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -724,7 +745,7 @@ impl TestDeduction_long_ {
 pub struct TestDeduction_unsigned_long_ {}
 impl TestDeduction_unsigned_long_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: u64 = 0_u64;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -734,7 +755,7 @@ impl TestDeduction_unsigned_long_ {
 pub struct TestDeduction_long_long_ {}
 impl TestDeduction_long_long_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: i64 = 0_i64;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -744,7 +765,7 @@ impl TestDeduction_long_long_ {
 pub struct TestDeduction_unsigned_long_long_ {}
 impl TestDeduction_unsigned_long_long_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: u64 = 0_u64;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -754,7 +775,7 @@ impl TestDeduction_unsigned_long_long_ {
 pub struct TestDeduction_wchar_t_ {}
 impl TestDeduction_wchar_t_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: i32 = 0_i32;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -764,7 +785,7 @@ impl TestDeduction_wchar_t_ {
 pub struct TestDeduction_char8_t_ {}
 impl TestDeduction_char8_t_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: u8 = 0_u8;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -774,7 +795,7 @@ impl TestDeduction_char8_t_ {
 pub struct TestDeduction_char16_t_ {}
 impl TestDeduction_char16_t_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: u16 = 0_u16;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -784,7 +805,7 @@ impl TestDeduction_char16_t_ {
 pub struct TestDeduction_char32_t_ {}
 impl TestDeduction_char32_t_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: () = 0_();
+        let mut x: u32 = 0_u32;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -794,7 +815,7 @@ impl TestDeduction_char32_t_ {
 pub struct TestDeduction_int_ptr_ {}
 impl TestDeduction_int_ptr_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: *mut () = std::ptr::null_mut();
+        let mut x: *mut i32 = std::ptr::null_mut();
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -804,7 +825,7 @@ impl TestDeduction_int_ptr_ {
 pub struct TestDeduction_const_int_ptr_ {}
 impl TestDeduction_const_int_ptr_ {
     pub unsafe fn operator_call(&self) {
-        let mut x: *const () = std::ptr::null();
+        let mut x: *const i32 = std::ptr::null();
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
@@ -824,13 +845,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe {
         TestEachAtomicType_TestDeduction_::operator_call(
             &<TestEachAtomicType_TestDeduction_>::default(),
         )
     });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const value_21);

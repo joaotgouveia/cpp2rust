@@ -7,29 +7,29 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_seq_cst_0(
-    mut store_op: FnPtr<fn(*mut (), (), ())>,
-    mut load_op: FnPtr<fn(*mut ()) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), f32, f32)>,
+    mut load_op: FnPtr<fn(*mut ()) -> f32>,
 ) {
     &(store_op);
     &(load_op);
 }
 pub unsafe fn test_seq_cst_1(
-    mut store_op: FnPtr<fn(*mut (), (), ())>,
-    mut load_op: FnPtr<fn(*mut ()) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), f32, f32)>,
+    mut load_op: FnPtr<fn(*mut ()) -> f32>,
 ) {
     &(store_op);
     &(load_op);
 }
 pub unsafe fn test_seq_cst_2(
-    mut store_op: FnPtr<fn(*mut (), (), ())>,
-    mut load_op: FnPtr<fn(*mut ()) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), f64, f64)>,
+    mut load_op: FnPtr<fn(*mut ()) -> f64>,
 ) {
     &(store_op);
     &(load_op);
 }
 pub unsafe fn test_seq_cst_3(
-    mut store_op: FnPtr<fn(*mut (), (), ())>,
-    mut load_op: FnPtr<fn(*mut ()) -> ()>,
+    mut store_op: FnPtr<fn(*mut (), f64, f64)>,
+    mut load_op: FnPtr<fn(*mut ()) -> f64>,
 ) {
     &(store_op);
     &(load_op);
@@ -45,17 +45,18 @@ pub unsafe fn test_impl_4() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
+        let mut r: f32 = (unimplemented!());
+        assert!(((unimplemented!()) == (1.2_f64 as f32)));
+        assert!(((r) == (1.2_f64 as f32)));
     }
     {
-        let mut assign: FnPtr<fn(*mut (), (), ())> =
-            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+        let mut assign: FnPtr<fn(*mut (), f32, f32)> = FnPtr::<fn(*mut (), f32, f32)>::new(
+            |x: *mut (), mut _a1: f32, mut new_val: f32| unsafe {
                 unimplemented!();
-            });
-        let mut load: FnPtr<fn(*mut ()) -> ()> =
-            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
+            },
+        );
+        let mut load: FnPtr<fn(*mut ()) -> f32> =
+            FnPtr::<fn(*mut ()) -> f32>::new(|x: *mut ()| -> f32 {
                 unsafe {
                     return unimplemented!();
                 }
@@ -74,17 +75,18 @@ pub unsafe fn test_impl_5() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
+        let mut r: f32 = (unimplemented!());
+        assert!(((unimplemented!()) == (1.2_f64 as f32)));
+        assert!(((r) == (1.2_f64 as f32)));
     }
     {
-        let mut assign: FnPtr<fn(*mut (), (), ())> =
-            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+        let mut assign: FnPtr<fn(*mut (), f32, f32)> = FnPtr::<fn(*mut (), f32, f32)>::new(
+            |x: *mut (), mut _a1: f32, mut new_val: f32| unsafe {
                 unimplemented!();
-            });
-        let mut load: FnPtr<fn(*mut ()) -> ()> =
-            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
+            },
+        );
+        let mut load: FnPtr<fn(*mut ()) -> f32> =
+            FnPtr::<fn(*mut ()) -> f32>::new(|x: *mut ()| -> f32 {
                 unsafe {
                     return unimplemented!();
                 }
@@ -103,17 +105,18 @@ pub unsafe fn test_impl_6() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
+        let mut r: f64 = (unimplemented!());
+        assert!(((unimplemented!()) == (1.2_f64)));
+        assert!(((r) == (1.2_f64)));
     }
     {
-        let mut assign: FnPtr<fn(*mut (), (), ())> =
-            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+        let mut assign: FnPtr<fn(*mut (), f64, f64)> = FnPtr::<fn(*mut (), f64, f64)>::new(
+            |x: *mut (), mut _a1: f64, mut new_val: f64| unsafe {
                 unimplemented!();
-            });
-        let mut load: FnPtr<fn(*mut ()) -> ()> =
-            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
+            },
+        );
+        let mut load: FnPtr<fn(*mut ()) -> f64> =
+            FnPtr::<fn(*mut ()) -> f64>::new(|x: *mut ()| -> f64 {
                 unsafe {
                     return unimplemented!();
                 }
@@ -132,17 +135,18 @@ pub unsafe fn test_impl_7() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
+        let mut r: f64 = (unimplemented!());
+        assert!(((unimplemented!()) == (1.2_f64)));
+        assert!(((r) == (1.2_f64)));
     }
     {
-        let mut assign: FnPtr<fn(*mut (), (), ())> =
-            FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
+        let mut assign: FnPtr<fn(*mut (), f64, f64)> = FnPtr::<fn(*mut (), f64, f64)>::new(
+            |x: *mut (), mut _a1: f64, mut new_val: f64| unsafe {
                 unimplemented!();
-            });
-        let mut load: FnPtr<fn(*mut ()) -> ()> =
-            FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
+            },
+        );
+        let mut load: FnPtr<fn(*mut ()) -> f64> =
+            FnPtr::<fn(*mut ()) -> f64>::new(|x: *mut ()| -> f64 {
                 unsafe {
                     return unimplemented!();
                 }
@@ -177,9 +181,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_8() });
     (unsafe { test_9() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

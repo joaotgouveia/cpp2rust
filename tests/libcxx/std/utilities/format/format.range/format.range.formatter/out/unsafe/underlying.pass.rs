@@ -30,7 +30,7 @@ pub unsafe fn test_underlying_1() {
         const _: () = assert!(true, "noexcept(formatter.underlying())");;
     }
 }
-pub unsafe fn test_2() -> () {
+pub unsafe fn test_2() -> bool {
     (unsafe { test_underlying_0() });
     (unsafe { test_underlying_1() });
     return true;
@@ -50,9 +50,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

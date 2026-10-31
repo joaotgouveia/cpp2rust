@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(
         true,
         "std::is_same<decltype( 3h   ), std::chrono::hours>::value"
@@ -48,29 +48,29 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "std::is_same<decltype( 3ns  ), std::chrono::nanoseconds>::value"
     );;
     let mut h: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut h2: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut min: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut min2: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut s: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut s2: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut ms: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut ms2: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut us: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut us2: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut ns: () = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let mut ns2: () = unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(unimplemented!());
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

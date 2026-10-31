@@ -6,43 +6,56 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl S {
-    pub fn new_1() -> Self {
-        Self { i: 0_() }
+    pub fn new_2() -> Self {
+        Self { i: 0 }
     }
-    pub fn new_2(mut j: ()) -> Self {
+    pub fn new_1(mut j: i32) -> Self {
         Self { i: j }
     }
 }
 impl Default for S {
     fn default() -> Self {
-        { S::new_1() }
+        { S::new_2() }
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(3)),
+            Rc::new(RefCell::new(4_i16)),
+        )));
+        let p2: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(5)),
+            Rc::new(RefCell::new(6_i16)),
+        )));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*(*p1.borrow()).0.borrow()) == 5));
+        assert!((((*(*p1.borrow()).1.borrow()) as i32) == 6));
+        assert!(((*(*p2.borrow()).0.borrow()) == 3));
+        assert!((((*(*p2.borrow()).1.borrow()) as i32) == 4));
     }
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p1: Value<(Value<i32>, Value<S>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(3)),
+            Rc::new(RefCell::new(S::new_1({ 4 }))),
+        )));
+        let p2: Value<(Value<i32>, Value<S>)> = Rc::new(RefCell::new((
+            Rc::new(RefCell::new(5)),
+            Rc::new(RefCell::new(S::new_1({ 6 }))),
+        )));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*(*p1.borrow()).0.borrow()) == 5));
+        assert!(({ SImpl::operator_eq(&(*p1.borrow()).1.as_pointer(), 6,) }));
+        assert!(((*(*p2.borrow()).0.borrow()) == 3));
+        assert!(({ SImpl::operator_eq(&(*p2.borrow()).1.as_pointer(), 4,) }));
     }
     return true;
 }
@@ -65,16 +78,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait SImpl {
-    fn operator_eq(&self, x: ()) -> ();
+    fn operator_eq(&self, x: i32) -> bool;
 }
 impl SImpl for Ptr<S> {
-    fn operator_eq(&self, mut x: ()) -> () {
+    fn operator_eq(&self, mut x: i32) -> bool {
         return ((*self).with(|__s| __s.i) == x);
     }
 }

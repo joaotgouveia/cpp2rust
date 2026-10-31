@@ -9,21 +9,19 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe)]
 pub struct nasty_vector_int_ {
-    pub v_: (),
+    pub v_: Vec<i32>,
 }
 impl nasty_vector_int_ {
     pub unsafe fn new_1() -> Self {
-        let mut this = Self {
-            v_: unimplemented!(),
-        };
+        let mut this = Self { v_: Vec::new() };
         this
     }
     pub unsafe fn destructor(&mut self) {}
-    pub unsafe fn begin_12(&mut self) -> () {
-        return unimplemented!();
+    pub unsafe fn begin_12(&mut self) -> UnsafeRandomAccessIterator<i32> {
+        return self.v_.begin();
     }
-    pub unsafe fn end_14(&mut self) -> () {
-        return unimplemented!();
+    pub unsafe fn end_14(&mut self) -> UnsafeRandomAccessIterator<i32> {
+        return self.v_.end();
     }
 }
 impl Default for nasty_vector_int_ {
@@ -41,25 +39,25 @@ impl nasty_mutex {
     }
     pub unsafe fn destructor(&mut self) {}
     pub unsafe fn operator_addr(&mut self) -> *mut nasty_mutex {
-        unimplemented!();
+        assert!(false);
         return std::ptr::null_mut();
     }
     unsafe fn copy_from(_a0: *const nasty_mutex) -> Self {
         let mut this = Self {};
-        unimplemented!();
+        assert!(false);
         this
     }
     unsafe fn copy_assign(&mut self, _a0: *const nasty_mutex) -> *mut nasty_mutex {
-        unimplemented!();
+        assert!(false);
         return &mut (*(self as *mut nasty_mutex));
     }
     pub unsafe fn lock(&mut self) {}
-    pub unsafe fn try_lock(&mut self) -> () {
+    pub unsafe fn try_lock(&mut self) -> bool {
         return true;
     }
     pub unsafe fn unlock(&mut self) {}
     pub unsafe fn lock_shared(&mut self) {}
-    pub unsafe fn try_lock_shared(&mut self) -> () {
+    pub unsafe fn try_lock_shared(&mut self) -> bool {
         return true;
     }
     pub unsafe fn unlock_shared(&mut self) {}
@@ -77,14 +75,14 @@ impl Default for nasty_mutex {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct ConstexprFixedCapacityDeque_int__10_ {
-    data_: [(); 10],
-    size_: (),
+    data_: [i32; 10],
+    size_: i32,
 }
 impl ConstexprFixedCapacityDeque_int__10_ {
-    pub unsafe fn begin_2(&mut self) -> *mut () {
+    pub unsafe fn begin_2(&mut self) -> *mut i32 {
         return self.data_.as_mut_ptr();
     }
-    pub unsafe fn end_3(&mut self) -> *mut () {
+    pub unsafe fn end_3(&mut self) -> *mut i32 {
         return self.data_.as_mut_ptr().offset((self.size_) as isize);
     }
 }
@@ -92,28 +90,28 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
     fn default() -> Self {
         unsafe {
             ConstexprFixedCapacityDeque_int__10_ {
-                data_: [unimplemented!(); 10],
-                size_: 0_(),
+                data_: [0_i32; 10],
+                size_: 0,
             }
         }
     }
 }
-pub unsafe fn test_0(mut c: ()) -> () {
+pub unsafe fn test_0(mut c: Vec<i32>) -> bool {
     let mut i: () = unimplemented!();
     let r: *mut () = &mut (*unimplemented!());
-    unimplemented!();
+    assert!(((r) == (&mut i as *mut ())));
     return true;
 }
-pub unsafe fn test_1(mut c: nasty_vector_int_) -> () {
+pub unsafe fn test_1(mut c: nasty_vector_int_) -> bool {
     let mut i: () = unimplemented!();
     let r: *mut () = &mut (*unimplemented!());
-    unimplemented!();
+    assert!(((r) == (&mut i as *mut ())));
     return true;
 }
-pub unsafe fn test_2(mut c: ConstexprFixedCapacityDeque_int__10_) -> () {
+pub unsafe fn test_2(mut c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let mut i: () = unimplemented!();
     let r: *mut () = &mut (*unimplemented!());
-    unimplemented!();
+    assert!(((r) == (&mut i as *mut ())));
     return true;
 }
 pub fn main() {
@@ -131,11 +129,11 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_0(unimplemented!()) });
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    (unsafe { test_0(Vec::new()) });
     (unsafe { test_1(nasty_vector_int_::new_1()) });
     (unsafe { test_2(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

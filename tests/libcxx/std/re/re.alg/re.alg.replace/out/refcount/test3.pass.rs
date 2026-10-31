@@ -26,43 +26,91 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut phone_book: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
+        let mut phone_book: Vec<i8> = {
+            let mut __bytes =
+                Ptr::<i8>::from_string_literal(b"555-1234, 555-2345, 555-3456").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        let mut r: Vec<i8> = unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"123-555-1234, 123-555-2345, 123-555-3456")
+                .with_c_str(|__s| r[..r.len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut phone_book: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
+        let mut phone_book: Vec<i8> = {
+            let mut __bytes =
+                Ptr::<i8>::from_string_literal(b"555-1234, 555-2345, 555-3456").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        let mut r: Vec<i8> = unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"123-$555-1234, 123-$555-2345, 123-$555-3456")
+                .with_c_str(|__s| r[..r.len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut phone_book: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
+        let mut phone_book: Vec<i8> = {
+            let mut __bytes =
+                Ptr::<i8>::from_string_literal(b"555-1234, 555-2345, 555-3456").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        let mut r: Vec<i8> = unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"123-555-1234, 123-555-2345, 123-555-3456")
+                .with_c_str(|__s| r[..r.len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut phone_book: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
+        let mut phone_book: Vec<i8> = {
+            let mut __bytes =
+                Ptr::<i8>::from_string_literal(b"555-1234, 555-2345, 555-3456").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        let mut r: Vec<i8> = unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"123-555-1234123-555-2345123-555-3456")
+                .with_c_str(|__s| r[..r.len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut phone_book: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
+        let mut phone_book: Vec<i8> = {
+            let mut __bytes =
+                Ptr::<i8>::from_string_literal(b"555-1234, 555-2345, 555-3456").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        let mut r: Vec<i8> = unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"123-555-1234, 555-2345, 555-3456")
+                .with_c_str(|__s| r[..r.len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let phone_numbers: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut phone_book: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
+        let mut phone_book: Vec<i8> = {
+            let mut __bytes =
+                Ptr::<i8>::from_string_literal(b"555-1234, 555-2345, 555-3456").to_c_bytes();
+            __bytes.push(0_i8);
+            __bytes
+        };
+        let mut r: Vec<i8> = unimplemented!();
+        assert!(
+            Ptr::<i8>::from_string_literal(b"123-555-1234")
+                .with_c_str(|__s| r[..r.len().saturating_sub(1)] == *__s)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

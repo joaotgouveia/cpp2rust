@@ -42,44 +42,44 @@ pub fn test_constexpr_2() {
         const _: () = assert!(true, "!(lhs != rhs)");;
     }
 }
-pub fn test_3() -> () {
+pub fn test_3() -> bool {
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(!(unimplemented!()));
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(!(!(unimplemented!())));
     }
     ({ test_constexpr_0() });
     return true;
 }
-pub fn test_4() -> () {
+pub fn test_4() -> bool {
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(!(unimplemented!()));
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(!(!(unimplemented!())));
     }
     ({ test_constexpr_1() });
     return true;
 }
-pub fn test_5() -> () {
+pub fn test_5() -> bool {
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(!(unimplemented!()));
     }
     {
         let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(!(!(unimplemented!())));
     }
     ({ test_constexpr_2() });
     return true;
@@ -103,13 +103,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_3() });
     ({ test_4() });
     ({ test_5() });
     const _: () = assert!(true, "test<float>()");;
     const _: () = assert!(true, "test<double>()");;
     const _: () = assert!(true, "test<long double>()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

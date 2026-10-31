@@ -207,7 +207,7 @@ impl Default for Union {
 #[byte_size(1)]
 pub struct bit_zero {
     #[offset(0)]
-    pub anon_14: (),
+    pub anon_14: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -231,7 +231,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_has_not_virtual_destructor_2() });
     ({ test_has_not_virtual_destructor_3() });
     ({ test_has_not_virtual_destructor_4() });
@@ -246,7 +246,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_has_not_virtual_destructor_13() });
     ({ test_has_virtual_destructor_0() });
     ({ test_has_virtual_destructor_1() });
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn destructor(&self) {

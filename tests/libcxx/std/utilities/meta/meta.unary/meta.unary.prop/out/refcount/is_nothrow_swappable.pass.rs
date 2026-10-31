@@ -45,7 +45,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "std::is_nothrow_swappable<int>::value");;
         const _: () = assert!(true, "std::is_nothrow_swappable<int&>::value");;
@@ -78,7 +78,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<int>");;
         const _: () = assert!(true, "!std::is_nothrow_swappable_v<void>");;
     }
-    return 0_();
+    return 0;
 }
 pub trait MyNS_ThrowingMoveImpl {
     fn move_assign(&self, _a0: Ptr<MyNS_ThrowingMove>) -> Ptr<MyNS_ThrowingMove>;

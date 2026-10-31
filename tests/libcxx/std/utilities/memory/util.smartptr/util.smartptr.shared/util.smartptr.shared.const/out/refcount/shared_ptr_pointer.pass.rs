@@ -33,7 +33,7 @@ impl Default for B {
     }
 }
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
 #[byte_size(1)]
@@ -62,7 +62,7 @@ impl Default for A {
     }
 }
 thread_local!(
-    pub static count_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_1: Value<i32> = Rc::new(RefCell::new(0));
 );
 
 pub fn main() {
@@ -84,58 +84,58 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 1_i64));
         {
             let b: Value<B> = Rc::new(RefCell::new(B::new()));
             let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
             let pB: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((count_1.with(|rc| *rc.borrow()) == 1));
+            assert!((count_0.with(|rc| *rc.borrow()) == 1));
+            assert!((unimplemented!() == 2_i64));
+            assert!((unimplemented!() == 2_i64));
+            assert!((unimplemented!() == (b.as_pointer())));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 1_i64));
+        assert!((count_1.with(|rc| *rc.borrow()) == 1));
+        assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
-    unimplemented!();
-    unimplemented!();
+    assert!((count_1.with(|rc| *rc.borrow()) == 0));
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
     {
         let pA: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 1_i64));
         {
             let b: Value<B> = Rc::new(RefCell::new(B::new()));
             let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
             let pB: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((count_1.with(|rc| *rc.borrow()) == 1));
+            assert!((count_0.with(|rc| *rc.borrow()) == 1));
+            assert!((unimplemented!() == 2_i64));
+            assert!((unimplemented!() == 2_i64));
+            assert!((unimplemented!() == (b.as_pointer())));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 1_i64));
+        assert!((count_1.with(|rc| *rc.borrow()) == 1));
+        assert!((count_0.with(|rc| *rc.borrow()) == 0));
     }
-    unimplemented!();
-    unimplemented!();
-    let mut pi: Ptr<()> = Ptr::alloc(Default::default());
+    assert!((count_1.with(|rc| *rc.borrow()) == 0));
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    let mut pi: Ptr<i32> = Ptr::alloc(Default::default());
     {
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(({ unimplemented!() } == { (pi).clone() }));
     }
     pi.delete();
     {
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!()).is_null());
     }
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn destructor(&self);

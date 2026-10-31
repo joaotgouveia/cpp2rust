@@ -22,31 +22,31 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut c: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut c: Vec<f64> = Vec::from([1_f64, 2_f64, 3.5_f64]);
+        assert!(((c.len()) == (3_usize)));
+        assert!(((unimplemented!()) == (3_usize)));
+        assert!(!(unimplemented!()));
     }
     {
-        let mut c: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut c: Vec<f64> = std::array::from_fn::<_, 0, _>(|_| 0_f64).to_vec();
+        assert!(((c.len()) == (0_usize)));
+        assert!(((unimplemented!()) == (0_usize)));
+        assert!(unimplemented!());
     }
     {
-        let c: () = unimplemented!();
+        let c: Vec<f64> = Vec::from([1_f64, 2_f64, 3.5_f64]);
         const _: () = assert!(true, "c.size() == 3");;
         const _: () = assert!(true, "c.max_size() == 3");;
         const _: () = assert!(true, "!c.empty()");;
     }
     {
-        let c: () = unimplemented!();
+        let c: Vec<f64> = std::array::from_fn::<_, 0, _>(|_| 0_f64).to_vec();
         const _: () = assert!(true, "c.size() == 0");;
         const _: () = assert!(true, "c.max_size() == 0");;
         const _: () = assert!(true, "c.empty()");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

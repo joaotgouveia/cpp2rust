@@ -10,8 +10,8 @@ pub fn test01_0() {
     {
         let list1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let list2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 10_()) {
+        let mut i: i32 = 0;
+        'loop_: while (i < 10) {
             unimplemented!();
             unimplemented!();
             i.prefix_inc();
@@ -27,8 +27,8 @@ pub fn test01_0() {
     {
         let list1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let list2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 10_()) {
+        let mut i: i32 = 0;
+        'loop_: while (i < 10) {
             unimplemented!();
             unimplemented!();
             i.prefix_inc();
@@ -46,8 +46,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test01_0() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

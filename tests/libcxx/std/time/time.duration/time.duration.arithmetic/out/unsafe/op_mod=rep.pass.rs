@@ -12,7 +12,7 @@ pub struct NotARep {}
 pub unsafe fn operator_rem_assign_0(mut d: (), mut _a1: NotARep) -> () {
     return unimplemented!();
 }
-pub unsafe fn test_constexpr_1() -> () {
+pub unsafe fn test_constexpr_1() -> bool {
     let mut s: () = unimplemented!();
     unimplemented!();
     return ((unimplemented!()) == (2_()));
@@ -32,11 +32,11 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut us: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (2_())));
     }
     const _: () = assert!(true, "test_constexpr()");;
     {
@@ -46,8 +46,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _d: () = unimplemented!();
             operator_rem_assign_0(_d, n)
         });
-        unimplemented!();
+        assert!(((unimplemented!()) == (5_())));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

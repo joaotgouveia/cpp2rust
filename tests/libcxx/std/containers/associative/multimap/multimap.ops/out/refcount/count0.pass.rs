@@ -32,19 +32,20 @@ pub struct transparent_less_private {}
 #[byte_size(4)]
 pub struct transparent_less_not_a_type {
     #[offset(0)]
-    pub is_transparent: (),
+    pub is_transparent: i32,
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
 pub struct C2Int {
     #[offset(0)]
-    i_: (),
+    i_: i32,
 }
 impl C2Int {
-    pub fn new_1() -> Self {
-        Self { i_: 0_() }
+    pub fn new_2() -> Self {
+        Self { i_: 0 }
     }
-    pub fn new_2(mut i: ()) -> Self {
+    pub fn new_1(mut i: i32) -> Self {
         Self { i_: i }
     }
 }
@@ -61,27 +62,27 @@ impl CppEq for C2Int {
 }
 impl Default for C2Int {
     fn default() -> Self {
-        { C2Int::new_1() }
+        { C2Int::new_2() }
     }
 }
-pub fn operator_lt_1(mut rhs: (), lhs: Ptr<C2Int>) -> () {
+pub fn operator_lt_1(mut rhs: i32, lhs: Ptr<C2Int>) -> bool {
     return ({ rhs } < { ({ C2IntImpl::get(&lhs) }) });
 }
-pub fn operator_lt_2(rhs: Ptr<C2Int>, lhs: Ptr<C2Int>) -> () {
+pub fn operator_lt_2(rhs: Ptr<C2Int>, lhs: Ptr<C2Int>) -> bool {
     return ({ ({ C2IntImpl::get(&rhs) }) } < { ({ C2IntImpl::get(&lhs) }) });
 }
-pub fn operator_lt_0(rhs: Ptr<C2Int>, mut lhs: ()) -> () {
+pub fn operator_lt_0(rhs: Ptr<C2Int>, mut lhs: i32) -> bool {
     return ({ ({ C2IntImpl::get(&rhs) }) } < { lhs });
 }
-pub fn test_3() -> () {
+pub fn test_3() -> bool {
     {
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
     }
     {
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
     }
     {
-        unimplemented!();
+        assert!((unimplemented!() == 0_usize));
     }
     return true;
 }
@@ -104,103 +105,121 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_3() });
-    return 0_();
+    return 0;
 }
 pub trait C2IntImpl {
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
 }
 impl C2IntImpl for Ptr<C2Int> {
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.i_);
     }
 }
 pub trait transparent_lessImpl {
-    fn operator_call_1_const_struct_C2Int_ref_const_int_ref(&self, t: Ptr<C2Int>, u: Ptr<()>)
-    -> ();
-    fn operator_call_1_const_int_ref_const_struct_C2Int_ref(&self, t: Ptr<()>, u: Ptr<C2Int>)
-    -> ();
+    fn operator_call_1_const_struct_C2Int_ref_const_int_ref(
+        &self,
+        t: Ptr<C2Int>,
+        u: Ptr<i32>,
+    ) -> bool;
+    fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
+        &self,
+        t: Ptr<i32>,
+        u: Ptr<C2Int>,
+    ) -> bool;
 }
 impl transparent_lessImpl for Ptr<transparent_less> {
     fn operator_call_1_const_struct_C2Int_ref_const_int_ref(
         &self,
         t: Ptr<C2Int>,
-        u: Ptr<()>,
-    ) -> () {
+        u: Ptr<i32>,
+    ) -> bool {
         return ({
             let _rhs: Ptr<C2Int> = (t).clone();
-            let _lhs: () = (u.read());
+            let _lhs: i32 = (u.read());
             operator_lt_0(_rhs, _lhs)
         });
     }
     fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
         &self,
-        t: Ptr<()>,
+        t: Ptr<i32>,
         u: Ptr<C2Int>,
-    ) -> () {
+    ) -> bool {
         return ({
-            let _rhs: () = (t.read());
+            let _rhs: i32 = (t.read());
             let _lhs: Ptr<C2Int> = (u).clone();
             operator_lt_1(_rhs, _lhs)
         });
     }
 }
 pub trait transparent_less_nonemptyImpl {
-    fn operator_call_1_const_struct_C2Int_ref_const_int_ref(&self, t: Ptr<C2Int>, u: Ptr<()>)
-    -> ();
-    fn operator_call_1_const_int_ref_const_struct_C2Int_ref(&self, t: Ptr<()>, u: Ptr<C2Int>)
-    -> ();
+    fn operator_call_1_const_struct_C2Int_ref_const_int_ref(
+        &self,
+        t: Ptr<C2Int>,
+        u: Ptr<i32>,
+    ) -> bool;
+    fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
+        &self,
+        t: Ptr<i32>,
+        u: Ptr<C2Int>,
+    ) -> bool;
 }
 impl transparent_less_nonemptyImpl for Ptr<transparent_less_nonempty> {
     fn operator_call_1_const_struct_C2Int_ref_const_int_ref(
         &self,
         t: Ptr<C2Int>,
-        u: Ptr<()>,
-    ) -> () {
+        u: Ptr<i32>,
+    ) -> bool {
         return ({
             let _rhs: Ptr<C2Int> = (t).clone();
-            let _lhs: () = (u.read());
+            let _lhs: i32 = (u.read());
             operator_lt_0(_rhs, _lhs)
         });
     }
     fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
         &self,
-        t: Ptr<()>,
+        t: Ptr<i32>,
         u: Ptr<C2Int>,
-    ) -> () {
+    ) -> bool {
         return ({
-            let _rhs: () = (t.read());
+            let _rhs: i32 = (t.read());
             let _lhs: Ptr<C2Int> = (u).clone();
             operator_lt_1(_rhs, _lhs)
         });
     }
 }
 pub trait transparent_less_not_referenceableImpl {
-    fn operator_call_1_const_struct_C2Int_ref_const_int_ref(&self, t: Ptr<C2Int>, u: Ptr<()>)
-    -> ();
-    fn operator_call_1_const_int_ref_const_struct_C2Int_ref(&self, t: Ptr<()>, u: Ptr<C2Int>)
-    -> ();
+    fn operator_call_1_const_struct_C2Int_ref_const_int_ref(
+        &self,
+        t: Ptr<C2Int>,
+        u: Ptr<i32>,
+    ) -> bool;
+    fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
+        &self,
+        t: Ptr<i32>,
+        u: Ptr<C2Int>,
+    ) -> bool;
 }
 impl transparent_less_not_referenceableImpl for Ptr<transparent_less_not_referenceable> {
     fn operator_call_1_const_struct_C2Int_ref_const_int_ref(
         &self,
         t: Ptr<C2Int>,
-        u: Ptr<()>,
-    ) -> () {
+        u: Ptr<i32>,
+    ) -> bool {
         return ({
             let _rhs: Ptr<C2Int> = (t).clone();
-            let _lhs: () = (u.read());
+            let _lhs: i32 = (u.read());
             operator_lt_0(_rhs, _lhs)
         });
     }
     fn operator_call_1_const_int_ref_const_struct_C2Int_ref(
         &self,
-        t: Ptr<()>,
+        t: Ptr<i32>,
         u: Ptr<C2Int>,
-    ) -> () {
+    ) -> bool {
         return ({
-            let _rhs: () = (t.read());
+            let _rhs: i32 = (t.read());
             let _lhs: Ptr<C2Int> = (u).clone();
             operator_lt_1(_rhs, _lhs)
         });

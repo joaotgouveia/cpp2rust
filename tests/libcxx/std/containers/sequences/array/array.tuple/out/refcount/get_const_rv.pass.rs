@@ -26,23 +26,26 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<Vec<Option<Value<f64>>>> = Rc::new(RefCell::new(Vec::from([Ptr::alloc(
+            3.5_f64,
+        )
+        .to_owned_opt()])));
         const _: () = assert!(
             true,
             "std::is_same<const T&&, decltype(std::get<0>(std::move(c)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(c)))");;
-        let t: Ptr<()> = unimplemented!();
-        unimplemented!();
+        let t: Ptr<Option<Value<f64>>> = unimplemented!();
+        assert!((((*t.upgrade().deref()).as_pointer().read()) == 3.5_f64));
     }
     {
-        let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let c: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([1_f64, 2_f64, 3.5_f64])));
         const _: () = assert!(true, "std::get<0>(std::move(c)) == 1");;
         const _: () = assert!(true, "std::get<1>(std::move(c)) == 2");;
         const _: () = assert!(true, "std::get<2>(std::move(c)) == 3.5");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

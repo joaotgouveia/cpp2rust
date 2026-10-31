@@ -22,31 +22,71 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut outf: () = unimplemented!();
-        let mut i: () = unimplemented!();
+        let mut i: UnsafeOstreamIterator<i32> = {
+            let __r: &mut ::std::fs::File = &mut outf;
+            UnsafeOstreamIterator::new(__r, ::std::ptr::null())
+        };
         unimplemented!();
-        unimplemented!();
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"2".as_ptr(),
+                    libcc2rs::c_str_len(c"2".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut outf: () = unimplemented!();
-        let mut i: () = unimplemented!();
+        let mut i: UnsafeOstreamIterator<i32> = {
+            let __r: &mut ::std::fs::File = &mut outf;
+            UnsafeOstreamIterator::new(__r, c", ".as_ptr())
+        };
         unimplemented!();
-        unimplemented!();
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    c"2, ".as_ptr(),
+                    libcc2rs::c_str_len(c"2, ".as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut outf: () = unimplemented!();
-        let mut i: () = unimplemented!();
+        let mut i: UnsafeOstreamIterator<i32> = {
+            let __r: &mut ::std::fs::File = &mut outf;
+            UnsafeOstreamIterator::new(__r, ::std::ptr::null())
+        };
         unimplemented!();
-        unimplemented!();
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [50 as i32, 0 as i32,].as_ptr(),
+                    libcc2rs::c_str_len([50 as i32, 0 as i32,].as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
     {
         let mut outf: () = unimplemented!();
-        let mut i: () = unimplemented!();
+        let mut i: UnsafeOstreamIterator<i32> = {
+            let __r: &mut ::std::fs::File = &mut outf;
+            UnsafeOstreamIterator::new(__r, [44 as i32, 32 as i32, 0 as i32].as_ptr())
+        };
         unimplemented!();
-        unimplemented!();
+        assert!(
+            unimplemented!()
+                == std::slice::from_raw_parts(
+                    [50 as i32, 44 as i32, 32 as i32, 0 as i32,].as_ptr(),
+                    libcc2rs::c_str_len([50 as i32, 44 as i32, 32 as i32, 0 as i32,].as_ptr()) + 1
+                )
+                .to_vec()
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

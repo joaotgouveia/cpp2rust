@@ -18,7 +18,7 @@ const _: () = assert!(true, "std::ranges::sized_range<ThreeElementRange>");
 const _: () = assert!(true, "std::tuple_size<SizedRange>::value == 2");
 const _: () = assert!(true, "std::tuple_size<UnsizedRange>::value == 2");
 const _: () = assert!(true, "std::tuple_size<ThreeElementRange>::value == 2");
-pub fn test_tuple_element_0() -> () {
+pub fn test_tuple_element_0() -> bool {
     const _: () = assert!(
         true,
         "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
@@ -29,7 +29,7 @@ pub fn test_tuple_element_0() -> () {
     );;
     return true;
 }
-pub fn test_tuple_element_1() -> () {
+pub fn test_tuple_element_1() -> bool {
     const _: () = assert!(
         true,
         "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
@@ -40,7 +40,7 @@ pub fn test_tuple_element_1() -> () {
     );;
     return true;
 }
-pub fn test_tuple_element_2() -> () {
+pub fn test_tuple_element_2() -> bool {
     const _: () = assert!(
         true,
         "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
@@ -51,7 +51,7 @@ pub fn test_tuple_element_2() -> () {
     );;
     return true;
 }
-pub fn test_tuple_element_3() -> () {
+pub fn test_tuple_element_3() -> bool {
     const _: () = assert!(
         true,
         "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
@@ -81,7 +81,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "test_tuple_element<0, SizedRange, Iterator>()");;
     const _: () = assert!(true, "test_tuple_element<1, SizedRange, SizedSentinel>()");;
     const _: () = assert!(true, "test_tuple_element<0, UnsizedRange, Iterator>()");;
@@ -89,10 +89,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "test_tuple_element<1, UnsizedRange, UnsizedSentinel>()"
     );;
-    return 0_();
+    return 0;
 }
 pub trait SizedSentinelImpl {
-    fn operator_eq(&self, mut _a0: Ptr<()>) -> () {
+    fn operator_eq(&self, mut _a0: Ptr<i32>) -> bool {
         unimplemented!()
     }
 }

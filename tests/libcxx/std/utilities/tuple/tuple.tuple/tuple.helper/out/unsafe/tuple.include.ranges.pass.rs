@@ -18,7 +18,7 @@ const _: () = assert!(true, "std::ranges::sized_range<ThreeElementRange>");
 const _: () = assert!(true, "std::tuple_size<SizedRange>::value == 2");
 const _: () = assert!(true, "std::tuple_size<UnsizedRange>::value == 2");
 const _: () = assert!(true, "std::tuple_size<ThreeElementRange>::value == 2");
-pub unsafe fn test_tuple_element_0() -> () {
+pub unsafe fn test_tuple_element_0() -> bool {
     const _: () = assert!(
         true,
         "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
@@ -29,7 +29,7 @@ pub unsafe fn test_tuple_element_0() -> () {
     );;
     return true;
 }
-pub unsafe fn test_tuple_element_1() -> () {
+pub unsafe fn test_tuple_element_1() -> bool {
     const _: () = assert!(
         true,
         "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
@@ -40,7 +40,7 @@ pub unsafe fn test_tuple_element_1() -> () {
     );;
     return true;
 }
-pub unsafe fn test_tuple_element_2() -> () {
+pub unsafe fn test_tuple_element_2() -> bool {
     const _: () = assert!(
         true,
         "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
@@ -51,7 +51,7 @@ pub unsafe fn test_tuple_element_2() -> () {
     );;
     return true;
 }
-pub unsafe fn test_tuple_element_3() -> () {
+pub unsafe fn test_tuple_element_3() -> bool {
     const _: () = assert!(
         true,
         "std::same_as<typename std::tuple_element<I, Range>::type, Expected>"
@@ -77,7 +77,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "test_tuple_element<0, SizedRange, Iterator>()");;
     const _: () = assert!(true, "test_tuple_element<1, SizedRange, SizedSentinel>()");;
     const _: () = assert!(true, "test_tuple_element<0, UnsizedRange, Iterator>()");;
@@ -85,6 +85,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         true,
         "test_tuple_element<1, UnsizedRange, UnsizedSentinel>()"
     );;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

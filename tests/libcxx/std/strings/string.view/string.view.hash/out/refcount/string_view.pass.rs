@@ -14,11 +14,11 @@ pub fn test_0() {
     let g2: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
         let __rhs = {
-            (*g2.borrow_mut())[(9_() - i) as usize] = { (('0' as ()) + i) };
-            (*g2.borrow())[(9_() - i) as usize]
+            (*g2.borrow_mut())[(9 - i) as usize] = { (((('0' as i8) as i32) + i) as ()) };
+            (*g2.borrow())[(9 - i) as usize]
         };
         (*g1.borrow_mut())[(i) as usize] = __rhs;
         i.prefix_inc();
@@ -26,13 +26,13 @@ pub fn test_0() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sh: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss1: () = unimplemented!();
+    let mut ss1: Vec<i8> = unimplemented!();
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut ss2: Vec<i8> = unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() != unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn test_1() {
     const _: () = assert!(true, "");;
@@ -42,11 +42,11 @@ pub fn test_1() {
     let g2: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
         let __rhs = {
-            (*g2.borrow_mut())[(9_() - i) as usize] = { (('0' as ()) + i) };
-            (*g2.borrow())[(9_() - i) as usize]
+            (*g2.borrow_mut())[(9 - i) as usize] = { (((('0' as i8) as i32) + i) as ()) };
+            (*g2.borrow())[(9 - i) as usize]
         };
         (*g1.borrow_mut())[(i) as usize] = __rhs;
         i.prefix_inc();
@@ -54,13 +54,13 @@ pub fn test_1() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sh: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss1: () = unimplemented!();
+    let mut ss1: Vec<u8> = unimplemented!();
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut ss2: Vec<u8> = unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() != unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn test_2() {
     const _: () = assert!(true, "");;
@@ -70,11 +70,11 @@ pub fn test_2() {
     let g2: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
         let __rhs = {
-            (*g2.borrow_mut())[(9_() - i) as usize] = { (('0' as ()) + i) };
-            (*g2.borrow())[(9_() - i) as usize]
+            (*g2.borrow_mut())[(9 - i) as usize] = { (((('0' as i8) as i32) + i) as ()) };
+            (*g2.borrow())[(9 - i) as usize]
         };
         (*g1.borrow_mut())[(i) as usize] = __rhs;
         i.prefix_inc();
@@ -82,13 +82,13 @@ pub fn test_2() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sh: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss1: () = unimplemented!();
+    let mut ss1: Vec<u16> = unimplemented!();
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut ss2: Vec<u16> = unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() != unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn test_3() {
     const _: () = assert!(true, "");;
@@ -98,11 +98,11 @@ pub fn test_3() {
     let g2: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
         let __rhs = {
-            (*g2.borrow_mut())[(9_() - i) as usize] = { (('0' as ()) + i) };
-            (*g2.borrow())[(9_() - i) as usize]
+            (*g2.borrow_mut())[(9 - i) as usize] = { (((('0' as i8) as i32) + i) as ()) };
+            (*g2.borrow())[(9 - i) as usize]
         };
         (*g1.borrow_mut())[(i) as usize] = __rhs;
         i.prefix_inc();
@@ -110,13 +110,13 @@ pub fn test_3() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sh: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss1: () = unimplemented!();
+    let mut ss1: Vec<u32> = unimplemented!();
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut ss2: Vec<u32> = unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() != unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn test_4() {
     const _: () = assert!(true, "");;
@@ -126,11 +126,11 @@ pub fn test_4() {
     let g2: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let mut i: () = 0_();
-    'loop_: while (i < 10_()) {
+    let mut i: i32 = 0;
+    'loop_: while (i < 10) {
         let __rhs = {
-            (*g2.borrow_mut())[(9_() - i) as usize] = { (('0' as ()) + i) };
-            (*g2.borrow())[(9_() - i) as usize]
+            (*g2.borrow_mut())[(9 - i) as usize] = { (((('0' as i8) as i32) + i) as ()) };
+            (*g2.borrow())[(9 - i) as usize]
         };
         (*g1.borrow_mut())[(i) as usize] = __rhs;
         i.prefix_inc();
@@ -138,13 +138,13 @@ pub fn test_4() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sh: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss1: () = unimplemented!();
+    let mut ss1: Vec<i32> = unimplemented!();
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ss2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let mut ss2: Vec<i32> = unimplemented!();
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() != unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
+    assert!((unimplemented!() == unimplemented!()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -165,12 +165,12 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
     ({ test_3() });
     ({ test_4() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

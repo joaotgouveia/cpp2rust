@@ -9,49 +9,49 @@ use std::rc::Rc;
 pub unsafe fn test_0(f: *const (), d: *const ()) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_1(f: *const (), d: *const ()) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_2(f: *const (), d: *const ()) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_3(f: *const (), d: *const ()) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_4(f: *const (), d: *const ()) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_5(f: *const (), d: *const ()) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_6(f: *const (), d: *const ()) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_7(f: *const (), d: *const ()) {
     {
         const _: () = assert!(true, "(std::is_same<R, ToDuration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn main() {
@@ -69,7 +69,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe {
         let mut _f: () = unimplemented!();
         let mut _d: () = unimplemented!();
@@ -114,6 +114,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let h: () = unimplemented!();
         const _: () = assert!(true, "h.count() == 2");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

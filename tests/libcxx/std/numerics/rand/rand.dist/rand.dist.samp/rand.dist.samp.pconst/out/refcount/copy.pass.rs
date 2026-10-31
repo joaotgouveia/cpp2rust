@@ -7,11 +7,11 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
-    let p: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([2_(), 4_(), 1_(), 8_()])));
-    let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([2_(), 4_(), 5_(), 8_(), 9_()])));
+    let p: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([2_f64, 4_f64, 1_f64, 8_f64])));
+    let b: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([2_f64, 4_f64, 5_f64, 8_f64, 9_f64])));
     let d1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let d2: Value<()> = Rc::new(RefCell::new((*d1.borrow()).clone()));
-    unimplemented!();
+    assert!(unimplemented!());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -32,8 +32,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_0() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

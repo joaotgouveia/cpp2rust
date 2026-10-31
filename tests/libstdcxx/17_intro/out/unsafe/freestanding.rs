@@ -12,22 +12,26 @@ pub fn main() {
         std::process::exit(main_0() as i32);
     }
 }
-unsafe fn main_0() -> () {
+unsafe fn main_0() -> i32 {
     let mut e: () = unimplemented!();
-    let mut str: *const () = unimplemented!();
+    let mut str: *const libc::c_char = unimplemented!();
     let mut limit_l: () = unimplemented!();
-    let mut r: () = unimplemented!();
-    let mut cp: *const () = (Box::leak(Box::new(unimplemented!())) as *mut ()).cast_const();
+    let mut r: i32 = unimplemented!();
+    let mut cp: *const libc::c_char =
+        (Box::leak(Box::new((0 as libc::c_char))) as *mut libc::c_char).cast_const();
     {
         let __p = cp;
         if !__p.is_null() {
             ::std::mem::drop(Box::from_raw(__p.cast_mut()))
         }
     };
-    let mut b: () = unimplemented!();
-    let mut ilisti: () = unimplemented!();
+    let mut b: bool = unimplemented!();
+    let mut ilisti: Vec<i32> = unimplemented!();
     const _: () = assert!(true, "std::has_single_bit(256u)");;
-    const _: () = assert!(((201411_()) >= (201411_())), "__cpp_lib_void_t >= 201411L");;
-    return 0_();
+    const _: () = assert!(
+        ((201411_i64) >= (201411_i64)),
+        "__cpp_lib_void_t >= 201411L"
+    );;
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

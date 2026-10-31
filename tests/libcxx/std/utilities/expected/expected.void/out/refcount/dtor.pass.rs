@@ -17,30 +17,31 @@ const _: () = assert!(
     true,
     "!std::is_trivially_destructible_v<std::expected<void, NonTrivial>>"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor, Default)]
+#[cpp_from(bool, new, mut_ptr)]
 #[byte_size(8)]
 pub struct TrackedDestroy {
     #[offset(0)]
     #[byte_size(8)]
-    pub destroyed: Ptr<()>,
+    pub destroyed: Ptr<bool>,
 }
 impl TrackedDestroy {
-    pub fn new(b: Ptr<()>) -> Self {
+    pub fn new(b: Ptr<bool>) -> Self {
         Self {
             destroyed: (b).clone(),
         }
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
-        let mut errorDestroyed: () = false;
+        let mut errorDestroyed: bool = false;
         {
             let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         }
-        unimplemented!();
+        assert!(errorDestroyed);
     }
     return true;
 }
@@ -63,10 +64,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait NonTrivialImpl {
     fn destructor(&self);

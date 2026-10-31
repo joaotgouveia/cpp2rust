@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -41,7 +41,7 @@ pub struct NoCopy {}
 impl NoCopy {
     pub fn copy_from(_a0: Ptr<NoCopy>) -> Self {
         let __this: NoCopy = Self {};
-        unimplemented!();
+        assert!(false);
         __this
     }
 }
@@ -58,51 +58,51 @@ pub fn test_val_types_1() {
     {
         {
             let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             const _: () = assert!(true, "");;
         }
         {
             let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut l: RefQual = <RefQual>::default();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             const _: () = assert!(true, "");;
         }
     }
     {
         {
             let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             const _: () = assert!(true, "");;
         }
         {
             let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut l: CRefQual = <CRefQual>::default();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             const _: () = assert!(true, "");;
         }
     }
     {
         {
             let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             const _: () = assert!(true, "");;
         }
         {
             let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             const _: () = assert!(true, "");;
         }
     }
     {
         {
             let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             const _: () = assert!(true, "");;
         }
         {
             let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut l: RVCRefQual = <RVCRefQual>::default();
-            unimplemented!();
+            assert!((unimplemented!() as bool));
             const _: () = assert!(true, "");;
         }
     }
@@ -115,26 +115,26 @@ pub fn test_sfinae_2() {
     let l: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |x: Ptr<NonConst>| -> () {
+        |x: Ptr<NonConst>| -> i32 {
             return ({ NonConstImpl::non_const(&x) });
         },
-        |x: Ptr<NonConst>| -> () {
+        |x: Ptr<NonConst>| -> i32 {
             return ({ NonConstImpl::non_const(&x) });
         }
     )));
     &(unimplemented!());
     &(unimplemented!());
 }
-pub fn test_3() -> () {
+pub fn test_3() -> bool {
     ({ test_sfinae_2() });
     ({ test_val_types_1() });
     let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let copt: Ptr<()> = opt.as_pointer();
-    let never_called: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(()) -> ()>::new(|mut _a0: ()| -> () {
+    let never_called: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(
+        FnPtr::<fn(i32) -> i32>::new(|mut _a0: i32| -> i32 {
             {
-                unimplemented!();
-                return 0_();
+                assert!(false);
+                return 0;
             }
         }),
     ));
@@ -169,50 +169,50 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_3() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait CLValImpl {
-    fn operator_call_2(&self, _a0: Ptr<()>) -> ();
+    fn operator_call_2(&self, _a0: Ptr<i32>) -> i32;
 }
 impl CLValImpl for Ptr<CLVal> {
-    fn operator_call_2(&self, _a0: Ptr<()>) -> () {
-        return 1_();
+    fn operator_call_2(&self, _a0: Ptr<i32>) -> i32 {
+        return 1;
     }
 }
 pub trait CRValImpl {
-    fn operator_call_4(&self, _a0: Ptr<()>) -> ();
+    fn operator_call_4(&self, _a0: Ptr<i32>) -> i32;
 }
 impl CRValImpl for Ptr<CRVal> {
-    fn operator_call_4(&self, _a0: Ptr<()>) -> () {
-        return 1_();
+    fn operator_call_4(&self, _a0: Ptr<i32>) -> i32 {
+        return 1;
     }
 }
 pub trait CRefQualImpl {
-    fn operator_call_2(&self, _a0: ()) -> ();
+    fn operator_call_2(&self, _a0: i32) -> i32;
 }
 impl CRefQualImpl for Ptr<CRefQual> {
-    fn operator_call_2(&self, mut _a0: ()) -> () {
-        return 1_();
+    fn operator_call_2(&self, mut _a0: i32) -> i32 {
+        return 1;
     }
 }
 pub trait LValImpl {
-    fn operator_call_1(&self, _a0: Ptr<()>) -> ();
+    fn operator_call_1(&self, _a0: Ptr<i32>) -> i32;
 }
 impl LValImpl for Ptr<LVal> {
-    fn operator_call_1(&self, _a0: Ptr<()>) -> () {
-        return 1_();
+    fn operator_call_1(&self, _a0: Ptr<i32>) -> i32 {
+        return 1;
     }
 }
 pub trait NoCopyImpl {
-    fn operator_call(&self, _a0: Ptr<NoCopy>) -> ();
+    fn operator_call(&self, _a0: Ptr<NoCopy>) -> i32;
     fn copy_assign(&self, _a0: Ptr<NoCopy>) -> Ptr<NoCopy>;
 }
 impl NoCopyImpl for Ptr<NoCopy> {
-    fn operator_call(&self, _a0: Ptr<NoCopy>) -> () {
-        return 1_();
+    fn operator_call(&self, _a0: Ptr<NoCopy>) -> i32 {
+        return 1;
     }
     fn copy_assign(&self, _a0: Ptr<NoCopy>) -> Ptr<NoCopy> {
         return (*self).clone();
@@ -227,43 +227,43 @@ impl NoMoveImpl for Ptr<NoMove> {
     }
 }
 pub trait NonConstImpl {
-    fn non_const(&self) -> ();
+    fn non_const(&self) -> i32;
 }
 impl NonConstImpl for Ptr<NonConst> {
-    fn non_const(&self) -> () {
-        return 1_();
+    fn non_const(&self) -> i32 {
+        return 1;
     }
 }
 pub trait RVCRefQualImpl {
-    fn operator_call_4(&self, _a0: ()) -> ();
+    fn operator_call_4(&self, _a0: i32) -> i32;
 }
 impl RVCRefQualImpl for Ptr<RVCRefQual> {
-    fn operator_call_4(&self, mut _a0: ()) -> () {
-        return 1_();
+    fn operator_call_4(&self, mut _a0: i32) -> i32 {
+        return 1;
     }
 }
 pub trait RVRefQualImpl {
-    fn operator_call_3(&self, _a0: ()) -> ();
+    fn operator_call_3(&self, _a0: i32) -> i32;
 }
 impl RVRefQualImpl for Ptr<RVRefQual> {
-    fn operator_call_3(&self, mut _a0: ()) -> () {
-        return 1_();
+    fn operator_call_3(&self, mut _a0: i32) -> i32 {
+        return 1;
     }
 }
 pub trait RValImpl {
-    fn operator_call_3(&self, _a0: Ptr<()>) -> ();
+    fn operator_call_3(&self, _a0: Ptr<i32>) -> i32;
 }
 impl RValImpl for Ptr<RVal> {
-    fn operator_call_3(&self, _a0: Ptr<()>) -> () {
-        return 1_();
+    fn operator_call_3(&self, _a0: Ptr<i32>) -> i32 {
+        return 1;
     }
 }
 pub trait RefQualImpl {
-    fn operator_call_1(&self, _a0: ()) -> ();
+    fn operator_call_1(&self, _a0: i32) -> i32;
 }
 impl RefQualImpl for Ptr<RefQual> {
-    fn operator_call_1(&self, mut _a0: ()) -> () {
-        return 1_();
+    fn operator_call_1(&self, mut _a0: i32) -> i32 {
+        return 1;
     }
 }
 pub fn __cpp2rust_init_globals() {}

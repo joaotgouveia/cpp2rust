@@ -22,20 +22,56 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut l: () = unimplemented!();
         {
-            let mut s2: () = unimplemented!();
-            let mut s3: () = unimplemented!();
-            unimplemented!();
+            let mut s2: Vec<libc::c_char> = std::slice::from_raw_parts(
+                c"aaaaaaA".as_ptr(),
+                libcc2rs::c_str_len(c"aaaaaaA".as_ptr()) + 1,
+            )
+            .to_vec();
+            let mut s3: Vec<libc::c_char> = std::slice::from_raw_parts(
+                c"BaaaaaA".as_ptr(),
+                libcc2rs::c_str_len(c"BaaaaaA".as_ptr()) + 1,
+            )
+            .to_vec();
+            assert!(unimplemented!());
         }
         {
-            let mut s2: () = unimplemented!();
-            let mut s3: () = unimplemented!();
-            unimplemented!();
+            let mut s2: Vec<i32> = std::slice::from_raw_parts(
+                [
+                    97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 65 as i32,
+                    0 as i32,
+                ]
+                .as_ptr(),
+                libcc2rs::c_str_len(
+                    [
+                        97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32,
+                        65 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                ) + 1,
+            )
+            .to_vec();
+            let mut s3: Vec<i32> = std::slice::from_raw_parts(
+                [
+                    66 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 65 as i32,
+                    0 as i32,
+                ]
+                .as_ptr(),
+                libcc2rs::c_str_len(
+                    [
+                        66 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32,
+                        65 as i32, 0 as i32,
+                    ]
+                    .as_ptr(),
+                ) + 1,
+            )
+            .to_vec();
+            assert!(unimplemented!());
         }
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

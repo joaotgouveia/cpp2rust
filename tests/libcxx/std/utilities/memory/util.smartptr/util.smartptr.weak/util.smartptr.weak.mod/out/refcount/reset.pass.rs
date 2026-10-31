@@ -33,7 +33,7 @@ impl Default for A {
     }
 }
 thread_local!(
-    pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_0: Value<i32> = Rc::new(RefCell::new(0));
 );
 
 pub fn main() {
@@ -55,17 +55,17 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let w1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        assert!((unimplemented!() == 1_i64));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 0_i64));
+        assert!((unimplemented!() == 1_i64));
     }
-    unimplemented!();
-    return 0_();
+    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    return 0;
 }
 pub trait AImpl {
     fn destructor(&self);

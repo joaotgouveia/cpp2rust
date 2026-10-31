@@ -26,19 +26,25 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let vecss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let vecss: Value<Vec<()>> = Rc::new(RefCell::new(Vec::new()));
+    {
+        let __a1 = unimplemented!();
+        (*vecss.borrow_mut()).push(__a1)
+    };
     unimplemented!();
+    {
+        let __a1 = unimplemented!();
+        (*vecss.borrow_mut()).push(__a1)
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut n: () = 0_();
-    'loop_: while (n < unimplemented!()) {
+    let mut n: usize = 0_usize;
+    'loop_: while (n < (*vecss.borrow()).len()) {
+        assert!(((unimplemented!().len() - 1) == 31_usize));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().len() - 1) == 31_usize));
         n.postfix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

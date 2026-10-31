@@ -6,194 +6,202 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn testConstexprSpan_0(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_0(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     } else {
-        ret = (ret) && ((*unimplemented!()) == (*unimplemented!()));
+        ret = (ret) && ((*b.iter_deref()) == (*unimplemented!()));
         ret = (ret)
-            && ((&mut (*unimplemented!()) as *mut ()) == (&mut (*unimplemented!()) as *mut ()));
+            && ((&mut (*b.iter_deref()) as *mut i32) == (&mut (*unimplemented!()) as *mut ()));
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_1(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_1(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     } else {
-        ret = (ret) && ((*unimplemented!()) == (*unimplemented!()));
+        ret = (ret) && ((*b.iter_deref()) == (*unimplemented!()));
         ret = (ret)
-            && ((&mut (*unimplemented!()) as *mut ()) == (&mut (*unimplemented!()) as *mut ()));
+            && ((&mut (*b.iter_deref()) as *mut i64) == (&mut (*unimplemented!()) as *mut ()));
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_2(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_2(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     } else {
-        ret = (ret) && ((*unimplemented!()) == (*unimplemented!()));
+        ret = (ret) && ((*b.iter_deref()) == (*unimplemented!()));
         ret = (ret)
-            && ((&mut (*unimplemented!()) as *mut ()) == (&mut (*unimplemented!()) as *mut ()));
+            && ((&mut (*b.iter_deref()) as *mut f64) == (&mut (*unimplemented!()) as *mut ()));
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_3(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_3(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     } else {
         ret = (ret)
             && (unsafe {
-                let _arg0: A = (*unimplemented!());
+                let _arg0: A = (*b.iter_deref());
                 operator_eq_4(_arg0, (*unimplemented!()))
             });
-        ret =
-            (ret) && ((&mut (*unimplemented!()) as *mut A) == (&mut (*unimplemented!()) as *mut A));
+        ret = (ret) && ((&mut (*b.iter_deref()) as *mut A) == (&mut (*unimplemented!()) as *mut A));
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_5(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_5(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     } else {
         ret = (ret) && (unimplemented!());
         ret = (ret)
-            && ((&mut (*unimplemented!()) as *mut ()) == (&mut (*unimplemented!()) as *mut ()));
+            && ((&mut (*b.iter_deref()) as *mut Vec<libc::c_char>)
+                == (&mut (*unimplemented!()) as *mut ()));
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_6(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_6(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_7(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_7(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_8(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_8(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_9(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_9(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_10(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_10(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     }
     return ret;
 }
-pub unsafe fn testConstexprSpan_11(mut s: ()) -> () {
-    let mut ret: () = true;
+pub unsafe fn testConstexprSpan_11(mut s: ()) -> bool {
+    let mut ret: bool = true;
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        ret = (ret) && (unimplemented!());
+        ret = (ret) && (b == unimplemented!());
     } else {
-        ret = (ret) && ((*unimplemented!()) == (*unimplemented!()));
-        ret = (ret) && ((&(*unimplemented!()) as *const ()) == (&(*unimplemented!()) as *const ()));
+        ret = (ret) && ((*b.iter_deref()) == (*unimplemented!()));
+        ret = (ret) && ((&(*b.iter_deref()) as *const i32) == (&(*unimplemented!()) as *const ()));
     }
     return ret;
 }
 pub unsafe fn testRuntimeSpan_12(mut s: ()) {
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
+        assert!(b == unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
+        assert!(((*b.iter_deref()) == (*unimplemented!())));
+        assert!(((&mut (*b.iter_deref()) as *mut i32) == (&mut (*unimplemented!()) as *mut ())));
     }
 }
 pub unsafe fn testRuntimeSpan_13(mut s: ()) {
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
+        assert!(b == unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
+        assert!(((*b.iter_deref()) == (*unimplemented!())));
+        assert!(((&mut (*b.iter_deref()) as *mut i64) == (&mut (*unimplemented!()) as *mut ())));
     }
 }
 pub unsafe fn testRuntimeSpan_14(mut s: ()) {
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
+        assert!(b == unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
+        assert!(((*b.iter_deref()) == (*unimplemented!())));
+        assert!(((&mut (*b.iter_deref()) as *mut f64) == (&mut (*unimplemented!()) as *mut ())));
     }
 }
 pub unsafe fn testRuntimeSpan_15(mut s: ()) {
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
+        assert!(b == unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let _arg0: A = (*b.iter_deref());
+                operator_eq_4(_arg0, (*unimplemented!()))
+            })
+        );
+        assert!(((&mut (*b.iter_deref()) as *mut A) == (&mut (*unimplemented!()) as *mut A)));
     }
 }
 pub unsafe fn testRuntimeSpan_16(mut s: ()) {
     let mut b: () = unimplemented!();
     if unimplemented!() {
-        unimplemented!();
+        assert!(b == unimplemented!());
     } else {
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            ((&mut (*b.iter_deref()) as *mut Vec<libc::c_char>)
+                == (&mut (*unimplemented!()) as *mut ()))
+        );
     }
 }
 pub unsafe fn testRuntimeSpan_17(mut s: ()) {
     let mut b: () = unimplemented!();
     {
-        unimplemented!();
+        assert!(b == unimplemented!());
     }
 }
 pub unsafe fn testRuntimeSpan_18(mut s: ()) {
     let mut b: () = unimplemented!();
     {
-        unimplemented!();
+        assert!(b == unimplemented!());
     }
 }
 pub unsafe fn testRuntimeSpan_19(mut s: ()) {
     let mut b: () = unimplemented!();
     {
-        unimplemented!();
+        assert!(b == unimplemented!());
     }
 }
 pub unsafe fn testRuntimeSpan_20(mut s: ()) {
     let mut b: () = unimplemented!();
     {
-        unimplemented!();
+        assert!(b == unimplemented!());
     }
 }
 pub unsafe fn testRuntimeSpan_21(mut s: ()) {
     let mut b: () = unimplemented!();
     {
-        unimplemented!();
+        assert!(b == unimplemented!());
     }
 }
 #[repr(C)]
@@ -205,26 +213,13 @@ impl std::cmp::PartialEq for A {
     }
 }
 impl std::cmp::Eq for A {}
-pub unsafe fn operator_eq_4(mut _a0: A, mut _a1: A) -> () {
+pub unsafe fn operator_eq_4(mut _a0: A, mut _a1: A) -> bool {
     return true;
 }
-pub static mut iArr1_22: std::cell::LazyCell<[(); 10]> = std::cell::LazyCell::new(|| unsafe {
-    [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_(), 9_()]
-});
-pub static mut iArr2_23: std::cell::LazyCell<[(); 10]> = std::cell::LazyCell::new(|| unsafe {
-    [
-        10_(),
-        11_(),
-        12_(),
-        13_(),
-        14_(),
-        15_(),
-        16_(),
-        17_(),
-        18_(),
-        19_(),
-    ]
-});
+pub static mut iArr1_22: std::cell::LazyCell<[i32; 10]> =
+    std::cell::LazyCell::new(|| unsafe { [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] });
+pub static mut iArr2_23: std::cell::LazyCell<[i32; 10]> =
+    std::cell::LazyCell::new(|| unsafe { [10, 11, 12, 13, 14, 15, 16, 17, 18, 19] });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -241,7 +236,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     const _: () = assert!(true, "testConstexprSpan(std::span<int>())");;
     const _: () = assert!(true, "testConstexprSpan(std::span<long>())");;
     const _: () = assert!(true, "testConstexprSpan(std::span<double>())");;
@@ -272,10 +267,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { testRuntimeSpan_12(unimplemented!()) });
     (unsafe { testRuntimeSpan_12(unimplemented!()) });
     (unsafe { testRuntimeSpan_12(unimplemented!()) });
-    let mut s: () = unimplemented!();
+    let mut s: Vec<libc::c_char> = vec![libc::c_char::default()];
     (unsafe { testRuntimeSpan_16(unimplemented!()) });
     (unsafe { testRuntimeSpan_16(unimplemented!()) });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const iArr1_22);

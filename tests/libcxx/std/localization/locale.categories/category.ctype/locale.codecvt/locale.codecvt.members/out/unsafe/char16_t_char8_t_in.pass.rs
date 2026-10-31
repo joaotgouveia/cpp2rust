@@ -22,24 +22,30 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let from: [(); 10] = [
         115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (), 120 as (),
         116 as (), 0 as (),
     ];
     let mut to: [(); 9] = [unimplemented!(); 9];
     let f: *const () = unimplemented!();
-    let mut mbs: () = unimplemented!();
+    let mut mbs: ::libc::mbstate_t = unsafe { std::mem::zeroed() };
     let mut from_next: *const () = std::ptr::null();
     let mut to_next: *mut () = std::ptr::null_mut();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (9_())) {
-        unimplemented!();
+    assert!(((unimplemented!() as i32) == (unimplemented!() as i32)));
+    assert!(
+        ((((from_next as usize - from.as_ptr() as usize) / ::std::mem::size_of::<()>()) as i64)
+            == (9_i64))
+    );
+    assert!(
+        ((((to_next as usize - to.as_mut_ptr() as usize) / ::std::mem::size_of::<()>()) as i64)
+            == (9_i64))
+    );
+    let mut i: u32 = 0_u32;
+    'loop_: while ((i) < (9_u32)) {
+        assert!(((to[(i) as usize] as i32) == ((from[(i) as usize] as u16) as i32)));
         i.prefix_inc();
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

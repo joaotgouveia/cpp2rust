@@ -11,10 +11,10 @@ use std::rc::{Rc, Weak};
 pub struct TrackDtor {
     #[offset(0)]
     #[byte_size(8)]
-    pub count_: Ptr<()>,
+    pub count_: Ptr<i32>,
 }
 impl TrackDtor {
-    pub fn new(mut count: Ptr<()>) -> Self {
+    pub fn new(mut count: Ptr<i32>) -> Self {
         Self {
             count_: (count).clone(),
         }
@@ -23,7 +23,7 @@ impl TrackDtor {
         let __this: TrackDtor = Self {
             count_: that.with(|__s| __s.count_.clone()),
         };
-        field!(that, count_).write(Ptr::<()>::null());
+        field!(that, count_).write(Ptr::<i32>::null());
         __this
     }
 }
@@ -45,13 +45,13 @@ const _: () = assert!(
     true,
     "!std::is_trivially_destructible<std::tuple<int, std::string>>::value"
 );
-pub fn test_0() -> () {
-    let count: Value<()> = Rc::new(RefCell::new(0_()));
+pub fn test_0() -> bool {
+    let count: Value<i32> = Rc::new(RefCell::new(0));
     {
         let tuple: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((*count.borrow()) == 0));
     }
-    unimplemented!();
+    assert!(((*count.borrow()) == 1));
     return true;
 }
 pub fn main() {
@@ -73,10 +73,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait TrackDtorImpl {
     fn destructor(&self);

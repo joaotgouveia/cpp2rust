@@ -22,7 +22,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut inf1: () = unimplemented!();
         let mut inf2: () = unimplemented!();
@@ -30,45 +30,45 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut i2: () = unimplemented!();
         let mut i3: () = unimplemented!();
         let mut i4: () = unimplemented!();
-        let mut i5: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut i5: () = std::ptr::null_mut();
+        assert!(!(i1 != i1));
+        assert!(!(i1 != i2));
+        assert!((i1 != i3));
+        assert!((i1 != i4));
+        assert!((i1 != i5));
+        assert!(!(i2 != i1));
+        assert!(!(i2 != i2));
+        assert!((i2 != i3));
+        assert!((i2 != i4));
+        assert!((i2 != i5));
+        assert!((i3 != i1));
+        assert!((i3 != i2));
+        assert!(!(i3 != i3));
+        assert!(!(i3 != i4));
+        assert!(!(i3 != i5));
+        assert!((i4 != i1));
+        assert!((i4 != i2));
+        assert!(!(i4 != i3));
+        assert!(!(i4 != i4));
+        assert!(!(i4 != i5));
+        assert!((i5 != i1));
+        assert!((i5 != i2));
+        assert!(!(i5 != i3));
+        assert!(!(i5 != i4));
+        assert!(!(i5 != i5));
     }
     {
         let mut i1: () = unimplemented!();
         let mut i2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(!(i1 != unimplemented!()));
+        assert!(!(i2 != unimplemented!()));
+        assert!(!(unimplemented!() != i1));
+        assert!(!(unimplemented!() != i2));
         let mut stream: () = unimplemented!();
         let mut i3: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(i3 != unimplemented!());
+        assert!(unimplemented!() != i3);
     }
     {
         let mut inf1: () = unimplemented!();
@@ -77,33 +77,33 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut i2: () = unimplemented!();
         let mut i3: () = unimplemented!();
         let mut i4: () = unimplemented!();
-        let mut i5: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut i5: () = std::ptr::null_mut();
+        assert!(!(i1 != i1));
+        assert!(!(i1 != i2));
+        assert!((i1 != i3));
+        assert!((i1 != i4));
+        assert!((i1 != i5));
+        assert!(!(i2 != i1));
+        assert!(!(i2 != i2));
+        assert!((i2 != i3));
+        assert!((i2 != i4));
+        assert!((i2 != i5));
+        assert!((i3 != i1));
+        assert!((i3 != i2));
+        assert!(!(i3 != i3));
+        assert!(!(i3 != i4));
+        assert!(!(i3 != i5));
+        assert!((i4 != i1));
+        assert!((i4 != i2));
+        assert!(!(i4 != i3));
+        assert!(!(i4 != i4));
+        assert!(!(i4 != i5));
+        assert!((i5 != i1));
+        assert!((i5 != i2));
+        assert!(!(i5 != i3));
+        assert!(!(i5 != i4));
+        assert!(!(i5 != i5));
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

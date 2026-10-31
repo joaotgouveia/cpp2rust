@@ -10,20 +10,20 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct S {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl CppEq for S {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn operator_eq_1(x: Ptr<S>, y: Ptr<S>) -> () {
+pub fn operator_eq_1(x: Ptr<S>, y: Ptr<S>) -> bool {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }
-pub fn operator_eq_0(x: Ptr<S>, y: Ptr<S>) -> () {
+pub fn operator_eq_0(x: Ptr<S>, y: Ptr<S>) -> bool {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }
-pub fn test_2(t: Ptr<()>) {
+pub fn test_2(t: Ptr<i32>) {
     const _: () = assert!(
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const                  (t))>::type>::value"
@@ -44,13 +44,13 @@ pub fn test_2(t: Ptr<()>) {
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const<const volatile T>(t))>::type>::value"
     );;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (t.read()) } == { (t.read()) }));
+    assert!(({ (t.read()) } == { (t.read()) }));
+    assert!(({ (t.read()) } == { (t.read()) }));
+    assert!(({ (t.read()) } == { (t.read()) }));
+    assert!(({ (t.read()) } == { (t.read()) }));
 }
-pub fn test_3(t: Ptr<()>) {
+pub fn test_3(t: Ptr<f64>) {
     const _: () = assert!(
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const                  (t))>::type>::value"
@@ -71,11 +71,11 @@ pub fn test_3(t: Ptr<()>) {
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const<const volatile T>(t))>::type>::value"
     );;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(({ (t.read()) } == { (t.read()) }));
+    assert!(({ (t.read()) } == { (t.read()) }));
+    assert!(({ (t.read()) } == { (t.read()) }));
+    assert!(({ (t.read()) } == { (t.read()) }));
+    assert!(({ (t.read()) } == { (t.read()) }));
 }
 pub fn test_4(t: Ptr<S>) {
     const _: () = assert!(
@@ -98,11 +98,41 @@ pub fn test_4(t: Ptr<S>) {
         true,
         "std::is_const<typename std::remove_reference<decltype(std::as_const<const volatile T>(t))>::type>::value"
     );;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _x: Ptr<S> = (t).clone();
+            let _y: Ptr<S> = (t).clone();
+            operator_eq_1(_x, _y)
+        })
+    );
+    assert!(
+        ({
+            let _x: Ptr<S> = (t).clone();
+            let _y: Ptr<S> = (t).clone();
+            operator_eq_1(_x, _y)
+        })
+    );
+    assert!(
+        ({
+            let _x: Ptr<S> = (t).clone();
+            let _y: Ptr<S> = (t).clone();
+            operator_eq_1(_x, _y)
+        })
+    );
+    assert!(
+        ({
+            let _x: Ptr<S> = (t).clone();
+            let _y: Ptr<S> = (t).clone();
+            operator_eq_0(_x, _y)
+        })
+    );
+    assert!(
+        ({
+            let _x: Ptr<S> = (t).clone();
+            let _y: Ptr<S> = (t).clone();
+            operator_eq_0(_x, _y)
+        })
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -123,13 +153,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let i: Value<()> = Rc::new(RefCell::new(3_()));
-    let d: Value<()> = Rc::new(RefCell::new(4_f64));
-    let s: Value<S> = Rc::new(RefCell::new(S { i: 2_() }));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let i: Value<i32> = Rc::new(RefCell::new(3));
+    let d: Value<f64> = Rc::new(RefCell::new(4_f64));
+    let s: Value<S> = Rc::new(RefCell::new(S { i: 2 }));
     ({ test_2(i.as_pointer()) });
     ({ test_3(d.as_pointer()) });
     ({ test_4(s.as_pointer()) });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -9,19 +9,19 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveAssignUnsafe)]
 pub struct S {
-    pub a: (),
-    pub k: (),
+    pub a: (i32, i32),
+    pub k: i32,
 }
 impl S {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            a: unimplemented!(),
-            k: (*unimplemented!()),
+            a: (1, 2),
+            k: (*<(i32, i32) as PairGet<0>>::pair_get_mut(&mut this.a)),
         };
         this
     }
     pub unsafe fn move_assign(&mut self, _a0: *mut S) -> *mut S {
-        unimplemented!();
+        self.a = std::mem::take(&mut (*_a0).a);
         self.k = (*_a0).k;
         return &mut (*(self as *mut S));
     }
@@ -31,8 +31,8 @@ impl Default for S {
         unsafe { S::new() }
     }
 }
-pub unsafe fn getP_0() -> () {
-    return unimplemented!();
+pub unsafe fn getP_0() -> (i32, i32) {
+    return (3, 4);
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -49,20 +49,20 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*unimplemented!()) = 5_();
-        (*unimplemented!()) = 6_();
-        unimplemented!();
-        unimplemented!();
+        let mut p: (i32, i16) = (3, 4_i16);
+        assert!(((*<(i32, i16) as PairGet<0>>::pair_get_mut(&mut p)) == (3)));
+        assert!((((*<(i32, i16) as PairGet<1>>::pair_get_mut(&mut p)) as i32) == (4)));
+        (*<(i32, i16) as PairGet<0>>::pair_get_mut(&mut p)) = 5;
+        (*<(i32, i16) as PairGet<1>>::pair_get_mut(&mut p)) = 6_i16;
+        assert!(((*<(i32, i16) as PairGet<0>>::pair_get_mut(&mut p)) == (5)));
+        assert!((((*<(i32, i16) as PairGet<1>>::pair_get_mut(&mut p)) as i32) == (6)));
     }
     {
         const _: () = assert!(true, "S().k == 1");;
         const _: () = assert!(true, "std::get<1>(getP()) == 4");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

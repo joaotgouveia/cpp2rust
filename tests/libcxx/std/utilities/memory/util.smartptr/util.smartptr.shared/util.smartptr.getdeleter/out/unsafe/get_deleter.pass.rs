@@ -10,40 +10,43 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub unsafe fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub unsafe fn outstanding_alloc() -> usize {
+        assert!(
+            ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
+                >= (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)))
+        );
         return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1))
             .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2))));
     }
     pub unsafe fn reset() {
-        unimplemented!();
+        assert!(((unsafe { malloc_allocator_base::outstanding_alloc() }) == (0_usize)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_3)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_0)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_1)) = 0_usize;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_2)) = 0_usize;
     }
 }
-pub static mut outstanding_bytes_0: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_1: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_2: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_3: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_0: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut alloc_count_1: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut dealloc_count_2: std::cell::LazyCell<usize> =
+    std::cell::LazyCell::new(|| unsafe { 0_usize });
+pub static mut disable_default_constructor_3: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_deleter_base {}
-pub static mut count_4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_5: std::cell::LazyCell<()> =
-    std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_4: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
+pub static mut dealloc_count_5: std::cell::LazyCell<i32> =
+    std::cell::LazyCell::new(|| unsafe { 0 });
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct test_deleter_A_ {
-    state_: (),
+    state_: i32,
 }
 impl test_deleter_A_ {
-    pub unsafe fn new_1(mut s: ()) -> Self {
+    pub unsafe fn new_1(mut s: i32) -> Self {
         let mut this = Self { state_: s };
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_4)).prefix_inc();
         this
@@ -56,15 +59,15 @@ impl test_deleter_A_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        unimplemented!();
+        assert!(((self.state_) >= (0)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_4)).prefix_dec();
-        self.state_ = -1_();
+        self.state_ = -1_i32;
     }
-    pub unsafe fn state(&self) -> () {
+    pub unsafe fn state(&self) -> i32 {
         return self.state_;
     }
     pub unsafe fn operator_call(&mut self, mut p: *mut A) {
-        unimplemented!();
+        assert!(((self.state_) >= (0)));
         (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)).prefix_inc();
         {
             let __p = p;
@@ -111,7 +114,7 @@ impl Default for A {
         unsafe { A::new() }
     }
 }
-pub static mut count_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_6: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -128,42 +131,42 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         {
             let mut ptr: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
             let mut p: () = unimplemented!();
             let mut d: *mut test_deleter_A_ = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_4)) == (1)));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) == (0)));
+            assert!(!(d).is_null());
+            assert!(((unsafe { test_deleter_A_::state(&(*(d).cast_const()),) }) == (3)));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_6)) == (0)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_4)) == (0)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) == (1)));
     }
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0;
     {
         {
             let mut p: () = unimplemented!();
             let mut d: *mut test_deleter_A_ = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_4)) == (1)));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) == (0)));
+            assert!(!(d).is_null());
+            assert!(((unsafe { test_deleter_A_::state(&(*(d).cast_const()),) }) == (3)));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_6)) == (0)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_4)) == (0)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) == (1)));
     }
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_5)) = 0;
     {
         let mut p: () = unimplemented!();
         let mut d: *mut () = unimplemented!();
-        unimplemented!();
+        assert!((d).is_null());
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);

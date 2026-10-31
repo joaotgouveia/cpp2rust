@@ -54,9 +54,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    let ci: Value<()> = Rc::new(RefCell::new(0_()));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let i: Value<i32> = Rc::new(RefCell::new(0));
+    let ci: Value<i32> = Rc::new(RefCell::new(0));
     let l: Value<legacy> = Rc::new(RefCell::new(legacy::new()));
     let a: Value<A> = Rc::new(RefCell::new(A::new()));
     let ca: Value<A> = Rc::new(RefCell::new(A::new()));
@@ -80,10 +80,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "(std::is_same<decltype(std::move_if_noexcept(l)), const legacy&>::value)"
     );;
-    let mut i1: () = 23_();
-    let mut i2: () = i1;
+    let mut i1: i32 = 23;
+    let mut i2: i32 = i1;
     const _: () = assert!(true, "i2 == 23");;
-    return 0_();
+    return 0;
 }
 pub trait AImpl {
     fn copy_assign(&self, _a0: Ptr<A>) -> Ptr<A> {

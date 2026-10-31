@@ -163,115 +163,115 @@ pub static mut testcases_0: std::cell::LazyCell<[(); 153]> = std::cell::LazyCell
         unimplemented!(),
     ]
 });
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_zero: anon_1 = 0;
 pub const anon_1_non_zero: anon_1 = 1;
 pub const anon_1_inf: anon_1 = 2;
 pub const anon_1_NaN: anon_1 = 3;
 pub const anon_1_non_zero_nan: anon_1 = 4;
-pub unsafe fn classify_2(mut x: ()) -> () {
-    if ((x) == (0_())) {
-        return (anon_1_zero as ());
+pub unsafe fn classify_2(mut x: f64) -> i32 {
+    if ((x) == (0_f64)) {
+        return (anon_1_zero as i32);
     }
     if unimplemented!() {
-        return (anon_1_inf as ());
+        return (anon_1_inf as i32);
     }
     if unimplemented!() {
-        return (anon_1_NaN as ());
+        return (anon_1_NaN as i32);
     }
-    return (anon_1_non_zero as ());
+    return (anon_1_non_zero as i32);
 }
-pub unsafe fn is_about_3(mut x: (), mut y: ()) {
-    unimplemented!();
+pub unsafe fn is_about_3(mut x: f32, mut y: f32) {
+    assert!(((unimplemented!() as f64) < (1e-06_f64)));
 }
-pub unsafe fn is_about_4(mut x: (), mut y: ()) {
-    unimplemented!();
+pub unsafe fn is_about_4(mut x: f64, mut y: f64) {
+    assert!(((unimplemented!()) < (1e-14_f64)));
 }
-pub unsafe fn is_about_5(mut x: (), mut y: ()) {
-    unimplemented!();
+pub unsafe fn is_about_5(mut x: f64, mut y: f64) {
+    assert!(((unimplemented!()) < (1e-14_f64)));
 }
-pub unsafe fn test_6(mut x: (), mut _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+pub unsafe fn test_6(mut x: i32, mut _a1: Option<*mut ::libc::c_void>) {
+    let mut _a1: *mut ::libc::c_void = _a1.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::conj(x)), std::complex<double> >::value)"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub unsafe fn test_7(mut x: (), mut _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+pub unsafe fn test_7(mut x: u32, mut _a1: Option<*mut ::libc::c_void>) {
+    let mut _a1: *mut ::libc::c_void = _a1.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::conj(x)), std::complex<double> >::value)"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub unsafe fn test_8(mut x: (), mut _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+pub unsafe fn test_8(mut x: i64, mut _a1: Option<*mut ::libc::c_void>) {
+    let mut _a1: *mut ::libc::c_void = _a1.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::conj(x)), std::complex<double> >::value)"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub unsafe fn test_9(mut x: (), mut _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+pub unsafe fn test_9(mut x: f32, mut _a1: Option<*mut ::libc::c_void>) {
+    let mut _a1: *mut ::libc::c_void = _a1.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::conj(x)), std::complex<T> >::value)"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub unsafe fn test_10(mut x: (), mut _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+pub unsafe fn test_10(mut x: f64, mut _a1: Option<*mut ::libc::c_void>) {
+    let mut _a1: *mut ::libc::c_void = _a1.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::conj(x)), std::complex<T> >::value)"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub unsafe fn test_11(mut x: (), mut _a1: Option<()>) {
-    let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
+pub unsafe fn test_11(mut x: f64, mut _a1: Option<*mut ::libc::c_void>) {
+    let mut _a1: *mut ::libc::c_void = _a1.unwrap_or_else(|| unsafe { std::ptr::null_mut() });
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::conj(x)), std::complex<T> >::value)"
     );;
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub unsafe fn test_12() -> () {
-    (unsafe { test_9(0_(), None) });
-    (unsafe { test_9(1_(), None) });
-    (unsafe { test_9(10_(), None) });
+pub unsafe fn test_12() -> bool {
+    (unsafe { test_9(0_f32, None) });
+    (unsafe { test_9(1_f32, None) });
+    (unsafe { test_9(10_f32, None) });
     return true;
 }
-pub unsafe fn test_13() -> () {
-    (unsafe { test_10(0_(), None) });
-    (unsafe { test_10(1_(), None) });
-    (unsafe { test_10(10_(), None) });
+pub unsafe fn test_13() -> bool {
+    (unsafe { test_10(0_f64, None) });
+    (unsafe { test_10(1_f64, None) });
+    (unsafe { test_10(10_f64, None) });
     return true;
 }
-pub unsafe fn test_14() -> () {
-    (unsafe { test_11(0_(), None) });
-    (unsafe { test_11(1_(), None) });
-    (unsafe { test_11(10_(), None) });
+pub unsafe fn test_14() -> bool {
+    (unsafe { test_11(0_f64, None) });
+    (unsafe { test_11(1_f64, None) });
+    (unsafe { test_11(10_f64, None) });
     return true;
 }
-pub unsafe fn test_15() -> () {
-    (unsafe { test_6(0_(), None) });
-    (unsafe { test_6(1_(), None) });
-    (unsafe { test_6(10_(), None) });
+pub unsafe fn test_15() -> bool {
+    (unsafe { test_6(0, None) });
+    (unsafe { test_6(1, None) });
+    (unsafe { test_6(10, None) });
     return true;
 }
-pub unsafe fn test_16() -> () {
-    (unsafe { test_7(0_(), None) });
-    (unsafe { test_7(1_(), None) });
-    (unsafe { test_7(10_(), None) });
+pub unsafe fn test_16() -> bool {
+    (unsafe { test_7(0_u32, None) });
+    (unsafe { test_7(1_u32, None) });
+    (unsafe { test_7(10_u32, None) });
     return true;
 }
-pub unsafe fn test_17() -> () {
-    (unsafe { test_8(0_(), None) });
-    (unsafe { test_8(1_(), None) });
-    (unsafe { test_8(10_(), None) });
+pub unsafe fn test_17() -> bool {
+    (unsafe { test_8(0_i64, None) });
+    (unsafe { test_8(1_i64, None) });
+    (unsafe { test_8(10_i64, None) });
     return true;
 }
 pub fn main() {
@@ -289,7 +289,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_12() });
     (unsafe { test_13() });
     (unsafe { test_14() });
@@ -302,7 +302,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "test<int>()");;
     const _: () = assert!(true, "test<unsigned>()");;
     const _: () = assert!(true, "test<long long>()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const testcases_0);

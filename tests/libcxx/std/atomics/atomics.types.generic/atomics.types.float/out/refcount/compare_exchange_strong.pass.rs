@@ -6,399 +6,399 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_seq_cst_0(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_0(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<fn(Ptr<()>) -> f32>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_1(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_1(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<fn(Ptr<()>) -> f32>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_2(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_2(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<fn(Ptr<()>) -> f32>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_3(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_3(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<fn(Ptr<()>) -> f32>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_4(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_4(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<fn(Ptr<()>) -> f32>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_5(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_5(store_op: FnPtr<fn(Ptr<()>, f32, f32)>, load_op: FnPtr<fn(Ptr<()>) -> f32>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_6(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_6(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<fn(Ptr<()>) -> f64>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_7(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_7(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<fn(Ptr<()>) -> f64>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_8(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_8(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<fn(Ptr<()>) -> f64>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_9(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_9(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<fn(Ptr<()>) -> f64>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_10(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_10(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<fn(Ptr<()>) -> f64>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
-pub fn test_seq_cst_11(store_op: FnPtr<fn(Ptr<()>, (), ())>, load_op: FnPtr<fn(Ptr<()>) -> ()>) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+pub fn test_seq_cst_11(store_op: FnPtr<fn(Ptr<()>, f64, f64)>, load_op: FnPtr<fn(Ptr<()>) -> f64>) {
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_12(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_13(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_14(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_15(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_16(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_17(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_18(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_19(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_20(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_21(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_22(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_23(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_24(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_25(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_26(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_27(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_28(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_29(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f32, f32)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f32>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f32, f32)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_30(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_31(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_32(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_33(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_34(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_35(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_36(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_37(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_38(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_39(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_40(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_41(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_42(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_43(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_44(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_45(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_46(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
 pub fn test_acquire_release_47(
-    store_op: FnPtr<fn(Ptr<()>, (), ())>,
-    load_op: FnPtr<fn(Ptr<()>) -> ()>,
+    store_op: FnPtr<fn(Ptr<()>, f64, f64)>,
+    load_op: FnPtr<fn(Ptr<()>) -> f64>,
 ) {
-    let store_op: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(store_op));
-    let load_op: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(load_op));
+    let store_op: Value<FnPtr<fn(Ptr<()>, f64, f64)>> = Rc::new(RefCell::new(store_op));
+    let load_op: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(load_op));
     &(*store_op.borrow_mut());
     &(*load_op.borrow_mut());
 }
@@ -409,21 +409,21 @@ pub fn testBasic_48() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.2_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == (1.2_f64 as f32)));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.5_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == (1.2_f64 as f32)));
+        assert!((expected == (1.2_f64 as f32)));
     }
 }
 pub fn testBasic_49(mut memory_order: ()) {
@@ -433,21 +433,21 @@ pub fn testBasic_49(mut memory_order: ()) {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.2_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == (1.2_f64 as f32)));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.5_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == (1.2_f64 as f32)));
+        assert!((expected == (1.2_f64 as f32)));
     }
 }
 pub fn testBasic_50(mut memory_order_0: (), mut memory_order_1: ()) {
@@ -457,21 +457,21 @@ pub fn testBasic_50(mut memory_order_0: (), mut memory_order_1: ()) {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.2_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == (1.2_f64 as f32)));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.5_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == (1.2_f64 as f32)));
+        assert!((expected == (1.2_f64 as f32)));
     }
 }
 pub fn testBasic_51() {
@@ -481,21 +481,21 @@ pub fn testBasic_51() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.2_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == (1.2_f64 as f32)));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.5_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == (1.2_f64 as f32)));
+        assert!((expected == (1.2_f64 as f32)));
     }
 }
 pub fn testBasic_52(mut memory_order: ()) {
@@ -505,21 +505,21 @@ pub fn testBasic_52(mut memory_order: ()) {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.2_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == (1.2_f64 as f32)));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.5_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == (1.2_f64 as f32)));
+        assert!((expected == (1.2_f64 as f32)));
     }
 }
 pub fn testBasic_53(mut memory_order_0: (), mut memory_order_1: ()) {
@@ -529,21 +529,21 @@ pub fn testBasic_53(mut memory_order_0: (), mut memory_order_1: ()) {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.2_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == (1.2_f64 as f32)));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f32 = (1.5_f64 as f32);
+        let mut desired: f32 = (2.3_f64 as f32);
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == (1.2_f64 as f32)));
+        assert!((expected == (1.2_f64 as f32)));
     }
 }
 pub fn testBasic_54() {
@@ -553,21 +553,21 @@ pub fn testBasic_54() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.2_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == 1.2_f64));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.5_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == 1.2_f64));
+        assert!((expected == 1.2_f64));
     }
 }
 pub fn testBasic_55(mut memory_order: ()) {
@@ -577,21 +577,21 @@ pub fn testBasic_55(mut memory_order: ()) {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.2_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == 1.2_f64));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.5_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == 1.2_f64));
+        assert!((expected == 1.2_f64));
     }
 }
 pub fn testBasic_56(mut memory_order_0: (), mut memory_order_1: ()) {
@@ -601,21 +601,21 @@ pub fn testBasic_56(mut memory_order_0: (), mut memory_order_1: ()) {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.2_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == 1.2_f64));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.5_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == 1.2_f64));
+        assert!((expected == 1.2_f64));
     }
 }
 pub fn testBasic_57() {
@@ -625,21 +625,21 @@ pub fn testBasic_57() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.2_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == 1.2_f64));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.5_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == 1.2_f64));
+        assert!((expected == 1.2_f64));
     }
 }
 pub fn testBasic_58(mut memory_order: ()) {
@@ -649,21 +649,21 @@ pub fn testBasic_58(mut memory_order: ()) {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.2_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == 1.2_f64));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.5_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == 1.2_f64));
+        assert!((expected == 1.2_f64));
     }
 }
 pub fn testBasic_59(mut memory_order_0: (), mut memory_order_1: ()) {
@@ -673,21 +673,21 @@ pub fn testBasic_59(mut memory_order_0: (), mut memory_order_1: ()) {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.2_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.2_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!((r as bool));
+        assert!((unimplemented!() == desired));
+        assert!((expected == 1.2_f64));
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut expected: () = 1.5_f64;
-        let mut desired: () = 2.3_f64;
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut expected: f64 = 1.5_f64;
+        let mut desired: f64 = 2.3_f64;
+        let mut r: bool = unimplemented!();
+        assert!(!(r));
+        assert!((unimplemented!() == 1.2_f64));
+        assert!((expected == 1.2_f64));
     }
 }
 pub fn test_impl_60() {
@@ -695,26 +695,27 @@ pub fn test_impl_60() {
     ({ testBasic_49(unimplemented!()) });
     ({ testBasic_50(unimplemented!(), unimplemented!()) });
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    return unimplemented!();
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        return unimplemented!();
+                    }
+                },
+            )));
         ({ test_acquire_release_12((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
         ({
@@ -725,27 +726,28 @@ pub fn test_impl_60() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut _a1: f32, mut new_val: f32| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_14((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_14((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -759,35 +761,36 @@ pub fn test_impl_60() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_16((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                },
-            )));
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_16((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
+                },
+            )));
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -801,35 +804,36 @@ pub fn test_impl_60() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_seq_cst_0((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                },
-            )));
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_seq_cst_0((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
+                },
+            )));
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -843,32 +847,33 @@ pub fn test_impl_60() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut _a1: f32, mut new_val: f32| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                    return (*result.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_18((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
                     {
-                        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                        let mut unexpected: () = -9999.99_f64;
-                        let mut r: () = unimplemented!();
-                        unimplemented!();
+                        let result: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f32 = (-9999.99_f64 as f32);
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
+                        return (*result.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_18((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let result: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f32 = (-9999.99_f64 as f32);
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
                         return (*result.borrow());
                     }
                 },
@@ -879,18 +884,17 @@ pub fn test_impl_60() {
                 (*load_one_arg.borrow()).copy_from(),
             )
         });
-        let load_one_arg_acq_rel: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                        let mut unexpected: () = -9999.99_f64;
-                        let mut r: () = unimplemented!();
-                        unimplemented!();
-                        return (*result.borrow());
-                    }
-                },
-            )));
+        let load_one_arg_acq_rel: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<()>) -> f32>::new(|x: Ptr<()>| -> f32 {
+                {
+                    let result: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                    let mut unexpected: f32 = (-9999.99_f64 as f32);
+                    let mut r: bool = unimplemented!();
+                    assert!(!(r));
+                    return (*result.borrow());
+                }
+            }),
+        ));
         ({
             test_acquire_release_20(
                 (*store.borrow()).copy_from(),
@@ -899,23 +903,24 @@ pub fn test_impl_60() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut _a1: f32, mut new_val: f32| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                    return (*result.borrow());
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let result: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f32 = (-9999.99_f64 as f32);
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
+                        return (*result.borrow());
+                    }
+                },
+            )));
         ({ test_seq_cst_2((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
@@ -924,26 +929,27 @@ pub fn test_impl_61() {
     ({ testBasic_52(unimplemented!()) });
     ({ testBasic_53(unimplemented!(), unimplemented!()) });
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    return unimplemented!();
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        return unimplemented!();
+                    }
+                },
+            )));
         ({ test_acquire_release_21((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
         ({
@@ -954,27 +960,28 @@ pub fn test_impl_61() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut _a1: f32, mut new_val: f32| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_23((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_23((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -988,35 +995,36 @@ pub fn test_impl_61() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_25((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                },
-            )));
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_25((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
+                },
+            )));
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -1030,35 +1038,36 @@ pub fn test_impl_61() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_seq_cst_3((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                },
-            )));
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_seq_cst_3((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut old_val: f32, mut new_val: f32| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
+                },
+            )));
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let val: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -1072,32 +1081,33 @@ pub fn test_impl_61() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut _a1: f32, mut new_val: f32| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                    return (*result.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_27((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
                     {
-                        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                        let mut unexpected: () = -9999.99_f64;
-                        let mut r: () = unimplemented!();
-                        unimplemented!();
+                        let result: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f32 = (-9999.99_f64 as f32);
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
+                        return (*result.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_27((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let result: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f32 = (-9999.99_f64 as f32);
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
                         return (*result.borrow());
                     }
                 },
@@ -1108,18 +1118,17 @@ pub fn test_impl_61() {
                 (*load_one_arg.borrow()).copy_from(),
             )
         });
-        let load_one_arg_acq_rel: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                        let mut unexpected: () = -9999.99_f64;
-                        let mut r: () = unimplemented!();
-                        unimplemented!();
-                        return (*result.borrow());
-                    }
-                },
-            )));
+        let load_one_arg_acq_rel: Value<FnPtr<fn(Ptr<()>) -> f32>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<()>) -> f32>::new(|x: Ptr<()>| -> f32 {
+                {
+                    let result: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                    let mut unexpected: f32 = (-9999.99_f64 as f32);
+                    let mut r: bool = unimplemented!();
+                    assert!(!(r));
+                    return (*result.borrow());
+                }
+            }),
+        ));
         ({
             test_acquire_release_29(
                 (*store.borrow()).copy_from(),
@@ -1128,23 +1137,24 @@ pub fn test_impl_61() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f32, f32)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f32, f32)>::new(
+                |x: Ptr<()>, mut _a1: f32, mut new_val: f32| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                    return (*result.borrow());
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f32>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f32>::new(
+                |x: Ptr<()>| -> f32 {
+                    {
+                        let result: Value<f32> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f32 = (-9999.99_f64 as f32);
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
+                        return (*result.borrow());
+                    }
+                },
+            )));
         ({ test_seq_cst_5((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
@@ -1153,26 +1163,27 @@ pub fn test_impl_62() {
     ({ testBasic_55(unimplemented!()) });
     ({ testBasic_56(unimplemented!(), unimplemented!()) });
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    return unimplemented!();
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        return unimplemented!();
+                    }
+                },
+            )));
         ({ test_acquire_release_30((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
         ({
@@ -1183,27 +1194,28 @@ pub fn test_impl_62() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut _a1: f64, mut new_val: f64| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_32((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_32((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -1217,35 +1229,36 @@ pub fn test_impl_62() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_34((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                },
-            )));
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_34((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
+                },
+            )));
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -1259,35 +1272,36 @@ pub fn test_impl_62() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_seq_cst_6((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                },
-            )));
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_seq_cst_6((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
+                },
+            )));
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -1301,32 +1315,33 @@ pub fn test_impl_62() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut _a1: f64, mut new_val: f64| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                    return (*result.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_36((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
                     {
-                        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                        let mut unexpected: () = -9999.99_f64;
-                        let mut r: () = unimplemented!();
-                        unimplemented!();
+                        let result: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f64 = -9999.99_f64;
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
+                        return (*result.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_36((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let result: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f64 = -9999.99_f64;
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
                         return (*result.borrow());
                     }
                 },
@@ -1337,18 +1352,17 @@ pub fn test_impl_62() {
                 (*load_one_arg.borrow()).copy_from(),
             )
         });
-        let load_one_arg_acq_rel: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                        let mut unexpected: () = -9999.99_f64;
-                        let mut r: () = unimplemented!();
-                        unimplemented!();
-                        return (*result.borrow());
-                    }
-                },
-            )));
+        let load_one_arg_acq_rel: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<()>) -> f64>::new(|x: Ptr<()>| -> f64 {
+                {
+                    let result: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                    let mut unexpected: f64 = -9999.99_f64;
+                    let mut r: bool = unimplemented!();
+                    assert!(!(r));
+                    return (*result.borrow());
+                }
+            }),
+        ));
         ({
             test_acquire_release_38(
                 (*store.borrow()).copy_from(),
@@ -1357,23 +1371,24 @@ pub fn test_impl_62() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut _a1: f64, mut new_val: f64| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                    return (*result.borrow());
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let result: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f64 = -9999.99_f64;
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
+                        return (*result.borrow());
+                    }
+                },
+            )));
         ({ test_seq_cst_8((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
@@ -1382,26 +1397,27 @@ pub fn test_impl_63() {
     ({ testBasic_58(unimplemented!()) });
     ({ testBasic_59(unimplemented!(), unimplemented!()) });
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    return unimplemented!();
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        return unimplemented!();
+                    }
+                },
+            )));
         ({ test_acquire_release_39((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
         ({
@@ -1412,27 +1428,28 @@ pub fn test_impl_63() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut _a1: f64, mut new_val: f64| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_41((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_41((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -1446,35 +1463,36 @@ pub fn test_impl_63() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_43((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                },
-            )));
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_43((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
+                },
+            )));
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -1488,35 +1506,36 @@ pub fn test_impl_63() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    'loop_: while !(unimplemented!()) {}
-                    return (*val.borrow());
-                }
-            }),
-        ));
-        ({ test_seq_cst_9((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let store_one_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                },
-            )));
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
                     {
-                        let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        'loop_: while !(unimplemented!()) {}
+                        return (*val.borrow());
+                    }
+                },
+            )));
+        ({ test_seq_cst_9((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let store_one_arg: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut old_val: f64, mut new_val: f64| {
+                    let mut r: bool = unimplemented!();
+                    assert!((r as bool));
+                },
+            )));
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let val: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
                         'loop_: while !(unimplemented!()) {}
                         return (*val.borrow());
                     }
@@ -1530,32 +1549,33 @@ pub fn test_impl_63() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut _a1: f64, mut new_val: f64| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                    return (*result.borrow());
-                }
-            }),
-        ));
-        ({ test_acquire_release_45((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
-        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
                     {
-                        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                        let mut unexpected: () = -9999.99_f64;
-                        let mut r: () = unimplemented!();
-                        unimplemented!();
+                        let result: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f64 = -9999.99_f64;
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
+                        return (*result.borrow());
+                    }
+                },
+            )));
+        ({ test_acquire_release_45((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
+        let load_one_arg: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let result: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f64 = -9999.99_f64;
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
                         return (*result.borrow());
                     }
                 },
@@ -1566,18 +1586,17 @@ pub fn test_impl_63() {
                 (*load_one_arg.borrow()).copy_from(),
             )
         });
-        let load_one_arg_acq_rel: Value<FnPtr<fn(Ptr<()>) -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
-                |x: Ptr<()>| -> () {
-                    {
-                        let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                        let mut unexpected: () = -9999.99_f64;
-                        let mut r: () = unimplemented!();
-                        unimplemented!();
-                        return (*result.borrow());
-                    }
-                },
-            )));
+        let load_one_arg_acq_rel: Value<FnPtr<fn(Ptr<()>) -> f64>> = Rc::new(RefCell::new(
+            FnPtr::<fn(Ptr<()>) -> f64>::new(|x: Ptr<()>| -> f64 {
+                {
+                    let result: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                    let mut unexpected: f64 = -9999.99_f64;
+                    let mut r: bool = unimplemented!();
+                    assert!(!(r));
+                    return (*result.borrow());
+                }
+            }),
+        ));
         ({
             test_acquire_release_47(
                 (*store.borrow()).copy_from(),
@@ -1586,23 +1605,24 @@ pub fn test_impl_63() {
         });
     }
     {
-        let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
-            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
-                |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
+        let store: Value<FnPtr<fn(Ptr<()>, f64, f64)>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, f64, f64)>::new(
+                |x: Ptr<()>, mut _a1: f64, mut new_val: f64| {
                     unimplemented!();
                 },
             )));
-        let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-            FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
-                {
-                    let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = unimplemented!();
-                    unimplemented!();
-                    return (*result.borrow());
-                }
-            }),
-        ));
+        let load: Value<FnPtr<fn(Ptr<()>) -> f64>> =
+            Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> f64>::new(
+                |x: Ptr<()>| -> f64 {
+                    {
+                        let result: Value<f64> = Rc::new(RefCell::new(unimplemented!()));
+                        let mut unexpected: f64 = -9999.99_f64;
+                        let mut r: bool = unimplemented!();
+                        assert!(!(r));
+                        return (*result.borrow());
+                    }
+                },
+            )));
         ({ test_seq_cst_11((*store.borrow()).copy_from(), (*load.borrow()).copy_from()) });
     }
 }
@@ -1637,9 +1657,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_64() });
     ({ test_65() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

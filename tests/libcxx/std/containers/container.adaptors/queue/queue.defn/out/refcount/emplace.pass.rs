@@ -10,18 +10,18 @@ use std::rc::{Rc, Weak};
 #[byte_size(16)]
 pub struct Emplaceable {
     #[offset(0)]
-    int_: (),
+    int_: i32,
     #[offset(8)]
-    double_: (),
+    double_: f64,
 }
 impl Emplaceable {
     pub fn new_1() -> Self {
         Self {
-            int_: 0_(),
-            double_: 0_(),
+            int_: 0,
+            double_: 0_f64,
         }
     }
-    pub fn new_2(mut i: (), mut d: ()) -> Self {
+    pub fn new_2(mut i: i32, mut d: f64) -> Self {
         Self {
             int_: i,
             double_: d,
@@ -32,8 +32,8 @@ impl Emplaceable {
             int_: x.with(|__s| __s.int_),
             double_: x.with(|__s| __s.double_),
         };
-        field!(x, int_).write(0_());
-        field!(x, double_).write(0_());
+        field!(x, int_).write(0);
+        field!(x, double_).write(0_f64);
         __this
     }
 }
@@ -83,49 +83,61 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_return_type_0() });
     ({ test_return_type_1() });
     let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let r1: Ptr<Emplaceable> = unimplemented!();
-    unimplemented!();
+    assert!(({ (r1).clone() } == { (unimplemented!()) }));
     let r2: Ptr<Emplaceable> = unimplemented!();
-    unimplemented!();
+    assert!(({ (r2).clone() } == { (unimplemented!()) }));
     let r3: Ptr<Emplaceable> = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(({ (r3).clone() } == { (unimplemented!()) }));
+    assert!(({ (r1).clone() } == { (unimplemented!()) }));
+    assert!((unimplemented!() == 3_()));
+    assert!(
+        ({
+            let _x: Value<Emplaceable> =
+                Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
+            EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _x: Value<Emplaceable> =
+                Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
+            EmplaceableImpl::operator_eq(&unimplemented!(), _x.as_pointer())
+        })
+    );
+    return 0;
 }
 pub trait EmplaceableImpl {
     fn copy_assign(&self, _a0: Ptr<Emplaceable>) -> Ptr<Emplaceable> {
         unimplemented!()
     }
     fn move_assign(&self, x: Ptr<Emplaceable>) -> Ptr<Emplaceable>;
-    fn operator_eq(&self, x: Ptr<Emplaceable>) -> ();
-    fn operator_lt(&self, x: Ptr<Emplaceable>) -> ();
-    fn get(&self) -> ();
+    fn operator_eq(&self, x: Ptr<Emplaceable>) -> bool;
+    fn operator_lt(&self, x: Ptr<Emplaceable>) -> bool;
+    fn get(&self) -> i32;
 }
 impl EmplaceableImpl for Ptr<Emplaceable> {
     fn move_assign(&self, x: Ptr<Emplaceable>) -> Ptr<Emplaceable> {
         field!((*self), int_).write({ x.with(|__s| __s.int_) });
-        field!(x, int_).write(0_());
+        field!(x, int_).write(0);
         field!((*self), double_).write({ x.with(|__s| __s.double_) });
-        field!(x, double_).write(0_());
+        field!(x, double_).write(0_f64);
         return (*self).clone();
     }
-    fn operator_eq(&self, x: Ptr<Emplaceable>) -> () {
+    fn operator_eq(&self, x: Ptr<Emplaceable>) -> bool {
         return ({ (*self).with(|__s| __s.int_) } == { x.with(|__s| __s.int_) })
             && ({ (*self).with(|__s| __s.double_) } == { x.with(|__s| __s.double_) });
     }
-    fn operator_lt(&self, x: Ptr<Emplaceable>) -> () {
+    fn operator_lt(&self, x: Ptr<Emplaceable>) -> bool {
         return ({ (*self).with(|__s| __s.int_) } < { x.with(|__s| __s.int_) })
             || (({ (*self).with(|__s| __s.int_) } == { x.with(|__s| __s.int_) })
                 && ({ (*self).with(|__s| __s.double_) } < { x.with(|__s| __s.double_) }));
     }
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.int_);
     }
 }

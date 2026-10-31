@@ -6,52 +6,52 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_const_int_ref__const_int_ref_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_const_long_ref__const_long_ref_ {}
-pub type anon_2 = ();
+pub type anon_2 = u32;
 pub const anon_2_value: anon_2 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_int_ref__int_ref_ {}
-pub type anon_3 = ();
+pub type anon_3 = u32;
 pub const anon_3_value: anon_3 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_int_refref__int_refref_ {}
-pub type anon_4 = ();
+pub type anon_4 = u32;
 pub const anon_4_value: anon_4 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_const_long_refref__const_long_refref_ {}
-pub type anon_5 = ();
+pub type anon_5 = u32;
 pub const anon_5_value: anon_5 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_const_int_refref__const_int_refref_ {}
-pub unsafe fn operator_eq_6(LHS: *const TypeID, RHS: *const TypeID) -> () {
+pub unsafe fn operator_eq_6(LHS: *const TypeID, RHS: *const TypeID) -> bool {
     return (((*LHS).m_id) == ((*RHS).m_id));
 }
-pub unsafe fn operator_ne_7(LHS: *const TypeID, RHS: *const TypeID) -> () {
+pub unsafe fn operator_ne_7(LHS: *const TypeID, RHS: *const TypeID) -> bool {
     return (((*LHS).m_id) != ((*RHS).m_id));
 }
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct TypeID {
-    m_id: *const (),
+    m_id: *const libc::c_char,
 }
 impl TypeID {
-    pub unsafe fn name(&self) -> () {
-        return unimplemented!();
+    pub unsafe fn name(&self) -> Vec<libc::c_char> {
+        return std::slice::from_raw_parts(self.m_id, libcc2rs::c_str_len(self.m_id) + 1).to_vec();
     }
-    unsafe fn new(mut xid: *const ()) -> Self {
+    unsafe fn new(mut xid: *const libc::c_char) -> Self {
         let mut this = Self { m_id: xid };
         this
     }
@@ -62,21 +62,22 @@ impl std::cmp::PartialEq for TypeID {
     }
 }
 impl std::cmp::Eq for TypeID {}
-pub type CallType = ();
+pub type CallType = u32;
 pub const CallType_CT_None: CallType = 0;
 pub const CallType_CT_NonConst: CallType = 1;
 pub const CallType_CT_Const: CallType = 2;
 pub const CallType_CT_LValue: CallType = 4;
 pub const CallType_CT_RValue: CallType = 8;
 pub unsafe fn operator_bitor_8(mut LHS: CallType, mut RHS: CallType) -> CallType {
-    return (((LHS as ()) | (RHS as ())) as CallType);
+    return (((LHS as u32) | (RHS as u32)) as CallType);
 }
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_into(i32, to_i32)]
 pub struct ForwardingCallObject {}
 impl ForwardingCallObject {
-    pub unsafe fn to_(&self) -> () {
-        return 0_();
+    pub unsafe fn to_i32(&self) -> i32 {
+        return 0;
     }
 }
 pub static mut last_call_type_9: std::cell::LazyCell<CallType> =
@@ -100,7 +101,7 @@ pub unsafe fn test_const_lvalue_get_11() {
         let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42)));
     }
     {
         let v: () = unimplemented!();
@@ -112,7 +113,7 @@ pub unsafe fn test_const_lvalue_get_11() {
         let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42_i64)));
     }
 }
 pub unsafe fn test_lvalue_get_12() {
@@ -120,12 +121,12 @@ pub unsafe fn test_lvalue_get_12() {
         let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42)));
     }
     {
         let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42_i64)));
     }
 }
 pub unsafe fn test_rvalue_get_13() {
@@ -133,12 +134,12 @@ pub unsafe fn test_rvalue_get_13() {
         let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42)));
     }
     {
         let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42_i64)));
     }
 }
 pub unsafe fn test_const_rvalue_get_14() {
@@ -146,12 +147,12 @@ pub unsafe fn test_const_rvalue_get_14() {
         let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42)));
     }
     {
         let v: () = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!(((*unimplemented!()) == (42_i64)));
     }
 }
 pub unsafe fn test_throws_for_all_value_categories_15() {}
@@ -170,13 +171,13 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_const_lvalue_get_11() });
     (unsafe { test_lvalue_get_12() });
     (unsafe { test_rvalue_get_13() });
     (unsafe { test_const_rvalue_get_14() });
     (unsafe { test_throws_for_all_value_categories_15() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const last_call_type_9);

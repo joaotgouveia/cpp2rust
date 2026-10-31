@@ -36,7 +36,7 @@ impl A {
         }
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     let mut a: A = <A>::default();
     &(a);
     return true;
@@ -60,9 +60,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
-    return 0_();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(({ test_0() }));
+    return 0;
 }
 pub trait AImpl {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A>;
@@ -70,8 +70,8 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        field!((*self), it).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).it.clone() });
+        field!((*self), cit).with_mut(|__b0| (*__b0) = { (*_a0.upgrade().deref()).cit.clone() });
         unimplemented!();
         unimplemented!();
         return (*self).clone();

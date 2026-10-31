@@ -6,10 +6,10 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn operator_eq_0(LHS: *const TypeID, RHS: *const TypeID) -> () {
+pub unsafe fn operator_eq_0(LHS: *const TypeID, RHS: *const TypeID) -> bool {
     return (((*LHS).m_id) == ((*RHS).m_id));
 }
-pub unsafe fn operator_ne_1(LHS: *const TypeID, RHS: *const TypeID) -> () {
+pub unsafe fn operator_ne_1(LHS: *const TypeID, RHS: *const TypeID) -> bool {
     return (((*LHS).m_id) != ((*RHS).m_id));
 }
 pub unsafe fn makeTypeIDImp_2() -> *const TypeID {
@@ -27,13 +27,13 @@ pub unsafe fn makeTypeIDImp_8() -> *const TypeID {
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct TypeID {
-    m_id: *const (),
+    m_id: *const libc::c_char,
 }
 impl TypeID {
-    pub unsafe fn name(&self) -> () {
-        return unimplemented!();
+    pub unsafe fn name(&self) -> Vec<libc::c_char> {
+        return std::slice::from_raw_parts(self.m_id, libcc2rs::c_str_len(self.m_id) + 1).to_vec();
     }
-    unsafe fn new(mut xid: *const ()) -> Self {
+    unsafe fn new(mut xid: *const libc::c_char) -> Self {
         let mut this = Self { m_id: xid };
         this
     }
@@ -78,51 +78,51 @@ pub unsafe fn makeArgumentID_12() -> *const TypeID {
 pub unsafe fn makeArgumentID_13() -> *const TypeID {
     return (unsafe { makeTypeIDImp_8() });
 }
-pub unsafe fn constexpr_sum_fn_14() -> () {
-    return 0_();
+pub unsafe fn constexpr_sum_fn_14() -> i32 {
+    return 0;
 }
-pub unsafe fn constexpr_sum_fn_15(mut x1: ()) -> () {
+pub unsafe fn constexpr_sum_fn_15(mut x1: i32) -> i32 {
     return ((x1) + (unsafe { constexpr_sum_fn_14() }));
 }
-pub unsafe fn constexpr_sum_fn_16(mut x1: (), mut rest: ()) -> () {
+pub unsafe fn constexpr_sum_fn_16(mut x1: i32, mut rest: i32) -> i32 {
     return ((x1) + (unsafe { constexpr_sum_fn_15(rest) }));
 }
-pub unsafe fn constexpr_sum_fn_17(mut x1: (), mut rest: ()) -> () {
-    return ((x1) + (unsafe { constexpr_sum_fn_15(rest) }));
+pub unsafe fn constexpr_sum_fn_17(mut x1: i32, mut rest: i64) -> i32 {
+    return ((x1) + (unsafe { constexpr_sum_fn_15((rest as i32)) }));
 }
-pub unsafe fn constexpr_sum_fn_18(mut x1: (), mut rest_1: (), mut rest_2: ()) -> () {
+pub unsafe fn constexpr_sum_fn_18(mut x1: i32, mut rest_1: i32, mut rest_2: i32) -> i32 {
     return ((x1) + (unsafe { constexpr_sum_fn_16(rest_1, rest_2) }));
 }
-pub unsafe fn constexpr_sum_fn_19(mut x1: (), mut rest_1: (), mut rest_2: ()) -> () {
-    return ((x1) + (unsafe { constexpr_sum_fn_16(rest_1, rest_2) }));
+pub unsafe fn constexpr_sum_fn_19(mut x1: i32, mut rest_1: i64, mut rest_2: i32) -> i32 {
+    return ((x1) + (unsafe { constexpr_sum_fn_16((rest_1 as i32), rest_2) }));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ConstexprSumT {}
 impl ConstexprSumT {
-    pub unsafe fn operator_call_2(&self) -> () {
+    pub unsafe fn operator_call_2(&self) -> i32 {
         return (unsafe { constexpr_sum_fn_14() });
     }
-    pub unsafe fn operator_call_2_int(&self, mut values: ()) -> () {
+    pub unsafe fn operator_call_2_int(&self, mut values: i32) -> i32 {
         return (unsafe { constexpr_sum_fn_15(values) });
     }
-    pub unsafe fn operator_call_2_int_long(&self, mut values_0: (), mut values_1: ()) -> () {
+    pub unsafe fn operator_call_2_int_long(&self, mut values_0: i32, mut values_1: i64) -> i32 {
         return (unsafe { constexpr_sum_fn_17(values_0, values_1) });
     }
     pub unsafe fn operator_call_2_int_long_int(
         &self,
-        mut values_0: (),
-        mut values_1: (),
-        mut values_2: (),
-    ) -> () {
+        mut values_0: i32,
+        mut values_1: i64,
+        mut values_2: i32,
+    ) -> i32 {
         return (unsafe { constexpr_sum_fn_19(values_0, values_1, values_2) });
     }
     pub unsafe fn operator_call_2_int_int_int(
         &self,
-        mut values_0: (),
-        mut values_1: (),
-        mut values_2: (),
-    ) -> () {
+        mut values_0: i32,
+        mut values_1: i32,
+        mut values_2: i32,
+    ) -> i32 {
         return (unsafe { constexpr_sum_fn_18(values_0, values_1, values_2) });
     }
 }
@@ -153,7 +153,7 @@ pub unsafe fn test_constexpr_evaluation_20() {
         const _: () = assert!(true, "std::apply(sum_obj, t) == 143");;
     }
     {
-        let t: () = unimplemented!();
+        let t: (i32, i64) = (42, (101 as i64));
         const _: () = assert!(
             true,
             "std::apply(static_cast<Fn>(constexpr_sum_fn), t) == 143"
@@ -169,7 +169,7 @@ pub unsafe fn test_constexpr_evaluation_20() {
         const _: () = assert!(true, "std::apply(sum_obj, t) == 142");;
     }
     {
-        let t: () = unimplemented!();
+        let t: Vec<i32> = Vec::from([42, 101, -1_i32]);
         const _: () = assert!(
             true,
             "std::apply(static_cast<Fn>(constexpr_sum_fn), t) == 142"
@@ -177,7 +177,7 @@ pub unsafe fn test_constexpr_evaluation_20() {
         const _: () = assert!(true, "std::apply(sum_obj, t) == 142");;
     }
 }
-pub type CallQuals = ();
+pub type CallQuals = u32;
 pub const CallQuals_CQ_None: CallQuals = 0;
 pub const CallQuals_CQ_LValue: CallQuals = 1;
 pub const CallQuals_CQ_ConstLValue: CallQuals = 2;
@@ -186,9 +186,9 @@ pub const CallQuals_CQ_ConstRValue: CallQuals = 4;
 impl CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
     pub unsafe fn new(
         mut q: CallQuals,
-        xargs_1: *mut (),
-        xargs_2: *const (),
-        xargs_3: *mut (),
+        xargs_1: *mut i32,
+        xargs_2: *const i32,
+        xargs_3: *mut u32,
     ) -> Self {
         let mut this = Self {
             quals: q,
@@ -220,9 +220,9 @@ impl CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
 impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
     pub unsafe fn new(
         mut q: CallQuals,
-        xargs_1: *const (),
-        xargs_2: *const (),
-        xargs_3: *mut (),
+        xargs_1: *const i32,
+        xargs_2: *const i32,
+        xargs_3: *mut u32,
     ) -> Self {
         let mut this = Self {
             quals: q,
@@ -254,9 +254,9 @@ impl CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
 impl CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
     pub unsafe fn new(
         mut q: CallQuals,
-        xargs_1: *mut (),
-        xargs_2: *const (),
-        xargs_3: *mut (),
+        xargs_1: *mut i32,
+        xargs_2: *const i32,
+        xargs_3: *mut u32,
     ) -> Self {
         let mut this = Self {
             quals: q,
@@ -288,9 +288,9 @@ impl CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
 impl CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
     pub unsafe fn new(
         mut q: CallQuals,
-        xargs_1: *const (),
-        xargs_2: *const (),
-        xargs_3: *mut (),
+        xargs_1: *const i32,
+        xargs_2: *const i32,
+        xargs_3: *mut u32,
     ) -> Self {
         let mut this = Self {
             quals: q,
@@ -321,9 +321,9 @@ impl CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
 }
 pub unsafe fn makeCallInfo_21(
     mut quals: CallQuals,
-    args_1: *mut (),
-    args_2: *const (),
-    args_3: *mut (),
+    args_1: *mut i32,
+    args_2: *const i32,
+    args_3: *mut u32,
 ) -> CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
     return CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__::new(
         { quals },
@@ -334,9 +334,9 @@ pub unsafe fn makeCallInfo_21(
 }
 pub unsafe fn makeCallInfo_22(
     mut quals: CallQuals,
-    args_1: *const (),
-    args_2: *const (),
-    args_3: *mut (),
+    args_1: *const i32,
+    args_2: *const i32,
+    args_3: *mut u32,
 ) -> CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
     return CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__::new(
         { quals },
@@ -347,9 +347,9 @@ pub unsafe fn makeCallInfo_22(
 }
 pub unsafe fn makeCallInfo_23(
     mut quals: CallQuals,
-    args_1: *mut (),
-    args_2: *const (),
-    args_3: *mut (),
+    args_1: *mut i32,
+    args_2: *const i32,
+    args_3: *mut u32,
 ) -> CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
     return CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__::new(
         { quals },
@@ -360,9 +360,9 @@ pub unsafe fn makeCallInfo_23(
 }
 pub unsafe fn makeCallInfo_24(
     mut quals: CallQuals,
-    args_1: *const (),
-    args_2: *const (),
-    args_3: *mut (),
+    args_1: *const i32,
+    args_2: *const i32,
+    args_3: *mut u32,
 ) -> CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
     return CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__::new(
         { quals },
@@ -377,209 +377,209 @@ pub struct TrackedCallable {}
 impl TrackedCallable {
     pub unsafe fn operator_call_2_int_ref_const_int_ref_unsigned_int_ref(
         &mut self,
-        xargs_0: *mut (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *mut i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
         return (unsafe {
-            let _args_1: *mut () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *mut i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_21(CallQuals_CQ_LValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_2_const_int_ref_const_int_ref_unsigned_int_ref(
         &mut self,
-        xargs_0: *const (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *const i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
         return (unsafe {
-            let _args_1: *const () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *const i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_22(CallQuals_CQ_LValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_2_int_const_int_ref_unsigned_int(
         &mut self,
-        xargs_0: *mut (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *mut i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
         return (unsafe {
-            let _args_1: *mut () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *mut i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_23(CallQuals_CQ_LValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_2_const_int_const_int_ref_unsigned_int(
         &mut self,
-        xargs_0: *const (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *const i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
         return (unsafe {
-            let _args_1: *const () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *const i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_24(CallQuals_CQ_LValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_3_int_ref_const_int_ref_unsigned_int_ref(
         &self,
-        xargs_0: *mut (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *mut i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
         return (unsafe {
-            let _args_1: *mut () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *mut i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_21(CallQuals_CQ_ConstLValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_3_const_int_ref_const_int_ref_unsigned_int_ref(
         &self,
-        xargs_0: *const (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *const i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
         return (unsafe {
-            let _args_1: *const () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *const i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_22(CallQuals_CQ_ConstLValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_3_int_const_int_ref_unsigned_int(
         &self,
-        xargs_0: *mut (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *mut i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
         return (unsafe {
-            let _args_1: *mut () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *mut i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_23(CallQuals_CQ_ConstLValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_3_const_int_const_int_ref_unsigned_int(
         &self,
-        xargs_0: *const (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *const i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
         return (unsafe {
-            let _args_1: *const () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *const i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_24(CallQuals_CQ_ConstLValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_4_int_ref_const_int_ref_unsigned_int_ref(
         &mut self,
-        xargs_0: *mut (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *mut i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
         return (unsafe {
-            let _args_1: *mut () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *mut i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_21(CallQuals_CQ_RValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_4_const_int_ref_const_int_ref_unsigned_int_ref(
         &mut self,
-        xargs_0: *const (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *const i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
         return (unsafe {
-            let _args_1: *const () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *const i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_22(CallQuals_CQ_RValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_4_int_const_int_ref_unsigned_int(
         &mut self,
-        xargs_0: *mut (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *mut i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
         return (unsafe {
-            let _args_1: *mut () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *mut i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_23(CallQuals_CQ_RValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_4_const_int_const_int_ref_unsigned_int(
         &mut self,
-        xargs_0: *const (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *const i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
         return (unsafe {
-            let _args_1: *const () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *const i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_24(CallQuals_CQ_RValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_5_int_ref_const_int_ref_unsigned_int_ref(
         &self,
-        xargs_0: *mut (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *mut i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ {
         return (unsafe {
-            let _args_1: *mut () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *mut i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_21(CallQuals_CQ_ConstRValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_5_const_int_ref_const_int_ref_unsigned_int_ref(
         &self,
-        xargs_0: *const (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *const i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ {
         return (unsafe {
-            let _args_1: *const () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *const i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_22(CallQuals_CQ_ConstRValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_5_int_const_int_ref_unsigned_int(
         &self,
-        xargs_0: *mut (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *mut i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ {
         return (unsafe {
-            let _args_1: *mut () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *mut i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_23(CallQuals_CQ_ConstRValue, _args_1, _args_2, _args_3)
         });
     }
     pub unsafe fn operator_call_5_const_int_const_int_ref_unsigned_int(
         &self,
-        xargs_0: *const (),
-        xargs_1: *const (),
-        xargs_2: *mut (),
+        xargs_0: *const i32,
+        xargs_1: *const i32,
+        xargs_2: *mut u32,
     ) -> CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ {
         return (unsafe {
-            let _args_1: *const () = xargs_0;
-            let _args_2: *const () = xargs_1;
-            let _args_3: *mut () = xargs_2;
+            let _args_1: *const i32 = xargs_0;
+            let _args_2: *const i32 = xargs_1;
+            let _args_3: *mut u32 = xargs_2;
             makeCallInfo_24(CallQuals_CQ_ConstRValue, _args_1, _args_2, _args_3)
         });
     }
@@ -591,30 +591,30 @@ pub unsafe fn check_apply_quals_and_types_25(t: *mut ()) {
     {
         let mut ret: CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_LValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstLValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_RValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_int_ref__const_int_ref__unsigned_int_ref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstRValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn check_apply_quals_and_types_26(t: *const ()) {
@@ -624,30 +624,30 @@ pub unsafe fn check_apply_quals_and_types_26(t: *const ()) {
     {
         let mut ret: CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_LValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstLValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_RValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_const_int_ref__const_int_ref__unsigned_int_ref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstRValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn check_apply_quals_and_types_27(t: *mut ()) {
@@ -657,30 +657,30 @@ pub unsafe fn check_apply_quals_and_types_27(t: *mut ()) {
     {
         let mut ret: CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_LValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstLValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_RValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_int_refref__const_int_ref__unsigned_int_refref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstRValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn check_apply_quals_and_types_28(t: *const ()) {
@@ -690,35 +690,35 @@ pub unsafe fn check_apply_quals_and_types_28(t: *const ()) {
     {
         let mut ret: CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_LValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstLValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_RValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
     {
         let mut ret: CallInfo_std_tuple_const_int_refref__const_int_ref__unsigned_int_refref__ =
             unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((ret.quals as i32) == (CallQuals_CQ_ConstRValue as i32)));
+        assert!(((ret.arg_types) == (expect_args)));
+        assert!(unimplemented!());
     }
 }
 pub unsafe fn test_call_quals_and_arg_types_29() {
-    let x: () = 42_();
-    let mut y: () = 101_();
+    let x: i32 = 42;
+    let mut y: u32 = 101_u32;
     let mut t: () = unimplemented!();
     let ct: *const () = &t;
     (unsafe { check_apply_quals_and_types_25(&mut t) });
@@ -750,16 +750,16 @@ pub struct TestNoexceptCallable_true_ {}
 impl TestNoexceptCallable_true_ {
     pub unsafe fn operator_call_1_int_const_char_ptr_long(
         &self,
-        mut _a0: (),
-        mut _a1: *const (),
-        mut _a2: (),
+        mut _a0: i32,
+        mut _a1: *const libc::c_char,
+        mut _a2: i64,
     ) -> NothrowMoveable {
         return <NothrowMoveable>::default();
     }
     pub unsafe fn operator_call_1_struct_NothrowMoveable_int(
         &self,
         mut _a0: NothrowMoveable,
-        mut _a1: (),
+        mut _a1: i32,
     ) -> NothrowMoveable {
         return <NothrowMoveable>::default();
     }
@@ -770,9 +770,9 @@ pub struct TestNoexceptCallable_false_ {}
 impl TestNoexceptCallable_false_ {
     pub unsafe fn operator_call_1_int_const_char_ptr_long(
         &self,
-        mut _a0: (),
-        mut _a1: *const (),
-        mut _a2: (),
+        mut _a0: i32,
+        mut _a1: *const libc::c_char,
+        mut _a2: i64,
     ) -> NothrowMoveable {
         return <NothrowMoveable>::default();
     }
@@ -791,7 +791,7 @@ pub unsafe fn test_noexcept_30() {
         const _: () = assert!(true, "");;
     }
 }
-pub static mut my_int_31: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 42_() });
+pub static mut my_int_31: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 42 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ReturnTypeTest_index_0_ {}
@@ -835,45 +835,45 @@ pub struct ReturnTypeTest_index_12_ {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ReturnTypeTest_index_13_ {}
 pub unsafe fn f_32(mut _a0: ReturnTypeTest_index_0_) {}
-pub unsafe fn f_33(mut _a0: ReturnTypeTest_index_1_) -> () {
-    return 0_();
+pub unsafe fn f_33(mut _a0: ReturnTypeTest_index_1_) -> i32 {
+    return 0;
 }
-pub unsafe fn f_34(mut _a0: ReturnTypeTest_index_2_) -> *mut () {
+pub unsafe fn f_34(mut _a0: ReturnTypeTest_index_2_) -> *mut i32 {
     return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31));
 }
-pub unsafe fn f_35(mut _a0: ReturnTypeTest_index_3_) -> *const () {
+pub unsafe fn f_35(mut _a0: ReturnTypeTest_index_3_) -> *const i32 {
     return &(*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31));
 }
-pub unsafe fn f_36(mut _a0: ReturnTypeTest_index_4_) -> *mut () {
+pub unsafe fn f_36(mut _a0: ReturnTypeTest_index_4_) -> *mut i32 {
     return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31));
 }
-pub unsafe fn f_37(mut _a0: ReturnTypeTest_index_5_) -> *const () {
+pub unsafe fn f_37(mut _a0: ReturnTypeTest_index_5_) -> *const i32 {
     return &(*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31));
 }
-pub unsafe fn f_38(mut _a0: ReturnTypeTest_index_6_) -> *mut () {
+pub unsafe fn f_38(mut _a0: ReturnTypeTest_index_6_) -> *mut i32 {
     return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31));
 }
-pub unsafe fn f_39(mut _a0: ReturnTypeTest_index_7_) -> *const () {
+pub unsafe fn f_39(mut _a0: ReturnTypeTest_index_7_) -> *const i32 {
     return &(*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31));
 }
-pub unsafe fn f_40(mut _a0: ReturnTypeTest_index_8_) -> *mut () {
+pub unsafe fn f_40(mut _a0: ReturnTypeTest_index_8_) -> *mut i32 {
     return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31));
 }
-pub unsafe fn f_41(mut _a0: ReturnTypeTest_index_9_) -> *const () {
+pub unsafe fn f_41(mut _a0: ReturnTypeTest_index_9_) -> *const i32 {
     return &(*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31));
 }
-pub unsafe fn f_42(mut _a0: ReturnTypeTest_index_10_) -> *mut () {
-    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31)) as *mut ());
+pub unsafe fn f_42(mut _a0: ReturnTypeTest_index_10_) -> *mut i32 {
+    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31)) as *mut i32);
 }
-pub unsafe fn f_43(mut _a0: ReturnTypeTest_index_11_) -> *const () {
-    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31)) as *mut ())
+pub unsafe fn f_43(mut _a0: ReturnTypeTest_index_11_) -> *const i32 {
+    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31)) as *mut i32)
         .cast_const();
 }
-pub unsafe fn f_44(mut _a0: ReturnTypeTest_index_12_) -> *mut () {
-    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31)) as *mut ());
+pub unsafe fn f_44(mut _a0: ReturnTypeTest_index_12_) -> *mut i32 {
+    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31)) as *mut i32);
 }
-pub unsafe fn f_45(mut _a0: ReturnTypeTest_index_13_) -> *const () {
-    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31)) as *mut ())
+pub unsafe fn f_45(mut _a0: ReturnTypeTest_index_13_) -> *const i32 {
+    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut my_int_31)) as *mut i32)
         .cast_const();
 }
 pub unsafe fn test_46() {
@@ -885,91 +885,91 @@ pub unsafe fn test_46() {
 }
 pub unsafe fn test_47() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_1_) -> ()> = Some(f_33);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_1_) -> i32> = Some(f_33);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_48() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_2_) -> *mut ()> = Some(f_34);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_2_) -> *mut i32> = Some(f_34);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_49() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_3_) -> *const ()> = Some(f_35);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_3_) -> *const i32> = Some(f_35);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_50() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_4_) -> *mut ()> = Some(f_36);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_4_) -> *mut i32> = Some(f_36);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_51() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_5_) -> *const ()> = Some(f_37);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_5_) -> *const i32> = Some(f_37);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_52() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_6_) -> *mut ()> = Some(f_38);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_6_) -> *mut i32> = Some(f_38);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_53() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_7_) -> *const ()> = Some(f_39);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_7_) -> *const i32> = Some(f_39);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_54() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_8_) -> *mut ()> = Some(f_40);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_8_) -> *mut i32> = Some(f_40);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_55() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_9_) -> *const ()> = Some(f_41);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_9_) -> *const i32> = Some(f_41);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_56() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_10_) -> *mut ()> = Some(f_42);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_10_) -> *mut i32> = Some(f_42);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_57() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_11_) -> *const ()> = Some(f_43);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_11_) -> *const i32> = Some(f_43);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_58() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_12_) -> *mut ()> = Some(f_44);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_12_) -> *mut i32> = Some(f_44);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
 }
 pub unsafe fn test_59() {
     const _: () = assert!(true, "std::is_same<RawInvokeResult, Expect>::value");;
-    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_13_) -> *const ()> = Some(f_45);
+    let mut fn_: Option<unsafe fn(ReturnTypeTest_index_13_) -> *const i32> = Some(f_45);
     let mut t: () = unimplemented!();
     (&(t));
     const _: () = assert!(true, "std::is_same<InvokeResult, Expect>::value");;
@@ -1005,12 +1005,12 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_constexpr_evaluation_20() });
     (unsafe { test_call_quals_and_arg_types_29() });
     (unsafe { test_return_type_60() });
     (unsafe { test_noexcept_30() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const my_int_31);

@@ -6,131 +6,131 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(mut fmt: Ptr<()>) {
+pub fn test_0(mut fmt: Ptr<i8>) {
     {
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
 }
-pub fn test_1(mut fmt: Ptr<()>) {
+pub fn test_1(mut fmt: Ptr<i32>) {
     {
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
 }
-pub fn test_2(mut fmt: Ptr<()>) {
+pub fn test_2(mut fmt: Ptr<u8>) {
     {
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
 }
-pub fn test_3(mut fmt: Ptr<()>) {
+pub fn test_3(mut fmt: Ptr<u16>) {
     {
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
 }
-pub fn test_4(mut fmt: Ptr<()>) {
+pub fn test_4(mut fmt: Ptr<u32>) {
     {
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
     {
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let context: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((1) as isize) }));
         unimplemented!();
+        assert!(({ unimplemented!() } == { fmt.offset((2) as isize) }));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == unimplemented!()));
     }
 }
-pub fn test_5() -> () {
-    ({ test_0(Ptr::<()>::from_string_literal(b"abc")) });
+pub fn test_5() -> bool {
+    ({ test_0(Ptr::<i8>::from_string_literal(b"abc")) });
     ({
-        test_1(Ptr::<()>::from_string_literal(&[
-            97 as (), 98 as (), 99 as (), 0 as (),
+        test_1(Ptr::<i32>::from_string_literal(&[
+            97 as i32, 98 as i32, 99 as i32, 0 as i32,
         ]))
     });
     ({
-        test_2(Ptr::<()>::from_string_literal(&[
-            97 as (), 98 as (), 99 as (), 0 as (),
+        test_2(Ptr::<u8>::from_string_literal(&[
+            97 as u8, 98 as u8, 99 as u8, 0 as u8,
         ]))
     });
     ({
-        test_3(Ptr::<()>::from_string_literal(&[
-            97 as (), 98 as (), 99 as (), 0 as (),
+        test_3(Ptr::<u16>::from_string_literal(&[
+            97 as u16, 98 as u16, 99 as u16, 0 as u16,
         ]))
     });
     ({
-        test_4(Ptr::<()>::from_string_literal(&[
-            97 as (), 98 as (), 99 as (), 0 as (),
+        test_4(Ptr::<u32>::from_string_literal(&[
+            97 as u32, 98 as u32, 99 as u32, 0 as u32,
         ]))
     });
     return true;
@@ -154,9 +154,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_5() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

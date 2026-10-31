@@ -28,40 +28,76 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut v: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < unimplemented!()) {
+        let v: Value<Vec<i32>> = Rc::new(RefCell::new(
+            (0..(1000_usize) as usize)
+                .map(|_| 0_i32)
+                .collect::<Vec<_>>(),
+        ));
+        let mut i: i32 = 0;
+        'loop_: while ((i as usize) < (*v.borrow()).len()) {
             let __rhs = i;
-            unimplemented!().write(__rhs);
+            v.decay().offset((i as usize) as isize).write(__rhs);
             i.prefix_inc();
         }
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < unimplemented!()) {
-            unimplemented!();
+        let v: Value<Vec<Option<Value<i32>>>> = Rc::new(RefCell::new(
+            (0..(1000_usize) as usize).map(|_| None).collect::<Vec<_>>(),
+        ));
+        let mut i: i32 = 0;
+        'loop_: while ((i as usize) < (*v.borrow()).len()) {
+            {
+                let _p: Ptr<_> = Ptr::alloc(i);
+                v.decay()
+                    .offset((i as usize) as isize)
+                    .write(_p.to_owned_opt())
+            };
             i.prefix_inc();
         }
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(
+            (((*v.decay().offset(0_usize as isize).upgrade().deref())
+                .as_pointer()
+                .read())
+                == 0)
+        );
+        assert!(
+            (((*v.decay().offset(1_usize as isize).upgrade().deref())
+                .as_pointer()
+                .read())
+                == 1)
+        );
+        assert!(
+            (((*v.decay().offset(2_usize as isize).upgrade().deref())
+                .as_pointer()
+                .read())
+                == 2)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub trait indirect_lessImpl {
-    fn operator_call_1_class_std_unique_ptr_int_(&self, x: Ptr<()>, y: Ptr<()>) -> ();
+    fn operator_call_1_class_std_unique_ptr_int_(
+        &self,
+        x: Ptr<Option<Value<i32>>>,
+        y: Ptr<Option<Value<i32>>>,
+    ) -> bool;
 }
 impl indirect_lessImpl for Ptr<indirect_less> {
-    fn operator_call_1_class_std_unique_ptr_int_(&self, x: Ptr<()>, y: Ptr<()>) -> () {
-        return ({ (unimplemented!().read()) } < { (unimplemented!().read()) });
+    fn operator_call_1_class_std_unique_ptr_int_(
+        &self,
+        x: Ptr<Option<Value<i32>>>,
+        y: Ptr<Option<Value<i32>>>,
+    ) -> bool {
+        return ({ ((*x.upgrade().deref()).as_pointer().read()) } < {
+            ((*y.upgrade().deref()).as_pointer().read())
+        });
     }
 }
 pub fn __cpp2rust_init_globals() {}

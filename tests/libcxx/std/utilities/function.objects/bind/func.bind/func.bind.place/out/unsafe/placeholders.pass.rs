@@ -126,7 +126,7 @@ pub unsafe fn test_9(t: *const ()) {
         const _: () = assert!(true, "std::is_nothrow_move_constructible<T>::value");;
     }
 }
-pub unsafe fn test_all_10() -> () {
+pub unsafe fn test_all_10() -> bool {
     (unsafe { test_0(&(*unimplemented!())) });
     (unsafe { test_1(&(*unimplemented!())) });
     (unsafe { test_2(&(*unimplemented!())) });
@@ -154,9 +154,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_all_10() });
     const _: () = assert!(true, "test_all()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

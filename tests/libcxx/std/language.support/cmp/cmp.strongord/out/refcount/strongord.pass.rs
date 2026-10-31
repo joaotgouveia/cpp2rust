@@ -6,38 +6,42 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_strong_ordering__std_strong_ordering_ {}
-pub fn DoNotOptimize_1(value: Ptr<Ptr<()>>) -> Ptr<Ptr<()>> {
+pub fn DoNotOptimize_1(value: Ptr<Ptr<std::cmp::Ordering>>) -> Ptr<Ptr<std::cmp::Ordering>> {
     b"";
     return (value).clone();
 }
 thread_local!(
-    pub static sink_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    pub static sink_2: Value<AnyPtr> = Rc::new(RefCell::new(AnyPtr::default()));
 );
 pub fn test_static_members_3() {
     ({
-        let _value: Value<Ptr<()>> = Rc::new(RefCell::new((unimplemented!())));
+        let _value: Value<Ptr<std::cmp::Ordering>> =
+            Rc::new(RefCell::new((std::cmp::Ordering::Less)));
         DoNotOptimize_1(_value.as_pointer())
     });
     ({
-        let _value: Value<Ptr<()>> = Rc::new(RefCell::new((unimplemented!())));
+        let _value: Value<Ptr<std::cmp::Ordering>> =
+            Rc::new(RefCell::new((std::cmp::Ordering::Equal)));
         DoNotOptimize_1(_value.as_pointer())
     });
     ({
-        let _value: Value<Ptr<()>> = Rc::new(RefCell::new((unimplemented!())));
+        let _value: Value<Ptr<std::cmp::Ordering>> =
+            Rc::new(RefCell::new((std::cmp::Ordering::Equal)));
         DoNotOptimize_1(_value.as_pointer())
     });
     ({
-        let _value: Value<Ptr<()>> = Rc::new(RefCell::new((unimplemented!())));
+        let _value: Value<Ptr<std::cmp::Ordering>> =
+            Rc::new(RefCell::new((std::cmp::Ordering::Greater)));
         DoNotOptimize_1(_value.as_pointer())
     });
 }
 pub fn test_signatures_4() {
-    let Eq: Ptr<()> = unimplemented!();
+    let Eq: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -56,82 +60,82 @@ pub fn test_signatures_4() {
     const _: () = assert!(true, "");;
 }
 pub fn test_equality_5() {
-    let StrongEq: Ptr<()> = unimplemented!();
+    let StrongEq: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
     let PartialEq: Ptr<()> = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
     let WeakEq: Ptr<()> = unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
 }
-pub fn test_conversion_6() -> () {
+pub fn test_conversion_6() -> bool {
     const _: () = assert!(
         true,
         "std::is_convertible<const std::strong_ordering&,\n      std::partial_ordering>::value"
     );;
     {
-        let V: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Equal));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let V: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Less));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let V: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Greater));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     const _: () = assert!(
         true,
         "std::is_convertible<const std::strong_ordering&,\n      std::weak_ordering>::value"
     );;
     {
-        let V: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Equal));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let V: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Less));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let V: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ordering::Greater));
         let WV: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     return true;
 }
-pub fn test_constexpr_7() -> () {
-    let Eq: Ptr<()> = unimplemented!();
-    let Equiv: Ptr<()> = unimplemented!();
-    let Less: Ptr<()> = unimplemented!();
-    let Greater: Ptr<()> = unimplemented!();
+pub fn test_constexpr_7() -> bool {
+    let Eq: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
+    let Equiv: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Equal;
+    let Less: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Less;
+    let Greater: Ptr<std::cmp::Ordering> = std::cmp::Ordering::Greater;
     let TestCases: Value<Box<[anon_8]>> = Rc::new(RefCell::new(Box::new([
         anon_8 {
-            Value: unimplemented!(),
+            Value: (*Eq.upgrade().deref()),
             ExpectEq: true,
             ExpectNeq: false,
             ExpectLess: false,
             ExpectGreater: false,
         },
         anon_8 {
-            Value: unimplemented!(),
+            Value: (*Equiv.upgrade().deref()),
             ExpectEq: true,
             ExpectNeq: false,
             ExpectLess: false,
             ExpectGreater: false,
         },
         anon_8 {
-            Value: unimplemented!(),
+            Value: (*Less.upgrade().deref()),
             ExpectEq: false,
             ExpectNeq: true,
             ExpectLess: true,
             ExpectGreater: false,
         },
         anon_8 {
-            Value: unimplemented!(),
+            Value: (*Greater.upgrade().deref()),
             ExpectEq: false,
             ExpectNeq: true,
             ExpectLess: false,
@@ -140,62 +144,74 @@ pub fn test_constexpr_7() -> () {
     ])));
     'loop_: for TC in IterRange::new(
         (TestCases.as_pointer() as Ptr<anon_8>),
-        (TestCases.as_pointer() as Ptr<anon_8>).offset((4_()) as isize),
+        (TestCases.as_pointer() as Ptr<anon_8>).offset((4_i64) as isize),
     ) {
         let mut TC: anon_8 = (*TC.upgrade().deref()).clone();
-        let V: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let V: Value<std::cmp::Ordering> = Rc::new(RefCell::new(TC.Value));
+        assert!(((((*V.borrow()) == std::cmp::Ordering::Equal) as i32) == (TC.ExpectEq as i32)));
+        assert!(((((*V.borrow()) == std::cmp::Ordering::Equal) as i32) == (TC.ExpectEq as i32)));
+        assert!(
+            (((!((*V.borrow()) == std::cmp::Ordering::Equal)) as i32) == (TC.ExpectNeq as i32))
+        );
+        assert!(
+            (((!((*V.borrow()) == std::cmp::Ordering::Equal)) as i32) == (TC.ExpectNeq as i32))
+        );
+        assert!(((((*V.borrow()) == std::cmp::Ordering::Less) as i32) == (TC.ExpectLess as i32)));
+        assert!(
+            ((((*V.borrow()) == std::cmp::Ordering::Greater) as i32) == (TC.ExpectGreater as i32))
+        );
+        assert!(
+            ((((*V.borrow()) != std::cmp::Ordering::Greater) as i32)
+                == (((TC.ExpectLess) || (TC.ExpectEq)) as i32))
+        );
+        assert!(
+            ((((*V.borrow()) != std::cmp::Ordering::Less) as i32)
+                == (((TC.ExpectGreater) || (TC.ExpectEq)) as i32))
+        );
+        assert!((((unimplemented!()) as i32) == (TC.ExpectGreater as i32)));
+        assert!((((unimplemented!()) as i32) == (TC.ExpectLess as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectGreater) || (TC.ExpectEq)) as i32)));
+        assert!((((unimplemented!()) as i32) == (((TC.ExpectLess) || (TC.ExpectEq)) as i32)));
     }
     {
-        let res: Value<()> = Rc::new(RefCell::new((unimplemented!())));
+        let res: Value<std::cmp::Ordering> = Rc::new(RefCell::new((unimplemented!())));
         (&(*res.borrow_mut()));
         unimplemented!();
         (&(*res.borrow_mut()));
     };
     let SpaceshipTestCases: Value<Box<[anon_10]>> = Rc::new(RefCell::new(Box::new([
         anon_10 {
-            Value: unimplemented!(),
+            Value: std::cmp::Ordering::Equal,
             Expect: ExpectRes_9_ER_Equiv,
         },
         anon_10 {
-            Value: unimplemented!(),
+            Value: std::cmp::Ordering::Less,
             Expect: ExpectRes_9_ER_Less,
         },
         anon_10 {
-            Value: unimplemented!(),
+            Value: std::cmp::Ordering::Greater,
             Expect: ExpectRes_9_ER_Greater,
         },
     ])));
     'loop_: for TC in IterRange::new(
         (SpaceshipTestCases.as_pointer() as Ptr<anon_10>),
-        (SpaceshipTestCases.as_pointer() as Ptr<anon_10>).offset((3_()) as isize),
+        (SpaceshipTestCases.as_pointer() as Ptr<anon_10>).offset((3_i64) as isize),
     ) {
         let mut TC: anon_10 = (*TC.upgrade().deref()).clone();
-        let Res: Value<()> = Rc::new(RefCell::new((unimplemented!())));
+        let Res: Value<std::cmp::Ordering> = Rc::new(RefCell::new((unimplemented!())));
         'switch: {
-            match { (TC.Expect as ()) } {
-                __v if __v == (ExpectRes_9_ER_Equiv as ()) => {
-                    unimplemented!();
-                    unimplemented!();
+            match { (TC.Expect as i32) } {
+                __v if __v == (ExpectRes_9_ER_Equiv as i32) => {
+                    assert!((*Res.borrow()) == std::cmp::Ordering::Equal);
+                    assert!((*Res.borrow()) == std::cmp::Ordering::Equal);
                     break 'switch;
                 }
-                __v if __v == (ExpectRes_9_ER_Less as ()) => {
-                    unimplemented!();
+                __v if __v == (ExpectRes_9_ER_Less as i32) => {
+                    assert!((*Res.borrow()) == std::cmp::Ordering::Less);
                     break 'switch;
                 }
-                __v if __v == (ExpectRes_9_ER_Greater as ()) => {
-                    unimplemented!();
+                __v if __v == (ExpectRes_9_ER_Greater as i32) => {
+                    assert!((*Res.borrow()) == std::cmp::Ordering::Greater);
                     break 'switch;
                 }
                 _ => {}
@@ -248,17 +264,17 @@ pub fn test_constexpr_7() -> () {
 pub struct anon_8 {
     #[offset(0)]
     #[byte_size(1)]
-    pub Value: (),
+    pub Value: std::cmp::Ordering,
     #[offset(1)]
-    pub ExpectEq: (),
+    pub ExpectEq: bool,
     #[offset(2)]
-    pub ExpectNeq: (),
+    pub ExpectNeq: bool,
     #[offset(3)]
-    pub ExpectLess: (),
+    pub ExpectLess: bool,
     #[offset(4)]
-    pub ExpectGreater: (),
+    pub ExpectGreater: bool,
 }
-pub type ExpectRes_9 = ();
+pub type ExpectRes_9 = u32;
 pub const ExpectRes_9_ER_Greater: ExpectRes_9 = 0;
 pub const ExpectRes_9_ER_Less: ExpectRes_9 = 1;
 pub const ExpectRes_9_ER_Equiv: ExpectRes_9 = 2;
@@ -267,7 +283,7 @@ pub const ExpectRes_9_ER_Equiv: ExpectRes_9 = 2;
 pub struct anon_10 {
     #[offset(0)]
     #[byte_size(1)]
-    pub Value: (),
+    pub Value: std::cmp::Ordering,
     #[offset(4)]
     pub Expect: ExpectRes_9,
 }
@@ -290,13 +306,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_static_members_3() });
     ({ test_signatures_4() });
     ({ test_equality_5() });
     const _: () = assert!(true, "test_conversion()");;
     const _: () = assert!(true, "test_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = sink_2.with(|_| ());

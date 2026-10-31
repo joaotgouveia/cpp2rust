@@ -6,15 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(i32, new, some_value)]
 #[byte_size(4)]
 pub struct A {
     #[offset(0)]
-    pub data_: (),
+    pub data_: i32,
 }
 impl A {
-    pub fn new(i: Option<()>) -> Self {
-        let mut i: () = i.unwrap_or_else(|| 0_());
+    pub fn new(i: Option<i32>) -> Self {
+        let mut i: i32 = i.unwrap_or_else(|| 0);
         Self { data_: i }
     }
 }
@@ -28,7 +29,7 @@ impl Default for A {
         { A::new(None) }
     }
 }
-pub fn operator_eq_0(x: Ptr<A>, y: Ptr<A>) -> () {
+pub fn operator_eq_0(x: Ptr<A>, y: Ptr<A>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 pub fn main() {
@@ -50,11 +51,29 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::numeric_limits<A>::is_specialized == false");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
     const _: () = assert!(true, "std::numeric_limits<A>::digits == 0");;
     const _: () = assert!(true, "std::numeric_limits<A>::digits10 == 0");;
     const _: () = assert!(true, "std::numeric_limits<A>::max_digits10 == 0");;
@@ -62,8 +81,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::numeric_limits<A>::is_integer == false");;
     const _: () = assert!(true, "std::numeric_limits<A>::is_exact == false");;
     const _: () = assert!(true, "std::numeric_limits<A>::radix == 0");;
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
     const _: () = assert!(true, "std::numeric_limits<A>::min_exponent == 0");;
     const _: () = assert!(true, "std::numeric_limits<A>::min_exponent10 == 0");;
     const _: () = assert!(true, "std::numeric_limits<A>::max_exponent == 0");;
@@ -76,10 +107,34 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         "std::numeric_limits<A>::has_denorm == std::denorm_absent"
     );;
     const _: () = assert!(true, "std::numeric_limits<A>::has_denorm_loss == false");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
+    assert!(
+        ({
+            let _x: Value<A> = Rc::new(RefCell::new(unimplemented!()));
+            let _y: Value<A> = Rc::new(RefCell::new(A::new(None)));
+            operator_eq_0(_x.as_pointer(), _y.as_pointer())
+        })
+    );
     const _: () = assert!(true, "std::numeric_limits<A>::is_iec559 == false");;
     const _: () = assert!(true, "std::numeric_limits<A>::is_bounded == false");;
     const _: () = assert!(true, "std::numeric_limits<A>::is_modulo == false");;
@@ -89,6 +144,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "std::numeric_limits<A>::round_style == std::round_toward_zero"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -9,7 +9,7 @@ use std::rc::Rc;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct support_double_move_tracker {
-    moved_from_: (),
+    moved_from_: bool,
 }
 impl support_double_move_tracker {
     pub unsafe fn new() -> Self {
@@ -18,7 +18,7 @@ impl support_double_move_tracker {
     }
     pub unsafe fn move_from(other: *mut support_double_move_tracker) -> Self {
         let mut this = Self { moved_from_: false };
-        unimplemented!();
+        assert!(!((*other).moved_from_));
         (*other).moved_from_ = true;
         this
     }
@@ -26,7 +26,7 @@ impl support_double_move_tracker {
         &mut self,
         other: *mut support_double_move_tracker,
     ) -> *mut support_double_move_tracker {
-        unimplemented!();
+        assert!(!((*other).moved_from_));
         (*other).moved_from_ = true;
         self.moved_from_ = false;
         return &mut (*(self as *mut support_double_move_tracker));
@@ -56,7 +56,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_output_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp17_output_iterator_int_ptr_ {
@@ -86,7 +86,7 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_ {
@@ -112,14 +112,14 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn operator_add_0(
     mut x: random_access_iterator_int_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_int_ptr_ {
     (unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_int_ptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_1(
     mut x: random_access_iterator_int_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_int_ptr_ {
     (unsafe { random_access_iterator_int_ptr_::operator_sub_assign(&mut x, n) });
     return random_access_iterator_int_ptr_::move_from({ &mut x });
@@ -127,42 +127,42 @@ pub unsafe fn operator_sub_1(
 pub unsafe fn operator_sub_2(
     mut x: random_access_iterator_int_ptr_,
     mut y: random_access_iterator_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
 }
 pub unsafe fn operator_eq_3(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_4(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_5(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_int_ptr_ {
@@ -175,14 +175,14 @@ impl random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_int_ptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut random_access_iterator_int_ptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_int_ptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut random_access_iterator_int_ptr_));
@@ -241,16 +241,24 @@ impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_int_ptr_ {}
+impl UnsafeCppAdvance for random_access_iterator_int_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_7();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_8();
+    }
+}
 pub unsafe fn operator_add_6(
     mut x: random_access_iterator_MoveOnly_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_MoveOnly_ptr_ {
     (unsafe { random_access_iterator_MoveOnly_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_MoveOnly_ptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_7(
     mut x: random_access_iterator_MoveOnly_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_MoveOnly_ptr_ {
     (unsafe { random_access_iterator_MoveOnly_ptr_::operator_sub_assign(&mut x, n) });
     return random_access_iterator_MoveOnly_ptr_::move_from({ &mut x });
@@ -258,25 +266,26 @@ pub unsafe fn operator_sub_7(
 pub unsafe fn operator_sub_8(
     mut x: random_access_iterator_MoveOnly_ptr_,
     mut y: random_access_iterator_MoveOnly_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<MoveOnly>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<MoveOnly>()) as i64
+        as isize);
 }
 pub unsafe fn operator_eq_9(
     x: *const random_access_iterator_MoveOnly_ptr_,
     y: *const random_access_iterator_MoveOnly_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_10(
     x: *const random_access_iterator_MoveOnly_ptr_,
     y: *const random_access_iterator_MoveOnly_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_11(
     x: *const random_access_iterator_MoveOnly_ptr_,
     y: *const random_access_iterator_MoveOnly_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
@@ -293,7 +302,7 @@ impl random_access_iterator_MoveOnly_ptr_ {
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut MoveOnly {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_MoveOnly_ptr_ {
@@ -306,14 +315,14 @@ impl random_access_iterator_MoveOnly_ptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_MoveOnly_ptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut random_access_iterator_MoveOnly_ptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_MoveOnly_ptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut random_access_iterator_MoveOnly_ptr_));
@@ -372,16 +381,24 @@ impl std::cmp::PartialEq for random_access_iterator_MoveOnly_ptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_MoveOnly_ptr_ {}
+impl UnsafeCppAdvance for random_access_iterator_MoveOnly_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_7();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_8();
+    }
+}
 pub unsafe fn operator_add_12(
     mut x: random_access_iterator_char_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_char_ptrptr_ {
     (unsafe { random_access_iterator_char_ptrptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_char_ptrptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_13(
     mut x: random_access_iterator_char_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_char_ptrptr_ {
     (unsafe { random_access_iterator_char_ptrptr_::operator_sub_assign(&mut x, n) });
     return random_access_iterator_char_ptrptr_::move_from({ &mut x });
@@ -389,42 +406,43 @@ pub unsafe fn operator_sub_13(
 pub unsafe fn operator_sub_14(
     mut x: random_access_iterator_char_ptrptr_,
     mut y: random_access_iterator_char_ptrptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*mut ()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*mut libc::c_char>()) as i64
+        as isize);
 }
 pub unsafe fn operator_eq_15(
     x: *const random_access_iterator_char_ptrptr_,
     y: *const random_access_iterator_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_16(
     x: *const random_access_iterator_char_ptrptr_,
     y: *const random_access_iterator_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_17(
     x: *const random_access_iterator_char_ptrptr_,
     y: *const random_access_iterator_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_char_ptrptr_ {
-    it_: *mut *mut (),
+    it_: *mut *mut libc::c_char,
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_char_ptrptr_ {
-    pub unsafe fn new_1(mut it: *mut *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut *mut libc::c_char) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut *mut libc::c_char {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_char_ptrptr_ {
@@ -437,14 +455,14 @@ impl random_access_iterator_char_ptrptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_char_ptrptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut random_access_iterator_char_ptrptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_char_ptrptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut random_access_iterator_char_ptrptr_));
@@ -503,16 +521,24 @@ impl std::cmp::PartialEq for random_access_iterator_char_ptrptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_char_ptrptr_ {}
+impl UnsafeCppAdvance for random_access_iterator_char_ptrptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_7();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_8();
+    }
+}
 pub unsafe fn operator_add_18(
     mut x: random_access_iterator_const_char_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_const_char_ptrptr_ {
     (unsafe { random_access_iterator_const_char_ptrptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_const_char_ptrptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_19(
     mut x: random_access_iterator_const_char_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_const_char_ptrptr_ {
     (unsafe { random_access_iterator_const_char_ptrptr_::operator_sub_assign(&mut x, n) });
     return random_access_iterator_const_char_ptrptr_::move_from({ &mut x });
@@ -520,42 +546,43 @@ pub unsafe fn operator_sub_19(
 pub unsafe fn operator_sub_20(
     mut x: random_access_iterator_const_char_ptrptr_,
     mut y: random_access_iterator_const_char_ptrptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*const ()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*const libc::c_char>())
+        as i64 as isize);
 }
 pub unsafe fn operator_eq_21(
     x: *const random_access_iterator_const_char_ptrptr_,
     y: *const random_access_iterator_const_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_22(
     x: *const random_access_iterator_const_char_ptrptr_,
     y: *const random_access_iterator_const_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_23(
     x: *const random_access_iterator_const_char_ptrptr_,
     y: *const random_access_iterator_const_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_const_char_ptrptr_ {
-    it_: *mut *const (),
+    it_: *mut *const libc::c_char,
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_const_char_ptrptr_ {
-    pub unsafe fn new_1(mut it: *mut *const ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut *const libc::c_char) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut *const libc::c_char {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_const_char_ptrptr_ {
@@ -568,14 +595,14 @@ impl random_access_iterator_const_char_ptrptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_const_char_ptrptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut random_access_iterator_const_char_ptrptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_const_char_ptrptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut random_access_iterator_const_char_ptrptr_));
@@ -634,16 +661,24 @@ impl std::cmp::PartialEq for random_access_iterator_const_char_ptrptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_const_char_ptrptr_ {}
+impl UnsafeCppAdvance for random_access_iterator_const_char_ptrptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_7();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_8();
+    }
+}
 pub unsafe fn operator_add_24(
     mut x: random_access_iterator_int_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_int_ptrptr_ {
     (unsafe { random_access_iterator_int_ptrptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_int_ptrptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_25(
     mut x: random_access_iterator_int_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> random_access_iterator_int_ptrptr_ {
     (unsafe { random_access_iterator_int_ptrptr_::operator_sub_assign(&mut x, n) });
     return random_access_iterator_int_ptrptr_::move_from({ &mut x });
@@ -651,42 +686,43 @@ pub unsafe fn operator_sub_25(
 pub unsafe fn operator_sub_26(
     mut x: random_access_iterator_int_ptrptr_,
     mut y: random_access_iterator_int_ptrptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*mut ()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*mut i32>()) as i64
+        as isize);
 }
 pub unsafe fn operator_eq_27(
     x: *const random_access_iterator_int_ptrptr_,
     y: *const random_access_iterator_int_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_28(
     x: *const random_access_iterator_int_ptrptr_,
     y: *const random_access_iterator_int_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_29(
     x: *const random_access_iterator_int_ptrptr_,
     y: *const random_access_iterator_int_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct random_access_iterator_int_ptrptr_ {
-    it_: *mut *mut (),
+    it_: *mut *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_int_ptrptr_ {
-    pub unsafe fn new_1(mut it: *mut *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut *mut i32 {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_int_ptrptr_ {
@@ -699,14 +735,14 @@ impl random_access_iterator_int_ptrptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_int_ptrptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut random_access_iterator_int_ptrptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut random_access_iterator_int_ptrptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut random_access_iterator_int_ptrptr_));
@@ -765,17 +801,25 @@ impl std::cmp::PartialEq for random_access_iterator_int_ptrptr_ {
     }
 }
 impl std::cmp::Eq for random_access_iterator_int_ptrptr_ {}
+impl UnsafeCppAdvance for random_access_iterator_int_ptrptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_7();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_8();
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_random_access_iterator_int_ptr_ {
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+    pub unsafe fn operator_index(&self, mut n: isize) -> *mut i32 {
         return &mut (*self.it_.offset((n) as isize));
     }
     pub unsafe fn move_from(_a0: *mut cpp20_random_access_iterator_int_ptr_) -> Self {
@@ -803,14 +847,14 @@ const _: () = assert!(
 );
 pub unsafe fn operator_add_30(
     mut x: contiguous_iterator_int_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_int_ptr_ {
     (unsafe { contiguous_iterator_int_ptr_::operator_add_assign(&mut x, n) });
     return contiguous_iterator_int_ptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_31(
     mut x: contiguous_iterator_int_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_int_ptr_ {
     (unsafe { contiguous_iterator_int_ptr_::operator_sub_assign(&mut x, n) });
     return contiguous_iterator_int_ptr_::move_from({ &mut x });
@@ -818,45 +862,45 @@ pub unsafe fn operator_sub_31(
 pub unsafe fn operator_sub_32(
     mut x: contiguous_iterator_int_ptr_,
     mut y: contiguous_iterator_int_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<i32>()) as i64 as isize);
 }
 pub unsafe fn operator_eq_33(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_34(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_35(
     x: *const contiguous_iterator_int_ptr_,
     y: *const contiguous_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
-    pub unsafe fn operator_arrow(&self) -> () {
+    pub unsafe fn operator_arrow(&self) -> *mut i32 {
         return self.it_;
     }
     pub unsafe fn operator_inc_9(&mut self) -> *mut contiguous_iterator_int_ptr_ {
@@ -867,11 +911,17 @@ impl contiguous_iterator_int_ptr_ {
         self.it_.prefix_dec();
         return &mut (*(self as *mut contiguous_iterator_int_ptr_));
     }
-    pub unsafe fn operator_add_assign(&mut self, mut n: ()) -> *mut contiguous_iterator_int_ptr_ {
+    pub unsafe fn operator_add_assign(
+        &mut self,
+        mut n: isize,
+    ) -> *mut contiguous_iterator_int_ptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut contiguous_iterator_int_ptr_));
     }
-    pub unsafe fn operator_sub_assign(&mut self, mut n: ()) -> *mut contiguous_iterator_int_ptr_ {
+    pub unsafe fn operator_sub_assign(
+        &mut self,
+        mut n: isize,
+    ) -> *mut contiguous_iterator_int_ptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut contiguous_iterator_int_ptr_));
     }
@@ -929,16 +979,24 @@ impl std::cmp::PartialEq for contiguous_iterator_int_ptr_ {
     }
 }
 impl std::cmp::Eq for contiguous_iterator_int_ptr_ {}
+impl UnsafeCppAdvance for contiguous_iterator_int_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_10();
+    }
+}
 pub unsafe fn operator_add_36(
     mut x: contiguous_iterator_MoveOnly_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_MoveOnly_ptr_ {
     (unsafe { contiguous_iterator_MoveOnly_ptr_::operator_add_assign(&mut x, n) });
     return contiguous_iterator_MoveOnly_ptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_37(
     mut x: contiguous_iterator_MoveOnly_ptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_MoveOnly_ptr_ {
     (unsafe { contiguous_iterator_MoveOnly_ptr_::operator_sub_assign(&mut x, n) });
     return contiguous_iterator_MoveOnly_ptr_::move_from({ &mut x });
@@ -946,25 +1004,26 @@ pub unsafe fn operator_sub_37(
 pub unsafe fn operator_sub_38(
     mut x: contiguous_iterator_MoveOnly_ptr_,
     mut y: contiguous_iterator_MoveOnly_ptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<MoveOnly>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<MoveOnly>()) as i64
+        as isize);
 }
 pub unsafe fn operator_eq_39(
     x: *const contiguous_iterator_MoveOnly_ptr_,
     y: *const contiguous_iterator_MoveOnly_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_40(
     x: *const contiguous_iterator_MoveOnly_ptr_,
     y: *const contiguous_iterator_MoveOnly_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_41(
     x: *const contiguous_iterator_MoveOnly_ptr_,
     y: *const contiguous_iterator_MoveOnly_ptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
@@ -981,7 +1040,7 @@ impl contiguous_iterator_MoveOnly_ptr_ {
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut MoveOnly {
         return &mut (*self.it_);
     }
     pub unsafe fn operator_inc_9(&mut self) -> *mut contiguous_iterator_MoveOnly_ptr_ {
@@ -994,14 +1053,14 @@ impl contiguous_iterator_MoveOnly_ptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut contiguous_iterator_MoveOnly_ptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut contiguous_iterator_MoveOnly_ptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut contiguous_iterator_MoveOnly_ptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut contiguous_iterator_MoveOnly_ptr_));
@@ -1060,16 +1119,24 @@ impl std::cmp::PartialEq for contiguous_iterator_MoveOnly_ptr_ {
     }
 }
 impl std::cmp::Eq for contiguous_iterator_MoveOnly_ptr_ {}
+impl UnsafeCppAdvance for contiguous_iterator_MoveOnly_ptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_10();
+    }
+}
 pub unsafe fn operator_add_42(
     mut x: contiguous_iterator_char_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_char_ptrptr_ {
     (unsafe { contiguous_iterator_char_ptrptr_::operator_add_assign(&mut x, n) });
     return contiguous_iterator_char_ptrptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_43(
     mut x: contiguous_iterator_char_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_char_ptrptr_ {
     (unsafe { contiguous_iterator_char_ptrptr_::operator_sub_assign(&mut x, n) });
     return contiguous_iterator_char_ptrptr_::move_from({ &mut x });
@@ -1077,45 +1144,46 @@ pub unsafe fn operator_sub_43(
 pub unsafe fn operator_sub_44(
     mut x: contiguous_iterator_char_ptrptr_,
     mut y: contiguous_iterator_char_ptrptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*mut ()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*mut libc::c_char>()) as i64
+        as isize);
 }
 pub unsafe fn operator_eq_45(
     x: *const contiguous_iterator_char_ptrptr_,
     y: *const contiguous_iterator_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_46(
     x: *const contiguous_iterator_char_ptrptr_,
     y: *const contiguous_iterator_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_47(
     x: *const contiguous_iterator_char_ptrptr_,
     y: *const contiguous_iterator_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_char_ptrptr_ {
-    it_: *mut *mut (),
+    it_: *mut *mut libc::c_char,
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_char_ptrptr_ {
-    pub unsafe fn new_1(mut it: *mut *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut *mut libc::c_char) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut *mut libc::c_char {
         return &mut (*self.it_);
     }
-    pub unsafe fn operator_arrow(&self) -> () {
+    pub unsafe fn operator_arrow(&self) -> *mut *mut libc::c_char {
         return self.it_;
     }
     pub unsafe fn operator_inc_9(&mut self) -> *mut contiguous_iterator_char_ptrptr_ {
@@ -1128,14 +1196,14 @@ impl contiguous_iterator_char_ptrptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut contiguous_iterator_char_ptrptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut contiguous_iterator_char_ptrptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut contiguous_iterator_char_ptrptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut contiguous_iterator_char_ptrptr_));
@@ -1194,16 +1262,24 @@ impl std::cmp::PartialEq for contiguous_iterator_char_ptrptr_ {
     }
 }
 impl std::cmp::Eq for contiguous_iterator_char_ptrptr_ {}
+impl UnsafeCppAdvance for contiguous_iterator_char_ptrptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_10();
+    }
+}
 pub unsafe fn operator_add_48(
     mut x: contiguous_iterator_const_char_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_const_char_ptrptr_ {
     (unsafe { contiguous_iterator_const_char_ptrptr_::operator_add_assign(&mut x, n) });
     return contiguous_iterator_const_char_ptrptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_49(
     mut x: contiguous_iterator_const_char_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_const_char_ptrptr_ {
     (unsafe { contiguous_iterator_const_char_ptrptr_::operator_sub_assign(&mut x, n) });
     return contiguous_iterator_const_char_ptrptr_::move_from({ &mut x });
@@ -1211,45 +1287,46 @@ pub unsafe fn operator_sub_49(
 pub unsafe fn operator_sub_50(
     mut x: contiguous_iterator_const_char_ptrptr_,
     mut y: contiguous_iterator_const_char_ptrptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*const ()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*const libc::c_char>())
+        as i64 as isize);
 }
 pub unsafe fn operator_eq_51(
     x: *const contiguous_iterator_const_char_ptrptr_,
     y: *const contiguous_iterator_const_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_52(
     x: *const contiguous_iterator_const_char_ptrptr_,
     y: *const contiguous_iterator_const_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_53(
     x: *const contiguous_iterator_const_char_ptrptr_,
     y: *const contiguous_iterator_const_char_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_const_char_ptrptr_ {
-    it_: *mut *const (),
+    it_: *mut *const libc::c_char,
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_const_char_ptrptr_ {
-    pub unsafe fn new_1(mut it: *mut *const ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut *const libc::c_char) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut *const libc::c_char {
         return &mut (*self.it_);
     }
-    pub unsafe fn operator_arrow(&self) -> () {
+    pub unsafe fn operator_arrow(&self) -> *mut *const libc::c_char {
         return self.it_;
     }
     pub unsafe fn operator_inc_9(&mut self) -> *mut contiguous_iterator_const_char_ptrptr_ {
@@ -1262,14 +1339,14 @@ impl contiguous_iterator_const_char_ptrptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut contiguous_iterator_const_char_ptrptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut contiguous_iterator_const_char_ptrptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut contiguous_iterator_const_char_ptrptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut contiguous_iterator_const_char_ptrptr_));
@@ -1328,16 +1405,24 @@ impl std::cmp::PartialEq for contiguous_iterator_const_char_ptrptr_ {
     }
 }
 impl std::cmp::Eq for contiguous_iterator_const_char_ptrptr_ {}
+impl UnsafeCppAdvance for contiguous_iterator_const_char_ptrptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_10();
+    }
+}
 pub unsafe fn operator_add_54(
     mut x: contiguous_iterator_int_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_int_ptrptr_ {
     (unsafe { contiguous_iterator_int_ptrptr_::operator_add_assign(&mut x, n) });
     return contiguous_iterator_int_ptrptr_::move_from({ &mut x });
 }
 pub unsafe fn operator_sub_55(
     mut x: contiguous_iterator_int_ptrptr_,
-    mut n: (),
+    mut n: isize,
 ) -> contiguous_iterator_int_ptrptr_ {
     (unsafe { contiguous_iterator_int_ptrptr_::operator_sub_assign(&mut x, n) });
     return contiguous_iterator_int_ptrptr_::move_from({ &mut x });
@@ -1345,45 +1430,46 @@ pub unsafe fn operator_sub_55(
 pub unsafe fn operator_sub_56(
     mut x: contiguous_iterator_int_ptrptr_,
     mut y: contiguous_iterator_int_ptrptr_,
-) -> () {
-    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*mut ()>()) as () as ());
+) -> isize {
+    return (((x.it_ as usize - y.it_ as usize) / ::std::mem::size_of::<*mut i32>()) as i64
+        as isize);
 }
 pub unsafe fn operator_eq_57(
     x: *const contiguous_iterator_int_ptrptr_,
     y: *const contiguous_iterator_int_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) == ((*y).it_));
 }
 pub unsafe fn operator_ne_58(
     x: *const contiguous_iterator_int_ptrptr_,
     y: *const contiguous_iterator_int_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) != ((*y).it_));
 }
 pub unsafe fn operator_lt_59(
     x: *const contiguous_iterator_int_ptrptr_,
     y: *const contiguous_iterator_int_ptrptr_,
-) -> () {
+) -> bool {
     return (((*x).it_) < ((*y).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct contiguous_iterator_int_ptrptr_ {
-    it_: *mut *mut (),
+    it_: *mut *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl contiguous_iterator_int_ptrptr_ {
-    pub unsafe fn new_1(mut it: *mut *mut ()) -> Self {
+    pub unsafe fn new_1(mut it: *mut *mut i32) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
-    pub unsafe fn operator_deref(&self) -> () {
+    pub unsafe fn operator_deref(&self) -> *mut *mut i32 {
         return &mut (*self.it_);
     }
-    pub unsafe fn operator_arrow(&self) -> () {
+    pub unsafe fn operator_arrow(&self) -> *mut *mut i32 {
         return self.it_;
     }
     pub unsafe fn operator_inc_9(&mut self) -> *mut contiguous_iterator_int_ptrptr_ {
@@ -1396,14 +1482,14 @@ impl contiguous_iterator_int_ptrptr_ {
     }
     pub unsafe fn operator_add_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut contiguous_iterator_int_ptrptr_ {
         self.it_ = (self.it_).wrapping_add(n as usize);
         return &mut (*(self as *mut contiguous_iterator_int_ptrptr_));
     }
     pub unsafe fn operator_sub_assign(
         &mut self,
-        mut n: (),
+        mut n: isize,
     ) -> *mut contiguous_iterator_int_ptrptr_ {
         self.it_ = (self.it_).wrapping_sub(n as usize);
         return &mut (*(self as *mut contiguous_iterator_int_ptrptr_));
@@ -1462,10 +1548,18 @@ impl std::cmp::PartialEq for contiguous_iterator_int_ptrptr_ {
     }
 }
 impl std::cmp::Eq for contiguous_iterator_int_ptrptr_ {}
+impl UnsafeCppAdvance for contiguous_iterator_int_ptrptr_ {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_9();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_10();
+    }
+}
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_input_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_input_iterator_int_ptr_ {
@@ -1487,7 +1581,7 @@ impl cpp20_input_iterator_int_ptr_ {
         });
         return &mut (*(self as *mut cpp20_input_iterator_int_ptr_));
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
 }
@@ -1495,7 +1589,7 @@ const _: () = assert!(true, "std::input_iterator<cpp20_input_iterator<int*>>");
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_output_iterator_int_ptr_ {
-    it_: *mut (),
+    it_: *mut i32,
     tracker_: support_double_move_tracker,
 }
 impl cpp20_output_iterator_int_ptr_ {
@@ -1517,7 +1611,7 @@ impl cpp20_output_iterator_int_ptr_ {
         });
         return &mut (*(self as *mut cpp20_output_iterator_int_ptr_));
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.it_);
     }
 }
@@ -1528,19 +1622,19 @@ const _: () = assert!(
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct IteratorOpCounts {
-    pub increments: (),
-    pub decrements: (),
-    pub zero_moves: (),
-    pub equal_cmps: (),
+    pub increments: usize,
+    pub decrements: usize,
+    pub zero_moves: usize,
+    pub equal_cmps: usize,
 }
 impl Default for IteratorOpCounts {
     fn default() -> Self {
         unsafe {
             IteratorOpCounts {
-                increments: 0_(),
-                decrements: 0_(),
-                zero_moves: 0_(),
-                equal_cmps: 0_(),
+                increments: 0_usize,
+                decrements: 0_usize,
+                zero_moves: 0_usize,
+                equal_cmps: 0_usize,
             }
         }
     }
@@ -1548,13 +1642,13 @@ impl Default for IteratorOpCounts {
 pub unsafe fn operator_eq_60(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
-) -> () {
+) -> bool {
     return (((*_a0).it_) == ((*_a1).it_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct forward_sized_iterator_int_ptr_ {
-    pub it_: *mut (),
+    pub it_: *mut i32,
 }
 impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
@@ -1582,44 +1676,47 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_61(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_61(mut i: adl_Iterator, mut n: isize) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_62(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_62(mut n: isize, mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
         operator_add_61(_i, n)
     });
 }
 pub unsafe fn iter_swap_63(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    cpp_swap_unsafe!(a.ptr_, b.ptr_);
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_64(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_64(mut iter: adl_Iterator) -> *mut i32 {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut (*(unsafe { adl_Iterator::operator_deref(&iter) }));
 }
-pub unsafe fn operator_eq_65(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_65(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> bool {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_66(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_66(
+    lhs: *const adl_Iterator,
+    rhs: *const adl_Iterator,
+) -> std::cmp::Ordering {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct adl_Iterator {
-    ptr_: *mut (),
-    iter_moves_: *mut (),
-    iter_swaps_: *mut (),
+    ptr_: *mut i32,
+    iter_moves_: *mut i32,
+    iter_swaps_: *mut i32,
 }
 impl adl_Iterator {
-    unsafe fn new_1(mut p: *mut (), mut iter_moves: *mut (), mut iter_swaps: *mut ()) -> Self {
+    unsafe fn new_1(mut p: *mut i32, mut iter_moves: *mut i32, mut iter_swaps: *mut i32) -> Self {
         let mut this = Self {
             ptr_: p,
             iter_moves_: iter_moves,
@@ -1627,47 +1724,47 @@ impl adl_Iterator {
         };
         this
     }
-    pub unsafe fn TrackMoves(mut p: *mut (), iter_moves: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackMoves(mut p: *mut i32, iter_moves: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ p }, { (iter_moves) }, { std::ptr::null_mut() });
     }
-    pub unsafe fn TrackSwaps_4(iter_swaps: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackSwaps_4(iter_swaps: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ std::ptr::null_mut() }, { std::ptr::null_mut() }, {
             (iter_swaps)
         });
     }
-    pub unsafe fn TrackSwaps_5(mut p: *mut (), iter_swaps: *mut ()) -> adl_Iterator {
+    pub unsafe fn TrackSwaps_5(mut p: *mut i32, iter_swaps: *mut i32) -> adl_Iterator {
         return adl_Iterator::new_1({ p }, { std::ptr::null_mut() }, { (iter_swaps) });
     }
-    pub unsafe fn iter_moves(&self) -> () {
-        unimplemented!();
+    pub unsafe fn iter_moves(&self) -> i32 {
+        assert!(!(self.iter_moves_).is_null());
         return (*self.iter_moves_);
     }
-    pub unsafe fn iter_swaps(&self) -> () {
-        unimplemented!();
+    pub unsafe fn iter_swaps(&self) -> i32 {
+        assert!(!(self.iter_swaps_).is_null());
         return (*self.iter_swaps_);
     }
-    pub unsafe fn operator_deref(&self) -> *mut () {
+    pub unsafe fn operator_deref(&self) -> *mut i32 {
         return &mut (*self.ptr_);
     }
-    pub unsafe fn operator_index(&self, mut n: ()) -> *mut () {
+    pub unsafe fn operator_index(&self, mut n: isize) -> *mut i32 {
         return &mut (*self.ptr_.offset((n) as isize));
     }
-    pub unsafe fn operator_sub_10(&self, mut n: ()) -> adl_Iterator {
+    pub unsafe fn operator_sub_10(&self, mut n: isize) -> adl_Iterator {
         return adl_Iterator::new_1(
             { self.ptr_.offset(-((n) as isize)) },
             { self.iter_moves_ },
             { self.iter_swaps_ },
         );
     }
-    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> () {
-        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<()>()) as ()
-            as ());
+    pub unsafe fn operator_sub_11(&self, mut rhs: adl_Iterator) -> isize {
+        return (((self.ptr_ as usize - rhs.ptr_ as usize) / ::std::mem::size_of::<i32>()) as i64
+            as isize);
     }
-    pub unsafe fn operator_add_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+    pub unsafe fn operator_add_assign(&mut self, mut n: isize) -> *mut adl_Iterator {
         self.ptr_ = (self.ptr_).wrapping_add(n as usize);
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_sub_assign(&mut self, mut n: ()) -> *mut adl_Iterator {
+    pub unsafe fn operator_sub_assign(&mut self, mut n: isize) -> *mut adl_Iterator {
         self.ptr_ = (self.ptr_).wrapping_sub(n as usize);
         return &mut (*(self as *mut adl_Iterator));
     }
@@ -1675,7 +1772,7 @@ impl adl_Iterator {
         self.ptr_.prefix_inc();
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: ()) -> adl_Iterator {
+    pub unsafe fn operator_post_inc_15(&mut self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
         self.ptr_.prefix_inc();
         return prev;
@@ -1684,7 +1781,7 @@ impl adl_Iterator {
         self.ptr_.prefix_dec();
         return &mut (*(self as *mut adl_Iterator));
     }
-    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: ()) -> adl_Iterator {
+    pub unsafe fn operator_post_dec_17(&mut self, mut _a0: i32) -> adl_Iterator {
         let mut prev: adl_Iterator = (*(self as *mut adl_Iterator));
         self.ptr_.prefix_dec();
         return prev;
@@ -1706,6 +1803,14 @@ impl std::cmp::PartialEq for adl_Iterator {
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
+impl UnsafeCppAdvance for adl_Iterator {
+    unsafe fn cpp_inc(&mut self) {
+        self.operator_inc_14();
+    }
+    unsafe fn cpp_dec(&mut self) {
+        self.operator_dec_16();
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -1720,22 +1825,22 @@ impl Default for adl_Iterator {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct rvalue_iterator_int_ptr_ {
-    it_: *mut *mut (),
+    it_: *mut *mut i32,
 }
 impl rvalue_iterator_int_ptr_ {
-    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+    pub unsafe fn operator_cmp(&self, _a0: *const rvalue_iterator_int_ptr_) -> std::cmp::Ordering {
         {
-            let mut cmp: () = std::cmp::Ord::cmp(
+            let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(
                 &((*(self as *const rvalue_iterator_int_ptr_)).it_),
                 &((*_a0).it_),
             );
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !(cmp == std::cmp::Ordering::Equal) {
+                return cmp;
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
-    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> () {
+    pub unsafe fn operator_eq(&self, _a0: *const rvalue_iterator_int_ptr_) -> bool {
         return (((*(self as *const rvalue_iterator_int_ptr_)).it_) == ((*_a0).it_));
     }
 }
@@ -1762,63 +1867,65 @@ impl std::cmp::PartialEq for rvalue_iterator_int_ptr_ {
 impl std::cmp::Eq for rvalue_iterator_int_ptr_ {}
 const _: () = assert!(true, "std::random_access_iterator<rvalue_iterator<int*>>");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
+#[cpp_from(*const libc::c_char , new, value)]
 pub struct util_iterator_error {}
 impl util_iterator_error {
-    pub unsafe fn new(mut what: *const ()) -> Self {
+    pub unsafe fn new(mut what: *const libc::c_char) -> Self {
         let mut this = Self {};
         this
     }
 }
-pub unsafe fn operator_eq_67(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_eq_67(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_68(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ne_68(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_69(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_lt_69(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_70(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_le_70(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_71(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_gt_71(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_72(x: *const MoveOnly, y: *const MoveOnly) -> () {
+pub unsafe fn operator_ge_72(x: *const MoveOnly, y: *const MoveOnly) -> bool {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_73(_a0: *const MoveOnly, _a1: *const MoveOnly) -> () {
+pub unsafe fn operator_cmp_73(_a0: *const MoveOnly, _a1: *const MoveOnly) -> std::cmp::Ordering {
     {
-        let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
+        if !(cmp == std::cmp::Ordering::Equal) {
+            return cmp;
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, MoveAssignUnsafe)]
+#[cpp_from(i32, new, some_value)]
 pub struct MoveOnly {
-    data_: (),
+    data_: i32,
 }
 impl MoveOnly {
-    pub unsafe fn new(mut data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| unsafe { 1_() });
+    pub unsafe fn new(mut data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| unsafe { 1 });
         let mut this = Self { data_: data };
         this
     }
     pub unsafe fn move_from(x: *mut MoveOnly) -> Self {
         let mut this = Self { data_: (*x).data_ };
-        (*x).data_ = 0_();
+        (*x).data_ = 0;
         this
     }
     pub unsafe fn move_assign(&mut self, x: *mut MoveOnly) -> *mut MoveOnly {
         self.data_ = (*x).data_;
-        (*x).data_ = 0_();
+        (*x).data_ = 0;
         return &mut (*(self as *mut MoveOnly));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn operator_add(&self, x: *const MoveOnly) -> MoveOnly {
@@ -1849,41 +1956,45 @@ impl Default for MoveOnly {
         unsafe { MoveOnly::new(None) }
     }
 }
-pub unsafe fn operator_eq_74(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_eq_74(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_75(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ne_75(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) != ((*y).data_));
 }
-pub unsafe fn operator_lt_76(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_lt_76(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) < ((*y).data_));
 }
-pub unsafe fn operator_le_77(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_le_77(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) <= ((*y).data_));
 }
-pub unsafe fn operator_gt_78(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_gt_78(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) > ((*y).data_));
 }
-pub unsafe fn operator_ge_79(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_ge_79(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> bool {
     return (((*x).data_) >= ((*y).data_));
 }
-pub unsafe fn operator_cmp_80(_a0: *const TrivialMoveOnly, _a1: *const TrivialMoveOnly) -> () {
+pub unsafe fn operator_cmp_80(
+    _a0: *const TrivialMoveOnly,
+    _a1: *const TrivialMoveOnly,
+) -> std::cmp::Ordering {
     {
-        let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        let mut cmp: std::cmp::Ordering = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
+        if !(cmp == std::cmp::Ordering::Equal) {
+            return cmp;
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, MoveAssignUnsafe)]
+#[cpp_from(i32, new, some_value)]
 pub struct TrivialMoveOnly {
-    data_: (),
+    data_: i32,
 }
 impl TrivialMoveOnly {
-    pub unsafe fn new(mut data: Option<()>) -> Self {
-        let mut data: () = data.unwrap_or_else(|| unsafe { 1_() });
+    pub unsafe fn new(mut data: Option<i32>) -> Self {
+        let mut data: i32 = data.unwrap_or_else(|| unsafe { 1 });
         let mut this = Self { data_: data };
         this
     }
@@ -1897,7 +2008,7 @@ impl TrivialMoveOnly {
         self.data_ = (*_a0).data_;
         return &mut (*(self as *mut TrivialMoveOnly));
     }
-    pub unsafe fn get(&self) -> () {
+    pub unsafe fn get(&self) -> i32 {
         return self.data_;
     }
     pub unsafe fn operator_add(&self, x: *const TrivialMoveOnly) -> TrivialMoveOnly {
@@ -1938,634 +2049,162 @@ impl Default for TrivialMoveOnly {
         unsafe { TrivialMoveOnly::new(None) }
     }
 }
-pub static mut LargeN_81: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 128_() });
-pub unsafe fn test_82() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+pub static mut LargeN_81: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 128 });
+pub unsafe fn test_82() -> bool {
+    let mut orig: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (7)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
-    let mut work: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
+    let mut work: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((7) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = (*__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_83() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+pub unsafe fn test_83() -> bool {
+    let mut orig: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (7)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
-    let mut work: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
+    let mut work: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((7) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = (*__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_84() -> () {
-    let mut orig: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_84() -> bool {
+    let mut orig: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (128)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
-    let mut work: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut work: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((128) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = (*__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_85() -> () {
-    let mut orig: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_85() -> bool {
+    let mut orig: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (128)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
-    let mut work: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut work: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((128) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = (*__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_86() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+pub unsafe fn test_86() -> bool {
+    let mut orig: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (7)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
     let mut work: [MoveOnly; 7] = [
@@ -2577,27 +2216,29 @@ pub unsafe fn test_86() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((7) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <MoveOnly as CppFromUnsafe<i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_87() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+pub unsafe fn test_87() -> bool {
+    let mut orig: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (7)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
     let mut work: [MoveOnly; 7] = [
@@ -2609,148 +2250,40 @@ pub unsafe fn test_87() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((7) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <MoveOnly as CppFromUnsafe<i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_88() -> () {
-    let mut orig: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_88() -> bool {
+    let mut orig: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (128)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
     let mut work: [MoveOnly; 128] = [
@@ -2883,148 +2416,40 @@ pub unsafe fn test_88() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((128) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <MoveOnly as CppFromUnsafe<i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_89() -> () {
-    let mut orig: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_89() -> bool {
+    let mut orig: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (128)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
     let mut work: [MoveOnly; 128] = [
@@ -3157,333 +2582,103 @@ pub unsafe fn test_89() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((128) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <MoveOnly as CppFromUnsafe<i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_90() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+pub unsafe fn test_90() -> bool {
+    let mut orig: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (7)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
-    let mut work: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
+    let mut work: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((7) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = (*__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_91() -> () {
-    let mut orig: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_91() -> bool {
+    let mut orig: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (128)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
-    let mut work: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let mut work: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((128) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = (*__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_92() -> () {
-    let mut orig: [(); 7] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (7_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+pub unsafe fn test_92() -> bool {
+    let mut orig: [i32; 7] = [0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32];
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (7)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
     let mut work: [MoveOnly; 7] = [
@@ -3495,148 +2690,40 @@ pub unsafe fn test_92() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((7) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <MoveOnly as CppFromUnsafe<i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_93() -> () {
-    let mut orig: [(); 128] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_93() -> bool {
+    let mut orig: [i32; 128] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (128_())) {
-        x = ((x).wrapping_mul(1664525_())).wrapping_add(1013904223_());
-        orig[(i) as usize] = (x).wrapping_rem(1000_());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (128)) {
+        x = ((x).wrapping_mul(1664525_u32)).wrapping_add(1013904223_u32);
+        orig[(i) as usize] = (((x).wrapping_rem(1000_u32)) as i32);
         i.prefix_inc();
     }
     let mut work: [MoveOnly; 128] = [
@@ -3769,33 +2856,43 @@ pub unsafe fn test_93() -> () {
         MoveOnly::new(None),
         MoveOnly::new(None),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((128) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <MoveOnly as CppFromUnsafe<i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_94() -> () {
-    let mut data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_94() -> bool {
+    let mut data: [libc::c_char; 17] = [
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
     ];
-    let mut orig: [*mut (); 17] = [
+    let mut orig: [*mut libc::c_char; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -3814,13 +2911,13 @@ pub unsafe fn test_pointers_94() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_u32)) as usize] as *mut libc::c_char);
         i.prefix_inc();
     }
-    let mut work: [*mut (); 17] = [
+    let mut work: [*mut libc::c_char; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -3839,33 +2936,45 @@ pub unsafe fn test_pointers_94() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <*mut libc::c_char as CppFromUnsafe<*mut libc::c_char>>::cpp_from(
+                __first.iter_deref(),
+            );
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_95() -> () {
-    let mut data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_95() -> bool {
+    let mut data: [libc::c_char; 17] = [
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
     ];
-    let mut orig: [*mut (); 17] = [
+    let mut orig: [*mut libc::c_char; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -3884,13 +2993,13 @@ pub unsafe fn test_pointers_95() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_u32)) as usize] as *mut libc::c_char);
         i.prefix_inc();
     }
-    let mut work: [*mut (); 17] = [
+    let mut work: [*mut libc::c_char; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -3909,33 +3018,45 @@ pub unsafe fn test_pointers_95() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <*mut libc::c_char as CppFromUnsafe<*mut libc::c_char>>::cpp_from(
+                __first.iter_deref(),
+            );
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_96() -> () {
-    let data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_96() -> bool {
+    let data: [libc::c_char; 17] = [
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
     ];
-    let mut orig: [*const (); 17] = [
+    let mut orig: [*const libc::c_char; 17] = [
         std::ptr::null(),
         std::ptr::null(),
         std::ptr::null(),
@@ -3954,13 +3075,13 @@ pub unsafe fn test_pointers_96() -> () {
         std::ptr::null(),
         std::ptr::null(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&data[((x).wrapping_rem(258_())) as usize] as *const ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&data[((x).wrapping_rem(258_u32)) as usize] as *const libc::c_char);
         i.prefix_inc();
     }
-    let mut work: [*const (); 17] = [
+    let mut work: [*const libc::c_char; 17] = [
         std::ptr::null(),
         std::ptr::null(),
         std::ptr::null(),
@@ -3979,33 +3100,46 @@ pub unsafe fn test_pointers_96() -> () {
         std::ptr::null(),
         std::ptr::null(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() =
+                <*const libc::c_char as CppFromUnsafe<*const libc::c_char>>::cpp_from(
+                    __first.iter_deref(),
+                );
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_97() -> () {
-    let data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_97() -> bool {
+    let data: [libc::c_char; 17] = [
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
     ];
-    let mut orig: [*const (); 17] = [
+    let mut orig: [*const libc::c_char; 17] = [
         std::ptr::null(),
         std::ptr::null(),
         std::ptr::null(),
@@ -4024,13 +3158,13 @@ pub unsafe fn test_pointers_97() -> () {
         std::ptr::null(),
         std::ptr::null(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&data[((x).wrapping_rem(258_())) as usize] as *const ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&data[((x).wrapping_rem(258_u32)) as usize] as *const libc::c_char);
         i.prefix_inc();
     }
-    let mut work: [*const (); 17] = [
+    let mut work: [*const libc::c_char; 17] = [
         std::ptr::null(),
         std::ptr::null(),
         std::ptr::null(),
@@ -4049,33 +3183,31 @@ pub unsafe fn test_pointers_97() -> () {
         std::ptr::null(),
         std::ptr::null(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() =
+                <*const libc::c_char as CppFromUnsafe<*const libc::c_char>>::cpp_from(
+                    __first.iter_deref(),
+                );
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_98() -> () {
-    let mut data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_98() -> bool {
+    let mut data: [i32; 17] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut orig: [*mut (); 17] = [
+    let mut orig: [*mut i32; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -4094,13 +3226,13 @@ pub unsafe fn test_pointers_98() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_u32)) as usize] as *mut i32);
         i.prefix_inc();
     }
-    let mut work: [*mut (); 17] = [
+    let mut work: [*mut i32; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -4119,33 +3251,29 @@ pub unsafe fn test_pointers_98() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() =
+                <*mut i32 as CppFromUnsafe<*mut i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_99() -> () {
-    let mut data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_99() -> bool {
+    let mut data: [i32; 17] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut orig: [*mut (); 17] = [
+    let mut orig: [*mut i32; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -4164,13 +3292,13 @@ pub unsafe fn test_pointers_99() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_u32)) as usize] as *mut i32);
         i.prefix_inc();
     }
-    let mut work: [*mut (); 17] = [
+    let mut work: [*mut i32; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -4189,33 +3317,44 @@ pub unsafe fn test_pointers_99() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() =
+                <*mut i32 as CppFromUnsafe<*mut i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_100() -> () {
-    let mut data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_100() -> bool {
+    let mut data: [libc::c_char; 17] = [
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
     ];
-    let mut orig: [*mut (); 17] = [
+    let mut orig: [*mut libc::c_char; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -4234,13 +3373,13 @@ pub unsafe fn test_pointers_100() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_u32)) as usize] as *mut libc::c_char);
         i.prefix_inc();
     }
-    let mut work: [*mut (); 17] = [
+    let mut work: [*mut libc::c_char; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -4259,33 +3398,45 @@ pub unsafe fn test_pointers_100() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() = <*mut libc::c_char as CppFromUnsafe<*mut libc::c_char>>::cpp_from(
+                __first.iter_deref(),
+            );
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_101() -> () {
-    let data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_101() -> bool {
+    let data: [libc::c_char; 17] = [
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
+        (0 as libc::c_char),
     ];
-    let mut orig: [*const (); 17] = [
+    let mut orig: [*const libc::c_char; 17] = [
         std::ptr::null(),
         std::ptr::null(),
         std::ptr::null(),
@@ -4304,13 +3455,13 @@ pub unsafe fn test_pointers_101() -> () {
         std::ptr::null(),
         std::ptr::null(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&data[((x).wrapping_rem(258_())) as usize] as *const ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&data[((x).wrapping_rem(258_u32)) as usize] as *const libc::c_char);
         i.prefix_inc();
     }
-    let mut work: [*const (); 17] = [
+    let mut work: [*const libc::c_char; 17] = [
         std::ptr::null(),
         std::ptr::null(),
         std::ptr::null(),
@@ -4329,33 +3480,31 @@ pub unsafe fn test_pointers_101() -> () {
         std::ptr::null(),
         std::ptr::null(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() =
+                <*const libc::c_char as CppFromUnsafe<*const libc::c_char>>::cpp_from(
+                    __first.iter_deref(),
+                );
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
-pub unsafe fn test_pointers_102() -> () {
-    let mut data: [(); 17] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+pub unsafe fn test_pointers_102() -> bool {
+    let mut data: [i32; 17] = [
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32,
     ];
-    let mut orig: [*mut (); 17] = [
+    let mut orig: [*mut i32; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -4374,13 +3523,13 @@ pub unsafe fn test_pointers_102() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
-    let mut x: () = 1_();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (17_())) {
-        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_())) as usize] as *mut ());
+    let mut x: u32 = 1_u32;
+    let mut i: i32 = 0;
+    'loop_: while ((i) < (17)) {
+        orig[(i) as usize] = (&mut data[((x).wrapping_rem(258_u32)) as usize] as *mut i32);
         i.prefix_inc();
     }
-    let mut work: [*mut (); 17] = [
+    let mut work: [*mut i32; 17] = [
         std::ptr::null_mut(),
         std::ptr::null_mut(),
         std::ptr::null_mut(),
@@ -4399,10 +3548,21 @@ pub unsafe fn test_pointers_102() -> () {
         std::ptr::null_mut(),
         std::ptr::null_mut(),
     ];
+    {
+        let mut __first = orig.as_mut_ptr();
+        let __last = orig.as_mut_ptr().offset((17) as isize);
+        let mut __out = work.as_mut_ptr();
+        while __first != __last {
+            *__out.iter_deref() =
+                <*mut i32 as CppFromUnsafe<*mut i32>>::cpp_from(__first.iter_deref());
+            __first.iter_inc();
+            __out.iter_inc();
+        }
+        __out
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(unimplemented!());
+    assert!(unimplemented!());
     return true;
 }
 pub fn main() {
@@ -4420,7 +3580,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_82() });
     (unsafe { test_83() });
     (unsafe { test_84() });
@@ -4487,7 +3647,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         "test_pointers<17, int, random_access_iterator<int**>>()"
     );;
     const _: () = assert!(true, "test_pointers<17, int, contiguous_iterator<int**>>()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const LargeN_81);

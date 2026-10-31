@@ -10,8 +10,8 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub unsafe fn eq(mut c1: (), mut c2: ()) -> () {
-        return ((c1) == (c2));
+    pub unsafe fn eq(mut c1: libc::c_char, mut c2: libc::c_char) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
 }
 pub fn main() {
@@ -29,15 +29,15 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut sv1: () = unimplemented!();
         let mut sv2: () = unimplemented!();
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
     }
     {
         let sv1: () = unimplemented!();
@@ -47,6 +47,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "sv2.starts_with(\'a\')");;
         const _: () = assert!(true, "!sv2.starts_with(\'x\')");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

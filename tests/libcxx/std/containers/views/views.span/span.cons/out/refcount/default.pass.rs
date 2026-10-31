@@ -12,38 +12,47 @@ pub fn checkCV_0() {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            ((((unimplemented!()).wrapping_add(unimplemented!())).wrapping_add(unimplemented!()))
+                .wrapping_add(unimplemented!())
+                == 0_())
+        );
     }
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(
+            ((((unimplemented!() as ()).wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ())) as ())
+                .wrapping_add((unimplemented!() as ()))
+                == 0_())
+        );
     }
 }
-pub fn testConstexprSpan_1() -> () {
+pub fn testConstexprSpan_1() -> bool {
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return ((((unimplemented!()).is_null()) && (unimplemented!() == 0_()))
         && ((unimplemented!()).is_null()))
         && (unimplemented!() == 0_());
 }
-pub fn testConstexprSpan_2() -> () {
+pub fn testConstexprSpan_2() -> bool {
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return ((((unimplemented!()).is_null()) && (unimplemented!() == 0_()))
         && ((unimplemented!()).is_null()))
         && (unimplemented!() == 0_());
 }
-pub fn testConstexprSpan_3() -> () {
+pub fn testConstexprSpan_3() -> bool {
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return ((((unimplemented!()).is_null()) && (unimplemented!() == 0_()))
         && ((unimplemented!()).is_null()))
         && (unimplemented!() == 0_());
 }
-pub fn testConstexprSpan_4() -> () {
+pub fn testConstexprSpan_4() -> bool {
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return ((((unimplemented!()).is_null()) && (unimplemented!() == 0_()))
@@ -54,36 +63,36 @@ pub fn testRuntimeSpan_5() {
     const _: () = assert!(true, "");;
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
 }
 pub fn testRuntimeSpan_6() {
     const _: () = assert!(true, "");;
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
 }
 pub fn testRuntimeSpan_7() {
     const _: () = assert!(true, "");;
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
 }
 pub fn testRuntimeSpan_8() {
     const _: () = assert!(true, "");;
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
 }
 pub fn testRuntimeSpan_9() {
     const _: () = assert!(true, "");;
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
+    assert!(((unimplemented!()).is_null()) && (unimplemented!() == 0_()));
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -107,7 +116,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "testConstexprSpan<int>()");;
     const _: () = assert!(true, "testConstexprSpan<long>()");;
     const _: () = assert!(true, "testConstexprSpan<double>()");;
@@ -124,6 +133,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );;
     const _: () = assert!(true, "std::is_default_constructible_v<std::span<int, 0>>");;
     const _: () = assert!(true, "!std::is_default_constructible_v<std::span<int, 2>>");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

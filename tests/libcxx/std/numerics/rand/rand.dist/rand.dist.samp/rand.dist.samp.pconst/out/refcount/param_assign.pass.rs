@@ -26,17 +26,18 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 14_(), 16_(), 17_()])));
-        let p: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([25_(), 62.5_f64, 12.5_f64])));
-        let mut Np: () = (::std::mem::size_of::<[(); 3]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let b: Value<Box<[f64]>> =
+            Rc::new(RefCell::new(Box::new([10_f64, 14_f64, 16_f64, 17_f64])));
+        let p: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([25_f64, 62.5_f64, 12.5_f64])));
+        let mut Np: usize = (::std::mem::size_of::<[f64; 3]>() as usize)
+            .wrapping_div((::std::mem::size_of::<f64>() as usize));
         let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -26,25 +26,81 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
-        let mut a: [(); 8] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
+        let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
+            (
+                Rc::new(RefCell::new(10)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"ten").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(20)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"twenty").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(30)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"thirty").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(40)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"forty").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(50)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"fifty").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(60)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"sixty").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(70)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"seventy").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(80)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"eighty").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+        ])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() >= 8_()));
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

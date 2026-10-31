@@ -73,83 +73,127 @@ impl Default for NotMoveConstructible {
         unsafe { NotMoveConstructible::new() }
     }
 }
-pub unsafe fn can_swap_0() -> () {
+pub unsafe fn can_swap_0() -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_swap_1() -> () {
+pub unsafe fn can_swap_1() -> bool {
     return unimplemented!();
 }
-pub unsafe fn can_swap_2() -> () {
+pub unsafe fn can_swap_2() -> bool {
     return unimplemented!();
 }
 pub unsafe fn test_unique_ptr_3() {
-    let mut i: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
-    let mut k: () = 0_();
-    'loop_: while ((k) < (3_())) {
-        unimplemented!();
+    let mut i: [Option<Box<i32>>; 3] = std::array::from_fn::<_, 3, _>(|_| None);
+    let mut k: i32 = 0;
+    'loop_: while ((k) < (3)) {
+        {
+            let _a0: *mut i32 = (Box::leak(Box::new(((k) + (1)))) as *mut i32);
+            i[(k) as usize] = if _a0.is_null() {
+                None
+            } else {
+                Some(Box::from_raw(_a0))
+            }
+        };
         k.prefix_inc();
     }
-    let mut j: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
-    let mut k: () = 0_();
-    'loop_: while ((k) < (3_())) {
-        unimplemented!();
+    let mut j: [Option<Box<i32>>; 3] = std::array::from_fn::<_, 3, _>(|_| None);
+    let mut k: i32 = 0;
+    'loop_: while ((k) < (3)) {
+        {
+            let _a0: *mut i32 = (Box::leak(Box::new(((k) + (4)))) as *mut i32);
+            j[(k) as usize] = if _a0.is_null() {
+                None
+            } else {
+                Some(Box::from_raw(_a0))
+            }
+        };
         k.prefix_inc();
     }
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(
+        ((*i[(0) as usize]
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+            == (4))
+    );
+    assert!(
+        ((*i[(1) as usize]
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+            == (5))
+    );
+    assert!(
+        ((*i[(2) as usize]
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+            == (6))
+    );
+    assert!(
+        ((*j[(0) as usize]
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+            == (1))
+    );
+    assert!(
+        ((*j[(1) as usize]
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+            == (2))
+    );
+    assert!(
+        ((*j[(2) as usize]
+            .as_deref()
+            .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32))
+            == (3))
+    );
 }
-pub unsafe fn test_4() -> () {
+pub unsafe fn test_4() -> bool {
     {
-        let mut i: [(); 3] = [1_(), 2_(), 3_()];
-        let mut j: [(); 3] = [4_(), 5_(), 6_()];
+        let mut i: [i32; 3] = [1, 2, 3];
+        let mut j: [i32; 3] = [4, 5, 6];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((i[(0) as usize]) == (4)));
+        assert!(((i[(1) as usize]) == (5)));
+        assert!(((i[(2) as usize]) == (6)));
+        assert!(((j[(0) as usize]) == (1)));
+        assert!(((j[(1) as usize]) == (2)));
+        assert!(((j[(2) as usize]) == (3)));
     }
     {
-        let mut a: [[(); 2]; 2] = [[0_(), 1_()], [2_(), 3_()]];
-        let mut b: [[(); 2]; 2] = [[9_(), 8_()], [7_(), 6_()]];
+        let mut a: [[i32; 2]; 2] = [[0, 1], [2, 3]];
+        let mut b: [[i32; 2]; 2] = [[9, 8], [7, 6]];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((a[(0) as usize][(0) as usize]) == (9)));
+        assert!(((a[(0) as usize][(1) as usize]) == (8)));
+        assert!(((a[(1) as usize][(0) as usize]) == (7)));
+        assert!(((a[(1) as usize][(1) as usize]) == (6)));
+        assert!(((b[(0) as usize][(0) as usize]) == (0)));
+        assert!(((b[(0) as usize][(1) as usize]) == (1)));
+        assert!(((b[(1) as usize][(0) as usize]) == (2)));
+        assert!(((b[(1) as usize][(1) as usize]) == (3)));
     }
     {
-        let mut a: [[(); 3]; 3] = [[0_(), 1_(), 2_()], [3_(), 4_(), 5_()], [6_(), 7_(), 8_()]];
-        let mut b: [[(); 3]; 3] = [[9_(), 8_(), 7_()], [6_(), 5_(), 4_()], [3_(), 2_(), 1_()]];
+        let mut a: [[i32; 3]; 3] = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
+        let mut b: [[i32; 3]; 3] = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((a[(0) as usize][(0) as usize]) == (9)));
+        assert!(((a[(0) as usize][(1) as usize]) == (8)));
+        assert!(((a[(0) as usize][(2) as usize]) == (7)));
+        assert!(((a[(1) as usize][(0) as usize]) == (6)));
+        assert!(((a[(1) as usize][(1) as usize]) == (5)));
+        assert!(((a[(1) as usize][(2) as usize]) == (4)));
+        assert!(((a[(2) as usize][(0) as usize]) == (3)));
+        assert!(((a[(2) as usize][(1) as usize]) == (2)));
+        assert!(((a[(2) as usize][(2) as usize]) == (1)));
+        assert!(((b[(0) as usize][(0) as usize]) == (0)));
+        assert!(((b[(0) as usize][(1) as usize]) == (1)));
+        assert!(((b[(0) as usize][(2) as usize]) == (2)));
+        assert!(((b[(1) as usize][(0) as usize]) == (3)));
+        assert!(((b[(1) as usize][(1) as usize]) == (4)));
+        assert!(((b[(1) as usize][(2) as usize]) == (5)));
+        assert!(((b[(2) as usize][(0) as usize]) == (6)));
+        assert!(((b[(2) as usize][(1) as usize]) == (7)));
+        assert!(((b[(2) as usize][(2) as usize]) == (8)));
     }
     {
         const _: () = assert!(true, "can_swap<CA&>()");;
@@ -181,9 +225,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_4() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

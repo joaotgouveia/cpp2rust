@@ -16,101 +16,101 @@ const _: () = assert!(
 );
 pub fn test_val_types_0() {
     {
-        let l: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
+        let l: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    return 1_();
+                    return 1;
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let l: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
+        let l: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    return 1_();
+                    return 1;
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let l: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
+        let l: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    return 1_();
+                    return 1;
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
     {
-        let l: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
+        let l: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    return 1_();
+                    return 1;
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn test_fail_1() {
     {
-        let l: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
+        let l: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    unimplemented!();
-                    return 0_();
+                    assert!(false);
+                    return 0;
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 5));
     }
     {
-        let l: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
+        let l: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    unimplemented!();
-                    return 0_();
+                    assert!(false);
+                    return 0;
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 5));
     }
     {
-        let l: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
+        let l: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    unimplemented!();
-                    return 0_();
+                    assert!(false);
+                    return 0;
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 5));
     }
     {
-        let l: Value<FnPtr<fn() -> ()>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> ()>::new(|| -> () {
+        let l: Value<FnPtr<fn() -> i32>> =
+            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(|| -> i32 {
                 {
-                    unimplemented!();
-                    return 0_();
+                    assert!(false);
+                    return 0;
                 }
             })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 5));
     }
 }
-pub fn test_2() -> () {
+pub fn test_2() -> bool {
     ({ test_fail_1() });
     ({ test_val_types_0() });
     return true;
@@ -134,9 +134,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

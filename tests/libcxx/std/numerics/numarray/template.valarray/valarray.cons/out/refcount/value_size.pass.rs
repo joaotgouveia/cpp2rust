@@ -26,34 +26,34 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 100_()) {
-            unimplemented!();
+        assert!((unimplemented!() == 100_usize));
+        let mut i: i32 = 0;
+        'loop_: while (i < 100) {
+            assert!(((unimplemented!().read()) == 5));
             i.prefix_inc();
         }
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 100_()) {
-            unimplemented!();
+        assert!((unimplemented!() == 100_usize));
+        let mut i: i32 = 0;
+        'loop_: while (i < 100) {
+            assert!(((unimplemented!().read()) == 2.5_f64));
             i.prefix_inc();
         }
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 100_()) {
-            unimplemented!();
+        assert!((unimplemented!() == 100_usize));
+        let mut i: i32 = 0;
+        'loop_: while (i < 100) {
+            assert!((unimplemented!() == 10_usize));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

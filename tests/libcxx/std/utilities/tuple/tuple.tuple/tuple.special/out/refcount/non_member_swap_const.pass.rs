@@ -9,11 +9,11 @@ use std::rc::{Rc, Weak};
 pub fn swap_0(a: Ptr<S>, b: Ptr<S>) {
     {
         a.with(|__s| __s.calls.clone())
-            .with_mut(|__v| *__v = *__v + 1_())
+            .with_mut(|__v| *__v = *__v + 1)
     };
     {
         b.with(|__s| __s.calls.clone())
-            .with_mut(|__v| *__v = *__v + 1_())
+            .with_mut(|__v| *__v = *__v + 1)
     };
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -21,16 +21,16 @@ pub fn swap_0(a: Ptr<S>, b: Ptr<S>) {
 pub struct S {
     #[offset(0)]
     #[byte_size(8)]
-    pub calls: Ptr<()>,
+    pub calls: Ptr<i32>,
 }
 pub fn swap_1(a: Ptr<CS>, b: Ptr<CS>) {
     {
         a.with(|__s| __s.calls.clone())
-            .with_mut(|__v| *__v = *__v + 1_())
+            .with_mut(|__v| *__v = *__v + 1)
     };
     {
         b.with(|__s| __s.calls.clone())
-            .with_mut(|__v| *__v = *__v + 1_())
+            .with_mut(|__v| *__v = *__v + 1)
     };
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -38,7 +38,7 @@ pub fn swap_1(a: Ptr<CS>, b: Ptr<CS>) {
 pub struct CS {
     #[offset(0)]
     #[byte_size(8)]
-    pub calls: Ptr<()>,
+    pub calls: Ptr<i32>,
 }
 const _: () = assert!(true, "std::is_swappable_v<std::tuple<>>");
 const _: () = assert!(true, "std::is_swappable_v<std::tuple<S>>");
@@ -52,9 +52,9 @@ const _: () = assert!(true, "std::is_swappable_v<const std::tuple<CS>>");
 const _: () = assert!(true, "std::is_swappable_v<const std::tuple<S&>>");
 const _: () = assert!(true, "!std::is_swappable_v<const std::tuple<CS, S>>");
 const _: () = assert!(true, "std::is_swappable_v<const std::tuple<CS, S&>>");
-pub fn test_2() -> () {
-    let cs_calls: Value<()> = Rc::new(RefCell::new(0_()));
-    let s_calls: Value<()> = Rc::new(RefCell::new(0_()));
+pub fn test_2() -> bool {
+    let cs_calls: Value<i32> = Rc::new(RefCell::new(0));
+    let s_calls: Value<i32> = Rc::new(RefCell::new(0));
     let s1: Value<S> = Rc::new(RefCell::new(S {
         calls: (s_calls.as_pointer()),
     }));
@@ -64,8 +64,8 @@ pub fn test_2() -> () {
     let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!(((*cs_calls.borrow()) == 2));
+    assert!(((*s_calls.borrow()) == 2));
     return true;
 }
 pub fn main() {
@@ -87,9 +87,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

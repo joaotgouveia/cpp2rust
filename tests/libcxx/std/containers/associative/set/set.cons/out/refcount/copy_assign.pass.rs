@@ -6,20 +6,20 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn operator_eq_0(a: Ptr<test_less_int_>, b: Ptr<test_less_int_>) -> () {
+pub fn operator_eq_0(a: Ptr<test_less_int_>, b: Ptr<test_less_int_>) -> bool {
     return ({ a.with(|__s| __s.data_) } == { b.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct test_less_int_ {
     #[offset(0)]
-    pub data_: (),
+    pub data_: i32,
 }
 impl test_less_int_ {
     pub fn new_1() -> Self {
-        Self { data_: 0_() }
+        Self { data_: 0 }
     }
-    pub fn new_2(mut data: ()) -> Self {
+    pub fn new_2(mut data: i32) -> Self {
         Self { data_: data }
     }
 }
@@ -37,57 +37,57 @@ impl Default for test_less_int_ {
 #[byte_size(40)]
 pub struct test_allocator_statistics {
     #[offset(0)]
-    pub time_to_throw: (),
+    pub time_to_throw: i32,
     #[offset(4)]
-    pub throw_after: (),
+    pub throw_after: i32,
     #[offset(8)]
-    pub count: (),
+    pub count: i32,
     #[offset(12)]
-    pub alloc_count: (),
+    pub alloc_count: i32,
     #[offset(16)]
-    pub allocated_size: (),
+    pub allocated_size: i32,
     #[offset(20)]
-    pub construct_count: (),
+    pub construct_count: i32,
     #[offset(24)]
-    pub destroy_count: (),
+    pub destroy_count: i32,
     #[offset(28)]
-    pub copied: (),
+    pub copied: i32,
     #[offset(32)]
-    pub moved: (),
+    pub moved: i32,
     #[offset(36)]
-    pub converted: (),
+    pub converted: i32,
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
             test_allocator_statistics {
-                time_to_throw: 0_(),
-                throw_after: 2147483647_(),
-                count: 0_(),
-                alloc_count: 0_(),
-                allocated_size: 0_(),
-                construct_count: 0_(),
-                destroy_count: 0_(),
-                copied: 0_(),
-                moved: 0_(),
-                converted: 0_(),
+                time_to_throw: 0,
+                throw_after: 2147483647,
+                count: 0,
+                alloc_count: 0,
+                allocated_size: 0,
+                construct_count: 0,
+                destroy_count: 0,
+                copied: 0,
+                moved: 0,
+                converted: 0,
             }
         }
     }
 }
 thread_local!(
-    pub static destructed_value_1: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_1: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_2: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_2: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
@@ -98,9 +98,9 @@ pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>)
 #[byte_size(16)]
 pub struct test_allocator_void_ {
     #[offset(0)]
-    data_: (),
+    data_: i32,
     #[offset(4)]
-    id_: (),
+    id_: i32,
     #[offset(8)]
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
@@ -108,33 +108,33 @@ pub struct test_allocator_void_ {
 impl test_allocator_void_ {
     pub fn new_1(mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
-            data_: 0_(),
-            id_: 0_(),
+            data_: 0,
+            id_: 0,
             stats_: (stats).clone(),
         }
     }
-    pub fn new_2(mut data: ()) -> Self {
+    pub fn new_2(mut data: i32) -> Self {
         Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn new_3(mut data: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
+    pub fn new_3(mut data: i32, mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: (stats).clone(),
         }
     }
-    pub fn new_4(mut data: (), mut id: ()) -> Self {
+    pub fn new_4(mut data: i32, mut id: i32) -> Self {
         Self {
             data_: data,
             id_: id,
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn new_5(mut data: (), mut id: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
+    pub fn new_5(mut data: i32, mut id: i32, mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
             data_: data,
             id_: id,
@@ -168,8 +168,8 @@ impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
             test_allocator_void_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -178,7 +178,8 @@ impl Default for test_allocator_void_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
-#[derive(Record, ByteRepr, FnPtrArg, CopyAssign, MoveAssign, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
 pub struct Tag_X {}
 impl Tag_X {
@@ -196,37 +197,37 @@ impl Tag_X {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_6.with(|rc| *rc.borrow()) >= dealloc_count_7.with(|rc| *rc.borrow())));
         return ((alloc_count_6.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_7.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_8.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_6.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_6.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_5: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_5: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_6: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_7: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_7: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_8: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_8: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -234,21 +235,22 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {}
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(Vec<AnyPtr  >  , new, mut_ptr)]
 #[byte_size(8)]
 pub struct tracking_allocator_int_ {
     #[offset(0)]
     #[byte_size(8)]
-    allocs_: Ptr<()>,
+    allocs_: Ptr<Vec<AnyPtr>>,
 }
 impl tracking_allocator_int_ {
-    pub fn new(allocs: Ptr<()>) -> Self {
+    pub fn new(allocs: Ptr<Vec<AnyPtr>>) -> Self {
         Self {
             allocs_: (allocs).clone(),
         }
@@ -279,130 +281,265 @@ pub fn test_alloc_9(
     ));
     {
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
     }
     {
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
     }
     {
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 2] = [4_(), 5_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 3] = [4_(), 5_(), 6_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 3] = [4_(), 5_(), 6_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut i: () = 0_();
-            'loop_: while (i != 50_()) {
+            let mut i: i32 = 0;
+            'loop_: while (i != 50) {
                 unimplemented!();
                 i.prefix_inc();
             }
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: i32 = 0;
             'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-                let mut v: () = (unimplemented!().read());
-                unimplemented!();
+                let mut v: i32 = (v.iter_deref().read());
+                assert!((v == i.postfix_inc()));
             }
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
@@ -430,130 +567,265 @@ pub fn test_alloc_10(
     ));
     {
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
     }
     {
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
     }
     {
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 2] = [4_(), 5_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 3] = [4_(), 5_(), 6_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 3] = [4_(), 5_(), 6_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut i: () = 0_();
-            'loop_: while (i != 50_()) {
+            let mut i: i32 = 0;
+            'loop_: while (i != 50) {
                 unimplemented!();
                 i.prefix_inc();
             }
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: i32 = 0;
             'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-                let mut v: () = (unimplemented!().read());
-                unimplemented!();
+                let mut v: i32 = (v.iter_deref().read());
+                assert!((v == i.postfix_inc()));
             }
         }
         ({ NoOpImpl::operator_call(&check_alloc_invariant.as_pointer()) });
@@ -567,141 +839,276 @@ pub fn test_alloc_11(
     let check_alloc_invariant: Value<AssertEmpty_12> = Rc::new(RefCell::new(check_alloc_invariant));
     {
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
         ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
     }
     {
         {
-            let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+            let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 0_()));
+            assert!(unimplemented!() == unimplemented!());
         }
     }
     {
         ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 2] = [4_(), 5_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 3] = [4_(), 5_(), 6_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
-            let mut lhs_arr: [(); 3] = [1_(), 2_(), 3_()];
+            let lhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut rhs_arr: [(); 3] = [4_(), 5_(), 6_()];
+            let rhs_arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
+            assert!((unimplemented!() == 3_()));
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 0_isize)
+                    .iter_deref()
+                    .read())
+                    == 1)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 1_isize)
+                    .iter_deref()
+                    .read())
+                    == 2)
+            );
+            assert!(
+                ((libcc2rs::next_refcount(unimplemented!(), 2_isize)
+                    .iter_deref()
+                    .read())
+                    == 3)
+            );
+            assert!(libcc2rs::next_refcount(unimplemented!(), 3_isize) == unimplemented!());
         }
         ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
         {
             let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let mut i: () = 0_();
-            'loop_: while (i != 50_()) {
+            let mut i: i32 = 0;
+            'loop_: while (i != 50) {
                 unimplemented!();
                 i.prefix_inc();
             }
             let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            let mut i: () = 0_();
+            let mut i: i32 = 0;
             'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-                let mut v: () = (unimplemented!().read());
-                unimplemented!();
+                let mut v: i32 = (v.iter_deref().read());
+                assert!((v == i.postfix_inc()));
             }
         }
         ({ AssertEmpty_12Impl::operator_call(&check_alloc_invariant.as_pointer()) });
     }
 }
-pub fn test_13() -> () {
+pub fn test_13() -> bool {
     ({ test_alloc_9(None, None, None) });
     ({ test_alloc_10(None, None, None) });
     {
-        let lhs_allocs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rhs_allocs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let lhs_allocs: Value<Vec<AnyPtr>> = Rc::new(RefCell::new(Vec::new()));
+        let rhs_allocs: Value<Vec<AnyPtr>> = Rc::new(RefCell::new(Vec::new()));
         ({
             let _lhs_alloc: Value<tracking_allocator_int_> =
                 Rc::new(RefCell::new(tracking_allocator_int_::new({
@@ -721,14 +1128,26 @@ pub fn test_13() -> () {
         });
     }
     {
-        let mut arr: [(); 3] = [1_(), 2_(), 3_()];
+        let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
         let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 3_()));
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_2({ 3 })));
+                operator_eq_0(_a.as_pointer(), _b.as_pointer())
+            })
+        );
+        assert!((unimplemented!() == 3_()));
+        assert!(
+            ({
+                let _a: Value<test_less_int_> = Rc::new(RefCell::new(unimplemented!()));
+                let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_2({ 3 })));
+                operator_eq_0(_a.as_pointer(), _b.as_pointer())
+            })
+        );
     }
     return true;
 }
@@ -737,13 +1156,13 @@ pub fn test_13() -> () {
 pub struct AssertEmpty_12 {
     #[offset(0)]
     #[byte_size(8)]
-    lhs_allocs_: Ptr<()>,
+    lhs_allocs_: Ptr<Vec<AnyPtr>>,
     #[offset(8)]
     #[byte_size(8)]
-    rhs_allocs_: Ptr<()>,
+    rhs_allocs_: Ptr<Vec<AnyPtr>>,
 }
 impl AssertEmpty_12 {
-    pub fn new(lhs_allocs: Ptr<()>, rhs_allocs: Ptr<()>) -> Self {
+    pub fn new(lhs_allocs: Ptr<Vec<AnyPtr>>, rhs_allocs: Ptr<Vec<AnyPtr>>) -> Self {
         Self {
             lhs_allocs_: (lhs_allocs).clone(),
             rhs_allocs_: (rhs_allocs).clone(),
@@ -769,17 +1188,29 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_13() });
-    return 0_();
+    return 0;
 }
 pub trait AssertEmpty_12Impl {
     fn operator_call(&self);
 }
 impl AssertEmpty_12Impl for Ptr<AssertEmpty_12> {
     fn operator_call(&self) {
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (*(*self)
+                .with(|__s| __s.lhs_allocs_.clone())
+                .upgrade()
+                .deref())
+            .is_empty()
+        );
+        assert!(
+            (*(*self)
+                .with(|__s| __s.rhs_allocs_.clone())
+                .upgrade()
+                .deref())
+            .is_empty()
+        );
     }
 }
 pub trait NoOpImpl {
@@ -801,26 +1232,26 @@ impl Tag_XImpl for Ptr<Tag_X> {
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!()
     }
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {}
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
@@ -828,7 +1259,7 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -837,29 +1268,35 @@ pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
-    fn operator_add(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_sub(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_sub(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
 }
@@ -868,7 +1305,7 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
 {
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }
@@ -882,26 +1319,30 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        unimplemented!();
-        field!((*self), count).write(0_());
-        field!((*self), time_to_throw).write(0_());
-        field!((*self), alloc_count).write(0_());
-        field!((*self), allocated_size).write(0_());
-        field!((*self), construct_count).write(0_());
-        field!((*self), destroy_count).write(0_());
-        field!((*self), throw_after).write(2147483647_());
+        assert!(
+            ((*self).with(|__s| __s.count) == 0)
+                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                    .is_null())
+        );
+        field!((*self), count).write(0);
+        field!((*self), time_to_throw).write(0);
+        field!((*self), alloc_count).write(0);
+        field!((*self), allocated_size).write(0);
+        field!((*self), construct_count).write(0);
+        field!((*self), destroy_count).write(0);
+        field!((*self), throw_after).write(2147483647);
         ({ test_allocator_statisticsImpl::clear_ctor_counters(self) });
     }
     fn clear_ctor_counters(&self) {
-        field!((*self), copied).write(0_());
-        field!((*self), moved).write(0_());
-        field!((*self), converted).write(0_());
+        field!((*self), copied).write(0);
+        field!((*self), moved).write(0);
+        field!((*self), converted).write(0);
     }
 }
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
-    fn get_id(&self) -> ();
-    fn get_data(&self) -> ();
+    fn get_id(&self) -> i32;
+    fn get_data(&self) -> i32;
     fn copy_assign(&self, _a0: Ptr<test_allocator_void_>) -> Ptr<test_allocator_void_>;
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
@@ -909,10 +1350,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
         field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
     }
-    fn get_id(&self) -> () {
+    fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
-    fn get_data(&self) -> () {
+    fn get_data(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn copy_assign(&self, _a0: Ptr<test_allocator_void_>) -> Ptr<test_allocator_void_> {
@@ -923,18 +1364,18 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub trait test_less_int_Impl {
-    fn operator_call(&self, a: Ptr<()>, b: Ptr<()>) -> ();
+    fn operator_call(&self, a: Ptr<i32>, b: Ptr<i32>) -> bool;
 }
 impl test_less_int_Impl for Ptr<test_less_int_> {
-    fn operator_call(&self, a: Ptr<()>, b: Ptr<()>) -> () {
+    fn operator_call(&self, a: Ptr<i32>, b: Ptr<i32>) -> bool {
         return ({ (a.read()) } < { (b.read()) });
     }
 }
 pub trait tracking_allocator_int_Impl {
-    fn allocate(&self, mut n: ()) -> Ptr<()> {
+    fn allocate(&self, mut n: usize) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut ptr: Ptr<()>, mut n: ()) {
+    fn deallocate(&self, mut ptr: Ptr<i32>, mut n: usize) {
         unimplemented!()
     }
 }

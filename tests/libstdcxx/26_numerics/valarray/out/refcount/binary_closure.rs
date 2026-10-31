@@ -10,7 +10,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -19,17 +19,35 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
+    {
+        let __s = unimplemented!();
+        libcc2rs::endl_refcount.call(__s)
+    };
     unimplemented!();
+    {
+        let __s = unimplemented!();
+        libcc2rs::endl_refcount.call(__s)
+    };
     unimplemented!();
+    {
+        let __s = unimplemented!();
+        libcc2rs::endl_refcount.call(__s)
+    };
     unimplemented!();
+    {
+        let __s = unimplemented!();
+        libcc2rs::endl_refcount.call(__s)
+    };
     unimplemented!();
+    {
+        let __s = unimplemented!();
+        libcc2rs::endl_refcount.call(__s)
+    };
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    {
+        let __s = unimplemented!();
+        libcc2rs::endl_refcount.call(__s)
+    };
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

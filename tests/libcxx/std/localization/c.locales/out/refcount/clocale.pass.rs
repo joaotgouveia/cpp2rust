@@ -26,8 +26,8 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let lc: Value<lconv> = Rc::new(RefCell::new(<lconv>::default()));
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let lc: Value<::libc::lconv> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
     (&(*lc.borrow_mut()));
     const _: () = assert!(
         true,
@@ -37,6 +37,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "(std::is_same<decltype(std::localeconv()), std::lconv*>::value)"
     );;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

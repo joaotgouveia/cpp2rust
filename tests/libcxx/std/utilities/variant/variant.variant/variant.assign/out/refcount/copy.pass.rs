@@ -34,31 +34,31 @@ impl MoveOnlyNT {
 #[byte_size(48)]
 pub struct CopyAssign {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
     #[offset(8)]
     #[byte_size(8)]
-    pub alive: Ptr<()>,
+    pub alive: Ptr<i32>,
     #[offset(16)]
     #[byte_size(8)]
-    pub copy_construct: Ptr<()>,
+    pub copy_construct: Ptr<i32>,
     #[offset(24)]
     #[byte_size(8)]
-    pub copy_assign: Ptr<()>,
+    pub copy_assign: Ptr<i32>,
     #[offset(32)]
     #[byte_size(8)]
-    pub move_construct: Ptr<()>,
+    pub move_construct: Ptr<i32>,
     #[offset(40)]
     #[byte_size(8)]
-    pub move_assign: Ptr<()>,
+    pub move_assign: Ptr<i32>,
 }
 impl CopyAssign {
     pub fn new(
-        mut v: (),
-        mut alv: Ptr<()>,
-        mut cpy_ctr: Ptr<()>,
-        mut cpy_assi: Ptr<()>,
-        mut move_ctr: Ptr<()>,
-        mut move_assi: Ptr<()>,
+        mut v: i32,
+        mut alv: Ptr<i32>,
+        mut cpy_ctr: Ptr<i32>,
+        mut cpy_assi: Ptr<i32>,
+        mut move_ctr: Ptr<i32>,
+        mut move_assi: Ptr<i32>,
     ) -> Self {
         let __this: Value<CopyAssign> = Rc::new(RefCell::new(Self {
             value: v,
@@ -99,7 +99,7 @@ impl CopyAssign {
             move_assign: o.with(|__s| __s.move_assign.clone()),
         }));
         let this: Ptr<CopyAssign> = __this.as_pointer();
-        field!(o, value).write(-1_());
+        field!(o, value).write(-1_i32);
         this.with(|__s| __s.alive.clone())
             .with_mut(|__v| __v.prefix_inc());
         this.with(|__s| __s.move_construct.clone())
@@ -128,14 +128,15 @@ impl CopyMaybeThrows {}
 #[byte_size(1)]
 pub struct CopyDoesThrow {}
 impl CopyDoesThrow {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct NTCopyAssign {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl NTCopyAssign {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -144,14 +145,15 @@ const _: () = assert!(
     "!std::is_trivially_copy_assignable<NTCopyAssign>::value"
 );
 const _: () = assert!(true, "std::is_copy_assignable<NTCopyAssign>::value");
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct TCopyAssign {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl TCopyAssign {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -159,14 +161,15 @@ const _: () = assert!(
     true,
     "std::is_trivially_copy_assignable<TCopyAssign>::value"
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveAssign, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, MoveAssign, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct TCopyAssignNTMoveAssign {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl TCopyAssignNTMoveAssign {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -222,50 +225,50 @@ pub fn test_copy_assignment_empty_non_empty_4() {}
 #[byte_size(16)]
 pub struct Result_int_ {
     #[offset(0)]
-    pub index: (),
+    pub index: usize,
     #[offset(8)]
-    pub value: (),
+    pub value: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Result_long_ {
     #[offset(0)]
-    pub index: (),
+    pub index: usize,
     #[offset(8)]
-    pub value: (),
+    pub value: i64,
 }
 pub fn test_copy_assignment_same_index_5() {
     {
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vref: Ptr<()> = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
+        assert!((unimplemented!() == 0_usize));
+        assert!(((unimplemented!().read()) == 42));
     }
     {
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vref: Ptr<()> = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
+        assert!((unimplemented!() == 1_usize));
+        assert!(((unimplemented!().read()) == 42_()));
     }
     {
-        let alive: Value<()> = Rc::new(RefCell::new(0_()));
-        let copy_construct: Value<()> = Rc::new(RefCell::new(0_()));
-        let copy_assign: Value<()> = Rc::new(RefCell::new(0_()));
-        let move_construct: Value<()> = Rc::new(RefCell::new(0_()));
-        let move_assign: Value<()> = Rc::new(RefCell::new(0_()));
+        let alive: Value<i32> = Rc::new(RefCell::new(0));
+        let copy_construct: Value<i32> = Rc::new(RefCell::new(0));
+        let copy_assign: Value<i32> = Rc::new(RefCell::new(0));
+        let move_construct: Value<i32> = Rc::new(RefCell::new(0));
+        let move_assign: Value<i32> = Rc::new(RefCell::new(0));
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vref: Ptr<()> = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
+        assert!((unimplemented!() == 1_usize));
+        assert!((unimplemented!().with(|__s| __s.value) == 42));
+        assert!(((*copy_construct.borrow()) == 0));
+        assert!(((*move_construct.borrow()) == 0));
+        assert!(((*copy_assign.borrow()) == 1));
     }
     {
         let test: Value<anon_6> = Rc::new(RefCell::new(<anon_6>::default()));
@@ -309,29 +312,29 @@ pub fn test_copy_assignment_different_index_10() {
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vref: Ptr<()> = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
+        assert!((unimplemented!() == 1_usize));
+        assert!(((unimplemented!().read()) == 42_()));
     }
     {
-        let alive: Value<()> = Rc::new(RefCell::new(0_()));
-        let copy_construct: Value<()> = Rc::new(RefCell::new(0_()));
-        let copy_assign: Value<()> = Rc::new(RefCell::new(0_()));
-        let move_construct: Value<()> = Rc::new(RefCell::new(0_()));
-        let move_assign: Value<()> = Rc::new(RefCell::new(0_()));
+        let alive: Value<i32> = Rc::new(RefCell::new(0));
+        let copy_construct: Value<i32> = Rc::new(RefCell::new(0));
+        let copy_assign: Value<i32> = Rc::new(RefCell::new(0));
+        let move_construct: Value<i32> = Rc::new(RefCell::new(0));
+        let move_assign: Value<i32> = Rc::new(RefCell::new(0));
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*copy_construct.borrow()) == 0));
+        assert!(((*move_construct.borrow()) == 0));
+        assert!(((*alive.borrow()) == 1));
         let vref: Ptr<()> = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
+        assert!((unimplemented!() == 1_usize));
+        assert!((unimplemented!().with(|__s| __s.value) == 42));
+        assert!(((*alive.borrow()) == 2));
+        assert!(((*copy_construct.borrow()) == 1));
+        assert!(((*move_construct.borrow()) == 1));
+        assert!(((*copy_assign.borrow()) == 0));
     }
     {
         let test: Value<anon_11> = Rc::new(RefCell::new(<anon_11>::default()));
@@ -353,53 +356,58 @@ pub struct anon_11 {}
 #[byte_size(1)]
 pub struct anon_12 {}
 pub fn test_assignment_throw_13() {}
-pub fn test_constexpr_assign_imp_14(v: Ptr<()>, new_value: Ptr<()>) {
+pub fn test_constexpr_assign_imp_14(v: Ptr<()>, new_value: Ptr<i64>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (0_u64 as usize)));
+    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
 }
 pub fn test_constexpr_assign_imp_15(v: Ptr<()>, new_value: Ptr<()>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (1_u64 as usize)));
+    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
 }
-pub fn test_constexpr_assign_imp_16(v: Ptr<()>, new_value: Ptr<()>) {
+pub fn test_constexpr_assign_imp_16(v: Ptr<()>, new_value: Ptr<i32>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (2_u64 as usize)));
+    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
 }
-pub fn test_constexpr_assign_imp_17(v: Ptr<()>, new_value: Ptr<()>) {
+pub fn test_constexpr_assign_imp_17(v: Ptr<()>, new_value: Ptr<i64>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (0_u64 as usize)));
+    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
 }
 pub fn test_constexpr_assign_imp_18(v: Ptr<()>, new_value: Ptr<()>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (1_u64 as usize)));
+    assert!(({ (unimplemented!().read()) } == { (unimplemented!().read()) }));
 }
 pub fn test_constexpr_assign_imp_19(v: Ptr<()>, new_value: Ptr<NonTrivialCopyAssign>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    assert!((unimplemented!() == (2_u64 as usize)));
+    assert!(
+        ({
+            let _x: Ptr<NonTrivialCopyAssign> = unimplemented!();
+            operator_eq_20(_x, unimplemented!())
+        })
+    );
 }
-pub fn test_constexpr_copy_assignment_trivial_20() {
+pub fn test_constexpr_copy_assignment_trivial_21() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_assignable<V>::value");;
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
+        let _new_value: Value<i64> = Rc::new(RefCell::new(101_i64));
         test_constexpr_assign_imp_14(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
+        let _new_value: Value<i64> = Rc::new(RefCell::new(101_i64));
         test_constexpr_assign_imp_14(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
@@ -409,21 +417,22 @@ pub fn test_constexpr_copy_assignment_trivial_20() {
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
+        let _new_value: Value<i32> = Rc::new(RefCell::new(101));
         test_constexpr_assign_imp_16(_v.as_pointer(), _new_value.as_pointer())
     });
 }
-pub fn operator_eq_21(x: Ptr<NonTrivialCopyAssign>, y: Ptr<NonTrivialCopyAssign>) -> () {
+pub fn operator_eq_20(x: Ptr<NonTrivialCopyAssign>, y: Ptr<NonTrivialCopyAssign>) -> bool {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct NonTrivialCopyAssign {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl NonTrivialCopyAssign {
-    pub fn new(mut ii: ()) -> Self {
+    pub fn new(mut ii: i32) -> Self {
         Self { i: ii }
     }
     pub fn copy_from(other: Ptr<NonTrivialCopyAssign>) -> Self {
@@ -434,7 +443,7 @@ impl NonTrivialCopyAssign {
 }
 impl CppEq for NonTrivialCopyAssign {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_21(__lhs.clone(), __rhs.clone())
+        operator_eq_20(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for NonTrivialCopyAssign {
@@ -446,7 +455,7 @@ impl Clone for NonTrivialCopyAssign {
 }
 impl Default for NonTrivialCopyAssign {
     fn default() -> Self {
-        { NonTrivialCopyAssign { i: 0_() } }
+        { NonTrivialCopyAssign { i: 0 } }
     }
 }
 pub fn test_constexpr_copy_assignment_non_trivial_22() {
@@ -454,12 +463,12 @@ pub fn test_constexpr_copy_assignment_non_trivial_22() {
     const _: () = assert!(true, "!std::is_trivially_copy_assignable<V>::value");;
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
+        let _new_value: Value<i64> = Rc::new(RefCell::new(101_i64));
         test_constexpr_assign_imp_17(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _new_value: Value<()> = Rc::new(RefCell::new(101_()));
+        let _new_value: Value<i64> = Rc::new(RefCell::new(101_i64));
         test_constexpr_assign_imp_17(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
@@ -470,13 +479,13 @@ pub fn test_constexpr_copy_assignment_non_trivial_22() {
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<NonTrivialCopyAssign> =
-            Rc::new(RefCell::new(NonTrivialCopyAssign::new({ 5_() })));
+            Rc::new(RefCell::new(NonTrivialCopyAssign::new({ 5 })));
         test_constexpr_assign_imp_19(_v.as_pointer(), _new_value.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _new_value: Value<NonTrivialCopyAssign> =
-            Rc::new(RefCell::new(NonTrivialCopyAssign::new({ 5_() })));
+            Rc::new(RefCell::new(NonTrivialCopyAssign::new({ 5 })));
         test_constexpr_assign_imp_19(_v.as_pointer(), _new_value.as_pointer())
     });
 }
@@ -486,13 +495,13 @@ pub fn non_constexpr_test_23() {
     ({ test_copy_assignment_empty_non_empty_4() });
     ({ test_assignment_throw_13() });
 }
-pub fn cxx17_constexpr_test_24() -> () {
+pub fn cxx17_constexpr_test_24() -> bool {
     ({ test_copy_assignment_sfinae_1() });
     ({ test_copy_assignment_not_noexcept_0() });
-    ({ test_constexpr_copy_assignment_trivial_20() });
+    ({ test_constexpr_copy_assignment_trivial_21() });
     return true;
 }
-pub fn cxx20_constexpr_test_25() -> () {
+pub fn cxx20_constexpr_test_25() -> bool {
     ({ test_copy_assignment_same_index_5() });
     ({ test_copy_assignment_different_index_10() });
     ({ test_constexpr_copy_assignment_non_trivial_22() });
@@ -517,13 +526,13 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ non_constexpr_test_23() });
     ({ cxx17_constexpr_test_24() });
     ({ cxx20_constexpr_test_25() });
     const _: () = assert!(true, "cxx17_constexpr_test()");;
     const _: () = assert!(true, "cxx20_constexpr_test()");;
-    return 0_();
+    return 0;
 }
 pub trait CopyAssignImpl {
     fn copy_assign(&self, o: Ptr<CopyAssign>) -> Ptr<CopyAssign>;
@@ -550,7 +559,7 @@ impl CopyAssignImpl for Ptr<CopyAssign> {
         field!((*self), copy_assign).write({ o.with(|__s| __s.copy_assign.clone()) });
         field!((*self), move_construct).write({ o.with(|__s| __s.move_construct.clone()) });
         field!((*self), move_assign).write({ o.with(|__s| __s.move_assign.clone()) });
-        field!(o, value).write(-1_());
+        field!(o, value).write(-1_i32);
         (*self)
             .with(|__s| __s.move_assign.clone())
             .with_mut(|__v| __v.prefix_inc());
@@ -598,7 +607,7 @@ pub trait TCopyAssignNTMoveAssignImpl {
 impl TCopyAssignNTMoveAssignImpl for Ptr<TCopyAssignNTMoveAssign> {
     fn move_assign(&self, that: Ptr<TCopyAssignNTMoveAssign>) -> Ptr<TCopyAssignNTMoveAssign> {
         field!((*self), value).write({ that.with(|__s| __s.value) });
-        field!(that, value).write(-1_());
+        field!(that, value).write(-1_i32);
         return (*self).clone();
     }
 }
@@ -612,7 +621,7 @@ impl anon_11Impl for Ptr<anon_11> {
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: (unimplemented!().read()),
+            value: ((unimplemented!().read()) as i64),
         };
     }
 }
@@ -640,7 +649,7 @@ impl anon_6Impl for Ptr<anon_6> {
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: (unimplemented!().read()),
+            value: ((unimplemented!().read()) as i32),
         };
     }
 }
@@ -654,7 +663,7 @@ impl anon_7Impl for Ptr<anon_7> {
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: (unimplemented!().read()),
+            value: ((unimplemented!().read()) as i64),
         };
     }
 }

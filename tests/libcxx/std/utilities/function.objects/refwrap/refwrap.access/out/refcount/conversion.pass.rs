@@ -10,29 +10,29 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct functor1 {}
 pub fn test_0(t: Ptr<FnPtr<fn()>>) {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<FnPtr<fn()>> = (unimplemented!() as Option<unsafe fn()>);
-    unimplemented!();
+    let mut r: Ptr<FnPtr<fn()>> = (t).clone();
+    let r2: Ptr<FnPtr<fn()>> = (r).clone();
+    assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn test_1(t: FnPtr<fn()>) {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: FnPtr<fn()> = unimplemented!();
-    unimplemented!();
+    let mut r: FnPtr<fn()> = (t).clone();
+    let r2: FnPtr<fn()> = (r).clone();
+    assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn test_2(t: Ptr<functor1>) {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<functor1> = (unimplemented!() as functor1);
-    unimplemented!();
+    let mut r: Ptr<functor1> = (t).clone();
+    let r2: Ptr<functor1> = (r).clone();
+    assert!(({ (r2).clone() } == { (t).clone() }));
 }
-pub fn test_3(t: Ptr<()>) {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<()> = unimplemented!();
-    unimplemented!();
+pub fn test_3(t: Ptr<i32>) {
+    let mut r: Ptr<i32> = (t).clone();
+    let r2: Ptr<i32> = (r).clone();
+    assert!(({ (r2).clone() } == { (t).clone() }));
 }
-pub fn test_4(t: Ptr<()>) {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<()> = unimplemented!();
-    unimplemented!();
+pub fn test_4(t: Ptr<i32>) {
+    let mut r: Ptr<i32> = (t).clone();
+    let r2: Ptr<i32> = (r).clone();
+    assert!(({ (r2).clone() } == { (t).clone() }));
 }
 pub fn f_5() {}
 pub fn main() {
@@ -54,16 +54,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let fp: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(f_5)));
     ({ test_0(fp.as_pointer()) });
     ({ test_1(FnPtr::<fn()>::new(f_5)) });
     let f1: Value<functor1> = Rc::new(RefCell::new(<functor1>::default()));
     ({ test_2(f1.as_pointer()) });
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    let i: Value<i32> = Rc::new(RefCell::new(0));
     ({ test_3(i.as_pointer()) });
-    let j: Value<()> = Rc::new(RefCell::new(0_()));
+    let j: Value<i32> = Rc::new(RefCell::new(0));
     ({ test_4(j.as_pointer()) });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

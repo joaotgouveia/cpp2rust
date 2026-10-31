@@ -9,11 +9,19 @@ use std::rc::{Rc, Weak};
 pub fn testComparisonsComplete_0(
     t1: Ptr<SomeInt>,
     t2: Ptr<()>,
-    mut isEqual: (),
-    mut isLess: (),
-    mut isGreater: (),
-) -> () {
-    unimplemented!();
+    mut isEqual: bool,
+    mut isLess: bool,
+    mut isGreater: bool,
+) -> bool {
+    assert!(
+        ((((if isEqual { 1 } else { 0 }) + (if isLess { 1 } else { 0 }))
+            + (if isGreater { 1 } else { 0 }))
+            <= 1)
+            && (!(Ptr::<i8>::from_string_literal(
+                b"at most one of isEqual, isLess, and isGreater can be true"
+            ))
+            .is_null())
+    );
     if isEqual {
         if !(unimplemented!()) {
             return false;
@@ -166,13 +174,21 @@ pub fn testComparisonsComplete_0(
     return true;
 }
 pub fn testComparisonsComplete_1(
-    t1: Ptr<()>,
+    t1: Ptr<i32>,
     t2: Ptr<()>,
-    mut isEqual: (),
-    mut isLess: (),
-    mut isGreater: (),
-) -> () {
-    unimplemented!();
+    mut isEqual: bool,
+    mut isLess: bool,
+    mut isGreater: bool,
+) -> bool {
+    assert!(
+        ((((if isEqual { 1 } else { 0 }) + (if isLess { 1 } else { 0 }))
+            + (if isGreater { 1 } else { 0 }))
+            <= 1)
+            && (!(Ptr::<i8>::from_string_literal(
+                b"at most one of isEqual, isLess, and isGreater can be true"
+            ))
+            .is_null())
+    );
     if isEqual {
         if !(unimplemented!()) {
             return false;
@@ -324,50 +340,51 @@ pub fn testComparisonsComplete_1(
     }
     return true;
 }
-pub fn testOrder_2(t1: Ptr<SomeInt>, t2: Ptr<()>, order: ()) -> () {
-    let order: Value<()> = Rc::new(RefCell::new(order));
-    let mut equal: () = unimplemented!();
-    let mut less: () = unimplemented!();
-    let mut greater: () = unimplemented!();
-    return (unimplemented!())
+pub fn testOrder_2(t1: Ptr<SomeInt>, t2: Ptr<()>, order: std::cmp::Ordering) -> bool {
+    let order: Value<std::cmp::Ordering> = Rc::new(RefCell::new(order));
+    let mut equal: bool = (*order.borrow()) == std::cmp::Ordering::Equal;
+    let mut less: bool = (*order.borrow()) == std::cmp::Ordering::Less;
+    let mut greater: bool = (*order.borrow()) == std::cmp::Ordering::Greater;
+    return (unimplemented!() == (*order.borrow()))
         && ({
             let _t1: Ptr<SomeInt> = (t1).clone();
             let _t2: Ptr<()> = (t2).clone();
-            let _isEqual: () = equal;
-            let _isLess: () = less;
-            let _isGreater: () = greater;
+            let _isEqual: bool = equal;
+            let _isLess: bool = less;
+            let _isGreater: bool = greater;
             testComparisonsComplete_0(_t1, _t2, _isEqual, _isLess, _isGreater)
         });
 }
-pub fn testOrder_3(t1: Ptr<()>, t2: Ptr<()>, order: ()) -> () {
-    let order: Value<()> = Rc::new(RefCell::new(order));
-    let mut equal: () = unimplemented!();
-    let mut less: () = unimplemented!();
-    let mut greater: () = unimplemented!();
-    return (unimplemented!())
+pub fn testOrder_3(t1: Ptr<i32>, t2: Ptr<()>, order: std::cmp::Ordering) -> bool {
+    let order: Value<std::cmp::Ordering> = Rc::new(RefCell::new(order));
+    let mut equal: bool = (*order.borrow()) == std::cmp::Ordering::Equal;
+    let mut less: bool = (*order.borrow()) == std::cmp::Ordering::Less;
+    let mut greater: bool = (*order.borrow()) == std::cmp::Ordering::Greater;
+    return (unimplemented!() == (*order.borrow()))
         && ({
-            let _t1: Ptr<()> = (t1).clone();
+            let _t1: Ptr<i32> = (t1).clone();
             let _t2: Ptr<()> = (t2).clone();
-            let _isEqual: () = equal;
-            let _isLess: () = less;
-            let _isGreater: () = greater;
+            let _isEqual: bool = equal;
+            let _isLess: bool = less;
+            let _isGreater: bool = greater;
             testComparisonsComplete_1(_t1, _t2, _isEqual, _isLess, _isGreater)
         });
 }
-pub fn operator_lt_4(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> () {
+pub fn operator_lt_4(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> bool {
     return ({ lhs.with(|__s| __s.value) } < { rhs.with(|__s| __s.value) });
 }
-pub fn operator_eq_5(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> () {
+pub fn operator_eq_5(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> bool {
     return ({ lhs.with(|__s| __s.value) } == { rhs.with(|__s| __s.value) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct LessAndEqComp {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl LessAndEqComp {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -381,23 +398,25 @@ impl CppEq for LessAndEqComp {
         operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn operator_cmp_6(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
+pub fn operator_cmp_6(mut _a0: StrongOrder, mut _a1: StrongOrder) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        let cmp: Value<std::cmp::Ordering> =
+            Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct StrongOrder {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl StrongOrder {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -420,14 +439,15 @@ pub fn operator_cmp_7(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     }
     return unimplemented!();
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct WeakOrder {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl WeakOrder {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -442,25 +462,26 @@ impl CppEq for WeakOrder {
     }
 }
 pub fn operator_cmp_8(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == i32::MIN) || (rhs.value == i32::MIN) {
         return unimplemented!();
     }
-    if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
+    if (lhs.value == i32::MAX) || (rhs.value == i32::MAX) {
         return unimplemented!();
     }
     return unimplemented!();
 }
-pub fn operator_eq_9(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
+pub fn operator_eq_9(mut lhs: PartialOrder, mut rhs: PartialOrder) -> bool {
     return unimplemented!();
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct PartialOrder {
     #[offset(0)]
-    pub value: (),
+    pub value: i32,
 }
 impl PartialOrder {
-    pub fn new(mut v: ()) -> Self {
+    pub fn new(mut v: i32) -> Self {
         Self { value: v }
     }
 }
@@ -485,17 +506,18 @@ const _: () = assert!(!(false), "!HasOperatorLessThan<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorLessThanEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorNotEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorSpaceship<NonComparable>");
-pub fn operator_eq_10(_a0: Ptr<EqualityComparable>, _a1: Ptr<EqualityComparable>) -> () {
+pub fn operator_eq_10(_a0: Ptr<EqualityComparable>, _a1: Ptr<EqualityComparable>) -> bool {
     return ({ _a0.with(|__s| __s.value_) } == { _a1.with(|__s| __s.value_) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct EqualityComparable {
     #[offset(0)]
-    value_: (),
+    value_: i32,
 }
 impl EqualityComparable {
-    pub fn new(mut value: ()) -> Self {
+    pub fn new(mut value: i32) -> Self {
         Self { value_: value }
     }
 }
@@ -507,29 +529,33 @@ impl CppEq for EqualityComparable {
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
-pub fn operator_eq_11(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> () {
+pub fn operator_eq_11(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> bool {
     return ({ _a0.with(|__s| __s.value_) } == { _a1.with(|__s| __s.value_) });
 }
-pub fn operator_cmp_12(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> () {
+pub fn operator_cmp_12(
+    _a0: Ptr<ThreeWayComparable>,
+    _a1: Ptr<ThreeWayComparable>,
+) -> std::cmp::Ordering {
     {
-        let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+        let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.value_)),
             &(_a1.with(|__s| __s.value_)),
         )));
-        if !(unimplemented!()) {
-            return unimplemented!();
+        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+            return (*cmp.borrow());
         }
     }
-    return unimplemented!();
+    return std::cmp::Ordering::Equal;
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct ThreeWayComparable {
     #[offset(0)]
-    value_: (),
+    value_: i32,
 }
 impl ThreeWayComparable {
-    pub fn new(mut value: ()) -> Self {
+    pub fn new(mut value: i32) -> Self {
         Self { value_: value }
     }
 }
@@ -556,19 +582,20 @@ const _: () = assert!(true, "HasOperatorSpaceship<ThreeWayComparable>");
 #[byte_size(4)]
 pub struct ImplicitBool_E1 {
     #[offset(0)]
-    pub x: (),
+    pub x: i32,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct ImplicitBool_E2 {
     #[offset(0)]
-    pub y: (),
+    pub y: i32,
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(bool, to_bool_1)]
 #[byte_size(1)]
 pub struct ImplicitBool {
     #[offset(0)]
-    pub val: (),
+    pub val: bool,
 }
 pub fn operator_eq_13(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {
@@ -579,11 +606,11 @@ pub fn operator_eq_13(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> Imp
 #[byte_size(4)]
 pub struct SomeInt {
     #[offset(0)]
-    pub value_: (),
+    pub value_: i32,
 }
 impl SomeInt {
-    pub fn new(value: Option<()>) -> Self {
-        let mut value: () = value.unwrap_or_else(|| 0_());
+    pub fn new(value: Option<i32>) -> Self {
+        let mut value: i32 = value.unwrap_or_else(|| 0);
         Self { value_: value }
     }
 }
@@ -621,45 +648,45 @@ const _: () = assert!(
 );
 pub fn test_custom_integral_14() {
     {
-        let t: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(3_()) })));
+        let t: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(3) })));
         let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
+        assert!(({ testOrder_2(t.as_pointer(), op.as_pointer(), std::cmp::Ordering::Equal,) }));
     }
     {
-        let t: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(2_()) })));
+        let t: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(2) })));
         let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Less);
+        assert!(({ testOrder_2(t.as_pointer(), op.as_pointer(), std::cmp::Ordering::Less,) }));
     }
     {
-        let t: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(3_()) })));
+        let t: Value<SomeInt> = Rc::new(RefCell::new(SomeInt::new({ Some(3) })));
         let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
+        assert!(({ testOrder_2(t.as_pointer(), op.as_pointer(), std::cmp::Ordering::Greater,) }));
     }
 }
 pub fn test_int_15() {
     {
-        let t: Value<()> = Rc::new(RefCell::new(3_()));
+        let t: Value<i32> = Rc::new(RefCell::new(3));
         let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Equal);
+        assert!(({ testOrder_3(t.as_pointer(), op.as_pointer(), std::cmp::Ordering::Equal,) }));
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(2_()));
+        let t: Value<i32> = Rc::new(RefCell::new(2));
         let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Less);
+        assert!(({ testOrder_3(t.as_pointer(), op.as_pointer(), std::cmp::Ordering::Less,) }));
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(3_()));
+        let t: Value<i32> = Rc::new(RefCell::new(3));
         let op: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!()) == std::cmp::Ordering::Greater);
+        assert!(({ testOrder_3(t.as_pointer(), op.as_pointer(), std::cmp::Ordering::Greater,) }));
     }
 }
-pub fn test_16() -> () {
+pub fn test_16() -> bool {
     ({ test_custom_integral_14() });
     ({ test_int_15() });
     return true;
@@ -683,37 +710,37 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    assert!(({ test_16() }));
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait ImplicitBoolImpl {
-    fn to__1(&self) -> ();
+    fn to_bool_1(&self) -> bool;
 }
 impl ImplicitBoolImpl for Ptr<ImplicitBool> {
-    fn to__1(&self) -> () {
+    fn to_bool_1(&self) -> bool {
         return (*self).with(|__s| __s.val);
     }
 }
 pub trait SomeIntImpl {
-    fn operator_cmp(&self, _a0: Ptr<SomeInt>) -> ();
-    fn operator_eq(&self, _a0: Ptr<SomeInt>) -> ();
+    fn operator_cmp(&self, _a0: Ptr<SomeInt>) -> std::cmp::Ordering;
+    fn operator_eq(&self, _a0: Ptr<SomeInt>) -> bool;
 }
 impl SomeIntImpl for Ptr<SomeInt> {
-    fn operator_cmp(&self, _a0: Ptr<SomeInt>) -> () {
+    fn operator_cmp(&self, _a0: Ptr<SomeInt>) -> std::cmp::Ordering {
         {
-            let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
+            let cmp: Value<std::cmp::Ordering> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
                 &((*self).with(|__s| __s.value_)),
                 &(_a0.with(|__s| __s.value_)),
             )));
-            if !(unimplemented!()) {
-                return unimplemented!();
+            if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+                return (*cmp.borrow());
             }
         }
-        return unimplemented!();
+        return std::cmp::Ordering::Equal;
     }
-    fn operator_eq(&self, _a0: Ptr<SomeInt>) -> () {
+    fn operator_eq(&self, _a0: Ptr<SomeInt>) -> bool {
         return ({ (*self).with(|__s| __s.value_) } == { _a0.with(|__s| __s.value_) });
     }
 }

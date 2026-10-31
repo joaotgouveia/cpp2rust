@@ -7,29 +7,29 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static has_abs_v_0: Value<()> = Rc::new(RefCell::new(true));
+    pub static has_abs_v_0: Value<bool> = Rc::new(RefCell::new(true));
 );
 thread_local!(
-    pub static has_abs_v_1: Value<()> = Rc::new(RefCell::new(false));
+    pub static has_abs_v_1: Value<bool> = Rc::new(RefCell::new(false));
 );
 const _: () = assert!(true, "has_abs_v<std::chrono::milliseconds>");
 const _: () = assert!(true, "!has_abs_v<std::chrono::duration<unsigned>>");
 pub fn test_2(f: Ptr<()>, d: Ptr<()>) {
     {
         const _: () = assert!(true, "(std::is_same<R, Duration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn test_3(f: Ptr<()>, d: Ptr<()>) {
     {
         const _: () = assert!(true, "(std::is_same<R, Duration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn test_4(f: Ptr<()>, d: Ptr<()>) {
     {
         const _: () = assert!(true, "(std::is_same<R, Duration>::value)");;
-        unimplemented!();
+        assert!(unimplemented!());
     }
 }
 pub fn main() {
@@ -51,7 +51,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
         let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -87,7 +87,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "d.count() == 2");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = has_abs_v_0.with(|_| ());

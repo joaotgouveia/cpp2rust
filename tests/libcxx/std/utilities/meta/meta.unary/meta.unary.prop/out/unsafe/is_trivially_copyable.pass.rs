@@ -89,16 +89,16 @@ pub unsafe fn test_is_not_trivially_copyable_7() {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {
-    pub i_: (),
+    pub i_: i32,
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct B {
-    pub i_: (),
+    pub i_: i32,
 }
 impl B {
     pub unsafe fn destructor(&mut self) {
-        unimplemented!();
+        assert!(((self.i_) == (0)));
     }
 }
 #[repr(C)]
@@ -120,7 +120,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_is_trivially_copyable_0() });
     (unsafe { test_is_trivially_copyable_1() });
     (unsafe { test_is_trivially_copyable_2() });
@@ -129,6 +129,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_is_not_trivially_copyable_5() });
     (unsafe { test_is_not_trivially_copyable_6() });
     (unsafe { test_is_not_trivially_copyable_7() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

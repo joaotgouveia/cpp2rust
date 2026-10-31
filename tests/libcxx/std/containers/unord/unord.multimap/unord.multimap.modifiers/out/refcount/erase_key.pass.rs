@@ -10,42 +10,45 @@ pub fn CheckConsecutiveKeys_0(pos: (), end: (), mut key: (), values: Ptr<()>) {
     let pos: Value<()> = Rc::new(RefCell::new(pos));
     let end: Value<()> = Rc::new(RefCell::new(end));
     'loop_: while !(unimplemented!()) {
+        assert!((*pos.borrow()) != (*end.borrow()));
+        assert!(((*(*(*pos.borrow()).iter_deref().upgrade().deref()).0.borrow()) == key));
+        assert!(unimplemented!() != unimplemented!());
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        (*pos.borrow_mut()).iter_inc();
     }
-    unimplemented!();
+    assert!(
+        ((*pos.borrow()) == (*end.borrow()))
+            || ((*(*(*pos.borrow()).iter_deref().upgrade().deref()).0.borrow()) != key)
+    );
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_2.with(|rc| *rc.borrow()) >= dealloc_count_3.with(|rc| *rc.borrow())));
         return ((alloc_count_2.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_3.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_4.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_1: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_3: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_3: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_4: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_4: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -53,7 +56,7 @@ pub struct min_pointer_std_pair_const_int__std_basic_string_char__std_char_trait
 {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<(Value<i32>, Value<Vec<i8>>)>,
 }
 impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__ { }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -61,23 +64,23 @@ impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
-pub fn only_deletions_5(whole: Ptr<()>, part: Ptr<()>) -> () {
+pub fn only_deletions_5(whole: Ptr<()>, part: Ptr<()>) -> bool {
     let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    'loop_: while (!(unimplemented!())) && (!(unimplemented!())) {
+    'loop_: while ((*w.borrow()) != unimplemented!()) && ((*p.borrow()) != unimplemented!()) {
         if unimplemented!() {
-            unimplemented!();
+            (*p.borrow_mut()).iter_post_inc();
         }
-        unimplemented!();
+        (*w.borrow_mut()).iter_post_inc();
     }
-    return unimplemented!();
+    return (*p.borrow()) == unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -98,354 +101,998 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
+            (
+                Rc::new(RefCell::new(1)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(2)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(3)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"three").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(4)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(1)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(2)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
         ])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        let eq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 6_()));
+        let eq: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new({
+            let __a0 = unimplemented!();
+            (
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a0.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a0.1.as_pointer(),
+                ))),
+            )
+        }));
+        assert!((unimplemented!() == 2_isize));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 2_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (2 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        let k: Value<()> = Rc::new(RefCell::new({ (*eq.borrow()).first.clone() }));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        let k: Value<()> = Rc::new(RefCell::new((*(*eq.borrow()).0.borrow()).clone()));
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
+        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 2_()));
+        assert!((unimplemented!() == 4_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
+        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 4_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
+        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 1_()));
+        assert!((unimplemented!() == 3_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 3_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 2_()));
+        assert!((unimplemented!() == 1_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 1_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 1_()));
+        assert!((unimplemented!() == 0_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 0_isize));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 0_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 0_isize));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
     }
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
+        let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
+            (
+                Rc::new(RefCell::new(1)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"one").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(2)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"two").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(3)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"three").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(4)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(1)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
+            (
+                Rc::new(RefCell::new(2)),
+                Rc::new(RefCell::new({
+                    let mut __bytes = Ptr::<i8>::from_string_literal(b"four").to_c_bytes();
+                    __bytes.push(0_i8);
+                    __bytes
+                })),
+            ),
         ])));
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        let eq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 6_()));
+        let eq: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new({
+            let __a0 = unimplemented!();
+            (
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a0.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a0.1.as_pointer(),
+                ))),
+            )
+        }));
+        assert!((unimplemented!() == 2_isize));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 2_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (2 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        let k: Value<()> = Rc::new(RefCell::new({ (*eq.borrow()).first.clone() }));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        let k: Value<()> = Rc::new(RefCell::new((*(*eq.borrow()).0.borrow()).clone()));
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
+        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 2_()));
+        assert!((unimplemented!() == 4_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
+        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 4_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4));
+        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 1_()));
+        assert!((unimplemented!() == 3_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 3_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 2_isize));
         unimplemented!();
         unimplemented!();
         ({
-            let _pos: () = unimplemented!();
-            let _end: () = unimplemented!();
-            CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
+            let _pos: () = <()>::from(unimplemented!());
+            let _end: () = <()>::from(unimplemented!());
+            CheckConsecutiveKeys_0(_pos, _end, (1 as ()), s.as_pointer())
         });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 2_()));
+        assert!((unimplemented!() == 1_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 1_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 1_isize));
+        (*k.borrow_mut()) = (*(*eq.borrow()).0.borrow()).clone();
+        assert!(((*(*(*k.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3));
+        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
+            (*(*(*k.borrow()).iter_deref().upgrade().deref()).1.borrow())[..(*(*(*k.borrow())
+                .iter_deref()
+                .upgrade()
+                .deref())
+            .1
+            .borrow())
+            .len()
+            .saturating_sub(1)]
+                == *__s
+        }));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 1_()));
+        assert!((unimplemented!() == 0_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 0_isize));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!((unimplemented!() == 0_()));
+        assert!((unimplemented!() == 0_()));
+        {
+            let __a1 = unimplemented!();
+            eq.as_pointer().write((
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<() as CppFrom<()>>::cpp_from_move(
+                    __a1.1.as_pointer(),
+                ))),
+            ))
+        };
+        assert!((unimplemented!() == 0_isize));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
+        assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
     }
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 10_()) {
-            let mut j: () = 0_();
-            'loop_: while (j < 2_()) {
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        'loop_: while ((*i.borrow()) < 10) {
+            let j: Value<i32> = Rc::new(RefCell::new(0));
+            'loop_: while ((*j.borrow()) < 2) {
                 unimplemented!();
                 unimplemented!();
-                j.prefix_inc();
+                (*j.borrow_mut()).prefix_inc();
             }
-            i.prefix_inc();
+            (*i.borrow_mut()).prefix_inc();
         }
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut ctr: () = 0_();
-        'loop_: while !(unimplemented!()) {
-            if ((ctr.postfix_inc() % 2_()) == 0_()) {
+        let mut ctr: i32 = 0;
+        'loop_: while (*i.borrow()) != unimplemented!() {
+            if ((ctr.postfix_inc() % 2) == 0) {
                 unimplemented!();
             } else {
-                unimplemented!();
+                (*i.borrow_mut()).iter_inc();
             }
         }
-        unimplemented!();
+        assert!(({ only_deletions_5(m.as_pointer(), m2.as_pointer(),) }));
     }
-    return 0_();
+    return 0;
 }
 pub trait min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char____Impl
 {
-    fn allocate ( &self , mut n : ()  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
+    fn allocate ( &self , mut n : usize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p : min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!()
     }
@@ -454,39 +1101,39 @@ impl min_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_ch
 }
 pub trait min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl
 {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
         unimplemented!()
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
         unimplemented!()
     }    fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
         unimplemented!()
-    }    fn operator_post_inc_9 ( &self , mut _a0 : ()  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
+    }    fn operator_post_inc_9 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
         unimplemented!()
     }    fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
         unimplemented!()
-    }    fn operator_post_dec_11 ( &self , mut _a0 : ()  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
+    }    fn operator_post_dec_11 ( &self , mut _a0 : i32  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
         unimplemented!()
-    }    fn operator_add_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
+    }    fn operator_add_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
         unimplemented!()
-    }    fn operator_sub_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
+    }    fn operator_sub_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__  >{
         unimplemented!()
-    }    fn operator_add ( &self , mut n : ()  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
+    }    fn operator_add ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
         unimplemented!()
-    }    fn operator_sub ( &self , mut n : ()  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
+    }    fn operator_sub ( &self , mut n : isize  , ) -> min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__{
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<(Value<i32>, Value<Vec<i8>>)> {
         unimplemented!()
     }
 }
 impl min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____std_integral_constant_unsigned_long__0__> {
 }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }

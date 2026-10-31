@@ -6,12 +6,12 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_bool__bool_ {}
-pub type anon_1 = ();
+pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -35,24 +35,24 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let mut p: () = unimplemented!();
-        unimplemented!();
+        let mut p: bool = unimplemented!();
+        assert!(p);
     }
     {
         const _: () = assert!(true, "std::is_constant_evaluated()");;
-        let mut p: () = unimplemented!();
-        unimplemented!();
+        let mut p: bool = unimplemented!();
+        assert!(!(p));
         const _: () = assert!(true, "");;
-        unimplemented!();
+        assert!((local_static_2.with(|rc| *rc.borrow()) == 42));
     }
-    return 0_();
+    return 0;
 }
 thread_local!(
-    static local_static_2: Value<()> =
-        Rc::new(RefCell::new(if unimplemented!() { 42_() } else { -1_() }));
+    static local_static_2: Value<i32> =
+        Rc::new(RefCell::new(if unimplemented!() { 42 } else { -1_i32 }));
 );
 pub fn __cpp2rust_init_globals() {}

@@ -6,16 +6,16 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn make_string_0(in_: *const [(); 7]) -> () {
+pub unsafe fn make_string_0(in_: *const [libc::c_char; 7]) -> Vec<libc::c_char> {
     return unimplemented!();
 }
-pub unsafe fn make_string_1(in_: *const [(); 7]) -> () {
+pub unsafe fn make_string_1(in_: *const [libc::c_char; 7]) -> Vec<i32> {
     return unimplemented!();
 }
-pub unsafe fn make_string_stream_2(in_: *const [(); 7]) -> () {
+pub unsafe fn make_string_stream_2(in_: *const [libc::c_char; 7]) -> () {
     return unimplemented!();
 }
-pub unsafe fn make_string_stream_3(in_: *const [(); 7]) -> () {
+pub unsafe fn make_string_stream_3(in_: *const [libc::c_char; 7]) -> () {
     return unimplemented!();
 }
 const _: () = assert!(!(false), "!std::copy_constructible<Iter<char>>");
@@ -32,7 +32,7 @@ pub unsafe fn test_4() {
         let mut isv: () = unimplemented!();
         let mut it: () = unimplemented!();
         let mut it2: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (12)));
     }
     {
         let mut iss1: () = (unsafe { make_string_stream_2(&std::mem::transmute(*b"12   3\0")) });
@@ -40,9 +40,9 @@ pub unsafe fn test_4() {
         let mut iss2: () = (unsafe { make_string_stream_2(&std::mem::transmute(*b"45   6\0")) });
         let mut isv2: () = unimplemented!();
         let mut it1: () = unimplemented!();
+        assert!(((*unimplemented!()) == (12)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (45)));
     }
 }
 pub unsafe fn test_5() {
@@ -51,7 +51,7 @@ pub unsafe fn test_5() {
         let mut isv: () = unimplemented!();
         let mut it: () = unimplemented!();
         let mut it2: () = unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (12)));
     }
     {
         let mut iss1: () = (unsafe { make_string_stream_3(&std::mem::transmute(*b"12   3\0")) });
@@ -59,9 +59,9 @@ pub unsafe fn test_5() {
         let mut iss2: () = (unsafe { make_string_stream_3(&std::mem::transmute(*b"45   6\0")) });
         let mut isv2: () = unimplemented!();
         let mut it1: () = unimplemented!();
+        assert!(((*unimplemented!()) == (12)));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((*unimplemented!()) == (45)));
     }
 }
 pub fn main() {
@@ -79,9 +79,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_4() });
     (unsafe { test_5() });
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

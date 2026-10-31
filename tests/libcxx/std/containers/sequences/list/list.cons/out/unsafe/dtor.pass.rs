@@ -11,10 +11,10 @@ pub static mut destroyed_0: std::cell::LazyCell<()> =
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, DestructorUnsafe, Default)]
 pub struct Foo {
-    pub value: (),
+    pub value: i32,
 }
 impl Foo {
-    pub unsafe fn new(mut i: ()) -> Self {
+    pub unsafe fn new(mut i: i32) -> Self {
         let mut this = Self { value: i };
         this
     }
@@ -37,18 +37,18 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut list: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
     }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((unimplemented!()) == (1_())));
+    assert!(((unimplemented!()) == (1_())));
+    assert!(((unimplemented!()) == (1_())));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const destroyed_0);

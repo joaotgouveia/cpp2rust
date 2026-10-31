@@ -14,12 +14,12 @@ pub fn test_unordered_set_0() {
 }
 pub fn test_unordered_map_1() {
     let mut tmp: Ptr<()> = Ptr::<()>::null();
-    let mut i: () = 0_();
-    'loop_: while (i < 20_()) {
+    let mut i: i32 = 0;
+    'loop_: while (i < 20) {
         tmp = Ptr::alloc(unimplemented!());
-        let mut j: () = 0_();
-        'loop_: while (j < 10000_()) {
-            let __rhs = j;
+        let mut j: i32 = 0;
+        'loop_: while (j < 10000) {
+            let __rhs = (j as ());
             unimplemented!().write(__rhs);
             j.postfix_inc();
         }
@@ -27,8 +27,8 @@ pub fn test_unordered_map_1() {
         i.postfix_inc();
     }
     tmp = Ptr::alloc(unimplemented!());
-    let mut i: () = 0_();
-    'loop_: while (i < 150000_()) {
+    let mut i: i32 = 0;
+    'loop_: while (i < 150000) {
         unimplemented!();
         i.postfix_inc();
     }
@@ -39,7 +39,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> () {
+fn main_0() -> i32 {
     ({ test_unordered_set_0() });
     ({ test_unordered_map_1() });
     0

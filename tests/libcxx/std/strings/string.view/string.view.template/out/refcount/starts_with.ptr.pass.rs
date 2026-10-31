@@ -10,27 +10,27 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct constexpr_char_traits_char_ {}
 impl constexpr_char_traits_char_ {
-    pub fn eq(mut c1: (), mut c2: ()) -> () {
-        return (c1 == c2);
+    pub fn eq(mut c1: i8, mut c2: i8) -> bool {
+        return ((c1 as i32) == (c2 as i32));
     }
-    pub fn lt(mut c1: (), mut c2: ()) -> () {
-        return (c1 < c2);
+    pub fn lt(mut c1: i8, mut c2: i8) -> bool {
+        return ((c1 as i32) < (c2 as i32));
     }
-    pub fn compare(mut s1: Ptr<()>, mut s2: Ptr<()>, mut n: ()) -> () {
+    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: usize) -> i32 {
         'loop_: while (n != 0) {
             if ({
-                let _c1: () = (s1.read());
-                let _c2: () = (s2.read());
+                let _c1: i8 = (s1.read());
+                let _c2: i8 = (s2.read());
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return -1_();
+                return -1_i32;
             }
             if ({
-                let _c1: () = (s2.read());
-                let _c2: () = (s1.read());
+                let _c1: i8 = (s2.read());
+                let _c2: i8 = (s1.read());
                 constexpr_char_traits_char_::lt(_c1, _c2)
             }) {
-                return 1_();
+                return 1;
             }
             {
                 {
@@ -40,13 +40,13 @@ impl constexpr_char_traits_char_ {
                 s2.prefix_inc()
             };
         }
-        return 0_();
+        return 0;
     }
-    pub fn length(mut s: Ptr<()>) -> () {
-        let len: Value<()> = Rc::new(RefCell::new(0_()));
+    pub fn length(mut s: Ptr<i8>) -> usize {
+        let len: Value<usize> = Rc::new(RefCell::new(0_usize));
         'loop_: while !({
-            let _c1: () = (s.read());
-            let _c2: () = 0_();
+            let _c1: i8 = (s.read());
+            let _c2: i8 = 0_i8;
             constexpr_char_traits_char_::eq(_c1, _c2)
         }) {
             (*len.borrow_mut()).prefix_inc();
@@ -74,40 +74,40 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut s: Ptr<()> = Ptr::<()>::from_string_literal(b"abcde");
+        let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");
         let sv0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let svNot: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(!(unimplemented!()));
+        assert!(unimplemented!());
     }
     {
-        let mut s: Ptr<()> = Ptr::<()>::from_string_literal(b"abcde");
+        let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");
         let sv0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sv1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sv2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -136,6 +136,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "!svNot.starts_with(\"abcde\")");;
         const _: () = assert!(true, "svNot.starts_with(\"def\")");;
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

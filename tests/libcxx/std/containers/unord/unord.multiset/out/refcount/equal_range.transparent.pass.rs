@@ -32,19 +32,20 @@ pub struct transparent_less_private {}
 #[byte_size(4)]
 pub struct transparent_less_not_a_type {
     #[offset(0)]
-    pub is_transparent: (),
+    pub is_transparent: i32,
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
 pub struct C2Int {
     #[offset(0)]
-    i_: (),
+    i_: i32,
 }
 impl C2Int {
-    pub fn new_1() -> Self {
-        Self { i_: 0_() }
+    pub fn new_2() -> Self {
+        Self { i_: 0 }
     }
-    pub fn new_2(mut i: ()) -> Self {
+    pub fn new_1(mut i: i32) -> Self {
         Self { i_: i }
     }
 }
@@ -61,32 +62,33 @@ impl CppEq for C2Int {
 }
 impl Default for C2Int {
     fn default() -> Self {
-        { C2Int::new_1() }
+        { C2Int::new_2() }
     }
 }
-pub fn operator_lt_1(mut rhs: (), lhs: Ptr<C2Int>) -> () {
+pub fn operator_lt_1(mut rhs: i32, lhs: Ptr<C2Int>) -> bool {
     return ({ rhs } < { ({ C2IntImpl::get(&lhs) }) });
 }
-pub fn operator_lt_0(rhs: Ptr<C2Int>, lhs: Ptr<C2Int>) -> () {
+pub fn operator_lt_0(rhs: Ptr<C2Int>, lhs: Ptr<C2Int>) -> bool {
     return ({ ({ C2IntImpl::get(&rhs) }) } < { ({ C2IntImpl::get(&lhs) }) });
 }
-pub fn operator_lt_2(rhs: Ptr<C2Int>, mut lhs: ()) -> () {
+pub fn operator_lt_2(rhs: Ptr<C2Int>, mut lhs: i32) -> bool {
     return ({ ({ C2IntImpl::get(&rhs) }) } < { lhs });
 }
-pub fn operator_eq_3(lhs: Ptr<StoredType_int_>, rhs: Ptr<StoredType_int_>) -> () {
+pub fn operator_eq_3(lhs: Ptr<StoredType_int_>, rhs: Ptr<StoredType_int_>) -> bool {
     return ({ lhs.with(|__s| __s.value_) } == { rhs.with(|__s| __s.value_) });
 }
-pub fn operator_eq_4(lhs: Ptr<StoredType_int_>, rhs: Ptr<SearchedType_int_>) -> () {
+pub fn operator_eq_4(lhs: Ptr<StoredType_int_>, rhs: Ptr<SearchedType_int_>) -> bool {
     return ({ lhs.with(|__s| __s.value_) } == { ({ SearchedType_int_Impl::get_value(&rhs) }) });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new_1, value)]
 #[byte_size(4)]
 pub struct StoredType_int_ {
     #[offset(0)]
-    value_: (),
+    value_: i32,
 }
 impl StoredType_int_ {
-    pub fn new_1(mut value: ()) -> Self {
+    pub fn new_1(mut value: i32) -> Self {
         Self { value_: value }
     }
 }
@@ -95,17 +97,18 @@ impl CppEq for StoredType_int_ {
         operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(StoredType_int_, to_StoredType_int_)]
 #[byte_size(16)]
 pub struct SearchedType_int_ {
     #[offset(0)]
-    value_: (),
+    value_: i32,
     #[offset(8)]
     #[byte_size(8)]
-    conversions_: Ptr<()>,
+    conversions_: Ptr<i32>,
 }
 impl SearchedType_int_ {
-    pub fn new(mut value: (), mut counter: Ptr<()>) -> Self {
+    pub fn new(mut value: i32, mut counter: Ptr<i32>) -> Self {
         Self {
             value_: value,
             conversions_: (counter).clone(),
@@ -129,125 +132,125 @@ pub struct transparent_hash_final {}
 pub struct transparent_equal_final {}
 pub fn test_transparent_equal_range_5(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 0));
 }
 pub fn test_transparent_equal_range_6(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 0));
 }
 pub fn test_transparent_equal_range_7(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 0));
 }
 pub fn test_transparent_equal_range_8(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 0));
 }
 pub fn test_non_transparent_equal_range_9(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 1));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 2));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 3));
 }
 pub fn test_non_transparent_equal_range_10(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 1));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 2));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 3));
 }
 pub fn test_non_transparent_equal_range_11(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 1));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 2));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 3));
 }
 pub fn test_non_transparent_equal_range_12(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 1));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 2));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 3));
 }
 pub fn test_non_transparent_equal_range_13(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 1));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 2));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 3));
 }
 pub fn test_non_transparent_equal_range_14(c: ()) {
     let c: Value<()> = Rc::new(RefCell::new(c));
-    let conversions: Value<()> = Rc::new(RefCell::new(0_()));
-    let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    let conversions: Value<i32> = Rc::new(RefCell::new(0));
+    let iters: Value<(Value<()>, Value<()>)> = Rc::new(RefCell::new(unimplemented!()));
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 1));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() > 0_isize));
+    assert!(((*conversions.borrow()) == 2));
+    iters.as_pointer().write(unimplemented!());
+    assert!((unimplemented!() == 0_isize));
+    assert!(((*conversions.borrow()) == 3));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -268,7 +271,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({ test_transparent_equal_range_5(unimplemented!()) });
         ({ test_transparent_equal_range_6(unimplemented!()) });
@@ -289,19 +292,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({ test_non_transparent_equal_range_13(unimplemented!()) });
         ({ test_non_transparent_equal_range_14(unimplemented!()) });
     }
-    return 0_();
+    return 0;
 }
 pub trait C2IntImpl {
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
 }
 impl C2IntImpl for Ptr<C2Int> {
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.i_);
     }
 }
 pub trait SearchedType_int_Impl {
     fn to_StoredType_int_(&self) -> StoredType_int_;
-    fn get_value(&self) -> ();
+    fn get_value(&self) -> i32;
 }
 impl SearchedType_int_Impl for Ptr<SearchedType_int_> {
     fn to_StoredType_int_(&self) -> StoredType_int_ {
@@ -310,28 +313,28 @@ impl SearchedType_int_Impl for Ptr<SearchedType_int_> {
             .with_mut(|__v| __v.prefix_inc());
         return StoredType_int_::new_1({ (*self).with(|__s| __s.value_) });
     }
-    fn get_value(&self) -> () {
+    fn get_value(&self) -> i32 {
         return (*self).with(|__s| __s.value_);
     }
 }
 pub trait StoredType_int_Impl {
-    fn get_value(&self) -> ();
+    fn get_value(&self) -> i32;
 }
 impl StoredType_int_Impl for Ptr<StoredType_int_> {
-    fn get_value(&self) -> () {
+    fn get_value(&self) -> i32 {
         return (*self).with(|__s| __s.value_);
     }
 }
 pub trait hash_implImpl {
-    fn operator_call_1_int(&self, t: Ptr<SearchedType_int_>) -> ();
-    fn operator_call_2_int(&self, t: Ptr<StoredType_int_>) -> ();
+    fn operator_call_1_int(&self, t: Ptr<SearchedType_int_>) -> usize;
+    fn operator_call_2_int(&self, t: Ptr<StoredType_int_>) -> usize;
 }
 impl hash_implImpl for Ptr<hash_impl> {
-    fn operator_call_1_int(&self, t: Ptr<SearchedType_int_>) -> () {
-        return ({ SearchedType_int_Impl::get_value(&t) });
+    fn operator_call_1_int(&self, t: Ptr<SearchedType_int_>) -> usize {
+        return (({ SearchedType_int_Impl::get_value(&t) }) as usize);
     }
-    fn operator_call_2_int(&self, t: Ptr<StoredType_int_>) -> () {
-        return ({ StoredType_int_Impl::get_value(&t) });
+    fn operator_call_2_int(&self, t: Ptr<StoredType_int_>) -> usize {
+        return (({ StoredType_int_Impl::get_value(&t) }) as usize);
     }
 }
 pub fn __cpp2rust_init_globals() {}

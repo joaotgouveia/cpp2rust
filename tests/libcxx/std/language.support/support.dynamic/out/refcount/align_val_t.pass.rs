@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     const _: () = assert!(true, "std::is_enum<std::align_val_t>::value");;
     const _: () = assert!(
         true,
@@ -21,13 +21,13 @@ pub fn test_0() -> () {
         "!std::is_constructible<std::size_t, std::align_val_t>::value"
     );;
     {
-        let mut a: () = ((0_()) as ());
-        let mut b: () = ((32_()) as ());
-        let mut c: () = ((-1_()) as ());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        let mut a: () = ((0) as ());
+        let mut b: () = ((32) as ());
+        let mut c: () = ((-1_i32) as ());
+        assert!((a != b));
+        assert!((a == ((0) as ())));
+        assert!((b == ((32) as ())));
+        assert!(((c as usize) == (-1_i32 as usize)));
     }
     return true;
 }
@@ -50,9 +50,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

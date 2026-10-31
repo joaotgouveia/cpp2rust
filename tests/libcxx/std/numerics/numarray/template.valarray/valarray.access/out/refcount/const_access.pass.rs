@@ -26,18 +26,19 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([5_(), 4_(), 3_(), 2_(), 1_()])));
-        let mut N: () = (::std::mem::size_of::<[(); 5]>() as ())
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+        let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([5, 4, 3, 2, 1])));
+        let mut N: u32 = (((::std::mem::size_of::<[i32; 5]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+            as u32);
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
+        let mut i: u32 = 0_u32;
         'loop_: while (i < N) {
-            unimplemented!();
+            assert!(((unimplemented!().read()) == (*a.borrow())[(i) as usize]));
             i.prefix_inc();
         }
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

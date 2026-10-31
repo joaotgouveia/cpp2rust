@@ -24,39 +24,63 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut f: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
-            return (((10_()) * (x)) + (9_()));
+        let mut f: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: i32| -> i32 {
+            return (((10) * (x)) + (9));
         });
         let mut place: My2 = <My2>::default();
         let mut bound: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unsafe {
+                let mut ___args_0: i32 = 7;
+                let mut ___args_1: i32 = 8;
+                bound(&mut ___args_0, &mut ___args_1)
+            }) == (89))
+        );
     }
     {
-        let mut f: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
-            return (((10_()) * (x)) + (9_()));
+        let mut f: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: i32| -> i32 {
+            return (((10) * (x)) + (9));
         });
         let place: My2 = <My2>::default();
         let mut bound: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unsafe {
+                let mut ___args_0: i32 = 7;
+                let mut ___args_1: i32 = 8;
+                bound(&mut ___args_0, &mut ___args_1)
+            }) == (89))
+        );
     }
     {
-        let mut f: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
-            return (((10_()) * (x)) + (9_()));
+        let mut f: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: i32| -> i32 {
+            return (((10) * (x)) + (9));
         });
         let mut place: My2 = <My2>::default();
         let mut bound: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unsafe {
+                let mut ___args_0: i32 = 7;
+                let mut ___args_1: i32 = 8;
+                bound(&mut ___args_0, &mut ___args_1)
+            }) == (89))
+        );
     }
     {
-        let mut f: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: ()| -> () {
-            return (((10_()) * (x)) + (9_()));
+        let mut f: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: i32| -> i32 {
+            return (((10) * (x)) + (9));
         });
         let place: My2 = <My2>::default();
         let mut bound: () = unimplemented!();
-        unimplemented!();
+        assert!(
+            ((unsafe {
+                let mut ___args_0: i32 = 7;
+                let mut ___args_1: i32 = 8;
+                bound(&mut ___args_0, &mut ___args_1)
+            }) == (89))
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

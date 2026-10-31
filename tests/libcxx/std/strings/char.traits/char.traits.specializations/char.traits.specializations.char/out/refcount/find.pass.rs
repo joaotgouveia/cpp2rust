@@ -6,11 +6,11 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_constexpr_0() -> () {
-    let mut p: Ptr<()> = Ptr::<()>::from_string_literal(b"123");
+pub fn test_constexpr_0() -> bool {
+    let mut p: Ptr<i8> = Ptr::<i8>::from_string_literal(b"123");
     return ((({ unimplemented!() } == { (p).clone() })
-        && ({ unimplemented!() } == { p.offset((1_()) as isize) }))
-        && ({ unimplemented!() } == { p.offset((2_()) as isize) }))
+        && ({ unimplemented!() } == { p.offset((1) as isize) }))
+        && ({ unimplemented!() } == { p.offset((2) as isize) }))
         && ((unimplemented!()).is_null());
 }
 pub fn main() {
@@ -32,15 +32,15 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let s1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let s1: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([1_i8, 2_i8, 3_i8])));
+    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<i8>)));
+    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<i8>).offset((1) as isize)));
+    assert!((unimplemented!() == (s1.as_pointer() as Ptr::<i8>).offset((2) as isize)));
+    assert!((unimplemented!()).is_null());
+    assert!((unimplemented!()).is_null());
+    assert!((unimplemented!()).is_null());
     const _: () = assert!(true, "test_constexpr()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -18,33 +18,34 @@ const _: () = assert!(
     "!MemberSwapNoexcept<std::unexpected<MayThrowSwap>>"
 );
 pub fn swap_0(x: Ptr<ADLSwap>, y: Ptr<ADLSwap>) {
-    unimplemented!();
+    cpp_swap!(field_ptr!(x, i), field_ptr!(y, i));
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(i32, new, value)]
 #[byte_size(4)]
 pub struct ADLSwap {
     #[offset(0)]
-    pub i: (),
+    pub i: i32,
 }
 impl ADLSwap {
-    pub fn new(mut ii: ()) -> Self {
+    pub fn new(mut ii: i32) -> Self {
         Self { i: ii }
     }
 }
-pub fn test_1() -> () {
+pub fn test_1() -> bool {
     {
         let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!().read()) == 6));
+        assert!(((unimplemented!().read()) == 5));
     }
     {
         let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!().with(|__s| __s.i) == 6));
+        assert!((unimplemented!().with(|__s| __s.i) == 5));
     }
     return true;
 }
@@ -67,9 +68,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

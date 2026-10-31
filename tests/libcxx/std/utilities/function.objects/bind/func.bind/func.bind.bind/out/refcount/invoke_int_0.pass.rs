@@ -6,48 +6,48 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(f: (), mut expected: ()) {
+pub fn test_0(f: (), mut expected: i32) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    unimplemented!();
+    assert!((({ (*f.borrow_mut())() }) == expected));
 }
-pub fn test_1(f: (), mut expected: ()) {
+pub fn test_1(f: (), mut expected: i32) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    unimplemented!();
+    assert!((({ (*f.borrow_mut())() }) == expected));
 }
-pub fn test_2(f: (), mut expected: ()) {
+pub fn test_2(f: (), mut expected: i32) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    unimplemented!();
+    assert!((({ (*f.borrow_mut())() }) == expected));
 }
-pub fn test_3(f: (), mut expected: ()) {
+pub fn test_3(f: (), mut expected: i32) {
     let f: Value<()> = Rc::new(RefCell::new(f));
-    unimplemented!();
+    assert!((({ (*f.borrow_mut())() }) == expected));
 }
-pub fn test_const_4(f: Ptr<()>, mut expected: ()) {
-    unimplemented!();
+pub fn test_const_4(f: Ptr<()>, mut expected: i32) {
+    assert!(({ ({ (*f.upgrade().deref())() }).clone() } == { expected }));
 }
-pub fn test_const_5(f: Ptr<()>, mut expected: ()) {
-    unimplemented!();
+pub fn test_const_5(f: Ptr<()>, mut expected: i32) {
+    assert!(({ ({ (*f.upgrade().deref())() }).clone() } == { expected }));
 }
-pub fn f_6() -> () {
-    return 1_();
+pub fn f_6() -> i32 {
+    return 1;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_int_0 {}
-pub fn test_all_7() -> () {
-    ({ test_0(unimplemented!(), 1_()) });
-    ({ test_0(unimplemented!(), 1_()) });
-    ({ test_1(unimplemented!(), 4_()) });
+pub fn test_all_7() -> bool {
+    ({ test_0(unimplemented!(), 1) });
+    ({ test_0(unimplemented!(), 1) });
+    ({ test_1(unimplemented!(), 4) });
     ({
         let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_const_4(_f.as_pointer(), 5_())
+        test_const_4(_f.as_pointer(), 5)
     });
-    ({ test_2(unimplemented!(), 1_()) });
-    ({ test_2(unimplemented!(), 1_()) });
-    ({ test_3(unimplemented!(), 4_()) });
+    ({ test_2(unimplemented!(), 1) });
+    ({ test_2(unimplemented!(), 1) });
+    ({ test_3(unimplemented!(), 4) });
     ({
         let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_const_5(_f.as_pointer(), 5_())
+        test_const_5(_f.as_pointer(), 5)
     });
     return true;
 }
@@ -70,21 +70,21 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_all_7() });
     const _: () = assert!(true, "test_all()");;
-    return 0_();
+    return 0;
 }
 pub trait A_int_0Impl {
-    fn operator_call_1(&self) -> ();
-    fn operator_call_2(&self) -> ();
+    fn operator_call_1(&self) -> i32;
+    fn operator_call_2(&self) -> i32;
 }
 impl A_int_0Impl for Ptr<A_int_0> {
-    fn operator_call_1(&self) -> () {
-        return 4_();
+    fn operator_call_1(&self) -> i32 {
+        return 4;
     }
-    fn operator_call_2(&self) -> () {
-        return 5_();
+    fn operator_call_2(&self) -> i32 {
+        return 5;
     }
 }
 pub fn __cpp2rust_init_globals() {}

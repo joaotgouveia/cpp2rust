@@ -10,20 +10,20 @@ pub fn test_0() {
     const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
     const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
     {
-        let mut r: () = unimplemented!();
+        let mut r: bool = unimplemented!();
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
+        let mut r: bool = unimplemented!();
         {
-            unimplemented!();
+            assert!((r as bool));
         }
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
+        let mut r: bool = unimplemented!();
         {
-            unimplemented!();
+            assert!((r as bool));
         }
     }
 }
@@ -31,20 +31,20 @@ pub fn test_1() {
     const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
     const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
     {
-        let mut r: () = unimplemented!();
+        let mut r: bool = unimplemented!();
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
+        let mut r: bool = unimplemented!();
         {
-            unimplemented!();
+            assert!((r as bool));
         }
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
+        let mut r: bool = unimplemented!();
         {
-            unimplemented!();
+            assert!((r as bool));
         }
     }
 }
@@ -67,9 +67,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

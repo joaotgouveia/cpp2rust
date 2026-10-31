@@ -10,24 +10,24 @@ use std::rc::Rc;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct functor1 {}
 pub unsafe fn test_0(t: *mut Option<unsafe fn()>) {
-    let mut r: () = unimplemented!();
-    unimplemented!();
+    let mut r: *mut Option<unsafe fn()> = t;
+    assert!(((r) == (t)));
 }
 pub unsafe fn test_1(t: Option<unsafe fn()>) {
-    let mut r: () = unimplemented!();
-    unimplemented!();
+    let mut r: Option<unsafe fn()> = t;
+    assert!(((r) == (t)));
 }
 pub unsafe fn test_2(t: *mut functor1) {
-    let mut r: () = unimplemented!();
-    unimplemented!();
+    let mut r: *mut functor1 = t;
+    assert!(((r) == (t)));
 }
-pub unsafe fn test_3(t: *mut ()) {
-    let mut r: () = unimplemented!();
-    unimplemented!();
+pub unsafe fn test_3(t: *mut i32) {
+    let mut r: *mut i32 = t;
+    assert!(((r) == (t)));
 }
-pub unsafe fn test_4(t: *const ()) {
-    let mut r: () = unimplemented!();
-    unimplemented!();
+pub unsafe fn test_4(t: *const i32) {
+    let mut r: *const i32 = t;
+    assert!(((r) == (t)));
 }
 pub unsafe fn f_5() {}
 pub fn main() {
@@ -45,15 +45,15 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     let mut fp: Option<unsafe fn()> = Some(f_5);
     (unsafe { test_0(&mut fp) });
     (unsafe { test_1(Some(f_5)) });
     let mut f1: functor1 = <functor1>::default();
     (unsafe { test_2(&mut f1) });
-    let mut i: () = 0_();
+    let mut i: i32 = 0;
     (unsafe { test_3(&mut i) });
-    let j: () = 0_();
+    let j: i32 = 0;
     (unsafe { test_4(&j) });
     {
         const _: () = assert!(true, "(std::is_constructible<Ref, int&>::value)");;
@@ -65,6 +65,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "(!std::is_nothrow_constructible<Ref, int>::value)");;
         const _: () = assert!(true, "(!std::is_nothrow_constructible<Ref, int&&>::value)");;
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -10,11 +10,11 @@ use std::rc::{Rc, Weak};
 #[byte_size(4)]
 pub struct foo {
     #[offset(0)]
-    val_: (),
+    val_: i32,
 }
 impl foo {
     pub fn new() -> Self {
-        Self { val_: 3_() }
+        Self { val_: 3 }
     }
 }
 impl Default for foo {
@@ -22,28 +22,52 @@ impl Default for foo {
         { foo::new() }
     }
 }
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
-        let mut p1: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 5_()) {
-            unimplemented!();
+        let mut p1: Option<Value<Box<[i32]>>> = Some(Rc::new(RefCell::new(
+            (0..5_usize).map(|_| 0_i32).collect::<Box<[_]>>(),
+        )));
+        let mut i: i32 = 0;
+        'loop_: while (i < 5) {
+            assert!(
+                (((p1.as_pointer() as Ptr<i32>)
+                    .offset((i as usize) as isize)
+                    .read())
+                    == 0)
+            );
             i.prefix_inc();
         }
     }
     {
-        let mut p2: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 5_()) {
-            unimplemented!();
+        let mut p2: Option<Value<Box<[Vec<i8>]>>> = Some(Rc::new(RefCell::new(
+            (0..5_usize)
+                .map(|_| vec![i8::default()])
+                .collect::<Box<[_]>>(),
+        )));
+        let mut i: i32 = 0;
+        'loop_: while (i < 5) {
+            assert!(
+                (((*(p2.as_pointer() as Ptr<Vec<i8>>)
+                    .offset((i as usize) as isize)
+                    .upgrade()
+                    .deref())
+                .len()
+                    - 1)
+                    == 0_usize)
+            );
             i.prefix_inc();
         }
     }
     {
-        let mut p3: () = unimplemented!();
-        let mut i: () = 0_();
-        'loop_: while (i < 7_()) {
-            unimplemented!();
+        let mut p3: Option<Value<Box<[foo]>>> = Some(Rc::new(RefCell::new(
+            (0..7_usize).map(|_| <foo>::default()).collect::<Box<[_]>>(),
+        )));
+        let mut i: i32 = 0;
+        'loop_: while (i < 7) {
+            assert!(
+                (({ fooImpl::get(&(p3.as_pointer() as Ptr<foo>).offset((i as usize) as isize),) })
+                    == 3)
+            );
             i.prefix_inc();
         }
     }
@@ -68,16 +92,16 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait fooImpl {
-    fn get(&self) -> ();
+    fn get(&self) -> i32;
 }
 impl fooImpl for Ptr<foo> {
-    fn get(&self) -> () {
+    fn get(&self) -> i32 {
         return (*self).with(|__s| __s.val_);
     }
 }

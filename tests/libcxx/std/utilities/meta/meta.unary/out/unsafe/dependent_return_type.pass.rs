@@ -7,31 +7,31 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn add_const_0() -> () {
-    return unimplemented!();
+    return (0_i32 as ());
 }
 pub unsafe fn add_cv_1() -> () {
-    return unimplemented!();
+    return (0_i32 as ());
 }
 pub unsafe fn add_lvalue_reference_2() -> () {
     return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut i_3));
 }
-static mut i_3: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut i_3: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0_i32 });
 pub unsafe fn add_pointer_4() -> () {
     return unimplemented!();
 }
 pub unsafe fn add_rvalue_reference_5() -> () {
     return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut i_6));
 }
-static mut i_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut i_6: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0_i32 });
 pub unsafe fn add_volatile_7() -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut i_8));
+    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut i_8)) as ());
 }
-static mut i_8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut i_8: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0_i32 });
 pub unsafe fn decay_9() -> () {
     return unimplemented!();
 }
-pub unsafe fn enable_if_10() -> () {
-    return unimplemented!();
+pub unsafe fn enable_if_10() -> i32 {
+    return 0_i32;
 }
 pub unsafe fn make_signed_11() -> () {
     return unimplemented!();
@@ -42,14 +42,14 @@ pub unsafe fn make_unsigned_12() -> () {
 pub unsafe fn remove_all_extents_13() -> () {
     return unimplemented!();
 }
-pub unsafe fn remove_const_14() -> () {
-    return unimplemented!();
+pub unsafe fn remove_const_14() -> i32 {
+    return 0_i32;
 }
-pub unsafe fn remove_cv_15() -> () {
-    return unimplemented!();
+pub unsafe fn remove_cv_15() -> i32 {
+    return 0_i32;
 }
-pub unsafe fn remove_cvref_16() -> () {
-    return unimplemented!();
+pub unsafe fn remove_cvref_16() -> i32 {
+    return 0_i32;
 }
 pub unsafe fn remove_extent_17() -> () {
     return unimplemented!();
@@ -57,19 +57,19 @@ pub unsafe fn remove_extent_17() -> () {
 pub unsafe fn remove_pointer_18() -> () {
     return unimplemented!();
 }
-pub unsafe fn remove_reference_19() -> () {
-    return unimplemented!();
+pub unsafe fn remove_reference_19() -> i32 {
+    return 0_i32;
 }
-pub unsafe fn remove_volatile_20() -> () {
-    return unimplemented!();
+pub unsafe fn remove_volatile_20() -> i32 {
+    return 0_i32;
 }
 pub unsafe fn type_identity_21() -> () {
     return unimplemented!();
 }
-pub unsafe fn underlying_type_22() -> () {
-    return unimplemented!();
+pub unsafe fn underlying_type_22() -> i32 {
+    return 0_i32;
 }
-pub type E = ();
+pub type E = i32;
 pub unsafe fn void_t_23() {}
 pub unsafe fn instantiate_24() {
     (unsafe { add_const_0() });
@@ -109,7 +109,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    return 0_();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

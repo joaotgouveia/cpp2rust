@@ -13,13 +13,13 @@ const _: () = assert!(
     true,
     "!std::is_constructible_v<std::pair<int,int>, my_ns::MyPairLike const&>"
 );
-pub fn test_0() -> () {
+pub fn test_0() -> bool {
     {
         {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let a: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2])));
+            let p: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
+            assert!(((*(*p.borrow()).0.borrow()) == 1));
+            assert!(((*(*p.borrow()).1.borrow()) == 2));
             const _: () = assert!(
                 true,
                 "!std::is_constructible_v<std::pair<int, int>, std::array<int, 1>>"
@@ -35,9 +35,9 @@ pub fn test_0() -> () {
         }
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
+            let p: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new(unimplemented!()));
+            assert!(((*(*p.borrow()).0.borrow()) == 1));
+            assert!(((*(*p.borrow()).1.borrow()) == 2));
             const _: () = assert!(
                 true,
                 "!std::is_constructible_v<std::pair<int, int>, std::tuple<int>>"
@@ -52,19 +52,27 @@ pub fn test_0() -> () {
             );;
         }
         {
-            let data: Value<Box<[()]>> =
-                Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
+            let data: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5])));
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let p: Value<()> = Rc::new(RefCell::new(({ (*a.borrow())() })));
-            unimplemented!();
-            unimplemented!();
+            let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> =
+                Rc::new(RefCell::new(({ (*a.borrow())() })));
+            assert!(
+                ({ (*(*p.borrow()).0.borrow()).clone() } == {
+                    (data.as_pointer() as Ptr<i32>).offset((0) as isize)
+                })
+            );
+            assert!(
+                ({ (*(*p.borrow()).1.borrow()).clone() } == {
+                    (data.as_pointer() as Ptr<i32>).offset((5) as isize)
+                })
+            );
         }
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
+        let p: Value<(Value<i64>, Value<Vec<i8>>)> = Rc::new(RefCell::new(unimplemented!()));
+        assert!(((*(*p.borrow()).0.borrow()) == 34_i64));
+        assert!(unimplemented!());
         const _: () = assert!(
             true,
             "!std::is_constructible_v<std::pair<long, std::string>, std::tuple<char*, std::string>>"
@@ -80,13 +88,13 @@ pub fn test_0() -> () {
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<(Value<NoCopy_1>, Value<NoCopy_1>)> = Rc::new(RefCell::new(unimplemented!()));
         &(*p.borrow_mut());
     }
     {
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let p: Value<(Value<To_2>, Value<f64>)> = Rc::new(RefCell::new(unimplemented!()));
             &(*p.borrow_mut());
             const _: () = assert!(
                 true,
@@ -133,7 +141,8 @@ impl NoCopy_1 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct To_2 {}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_into(To_2, to_To_2)]
 #[byte_size(1)]
 pub struct FromImplicit_3 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -158,10 +167,10 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub trait FromExplicit_4Impl {
     fn to_To_2(&self) -> To_2;

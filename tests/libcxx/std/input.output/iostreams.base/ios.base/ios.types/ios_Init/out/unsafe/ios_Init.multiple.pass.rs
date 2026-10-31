@@ -22,15 +22,31 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    unimplemented!();
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
+    {
+        let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+        let __s: *mut ::std::fs::File = __r;
+        let _ = (*__s).write_all(::std::ffi::CStr::from_ptr(c"Hello!".as_ptr()).to_bytes());
+        __s
+    };
     let mut stock_flags: () = unimplemented!();
-    unimplemented!();
+    {
+        let __r: &mut ::std::fs::File = &mut (*{
+            let __r: &mut ::std::fs::File = &mut (*libcc2rs::cout_unsafe());
+            let __s: *mut ::std::fs::File = __r;
+            (libcc2rs::boolalpha_unsafe as unsafe fn(*mut ::std::fs::File) -> *mut ::std::fs::File)(
+                __s,
+            )
+        });
+        let __s: *mut ::std::fs::File = __r;
+        libcc2rs::write_bool(&mut *__s, true);
+        __s
+    };
     let mut ba_flags: () = unimplemented!();
-    unimplemented!();
+    assert!(((stock_flags as i32) != (ba_flags as i32)));
     let mut init_streams: () = unimplemented!();
     let mut after_init: () = unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!(((after_init as i32) == (ba_flags as i32)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

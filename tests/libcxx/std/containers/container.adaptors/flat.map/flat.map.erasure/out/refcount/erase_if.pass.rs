@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub type anon_0 = ();
+pub type anon_0 = u32;
 pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -15,57 +15,57 @@ pub struct test_macros_detail_is_same_unsigned_long__unsigned_long_ {}
 #[byte_size(40)]
 pub struct test_allocator_statistics {
     #[offset(0)]
-    pub time_to_throw: (),
+    pub time_to_throw: i32,
     #[offset(4)]
-    pub throw_after: (),
+    pub throw_after: i32,
     #[offset(8)]
-    pub count: (),
+    pub count: i32,
     #[offset(12)]
-    pub alloc_count: (),
+    pub alloc_count: i32,
     #[offset(16)]
-    pub allocated_size: (),
+    pub allocated_size: i32,
     #[offset(20)]
-    pub construct_count: (),
+    pub construct_count: i32,
     #[offset(24)]
-    pub destroy_count: (),
+    pub destroy_count: i32,
     #[offset(28)]
-    pub copied: (),
+    pub copied: i32,
     #[offset(32)]
-    pub moved: (),
+    pub moved: i32,
     #[offset(36)]
-    pub converted: (),
+    pub converted: i32,
 }
 impl Default for test_allocator_statistics {
     fn default() -> Self {
         {
             test_allocator_statistics {
-                time_to_throw: 0_(),
-                throw_after: 2147483647_(),
-                count: 0_(),
-                alloc_count: 0_(),
-                allocated_size: 0_(),
-                construct_count: 0_(),
-                destroy_count: 0_(),
-                copied: 0_(),
-                moved: 0_(),
-                converted: 0_(),
+                time_to_throw: 0,
+                throw_after: 2147483647,
+                count: 0,
+                alloc_count: 0,
+                allocated_size: 0,
+                construct_count: 0,
+                destroy_count: 0,
+                copied: 0,
+                moved: 0,
+                converted: 0,
             }
         }
     }
 }
 thread_local!(
-    pub static destructed_value_1: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_1: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_2: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_2: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
@@ -76,9 +76,9 @@ pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>)
 #[byte_size(16)]
 pub struct test_allocator_void_ {
     #[offset(0)]
-    data_: (),
+    data_: i32,
     #[offset(4)]
-    id_: (),
+    id_: i32,
     #[offset(8)]
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
@@ -86,33 +86,33 @@ pub struct test_allocator_void_ {
 impl test_allocator_void_ {
     pub fn new_1(mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
-            data_: 0_(),
-            id_: 0_(),
+            data_: 0,
+            id_: 0,
             stats_: (stats).clone(),
         }
     }
-    pub fn new_2(mut data: ()) -> Self {
+    pub fn new_2(mut data: i32) -> Self {
         Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn new_3(mut data: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
+    pub fn new_3(mut data: i32, mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
             data_: data,
-            id_: 0_(),
+            id_: 0,
             stats_: (stats).clone(),
         }
     }
-    pub fn new_4(mut data: (), mut id: ()) -> Self {
+    pub fn new_4(mut data: i32, mut id: i32) -> Self {
         Self {
             data_: data,
             id_: id,
             stats_: Ptr::<test_allocator_statistics>::null(),
         }
     }
-    pub fn new_5(mut data: (), mut id: (), mut stats: Ptr<test_allocator_statistics>) -> Self {
+    pub fn new_5(mut data: i32, mut id: i32, mut stats: Ptr<test_allocator_statistics>) -> Self {
         Self {
             data_: data,
             id_: id,
@@ -146,8 +146,8 @@ impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
             test_allocator_void_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -163,9 +163,9 @@ pub struct test_allocator_int__rebind_int_ptr_ {}
 #[byte_size(16)]
 pub struct test_allocator_int_ {
     #[offset(0)]
-    data_: (),
+    data_: i32,
     #[offset(4)]
-    id_: (),
+    id_: i32,
     #[offset(8)]
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
@@ -182,7 +182,12 @@ impl test_allocator_int_ {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_inc());
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
-        unimplemented!();
+        assert!(
+            (({ a.with(|__s| __s.data_) } != { destructed_value_1.with(|rc| *rc.borrow()) })
+                && ({ a.with(|__s| __s.id_) } != { destructed_value_1.with(|rc| *rc.borrow()) }))
+                && (!(Ptr::<i8>::from_string_literal(b"moving from destroyed allocator"))
+                    .is_null())
+        );
         field!(a, id_).write(moved_value_2.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -191,8 +196,8 @@ impl Default for test_allocator_int_ {
     fn default() -> Self {
         {
             test_allocator_int_ {
-                data_: 0_(),
-                id_: 0_(),
+                data_: 0,
+                id_: 0,
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -213,13 +218,14 @@ impl test_allocator_int_ptr_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, Destructor)]
+#[cpp_from(test_allocator_int_, new_1, ptr)]
 #[byte_size(16)]
 pub struct test_allocator_int_ptr_ {
     #[offset(0)]
-    data_: (),
+    data_: i32,
     #[offset(4)]
-    id_: (),
+    id_: i32,
     #[offset(8)]
     #[byte_size(8)]
     stats_: Ptr<test_allocator_statistics>,
@@ -229,8 +235,8 @@ impl Default for test_allocator_int_ptr_ {
     fn default() -> Self {
         {
             test_allocator_int_ptr_ {
-                data_: unimplemented!(),
-                id_: unimplemented!(),
+                data_: 0_i32,
+                id_: 0_i32,
                 stats_: Ptr::<test_allocator_statistics>::null(),
             }
         }
@@ -239,7 +245,8 @@ impl Default for test_allocator_int_ptr_ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
-#[derive(Record, ByteRepr, FnPtrArg, CopyAssign, MoveAssign, Default)]
+#[derive(Record, ByteRepr, FnPtrArg, CppFrom, CopyAssign, MoveAssign, Default)]
+#[cpp_from(Ctor_Tag, new_1, value)]
 #[byte_size(1)]
 pub struct Tag_X {}
 impl Tag_X {
@@ -257,53 +264,53 @@ impl Tag_X {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> () {
-        unimplemented!();
+    pub fn outstanding_alloc() -> usize {
+        assert!((alloc_count_6.with(|rc| *rc.borrow()) >= dealloc_count_7.with(|rc| *rc.borrow())));
         return ((alloc_count_6.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_7.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        unimplemented!();
+        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
         disable_default_constructor_8.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_6.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_());
+        outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_usize);
+        alloc_count_6.with(|rc| *rc.borrow_mut() = 0_usize);
+        dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
     }
 }
 thread_local!(
-    pub static outstanding_bytes_5: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_5: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static alloc_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_6: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static dealloc_count_7: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_7: Value<usize> = Rc::new(RefCell::new(0_usize));
 );
 thread_local!(
-    pub static disable_default_constructor_8: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_8: Value<bool> = Rc::new(RefCell::new(false));
 );
 pub fn operator_sub_9(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_lt_10(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
 pub fn operator_eq_11(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_12(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !({
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
         operator_eq_11(_x, y)
@@ -314,10 +321,10 @@ pub fn operator_ne_12(
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
-    fn new_1(mut p: Ptr<()>) -> Self {
+    fn new_1(mut p: Ptr<i32>) -> Self {
         Self { ptr_: (p).clone() }
     }
 }
@@ -331,38 +338,51 @@ impl CppEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
         operator_eq_11(__lhs.read(), __rhs.read())
     }
 }
+impl CppAdvance for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_8();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_10();
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_sub_13(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_eq_14(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_15(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } != { (y.ptr_).clone() });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(
+    min_pointer_int__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
 #[byte_size(8)]
 pub struct min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i32>,
 }
 impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     pub fn new_1(mut p: min_pointer_int__std_integral_constant_unsigned_long__0__) -> Self {
@@ -376,36 +396,41 @@ impl CppEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         operator_eq_14(__lhs.read(), __rhs.read())
     }
 }
+impl CppAdvance for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_9();
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: (),
+    ptr_: AnyPtr,
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 pub fn operator_sub_16(
     mut x: min_pointer_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_char__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_lt_17(
     mut x: min_pointer_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_char__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
 pub fn operator_eq_18(
     mut x: min_pointer_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_char__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_19(
     mut x: min_pointer_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_char__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !({
         let _x: min_pointer_char__std_integral_constant_unsigned_long__0__ = x;
         operator_eq_18(_x, y)
@@ -416,10 +441,10 @@ pub fn operator_ne_19(
 pub struct min_pointer_char__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i8>,
 }
 impl min_pointer_char__std_integral_constant_unsigned_long__0__ {
-    fn new_1(mut p: Ptr<()>) -> Self {
+    fn new_1(mut p: Ptr<i8>) -> Self {
         Self { ptr_: (p).clone() }
     }
 }
@@ -433,30 +458,43 @@ impl CppEq for min_pointer_char__std_integral_constant_unsigned_long__0__ {
         operator_eq_18(__lhs.read(), __rhs.read())
     }
 }
+impl CppAdvance for min_pointer_char__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_8();
+    }
+    fn cpp_dec(__it: &Ptr<Self>) {
+        __it.operator_dec_10();
+    }
+}
 pub fn operator_sub_20(
     mut x: min_pointer_const_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_char__std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_eq_21(
     mut x: min_pointer_const_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_char__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_22(
     mut x: min_pointer_const_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_char__std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } != { (y.ptr_).clone() });
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(
+    min_pointer_char__std_integral_constant_unsigned_long__0__,
+    new_1,
+    value
+)]
 #[byte_size(8)]
 pub struct min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
     #[offset(0)]
     #[byte_size(8)]
-    ptr_: Ptr<()>,
+    ptr_: Ptr<i8>,
 }
 impl min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
     pub fn new_1(mut p: min_pointer_char__std_integral_constant_unsigned_long__0__) -> Self {
@@ -470,28 +508,33 @@ impl CppEq for min_pointer_const_char__std_integral_constant_unsigned_long__0__ 
         operator_eq_21(__lhs.read(), __rhs.read())
     }
 }
+impl CppAdvance for min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
+    fn cpp_inc(__it: &Ptr<Self>) {
+        __it.operator_inc_9();
+    }
+}
 pub fn operator_sub_23(
     mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
     mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-) -> () {
-    return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
+) -> isize {
+    return (((x.ptr_).clone() - (y.ptr_).clone()) as i64 as isize);
 }
 pub fn operator_lt_24(
     mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
     mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
 pub fn operator_eq_25(
     mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
     mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
 pub fn operator_ne_26(
     mut x : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
     mut y : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-) -> () {
+) -> bool {
     return !({
         let _x: min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__   = x   ;
         operator_eq_25(_x, y)
@@ -508,6 +551,7 @@ pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0__
 impl min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn new_1 ( mut p : Ptr< min_pointer_int__std_integral_constant_unsigned_long__0__  >  , ) -> Self { Self { ptr_ : (p ).clone() , }  } }
 impl CppLess for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { operator_lt_24(__lhs.read(), __rhs.read()) } }
 impl CppEq for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool { operator_eq_25(__lhs.read(), __rhs.read()) } }
+impl CppAdvance for min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { fn cpp_inc(__it: &Ptr<Self>) { __it.operator_inc_8(); } fn cpp_dec(__it: &Ptr<Self>) { __it.operator_dec_10(); } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
@@ -519,1413 +563,1722 @@ impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {
         Self {}
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
+#[cpp_from(min_allocator_int_, new_1, value)]
 #[byte_size(1)]
 pub struct min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 const _: () = assert!(true, "HasStdErase<std::vector<int>>");
 const _: () = assert!(!(false), "!HasStdErase<std::flat_map<int, int>>");
-pub fn make_27(vals: ()) -> () {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn make_27(vals: Vec<i32>) -> () {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut v: () = (v.read());
-        let __rhs = (v + 10_());
+        let mut v: i32 = (v.read());
+        let __rhs = ((v + 10) as i8);
         unimplemented!().write(__rhs);
     }
     return (*ret.borrow_mut()).clone();
 }
-pub fn make_28(vals: ()) -> () {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn make_28(vals: Vec<i32>) -> () {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut v: () = (v.read());
-        let __rhs = (v + 10_());
+        let mut v: i32 = (v.read());
+        let __rhs = ((v + 10) as i8);
         unimplemented!().write(__rhs);
     }
     return (*ret.borrow_mut()).clone();
 }
-pub fn make_29(vals: ()) -> () {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn make_29(vals: Vec<i32>) -> () {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut v: () = (v.read());
-        let __rhs = (v + 10_());
+        let mut v: i32 = (v.read());
+        let __rhs = ((v + 10) as i8);
         unimplemented!().write(__rhs);
     }
     return (*ret.borrow_mut()).clone();
 }
-pub fn make_30(vals: ()) -> () {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn make_30(vals: Vec<i32>) -> () {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut v: () = (v.read());
-        let __rhs = (v + 10_());
+        let mut v: i32 = (v.read());
+        let __rhs = ((v + 10) as i8);
         unimplemented!().write(__rhs);
     }
     return (*ret.borrow_mut()).clone();
 }
-pub fn make_31(vals: ()) -> () {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn make_31(vals: Vec<i32>) -> () {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut v: () = (v.read());
-        let __rhs = (v + 10_());
+        let mut v: i32 = (v.read());
+        let __rhs = ((v + 10) as i8);
         unimplemented!().write(__rhs);
     }
     return (*ret.borrow_mut()).clone();
 }
-pub fn make_32(vals: ()) -> () {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn make_32(vals: Vec<i32>) -> () {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut v: () = (v.read());
-        let __rhs = ((v + 10_()) as ());
+        let mut v: i32 = (v.read());
+        let __rhs = ((v + 10) as i32);
         unimplemented!().write(__rhs);
     }
     return (*ret.borrow_mut()).clone();
 }
-pub fn make_33(vals: ()) -> () {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn make_33(vals: Vec<i32>) -> () {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for v in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut v: () = (v.read());
-        let __rhs = ((v + 10_()) as ());
+        let mut v: i32 = (v.read());
+        let __rhs = ((v + 10) as i32);
         unimplemented!().write(__rhs);
     }
     return (*ret.borrow_mut()).clone();
 }
-pub fn test0_34(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_34(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_27((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_35(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_35(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<i32>, Value<i8>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_27((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn test0_36(
-    vals: (),
-    p: FnPtr<fn(Ptr<()>) -> ()>,
-    expected: (),
-    mut expected_erased_count: (),
+    vals: Vec<i32>,
+    p: FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
 ) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_27((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_37(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_37(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_27((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_38(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_38(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_27((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_39(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_39(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_27((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_40(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_40(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_28((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_41(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_41(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<i32>, Value<i8>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_28((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn test0_42(
-    vals: (),
-    p: FnPtr<fn(Ptr<()>) -> ()>,
-    expected: (),
-    mut expected_erased_count: (),
+    vals: Vec<i32>,
+    p: FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
 ) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_28((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_43(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_43(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_28((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_44(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_44(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_28((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_45(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_45(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_28((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_46(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_46(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_29((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_47(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_47(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<i32>, Value<i8>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_29((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn test0_48(
-    vals: (),
-    p: FnPtr<fn(Ptr<()>) -> ()>,
-    expected: (),
-    mut expected_erased_count: (),
+    vals: Vec<i32>,
+    p: FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
 ) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_29((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_49(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_49(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_29((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_50(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_50(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_29((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_51(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_51(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_29((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_52(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_52(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_30((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_53(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_53(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<i32>, Value<i8>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_30((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn test0_54(
-    vals: (),
-    p: FnPtr<fn(Ptr<()>) -> ()>,
-    expected: (),
-    mut expected_erased_count: (),
+    vals: Vec<i32>,
+    p: FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
 ) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_30((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_55(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_55(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_30((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_56(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_56(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_30((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_57(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_57(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_30((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_58(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_58(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_31((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_59(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_59(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<i32>, Value<i8>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_31((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn test0_60(
-    vals: (),
-    p: FnPtr<fn(Ptr<()>) -> ()>,
-    expected: (),
-    mut expected_erased_count: (),
+    vals: Vec<i32>,
+    p: FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
 ) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_31((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_61(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_61(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_31((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_62(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_62(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_31((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_63(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_63(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_31((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_64(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_64(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<Ptr<i64>>, Value<Ptr<i32>>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<Ptr<i64>>, Value<Ptr<i32>>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_32((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_65(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_65(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<i64>, Value<i32>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<i64>, Value<i32>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_32((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn test0_66(
-    vals: (),
-    p: FnPtr<fn(Ptr<()>) -> ()>,
-    expected: (),
-    mut expected_erased_count: (),
+    vals: Vec<i32>,
+    p: FnPtr<fn(Ptr<(Value<i64>, Value<i32>)>) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
 ) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn(Ptr<(Value<i64>, Value<i32>)>) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_32((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_67(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_67(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_32((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_68(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_68(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_32((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_69(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_69(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_32((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_70(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_70(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<Ptr<f64>>, Value<Ptr<i32>>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<Ptr<f64>>, Value<Ptr<i32>>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_33((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_71(vals: (), p: FnPtr<fn(()) -> ()>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(()) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+pub fn test0_71(
+    vals: Vec<i32>,
+    p: FnPtr<fn((Value<f64>, Value<i32>)) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn((Value<f64>, Value<i32>)) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_33((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn test0_72(
-    vals: (),
-    p: FnPtr<fn(Ptr<()>) -> ()>,
-    expected: (),
-    mut expected_erased_count: (),
+    vals: Vec<i32>,
+    p: FnPtr<fn(Ptr<(Value<f64>, Value<i32>)>) -> bool>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
 ) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
-    let p: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
+    let p: Value<FnPtr<fn(Ptr<(Value<f64>, Value<i32>)>) -> bool>> = Rc::new(RefCell::new(p));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_33((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_73(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_73(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_33((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_74(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_74(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_33((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
-pub fn test0_75(vals: (), p: FnPtr<Generic>, expected: (), mut expected_erased_count: ()) {
-    let vals: Value<()> = Rc::new(RefCell::new(vals));
+pub fn test0_75(
+    vals: Vec<i32>,
+    p: FnPtr<Generic>,
+    expected: Vec<i32>,
+    mut expected_erased_count: usize,
+) {
+    let vals: Value<Vec<i32>> = Rc::new(RefCell::new(vals));
     let p: Value<FnPtr<Generic>> = Rc::new(RefCell::new(p));
-    let expected: Value<()> = Rc::new(RefCell::new(expected));
+    let expected: Value<Vec<i32>> = Rc::new(RefCell::new(expected));
     let s: Value<()> = Rc::new(RefCell::new(({ make_33((*vals.borrow()).clone()) })));
     const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
+    assert!((expected_erased_count == unimplemented!()));
+    assert!(unimplemented!());
 }
 pub fn test_76() {
-    let is1: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
+    let is1: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool,
+        >::new(
+            |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
+                {
+                    let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+                    return (((*v.borrow()).0.read()) == 1);
+                }
+            },
+        )));
+    let is2: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(FnPtr::<
+        fn((Value<i32>, Value<i8>)) -> bool,
+    >::new(
+        |v: (Value<i32>, Value<i8>)| -> bool {
             {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return (({ (*v.borrow()).first.clone() }.read()) == 1_());
+                let v: Value<(Value<i32>, Value<i8>)> = Rc::new(RefCell::new(v));
+                return ((*(*v.borrow()).0.borrow()) == 2);
             }
-        })));
-    let is2: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
-            {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return ({ (*v.borrow()).first } == 2_());
-            }
-        })));
-    let is3: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(Ptr<()>) -> ()>::new(|v: Ptr<()>| -> () {
-            {
-                return (v.with(|__s| __s.first) == 3_());
-            }
-        }),
-    ));
-    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: ()| -> () {
-        let v: Value<()> = Rc::new(RefCell::new(v));
-        return (({ (*v.borrow()).first.clone() }.read()) == 4_());
+        },
+    )));
+    let is3: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<(Value<i32>, Value<i8>)>) -> bool,
+        >::new(
+            |v: Ptr<(Value<i32>, Value<i8>)>| -> bool {
+                {
+                    return ((*(*v.upgrade().deref()).0.borrow()) == 3);
+                }
+            },
+        )));
+    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: (
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )|
+     -> bool {
+        let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+        return (((*v.borrow()).0.read()) == 4);
     })));
-    let True: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return true;
-        })));
-    let False: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return false;
-        })));
+    let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )>|
+     -> bool {
+        return true;
+    })));
+    let False: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<
+        (Value<Ptr<i32>>, Value<Ptr<i8>>),
+    >|
+     -> bool {
+        return false;
+    })));
     ({
         test0_34(
             unimplemented!(),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            0_(),
+            0_usize,
         )
     });
     ({
         test0_34(
-            unimplemented!(),
+            Vec::from([1]),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            1_(),
+            1_usize,
         )
     });
     ({
         test0_35(
-            unimplemented!(),
+            Vec::from([1]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1]),
+            0_usize,
         )
     });
     ({
         test0_34(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2]),
+            1_usize,
         )
     });
     ({
         test0_35(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1]),
+            1_usize,
         )
     });
     ({
         test0_36(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2]),
+            0_usize,
         )
     });
     ({
         test0_34(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2, 3]),
+            1_usize,
         )
     });
     ({
         test0_35(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 3]),
+            1_usize,
         )
     });
     ({
         test0_36(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 2]),
+            1_usize,
         )
     });
     ({
         test0_37(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is4.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
     ({
         test0_38(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*True.borrow()).copy_from(),
             unimplemented!(),
-            3_(),
+            3_usize,
         )
     });
     ({
         test0_39(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*False.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
 }
 pub fn test_77() {
-    let is1: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
+    let is1: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool,
+        >::new(
+            |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
+                {
+                    let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+                    return (((*v.borrow()).0.read()) == 1);
+                }
+            },
+        )));
+    let is2: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(FnPtr::<
+        fn((Value<i32>, Value<i8>)) -> bool,
+    >::new(
+        |v: (Value<i32>, Value<i8>)| -> bool {
             {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return (({ (*v.borrow()).first.clone() }.read()) == 1_());
+                let v: Value<(Value<i32>, Value<i8>)> = Rc::new(RefCell::new(v));
+                return ((*(*v.borrow()).0.borrow()) == 2);
             }
-        })));
-    let is2: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
-            {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return ({ (*v.borrow()).first } == 2_());
-            }
-        })));
-    let is3: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(Ptr<()>) -> ()>::new(|v: Ptr<()>| -> () {
-            {
-                return (v.with(|__s| __s.first) == 3_());
-            }
-        }),
-    ));
-    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: ()| -> () {
-        let v: Value<()> = Rc::new(RefCell::new(v));
-        return (({ (*v.borrow()).first.clone() }.read()) == 4_());
+        },
+    )));
+    let is3: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<(Value<i32>, Value<i8>)>) -> bool,
+        >::new(
+            |v: Ptr<(Value<i32>, Value<i8>)>| -> bool {
+                {
+                    return ((*(*v.upgrade().deref()).0.borrow()) == 3);
+                }
+            },
+        )));
+    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: (
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )|
+     -> bool {
+        let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+        return (((*v.borrow()).0.read()) == 4);
     })));
-    let True: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return true;
-        })));
-    let False: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return false;
-        })));
+    let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )>|
+     -> bool {
+        return true;
+    })));
+    let False: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<
+        (Value<Ptr<i32>>, Value<Ptr<i8>>),
+    >|
+     -> bool {
+        return false;
+    })));
     ({
         test0_40(
             unimplemented!(),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            0_(),
+            0_usize,
         )
     });
     ({
         test0_40(
-            unimplemented!(),
+            Vec::from([1]),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            1_(),
+            1_usize,
         )
     });
     ({
         test0_41(
-            unimplemented!(),
+            Vec::from([1]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1]),
+            0_usize,
         )
     });
     ({
         test0_40(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2]),
+            1_usize,
         )
     });
     ({
         test0_41(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1]),
+            1_usize,
         )
     });
     ({
         test0_42(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2]),
+            0_usize,
         )
     });
     ({
         test0_40(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2, 3]),
+            1_usize,
         )
     });
     ({
         test0_41(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 3]),
+            1_usize,
         )
     });
     ({
         test0_42(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 2]),
+            1_usize,
         )
     });
     ({
         test0_43(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is4.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
     ({
         test0_44(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*True.borrow()).copy_from(),
             unimplemented!(),
-            3_(),
+            3_usize,
         )
     });
     ({
         test0_45(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*False.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
 }
 pub fn test_78() {
-    let is1: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
+    let is1: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool,
+        >::new(
+            |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
+                {
+                    let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+                    return (((*v.borrow()).0.read()) == 1);
+                }
+            },
+        )));
+    let is2: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(FnPtr::<
+        fn((Value<i32>, Value<i8>)) -> bool,
+    >::new(
+        |v: (Value<i32>, Value<i8>)| -> bool {
             {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return (({ (*v.borrow()).first.clone() }.read()) == 1_());
+                let v: Value<(Value<i32>, Value<i8>)> = Rc::new(RefCell::new(v));
+                return ((*(*v.borrow()).0.borrow()) == 2);
             }
-        })));
-    let is2: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
-            {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return ({ (*v.borrow()).first } == 2_());
-            }
-        })));
-    let is3: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(Ptr<()>) -> ()>::new(|v: Ptr<()>| -> () {
-            {
-                return (v.with(|__s| __s.first) == 3_());
-            }
-        }),
-    ));
-    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: ()| -> () {
-        let v: Value<()> = Rc::new(RefCell::new(v));
-        return (({ (*v.borrow()).first.clone() }.read()) == 4_());
+        },
+    )));
+    let is3: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<(Value<i32>, Value<i8>)>) -> bool,
+        >::new(
+            |v: Ptr<(Value<i32>, Value<i8>)>| -> bool {
+                {
+                    return ((*(*v.upgrade().deref()).0.borrow()) == 3);
+                }
+            },
+        )));
+    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: (
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )|
+     -> bool {
+        let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+        return (((*v.borrow()).0.read()) == 4);
     })));
-    let True: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return true;
-        })));
-    let False: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return false;
-        })));
+    let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )>|
+     -> bool {
+        return true;
+    })));
+    let False: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<
+        (Value<Ptr<i32>>, Value<Ptr<i8>>),
+    >|
+     -> bool {
+        return false;
+    })));
     ({
         test0_46(
             unimplemented!(),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            0_(),
+            0_usize,
         )
     });
     ({
         test0_46(
-            unimplemented!(),
+            Vec::from([1]),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            1_(),
+            1_usize,
         )
     });
     ({
         test0_47(
-            unimplemented!(),
+            Vec::from([1]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1]),
+            0_usize,
         )
     });
     ({
         test0_46(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2]),
+            1_usize,
         )
     });
     ({
         test0_47(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1]),
+            1_usize,
         )
     });
     ({
         test0_48(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2]),
+            0_usize,
         )
     });
     ({
         test0_46(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2, 3]),
+            1_usize,
         )
     });
     ({
         test0_47(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 3]),
+            1_usize,
         )
     });
     ({
         test0_48(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 2]),
+            1_usize,
         )
     });
     ({
         test0_49(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is4.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
     ({
         test0_50(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*True.borrow()).copy_from(),
             unimplemented!(),
-            3_(),
+            3_usize,
         )
     });
     ({
         test0_51(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*False.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
 }
 pub fn test_79() {
-    let is1: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
+    let is1: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool,
+        >::new(
+            |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
+                {
+                    let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+                    return (((*v.borrow()).0.read()) == 1);
+                }
+            },
+        )));
+    let is2: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(FnPtr::<
+        fn((Value<i32>, Value<i8>)) -> bool,
+    >::new(
+        |v: (Value<i32>, Value<i8>)| -> bool {
             {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return (({ (*v.borrow()).first.clone() }.read()) == 1_());
+                let v: Value<(Value<i32>, Value<i8>)> = Rc::new(RefCell::new(v));
+                return ((*(*v.borrow()).0.borrow()) == 2);
             }
-        })));
-    let is2: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
-            {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return ({ (*v.borrow()).first } == 2_());
-            }
-        })));
-    let is3: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(Ptr<()>) -> ()>::new(|v: Ptr<()>| -> () {
-            {
-                return (v.with(|__s| __s.first) == 3_());
-            }
-        }),
-    ));
-    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: ()| -> () {
-        let v: Value<()> = Rc::new(RefCell::new(v));
-        return (({ (*v.borrow()).first.clone() }.read()) == 4_());
+        },
+    )));
+    let is3: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<(Value<i32>, Value<i8>)>) -> bool,
+        >::new(
+            |v: Ptr<(Value<i32>, Value<i8>)>| -> bool {
+                {
+                    return ((*(*v.upgrade().deref()).0.borrow()) == 3);
+                }
+            },
+        )));
+    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: (
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )|
+     -> bool {
+        let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+        return (((*v.borrow()).0.read()) == 4);
     })));
-    let True: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return true;
-        })));
-    let False: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return false;
-        })));
+    let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )>|
+     -> bool {
+        return true;
+    })));
+    let False: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<
+        (Value<Ptr<i32>>, Value<Ptr<i8>>),
+    >|
+     -> bool {
+        return false;
+    })));
     ({
         test0_52(
             unimplemented!(),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            0_(),
+            0_usize,
         )
     });
     ({
         test0_52(
-            unimplemented!(),
+            Vec::from([1]),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            1_(),
+            1_usize,
         )
     });
     ({
         test0_53(
-            unimplemented!(),
+            Vec::from([1]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1]),
+            0_usize,
         )
     });
     ({
         test0_52(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2]),
+            1_usize,
         )
     });
     ({
         test0_53(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1]),
+            1_usize,
         )
     });
     ({
         test0_54(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2]),
+            0_usize,
         )
     });
     ({
         test0_52(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2, 3]),
+            1_usize,
         )
     });
     ({
         test0_53(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 3]),
+            1_usize,
         )
     });
     ({
         test0_54(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 2]),
+            1_usize,
         )
     });
     ({
         test0_55(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is4.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
     ({
         test0_56(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*True.borrow()).copy_from(),
             unimplemented!(),
-            3_(),
+            3_usize,
         )
     });
     ({
         test0_57(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*False.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
 }
 pub fn test_80() {
-    let is1: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
+    let is1: Value<FnPtr<fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn((Value<Ptr<i32>>, Value<Ptr<i8>>)) -> bool,
+        >::new(
+            |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
+                {
+                    let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+                    return (((*v.borrow()).0.read()) == 1);
+                }
+            },
+        )));
+    let is2: Value<FnPtr<fn((Value<i32>, Value<i8>)) -> bool>> = Rc::new(RefCell::new(FnPtr::<
+        fn((Value<i32>, Value<i8>)) -> bool,
+    >::new(
+        |v: (Value<i32>, Value<i8>)| -> bool {
             {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return (({ (*v.borrow()).first.clone() }.read()) == 1_());
+                let v: Value<(Value<i32>, Value<i8>)> = Rc::new(RefCell::new(v));
+                return ((*(*v.borrow()).0.borrow()) == 2);
             }
-        })));
-    let is2: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
-            {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return ({ (*v.borrow()).first } == 2_());
-            }
-        })));
-    let is3: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(Ptr<()>) -> ()>::new(|v: Ptr<()>| -> () {
-            {
-                return (v.with(|__s| __s.first) == 3_());
-            }
-        }),
-    ));
-    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: ()| -> () {
-        let v: Value<()> = Rc::new(RefCell::new(v));
-        return (({ (*v.borrow()).first.clone() }.read()) == 4_());
+        },
+    )));
+    let is3: Value<FnPtr<fn(Ptr<(Value<i32>, Value<i8>)>) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<(Value<i32>, Value<i8>)>) -> bool,
+        >::new(
+            |v: Ptr<(Value<i32>, Value<i8>)>| -> bool {
+                {
+                    return ((*(*v.upgrade().deref()).0.borrow()) == 3);
+                }
+            },
+        )));
+    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: (
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )|
+     -> bool {
+        let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
+        return (((*v.borrow()).0.read()) == 4);
     })));
-    let True: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return true;
-        })));
-    let False: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return false;
-        })));
+    let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
+        Value<Ptr<i32>>,
+        Value<Ptr<i8>>
+    )>|
+     -> bool {
+        return true;
+    })));
+    let False: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<
+        (Value<Ptr<i32>>, Value<Ptr<i8>>),
+    >|
+     -> bool {
+        return false;
+    })));
     ({
         test0_58(
             unimplemented!(),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            0_(),
+            0_usize,
         )
     });
     ({
         test0_58(
-            unimplemented!(),
+            Vec::from([1]),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            1_(),
+            1_usize,
         )
     });
     ({
         test0_59(
-            unimplemented!(),
+            Vec::from([1]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1]),
+            0_usize,
         )
     });
     ({
         test0_58(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2]),
+            1_usize,
         )
     });
     ({
         test0_59(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1]),
+            1_usize,
         )
     });
     ({
         test0_60(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2]),
+            0_usize,
         )
     });
     ({
         test0_58(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2, 3]),
+            1_usize,
         )
     });
     ({
         test0_59(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 3]),
+            1_usize,
         )
     });
     ({
         test0_60(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 2]),
+            1_usize,
         )
     });
     ({
         test0_61(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is4.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
     ({
         test0_62(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*True.borrow()).copy_from(),
             unimplemented!(),
-            3_(),
+            3_usize,
         )
     });
     ({
         test0_63(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*False.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
 }
 pub fn test_81() {
-    let is1: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
+    let is1: Value<FnPtr<fn((Value<Ptr<i64>>, Value<Ptr<i32>>)) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn((Value<Ptr<i64>>, Value<Ptr<i32>>)) -> bool,
+        >::new(
+            |v: (Value<Ptr<i64>>, Value<Ptr<i32>>)| -> bool {
+                {
+                    let v: Value<(Value<Ptr<i64>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(v));
+                    return (((*v.borrow()).0.read()) == 1_i64);
+                }
+            },
+        )));
+    let is2: Value<FnPtr<fn((Value<i64>, Value<i32>)) -> bool>> = Rc::new(RefCell::new(FnPtr::<
+        fn((Value<i64>, Value<i32>)) -> bool,
+    >::new(
+        |v: (Value<i64>, Value<i32>)| -> bool {
             {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return (({ (*v.borrow()).first.clone() }.read()) == 1_());
+                let v: Value<(Value<i64>, Value<i32>)> = Rc::new(RefCell::new(v));
+                return ((*(*v.borrow()).0.borrow()) == 2_i64);
             }
-        })));
-    let is2: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
-            {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return ({ (*v.borrow()).first } == 2_());
-            }
-        })));
-    let is3: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(Ptr<()>) -> ()>::new(|v: Ptr<()>| -> () {
-            {
-                return (v.with(|__s| __s.first) == 3_());
-            }
-        }),
-    ));
-    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: ()| -> () {
-        let v: Value<()> = Rc::new(RefCell::new(v));
-        return (({ (*v.borrow()).first.clone() }.read()) == 4_());
+        },
+    )));
+    let is3: Value<FnPtr<fn(Ptr<(Value<i64>, Value<i32>)>) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<(Value<i64>, Value<i32>)>) -> bool,
+        >::new(
+            |v: Ptr<(Value<i64>, Value<i32>)>| -> bool {
+                {
+                    return ((*(*v.upgrade().deref()).0.borrow()) == 3_i64);
+                }
+            },
+        )));
+    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: (
+        Value<Ptr<i64>>,
+        Value<Ptr<i32>>
+    )|
+     -> bool {
+        let v: Value<(Value<Ptr<i64>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(v));
+        return (((*v.borrow()).0.read()) == 4_i64);
     })));
-    let True: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return true;
-        })));
-    let False: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return false;
-        })));
+    let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
+        Value<Ptr<i64>>,
+        Value<Ptr<i32>>
+    )>|
+     -> bool {
+        return true;
+    })));
+    let False: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<
+        (Value<Ptr<i64>>, Value<Ptr<i32>>),
+    >|
+     -> bool {
+        return false;
+    })));
     ({
         test0_64(
             unimplemented!(),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            0_(),
+            0_usize,
         )
     });
     ({
         test0_64(
-            unimplemented!(),
+            Vec::from([1]),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            1_(),
+            1_usize,
         )
     });
     ({
         test0_65(
-            unimplemented!(),
+            Vec::from([1]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1]),
+            0_usize,
         )
     });
     ({
         test0_64(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2]),
+            1_usize,
         )
     });
     ({
         test0_65(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1]),
+            1_usize,
         )
     });
     ({
         test0_66(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2]),
+            0_usize,
         )
     });
     ({
         test0_64(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2, 3]),
+            1_usize,
         )
     });
     ({
         test0_65(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 3]),
+            1_usize,
         )
     });
     ({
         test0_66(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 2]),
+            1_usize,
         )
     });
     ({
         test0_67(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is4.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
     ({
         test0_68(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*True.borrow()).copy_from(),
             unimplemented!(),
-            3_(),
+            3_usize,
         )
     });
     ({
         test0_69(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*False.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
 }
 pub fn test_82() {
-    let is1: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
+    let is1: Value<FnPtr<fn((Value<Ptr<f64>>, Value<Ptr<i32>>)) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn((Value<Ptr<f64>>, Value<Ptr<i32>>)) -> bool,
+        >::new(
+            |v: (Value<Ptr<f64>>, Value<Ptr<i32>>)| -> bool {
+                {
+                    let v: Value<(Value<Ptr<f64>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(v));
+                    return (((*v.borrow()).0.read()) == 1_f64);
+                }
+            },
+        )));
+    let is2: Value<FnPtr<fn((Value<f64>, Value<i32>)) -> bool>> = Rc::new(RefCell::new(FnPtr::<
+        fn((Value<f64>, Value<i32>)) -> bool,
+    >::new(
+        |v: (Value<f64>, Value<i32>)| -> bool {
             {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return (({ (*v.borrow()).first.clone() }.read()) == 1_());
+                let v: Value<(Value<f64>, Value<i32>)> = Rc::new(RefCell::new(v));
+                return ((*(*v.borrow()).0.borrow()) == 2_f64);
             }
-        })));
-    let is2: Value<FnPtr<fn(()) -> ()>> =
-        Rc::new(RefCell::new(FnPtr::<fn(()) -> ()>::new(|v: ()| -> () {
-            {
-                let v: Value<()> = Rc::new(RefCell::new(v));
-                return ({ (*v.borrow()).first } == 2_());
-            }
-        })));
-    let is3: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
-        FnPtr::<fn(Ptr<()>) -> ()>::new(|v: Ptr<()>| -> () {
-            {
-                return (v.with(|__s| __s.first) == 3_());
-            }
-        }),
-    ));
-    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: ()| -> () {
-        let v: Value<()> = Rc::new(RefCell::new(v));
-        return (({ (*v.borrow()).first.clone() }.read()) == 4_());
+        },
+    )));
+    let is3: Value<FnPtr<fn(Ptr<(Value<f64>, Value<i32>)>) -> bool>> =
+        Rc::new(RefCell::new(FnPtr::<
+            fn(Ptr<(Value<f64>, Value<i32>)>) -> bool,
+        >::new(
+            |v: Ptr<(Value<f64>, Value<i32>)>| -> bool {
+                {
+                    return ((*(*v.upgrade().deref()).0.borrow()) == 3_f64);
+                }
+            },
+        )));
+    let is4: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |v: (
+        Value<Ptr<f64>>,
+        Value<Ptr<i32>>
+    )|
+     -> bool {
+        let v: Value<(Value<Ptr<f64>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(v));
+        return (((*v.borrow()).0.read()) == 4_f64);
     })));
-    let True: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return true;
-        })));
-    let False: Value<FnPtr<Generic>> =
-        Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<()>| -> () {
-            return false;
-        })));
+    let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
+        Value<Ptr<f64>>,
+        Value<Ptr<i32>>
+    )>|
+     -> bool {
+        return true;
+    })));
+    let False: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<
+        (Value<Ptr<f64>>, Value<Ptr<i32>>),
+    >|
+     -> bool {
+        return false;
+    })));
     ({
         test0_70(
             unimplemented!(),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            0_(),
+            0_usize,
         )
     });
     ({
         test0_70(
-            unimplemented!(),
+            Vec::from([1]),
             (*is1.borrow()).copy_from(),
             unimplemented!(),
-            1_(),
+            1_usize,
         )
     });
     ({
         test0_71(
-            unimplemented!(),
+            Vec::from([1]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1]),
+            0_usize,
         )
     });
     ({
         test0_70(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2]),
+            1_usize,
         )
     });
     ({
         test0_71(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1]),
+            1_usize,
         )
     });
     ({
         test0_72(
-            unimplemented!(),
+            Vec::from([1, 2]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2]),
+            0_usize,
         )
     });
     ({
         test0_70(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is1.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([2, 3]),
+            1_usize,
         )
     });
     ({
         test0_71(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is2.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 3]),
+            1_usize,
         )
     });
     ({
         test0_72(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is3.borrow()).copy_from(),
-            unimplemented!(),
-            1_(),
+            Vec::from([1, 2]),
+            1_usize,
         )
     });
     ({
         test0_73(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*is4.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
     ({
         test0_74(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*True.borrow()).copy_from(),
             unimplemented!(),
-            3_(),
+            3_usize,
         )
     });
     ({
         test0_75(
-            unimplemented!(),
+            Vec::from([1, 2, 3]),
             (*False.borrow()).copy_from(),
-            unimplemented!(),
-            0_(),
+            Vec::from([1, 2, 3]),
+            0_usize,
         )
     });
 }
-pub fn test_83() -> () {
+pub fn test_83() -> bool {
     ({ test_76() });
     ({ test_77() });
     ({ test_78() });
@@ -1956,9 +2309,9 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_83() });
-    return 0_();
+    return 0;
 }
 pub trait Tag_XImpl {
     fn copy_assign(&self, _a0: Ptr<Tag_X>) -> Ptr<Tag_X>;
@@ -1973,11 +2326,11 @@ impl Tag_XImpl for Ptr<Tag_X> {
     }
 }
 pub trait min_allocator_char_Impl {
-    fn allocate(&self, n: ()) -> min_pointer_char__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_char__std_integral_constant_unsigned_long__0__, n: ());
+    fn allocate(&self, n: usize) -> min_pointer_char__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_char__std_integral_constant_unsigned_long__0__, n: usize);
 }
 impl min_allocator_char_Impl for Ptr<min_allocator_char_> {
-    fn allocate(&self, mut n: ()) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: usize) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
         return min_pointer_char__std_integral_constant_unsigned_long__0__::new_1({
             unimplemented!()
         });
@@ -1985,17 +2338,17 @@ impl min_allocator_char_Impl for Ptr<min_allocator_char_> {
     fn deallocate(
         &self,
         mut p: min_pointer_char__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: ());
+    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             unimplemented!()
         });
@@ -2003,75 +2356,75 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
 }
 pub trait min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl {
-    fn allocate ( &self , n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
+    fn allocate ( &self , n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
     fn deallocate(
         &self,
         p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        n: (),
+        n: usize,
     );
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl
     for Ptr<min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>
 {
-    fn allocate ( &self , mut n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
+    fn allocate ( &self , mut n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
         return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()   } , )    ;
     }
     fn deallocate(
         &self,
         mut p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        mut n: (),
+        mut n: usize,
     ) {
         unimplemented!();
     }
 }
 pub trait min_pointer_char__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> ();
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_arrow(&self) -> Ptr<()>;
+    fn to_bool(&self) -> bool;
+    fn operator_deref(&self) -> Ptr<i8>;
+    fn operator_arrow(&self) -> Ptr<i8>;
     fn operator_inc_8(&self) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_dec_10(&self) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__>;
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__>;
     fn operator_sub_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__>;
-    fn operator_add(&self, n: ()) -> min_pointer_char__std_integral_constant_unsigned_long__0__;
-    fn operator_sub(&self, n: ()) -> min_pointer_char__std_integral_constant_unsigned_long__0__;
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_add(&self, n: isize) -> min_pointer_char__std_integral_constant_unsigned_long__0__;
+    fn operator_sub(&self, n: isize) -> min_pointer_char__std_integral_constant_unsigned_long__0__;
+    fn operator_index(&self, mut n: isize) -> Ptr<i8> {
         unimplemented!()
     }
 }
 impl min_pointer_char__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__>
 {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         return !(((*self).with(|__s| __s.ptr_.clone())).is_null());
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
@@ -2084,7 +2437,7 @@ impl min_pointer_char__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -2094,7 +2447,7 @@ impl min_pointer_char__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_char__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -2104,7 +2457,7 @@ impl min_pointer_char__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_char__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
@@ -2118,7 +2471,7 @@ impl min_pointer_char__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_char__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_char__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
@@ -2132,11 +2485,11 @@ impl min_pointer_char__std_integral_constant_unsigned_long__0__Impl
     }
 }
 pub trait min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i8>;
+    fn operator_arrow(&self) -> Ptr<i8> {
         unimplemented!()
     }
     fn operator_inc_9(
@@ -2144,7 +2497,7 @@ pub trait min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl {
     ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_10(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -2155,42 +2508,42 @@ pub trait min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_dec_12(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_char__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i8> {
         unimplemented!()
     }
 }
 impl min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_const_char__std_integral_constant_unsigned_long__0__>
 {
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i8> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_9(
@@ -2201,11 +2554,11 @@ impl min_pointer_const_char__std_integral_constant_unsigned_long__0__Impl
     }
 }
 pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_arrow(&self) -> Ptr<i32> {
         unimplemented!()
     }
     fn operator_inc_9(
@@ -2213,7 +2566,7 @@ pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_10(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
@@ -2224,42 +2577,42 @@ pub trait min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl {
     }
     fn operator_post_dec_12(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_add(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_sub(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         unimplemented!()
     }
 }
 impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_const_int__std_integral_constant_unsigned_long__0__>
 {
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_9(
@@ -2270,7 +2623,7 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__Impl
     }
 }
 pub trait min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }
@@ -2279,45 +2632,45 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__Impl
 {
 }
 pub trait min_pointer_int__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> ();
-    fn operator_deref(&self) -> Ptr<()>;
-    fn operator_arrow(&self) -> Ptr<()>;
+    fn to_bool(&self) -> bool;
+    fn operator_deref(&self) -> Ptr<i32>;
+    fn operator_arrow(&self) -> Ptr<i32>;
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
     fn operator_post_inc_9(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_dec_10(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
     fn operator_post_dec_11(
         &self,
-        mut _a0: (),
+        mut _a0: i32,
     ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn operator_add_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
     fn operator_sub_assign(
         &self,
-        n: (),
+        n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
-    fn operator_add(&self, n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn operator_sub(&self, n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn operator_index(&self, n: ()) -> Ptr<()>;
+    fn operator_add(&self, n: isize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn operator_sub(&self, n: isize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn operator_index(&self, n: isize) -> Ptr<i32>;
 }
 impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
     for Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>
 {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         return !(((*self).with(|__s| __s.ptr_.clone())).is_null());
     }
-    fn operator_deref(&self) -> Ptr<()> {
+    fn operator_deref(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
-    fn operator_arrow(&self) -> Ptr<()> {
+    fn operator_arrow(&self) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone());
     }
     fn operator_inc_8(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
@@ -2330,7 +2683,7 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_add_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -2340,7 +2693,7 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
     }
     fn operator_sub_assign(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         {
             let _ptr = field!((*self), ptr_);
@@ -2348,7 +2701,10 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         };
         return (*self).clone();
     }
-    fn operator_add(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_add(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_int__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
         ({
@@ -2359,7 +2715,10 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         });
         return (*tmp.borrow()).clone();
     }
-    fn operator_sub(&self, mut n: ()) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn operator_sub(
+        &self,
+        mut n: isize,
+    ) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         let tmp: Value<min_pointer_int__std_integral_constant_unsigned_long__0__> =
             Rc::new(RefCell::new((*(*self).upgrade().deref()).clone()));
         ({
@@ -2370,60 +2729,60 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__Impl
         });
         return (*tmp.borrow()).clone();
     }
-    fn operator_index(&self, mut n: ()) -> Ptr<()> {
+    fn operator_index(&self, mut n: isize) -> Ptr<i32> {
         return (*self).with(|__s| __s.ptr_.clone()).offset((n) as isize);
     }
 }
 pub trait min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl
 {
-    fn to_(&self) -> ();
+    fn to_bool(&self) -> bool;
     fn operator_deref(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__>;
     fn operator_arrow(&self) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
     fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
-    fn operator_post_inc_9 ( &self , mut _a0 : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
+    fn operator_post_inc_9 ( &self , mut _a0 : i32  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
         unimplemented!()
     }
     fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
-    fn operator_post_dec_11 ( &self , mut _a0 : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
+    fn operator_post_dec_11 ( &self , mut _a0 : i32  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
         unimplemented!()
     }
-    fn operator_add_assign ( &self , n : ()  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
-    fn operator_sub_assign ( &self , n : ()  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
-    fn operator_add ( &self , n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
-    fn operator_sub ( &self , n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
+    fn operator_add_assign ( &self , n : isize  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
+    fn operator_sub_assign ( &self , n : isize  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > ;
+    fn operator_add ( &self , n : isize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
+    fn operator_sub ( &self , n : isize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
     fn operator_index(
         &self,
-        mut n: (),
+        mut n: isize,
     ) -> Ptr<min_pointer_int__std_integral_constant_unsigned_long__0__> {
         unimplemented!()
     }
 }
 impl min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl for Ptr<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__> {
-fn to_ ( &self , ) -> ()  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
+fn to_bool ( &self , ) -> bool  { return ! ( ( (* self ) .with(|__s| __s . ptr_ .clone()) ).is_null() )   ;
  } fn operator_deref ( &self , ) -> Ptr< min_pointer_int__std_integral_constant_unsigned_long__0__  > { return (* self ) .with(|__s| __s . ptr_ .clone())    ;
  } fn operator_inc_8 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { field!((* self ) , ptr_) .with_mut(|__v| __v. prefix_inc ()) ;
  return ((* self )  ).clone()  ;
  } fn operator_dec_10 ( &self , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { field!((* self ) , ptr_) .with_mut(|__v| __v. prefix_dec ()) ;
  return ((* self )  ).clone()  ;
- } fn operator_add_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { { let _ptr = field!((* self ) , ptr_); _ptr.write(_ptr.read() + n ) } ;
+ } fn operator_add_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { { let _ptr = field!((* self ) , ptr_); _ptr.write(_ptr.read() + n ) } ;
  return ((* self )  ).clone()  ;
- } fn operator_sub_assign ( &self , mut n : ()  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { { let _ptr = field!((* self ) , ptr_); _ptr.write(_ptr.read() - n ) } ;
+ } fn operator_sub_assign ( &self , mut n : isize  , ) -> Ptr< min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  > { { let _ptr = field!((* self ) , ptr_); _ptr.write(_ptr.read() - n ) } ;
  return ((* self )  ).clone()  ;
- } fn operator_add ( &self , mut n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  { let tmp : Value<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ > = Rc::new(RefCell::new((( * (* self ) .upgrade().deref() )  ).clone() )) ;
+ } fn operator_add ( &self , mut n : isize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  { let tmp : Value<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ > = Rc::new(RefCell::new((( * (* self ) .upgrade().deref() )  ).clone() )) ;
   ;
  ;
  ( { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl :: operator_add_assign ( &tmp .as_pointer()  , n  , ) } )  ;
  return ((*tmp.borrow()) ).clone()   ;
- } fn operator_sub ( &self , mut n : ()  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  { let tmp : Value<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ > = Rc::new(RefCell::new((( * (* self ) .upgrade().deref() )  ).clone() )) ;
+ } fn operator_sub ( &self , mut n : isize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  { let tmp : Value<min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ > = Rc::new(RefCell::new((( * (* self ) .upgrade().deref() )  ).clone() )) ;
   ;
  ;
  ( { min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__Impl :: operator_sub_assign ( &tmp .as_pointer()  , n  , ) } )  ;
  return ((*tmp.borrow()) ).clone()   ;
  } }
 pub trait min_pointer_void__std_integral_constant_unsigned_long__0__Impl {
-    fn to_(&self) -> () {
+    fn to_bool(&self) -> bool {
         unimplemented!()
     }
 }
@@ -2433,37 +2792,37 @@ impl min_pointer_void__std_integral_constant_unsigned_long__0__Impl
 }
 pub trait test_allocator_int_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<()> {
+    fn address_11(&self, x: ()) -> Ptr<i32> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<()> {
+    fn address_12(&self, x: ()) -> Ptr<i32> {
         unimplemented!()
     }
-    fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<()>;
-    fn deallocate(&self, p: Ptr<()>, s: ());
-    fn max_size(&self) -> ();
-    fn destroy(&self, p: Ptr<()>);
-    fn get_data(&self) -> () {
+    fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, s: u32);
+    fn max_size(&self) -> u32;
+    fn destroy(&self, p: Ptr<i32>);
+    fn get_data(&self) -> i32 {
         unimplemented!()
     }
-    fn get_id(&self) -> () {
+    fn get_id(&self) -> i32 {
         unimplemented!()
     }
-    fn construct_16_int(&self, p: Ptr<()>, val: Ptr<()>);
+    fn construct_16_int(&self, p: Ptr<i32>, val: Ptr<i32>);
 }
 impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
     fn destructor(&self) {
-        unimplemented!();
-        unimplemented!();
+        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
+        assert!(((*self).with(|__s| __s.id_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
         field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
-        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-        unimplemented!();
+    fn allocate(&self, mut n: u32, _a1: Option<AnyPtr>) -> Ptr<i32> {
+        let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
+        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             if ({
                 (*self)
@@ -2474,46 +2833,47 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
                     .with(|__s| __s.stats_.clone())
                     .with(|__s| __s.throw_after)
             }) {
-                unimplemented!();
+                std::process::abort();
             }
             field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
                 .with_mut(|__v| __v.prefix_inc());
             field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
                 .with_mut(|__v| __v.prefix_inc());
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
+                (((*self)
                     .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_add(n)
+                    .with(|__s| __s.allocated_size) as u32)
+                    .wrapping_add(n)) as i32
             });
         }
         return unimplemented!();
     }
-    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
-        unimplemented!();
+    fn deallocate(&self, mut p: Ptr<i32>, mut s: u32) {
+        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
                 .with_mut(|__v| __v.prefix_dec());
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
+                (((*self)
                     .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_sub(s)
+                    .with(|__s| __s.allocated_size) as u32)
+                    .wrapping_sub(s)) as i32
             });
         }
         unimplemented!();
     }
-    fn max_size(&self) -> () {
-        return (((2147483647_()).wrapping_mul((2_() as ())) as ()).wrapping_add((1_() as ())))
-            .wrapping_div((::std::mem::size_of::<()>() as ()));
+    fn max_size(&self) -> u32 {
+        return ((((((2147483647_u32).wrapping_mul((2_u32 as u32)) as u32)
+            .wrapping_add((1_u32 as u32))) as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize))) as u32);
     }
-    fn destroy(&self, mut p: Ptr<()>) {
+    fn destroy(&self, mut p: Ptr<i32>) {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), destroy_count)
                 .with_mut(|__v| __v.prefix_inc());
         };
     }
-    fn construct_16_int(&self, mut p: Ptr<()>, val: Ptr<()>) {
+    fn construct_16_int(&self, mut p: Ptr<i32>, val: Ptr<i32>) {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), construct_count)
                 .with_mut(|__v| __v.prefix_inc());
@@ -2523,40 +2883,40 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
 }
 pub trait test_allocator_int_ptr_Impl {
     fn destructor(&self);
-    fn address_11(&self, x: ()) -> Ptr<Ptr<()>> {
+    fn address_11(&self, x: ()) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
-    fn address_12(&self, x: ()) -> Ptr<Ptr<()>> {
+    fn address_12(&self, x: ()) -> Ptr<Ptr<i32>> {
         unimplemented!()
     }
-    fn allocate(&self, n: (), _a1: Option<()>) -> Ptr<Ptr<()>>;
-    fn deallocate(&self, p: Ptr<Ptr<()>>, s: ());
-    fn max_size(&self) -> () {
+    fn allocate(&self, n: u32, _a1: Option<AnyPtr>) -> Ptr<Ptr<i32>>;
+    fn deallocate(&self, p: Ptr<Ptr<i32>>, s: u32);
+    fn max_size(&self) -> u32 {
         unimplemented!()
     }
-    fn destroy(&self, mut p: Ptr<Ptr<()>>) {
+    fn destroy(&self, mut p: Ptr<Ptr<i32>>) {
         unimplemented!()
     }
-    fn get_data(&self) -> () {
+    fn get_data(&self) -> i32 {
         unimplemented!()
     }
-    fn get_id(&self) -> () {
+    fn get_id(&self) -> i32 {
         unimplemented!()
     }
 }
 impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
     fn destructor(&self) {
-        unimplemented!();
-        unimplemented!();
+        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
+        assert!(((*self).with(|__s| __s.id_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
         field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
     }
-    fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<Ptr<()>> {
-        let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
-        unimplemented!();
+    fn allocate(&self, mut n: u32, _a1: Option<AnyPtr>) -> Ptr<Ptr<i32>> {
+        let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
+        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             if ({
                 (*self)
@@ -2567,31 +2927,31 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
                     .with(|__s| __s.stats_.clone())
                     .with(|__s| __s.throw_after)
             }) {
-                unimplemented!();
+                std::process::abort();
             }
             field!((*self).with(|__s| __s.stats_.clone()), time_to_throw)
                 .with_mut(|__v| __v.prefix_inc());
             field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
                 .with_mut(|__v| __v.prefix_inc());
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
+                (((*self)
                     .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_add(n)
+                    .with(|__s| __s.allocated_size) as u32)
+                    .wrapping_add(n)) as i32
             });
         }
         return unimplemented!();
     }
-    fn deallocate(&self, mut p: Ptr<Ptr<()>>, mut s: ()) {
-        unimplemented!();
+    fn deallocate(&self, mut p: Ptr<Ptr<i32>>, mut s: u32) {
+        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), alloc_count)
                 .with_mut(|__v| __v.prefix_dec());
             field!((*self).with(|__s| __s.stats_.clone()), allocated_size).write({
-                ((*self)
+                (((*self)
                     .with(|__s| __s.stats_.clone())
-                    .with(|__s| __s.allocated_size))
-                .wrapping_sub(s)
+                    .with(|__s| __s.allocated_size) as u32)
+                    .wrapping_sub(s)) as i32
             });
         }
         unimplemented!();
@@ -2603,26 +2963,30 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        unimplemented!();
-        field!((*self), count).write(0_());
-        field!((*self), time_to_throw).write(0_());
-        field!((*self), alloc_count).write(0_());
-        field!((*self), allocated_size).write(0_());
-        field!((*self), construct_count).write(0_());
-        field!((*self), destroy_count).write(0_());
-        field!((*self), throw_after).write(2147483647_());
+        assert!(
+            ((*self).with(|__s| __s.count) == 0)
+                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                    .is_null())
+        );
+        field!((*self), count).write(0);
+        field!((*self), time_to_throw).write(0);
+        field!((*self), alloc_count).write(0);
+        field!((*self), allocated_size).write(0);
+        field!((*self), construct_count).write(0);
+        field!((*self), destroy_count).write(0);
+        field!((*self), throw_after).write(2147483647);
         ({ test_allocator_statisticsImpl::clear_ctor_counters(self) });
     }
     fn clear_ctor_counters(&self) {
-        field!((*self), copied).write(0_());
-        field!((*self), moved).write(0_());
-        field!((*self), converted).write(0_());
+        field!((*self), copied).write(0);
+        field!((*self), moved).write(0);
+        field!((*self), converted).write(0);
     }
 }
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
-    fn get_id(&self) -> ();
-    fn get_data(&self) -> ();
+    fn get_id(&self) -> i32;
+    fn get_data(&self) -> i32;
     fn copy_assign(&self, _a0: Ptr<test_allocator_void_>) -> Ptr<test_allocator_void_>;
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
@@ -2630,10 +2994,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
         field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
         field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
     }
-    fn get_id(&self) -> () {
+    fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
     }
-    fn get_data(&self) -> () {
+    fn get_data(&self) -> i32 {
         return (*self).with(|__s| __s.data_);
     }
     fn copy_assign(&self, _a0: Ptr<test_allocator_void_>) -> Ptr<test_allocator_void_> {

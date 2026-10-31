@@ -14,22 +14,22 @@ const _: () = assert!(
     true,
     "std::is_trivially_default_constructible<decltype(std::ignore)>::value"
 );
-pub unsafe fn test_nodiscard_0() -> () {
-    return 8294_();
+pub unsafe fn test_nodiscard_0() -> i32 {
+    return 8294;
 }
-pub unsafe fn test_1() -> () {
+pub unsafe fn test_1() -> bool {
     {
         let ignore_v: *const () = &(*unimplemented!());
     }
     {
         let res: *const () = &(*unimplemented!());
         const _: () = assert!(true, "noexcept(res = (std::ignore = 42))");;
-        unimplemented!();
+        assert!(((res) == (&raw const (*unimplemented!()) as *const ())));
     }
     {
-        let mut s: S_2 = S_2 { bf: 2_() };
+        let mut s: S_2 = S_2 { bf: 2_u32 };
         let res: *const () = &(*unimplemented!());
-        unimplemented!();
+        assert!(((res) == (&raw const (*unimplemented!()) as *const ())));
     }
     {
         let mut copy: () = unimplemented!();
@@ -49,7 +49,7 @@ pub unsafe fn test_1() -> () {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct S_2 {
-    pub bf: (),
+    pub bf: u32,
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -66,9 +66,9 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     (unsafe { test_1() });
     const _: () = assert!(true, "test()");;
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {}

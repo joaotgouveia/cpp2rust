@@ -37,7 +37,7 @@ impl Default for A {
         unsafe { A::new() }
     }
 }
-pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut count_0: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -54,7 +54,7 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
         let mut ptr1: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
         let mut ptr2: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
@@ -62,17 +62,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut p2: () = unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (1_i64)));
+            assert!(((unimplemented!()) == (ptr2)));
+            assert!(((unimplemented!()) == (1_i64)));
+            assert!(((unimplemented!()) == (ptr1)));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (2)));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1_i64)));
+        assert!(((unimplemented!()) == (ptr2)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
     }
-    unimplemented!();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     {
         let mut ptr1: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
         let mut ptr2: *mut A = std::ptr::null_mut();
@@ -80,17 +80,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut p2: () = unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_i64)));
+            assert!(((unimplemented!()) == (ptr2)));
+            assert!(((unimplemented!()) == (1_i64)));
+            assert!(((unimplemented!()) == (ptr1)));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_i64)));
+        assert!(((unimplemented!()) == (ptr2)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     }
-    unimplemented!();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     {
         let mut ptr1: *mut A = std::ptr::null_mut();
         let mut ptr2: *mut A = (Box::leak(Box::new(A::new())) as *mut A);
@@ -98,17 +98,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut p2: () = unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (1_i64)));
+            assert!(((unimplemented!()) == (ptr2)));
+            assert!(((unimplemented!()) == (0_i64)));
+            assert!(((unimplemented!()) == (ptr1)));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (1_i64)));
+        assert!(((unimplemented!()) == (ptr2)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (1)));
     }
-    unimplemented!();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     {
         let mut ptr1: *mut A = std::ptr::null_mut();
         let mut ptr2: *mut A = std::ptr::null_mut();
@@ -116,18 +116,18 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         {
             let mut p2: () = unimplemented!();
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
+            assert!(((unimplemented!()) == (0_i64)));
+            assert!(((unimplemented!()) == (ptr2)));
+            assert!(((unimplemented!()) == (0_i64)));
+            assert!(((unimplemented!()) == (ptr1)));
+            assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
         }
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(((unimplemented!()) == (0_i64)));
+        assert!(((unimplemented!()) == (ptr2)));
+        assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
     }
-    unimplemented!();
-    return 0_();
+    assert!(((*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) == (0)));
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

@@ -26,55 +26,27 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-        7_(),
-        8_(),
-        9_(),
-        10_(),
-        11_(),
-        12_(),
-        13_(),
-        14_(),
-        15_(),
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
     ])));
-    let N1: Value<()> = Rc::new(RefCell::new(
-        (::std::mem::size_of::<[(); 16]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ())),
+    let N1: Value<usize> = Rc::new(RefCell::new(
+        (::std::mem::size_of::<[i32; 16]>() as usize)
+            .wrapping_div((::std::mem::size_of::<i32>() as usize)),
     ));
-    let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        true,
-        false,
-        false,
-        true,
-        true,
-        false,
-        false,
-        true,
-        false,
-        false,
-        false,
-        true,
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
+    let b: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([
+        true, false, false, true, true, false, false, true, false, false, false, true, false,
+        false, false, false,
     ])));
     let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let vb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    return 0_();
+    assert!((unimplemented!() == 5_usize));
+    assert!(((unimplemented!().read()) == 0));
+    assert!(((unimplemented!().read()) == 3));
+    assert!(((unimplemented!().read()) == 4));
+    assert!(((unimplemented!().read()) == 7));
+    assert!(((unimplemented!().read()) == 11));
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -7,211 +7,217 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 thread_local!(
-    pub static value_0: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_0: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_plus_int___two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_plus_int__ {}
 thread_local!(
-    pub static value_1: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_1: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_plus_std_basic_string_char____two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_plus_std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
 thread_local!(
-    pub static value_2: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
+    pub static value_2: Value<bool> =
+        Rc::new(RefCell::new((::std::mem::size_of::<i8>() == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_plus_void__ {}
 thread_local!(
-    pub static value_3: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_3: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_minus_int___two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_minus_int__ {}
 thread_local!(
-    pub static value_4: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_4: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_minus_std_basic_string_char____two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_minus_std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
 thread_local!(
-    pub static value_5: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
+    pub static value_5: Value<bool> =
+        Rc::new(RefCell::new((::std::mem::size_of::<i8>() == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_minus_void__ {}
 thread_local!(
-    pub static value_6: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_6: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_multiplies_int___two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_multiplies_int__ {}
 thread_local!(
-    pub static value_7: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_7: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_multiplies_std_basic_string_char____two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_multiplies_std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
 thread_local!(
-    pub static value_8: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
+    pub static value_8: Value<bool> =
+        Rc::new(RefCell::new((::std::mem::size_of::<i8>() == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_multiplies_void__ {}
 thread_local!(
-    pub static value_9: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_9: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_divides_int___two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_divides_int__ {}
 thread_local!(
-    pub static value_10: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_10: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_divides_std_basic_string_char____two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_divides_std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
 thread_local!(
-    pub static value_11: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
+    pub static value_11: Value<bool> =
+        Rc::new(RefCell::new((::std::mem::size_of::<i8>() == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_divides_void__ {}
 thread_local!(
-    pub static value_12: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_12: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_modulus_int___two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_modulus_int__ {}
 thread_local!(
-    pub static value_13: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_13: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_modulus_std_basic_string_char____two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_modulus_std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
 thread_local!(
-    pub static value_14: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
+    pub static value_14: Value<bool> =
+        Rc::new(RefCell::new((::std::mem::size_of::<i8>() == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_modulus_void__ {}
 thread_local!(
-    pub static value_15: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_15: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_negate_int___two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_negate_int__ {}
 thread_local!(
-    pub static value_16: Value<()> = Rc::new(RefCell::new((2usize == 1_())));
+    pub static value_16: Value<bool> = Rc::new(RefCell::new((2usize == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 struct is_transparent_std_negate_std_basic_string_char____two {
     #[offset(0)]
-    pub lx: (),
+    pub lx: i8,
     #[offset(1)]
-    pub lxx: (),
+    pub lxx: i8,
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct is_transparent_std_negate_std_basic_string_char__std_char_traits_char___std_allocator_char____
 {}
 thread_local!(
-    pub static value_17: Value<()> = Rc::new(RefCell::new((::std::mem::size_of::<()>() == 1_())));
+    pub static value_17: Value<bool> =
+        Rc::new(RefCell::new((::std::mem::size_of::<i8>() == 1_usize)));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -235,7 +241,7 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "!is_transparent<std::plus<int>>::value");;
     const _: () = assert!(true, "!is_transparent<std::plus<std::string>>::value");;
     const _: () = assert!(true, "is_transparent<std::plus<void>>::value");;
@@ -260,7 +266,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "!is_transparent<std::negate<std::string>>::value");;
     const _: () = assert!(true, "is_transparent<std::negate<void>>::value");;
     const _: () = assert!(true, "is_transparent<std::negate<>>::value");;
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {
     let _ = value_0.with(|_| ());

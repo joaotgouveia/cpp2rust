@@ -15,21 +15,22 @@ impl A1_int_ {
         this
     }
 }
-pub static mut copy_called_1: std::cell::LazyCell<()> =
+pub static mut copy_called_1: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut move_called_0: std::cell::LazyCell<()> =
+pub static mut move_called_0: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
-#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(VaArg, FnPtrArg, MoveCtorUnsafe, CppFromUnsafe, Default)]
+#[cpp_from_move(A1_char_, new_1, ptr)]
 pub struct A1_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A1_int_ {
-    pub unsafe fn new_2(mut id: ()) -> Self {
+    pub unsafe fn new_2(mut id: i32) -> Self {
         let mut this = Self { id_: id };
         this
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
     pub unsafe fn copy_from(a: *const A1_int_) -> Self {
@@ -61,35 +62,35 @@ impl Clone for A1_int_ {
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct A1_char_ {
-    id_: (),
+    id_: i32,
 }
 impl A1_char_ {
-    pub unsafe fn new(mut id: ()) -> Self {
+    pub unsafe fn new(mut id: i32) -> Self {
         let mut this = Self { id_: id };
         this
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
 }
-pub unsafe fn operator_eq_4(x: *const A1_int_, y: *const A1_int_) -> () {
+pub unsafe fn operator_eq_4(x: *const A1_int_, y: *const A1_int_) -> bool {
     return ((unsafe { A1_int_::id(&(*x)) }) == (unsafe { A1_int_::id(&(*y)) }));
 }
-pub static mut copy_called_9: std::cell::LazyCell<()> =
+pub static mut copy_called_9: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut move_called_10: std::cell::LazyCell<()> =
+pub static mut move_called_10: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
 pub struct A2_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A2_int_ {
-    pub unsafe fn new(mut id: ()) -> Self {
+    pub unsafe fn new(mut id: i32) -> Self {
         let mut this = Self { id_: id };
         this
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
     pub unsafe fn copy_from(a: *const A2_int_) -> Self {
@@ -118,24 +119,24 @@ impl Clone for A2_int_ {
         unsafe { A2_int_::copy_from(self as *const A2_int_) }
     }
 }
-pub unsafe fn operator_eq_12(x: *const A2_int_, y: *const A2_int_) -> () {
+pub unsafe fn operator_eq_12(x: *const A2_int_, y: *const A2_int_) -> bool {
     return ((unsafe { A2_int_::id(&(*x)) }) == (unsafe { A2_int_::id(&(*y)) }));
 }
-pub static mut copy_called_13: std::cell::LazyCell<()> =
+pub static mut copy_called_13: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub static mut move_called_14: std::cell::LazyCell<()> =
+pub static mut move_called_14: std::cell::LazyCell<bool> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, Default)]
 pub struct A3_int_ {
-    id_: (),
+    id_: i32,
 }
 impl A3_int_ {
-    pub unsafe fn new(mut id: ()) -> Self {
+    pub unsafe fn new(mut id: i32) -> Self {
         let mut this = Self { id_: id };
         this
     }
-    pub unsafe fn id(&self) -> () {
+    pub unsafe fn id(&self) -> i32 {
         return self.id_;
     }
     pub unsafe fn copy_from(a: *const A3_int_) -> Self {
@@ -157,7 +158,7 @@ impl Clone for A3_int_ {
         unsafe { A3_int_::copy_from(self as *const A3_int_) }
     }
 }
-pub unsafe fn operator_eq_17(x: *const A3_int_, y: *const A3_int_) -> () {
+pub unsafe fn operator_eq_17(x: *const A3_int_, y: *const A3_int_) -> bool {
     return ((unsafe { A3_int_::id(&(*x)) }) == (unsafe { A3_int_::id(&(*y)) }));
 }
 pub fn main() {
@@ -175,33 +176,75 @@ pub fn main() {
         ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
     }
 }
-unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     {
-        let mut a3: A1_int_ = A1_int_::new_2({ 3_() });
+        let mut a3: A1_int_ = A1_int_::new_2({ 3 });
         let mut a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let _x: *const A1_int_ = unimplemented!();
+                let mut _y: A1_int_ = A1_int_::new_2({ 3 });
+                operator_eq_4(_x, &mut _y)
+            })
+        );
+        assert!(unimplemented!());
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) as i32)
+                == (false as i32))
+        );
     }
     (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) = false;
     {
         let mut a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let _x: *const A1_int_ = unimplemented!();
+                let mut _y: A1_int_ = A1_int_::new_2({ 3 });
+                operator_eq_4(_x, &mut _y)
+            })
+        );
+        assert!(unimplemented!());
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) as i32)
+                == (true as i32))
+        );
     }
     (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) = false;
     {
-        let mut a4: A1_int_ = A1_int_::new_2({ 4_() });
+        let mut a4: A1_int_ = A1_int_::new_2({ 4 });
         let mut a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_9)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_10)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (unsafe {
+                let _x: *const A1_int_ = unimplemented!();
+                let mut _y: A1_int_ = A1_int_::new_2({ 4 });
+                operator_eq_4(_x, &mut _y)
+            })
+        );
+        assert!(unimplemented!());
     }
     (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) = false;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) = false;
@@ -209,12 +252,30 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_10)) = false;
     {
         let mut a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_9)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_10)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (unsafe {
+                let _x: *const A1_int_ = unimplemented!();
+                let mut _y: A1_int_ = A1_int_::new_2({ 4 });
+                operator_eq_4(_x, &mut _y)
+            })
+        );
+        assert!(unimplemented!());
     }
     (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) = false;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) = false;
@@ -222,16 +283,40 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_10)) = false;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) = false;
     {
-        let mut a4: A1_int_ = A1_int_::new_2({ 4_() });
+        let mut a4: A1_int_ = A1_int_::new_2({ 4 });
         let mut a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_9)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_10)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_13)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_14)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (unsafe {
+                let _x: *const A1_int_ = unimplemented!();
+                let mut _y: A1_int_ = A1_int_::new_2({ 4 });
+                operator_eq_4(_x, &mut _y)
+            })
+        );
+        assert!((unimplemented!()));
     }
     (*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) = false;
     (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) = false;
@@ -241,14 +326,38 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_14)) = false;
     {
         let mut a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_1)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_0)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_9)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_10)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut copy_called_13)) as i32)
+                == (true as i32))
+        );
+        assert!(
+            (((*std::cell::LazyCell::force_mut(&mut *&raw mut move_called_14)) as i32)
+                == (false as i32))
+        );
+        assert!(
+            (unsafe {
+                let _x: *const A1_int_ = unimplemented!();
+                let mut _y: A1_int_ = A1_int_::new_2({ 4 });
+                operator_eq_4(_x, &mut _y)
+            })
+        );
+        assert!((unimplemented!()));
     }
     {
         const _: () = assert!(true, "!std::is_convertible<A1<int>, A2<int>>::value");;
@@ -259,10 +368,22 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!(
+            (unsafe {
+                let _x: *const A1_int_ = unimplemented!();
+                let mut _y: A1_int_ = A1_int_::new_2({ 4 });
+                operator_eq_4(_x, &mut _y)
+            })
+        );
+        assert!(
+            (unsafe {
+                let _x: *const A1_int_ = unimplemented!();
+                let mut _y: A1_int_ = A1_int_::new_2({ 5 });
+                operator_eq_4(_x, &mut _y)
+            })
+        );
     }
-    return 0_();
+    return 0;
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const copy_called_1);

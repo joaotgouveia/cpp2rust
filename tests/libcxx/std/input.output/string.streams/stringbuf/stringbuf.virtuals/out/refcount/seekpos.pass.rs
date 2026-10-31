@@ -26,61 +26,91 @@ pub fn main() {
     __cpp2rust_init_globals();
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
-fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (-1_i32 as ())));
+        assert!((unimplemented!() == (-1_i32 as ())));
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == (('3' as i8) as i32)));
     }
     {
         let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (-1_i32 as ())));
+        assert!((unimplemented!() == (-1_i32 as ())));
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == (('a' as i8) as i32)));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"012a456789").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == (('3' as i8) as i32)));
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == (('3' as i8) as i32)));
+        assert!((unimplemented!() == (('a' as i8) as i32)));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"012a456789").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == (('3' as i8) as i32)));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"0123456789").with_c_str(|__s| unimplemented!()
+                [..unimplemented!().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (-1_i32 as ())));
+        assert!((unimplemented!() == (-1_i32 as ())));
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == ((51 as i32) as ())));
     }
     {
         let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == (-1_i32 as ())));
+        assert!((unimplemented!() == (-1_i32 as ())));
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == ((97 as i32) as ())));
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32, 54 as i32,
+                55 as i32, 56 as i32, 57 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        );
     }
     {
         let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == ((51 as i32) as ())));
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == ((51 as i32) as ())));
+        assert!((unimplemented!() == ((97 as i32) as ())));
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                48 as i32, 49 as i32, 50 as i32, 97 as i32, 52 as i32, 53 as i32, 54 as i32,
+                55 as i32, 56 as i32, 57 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        );
+        assert!((unimplemented!() == 3_()));
+        assert!((unimplemented!() == ((51 as i32) as ())));
+        assert!(
+            Ptr::<i32>::from_string_literal(&[
+                48 as i32, 49 as i32, 50 as i32, 51 as i32, 52 as i32, 53 as i32, 54 as i32,
+                55 as i32, 56 as i32, 57 as i32, 0 as i32,
+            ])
+            .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
+        );
     }
-    return 0_();
+    return 0;
 }
 pub fn __cpp2rust_init_globals() {}
