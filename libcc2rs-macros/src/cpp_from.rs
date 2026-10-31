@@ -199,8 +199,9 @@ pub fn expand(input: TokenStream, is_unsafe: bool) -> TokenStream {
         let op = &conversion.method;
         let self_ty = quote!(#name #ty_generics);
         let src = pointer(&syn::parse_quote!(#self_ty), false);
+        // the operator may be non-const, e.g., operator It() &&
         let body = if is_unsafe {
-            quote!((*src).#op())
+            quote!((*src.cast_mut()).#op())
         } else {
             quote!(#impl_trait::#op(&src))
         };
