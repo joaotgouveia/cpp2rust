@@ -197,6 +197,13 @@ impl<T: StreamChar> PathSource for Vec<T> {
     }
 }
 
+// A narrow string literal, c"...".
+impl PathSource for std::ffi::CStr {
+    fn path_bytes(&self) -> Vec<u8> {
+        self.to_bytes().to_vec()
+    }
+}
+
 impl<T: StreamChar> PathSource for Ptr<T> {
     fn path_bytes(&self) -> Vec<u8> {
         let mut out = Vec::new();
