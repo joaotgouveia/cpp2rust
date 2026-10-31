@@ -387,7 +387,7 @@ thread_local!(
 );
 pub fn root_path_11() -> Vec<i8> {
     return {
-        let mut __v: Vec<i8> = (b"/" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -670,7 +670,7 @@ pub fn test02_16() {
 pub fn test03_17() {
     let paths: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
         {
-            let mut __v: Vec<i8> = (b"single" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"single") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -679,7 +679,8 @@ pub fn test03_17() {
             __v
         },
         {
-            let mut __v: Vec<i8> = (b"multiple/elements" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"multiple/elements")
+                as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -688,7 +689,7 @@ pub fn test03_17() {
             __v
         },
         {
-            let mut __v: Vec<i8> = (b"trailing/slash/" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"trailing/slash/") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -697,7 +698,7 @@ pub fn test03_17() {
             __v
         },
         {
-            let mut __v: Vec<i8> = (b"/." as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/.") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -740,7 +741,7 @@ pub fn test03_17() {
 }
 pub fn test04_18() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"/a/b/c/d/e/f/g" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/a/b/c/d/e/f/g") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)

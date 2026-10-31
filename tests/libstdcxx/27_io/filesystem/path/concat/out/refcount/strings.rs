@@ -483,7 +483,7 @@ thread_local!(
 );
 pub fn root_path_11() -> Vec<i8> {
     return {
-        let mut __v: Vec<i8> = (b"/" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -614,7 +614,7 @@ thread_local!(
 );
 pub fn test01_15() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"/" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -742,7 +742,7 @@ pub fn test02_16() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"0/1/2/3/4/5/6" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"0/1/2/3/4/5/6") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -754,7 +754,8 @@ pub fn test02_16() {
     unimplemented!();
     ({
         let _p2: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"0/1/2/3/4/5/60/1/2/3/4/5/6" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"0/1/2/3/4/5/60/1/2/3/4/5/6")
+                as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -765,7 +766,7 @@ pub fn test02_16() {
         compare_paths_9(p.as_pointer(), _p2.as_pointer())
     });
     let p2: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"0/1/2/3/4/5/" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"0/1/2/3/4/5/") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -777,7 +778,8 @@ pub fn test02_16() {
     unimplemented!();
     ({
         let _p2: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"0/1/2/3/4/5/0/1/2/3/4/5/" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"0/1/2/3/4/5/0/1/2/3/4/5/")
+                as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -788,7 +790,7 @@ pub fn test02_16() {
         compare_paths_9(p2.as_pointer(), _p2.as_pointer())
     });
     let p3: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"0/123456789" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"0/123456789") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -804,7 +806,8 @@ pub fn test02_16() {
     unimplemented!();
     ({
         let _p2: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"0/123456789123456789" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"0/123456789123456789")
+                as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)

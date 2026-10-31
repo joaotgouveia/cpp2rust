@@ -119,7 +119,7 @@ pub fn checkBeginEndBasic_10() {
     }
     {
         let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -137,17 +137,19 @@ pub fn checkBeginEndBasic_10() {
     }
     {
         let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"//root_name//first_dir////second_dir" as Ptr<i8>)
-                .path_bytes()
-                .into_iter()
-                .map(|__b| __b as i8)
-                .collect();
+            let mut __v: Vec<i8> =
+                (Ptr::<i8>::from_string_literal(b"//root_name//first_dir////second_dir")
+                    as Ptr<i8>)
+                    .path_bytes()
+                    .into_iter()
+                    .map(|__b| __b as i8)
+                    .collect();
             __v.push(0);
             __v
         }));
         let expect: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
             {
-                let mut __v: Vec<i8> = (b"/" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
@@ -156,7 +158,7 @@ pub fn checkBeginEndBasic_10() {
                 __v
             },
             {
-                let mut __v: Vec<i8> = (b"root_name" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"root_name") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
@@ -165,7 +167,7 @@ pub fn checkBeginEndBasic_10() {
                 __v
             },
             {
-                let mut __v: Vec<i8> = (b"first_dir" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"first_dir") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
@@ -174,7 +176,7 @@ pub fn checkBeginEndBasic_10() {
                 __v
             },
             {
-                let mut __v: Vec<i8> = (b"second_dir" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"second_dir") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
@@ -204,7 +206,8 @@ pub fn checkBeginEndBasic_10() {
     }
     {
         let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"////foo/bar/baz///" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"////foo/bar/baz///")
+                as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -214,7 +217,7 @@ pub fn checkBeginEndBasic_10() {
         }));
         let expect: Value<Box<[Vec<i8>]>> = Rc::new(RefCell::new(Box::new([
             {
-                let mut __v: Vec<i8> = (b"/" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
@@ -223,7 +226,7 @@ pub fn checkBeginEndBasic_10() {
                 __v
             },
             {
-                let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
@@ -232,7 +235,7 @@ pub fn checkBeginEndBasic_10() {
                 __v
             },
             {
-                let mut __v: Vec<i8> = (b"bar" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"bar") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
@@ -241,7 +244,7 @@ pub fn checkBeginEndBasic_10() {
                 __v
             },
             {
-                let mut __v: Vec<i8> = (b"baz" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"baz") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
@@ -250,7 +253,7 @@ pub fn checkBeginEndBasic_10() {
                 __v
             },
             {
-                let mut __v: Vec<i8> = (b"" as Ptr<i8>)
+                let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"") as Ptr<i8>)
                     .path_bytes()
                     .into_iter()
                     .map(|__b| __b as i8)
