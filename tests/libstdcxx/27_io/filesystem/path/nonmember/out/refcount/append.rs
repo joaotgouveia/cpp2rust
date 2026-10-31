@@ -196,7 +196,7 @@ thread_local!(
 );
 pub fn root_path_2() -> Vec<i8> {
     return {
-        let mut __v: Vec<i8> = (b"/" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -335,7 +335,7 @@ pub fn test_6(lhs: Ptr<Vec<i8>>, rhs: Ptr<Vec<i8>>) {
 pub fn test01_7() {
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"/foo/bar" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/foo/bar") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -344,7 +344,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"/foo/" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/foo/") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -356,7 +356,7 @@ pub fn test01_7() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"baz" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"baz") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -365,7 +365,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"baz" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"baz") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -377,7 +377,7 @@ pub fn test01_7() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"baz/" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"baz/") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -386,7 +386,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"baz" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"baz") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -398,7 +398,7 @@ pub fn test01_7() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"baz" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"baz") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -407,7 +407,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"/foo/bar" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/foo/bar") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -419,7 +419,7 @@ pub fn test01_7() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"baz/" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"baz/") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -428,7 +428,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"/foo/bar" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/foo/bar") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -440,7 +440,7 @@ pub fn test01_7() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -449,7 +449,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -461,7 +461,7 @@ pub fn test01_7() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -470,7 +470,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"rel" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"rel") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -482,7 +482,7 @@ pub fn test01_7() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"dir/" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"dir/") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -491,7 +491,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"/file" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/file") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -503,7 +503,7 @@ pub fn test01_7() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"dir/" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"dir/") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -512,7 +512,7 @@ pub fn test01_7() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"file" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"file") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -526,7 +526,7 @@ pub fn test01_7() {
 pub fn test02_8() {
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"//host" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"//host") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -535,7 +535,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -547,7 +547,7 @@ pub fn test02_8() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"//host/" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"//host/") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -556,7 +556,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -568,7 +568,7 @@ pub fn test02_8() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -577,7 +577,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -589,7 +589,7 @@ pub fn test02_8() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -598,7 +598,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"/bar" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/bar") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -610,7 +610,7 @@ pub fn test02_8() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -619,7 +619,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"c:/bar" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"c:/bar") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -631,7 +631,7 @@ pub fn test02_8() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -640,7 +640,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"c:" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"c:") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -652,7 +652,7 @@ pub fn test02_8() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"c:" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"c:") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -661,7 +661,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -673,7 +673,7 @@ pub fn test02_8() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"c:foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"c:foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -682,7 +682,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"/bar" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/bar") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -694,7 +694,7 @@ pub fn test02_8() {
     });
     ({
         let _lhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"foo" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)
@@ -703,7 +703,7 @@ pub fn test02_8() {
             __v
         }));
         let _rhs: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __v: Vec<i8> = (b"c:\\bar" as Ptr<i8>)
+            let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"c:\\bar") as Ptr<i8>)
                 .path_bytes()
                 .into_iter()
                 .map(|__b| __b as i8)

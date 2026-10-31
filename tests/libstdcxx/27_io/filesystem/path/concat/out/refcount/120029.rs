@@ -199,7 +199,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test_root_dir_9() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"/" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -238,7 +238,7 @@ pub fn test_root_dir_9() {
 }
 pub fn test_root_name_10() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"C:/" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"C:/") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -277,7 +277,7 @@ pub fn test_root_name_10() {
 }
 pub fn test_filename_11() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"file" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"file") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -316,7 +316,8 @@ pub fn test_filename_11() {
 }
 pub fn test_multi_12() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"/home/username/Documents/mu" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"/home/username/Documents/mu")
+            as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)

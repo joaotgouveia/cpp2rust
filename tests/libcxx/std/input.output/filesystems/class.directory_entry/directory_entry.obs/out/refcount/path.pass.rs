@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_path_method_0() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"foo/bar/baz.exe" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo/bar/baz.exe") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -17,7 +17,7 @@ pub fn test_path_method_0() {
         __v
     }));
     let p2: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"abc" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"abc") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -50,7 +50,7 @@ pub fn test_path_method_0() {
 }
 pub fn test_path_conversion_1() {
     let p: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"foo/bar/baz.exe" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"foo/bar/baz.exe") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)
@@ -59,7 +59,7 @@ pub fn test_path_conversion_1() {
         __v
     }));
     let p2: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (b"abc" as Ptr<i8>)
+        let mut __v: Vec<i8> = (Ptr::<i8>::from_string_literal(b"abc") as Ptr<i8>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)

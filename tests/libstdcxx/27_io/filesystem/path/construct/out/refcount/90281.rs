@@ -219,11 +219,12 @@ pub fn test01_10() {
         }
     }
     let p16: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (&[55348 as u16, 56606 as u16, 0 as u16] as Ptr<u16>)
-            .path_bytes()
-            .into_iter()
-            .map(|__b| __b as i8)
-            .collect();
+        let mut __v: Vec<i8> =
+            (Ptr::<u16>::from_string_literal(&[55348 as u16, 56606 as u16, 0 as u16]) as Ptr<u16>)
+                .path_bytes()
+                .into_iter()
+                .map(|__b| __b as i8)
+                .collect();
         __v.push(0);
         __v
     }));
@@ -236,7 +237,8 @@ pub fn test01_10() {
         }
     }
     let p32: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __v: Vec<i8> = (&[119070 as u32, 0 as u32] as Ptr<u32>)
+        let mut __v: Vec<i8> = (Ptr::<u32>::from_string_literal(&[119070 as u32, 0 as u32])
+            as Ptr<u32>)
             .path_bytes()
             .into_iter()
             .map(|__b| __b as i8)

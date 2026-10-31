@@ -122,7 +122,7 @@ pub unsafe fn operator_ne_1(
     return (*x).it_ != (*y).it_;
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {
     it_: UnsafeRandomAccessIterator<bool>,
     tracker_: support_double_move_tracker,
@@ -158,7 +158,7 @@ impl cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {
         _a0: *mut cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_,
     ) -> *mut cpp17_input_iterator_std__Bit_iterator__std__Bit_iterator_ {
         {
-            self.it_ = ((*_a0).it_).clone();
+            self.it_ = (*_a0).it_;
             self.it_.clone()
         };
         (unsafe {
@@ -260,7 +260,7 @@ pub unsafe fn operator_ne_4(
     return (*x).it_ != (*y).it_;
 }
 #[repr(C)]
-#[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct forward_iterator_std__Bit_iterator_ {
     it_: UnsafeRandomAccessIterator<bool>,
     tracker_: support_double_move_tracker,
@@ -292,7 +292,7 @@ impl forward_iterator_std__Bit_iterator_ {
         _a0: *mut forward_iterator_std__Bit_iterator_,
     ) -> *mut forward_iterator_std__Bit_iterator_ {
         {
-            self.it_ = ((*_a0).it_).clone();
+            self.it_ = (*_a0).it_;
             self.it_.clone()
         };
         (unsafe {

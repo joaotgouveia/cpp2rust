@@ -174,6 +174,7 @@ impl<T: ByteRepr> ByteRepr for Box<T> {}
 impl<T: 'static> ByteRepr for *const T {}
 impl<T: 'static> ByteRepr for *mut T {}
 impl<A: ByteRepr, B: ByteRepr> ByteRepr for (A, B) {}
+impl ByteRepr for std::cmp::Ordering {}
 impl<K: 'static, V: 'static> ByteRepr for std::collections::BTreeMap<K, V> {}
 
 // Runs `f` with a zeroed scratch buffer of `len` elements. Small buffers live

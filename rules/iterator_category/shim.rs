@@ -7,7 +7,10 @@ use std::marker::PhantomData;
 
 use std::rc::Rc;
 
-use crate::{MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value};
+use crate::{
+    ByteRepr, CppAdvance, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr,
+    UnsafeCppAdvance, UnsafeMapNode, Value,
+};
 
 pub trait CppIterator<T>: Clone {
     fn iter_deref(&self) -> Ptr<T>;
@@ -291,6 +294,8 @@ impl<T> Clone for UnsafeBidirectionalIterator<T> {
     }
 }
 
+impl<T> Copy for UnsafeBidirectionalIterator<T> {}
+
 impl<T> PartialEq for UnsafeBidirectionalIterator<T> {
     fn eq(&self, other: &Self) -> bool {
         match (self, other) {
@@ -462,6 +467,8 @@ random_access_iterator!(
     std::ptr::null_mut()
 );
 
+impl<T> Copy for UnsafeRandomAccessIterator<T> {}
+
 pub trait IterStep: Clone + PartialEq {
     fn iter_step(&mut self);
 }
@@ -487,6 +494,45 @@ iter_step!(BidirectionalIterator<T>, CppIterator);
 iter_step!(UnsafeBidirectionalIterator<T>, UnsafeCppIterator);
 iter_step!(RandomAccessIterator<T>, CppIterator);
 iter_step!(UnsafeRandomAccessIterator<T>, UnsafeCppIterator);
+
+// The library's bidirectional and random access iterators advance in
+// std::next and std::prev.
+macro_rules! cpp_advance {
+    ($name:ty) => {
+        impl<T: 'static> ByteRepr for $name {}
+
+        impl<T: 'static> CppAdvance for $name {
+            fn cpp_inc(it: &Ptr<Self>) {
+                it.with_mut(|i| {
+                    CppIterator::<T>::iter_inc(i);
+                });
+            }
+            fn cpp_dec(it: &Ptr<Self>) {
+                it.with_mut(|i| {
+                    CppBidirectionalIterator::<T>::iter_dec(i);
+                });
+            }
+        }
+    };
+}
+
+macro_rules! unsafe_cpp_advance {
+    ($name:ty) => {
+        impl<T> UnsafeCppAdvance for $name {
+            unsafe fn cpp_inc(&mut self) {
+                UnsafeCppIterator::<T>::iter_inc(self);
+            }
+            unsafe fn cpp_dec(&mut self) {
+                UnsafeCppBidirectionalIterator::<T>::iter_dec(self);
+            }
+        }
+    };
+}
+
+cpp_advance!(BidirectionalIterator<T>);
+cpp_advance!(RandomAccessIterator<T>);
+unsafe_cpp_advance!(UnsafeBidirectionalIterator<T>);
+unsafe_cpp_advance!(UnsafeRandomAccessIterator<T>);
 
 pub struct IterRange<I> {
     cur: I,

@@ -150,6 +150,13 @@ impl AnyPtr {
 
 impl ByteRepr for AnyPtr {}
 
+// The address, as printed for %p.
+impl std::fmt::Debug for AnyPtr {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        std::fmt::Debug::fmt(&self.reinterpret_cast::<u8>(), f)
+    }
+}
+
 impl AnyPtr {
     pub fn to_int(&self) -> usize {
         self.reinterpret_cast::<u8>().to_int()

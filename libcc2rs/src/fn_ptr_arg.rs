@@ -157,6 +157,38 @@ impl<T: ?Sized + 'static> FnPtrArg for *const T {
     }
 }
 
+// std::pair, the library's strings and containers, and the comparison
+// categories are passed as records.
+impl<A: 'static, B: 'static> FnPtrArg for (A, B) {
+    #[inline]
+    fn to_repr(self) -> ArgRepr {
+        ArgRepr::Record(Box::new(self))
+    }
+    fn from_repr(r: ArgRepr) -> Self {
+        record_from_repr(r)
+    }
+}
+
+impl<T: 'static> FnPtrArg for Vec<T> {
+    #[inline]
+    fn to_repr(self) -> ArgRepr {
+        ArgRepr::Record(Box::new(self))
+    }
+    fn from_repr(r: ArgRepr) -> Self {
+        record_from_repr(r)
+    }
+}
+
+impl FnPtrArg for std::cmp::Ordering {
+    #[inline]
+    fn to_repr(self) -> ArgRepr {
+        ArgRepr::Record(Box::new(self))
+    }
+    fn from_repr(r: ArgRepr) -> Self {
+        record_from_repr(r)
+    }
+}
+
 macro_rules! impl_fn_ptr_arg_unsafe_fn {
     () => {
         impl_fn_ptr_arg_unsafe_fn!(@gen A B C D E F G H I J K L M N O P Q S T U V W X Y);

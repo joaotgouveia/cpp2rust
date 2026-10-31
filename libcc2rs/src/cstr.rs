@@ -181,19 +181,31 @@ macro_rules! impl_stream_char_wide {
 
 impl_stream_char_wide!(u16, u32, i32);
 
-// A filesystem path source (a string or a C string of any char type) as the
-// narrow bytes of the path.
+// A filesystem path source (a string, a char array or a C string of any char
+// type) as the narrow bytes of the path.
 pub trait PathSource {
     fn path_bytes(&self) -> Vec<u8>;
 }
 
 impl<T: StreamChar> PathSource for Vec<T> {
     fn path_bytes(&self) -> Vec<u8> {
+        self.as_slice().path_bytes()
+    }
+}
+
+impl<T: StreamChar> PathSource for [T] {
+    fn path_bytes(&self) -> Vec<u8> {
         let mut out = Vec::new();
         for &c in self.iter().take_while(|&&c| c != T::default()) {
             c.push_stream_bytes(&mut out);
         }
         out
+    }
+}
+
+impl PathSource for std::ffi::CStr {
+    fn path_bytes(&self) -> Vec<u8> {
+        self.to_bytes().to_vec()
     }
 }
 
