@@ -56,13 +56,14 @@ public:
                                     std::string_view lhs) override;
 
   void ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
-                                     const clang::FunctionDecl *eq,
-                                     const clang::FunctionDecl *lt,
-                                     const clang::FunctionDecl *cmp) override;
+                                     const ComparisonOperators &ops) override;
 
   void ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
                            const clang::CXXMethodDecl *inc,
                            const clang::CXXMethodDecl *dec) override;
+
+  void ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
+                             const IteratorOperators &ops) override;
 
   std::string GetShallowCopy(const clang::RecordDecl *decl,
                              std::string_view src);

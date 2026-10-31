@@ -107,3 +107,27 @@ pub fn next_refcount<I: CppAdvance + 'static>(it: I, n: isize) -> I {
 pub fn prev_refcount<I: CppAdvance + 'static>(it: I, n: isize) -> I {
     advance_refcount(it, -n)
 }
+
+/// Calls `f` with a pointer to the iterator, as the operators of iterator
+/// records take it, which the iterator is moved into and back out of.
+pub fn with_iterator_ptr<I: Default + 'static, R>(it: &mut I, f: impl FnOnce(&Ptr<I>) -> R) -> R {
+    let value = Rc::new(RefCell::new(std::mem::take(it)));
+    let result = f(&value.as_pointer());
+    *it = match Rc::try_unwrap(value) {
+        Ok(cell) => cell.into_inner(),
+        Err(_) => panic!("iterator escaped its operator"),
+    };
+    result
+}
+
+/// Calls `f` with pointers to copies of the iterators, as the comparison
+/// operators of iterator records take them.
+pub fn with_iterator_ptrs<I: Clone + 'static, R>(
+    lhs: &I,
+    rhs: &I,
+    f: impl FnOnce(&Ptr<I>, &Ptr<I>) -> R,
+) -> R {
+    let lhs = Rc::new(RefCell::new(lhs.clone()));
+    let rhs = Rc::new(RefCell::new(rhs.clone()));
+    f(&lhs.as_pointer(), &rhs.as_pointer())
+}
