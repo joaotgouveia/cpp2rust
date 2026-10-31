@@ -770,8 +770,16 @@ pub fn test_6() -> bool {
             Rc::new(RefCell::new(2)),
         )));
         let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(({ ((*p2.borrow()).0).clone() } == { ((*p1.borrow()).0.as_pointer()) }));
-        assert!(({ ((*p2.borrow()).1).clone() } == { ((*p1.borrow()).1.as_pointer()) }));
+        assert!(
+            ({ ((*p2.borrow()).0.borrow().clone()).clone() } == {
+                ((*p1.borrow()).0.as_pointer())
+            })
+        );
+        assert!(
+            ({ ((*p2.borrow()).1.borrow().clone()).clone() } == {
+                ((*p1.borrow()).1.as_pointer())
+            })
+        );
     }
     {
         let p1: Value<(Value<ConstMove>, Value<i32>)> = Rc::new(RefCell::new((

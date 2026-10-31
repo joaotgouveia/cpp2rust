@@ -922,7 +922,7 @@ pub unsafe fn test_constexpr_27() -> bool {
     let N: usize = 4_usize;
     let mut it: *mut i32 = {
         let __first = unimplemented!();
-        let __last = ia.as_ptr().add(ia.len());
+        let __last = (ia.as_ptr().add(ia.len()) as *mut i32);
         if __first == __last {
             __last
         } else {

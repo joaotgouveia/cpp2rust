@@ -283,7 +283,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((next) == (bytes.as_ptr().add(bytes.len()))) {
+        if !((next) == (bytes.as_ptr().add(bytes.len()) as *mut libc::c_char)) {
             unimplemented!();
             std::process::abort();
         }
@@ -380,7 +380,7 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((next) == (bytes.as_ptr().add(bytes.len()))) {
+        if !((next) == (bytes.as_ptr().add(bytes.len()) as *mut libc::c_char)) {
             unimplemented!();
             std::process::abort();
         }

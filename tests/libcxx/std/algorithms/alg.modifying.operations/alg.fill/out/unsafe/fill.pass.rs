@@ -1529,10 +1529,10 @@ pub unsafe fn test_vector_bool_28(mut N: usize) -> bool {
             let mut in_: Vec<bool> = unimplemented!();
             let mut expected: Vec<bool> = unimplemented!();
             {
-                *(&mut expected).as_mut_ptr().add(0_usize as usize) = *(*{
+                *(&mut expected).as_mut_ptr().add(0_usize as usize) = *{
                     *(&mut expected).as_mut_ptr().add(1_usize as usize) = false;
                     (&mut expected).as_mut_ptr().add(1_usize as usize)
-                });
+                };
                 (&mut expected).as_mut_ptr().add(0_usize as usize)
             };
             unimplemented!();
@@ -1544,14 +1544,14 @@ pub unsafe fn test_vector_bool_28(mut N: usize) -> bool {
             {
                 *(&mut expected)
                     .as_mut_ptr()
-                    .add((N).wrapping_sub(1_usize) as usize) = *(*{
+                    .add((N).wrapping_sub(1_usize) as usize) = *{
                     *(&mut expected)
                         .as_mut_ptr()
                         .add((N).wrapping_sub(2_usize) as usize) = false;
                     (&mut expected)
                         .as_mut_ptr()
                         .add((N).wrapping_sub(2_usize) as usize)
-                });
+                };
                 (&mut expected)
                     .as_mut_ptr()
                     .add((N).wrapping_sub(1_usize) as usize)
@@ -1563,24 +1563,24 @@ pub unsafe fn test_vector_bool_28(mut N: usize) -> bool {
             let mut in_: Vec<bool> = unimplemented!();
             let mut expected: Vec<bool> = unimplemented!();
             {
-                *(&mut expected).as_mut_ptr().add(0_usize as usize) = *(*{
-                    *(&mut expected).as_mut_ptr().add(1_usize as usize) = *(*{
+                *(&mut expected).as_mut_ptr().add(0_usize as usize) = *{
+                    *(&mut expected).as_mut_ptr().add(1_usize as usize) = *{
                         *(&mut expected)
                             .as_mut_ptr()
-                            .add((N).wrapping_sub(1_usize) as usize) = *(*{
+                            .add((N).wrapping_sub(1_usize) as usize) = *{
                             *(&mut expected)
                                 .as_mut_ptr()
                                 .add((N).wrapping_sub(2_usize) as usize) = false;
                             (&mut expected)
                                 .as_mut_ptr()
                                 .add((N).wrapping_sub(2_usize) as usize)
-                        });
+                        };
                         (&mut expected)
                             .as_mut_ptr()
                             .add((N).wrapping_sub(1_usize) as usize)
-                    });
+                    };
                     (&mut expected).as_mut_ptr().add(1_usize as usize)
-                });
+                };
                 (&mut expected).as_mut_ptr().add(0_usize as usize)
             };
             unimplemented!();

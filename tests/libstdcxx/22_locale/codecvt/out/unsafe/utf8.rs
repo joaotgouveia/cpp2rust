@@ -289,7 +289,7 @@ pub unsafe fn test_11(mut from: *const u16) {
     let cvt: *const () = unimplemented!();
     let mut from_end: *const u16 = from.offset((len) as isize);
     let mut from_next: *const u16 = from;
-    let mut buf_end: *mut libc::c_char = buf.as_ptr().add(buf.len());
+    let mut buf_end: *mut libc::c_char = (buf.as_ptr().add(buf.len()) as *mut libc::c_char);
     let mut buf_next: *mut libc::c_char = buf.as_mut_ptr();
     let mut res: () = unimplemented!();
     let mut __do_while = true;
@@ -333,7 +333,7 @@ pub unsafe fn test_11(mut from: *const u16) {
             .offset((*std::cell::LazyCell::force_mut(&mut *&raw mut expected_len_10)) as isize);
     let mut exp_next: *const libc::c_char =
         (*std::cell::LazyCell::force_mut(&mut *&raw mut expected_9));
-    let mut buf2_end: *mut u16 = buf2.as_ptr().add(buf2.len());
+    let mut buf2_end: *mut u16 = (buf2.as_ptr().add(buf2.len()) as *mut u16);
     let mut buf2_next: *mut u16 = buf2.as_mut_ptr();
     res = unimplemented!();
     let mut __do_while = true;
@@ -396,7 +396,7 @@ pub unsafe fn test_12(mut from: *const u32) {
     let cvt: *const () = unimplemented!();
     let mut from_end: *const u32 = from.offset((len) as isize);
     let mut from_next: *const u32 = from;
-    let mut buf_end: *mut libc::c_char = buf.as_ptr().add(buf.len());
+    let mut buf_end: *mut libc::c_char = (buf.as_ptr().add(buf.len()) as *mut libc::c_char);
     let mut buf_next: *mut libc::c_char = buf.as_mut_ptr();
     let mut res: () = unimplemented!();
     let mut __do_while = true;
@@ -440,7 +440,7 @@ pub unsafe fn test_12(mut from: *const u32) {
             .offset((*std::cell::LazyCell::force_mut(&mut *&raw mut expected_len_10)) as isize);
     let mut exp_next: *const libc::c_char =
         (*std::cell::LazyCell::force_mut(&mut *&raw mut expected_9));
-    let mut buf2_end: *mut u32 = buf2.as_ptr().add(buf2.len());
+    let mut buf2_end: *mut u32 = (buf2.as_ptr().add(buf2.len()) as *mut u32);
     let mut buf2_next: *mut u32 = buf2.as_mut_ptr();
     res = unimplemented!();
     let mut __do_while = true;

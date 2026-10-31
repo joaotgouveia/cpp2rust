@@ -1229,7 +1229,7 @@ pub fn test_76() {
             |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
                 {
                     let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-                    return (((*v.borrow()).0.read()) == 1);
+                    return (((*v.borrow()).0.borrow().clone().read()) == 1);
                 }
             },
         )));
@@ -1259,7 +1259,7 @@ pub fn test_76() {
     )|
      -> bool {
         let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-        return (((*v.borrow()).0.read()) == 4);
+        return (((*v.borrow()).0.borrow().clone().read()) == 4);
     })));
     let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
         Value<Ptr<i32>>,
@@ -1395,7 +1395,7 @@ pub fn test_77() {
             |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
                 {
                     let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-                    return (((*v.borrow()).0.read()) == 1);
+                    return (((*v.borrow()).0.borrow().clone().read()) == 1);
                 }
             },
         )));
@@ -1425,7 +1425,7 @@ pub fn test_77() {
     )|
      -> bool {
         let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-        return (((*v.borrow()).0.read()) == 4);
+        return (((*v.borrow()).0.borrow().clone().read()) == 4);
     })));
     let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
         Value<Ptr<i32>>,
@@ -1561,7 +1561,7 @@ pub fn test_78() {
             |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
                 {
                     let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-                    return (((*v.borrow()).0.read()) == 1);
+                    return (((*v.borrow()).0.borrow().clone().read()) == 1);
                 }
             },
         )));
@@ -1591,7 +1591,7 @@ pub fn test_78() {
     )|
      -> bool {
         let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-        return (((*v.borrow()).0.read()) == 4);
+        return (((*v.borrow()).0.borrow().clone().read()) == 4);
     })));
     let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
         Value<Ptr<i32>>,
@@ -1727,7 +1727,7 @@ pub fn test_79() {
             |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
                 {
                     let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-                    return (((*v.borrow()).0.read()) == 1);
+                    return (((*v.borrow()).0.borrow().clone().read()) == 1);
                 }
             },
         )));
@@ -1757,7 +1757,7 @@ pub fn test_79() {
     )|
      -> bool {
         let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-        return (((*v.borrow()).0.read()) == 4);
+        return (((*v.borrow()).0.borrow().clone().read()) == 4);
     })));
     let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
         Value<Ptr<i32>>,
@@ -1893,7 +1893,7 @@ pub fn test_80() {
             |v: (Value<Ptr<i32>>, Value<Ptr<i8>>)| -> bool {
                 {
                     let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-                    return (((*v.borrow()).0.read()) == 1);
+                    return (((*v.borrow()).0.borrow().clone().read()) == 1);
                 }
             },
         )));
@@ -1923,7 +1923,7 @@ pub fn test_80() {
     )|
      -> bool {
         let v: Value<(Value<Ptr<i32>>, Value<Ptr<i8>>)> = Rc::new(RefCell::new(v));
-        return (((*v.borrow()).0.read()) == 4);
+        return (((*v.borrow()).0.borrow().clone().read()) == 4);
     })));
     let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
         Value<Ptr<i32>>,
@@ -2059,7 +2059,7 @@ pub fn test_81() {
             |v: (Value<Ptr<i64>>, Value<Ptr<i32>>)| -> bool {
                 {
                     let v: Value<(Value<Ptr<i64>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(v));
-                    return (((*v.borrow()).0.read()) == 1_i64);
+                    return (((*v.borrow()).0.borrow().clone().read()) == 1_i64);
                 }
             },
         )));
@@ -2089,7 +2089,7 @@ pub fn test_81() {
     )|
      -> bool {
         let v: Value<(Value<Ptr<i64>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(v));
-        return (((*v.borrow()).0.read()) == 4_i64);
+        return (((*v.borrow()).0.borrow().clone().read()) == 4_i64);
     })));
     let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
         Value<Ptr<i64>>,
@@ -2225,7 +2225,7 @@ pub fn test_82() {
             |v: (Value<Ptr<f64>>, Value<Ptr<i32>>)| -> bool {
                 {
                     let v: Value<(Value<Ptr<f64>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(v));
-                    return (((*v.borrow()).0.read()) == 1_f64);
+                    return (((*v.borrow()).0.borrow().clone().read()) == 1_f64);
                 }
             },
         )));
@@ -2255,7 +2255,7 @@ pub fn test_82() {
     )|
      -> bool {
         let v: Value<(Value<Ptr<f64>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(v));
-        return (((*v.borrow()).0.read()) == 4_f64);
+        return (((*v.borrow()).0.borrow().clone().read()) == 4_f64);
     })));
     let True: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {}, |_a0: Ptr<(
         Value<Ptr<f64>>,

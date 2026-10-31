@@ -148,7 +148,7 @@ pub unsafe fn test_4() {
     let mut vb: Vec<bool> = {
         let mut __v = Vec::new();
         let mut __it = unimplemented!();
-        while __it != ba.as_ptr().add(ba.len()) {
+        while __it != (ba.as_ptr().add(ba.len()) as *mut bool) {
             __v.push((*__it.iter_deref()).clone() != false);
             __it.iter_inc();
         }
@@ -167,7 +167,7 @@ pub unsafe fn test_5() {
     let mut vb: Vec<bool> = {
         let mut __v = Vec::new();
         let mut __it = unimplemented!();
-        while __it != ba.as_ptr().add(ba.len()) {
+        while __it != (ba.as_ptr().add(ba.len()) as *mut bool) {
             __v.push((*__it.iter_deref()).clone() != false);
             __it.iter_inc();
         }

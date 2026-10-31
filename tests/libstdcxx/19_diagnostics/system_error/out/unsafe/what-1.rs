@@ -280,8 +280,8 @@ pub unsafe fn test01_9() {
             .len()
                 - 1];
             let __needle = ::std::slice::from_raw_parts(
-                (s.as_mut_ptr()).cast_const(),
-                libcc2rs::c_str_len((s.as_mut_ptr()).cast_const()),
+                (s.as_mut_ptr() as *mut libc::c_char).cast_const(),
+                libcc2rs::c_str_len((s.as_mut_ptr() as *mut libc::c_char).cast_const()),
             );
             (0_usize..=__hay.len().saturating_sub(__needle.len()))
                 .find(|&__i| __hay[__i..].starts_with(__needle))
@@ -308,8 +308,8 @@ pub unsafe fn test01_9() {
             .len()
                 - 1];
             let __needle = ::std::slice::from_raw_parts(
-                (s.as_mut_ptr()).cast_const(),
-                libcc2rs::c_str_len((s.as_mut_ptr()).cast_const()),
+                (s.as_mut_ptr() as *mut libc::c_char).cast_const(),
+                libcc2rs::c_str_len((s.as_mut_ptr() as *mut libc::c_char).cast_const()),
             );
             (0_usize..=__hay.len().saturating_sub(__needle.len()))
                 .find(|&__i| __hay[__i..].starts_with(__needle))
@@ -344,8 +344,8 @@ pub unsafe fn test02_10() {
             .len()
                 - 1];
             let __needle = ::std::slice::from_raw_parts(
-                (s.as_mut_ptr()).cast_const(),
-                libcc2rs::c_str_len((s.as_mut_ptr()).cast_const()),
+                (s.as_mut_ptr() as *mut libc::c_char).cast_const(),
+                libcc2rs::c_str_len((s.as_mut_ptr() as *mut libc::c_char).cast_const()),
             );
             (0_usize..=__hay.len().saturating_sub(__needle.len()))
                 .find(|&__i| __hay[__i..].starts_with(__needle))

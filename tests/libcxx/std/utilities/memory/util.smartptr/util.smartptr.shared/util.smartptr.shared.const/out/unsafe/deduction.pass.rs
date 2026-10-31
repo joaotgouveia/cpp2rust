@@ -80,11 +80,11 @@ unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     }
     {
         let mut u: Option<Box<A>> = Some(Box::from_raw(
-            (Box::leak(Box::new(<A>::default())) as *mut A).cast_const(),
+            ((Box::leak(Box::new(<A>::default())) as *mut A).cast_const() as *mut A),
         ));
-        let mut uPointee: *const A = u
-            .as_deref_mut()
-            .map_or(::std::ptr::null_mut(), |v| v as *mut A);
+        let mut uPointee: *const A =
+            (u.as_deref_mut()
+                .map_or(::std::ptr::null_mut(), |v| v as *mut A) as *const A);
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         assert!(u.is_none());
@@ -102,9 +102,9 @@ unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
     }
     {
         let mut u: Option<Box<A>> = unimplemented!();
-        let mut uPointee: *const A = u
-            .as_deref_mut()
-            .map_or(::std::ptr::null_mut(), |v| v as *mut A);
+        let mut uPointee: *const A =
+            (u.as_deref_mut()
+                .map_or(::std::ptr::null_mut(), |v| v as *mut A) as *const A);
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         assert!(u.is_none());

@@ -12,16 +12,16 @@ pub fn test_0() -> bool {
         let j: Value<i32> = Rc::new(RefCell::new(2));
         {
             let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new((*i.borrow()))),
-                Rc::new(RefCell::new((*j.borrow()))),
+                Rc::new(RefCell::new(i.as_pointer())),
+                Rc::new(RefCell::new(j.as_pointer())),
             )));
             assert!(((unimplemented!()) == (i.as_pointer())));
             assert!(((unimplemented!()) == (j.as_pointer())));
             assert!(((unimplemented!()) == (i.as_pointer())));
             assert!(((unimplemented!().read()) == 2));
             let cp: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new((*i.borrow()))),
-                Rc::new(RefCell::new((*j.borrow()))),
+                Rc::new(RefCell::new(i.as_pointer())),
+                Rc::new(RefCell::new(j.as_pointer())),
             )));
             assert!(((unimplemented!()) == (i.as_pointer())));
             assert!(((unimplemented!()) == (j.as_pointer())));
@@ -30,16 +30,16 @@ pub fn test_0() -> bool {
         }
         {
             let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new((*i.borrow()))),
-                Rc::new(RefCell::new((*j.borrow()))),
+                Rc::new(RefCell::new(i.as_pointer())),
+                Rc::new(RefCell::new(j.as_pointer())),
             )));
             assert!(((unimplemented!()) == (j.as_pointer())));
             assert!(((unimplemented!()) == (i.as_pointer())));
             assert!(((unimplemented!()) == (j.as_pointer())));
             assert!(((unimplemented!().read()) == 1));
             let cp: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new((*i.borrow()))),
-                Rc::new(RefCell::new((*j.borrow()))),
+                Rc::new(RefCell::new(i.as_pointer())),
+                Rc::new(RefCell::new(j.as_pointer())),
             )));
             assert!(((unimplemented!()) == (j.as_pointer())));
             assert!(((unimplemented!()) == (i.as_pointer())));
@@ -85,8 +85,8 @@ pub fn test_0() -> bool {
         let x: Value<i32> = Rc::new(RefCell::new(42));
         let y: Value<i32> = Rc::new(RefCell::new(43));
         let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new((*x.borrow()))),
-            Rc::new(RefCell::new((*y.borrow()))),
+            Rc::new(RefCell::new(x.as_pointer())),
+            Rc::new(RefCell::new(y.as_pointer())),
         )));
         const _: () = assert!(
             true,

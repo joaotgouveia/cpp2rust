@@ -129,24 +129,28 @@ pub unsafe fn test_basic_18() {
         {
             let mut x: *mut libc::c_char =
                 (Box::leak(Box::new((0 as libc::c_char))) as *mut libc::c_char);
-            let mut ptr: Option<Box<libc::c_char>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<libc::c_char>> =
+                Some(Box::from_raw(((x).cast_const() as *mut libc::c_char)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut libc::c_char))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut libc::c_char)
+                    as *const libc::c_char)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut libc::c_char =
                 (Box::leak(Box::new((0 as libc::c_char))) as *mut libc::c_char);
-            let ptr: Option<Box<libc::c_char>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<libc::c_char>> =
+                Some(Box::from_raw(((x).cast_const() as *mut libc::c_char)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut libc::c_char))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut libc::c_char)
+                    as *const libc::c_char)
                     == ((x).cast_const()))
             );
         }
@@ -200,7 +204,8 @@ pub unsafe fn test_basic_18() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const libc::c_char)
                     == ((x).cast_const()))
             );
         }
@@ -216,7 +221,8 @@ pub unsafe fn test_basic_18() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const libc::c_char)
                     == ((x).cast_const()))
             );
         }
@@ -252,23 +258,25 @@ pub unsafe fn test_basic_19() {
     {
         {
             let mut x: *mut i32 = (Box::leak(Box::new(0_i32)) as *mut i32);
-            let mut ptr: Option<Box<i32>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<i32>> = Some(Box::from_raw(((x).cast_const() as *mut i32)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut i32))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut i32)
+                    as *const i32)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut i32 = (Box::leak(Box::new(0_i32)) as *mut i32);
-            let ptr: Option<Box<i32>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<i32>> = Some(Box::from_raw(((x).cast_const() as *mut i32)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut i32))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut i32)
+                    as *const i32)
                     == ((x).cast_const()))
             );
         }
@@ -310,7 +318,8 @@ pub unsafe fn test_basic_19() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const i32)
                     == ((x).cast_const()))
             );
         }
@@ -322,7 +331,8 @@ pub unsafe fn test_basic_19() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const i32)
                     == ((x).cast_const()))
             );
         }
@@ -361,24 +371,28 @@ pub unsafe fn test_basic_20() {
         {
             let mut x: *mut WithSize_1_ =
                 (Box::leak(Box::new(<WithSize_1_>::default())) as *mut WithSize_1_);
-            let mut ptr: Option<Box<WithSize_1_>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<WithSize_1_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_1_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_1_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_1_)
+                    as *const WithSize_1_)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut WithSize_1_ =
                 (Box::leak(Box::new(<WithSize_1_>::default())) as *mut WithSize_1_);
-            let ptr: Option<Box<WithSize_1_>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<WithSize_1_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_1_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_1_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_1_)
+                    as *const WithSize_1_)
                     == ((x).cast_const()))
             );
         }
@@ -432,7 +446,8 @@ pub unsafe fn test_basic_20() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_1_)
                     == ((x).cast_const()))
             );
         }
@@ -448,7 +463,8 @@ pub unsafe fn test_basic_20() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_1_)
                     == ((x).cast_const()))
             );
         }
@@ -487,24 +503,28 @@ pub unsafe fn test_basic_21() {
         {
             let mut x: *mut WithSize_2_ =
                 (Box::leak(Box::new(<WithSize_2_>::default())) as *mut WithSize_2_);
-            let mut ptr: Option<Box<WithSize_2_>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<WithSize_2_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_2_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_2_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_2_)
+                    as *const WithSize_2_)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut WithSize_2_ =
                 (Box::leak(Box::new(<WithSize_2_>::default())) as *mut WithSize_2_);
-            let ptr: Option<Box<WithSize_2_>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<WithSize_2_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_2_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_2_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_2_)
+                    as *const WithSize_2_)
                     == ((x).cast_const()))
             );
         }
@@ -558,7 +578,8 @@ pub unsafe fn test_basic_21() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_2_)
                     == ((x).cast_const()))
             );
         }
@@ -574,7 +595,8 @@ pub unsafe fn test_basic_21() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_2_)
                     == ((x).cast_const()))
             );
         }
@@ -613,24 +635,28 @@ pub unsafe fn test_basic_22() {
         {
             let mut x: *mut WithSize_3_ =
                 (Box::leak(Box::new(<WithSize_3_>::default())) as *mut WithSize_3_);
-            let mut ptr: Option<Box<WithSize_3_>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<WithSize_3_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_3_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_3_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_3_)
+                    as *const WithSize_3_)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut WithSize_3_ =
                 (Box::leak(Box::new(<WithSize_3_>::default())) as *mut WithSize_3_);
-            let ptr: Option<Box<WithSize_3_>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<WithSize_3_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_3_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_3_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_3_)
+                    as *const WithSize_3_)
                     == ((x).cast_const()))
             );
         }
@@ -684,7 +710,8 @@ pub unsafe fn test_basic_22() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_3_)
                     == ((x).cast_const()))
             );
         }
@@ -700,7 +727,8 @@ pub unsafe fn test_basic_22() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_3_)
                     == ((x).cast_const()))
             );
         }
@@ -739,24 +767,28 @@ pub unsafe fn test_basic_23() {
         {
             let mut x: *mut WithSize_4_ =
                 (Box::leak(Box::new(<WithSize_4_>::default())) as *mut WithSize_4_);
-            let mut ptr: Option<Box<WithSize_4_>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<WithSize_4_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_4_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_4_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_4_)
+                    as *const WithSize_4_)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut WithSize_4_ =
                 (Box::leak(Box::new(<WithSize_4_>::default())) as *mut WithSize_4_);
-            let ptr: Option<Box<WithSize_4_>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<WithSize_4_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_4_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_4_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_4_)
+                    as *const WithSize_4_)
                     == ((x).cast_const()))
             );
         }
@@ -810,7 +842,8 @@ pub unsafe fn test_basic_23() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_4_)
                     == ((x).cast_const()))
             );
         }
@@ -826,7 +859,8 @@ pub unsafe fn test_basic_23() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_4_)
                     == ((x).cast_const()))
             );
         }
@@ -865,24 +899,28 @@ pub unsafe fn test_basic_24() {
         {
             let mut x: *mut WithSize_8_ =
                 (Box::leak(Box::new(<WithSize_8_>::default())) as *mut WithSize_8_);
-            let mut ptr: Option<Box<WithSize_8_>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<WithSize_8_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_8_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_8_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_8_)
+                    as *const WithSize_8_)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut WithSize_8_ =
                 (Box::leak(Box::new(<WithSize_8_>::default())) as *mut WithSize_8_);
-            let ptr: Option<Box<WithSize_8_>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<WithSize_8_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_8_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_8_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_8_)
+                    as *const WithSize_8_)
                     == ((x).cast_const()))
             );
         }
@@ -936,7 +974,8 @@ pub unsafe fn test_basic_24() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_8_)
                     == ((x).cast_const()))
             );
         }
@@ -952,7 +991,8 @@ pub unsafe fn test_basic_24() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_8_)
                     == ((x).cast_const()))
             );
         }
@@ -991,24 +1031,28 @@ pub unsafe fn test_basic_25() {
         {
             let mut x: *mut WithSize_16_ =
                 (Box::leak(Box::new(<WithSize_16_>::default())) as *mut WithSize_16_);
-            let mut ptr: Option<Box<WithSize_16_>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<WithSize_16_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_16_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_16_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_16_)
+                    as *const WithSize_16_)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut WithSize_16_ =
                 (Box::leak(Box::new(<WithSize_16_>::default())) as *mut WithSize_16_);
-            let ptr: Option<Box<WithSize_16_>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<WithSize_16_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_16_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_16_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_16_)
+                    as *const WithSize_16_)
                     == ((x).cast_const()))
             );
         }
@@ -1062,7 +1106,8 @@ pub unsafe fn test_basic_25() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_16_)
                     == ((x).cast_const()))
             );
         }
@@ -1078,7 +1123,8 @@ pub unsafe fn test_basic_25() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_16_)
                     == ((x).cast_const()))
             );
         }
@@ -1117,24 +1163,28 @@ pub unsafe fn test_basic_26() {
         {
             let mut x: *mut WithSize_256_ =
                 (Box::leak(Box::new(<WithSize_256_>::default())) as *mut WithSize_256_);
-            let mut ptr: Option<Box<WithSize_256_>> = Some(Box::from_raw((x).cast_const()));
+            let mut ptr: Option<Box<WithSize_256_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_256_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_256_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_256_)
+                    as *const WithSize_256_)
                     == ((x).cast_const()))
             );
         }
         {
             let mut x: *mut WithSize_256_ =
                 (Box::leak(Box::new(<WithSize_256_>::default())) as *mut WithSize_256_);
-            let ptr: Option<Box<WithSize_256_>> = Some(Box::from_raw((x).cast_const()));
+            let ptr: Option<Box<WithSize_256_>> =
+                Some(Box::from_raw(((x).cast_const() as *mut WithSize_256_)));
             const _: () = assert!(true, "");;
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_256_))
+                    .map_or(::std::ptr::null_mut(), |v| v as *mut WithSize_256_)
+                    as *const WithSize_256_)
                     == ((x).cast_const()))
             );
         }
@@ -1188,7 +1238,8 @@ pub unsafe fn test_basic_26() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_256_)
                     == ((x).cast_const()))
             );
         }
@@ -1204,7 +1255,8 @@ pub unsafe fn test_basic_26() {
             assert!(
                 ((ptr
                     .as_deref_mut()
-                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr()))
+                    .map_or(::std::ptr::null_mut(), |s| s.as_mut_ptr())
+                    as *const WithSize_256_)
                     == ((x).cast_const()))
             );
         }

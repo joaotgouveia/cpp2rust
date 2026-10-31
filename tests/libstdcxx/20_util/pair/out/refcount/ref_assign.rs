@@ -201,11 +201,11 @@ pub fn test01_9() {
     let i: Value<i32> = Rc::new(RefCell::new(1));
     let j: Value<i32> = Rc::new(RefCell::new(2));
     let p: Value<(Value<Ptr<i32>>, Value<i32>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new((*i.borrow()))),
+        Rc::new(RefCell::new(i.as_pointer())),
         Rc::new(RefCell::new(3)),
     )));
     let q: Value<(Value<Ptr<i32>>, Value<i32>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new((*j.borrow()))),
+        Rc::new(RefCell::new(j.as_pointer())),
         Rc::new(RefCell::new(4)),
     )));
     p.as_pointer().write((
@@ -215,7 +215,9 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ((*p.borrow()).0.read()) } == { ((*q.borrow()).0.read()) }) {
+        if !({ ((*p.borrow()).0.borrow().clone().read()) } == {
+            ((*q.borrow()).0.borrow().clone().read())
+        }) {
             unimplemented!();
             std::process::abort();
         }
@@ -242,11 +244,11 @@ pub fn test02_10() {
     let j: Value<i32> = Rc::new(RefCell::new(2));
     let p: Value<(Value<i32>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
         Rc::new(RefCell::new(3)),
-        Rc::new(RefCell::new((*i.borrow()))),
+        Rc::new(RefCell::new(i.as_pointer())),
     )));
     let q: Value<(Value<i32>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
         Rc::new(RefCell::new(4)),
-        Rc::new(RefCell::new((*j.borrow()))),
+        Rc::new(RefCell::new(j.as_pointer())),
     )));
     p.as_pointer().write((
         Rc::new(RefCell::new((*q.borrow()).0.borrow().clone())),
@@ -263,7 +265,9 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ((*p.borrow()).1.read()) } == { ((*q.borrow()).1.read()) }) {
+        if !({ ((*p.borrow()).1.borrow().clone().read()) } == {
+            ((*q.borrow()).1.borrow().clone().read())
+        }) {
             unimplemented!();
             std::process::abort();
         }
@@ -291,7 +295,9 @@ pub fn test03_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ((*p.borrow()).0.read()) } == { ((*q.borrow()).0.read()) }) {
+        if !({ ((*p.borrow()).0.borrow().clone().read()) } == {
+            ((*q.borrow()).0.borrow().clone().read())
+        }) {
             unimplemented!();
             std::process::abort();
         }
@@ -299,7 +305,9 @@ pub fn test03_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ((*p.borrow()).1.read()) } == { ((*q.borrow()).1.read()) }) {
+        if !({ ((*p.borrow()).1.borrow().clone().read()) } == {
+            ((*q.borrow()).1.borrow().clone().read())
+        }) {
             unimplemented!();
             std::process::abort();
         }
@@ -464,22 +472,37 @@ pub fn run_tests_wrapped_env_16(
         Ok(__val) => Ptr::alloc_c_str(__val.as_bytes()),
         Err(_) => Ptr::null(),
     };
-    if !(libc::setenv(env, name, 1) != 0) {
+    if !({
+        let __name = env.to_rust_string();
+        if 1 != 0 || ::std::env::var_os(&__name).is_none() {
+            unsafe { ::std::env::set_var(__name, name.to_rust_string()) };
+        }
+        0
+    } != 0)
+    {
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: i32 = 0;
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        libc::setenv(
-            env,
-            if !(oldENV).is_null() {
-                (oldENV).clone()
-            } else {
-                Ptr::<i8>::from_string_literal(b"")
-            },
-            1,
-        );
+        {
+            let __name = env.to_rust_string();
+            if 1 != 0 || ::std::env::var_os(&__name).is_none() {
+                unsafe {
+                    ::std::env::set_var(
+                        __name,
+                        if !(oldENV).is_null() {
+                            (oldENV).clone()
+                        } else {
+                            Ptr::<i8>::from_string_literal(b"")
+                        }
+                        .to_rust_string(),
+                    )
+                };
+            }
+            0
+        };
     } else {
         let s: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __bytes = env.to_c_bytes();

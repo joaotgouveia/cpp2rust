@@ -748,7 +748,7 @@ pub unsafe fn test_iter_15() {
                     let _x: *const cpp17_input_iterator_int_ptr__int_ptr_ = &result;
                     let mut _y: cpp17_input_iterator_int_ptr__int_ptr_ =
                         cpp17_input_iterator_int_ptr__int_ptr_::new({
-                            range.as_ptr().add(range.len())
+                            (range.as_ptr().add(range.len()) as *mut i32)
                         });
                     operator_eq_0(_x, &mut _y)
                 })
@@ -794,8 +794,9 @@ pub unsafe fn test_iter_16() {
             assert!(
                 (unsafe {
                     let _x: *const forward_iterator_int_ptr_ = &result;
-                    let mut _y: forward_iterator_int_ptr_ =
-                        forward_iterator_int_ptr_::new_1({ range.as_ptr().add(range.len()) });
+                    let mut _y: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
+                        (range.as_ptr().add(range.len()) as *mut i32)
+                    });
                     operator_eq_2(_x, &mut _y)
                 })
             );
@@ -840,7 +841,9 @@ pub unsafe fn test_iter_17() {
                 (unsafe {
                     let _x: *const bidirectional_iterator_int_ptr_ = &result;
                     let mut _y: bidirectional_iterator_int_ptr_ =
-                        bidirectional_iterator_int_ptr_::new_1({ range.as_ptr().add(range.len()) });
+                        bidirectional_iterator_int_ptr_::new_1({
+                            (range.as_ptr().add(range.len()) as *mut i32)
+                        });
                     operator_eq_4(_x, &mut _y)
                 })
             );
@@ -886,7 +889,9 @@ pub unsafe fn test_iter_18() {
                 (unsafe {
                     let _x: *const random_access_iterator_int_ptr_ = &result;
                     let mut _y: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({ range.as_ptr().add(range.len()) });
+                        random_access_iterator_int_ptr_::new_1({
+                            (range.as_ptr().add(range.len()) as *mut i32)
+                        });
                     operator_eq_6(_x, &mut _y)
                 })
             );

@@ -290,7 +290,8 @@ unsafe fn main_0() -> i32 {
             .to_vec();
     let mut sm: () = unimplemented!();
     (sm as (*mut libc::c_char, *mut libc::c_char)).0 = unimplemented!();
-    (sm as (*mut libc::c_char, *mut libc::c_char)).1 = test_data2.as_ptr().add(test_data2.len());
+    (sm as (*mut libc::c_char, *mut libc::c_char)).1 =
+        (test_data2.as_ptr().add(test_data2.len()) as *mut libc::c_char);
     sm.matched = true;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

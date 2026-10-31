@@ -120,7 +120,7 @@ pub unsafe fn test_stable_5(mut N: i32) {
     let mut j: () = <UnsafeBidirectionalIterator<Payload>>::from(unimplemented!());
     let mut i: i32 = 0;
     'loop_: while ((i) < (N)) {
-        assert!((((*j.iter_deref()).val) == ((i) / (2))));
+        assert!((((*(j.iter_deref() as *const Payload)).val) == ((i) / (2))));
         {
             i.prefix_inc();
             j.iter_inc()
@@ -130,9 +130,13 @@ pub unsafe fn test_stable_5(mut N: i32) {
     'loop_: while it != <UnsafeBidirectionalIterator<Payload>>::from(unimplemented!()) {
         let mut next: () = libcc2rs::next_unsafe(it.clone(), 1_isize);
         if (next != <UnsafeBidirectionalIterator<Payload>>::from(unimplemented!()))
-            && (((*it.iter_deref()).val) == ((*next.iter_deref()).val))
+            && (((*(it.iter_deref() as *const Payload)).val)
+                == ((*(next.iter_deref() as *const Payload)).val))
         {
-            assert!((((*it.iter_deref()).side) < ((*next.iter_deref()).side)));
+            assert!(
+                (((*(it.iter_deref() as *const Payload)).side)
+                    < ((*(next.iter_deref() as *const Payload)).side))
+            );
         }
         it.iter_inc();
     }

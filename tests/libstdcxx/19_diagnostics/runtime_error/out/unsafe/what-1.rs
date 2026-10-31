@@ -267,7 +267,11 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((libc::strcmp(unimplemented!(), (s.as_mut_ptr()).cast_const())) == (0)) {
+        if !((libc::strcmp(
+            unimplemented!(),
+            (s.as_mut_ptr() as *mut libc::c_char).cast_const(),
+        )) == (0))
+        {
             unimplemented!();
             std::process::abort();
         }
@@ -275,7 +279,11 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((libc::strcmp(unimplemented!(), (s.as_mut_ptr()).cast_const())) == (0)) {
+        if !((libc::strcmp(
+            unimplemented!(),
+            (s.as_mut_ptr() as *mut libc::c_char).cast_const(),
+        )) == (0))
+        {
             unimplemented!();
             std::process::abort();
         }
@@ -291,7 +299,11 @@ pub unsafe fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((libc::strcmp(unimplemented!(), (s.as_mut_ptr()).cast_const())) == (0)) {
+        if !((libc::strcmp(
+            unimplemented!(),
+            (s.as_mut_ptr() as *mut libc::c_char).cast_const(),
+        )) == (0))
+        {
             unimplemented!();
             std::process::abort();
         }

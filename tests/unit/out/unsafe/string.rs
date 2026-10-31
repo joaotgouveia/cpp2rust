@@ -64,7 +64,7 @@ unsafe fn main_0() -> i32 {
             )
             .to_vec()))
     );
-    let mut p1: *const libc::c_char = (s1.as_mut_ptr()).cast_const();
+    let mut p1: *const libc::c_char = (s1.as_mut_ptr() as *mut libc::c_char).cast_const();
     assert!((((*p1.offset((0) as isize)) as i32) == (('h' as libc::c_char) as i32)));
     assert!((((*p1.offset((1) as isize)) as i32) == (('e' as libc::c_char) as i32)));
     assert!((((*p1.offset((2) as isize)) as i32) == (('l' as libc::c_char) as i32)));
@@ -75,7 +75,7 @@ unsafe fn main_0() -> i32 {
         .cloned()
         .chain(std::iter::once((0 as libc::c_char)))
         .collect();
-    let mut p2: *const libc::c_char = (s2.as_mut_ptr()).cast_const();
+    let mut p2: *const libc::c_char = (s2.as_mut_ptr() as *mut libc::c_char).cast_const();
     let mut i: u32 = 0_u32;
     'loop_: while ((i as usize) < (s2.len() - 1)) {
         assert!(
@@ -115,7 +115,7 @@ unsafe fn main_0() -> i32 {
     };
     assert!(((s3.len() - 1) == (5_usize)));
     assert!(((s3.len() - 1) == (s3.len() - 1)));
-    let mut p3: *const libc::c_char = (s3.as_mut_ptr()).cast_const();
+    let mut p3: *const libc::c_char = (s3.as_mut_ptr() as *mut libc::c_char).cast_const();
     let mut i: u32 = 0_u32;
     'loop_: while ((i as usize) < (s3.len() - 1)) {
         assert!(
@@ -151,7 +151,7 @@ unsafe fn main_0() -> i32 {
     };
     assert!(((s4.len() - 1) == (3_usize)));
     assert!(((s4.len() - 1) == (s4.len() - 1)));
-    let mut p4: *const libc::c_char = (s4.as_mut_ptr()).cast_const();
+    let mut p4: *const libc::c_char = (s4.as_mut_ptr() as *mut libc::c_char).cast_const();
     let mut i: u32 = 0_u32;
     'loop_: while ((i as usize) < (s4.len() - 1)) {
         assert!(
@@ -172,7 +172,7 @@ unsafe fn main_0() -> i32 {
     };
     assert!(((s5.len() - 1) == (12_usize)));
     assert!(((s5.len() - 1) == (s5.len() - 1)));
-    let mut p5: *const libc::c_char = (s5.as_mut_ptr()).cast_const();
+    let mut p5: *const libc::c_char = (s5.as_mut_ptr() as *mut libc::c_char).cast_const();
     let mut i: u32 = 0_u32;
     'loop_: while ((i as usize) < (s5.len() - 1)) {
         assert!(

@@ -946,7 +946,7 @@ pub unsafe fn test_constexpr_21() -> bool {
     }) && (unsafe {
         let mut _x: forward_iterator_int_ptr_ = unimplemented!();
         let mut _y: forward_iterator_int_ptr_ =
-            forward_iterator_int_ptr_::new_1({ ic.as_ptr().add(ic.len()) });
+            forward_iterator_int_ptr_::new_1({ (ic.as_ptr().add(ic.len()) as *mut i32) });
         operator_eq_0(&mut _x, &mut _y)
     })) && (unsafe {
         let mut _x: bidirectional_iterator_int_ptr_ = unimplemented!();
@@ -956,7 +956,7 @@ pub unsafe fn test_constexpr_21() -> bool {
     })) && (unsafe {
         let mut _x: bidirectional_iterator_int_ptr_ = unimplemented!();
         let mut _y: bidirectional_iterator_int_ptr_ =
-            bidirectional_iterator_int_ptr_::new_1({ ic.as_ptr().add(ic.len()) });
+            bidirectional_iterator_int_ptr_::new_1({ (ic.as_ptr().add(ic.len()) as *mut i32) });
         operator_eq_4(&mut _x, &mut _y)
     })) && (unsafe {
         let mut _x: random_access_iterator_int_ptr_ = unimplemented!();
@@ -966,7 +966,7 @@ pub unsafe fn test_constexpr_21() -> bool {
     })) && (unsafe {
         let mut _x: random_access_iterator_int_ptr_ = unimplemented!();
         let mut _y: random_access_iterator_int_ptr_ =
-            random_access_iterator_int_ptr_::new_1({ ic.as_ptr().add(ic.len()) });
+            random_access_iterator_int_ptr_::new_1({ (ic.as_ptr().add(ic.len()) as *mut i32) });
         operator_eq_9(&mut _x, &mut _y)
     });
 }

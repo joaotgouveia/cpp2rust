@@ -191,7 +191,7 @@ pub unsafe fn test_8() -> bool {
         let mut t1: [i32; 8] = [1, 2, 1, 3, 5, 8, 11, 1];
         let mut t2: [i32; 5] = [2, 3, 5, 8, 11];
         let mut c: () = unimplemented!();
-        let mut ip: *mut i32 = t1.as_ptr().add(t1.len());
+        let mut ip: *mut i32 = (t1.as_ptr().add(t1.len()) as *mut i32);
         'loop_: while ((ip) != (unimplemented!())) {
             unimplemented!();
         }
@@ -202,9 +202,9 @@ pub unsafe fn test_8() -> bool {
         });
         let mut it: () = <()>::from(unimplemented!());
         let mut ip: *mut i32 = unimplemented!();
-        'loop_: while ((ip) != (t2.as_ptr().add(t2.len()))) {
+        'loop_: while ((ip) != (t2.as_ptr().add(t2.len()) as *mut i32)) {
             assert!(it != <()>::from(unimplemented!()));
-            assert!(((*ip) == (unsafe { S::get(&(*it.iter_deref()),) })));
+            assert!(((*ip) == (unsafe { S::get(&(*(it.iter_deref() as *const S)),) })));
             {
                 ip.prefix_inc();
                 it.iter_inc()

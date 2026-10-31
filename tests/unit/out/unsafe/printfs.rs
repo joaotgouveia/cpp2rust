@@ -85,7 +85,12 @@ unsafe fn main_0() -> i32 {
         libcc2rs::c_str_len(c"a string".as_ptr()) + 1,
     )
     .to_vec();
-    (unsafe { libc::printf(c"%s\n".as_ptr() as *const libc::c_char, (s.as_mut_ptr())) });
+    (unsafe {
+        libc::printf(
+            c"%s\n".as_ptr() as *const libc::c_char,
+            (s.as_mut_ptr() as *mut libc::c_char),
+        )
+    });
     (unsafe {
         libc::printf(
             c"%s\n".as_ptr() as *const libc::c_char,

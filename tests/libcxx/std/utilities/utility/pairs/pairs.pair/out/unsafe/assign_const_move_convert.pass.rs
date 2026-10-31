@@ -688,8 +688,8 @@ pub unsafe fn test_6() -> bool {
         let mut i2: i32 = 2;
         let mut j1: i64 = 3_i64;
         let mut j2: i64 = 4_i64;
-        let mut p1: (*mut i32, *mut i32) = (i1, i2);
-        let p2: (*mut i64, *mut i64) = (j1, j2);
+        let mut p1: (*mut i32, *mut i32) = (&mut i1, &mut i2);
+        let p2: (*mut i64, *mut i64) = (&mut j1, &mut j2);
         unimplemented!();
         assert!(((*p2.0) == (1_i64)));
         assert!(((*p2.1) == (2_i64)));

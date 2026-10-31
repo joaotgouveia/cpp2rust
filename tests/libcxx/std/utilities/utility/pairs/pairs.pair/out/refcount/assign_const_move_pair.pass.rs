@@ -541,16 +541,16 @@ pub fn test_6() -> bool {
         let d1: Value<f64> = Rc::new(RefCell::new(3_f64));
         let d2: Value<f64> = Rc::new(RefCell::new(5_f64));
         let p1: Value<(Value<Ptr<i32>>, Value<Ptr<f64>>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new((*i1.borrow()))),
-            Rc::new(RefCell::new((*d1.borrow()))),
+            Rc::new(RefCell::new(i1.as_pointer())),
+            Rc::new(RefCell::new(d1.as_pointer())),
         )));
         let p2: Value<(Value<Ptr<i32>>, Value<Ptr<f64>>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new((*i2.borrow()))),
-            Rc::new(RefCell::new((*d2.borrow()))),
+            Rc::new(RefCell::new(i2.as_pointer())),
+            Rc::new(RefCell::new(d2.as_pointer())),
         )));
         unimplemented!();
-        assert!((((*p2.borrow()).0.read()) == 1));
-        assert!((((*p2.borrow()).1.read()) == 3_f64));
+        assert!((((*p2.borrow()).0.borrow().clone().read()) == 1));
+        assert!((((*p2.borrow()).1.borrow().clone().read()) == 3_f64));
     }
     {
         let p1: Value<(Value<ConstMoveAssign>, Value<ConstMoveAssign>)> = Rc::new(RefCell::new((

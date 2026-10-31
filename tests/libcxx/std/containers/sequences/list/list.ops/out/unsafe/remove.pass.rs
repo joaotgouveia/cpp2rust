@@ -151,7 +151,7 @@ pub unsafe fn test_5() -> bool {
         let mut ip: *mut i32 = a2.as_mut_ptr();
         'loop_: while ((ip) < (a2.as_mut_ptr().offset((5) as isize))) {
             assert!(it != <UnsafeBidirectionalIterator<S>>::from(unimplemented!()));
-            assert!(((*ip) == (unsafe { S::get(&(*it.iter_deref()),) })));
+            assert!(((*ip) == (unsafe { S::get(&(*(it.iter_deref() as *const S)),) })));
             {
                 ip.prefix_inc();
                 it.iter_inc()

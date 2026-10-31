@@ -543,8 +543,8 @@ pub fn test_6() -> bool {
         let p1: Value<(Value<Ptr<i32>>, Value<Ptr<f64>>)> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<(Value<Ptr<i32>>, Value<Ptr<f64>>)> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((((*p2.borrow()).0.read()) == 1));
-        assert!((((*p2.borrow()).1.read()) == 3_f64));
+        assert!((((*p2.borrow()).0.borrow().clone().read()) == 1));
+        assert!((((*p2.borrow()).1.borrow().clone().read()) == 3_f64));
     }
     {
         let p1: Value<(Value<ConstCopyAssign>, Value<ConstCopyAssign>)> = Rc::new(RefCell::new((

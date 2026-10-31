@@ -55,7 +55,7 @@ unsafe fn main_0() -> i32 {
     {
         0_u32
     } else {
-        (*const_it.iter_deref()).1
+        (*(const_it.iter_deref() as *const (i16, u32))).1
     };
     assert!(((x2) == (0_u32)));
     let mut x3: u32 = if it == m.end() {
@@ -67,7 +67,7 @@ unsafe fn main_0() -> i32 {
     let mut x4: u32 = if const_it == <UnsafeBidirectionalIterator<(i16, u32)>>::from(m.end()) {
         0_u32
     } else {
-        (*const_it.iter_deref()).1
+        (*(const_it.iter_deref() as *const (i16, u32))).1
     };
     assert!(((x4) == (0_u32)));
     (*m.subscript_move(&mut 4_i16, |__k| cpp_move_unsafe!(__k))) = 5_u32;

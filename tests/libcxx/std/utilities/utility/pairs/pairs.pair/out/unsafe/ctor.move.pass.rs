@@ -49,7 +49,7 @@ unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
         {
             const _: () = assert!(true, "std::is_move_constructible<P>::value");;
             let mut obj: NotCopyOrMoveConstructible = <NotCopyOrMoveConstructible>::default();
-            let mut p2: (*mut NotCopyOrMoveConstructible, i32) = (obj, 3);
+            let mut p2: (*mut NotCopyOrMoveConstructible, i32) = (&mut obj, 3);
             let mut p1: (*mut NotCopyOrMoveConstructible, i32) = std::mem::take(&mut p2);
             assert!(((p1.0) == (&mut obj as *mut NotCopyOrMoveConstructible)));
             assert!(((p2.0) == (&mut obj as *mut NotCopyOrMoveConstructible)));
@@ -57,7 +57,7 @@ unsafe fn main_0(mut _a0: i32, mut _a1: *mut *mut libc::c_char) -> i32 {
         {
             const _: () = assert!(true, "std::is_move_constructible<P>::value");;
             let mut obj: NotCopyOrMoveConstructible = <NotCopyOrMoveConstructible>::default();
-            let mut p2: (*mut NotCopyOrMoveConstructible, i32) = (obj, 3);
+            let mut p2: (*mut NotCopyOrMoveConstructible, i32) = (&mut obj, 3);
             let mut p1: (*mut NotCopyOrMoveConstructible, i32) = std::mem::take(&mut p2);
             assert!(((p1.0) == (&mut obj as *mut NotCopyOrMoveConstructible)));
             assert!(((p2.0) == (&mut obj as *mut NotCopyOrMoveConstructible)));

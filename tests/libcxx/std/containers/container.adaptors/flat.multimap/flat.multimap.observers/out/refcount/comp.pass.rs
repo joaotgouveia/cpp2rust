@@ -60,16 +60,36 @@ pub fn test_7() -> bool {
         assert!(
             ({
                 (*vc.borrow_mut())(
-                    (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(('2' as i8)))),
-                    (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(('1' as i8)))),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                        Rc::new(RefCell::new(
+                            Rc::new(RefCell::new(('2' as i8))).as_pointer(),
+                        )),
+                    ),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                        Rc::new(RefCell::new(
+                            Rc::new(RefCell::new(('1' as i8))).as_pointer(),
+                        )),
+                    ),
                 )
             })
         );
         assert!(
             !({
                 (*vc.borrow_mut())(
-                    (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(('1' as i8)))),
-                    (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(('2' as i8)))),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                        Rc::new(RefCell::new(
+                            Rc::new(RefCell::new(('1' as i8))).as_pointer(),
+                        )),
+                    ),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                        Rc::new(RefCell::new(
+                            Rc::new(RefCell::new(('2' as i8))).as_pointer(),
+                        )),
+                    ),
                 )
             })
         );
@@ -93,16 +113,28 @@ pub fn test_7() -> bool {
         assert!(
             !({
                 (*vc.borrow_mut())(
-                    (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
-                    (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(1))),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                    ),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                    ),
                 )
             })
         );
         assert!(
             ({
                 (*vc.borrow_mut())(
-                    (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(1))),
-                    (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                    ),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                    ),
                 )
             })
         );
@@ -124,16 +156,28 @@ pub fn test_7() -> bool {
         assert!(
             ({
                 (*vc.borrow_mut())(
-                    (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
-                    (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(1))),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                    ),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                    ),
                 )
             })
         );
         assert!(
             !({
                 (*vc.borrow_mut())(
-                    (Rc::new(RefCell::new(2)), Rc::new(RefCell::new(1))),
-                    (Rc::new(RefCell::new(1)), Rc::new(RefCell::new(2))),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                    ),
+                    (
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(1)).as_pointer())),
+                        Rc::new(RefCell::new(Rc::new(RefCell::new(2)).as_pointer())),
+                    ),
                 )
             })
         );

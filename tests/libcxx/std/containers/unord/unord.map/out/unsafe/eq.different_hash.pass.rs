@@ -96,27 +96,27 @@ pub unsafe fn test_18(vals: *mut [u64; 46]) {
     let mut c5: () = unimplemented!();
     (unsafe {
         let _start: *mut u64 = unimplemented!();
-        let _end: *mut u64 = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut u64 = ((*vals).as_ptr().add((*vals).len()) as *mut u64);
         populate_15(&mut c1, _start, _end)
     });
     (unsafe {
         let _start: *mut u64 = unimplemented!();
-        let _end: *mut u64 = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut u64 = ((*vals).as_ptr().add((*vals).len()) as *mut u64);
         populate_15(&mut c2, _start, _end)
     });
     (unsafe {
         let _start: *mut u64 = unimplemented!();
-        let _end: *mut u64 = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut u64 = ((*vals).as_ptr().add((*vals).len()) as *mut u64);
         populate_15(&mut c3, _start, _end)
     });
     (unsafe {
         let _start: *mut u64 = unimplemented!();
-        let _end: *mut u64 = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut u64 = ((*vals).as_ptr().add((*vals).len()) as *mut u64);
         populate_15(&mut c4, _start, _end)
     });
     (unsafe {
         let _start: *mut u64 = unimplemented!();
-        let _end: *mut u64 = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut u64 = ((*vals).as_ptr().add((*vals).len()) as *mut u64);
         populate_15(&mut c5, _start, _end)
     });
     assert!(unimplemented!());
@@ -153,27 +153,27 @@ pub unsafe fn test_19(vals: *mut [bool; 2]) {
     let mut c5: () = unimplemented!();
     (unsafe {
         let _start: *mut bool = unimplemented!();
-        let _end: *mut bool = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut bool = ((*vals).as_ptr().add((*vals).len()) as *mut bool);
         populate_16(&mut c1, _start, _end)
     });
     (unsafe {
         let _start: *mut bool = unimplemented!();
-        let _end: *mut bool = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut bool = ((*vals).as_ptr().add((*vals).len()) as *mut bool);
         populate_16(&mut c2, _start, _end)
     });
     (unsafe {
         let _start: *mut bool = unimplemented!();
-        let _end: *mut bool = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut bool = ((*vals).as_ptr().add((*vals).len()) as *mut bool);
         populate_16(&mut c3, _start, _end)
     });
     (unsafe {
         let _start: *mut bool = unimplemented!();
-        let _end: *mut bool = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut bool = ((*vals).as_ptr().add((*vals).len()) as *mut bool);
         populate_16(&mut c4, _start, _end)
     });
     (unsafe {
         let _start: *mut bool = unimplemented!();
-        let _end: *mut bool = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut bool = ((*vals).as_ptr().add((*vals).len()) as *mut bool);
         populate_16(&mut c5, _start, _end)
     });
     assert!(unimplemented!());
@@ -210,27 +210,32 @@ pub unsafe fn test_20(vals: *mut [*mut libc::c_char; 3]) {
     let mut c5: () = unimplemented!();
     (unsafe {
         let _start: *mut *mut libc::c_char = unimplemented!();
-        let _end: *mut *mut libc::c_char = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut *mut libc::c_char =
+            ((*vals).as_ptr().add((*vals).len()) as *mut *mut libc::c_char);
         populate_17(&mut c1, _start, _end)
     });
     (unsafe {
         let _start: *mut *mut libc::c_char = unimplemented!();
-        let _end: *mut *mut libc::c_char = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut *mut libc::c_char =
+            ((*vals).as_ptr().add((*vals).len()) as *mut *mut libc::c_char);
         populate_17(&mut c2, _start, _end)
     });
     (unsafe {
         let _start: *mut *mut libc::c_char = unimplemented!();
-        let _end: *mut *mut libc::c_char = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut *mut libc::c_char =
+            ((*vals).as_ptr().add((*vals).len()) as *mut *mut libc::c_char);
         populate_17(&mut c3, _start, _end)
     });
     (unsafe {
         let _start: *mut *mut libc::c_char = unimplemented!();
-        let _end: *mut *mut libc::c_char = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut *mut libc::c_char =
+            ((*vals).as_ptr().add((*vals).len()) as *mut *mut libc::c_char);
         populate_17(&mut c4, _start, _end)
     });
     (unsafe {
         let _start: *mut *mut libc::c_char = unimplemented!();
-        let _end: *mut *mut libc::c_char = (*vals).as_ptr().add((*vals).len());
+        let _end: *mut *mut libc::c_char =
+            ((*vals).as_ptr().add((*vals).len()) as *mut *mut libc::c_char);
         populate_17(&mut c5, _start, _end)
     });
     assert!(unimplemented!());
