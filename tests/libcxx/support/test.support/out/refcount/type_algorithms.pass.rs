@@ -100,9 +100,23 @@ impl ApplyAllTest {
         }
     }
 }
+impl Callable0<()> for ApplyAllTest {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            ApplyAllTestImpl::operator_call_4_class_NumT_0_(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Identity {}
+impl Callable1<bool, bool> for Identity {
+    fn call(&self, a1: bool) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            IdentityImpl::operator_call(__it, a1)
+        })
+    }
+}
 pub fn test_for_each_2() {
     let is_called_array: Value<Box<[bool]>> =
         Rc::new(RefCell::new(Box::new([false, false, false])));

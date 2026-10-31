@@ -42,6 +42,13 @@ impl CppEq for test_hash_int_ {
         test_hash_int_Impl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl Callable1<Ptr<i32>, usize> for test_hash_int_ {
+    fn call(&self, a1: Ptr<i32>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_hash_int_Impl::operator_call(__it, a1)
+        })
+    }
+}
 impl Default for test_hash_int_ {
     fn default() -> Self {
         { test_hash_int_::new(None) }

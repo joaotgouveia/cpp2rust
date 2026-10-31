@@ -118,6 +118,11 @@ impl std::cmp::PartialEq for operator_hijacker {
     }
 }
 impl std::cmp::Eq for operator_hijacker {}
+impl Callable0<i32> for operator_hijacker {
+    fn call(&self) -> i32 {
+        unsafe { operator_hijacker::operator_call(self) }
+    }
+}
 const _: () = assert!(
     true,
     "std::is_trivially_copyable<operator_hijacker>::value &&     //\n                  std::is_copy_constructible<operator_hijacker>::value && //\n                  std::is_move_constructible<operator_hijacker>::value && //\n                  std::is_copy_assignable<operator_hijacker>::value &&    //\n                  std::is_move_assignable<operator_hijacker>::value"
@@ -212,7 +217,6 @@ pub unsafe fn operator_ne_7(
 pub struct test_allocator_void__rebind_void_ {}
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CppFromUnsafe, CopyAssignUnsafe, DestructorUnsafe)]
-#[cpp_from(test_allocator_void_, new_1, ptr)]
 pub struct test_allocator_void_ {
     data_: i32,
     id_: i32,

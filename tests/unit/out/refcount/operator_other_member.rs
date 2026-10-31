@@ -21,6 +21,23 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl Callable0<i32> for S {
+    fn call(&self) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| SImpl::operator_call_1(__it))
+    }
+}
+impl Callable1<i32, i32> for S {
+    fn call(&self, a1: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| SImpl::operator_call_2(__it, a1))
+    }
+}
+impl Callable2<i32, i32, i32> for S {
+    fn call(&self, a1: i32, a2: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            SImpl::operator_call_3(__it, a1, a2)
+        })
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

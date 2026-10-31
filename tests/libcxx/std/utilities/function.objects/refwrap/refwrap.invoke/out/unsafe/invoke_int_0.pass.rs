@@ -18,6 +18,11 @@ impl A_int_0 {
         return 4;
     }
 }
+impl Callable0<i32> for A_int_0 {
+    fn call(&self) -> i32 {
+        unsafe { A_int_0::operator_call(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 pub unsafe fn test_int_0_2() {
     {
         let mut r1: Option<unsafe fn() -> i32> = Some(f_int_0_1);
@@ -43,6 +48,11 @@ pub struct A_void_1 {}
 impl A_void_1 {
     pub unsafe fn operator_call(&mut self, mut i: i32) {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) += i;
+    }
+}
+impl Callable1<i32, ()> for A_void_1 {
+    fn call(&self, a1: i32) -> () {
+        unsafe { A_void_1::operator_call(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 pub fn main() {

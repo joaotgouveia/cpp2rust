@@ -388,9 +388,23 @@ impl Default for LargeUserAtomicType {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachIntegralType_TestFetchSub_ {}
+impl Callable0<()> for TestEachIntegralType_TestFetchSub_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachIntegralType_TestFetchSub_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachPointerType_TestFetchSub_ {}
+impl Callable0<()> for TestEachPointerType_TestFetchSub_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachPointerType_TestFetchSub_Impl::operator_call(__it)
+        })
+    }
+}
 pub fn test_seq_cst_14(store_op: FnPtr<fn(Ptr<()>, i8, i8)>, load_op: FnPtr<fn(Ptr<()>) -> i8>) {
     let store_op: Value<FnPtr<fn(Ptr<()>, i8, i8)>> = Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<fn(Ptr<()>) -> i8>> = Rc::new(RefCell::new(load_op));
@@ -805,69 +819,223 @@ pub fn test_acquire_release_70(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveFetchSub_bool_ {}
+impl Callable0<()> for TestDoesNotHaveFetchSub_bool_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveFetchSub_bool_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveFetchSub_UserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveFetchSub_UserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveFetchSub_UserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveFetchSub_LargeUserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveFetchSub_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveFetchSub_LargeUserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_float_ {}
+impl Callable0<()> for TestFetchSub_float_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_float_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_double_ {}
+impl Callable0<()> for TestFetchSub_double_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_double_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_char_ {}
+impl Callable0<()> for TestFetchSub_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_signed_char_ {}
+impl Callable0<()> for TestFetchSub_signed_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_signed_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_unsigned_char_ {}
+impl Callable0<()> for TestFetchSub_unsigned_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_unsigned_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_short_ {}
+impl Callable0<()> for TestFetchSub_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_unsigned_short_ {}
+impl Callable0<()> for TestFetchSub_unsigned_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_unsigned_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_int_ {}
+impl Callable0<()> for TestFetchSub_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_unsigned_int_ {}
+impl Callable0<()> for TestFetchSub_unsigned_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_unsigned_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_long_ {}
+impl Callable0<()> for TestFetchSub_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_unsigned_long_ {}
+impl Callable0<()> for TestFetchSub_unsigned_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_unsigned_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_long_long_ {}
+impl Callable0<()> for TestFetchSub_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_unsigned_long_long_ {}
+impl Callable0<()> for TestFetchSub_unsigned_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_unsigned_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_wchar_t_ {}
+impl Callable0<()> for TestFetchSub_wchar_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_wchar_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_char8_t_ {}
+impl Callable0<()> for TestFetchSub_char8_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_char8_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_char16_t_ {}
+impl Callable0<()> for TestFetchSub_char16_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_char16_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_char32_t_ {}
+impl Callable0<()> for TestFetchSub_char32_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_char32_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_int_ptr_ {}
+impl Callable0<()> for TestFetchSub_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFetchSub_const_int_ptr_ {}
+impl Callable0<()> for TestFetchSub_const_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFetchSub_const_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

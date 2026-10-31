@@ -305,6 +305,11 @@ impl PathPointLess {
             < ((unsafe { PathPoint::getType(&(*__rhs)) }) as i32));
     }
 }
+impl Callable2<*const PathPoint, *const PathPoint, bool> for PathPointLess {
+    fn call(&self, a1: *const PathPoint, a2: *const PathPoint) -> bool {
+        unsafe { PathPointLess::operator_call(self, a1, a2) }
+    }
+}
 pub unsafe fn test01_9() {
     let mut s: () = unimplemented!();
     let mut coord1: Vec<f64> = Vec::from([0_f64, 1_f64, 2_f64]);

@@ -504,6 +504,17 @@ impl UnsafeCppAdvance for cpp17_output_iterator_int_ptr_ {
         self.operator_inc_5();
     }
 }
+impl UnsafeCppIterator<i32> for cpp17_output_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { cpp17_output_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            cpp17_output_iterator_int_ptr_::operator_inc_5(self);
+        }
+        self
+    }
+}
 const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
@@ -556,6 +567,17 @@ impl UnsafeCppAdvance for cpp17_input_iterator_int_ptr__int_ptr_ {
         self.operator_inc_5();
     }
 }
+impl UnsafeCppIterator<i32> for cpp17_input_iterator_int_ptr__int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { cpp17_input_iterator_int_ptr__int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            cpp17_input_iterator_int_ptr__int_ptr_::operator_inc_5(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_11(
     x: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
     y: *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
@@ -604,11 +626,36 @@ impl cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
         return &mut (*(self as *mut cpp17_input_iterator_const_int_ptr__const_int_ptr_));
     }
 }
+impl std::cmp::PartialEq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_11(
+                self as *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+                other as *const cpp17_input_iterator_const_int_ptr__const_int_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 impl UnsafeCppAdvance for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_5();
     }
 }
+impl UnsafeCppIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe {
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::operator_deref(self) as *mut i32
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            cpp17_input_iterator_const_int_ptr__const_int_ptr_::operator_inc_5(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for cpp17_input_iterator_const_int_ptr__const_int_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 pub unsafe fn base_12(i: *const forward_iterator_int_ptr_) -> *mut i32 {
     return (*i).it_;
@@ -658,6 +705,17 @@ impl UnsafeCppAdvance for forward_iterator_int_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<i32> for forward_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { forward_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_13(
     x: *const forward_iterator_const_int_ptr_,
     y: *const forward_iterator_const_int_ptr_,
@@ -704,11 +762,34 @@ impl forward_iterator_const_int_ptr_ {
         return &mut (*(self as *mut forward_iterator_const_int_ptr_));
     }
 }
+impl std::cmp::PartialEq for forward_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_13(
+                self as *const forward_iterator_const_int_ptr_,
+                other as *const forward_iterator_const_int_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for forward_iterator_const_int_ptr_ {}
 impl UnsafeCppAdvance for forward_iterator_const_int_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<i32> for forward_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { forward_iterator_const_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            forward_iterator_const_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for forward_iterator_const_int_ptr_ {}
 pub unsafe fn base_14(i: *const bidirectional_iterator_int_ptr_) -> *mut i32 {
     return (*i).it_;
 }
@@ -757,6 +838,17 @@ impl UnsafeCppAdvance for bidirectional_iterator_int_ptr_ {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<i32> for bidirectional_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { bidirectional_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_15(
     x: *const bidirectional_iterator_const_int_ptr_,
     y: *const bidirectional_iterator_const_int_ptr_,
@@ -803,11 +895,34 @@ impl bidirectional_iterator_const_int_ptr_ {
         return &mut (*(self as *mut bidirectional_iterator_const_int_ptr_));
     }
 }
+impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_15(
+                self as *const bidirectional_iterator_const_int_ptr_,
+                other as *const bidirectional_iterator_const_int_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for bidirectional_iterator_const_int_ptr_ {}
 impl UnsafeCppAdvance for bidirectional_iterator_const_int_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_6();
     }
 }
+impl UnsafeCppIterator<i32> for bidirectional_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { bidirectional_iterator_const_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            bidirectional_iterator_const_int_ptr_::operator_inc_6(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for bidirectional_iterator_const_int_ptr_ {}
 pub unsafe fn base_16(i: *const random_access_iterator_int_ptr_) -> *mut i32 {
     return (*i).it_;
 }
@@ -856,6 +971,17 @@ impl UnsafeCppAdvance for random_access_iterator_int_ptr_ {
         self.operator_inc_7();
     }
 }
+impl UnsafeCppIterator<i32> for random_access_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { random_access_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_int_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_17(
     x: *const random_access_iterator_const_int_ptr_,
     y: *const random_access_iterator_const_int_ptr_,
@@ -902,11 +1028,34 @@ impl random_access_iterator_const_int_ptr_ {
         return &mut (*(self as *mut random_access_iterator_const_int_ptr_));
     }
 }
+impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_17(
+                self as *const random_access_iterator_const_int_ptr_,
+                other as *const random_access_iterator_const_int_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for random_access_iterator_const_int_ptr_ {}
 impl UnsafeCppAdvance for random_access_iterator_const_int_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_7();
     }
 }
+impl UnsafeCppIterator<i32> for random_access_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { random_access_iterator_const_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            random_access_iterator_const_int_ptr_::operator_inc_7(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for random_access_iterator_const_int_ptr_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -991,6 +1140,17 @@ impl UnsafeCppAdvance for contiguous_iterator_int_ptr_ {
         self.operator_inc_9();
     }
 }
+impl UnsafeCppIterator<i32> for contiguous_iterator_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { contiguous_iterator_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            contiguous_iterator_int_ptr_::operator_inc_9(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_ne_19(
     x: *const contiguous_iterator_const_int_ptr_,
     y: *const contiguous_iterator_const_int_ptr_,
@@ -1037,11 +1197,34 @@ impl contiguous_iterator_const_int_ptr_ {
         return &mut (*(self as *mut contiguous_iterator_const_int_ptr_));
     }
 }
+impl std::cmp::PartialEq for contiguous_iterator_const_int_ptr_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            !(operator_ne_19(
+                self as *const contiguous_iterator_const_int_ptr_,
+                other as *const contiguous_iterator_const_int_ptr_,
+            ))
+        }
+    }
+}
+impl std::cmp::Eq for contiguous_iterator_const_int_ptr_ {}
 impl UnsafeCppAdvance for contiguous_iterator_const_int_ptr_ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_9();
     }
 }
+impl UnsafeCppIterator<i32> for contiguous_iterator_const_int_ptr_ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { contiguous_iterator_const_int_ptr_::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            contiguous_iterator_const_int_ptr_::operator_inc_9(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for contiguous_iterator_const_int_ptr_ {}
 pub unsafe fn base_20(mut i: *mut i32) -> *mut i32 {
     return i;
 }
@@ -1300,6 +1483,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -1371,6 +1585,11 @@ pub struct Pred {}
 impl Pred {
     pub unsafe fn operator_call(&mut self, mut i: i32) -> bool {
         return (((i) % (3)) == (0));
+    }
+}
+impl Callable1<i32, bool> for Pred {
+    fn call(&self, a1: i32) -> bool {
+        unsafe { Pred::operator_call(&mut *(&raw const *self).cast_mut(), a1) }
     }
 }
 #[repr(C)]
@@ -2726,6 +2945,15 @@ impl TestOutIters_const_int_ptr_ {
         'loop_: while ((i) < (((N).wrapping_div(3_u32) as u32).wrapping_add(1_u32))) {
             assert!((((ib[(i) as usize]) % (3)) == (0)));
             i.prefix_inc();
+        }
+    }
+}
+impl Callable0<()> for TestOutIters_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe {
+            TestOutIters_const_int_ptr_::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
         }
     }
 }
@@ -4085,6 +4313,15 @@ impl TestOutIters_contiguous_iterator_const_int_ptr__ {
         }
     }
 }
+impl Callable0<()> for TestOutIters_contiguous_iterator_const_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestOutIters_contiguous_iterator_const_int_ptr__::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOutIters_random_access_iterator_const_int_ptr__ {}
@@ -5438,6 +5675,15 @@ impl TestOutIters_random_access_iterator_const_int_ptr__ {
         'loop_: while ((i) < (((N).wrapping_div(3_u32) as u32).wrapping_add(1_u32))) {
             assert!((((ib[(i) as usize]) % (3)) == (0)));
             i.prefix_inc();
+        }
+    }
+}
+impl Callable0<()> for TestOutIters_random_access_iterator_const_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestOutIters_random_access_iterator_const_int_ptr__::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
         }
     }
 }
@@ -6797,6 +7043,15 @@ impl TestOutIters_bidirectional_iterator_const_int_ptr__ {
         }
     }
 }
+impl Callable0<()> for TestOutIters_bidirectional_iterator_const_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestOutIters_bidirectional_iterator_const_int_ptr__::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestOutIters_forward_iterator_const_int_ptr__ {}
@@ -8150,6 +8405,15 @@ impl TestOutIters_forward_iterator_const_int_ptr__ {
         'loop_: while ((i) < (((N).wrapping_div(3_u32) as u32).wrapping_add(1_u32))) {
             assert!((((ib[(i) as usize]) % (3)) == (0)));
             i.prefix_inc();
+        }
+    }
+}
+impl Callable0<()> for TestOutIters_forward_iterator_const_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestOutIters_forward_iterator_const_int_ptr__::operator_call_1_int_ptr(
+                &mut *(&raw const *self).cast_mut(),
+            )
         }
     }
 }
@@ -9509,6 +9773,13 @@ impl TestOutIters_cpp17_input_iterator_const_int_ptr__const_int_ptr__ {
         }
     }
 }
+impl Callable0<()> for TestOutIters_cpp17_input_iterator_const_int_ptr__const_int_ptr__ {
+    fn call(&self) -> () {
+        unsafe {
+            TestOutIters_cpp17_input_iterator_const_int_ptr__const_int_ptr__::operator_call_1_int_ptr(&mut *(&raw const *self).cast_mut())
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestInIters {}
@@ -9542,6 +9813,11 @@ impl TestInIters {
         (unsafe {
             for_each_8 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr___cpp17_output_iterator_int_ptr__ >::default() , <TestOutIters_cpp17_input_iterator_const_int_ptr__const_int_ptr__ >::default() , )
         });
+    }
+}
+impl Callable0<()> for TestInIters {
+    fn call(&self) -> () {
+        unsafe { TestInIters::operator_call_1_const_int_ptr(&mut *(&raw const *self).cast_mut()) }
     }
 }
 pub unsafe fn test_28() -> bool {

@@ -598,6 +598,13 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct __gnu_test_counter_type_hasher {}
+impl Callable1<Ptr<__gnu_test_counter_type>, usize> for __gnu_test_counter_type_hasher {
+    fn call(&self, a1: Ptr<__gnu_test_counter_type>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            __gnu_test_counter_type_hasherImpl::operator_call(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Mapped {}

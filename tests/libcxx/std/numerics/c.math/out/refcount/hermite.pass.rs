@@ -147,6 +147,13 @@ impl CompareFloatingValues_float_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
+impl Callable2<f32, f32, bool> for CompareFloatingValues_float_ {
+    fn call(&self, a1: f32, a2: f32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompareFloatingValues_float_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 impl Default for CompareFloatingValues_float_ {
     fn default() -> Self {
         { CompareFloatingValues_float_::new() }
@@ -184,6 +191,13 @@ impl CompareFloatingValues_double_ {
         );
         field!(this, rel_tol).write(this.with(|__s| __s.abs_tol));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl Callable2<f64, f64, bool> for CompareFloatingValues_double_ {
+    fn call(&self, a1: f64, a2: f64) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompareFloatingValues_double_Impl::operator_call(__it, a1, a2)
+        })
     }
 }
 impl Default for CompareFloatingValues_double_ {
@@ -225,6 +239,13 @@ impl CompareFloatingValues_long_double_ {
         );
         field!(this, rel_tol).write(this.with(|__s| __s.abs_tol));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl Callable2<f64, f64, bool> for CompareFloatingValues_long_double_ {
+    fn call(&self, a1: f64, a2: f64) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompareFloatingValues_long_double_Impl::operator_call(__it, a1, a2)
+        })
     }
 }
 impl Default for CompareFloatingValues_long_double_ {
@@ -1538,9 +1559,23 @@ pub fn test_15() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestFloat {}
+impl Callable0<()> for TestFloat {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestFloatImpl::operator_call_1_float(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestInt {}
+impl Callable0<()> for TestInt {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIntImpl::operator_call_1_short(__it)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

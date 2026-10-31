@@ -161,6 +161,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyHash_4 {}
+impl Callable1<usize, usize> for MyHash_4 {
+    fn call(&self, a1: usize) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            MyHash_4Impl::operator_call(__it, a1)
+        })
+    }
+}
 pub trait MyHash_4Impl {
     fn operator_call(&self, v: usize) -> usize;
 }

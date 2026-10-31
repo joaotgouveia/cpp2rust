@@ -333,8 +333,8 @@ pub unsafe fn test04_10() {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
-#[cpp_into(*mut i32 , to_pmuti32)]
-#[cpp_into(() , to_)]
+#[cpp_into(*mut i32 , to_pmuti32, mut_ptr)]
+#[cpp_into(() , to_, mut_ptr)]
 pub struct S_11 {
     pub c: i32,
 }

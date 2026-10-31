@@ -321,12 +321,27 @@ pub fn test_move_assignment_same_index_10() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_11 {}
+impl Callable0<Result_int_> for anon_11 {
+    fn call(&self) -> Result_int_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_11Impl::operator_call(__it))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_12 {}
+impl Callable0<Result_long_> for anon_12 {
+    fn call(&self) -> Result_long_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_12Impl::operator_call(__it))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_13 {}
+impl Callable0<Result_int_> for anon_13 {
+    fn call(&self) -> Result_int_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_13Impl::operator_call(__it))
+    }
+}
 pub fn test_move_assignment_different_index_14() {
     {
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -364,9 +379,19 @@ pub fn test_move_assignment_different_index_14() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_15 {}
+impl Callable0<Result_long_> for anon_15 {
+    fn call(&self) -> Result_long_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_15Impl::operator_call(__it))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_16 {}
+impl Callable0<Result_long_> for anon_16 {
+    fn call(&self) -> Result_long_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_16Impl::operator_call(__it))
+    }
+}
 pub fn test_assignment_throw_17() {}
 pub fn test_constexpr_assign_imp_18(v: Ptr<()>, new_value: Ptr<i64>) {
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));

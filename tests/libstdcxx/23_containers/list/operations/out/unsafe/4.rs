@@ -271,6 +271,11 @@ impl CompLastLt {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut itsCount_9)) = 0;
     }
 }
+impl Callable2<i32, i32, bool> for CompLastLt {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { CompLastLt::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
+    }
+}
 pub static mut itsCount_9: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0_i32 });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -285,6 +290,11 @@ impl CompLastEq {
     }
     pub unsafe fn reset() {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut itsCount_10)) = 0;
+    }
+}
+impl Callable2<i32, i32, bool> for CompLastEq {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { CompLastEq::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
     }
 }
 pub static mut itsCount_10: std::cell::LazyCell<i32> =

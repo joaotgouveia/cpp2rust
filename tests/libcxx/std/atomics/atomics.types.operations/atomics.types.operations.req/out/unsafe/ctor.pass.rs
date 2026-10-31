@@ -438,6 +438,11 @@ impl TestEachIntegralType_TestFunc_ {
         (unsafe { TestFunc_unsigned_long_::operator_call(&<TestFunc_unsigned_long_>::default()) });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestFunc_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestFunc_::operator_call(self) }
+    }
+}
 pub unsafe fn operator_eq_14(x: *const UserType, y: *const UserType) -> bool {
     return (((*x).i) == ((*y).i));
 }
@@ -493,6 +498,11 @@ impl TestFunc_UserType_ {
         }
     }
 }
+impl Callable0<()> for TestFunc_UserType_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_UserType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFunc_char_ {}
@@ -507,6 +517,11 @@ impl TestFunc_char_ {
             let a: () = unimplemented!();
             assert!(((unimplemented!() as i32) == (t as i32)));
         }
+    }
+}
+impl Callable0<()> for TestFunc_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -525,6 +540,11 @@ impl TestFunc_signed_char_ {
         }
     }
 }
+impl Callable0<()> for TestFunc_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_signed_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFunc_unsigned_char_ {}
@@ -539,6 +559,11 @@ impl TestFunc_unsigned_char_ {
             let a: () = unimplemented!();
             assert!(((unimplemented!() as i32) == (t as i32)));
         }
+    }
+}
+impl Callable0<()> for TestFunc_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_unsigned_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -557,6 +582,11 @@ impl TestFunc_short_ {
         }
     }
 }
+impl Callable0<()> for TestFunc_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFunc_unsigned_short_ {}
@@ -571,6 +601,11 @@ impl TestFunc_unsigned_short_ {
             let a: () = unimplemented!();
             assert!(((unimplemented!() as i32) == (t as i32)));
         }
+    }
+}
+impl Callable0<()> for TestFunc_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_unsigned_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -589,6 +624,11 @@ impl TestFunc_int_ {
         }
     }
 }
+impl Callable0<()> for TestFunc_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFunc_unsigned_int_ {}
@@ -603,6 +643,11 @@ impl TestFunc_unsigned_int_ {
             let a: () = unimplemented!();
             assert!(((unimplemented!()) == (t)));
         }
+    }
+}
+impl Callable0<()> for TestFunc_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_unsigned_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -621,6 +666,11 @@ impl TestFunc_long_ {
         }
     }
 }
+impl Callable0<()> for TestFunc_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFunc_unsigned_long_ {}
@@ -635,6 +685,11 @@ impl TestFunc_unsigned_long_ {
             let a: () = unimplemented!();
             assert!(((unimplemented!()) == (t)));
         }
+    }
+}
+impl Callable0<()> for TestFunc_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_unsigned_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -653,6 +708,11 @@ impl TestFunc_long_long_ {
         }
     }
 }
+impl Callable0<()> for TestFunc_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFunc_unsigned_long_long_ {}
@@ -667,6 +727,11 @@ impl TestFunc_unsigned_long_long_ {
             let a: () = unimplemented!();
             assert!(((unimplemented!()) == (t)));
         }
+    }
+}
+impl Callable0<()> for TestFunc_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_unsigned_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -685,6 +750,11 @@ impl TestFunc_wchar_t_ {
         }
     }
 }
+impl Callable0<()> for TestFunc_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_wchar_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFunc_char8_t_ {}
@@ -699,6 +769,11 @@ impl TestFunc_char8_t_ {
             let a: () = unimplemented!();
             assert!(((unimplemented!() as i32) == (t as i32)));
         }
+    }
+}
+impl Callable0<()> for TestFunc_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_char8_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -717,6 +792,11 @@ impl TestFunc_char16_t_ {
         }
     }
 }
+impl Callable0<()> for TestFunc_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFunc_char32_t_ {}
@@ -731,6 +811,11 @@ impl TestFunc_char32_t_ {
             let a: () = unimplemented!();
             assert!(((unimplemented!() as u32) == (t)));
         }
+    }
+}
+impl Callable0<()> for TestFunc_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFunc_char32_t_::operator_call(self) }
     }
 }
 pub fn main() {

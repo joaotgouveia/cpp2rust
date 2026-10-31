@@ -219,9 +219,23 @@ impl num {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct num_hash {}
+impl Callable1<Ptr<num>, usize> for num_hash {
+    fn call(&self, a1: Ptr<num>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            num_hashImpl::operator_call(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct num_equal {}
+impl Callable2<Ptr<num>, Ptr<num>, bool> for num_equal {
+    fn call(&self, a1: Ptr<num>, a2: Ptr<num>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            num_equalImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 thread_local!(
     pub static _S_called_on_moved_instance_9: Value<bool> = Rc::new(RefCell::new(false));
 );

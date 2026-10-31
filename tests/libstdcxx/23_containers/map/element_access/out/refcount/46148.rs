@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom)]
-#[cpp_into(i32, to_i32)]
+#[cpp_into(i32, to_i32, mut_ptr)]
 #[byte_size(1)]
 pub struct moveable {}
 impl moveable {

@@ -119,12 +119,22 @@ impl ApplyAllTest {
         (unsafe { ApplyAllTest::check_num_2_2(self, <NumT_2_>::default()) });
     }
 }
+impl Callable0<()> for ApplyAllTest {
+    fn call(&self) -> () {
+        unsafe { ApplyAllTest::operator_call_4_class_NumT_0_(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Identity {}
 impl Identity {
     pub unsafe fn operator_call(&self, mut b: bool) -> bool {
         return b;
+    }
+}
+impl Callable1<bool, bool> for Identity {
+    fn call(&self, a1: bool) -> bool {
+        unsafe { Identity::operator_call(self, a1) }
     }
 }
 pub unsafe fn test_for_each_2() {

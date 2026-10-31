@@ -388,9 +388,23 @@ impl Default for LargeUserAtomicType {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachIntegralType_TestOperatorMinusEquals_ {}
+impl Callable0<()> for TestEachIntegralType_TestOperatorMinusEquals_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachIntegralType_TestOperatorMinusEquals_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachPointerType_TestOperatorMinusEquals_ {}
+impl Callable0<()> for TestEachPointerType_TestOperatorMinusEquals_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachPointerType_TestOperatorMinusEquals_Impl::operator_call(__it)
+        })
+    }
+}
 pub fn test_seq_cst_14(store_op: FnPtr<fn(Ptr<()>, i8, i8)>, load_op: FnPtr<fn(Ptr<()>) -> i8>) {
     let store_op: Value<FnPtr<fn(Ptr<()>, i8, i8)>> = Rc::new(RefCell::new(store_op));
     let load_op: Value<FnPtr<fn(Ptr<()>) -> i8>> = Rc::new(RefCell::new(load_op));
@@ -514,69 +528,223 @@ pub fn test_seq_cst_32(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveOperatorMinusEquals_bool_ {}
+impl Callable0<()> for TestDoesNotHaveOperatorMinusEquals_bool_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveOperatorMinusEquals_bool_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveOperatorMinusEquals_UserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveOperatorMinusEquals_UserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveOperatorMinusEquals_UserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveOperatorMinusEquals_LargeUserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveOperatorMinusEquals_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveOperatorMinusEquals_LargeUserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_float_ {}
+impl Callable0<()> for TestOperatorMinusEquals_float_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_float_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_double_ {}
+impl Callable0<()> for TestOperatorMinusEquals_double_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_double_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_char_ {}
+impl Callable0<()> for TestOperatorMinusEquals_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_signed_char_ {}
+impl Callable0<()> for TestOperatorMinusEquals_signed_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_signed_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_char_ {}
+impl Callable0<()> for TestOperatorMinusEquals_unsigned_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_unsigned_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_short_ {}
+impl Callable0<()> for TestOperatorMinusEquals_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_short_ {}
+impl Callable0<()> for TestOperatorMinusEquals_unsigned_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_unsigned_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_int_ {}
+impl Callable0<()> for TestOperatorMinusEquals_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_int_ {}
+impl Callable0<()> for TestOperatorMinusEquals_unsigned_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_unsigned_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_long_ {}
+impl Callable0<()> for TestOperatorMinusEquals_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_long_ {}
+impl Callable0<()> for TestOperatorMinusEquals_unsigned_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_unsigned_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_long_long_ {}
+impl Callable0<()> for TestOperatorMinusEquals_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_unsigned_long_long_ {}
+impl Callable0<()> for TestOperatorMinusEquals_unsigned_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_unsigned_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_wchar_t_ {}
+impl Callable0<()> for TestOperatorMinusEquals_wchar_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_wchar_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_char8_t_ {}
+impl Callable0<()> for TestOperatorMinusEquals_char8_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_char8_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_char16_t_ {}
+impl Callable0<()> for TestOperatorMinusEquals_char16_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_char16_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_char32_t_ {}
+impl Callable0<()> for TestOperatorMinusEquals_char32_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_char32_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_int_ptr_ {}
+impl Callable0<()> for TestOperatorMinusEquals_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestOperatorMinusEquals_const_int_ptr_ {}
+impl Callable0<()> for TestOperatorMinusEquals_const_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestOperatorMinusEquals_const_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

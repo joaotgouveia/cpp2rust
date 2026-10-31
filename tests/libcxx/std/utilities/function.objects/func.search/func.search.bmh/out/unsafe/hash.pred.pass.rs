@@ -548,6 +548,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -621,12 +652,22 @@ impl MyHash_int_ {
         return (t as usize);
     }
 }
+impl Callable1<i32, usize> for MyHash_int_ {
+    fn call(&self, a1: i32) -> usize {
+        unsafe { MyHash_int_::operator_call(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MyHash_char_ {}
 impl MyHash_char_ {
     pub unsafe fn operator_call(&self, mut t: libc::c_char) -> usize {
         return (t as usize);
+    }
+}
+impl Callable1<libc::c_char, usize> for MyHash_char_ {
+    fn call(&self, a1: libc::c_char) -> usize {
+        unsafe { MyHash_char_::operator_call(self, a1) }
     }
 }
 #[repr(C)]
@@ -644,6 +685,16 @@ impl count_equal {
     ) -> bool {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_13)).prefix_inc();
         return (((*x) as i32) == ((*y) as i32));
+    }
+}
+impl Callable2<*const i32, *const i32, bool> for count_equal {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { count_equal::operator_call_1_int(self, a1, a2) }
+    }
+}
+impl Callable2<*const libc::c_char, *const libc::c_char, bool> for count_equal {
+    fn call(&self, a1: *const libc::c_char, a2: *const libc::c_char) -> bool {
+        unsafe { count_equal::operator_call_1_char(self, a1, a2) }
     }
 }
 pub static mut count_13: std::cell::LazyCell<u32> = std::cell::LazyCell::new(|| unsafe { 0_u32 });

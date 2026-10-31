@@ -383,6 +383,37 @@ impl UnsafeCppAdvance for Iter {
         self.operator_dec_5();
     }
 }
+impl UnsafeCppIterator<i32> for Iter {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { Iter::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            Iter::operator_inc_4(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for Iter {}
+impl UnsafeCppBidirectionalIterator<i32> for Iter {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            Iter::operator_dec_5(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for Iter {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            Iter::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (operator_sub_17(self.clone(), from.clone())) as isize }
+    }
+}
 impl Default for Iter {
     fn default() -> Self {
         unsafe { Iter { index: 0_i32 } }

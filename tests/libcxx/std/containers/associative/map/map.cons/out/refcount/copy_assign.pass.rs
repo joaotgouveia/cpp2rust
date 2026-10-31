@@ -28,6 +28,13 @@ impl CppEq for test_less_int_ {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl Callable2<Ptr<i32>, Ptr<i32>, bool> for test_less_int_ {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_less_int_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 impl Default for test_less_int_ {
     fn default() -> Self {
         { test_less_int_::new_1() }
@@ -313,6 +320,11 @@ impl tracking_allocator_std_pair_const_int__int__ {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct NoOp {}
+impl Callable0<()> for NoOp {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| NoOpImpl::operator_call(__it))
+    }
+}
 pub fn test_alloc_11(
     lhs_alloc: Option<Ptr<()>>,
     rhs_alloc: Option<Ptr<()>>,
@@ -1413,6 +1425,13 @@ impl AssertEmpty_14 {
             lhs_allocs_: (lhs_allocs).clone(),
             rhs_allocs_: (rhs_allocs).clone(),
         }
+    }
+}
+impl Callable0<()> for AssertEmpty_14 {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            AssertEmpty_14Impl::operator_call(__it)
+        })
     }
 }
 pub fn main() {

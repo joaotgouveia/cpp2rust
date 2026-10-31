@@ -239,6 +239,13 @@ pub fn test02_11() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct compare_12 {}
+impl Callable2<Ptr<i32>, Ptr<i32>, bool> for compare_12 {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            compare_12Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 thread_local!(
     static nn_13: Value<i32> = Rc::new(RefCell::new(9));
 );

@@ -101,6 +101,11 @@ impl PredLWG526 {
         return ((i) == (self.i_));
     }
 }
+impl Callable2<*const PredLWG526, *const PredLWG526, bool> for PredLWG526 {
+    fn call(&self, a1: *const PredLWG526, a2: *const PredLWG526) -> bool {
+        unsafe { PredLWG526::operator_call(self, a1, a2) }
+    }
+}
 pub unsafe fn g_8(mut x: i32, mut y: i32) -> bool {
     return ((x) == (y));
 }

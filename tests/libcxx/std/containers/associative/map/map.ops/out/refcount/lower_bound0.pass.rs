@@ -9,9 +9,23 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less {}
+impl Callable2<Ptr<i32>, Ptr<C2Int>, bool> for transparent_less {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<C2Int>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            transparent_lessImpl::operator_call_1_const_int_ref_const_struct_C2Int_ref(__it, a1, a2)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_not_referenceable {}
+impl Callable2<Ptr<i32>, Ptr<C2Int>, bool> for transparent_less_not_referenceable {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<C2Int>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            transparent_less_not_referenceableImpl::operator_call_1_const_int_ref_const_struct_C2Int_ref(__it, a1, a2)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct transparent_less_nonempty_is_transparent {}
@@ -21,6 +35,15 @@ pub struct transparent_less_nonempty {
     #[offset(0)]
     #[byte_size(1)]
     pub pad_: transparent_less_nonempty_is_transparent,
+}
+impl Callable2<Ptr<i32>, Ptr<C2Int>, bool> for transparent_less_nonempty {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<C2Int>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            transparent_less_nonemptyImpl::operator_call_1_const_int_ref_const_struct_C2Int_ref(
+                __it, a1, a2,
+            )
+        })
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]

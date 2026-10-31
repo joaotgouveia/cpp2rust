@@ -222,6 +222,11 @@ pub fn test01_9() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct F_10 {}
+impl Callable0<()> for F_10 {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| F_10Impl::operator_call(__it))
+    }
+}
 pub fn test02_11() {
     let mut f: F_13 = <F_13>::default();
     let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -291,6 +296,11 @@ pub struct quals_12 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct F_13 {}
+impl Callable0<quals_12> for F_13 {
+    fn call(&self) -> quals_12 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| F_13Impl::operator_call_1(__it))
+    }
+}
 pub fn test03_14() {
     let i: Value<i32> = Rc::new(RefCell::new(5));
     let vp: Value<AnyPtr> = Rc::new(RefCell::new(AnyPtr::default()));
@@ -366,6 +376,20 @@ pub fn test03_14() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct F_15 {}
+impl Callable2<AnyPtr, Ptr<i32>, Ptr<i32>> for F_15 {
+    fn call(&self, a1: AnyPtr, a2: Ptr<i32>) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            F_15Impl::operator_call_1(__it, a1, a2)
+        })
+    }
+}
+impl Callable2<AnyPtr, i32, AnyPtr> for F_15 {
+    fn call(&self, a1: AnyPtr, a2: i32) -> AnyPtr {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            F_15Impl::operator_call_2(__it, a1, a2)
+        })
+    }
+}
 pub fn f_16(mut i: i32, mut j: i32, mut k: i32) -> i32 {
     return (i + (2 * (j + k)));
 }

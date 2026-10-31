@@ -388,12 +388,33 @@ impl Default for LargeUserAtomicType {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachIntegralType_TestIncrementDecrement_ {}
+impl Callable0<()> for TestEachIntegralType_TestIncrementDecrement_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachIntegralType_TestIncrementDecrement_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_ {}
+impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachFloatingPointType_TestDoesNotHaveIncrementDecrement_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachPointerType_TestIncrementDecrement_ {}
+impl Callable0<()> for TestEachPointerType_TestIncrementDecrement_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachPointerType_TestIncrementDecrement_Impl::operator_call(__it)
+        })
+    }
+}
 pub fn does_not_have_increment_nor_decrement_operators_14() -> bool {
     return (((!(false)) && (!(false))) && (!(false))) && (!(false));
 }
@@ -415,72 +436,233 @@ pub fn does_not_have_increment_nor_decrement_operators_19() -> bool {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_bool_ {}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_bool_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveIncrementDecrement_bool_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_UserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_UserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveIncrementDecrement_UserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_LargeUserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveIncrementDecrement_LargeUserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_float_ {}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_float_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveIncrementDecrement_float_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_double_ {}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_double_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveIncrementDecrement_double_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveIncrementDecrement_long_double_ {}
+impl Callable0<()> for TestDoesNotHaveIncrementDecrement_long_double_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveIncrementDecrement_long_double_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_char_ {}
+impl Callable0<()> for TestIncrementDecrement_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_signed_char_ {}
+impl Callable0<()> for TestIncrementDecrement_signed_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_signed_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_unsigned_char_ {}
+impl Callable0<()> for TestIncrementDecrement_unsigned_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_unsigned_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_short_ {}
+impl Callable0<()> for TestIncrementDecrement_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_unsigned_short_ {}
+impl Callable0<()> for TestIncrementDecrement_unsigned_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_unsigned_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_int_ {}
+impl Callable0<()> for TestIncrementDecrement_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_unsigned_int_ {}
+impl Callable0<()> for TestIncrementDecrement_unsigned_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_unsigned_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_long_ {}
+impl Callable0<()> for TestIncrementDecrement_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_unsigned_long_ {}
+impl Callable0<()> for TestIncrementDecrement_unsigned_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_unsigned_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_long_long_ {}
+impl Callable0<()> for TestIncrementDecrement_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_unsigned_long_long_ {}
+impl Callable0<()> for TestIncrementDecrement_unsigned_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_unsigned_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_wchar_t_ {}
+impl Callable0<()> for TestIncrementDecrement_wchar_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_wchar_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_char8_t_ {}
+impl Callable0<()> for TestIncrementDecrement_char8_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_char8_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_char16_t_ {}
+impl Callable0<()> for TestIncrementDecrement_char16_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_char16_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_char32_t_ {}
+impl Callable0<()> for TestIncrementDecrement_char32_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_char32_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_int_ptr_ {}
+impl Callable0<()> for TestIncrementDecrement_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestIncrementDecrement_const_int_ptr_ {}
+impl Callable0<()> for TestIncrementDecrement_const_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestIncrementDecrement_const_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

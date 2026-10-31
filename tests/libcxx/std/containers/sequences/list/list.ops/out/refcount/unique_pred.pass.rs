@@ -74,6 +74,13 @@ impl PredLWG526 {
         Self { i_: i }
     }
 }
+impl Callable2<Ptr<PredLWG526>, Ptr<PredLWG526>, bool> for PredLWG526 {
+    fn call(&self, a1: Ptr<PredLWG526>, a2: Ptr<PredLWG526>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            PredLWG526Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test_6() -> bool {
     {
         let a1: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([2, 1, 1, 4, 4, 4, 4, 3, 3])));

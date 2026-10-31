@@ -368,8 +368,8 @@ pub unsafe fn test04_10() {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe)]
-#[cpp_into(*mut libc::c_char , to_pmutlibcc_char)]
-#[cpp_into(() , to_)]
+#[cpp_into(*mut libc::c_char , to_pmutlibcc_char, mut_ptr)]
+#[cpp_into(() , to_, mut_ptr)]
 pub struct S_11 {
     pub c: libc::c_char,
 }

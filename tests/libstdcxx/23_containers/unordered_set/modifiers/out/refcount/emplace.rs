@@ -229,9 +229,23 @@ impl PathPoint {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PathPointHasher {}
+impl Callable1<Ptr<PathPoint>, usize> for PathPointHasher {
+    fn call(&self, a1: Ptr<PathPoint>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            PathPointHasherImpl::operator_call(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PathPointEqual {}
+impl Callable2<Ptr<PathPoint>, Ptr<PathPoint>, bool> for PathPointEqual {
+    fn call(&self, a1: Ptr<PathPoint>, a2: Ptr<PathPoint>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            PathPointEqualImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test01_9() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let coord1: Value<Vec<f64>> = Rc::new(RefCell::new(Vec::from([0_f64, 1_f64, 2_f64])));

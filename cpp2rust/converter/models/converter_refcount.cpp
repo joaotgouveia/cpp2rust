@@ -642,25 +642,39 @@ ConverterRefCount::GetComparisonReceiver(const clang::CXXMethodDecl *,
 // Records implement the comparisons of the standard library (CppLess and
 // CppEq) with their comparison operators, which get pointers to the values.
 // They don't implement Ord and PartialEq, which get references to the values,
-// as passing those to the operators would require copying the values.
+// as passing those to the operators would require copying the values, except
+// for iterators, which the generic algorithms compare as values.
 void ConverterRefCount::ConvertOrdAndPartialOrdTraits(
-    const clang::CXXRecordDecl *decl, const clang::FunctionDecl *eq,
-    const clang::FunctionDecl *lt, const clang::FunctionDecl *cmp) {
+    const clang::CXXRecordDecl *decl, const ComparisonOperators &ops) {
   auto record_name = GetRecordName(decl);
+  if (IsIteratorRecord(decl)) {
+    auto on_copies = [](std::string body) {
+      if (body.empty()) {
+        return body;
+      }
+      return std::format(
+          "libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {})",
+          body);
+    };
+    ConvertOrdAndPartialOrdTraitsBase(
+        on_copies(GetCmpBody(decl, ops, "__lhs", "__rhs")),
+        on_copies(GetEqBody(decl, ops, "__lhs", "__rhs")), record_name);
+    return;
+  }
   auto emit = [&](std::string_view trait, std::string_view fn,
                   std::string_view body) {
     StrCat(std::format("impl {} for {} {{ fn {}(__lhs: &Ptr<Self>, "
                        "__rhs: &Ptr<Self>) -> bool {{ {} }} }}",
                        trait, record_name, fn, body));
   };
-  if (lt) {
-    emit("CppLess", "less", GetComparisonBool(lt, decl, "__lhs", "__rhs"));
-  } else if (cmp) {
+  if (ops.lt) {
+    emit("CppLess", "less", GetComparisonBool(ops.lt, decl, "__lhs", "__rhs"));
+  } else if (ops.cmp) {
     emit("CppLess", "less",
          std::format("{} == std::cmp::Ordering::Less",
-                     GetComparisonCall(cmp, decl, "__lhs", "__rhs")));
+                     GetComparisonCall(ops.cmp, decl, "__lhs", "__rhs")));
   }
-  emit("CppEq", "equal", GetEqBody(decl, eq, lt, cmp, "__lhs", "__rhs"));
+  emit("CppEq", "equal", GetEqBody(decl, ops, "__lhs", "__rhs"));
 }
 
 void ConverterRefCount::ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
@@ -674,6 +688,67 @@ void ConverterRefCount::ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
                        GetMethodName(dec)));
   }
   StrCat("}");
+}
+
+// The operators get a pointer to the iterator, which the iterator is moved
+// into, or copied into when the operator doesn't change it.
+void ConverterRefCount::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
+                                              const IteratorOperators &ops) {
+  auto name = GetRecordName(decl);
+  auto value = GetUnboxedTypeAsString(
+      ops.deref->getReturnType().getNonReferenceType().getUnqualifiedType());
+  auto call = [&](const clang::CXXMethodDecl *method,
+                  std::string_view args = "") {
+    return std::format("{}::{}(__it{})", GetUFCSName(method),
+                       GetMethodName(method), args);
+  };
+  StrCat(std::format("impl CppIterator<{}> for {} {{", value, name));
+  StrCat(std::format("fn iter_deref(&self) -> Ptr<{}> {{ "
+                     "libcc2rs::with_record_ptr(&mut self.clone(), |__it| "
+                     "{}) }}",
+                     value, call(ops.deref)));
+  StrCat(std::format("fn iter_inc(&mut self) -> &mut Self {{ "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
+                     "self }}",
+                     call(ops.inc)));
+  StrCat("}");
+  if (!ops.equality) {
+    return;
+  }
+  StrCat(std::format("impl CppInputIterator<{}> for {} {{}}", value, name));
+  if (!ops.dec) {
+    return;
+  }
+  StrCat(std::format("impl CppBidirectionalIterator<{}> for {} {{", value,
+                     name));
+  StrCat(std::format("fn iter_dec(&mut self) -> &mut Self {{ "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
+                     "self }}",
+                     call(ops.dec)));
+  StrCat("}");
+  if (!ops.ordering || !ops.add_assign || !ops.distance) {
+    return;
+  }
+  StrCat(std::format("impl CppRandomAccessIterator<{}> for {} {{", value,
+                     name));
+  StrCat(std::format("fn iter_add_assign(&mut self, n: isize) -> Self {{ "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
+                     "self.clone() }}",
+                     call(ops.add_assign, ", n as _")));
+  StrCat(std::format(
+      "fn iter_distance(&self, from: &Self) -> isize {{ "
+      "libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| ({}) as "
+      "isize) }}",
+      GetComparisonCall(ops.distance, decl, "__lhs", "__rhs")));
+  StrCat("}");
+}
+
+// The operator gets a pointer to a copy of the function object.
+std::string ConverterRefCount::GetCallableBody(const clang::CXXMethodDecl *call,
+                                               std::string_view args) {
+  return std::format(
+      "libcc2rs::with_record_ptr(&mut self.clone(), |__it| {}::{}(__it{}))",
+      GetUFCSName(call), GetMethodName(call), args);
 }
 
 std::string ConverterRefCount::GetShallowCopy(const clang::RecordDecl *decl,

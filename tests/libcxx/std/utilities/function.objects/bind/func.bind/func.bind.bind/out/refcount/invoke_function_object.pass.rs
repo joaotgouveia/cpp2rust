@@ -9,6 +9,13 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct DummyUnaryFunction {}
+impl Callable1<Ptr<BadUnaryFunction>, i32> for DummyUnaryFunction {
+    fn call(&self, a1: Ptr<BadUnaryFunction>) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            DummyUnaryFunctionImpl::operator_call_1_struct_BadUnaryFunction(__it, a1)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct BadUnaryFunction {}

@@ -23,12 +23,22 @@ impl indirect_less {
                 .map_or(::std::ptr::null_mut(), |v| v as *const i32 as *mut i32)));
     }
 }
+impl Callable2<*const Option<Box<i32>>, *const Option<Box<i32>>, bool> for indirect_less {
+    fn call(&self, a1: *const Option<Box<i32>>, a2: *const Option<Box<i32>>) -> bool {
+        unsafe { indirect_less::operator_call_1_class_std_unique_ptr_int_(self, a1, a2) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct first_only {}
 impl first_only {
     pub unsafe fn operator_call(&self, x: *const (i32, i32), y: *const (i32, i32)) -> bool {
         return (((*x).0) < ((*y).0));
+    }
+}
+impl Callable2<*const (i32, i32), *const (i32, i32), bool> for first_only {
+    fn call(&self, a1: *const (i32, i32), a2: *const (i32, i32)) -> bool {
+        unsafe { first_only::operator_call(self, a1, a2) }
     }
 }
 pub unsafe fn generate_sawtooth_0(mut N: i32, mut M: i32) -> Vec<(i32, i32)> {

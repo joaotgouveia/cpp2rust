@@ -258,7 +258,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, CppFromUnsafe)]
-#[cpp_into(bool, to_bool)]
+#[cpp_into(bool, to_bool, mut_ptr)]
 pub struct noexcept_move_copy {
     status: bool,
 }
@@ -283,7 +283,7 @@ impl Default for noexcept_move_copy {
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe)]
-#[cpp_into(bool, to_bool)]
+#[cpp_into(bool, to_bool, mut_ptr)]
 pub struct noexcept_move_no_copy {
     status: bool,
 }
@@ -308,7 +308,7 @@ impl Default for noexcept_move_no_copy {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, CppFromUnsafe)]
-#[cpp_into(bool, to_bool)]
+#[cpp_into(bool, to_bool, mut_ptr)]
 pub struct except_move_copy {
     status: bool,
 }
@@ -333,7 +333,7 @@ impl Default for except_move_copy {
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, CppFromUnsafe)]
-#[cpp_into(bool, to_bool)]
+#[cpp_into(bool, to_bool, mut_ptr)]
 pub struct except_move_no_copy {
     status: bool,
 }

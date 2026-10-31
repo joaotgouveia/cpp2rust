@@ -29,6 +29,13 @@ impl rand1_unsigned_int__0__10_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
+impl Callable0<u32> for rand1_unsigned_int__0__10_ {
+    fn call(&self) -> u32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            rand1_unsigned_int__0__10_Impl::operator_call(__it)
+        })
+    }
+}
 impl Default for rand1_unsigned_int__0__10_ {
     fn default() -> Self {
         { rand1_unsigned_int__0__10_::new(None) }
@@ -55,6 +62,13 @@ impl rand1_unsigned_int__0__100_ {
             field!(this, x_).write(100_u32);
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl Callable0<u32> for rand1_unsigned_int__0__100_ {
+    fn call(&self) -> u32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            rand1_unsigned_int__0__100_Impl::operator_call(__it)
+        })
     }
 }
 impl Default for rand1_unsigned_int__0__100_ {
@@ -85,6 +99,13 @@ impl rand1_unsigned_int__0__4294967295_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
+impl Callable0<u32> for rand1_unsigned_int__0__4294967295_ {
+    fn call(&self) -> u32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            rand1_unsigned_int__0__4294967295_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct rand1_unsigned_int__2__3_ {
@@ -105,6 +126,13 @@ impl rand1_unsigned_int__2__3_ {
             field!(this, x_).write(3_u32);
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl Callable0<u32> for rand1_unsigned_int__2__3_ {
+    fn call(&self) -> u32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            rand1_unsigned_int__2__3_Impl::operator_call(__it)
+        })
     }
 }
 pub fn test1_0() {

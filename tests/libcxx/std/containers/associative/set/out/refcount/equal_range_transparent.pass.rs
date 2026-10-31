@@ -9,6 +9,27 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Comp {}
+impl Callable2<Ptr<(Value<i32>, Value<i32>)>, Ptr<(Value<i32>, Value<i32>)>, bool> for Comp {
+    fn call(&self, a1: Ptr<(Value<i32>, Value<i32>)>, a2: Ptr<(Value<i32>, Value<i32>)>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompImpl::operator_call_1(__it, a1, a2)
+        })
+    }
+}
+impl Callable2<Ptr<(Value<i32>, Value<i32>)>, i32, bool> for Comp {
+    fn call(&self, a1: Ptr<(Value<i32>, Value<i32>)>, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompImpl::operator_call_2(__it, a1, a2)
+        })
+    }
+}
+impl Callable2<i32, Ptr<(Value<i32>, Value<i32>)>, bool> for Comp {
+    fn call(&self, a1: i32, a2: Ptr<(Value<i32>, Value<i32>)>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CompImpl::operator_call_3(__it, a1, a2)
+        })
+    }
+}
 pub fn test_0() -> bool {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let er: Value<(

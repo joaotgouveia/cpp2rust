@@ -241,6 +241,31 @@ impl UnsafeCppAdvance for min_pointer_int__std_integral_constant_unsigned_long__
         self.operator_dec_10();
     }
 }
+impl UnsafeCppIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_deref(self)
+                as *mut i32
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_inc_8(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppBidirectionalIterator<i32>
+    for min_pointer_int__std_integral_constant_unsigned_long__0__
+{
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_int__std_integral_constant_unsigned_long__0__::operator_dec_10(self);
+        }
+        self
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -308,10 +333,34 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
         return tmp;
     }
 }
+impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { !(operator_ne_13(self.clone(), other.clone())) }
+    }
+}
+impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
 impl UnsafeCppAdvance for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_9();
     }
+}
+impl UnsafeCppIterator<i32> for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe {
+            min_pointer_const_int__std_integral_constant_unsigned_long__0__::operator_deref(self)
+                as *mut i32
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_const_int__std_integral_constant_unsigned_long__0__::operator_inc_9(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32>
+    for min_pointer_const_int__std_integral_constant_unsigned_long__0__
+{
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -429,6 +478,36 @@ impl UnsafeCppAdvance for min_pointer_MoveOnly__std_integral_constant_unsigned_l
     }
     unsafe fn cpp_dec(&mut self) {
         self.operator_dec_10();
+    }
+}
+impl UnsafeCppIterator<MoveOnly>
+    for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_deref(&self) -> *mut MoveOnly {
+        unsafe {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__::operator_deref(self)
+                as *mut MoveOnly
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__::operator_inc_8(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<MoveOnly>
+    for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__
+{
+}
+impl UnsafeCppBidirectionalIterator<MoveOnly>
+    for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__::operator_dec_10(self);
+        }
+        self
     }
 }
 pub unsafe fn operator_sub_17(
@@ -578,6 +657,41 @@ impl UnsafeCppAdvance for min_pointer_TrivialMoveOnly__std_integral_constant_uns
         self.operator_dec_10();
     }
 }
+impl UnsafeCppIterator<TrivialMoveOnly>
+    for min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_deref(&self) -> *mut TrivialMoveOnly {
+        unsafe {
+            min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__::operator_deref(
+                self,
+            ) as *mut TrivialMoveOnly
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__::operator_inc_8(
+                self,
+            );
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<TrivialMoveOnly>
+    for min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__
+{
+}
+impl UnsafeCppBidirectionalIterator<TrivialMoveOnly>
+    for min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_TrivialMoveOnly__std_integral_constant_unsigned_long__0__::operator_dec_10(
+                self,
+            );
+        }
+        self
+    }
+}
 pub unsafe fn operator_sub_22(
     mut x: min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_TrivialMoveOnly__std_integral_constant_unsigned_long__0__,
@@ -711,6 +825,35 @@ impl UnsafeCppAdvance
         self.operator_dec_10();
     }
 }
+impl UnsafeCppIterator<NonTriviallyRelocatable>
+    for min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
+    fn iter_deref(&self) -> *mut NonTriviallyRelocatable {
+        unsafe {
+            min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__::operator_deref(self) as *mut NonTriviallyRelocatable
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__::operator_inc_8(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<NonTriviallyRelocatable>
+    for min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
+}
+impl UnsafeCppBidirectionalIterator<NonTriviallyRelocatable>
+    for min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__::operator_dec_10(self);
+        }
+        self
+    }
+}
 pub unsafe fn operator_sub_27(
     mut x: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__,
@@ -772,12 +915,42 @@ impl min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_l
         return tmp;
     }
 }
+impl std::cmp::PartialEq
+    for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { !(operator_ne_28(self.clone(), other.clone())) }
+    }
+}
+impl std::cmp::Eq
+    for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
+}
 impl UnsafeCppAdvance
     for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
 {
     unsafe fn cpp_inc(&mut self) {
         self.operator_inc_9();
     }
+}
+impl UnsafeCppIterator<NonTriviallyRelocatable>
+    for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
+    fn iter_deref(&self) -> *mut NonTriviallyRelocatable {
+        unsafe {
+            min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__::operator_deref(self) as *mut NonTriviallyRelocatable
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__::operator_inc_9(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<NonTriviallyRelocatable>
+    for min_pointer_const_NonTriviallyRelocatable__std_integral_constant_unsigned_long__0__
+{
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]

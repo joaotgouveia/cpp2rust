@@ -388,81 +388,263 @@ impl Default for LargeUserAtomicType {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachIntegralType_TestBitwiseAndAssign_ {}
+impl Callable0<()> for TestEachIntegralType_TestBitwiseAndAssign_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachIntegralType_TestBitwiseAndAssign_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveBitwiseAndAssign_ {}
+impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveBitwiseAndAssign_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachFloatingPointType_TestDoesNotHaveBitwiseAndAssign_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachPointerType_TestDoesNotHaveBitwiseAndAssign_ {}
+impl Callable0<()> for TestEachPointerType_TestDoesNotHaveBitwiseAndAssign_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachPointerType_TestDoesNotHaveBitwiseAndAssign_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseAndAssign_bool_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_bool_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseAndAssign_bool_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseAndAssign_UserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_UserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseAndAssign_UserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseAndAssign_LargeUserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseAndAssign_LargeUserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseAndAssign_float_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_float_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseAndAssign_float_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseAndAssign_double_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_double_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseAndAssign_double_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseAndAssign_long_double_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_long_double_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseAndAssign_long_double_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseAndAssign_int_ptr_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseAndAssign_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseAndAssign_const_int_ptr_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseAndAssign_const_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseAndAssign_const_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_char_ {}
+impl Callable0<()> for TestBitwiseAndAssign_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_signed_char_ {}
+impl Callable0<()> for TestBitwiseAndAssign_signed_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_signed_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_unsigned_char_ {}
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_unsigned_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_short_ {}
+impl Callable0<()> for TestBitwiseAndAssign_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_unsigned_short_ {}
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_unsigned_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_int_ {}
+impl Callable0<()> for TestBitwiseAndAssign_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_unsigned_int_ {}
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_unsigned_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_long_ {}
+impl Callable0<()> for TestBitwiseAndAssign_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_unsigned_long_ {}
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_unsigned_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_long_long_ {}
+impl Callable0<()> for TestBitwiseAndAssign_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_unsigned_long_long_ {}
+impl Callable0<()> for TestBitwiseAndAssign_unsigned_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_unsigned_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_wchar_t_ {}
+impl Callable0<()> for TestBitwiseAndAssign_wchar_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_wchar_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_char8_t_ {}
+impl Callable0<()> for TestBitwiseAndAssign_char8_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_char8_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_char16_t_ {}
+impl Callable0<()> for TestBitwiseAndAssign_char16_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_char16_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseAndAssign_char32_t_ {}
+impl Callable0<()> for TestBitwiseAndAssign_char32_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseAndAssign_char32_t_Impl::operator_call(__it)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

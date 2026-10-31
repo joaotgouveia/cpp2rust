@@ -388,81 +388,263 @@ impl Default for LargeUserAtomicType {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachIntegralType_TestBitwiseOrAssign_ {}
+impl Callable0<()> for TestEachIntegralType_TestBitwiseOrAssign_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachIntegralType_TestBitwiseOrAssign_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveBitwiseOrAssign_ {}
+impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveBitwiseOrAssign_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachFloatingPointType_TestDoesNotHaveBitwiseOrAssign_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestEachPointerType_TestDoesNotHaveBitwiseOrAssign_ {}
+impl Callable0<()> for TestEachPointerType_TestDoesNotHaveBitwiseOrAssign_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestEachPointerType_TestDoesNotHaveBitwiseOrAssign_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseOrAssign_bool_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseOrAssign_bool_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseOrAssign_bool_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseOrAssign_UserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseOrAssign_UserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseOrAssign_UserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseOrAssign_LargeUserAtomicType_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseOrAssign_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseOrAssign_LargeUserAtomicType_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseOrAssign_float_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseOrAssign_float_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseOrAssign_float_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseOrAssign_double_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseOrAssign_double_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseOrAssign_double_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseOrAssign_long_double_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseOrAssign_long_double_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseOrAssign_long_double_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseOrAssign_int_ptr_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseOrAssign_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseOrAssign_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestDoesNotHaveBitwiseOrAssign_const_int_ptr_ {}
+impl Callable0<()> for TestDoesNotHaveBitwiseOrAssign_const_int_ptr_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestDoesNotHaveBitwiseOrAssign_const_int_ptr_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_char_ {}
+impl Callable0<()> for TestBitwiseOrAssign_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_signed_char_ {}
+impl Callable0<()> for TestBitwiseOrAssign_signed_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_signed_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_unsigned_char_ {}
+impl Callable0<()> for TestBitwiseOrAssign_unsigned_char_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_unsigned_char_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_short_ {}
+impl Callable0<()> for TestBitwiseOrAssign_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_unsigned_short_ {}
+impl Callable0<()> for TestBitwiseOrAssign_unsigned_short_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_unsigned_short_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_int_ {}
+impl Callable0<()> for TestBitwiseOrAssign_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_unsigned_int_ {}
+impl Callable0<()> for TestBitwiseOrAssign_unsigned_int_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_unsigned_int_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_long_ {}
+impl Callable0<()> for TestBitwiseOrAssign_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_unsigned_long_ {}
+impl Callable0<()> for TestBitwiseOrAssign_unsigned_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_unsigned_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_long_long_ {}
+impl Callable0<()> for TestBitwiseOrAssign_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_unsigned_long_long_ {}
+impl Callable0<()> for TestBitwiseOrAssign_unsigned_long_long_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_unsigned_long_long_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_wchar_t_ {}
+impl Callable0<()> for TestBitwiseOrAssign_wchar_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_wchar_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_char8_t_ {}
+impl Callable0<()> for TestBitwiseOrAssign_char8_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_char8_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_char16_t_ {}
+impl Callable0<()> for TestBitwiseOrAssign_char16_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_char16_t_Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestBitwiseOrAssign_char32_t_ {}
+impl Callable0<()> for TestBitwiseOrAssign_char32_t_ {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            TestBitwiseOrAssign_char32_t_Impl::operator_call(__it)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

@@ -582,6 +582,11 @@ impl TestEachIntegralType_TestDeduction_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestDeduction_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestDeduction_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestDeduction_ {}
@@ -591,6 +596,11 @@ impl TestEachPointerType_TestDeduction_ {
         (unsafe {
             TestDeduction_const_int_ptr_::operator_call(&<TestDeduction_const_int_ptr_>::default())
         });
+    }
+}
+impl Callable0<()> for TestEachPointerType_TestDeduction_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestDeduction_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -620,6 +630,11 @@ impl TestEachAtomicType_TestDeduction_ {
         (unsafe { TestDeduction_double_::operator_call(&<TestDeduction_double_>::default()) });
     }
 }
+impl Callable0<()> for TestEachAtomicType_TestDeduction_ {
+    fn call(&self) -> () {
+        unsafe { TestEachAtomicType_TestDeduction_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_UserAtomicType_ {}
@@ -628,6 +643,11 @@ impl TestDeduction_UserAtomicType_ {
         let mut x: UserAtomicType = UserAtomicType::new({ Some(0) });
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_UserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -640,6 +660,11 @@ impl TestDeduction_LargeUserAtomicType_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_LargeUserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_float_ {}
@@ -648,6 +673,11 @@ impl TestDeduction_float_ {
         let mut x: f32 = 0_f32;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_float_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_float_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -660,6 +690,11 @@ impl TestDeduction_double_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_double_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_char_ {}
@@ -668,6 +703,11 @@ impl TestDeduction_char_ {
         let mut x: libc::c_char = (0 as libc::c_char);
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_char_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -680,6 +720,11 @@ impl TestDeduction_signed_char_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_signed_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_unsigned_char_ {}
@@ -688,6 +733,11 @@ impl TestDeduction_unsigned_char_ {
         let mut x: u8 = 0_u8;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_unsigned_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -700,6 +750,11 @@ impl TestDeduction_short_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_short_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_unsigned_short_ {}
@@ -708,6 +763,11 @@ impl TestDeduction_unsigned_short_ {
         let mut x: u16 = 0_u16;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_unsigned_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -720,6 +780,11 @@ impl TestDeduction_int_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_int_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_unsigned_int_ {}
@@ -728,6 +793,11 @@ impl TestDeduction_unsigned_int_ {
         let mut x: u32 = 0_u32;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_unsigned_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -740,6 +810,11 @@ impl TestDeduction_long_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_long_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_unsigned_long_ {}
@@ -748,6 +823,11 @@ impl TestDeduction_unsigned_long_ {
         let mut x: u64 = 0_u64;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_unsigned_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -760,6 +840,11 @@ impl TestDeduction_long_long_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_unsigned_long_long_ {}
@@ -768,6 +853,11 @@ impl TestDeduction_unsigned_long_long_ {
         let mut x: u64 = 0_u64;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_unsigned_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -780,6 +870,11 @@ impl TestDeduction_wchar_t_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_wchar_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_char8_t_ {}
@@ -788,6 +883,11 @@ impl TestDeduction_char8_t_ {
         let mut x: u8 = 0_u8;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_char8_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -800,6 +900,11 @@ impl TestDeduction_char16_t_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_char32_t_ {}
@@ -808,6 +913,11 @@ impl TestDeduction_char32_t_ {
         let mut x: u32 = 0_u32;
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_char32_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -820,6 +930,11 @@ impl TestDeduction_int_ptr_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestDeduction_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDeduction_const_int_ptr_ {}
@@ -828,6 +943,11 @@ impl TestDeduction_const_int_ptr_ {
         let mut x: *const i32 = std::ptr::null();
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestDeduction_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDeduction_const_int_ptr_::operator_call(self) }
     }
 }
 pub fn main() {

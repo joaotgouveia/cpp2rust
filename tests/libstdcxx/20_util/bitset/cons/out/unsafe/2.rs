@@ -258,7 +258,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(*const libc::c_char , to_pconstlibcc_char)]
+#[cpp_into(*const libc::c_char , to_pconstlibcc_char, mut_ptr)]
 pub struct X {}
 impl X {
     pub unsafe fn to_pconstlibcc_char(&mut self) -> *const libc::c_char {

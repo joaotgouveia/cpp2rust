@@ -70,6 +70,11 @@ impl A_void_0 {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) += 2;
     }
 }
+impl Callable0<()> for A_void_0 {
+    fn call(&self) -> () {
+        unsafe { A_void_0::operator_call_1(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A_int_0 {}
@@ -81,6 +86,11 @@ impl A_int_0 {
     pub unsafe fn operator_call_2(&self) -> i32 {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)) += 2;
         return 5;
+    }
+}
+impl Callable0<i32> for A_int_0 {
+    fn call(&self) -> i32 {
+        unsafe { A_int_0::operator_call_1(&mut *(&raw const *self).cast_mut()) }
     }
 }
 pub fn main() {

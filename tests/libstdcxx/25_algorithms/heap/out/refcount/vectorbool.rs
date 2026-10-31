@@ -243,6 +243,13 @@ impl Gt {
         _S_count_13.with(|rc| *rc.borrow_mut() = 0);
     }
 }
+impl Callable2<bool, bool, bool> for Gt {
+    fn call(&self, a1: bool, a2: bool) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            GtImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 thread_local!(
     static _S_count_13: Value<i32> = Rc::new(RefCell::new(0));
 );

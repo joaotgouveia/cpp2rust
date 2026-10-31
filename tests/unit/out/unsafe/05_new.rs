@@ -22,6 +22,11 @@ impl D {
         };
     }
 }
+impl Callable1<*const A, ()> for D {
+    fn call(&self, a1: *const A) -> () {
+        unsafe { D::operator_call(self, a1) }
+    }
+}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();

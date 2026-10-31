@@ -298,15 +298,35 @@ pub fn test_copy_assignment_same_index_5() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_6 {}
+impl Callable0<Result_int_> for anon_6 {
+    fn call(&self) -> Result_int_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_6Impl::operator_call(__it))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_7 {}
+impl Callable0<Result_long_> for anon_7 {
+    fn call(&self) -> Result_long_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_7Impl::operator_call(__it))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_8 {}
+impl Callable0<Result_int_> for anon_8 {
+    fn call(&self) -> Result_int_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_8Impl::operator_call(__it))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_9 {}
+impl Callable0<Result_int_> for anon_9 {
+    fn call(&self) -> Result_int_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_9Impl::operator_call(__it))
+    }
+}
 pub fn test_copy_assignment_different_index_10() {
     {
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -352,9 +372,19 @@ pub fn test_copy_assignment_different_index_10() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_11 {}
+impl Callable0<Result_long_> for anon_11 {
+    fn call(&self) -> Result_long_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_11Impl::operator_call(__it))
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct anon_12 {}
+impl Callable0<Result_int_> for anon_12 {
+    fn call(&self) -> Result_int_ {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| anon_12Impl::operator_call(__it))
+    }
+}
 pub fn test_assignment_throw_13() {}
 pub fn test_constexpr_assign_imp_14(v: Ptr<()>, new_value: Ptr<i64>) {
     let cp: Value<()> = Rc::new(RefCell::new(unimplemented!()));

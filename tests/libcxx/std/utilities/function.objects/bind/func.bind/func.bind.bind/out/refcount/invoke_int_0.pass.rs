@@ -34,6 +34,11 @@ pub fn f_6() -> i32 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_int_0 {}
+impl Callable0<i32> for A_int_0 {
+    fn call(&self) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| A_int_0Impl::operator_call_1(__it))
+    }
+}
 pub fn test_all_7() -> bool {
     ({ test_0(unimplemented!(), 1) });
     ({ test_0(unimplemented!(), 1) });

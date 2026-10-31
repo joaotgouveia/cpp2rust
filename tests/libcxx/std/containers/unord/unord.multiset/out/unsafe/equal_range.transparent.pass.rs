@@ -157,6 +157,16 @@ impl hash_impl {
         return ((unsafe { StoredType_int_::get_value(&(*t)) }) as usize);
     }
 }
+impl Callable1<*const SearchedType_int_, usize> for hash_impl {
+    fn call(&self, a1: *const SearchedType_int_) -> usize {
+        unsafe { hash_impl::operator_call_1_int(self, a1) }
+    }
+}
+impl Callable1<*const StoredType_int_, usize> for hash_impl {
+    fn call(&self, a1: *const StoredType_int_) -> usize {
+        unsafe { hash_impl::operator_call_2_int(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct non_transparent_hash {}

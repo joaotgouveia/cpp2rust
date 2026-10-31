@@ -18,6 +18,11 @@ impl Fun {
         const _: () = assert!(true, "std::is_same<U, int &>::value");;
     }
 }
+impl Callable2<*const [libc::c_char; 6], *mut i32, ()> for Fun {
+    fn call(&self, a1: *const [libc::c_char; 6], a2: *mut i32) -> () {
+        unsafe { Fun::operator_call_1_const_char__ref_arr6arr_int_ref(self, a1, a2) }
+    }
+}
 pub unsafe fn test_0() -> bool {
     (unsafe { unimplemented!()(&std::mem::transmute(*b"hello\0")) });
     return true;

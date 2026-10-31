@@ -200,6 +200,13 @@ impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct compare_counter {}
+impl Callable2<i32, i32, bool> for compare_counter {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            compare_counterImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 thread_local!(
     pub static count_9: Value<i32> = Rc::new(RefCell::new(0));
 );

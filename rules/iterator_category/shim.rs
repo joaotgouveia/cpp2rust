@@ -15,43 +15,71 @@ use crate::{
 pub trait CppIterator<T>: Clone {
     fn iter_deref(&self) -> Ptr<T>;
     fn iter_inc(&mut self) -> &mut Self;
-    fn iter_post_inc(&mut self) -> Self;
+    fn iter_post_inc(&mut self) -> Self {
+        let old = self.clone();
+        self.iter_inc();
+        old
+    }
 }
 
 pub trait CppInputIterator<T>: CppIterator<T> + PartialEq {}
 
 pub trait CppBidirectionalIterator<T>: CppInputIterator<T> {
     fn iter_dec(&mut self) -> &mut Self;
-    fn iter_post_dec(&mut self) -> Self;
+    fn iter_post_dec(&mut self) -> Self {
+        let old = self.clone();
+        self.iter_dec();
+        old
+    }
 }
 
 pub trait CppRandomAccessIterator<T>: CppBidirectionalIterator<T> + PartialOrd {
-    fn iter_add(&self, n: isize) -> Self;
+    fn iter_add(&self, n: isize) -> Self {
+        let mut it = self.clone();
+        it.iter_add_assign(n);
+        it
+    }
     fn iter_add_assign(&mut self, n: isize) -> Self;
     fn iter_distance(&self, from: &Self) -> isize;
-    fn iter_at(&self, n: isize) -> Ptr<T>;
+    fn iter_at(&self, n: isize) -> Ptr<T> {
+        self.iter_add(n).iter_deref()
+    }
 }
 
 pub trait UnsafeCppIterator<T>: Clone {
     fn iter_deref(&self) -> *mut T;
     fn iter_inc(&mut self) -> &mut Self;
-    fn iter_post_inc(&mut self) -> Self;
+    fn iter_post_inc(&mut self) -> Self {
+        let old = self.clone();
+        self.iter_inc();
+        old
+    }
 }
 
 pub trait UnsafeCppInputIterator<T>: UnsafeCppIterator<T> + PartialEq {}
 
 pub trait UnsafeCppBidirectionalIterator<T>: UnsafeCppInputIterator<T> {
     fn iter_dec(&mut self) -> &mut Self;
-    fn iter_post_dec(&mut self) -> Self;
+    fn iter_post_dec(&mut self) -> Self {
+        let old = self.clone();
+        self.iter_dec();
+        old
+    }
 }
 
 pub trait UnsafeCppRandomAccessIterator<T>:
     UnsafeCppBidirectionalIterator<T> + PartialOrd
 {
-    fn iter_add(&self, n: isize) -> Self;
+    fn iter_add(&self, n: isize) -> Self {
+        let mut it = self.clone();
+        it.iter_add_assign(n);
+        it
+    }
     fn iter_add_assign(&mut self, n: isize) -> Self;
     fn iter_distance(&self, from: &Self) -> isize;
-    fn iter_at(&self, n: isize) -> *mut T;
+    fn iter_at(&self, n: isize) -> *mut T {
+        self.iter_add(n).iter_deref()
+    }
 }
 
 impl<T> CppIterator<T> for Ptr<T> {
@@ -367,10 +395,18 @@ macro_rules! random_access_iterator {
             }
         }
 
+        impl<T> Eq for $name<T> {}
+
         impl<T> PartialOrd for $name<T> {
             fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+                Some(self.cmp(other))
+            }
+        }
+
+        impl<T> Ord for $name<T> {
+            fn cmp(&self, other: &Self) -> Ordering {
                 match (self, other) {
-                    (Self::Vec(a), Self::Vec(b)) => a.partial_cmp(b),
+                    (Self::Vec(a), Self::Vec(b)) => a.cmp(b),
                 }
             }
         }

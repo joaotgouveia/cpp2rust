@@ -22,6 +22,11 @@ pub struct A {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct D {}
+impl Callable1<Ptr<A>, ()> for D {
+    fn call(&self, a1: Ptr<A>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| DImpl::operator_call(__it, a1))
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

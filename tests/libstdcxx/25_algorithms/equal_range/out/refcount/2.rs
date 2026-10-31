@@ -212,6 +212,13 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct gt {}
+impl Callable2<Ptr<i32>, Ptr<i32>, bool> for gt {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            gtImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test03_12() {
     let mut first: i32 = ({
         let __idx0 = (0) as usize;

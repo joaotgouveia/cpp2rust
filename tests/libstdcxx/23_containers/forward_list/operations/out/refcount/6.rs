@@ -212,6 +212,13 @@ impl Comp_int_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
+impl Callable2<i32, i32, bool> for Comp_int_ {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Comp_int_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test01_9() {
     let n: Value<u32> = Rc::new(RefCell::new(13_u32));
     let order: Value<Box<[Box<[i32]>]>> = Rc::new(RefCell::new(Box::new([

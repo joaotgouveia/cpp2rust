@@ -691,6 +691,16 @@ impl anon_12 {
         return unimplemented!();
     }
 }
+impl Callable2<libc::c_char, libc::c_char, bool> for anon_12 {
+    fn call(&self, a1: libc::c_char, a2: libc::c_char) -> bool {
+        unsafe { anon_12::operator_call_2(self, a1, a2) }
+    }
+}
+impl Callable1<libc::c_char, usize> for anon_12 {
+    fn call(&self, a1: libc::c_char) -> usize {
+        unsafe { anon_12::operator_call_3(self, a1) }
+    }
+}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();

@@ -434,6 +434,11 @@ impl TestEachIntegralType_TestFn_ {
         (unsafe { TestFn_unsigned_long_::operator_call(&<TestFn_unsigned_long_>::default()) });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestFn_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestFn_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestFn_ {}
@@ -441,6 +446,11 @@ impl TestEachPointerType_TestFn_ {
     pub unsafe fn operator_call(&self) {
         (unsafe { TestFn_int_ptr_::operator_call(&<TestFn_int_ptr_>::default()) });
         (unsafe { TestFn_const_int_ptr_::operator_call(&<TestFn_const_int_ptr_>::default()) });
+    }
+}
+impl Callable0<()> for TestEachPointerType_TestFn_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestFn_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -462,6 +472,11 @@ impl TestEachAtomicType_TestFn_ {
         (unsafe { TestFn_double_::operator_call(&<TestFn_double_>::default()) });
     }
 }
+impl Callable0<()> for TestEachAtomicType_TestFn_ {
+    fn call(&self) -> () {
+        unsafe { TestEachAtomicType_TestFn_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_A_ {}
@@ -478,6 +493,11 @@ impl TestFn_A_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_A_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_A_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -498,6 +518,11 @@ impl TestFn_UserAtomicType_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_UserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_LargeUserAtomicType_ {}
@@ -512,6 +537,11 @@ impl TestFn_LargeUserAtomicType_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_LargeUserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -532,6 +562,11 @@ impl TestFn_float_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_float_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_float_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_double_ {}
@@ -548,6 +583,11 @@ impl TestFn_double_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_double_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -568,6 +608,11 @@ impl TestFn_char_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_signed_char_ {}
@@ -584,6 +629,11 @@ impl TestFn_signed_char_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_signed_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -604,6 +654,11 @@ impl TestFn_unsigned_char_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_unsigned_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_short_ {}
@@ -620,6 +675,11 @@ impl TestFn_short_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -640,6 +700,11 @@ impl TestFn_unsigned_short_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_unsigned_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_int_ {}
@@ -656,6 +721,11 @@ impl TestFn_int_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -676,6 +746,11 @@ impl TestFn_unsigned_int_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_unsigned_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_long_ {}
@@ -692,6 +767,11 @@ impl TestFn_long_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -712,6 +792,11 @@ impl TestFn_unsigned_long_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_unsigned_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_long_long_ {}
@@ -728,6 +813,11 @@ impl TestFn_long_long_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -748,6 +838,11 @@ impl TestFn_unsigned_long_long_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_unsigned_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_wchar_t_ {}
@@ -764,6 +859,11 @@ impl TestFn_wchar_t_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_wchar_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -784,6 +884,11 @@ impl TestFn_char8_t_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_char8_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_char16_t_ {}
@@ -800,6 +905,11 @@ impl TestFn_char16_t_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_char16_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -820,6 +930,11 @@ impl TestFn_char32_t_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_char32_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_int_ptr_ {}
@@ -838,6 +953,11 @@ impl TestFn_int_ptr_ {
         const _: () = assert!(true, "");;
     }
 }
+impl Callable0<()> for TestFn_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFn_const_int_ptr_ {}
@@ -854,6 +974,11 @@ impl TestFn_const_int_ptr_ {
         assert!(((b1 as i32) == (b2 as i32)));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
+    }
+}
+impl Callable0<()> for TestFn_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestFn_const_int_ptr_::operator_call(self) }
     }
 }
 #[repr(C)]

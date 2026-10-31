@@ -333,6 +333,11 @@ impl hasher {
         return ((((*a).x) / (10)) as usize);
     }
 }
+impl Callable1<*const A, usize> for hasher {
+    fn call(&self, a1: *const A) -> usize {
+        unsafe { hasher::operator_call(self, a1) }
+    }
+}
 pub unsafe fn test01_10() {
     let mut map: () = unimplemented!();
     unimplemented!();

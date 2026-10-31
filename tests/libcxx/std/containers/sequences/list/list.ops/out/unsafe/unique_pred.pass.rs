@@ -78,6 +78,11 @@ impl PredLWG526 {
         return ((i) == (self.i_));
     }
 }
+impl Callable2<*const PredLWG526, *const PredLWG526, bool> for PredLWG526 {
+    fn call(&self, a1: *const PredLWG526, a2: *const PredLWG526) -> bool {
+        unsafe { PredLWG526::operator_call(self, a1, a2) }
+    }
+}
 pub unsafe fn test_6() -> bool {
     {
         let mut a1: [i32; 9] = [2, 1, 1, 4, 4, 4, 4, 3, 3];

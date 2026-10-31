@@ -576,12 +576,22 @@ impl Hash {
         return ((*p).0 as usize);
     }
 }
+impl Callable1<*const (i32, i32), usize> for Hash {
+    fn call(&self, a1: *const (i32, i32)) -> usize {
+        unsafe { Hash::operator_call(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Equal {}
 impl Equal {
     pub unsafe fn operator_call(&self, lhs: *const (i32, i32), rhs: *const (i32, i32)) -> bool {
         return (((*lhs).0) == ((*rhs).0));
+    }
+}
+impl Callable2<*const (i32, i32), *const (i32, i32), bool> for Equal {
+    fn call(&self, a1: *const (i32, i32), a2: *const (i32, i32)) -> bool {
+        unsafe { Equal::operator_call(self, a1, a2) }
     }
 }
 pub unsafe fn test03_11() {

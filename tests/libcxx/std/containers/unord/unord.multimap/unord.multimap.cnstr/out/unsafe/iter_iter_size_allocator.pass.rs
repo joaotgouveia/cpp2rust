@@ -131,7 +131,11 @@ impl cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_c
  ( unsafe { let _other: *mut support_double_move_tracker  = & mut ( * _a0 ) . tracker_  ; support_double_move_tracker :: move_assign ( &mut self . tracker_   , _other , ) } )  ;
  return & mut ( * ( self as *mut cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_  )  )  ;
  } }
+impl std::cmp::PartialEq for cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_ { fn eq(&self, other: &Self) -> bool { unsafe { !(operator_ne_0(self as *const cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_, other as *const cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_)) }}}
+impl std::cmp::Eq for cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_ {}
 impl UnsafeCppAdvance for cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_ { unsafe fn cpp_inc(&mut self) { self.operator_inc_5(); } }
+impl UnsafeCppIterator<(i32 , Vec<libc::c_char > ) > for cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_ { fn iter_deref(&self) -> *mut (i32 , Vec<libc::c_char > )  { unsafe { cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_::operator_deref(self) as *mut (i32 , Vec<libc::c_char > )  } } fn iter_inc(&mut self) -> &mut Self { unsafe { cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_::operator_inc_5(self); } self } }
+impl UnsafeCppInputIterator<(i32 , Vec<libc::c_char > ) > for cpp17_input_iterator_std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr__std_pair_int__std_basic_string_char__std_char_traits_char___std_allocator_char____ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -424,6 +428,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -527,6 +562,11 @@ impl std::cmp::PartialEq for test_equal_to_int_ {
     }
 }
 impl std::cmp::Eq for test_equal_to_int_ {}
+impl Callable2<*const i32, *const i32, bool> for test_equal_to_int_ {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { test_equal_to_int_::operator_call(self, a1, a2) }
+    }
+}
 impl Default for test_equal_to_int_ {
     fn default() -> Self {
         unsafe { test_equal_to_int_::new_1() }
@@ -556,6 +596,11 @@ impl std::cmp::PartialEq for test_hash_int_ {
     }
 }
 impl std::cmp::Eq for test_hash_int_ {}
+impl Callable1<*const i32, usize> for test_hash_int_ {
+    fn call(&self, a1: *const i32) -> usize {
+        unsafe { test_hash_int_::operator_call(self, a1) }
+    }
+}
 impl Default for test_hash_int_ {
     fn default() -> Self {
         unsafe { test_hash_int_::new(None) }

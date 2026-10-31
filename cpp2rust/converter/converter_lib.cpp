@@ -1424,6 +1424,30 @@ bool IsSameTypeComparison(const clang::FunctionDecl *fn,
          is_record(fn->getParamDecl(1)->getType());
 }
 
+const clang::CXXMethodDecl *GetMemberOperator(const clang::CXXRecordDecl *decl,
+                                              clang::OverloadedOperatorKind op,
+                                              unsigned num_params) {
+  const clang::CXXMethodDecl *found = nullptr;
+  for (const auto *method : decl->methods()) {
+    if (method->isImplicit() || method->isDeleted() || !method->hasBody() ||
+        method->getDescribedFunctionTemplate() ||
+        method->getNumParams() != num_params ||
+        method->getOverloadedOperator() != op) {
+      continue;
+    }
+    found = method;
+  }
+  return found;
+}
+
+const clang::CXXMethodDecl *GetIteratorDeref(const clang::CXXRecordDecl *decl) {
+  const auto *deref = GetMemberOperator(decl, clang::OO_Star, 0);
+  if (!deref || !deref->getReturnType()->isLValueReferenceType()) {
+    return nullptr;
+  }
+  return deref;
+}
+
 bool IsImplicitAssignmentCall(const clang::CallExpr *expr) {
   const auto *call = clang::dyn_cast<clang::CXXMemberCallExpr>(expr);
   if (!call) {

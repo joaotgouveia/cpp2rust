@@ -200,6 +200,27 @@ impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Cmp {}
+impl Callable2<i32, i64, bool> for Cmp {
+    fn call(&self, a1: i32, a2: i64) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CmpImpl::operator_call_1(__it, a1, a2)
+        })
+    }
+}
+impl Callable2<i64, i32, bool> for Cmp {
+    fn call(&self, a1: i64, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CmpImpl::operator_call_2(__it, a1, a2)
+        })
+    }
+}
+impl Callable2<i32, i32, bool> for Cmp {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            CmpImpl::operator_call_3(__it, a1, a2)
+        })
+    }
+}
 thread_local!(
     pub static count_9: Value<i32> = Rc::new(RefCell::new(0));
 );

@@ -180,12 +180,26 @@ pub struct MoveOnlyVoidFunction_3 {
     #[byte_size(8)]
     pub was_called: Ptr<bool>,
 }
+impl Callable0<()> for MoveOnlyVoidFunction_3 {
+    fn call(&self) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            MoveOnlyVoidFunction_3Impl::operator_call(__it)
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct MoveOnlyIntFunction_4 {
     #[offset(0)]
     #[byte_size(8)]
     pub was_called: Ptr<bool>,
+}
+impl Callable0<i32> for MoveOnlyIntFunction_4 {
+    fn call(&self) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            MoveOnlyIntFunction_4Impl::operator_call(__it)
+        })
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i32, to_i32)]

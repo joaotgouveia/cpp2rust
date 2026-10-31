@@ -38,6 +38,11 @@ impl A_int_0 {
         return 5;
     }
 }
+impl Callable0<i32> for A_int_0 {
+    fn call(&self) -> i32 {
+        unsafe { A_int_0::operator_call_1(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 pub unsafe fn test_all_7() -> bool {
     (unsafe { test_0(unimplemented!(), 1) });
     (unsafe { test_0(unimplemented!(), 1) });

@@ -274,6 +274,11 @@ impl Pred {
         return (((*x) % (2)) == (0));
     }
 }
+impl Callable1<*const i32, bool> for Pred {
+    fn call(&self, a1: *const i32) -> bool {
+        unsafe { Pred::operator_call(self, a1) }
+    }
+}
 pub unsafe fn test01_12() {
     let mut s1: [i32; 17] = [0_i32; 17];
     {

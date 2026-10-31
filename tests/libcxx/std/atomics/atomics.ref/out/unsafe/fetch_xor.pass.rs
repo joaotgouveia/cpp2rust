@@ -456,6 +456,11 @@ impl TestEachIntegralType_TestFetchXor_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestFetchXor_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestFetchXor_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveFetchXor_ {}
@@ -478,6 +483,11 @@ impl TestEachFloatingPointType_TestDoesNotHaveFetchXor_ {
         });
     }
 }
+impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveFetchXor_ {
+    fn call(&self) -> () {
+        unsafe { TestEachFloatingPointType_TestDoesNotHaveFetchXor_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestDoesNotHaveFetchXor_ {}
@@ -495,12 +505,22 @@ impl TestEachPointerType_TestDoesNotHaveFetchXor_ {
         });
     }
 }
+impl Callable0<()> for TestEachPointerType_TestDoesNotHaveFetchXor_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestDoesNotHaveFetchXor_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchXor_bool_ {}
 impl TestDoesNotHaveFetchXor_bool_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_xor<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchXor_bool_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchXor_bool_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -511,12 +531,22 @@ impl TestDoesNotHaveFetchXor_UserAtomicType_ {
         const _: () = assert!(!(false), "!has_fetch_xor<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchXor_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchXor_UserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchXor_LargeUserAtomicType_ {}
 impl TestDoesNotHaveFetchXor_LargeUserAtomicType_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_xor<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchXor_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchXor_LargeUserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -527,12 +557,22 @@ impl TestDoesNotHaveFetchXor_float_ {
         const _: () = assert!(!(false), "!has_fetch_xor<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchXor_float_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchXor_float_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchXor_double_ {}
 impl TestDoesNotHaveFetchXor_double_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_xor<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchXor_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchXor_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -543,6 +583,11 @@ impl TestDoesNotHaveFetchXor_long_double_ {
         const _: () = assert!(!(false), "!has_fetch_xor<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchXor_long_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchXor_long_double_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchXor_int_ptr_ {}
@@ -551,12 +596,22 @@ impl TestDoesNotHaveFetchXor_int_ptr_ {
         const _: () = assert!(!(false), "!has_fetch_xor<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchXor_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchXor_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchXor_const_int_ptr_ {}
 impl TestDoesNotHaveFetchXor_const_int_ptr_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_xor<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchXor_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchXor_const_int_ptr_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -581,6 +636,11 @@ impl TestFetchXor_char_ {
         }
     }
 }
+impl Callable0<()> for TestFetchXor_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchXor_signed_char_ {}
@@ -601,6 +661,11 @@ impl TestFetchXor_signed_char_ {
             assert!(((x as i32) == (1_i8 as i32)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchXor_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_signed_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -625,6 +690,11 @@ impl TestFetchXor_unsigned_char_ {
         }
     }
 }
+impl Callable0<()> for TestFetchXor_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_unsigned_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchXor_short_ {}
@@ -645,6 +715,11 @@ impl TestFetchXor_short_ {
             assert!(((x as i32) == (1_i16 as i32)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchXor_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -669,6 +744,11 @@ impl TestFetchXor_unsigned_short_ {
         }
     }
 }
+impl Callable0<()> for TestFetchXor_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_unsigned_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchXor_int_ {}
@@ -689,6 +769,11 @@ impl TestFetchXor_int_ {
             assert!(((x) == (1)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchXor_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -713,6 +798,11 @@ impl TestFetchXor_unsigned_int_ {
         }
     }
 }
+impl Callable0<()> for TestFetchXor_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_unsigned_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchXor_long_ {}
@@ -733,6 +823,11 @@ impl TestFetchXor_long_ {
             assert!(((x) == (1_i64)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchXor_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -757,6 +852,11 @@ impl TestFetchXor_unsigned_long_ {
         }
     }
 }
+impl Callable0<()> for TestFetchXor_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_unsigned_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchXor_long_long_ {}
@@ -777,6 +877,11 @@ impl TestFetchXor_long_long_ {
             assert!(((x) == (1_i64)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchXor_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -801,6 +906,11 @@ impl TestFetchXor_unsigned_long_long_ {
         }
     }
 }
+impl Callable0<()> for TestFetchXor_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_unsigned_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchXor_wchar_t_ {}
@@ -821,6 +931,11 @@ impl TestFetchXor_wchar_t_ {
             assert!(((x) == (1_i32)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchXor_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_wchar_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -845,6 +960,11 @@ impl TestFetchXor_char8_t_ {
         }
     }
 }
+impl Callable0<()> for TestFetchXor_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_char8_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchXor_char16_t_ {}
@@ -867,6 +987,11 @@ impl TestFetchXor_char16_t_ {
         }
     }
 }
+impl Callable0<()> for TestFetchXor_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchXor_char32_t_ {}
@@ -887,6 +1012,11 @@ impl TestFetchXor_char32_t_ {
             assert!(((x) == (1_u32)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchXor_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchXor_char32_t_::operator_call(self) }
     }
 }
 pub fn main() {

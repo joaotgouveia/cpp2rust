@@ -271,6 +271,21 @@ impl Cmp {
         return ((i) < (j));
     }
 }
+impl Callable2<i32, i64, bool> for Cmp {
+    fn call(&self, a1: i32, a2: i64) -> bool {
+        unsafe { Cmp::operator_call_1(self, a1, a2) }
+    }
+}
+impl Callable2<i64, i32, bool> for Cmp {
+    fn call(&self, a1: i64, a2: i32) -> bool {
+        unsafe { Cmp::operator_call_2(self, a1, a2) }
+    }
+}
+impl Callable2<i32, i32, bool> for Cmp {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { Cmp::operator_call_3(self, a1, a2) }
+    }
+}
 pub static mut count_9: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 pub static mut x_10: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });

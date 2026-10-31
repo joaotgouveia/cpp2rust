@@ -14,12 +14,22 @@ impl detail_parse_integer_impl_int_ {
         return unimplemented!();
     }
 }
+impl Callable1<*const Vec<i32>, i32> for detail_parse_integer_impl_int_ {
+    fn call(&self, a1: *const Vec<i32>) -> i32 {
+        unsafe { detail_parse_integer_impl_int_::operator_call_1_wchar_t(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_long_ {}
 impl detail_parse_integer_impl_long_ {
     pub unsafe fn operator_call_1_wchar_t(&self, str: *const Vec<i32>) -> i64 {
         return unimplemented!();
+    }
+}
+impl Callable1<*const Vec<i32>, i64> for detail_parse_integer_impl_long_ {
+    fn call(&self, a1: *const Vec<i32>) -> i64 {
+        unsafe { detail_parse_integer_impl_long_::operator_call_1_wchar_t(self, a1) }
     }
 }
 #[repr(C)]
@@ -30,12 +40,22 @@ impl detail_parse_integer_impl_long_long_ {
         return unimplemented!();
     }
 }
+impl Callable1<*const Vec<i32>, i64> for detail_parse_integer_impl_long_long_ {
+    fn call(&self, a1: *const Vec<i32>) -> i64 {
+        unsafe { detail_parse_integer_impl_long_long_::operator_call_1_wchar_t(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_unsigned_int_ {}
 impl detail_parse_integer_impl_unsigned_int_ {
     pub unsafe fn operator_call_1_wchar_t(&self, str: *const Vec<i32>) -> u32 {
         return (unimplemented!() as u32);
+    }
+}
+impl Callable1<*const Vec<i32>, u32> for detail_parse_integer_impl_unsigned_int_ {
+    fn call(&self, a1: *const Vec<i32>) -> u32 {
+        unsafe { detail_parse_integer_impl_unsigned_int_::operator_call_1_wchar_t(self, a1) }
     }
 }
 #[repr(C)]
@@ -46,12 +66,22 @@ impl detail_parse_integer_impl_unsigned_long_ {
         return unimplemented!();
     }
 }
+impl Callable1<*const Vec<i32>, u64> for detail_parse_integer_impl_unsigned_long_ {
+    fn call(&self, a1: *const Vec<i32>) -> u64 {
+        unsafe { detail_parse_integer_impl_unsigned_long_::operator_call_1_wchar_t(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct detail_parse_integer_impl_unsigned_long_long_ {}
 impl detail_parse_integer_impl_unsigned_long_long_ {
     pub unsafe fn operator_call_1_wchar_t(&self, str: *const Vec<i32>) -> u64 {
         return unimplemented!();
+    }
+}
+impl Callable1<*const Vec<i32>, u64> for detail_parse_integer_impl_unsigned_long_long_ {
+    fn call(&self, a1: *const Vec<i32>) -> u64 {
+        unsafe { detail_parse_integer_impl_unsigned_long_long_::operator_call_1_wchar_t(self, a1) }
     }
 }
 pub unsafe fn parse_integer_0(str: *const Vec<i32>) -> i32 {

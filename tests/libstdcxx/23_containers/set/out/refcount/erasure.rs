@@ -259,6 +259,13 @@ pub fn test_pr107850_12() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Pred_13 {}
+impl Callable1<Ptr<i32>, bool> for Pred_13 {
+    fn call(&self, a1: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            Pred_13Impl::operator_call(__it, a1)
+        })
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

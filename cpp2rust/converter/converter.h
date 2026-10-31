@@ -784,22 +784,60 @@ protected:
 
   bool ConvertOutOfLineVirtualMethod(clang::CXXMethodDecl *decl);
 
+  // The comparison operators of a record, which implement its comparisons.
+  struct ComparisonOperators {
+    const clang::FunctionDecl *eq = nullptr;
+    const clang::FunctionDecl *ne = nullptr;
+    const clang::FunctionDecl *lt = nullptr;
+    const clang::FunctionDecl *cmp = nullptr;
+  };
+
+  // The operators of an iterator record, which implement the iterator traits
+  // of the library's generic algorithms.
+  struct IteratorOperators {
+    const clang::CXXMethodDecl *deref = nullptr;
+    const clang::CXXMethodDecl *inc = nullptr;
+    const clang::CXXMethodDecl *dec = nullptr;
+    const clang::CXXMethodDecl *add_assign = nullptr;
+    const clang::FunctionDecl *distance = nullptr;
+    bool equality = false;
+    bool ordering = false;
+  };
+
+  ComparisonOperators GetComparisonOperators(const clang::CXXRecordDecl *decl);
+
+  // Whether decl implements the iterator traits: it is copied, dereferenced
+  // to an element and incremented.
+  bool IsIteratorRecord(const clang::CXXRecordDecl *decl);
+
   void AddOrdTrait(const clang::CXXRecordDecl *decl);
   void AddAdvanceTrait(const clang::CXXRecordDecl *decl);
+  void AddIteratorTraits(const clang::CXXRecordDecl *decl);
 
-  virtual void ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
-                                             const clang::FunctionDecl *eq,
-                                             const clang::FunctionDecl *lt,
-                                             const clang::FunctionDecl *cmp);
+  virtual void
+  ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
+                                const ComparisonOperators &ops);
 
   virtual void ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
                                    const clang::CXXMethodDecl *inc,
                                    const clang::CXXMethodDecl *dec);
 
+  virtual void ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
+                                     const IteratorOperators &ops);
+
+  void AddCallableTraits(const clang::CXXRecordDecl *decl);
+
+  // The body of the call method of the callable trait of decl, which calls
+  // its operator() with args.
+  virtual std::string GetCallableBody(const clang::CXXMethodDecl *call,
+                                      std::string_view args);
+
+  std::string GetCmpBody(const clang::CXXRecordDecl *decl,
+                         const ComparisonOperators &ops, std::string_view lhs,
+                         std::string_view rhs);
+
   std::string GetEqBody(const clang::CXXRecordDecl *decl,
-                        const clang::FunctionDecl *eq,
-                        const clang::FunctionDecl *lt,
-                        const clang::FunctionDecl *cmp, std::string_view lhs,
+                        const ComparisonOperators &ops, std::string_view lhs,
                         std::string_view rhs);
 
   void ConvertOrdAndPartialOrdTraitsBase(std::string_view cmp_body,

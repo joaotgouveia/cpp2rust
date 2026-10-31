@@ -271,6 +271,21 @@ impl Cmp {
         return ((i) < (j));
     }
 }
+impl Callable2<i32, i64, bool> for Cmp {
+    fn call(&self, a1: i32, a2: i64) -> bool {
+        unsafe { Cmp::operator_call_1(self, a1, a2) }
+    }
+}
+impl Callable2<i64, i32, bool> for Cmp {
+    fn call(&self, a1: i64, a2: i32) -> bool {
+        unsafe { Cmp::operator_call_2(self, a1, a2) }
+    }
+}
+impl Callable2<i32, i32, bool> for Cmp {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { Cmp::operator_call_3(self, a1, a2) }
+    }
+}
 pub static mut count_9: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });
 pub static mut x_10: std::cell::LazyCell<UnsafeMap<i32, (i32, libc::c_char)>> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
@@ -593,6 +608,21 @@ impl C_18 {
     }
     pub unsafe fn operator_call_3(&self, mut _a0: test06___C_Partition, mut r: i32) -> bool {
         return ((4) < (r));
+    }
+}
+impl Callable2<i32, i32, bool> for C_18 {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { C_18::operator_call_1(self, a1, a2) }
+    }
+}
+impl Callable2<i32, test06___C_Partition, bool> for C_18 {
+    fn call(&self, a1: i32, a2: test06___C_Partition) -> bool {
+        unsafe { C_18::operator_call_2(self, a1, a2) }
+    }
+}
+impl Callable2<test06___C_Partition, i32, bool> for C_18 {
+    fn call(&self, a1: test06___C_Partition, a2: i32) -> bool {
+        unsafe { C_18::operator_call_3(self, a1, a2) }
     }
 }
 pub fn main() {

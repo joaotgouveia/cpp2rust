@@ -78,6 +78,11 @@ impl test_deleter_A_ {
         };
     }
 }
+impl Callable1<*mut A, ()> for test_deleter_A_ {
+    fn call(&self, a1: *mut A) -> () {
+        unsafe { test_deleter_A_::operator_call(&mut *(&raw const *self).cast_mut(), a1) }
+    }
+}
 impl Clone for test_deleter_A_ {
     fn clone(&self) -> Self {
         unsafe { test_deleter_A_::copy_from(self as *const test_deleter_A_) }

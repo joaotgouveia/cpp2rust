@@ -277,6 +277,15 @@ clang::QualType GetDeclRefType(const clang::FunctionDecl *fn,
 bool IsSameTypeComparison(const clang::FunctionDecl *fn,
                           const clang::CXXRecordDecl *record);
 
+// The defined, non-template operator op of decl taking num_params parameters.
+const clang::CXXMethodDecl *GetMemberOperator(const clang::CXXRecordDecl *decl,
+                                              clang::OverloadedOperatorKind op,
+                                              unsigned num_params);
+
+// The operator* of decl that returns a reference to the element, as the
+// operator* of an iterator does.
+const clang::CXXMethodDecl *GetIteratorDeref(const clang::CXXRecordDecl *decl);
+
 clang::CXXDestructorDecl *
 GetUserDefinedDestructor(const clang::CXXRecordDecl *decl);
 

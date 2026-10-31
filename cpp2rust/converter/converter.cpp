@@ -913,6 +913,8 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
     ConvertVirtualMethods(cxx);
     AddOrdTrait(cxx);
     AddAdvanceTrait(cxx);
+    AddIteratorTraits(cxx);
+    AddCallableTraits(cxx);
   }
   AddCloneTrait(decl);
   AddDefaultTrait(decl);
@@ -976,6 +978,12 @@ void Converter::EmitConversionAttrs(clang::CXXRecordDecl *decl) {
   ForEachConvertingConstructor(decl, [&](clang::CXXConstructorDecl *ctor) {
     auto *param = ctor->getParamDecl(0);
     auto type = param->getType();
+    // Every clonable type converts to itself with the blanket conversion.
+    if (ctx_.hasSameUnqualifiedType(type.getNonReferenceType(),
+                                    ctx_.getCanonicalTagType(decl)) &&
+        RecordImplementsClone(decl)) {
+      return;
+    }
     auto source =
         GetUnboxedTypeAsString(type.getNonReferenceType().getUnqualifiedType());
     bool is_move = type->isRValueReferenceType();
@@ -1001,8 +1009,9 @@ void Converter::EmitConversionAttrs(clang::CXXRecordDecl *decl) {
     if (!into_types.insert(target).second) {
       return;
     }
-    StrCat(
-        std::format("#[cpp_into({}, {})]", target, GetMethodName(conversion)));
+    StrCat(std::format("#[cpp_into({}, {}{})]", target,
+                       GetMethodName(conversion),
+                       conversion->isConst() ? "" : ", mut_ptr"));
   });
 }
 
@@ -4685,82 +4694,71 @@ std::string Converter::GetComparisonReceiver(const clang::CXXMethodDecl *method,
 }
 
 std::string Converter::GetEqBody(const clang::CXXRecordDecl *decl,
-                                 const clang::FunctionDecl *eq,
-                                 const clang::FunctionDecl *lt,
-                                 const clang::FunctionDecl *cmp,
+                                 const ComparisonOperators &ops,
                                  std::string_view lhs, std::string_view rhs) {
-  if (eq) {
-    return GetComparisonBool(eq, decl, lhs, rhs);
+  if (ops.eq) {
+    return GetComparisonBool(ops.eq, decl, lhs, rhs);
   }
-  if (cmp) {
+  if (ops.ne) {
+    return std::format("!({})", GetComparisonBool(ops.ne, decl, lhs, rhs));
+  }
+  if (ops.cmp) {
     return std::format("{} == std::cmp::Ordering::Equal",
-                       GetComparisonCall(cmp, decl, lhs, rhs));
+                       GetComparisonCall(ops.cmp, decl, lhs, rhs));
   }
-  return std::format("!({}) && !({})", GetComparisonBool(lt, decl, lhs, rhs),
-                     GetComparisonBool(lt, decl, rhs, lhs));
+  return std::format("!({}) && !({})",
+                     GetComparisonBool(ops.lt, decl, lhs, rhs),
+                     GetComparisonBool(ops.lt, decl, rhs, lhs));
+}
+
+std::string Converter::GetCmpBody(const clang::CXXRecordDecl *decl,
+                                  const ComparisonOperators &ops,
+                                  std::string_view lhs, std::string_view rhs) {
+  if (ops.cmp) {
+    return GetComparisonCall(ops.cmp, decl, lhs, rhs);
+  }
+  if (ops.lt) {
+    return std::format("if {} {{ std::cmp::Ordering::Less }} else if {} {{ "
+                       "std::cmp::Ordering::Greater }} else {{ "
+                       "std::cmp::Ordering::Equal }}",
+                       GetComparisonBool(ops.lt, decl, lhs, rhs),
+                       GetComparisonBool(ops.lt, decl, rhs, lhs));
+  }
+  return "";
 }
 
 void Converter::ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
-                                              const clang::FunctionDecl *eq,
-                                              const clang::FunctionDecl *lt,
-                                              const clang::FunctionDecl *cmp) {
-  std::string cmp_body;
-  if (cmp) {
-    cmp_body = GetComparisonCall(cmp, decl, "self", "other");
-  } else if (lt) {
-    cmp_body = std::format("if {} {{ std::cmp::Ordering::Less }} else if {} {{ "
-                           "std::cmp::Ordering::Greater }} else {{ "
-                           "std::cmp::Ordering::Equal }}",
-                           GetComparisonBool(lt, decl, "self", "other"),
-                           GetComparisonBool(lt, decl, "other", "self"));
-  }
-  ConvertOrdAndPartialOrdTraitsBase(
-      cmp_body, GetEqBody(decl, eq, lt, cmp, "self", "other"),
-      GetRecordName(decl));
+                                              const ComparisonOperators &ops) {
+  ConvertOrdAndPartialOrdTraitsBase(GetCmpBody(decl, ops, "self", "other"),
+                                    GetEqBody(decl, ops, "self", "other"),
+                                    GetRecordName(decl));
 }
 
-void Converter::AddOrdTrait(const clang::CXXRecordDecl *decl) {
-  const clang::FunctionDecl *eq = nullptr;
-  const clang::FunctionDecl *lt = nullptr;
-  const clang::FunctionDecl *cmp = nullptr;
-  auto consider = [&](const clang::FunctionDecl *fn) {
-    if (!fn || fn->isImplicit() || fn->isDeleted() || !fn->hasBody() ||
-        fn->getDescribedFunctionTemplate() || !IsSameTypeComparison(fn, decl)) {
-      return;
-    }
-    if (fn->getOverloadedOperator() == clang::OO_Spaceship &&
-        !ctx_.CompCategories.lookupInfoForType(fn->getReturnType())) {
-      return;
-    }
-    switch (fn->getOverloadedOperator()) {
-    case clang::OO_EqualEqual:
-      eq = fn;
-      break;
-    case clang::OO_Less:
-      lt = fn;
-      break;
-    case clang::OO_Spaceship:
-      cmp = fn;
-      break;
-    default:
-      break;
-    }
-  };
+// Calls fn with the functions that may implement the operators ops of decl:
+// its methods, and the operator functions that its context and its friends
+// declare, including the specializations of templates.
+static void
+ForEachOperatorFunction(const clang::CXXRecordDecl *decl,
+                        llvm::ArrayRef<clang::OverloadedOperatorKind> ops,
+                        llvm::function_ref<void(const clang::FunctionDecl *)> fn) {
   auto consider_decl = [&](const clang::NamedDecl *found) {
     if (const auto *tmpl =
             clang::dyn_cast<clang::FunctionTemplateDecl>(found)) {
       for (const auto *spec : tmpl->specializations()) {
-        consider(spec);
+        fn(spec);
       }
       return;
     }
-    consider(clang::dyn_cast<clang::FunctionDecl>(found));
+    if (const auto *function = clang::dyn_cast<clang::FunctionDecl>(found)) {
+      fn(function);
+    }
   };
   for (const auto *method : decl->methods()) {
-    consider(method);
+    fn(method);
   }
-  for (auto op : {clang::OO_EqualEqual, clang::OO_Less, clang::OO_Spaceship}) {
-    auto name = ctx_.DeclarationNames.getCXXOperatorName(op);
+  auto &ctx = decl->getASTContext();
+  for (auto op : ops) {
+    auto name = ctx.DeclarationNames.getCXXOperatorName(op);
     for (const auto *found : decl->getDeclContext()->lookup(name)) {
       consider_decl(found);
     }
@@ -4770,32 +4768,59 @@ void Converter::AddOrdTrait(const clang::CXXRecordDecl *decl) {
       consider_decl(found);
     }
   }
+}
 
-  if (!eq && !lt && !cmp) {
+Converter::ComparisonOperators
+Converter::GetComparisonOperators(const clang::CXXRecordDecl *decl) {
+  ComparisonOperators ops;
+  auto consider = [&](const clang::FunctionDecl *fn) {
+    if (fn->isImplicit() || fn->isDeleted() || !fn->hasBody() ||
+        fn->getDescribedFunctionTemplate() || !IsSameTypeComparison(fn, decl)) {
+      return;
+    }
+    if (fn->getOverloadedOperator() == clang::OO_Spaceship &&
+        !ctx_.CompCategories.lookupInfoForType(fn->getReturnType())) {
+      return;
+    }
+    switch (fn->getOverloadedOperator()) {
+    case clang::OO_EqualEqual:
+      ops.eq = fn;
+      break;
+    case clang::OO_ExclaimEqual:
+      ops.ne = fn;
+      break;
+    case clang::OO_Less:
+      ops.lt = fn;
+      break;
+    case clang::OO_Spaceship:
+      ops.cmp = fn;
+      break;
+    default:
+      break;
+    }
+  };
+  ForEachOperatorFunction(decl,
+                          {clang::OO_EqualEqual, clang::OO_ExclaimEqual,
+                           clang::OO_Less, clang::OO_Spaceship},
+                          consider);
+  return ops;
+}
+
+void Converter::AddOrdTrait(const clang::CXXRecordDecl *decl) {
+  auto ops = GetComparisonOperators(decl);
+  if (!ops.eq && !ops.ne && !ops.lt && !ops.cmp) {
     return;
   }
 
-  ConvertOrdAndPartialOrdTraits(decl, eq, lt, cmp);
+  ConvertOrdAndPartialOrdTraits(decl, ops);
 }
 
 // Records with prefix ++ (and --) advance like iterators in the library's
 // generic algorithms (std::next and std::prev used as function values).
 void Converter::AddAdvanceTrait(const clang::CXXRecordDecl *decl) {
-  const clang::CXXMethodDecl *inc = nullptr;
-  const clang::CXXMethodDecl *dec = nullptr;
-  for (const auto *method : decl->methods()) {
-    if (method->isImplicit() || method->isDeleted() || !method->hasBody() ||
-        method->getDescribedFunctionTemplate() || method->getNumParams() != 0) {
-      continue;
-    }
-    if (method->getOverloadedOperator() == clang::OO_PlusPlus) {
-      inc = method;
-    } else if (method->getOverloadedOperator() == clang::OO_MinusMinus) {
-      dec = method;
-    }
-  }
-  if (inc) {
-    ConvertAdvanceTrait(decl, inc, dec);
+  if (const auto *inc = GetMemberOperator(decl, clang::OO_PlusPlus, 0)) {
+    ConvertAdvanceTrait(decl, inc,
+                        GetMemberOperator(decl, clang::OO_MinusMinus, 0));
   }
 }
 
@@ -4810,6 +4835,133 @@ void Converter::ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
                        GetMethodName(dec)));
   }
   StrCat("}");
+}
+
+bool Converter::IsIteratorRecord(const clang::CXXRecordDecl *decl) {
+  return GetIteratorDeref(decl) &&
+         GetMemberOperator(decl, clang::OO_PlusPlus, 0) &&
+         RecordImplementsClone(decl);
+}
+
+// Iterator records implement the iterator traits that the library's generic
+// algorithms take, up to the category that their operators provide.
+void Converter::AddIteratorTraits(const clang::CXXRecordDecl *decl) {
+  if (!IsIteratorRecord(decl)) {
+    return;
+  }
+  IteratorOperators ops;
+  ops.deref = GetIteratorDeref(decl);
+  ops.inc = GetMemberOperator(decl, clang::OO_PlusPlus, 0);
+  ops.dec = GetMemberOperator(decl, clang::OO_MinusMinus, 0);
+  if (const auto *add_assign =
+          GetMemberOperator(decl, clang::OO_PlusEqual, 1);
+      add_assign && add_assign->getParamDecl(0)->getType()->isIntegerType()) {
+    ops.add_assign = add_assign;
+  }
+  auto comparisons = GetComparisonOperators(decl);
+  ops.equality =
+      comparisons.eq || comparisons.ne || comparisons.lt || comparisons.cmp;
+  ops.ordering = comparisons.lt || comparisons.cmp;
+  ForEachOperatorFunction(
+      decl, {clang::OO_Minus}, [&](const clang::FunctionDecl *fn) {
+        if (fn->getOverloadedOperator() == clang::OO_Minus &&
+            !fn->isDeleted() && fn->hasBody() &&
+            !fn->getDescribedFunctionTemplate() &&
+            IsSameTypeComparison(fn, decl) &&
+            fn->getReturnType()->isIntegerType()) {
+          ops.distance = fn;
+        }
+      });
+  ConvertIteratorTraits(decl, ops);
+}
+
+void Converter::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
+                                      const IteratorOperators &ops) {
+  auto name = GetRecordName(decl);
+  auto value = GetUnboxedTypeAsString(
+      ops.deref->getReturnType().getNonReferenceType().getUnqualifiedType());
+  auto call = [&](const clang::CXXMethodDecl *method, std::string_view self,
+                  std::string_view args = "") {
+    return std::format("{}::{}({}{})", GetUFCSName(method),
+                       GetMethodName(method), self, args);
+  };
+  StrCat(std::format("impl UnsafeCppIterator<{}> for {} {{", value, name));
+  StrCat(std::format(
+      "fn iter_deref(&self) -> *mut {0} {{ unsafe {{ {1} as *mut {0} }} }}",
+      value, call(ops.deref, GetComparisonReceiver(ops.deref, "self"))));
+  StrCat(std::format("fn iter_inc(&mut self) -> &mut Self {{ unsafe {{ {}; "
+                     "}} self }}",
+                     call(ops.inc, "self")));
+  StrCat("}");
+  if (!ops.equality) {
+    return;
+  }
+  StrCat(
+      std::format("impl UnsafeCppInputIterator<{}> for {} {{}}", value, name));
+  if (!ops.dec) {
+    return;
+  }
+  StrCat(std::format("impl UnsafeCppBidirectionalIterator<{}> for {} {{",
+                     value, name));
+  StrCat(std::format("fn iter_dec(&mut self) -> &mut Self {{ unsafe {{ {}; "
+                     "}} self }}",
+                     call(ops.dec, "self")));
+  StrCat("}");
+  if (!ops.ordering || !ops.add_assign || !ops.distance) {
+    return;
+  }
+  StrCat(std::format("impl UnsafeCppRandomAccessIterator<{}> for {} {{",
+                     value, name));
+  StrCat(std::format("fn iter_add_assign(&mut self, n: isize) -> Self {{ "
+                     "unsafe {{ {}; }} self.clone() }}",
+                     call(ops.add_assign, "self", ", n as _")));
+  StrCat(std::format("fn iter_distance(&self, from: &Self) -> isize {{ "
+                     "unsafe {{ ({}) as isize }} }}",
+                     GetComparisonCall(ops.distance, decl, "self", "from")));
+  StrCat("}");
+}
+
+// Records with operator() implement the callable traits that the library's
+// generic algorithms call their function objects through.
+void Converter::AddCallableTraits(const clang::CXXRecordDecl *decl) {
+  if (decl->isLambda() || !RecordImplementsClone(decl)) {
+    return;
+  }
+  std::unordered_set<std::string> signatures;
+  ForEachMethod(decl, [&](clang::CXXMethodDecl *method) {
+    if (method->getOverloadedOperator() != clang::OO_Call ||
+        !method->isInstance() || method->isVirtual() || method->isDeleted() ||
+        !method->hasBody() || method->getDescribedFunctionTemplate() ||
+        method->isVariadic() || method->getNumParams() > 3) {
+      return;
+    }
+    std::string types;
+    std::string params;
+    std::string args;
+    for (unsigned i = 0; i < method->getNumParams(); ++i) {
+      auto type = GetUnboxedTypeAsString(method->getParamDecl(i)->getType());
+      types += type + ", ";
+      params += std::format(", a{}: {}", i + 1, type);
+      args += std::format(", a{}", i + 1);
+    }
+    auto ret = GetUnboxedTypeAsString(method->getReturnType());
+    if (!signatures.insert(types + ret).second) {
+      return;
+    }
+    StrCat(std::format("impl Callable{}<{}{}> for {} {{",
+                       method->getNumParams(), types, ret,
+                       GetRecordName(decl)));
+    StrCat(std::format("fn call(&self{}) -> {} {{ {} }}", params, ret,
+                       GetCallableBody(method, args)));
+    StrCat("}");
+  });
+}
+
+std::string Converter::GetCallableBody(const clang::CXXMethodDecl *call,
+                                       std::string_view args) {
+  return std::format("unsafe {{ {}::{}({}{}) }}", GetUFCSName(call),
+                     GetMethodName(call), GetComparisonReceiver(call, "self"),
+                     args);
 }
 
 void Converter::AddCloneTrait(const clang::RecordDecl *decl) {

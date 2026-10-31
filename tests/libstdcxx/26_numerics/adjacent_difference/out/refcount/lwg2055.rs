@@ -265,6 +265,13 @@ pub fn operator_sub_9(x: Int, mut y: Int) -> Int {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Subtract {}
+impl Callable2<Int, Int, Int> for Subtract {
+    fn call(&self, a1: Int, a2: Int) -> Int {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            SubtractImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn test01_10() {
     let i: Value<Box<[Int]>> = Rc::new(RefCell::new(Box::new([
         Int::new({ 0 }),

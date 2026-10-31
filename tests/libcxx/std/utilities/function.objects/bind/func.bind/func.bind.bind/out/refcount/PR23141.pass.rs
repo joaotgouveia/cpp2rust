@@ -9,6 +9,13 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Fun {}
+impl Callable2<Ptr<i8>, Ptr<i32>, ()> for Fun {
+    fn call(&self, a1: Ptr<i8>, a2: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            FunImpl::operator_call_1_const_char__ref_arr6arr_int_ref(__it, a1, a2)
+        })
+    }
+}
 pub fn test_0() -> bool {
     ({ unimplemented!()(Ptr::<i8>::from_string_literal(b"hello")) });
     return true;

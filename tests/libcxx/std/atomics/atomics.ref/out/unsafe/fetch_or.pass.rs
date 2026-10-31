@@ -456,6 +456,11 @@ impl TestEachIntegralType_TestFetchOr_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_TestFetchOr_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_TestFetchOr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachFloatingPointType_TestDoesNotHaveFetchOr_ {}
@@ -476,6 +481,11 @@ impl TestEachFloatingPointType_TestDoesNotHaveFetchOr_ {
         });
     }
 }
+impl Callable0<()> for TestEachFloatingPointType_TestDoesNotHaveFetchOr_ {
+    fn call(&self) -> () {
+        unsafe { TestEachFloatingPointType_TestDoesNotHaveFetchOr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_TestDoesNotHaveFetchOr_ {}
@@ -493,12 +503,22 @@ impl TestEachPointerType_TestDoesNotHaveFetchOr_ {
         });
     }
 }
+impl Callable0<()> for TestEachPointerType_TestDoesNotHaveFetchOr_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_TestDoesNotHaveFetchOr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchOr_bool_ {}
 impl TestDoesNotHaveFetchOr_bool_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_or<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchOr_bool_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchOr_bool_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -509,12 +529,22 @@ impl TestDoesNotHaveFetchOr_UserAtomicType_ {
         const _: () = assert!(!(false), "!has_fetch_or<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchOr_UserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchOr_UserAtomicType_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchOr_LargeUserAtomicType_ {}
 impl TestDoesNotHaveFetchOr_LargeUserAtomicType_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_or<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchOr_LargeUserAtomicType_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchOr_LargeUserAtomicType_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -525,12 +555,22 @@ impl TestDoesNotHaveFetchOr_float_ {
         const _: () = assert!(!(false), "!has_fetch_or<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchOr_float_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchOr_float_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchOr_double_ {}
 impl TestDoesNotHaveFetchOr_double_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_or<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchOr_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchOr_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -541,6 +581,11 @@ impl TestDoesNotHaveFetchOr_long_double_ {
         const _: () = assert!(!(false), "!has_fetch_or<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchOr_long_double_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchOr_long_double_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchOr_int_ptr_ {}
@@ -549,12 +594,22 @@ impl TestDoesNotHaveFetchOr_int_ptr_ {
         const _: () = assert!(!(false), "!has_fetch_or<std::atomic_ref<T>>");;
     }
 }
+impl Callable0<()> for TestDoesNotHaveFetchOr_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchOr_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestDoesNotHaveFetchOr_const_int_ptr_ {}
 impl TestDoesNotHaveFetchOr_const_int_ptr_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(!(false), "!has_fetch_or<std::atomic_ref<T>>");;
+    }
+}
+impl Callable0<()> for TestDoesNotHaveFetchOr_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { TestDoesNotHaveFetchOr_const_int_ptr_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -579,6 +634,11 @@ impl TestFetchOr_char_ {
         }
     }
 }
+impl Callable0<()> for TestFetchOr_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchOr_signed_char_ {}
@@ -599,6 +659,11 @@ impl TestFetchOr_signed_char_ {
             assert!(((x as i32) == (3_i8 as i32)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchOr_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_signed_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -623,6 +688,11 @@ impl TestFetchOr_unsigned_char_ {
         }
     }
 }
+impl Callable0<()> for TestFetchOr_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_unsigned_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchOr_short_ {}
@@ -643,6 +713,11 @@ impl TestFetchOr_short_ {
             assert!(((x as i32) == (3_i16 as i32)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchOr_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -667,6 +742,11 @@ impl TestFetchOr_unsigned_short_ {
         }
     }
 }
+impl Callable0<()> for TestFetchOr_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_unsigned_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchOr_int_ {}
@@ -687,6 +767,11 @@ impl TestFetchOr_int_ {
             assert!(((x) == (3)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchOr_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -711,6 +796,11 @@ impl TestFetchOr_unsigned_int_ {
         }
     }
 }
+impl Callable0<()> for TestFetchOr_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_unsigned_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchOr_long_ {}
@@ -731,6 +821,11 @@ impl TestFetchOr_long_ {
             assert!(((x) == (3_i64)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchOr_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -755,6 +850,11 @@ impl TestFetchOr_unsigned_long_ {
         }
     }
 }
+impl Callable0<()> for TestFetchOr_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_unsigned_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchOr_long_long_ {}
@@ -775,6 +875,11 @@ impl TestFetchOr_long_long_ {
             assert!(((x) == (3_i64)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchOr_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -799,6 +904,11 @@ impl TestFetchOr_unsigned_long_long_ {
         }
     }
 }
+impl Callable0<()> for TestFetchOr_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_unsigned_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchOr_wchar_t_ {}
@@ -819,6 +929,11 @@ impl TestFetchOr_wchar_t_ {
             assert!(((x) == (3_i32)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchOr_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_wchar_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -843,6 +958,11 @@ impl TestFetchOr_char8_t_ {
         }
     }
 }
+impl Callable0<()> for TestFetchOr_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_char8_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchOr_char16_t_ {}
@@ -865,6 +985,11 @@ impl TestFetchOr_char16_t_ {
         }
     }
 }
+impl Callable0<()> for TestFetchOr_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_char16_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestFetchOr_char32_t_ {}
@@ -885,6 +1010,11 @@ impl TestFetchOr_char32_t_ {
             assert!(((x) == (3_u32)));
             const _: () = assert!(true, "");;
         }
+    }
+}
+impl Callable0<()> for TestFetchOr_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { TestFetchOr_char32_t_::operator_call(self) }
     }
 }
 pub fn main() {

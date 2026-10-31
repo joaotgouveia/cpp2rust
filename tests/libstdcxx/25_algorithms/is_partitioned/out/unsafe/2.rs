@@ -266,6 +266,11 @@ impl pred {
         return ((i) < (5));
     }
 }
+impl Callable1<i32, bool> for pred {
+    fn call(&self, a1: i32) -> bool {
+        unsafe { pred::operator_call(self, a1) }
+    }
+}
 pub unsafe fn test01_10() {
     let mut i: [i32; 10] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     let mut result: bool = unimplemented!();

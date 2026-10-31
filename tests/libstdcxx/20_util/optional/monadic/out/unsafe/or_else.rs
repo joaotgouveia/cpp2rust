@@ -488,6 +488,11 @@ impl F_14 {
         return unimplemented!();
     }
 }
+impl Callable0<()> for F_14 {
+    fn call(&self) -> () {
+        unsafe { F_14::operator_call_1(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 const _: () = assert!(true, "test_call()");
 pub fn main() {
     unsafe {

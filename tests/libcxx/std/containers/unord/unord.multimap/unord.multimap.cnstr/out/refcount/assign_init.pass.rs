@@ -32,6 +32,13 @@ impl test_equal_to_int_ {
         Self { data_: 0 }
     }
 }
+impl Callable2<Ptr<i32>, Ptr<i32>, bool> for test_equal_to_int_ {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_equal_to_int_Impl::operator_call(__it, a1, a2)
+        })
+    }
+}
 impl Default for test_equal_to_int_ {
     fn default() -> Self {
         { test_equal_to_int_::new_1() }
@@ -47,6 +54,13 @@ impl test_hash_int_ {
     pub fn new(data: Option<i32>) -> Self {
         let mut data: i32 = data.unwrap_or_else(|| 0);
         Self { data_: data }
+    }
+}
+impl Callable1<Ptr<i32>, usize> for test_hash_int_ {
+    fn call(&self, a1: Ptr<i32>) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            test_hash_int_Impl::operator_call(__it, a1)
+        })
     }
 }
 impl Default for test_hash_int_ {

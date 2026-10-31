@@ -12,6 +12,11 @@ pub struct Callable_Holder_Incomplete__ {}
 impl Callable_Holder_Incomplete__ {
     pub unsafe fn operator_call(&self) {}
 }
+impl Callable0<()> for Callable_Holder_Incomplete__ {
+    fn call(&self) -> () {
+        unsafe { Callable_Holder_Incomplete__::operator_call(self) }
+    }
+}
 pub unsafe fn no_args_0() -> *mut Holder_Incomplete_ {
     return std::ptr::null_mut();
 }

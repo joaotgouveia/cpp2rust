@@ -200,6 +200,11 @@ impl __gnu_test_semaphore {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct D {}
+impl Callable1<Ptr<i32>, ()> for D {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| DImpl::operator_call(__it, a1))
+    }
+}
 thread_local!(
     pub static count_9: Value<i32> = Rc::new(RefCell::new(0));
 );

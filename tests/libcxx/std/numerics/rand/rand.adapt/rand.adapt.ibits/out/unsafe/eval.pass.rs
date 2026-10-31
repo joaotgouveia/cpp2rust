@@ -36,6 +36,11 @@ impl rand1_unsigned_int__0__10_ {
         return r;
     }
 }
+impl Callable0<u32> for rand1_unsigned_int__0__10_ {
+    fn call(&self) -> u32 {
+        unsafe { rand1_unsigned_int__0__10_::operator_call(&mut *(&raw const *self).cast_mut()) }
+    }
+}
 impl Default for rand1_unsigned_int__0__10_ {
     fn default() -> Self {
         unsafe { rand1_unsigned_int__0__10_::new(None) }
@@ -69,6 +74,11 @@ impl rand1_unsigned_int__0__100_ {
             self.x_ = 0_u32;
         }
         return r;
+    }
+}
+impl Callable0<u32> for rand1_unsigned_int__0__100_ {
+    fn call(&self) -> u32 {
+        unsafe { rand1_unsigned_int__0__100_::operator_call(&mut *(&raw const *self).cast_mut()) }
     }
 }
 impl Default for rand1_unsigned_int__0__100_ {
@@ -105,6 +115,13 @@ impl rand1_unsigned_int__0__4294967295_ {
         return r;
     }
 }
+impl Callable0<u32> for rand1_unsigned_int__0__4294967295_ {
+    fn call(&self) -> u32 {
+        unsafe {
+            rand1_unsigned_int__0__4294967295_::operator_call(&mut *(&raw const *self).cast_mut())
+        }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct rand1_unsigned_int__2__3_ {
@@ -132,6 +149,11 @@ impl rand1_unsigned_int__2__3_ {
             self.x_ = 2_u32;
         }
         return r;
+    }
+}
+impl Callable0<u32> for rand1_unsigned_int__2__3_ {
+    fn call(&self) -> u32 {
+        unsafe { rand1_unsigned_int__2__3_::operator_call(&mut *(&raw const *self).cast_mut()) }
     }
 }
 pub unsafe fn test1_0() {

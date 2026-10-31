@@ -14,6 +14,11 @@ impl MyBind {
         return (((10) * (x)) + (y));
     }
 }
+impl Callable2<i32, i32, i32> for MyBind {
+    fn call(&self, a1: i32, a2: i32) -> i32 {
+        unsafe { MyBind::operator_call(self, a1, a2) }
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

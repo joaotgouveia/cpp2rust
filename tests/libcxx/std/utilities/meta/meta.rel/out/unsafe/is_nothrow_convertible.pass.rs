@@ -11,7 +11,7 @@ use std::rc::Rc;
 pub struct A {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(A, to_A)]
+#[cpp_into(A, to_A, mut_ptr)]
 pub struct B {
     pub a: A,
 }
@@ -25,7 +25,7 @@ impl B {
 pub struct C {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, CppFromUnsafe, Default)]
-#[cpp_into(C, to_C)]
+#[cpp_into(C, to_C, mut_ptr)]
 pub struct D {
     pub c: C,
 }

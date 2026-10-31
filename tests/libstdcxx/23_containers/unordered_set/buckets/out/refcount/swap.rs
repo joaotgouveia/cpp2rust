@@ -209,6 +209,11 @@ impl hash {
         Self { _M_modulo: modulo }
     }
 }
+impl Callable1<i32, usize> for hash {
+    fn call(&self, a1: i32) -> usize {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| hashImpl::operator_call(__it, a1))
+    }
+}
 pub fn test01_9() {
     let us1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let us2: Value<()> = Rc::new(RefCell::new(unimplemented!()));

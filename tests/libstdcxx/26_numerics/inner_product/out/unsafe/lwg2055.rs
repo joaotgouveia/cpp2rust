@@ -338,6 +338,11 @@ impl Add {
         return Int::move_from({ &mut x });
     }
 }
+impl Callable2<Int, Int, Int> for Add {
+    fn call(&self, a1: Int, a2: Int) -> Int {
+        unsafe { Add::operator_call(self, a1, a2) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Multiply {}
@@ -345,6 +350,11 @@ impl Multiply {
     pub unsafe fn operator_call(&self, mut x: Int, mut y: Int) -> Int {
         x.val *= y.val;
         return Int::move_from({ &mut x });
+    }
+}
+impl Callable2<Int, Int, Int> for Multiply {
+    fn call(&self, a1: Int, a2: Int) -> Int {
+        unsafe { Multiply::operator_call(self, a1, a2) }
     }
 }
 pub unsafe fn test01_11() {

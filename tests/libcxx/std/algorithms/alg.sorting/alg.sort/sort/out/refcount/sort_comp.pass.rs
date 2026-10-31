@@ -9,6 +9,13 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct indirect_less {}
+impl Callable2<Ptr<Option<Value<i32>>>, Ptr<Option<Value<i32>>>, bool> for indirect_less {
+    fn call(&self, a1: Ptr<Option<Value<i32>>>, a2: Ptr<Option<Value<i32>>>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            indirect_lessImpl::operator_call_1_class_std_unique_ptr_int_(__it, a1, a2)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

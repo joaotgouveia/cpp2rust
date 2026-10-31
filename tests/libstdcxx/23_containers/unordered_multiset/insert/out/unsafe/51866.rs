@@ -290,6 +290,11 @@ impl num_hash {
         return ((*a).value as usize);
     }
 }
+impl Callable1<*const num, usize> for num_hash {
+    fn call(&self, a1: *const num) -> usize {
+        unsafe { num_hash::operator_call(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct num_equal {}
@@ -299,6 +304,11 @@ impl num_equal {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut _S_called_on_moved_instance_9)) = true;
         }
         return (((*a).value) == ((*b).value));
+    }
+}
+impl Callable2<*const num, *const num, bool> for num_equal {
+    fn call(&self, a1: *const num, a2: *const num) -> bool {
+        unsafe { num_equal::operator_call(self, a1, a2) }
     }
 }
 pub static mut _S_called_on_moved_instance_9: std::cell::LazyCell<bool> =

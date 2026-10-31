@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct A {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(A, to_A)]
+#[cpp_into(A, to_A, mut_ptr)]
 #[byte_size(1)]
 pub struct B {
     #[offset(0)]
@@ -21,7 +21,7 @@ pub struct B {
 #[byte_size(1)]
 pub struct C {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
-#[cpp_into(C, to_C)]
+#[cpp_into(C, to_C, mut_ptr)]
 #[byte_size(1)]
 pub struct D {
     #[offset(0)]

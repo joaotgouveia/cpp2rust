@@ -285,6 +285,16 @@ impl X {
         return 3;
     }
 }
+impl Callable0<i32> for X {
+    fn call(&self) -> i32 {
+        unsafe { X::operator_call_1(&mut *(&raw const *self).cast_mut()) }
+    }
+}
+impl Callable3<i32, i32, i32, i32> for X {
+    fn call(&self, a1: i32, a2: i32, a3: i32) -> i32 {
+        unsafe { X::operator_call_5(&mut *(&raw const *self).cast_mut(), a1, a2, a3) }
+    }
+}
 pub unsafe fn test01_9() {
     let mut b0: () = unimplemented!();
     let mut __do_while = true;

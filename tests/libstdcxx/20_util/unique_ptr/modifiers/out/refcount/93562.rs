@@ -217,6 +217,13 @@ pub struct A_Deleter {
     #[offset(0)]
     pub id: i32,
 }
+impl Callable1<Ptr<i32>, ()> for A_Deleter {
+    fn call(&self, a1: Ptr<i32>) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            A_DeleterImpl::operator_call(__it, a1)
+        })
+    }
+}
 const _: () = assert!(true, "!std::is_move_assignable<Deleter>::value");
 const _: () = assert!(true, "std::is_swappable_v<Deleter>");
 pub fn test03_12() {

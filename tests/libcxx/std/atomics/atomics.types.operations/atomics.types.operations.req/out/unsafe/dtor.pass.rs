@@ -524,6 +524,11 @@ impl TestEachIntegralType_CheckTriviallyDestructible_ {
         });
     }
 }
+impl Callable0<()> for TestEachIntegralType_CheckTriviallyDestructible_ {
+    fn call(&self) -> () {
+        unsafe { TestEachIntegralType_CheckTriviallyDestructible_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachFloatingPointType_CheckTriviallyDestructible_ {}
@@ -546,6 +551,11 @@ impl TestEachFloatingPointType_CheckTriviallyDestructible_ {
         });
     }
 }
+impl Callable0<()> for TestEachFloatingPointType_CheckTriviallyDestructible_ {
+    fn call(&self) -> () {
+        unsafe { TestEachFloatingPointType_CheckTriviallyDestructible_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct TestEachPointerType_CheckTriviallyDestructible_ {}
@@ -563,12 +573,22 @@ impl TestEachPointerType_CheckTriviallyDestructible_ {
         });
     }
 }
+impl Callable0<()> for TestEachPointerType_CheckTriviallyDestructible_ {
+    fn call(&self) -> () {
+        unsafe { TestEachPointerType_CheckTriviallyDestructible_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_bool_ {}
 impl CheckTriviallyDestructible_bool_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_bool_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_bool_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -579,12 +599,22 @@ impl CheckTriviallyDestructible_char_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_char_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_signed_char_ {}
 impl CheckTriviallyDestructible_signed_char_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_signed_char_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_signed_char_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -595,12 +625,22 @@ impl CheckTriviallyDestructible_unsigned_char_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_unsigned_char_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_unsigned_char_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_short_ {}
 impl CheckTriviallyDestructible_short_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_short_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_short_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -611,12 +651,22 @@ impl CheckTriviallyDestructible_unsigned_short_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_unsigned_short_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_unsigned_short_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_int_ {}
 impl CheckTriviallyDestructible_int_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_int_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_int_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -627,12 +677,22 @@ impl CheckTriviallyDestructible_unsigned_int_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_unsigned_int_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_unsigned_int_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_long_ {}
 impl CheckTriviallyDestructible_long_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_long_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -643,12 +703,22 @@ impl CheckTriviallyDestructible_unsigned_long_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_unsigned_long_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_unsigned_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_long_long_ {}
 impl CheckTriviallyDestructible_long_long_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_long_long_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_long_long_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -659,12 +729,22 @@ impl CheckTriviallyDestructible_unsigned_long_long_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_unsigned_long_long_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_unsigned_long_long_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_wchar_t_ {}
 impl CheckTriviallyDestructible_wchar_t_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_wchar_t_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_wchar_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -675,12 +755,22 @@ impl CheckTriviallyDestructible_char8_t_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_char8_t_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_char8_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_char16_t_ {}
 impl CheckTriviallyDestructible_char16_t_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_char16_t_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_char16_t_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -691,12 +781,22 @@ impl CheckTriviallyDestructible_char32_t_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_char32_t_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_char32_t_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_float_ {}
 impl CheckTriviallyDestructible_float_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_float_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_float_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -707,12 +807,22 @@ impl CheckTriviallyDestructible_double_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_double_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_double_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_long_double_ {}
 impl CheckTriviallyDestructible_long_double_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_long_double_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_long_double_::operator_call(self) }
     }
 }
 #[repr(C)]
@@ -723,12 +833,22 @@ impl CheckTriviallyDestructible_int_ptr_ {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
     }
 }
+impl Callable0<()> for CheckTriviallyDestructible_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_int_ptr_::operator_call(self) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct CheckTriviallyDestructible_const_int_ptr_ {}
 impl CheckTriviallyDestructible_const_int_ptr_ {
     pub unsafe fn operator_call(&self) {
         const _: () = assert!(true, "std::is_trivially_destructible<Atomic>::value");;
+    }
+}
+impl Callable0<()> for CheckTriviallyDestructible_const_int_ptr_ {
+    fn call(&self) -> () {
+        unsafe { CheckTriviallyDestructible_const_int_ptr_::operator_call(self) }
     }
 }
 pub fn main() {

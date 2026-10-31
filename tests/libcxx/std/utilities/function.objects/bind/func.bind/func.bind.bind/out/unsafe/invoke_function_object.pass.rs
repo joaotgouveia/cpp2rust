@@ -17,6 +17,11 @@ impl DummyUnaryFunction {
         return 0;
     }
 }
+impl Callable1<*const BadUnaryFunction, i32> for DummyUnaryFunction {
+    fn call(&self, a1: *const BadUnaryFunction) -> i32 {
+        unsafe { DummyUnaryFunction::operator_call_1_struct_BadUnaryFunction(self, a1) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct BadUnaryFunction {}

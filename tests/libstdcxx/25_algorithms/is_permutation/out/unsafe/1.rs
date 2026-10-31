@@ -264,6 +264,11 @@ impl my_equal_to {
         return (((__x) % (10)) == ((__y) % (10)));
     }
 }
+impl Callable2<i32, i32, bool> for my_equal_to {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { my_equal_to::operator_call(self, a1, a2) }
+    }
+}
 pub static mut arr0_9: std::cell::LazyCell<[i32; 5]> =
     std::cell::LazyCell::new(|| unsafe { [11, 22, 33, 44, 55] });
 pub unsafe fn do_test_10(mut arr1: *mut i32, mut np: Option<bool>) {

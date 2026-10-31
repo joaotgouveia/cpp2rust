@@ -145,6 +145,11 @@ impl comparator_6 {
         });
     }
 }
+impl Callable2<*const Counter_int_, *const Counter_int_, bool> for comparator_6 {
+    fn call(&self, a1: *const Counter_int_, a2: *const Counter_int_) -> bool {
+        unsafe { comparator_6::operator_call(self, a1, a2) }
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())

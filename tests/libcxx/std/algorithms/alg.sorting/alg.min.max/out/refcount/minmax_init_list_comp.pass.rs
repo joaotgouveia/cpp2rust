@@ -24,6 +24,17 @@ impl binary_counting_predicate_bool__ptr__int__int___int__int_ {
         }
     }
 }
+impl Callable2<Ptr<i32>, Ptr<i32>, bool>
+    for binary_counting_predicate_bool__ptr__int__int___int__int_
+{
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            binary_counting_predicate_bool__ptr__int__int___int__int_Impl::operator_call(
+                __it, a1, a2,
+            )
+        })
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
 #[cpp_from(()  , new, value)]
 #[byte_size(16)]
@@ -41,6 +52,13 @@ impl binary_counting_predicate_std_greater_int___int__int_ {
             p_: (*p.borrow()).clone(),
             count_: 0_usize,
         }
+    }
+}
+impl Callable2<Ptr<i32>, Ptr<i32>, bool> for binary_counting_predicate_std_greater_int___int__int_ {
+    fn call(&self, a1: Ptr<i32>, a2: Ptr<i32>) -> bool {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            binary_counting_predicate_std_greater_int___int__int_Impl::operator_call(__it, a1, a2)
+        })
     }
 }
 impl Default for binary_counting_predicate_std_greater_int___int__int_ {

@@ -252,16 +252,35 @@ impl __gnu_test_input_iterator_wrapper_int_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-impl CppEq for __gnu_test_input_iterator_wrapper_int_ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        __gnu_test_input_iterator_wrapper_int_Impl::operator_eq(__lhs, __rhs.clone())
+impl std::cmp::PartialEq for __gnu_test_input_iterator_wrapper_int_ {
+    fn eq(&self, other: &Self) -> bool {
+        {
+            libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {
+                __gnu_test_input_iterator_wrapper_int_Impl::operator_eq(__lhs, __rhs.clone())
+            })
+        }
     }
 }
+impl std::cmp::Eq for __gnu_test_input_iterator_wrapper_int_ {}
 impl CppAdvance for __gnu_test_input_iterator_wrapper_int_ {
     fn cpp_inc(__it: &Ptr<Self>) {
         __it.operator_inc_9();
     }
 }
+impl CppIterator<i32> for __gnu_test_input_iterator_wrapper_int_ {
+    fn iter_deref(&self) -> Ptr<i32> {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            __gnu_test_input_iterator_wrapper_int_Impl::operator_deref(__it)
+        })
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        libcc2rs::with_record_ptr(self, |__it| {
+            __gnu_test_input_iterator_wrapper_int_Impl::operator_inc_9(__it);
+        });
+        self
+    }
+}
+impl CppInputIterator<i32> for __gnu_test_input_iterator_wrapper_int_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct __gnu_test_test_container_int____gnu_test_input_iterator_wrapper_ {

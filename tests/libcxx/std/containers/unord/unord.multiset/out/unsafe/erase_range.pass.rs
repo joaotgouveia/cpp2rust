@@ -151,6 +151,11 @@ impl MyHash_4 {
         return v;
     }
 }
+impl Callable1<usize, usize> for MyHash_4 {
+    fn call(&self, a1: usize) -> usize {
+        unsafe { MyHash_4::operator_call(self, a1) }
+    }
+}
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const outstanding_bytes_0);
     std::cell::LazyCell::force(&*&raw const alloc_count_1);

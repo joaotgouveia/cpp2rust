@@ -221,6 +221,10 @@ impl std::cmp::PartialOrd for three_way_random_access_iterator_std_basic_string_
 impl std::cmp::PartialEq for three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_8(self as *const three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_, other as *const three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_) }}}
 impl std::cmp::Eq for three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ {}
 impl UnsafeCppAdvance for three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { unsafe fn cpp_inc(&mut self) { self.operator_inc_7(); } unsafe fn cpp_dec(&mut self) { self.operator_dec_8(); } }
+impl UnsafeCppIterator<Vec<libc::c_char > > for three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { fn iter_deref(&self) -> *mut Vec<libc::c_char >  { unsafe { three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_::operator_deref(self) as *mut Vec<libc::c_char >  } } fn iter_inc(&mut self) -> &mut Self { unsafe { three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_::operator_inc_7(self); } self } }
+impl UnsafeCppInputIterator<Vec<libc::c_char > > for three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ {}
+impl UnsafeCppBidirectionalIterator<Vec<libc::c_char > > for three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { fn iter_dec(&mut self) -> &mut Self { unsafe { three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_::operator_dec_8(self); } self } }
+impl UnsafeCppRandomAccessIterator<Vec<libc::c_char > > for three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { fn iter_add_assign(&mut self, n: isize) -> Self { unsafe { three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_::operator_add_assign(self, n as _); } self.clone() } fn iter_distance(&self, from: &Self) -> isize { unsafe { (operator_sub_7(self.clone(), from.clone())) as isize } } }
 impl three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { pub unsafe fn new_1 ( u : *const three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ , ) -> Self { let mut this = Self { it_ : ( ( * u ) . it_  ) .cast_const() , tracker_ : ( * u ) . tracker_  , } ;
  this } }
 impl three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { pub unsafe fn new_2 ( u : *mut three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ , ) -> Self { let mut this = Self { it_ : ( ( * u ) . it_  ) .cast_const() , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * u ) . tracker_  } , )  , } ;
@@ -271,6 +275,9 @@ impl three_way_random_access_iterator_const_std_basic_string_char__std_char_trai
 impl std::cmp::PartialEq for three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_12(self as *const three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_, other as *const three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_) }}}
 impl std::cmp::Eq for three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ {}
 impl UnsafeCppAdvance for three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { unsafe fn cpp_inc(&mut self) { self.operator_inc_7(); } unsafe fn cpp_dec(&mut self) { self.operator_dec_8(); } }
+impl UnsafeCppIterator<Vec<libc::c_char > > for three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { fn iter_deref(&self) -> *mut Vec<libc::c_char >  { unsafe { three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_::operator_deref(self) as *mut Vec<libc::c_char >  } } fn iter_inc(&mut self) -> &mut Self { unsafe { three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_::operator_inc_7(self); } self } }
+impl UnsafeCppInputIterator<Vec<libc::c_char > > for three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ {}
+impl UnsafeCppBidirectionalIterator<Vec<libc::c_char > > for three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { fn iter_dec(&mut self) -> &mut Self { unsafe { three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_::operator_dec_8(self); } self } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
 pub struct cpp20_random_access_iterator_int_ptr_ {
@@ -562,6 +569,37 @@ impl UnsafeCppAdvance for adl_Iterator {
         self.operator_dec_16();
     }
 }
+impl UnsafeCppIterator<i32> for adl_Iterator {
+    fn iter_deref(&self) -> *mut i32 {
+        unsafe { adl_Iterator::operator_deref(self) as *mut i32 }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_inc_14(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<i32> for adl_Iterator {}
+impl UnsafeCppBidirectionalIterator<i32> for adl_Iterator {
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            adl_Iterator::operator_dec_16(self);
+        }
+        self
+    }
+}
+impl UnsafeCppRandomAccessIterator<i32> for adl_Iterator {
+    fn iter_add_assign(&mut self, n: isize) -> Self {
+        unsafe {
+            adl_Iterator::operator_add_assign(self, n as _);
+        }
+        self.clone()
+    }
+    fn iter_distance(&self, from: &Self) -> isize {
+        unsafe { (adl_Iterator::operator_sub_11(self, from.clone())) as isize }
+    }
+}
 impl Default for adl_Iterator {
     fn default() -> Self {
         unsafe {
@@ -769,6 +807,28 @@ impl TransparentComparator {
     }
     pub unsafe fn operator_call_5_int(&self, t1: *const i32, t2: *const i32) -> bool {
         return ((*t1) < (*t2));
+    }
+}
+impl Callable2<*const Vec<libc::c_char > , *const Transparent_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ , bool > for TransparentComparator { fn call(&self, a1: *const Vec<libc::c_char > , a2: *const Transparent_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ ) -> bool  { unsafe { TransparentComparator::operator_call_3_class_std_basic_string_char__0(self, a1, a2) } } }
+impl Callable2<*const i32, *const Transparent_int__false_, bool> for TransparentComparator {
+    fn call(&self, a1: *const i32, a2: *const Transparent_int__false_) -> bool {
+        unsafe { TransparentComparator::operator_call_3_int_0(self, a1, a2) }
+    }
+}
+impl Callable2<*const Transparent_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ , *const Vec<libc::c_char > , bool > for TransparentComparator { fn call(&self, a1: *const Transparent_std_basic_string_char__std_char_traits_char___std_allocator_char____false_ , a2: *const Vec<libc::c_char > ) -> bool  { unsafe { TransparentComparator::operator_call_4_class_std_basic_string_char__0(self, a1, a2) } } }
+impl Callable2<*const Transparent_int__false_, *const i32, bool> for TransparentComparator {
+    fn call(&self, a1: *const Transparent_int__false_, a2: *const i32) -> bool {
+        unsafe { TransparentComparator::operator_call_4_int_0(self, a1, a2) }
+    }
+}
+impl Callable2<*const Vec<libc::c_char>, *const Vec<libc::c_char>, bool> for TransparentComparator {
+    fn call(&self, a1: *const Vec<libc::c_char>, a2: *const Vec<libc::c_char>) -> bool {
+        unsafe { TransparentComparator::operator_call_5_class_std_basic_string_char_(self, a1, a2) }
+    }
+}
+impl Callable2<*const i32, *const i32, bool> for TransparentComparator {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { TransparentComparator::operator_call_5_int(self, a1, a2) }
     }
 }
 impl Default for TransparentComparator {
@@ -1164,6 +1224,10 @@ impl std::cmp::PartialOrd for min_pointer_std_basic_string_char__std_char_traits
 impl std::cmp::PartialEq for min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_30(self.clone(), other.clone()) }}}
 impl std::cmp::Eq for min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ {}
 impl UnsafeCppAdvance for min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { unsafe fn cpp_inc(&mut self) { self.operator_inc_8(); } unsafe fn cpp_dec(&mut self) { self.operator_dec_10(); } }
+impl UnsafeCppIterator<Vec<libc::c_char > > for min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { fn iter_deref(&self) -> *mut Vec<libc::c_char >  { unsafe { min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__::operator_deref(self) as *mut Vec<libc::c_char >  } } fn iter_inc(&mut self) -> &mut Self { unsafe { min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__::operator_inc_8(self); } self } }
+impl UnsafeCppInputIterator<Vec<libc::c_char > > for min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppBidirectionalIterator<Vec<libc::c_char > > for min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { fn iter_dec(&mut self) -> &mut Self { unsafe { min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__::operator_dec_10(self); } self } }
+impl UnsafeCppRandomAccessIterator<Vec<libc::c_char > > for min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { fn iter_add_assign(&mut self, n: isize) -> Self { unsafe { min_pointer_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__::operator_add_assign(self, n as _); } self.clone() } fn iter_distance(&self, from: &Self) -> isize { unsafe { (operator_sub_28(self.clone(), from.clone())) as isize } } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
@@ -1202,6 +1266,9 @@ impl min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocat
 impl std::cmp::PartialEq for min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_33(self.clone(), other.clone()) }}}
 impl std::cmp::Eq for min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ {}
 impl UnsafeCppAdvance for min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { unsafe fn cpp_inc(&mut self) { self.operator_inc_9(); } unsafe fn cpp_dec(&mut self) { self.operator_dec_11(); } }
+impl UnsafeCppIterator<Vec<libc::c_char > > for min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { fn iter_deref(&self) -> *mut Vec<libc::c_char >  { unsafe { min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__::operator_deref(self) as *mut Vec<libc::c_char >  } } fn iter_inc(&mut self) -> &mut Self { unsafe { min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__::operator_inc_9(self); } self } }
+impl UnsafeCppInputIterator<Vec<libc::c_char > > for min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ {}
+impl UnsafeCppBidirectionalIterator<Vec<libc::c_char > > for min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__ { fn iter_dec(&mut self) -> &mut Self { unsafe { min_pointer_const_std_basic_string_char__std_char_traits_char___std_allocator_char____std_integral_constant_unsigned_long__0__::operator_dec_11(self); } self } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {

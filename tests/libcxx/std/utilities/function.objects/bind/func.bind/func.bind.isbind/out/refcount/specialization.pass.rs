@@ -9,6 +9,13 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct MyBind {}
+impl Callable2<i32, i32, i32> for MyBind {
+    fn call(&self, a1: i32, a2: i32) -> i32 {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            MyBindImpl::operator_call(__it, a1, a2)
+        })
+    }
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));

@@ -268,29 +268,33 @@ pub unsafe fn test01_10() {
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, CppFromUnsafe)]
 #[cpp_from(FnPtr<fn(*const Option<Box<Thingy_11 >> ,i32 ,)> , new, value)]
-pub struct PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__
+pub struct PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__
 {
     pub f: FnPtr<fn(*const Option<Box<Thingy_11>>, i32)>,
 }
-impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { pub unsafe fn new ( mut f : FnPtr<fn(*const Option<Box<Thingy_11 >> ,i32 ,)> , ) -> Self { let mut this = Self { f : f .copy_from() , } ;
+impl PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { pub unsafe fn new ( mut f : FnPtr<fn(*const Option<Box<Thingy_11 >> ,i32 ,)> , ) -> Self { let mut this = Self { f : f .copy_from() , } ;
  this } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : *const *mut Option<Box<Thingy_11 >>  , ) -> () { { return unimplemented!()   ;
  } panic!("ub: non-void function does not return a value") } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int ( &self , a_0 : *const *mut Option<Box<Thingy_11 >>  , a_1 : *const i32 , ) { { ( unsafe { let _arg0: *const Option<Box<Thingy_11 >>  = ( * a_0 )   ; let _arg1: i32  = ( * a_1 ) ; self . f   .call ( _arg0 , _arg1 , ) } ) ;
  return ;
  ;
  } } }
-impl Default for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn default() -> Self { unsafe { PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { f : FnPtr::<fn(*const Option<Box<Thingy_11 >> ,i32 ,)>::new ( | _a0 : *const Option<Box<Thingy_11 >> , mut _a1 : i32 , | { unsafe { } } )  , } } } }
+impl Callable1<*const *mut Option<Box<Thingy_11 >>  , () > for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn call(&self, a1: *const *mut Option<Box<Thingy_11 >>  ) -> ()  { unsafe { PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__::operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___(self, a1) } } }
+impl Callable2<*const *mut Option<Box<Thingy_11 >>  , *const i32 , () > for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn call(&self, a1: *const *mut Option<Box<Thingy_11 >>  , a2: *const i32 ) -> ()  { unsafe { PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__::operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int(self, a1, a2) } } }
+impl Default for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { fn default() -> Self { unsafe { PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ { f : FnPtr::<fn(*const Option<Box<Thingy_11 >> ,i32 ,)>::new ( | _a0 : *const Option<Box<Thingy_11 >> , mut _a1 : i32 , | { unsafe { } } )  , } } } }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, CppFromUnsafe)]
 #[cpp_from(FnPtr<fn(*const Vec<libc::c_char> ,i32 ,) -> *const Vec<libc::c_char> > , new, value)]
-pub struct PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__
+pub struct PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__
 {
     pub f: FnPtr<fn(*const Vec<libc::c_char>, i32) -> *const Vec<libc::c_char>>,
 }
-impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { pub unsafe fn new ( mut f : FnPtr<fn(*const Vec<libc::c_char> ,i32 ,) -> *const Vec<libc::c_char> > , ) -> Self { let mut this = Self { f : f .copy_from() , } ;
+impl PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { pub unsafe fn new ( mut f : FnPtr<fn(*const Vec<libc::c_char> ,i32 ,) -> *const Vec<libc::c_char> > , ) -> Self { let mut this = Self { f : f .copy_from() , } ;
  this } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : *const *mut Vec<libc::c_char >  , ) -> () { { return unimplemented!()   ;
  } panic!("ub: non-void function does not return a value") } pub unsafe fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int ( &self , a_0 : *const *mut Vec<libc::c_char >  , a_1 : *const i32 , ) -> *const Vec<libc::c_char> { { return & ( unsafe { let _s: *const Vec<libc::c_char>  = (( * a_0 )    as *const Vec<libc::c_char >).cast::<Vec<libc::c_char>>() ; let _arg1: i32  = ( * a_1 ) ; self . f   .call ( _s , _arg1 , ) } )  ;
  } panic!("ub: non-void function does not return a value") } }
-impl Default for PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn default() -> Self { unsafe { PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { f : FnPtr::<fn(*const Vec<libc::c_char> ,i32 ,) -> *const Vec<libc::c_char> >::new ( | s : *const Vec<libc::c_char> , mut _a1 : i32 , | -> *const Vec<libc::c_char> { unsafe { return s  ;
+impl Callable1<*const *mut Vec<libc::c_char >  , () > for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn call(&self, a1: *const *mut Vec<libc::c_char >  ) -> ()  { unsafe { PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__::operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___(self, a1) } } }
+impl Callable2<*const *mut Vec<libc::c_char >  , *const i32 , *const Vec<libc::c_char> > for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn call(&self, a1: *const *mut Vec<libc::c_char >  , a2: *const i32 ) -> *const Vec<libc::c_char>  { unsafe { PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__::operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int(self, a1, a2) } } }
+impl Default for PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { fn default() -> Self { unsafe { PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ { f : FnPtr::<fn(*const Vec<libc::c_char> ,i32 ,) -> *const Vec<libc::c_char> >::new ( | s : *const Vec<libc::c_char> , mut _a1 : i32 , | -> *const Vec<libc::c_char> { unsafe { return s  ;
  } } )  , } } } }
 pub unsafe fn test02_12() {
     let mut thingy: Option<Box<Thingy_11>> = None;
@@ -301,12 +305,12 @@ pub unsafe fn test02_12() {
     (unsafe {
         let mut ___self: () = (unsafe {
             let mut _a: *mut Option<Box<Thingy_11>> = unimplemented!();
-            PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( & PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: new ( { func .copy_from() } , )   , & mut _a , )
+            PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( & PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: new ( { func .copy_from() } , )   , & mut _a , )
         });
         let mut ___call_args: i32 = 10;
         (unsafe {
             let mut _a: *mut Option<Box<Thingy_11>> = unimplemented!();
-            PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( & PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: new ( { func .copy_from() } , )   , & mut _a , )
+            PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( & PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__ :: new ( { func .copy_from() } , )   , & mut _a , )
         })(&mut ___self, &mut ___call_args)
     });
 }
@@ -323,7 +327,7 @@ pub unsafe fn test03_13() {
                 }
             },
         );
-    let sref : *const Vec<libc::c_char> = & *(&raw const ( unsafe { let mut ___self : ()  = ( unsafe { let mut _a : *mut Vec<libc::c_char >   = unimplemented!()  ; PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( & PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: new ( { func .copy_from() } , )   , & mut _a , ) } )  ; let mut ___call_args : i32  = 10 ; ( unsafe { let mut _a : *mut Vec<libc::c_char >   = unimplemented!()  ; PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( & PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: new ( { func .copy_from() } , )   , & mut _a , ) } )  ( & mut ___self , & mut ___call_args , ) } ) ).cast::<Vec<libc::c_char>>() ;
+    let sref : *const Vec<libc::c_char> = & *(&raw const ( unsafe { let mut ___self : ()  = ( unsafe { let mut _a : *mut Vec<libc::c_char >   = unimplemented!()  ; PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( & PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: new ( { func .copy_from() } , )   , & mut _a , ) } )  ; let mut ___call_args : i32  = 10 ; ( unsafe { let mut _a : *mut Vec<libc::c_char >   = unimplemented!()  ; PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( & PartialApply__lambda_at__app_cpp2rust_tmp_agents_traits_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__ :: new ( { func .copy_from() } , )   , & mut _a , ) } )  ( & mut ___self , & mut ___call_args , ) } ) ).cast::<Vec<libc::c_char>>() ;
     let c: *const libc::c_char = &(*unimplemented!());
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

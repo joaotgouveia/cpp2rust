@@ -285,6 +285,11 @@ impl CompLast {
         return (((x) % (10)) < ((y) % (10)));
     }
 }
+impl Callable2<i32, i32, bool> for CompLast {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { CompLast::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Gt {}
@@ -298,6 +303,11 @@ impl Gt {
     pub unsafe fn operator_call(&mut self, x: *const i32, y: *const i32) -> bool {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut itsCount_15)).prefix_inc();
         return ((*x) > (*y));
+    }
+}
+impl Callable2<*const i32, *const i32, bool> for Gt {
+    fn call(&self, a1: *const i32, a2: *const i32) -> bool {
+        unsafe { Gt::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
     }
 }
 static mut itsCount_15: std::cell::LazyCell<i32> = std::cell::LazyCell::new(|| unsafe { 0 });

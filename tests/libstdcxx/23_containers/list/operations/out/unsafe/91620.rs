@@ -297,6 +297,16 @@ impl std::cmp::PartialEq for PredLWG526 {
     }
 }
 impl std::cmp::Eq for PredLWG526 {}
+impl Callable1<*const PredLWG526, bool> for PredLWG526 {
+    fn call(&self, a1: *const PredLWG526) -> bool {
+        unsafe { PredLWG526::operator_call_3(self, a1) }
+    }
+}
+impl Callable2<*const PredLWG526, *const PredLWG526, bool> for PredLWG526 {
+    fn call(&self, a1: *const PredLWG526, a2: *const PredLWG526) -> bool {
+        unsafe { PredLWG526::operator_call_5(self, a1, a2) }
+    }
+}
 pub unsafe fn test01_10() {
     let mut a1: [i32; 7] = [1, 2, 1, 3, 5, 8, 11];
     let mut a2: [i32; 5] = [2, 3, 5, 8, 11];

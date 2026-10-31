@@ -712,6 +712,36 @@ impl UnsafeCppAdvance for min_pointer_MoveOnly__std_integral_constant_unsigned_l
         self.operator_dec_10();
     }
 }
+impl UnsafeCppIterator<MoveOnly>
+    for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_deref(&self) -> *mut MoveOnly {
+        unsafe {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__::operator_deref(self)
+                as *mut MoveOnly
+        }
+    }
+    fn iter_inc(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__::operator_inc_8(self);
+        }
+        self
+    }
+}
+impl UnsafeCppInputIterator<MoveOnly>
+    for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__
+{
+}
+impl UnsafeCppBidirectionalIterator<MoveOnly>
+    for min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__
+{
+    fn iter_dec(&mut self) -> &mut Self {
+        unsafe {
+            min_pointer_MoveOnly__std_integral_constant_unsigned_long__0__::operator_dec_10(self);
+        }
+        self
+    }
+}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {

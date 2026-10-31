@@ -24,6 +24,13 @@ impl Deleter {
         Self {}
     }
 }
+impl Callable1<AnyPtr, ()> for Deleter {
+    fn call(&self, a1: AnyPtr) -> () {
+        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
+            DeleterImpl::operator_call(__it, a1)
+        })
+    }
+}
 impl Default for Deleter {
     fn default() -> Self {
         { Deleter::new() }

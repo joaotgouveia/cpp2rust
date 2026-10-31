@@ -285,6 +285,11 @@ impl Mod_int_ {
         return (((i) % (self.m)) == ((j) % (self.m)));
     }
 }
+impl Callable2<i32, i32, bool> for Mod_int_ {
+    fn call(&self, a1: i32, a2: i32) -> bool {
+        unsafe { Mod_int_::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
+    }
+}
 pub unsafe fn test02_10() {
     let mut fl: () = unimplemented!();
     unimplemented!();

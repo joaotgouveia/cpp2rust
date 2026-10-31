@@ -52,6 +52,11 @@ pub struct do_nothing {}
 impl do_nothing {
     pub unsafe fn operator_call(&self, mut _a0: *mut ::libc::c_void) {}
 }
+impl Callable1<*mut ::libc::c_void, ()> for do_nothing {
+    fn call(&self, a1: *mut ::libc::c_void) -> () {
+        unsafe { do_nothing::operator_call(self, a1) }
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
