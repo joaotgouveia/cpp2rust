@@ -2570,6 +2570,7 @@ bool Converter::VisitImplicitCastExpr(clang::ImplicitCastExpr *expr) {
     break;
   }
   case clang::CastKind::CK_ConstructorConversion:
+  case clang::CastKind::CK_UserDefinedConversion:
   case clang::CastKind::CK_DerivedToBase:
     Convert(sub_expr);
     break;
@@ -5054,7 +5055,9 @@ void Converter::PlaceholderCtx::dump() const {
 
 std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
                                           const PlaceholderCtx &ph_ctx) {
-  if (arg->getType()->isFunctionPointerType()) {
+  // a rule taking a pointer gets the address of the function pointer object
+  if (arg->getType()->isFunctionPointerType() &&
+      !ph_ctx.declared_in_rule_as_rust_ptr) {
     return ConvertFnPtrPlaceholder(arg);
   }
 
@@ -5225,7 +5228,9 @@ std::string Converter::ConvertIRFragment(
       assert(arg_idx < all_args.size());
       auto *arg = all_args[arg_idx];
       bool is_receiver = HasReceiver(expr) && arg_idx == 0;
-      bool is_cpp_ptr = arg->getType()->isPointerType();
+      // a function pointer is converted as a function, not as a pointer
+      bool is_cpp_ptr = arg->getType()->isPointerType() &&
+                        !arg->getType()->isFunctionPointerType();
 
       PlaceholderCtx ph_ctx{
           .arg_idx = arg_idx,

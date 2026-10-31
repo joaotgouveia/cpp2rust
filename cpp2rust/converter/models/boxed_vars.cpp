@@ -273,8 +273,10 @@ private:
       if (MovedByConstructor(arg)) {
         continue;
       }
-      if (!rule->params[i].is_pointer() || arg->getType()->isPointerType() ||
-          RuleRegistry::MapsToPointer(ctx_, arg->getType())) {
+      auto type = arg->getType();
+      if (!rule->params[i].is_pointer() ||
+          (type->isPointerType() && !type->isFunctionPointerType()) ||
+          RuleRegistry::MapsToPointer(ctx_, type)) {
         AddValueUse(arg);
       }
     }

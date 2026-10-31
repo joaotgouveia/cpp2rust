@@ -42,6 +42,39 @@ fn pointer_flags(ty: &ast::Type) -> (bool, bool) {
     flags
 }
 
+/// The generic a pointer type points to (`T1` of `*mut T1`, `Ptr<T1>`), if
+/// the pointee is a bare generic.
+fn pointee_generic(ty: &ast::Type) -> Option<i32> {
+    let pointee = match ty {
+        ast::Type::PtrType(ptr) => ptr.ty()?,
+        ast::Type::PathType(path) => {
+            let segment = path.path()?.segment()?;
+            if segment.name_ref()?.text() != "Ptr" {
+                return None;
+            }
+            match segment.generic_arg_list()?.generic_args().next()? {
+                ast::GenericArg::TypeArg(arg) => arg.ty()?,
+                _ => return None,
+            }
+        }
+        ast::Type::RefType(r) => return pointee_generic(&r.ty()?),
+        _ => return None,
+    };
+    let ast::Type::PathType(path) = pointee else {
+        return None;
+    };
+    let path = path.path()?;
+    if path.qualifier().is_some() {
+        return None;
+    }
+    let segment = path.segment()?;
+    if segment.generic_arg_list().is_some() {
+        return None;
+    }
+    let name = segment.name_ref()?.text().to_string();
+    name.strip_prefix('T')?.parse().ok()
+}
+
 /// Whether the type names an associated type through a `<X as Trait>::` anchor,
 /// which the converter cannot compare with the C++ type textually.
 fn is_projection(ty: &ast::Type) -> bool {
@@ -347,6 +380,7 @@ struct ParamInfo {
     ty: String,
     is_refcount_pointer: bool,
     is_unsafe_pointer: bool,
+    pointee_generic: Option<i32>,
     is_mut_ref: bool,
     is_va_args: bool,
     is_init: bool,
@@ -390,6 +424,7 @@ impl<'a> FnIrBuilder<'a> {
                 ty: ty.syntax().text().to_string(),
                 is_refcount_pointer,
                 is_unsafe_pointer,
+                pointee_generic: pointee_generic(&ty),
                 is_mut_ref: matches!(&ty, ast::Type::RefType(r) if r.mut_token().is_some()),
                 is_va_args,
                 is_init,
@@ -418,6 +453,7 @@ impl<'a> FnIrBuilder<'a> {
                 is_refcount_pointer,
                 is_unsafe_pointer,
                 is_projection: is_projection(&ty),
+                pointee_generic: pointee_generic(&ty),
                 derives: Vec::new(),
             })
         }
@@ -642,6 +678,7 @@ impl<'a> FnIrBuilder<'a> {
                         is_refcount_pointer: p.is_refcount_pointer,
                         is_unsafe_pointer: p.is_unsafe_pointer,
                         is_projection: false,
+                        pointee_generic: p.pointee_generic,
                         derives: Vec::new(),
                     },
                 )
@@ -766,6 +803,7 @@ impl<'a> TypeIrBuilder<'a> {
                 is_refcount_pointer,
                 is_unsafe_pointer,
                 is_projection: false,
+                pointee_generic: pointee_generic(&ty),
                 derives: Vec::new(),
             },
         }
