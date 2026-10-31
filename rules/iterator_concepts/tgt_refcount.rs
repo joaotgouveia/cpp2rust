@@ -103,8 +103,8 @@ fn f39<T1: CppInputIterator<T3> + PartialEq<T2>, T2: CppInputIterator<T3>, T3>(a
     a0 != a1
 }
 
-fn f40<T1: CppRandomAccessIterator<T3>, T2: Into<T1>, T3>(a0: T1, a1: T2) -> isize {
-    a0.iter_distance(&a1.into())
+fn f40<T1: CppRandomAccessIterator<T3>, T2: Into<T1>, T3>(a0: T1, a1: T2) -> i64 {
+    a0.iter_distance(&a1.into()) as i64
 }
 
 fn t1<T1: CppIterator<T2>, T2>() -> BidirectionalIterator<T2> {
@@ -117,4 +117,24 @@ fn t2<T1: CppIterator<T2>, T2>() -> RandomAccessIterator<T2> {
 
 fn f37<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: T1) -> std::cmp::Ordering {
     a0.partial_cmp(&a1).unwrap()
+}
+
+fn f41<T1: CppRandomAccessIterator<T3>, T2: Into<T1>, T3>(a0: T1, a1: T2) -> bool {
+    a0 < a1.into()
+}
+
+fn f42<T1: CppRandomAccessIterator<T3>, T2: Into<T1>, T3>(a0: T1, a1: T2) -> bool {
+    a0 > a1.into()
+}
+
+fn f43<T1: CppRandomAccessIterator<T3>, T2: Into<T1>, T3>(a0: T1, a1: T2) -> bool {
+    a0 <= a1.into()
+}
+
+fn f44<T1: CppRandomAccessIterator<T3>, T2: Into<T1>, T3>(a0: T1, a1: T2) -> bool {
+    a0 >= a1.into()
+}
+
+fn f45<T1: CppRandomAccessIterator<T3>, T2: Into<T1>, T3>(a0: T1, a1: T2) -> std::cmp::Ordering {
+    a0.partial_cmp(&a1.into()).unwrap()
 }

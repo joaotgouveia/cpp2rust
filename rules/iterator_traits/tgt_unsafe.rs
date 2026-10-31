@@ -8,3 +8,11 @@ fn t5() -> isize {
 fn t4<T1>() -> T1 {
     unimplemented!()
 }
+
+fn t6<T1>() -> *mut T1 {
+    ::std::ptr::null_mut()
+}
+
+fn t7<T1>() -> *mut T1 {
+    ::std::ptr::null_mut()
+}

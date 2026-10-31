@@ -289,32 +289,77 @@ auto f40(const T1 &a0, const T2 &a1) -> decltype(a0 - a1) {
   return a0 - a1;
 }
 
-const std::unreachable_sentinel_t &f41() { return std::unreachable_sentinel; }
+template <typename T1, typename T2>
+  requires(std::sized_sentinel_for<T1, T2> ||
+           std::sized_sentinel_for<T2, T1>) &&
+          std::totally_ordered_with<T1, T2> && (!std::same_as<T1, T2>) &&
+          (std::is_class<T1>::value || std::is_class<T2>::value)
+auto f41(const T1 &a0, const T2 &a1) -> decltype(a0 < a1) {
+  return a0 < a1;
+}
+
+template <typename T1, typename T2>
+  requires(std::sized_sentinel_for<T1, T2> ||
+           std::sized_sentinel_for<T2, T1>) &&
+          std::totally_ordered_with<T1, T2> && (!std::same_as<T1, T2>) &&
+          (std::is_class<T1>::value || std::is_class<T2>::value)
+auto f42(const T1 &a0, const T2 &a1) -> decltype(a0 > a1) {
+  return a0 > a1;
+}
+
+template <typename T1, typename T2>
+  requires(std::sized_sentinel_for<T1, T2> ||
+           std::sized_sentinel_for<T2, T1>) &&
+          std::totally_ordered_with<T1, T2> && (!std::same_as<T1, T2>) &&
+          (std::is_class<T1>::value || std::is_class<T2>::value)
+auto f43(const T1 &a0, const T2 &a1) -> decltype(a0 <= a1) {
+  return a0 <= a1;
+}
+
+template <typename T1, typename T2>
+  requires(std::sized_sentinel_for<T1, T2> ||
+           std::sized_sentinel_for<T2, T1>) &&
+          std::totally_ordered_with<T1, T2> && (!std::same_as<T1, T2>) &&
+          (std::is_class<T1>::value || std::is_class<T2>::value)
+auto f44(const T1 &a0, const T2 &a1) -> decltype(a0 >= a1) {
+  return a0 >= a1;
+}
+
+template <typename T1, typename T2>
+  requires(std::sized_sentinel_for<T1, T2> ||
+           std::sized_sentinel_for<T2, T1>) &&
+          std::three_way_comparable_with<T1, T2> && (!std::same_as<T1, T2>) &&
+          (std::is_class<T1>::value || std::is_class<T2>::value)
+auto f45(const T1 &a0, const T2 &a1) -> decltype(a0 <=> a1) {
+  return a0 <=> a1;
+}
+
+const std::unreachable_sentinel_t &f46() { return std::unreachable_sentinel; }
 
 using t15 = std::unreachable_sentinel_t;
 
-std::unreachable_sentinel_t f42() { return std::unreachable_sentinel_t(); }
+std::unreachable_sentinel_t f47() { return std::unreachable_sentinel_t(); }
 
-std::unreachable_sentinel_t f43(const std::unreachable_sentinel_t &a0) {
+std::unreachable_sentinel_t f48(const std::unreachable_sentinel_t &a0) {
   return std::unreachable_sentinel_t(a0);
 }
 
-std::unreachable_sentinel_t f44(std::unreachable_sentinel_t &&a0) {
+std::unreachable_sentinel_t f49(std::unreachable_sentinel_t &&a0) {
   return std::unreachable_sentinel_t(std::move(a0));
 }
 
-std::unreachable_sentinel_t &f45(std::unreachable_sentinel_t &a0,
+std::unreachable_sentinel_t &f50(std::unreachable_sentinel_t &a0,
                                  const std::unreachable_sentinel_t &a1) {
   return a0.operator=(a1);
 }
 
-std::unreachable_sentinel_t &f46(std::unreachable_sentinel_t &a0,
+std::unreachable_sentinel_t &f51(std::unreachable_sentinel_t &a0,
                                  std::unreachable_sentinel_t &&a1) {
   return a0.operator=(std::move(a1));
 }
 
 template <typename T1>
-bool f47(std::unreachable_sentinel_t a0, const T1 &a1)
+bool f52(std::unreachable_sentinel_t a0, const T1 &a1)
   requires(std::weakly_incrementable<T1>)
 {
   return operator==(std::move(a0), a1);
