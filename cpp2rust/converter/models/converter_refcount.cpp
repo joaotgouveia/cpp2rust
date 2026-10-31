@@ -1260,7 +1260,9 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
     return temps ? temps->Wrap(std::move(s)) : s;
   };
   auto ty = GetReturnTypeOfFunction(expr);
-  auto *ref = ty->getAs<clang::ReferenceType>();
+  auto *ref = RuleRegistry::ReturnsProxyReference(ctx_, expr, ty)
+                  ? nullptr
+                  : ty->getAs<clang::ReferenceType>();
   // A rule returns a reference to a class object that is no pointer as a Rust
   // reference to it, e.g., ++it as &mut Iterator.
   if (auto *rule = RuleRegistry::GetExprRule(ctx_, expr);
