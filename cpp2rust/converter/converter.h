@@ -596,6 +596,10 @@ public:
 
   virtual const char *LambdaMacro() const { return "lambda_unsafe!"; }
 
+  virtual const char *ValueComparatorMacro() const {
+    return "value_comparator_unsafe!";
+  }
+
   virtual void ConvertLambdaCapture(const clang::FieldDecl *field,
                                     clang::Expr *init);
 
@@ -814,9 +818,8 @@ protected:
   void AddAdvanceTrait(const clang::CXXRecordDecl *decl);
   void AddIteratorTraits(const clang::CXXRecordDecl *decl);
 
-  virtual void
-  ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
-                                const ComparisonOperators &ops);
+  virtual void ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
+                                             const ComparisonOperators &ops);
 
   virtual void ConvertAdvanceTrait(const clang::CXXRecordDecl *decl,
                                    const clang::CXXMethodDecl *inc,

@@ -144,6 +144,9 @@ public:
   void ConvertCapturelessLambda(const clang::CXXRecordDecl *decl) override;
 
   const char *LambdaMacro() const override { return "lambda!"; }
+  const char *ValueComparatorMacro() const override {
+    return "value_comparator!";
+  }
 
   void ConvertLambdaCapture(const clang::FieldDecl *field,
                             clang::Expr *init) override;

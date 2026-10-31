@@ -2705,8 +2705,9 @@ bool Converter::VisitCXXRewrittenBinaryOperator(
   if (Mapper::Contains(ctx_, expr)) {
     auto operand = [](const clang::Expr *e) {
       auto *cast = clang::dyn_cast<clang::ImplicitCastExpr>(e);
-      while (cast && (cast->getCastKind() == clang::CK_DerivedToBase ||
-                      cast->getCastKind() == clang::CK_UncheckedDerivedToBase)) {
+      while (cast &&
+             (cast->getCastKind() == clang::CK_DerivedToBase ||
+              cast->getCastKind() == clang::CK_UncheckedDerivedToBase)) {
         e = cast->getSubExpr();
         cast = clang::dyn_cast<clang::ImplicitCastExpr>(e);
       }
@@ -4740,10 +4741,10 @@ void Converter::ConvertOrdAndPartialOrdTraits(const clang::CXXRecordDecl *decl,
 // Calls fn with the functions that may implement the operators ops of decl:
 // its methods, and the operator functions that its context and its friends
 // declare, including the specializations of templates.
-static void
-ForEachOperatorFunction(const clang::CXXRecordDecl *decl,
-                        llvm::ArrayRef<clang::OverloadedOperatorKind> ops,
-                        llvm::function_ref<void(const clang::FunctionDecl *)> fn) {
+static void ForEachOperatorFunction(
+    const clang::CXXRecordDecl *decl,
+    llvm::ArrayRef<clang::OverloadedOperatorKind> ops,
+    llvm::function_ref<void(const clang::FunctionDecl *)> fn) {
   auto consider_decl = [&](const clang::NamedDecl *found) {
     if (const auto *tmpl =
             clang::dyn_cast<clang::FunctionTemplateDecl>(found)) {
@@ -4856,8 +4857,7 @@ void Converter::AddIteratorTraits(const clang::CXXRecordDecl *decl) {
   ops.deref = GetIteratorDeref(decl);
   ops.inc = GetMemberOperator(decl, clang::OO_PlusPlus, 0);
   ops.dec = GetMemberOperator(decl, clang::OO_MinusMinus, 0);
-  if (const auto *add_assign =
-          GetMemberOperator(decl, clang::OO_PlusEqual, 1);
+  if (const auto *add_assign = GetMemberOperator(decl, clang::OO_PlusEqual, 1);
       add_assign && add_assign->getParamDecl(0)->getType()->isIntegerType()) {
     ops.add_assign = add_assign;
   }
@@ -4904,8 +4904,8 @@ void Converter::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
   if (!ops.dec) {
     return;
   }
-  StrCat(std::format("impl UnsafeCppBidirectionalIterator<{}> for {} {{",
-                     value, name));
+  StrCat(std::format("impl UnsafeCppBidirectionalIterator<{}> for {} {{", value,
+                     name));
   StrCat(std::format("fn iter_dec(&mut self) -> &mut Self {{ unsafe {{ {}; "
                      "}} self }}",
                      call(ops.dec, "self")));
@@ -4913,8 +4913,8 @@ void Converter::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
   if (!ops.ordering || !ops.add_assign || !ops.distance) {
     return;
   }
-  StrCat(std::format("impl UnsafeCppRandomAccessIterator<{}> for {} {{",
-                     value, name));
+  StrCat(std::format("impl UnsafeCppRandomAccessIterator<{}> for {} {{", value,
+                     name));
   StrCat(std::format("fn iter_add_assign(&mut self, n: isize) -> Self {{ "
                      "unsafe {{ {}; }} self.clone() }}",
                      call(ops.add_assign, "self", ", n as _")));
@@ -4957,6 +4957,18 @@ void Converter::AddCallableTraits(const clang::CXXRecordDecl *decl) {
     StrCat(std::format("fn call(&self{}) -> {} {{ {} }}", params, ret,
                        GetCallableBody(method, args)));
     StrCat("}");
+    // a comparator taking the elements by value (bool operator()(T, T))
+    if (method->getNumParams() != 2 ||
+        !method->getReturnType()->isBooleanType()) {
+      return;
+    }
+    auto lhs = method->getParamDecl(0)->getType();
+    auto rhs = method->getParamDecl(1)->getType();
+    if (lhs->isReferenceType() || !ctx_.hasSameUnqualifiedType(lhs, rhs)) {
+      return;
+    }
+    StrCat(std::format("{}({}, {});", ValueComparatorMacro(),
+                       GetRecordName(decl), GetUnboxedTypeAsString(lhs)));
   });
 }
 
@@ -5429,7 +5441,8 @@ std::string Converter::ConvertIRFragment(
           // object that maps to a pointer is still passed by address to a
           // pointer to its own type (reference_wrapper<reference_wrapper<T>>).
           .maps_to_rust_ptr =
-              !is_cpp_ptr && RuleRegistry::MapsToPointer(ctx_, arg->getType()) &&
+              !is_cpp_ptr &&
+              RuleRegistry::MapsToPointer(ctx_, arg->getType()) &&
               !RuleRegistry::ParamPointsTo(ctx_, expr, arg_idx, arg->getType()),
           .declared_in_rule_as_rust_ptr =
               RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx) ||

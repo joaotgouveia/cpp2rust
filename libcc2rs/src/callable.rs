@@ -81,3 +81,35 @@ impl<T: Clone + ByteRepr + FnPtrArg> Comparator<T> for FnPtr<fn(T, T) -> bool> {
         self.call(a.read(), b.read())
     }
 }
+
+// A function object taking the compared elements by value (C++ `bool
+// operator()(T, T)`) is a comparator handed them by pointer.
+#[macro_export]
+macro_rules! value_comparator_unsafe {
+    ($record:ty, $elem:ty) => {
+        impl $crate::UnsafeComparator<$elem> for $record {
+            #[inline]
+            unsafe fn unsafe_less(&self, a: *const $elem, b: *const $elem) -> bool {
+                unsafe {
+                    <Self as $crate::Callable2<$elem, $elem, bool>>::call(
+                        self,
+                        (*a).clone(),
+                        (*b).clone(),
+                    )
+                }
+            }
+        }
+    };
+}
+
+#[macro_export]
+macro_rules! value_comparator {
+    ($record:ty, $elem:ty) => {
+        impl $crate::Comparator<$elem> for $record {
+            #[inline]
+            fn less(&self, a: $crate::Ptr<$elem>, b: $crate::Ptr<$elem>) -> bool {
+                <Self as $crate::Callable2<$elem, $elem, bool>>::call(self, a.read(), b.read())
+            }
+        }
+    };
+}

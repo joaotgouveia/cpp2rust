@@ -290,6 +290,7 @@ impl Callable2<i32, i32, bool> for CompLast {
         unsafe { CompLast::operator_call(&mut *(&raw const *self).cast_mut(), a1, a2) }
     }
 }
+value_comparator_unsafe!(CompLast, i32);
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Gt {}
