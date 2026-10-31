@@ -168,6 +168,11 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     }
     auto args = RuleDecls::DeduceFromClass(
         sema, params, clang::QualType(qualifier, 0), owner);
+    // a member typedef belongs to its own class only (vector<int>::size_type
+    // is not vector<bool, T1>::size_type)
+    if (!args && llvm::isa<clang::TypedefNameDecl>(named)) {
+      return std::nullopt;
+    }
     if (!args) {
       return from_defaults();
     }
