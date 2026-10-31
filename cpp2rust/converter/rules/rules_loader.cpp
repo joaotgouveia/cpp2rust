@@ -227,6 +227,9 @@ private:
     if (const auto *atomic = type->getAs<clang::AtomicType>()) {
       return AddType(atomic->getValueType());
     }
+    if (const auto *complex = type->getAs<clang::ComplexType>()) {
+      return AddType(complex->getElementType());
+    }
     if (const auto *fn = type->getAs<clang::FunctionType>()) {
       AddType(fn->getReturnType());
       if (const auto *proto = llvm::dyn_cast<clang::FunctionProtoType>(fn)) {
