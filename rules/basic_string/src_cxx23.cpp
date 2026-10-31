@@ -1552,9 +1552,8 @@ f173(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename __gnu_cxx::__alloc_traits<T3>::size_type
-f174(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
-     typename std::basic_string<T1, T2, T3>::size_type a2)
+auto f174(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+          typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template find<T4>(
@@ -1562,9 +1561,8 @@ f174(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename __gnu_cxx::__alloc_traits<T3>::size_type
-f175(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
-     typename std::basic_string<T1, T2, T3>::size_type a2)
+auto f175(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+          typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template rfind<T4>(
@@ -1572,9 +1570,8 @@ f175(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename __gnu_cxx::__alloc_traits<T3>::size_type
-f176(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
-     typename std::basic_string<T1, T2, T3>::size_type a2)
+auto f176(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+          typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template find_first_of<T4>(
@@ -1582,9 +1579,8 @@ f176(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename __gnu_cxx::__alloc_traits<T3>::size_type
-f177(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
-     typename std::basic_string<T1, T2, T3>::size_type a2)
+auto f177(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+          typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template find_last_of<T4>(
@@ -1592,9 +1588,8 @@ f177(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename __gnu_cxx::__alloc_traits<T3>::size_type
-f178(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
-     typename std::basic_string<T1, T2, T3>::size_type a2)
+auto f178(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+          typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template find_first_not_of<T4>(
@@ -1602,9 +1597,8 @@ f178(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename __gnu_cxx::__alloc_traits<T3>::size_type
-f179(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
-     typename std::basic_string<T1, T2, T3>::size_type a2)
+auto f179(const std::basic_string<T1, T2, T3> &a0, const T4 &a1,
+          typename std::basic_string<T1, T2, T3>::size_type a2)
   requires(!(std::is_same<T4, std::basic_string<T1, T2, T3>>::value))
 {
   return a0.template find_last_not_of<T4>(

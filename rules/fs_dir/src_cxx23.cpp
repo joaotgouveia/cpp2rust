@@ -319,8 +319,7 @@ f67(std::filesystem::directory_iterator &a0, std::error_code &a1) {
   return a0.increment(a1);
 }
 
-std::filesystem::__directory_iterator_proxy
-f68(std::filesystem::directory_iterator &a0, int a1) {
+auto f68(std::filesystem::directory_iterator &a0, int a1) {
   return a0.operator++(a1);
 }
 
@@ -484,8 +483,7 @@ f99(std::filesystem::recursive_directory_iterator &a0, std::error_code &a1) {
   return a0.increment(a1);
 }
 
-std::filesystem::__directory_iterator_proxy
-f100(std::filesystem::recursive_directory_iterator &a0, int a1) {
+auto f100(std::filesystem::recursive_directory_iterator &a0, int a1) {
   return a0.operator++(a1);
 }
 

@@ -134,9 +134,8 @@ std::basic_istream<T1, T2> &f16(std::basic_istream<T1, T2> &a0, const T1 *a1,
 }
 
 template <typename T1>
-std::chrono::__detail::__local_time_fmt<T1>
-f17(std::chrono::local_time<T1> a0, const std::string *a1,
-    const std::chrono::seconds *a2) {
+auto f17(std::chrono::local_time<T1> a0, const std::string *a1,
+         const std::chrono::seconds *a2) {
   return std::chrono::local_time_format(
       std::forward<std::chrono::local_time<T1>>(a0), a1, a2);
 }

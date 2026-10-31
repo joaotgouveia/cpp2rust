@@ -325,48 +325,37 @@ std::filesystem::path f77(T1 a0, T1 a1, const std::locale &a2,
 }
 
 template <typename T1>
-std::filesystem::__detail::_Path<T1> &f78(std::filesystem::path &a0,
-                                          const T1 &a1)
+auto &f78(std::filesystem::path &a0, const T1 &a1)
   requires(!(std::is_same<T1, std::filesystem::path>::value))
 {
   return a0.template operator= <T1>(a1);
 }
 
-template <typename T1>
-std::filesystem::__detail::_Path<T1> &f79(std::filesystem::path &a0,
-                                          const T1 &a1) {
+template <typename T1> auto &f79(std::filesystem::path &a0, const T1 &a1) {
   return a0.template assign<T1>(a1);
 }
 
-template <typename T1>
-std::filesystem::__detail::_Path2<T1> &f80(std::filesystem::path &a0, T1 a1,
-                                           T1 a2) {
+template <typename T1> auto &f80(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template assign<T1>(std::move(a1), std::move(a2));
 }
 
 template <typename T1>
-std::filesystem::__detail::_Path<T1> &f81(std::filesystem::path &a0,
-                                          const T1 &a1)
+auto &f81(std::filesystem::path &a0, const T1 &a1)
   requires(!(std::is_same<T1, std::filesystem::path>::value))
 {
   return a0.template operator/= <T1>(a1);
 }
 
-template <typename T1>
-std::filesystem::__detail::_Path<T1> &f82(std::filesystem::path &a0,
-                                          const T1 &a1) {
+template <typename T1> auto &f82(std::filesystem::path &a0, const T1 &a1) {
   return a0.template append<T1>(a1);
 }
 
-template <typename T1>
-std::filesystem::__detail::_Path2<T1> &f83(std::filesystem::path &a0, T1 a1,
-                                           T1 a2) {
+template <typename T1> auto &f83(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template append<T1>(std::move(a1), std::move(a2));
 }
 
 template <typename T1>
-std::filesystem::__detail::_Path<T1> &f84(std::filesystem::path &a0,
-                                          const T1 &a1)
+auto &f84(std::filesystem::path &a0, const T1 &a1)
   requires(!(std::is_same<T1, std::filesystem::path>::value) &&
            !(std::is_same<T1, std::filesystem::path::string_type>::value))
 {
@@ -374,7 +363,7 @@ std::filesystem::__detail::_Path<T1> &f84(std::filesystem::path &a0,
 }
 
 template <typename T1>
-std::filesystem::__detail::_Path2<T1 *> &f85(std::filesystem::path &a0, T1 a1)
+auto &f85(std::filesystem::path &a0, T1 a1)
   requires(
       !(std::is_same<T1, const std::filesystem::path &>::value) &&
       !(std::is_same<T1, const std::filesystem::path::string_type &>::value) &&
@@ -386,15 +375,11 @@ std::filesystem::__detail::_Path2<T1 *> &f85(std::filesystem::path &a0, T1 a1)
   return a0.template operator+= <T1>(std::move(a1));
 }
 
-template <typename T1>
-std::filesystem::__detail::_Path<T1> &f86(std::filesystem::path &a0,
-                                          const T1 &a1) {
+template <typename T1> auto &f86(std::filesystem::path &a0, const T1 &a1) {
   return a0.template concat<T1>(a1);
 }
 
-template <typename T1>
-std::filesystem::__detail::_Path2<T1> &f87(std::filesystem::path &a0, T1 a1,
-                                           T1 a2) {
+template <typename T1> auto &f87(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template concat<T1>(std::move(a1), std::move(a2));
 }
 

@@ -334,8 +334,7 @@ template <typename T1> std::valarray<T1> f61(const T1 &a0, std::size_t a1) {
   return std::valarray<T1>(a0, a1);
 }
 
-template <typename T1>
-std::valarray<T1> f62(const T1 *__restrict a0, std::size_t a1) {
+template <typename T1> std::valarray<T1> f62(const T1 *a0, std::size_t a1) {
   return std::valarray<T1>(a0, a1);
 }
 

@@ -13,11 +13,11 @@ template <typename T1> using t4 = std::_Put_time<T1>;
 
 template <typename T1> using t5 = std::_Setfill<T1>;
 
-template <typename T1> std::_Get_money<T1> f1(T1 &a0, bool a1) {
+template <typename T1> auto f1(T1 &a0, bool a1) {
   return std::get_money(a0, a1);
 }
 
-template <typename T1> std::_Get_time<T1> f2(std::tm *a0, const T1 *a1) {
+template <typename T1> auto f2(std::tm *a0, const T1 *a1) {
   return std::get_time(a0, a1);
 }
 
@@ -124,11 +124,11 @@ std::basic_istream<T1, T2> &f18(std::basic_istream<T1, T2> &a0,
   return std::operator>>(a0, std::forward<std::_Get_money<T3>>(a1));
 }
 
-template <typename T1> std::_Put_money<T1> f19(const T1 &a0, bool a1) {
+template <typename T1> auto f19(const T1 &a0, bool a1) {
   return std::put_money(a0, a1);
 }
 
-template <typename T1> std::_Put_time<T1> f20(const std::tm *a0, const T1 *a1) {
+template <typename T1> auto f20(const std::tm *a0, const T1 *a1) {
   return std::put_time(a0, a1);
 }
 
@@ -161,9 +161,7 @@ decltype(std::setbase(std::declval<int>())) f26(int a0) {
   return std::setbase(a0);
 }
 
-template <typename T1> std::_Setfill<T1> f27(T1 a0) {
-  return std::setfill(std::move(a0));
-}
+template <typename T1> auto f27(T1 a0) { return std::setfill(std::move(a0)); }
 
 decltype(std::setiosflags(std::declval<std::ios_base::fmtflags>()))
 f28(std::ios_base::fmtflags a0) {

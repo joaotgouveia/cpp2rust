@@ -836,10 +836,7 @@ const char *f192(const std::chrono::nonexistent_local_time &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::chrono::duration<
-    std::chrono::__common_rep_t<T1, std::chrono::__disable_if_is_duration<T3>>,
-    T2>
-f193(const std::chrono::duration<T1, T2> &a0, const T3 &a1) {
+auto f193(const std::chrono::duration<T1, T2> &a0, const T3 &a1) {
   return std::chrono::operator%(a0, a1);
 }
 
@@ -921,10 +918,7 @@ f202(const std::chrono::time_point<T1, T2> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-std::chrono::duration<
-    std::chrono::__common_rep_t<T1, std::chrono::__disable_if_is_duration<T3>>,
-    T2>
-f203(const std::chrono::duration<T1, T2> &a0, const T3 &a1) {
+auto f203(const std::chrono::duration<T1, T2> &a0, const T3 &a1) {
   return std::chrono::operator/(a0, a1);
 }
 
@@ -2426,27 +2420,27 @@ using t89 = std::filesystem::__file_clock::period;
 
 using t90 = std::filesystem::__file_clock::time_point;
 
-std::filesystem::__file_clock::time_point f516() {
+std::chrono::time_point<std::chrono::file_clock> f516() {
   return std::filesystem::__file_clock::now();
 }
 
-std::filesystem::__file_clock f517() { return std::filesystem::__file_clock(); }
+std::chrono::file_clock f517() { return std::filesystem::__file_clock(); }
 
-std::filesystem::__file_clock f518(const std::filesystem::__file_clock &a0) {
+std::chrono::file_clock f518(const std::chrono::file_clock &a0) {
   return std::filesystem::__file_clock(a0);
 }
 
-std::filesystem::__file_clock f519(std::filesystem::__file_clock &&a0) {
+std::chrono::file_clock f519(std::chrono::file_clock &&a0) {
   return std::filesystem::__file_clock(std::move(a0));
 }
 
-std::filesystem::__file_clock &f520(std::filesystem::__file_clock &a0,
-                                    const std::filesystem::__file_clock &a1) {
+std::chrono::file_clock &f520(std::chrono::file_clock &a0,
+                              const std::chrono::file_clock &a1) {
   return a0.operator=(a1);
 }
 
-std::filesystem::__file_clock &f521(std::filesystem::__file_clock &a0,
-                                    std::filesystem::__file_clock &&a1) {
+std::chrono::file_clock &f521(std::chrono::file_clock &a0,
+                              std::chrono::file_clock &&a1) {
   return a0.operator=(std::move(a1));
 }
 

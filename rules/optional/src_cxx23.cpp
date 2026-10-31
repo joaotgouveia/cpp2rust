@@ -60,7 +60,7 @@ std::nullopt_t &f12(std::nullopt_t &a0, std::nullopt_t &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-std::nullopt_t::_Construct f13() { return std::nullopt_t::_Construct::_Token; }
+auto f13() { return std::nullopt_t::_Construct::_Token; }
 
 template <typename T1, typename T2>
 std::enable_if_t<std::is_convertible_v<decltype(std::declval<T1 const &>() !=

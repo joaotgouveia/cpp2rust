@@ -786,8 +786,7 @@ f86(std::unordered_map<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-std::pair<typename std::__umap_hashtable<T1, T2, T3, T4, T5>::iterator, bool>
-f87(std::unordered_map<T1, T2, T3, T4, T5> &a0, T6 &&a1)
+auto f87(std::unordered_map<T1, T2, T3, T4, T5> &a0, T6 &&a1)
   requires(
       !(std::is_same<T6, typename std::unordered_map<T1, T2, T3, T4,
                                                      T5>::node_type>::value) &&
@@ -803,9 +802,9 @@ f87(std::unordered_map<T1, T2, T3, T4, T5> &a0, T6 &&a1)
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
-typename std::__umap_hashtable<T1, T2, T3, T4, T5>::iterator
-f88(std::unordered_map<T1, T2, T3, T4, T5> &a0,
-    typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1, T6 &&a2)
+auto f88(std::unordered_map<T1, T2, T3, T4, T5> &a0,
+         typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
+         T6 &&a2)
   requires(
       !(std::is_same<T6, typename std::unordered_map<T1, T2, T3, T4,
                                                      T5>::node_type>::value) &&

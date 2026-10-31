@@ -81,15 +81,11 @@ auto f13(T2 &&a0, T3 &&...a1) {
   return std::bind<T1>(std::forward<T2>(a0), std::forward<T3>(a1)...);
 }
 
-template <typename T1, typename... T2>
-std::_Bind_back<std::decay_t<T1>, std::decay_t<T2>...> f14(T1 &&a0,
-                                                           T2 &&...a1) {
+template <typename T1, typename... T2> auto f14(T1 &&a0, T2 &&...a1) {
   return std::bind_back(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
-template <typename T1, typename... T2>
-std::_Bind_front<std::decay_t<T1>, std::decay_t<T2>...> f15(T1 &&a0,
-                                                            T2 &&...a1) {
+template <typename T1, typename... T2> auto f15(T1 &&a0, T2 &&...a1) {
   return std::bind_front(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
@@ -109,7 +105,7 @@ template <typename T1> bool f18() { return std::is_bind_expression_v<T1>; }
 
 template <typename T1> int f19() { return std::is_placeholder_v<T1>; }
 
-template <typename T1, typename T2> std::_Mem_fn<T1 T2::*> f20(T1 T2::*a0) {
+template <typename T1, typename T2> auto f20(T1 T2::*a0) {
   return std::mem_fn(std::forward<T1 T2::*>(a0));
 }
 
@@ -117,60 +113,60 @@ template <typename T1> auto f21(T1 &&a0) {
   return std::not_fn(std::forward<T1>(a0));
 }
 
-const std::_Placeholder<1> &f22() { return std::placeholders::_1; }
+const auto &f22() { return std::placeholders::_1; }
 
-const std::_Placeholder<10> &f23() { return std::placeholders::_10; }
+const auto &f23() { return std::placeholders::_10; }
 
-const std::_Placeholder<11> &f24() { return std::placeholders::_11; }
+const auto &f24() { return std::placeholders::_11; }
 
-const std::_Placeholder<12> &f25() { return std::placeholders::_12; }
+const auto &f25() { return std::placeholders::_12; }
 
-const std::_Placeholder<13> &f26() { return std::placeholders::_13; }
+const auto &f26() { return std::placeholders::_13; }
 
-const std::_Placeholder<14> &f27() { return std::placeholders::_14; }
+const auto &f27() { return std::placeholders::_14; }
 
-const std::_Placeholder<15> &f28() { return std::placeholders::_15; }
+const auto &f28() { return std::placeholders::_15; }
 
-const std::_Placeholder<16> &f29() { return std::placeholders::_16; }
+const auto &f29() { return std::placeholders::_16; }
 
-const std::_Placeholder<17> &f30() { return std::placeholders::_17; }
+const auto &f30() { return std::placeholders::_17; }
 
-const std::_Placeholder<18> &f31() { return std::placeholders::_18; }
+const auto &f31() { return std::placeholders::_18; }
 
-const std::_Placeholder<19> &f32() { return std::placeholders::_19; }
+const auto &f32() { return std::placeholders::_19; }
 
-const std::_Placeholder<2> &f33() { return std::placeholders::_2; }
+const auto &f33() { return std::placeholders::_2; }
 
-const std::_Placeholder<20> &f34() { return std::placeholders::_20; }
+const auto &f34() { return std::placeholders::_20; }
 
-const std::_Placeholder<21> &f35() { return std::placeholders::_21; }
+const auto &f35() { return std::placeholders::_21; }
 
-const std::_Placeholder<22> &f36() { return std::placeholders::_22; }
+const auto &f36() { return std::placeholders::_22; }
 
-const std::_Placeholder<23> &f37() { return std::placeholders::_23; }
+const auto &f37() { return std::placeholders::_23; }
 
-const std::_Placeholder<24> &f38() { return std::placeholders::_24; }
+const auto &f38() { return std::placeholders::_24; }
 
-const std::_Placeholder<25> &f39() { return std::placeholders::_25; }
+const auto &f39() { return std::placeholders::_25; }
 
-const std::_Placeholder<26> &f40() { return std::placeholders::_26; }
+const auto &f40() { return std::placeholders::_26; }
 
-const std::_Placeholder<27> &f41() { return std::placeholders::_27; }
+const auto &f41() { return std::placeholders::_27; }
 
-const std::_Placeholder<28> &f42() { return std::placeholders::_28; }
+const auto &f42() { return std::placeholders::_28; }
 
-const std::_Placeholder<29> &f43() { return std::placeholders::_29; }
+const auto &f43() { return std::placeholders::_29; }
 
-const std::_Placeholder<3> &f44() { return std::placeholders::_3; }
+const auto &f44() { return std::placeholders::_3; }
 
-const std::_Placeholder<4> &f45() { return std::placeholders::_4; }
+const auto &f45() { return std::placeholders::_4; }
 
-const std::_Placeholder<5> &f46() { return std::placeholders::_5; }
+const auto &f46() { return std::placeholders::_5; }
 
-const std::_Placeholder<6> &f47() { return std::placeholders::_6; }
+const auto &f47() { return std::placeholders::_6; }
 
-const std::_Placeholder<7> &f48() { return std::placeholders::_7; }
+const auto &f48() { return std::placeholders::_7; }
 
-const std::_Placeholder<8> &f49() { return std::placeholders::_8; }
+const auto &f49() { return std::placeholders::_8; }
 
-const std::_Placeholder<9> &f50() { return std::placeholders::_9; }
+const auto &f50() { return std::placeholders::_9; }

@@ -59,7 +59,7 @@ template <typename T1, typename T2 = T1> T1 f14(T1 &a0, T2 &&a1) {
   return std::exchange(a0, std::forward<T2>(a1));
 }
 
-const std::_Swallow_assign &f15() { return std::ignore; }
+const auto &f15() { return std::ignore; }
 
 const std::in_place_t &f16() { return std::in_place; }
 
