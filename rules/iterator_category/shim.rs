@@ -393,10 +393,18 @@ macro_rules! random_access_iterator {
             }
         }
 
+        impl<T> Eq for $name<T> {}
+
         impl<T> PartialOrd for $name<T> {
             fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+                Some(self.cmp(other))
+            }
+        }
+
+        impl<T> Ord for $name<T> {
+            fn cmp(&self, other: &Self) -> Ordering {
                 match (self, other) {
-                    (Self::Vec(a), Self::Vec(b)) => a.partial_cmp(b),
+                    (Self::Vec(a), Self::Vec(b)) => a.cmp(b),
                 }
             }
         }
