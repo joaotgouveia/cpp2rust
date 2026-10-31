@@ -70,7 +70,6 @@ int f63(void) { return ENOTSUP; }
 int f64(void) { return ENOTBLK; }
 int f65(void) { return ENOTTY; }
 int f66(void) { return ENXIO; }
-int f67(void) { return EOPNOTSUPP; }
 int f68(void) { return EOVERFLOW; }
 int f69(void) { return EOWNERDEAD; }
 int f70(void) { return EPERM; }
@@ -92,7 +91,6 @@ int f85(void) { return ETIMEDOUT; }
 int f86(void) { return ETOOMANYREFS; }
 int f87(void) { return ETXTBSY; }
 int f88(void) { return EUSERS; }
-int f89(void) { return EWOULDBLOCK; }
 int f90(void) { return EXDEV; }
 
 #if defined(__linux__)
@@ -105,7 +103,6 @@ int f96(void) { return EBADSLT; }
 int f97(void) { return EBFONT; }
 int f98(void) { return ECHRNG; }
 int f99(void) { return ECOMM; }
-int f100(void) { return EDEADLOCK; }
 int f101(void) { return EDOTDOT; }
 int f102(void) { return EHWPOISON; }
 int f103(void) { return EISNAM; }

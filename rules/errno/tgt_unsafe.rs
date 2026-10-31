@@ -265,10 +265,6 @@ unsafe fn f66() -> i32 {
     libc::ENXIO
 }
 
-unsafe fn f67() -> i32 {
-    libc::EOPNOTSUPP
-}
-
 unsafe fn f68() -> i32 {
     libc::EOVERFLOW
 }
@@ -353,10 +349,6 @@ unsafe fn f88() -> i32 {
     libc::EUSERS
 }
 
-unsafe fn f89() -> i32 {
-    libc::EWOULDBLOCK
-}
-
 unsafe fn f90() -> i32 {
     libc::EXDEV
 }
@@ -407,9 +399,6 @@ unsafe fn f99() -> i32 {
 }
 
 #[cfg(target_os = "linux")]
-unsafe fn f100() -> i32 {
-    libc::EDEADLOCK
-}
 
 #[cfg(target_os = "linux")]
 unsafe fn f101() -> i32 {
