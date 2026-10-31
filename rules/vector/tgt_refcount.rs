@@ -257,7 +257,7 @@ fn f77<T1>() -> RandomAccessIterator<bool> {
     RandomAccessIterator::default()
 }
 
-fn f79<T1>(a0: &mut RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
+fn f79<T1>(a0: &mut RandomAccessIterator<bool>) -> &mut RandomAccessIterator<bool> {
     a0.iter_inc()
 }
 
@@ -265,7 +265,7 @@ fn f80<T1>(a0: &mut RandomAccessIterator<bool>, a1: i32) -> RandomAccessIterator
     a0.iter_post_inc()
 }
 
-fn f81<T1>(a0: &mut RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
+fn f81<T1>(a0: &mut RandomAccessIterator<bool>) -> &mut RandomAccessIterator<bool> {
     a0.iter_dec()
 }
 
@@ -351,7 +351,7 @@ fn f97<T1>(a0: RandomAccessIterator<bool>) -> bool {
     a0.iter_deref().read()
 }
 
-fn f98<T1>(a0: &mut RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
+fn f98<T1>(a0: &mut RandomAccessIterator<bool>) -> &mut RandomAccessIterator<bool> {
     a0.iter_inc()
 }
 
@@ -359,7 +359,7 @@ fn f99<T1>(a0: &mut RandomAccessIterator<bool>, a1: i32) -> RandomAccessIterator
     a0.iter_post_inc()
 }
 
-fn f100<T1>(a0: &mut RandomAccessIterator<bool>) -> RandomAccessIterator<bool> {
+fn f100<T1>(a0: &mut RandomAccessIterator<bool>) -> &mut RandomAccessIterator<bool> {
     a0.iter_dec()
 }
 

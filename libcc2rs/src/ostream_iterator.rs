@@ -83,18 +83,18 @@ impl<T: StreamInsert> UnsafeCppIterator<T> for UnsafeOstreamIterator<T> {
         self.slot.get()
     }
 
-    fn iter_inc(&mut self) -> Self {
+    fn iter_inc(&mut self) -> &mut Self {
         unsafe {
             let _ = (*self.stream).write_all(&(*self.slot.get()).stream_bytes());
             if !self.delim.is_null() {
                 let _ = (*self.stream).write_all(CStr::from_ptr(self.delim).to_bytes());
             }
         }
-        self.clone()
+        self
     }
 
     fn iter_post_inc(&mut self) -> Self {
-        self.iter_inc()
+        self.iter_inc().clone()
     }
 }
 
@@ -135,7 +135,7 @@ impl<T: StreamInsert + ByteRepr> CppIterator<T> for OstreamIterator<T> {
         self.slot.as_pointer()
     }
 
-    fn iter_inc(&mut self) -> Self {
+    fn iter_inc(&mut self) -> &mut Self {
         let _ = self.stream.write_all(&self.slot.borrow().stream_bytes());
         if !self.delim.is_null() {
             let _ = self.delim.with_c_str(|__cs| {
@@ -143,10 +143,10 @@ impl<T: StreamInsert + ByteRepr> CppIterator<T> for OstreamIterator<T> {
                     .write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
             });
         }
-        self.clone()
+        self
     }
 
     fn iter_post_inc(&mut self) -> Self {
-        self.iter_inc()
+        self.iter_inc().clone()
     }
 }

@@ -5202,6 +5202,19 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
     result = std::format("{}.with_mut(|{}| {})", place, name, result);
   }
   mut_borrows_ = std::move(saved_borrows);
+  // The target returns the scalar of the canonical C type, the expression has
+  // the one of its spelled type:
+  //   it - it    <-- ptrdiff_t -> isize, target returns long -> i64
+  auto type = expr->getType();
+  auto rendered = [&](clang::QualType qual_type) {
+    return llvm::StringRef(ToString(qual_type)).trim().str();
+  };
+  if (!lvalue && expr->isPRValue() && type->isIntegerType() &&
+      tgt_ir->return_type.type == rendered(type.getCanonicalType())) {
+    if (auto spelled = rendered(type); spelled != tgt_ir->return_type.type) {
+      result = std::format("({} as {})", result, spelled);
+    }
+  }
   return result;
 }
 

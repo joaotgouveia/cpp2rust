@@ -3,7 +3,7 @@
 
 use libcc2rs::*;
 
-unsafe fn f1<T1: UnsafeCppBidirectionalIterator<T2>, T2>(a0: &mut T1) -> T1 {
+unsafe fn f1<T1: UnsafeCppBidirectionalIterator<T2>, T2>(a0: &mut T1) -> &mut T1 {
     a0.iter_dec()
 }
 
@@ -47,7 +47,7 @@ unsafe fn f18<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1, a1: T1) {
     *a0 = a1
 }
 
-unsafe fn f20<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1) -> T1 {
+unsafe fn f20<T1: UnsafeCppIterator<T2>, T2>(a0: &mut T1) -> &mut T1 {
     a0.iter_inc()
 }
 

@@ -361,7 +361,7 @@ unsafe fn f77<T1>() -> UnsafeRandomAccessIterator<bool> {
     UnsafeRandomAccessIterator::default()
 }
 
-unsafe fn f79<T1>(a0: &mut UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
+unsafe fn f79<T1>(a0: &mut UnsafeRandomAccessIterator<bool>) -> &mut UnsafeRandomAccessIterator<bool> {
     a0.iter_inc()
 }
 
@@ -369,7 +369,7 @@ unsafe fn f80<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: i32) -> UnsafeR
     a0.iter_post_inc()
 }
 
-unsafe fn f81<T1>(a0: &mut UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
+unsafe fn f81<T1>(a0: &mut UnsafeRandomAccessIterator<bool>) -> &mut UnsafeRandomAccessIterator<bool> {
     a0.iter_dec()
 }
 
@@ -455,7 +455,7 @@ unsafe fn f97<T1>(a0: UnsafeRandomAccessIterator<bool>) -> bool {
     *a0.iter_deref()
 }
 
-unsafe fn f98<T1>(a0: &mut UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
+unsafe fn f98<T1>(a0: &mut UnsafeRandomAccessIterator<bool>) -> &mut UnsafeRandomAccessIterator<bool> {
     a0.iter_inc()
 }
 
@@ -463,7 +463,7 @@ unsafe fn f99<T1>(a0: &mut UnsafeRandomAccessIterator<bool>, a1: i32) -> UnsafeR
     a0.iter_post_inc()
 }
 
-unsafe fn f100<T1>(a0: &mut UnsafeRandomAccessIterator<bool>) -> UnsafeRandomAccessIterator<bool> {
+unsafe fn f100<T1>(a0: &mut UnsafeRandomAccessIterator<bool>) -> &mut UnsafeRandomAccessIterator<bool> {
     a0.iter_dec()
 }
 

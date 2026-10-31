@@ -1260,8 +1260,23 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
     return temps ? temps->Wrap(std::move(s)) : s;
   };
   auto ty = GetReturnTypeOfFunction(expr);
-  if (auto *ref = ty->getAs<clang::ReferenceType>();
-      ref && !isAddrOf() && !isVoid()) {
+  auto *ref = ty->getAs<clang::ReferenceType>();
+  // A rule returns a reference to a class object that is no pointer as a Rust
+  // reference to it, e.g., ++it as &mut Iterator.
+  if (auto *rule = RuleRegistry::GetExprRule(ctx_, expr);
+      ref && rule && ref->getPointeeType()->isRecordType() &&
+      !RuleRegistry::MapsToPointer(ctx_, ref->getPointeeType()) &&
+      !rule->return_type.is_pointer() && !rule->return_type.is_projection &&
+      !isAddrOf() && !isVoid()) {
+    if (isLValue()) {
+      StrCat(wrap(std::move(str)));
+      MarkNotFresh();
+      return;
+    }
+    EmitFresh(std::format("({}).clone()", wrap(std::move(str))));
+    return;
+  }
+  if (ref && !isAddrOf() && !isVoid()) {
     if (isLValue()) {
       pending_deref_.set(wrap(std::move(str)), /*fresh=*/true);
       return;
