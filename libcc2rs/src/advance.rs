@@ -108,24 +108,24 @@ pub fn prev_refcount<I: CppAdvance + 'static>(it: I, n: isize) -> I {
     advance_refcount(it, -n)
 }
 
-/// Calls `f` with a pointer to the iterator, as the operators of iterator
-/// records take it, which the iterator is moved into and back out of.
-pub fn with_iterator_ptr<I: Default + 'static, R>(it: &mut I, f: impl FnOnce(&Ptr<I>) -> R) -> R {
-    let value = Rc::new(RefCell::new(std::mem::take(it)));
-    let result = f(&value.as_pointer());
-    *it = match Rc::try_unwrap(value) {
+/// Calls `f` with a pointer to the record, as the operators of records take
+/// it, which the record is moved into and back out of.
+pub fn with_record_ptr<T: Default + 'static, R>(value: &mut T, f: impl FnOnce(&Ptr<T>) -> R) -> R {
+    let cell = Rc::new(RefCell::new(std::mem::take(value)));
+    let result = f(&cell.as_pointer());
+    *value = match Rc::try_unwrap(cell) {
         Ok(cell) => cell.into_inner(),
-        Err(_) => panic!("iterator escaped its operator"),
+        Err(_) => panic!("record escaped its operator"),
     };
     result
 }
 
-/// Calls `f` with pointers to copies of the iterators, as the comparison
-/// operators of iterator records take them.
-pub fn with_iterator_ptrs<I: Clone + 'static, R>(
-    lhs: &I,
-    rhs: &I,
-    f: impl FnOnce(&Ptr<I>, &Ptr<I>) -> R,
+/// Calls `f` with pointers to copies of the records, as the comparison
+/// operators of records take them.
+pub fn with_record_ptrs<T: Clone + 'static, R>(
+    lhs: &T,
+    rhs: &T,
+    f: impl FnOnce(&Ptr<T>, &Ptr<T>) -> R,
 ) -> R {
     let lhs = Rc::new(RefCell::new(lhs.clone()));
     let rhs = Rc::new(RefCell::new(rhs.clone()));

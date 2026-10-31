@@ -65,6 +65,9 @@ public:
   void ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
                              const IteratorOperators &ops) override;
 
+  std::string GetCallableBody(const clang::CXXMethodDecl *call,
+                              std::string_view args) override;
+
   std::string GetShallowCopy(const clang::RecordDecl *decl,
                              std::string_view src);
   void AddCloneTrait(const clang::RecordDecl *decl) override;

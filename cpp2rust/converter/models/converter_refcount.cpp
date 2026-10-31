@@ -653,7 +653,7 @@ void ConverterRefCount::ConvertOrdAndPartialOrdTraits(
         return body;
       }
       return std::format(
-          "libcc2rs::with_iterator_ptrs(self, other, |__lhs, __rhs| {})",
+          "libcc2rs::with_record_ptrs(self, other, |__lhs, __rhs| {})",
           body);
     };
     ConvertOrdAndPartialOrdTraitsBase(
@@ -704,11 +704,11 @@ void ConverterRefCount::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
   };
   StrCat(std::format("impl CppIterator<{}> for {} {{", value, name));
   StrCat(std::format("fn iter_deref(&self) -> Ptr<{}> {{ "
-                     "libcc2rs::with_iterator_ptr(&mut self.clone(), |__it| "
+                     "libcc2rs::with_record_ptr(&mut self.clone(), |__it| "
                      "{}) }}",
                      value, call(ops.deref)));
   StrCat(std::format("fn iter_inc(&mut self) -> &mut Self {{ "
-                     "libcc2rs::with_iterator_ptr(self, |__it| {{ {}; }}); "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
                      "self }}",
                      call(ops.inc)));
   StrCat("}");
@@ -722,7 +722,7 @@ void ConverterRefCount::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
   StrCat(std::format("impl CppBidirectionalIterator<{}> for {} {{", value,
                      name));
   StrCat(std::format("fn iter_dec(&mut self) -> &mut Self {{ "
-                     "libcc2rs::with_iterator_ptr(self, |__it| {{ {}; }}); "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
                      "self }}",
                      call(ops.dec)));
   StrCat("}");
@@ -732,15 +732,23 @@ void ConverterRefCount::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
   StrCat(std::format("impl CppRandomAccessIterator<{}> for {} {{", value,
                      name));
   StrCat(std::format("fn iter_add_assign(&mut self, n: isize) -> Self {{ "
-                     "libcc2rs::with_iterator_ptr(self, |__it| {{ {}; }}); "
+                     "libcc2rs::with_record_ptr(self, |__it| {{ {}; }}); "
                      "self.clone() }}",
                      call(ops.add_assign, ", n as _")));
   StrCat(std::format(
       "fn iter_distance(&self, from: &Self) -> isize {{ "
-      "libcc2rs::with_iterator_ptrs(self, from, |__lhs, __rhs| ({}) as "
+      "libcc2rs::with_record_ptrs(self, from, |__lhs, __rhs| ({}) as "
       "isize) }}",
       GetComparisonCall(ops.distance, decl, "__lhs", "__rhs")));
   StrCat("}");
+}
+
+// The operator gets a pointer to a copy of the function object.
+std::string ConverterRefCount::GetCallableBody(const clang::CXXMethodDecl *call,
+                                               std::string_view args) {
+  return std::format(
+      "libcc2rs::with_record_ptr(&mut self.clone(), |__it| {}::{}(__it{}))",
+      GetUFCSName(call), GetMethodName(call), args);
 }
 
 std::string ConverterRefCount::GetShallowCopy(const clang::RecordDecl *decl,

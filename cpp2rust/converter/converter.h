@@ -825,6 +825,13 @@ protected:
   virtual void ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
                                      const IteratorOperators &ops);
 
+  void AddCallableTraits(const clang::CXXRecordDecl *decl);
+
+  // The body of the call method of the callable trait of decl, which calls
+  // its operator() with args.
+  virtual std::string GetCallableBody(const clang::CXXMethodDecl *call,
+                                      std::string_view args);
+
   std::string GetCmpBody(const clang::CXXRecordDecl *decl,
                          const ComparisonOperators &ops, std::string_view lhs,
                          std::string_view rhs);

@@ -910,6 +910,7 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
     AddOrdTrait(cxx);
     AddAdvanceTrait(cxx);
     AddIteratorTraits(cxx);
+    AddCallableTraits(cxx);
   }
   AddCloneTrait(decl);
   AddDefaultTrait(decl);
@@ -4914,6 +4915,49 @@ void Converter::ConvertIteratorTraits(const clang::CXXRecordDecl *decl,
                      "unsafe {{ ({}) as isize }} }}",
                      GetComparisonCall(ops.distance, decl, "self", "from")));
   StrCat("}");
+}
+
+// Records with operator() implement the callable traits that the library's
+// generic algorithms call their function objects through.
+void Converter::AddCallableTraits(const clang::CXXRecordDecl *decl) {
+  if (decl->isLambda() || !RecordImplementsClone(decl)) {
+    return;
+  }
+  std::unordered_set<std::string> signatures;
+  ForEachMethod(decl, [&](clang::CXXMethodDecl *method) {
+    if (method->getOverloadedOperator() != clang::OO_Call ||
+        !method->isInstance() || method->isVirtual() || method->isDeleted() ||
+        !method->hasBody() || method->getDescribedFunctionTemplate() ||
+        method->isVariadic() || method->getNumParams() > 3) {
+      return;
+    }
+    std::string types;
+    std::string params;
+    std::string args;
+    for (unsigned i = 0; i < method->getNumParams(); ++i) {
+      auto type = GetUnboxedTypeAsString(method->getParamDecl(i)->getType());
+      types += type + ", ";
+      params += std::format(", a{}: {}", i + 1, type);
+      args += std::format(", a{}", i + 1);
+    }
+    auto ret = GetUnboxedTypeAsString(method->getReturnType());
+    if (!signatures.insert(types + ret).second) {
+      return;
+    }
+    StrCat(std::format("impl Callable{}<{}{}> for {} {{",
+                       method->getNumParams(), types, ret,
+                       GetRecordName(decl)));
+    StrCat(std::format("fn call(&self{}) -> {} {{ {} }}", params, ret,
+                       GetCallableBody(method, args)));
+    StrCat("}");
+  });
+}
+
+std::string Converter::GetCallableBody(const clang::CXXMethodDecl *call,
+                                       std::string_view args) {
+  return std::format("unsafe {{ {}::{}({}{}) }}", GetUFCSName(call),
+                     GetMethodName(call), GetComparisonReceiver(call, "self"),
+                     args);
 }
 
 void Converter::AddCloneTrait(const clang::RecordDecl *decl) {
