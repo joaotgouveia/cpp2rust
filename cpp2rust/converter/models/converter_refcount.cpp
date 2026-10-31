@@ -508,6 +508,9 @@ std::string ConverterRefCount::ConvertFreshRValue(
 
 std::string ConverterRefCount::ConvertFreshPointer(
     clang::Expr *expr, std::optional<clang::QualType> implicit_convert_to) {
+  if (expr->getType()->isArrayType() && IsStringLiteralExpr(expr)) {
+    return MakeFresh(ConvertStringLiteralPtr(expr));
+  }
   return MakeFresh(ConvertPointer(expr, implicit_convert_to));
 }
 
