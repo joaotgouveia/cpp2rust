@@ -3799,7 +3799,9 @@ bool Converter::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
   }
   if (IsPassThroughConstructor(ctor)) {
     Convert(expr->getArg(0));
-    if ((ctor->isCopyConstructor() || IsDefaultedMoveConstructor(ctor)) &&
+    // a trivial move copies the object, which is left as it was
+    if ((ctor->isCopyConstructor() || IsDefaultedMoveConstructor(ctor) ||
+         (ctor->isMoveConstructor() && ctor->isTrivial())) &&
         !TypeIsCopyable(expr->getType())) {
       EmitFresh(".clone()");
     }
