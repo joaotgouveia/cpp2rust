@@ -28,6 +28,14 @@ fn f1006(a0: Ptr<i8>) -> Ptr<i8> {
     }
 }
 
+fn f1007(a0: Ptr<i8>, a1: Ptr<i8>, a2: i32) -> i32 {
+    let __name = a0.to_rust_string();
+    if a2 != 0 || ::std::env::var_os(&__name).is_none() {
+        unsafe { ::std::env::set_var(__name, a1.to_rust_string()) };
+    }
+    0
+}
+
 fn f1008(a0: AnyPtr, a1: AnyPtr, a2: usize, a3: usize, a4: fn(AnyPtr, AnyPtr) -> i32) -> AnyPtr {
     let __base = a1.reinterpret_cast::<u8>();
     let mut __lo: isize = 0;
