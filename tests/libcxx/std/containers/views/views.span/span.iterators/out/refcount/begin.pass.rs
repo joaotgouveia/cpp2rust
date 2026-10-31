@@ -65,7 +65,7 @@ pub fn testConstexprSpan_3(s: ()) -> bool {
         let __rhs = (*ret.borrow())
             && ({
                 let _arg0: A = (*(*b.borrow()).iter_deref().upgrade().deref()).clone();
-                operator_eq_4(_arg0, (*unimplemented!().upgrade().deref()).clone())
+                operator_eq_4(_arg0, (unimplemented!()).clone())
             });
         (*ret.borrow_mut()) = __rhs;
         let __rhs = (*ret.borrow()) && (((*b.borrow()).iter_deref()) == (unimplemented!()));
@@ -193,7 +193,7 @@ pub fn testRuntimeSpan_15(s: ()) {
         assert!(
             ({
                 let _arg0: A = (*(*b.borrow()).iter_deref().upgrade().deref()).clone();
-                operator_eq_4(_arg0, (*unimplemented!().upgrade().deref()).clone())
+                operator_eq_4(_arg0, (unimplemented!()).clone())
             })
         );
         assert!((((*b.borrow()).iter_deref()) == (unimplemented!())));

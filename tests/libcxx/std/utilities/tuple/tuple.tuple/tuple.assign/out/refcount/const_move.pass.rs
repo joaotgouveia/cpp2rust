@@ -558,14 +558,14 @@ pub fn test_6() -> bool {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((unimplemented!().with(|__s| __s.val) == 1));
+        assert!(({ (unimplemented!()).clone().val } == 1));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((unimplemented!().with(|__s| __s.constMoveAssign) == 1));
-        assert!((unimplemented!().with(|__s| __s.constCopyAssign) == 1));
+        assert!(({ (unimplemented!()).clone().constMoveAssign } == 1));
+        assert!(({ (unimplemented!()).clone().constCopyAssign } == 1));
     }
     return true;
 }

@@ -78,11 +78,11 @@ pub fn test_0() -> bool {
         );;
         {
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!().with(|__s| __s.i) == 42));
+            assert!(({ (unimplemented!()).clone().i } == 42));
         }
         {
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!().with(|__s| __s.i) == 1));
+            assert!(({ (unimplemented!()).clone().i } == 1));
         }
     }
     {
@@ -109,7 +109,7 @@ pub fn test_0() -> bool {
         );;
         {
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!().with(|__s| __s.i) == 1));
+            assert!(({ (unimplemented!()).clone().i } == 1));
         }
     }
     {
@@ -128,7 +128,7 @@ pub fn test_0() -> bool {
         {
             let m: Value<MoveChecker> = Rc::new(RefCell::new(MoveChecker::new({ 42 })));
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!((unimplemented!().with(|__s| __s.i) == 42));
+            assert!(({ (unimplemented!()).clone().i } == 42));
             assert!(({ (*m.borrow()).i } == -1_i32));
         }
     }

@@ -212,7 +212,7 @@ pub fn test_18() -> bool {
             1_(),
         )));
         assert!(unimplemented!());
-        assert!((*unimplemented!().upgrade().deref()) != unimplemented!());
+        assert!((unimplemented!()).clone() != unimplemented!());
         assert!(unimplemented!());
         const _: () = assert!(true, "!std::is_reference_v<decltype(iter2--)>");;
         const _: () = assert!(true, "std::is_reference_v<decltype(--iter2)>");;
@@ -232,7 +232,7 @@ pub fn test_18() -> bool {
             (1 as ()),
         )));
         assert!(unimplemented!());
-        assert!((*unimplemented!().upgrade().deref()) != unimplemented!());
+        assert!((unimplemented!()).clone() != unimplemented!());
         assert!(unimplemented!());
         const _: () = assert!(true, "!std::is_reference_v<decltype(iter2--)>");;
         const _: () = assert!(true, "std::is_reference_v<decltype(--iter2)>");;

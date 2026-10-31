@@ -902,13 +902,16 @@ pub fn test_one_35() {
                     Value<RandomAccessIterator<Vec<i8>>>,
                 ) as PairGetRef<1>>::pair_get(&(*__decomp_36.borrow()));
             assert!(
-                ((*last.upgrade().deref()).iter_distance(&(*first.upgrade().deref()).clone().into())
-                    as i64
+                (((*last.upgrade().deref())
+                    .iter_distance(&(*first.upgrade().deref()).clone().into())
+                    as i64 as isize)
                     == (expected_length as isize))
             );
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
             let it: Value<RandomAccessIterator<Vec<i8>>> =
                 Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
@@ -936,13 +939,16 @@ pub fn test_one_35() {
                     Value<RandomAccessIterator<Vec<i8>>>,
                 ) as PairGetRef<1>>::pair_get(&(*__decomp_37.borrow()));
             assert!(
-                ((*last.upgrade().deref()).iter_distance(&(*first.upgrade().deref()).clone().into())
-                    as i64
+                (((*last.upgrade().deref())
+                    .iter_distance(&(*first.upgrade().deref()).clone().into())
+                    as i64 as isize)
                     == (expected_length as isize))
             );
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
             let it: Value<RandomAccessIterator<Vec<i8>>> =
                 Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
@@ -972,8 +978,10 @@ pub fn test_one_35() {
                 ) as PairGetRef<1>>::pair_get(&(*__decomp_38.borrow()));
             assert!((*first.upgrade().deref()) == (*last.upgrade().deref()));
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
         },
         |set: Ptr<()>, expected_key: Ptr<Vec<i8>>, mut expected_offset: i64| {
@@ -993,8 +1001,10 @@ pub fn test_one_35() {
                 ) as PairGetRef<1>>::pair_get(&(*__decomp_39.borrow()));
             assert!((*first.upgrade().deref()) == (*last.upgrade().deref()));
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
         }
     )));
@@ -1213,13 +1223,16 @@ pub fn test_one_40() {
             let last: Ptr<()> =
                 <(Value<()>, Value<()>) as PairGetRef<1>>::pair_get(&(*__decomp_41.borrow()));
             assert!(
-                ((*last.upgrade().deref()).iter_distance(&(*first.upgrade().deref()).clone().into())
-                    as i64
+                (((*last.upgrade().deref())
+                    .iter_distance(&(*first.upgrade().deref()).clone().into())
+                    as i64 as isize)
                     == (expected_length as isize))
             );
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
             let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while (*it.borrow()) != (*last.upgrade().deref()) {
@@ -1238,13 +1251,16 @@ pub fn test_one_40() {
             let last: Ptr<()> =
                 <(Value<()>, Value<()>) as PairGetRef<1>>::pair_get(&(*__decomp_42.borrow()));
             assert!(
-                ((*last.upgrade().deref()).iter_distance(&(*first.upgrade().deref()).clone().into())
-                    as i64
+                (((*last.upgrade().deref())
+                    .iter_distance(&(*first.upgrade().deref()).clone().into())
+                    as i64 as isize)
                     == (expected_length as isize))
             );
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
             let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while (*it.borrow()) != (*last.upgrade().deref()) {
@@ -1265,8 +1281,10 @@ pub fn test_one_40() {
                 <(Value<()>, Value<()>) as PairGetRef<1>>::pair_get(&(*__decomp_43.borrow()));
             assert!((*first.upgrade().deref()) == (*last.upgrade().deref()));
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
         },
         |set: Ptr<()>, expected_key: Ptr<Vec<i8>>, mut expected_offset: i64| {
@@ -1278,8 +1296,10 @@ pub fn test_one_40() {
                 <(Value<()>, Value<()>) as PairGetRef<1>>::pair_get(&(*__decomp_44.borrow()));
             assert!((*first.upgrade().deref()) == (*last.upgrade().deref()));
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
         }
     )));
@@ -1803,13 +1823,16 @@ pub fn test_one_50() {
             let last: Ptr<()> =
                 <(Value<()>, Value<()>) as PairGetRef<1>>::pair_get(&(*__decomp_51.borrow()));
             assert!(
-                ((*last.upgrade().deref()).iter_distance(&(*first.upgrade().deref()).clone().into())
-                    as i64
+                (((*last.upgrade().deref())
+                    .iter_distance(&(*first.upgrade().deref()).clone().into())
+                    as i64 as isize)
                     == (expected_length as isize))
             );
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
             let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while (*it.borrow()) != (*last.upgrade().deref()) {
@@ -1828,13 +1851,16 @@ pub fn test_one_50() {
             let last: Ptr<()> =
                 <(Value<()>, Value<()>) as PairGetRef<1>>::pair_get(&(*__decomp_52.borrow()));
             assert!(
-                ((*last.upgrade().deref()).iter_distance(&(*first.upgrade().deref()).clone().into())
-                    as i64
+                (((*last.upgrade().deref())
+                    .iter_distance(&(*first.upgrade().deref()).clone().into())
+                    as i64 as isize)
                     == (expected_length as isize))
             );
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
             let it: Value<()> = Rc::new(RefCell::new((*first.upgrade().deref()).clone()));
             'loop_: while (*it.borrow()) != (*last.upgrade().deref()) {
@@ -1855,8 +1881,10 @@ pub fn test_one_50() {
                 <(Value<()>, Value<()>) as PairGetRef<1>>::pair_get(&(*__decomp_53.borrow()));
             assert!((*first.upgrade().deref()) == (*last.upgrade().deref()));
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
         },
         |set: Ptr<()>, expected_key: Ptr<Vec<i8>>, mut expected_offset: i64| {
@@ -1868,8 +1896,10 @@ pub fn test_one_50() {
                 <(Value<()>, Value<()>) as PairGetRef<1>>::pair_get(&(*__decomp_54.borrow()));
             assert!((*first.upgrade().deref()) == (*last.upgrade().deref()));
             assert!(
-                ({ (*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64 }
-                    == { (expected_offset as isize) })
+                ({
+                    ((*first.upgrade().deref()).iter_distance(&unimplemented!().into()) as i64
+                        as isize)
+                } == { (expected_offset as isize) })
             );
         }
     )));
@@ -2284,7 +2314,7 @@ fn begin_11 ( &self , ) -> three_way_random_access_iterator_std_basic_string_cha
  } fn clear ( &self , ) { field!((* self ) , data_).with_mut(|__v: &mut Vec<Vec<i8  >  >| __v.clear())  ;
  } fn to_vector_iterator ( &self , mut cit : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  , ) -> RandomAccessIterator<Vec<i8  >  >  { return field_ref!((* self )  , data_).decay() .begin()  .iter_add(( { let _x: three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_   = (cit ).clone()  ; operator_sub_11 ( _x , ( { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: cbegin ( self , ) } )   , ) } )  )    ;
  } fn from_vector_iterator ( &self , it : RandomAccessIterator<Vec<i8  >  >  , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  { let it : Value<RandomAccessIterator<Vec<i8  >  > >  = Rc::new(RefCell::new(it)) ;
- return ( { let _n: isize   = (*it.borrow()) .iter_distance(&field_ref!((* self )  , data_).decay() .begin()  .into()) as i64   ; let _x: three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_   = ( { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: begin_11 ( self , ) } )   ; operator_add_5 ( _n , _x , ) } )    ;
+ return ( { let _n: isize   = ((*it.borrow()) .iter_distance(&field_ref!((* self )  , data_).decay() .begin()  .into()) as i64 as isize)   ; let _x: three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_   = ( { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: begin_11 ( self , ) } )   ; operator_add_5 ( _n , _x , ) } )    ;
  } fn move_assign ( &self , _a0 : Ptr< MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__  > , ) -> Ptr< MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__  > { field_ref!((* self )  , data_).as_pointer() .write(field!(_a0, data_).with_mut(std::mem::take))  ;
  return ((* self )  ).clone()  ;
  } fn insert_20_const_class_std_basic_string_char__ptr ( &self , mut p : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  , mut first : Ptr< Vec<i8  >  >  , mut last : Ptr< Vec<i8  >  >  , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  { return ( { let _it: RandomAccessIterator<Vec<i8  >  >   = {let __pos = ( { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: to_vector_iterator ( self , (p ).clone()  , ) } )  ;

@@ -25,7 +25,7 @@ pub fn testConstexprSpan_0(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -49,7 +49,7 @@ pub fn testConstexprSpan_1(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -73,7 +73,7 @@ pub fn testConstexprSpan_2(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -97,7 +97,7 @@ pub fn testConstexprSpan_3(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -121,7 +121,7 @@ pub fn testConstexprSpan_4(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -135,7 +135,7 @@ pub fn testConstexprSpan_5(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -149,7 +149,7 @@ pub fn testConstexprSpan_6(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -163,7 +163,7 @@ pub fn testConstexprSpan_7(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -177,7 +177,7 @@ pub fn testConstexprSpan_8(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -191,7 +191,7 @@ pub fn testConstexprSpan_9(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -215,7 +215,7 @@ pub fn testConstexprSpan_10(s: ()) -> bool {
         (*ret.borrow_mut()) = __rhs;
     }
     let __rhs = (*ret.borrow())
-        && (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        && ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     (*ret.borrow_mut()) = __rhs;
     return (*ret.borrow());
@@ -234,7 +234,7 @@ pub fn testRuntimeSpan_11(s: ()) {
         assert!(({ (((*e.borrow()).iter_add(-1_isize)).iter_deref()) } == { (last).clone() }));
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -252,7 +252,7 @@ pub fn testRuntimeSpan_12(s: ()) {
         assert!(({ (((*e.borrow()).iter_add(-1_isize)).iter_deref()) } == { (last).clone() }));
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -270,7 +270,7 @@ pub fn testRuntimeSpan_13(s: ()) {
         assert!(({ (((*e.borrow()).iter_add(-1_isize)).iter_deref()) } == { (last).clone() }));
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -288,7 +288,7 @@ pub fn testRuntimeSpan_14(s: ()) {
         assert!(({ (((*e.borrow()).iter_add(-1_isize)).iter_deref()) } == { (last).clone() }));
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -306,7 +306,7 @@ pub fn testRuntimeSpan_15(s: ()) {
         assert!(({ (((*e.borrow()).iter_add(-1_isize)).iter_deref()) } == { (last).clone() }));
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -317,7 +317,7 @@ pub fn testRuntimeSpan_16(s: ()) {
         assert!((*e.borrow()) == unimplemented!());
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -328,7 +328,7 @@ pub fn testRuntimeSpan_17(s: ()) {
         assert!((*e.borrow()) == unimplemented!());
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -339,7 +339,7 @@ pub fn testRuntimeSpan_18(s: ()) {
         assert!((*e.borrow()) == unimplemented!());
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -350,7 +350,7 @@ pub fn testRuntimeSpan_19(s: ()) {
         assert!((*e.borrow()) == unimplemented!());
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -361,7 +361,7 @@ pub fn testRuntimeSpan_20(s: ()) {
         assert!((*e.borrow()) == unimplemented!());
     }
     assert!(
-        (((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as usize)
+        ((((*e.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }

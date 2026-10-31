@@ -480,30 +480,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         assert!((unimplemented!() == 4_()));
-        assert!(Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
+        assert!(
+            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
+        assert!(
+            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
+        assert!(
+            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([
@@ -559,30 +555,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         assert!((unimplemented!() == 4_()));
-        assert!(Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
+        assert!(
+            Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
+        assert!(
+            Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
+        assert!(
+            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     return 0;
 }

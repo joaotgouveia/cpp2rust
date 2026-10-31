@@ -299,7 +299,7 @@ pub unsafe fn string_stuff_9() -> i32 {
     let mut i2: UnsafeRandomAccessIterator<libc::c_char> = UnsafeRandomAccessIterator::default();
     i2 = UnsafeRandomAccessIterator::Vec(s.as_mut_ptr().add(s.len() - 1));
     let mut d1: isize = 0_isize;
-    d1 = i2.iter_distance(&(i1).clone().into()) as i64;
+    d1 = (i2.iter_distance(&(i1).clone().into()) as i64 as isize);
     if ((d1) != (5_isize)) {
         failures.prefix_inc();
     }
@@ -410,7 +410,7 @@ pub unsafe fn string_stuff_9() -> i32 {
         s.as_mut_ptr().add(s.len() - 1),
     ));
     let mut d2: isize = 0_isize;
-    d2 = ci2.iter_distance(&(ci1).clone().into()) as i64;
+    d2 = (ci2.iter_distance(&(ci1).clone().into()) as i64 as isize);
     if ((d2) != (5_isize)) {
         failures.prefix_inc();
     }
@@ -574,7 +574,7 @@ pub unsafe fn vector_stuff_10() -> i32 {
     let mut i2: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
     i2 = v.end();
     let mut d1: isize = 0_isize;
-    d1 = i2.iter_distance(&(i1).clone().into()) as i64;
+    d1 = (i2.iter_distance(&(i1).clone().into()) as i64 as isize);
     if ((d1) != (5_isize)) {
         failures.prefix_inc();
     }
@@ -681,7 +681,7 @@ pub unsafe fn vector_stuff_10() -> i32 {
     let mut ci2: UnsafeRandomAccessIterator<i32> = UnsafeRandomAccessIterator::default();
     ci2 = <UnsafeRandomAccessIterator<i32>>::from(v.end());
     let mut d2: isize = 0_isize;
-    d2 = ci2.iter_distance(&(ci1).clone().into()) as i64;
+    d2 = (ci2.iter_distance(&(ci1).clone().into()) as i64 as isize);
     if ((d2) != (5_isize)) {
         failures.prefix_inc();
     }

@@ -219,9 +219,7 @@ pub fn string_stuff_9() -> i32 {
     if ((((*i1.borrow()).iter_deref().read()) as i32) != (('c' as i8) as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*i1.borrow_mut())
-        .iter_inc()
-        .with_mut(|__v: &mut RandomAccessIterator<i8>| __v.iter_inc());
+    (*i1.borrow_mut()).iter_inc().iter_inc();
     if ((((*i1.borrow()).iter_deref().read()) as i32) != (('e' as i8) as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -235,9 +233,7 @@ pub fn string_stuff_9() -> i32 {
     if ((((*i1.borrow()).iter_deref().read()) as i32) != (('c' as i8) as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*i1.borrow_mut())
-        .iter_dec()
-        .with_mut(|__v: &mut RandomAccessIterator<i8>| __v.iter_dec());
+    (*i1.borrow_mut()).iter_dec().iter_dec();
     if ((((*i1.borrow()).iter_deref().read()) as i32) != (('a' as i8) as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -245,7 +241,7 @@ pub fn string_stuff_9() -> i32 {
         Rc::new(RefCell::new(RandomAccessIterator::default()));
     (*i2.borrow_mut()) = RandomAccessIterator::Vec(s.decay().to_last());
     let mut d1: isize = 0_isize;
-    d1 = (*i2.borrow()).iter_distance(&(*i1.borrow()).clone().into()) as i64;
+    d1 = ((*i2.borrow()).iter_distance(&(*i1.borrow()).clone().into()) as i64 as isize);
     if (d1 != 5_isize) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -334,9 +330,7 @@ pub fn string_stuff_9() -> i32 {
     if ((((*ci1.borrow()).iter_deref().read()) as i32) != (('c' as i8) as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*ci1.borrow_mut())
-        .iter_inc()
-        .with_mut(|__v: &mut RandomAccessIterator<i8>| __v.iter_inc());
+    (*ci1.borrow_mut()).iter_inc().iter_inc();
     if ((((*ci1.borrow()).iter_deref().read()) as i32) != (('e' as i8) as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -351,9 +345,7 @@ pub fn string_stuff_9() -> i32 {
     if ((((*ci1.borrow()).iter_deref().read()) as i32) != (('c' as i8) as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*ci1.borrow_mut())
-        .iter_dec()
-        .with_mut(|__v: &mut RandomAccessIterator<i8>| __v.iter_dec());
+    (*ci1.borrow_mut()).iter_dec().iter_dec();
     if ((((*ci1.borrow()).iter_deref().read()) as i32) != (('a' as i8) as i32)) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -362,7 +354,7 @@ pub fn string_stuff_9() -> i32 {
     (*ci2.borrow_mut()) =
         <RandomAccessIterator<i8>>::from(RandomAccessIterator::Vec(s.decay().to_last()));
     let mut d2: isize = 0_isize;
-    d2 = (*ci2.borrow()).iter_distance(&(*ci1.borrow()).clone().into()) as i64;
+    d2 = ((*ci2.borrow()).iter_distance(&(*ci1.borrow()).clone().into()) as i64 as isize);
     if (d2 != 5_isize) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -507,9 +499,7 @@ pub fn vector_stuff_10() -> i32 {
     if (((*i1.borrow()).iter_deref().read()) != 3) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*i1.borrow_mut())
-        .iter_inc()
-        .with_mut(|__v: &mut RandomAccessIterator<i32>| __v.iter_inc());
+    (*i1.borrow_mut()).iter_inc().iter_inc();
     if (((*i1.borrow()).iter_deref().read()) != 5) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -523,9 +513,7 @@ pub fn vector_stuff_10() -> i32 {
     if (((*i1.borrow()).iter_deref().read()) != 3) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*i1.borrow_mut())
-        .iter_dec()
-        .with_mut(|__v: &mut RandomAccessIterator<i32>| __v.iter_dec());
+    (*i1.borrow_mut()).iter_dec().iter_dec();
     if (((*i1.borrow()).iter_deref().read()) != 1) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -533,7 +521,7 @@ pub fn vector_stuff_10() -> i32 {
         Rc::new(RefCell::new(RandomAccessIterator::default()));
     (*i2.borrow_mut()) = v.decay().end();
     let mut d1: isize = 0_isize;
-    d1 = (*i2.borrow()).iter_distance(&(*i1.borrow()).clone().into()) as i64;
+    d1 = ((*i2.borrow()).iter_distance(&(*i1.borrow()).clone().into()) as i64 as isize);
     if (d1 != 5_isize) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -621,9 +609,7 @@ pub fn vector_stuff_10() -> i32 {
     if (((*ci1.borrow()).iter_deref().read()) != 3) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*ci1.borrow_mut())
-        .iter_inc()
-        .with_mut(|__v: &mut RandomAccessIterator<i32>| __v.iter_inc());
+    (*ci1.borrow_mut()).iter_inc().iter_inc();
     if (((*ci1.borrow()).iter_deref().read()) != 5) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -637,9 +623,7 @@ pub fn vector_stuff_10() -> i32 {
     if (((*ci1.borrow()).iter_deref().read()) != 3) {
         (*failures.borrow_mut()).prefix_inc();
     }
-    (*ci1.borrow_mut())
-        .iter_dec()
-        .with_mut(|__v: &mut RandomAccessIterator<i32>| __v.iter_dec());
+    (*ci1.borrow_mut()).iter_dec().iter_dec();
     if (((*ci1.borrow()).iter_deref().read()) != 1) {
         (*failures.borrow_mut()).prefix_inc();
     }
@@ -647,7 +631,7 @@ pub fn vector_stuff_10() -> i32 {
         Rc::new(RefCell::new(RandomAccessIterator::default()));
     (*ci2.borrow_mut()) = <RandomAccessIterator<i32>>::from(v.decay().end());
     let mut d2: isize = 0_isize;
-    d2 = (*ci2.borrow()).iter_distance(&(*ci1.borrow()).clone().into()) as i64;
+    d2 = ((*ci2.borrow()).iter_distance(&(*ci1.borrow()).clone().into()) as i64 as isize);
     if (d2 != 5_isize) {
         (*failures.borrow_mut()).prefix_inc();
     }

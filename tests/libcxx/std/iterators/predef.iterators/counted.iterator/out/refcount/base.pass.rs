@@ -500,7 +500,7 @@ pub fn test_18() -> bool {
     {
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(
-            ({ unimplemented!().with(|__s| __s.ptr.clone()) } == {
+            ({ { (unimplemented!()).clone().ptr.clone() } } == {
                 (buffer.as_pointer() as Ptr<i32>)
             })
         );
@@ -532,12 +532,12 @@ pub fn test_18() -> bool {
     {
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(
-            ({ unimplemented!().with(|__s| __s.ptr.clone()) } == {
+            ({ { (unimplemented!()).clone().ptr.clone() } } == {
                 (buffer.as_pointer() as Ptr<i32>)
             })
         );
         assert!(
-            ({ unimplemented!().with(|__s| __s.ptr.clone()) } == {
+            ({ { (unimplemented!()).clone().ptr.clone() } } == {
                 (buffer.as_pointer() as Ptr<i32>)
             })
         );

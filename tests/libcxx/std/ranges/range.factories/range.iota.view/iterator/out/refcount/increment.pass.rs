@@ -206,7 +206,7 @@ pub fn test_18() -> bool {
         let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
-        assert!((*unimplemented!().upgrade().deref()) != unimplemented!());
+        assert!((unimplemented!()).clone() != unimplemented!());
         assert!(unimplemented!());
         const _: () = assert!(true, "!std::is_reference_v<decltype(iter2++)>");;
         const _: () = assert!(true, "std::is_reference_v<decltype(++iter2)>");;
@@ -220,7 +220,7 @@ pub fn test_18() -> bool {
         let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
-        assert!((*unimplemented!().upgrade().deref()) != unimplemented!());
+        assert!((unimplemented!()).clone() != unimplemented!());
         assert!(unimplemented!());
         const _: () = assert!(true, "!std::is_reference_v<decltype(iter2++)>");;
         const _: () = assert!(true, "std::is_reference_v<decltype(++iter2)>");;
@@ -234,7 +234,7 @@ pub fn test_18() -> bool {
         let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(unimplemented!());
-        assert!((*unimplemented!().upgrade().deref()) != (*iter2.borrow()));
+        assert!((unimplemented!()).clone() != (*iter2.borrow()));
         unimplemented!();
         assert!(unimplemented!());
         const _: () = assert!(true, "std::same_as<decltype(iter2++), void>");;

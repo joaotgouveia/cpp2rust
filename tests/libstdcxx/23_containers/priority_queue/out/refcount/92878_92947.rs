@@ -225,7 +225,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 0) {
+        if !({ (unimplemented!()).clone().a } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -233,24 +233,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 0) {
-            unimplemented!();
-            std::process::abort();
-        }
-    }
-    unimplemented!();
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 1) {
-            unimplemented!();
-            std::process::abort();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 2) {
+        if !({ (unimplemented!()).clone().b } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -259,7 +242,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 2) {
+        if !({ (unimplemented!()).clone().a } == 1) {
             unimplemented!();
             std::process::abort();
         }
@@ -267,7 +250,24 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 0) {
+        if !({ (unimplemented!()).clone().b } == 2) {
+            unimplemented!();
+            std::process::abort();
+        }
+    }
+    unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !({ (unimplemented!()).clone().a } == 2) {
+            unimplemented!();
+            std::process::abort();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !({ (unimplemented!()).clone().b } == 0) {
             unimplemented!();
             std::process::abort();
         }

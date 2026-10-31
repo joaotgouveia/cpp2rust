@@ -582,16 +582,16 @@ pub fn test_6() -> bool {
         )));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
-        assert!((unimplemented!().with(|__s| __s.val) == 2));
+        assert!(({ (unimplemented!()).clone().v.val } == 1));
+        assert!(({ (unimplemented!()).clone().val } == 2));
     }
     {
         let t1: Value<(Value<TracedAssignment>, Value<TracedAssignment>)> =
             Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((unimplemented!().with(|__s| __s.v.constMoveAssign) == 1));
-        assert!((unimplemented!().with(|__s| __s.v.constMoveAssign) == 1));
+        assert!(({ (unimplemented!()).clone().v.constMoveAssign } == 1));
+        assert!(({ (unimplemented!()).clone().v.constMoveAssign } == 1));
     }
     return true;
 }

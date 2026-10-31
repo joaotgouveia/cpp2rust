@@ -394,10 +394,7 @@ pub fn test01_9() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(Ptr::<i8>::from_string_literal(b"/foo/bar").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
+            (unimplemented!()).clone()[..(unimplemented!()).clone().len().saturating_sub(1)] == *__s
         })) {
             unimplemented!();
             std::process::abort();

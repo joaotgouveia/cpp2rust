@@ -713,30 +713,26 @@ pub fn test_20(
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     assert!((unimplemented!() == 4_()));
-    assert!(Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
+    assert!(
+        Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
     assert!(
         ({
             let _c: Value<test_hash_int_> = Rc::new(RefCell::new(test_hash_int_::new(None)));
@@ -821,30 +817,26 @@ pub fn test_21(
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     assert!((unimplemented!() == 4_()));
-    assert!(Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
+    assert!(
+        Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
     assert!(
         ({
             let _c: Value<test_hash_int_> = Rc::new(RefCell::new(test_hash_int_::new(None)));
@@ -929,30 +921,26 @@ pub fn test_22(
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     assert!((unimplemented!() == 4_()));
-    assert!(Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
+    assert!(
+        Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
     assert!(
         ({
             let _c: Value<test_hash_int_> = Rc::new(RefCell::new(test_hash_int_::new(None)));

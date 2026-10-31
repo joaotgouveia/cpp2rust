@@ -136,10 +136,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(Ptr::alloc(4).to_owned_opt())),
             Rc::new(RefCell::new(42)),
         )));
-        let mut p: Option<Value<i32>> =
-            unimplemented!().with_mut(|__v: &mut Option<Value<i32>>| __v.take());
+        let mut p: Option<Value<i32>> = unimplemented!().take();
         assert!(((p.as_pointer().read()) == 4));
-        assert!((*unimplemented!().upgrade().deref()).is_none());
+        assert!((unimplemented!()).clone().is_none());
     }
     {
         let t: Value<(Value<Option<Value<i32>>>, Value<i32>)> = Rc::new(RefCell::new((
@@ -160,7 +159,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let i: Ptr<i32> = unimplemented!();
         assert!((((*p.upgrade().deref()).as_pointer().read()) == 4));
         assert!(((i.read()) == 42));
-        assert!(!((*unimplemented!().upgrade().deref()).is_none()));
+        assert!(!((unimplemented!()).clone().is_none()));
     }
     return 0;
 }

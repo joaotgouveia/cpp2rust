@@ -206,7 +206,8 @@ pub fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*beg.borrow()).iter_distance(&(*constbeg.borrow()).clone().into()) as i64 == 0_isize)
+        if !(((*beg.borrow()).iter_distance(&(*constbeg.borrow()).clone().into()) as i64 as isize)
+            == 0_isize)
         {
             unimplemented!();
             std::process::abort();
@@ -215,7 +216,8 @@ pub fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*constend.borrow()).iter_distance(&(*end.borrow()).clone().into()) as i64 == 0_isize)
+        if !(((*constend.borrow()).iter_distance(&(*end.borrow()).clone().into()) as i64 as isize)
+            == 0_isize)
         {
             unimplemented!();
             std::process::abort();
@@ -224,7 +226,9 @@ pub fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*end.borrow()).iter_distance(&(*constbeg.borrow()).clone().into()) as i64 > 0_isize) {
+        if !(((*end.borrow()).iter_distance(&(*constbeg.borrow()).clone().into()) as i64 as isize)
+            > 0_isize)
+        {
             unimplemented!();
             std::process::abort();
         }
@@ -232,7 +236,9 @@ pub fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*constend.borrow()).iter_distance(&(*beg.borrow()).clone().into()) as i64 > 0_isize) {
+        if !(((*constend.borrow()).iter_distance(&(*beg.borrow()).clone().into()) as i64 as isize)
+            > 0_isize)
+        {
             unimplemented!();
             std::process::abort();
         }

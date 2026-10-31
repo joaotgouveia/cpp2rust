@@ -72,57 +72,49 @@ pub fn rehash_postcondition_5(c: Ptr<()>, mut n: usize) {
 }
 pub fn test_6(c: Ptr<()>) {
     assert!((unimplemented!() == 4_()));
-    assert!(Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
+    assert!(
+        Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
 }
 pub fn test_7(c: Ptr<()>) {
     assert!((unimplemented!() == 4_()));
-    assert!(Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
-    assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-        (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-            .len()
-            .saturating_sub(1)]
-            == *__s
-    }));
+    assert!(
+        Ptr::<i8>::from_string_literal(b"one").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"two").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"three").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
+    assert!(
+        Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+            [..(unimplemented!()).clone().len().saturating_sub(1)]
+            == *__s)
+    );
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

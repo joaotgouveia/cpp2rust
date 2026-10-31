@@ -669,23 +669,23 @@ pub fn test_6() -> bool {
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
+        assert!(({ (unimplemented!()).clone().v.val } == 1));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
+        assert!(({ (unimplemented!()).clone().v.val } == 1));
         assert!(((unimplemented!().read()) == 2));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
+        assert!(({ (unimplemented!()).clone().v.val } == 1));
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
+        assert!(({ (unimplemented!()).clone().v.val } == 1));
         assert!(((unimplemented!().read()) == 2));
     }
     const _: () = assert!(

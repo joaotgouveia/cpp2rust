@@ -259,7 +259,7 @@ fn main_0() -> i32 {
     };
     unimplemented!();
     ({ test_9((c).clone()) });
-    ({ test_9((*unimplemented!().upgrade().deref()).clone()) });
+    ({ test_9((unimplemented!()).clone()) });
     0
 }
 impl __gnu_test_semaphore {

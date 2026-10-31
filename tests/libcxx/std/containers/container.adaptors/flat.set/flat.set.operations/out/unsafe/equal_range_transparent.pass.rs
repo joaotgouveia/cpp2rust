@@ -652,7 +652,7 @@ impl MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allo
  } pub unsafe fn clear ( &mut self , ) { self . data_  .clear()  ;
  } pub unsafe fn erase_25 ( &mut self , mut first : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ , mut last : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { return ( unsafe { let _it: UnsafeRandomAccessIterator<Vec<libc::c_char > >  = unimplemented!()  ; MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ :: from_vector_iterator ( self , _it , ) } )   ;
  } unsafe fn to_vector_iterator ( &self , mut cit : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ , ) -> UnsafeRandomAccessIterator<Vec<libc::c_char > > { return self . data_  .begin()  .iter_add(( unsafe { let _x: three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  = cit ; operator_sub_11 ( _x , ( unsafe { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ :: cbegin ( self , ) } )  , ) } )  )   ;
- } unsafe fn from_vector_iterator ( &mut self , mut it : UnsafeRandomAccessIterator<Vec<libc::c_char > > , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { return ( unsafe { let _n: isize  = it .iter_distance(&self . data_  .begin()  .into()) as i64  ; let _x: three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  = ( unsafe { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ :: begin_11 ( self , ) } )  ; operator_add_5 ( _n , _x , ) } )   ;
+ } unsafe fn from_vector_iterator ( &mut self , mut it : UnsafeRandomAccessIterator<Vec<libc::c_char > > , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { return ( unsafe { let _n: isize  = (it .iter_distance(&self . data_  .begin()  .into()) as i64 as isize)  ; let _x: three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  = ( unsafe { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ :: begin_11 ( self , ) } )  ; operator_add_5 ( _n , _x , ) } )   ;
  } pub unsafe fn move_from ( _a0 : *mut MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ , ) -> Self { let mut this = Self { data_ : std::mem::take(&mut ( * _a0 ) . data_  ) , } ;
  this } pub unsafe fn move_assign ( &mut self , _a0 : *mut MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ , ) -> *mut MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ { self . data_   = std::mem::take(&mut ( * _a0 ) . data_  )  ;
  return & mut ( * ( self as *mut MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__  )  )  ;
@@ -1246,7 +1246,9 @@ pub unsafe fn test_one_34() {
                     UnsafeRandomAccessIterator<Vec<libc::c_char>>,
                     UnsafeRandomAccessIterator<Vec<libc::c_char>>,
                 ) as PairGet<1>>::pair_get_mut(&mut __decomp_35);
-            assert!((((*last).iter_distance(&(*first).clone().into()) as i64) == (1_isize)));
+            assert!(
+                (((*last).iter_distance(&(*first).clone().into()) as i64 as isize) == (1_isize))
+            );
             assert!(unimplemented!());
         },
         |map: *const (), expected_key: *const Vec<libc::c_char>| {
@@ -1264,7 +1266,9 @@ pub unsafe fn test_one_34() {
                     UnsafeRandomAccessIterator<Vec<libc::c_char>>,
                     UnsafeRandomAccessIterator<Vec<libc::c_char>>,
                 ) as PairGet<1>>::pair_get_mut(&mut __decomp_36);
-            assert!((((*last).iter_distance(&(*first).clone().into()) as i64) == (1_isize)));
+            assert!(
+                (((*last).iter_distance(&(*first).clone().into()) as i64 as isize) == (1_isize))
+            );
             assert!(unimplemented!());
         }
     );
@@ -1288,7 +1292,7 @@ pub unsafe fn test_one_34() {
                 ) as PairGet<1>>::pair_get_mut(&mut __decomp_37);
             assert!((*first) == (*last));
             assert!(
-                (((*first).iter_distance(&unimplemented!().into()) as i64)
+                (((*first).iter_distance(&unimplemented!().into()) as i64 as isize)
                     == (expected_offset as isize))
             );
         },
@@ -1309,7 +1313,7 @@ pub unsafe fn test_one_34() {
                 ) as PairGet<1>>::pair_get_mut(&mut __decomp_38);
             assert!((*first) == (*last));
             assert!(
-                (((*first).iter_distance(&unimplemented!().into()) as i64)
+                (((*first).iter_distance(&unimplemented!().into()) as i64 as isize)
                     == (expected_offset as isize))
             );
         }
@@ -1522,14 +1526,18 @@ pub unsafe fn test_one_39() {
             let mut __decomp_40: ((), ()) = unimplemented!();
             let first: *mut () = <((), ()) as PairGet<0>>::pair_get_mut(&mut __decomp_40);
             let last: *mut () = <((), ()) as PairGet<1>>::pair_get_mut(&mut __decomp_40);
-            assert!((((*last).iter_distance(&(*first).clone().into()) as i64) == (1_isize)));
+            assert!(
+                (((*last).iter_distance(&(*first).clone().into()) as i64 as isize) == (1_isize))
+            );
             assert!(unimplemented!());
         },
         |map: *const (), expected_key: *const Vec<libc::c_char>| {
             let mut __decomp_41: ((), ()) = unimplemented!();
             let first: *mut () = <((), ()) as PairGet<0>>::pair_get_mut(&mut __decomp_41);
             let last: *mut () = <((), ()) as PairGet<1>>::pair_get_mut(&mut __decomp_41);
-            assert!((((*last).iter_distance(&(*first).clone().into()) as i64) == (1_isize)));
+            assert!(
+                (((*last).iter_distance(&(*first).clone().into()) as i64 as isize) == (1_isize))
+            );
             assert!(unimplemented!());
         }
     );
@@ -1542,7 +1550,7 @@ pub unsafe fn test_one_39() {
             let last: *mut () = <((), ()) as PairGet<1>>::pair_get_mut(&mut __decomp_42);
             assert!((*first) == (*last));
             assert!(
-                (((*first).iter_distance(&unimplemented!().into()) as i64)
+                (((*first).iter_distance(&unimplemented!().into()) as i64 as isize)
                     == (expected_offset as isize))
             );
         },
@@ -1552,7 +1560,7 @@ pub unsafe fn test_one_39() {
             let last: *mut () = <((), ()) as PairGet<1>>::pair_get_mut(&mut __decomp_43);
             assert!((*first) == (*last));
             assert!(
-                (((*first).iter_distance(&unimplemented!().into()) as i64)
+                (((*first).iter_distance(&unimplemented!().into()) as i64 as isize)
                     == (expected_offset as isize))
             );
         }
@@ -2032,14 +2040,18 @@ pub unsafe fn test_one_49() {
             let mut __decomp_50: ((), ()) = unimplemented!();
             let first: *mut () = <((), ()) as PairGet<0>>::pair_get_mut(&mut __decomp_50);
             let last: *mut () = <((), ()) as PairGet<1>>::pair_get_mut(&mut __decomp_50);
-            assert!((((*last).iter_distance(&(*first).clone().into()) as i64) == (1_isize)));
+            assert!(
+                (((*last).iter_distance(&(*first).clone().into()) as i64 as isize) == (1_isize))
+            );
             assert!(unimplemented!());
         },
         |map: *const (), expected_key: *const Vec<libc::c_char>| {
             let mut __decomp_51: ((), ()) = unimplemented!();
             let first: *mut () = <((), ()) as PairGet<0>>::pair_get_mut(&mut __decomp_51);
             let last: *mut () = <((), ()) as PairGet<1>>::pair_get_mut(&mut __decomp_51);
-            assert!((((*last).iter_distance(&(*first).clone().into()) as i64) == (1_isize)));
+            assert!(
+                (((*last).iter_distance(&(*first).clone().into()) as i64 as isize) == (1_isize))
+            );
             assert!(unimplemented!());
         }
     );
@@ -2052,7 +2064,7 @@ pub unsafe fn test_one_49() {
             let last: *mut () = <((), ()) as PairGet<1>>::pair_get_mut(&mut __decomp_52);
             assert!((*first) == (*last));
             assert!(
-                (((*first).iter_distance(&unimplemented!().into()) as i64)
+                (((*first).iter_distance(&unimplemented!().into()) as i64 as isize)
                     == (expected_offset as isize))
             );
         },
@@ -2062,7 +2074,7 @@ pub unsafe fn test_one_49() {
             let last: *mut () = <((), ()) as PairGet<1>>::pair_get_mut(&mut __decomp_53);
             assert!((*first) == (*last));
             assert!(
-                (((*first).iter_distance(&unimplemented!().into()) as i64)
+                (((*first).iter_distance(&unimplemented!().into()) as i64 as isize)
                     == (expected_offset as isize))
             );
         }

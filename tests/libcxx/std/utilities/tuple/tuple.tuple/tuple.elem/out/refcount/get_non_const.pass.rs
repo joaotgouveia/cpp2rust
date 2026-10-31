@@ -26,7 +26,7 @@ impl S {
         Self {
             a: unimplemented!(),
             k: ((unimplemented!().read()) as i32),
-            e: (*unimplemented!().upgrade().deref()).clone(),
+            e: (unimplemented!()).clone(),
         }
     }
     pub fn move_from(_a0: Ptr<S>) -> Self {
@@ -73,44 +73,40 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!(Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
         assert!(((unimplemented!().read()) == 5));
         unimplemented!();
         unimplemented!().write((4 as ()));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
         assert!(((unimplemented!().read()) == 4));
     }
     {
         let mut d: f64 = 1.5_f64;
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(((unimplemented!().read()) == 1.5_f64));
-        assert!(Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"high").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
         assert!(((unimplemented!().read()) == 5));
         unimplemented!().write(2.5_f64);
         unimplemented!();
         unimplemented!().write((4 as ()));
         assert!(((unimplemented!().read()) == 2.5_f64));
-        assert!(Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"four").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
         assert!(((unimplemented!().read()) == 4));
         assert!((d == 2.5_f64));
     }

@@ -360,10 +360,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let s: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"tournament\0")));
         assert!(unimplemented!());
         assert!((unimplemented!() == 1_()));
-        assert!(!(unimplemented!().with(|__s| __s.matched)));
+        assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                     .0
                     .borrow())
                 .clone()
@@ -371,26 +371,26 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                     .1
                     .borrow())
                 .clone()
             } == {
-                (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                     .0
                     .borrow())
                 .clone()
             })
         );
-        assert!(!(unimplemented!().with(|__s| __s.matched)));
+        assert!(!({ (unimplemented!()).clone().matched }));
         assert!(
             ({
-                (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                     .0
                     .borrow())
                 .clone()
             } == {
-                (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                     .1
                     .borrow())
                 .clone()
@@ -398,7 +398,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         );
         assert!(
             ({
-                (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+                (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                     .1
                     .borrow())
                 .clone()

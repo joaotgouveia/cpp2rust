@@ -395,7 +395,7 @@ pub fn test_err_12() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.n) == 4) {
+        if !({ (unimplemented!()).clone().n } == 4) {
             unimplemented!();
             std::process::abort();
         }
@@ -412,7 +412,7 @@ pub fn test_err_12() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.n) == 5) {
+        if !({ (unimplemented!()).clone().n } == 5) {
             unimplemented!();
             std::process::abort();
         }
@@ -480,7 +480,7 @@ pub fn test_err_12() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.n) == 4) {
+        if !({ (unimplemented!()).clone().n } == 4) {
             unimplemented!();
             std::process::abort();
         }
@@ -497,7 +497,7 @@ pub fn test_err_12() -> bool {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.n) == 5) {
+        if !({ (unimplemented!()).clone().n } == 5) {
             unimplemented!();
             std::process::abort();
         }

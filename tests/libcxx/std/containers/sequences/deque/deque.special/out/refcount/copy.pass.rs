@@ -183,7 +183,7 @@ pub fn operator_sub_4(
     mut x: random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__,
     mut y: random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__,
 ) -> isize {
-    return x.it_.iter_distance(&y.it_.clone().into()) as i64;
+    return (x.it_.iter_distance(&y.it_.clone().into()) as i64 as isize);
 }
 pub fn operator_ne_5(
     x: Ptr<random_access_iterator_std__Deque_iterator_int__const_int_ref__const_int_ptr__>,

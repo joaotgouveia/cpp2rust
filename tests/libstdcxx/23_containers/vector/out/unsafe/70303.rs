@@ -277,7 +277,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((it.iter_distance(&(it).clone().into()) as i64) == (0_isize)) {
+        if !((it.iter_distance(&(it).clone().into()) as i64 as isize) == (0_isize)) {
             unimplemented!();
             std::process::abort();
         }
@@ -334,7 +334,7 @@ pub unsafe fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((cit.iter_distance(&(cit).clone().into()) as i64) == (0_isize)) {
+        if !((cit.iter_distance(&(cit).clone().into()) as i64 as isize) == (0_isize)) {
             unimplemented!();
             std::process::abort();
         }

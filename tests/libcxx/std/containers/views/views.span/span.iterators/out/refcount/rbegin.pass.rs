@@ -65,8 +65,8 @@ pub fn testConstexprSpan_3(s: ()) -> bool {
         let mut last: () = (unimplemented!()).wrapping_sub(1_());
         let __rhs = (*ret.borrow())
             && ({
-                let _arg0: A = (*unimplemented!().upgrade().deref()).clone();
-                operator_eq_4(_arg0, (*unimplemented!().upgrade().deref()).clone())
+                let _arg0: A = (unimplemented!()).clone();
+                operator_eq_4(_arg0, (unimplemented!()).clone())
             });
         (*ret.borrow_mut()) = __rhs;
         let __rhs = (*ret.borrow()) && ((unimplemented!()) == (unimplemented!()));
@@ -198,8 +198,8 @@ pub fn testRuntimeSpan_15(s: ()) {
         let mut last: () = (unimplemented!()).wrapping_sub(1_());
         assert!(
             ({
-                let _arg0: A = (*unimplemented!().upgrade().deref()).clone();
-                operator_eq_4(_arg0, (*unimplemented!().upgrade().deref()).clone())
+                let _arg0: A = (unimplemented!()).clone();
+                operator_eq_4(_arg0, (unimplemented!()).clone())
             })
         );
         assert!(((unimplemented!()) == (unimplemented!())));

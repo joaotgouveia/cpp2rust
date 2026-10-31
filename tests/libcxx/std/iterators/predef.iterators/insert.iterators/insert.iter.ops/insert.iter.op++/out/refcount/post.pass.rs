@@ -69,7 +69,7 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
 pub fn test_0(c: Vec<i32>) -> bool {
     let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+    let r: Value<()> = Rc::new(RefCell::new((unimplemented!()).clone()));
     unimplemented!();
     assert!(((*c.borrow()).len() == 1_usize));
     assert!(((c.decay().to_last().read()) == 0));
@@ -78,7 +78,7 @@ pub fn test_0(c: Vec<i32>) -> bool {
 pub fn test_1(c: nasty_vector_int_) -> bool {
     let c: Value<nasty_vector_int_> = Rc::new(RefCell::new(c));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+    let r: Value<()> = Rc::new(RefCell::new((unimplemented!()).clone()));
     unimplemented!();
     assert!((({ nasty_vector_int_Impl::size(&c.as_pointer(),) }) == 1_usize));
     assert!(((({ nasty_vector_int_Impl::back_36(&c.as_pointer(),) }).read()) == 0));
@@ -87,7 +87,7 @@ pub fn test_1(c: nasty_vector_int_) -> bool {
 pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+    let r: Value<()> = Rc::new(RefCell::new((unimplemented!()).clone()));
     unimplemented!();
     assert!((({ ConstexprFixedCapacityDeque_int__10_Impl::size(&c.as_pointer(),) }) == 1_usize));
     assert!(((({ ConstexprFixedCapacityDeque_int__10_Impl::back(&c.as_pointer(),) }).read()) == 0));

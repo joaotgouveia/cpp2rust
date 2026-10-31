@@ -57,7 +57,8 @@ pub fn lehmer_2(mut sigma: Ptr<u32>, mut len: u32, mut code: Ptr<u32>) {
             __it
         }));
         assert!((*it.borrow()) != items.decay().end());
-        let __rhs = ((*it.borrow()).iter_distance(&items.decay().begin().into()) as i64 as u32);
+        let __rhs =
+            (((*it.borrow()).iter_distance(&items.decay().begin().into()) as i64 as isize) as u32);
         elem!(code, i).write(__rhs);
         {
             let __it = <RandomAccessIterator<u32>>::from((*it.borrow()).clone());

@@ -89,13 +89,13 @@ pub fn test_0() -> bool {
     {
         let mut a: Arg = Arg::new({ 5 });
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.arg.i) == 5));
+        assert!(({ (unimplemented!()).clone().arg.i } == 5));
         assert!((a.i == 5));
     }
     {
         let a: Value<Arg> = Rc::new(RefCell::new(Arg::new({ 5 })));
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.arg.i) == 5));
+        assert!(({ (unimplemented!()).clone().arg.i } == 5));
         assert!(({ (*a.borrow()).i } == 0));
     }
     {

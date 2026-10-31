@@ -20,28 +20,28 @@ pub fn test_1() -> bool {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((unimplemented!().with(|__s| __s.i) == 1));
-        assert!((unimplemented!().with(|__s| __s.i) == 0));
+        assert!(({ (unimplemented!()).clone().i } == 1));
+        assert!(({ (unimplemented!()).clone().i } == 0));
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((unimplemented!().with(|__s| __s.i) == 2));
-        assert!((unimplemented!().with(|__s| __s.i) == 3));
-        assert!((unimplemented!().with(|__s| __s.i) == 0));
-        assert!((unimplemented!().with(|__s| __s.i) == 1));
+        assert!(({ (unimplemented!()).clone().i } == 2));
+        assert!(({ (unimplemented!()).clone().i } == 3));
+        assert!(({ (unimplemented!()).clone().i } == 0));
+        assert!(({ (unimplemented!()).clone().i } == 1));
     }
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        assert!((unimplemented!().with(|__s| __s.i) == 3));
-        assert!((unimplemented!().with(|__s| __s.i) == 4));
-        assert!((unimplemented!().with(|__s| __s.i) == 5));
-        assert!((unimplemented!().with(|__s| __s.i) == 0));
-        assert!((unimplemented!().with(|__s| __s.i) == 1));
-        assert!((unimplemented!().with(|__s| __s.i) == 2));
+        assert!(({ (unimplemented!()).clone().i } == 3));
+        assert!(({ (unimplemented!()).clone().i } == 4));
+        assert!(({ (unimplemented!()).clone().i } == 5));
+        assert!(({ (unimplemented!()).clone().i } == 0));
+        assert!(({ (unimplemented!()).clone().i } == 1));
+        assert!(({ (unimplemented!()).clone().i } == 2));
     }
     return true;
 }

@@ -99,13 +99,8 @@ pub fn test_6() -> bool {
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut io: [(); 3] = [
             unimplemented!(),
-            (*unimplemented!().iter_inc().upgrade().deref()).clone(),
-            (*unimplemented!()
-                .iter_inc()
-                .with_mut(|__v: &mut ()| __v.iter_inc())
-                .upgrade()
-                .deref())
-            .clone(),
+            (unimplemented!().iter_inc()).clone(),
+            (unimplemented!().iter_inc().iter_inc()).clone(),
         ];
         let mut ro: [Ptr<i32>; 3] = [
             io[(0) as usize].iter_deref(),

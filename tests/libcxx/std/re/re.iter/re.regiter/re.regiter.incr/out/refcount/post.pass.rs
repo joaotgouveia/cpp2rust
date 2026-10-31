@@ -9,11 +9,11 @@ use std::rc::{Rc, Weak};
 pub fn validate_prefixes_0(empty_matching_pattern: Ptr<()>) {
     let source: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"abc\0")));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!(!(unimplemented!().with(|__s| __s.matched)));
+    assert!(!({ (unimplemented!()).clone().matched }));
     assert!((unimplemented!() == 0_()));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -21,18 +21,18 @@ pub fn validate_prefixes_0(empty_matching_pattern: Ptr<()>) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()
         } == { (source.as_pointer() as Ptr::<i8>) })
     );
     unimplemented!();
-    assert!(unimplemented!().with(|__s| __s.matched));
+    assert!({ (unimplemented!()).clone().matched });
     assert!((unimplemented!() == 1_()));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -40,7 +40,7 @@ pub fn validate_prefixes_0(empty_matching_pattern: Ptr<()>) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()
@@ -51,11 +51,11 @@ pub fn validate_prefixes_0(empty_matching_pattern: Ptr<()>) {
             .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
     );
     unimplemented!();
-    assert!(unimplemented!().with(|__s| __s.matched));
+    assert!({ (unimplemented!()).clone().matched });
     assert!((unimplemented!() == 1_()));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -63,7 +63,7 @@ pub fn validate_prefixes_0(empty_matching_pattern: Ptr<()>) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()
@@ -74,11 +74,11 @@ pub fn validate_prefixes_0(empty_matching_pattern: Ptr<()>) {
             .with_c_str(|__s| unimplemented!()[..unimplemented!().len().saturating_sub(1)] == *__s)
     );
     unimplemented!();
-    assert!(unimplemented!().with(|__s| __s.matched));
+    assert!({ (unimplemented!()).clone().matched });
     assert!((unimplemented!() == 1_()));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -86,7 +86,7 @@ pub fn validate_prefixes_0(empty_matching_pattern: Ptr<()>) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()

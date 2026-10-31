@@ -22,7 +22,7 @@ pub unsafe fn testConstexprSpan_0(mut s: ()) -> bool {
             && (((&mut (*(e.iter_add(-1_isize)).iter_deref()) as *mut i32).cast_const()) == (last));
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -42,7 +42,7 @@ pub unsafe fn testConstexprSpan_1(mut s: ()) -> bool {
             && (((&mut (*(e.iter_add(-1_isize)).iter_deref()) as *mut i64).cast_const()) == (last));
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -62,7 +62,7 @@ pub unsafe fn testConstexprSpan_2(mut s: ()) -> bool {
             && (((&mut (*(e.iter_add(-1_isize)).iter_deref()) as *mut f64).cast_const()) == (last));
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -82,7 +82,7 @@ pub unsafe fn testConstexprSpan_3(mut s: ()) -> bool {
             && (((&mut (*(e.iter_add(-1_isize)).iter_deref()) as *mut A).cast_const()) == (last));
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -104,7 +104,7 @@ pub unsafe fn testConstexprSpan_4(mut s: ()) -> bool {
                 == (last));
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -115,7 +115,7 @@ pub unsafe fn testConstexprSpan_5(mut s: ()) -> bool {
         ret = (ret) && (e == unimplemented!());
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -126,7 +126,7 @@ pub unsafe fn testConstexprSpan_6(mut s: ()) -> bool {
         ret = (ret) && (e == unimplemented!());
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -137,7 +137,7 @@ pub unsafe fn testConstexprSpan_7(mut s: ()) -> bool {
         ret = (ret) && (e == unimplemented!());
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -148,7 +148,7 @@ pub unsafe fn testConstexprSpan_8(mut s: ()) -> bool {
         ret = (ret) && (e == unimplemented!());
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -159,7 +159,7 @@ pub unsafe fn testConstexprSpan_9(mut s: ()) -> bool {
         ret = (ret) && (e == unimplemented!());
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -177,7 +177,7 @@ pub unsafe fn testConstexprSpan_10(mut s: ()) -> bool {
         ret = (ret) && ((&(*(e.iter_add(-1_isize)).iter_deref()) as *const i32) == (last));
     }
     ret = (ret)
-        && ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        && (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize));
     return ret;
 }
@@ -197,7 +197,7 @@ pub unsafe fn testRuntimeSpan_11(mut s: ()) {
         );
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -217,7 +217,7 @@ pub unsafe fn testRuntimeSpan_12(mut s: ()) {
         );
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -237,7 +237,7 @@ pub unsafe fn testRuntimeSpan_13(mut s: ()) {
         );
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -255,7 +255,7 @@ pub unsafe fn testRuntimeSpan_14(mut s: ()) {
         assert!((((&mut (*(e.iter_add(-1_isize)).iter_deref()) as *mut A).cast_const()) == (last)));
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -277,7 +277,7 @@ pub unsafe fn testRuntimeSpan_15(mut s: ()) {
         );
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -287,7 +287,7 @@ pub unsafe fn testRuntimeSpan_16(mut s: ()) {
         assert!(e == unimplemented!());
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -297,7 +297,7 @@ pub unsafe fn testRuntimeSpan_17(mut s: ()) {
         assert!(e == unimplemented!());
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -307,7 +307,7 @@ pub unsafe fn testRuntimeSpan_18(mut s: ()) {
         assert!(e == unimplemented!());
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -317,7 +317,7 @@ pub unsafe fn testRuntimeSpan_19(mut s: ()) {
         assert!(e == unimplemented!());
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }
@@ -327,7 +327,7 @@ pub unsafe fn testRuntimeSpan_20(mut s: ()) {
         assert!(e == unimplemented!());
     }
     assert!(
-        ((e.iter_distance(&unimplemented!().into()) as i64 as usize)
+        (((e.iter_distance(&unimplemented!().into()) as i64 as isize) as usize)
             == (unimplemented!() as usize))
     );
 }

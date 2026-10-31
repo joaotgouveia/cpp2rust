@@ -307,7 +307,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*pos.borrow_mut()).iter_inc().upgrade().deref()) == <()>::from(unimplemented!())) {
+        if !(((*pos.borrow_mut()).iter_inc()).clone() == <()>::from(unimplemented!())) {
             unimplemented!();
             std::process::abort();
         }

@@ -78,7 +78,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         assert!((unimplemented!() == 100_usize));
         let mut i: i32 = 0;
         'loop_: while (i < 100) {
-            assert!((unimplemented!().with(|__s| __s.x) == 1));
+            assert!(({ (unimplemented!()).clone().x } == 1));
             i.prefix_inc();
         }
     }

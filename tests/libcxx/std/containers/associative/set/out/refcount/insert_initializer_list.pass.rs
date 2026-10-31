@@ -62,48 +62,13 @@ pub fn test_4() -> bool {
         assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((((*i.borrow()).iter_deref().read()) == (1 as ())));
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (2 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (3 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (4 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (5 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (6 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (8 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (10 as ()))
-        );
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (2 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (3 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (4 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (5 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (6 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (8 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (10 as ())));
     }
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -112,48 +77,13 @@ pub fn test_4() -> bool {
         assert!(((unimplemented!() as usize) == (unimplemented!() as usize)));
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((((*i.borrow()).iter_deref().read()) == (1 as ())));
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (2 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (3 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (4 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (5 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (6 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (8 as ()))
-        );
-        assert!(
-            (((*(*i.borrow_mut()).iter_inc().upgrade().deref())
-                .iter_deref()
-                .read())
-                == (10 as ()))
-        );
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (2 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (3 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (4 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (5 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (6 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (8 as ())));
+        assert!(((((*i.borrow_mut()).iter_inc()).clone().iter_deref().read()) == (10 as ())));
     }
     return true;
 }

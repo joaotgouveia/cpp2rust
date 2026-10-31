@@ -148,17 +148,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(((unimplemented!().read()) == 2));
         assert!((unimplemented!().read()).is_null());
-        assert!(Ptr::<i8>::from_string_literal(b"text").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"text").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
     }
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(((unimplemented!().read()) == 1));
-        assert!((unimplemented!().with(|__s| __s.id) == 1));
+        assert!(({ (unimplemented!()).clone().id } == 1));
         assert!(((unimplemented!().read()) == 2));
         assert!(((unimplemented!().read()) == 3));
     }

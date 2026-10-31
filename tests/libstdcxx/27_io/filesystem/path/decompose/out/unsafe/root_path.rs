@@ -537,7 +537,7 @@ impl Default for __gnu_test_scoped_file {
 pub unsafe fn permissions_are_testable_14(mut print_msg: Option<bool>) -> bool {
     let mut print_msg: bool = print_msg.unwrap_or_else(|| unsafe { true });
     let mut testable: bool = false;
-    if ((libc::geteuid()) != (0 as ::libc::uid_t)) {
+    if ((libc::geteuid() as ::libc::uid_t) != (0 as ::libc::uid_t)) {
         testable = true;
     }
     if (print_msg) && (!(testable)) {

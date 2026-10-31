@@ -13,7 +13,8 @@ pub unsafe fn test_0() {
     let mut i: () = unimplemented!();
     let mut e: () = unimplemented!();
     assert!(
-        ((e.iter_distance(&(i).clone().into()) as i64 as usize) == (unimplemented!() as usize))
+        (((e.iter_distance(&(i).clone().into()) as i64 as isize) as usize)
+            == (unimplemented!() as usize))
     );
     let mut j: i32 = 0;
     'loop_: while i != e {

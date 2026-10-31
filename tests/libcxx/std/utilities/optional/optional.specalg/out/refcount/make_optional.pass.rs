@@ -143,12 +143,11 @@ pub fn test_20() -> bool {
         };
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        assert!(Ptr::<i8>::from_string_literal(b"123").with_c_str(|__s| {
-            (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                .len()
-                .saturating_sub(1)]
-                == *__s
-        }));
+        assert!(
+            Ptr::<i8>::from_string_literal(b"123").with_c_str(|__s| (unimplemented!()).clone()
+                [..(unimplemented!()).clone().len().saturating_sub(1)]
+                == *__s)
+        );
     })));
     {
         ({ (*test_string.borrow()).call() });
@@ -157,7 +156,7 @@ pub fn test_20() -> bool {
         let mut s: Option<Value<i32>> = Some(Rc::new(RefCell::new(3)));
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        assert!((((*unimplemented!().upgrade().deref()).as_pointer().read()) == 3));
+        assert!((((unimplemented!()).clone().as_pointer().read()) == 3));
         assert!(s.is_none());
     })));
     {

@@ -73,13 +73,13 @@ pub fn test_0() -> bool {
     {
         let mut e: Error = Error::new_1({ 5 });
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.i) == 5));
+        assert!(({ (unimplemented!()).clone().i } == 5));
         assert!((e.i == 5));
     }
     {
         let e: Value<Error> = Rc::new(RefCell::new(Error::new_1({ 5 })));
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.i) == 5));
+        assert!(({ (unimplemented!()).clone().i } == 5));
         assert!(({ (*e.borrow()).i } == 0));
     }
     {
@@ -88,8 +88,8 @@ pub fn test_0() -> bool {
     }
     {
         let ue: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.i) == 5));
-        assert!((unimplemented!().with(|__s| __s.j) == 6));
+        assert!(({ (unimplemented!()).clone().i } == 5));
+        assert!(({ (unimplemented!()).clone().j } == 6));
     }
     return true;
 }

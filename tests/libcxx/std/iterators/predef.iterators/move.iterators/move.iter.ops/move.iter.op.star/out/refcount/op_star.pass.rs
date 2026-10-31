@@ -368,7 +368,7 @@ pub fn test_8(mut i: Ptr<A>, x: A) {
             operator_eq_7(_x, x.as_pointer())
         })
     );
-    let x2: Value<A> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+    let x2: Value<A> = Rc::new(RefCell::new((unimplemented!()).clone()));
     let _dtor_x2 = ScopedDestructor::new(&x2, |__p| __p.destructor());
     assert!(
         ({
@@ -380,8 +380,7 @@ pub fn test_8(mut i: Ptr<A>, x: A) {
 pub fn test_9(mut i: Ptr<Option<Value<i32>>>, mut x: Option<Value<i32>>) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     assert!(unimplemented!());
-    let mut x2: Option<Value<i32>> =
-        unimplemented!().with_mut(|__v: &mut Option<Value<i32>>| __v.take());
+    let mut x2: Option<Value<i32>> = unimplemented!().take();
     assert!(unimplemented!());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]

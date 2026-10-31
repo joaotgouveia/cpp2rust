@@ -88,40 +88,40 @@ pub fn test_0() -> bool {
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((unimplemented!() == 3_()));
-        assert!((unimplemented!().with(|__s| __s.x) == 111));
-        assert!((unimplemented!().with(|__s| __s.y) == 222));
+        assert!(({ (unimplemented!()).clone().x } == 111));
+        assert!(({ (unimplemented!()).clone().y } == 222));
         assert!(unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.x) == 111));
-        assert!((unimplemented!().with(|__s| __s.y) == 222));
+        assert!(({ (unimplemented!()).clone().x } == 111));
+        assert!(({ (unimplemented!()).clone().y } == 222));
         assert!(unimplemented!() != unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((unimplemented!() == 3_()));
-        assert!((unimplemented!().with(|__s| __s.x) == 1));
-        assert!((unimplemented!().with(|__s| __s.y) == 2));
+        assert!(({ (unimplemented!()).clone().x } == 1));
+        assert!(({ (unimplemented!()).clone().y } == 2));
         assert!(unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.x) == 1));
-        assert!((unimplemented!().with(|__s| __s.y) == 2));
+        assert!(({ (unimplemented!()).clone().x } == 1));
+        assert!(({ (unimplemented!()).clone().y } == 2));
         assert!(unimplemented!() != unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((unimplemented!() == 3_()));
-        assert!((unimplemented!().with(|__s| __s.x) == 11));
-        assert!((unimplemented!().with(|__s| __s.y) == 12));
+        assert!(({ (unimplemented!()).clone().x } == 11));
+        assert!(({ (unimplemented!()).clone().y } == 12));
         assert!(unimplemented!());
     }
     {
         let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.x) == 10));
-        assert!((unimplemented!().with(|__s| __s.y) == 11));
+        assert!(({ (unimplemented!()).clone().x } == 10));
+        assert!(({ (unimplemented!()).clone().y } == 11));
         assert!(unimplemented!() != unimplemented!());
     }
     return true;

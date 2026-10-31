@@ -297,7 +297,7 @@ pub fn test01_9() {
     let s: Value<FnPtr<fn() -> Vec<i8>>> = Rc::new(RefCell::new(FnPtr::<fn() -> Vec<i8>>::new(
         || -> Vec<i8> {
             {
-                return (*unimplemented!().upgrade().deref()).clone();
+                return (unimplemented!()).clone();
             }
         },
     )));
@@ -331,7 +331,7 @@ pub fn test01_9() {
     }
 }
 pub fn test02_10() {
-    let s: Value<Vec<i8>> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+    let s: Value<Vec<i8>> = Rc::new(RefCell::new((unimplemented!()).clone()));
     let p0: Value<Vec<i8>> = Rc::new(RefCell::new({
         let mut __v: Vec<i8> = s
             .as_pointer()

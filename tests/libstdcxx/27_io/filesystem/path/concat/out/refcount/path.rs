@@ -495,7 +495,7 @@ impl Default for __gnu_test_scoped_file {
 pub fn permissions_are_testable_14(print_msg: Option<bool>) -> bool {
     let mut print_msg: bool = print_msg.unwrap_or_else(|| true);
     let testable: Value<bool> = Rc::new(RefCell::new(false));
-    if (nix::unistd::geteuid().as_raw() != (0 as ::libc::uid_t)) {
+    if ((nix::unistd::geteuid().as_raw() as ::libc::uid_t) != (0 as ::libc::uid_t)) {
         (*testable.borrow_mut()) = true;
     }
     if (print_msg) && (!(*testable.borrow())) {
@@ -592,7 +592,7 @@ pub fn test02_16() {
             __v.push(0);
             __v
         }));
-        let mut prior_native: Vec<i8> = (*unimplemented!().upgrade().deref()).clone();
+        let mut prior_native: Vec<i8> = (unimplemented!()).clone();
         let x: Value<Vec<i8>> = Rc::new(RefCell::new({
             let mut __v: Vec<i8> = (b"//blah/di/blah" as Ptr<i8>)
                 .path_bytes()
@@ -668,7 +668,7 @@ pub fn test04_18() {
                 __v.push(0);
                 __v
             }));
-            let mut prior_native: Vec<i8> = (*unimplemented!().upgrade().deref()).clone();
+            let mut prior_native: Vec<i8> = (unimplemented!()).clone();
             unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {

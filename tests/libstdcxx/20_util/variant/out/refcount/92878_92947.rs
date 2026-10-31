@@ -226,7 +226,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 1) {
+        if !({ (unimplemented!()).clone().a } == 1) {
             unimplemented!();
             std::process::abort();
         }
@@ -234,7 +234,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 2) {
+        if !({ (unimplemented!()).clone().b } == 2) {
             unimplemented!();
             std::process::abort();
         }
@@ -254,7 +254,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 1) {
+        if !({ (unimplemented!()).clone().a } == 1) {
             unimplemented!();
             std::process::abort();
         }
@@ -262,7 +262,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 0) {
+        if !({ (unimplemented!()).clone().b } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -279,7 +279,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 0) {
+        if !({ (unimplemented!()).clone().a } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -287,7 +287,7 @@ pub fn test_emplace_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 0) {
+        if !({ (unimplemented!()).clone().b } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -306,7 +306,7 @@ pub fn test_in_place_type_construct_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 1) {
+        if !({ (unimplemented!()).clone().a } == 1) {
             unimplemented!();
             std::process::abort();
         }
@@ -314,7 +314,7 @@ pub fn test_in_place_type_construct_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 2) {
+        if !({ (unimplemented!()).clone().b } == 2) {
             unimplemented!();
             std::process::abort();
         }
@@ -331,7 +331,7 @@ pub fn test_in_place_type_construct_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 1) {
+        if !({ (unimplemented!()).clone().a } == 1) {
             unimplemented!();
             std::process::abort();
         }
@@ -339,7 +339,7 @@ pub fn test_in_place_type_construct_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 0) {
+        if !({ (unimplemented!()).clone().b } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -356,7 +356,7 @@ pub fn test_in_place_type_construct_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 0) {
+        if !({ (unimplemented!()).clone().a } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -364,7 +364,7 @@ pub fn test_in_place_type_construct_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 0) {
+        if !({ (unimplemented!()).clone().b } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -383,7 +383,7 @@ pub fn test_in_place_index_construct_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 1) {
+        if !({ (unimplemented!()).clone().a } == 1) {
             unimplemented!();
             std::process::abort();
         }
@@ -391,7 +391,7 @@ pub fn test_in_place_index_construct_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 2) {
+        if !({ (unimplemented!()).clone().b } == 2) {
             unimplemented!();
             std::process::abort();
         }
@@ -408,7 +408,7 @@ pub fn test_in_place_index_construct_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 1) {
+        if !({ (unimplemented!()).clone().a } == 1) {
             unimplemented!();
             std::process::abort();
         }
@@ -416,7 +416,7 @@ pub fn test_in_place_index_construct_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 0) {
+        if !({ (unimplemented!()).clone().b } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -433,7 +433,7 @@ pub fn test_in_place_index_construct_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.a) == 0) {
+        if !({ (unimplemented!()).clone().a } == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -441,7 +441,7 @@ pub fn test_in_place_index_construct_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.b) == 0) {
+        if !({ (unimplemented!()).clone().b } == 0) {
             unimplemented!();
             std::process::abort();
         }

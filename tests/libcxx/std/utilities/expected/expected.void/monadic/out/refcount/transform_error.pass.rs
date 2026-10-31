@@ -107,7 +107,7 @@ pub fn test_direct_non_list_init_2() {
     ));
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!().with(|__s| __s.value) == 2));
+    assert!(({ (unimplemented!()).clone().value } == 2));
 }
 pub fn test_3() -> bool {
     ({ test_fail_1() });

@@ -167,31 +167,31 @@ pub fn test_tuple_cat_with_unconstrained_constructor_16() -> bool {
     {
         let tup_src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.data) == 5));
+        assert!(({ (unimplemented!()).clone().data } == 5));
     }
     {
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.data) == 6));
+        assert!(({ (unimplemented!()).clone().data } == 6));
     }
     {
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.data) == 7));
+        assert!(({ (unimplemented!()).clone().data } == 7));
     }
     {
         let tup_src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!().with(|__s| __s.data) == 8));
+        assert!(({ (unimplemented!()).clone().data } == 8));
     }
     {
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!().with(|__s| __s.data) == 9));
+        assert!(({ (unimplemented!()).clone().data } == 9));
     }
     {
         let tup: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        assert!((unimplemented!().with(|__s| __s.data) == 10));
+        assert!(({ (unimplemented!()).clone().data } == 10));
     }
     return true;
 }
@@ -527,8 +527,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.i) == 1));
-        assert!((unimplemented!().with(|__s| __s.i) == 1));
+        assert!(({ (unimplemented!()).clone().i } == 1));
+        assert!(({ (unimplemented!()).clone().i } == 1));
     }
     {
         ({ test_tuple_cat_with_unconstrained_constructor_16() });

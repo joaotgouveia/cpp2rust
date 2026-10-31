@@ -253,11 +253,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*(*pos.borrow_mut()).iter_inc().upgrade().deref())
-            .iter_deref()
-            .read())
-            == 0)
-        {
+        if !((((*pos.borrow_mut()).iter_inc()).clone().iter_deref().read()) == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -282,7 +278,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*pos.borrow()) == (*unimplemented!().iter_dec().upgrade().deref())) {
+        if !((*pos.borrow()) == (unimplemented!().iter_dec()).clone()) {
             unimplemented!();
             std::process::abort();
         }
@@ -290,11 +286,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*(*pos.borrow_mut()).iter_dec().upgrade().deref())
-            .iter_deref()
-            .read())
-            == 0)
-        {
+        if !((((*pos.borrow_mut()).iter_dec()).clone().iter_deref().read()) == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -302,11 +294,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*(*pos.borrow_mut()).iter_dec().upgrade().deref())
-            .iter_deref()
-            .read())
-            == 2)
-        {
+        if !((((*pos.borrow_mut()).iter_dec()).clone().iter_deref().read()) == 2) {
             unimplemented!();
             std::process::abort();
         }
@@ -339,11 +327,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*(*pos.borrow_mut()).iter_inc().upgrade().deref())
-            .iter_deref()
-            .read())
-            == 2)
-        {
+        if !((((*pos.borrow_mut()).iter_inc()).clone().iter_deref().read()) == 2) {
             unimplemented!();
             std::process::abort();
         }
@@ -382,11 +366,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*(*pos.borrow_mut()).iter_dec().upgrade().deref())
-            .iter_deref()
-            .read())
-            == 2)
-        {
+        if !((((*pos.borrow_mut()).iter_dec()).clone().iter_deref().read()) == 2) {
             unimplemented!();
             std::process::abort();
         }
@@ -394,11 +374,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*(*pos.borrow_mut()).iter_dec().upgrade().deref())
-            .iter_deref()
-            .read())
-            == 0)
-        {
+        if !((((*pos.borrow_mut()).iter_dec()).clone().iter_deref().read()) == 0) {
             unimplemented!();
             std::process::abort();
         }
@@ -439,7 +415,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*pos.borrow()) == (*unimplemented!().iter_dec().upgrade().deref())) {
+        if !((*pos.borrow()) == (unimplemented!().iter_dec()).clone()) {
             unimplemented!();
             std::process::abort();
         }
@@ -465,7 +441,7 @@ pub fn test02_10() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(<BidirectionalIterator<V>>::from((*pos.borrow()).clone())
-            == (*unimplemented!().iter_dec().upgrade().deref()))
+            == (unimplemented!().iter_dec()).clone())
         {
             unimplemented!();
             std::process::abort();
@@ -474,7 +450,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.val) == 1) {
+        if !({ (unimplemented!()).clone().val } == 1) {
             unimplemented!();
             std::process::abort();
         }

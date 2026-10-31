@@ -474,7 +474,7 @@ pub fn test_11() -> bool {
         let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(
-            ({ unimplemented!().with(|__s| __s.ptr.clone()) } == {
+            ({ { (unimplemented!()).clone().ptr.clone() } } == {
                 (buffer.as_pointer() as Ptr<i32>)
             })
         );
@@ -482,7 +482,7 @@ pub fn test_11() -> bool {
         let result: Ptr<()> = ((*iter1.borrow_mut()) = (*iter2.borrow()).clone());
         assert!(({ (result).clone() } == { (iter1.as_pointer()) }));
         assert!(
-            ({ unimplemented!().with(|__s| __s.ptr.clone()) } == {
+            ({ { (unimplemented!()).clone().ptr.clone() } } == {
                 (buffer.as_pointer() as Ptr<i32>).offset((2) as isize)
             })
         );
@@ -493,7 +493,7 @@ pub fn test_11() -> bool {
         let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!(
-            ({ unimplemented!().with(|__s| __s.ptr.clone()) } == {
+            ({ { (unimplemented!()).clone().ptr.clone() } } == {
                 (buffer.as_pointer() as Ptr<i32>)
             })
         );
@@ -501,7 +501,7 @@ pub fn test_11() -> bool {
         let result: Ptr<()> = ((*iter1.borrow_mut()) = (*iter2.borrow()).clone());
         assert!(({ (result).clone() } == { (iter1.as_pointer()) }));
         assert!(
-            ({ unimplemented!().with(|__s| __s.ptr.clone()) } == {
+            ({ { (unimplemented!()).clone().ptr.clone() } } == {
                 (buffer.as_pointer() as Ptr<i32>).offset((2) as isize)
             })
         );

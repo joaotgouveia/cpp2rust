@@ -619,7 +619,7 @@ impl Default for DefaultConstructibleType {
 }
 pub fn test01_26() {
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!().write(<Mapped>::default());
+    unimplemented!() = <Mapped>::default();
     let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let _in_: Value<__gnu_test_rvalstruct> =
@@ -630,7 +630,7 @@ pub fn test01_26() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.val) == 123) {
+        if !({ (unimplemented!()).clone().val } == 123) {
             unimplemented!();
             std::process::abort();
         }
@@ -647,7 +647,7 @@ pub fn test01_26() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.val) == 2) {
+        if !({ (unimplemented!()).clone().val } == 2) {
             unimplemented!();
             std::process::abort();
         }

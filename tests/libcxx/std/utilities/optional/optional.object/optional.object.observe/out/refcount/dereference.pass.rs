@@ -192,16 +192,12 @@ pub fn test_24() -> bool {
         assert!((({ XImpl::test_2(&(unimplemented!()),) }) == 4));
         assert!(
             (({
-                XImpl::test_3(
-                    &Rc::new(RefCell::new((*unimplemented!().upgrade().deref()))).as_pointer(),
-                )
+                XImpl::test_3(&Rc::new(RefCell::new(((unimplemented!()).clone()))).as_pointer())
             }) == 5)
         );
         assert!(
             (({
-                XImpl::test_4(
-                    &Rc::new(RefCell::new((*unimplemented!().upgrade().deref()))).as_pointer(),
-                )
+                XImpl::test_4(&Rc::new(RefCell::new(((unimplemented!()).clone()))).as_pointer())
             }) == 6)
         );
         let x: Ptr<X> = unimplemented!();

@@ -267,12 +267,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
-            == (*iter0.borrow()))
-        {
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone() == (*iter0.borrow())) {
             unimplemented!();
             std::process::abort();
         }
@@ -324,12 +319,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
-            == (*iter1.borrow()))
-        {
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone() == (*iter1.borrow())) {
             unimplemented!();
             std::process::abort();
         }
@@ -382,12 +372,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
-            == (*iter5.borrow()))
-        {
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone() == (*iter5.borrow())) {
             unimplemented!();
             std::process::abort();
         }
@@ -431,12 +416,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
-            == (*iter4.borrow()))
-        {
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone() == (*iter4.borrow())) {
             unimplemented!();
             std::process::abort();
         }
@@ -488,12 +468,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
-            == (*iter3.borrow()))
-        {
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone() == (*iter3.borrow())) {
             unimplemented!();
             std::process::abort();
         }
@@ -600,10 +575,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp1.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
+        if !(((*(*pp1.borrow()).0.borrow_mut()).iter_dec()).clone()
             == <BidirectionalIterator<(Value<i32>, Value<i32>)>>::from((*iter7.borrow()).clone()))
         {
             unimplemented!();

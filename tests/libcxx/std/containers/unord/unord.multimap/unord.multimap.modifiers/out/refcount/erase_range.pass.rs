@@ -298,7 +298,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         unimplemented!();
         assert!((unimplemented!() == 1_()));
         assert!(unimplemented!());
-        assert!((*unimplemented!().iter_inc().upgrade().deref()) == unimplemented!());
+        assert!((unimplemented!().iter_inc()).clone() == unimplemented!());
     }
     {
         let a: Value<Box<[(Value<i32>, Value<Vec<i8>>)]>> = Rc::new(RefCell::new(Box::new([

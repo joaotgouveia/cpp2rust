@@ -212,7 +212,7 @@ fn main_0() -> i32 {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| (__s).i) == 51) {
+        if !({ ((unimplemented!()).clone()).i } == 51) {
             unimplemented!();
             std::process::abort();
         }

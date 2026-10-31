@@ -220,7 +220,7 @@ fn main_0() -> i32 {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ unimplemented!().i } == unimplemented!().with(|__s| (__s).i)) {
+        if !({ unimplemented!().i } == { ((unimplemented!()).clone()).i }) {
             unimplemented!();
             std::process::abort();
         }

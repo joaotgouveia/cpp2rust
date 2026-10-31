@@ -165,21 +165,19 @@ pub fn test_25() -> bool {
                 __bytes
             };
             let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(Ptr::<i8>::from_string_literal(b"123").with_c_str(|__s| {
-                (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                    .len()
-                    .saturating_sub(1)]
-                    == *__s
-            }));
+            assert!(
+                Ptr::<i8>::from_string_literal(b"123").with_c_str(|__s| (unimplemented!()).clone()
+                    [..(unimplemented!()).clone().len().saturating_sub(1)]
+                    == *__s)
+            );
         }
         {
             let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            assert!(Ptr::<i8>::from_string_literal(b"XXXX").with_c_str(|__s| {
-                (*unimplemented!().upgrade().deref())[..(*unimplemented!().upgrade().deref())
-                    .len()
-                    .saturating_sub(1)]
-                    == *__s
-            }));
+            assert!(
+                Ptr::<i8>::from_string_literal(b"XXXX").with_c_str(|__s| (unimplemented!())
+                    .clone()[..(unimplemented!()).clone().len().saturating_sub(1)]
+                    == *__s)
+            );
         }
     })));
     {
@@ -188,7 +186,7 @@ pub fn test_25() -> bool {
     let test_unique_ptr: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
         let mut s: Option<Value<i32>> = Some(Rc::new(RefCell::new(3)));
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((((*unimplemented!().upgrade().deref()).as_pointer().read()) == 3));
+        assert!((((unimplemented!()).clone().as_pointer().read()) == 3));
         assert!(s.is_none());
     })));
     {

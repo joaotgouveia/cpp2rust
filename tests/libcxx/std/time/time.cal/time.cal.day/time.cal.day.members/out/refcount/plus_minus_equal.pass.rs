@@ -15,9 +15,9 @@ pub fn test_1() -> bool {
     let mut i: u32 = 0_u32;
     'loop_: while (i <= 10_u32) {
         let d: Value<u32> = Rc::new(RefCell::new(i));
-        assert!(((*unimplemented!().upgrade().deref()) == (i).wrapping_add(22_u32)));
+        assert!(((unimplemented!()).clone() == (i).wrapping_add(22_u32)));
         assert!(((*d.borrow()) == (i).wrapping_add(22_u32)));
-        assert!(((*unimplemented!().upgrade().deref()) == (i).wrapping_add(10_u32)));
+        assert!(((unimplemented!()).clone() == (i).wrapping_add(10_u32)));
         assert!(((*d.borrow()) == (i).wrapping_add(10_u32)));
         i.prefix_inc();
     }

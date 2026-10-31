@@ -693,8 +693,8 @@ pub fn test_6() -> bool {
             Rc::new(RefCell::new(2)),
         )));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
-        assert!((unimplemented!().with(|__s| __s.v) == 2));
+        assert!(({ (unimplemented!()).clone().v.val } == 1));
+        assert!(({ (unimplemented!()).clone().v } == 2));
     }
     {
         let p: Value<(Value<MutableCopy>, Value<i32>)> = Rc::new(RefCell::new((
@@ -702,8 +702,8 @@ pub fn test_6() -> bool {
             Rc::new(RefCell::new(2)),
         )));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        assert!((unimplemented!().with(|__s| __s.v.val) == 1));
-        assert!((unimplemented!().with(|__s| __s.v) == 2));
+        assert!(({ (unimplemented!()).clone().v.val } == 1));
+        assert!(({ (unimplemented!()).clone().v } == 2));
     }
     {
         let p: Value<(Value<TracedCopyMove>, Value<TracedCopyMove>)> =

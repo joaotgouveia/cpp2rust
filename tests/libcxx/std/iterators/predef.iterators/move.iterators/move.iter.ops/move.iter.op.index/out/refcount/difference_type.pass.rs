@@ -379,8 +379,7 @@ pub fn test_9(mut i: Ptr<i8>, mut n: isize, mut x: i8) {
 }
 pub fn test_10(mut i: Ptr<Option<Value<i32>>>, mut n: isize, mut x: Option<Value<i32>>) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rr: Option<Value<i32>> =
-        unimplemented!().with_mut(|__v: &mut Option<Value<i32>>| __v.take());
+    let mut rr: Option<Value<i32>> = unimplemented!().take();
     assert!(unimplemented!());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]

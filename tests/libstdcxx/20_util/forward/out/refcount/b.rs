@@ -262,7 +262,7 @@ fn main_0() -> i32 {
     let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
     unimplemented!();
     ({ test_9((*c.borrow()).clone()) });
-    ({ test_9((*unimplemented!().upgrade().deref()).clone()) });
+    ({ test_9((unimplemented!()).clone()) });
     0
 }
 impl __gnu_test_semaphore {

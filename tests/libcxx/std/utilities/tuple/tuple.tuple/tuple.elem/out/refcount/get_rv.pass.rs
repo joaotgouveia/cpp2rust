@@ -29,8 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut p: Option<Value<i32>> =
-            unimplemented!().with_mut(|__v: &mut Option<Value<i32>>| __v.take());
+        let mut p: Option<Value<i32>> = unimplemented!().take();
         assert!(((p.as_pointer().read()) == 3));
     }
     return 0;

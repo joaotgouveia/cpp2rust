@@ -764,7 +764,8 @@ pub fn to_string_13(mut val: u128) -> Vec<i8> {
     let iter: Value<RandomAccessIterator<i8>> =
         Rc::new(RefCell::new(RandomAccessIterator::Vec(s.decay().to_last())));
     'loop_: while (val != 0_u128) {
-        (*(*iter.borrow_mut()).iter_dec().upgrade().deref())
+        ((*iter.borrow_mut()).iter_dec())
+            .clone()
             .iter_deref()
             .write((((('0' as i8) as u128).wrapping_add(((val).wrapping_rem(10_u128)))) as i8));
         val = { (val).wrapping_div(10_u128) };

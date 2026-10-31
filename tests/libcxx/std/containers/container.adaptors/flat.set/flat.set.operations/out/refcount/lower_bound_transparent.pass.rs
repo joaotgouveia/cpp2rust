@@ -894,18 +894,18 @@ pub fn test_one_35() {
                 let iter: Value<RandomAccessIterator<Vec<i8>>> =
                     Rc::new(RefCell::new(unimplemented!()));
                 assert!(
-                    ({ (*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 } == {
-                        (expected_offset as isize)
-                    })
+                    ({
+                        ((*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize)
+                    } == { (expected_offset as isize) })
                 );
             },
             |map: Ptr<()>, expected_key: Ptr<Vec<i8>>, mut expected_offset: i64| {
                 let iter: Value<RandomAccessIterator<Vec<i8>>> =
                     Rc::new(RefCell::new(unimplemented!()));
                 assert!(
-                    ({ (*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 } == {
-                        (expected_offset as isize)
-                    })
+                    ({
+                        ((*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize)
+                    } == { (expected_offset as isize) })
                 );
             }
         )));
@@ -1159,17 +1159,17 @@ pub fn test_one_36() {
             |map: Ptr<()>, expected_key: Ptr<Vec<i8>>, mut expected_offset: i64| {
                 let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 assert!(
-                    ({ (*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 } == {
-                        (expected_offset as isize)
-                    })
+                    ({
+                        ((*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize)
+                    } == { (expected_offset as isize) })
                 );
             },
             |map: Ptr<()>, expected_key: Ptr<Vec<i8>>, mut expected_offset: i64| {
                 let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 assert!(
-                    ({ (*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 } == {
-                        (expected_offset as isize)
-                    })
+                    ({
+                        ((*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize)
+                    } == { (expected_offset as isize) })
                 );
             }
         )));
@@ -1700,18 +1700,18 @@ pub fn test_one_38() {
                 let iter: Value<RandomAccessIterator<Vec<i8>>> =
                     Rc::new(RefCell::new(unimplemented!()));
                 assert!(
-                    ({ (*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 } == {
-                        (expected_offset as isize)
-                    })
+                    ({
+                        ((*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize)
+                    } == { (expected_offset as isize) })
                 );
             },
             |map: Ptr<()>, expected_key: Ptr<Vec<i8>>, mut expected_offset: i64| {
                 let iter: Value<RandomAccessIterator<Vec<i8>>> =
                     Rc::new(RefCell::new(unimplemented!()));
                 assert!(
-                    ({ (*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 } == {
-                        (expected_offset as isize)
-                    })
+                    ({
+                        ((*iter.borrow()).iter_distance(&unimplemented!().into()) as i64 as isize)
+                    } == { (expected_offset as isize) })
                 );
             }
         )));
@@ -2150,7 +2150,7 @@ fn begin_11 ( &self , ) -> three_way_random_access_iterator_std_basic_string_cha
  } fn erase_25 ( &self , mut first : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  , mut last : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  { return ( { let _it: RandomAccessIterator<Vec<i8  >  >   = unimplemented!()   ; MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: from_vector_iterator ( self , _it , ) } )    ;
  } fn to_vector_iterator ( &self , mut cit : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  , ) -> RandomAccessIterator<Vec<i8  >  >  { return field_ref!((* self )  , data_).decay() .begin()  .iter_add(( { let _x: three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_   = (cit ).clone()  ; operator_sub_11 ( _x , ( { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: cbegin ( self , ) } )   , ) } )  )    ;
  } fn from_vector_iterator ( &self , it : RandomAccessIterator<Vec<i8  >  >  , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  { let it : Value<RandomAccessIterator<Vec<i8  >  > >  = Rc::new(RefCell::new(it)) ;
- return ( { let _n: isize   = (*it.borrow()) .iter_distance(&field_ref!((* self )  , data_).decay() .begin()  .into()) as i64   ; let _x: three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_   = ( { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: begin_11 ( self , ) } )   ; operator_add_5 ( _n , _x , ) } )    ;
+ return ( { let _n: isize   = ((*it.borrow()) .iter_distance(&field_ref!((* self )  , data_).decay() .begin()  .into()) as i64 as isize)   ; let _x: three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_   = ( { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: begin_11 ( self , ) } )   ; operator_add_5 ( _n , _x , ) } )    ;
  } fn move_assign ( &self , _a0 : Ptr< MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__  > , ) -> Ptr< MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__  > { field_ref!((* self )  , data_).as_pointer() .write(field!(_a0, data_).with_mut(std::mem::take))  ;
  return ((* self )  ).clone()  ;
  } fn insert_20_const_class_std_basic_string_char__ptr ( &self , mut p : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  , mut first : Ptr< Vec<i8  >  >  , mut last : Ptr< Vec<i8  >  >  , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  { return ( { let _it: RandomAccessIterator<Vec<i8  >  >   = {let __pos = ( { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__Impl :: to_vector_iterator ( self , (p ).clone()  , ) } )  ;

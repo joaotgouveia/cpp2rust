@@ -22,7 +22,7 @@ pub fn test_0() -> bool {
     let unex1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let unex2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    assert!((unimplemented!().with(|__s| __s.i) == 5));
+    assert!(({ (unimplemented!()).clone().i } == 5));
     return true;
 }
 pub fn main() {

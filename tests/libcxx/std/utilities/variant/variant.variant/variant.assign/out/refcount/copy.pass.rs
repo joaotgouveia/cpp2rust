@@ -265,7 +265,7 @@ pub fn test_copy_assignment_same_index_5() {
         let vref: Ptr<()> = (unimplemented!());
         assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
         assert!((unimplemented!() == 1_usize));
-        assert!((unimplemented!().with(|__s| __s.value) == 42));
+        assert!(({ (unimplemented!()).clone().value } == 42));
         assert!(((*copy_construct.borrow()) == 0));
         assert!(((*move_construct.borrow()) == 0));
         assert!(((*copy_assign.borrow()) == 1));
@@ -330,7 +330,7 @@ pub fn test_copy_assignment_different_index_10() {
         let vref: Ptr<()> = (unimplemented!());
         assert!(({ (vref).clone() } == { (v1.as_pointer()) }));
         assert!((unimplemented!() == 1_usize));
-        assert!((unimplemented!().with(|__s| __s.value) == 42));
+        assert!(({ (unimplemented!()).clone().value } == 42));
         assert!(((*alive.borrow()) == 2));
         assert!(((*copy_construct.borrow()) == 1));
         assert!(((*move_construct.borrow()) == 1));
@@ -635,7 +635,7 @@ impl anon_12Impl for Ptr<anon_12> {
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: unimplemented!().with(|__s| __s.value),
+            value: { (unimplemented!()).clone().value },
         };
     }
 }
@@ -677,7 +677,7 @@ impl anon_8Impl for Ptr<anon_8> {
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: unimplemented!().with(|__s| __s.value),
+            value: { (unimplemented!()).clone().value },
         };
     }
 }
@@ -691,7 +691,7 @@ impl anon_9Impl for Ptr<anon_9> {
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: unimplemented!().with(|__s| __s.value),
+            value: { (unimplemented!()).clone().value },
         };
     }
 }

@@ -36,7 +36,7 @@ const _: () = assert!(
 );
 pub fn test_0() -> bool {
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!().with(|__s| (__s).value) == 42));
+    assert!(({ ((unimplemented!()).clone()).value } == 42));
     return true;
 }
 pub fn main() {

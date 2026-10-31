@@ -236,7 +236,7 @@ pub fn test03_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.id) == -2_i32) {
+        if !({ (unimplemented!()).clone().id } == -2_i32) {
             unimplemented!();
             std::process::abort();
         }
@@ -252,7 +252,7 @@ pub fn test03_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.id) == -1_i32) {
+        if !({ (unimplemented!()).clone().id } == -1_i32) {
             unimplemented!();
             std::process::abort();
         }
@@ -275,7 +275,7 @@ pub fn test04_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.id) == -2_i32) {
+        if !({ (unimplemented!()).clone().id } == -2_i32) {
             unimplemented!();
             std::process::abort();
         }
@@ -291,7 +291,7 @@ pub fn test04_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.id) == -1_i32) {
+        if !({ (unimplemented!()).clone().id } == -1_i32) {
             unimplemented!();
             std::process::abort();
         }

@@ -648,7 +648,7 @@ impl MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allo
  } pub unsafe fn size ( &self , ) -> u32 { return ( self . data_  .len()  as u32 )  ;
  } pub unsafe fn clear ( &mut self , ) { self . data_  .clear()  ;
  } unsafe fn to_vector_iterator ( &self , mut cit : three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ , ) -> UnsafeRandomAccessIterator<Vec<libc::c_char > > { return self . data_  .begin()  .iter_add(( unsafe { let _x: three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  = cit ; operator_sub_11 ( _x , ( unsafe { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ :: cbegin ( self , ) } )  , ) } )  )   ;
- } unsafe fn from_vector_iterator ( &mut self , mut it : UnsafeRandomAccessIterator<Vec<libc::c_char > > , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { return ( unsafe { let _n: isize  = it .iter_distance(&self . data_  .begin()  .into()) as i64  ; let _x: three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  = ( unsafe { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ :: begin_11 ( self , ) } )  ; operator_add_5 ( _n , _x , ) } )   ;
+ } unsafe fn from_vector_iterator ( &mut self , mut it : UnsafeRandomAccessIterator<Vec<libc::c_char > > , ) -> three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_ { return ( unsafe { let _n: isize  = (it .iter_distance(&self . data_  .begin()  .into()) as i64 as isize)  ; let _x: three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr_  = ( unsafe { MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ :: begin_11 ( self , ) } )  ; operator_add_5 ( _n , _x , ) } )   ;
  } pub unsafe fn move_from ( _a0 : *mut MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ , ) -> Self { let mut this = Self { data_ : std::mem::take(&mut ( * _a0 ) . data_  ) , } ;
  this } pub unsafe fn move_assign ( &mut self , _a0 : *mut MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ , ) -> *mut MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__ { self . data_   = std::mem::take(&mut ( * _a0 ) . data_  )  ;
  return & mut ( * ( self as *mut MinSequenceContainer_std_basic_string_char__std_char_traits_char___std_allocator_char____three_way_random_access_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr___three_way_random_access_iterator_const_std_basic_string_char__std_char_traits_char___std_allocator_char___ptr__  )  )  ;
@@ -1223,14 +1223,14 @@ pub unsafe fn test_one_35() {
             |set: *mut (), expected_key: *const Vec<libc::c_char>, mut expected_offset: i64| {
                 let mut iter: UnsafeRandomAccessIterator<Vec<libc::c_char>> = unimplemented!();
                 assert!(
-                    ((iter.iter_distance(&unimplemented!().into()) as i64)
+                    ((iter.iter_distance(&unimplemented!().into()) as i64 as isize)
                         == (expected_offset as isize))
                 );
             },
             |set: *const (), expected_key: *const Vec<libc::c_char>, mut expected_offset: i64| {
                 let mut iter: UnsafeRandomAccessIterator<Vec<libc::c_char>> = unimplemented!();
                 assert!(
-                    ((iter.iter_distance(&unimplemented!().into()) as i64)
+                    ((iter.iter_distance(&unimplemented!().into()) as i64 as isize)
                         == (expected_offset as isize))
                 );
             }
@@ -1485,14 +1485,14 @@ pub unsafe fn test_one_36() {
             |set: *mut (), expected_key: *const Vec<libc::c_char>, mut expected_offset: i64| {
                 let mut iter: () = unimplemented!();
                 assert!(
-                    ((iter.iter_distance(&unimplemented!().into()) as i64)
+                    ((iter.iter_distance(&unimplemented!().into()) as i64 as isize)
                         == (expected_offset as isize))
                 );
             },
             |set: *const (), expected_key: *const Vec<libc::c_char>, mut expected_offset: i64| {
                 let mut iter: () = unimplemented!();
                 assert!(
-                    ((iter.iter_distance(&unimplemented!().into()) as i64)
+                    ((iter.iter_distance(&unimplemented!().into()) as i64 as isize)
                         == (expected_offset as isize))
                 );
             }
@@ -2019,14 +2019,14 @@ pub unsafe fn test_one_38() {
             |set: *mut (), expected_key: *const Vec<libc::c_char>, mut expected_offset: i64| {
                 let mut iter: UnsafeRandomAccessIterator<Vec<libc::c_char>> = unimplemented!();
                 assert!(
-                    ((iter.iter_distance(&unimplemented!().into()) as i64)
+                    ((iter.iter_distance(&unimplemented!().into()) as i64 as isize)
                         == (expected_offset as isize))
                 );
             },
             |set: *const (), expected_key: *const Vec<libc::c_char>, mut expected_offset: i64| {
                 let mut iter: UnsafeRandomAccessIterator<Vec<libc::c_char>> = unimplemented!();
                 assert!(
-                    ((iter.iter_distance(&unimplemented!().into()) as i64)
+                    ((iter.iter_distance(&unimplemented!().into()) as i64 as isize)
                         == (expected_offset as isize))
                 );
             }

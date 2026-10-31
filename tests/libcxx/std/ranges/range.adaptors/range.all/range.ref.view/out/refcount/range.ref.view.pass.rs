@@ -522,7 +522,7 @@ pub fn test_22() -> bool {
         let mut range: Range = <Range>::default();
         let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         assert!((unimplemented!() == (globalBuff_11.with(|v| v.as_pointer()) as Ptr::<i32>)));
-        unimplemented!().write(Range { start: 2 });
+        unimplemented!() = Range { start: 2 };
         assert!(
             (unimplemented!()
                 == (globalBuff_11.with(|v| v.as_pointer()) as Ptr::<i32>).offset((2) as isize))

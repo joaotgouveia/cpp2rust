@@ -265,7 +265,7 @@ pub unsafe fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((beg.iter_distance(&(constbeg).clone().into()) as i64) == (0_isize)) {
+        if !((beg.iter_distance(&(constbeg).clone().into()) as i64 as isize) == (0_isize)) {
             unimplemented!();
             std::process::abort();
         }
@@ -273,7 +273,7 @@ pub unsafe fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((constend.iter_distance(&(end).clone().into()) as i64) == (0_isize)) {
+        if !((constend.iter_distance(&(end).clone().into()) as i64 as isize) == (0_isize)) {
             unimplemented!();
             std::process::abort();
         }
@@ -281,7 +281,7 @@ pub unsafe fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((end.iter_distance(&(constbeg).clone().into()) as i64) > (0_isize)) {
+        if !((end.iter_distance(&(constbeg).clone().into()) as i64 as isize) > (0_isize)) {
             unimplemented!();
             std::process::abort();
         }
@@ -289,7 +289,7 @@ pub unsafe fn test02_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((constend.iter_distance(&(beg).clone().into()) as i64) > (0_isize)) {
+        if !((constend.iter_distance(&(beg).clone().into()) as i64 as isize) > (0_isize)) {
             unimplemented!();
             std::process::abort();
         }

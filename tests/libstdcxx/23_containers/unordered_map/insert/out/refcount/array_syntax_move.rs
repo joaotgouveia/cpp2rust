@@ -552,7 +552,7 @@ pub fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.val) == 17) {
+        if !({ (unimplemented!()).clone().val } == 17) {
             unimplemented!();
             std::process::abort();
         }
@@ -573,7 +573,7 @@ pub fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.val) == 9) {
+        if !({ (unimplemented!()).clone().val } == 9) {
             unimplemented!();
             std::process::abort();
         }
@@ -594,7 +594,7 @@ pub fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.val) == 5) {
+        if !({ (unimplemented!()).clone().val } == 5) {
             unimplemented!();
             std::process::abort();
         }
@@ -602,7 +602,7 @@ pub fn test01_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unimplemented!().with(|__s| __s.val) == 9) {
+        if !({ (unimplemented!()).clone().val } == 9) {
             unimplemented!();
             std::process::abort();
         }

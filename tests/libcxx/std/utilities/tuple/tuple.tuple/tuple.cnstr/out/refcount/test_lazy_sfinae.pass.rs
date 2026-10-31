@@ -45,7 +45,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let b: Value<BlowsUpOnConstCopy_int_> =
         Rc::new(RefCell::new(<BlowsUpOnConstCopy_int_>::default()));
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    assert!((unimplemented!().with(|__s| __s.value) == 42));
+    assert!(({ (unimplemented!()).clone().value } == 42));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

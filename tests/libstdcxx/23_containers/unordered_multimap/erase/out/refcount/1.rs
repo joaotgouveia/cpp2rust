@@ -639,7 +639,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*it7.borrow_mut()).iter_inc().upgrade().deref()) == (*it9.borrow())) {
+        if !(((*it7.borrow_mut()).iter_inc()).clone() == (*it9.borrow())) {
             unimplemented!();
             std::process::abort();
         }
@@ -682,7 +682,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*it10.borrow_mut()).iter_inc().upgrade().deref()) == unimplemented!()) {
+        if !(((*it10.borrow_mut()).iter_inc()).clone() == unimplemented!()) {
             unimplemented!();
             std::process::abort();
         }

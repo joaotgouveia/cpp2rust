@@ -13,7 +13,7 @@ pub fn test_0(mut syntax: ()) {
     assert!((unimplemented!() == 4_()));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -21,16 +21,16 @@ pub fn test_0(mut syntax: ()) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()
         } == { (s.as_pointer() as Ptr::<i8>).offset((9) as isize) })
     );
-    assert!(((unimplemented!().with(|__s| __s.matched) as i32) == (true as i32)));
+    assert!((({ (unimplemented!()).clone().matched } as i32) == (true as i32)));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -38,16 +38,16 @@ pub fn test_0(mut syntax: ()) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()
         } == { (s.as_pointer() as Ptr::<i8>).offset((7) as isize) })
     );
-    assert!(((unimplemented!().with(|__s| __s.matched) as i32) == (true as i32)));
+    assert!((({ (unimplemented!()).clone().matched } as i32) == (true as i32)));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -55,16 +55,16 @@ pub fn test_0(mut syntax: ()) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()
         } == { (s.as_pointer() as Ptr::<i8>).offset((5) as isize) })
     );
-    assert!(((unimplemented!().with(|__s| __s.matched) as i32) == (true as i32)));
+    assert!((({ (unimplemented!()).clone().matched } as i32) == (true as i32)));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -72,16 +72,16 @@ pub fn test_0(mut syntax: ()) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()
         } == { (s.as_pointer() as Ptr::<i8>).offset((11) as isize) })
     );
-    assert!(((unimplemented!().with(|__s| __s.matched) as i32) == (false as i32)));
+    assert!((({ (unimplemented!()).clone().matched } as i32) == (false as i32)));
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .0
                 .borrow())
             .clone()
@@ -89,13 +89,13 @@ pub fn test_0(mut syntax: ()) {
     );
     assert!(
         ({
-            (*((*unimplemented!().upgrade().deref()) as (Value<*const i8>, Value<*const i8>))
+            (*((unimplemented!()).clone() as (Value<*const i8>, Value<*const i8>))
                 .1
                 .borrow())
             .clone()
         } == { (s.as_pointer() as Ptr::<i8>).offset((11) as isize) })
     );
-    assert!(((unimplemented!().with(|__s| __s.matched) as i32) == (false as i32)));
+    assert!((({ (unimplemented!()).clone().matched } as i32) == (false as i32)));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

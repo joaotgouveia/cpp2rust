@@ -284,10 +284,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone()
             == (*(*irt0.borrow()).0.borrow()))
         {
             unimplemented!();
@@ -347,10 +344,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone()
             == (*(*irt1.borrow()).0.borrow()))
         {
             unimplemented!();
@@ -408,10 +402,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone()
             == (*(*irt5.borrow()).0.borrow()))
         {
             unimplemented!();
@@ -460,10 +451,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone()
             == (*(*irt4.borrow()).0.borrow()))
         {
             unimplemented!();
@@ -521,10 +509,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp0.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
+        if !(((*(*pp0.borrow()).0.borrow_mut()).iter_dec()).clone()
             == (*(*irt3.borrow()).0.borrow()))
         {
             unimplemented!();
@@ -642,10 +627,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*(*(*pp1.borrow()).0.borrow_mut())
-            .iter_dec()
-            .upgrade()
-            .deref())
+        if !(((*(*pp1.borrow()).0.borrow_mut()).iter_dec()).clone()
             == <BidirectionalIterator<(Value<i32>, Value<i32>)>>::from(
                 (*(*irt7.borrow()).0.borrow()).clone(),
             ))

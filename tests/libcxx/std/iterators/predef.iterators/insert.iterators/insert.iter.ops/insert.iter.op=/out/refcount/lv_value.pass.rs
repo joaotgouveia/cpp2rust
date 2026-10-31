@@ -99,17 +99,13 @@ pub fn insert3at_3(
         __it
     };
     (*i.borrow_mut()) = {
-        let __it = <RandomAccessIterator<i32>>::from(
-            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
-        );
+        let __it = <RandomAccessIterator<i32>>::from(((*i.borrow_mut()).iter_inc()).clone());
         let __off = __it.index();
         c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x2));
         __it
     };
     {
-        let __it = <RandomAccessIterator<i32>>::from(
-            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
-        );
+        let __it = <RandomAccessIterator<i32>>::from(((*i.borrow_mut()).iter_inc()).clone());
         let __off = __it.index();
         c.with_mut(|__v: &mut Vec<i32>| __v.insert(__off, x3));
         __it
@@ -133,16 +129,14 @@ pub fn insert3at_4(
         nasty_vector_int_Impl::insert_45(&c, _pos, _x)
     });
     (*i.borrow_mut()) = ({
-        let _pos: RandomAccessIterator<i32> = <RandomAccessIterator<i32>>::from(
-            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
-        );
+        let _pos: RandomAccessIterator<i32> =
+            <RandomAccessIterator<i32>>::from(((*i.borrow_mut()).iter_inc()).clone());
         let _x: Ptr<i32> = x2.as_pointer();
         nasty_vector_int_Impl::insert_45(&c, _pos, _x)
     });
     ({
-        let _pos: RandomAccessIterator<i32> = <RandomAccessIterator<i32>>::from(
-            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
-        );
+        let _pos: RandomAccessIterator<i32> =
+            <RandomAccessIterator<i32>>::from(((*i.borrow_mut()).iter_inc()).clone());
         let _x: Ptr<i32> = x3.as_pointer();
         nasty_vector_int_Impl::insert_45(&c, _pos, _x)
     });

@@ -295,7 +295,7 @@ pub fn test01_9() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*pos.borrow()) == (*c.decay().end().iter_dec().upgrade().deref())) {
+        if !((*pos.borrow()) == (c.decay().end().iter_dec()).clone()) {
             unimplemented!();
             std::process::abort();
         }
@@ -411,7 +411,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*pos.borrow()) == (*c.decay().end().iter_dec().upgrade().deref())) {
+        if !((*pos.borrow()) == (c.decay().end().iter_dec()).clone()) {
             unimplemented!();
             std::process::abort();
         }
@@ -444,7 +444,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*pos.borrow()) == (*c.decay().end().iter_dec().upgrade().deref())) {
+        if !((*pos.borrow()) == (c.decay().end().iter_dec()).clone()) {
             unimplemented!();
             std::process::abort();
         }

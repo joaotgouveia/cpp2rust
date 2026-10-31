@@ -485,7 +485,7 @@ pub fn test_14() -> bool {
         let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*iter.borrow_mut()).iter_post_inc();
         assert!(
-            ({ unimplemented!().with(|__s| __s.ptr.clone()) } == {
+            ({ { (unimplemented!()).clone().ptr.clone() } } == {
                 (buffer.as_pointer() as Ptr<i32>).offset((2) as isize)
             })
         );

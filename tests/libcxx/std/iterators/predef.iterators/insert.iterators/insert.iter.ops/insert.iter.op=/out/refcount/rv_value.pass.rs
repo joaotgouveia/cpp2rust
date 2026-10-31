@@ -37,7 +37,7 @@ pub fn insert3at_1(
     };
     (*i.borrow_mut()) = {
         let __it = <RandomAccessIterator<Option<Value<i32>>>>::from(
-            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
+            ((*i.borrow_mut()).iter_inc()).clone(),
         );
         let __off = __it.index();
         c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| __v.insert(__off, (x2).clone()));
@@ -45,7 +45,7 @@ pub fn insert3at_1(
     };
     {
         let __it = <RandomAccessIterator<Option<Value<i32>>>>::from(
-            (*(*i.borrow_mut()).iter_inc().upgrade().deref()).clone(),
+            ((*i.borrow_mut()).iter_inc()).clone(),
         );
         let __off = __it.index();
         c.with_mut(|__v: &mut Vec<Option<Value<i32>>>| __v.insert(__off, (x3).clone()));
