@@ -7,7 +7,9 @@ use std::marker::PhantomData;
 
 use std::rc::Rc;
 
-use crate::{MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value};
+use crate::{
+    ByteRepr, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value,
+};
 
 pub trait CppIterator<T>: Clone {
     fn iter_deref(&self) -> Ptr<T>;
@@ -443,6 +445,10 @@ random_access_iterator!(
     CppRandomAccessIterator,
     Ptr::null()
 );
+
+// Like a pointer, an iterator field has no bytes of its own.
+impl<T: 'static> ByteRepr for BidirectionalIterator<T> {}
+impl<T: 'static> ByteRepr for RandomAccessIterator<T> {}
 
 impl<T> RandomAccessIterator<T> {
     pub fn index(&self) -> usize {
