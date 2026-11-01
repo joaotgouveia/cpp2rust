@@ -182,11 +182,13 @@ pub fn emplace_ctor_args_7(mut pairs: Ptr<Vec<Pair>>) {
 pub fn emplace_deque_8(mut queue: Ptr<Vec<Pair>>) {
     {
         let __init = Pair::new_3({ 6 }, { 7 });
-        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        queue.decay().to_last()
     };
     {
         let __init = Pair::new_2();
-        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        queue.decay().to_last()
     };
 }
 pub fn emplace_scalar_9(mut values: Ptr<Vec<i64>>, x: i32) {

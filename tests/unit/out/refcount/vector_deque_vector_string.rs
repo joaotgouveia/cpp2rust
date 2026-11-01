@@ -51,7 +51,10 @@ fn main_0() -> i32 {
         .with_mut(|__v: &mut Vec<Vec<Vec<i8>>>| __v.push((*row.borrow()).clone()));
     {
         let __init = Vec::new();
-        elem!(v.decay(), 1_usize).with_mut(|__v: &mut Vec<Vec<Vec<i8>>>| __v.push(__init))
+        v.decay()
+            .offset(1_usize)
+            .with_mut(|__v: &mut Vec<Vec<Vec<i8>>>| __v.push(__init));
+        v.decay().offset(1_usize).decay().to_last()
     };
     {
         let __a1 = {
