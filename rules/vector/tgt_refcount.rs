@@ -162,42 +162,6 @@ fn f80<T1: Clone>(a0: &mut Vec<T1>, a1: T1) {
     a0.push(a0_clone)
 }
 
-fn f81<T1>(a0: Ptr<T1>) -> Ptr<T1> {
-    a0
-}
-
-fn f82<T1>(a0: Ptr<T1>) -> Ptr<T1> {
-    a0
-}
-
-fn f83<T1>(a0: Ptr<T1>) -> Ptr<T1> {
-    a0
-}
-
-fn f84<T1>(a0: Ptr<T1>, a1: usize) -> Ptr<T1> {
-    a0.offset(a1 as isize)
-}
-
-fn f85<T1>(a0: Ptr<T1>, a1: Ptr<T1>) -> bool {
-    a0 != a1
-}
-
-fn f86<T1>(a0: Ptr<T1>, a1: Ptr<T1>) -> bool {
-    a0 == a1
-}
-
-fn f87<T1>(a0: &mut Ptr<T1>) -> Ptr<T1> {
-    a0.postfix_inc()
-}
-
-fn f88<T1>(a0: Ptr<T1>, a1: Ptr<T1>) -> isize {
-    ((a0.get_offset() as isize) - (a1.get_offset() as isize))
-}
-
-fn f89<T1>(a0: &mut Ptr<T1>) -> Ptr<T1> {
-    a0.prefix_inc().clone()
-}
-
 fn f91<T1>(a0: Vec<T1>) -> Vec<T1> {
     a0
 }
