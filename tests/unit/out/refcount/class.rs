@@ -14,6 +14,11 @@ pub struct Pair {
     #[offset(4)]
     pub second: i32,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Route {
@@ -22,6 +27,11 @@ pub struct Route {
     pub path: Pair,
     #[offset(8)]
     pub cost: f64,
+}
+impl CppMove for Route {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -36,11 +46,21 @@ impl CppEq for Counter {
         CounterImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Tally {
     #[offset(0)]
     pub calls: i32,
+}
+impl CppMove for Tally {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn RandomRoute_0(route: Ptr<Route>) -> i32 {
     if ((route.with(|__s| __s.path.first) % 2) != 0) {
@@ -113,11 +133,15 @@ pub trait CounterImpl {
 }
 impl CounterImpl for Ptr<Counter> {
     fn Get(&self) -> i32 {
-        field!((*self), calls).with_mut(|__v| __v.prefix_inc());
+        field!((*self), calls).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).with(|__s| __s.v);
     }
     fn operator_eq(&self, o: Ptr<Counter>) -> bool {
-        field!((*self), calls).with_mut(|__v| __v.prefix_inc());
+        field!((*self), calls).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return ({ (*self).with(|__s| __s.v) } == { o.with(|__s| __s.v) });
     }
 }

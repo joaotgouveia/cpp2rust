@@ -20,6 +20,11 @@ pub struct MinHeapNode {
     #[byte_size(8)]
     pub right: Ptr<MinHeapNode>,
 }
+impl CppMove for MinHeapNode {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn Swap_0(a: Ptr<MinHeapNode>, b: Ptr<MinHeapNode>) {
     let mut t: MinHeapNode = MinHeapNode {
         data: a.with(|__s| __s.data),
@@ -71,6 +76,11 @@ impl MinHeap {
             alloc: field!(_a0, alloc)
                 .with_mut(|__v: &mut Option<Value<Box<[MinHeapNode]>>>| __v.take()),
         }
+    }
+}
+impl CppMove for MinHeap {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn AllocMinHeap_1(mut capacity: i32) -> Option<Value<MinHeap>> {
@@ -151,7 +161,9 @@ pub fn CollectCode_3(
             .write(__rhs);
         i.prefix_inc();
     }
-    next.with_mut(|__v| __v.prefix_inc());
+    next.with_mut(|__v| {
+        __v.prefix_inc();
+    });
 }
 pub fn CollectCodes_4(
     mut root: Ptr<MinHeapNode>,
@@ -365,7 +377,9 @@ impl MinHeapImpl for Ptr<MinHeap> {
                 .offset(0_usize as isize)
                 .read()),
         ));
-        field!((*self), size).with_mut(|__v| __v.prefix_dec());
+        field!((*self), size).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         let __rhs = (((*self).with(|__s| __s.arr.clone()).as_pointer() as Ptr<Ptr<MinHeapNode>>)
             .offset(((*self).with(|__s| __s.size) as usize) as isize)
             .read());
@@ -376,7 +390,9 @@ impl MinHeapImpl for Ptr<MinHeap> {
         return (*out.borrow()).clone();
     }
     fn Insert(&self, mut node: Ptr<MinHeapNode>) {
-        field!((*self), size).with_mut(|__v| __v.prefix_inc());
+        field!((*self), size).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         let mut i: i32 = ((*self).with(|__s| __s.size) - 1);
         'loop_: while (i != 0)
             && ({ node.with(|__s| __s.freq) } < {

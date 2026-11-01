@@ -14,6 +14,11 @@ pub struct Entry {
     #[offset(2)]
     pub value: u16,
 }
+impl CppMove for Entry {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

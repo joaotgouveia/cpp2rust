@@ -113,6 +113,12 @@ bool IsConvertibleMoveConstructor(const clang::CXXConstructorDecl *ctor);
 bool MovesRuleArg(clang::Expr *expr, unsigned arg_idx, clang::Expr *arg,
                   TranslationRule::Access access);
 
+// Whether a rule takes the value of arg, an object of a library type whose
+// move isn't a copy, from an rvalue reference parameter.
+bool MovesLibraryArg(clang::ASTContext &ctx, clang::Expr *expr,
+                     unsigned arg_idx, clang::Expr *arg,
+                     TranslationRule::Access access);
+
 clang::CXXConstructExpr *BuildMoveConstruction(clang::ASTContext &ctx,
                                                clang::Expr *expr,
                                                unsigned arg_idx,

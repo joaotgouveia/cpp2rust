@@ -55,6 +55,11 @@ impl Clone for Tracked {
         Tracked::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Tracked {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn chosen_overload_0(_a0: Ptr<Tracked>) -> Overload {
     return Overload_kLvalueOverload;
 }
@@ -89,6 +94,11 @@ impl Holder {
         Self {
             t: Tracked::move_from({ field_ptr!(_a0, t) }),
         }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn forward_once_2(x: Ptr<Tracked>) -> Overload {

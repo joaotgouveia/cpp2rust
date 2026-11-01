@@ -12,6 +12,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct C {}
+impl CppMove for C {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static inner_const_1: Value<i32> = Rc::new(RefCell::new(2));
 );
@@ -23,6 +28,11 @@ pub struct S {}
 impl S {
     pub fn f() -> i32 {
         return counter_2.with(|rc| *rc.borrow());
+    }
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 thread_local!(

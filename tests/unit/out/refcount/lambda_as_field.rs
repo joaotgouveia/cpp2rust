@@ -13,6 +13,11 @@ pub struct Guard__lambda_at_lambda_as_field_cpp_33_13__ {
     #[byte_size(1)]
     pub f: FnPtr<fn()>,
 }
+impl CppMove for Guard__lambda_at_lambda_as_field_cpp_33_13__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Guard__lambda_at_lambda_as_field_cpp_33_13__ {
     fn default() -> Self {
         {
@@ -31,6 +36,11 @@ pub struct Guard__lambda_at_lambda_as_field_cpp_44_13__ {
     #[byte_size(8)]
     pub f: FnPtr<fn()>,
 }
+impl CppMove for Guard__lambda_at_lambda_as_field_cpp_44_13__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
 pub struct Holder__lambda_at_lambda_as_field_cpp_38_12__ {
@@ -39,6 +49,11 @@ pub struct Holder__lambda_at_lambda_as_field_cpp_38_12__ {
     pub f: FnPtr<fn(i32) -> i32>,
     #[offset(4)]
     pub calls: i32,
+}
+impl CppMove for Holder__lambda_at_lambda_as_field_cpp_38_12__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Holder__lambda_at_lambda_as_field_cpp_38_12__ {
     fn default() -> Self {
@@ -63,6 +78,11 @@ pub struct Holder__lambda_at_lambda_as_field_cpp_50_12__ {
     #[offset(4)]
     pub calls: i32,
 }
+impl CppMove for Holder__lambda_at_lambda_as_field_cpp_50_12__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom)]
 #[cpp_from(FnPtr<fn(i32  ,) -> i32  >  , new, value)]
 #[byte_size(8)]
@@ -86,6 +106,11 @@ impl Moving__lambda_at_lambda_as_field_cpp_63_12__ {
             f: (*o.upgrade().deref()).f.move_from(),
             moves: (o.with(|__s| __s.moves) + 1),
         }
+    }
+}
+impl CppMove for Moving__lambda_at_lambda_as_field_cpp_63_12__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for Moving__lambda_at_lambda_as_field_cpp_63_12__ {

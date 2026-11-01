@@ -713,6 +713,18 @@ void ConverterRefCount::AddCloneTrait(const clang::RecordDecl *decl) {
   StrCat('}');
 }
 
+void ConverterRefCount::AddMoveTrait(const clang::RecordDecl *decl) {
+  const char *body = HasMoveFromConstructor(decl) ? "Self::move_from(src)"
+                     : RecordImplementsClone(decl) ? "src.read()"
+                                                   : nullptr;
+  if (!body) {
+    return;
+  }
+  StrCat(std::format("impl CppMove for {} {{ fn cpp_move(src: Ptr<Self>) -> "
+                     "Self {{ {} }} }}",
+                     GetRecordName(decl), body));
+}
+
 void ConverterRefCount::AddDefaultTrait(const clang::RecordDecl *decl) {
   PushConversionKind push(*this, ConversionKind::FullRefCount);
   Converter::AddDefaultTrait(decl);
@@ -754,6 +766,7 @@ void ConverterRefCount::EmitRustUnion(clang::RecordDecl *decl) {
   }
 
   AddCloneTrait(decl);
+  AddMoveTrait(decl);
   AddDefaultTrait(decl);
 }
 
@@ -906,15 +919,52 @@ bool ConverterRefCount::ConvertIncAndDec(clang::UnaryOperator *expr) {
     return false;
   }
 
+  // A prefix increment is an lvalue naming its operand, which prefix_inc
+  // returns a mutable reference to.
+  bool is_prefix = expr->isPrefix();
+  if (is_prefix && isAddrOf()) {
+    StrCat(std::format(
+        "{{ let __p = {}; __p.with_mut(|__v| {{ __v.{}(); }}); __p }}",
+        ConvertPointer(sub_expr), method));
+    MarkFresh();
+    return true;
+  }
+
   auto str = ConvertLValue(sub_expr);
   if (!pending_deref_.empty()) {
-    StrCat(pending_deref_.take(), ".with_mut(|__v| __v.", method, "())");
+    auto ptr = pending_deref_.take();
+    if (!is_prefix) {
+      StrCat(ptr, ".with_mut(|__v| __v.", method, "())");
+    } else if (isVoid()) {
+      StrCat(ptr, ".with_mut(|__v| { __v.", method, "(); })");
+    } else if (isLValue()) {
+      pending_deref_.set(
+          std::format(
+              "{{ let __p = {}; __p.with_mut(|__v| {{ __v.{}(); }}); __p }}",
+              ptr, method),
+          /*fresh=*/true);
+      return true;
+    } else {
+      StrCat(ptr, ".with_mut(|__v| __v.", method, "().clone())");
+    }
   } else if (!isVoid() &&
              clang::isa<clang::MemberExpr>(sub_expr->IgnoreParens()) &&
              !IsUnboxedPlace(sub_expr)) {
     // The struct is borrowed in a block, which ends the borrow before the
     // result is used, e.g., to write through a pointer into the struct.
-    StrCat(std::format("{{ {}.{}() }}", str, method));
+    if (!is_prefix) {
+      StrCat(std::format("{{ {}.{}() }}", str, method));
+    } else if (isLValue()) {
+      StrCat(std::format("(*{}.{}())", str, method));
+    } else {
+      StrCat(std::format("{{ {}.{}().clone() }}", str, method));
+    }
+  } else if (is_prefix && !isVoid()) {
+    StrCat(std::format("(*{}.{}())", str, method));
+    if (!isLValue()) {
+      SetValueFreshness(expr->getType());
+      return true;
+    }
   } else {
     StrCat(str, '.', method, "()");
   }
@@ -3000,6 +3050,12 @@ std::string ConverterRefCount::ConvertBorrowMut(clang::Expr *arg) {
     return std::format("(*{})", name);
   }
   return lvalue;
+}
+
+std::string ConverterRefCount::ConvertLibraryMove(clang::Expr *arg) {
+  auto ptr = ConvertPointer(arg);
+  MarkFresh();
+  return std::format("CppMove::cpp_move({})", std::move(ptr));
 }
 
 std::string ConverterRefCount::ConvertTake(clang::Expr *arg) {

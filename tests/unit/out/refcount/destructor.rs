@@ -12,12 +12,22 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct S {}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct Defaulted {
     #[offset(0)]
     #[byte_size(1)]
     pub s: S,
+}
+impl CppMove for Defaulted {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
@@ -26,6 +36,11 @@ pub struct Middle {
     #[byte_size(1)]
     pub s: S,
 }
+impl CppMove for Middle {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct Outer {
@@ -33,12 +48,22 @@ pub struct Outer {
     #[byte_size(1)]
     pub m: Middle,
 }
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(3)]
 pub struct ArrayMember {
     #[offset(0)]
     #[byte_size(3)]
     pub items: Box<[S]>,
+}
+impl CppMove for ArrayMember {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for ArrayMember {
     fn default() -> Self {
@@ -56,11 +81,21 @@ pub struct EmptyBody {
     #[byte_size(1)]
     pub s: S,
 }
+impl CppMove for EmptyBody {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(1)]
 pub struct Templated_char_ {
     #[offset(0)]
     pub v: i8,
+}
+impl CppMove for Templated_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(4)]
@@ -68,11 +103,21 @@ pub struct Templated_int_ {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for Templated_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(4)]
 pub struct Copied {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for Copied {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 thread_local!(
     pub static order_1: Value<Box<[i32]>> =
@@ -86,6 +131,11 @@ thread_local!(
 pub struct Tagged {
     #[offset(0)]
     pub tag: i32,
+}
+impl CppMove for Tagged {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(20)]
@@ -103,6 +153,11 @@ pub struct Ordered {
     #[offset(16)]
     #[byte_size(4)]
     pub third: Tagged,
+}
+impl CppMove for Ordered {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

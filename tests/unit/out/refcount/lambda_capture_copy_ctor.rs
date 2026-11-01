@@ -43,6 +43,11 @@ impl Clone for Counted {
         Counted::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Counted {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Counted {
     fn default() -> Self {
         { Counted::new() }
@@ -69,6 +74,11 @@ impl Clone for Dropped {
     fn clone(&self) -> Self {
         let __src: Value<Dropped> = Rc::new(RefCell::new(Dropped {}));
         Dropped::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for Dropped {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for Dropped {

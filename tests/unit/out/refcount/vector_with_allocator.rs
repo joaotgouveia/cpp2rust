@@ -9,9 +9,19 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestAllocator_int_ {}
+impl CppMove for TestAllocator_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct TestAllocator_double_ {}
+impl CppMove for TestAllocator_double_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn copy_0(mut copy_vector: Vec<i32>) {}
 pub fn fn_1(v: Ptr<Vec<i32>>, v3: Vec<i32>) {
     let v3: Value<Vec<i32>> = Rc::new(RefCell::new(v3));

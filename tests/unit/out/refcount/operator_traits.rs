@@ -22,6 +22,11 @@ impl CppEq for Lt {
         !(LtImpl::operator_lt(__lhs, __rhs.clone())) && !(LtImpl::operator_lt(__rhs, __lhs.clone()))
     }
 }
+impl CppMove for Lt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Eq {
@@ -31,6 +36,11 @@ pub struct Eq {
 impl CppEq for Eq {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         EqImpl::operator_eq(__lhs, __rhs.clone())
+    }
+}
+impl CppMove for Eq {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -49,6 +59,11 @@ impl CppEq for Cmp {
         CmpImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Cmp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Free {
@@ -65,6 +80,11 @@ impl CppEq for Free {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Free {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_lt_0(a: Ptr<Free>, b: Ptr<Free>) -> bool {
     return ({ a.with(|__s| __s.v) } < { b.with(|__s| __s.v) });
 }
@@ -76,6 +96,11 @@ pub fn operator_eq_1(a: Ptr<Free>, b: Ptr<Free>) -> bool {
 pub struct Wrapped_int_ {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for Wrapped_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

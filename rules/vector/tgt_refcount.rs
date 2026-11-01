@@ -195,7 +195,7 @@ fn f88<T1>(a0: Ptr<T1>, a1: Ptr<T1>) -> isize {
 }
 
 fn f89<T1>(a0: &mut Ptr<T1>) -> Ptr<T1> {
-    a0.prefix_inc()
+    a0.prefix_inc().clone()
 }
 
 fn f91<T1>(a0: Vec<T1>) -> Vec<T1> {

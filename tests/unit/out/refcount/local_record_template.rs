@@ -35,11 +35,21 @@ pub struct Local_5 {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for Local_5 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Local_7 {
     #[offset(0)]
     pub x: i64,
+}
+impl CppMove for Local_7 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn other_11() -> i32 {
     let mut l: Local_1 = Local_1 { x: 3_i64, y: 4_i64 };
@@ -52,6 +62,11 @@ pub struct Local_1 {
     pub x: i64,
     #[offset(8)]
     pub y: i64,
+}
+impl CppMove for Local_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -71,5 +86,10 @@ fn main_0() -> i32 {
 pub struct Local_3 {
     #[offset(0)]
     pub x: i32,
+}
+impl CppMove for Local_3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn __cpp2rust_init_globals() {}

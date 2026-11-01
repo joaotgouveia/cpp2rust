@@ -957,6 +957,7 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
     AddOrdTrait(cxx);
   }
   AddCloneTrait(decl);
+  AddMoveTrait(decl);
   AddDefaultTrait(decl);
 }
 
@@ -2939,6 +2940,11 @@ bool Converter::ConvertIncAndDec(clang::UnaryOperator *expr) {
   if (!method) {
     return false;
   }
+  bool deref_prefix = expr->isPrefix() && !isVoid();
+  PushParen paren(*this, deref_prefix);
+  if (deref_prefix) {
+    StrCat(token::kStar);
+  }
   {
     PushExprKind push(*this, ExprKind::LValue);
     Convert(expr->getSubExpr());
@@ -4835,6 +4841,8 @@ bool Converter::RecordImplementsClone(const clang::RecordDecl *decl) {
          GetUserDefinedCopyConstructor(decl) != nullptr;
 }
 
+void Converter::AddMoveTrait(const clang::RecordDecl *) {}
+
 void Converter::AddDefaultTraitForUnion(const clang::RecordDecl *decl) {
   EmitDefaultImpl(decl, [&] { StrCat("unsafe { std::mem::zeroed() }"); });
 }
@@ -5134,6 +5142,9 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
     Convert(init);
     return std::move(buf).str();
   }
+  if (MovesLibraryArg(ctx_, expr, ph_ctx.arg_idx, arg, ph_ctx.access)) {
+    return ConvertLibraryMove(arg);
+  }
   if (MovesRuleArg(expr, ph_ctx.arg_idx, arg, ph_ctx.access)) {
     if (TypeIsCopyable(arg->getType())) {
       return ConvertRValue(arg);
@@ -5157,6 +5168,10 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
 
 std::string Converter::ConvertBorrowMut(clang::Expr *arg) {
   return ConvertLValue(arg);
+}
+
+std::string Converter::ConvertLibraryMove(clang::Expr *arg) {
+  return ConvertFreshRValue(arg);
 }
 
 std::string Converter::ConvertTake(clang::Expr *arg) {

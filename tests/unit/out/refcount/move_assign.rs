@@ -25,6 +25,11 @@ impl MoveOnly {
         __this
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(4)]
 pub struct ConstMoveAssign {

@@ -14,6 +14,11 @@ pub struct S {
     #[offset(8)]
     pub x: i64,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn pack_size_0() -> u64 {
     return ((0 as usize).wrapping_add((0 as usize)) as u64);
 }

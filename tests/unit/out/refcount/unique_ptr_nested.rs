@@ -14,6 +14,11 @@ pub struct Inner {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(8)]
 pub struct Outer {
@@ -26,6 +31,11 @@ impl Outer {
         Self {
             inner: field!(_a0, inner).with_mut(|__v: &mut Option<Value<Inner>>| __v.take()),
         }
+    }
+}
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {

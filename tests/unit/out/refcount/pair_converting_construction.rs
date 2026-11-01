@@ -18,12 +18,22 @@ impl Celsius {
         Self { degrees: d }
     }
 }
+impl CppMove for Celsius {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i32, to_i32)]
 #[byte_size(4)]
 pub struct Meters {
     #[offset(0)]
     pub value: i32,
+}
+impl CppMove for Meters {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Celsius, new, ptr)]
@@ -37,6 +47,11 @@ impl Label {
         Self {
             id: c.with(|__s| __s.degrees),
         }
+    }
+}
+impl CppMove for Label {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
@@ -63,6 +78,11 @@ impl Owner {
         }
     }
 }
+impl CppMove for Owner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Celsius, new, value)]
 #[byte_size(4)]
@@ -73,6 +93,11 @@ pub struct Holder {
 impl Holder {
     pub fn new(mut c: Celsius) -> Self {
         Self { value: c.degrees }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
@@ -88,6 +113,11 @@ impl Fallback {
         Self { value: v }
     }
 }
+impl CppMove for Fallback {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Fallback {
     fn default() -> Self {
         { Fallback::new(None) }
@@ -98,6 +128,11 @@ impl Default for Fallback {
 pub struct Counter {
     #[offset(0)]
     pub hits: i32,
+}
+impl CppMove for Counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Counter, new, mut_ptr)]
@@ -115,6 +150,11 @@ impl Observer {
         __this
     }
 }
+impl CppMove for Observer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Tag {
     pub fn new(u: Ptr<Celsius>) -> Self {
         Self {
@@ -129,6 +169,11 @@ pub struct Tag {
     #[offset(0)]
     pub code: i32,
 }
+impl CppMove for Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
 #[byte_size(4)]
@@ -141,9 +186,16 @@ impl Name {
         let __this: Value<Name> = Rc::new(RefCell::new(Self { len: 0 }));
         let this: Ptr<Name> = __this.as_pointer();
         'loop_: while ((elem!(s, this.with(|__s| __s.len)).read()) != 0) {
-            field!(this, len).with_mut(|__v| __v.prefix_inc());
+            field!(this, len).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl CppMove for Name {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

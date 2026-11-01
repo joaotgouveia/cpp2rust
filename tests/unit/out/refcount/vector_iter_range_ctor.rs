@@ -18,12 +18,22 @@ impl Degrees {
         Self { value: v }
     }
 }
+impl CppMove for Degrees {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i64, to_i64)]
 #[byte_size(4)]
 pub struct Reading {
     #[offset(0)]
     pub raw_: i32,
+}
+impl CppMove for Reading {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

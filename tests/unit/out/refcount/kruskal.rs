@@ -16,6 +16,11 @@ pub struct Edge {
     #[offset(8)]
     pub weight: f64,
 }
+impl CppMove for Edge {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn partition_0(arr: Ptr<Option<Value<Box<[Edge]>>>>, mut start: i32, mut end: i32) -> i32 {
     let pivot: Ptr<Edge> =
         ((*arr.upgrade().deref()).as_pointer() as Ptr<Edge>).offset((start as usize) as isize);
@@ -167,6 +172,11 @@ impl DisjointSet {
         }
     }
 }
+impl CppMove for DisjointSet {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(16)]
 pub struct Graph {
@@ -185,6 +195,11 @@ impl Graph {
             V: { (*_a0.upgrade().deref()).V },
             E: { (*_a0.upgrade().deref()).E },
         }
+    }
+}
+impl CppMove for Graph {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn MSTKruskal_2(graph: Ptr<Graph>) -> f64 {

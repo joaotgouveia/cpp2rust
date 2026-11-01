@@ -335,18 +335,27 @@ impl<'a> FragmentCtx<'a> {
         );
         self.flush_text();
 
+        // A chain of calls on a receiver is one access to it, e.g.,
+        // `a0.iter_inc().clone()` borrows a0 for the whole chain.
+        let mut chain = vec![call.clone()];
+        while let Some(ast::Expr::MethodCallExpr(inner)) = chain.last().unwrap().receiver() {
+            chain.push(inner);
+        }
+
         let receiver = {
             let mut receiver_ctx = FragmentCtx::new(self.builder, self.params, self.generic_names);
             receiver_ctx.visit(ra_ap_syntax::NodeOrToken::Node(
-                call.receiver().unwrap().syntax().clone(),
+                chain.last().unwrap().receiver().unwrap().syntax().clone(),
             ));
             receiver_ctx.finish()
         };
 
         let body = {
             let mut body_ctx = FragmentCtx::new(self.builder, self.params, self.generic_names);
-            for child in call.syntax().children_with_tokens().skip(1) {
-                body_ctx.visit(child);
+            for call in chain.iter().rev() {
+                for child in call.syntax().children_with_tokens().skip(1) {
+                    body_ctx.visit(child);
+                }
             }
             body_ctx.finish()
         };

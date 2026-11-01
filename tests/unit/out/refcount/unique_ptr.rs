@@ -20,6 +20,11 @@ impl SafePointer {
         }
     }
 }
+impl CppMove for SafePointer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Pair {
@@ -28,13 +33,20 @@ pub struct Pair {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn DoStuffWithSafePointer_0(safe_ptr: Ptr<Option<Value<SafePointer>>>) {
     let x1: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Some(Rc::new(RefCell::new(0)))));
     let mut x2: Option<Value<i32>> = Some(Rc::new(RefCell::new(0)));
     x2.as_pointer().write(1);
     x1.as_pointer().write(x2.take());
     let mut raw_ptr1: Ptr<i32> = ((*x1.borrow()).as_pointer());
-    raw_ptr1.with_mut(|__v| __v.prefix_inc());
+    raw_ptr1.with_mut(|__v| {
+        __v.prefix_inc();
+    });
     field_ptr!(((*safe_ptr.upgrade().deref()).as_pointer()), ptr).write((*x1.borrow_mut()).take());
     ({ SafePointerImpl::inc(&((*safe_ptr.upgrade().deref()).as_pointer())) });
     ({ SafePointerImpl::inc(&((*safe_ptr.upgrade().deref()).as_pointer())) });
@@ -237,7 +249,9 @@ impl SafePointerImpl for Ptr<SafePointer> {
         (*self)
             .with(|__s| __s.ptr.clone())
             .as_pointer()
-            .with_mut(|__v| __v.prefix_inc());
+            .with_mut(|__v| {
+                __v.prefix_inc();
+            });
     }
     fn move_assign(&self, _a0: Ptr<SafePointer>) -> Ptr<SafePointer> {
         field_ptr!((*self), ptr)

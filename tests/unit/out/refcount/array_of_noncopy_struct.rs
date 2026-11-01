@@ -23,6 +23,11 @@ impl NonCopy {
         }
     }
 }
+impl CppMove for NonCopy {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for NonCopy {
     fn default() -> Self {
         {

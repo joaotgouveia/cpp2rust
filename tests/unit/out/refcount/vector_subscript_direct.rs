@@ -14,6 +14,11 @@ pub struct Point {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Point {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(48)]
 pub struct Holder {
@@ -30,6 +35,11 @@ impl Holder {
             values: field!(_a0, values).with_mut(std::mem::take),
             points: field!(_a0, points).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn push_and_index_0(v: Ptr<Vec<i32>>) -> i32 {

@@ -29,6 +29,11 @@ impl Elem {
         }
     }
 }
+impl CppMove for Elem {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Elem {
     fn default() -> Self {
         {
@@ -73,6 +78,11 @@ impl State {
         }
     }
 }
+impl CppMove for State {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for State {
     fn default() -> Self {
         {
@@ -81,7 +91,7 @@ impl Default for State {
                 grid: (0..2)
                     .map(|_| (0..3).map(|_| 0_i32).collect::<Box<[i32]>>())
                     .collect::<Box<[Box<[i32]>]>>(),
-                arr: std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
+                arr: std::array::from_fn::<_, 3_usize, _>(|_| 0_i32).to_vec(),
                 elems: Default::default(),
                 rows: Default::default(),
             }

@@ -33,6 +33,11 @@ impl S {
         }
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for S {
     fn default() -> Self {
         {
@@ -55,6 +60,11 @@ impl T {
         Self {
             v: field!(_a0, v).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for T {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn sum_0(s: Ptr<S>) -> i32 {

@@ -14,12 +14,22 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i64, to_i64_1)]
 #[byte_size(4)]
 pub struct T {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for T {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

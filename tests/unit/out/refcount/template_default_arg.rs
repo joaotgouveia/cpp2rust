@@ -21,6 +21,11 @@ impl A {
         Self { v: v }
     }
 }
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for A {
     fn default() -> Self {
         { A::new_2() }
@@ -35,6 +40,11 @@ pub struct B {
 impl B {
     pub fn new() -> Self {
         Self { v: 2 }
+    }
+}
+impl CppMove for B {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for B {
@@ -52,6 +62,11 @@ pub struct NoDefault {
 impl NoDefault {
     pub fn new(mut v: i32) -> Self {
         Self { v: v }
+    }
+}
+impl CppMove for NoDefault {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn used_0(x: Option<A>) -> i32 {
@@ -79,6 +94,11 @@ pub struct S_NoDefault_ {
 impl S_NoDefault_ {
     pub fn new(mut v: i32) -> Self {
         Self { v: v }
+    }
+}
+impl CppMove for S_NoDefault_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

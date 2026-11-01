@@ -22,7 +22,7 @@ pub fn All_0(arr: Ptr<Option<Value<Box<[i32]>>>>, mut N: i32, mut element: i32) 
 pub fn Consume_1(mut arr: Option<Value<Box<[i32]>>>, mut N: i32) -> i32 {
     let sum: Value<i32> = Rc::new(RefCell::new(0));
     let mut i: i32 = -1_i32;
-    'loop_: while (i.prefix_inc() < N) {
+    'loop_: while ((*i.prefix_inc()) < N) {
         (*sum.borrow_mut()) += ((arr.as_pointer() as Ptr<i32>)
             .offset((i as usize) as isize)
             .read());

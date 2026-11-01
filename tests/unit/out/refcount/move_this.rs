@@ -36,6 +36,11 @@ impl Clone for Chain {
         Chain::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Chain {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn consume_0(mut c: Chain) -> i32 {
     return c.v;
 }

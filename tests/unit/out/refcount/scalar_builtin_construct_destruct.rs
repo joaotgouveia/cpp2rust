@@ -12,6 +12,11 @@ pub struct Pod {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for Pod {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn zero_0() -> Ptr<i32> {
     return Ptr::<i32>::null();
 }

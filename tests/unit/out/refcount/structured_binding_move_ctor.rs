@@ -52,6 +52,11 @@ impl Clone for Movable {
         Movable::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Movable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(48)]
 pub struct Holder {
@@ -68,6 +73,11 @@ impl Holder {
             xs: field!(_a0, xs).with_mut(std::mem::take),
             ys: field!(_a0, ys).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {

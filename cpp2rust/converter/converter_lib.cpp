@@ -586,6 +586,20 @@ bool MovesRuleArg(clang::Expr *expr, unsigned arg_idx, clang::Expr *arg,
          IsUserDefinedDecl(record);
 }
 
+bool MovesLibraryArg(clang::ASTContext &ctx, clang::Expr *expr,
+                     unsigned arg_idx, clang::Expr *arg,
+                     TranslationRule::Access access) {
+  auto param_type = GetParamType(expr, arg_idx);
+  if (access != TranslationRule::Access::kMove || !param_type ||
+      !(*param_type)->isRValueReferenceType() ||
+      clang::isa<clang::MaterializeTemporaryExpr>(arg)) {
+    return false;
+  }
+  auto *record = arg->getType()->getAsCXXRecordDecl();
+  return record && !IsUserDefinedDecl(record) &&
+         !arg->getType().isTriviallyCopyableType(ctx);
+}
+
 clang::CXXConstructExpr *BuildMoveConstruction(clang::ASTContext &ctx,
                                                clang::Expr *expr,
                                                unsigned arg_idx,

@@ -86,11 +86,21 @@ pub struct S {
     #[offset(148)]
     pub vec_: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct type_ {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for type_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -98,6 +108,11 @@ pub struct loop_ {
     #[offset(0)]
     #[byte_size(4)]
     pub t: type_,
+}
+impl CppMove for loop_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn foo_0(
     mut as_: i32,

@@ -12,6 +12,11 @@ pub struct Chunk {
     #[offset(0)]
     pub data: i32,
 }
+impl CppMove for Chunk {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Writer {
@@ -21,6 +26,11 @@ pub struct Writer {
     #[offset(8)]
     #[byte_size(4)]
     pub chunk: Chunk,
+}
+impl CppMove for Writer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(48)]
@@ -38,6 +48,11 @@ impl JPEGData {
             com_data: field!(_a0, com_data).with_mut(std::mem::take),
             app_data: field!(_a0, app_data).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for JPEGData {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn push_param_0(mut dest: Ptr<Vec<Vec<u8>>>) {
@@ -138,6 +153,11 @@ impl Pair {
             first: a,
             second: (b * 2),
         }
+    }
+}
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Pair {

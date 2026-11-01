@@ -9,6 +9,11 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Probe {}
+impl CppMove for Probe {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Wrapper_Probe_ {
@@ -17,6 +22,11 @@ pub struct Wrapper_Probe_ {
     pub base_: Probe,
     #[offset(4)]
     pub tag: i32,
+}
+impl CppMove for Wrapper_Probe_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

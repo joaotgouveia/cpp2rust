@@ -12,6 +12,11 @@ pub struct S {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn copy_0(mut copy_vector: Vec<i32>) {}
 pub fn main() {
     __cpp2rust_init_globals();

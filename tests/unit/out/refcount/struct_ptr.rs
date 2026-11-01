@@ -12,6 +12,11 @@ pub struct XX {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for XX {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

@@ -29,6 +29,11 @@ impl CppEq for V {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for V {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn get_4(w: Ptr<W_int_>) -> i32 {
     return w.with(|__s| __s.x);
 }
@@ -37,6 +42,11 @@ pub fn get_4(w: Ptr<W_int_>) -> i32 {
 pub struct W_int_ {
     #[offset(0)]
     pub x: i32,
+}
+impl CppMove for W_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn get_5(w: Ptr<W_long_>) -> i64 {
     return w.with(|__s| __s.x);
@@ -47,11 +57,21 @@ pub struct W_long_ {
     #[offset(0)]
     pub x: i64,
 }
+impl CppMove for W_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct D {
     #[offset(0)]
     pub x: i32,
+}
+impl CppMove for D {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn declared_then_defined_6(d: Ptr<D>) -> i32 {
     return (d.with(|__s| __s.x) + 1);

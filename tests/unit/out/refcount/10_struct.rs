@@ -15,6 +15,11 @@ pub struct GraphNode {
     #[byte_size(8)]
     pub next: Ptr<GraphNode>,
 }
+impl CppMove for GraphNode {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Graph {
@@ -23,6 +28,11 @@ pub struct Graph {
     #[offset(8)]
     #[byte_size(8)]
     pub adj: Ptr<Ptr<GraphNode>>,
+}
+impl CppMove for Graph {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(8)]
@@ -34,6 +44,11 @@ pub struct Partial {
 impl Partial {
     pub fn new_1(mut q: Ptr<i32>) -> Self {
         Self { p: (q).clone() }
+    }
+}
+impl CppMove for Partial {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Partial {
@@ -49,6 +64,11 @@ impl Default for Partial {
 #[byte_size(1)]
 pub struct Declared {}
 impl Declared {}
+impl CppMove for Declared {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct S {
@@ -57,6 +77,11 @@ pub struct S {
     #[offset(8)]
     #[byte_size(8)]
     pub d: Ptr<Declared>,
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

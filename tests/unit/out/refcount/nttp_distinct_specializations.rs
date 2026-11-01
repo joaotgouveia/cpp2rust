@@ -14,17 +14,32 @@ pub struct S_2_ {
     #[offset(4)]
     pub w: i32,
 }
+impl CppMove for S_2_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct S_1_ {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S_1_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct S_3_ {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for S_3_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn scale_0(mut x: i32) -> i32 {
     return (x * 1);

@@ -14,6 +14,11 @@ pub struct Outer_RunInfo {
     #[offset(4)]
     pub num_extra_zero_runs: i32,
 }
+impl CppMove for Outer_RunInfo {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(24)]
 pub struct Outer {
@@ -26,6 +31,11 @@ impl Outer {
         Self {
             runs: field!(_a0, runs).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {

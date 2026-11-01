@@ -29,6 +29,11 @@ pub struct Pair {
     #[byte_size(16)]
     pub ap: Box<[Ptr<i32>]>,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Pair {
     fn default() -> Self {
         {
@@ -52,6 +57,11 @@ pub fn zero_0() -> i32 {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct X1 {}
+impl CppMove for X1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn foo_1(mut x1: i32, x2: Ptr<i32>, mut x3: Ptr<i32>, p2: Ptr<Pair>, mut p3: Ptr<Pair>) {}
 pub fn main() {
     __cpp2rust_init_globals();
@@ -241,7 +251,9 @@ pub trait PairImpl {
 impl PairImpl for Ptr<Pair> {
     fn method(&self) {
         field!((*self), x).with_mut(|__v| __v.postfix_inc());
-        field!((*self), y).with_mut(|__v| __v.prefix_inc());
+        field!((*self), y).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         array_elem!((*self), a, 4).write(1);
         (*self).with(|__s| __s.r.clone()).write(1);
         field!((*self), p).write(Ptr::<i32>::null());

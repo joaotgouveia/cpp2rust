@@ -36,6 +36,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct S_8 {}
+impl CppMove for S_8 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -51,7 +56,7 @@ pub trait S_8Impl {
 }
 impl S_8Impl for Ptr<S_8> {
     fn get(&self) -> i32 {
-        return (*x_7.with(Value::clone).borrow_mut()).prefix_inc();
+        return (*(*x_7.with(Value::clone).borrow_mut()).prefix_inc());
     }
 }
 pub fn __cpp2rust_init_globals() {}

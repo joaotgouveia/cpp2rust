@@ -12,6 +12,11 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_comma_0(a: Ptr<S>, b: Ptr<S>) -> S {
     return S {
         v: ({ (a.with(|__s| __s.v) * 10) } + { b.with(|__s| __s.v) }),
