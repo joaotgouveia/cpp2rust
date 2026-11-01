@@ -44,7 +44,7 @@ fn f5<T1: CppIterator<T2>, T2>(a0: T1) -> Ptr<T2> {
 }
 
 fn f6<T1: CppIterator<T2>, T2>(a0: &mut T1) -> T1 {
-    a0.iter_inc()
+    a0.iter_inc().clone()
 }
 
 fn f7<T1: CppIterator<T2>, T2>(a0: &mut T1) -> T1 {
@@ -64,7 +64,7 @@ fn f10<T1: CppInputIterator<T2>, T2>(a0: T1, a1: T1) -> bool {
 }
 
 fn f11<T1: CppBidirectionalIterator<T2>, T2>(a0: &mut T1) -> T1 {
-    a0.iter_dec()
+    a0.iter_dec().clone()
 }
 
 fn f12<T1: CppBidirectionalIterator<T2>, T2>(a0: &mut T1) -> T1 {
@@ -109,12 +109,14 @@ fn f24<T1: From<T2>, T2>(a0: T2) -> T1 {
 
 fn f25<T1: CppIterator<T2>, T2>(a0: T1) -> T1 {
     let mut __it = a0;
-    __it.iter_inc()
+    __it.iter_inc();
+    __it
 }
 
 fn f26<T1: CppBidirectionalIterator<T2>, T2>(a0: T1) -> T1 {
     let mut __it = a0;
-    __it.iter_dec()
+    __it.iter_dec();
+    __it
 }
 
 fn f27<T1: CppInputIterator<T3> + PartialEq<T2>, T2: CppInputIterator<T3>, T3>(a0: T1, a1: T2) -> bool {

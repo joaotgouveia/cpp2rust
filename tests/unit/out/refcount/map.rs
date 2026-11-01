@@ -251,7 +251,9 @@ fn main_0() -> i32 {
     assert!(((*(*(*it4.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 5_u32));
     assert!(((p.read()) == 5_u32));
     assert!((x5 == 5_u32));
-    p.with_mut(|__v| __v.prefix_inc());
+    p.with_mut(|__v| {
+        __v.prefix_inc();
+    });
     assert!(
         ((Map::subscript_move(
             m.as_pointer(),
