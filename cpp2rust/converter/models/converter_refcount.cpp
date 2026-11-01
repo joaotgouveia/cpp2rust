@@ -462,6 +462,15 @@ void ConverterRefCount::CheckRuleReturnType(clang::Expr *expr) {
   }
 }
 
+bool ConverterRefCount::RuleReturnsReferencedObject(clang::CallExpr *expr) {
+  auto *ref = GetReturnTypeOfFunction(expr)->getAs<clang::ReferenceType>();
+  if (!ref || !RuleRegistry::GetExprRule(ctx_, expr)) {
+    return false;
+  }
+  auto ret = NormalizeType(Mapper::GetReturnType(*this, expr));
+  return ret == NormalizeType(ToString(ref->getPointeeType()));
+}
+
 std::string ConverterRefCount::ConvertFreshObject(clang::Expr *expr) {
   return MakeFresh(ConvertObject(expr));
 }
@@ -1238,7 +1247,7 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
   };
   auto ty = GetReturnTypeOfFunction(expr);
   if (auto *ref = ty->getAs<clang::ReferenceType>();
-      ref && !isAddrOf() && !isVoid()) {
+      ref && !isAddrOf() && !isVoid() && !RuleReturnsReferencedObject(expr)) {
     if (isLValue()) {
       pending_deref_.set(wrap(std::move(str)), /*fresh=*/true);
       return;
