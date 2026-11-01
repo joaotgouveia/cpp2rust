@@ -481,15 +481,16 @@ std::string ruleUID(const clang::NamedDecl *decl) {
 
 } // namespace
 
+void SetCheckUsedRules() { check_used_rules_ = true; }
+
 void SetIRDirs(llvm::ArrayRef<std::string> rules_ir_dirs) {
   rules_ir_dirs_ = rules_ir_dirs;
 }
 
-void Load(clang::Sema &sema, Model model, bool check_used_rules) {
+void Load(clang::Sema &sema, Model model) {
   auto &ctx = sema.Context;
   sema_ = &sema;
   model_ = model;
-  check_used_rules_ = check_used_rules;
   unruled_typedefs_.clear();
   exprs_.clear();
   types_.clear();
@@ -616,6 +617,10 @@ clang::QualType GetInitType(clang::ASTContext &ctx, const clang::Expr *expr) {
 
 std::string InitCppType(Model model, const std::string &dir,
                         const std::string &name) {
+  if (check_used_rules_) {
+    return {};
+  }
+
   auto rule = findRule(model, dir, name);
   if (!rule) {
     rule = findRule(Model::kUnsafe, dir, name);

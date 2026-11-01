@@ -28,9 +28,11 @@ struct TypeRuleDecl {
   TranslationRule::TypeRule rule;
 };
 
+void SetCheckUsedRules();
+
 void SetIRDirs(llvm::ArrayRef<std::string> rules_ir_dirs);
 
-void Load(clang::Sema &sema, Model model, bool check_used_rules = false);
+void Load(clang::Sema &sema, Model model);
 
 Matcher::Match<TranslationRule::ExprRule> Search(clang::ASTContext &ctx,
                                                  const clang::Expr *expr);
