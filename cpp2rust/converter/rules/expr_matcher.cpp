@@ -6,6 +6,7 @@
 #include <clang/AST/DeclCXX.h>
 #include <clang/AST/DeclTemplate.h>
 #include <clang/AST/ExprCXX.h>
+#include <clang/AST/IgnoreExpr.h>
 #include <clang/Basic/OperatorKinds.h>
 #include <clang/Lex/Lexer.h>
 #include <clang/Sema/EnterExpressionEvaluationContext.h>
@@ -145,9 +146,11 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
     operands.assign(op->arg_begin(), op->arg_end());
     if (!operands.empty() &&
         llvm::isa_and_nonnull<clang::CXXMethodDecl>(op->getDirectCallee())) {
-      operands[0] =
-          getObject(ctx, operands[0]->IgnoreParenImpCasts(),
-                    llvm::cast<clang::CXXMethodDecl>(op->getDirectCallee()));
+      operands[0] = getObject(
+          ctx,
+          clang::IgnoreExprNodes(operands[0], clang::IgnoreParensSingleStep,
+                                 clang::IgnoreImplicitCastsSingleStep),
+          llvm::cast<clang::CXXMethodDecl>(op->getDirectCallee()));
     }
     // A rule written as a0++ has no parameter for the dummy int of a postfix
     // operator.

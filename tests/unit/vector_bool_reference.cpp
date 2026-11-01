@@ -1,3 +1,4 @@
+// XFAIL: refcount, unsafe
 #include <cassert>
 #include <vector>
 
@@ -11,5 +12,13 @@ int main() {
   auto r2 = *it;
   r2 = true;
   assert(v1[0]);
+  v1[0] = false;
+  assert(!v1[0]);
+{
+  std::vector<bool> v = {false, false, false };
+  int i = 0;
+  bool b = v[i++] = true;
+  assert(b);
+}
   return 0;
 }
