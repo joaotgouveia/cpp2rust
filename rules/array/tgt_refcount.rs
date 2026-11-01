@@ -25,6 +25,10 @@ fn t5<T1>() -> Ptr<T1> {
     Ptr::null()
 }
 
+fn t6<T2>() -> T2 {
+    unimplemented!()
+}
+
 fn f1<T1>(a0: Ptr<T1>) -> Ptr<T1> {
     a0
 }
