@@ -31,11 +31,10 @@ fn main_0() -> i32 {
         v1.decay().offset(0_usize as isize)
     };
     assert!(!(v1.decay().offset(0_usize as isize).read()));
-    let __tmp_0: Value<Ptr<bool>> = Rc::new(RefCell::new(v1.decay().offset(0_usize as isize)));
-    let r3: Ptr<Ptr<bool>> = __tmp_0.as_pointer();
+    let r3: Ptr<bool> = v1.decay().offset(0_usize as isize);
     {
-        (*r3.upgrade().deref()).write(true);
-        (*r3.upgrade().deref()).clone()
+        r3.write(true);
+        (r3).clone()
     };
     assert!(v1.decay().offset(0_usize as isize).read());
     let mut x: bool = ({

@@ -16,18 +16,18 @@ fn main_0() -> i32 {
             .map(|_| false)
             .collect::<Vec<bool>>(),
     ));
-    let bit: Value<Ptr<bool>> = Rc::new(RefCell::new(bits.decay().offset(0_usize as isize)));
-    let assigned: Ptr<Ptr<bool>> = ({
-        (*bit.borrow()).write(true);
-        (*bit.borrow()).clone()
+    let mut bit: Ptr<bool> = bits.decay().offset(0_usize as isize);
+    let assigned: Ptr<bool> = ({
+        bit.write(true);
+        (bit).clone()
     });
-    assert!((*assigned.upgrade().deref()).read());
+    assert!(assigned.read());
     assert!(bits.decay().offset(0_usize as isize).read());
-    let cleared: Ptr<Ptr<bool>> = {
-        (*bit.borrow()).write(false);
-        (*bit.borrow()).clone()
+    let cleared: Ptr<bool> = {
+        bit.write(false);
+        (bit).clone()
     };
-    assert!(({ (cleared).clone() } == { (bit.as_pointer()) }));
+    assert!(!(cleared.read()));
     assert!(!(bits.decay().offset(0_usize as isize).read()));
     return 0;
 }

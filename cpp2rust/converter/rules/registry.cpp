@@ -706,11 +706,14 @@ bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
   return pointsTo(ctx, rule->params.at(index), bindings, type);
 }
 
+bool IsProxyRecord(clang::ASTContext &ctx, clang::QualType type) {
+  return type->isRecordType() && MapsToPointer(ctx, type);
+}
+
 bool ReturnsProxyReference(clang::ASTContext &ctx, const clang::Expr *expr,
                            clang::QualType type) {
   auto *ref = type->getAs<clang::ReferenceType>();
-  if (!ref || !ref->getPointeeType()->isRecordType() ||
-      !MapsToPointer(ctx, ref->getPointeeType())) {
+  if (!ref || !IsProxyRecord(ctx, ref->getPointeeType())) {
     return false;
   }
   auto [rule, bindings] = Search(ctx, expr);

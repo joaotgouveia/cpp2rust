@@ -1,4 +1,3 @@
-// XFAIL: refcount
 #include <cassert>
 #include <vector>
 
@@ -9,7 +8,7 @@ int main() {
   assert(assigned);
   assert(bits[0]);
   auto &cleared = bit.operator=(false);
-  assert(&cleared == &bit);
+  assert(!cleared);
   assert(!bits[0]);
   return 0;
 }

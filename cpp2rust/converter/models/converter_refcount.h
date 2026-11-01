@@ -313,6 +313,8 @@ public:
 
   bool IsReferenceType(const clang::Expr *expr) const override;
 
+  bool IsProxyReference(clang::QualType type) const override;
+
   std::string ConvertTake(clang::Expr *arg) override;
 
   std::string ConvertBorrowMut(clang::Expr *arg) override;
