@@ -20,16 +20,16 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new(8)),
     )));
     {
-        let __a1 = (*b.borrow()).clone();
+        let __a1 = ({ (*b.borrow()).clone() });
         a.as_pointer().write((
             Rc::new(RefCell::new(((__a1.0.as_pointer().read()) as i32))),
             Rc::new(RefCell::new(((__a1.1.as_pointer().read()) as i64))),
         ));
         a.as_pointer()
     };
-    assert!(((*(*a.borrow()).0.borrow()) == 7) && ((*(*a.borrow()).1.borrow()) == 8_i64));
+    assert!(({ ((*(*a.borrow()).0.borrow()) == 7) && ((*(*a.borrow()).1.borrow()) == 8_i64) }));
     (*(*b.borrow()).0.borrow_mut()) = 9_i16;
-    assert!(((*(*a.borrow()).0.borrow()) == 7));
+    assert!(({ ((*(*a.borrow()).0.borrow()) == 7) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

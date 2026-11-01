@@ -20,7 +20,7 @@ fn main_0() -> i32 {
         i.as_pointer()
     });
     assert!(({ (r).clone() } == { (i.as_pointer()) }));
-    assert!((((*i.borrow()).iter_deref().read()) == 20));
+    assert!(({ (((*i.borrow()).iter_deref().read()) == 20) }));
     let s: Ptr<RandomAccessIterator<i32>> = {
         i.as_pointer().with_mut(|__it| {
             __it.iter_inc();
@@ -28,7 +28,7 @@ fn main_0() -> i32 {
         i.as_pointer()
     };
     assert!(({ (s).clone() } == { (i.as_pointer()) }));
-    assert!((((*i.borrow()).iter_deref().read()) == 30));
+    assert!(({ (((*i.borrow()).iter_deref().read()) == 30) }));
     let t: Ptr<RandomAccessIterator<i32>> = {
         i.as_pointer().with_mut(|__it| {
             __it.iter_dec();
@@ -36,7 +36,7 @@ fn main_0() -> i32 {
         i.as_pointer()
     };
     assert!(({ (t).clone() } == { (i.as_pointer()) }));
-    assert!((((*i.borrow()).iter_deref().read()) == 20));
+    assert!(({ (((*i.borrow()).iter_deref().read()) == 20) }));
     let u: Ptr<RandomAccessIterator<i32>> = ({
         i.as_pointer().with_mut(|__it| {
             __it.iter_add_assign(2_isize);
@@ -44,7 +44,7 @@ fn main_0() -> i32 {
         i.as_pointer()
     });
     assert!(({ (u).clone() } == { (i.as_pointer()) }));
-    assert!((((*i.borrow()).iter_deref().read()) == 40));
+    assert!(({ (((*i.borrow()).iter_deref().read()) == 40) }));
     let j: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
     let mut x: i32 = ((*{
         j.as_pointer().with_mut(|__it| {
@@ -68,8 +68,8 @@ fn main_0() -> i32 {
         .deref())
         .clone(),
     ));
-    assert!((((*k.borrow()).iter_deref().read()) == 30));
-    assert!((((*j.borrow()).iter_deref().read()) == 30));
+    assert!(({ (((*k.borrow()).iter_deref().read()) == 30) }));
+    assert!(({ (((*j.borrow()).iter_deref().read()) == 30) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

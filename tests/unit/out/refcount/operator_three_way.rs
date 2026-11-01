@@ -49,7 +49,7 @@ fn main_0() -> i32 {
     assert!(!({ SImpl::operator_eq(&a.as_pointer(), b.as_pointer(),) }));
     assert!(
         ({ SImpl::operator_cmp(&a.as_pointer(), b.as_pointer(),) })
-            == (*libcc2rs::strong_ordering_less().upgrade().deref())
+            == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
     );
     return 0;
 }

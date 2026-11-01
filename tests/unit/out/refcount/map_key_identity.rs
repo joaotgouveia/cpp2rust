@@ -158,7 +158,7 @@ fn main_0() -> i32 {
         let rhs_0 = ((ok as i32)
             & (((*a_it.borrow())
                 .iter_deref()
-                .with(|__s| (*__s.1.borrow()).value)
+                .with(|__s| (*({ __s }).1.borrow()).value)
                 == 11) as i32))
             != 0;
         ok = rhs_0
@@ -292,7 +292,7 @@ fn main_0() -> i32 {
             let rhs_0 = ((ok as i32)
                 & ((((*first_it.borrow())
                     .iter_deref()
-                    .with(|__s| (*__s.1.borrow()).value)
+                    .with(|__s| (*({ __s }).1.borrow()).value)
                     == 31)
                     && (second.with(|__s| __s.value) == 31)) as i32))
                 != 0;
@@ -369,7 +369,7 @@ fn main_0() -> i32 {
             let rhs_0 = ((ok as i32)
                 & (((*first_it.borrow())
                     .iter_deref()
-                    .with(|__s| (*__s.1.borrow()).value)
+                    .with(|__s| (*({ __s }).1.borrow()).value)
                     == 31) as i32))
                 != 0;
             ok = rhs_0
@@ -439,7 +439,7 @@ fn main_0() -> i32 {
         let rhs_0 = ((ok as i32)
             & (((*matched_it.borrow())
                 .iter_deref()
-                .with(|__s| (*__s.1.borrow()).value)
+                .with(|__s| (*({ __s }).1.borrow()).value)
                 == 51) as i32))
             != 0;
         ok = rhs_0
@@ -480,7 +480,7 @@ fn main_0() -> i32 {
         let rhs_0 = ((ok as i32)
             & (((*matched_it.borrow())
                 .iter_deref()
-                .with(|__s| (*__s.1.borrow()).value)
+                .with(|__s| (*({ __s }).1.borrow()).value)
                 == 51) as i32))
             != 0;
         ok = rhs_0

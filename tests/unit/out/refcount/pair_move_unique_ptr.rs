@@ -16,8 +16,8 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new(CppMove::cpp_move(u.as_pointer()))),
         Rc::new(RefCell::new(1)),
     )));
-    assert!(((*u.borrow()).as_pointer()).is_null());
-    assert!((((*(*p.borrow()).0.borrow()).as_pointer().read()) == 3));
+    assert!(({ ((*u.borrow()).as_pointer()).is_null() }));
+    assert!(({ (((*(*p.borrow()).0.borrow()).as_pointer().read()) == 3) }));
     let source: Value<(Value<i32>, Value<Option<Value<i32>>>)> = Rc::new(RefCell::new((
         Rc::new(RefCell::new(0)),
         Rc::new(RefCell::new(Ptr::alloc(81).to_owned_opt())),
@@ -33,10 +33,10 @@ fn main_0() -> i32 {
             (*source.borrow()).1.as_pointer()
         ))),
     )));
-    assert!(((*(*converted.borrow()).0.borrow()) == 0_i64));
-    assert!(({ (*(*converted.borrow()).1.borrow()).as_pointer() } == { (original).clone() }));
-    assert!((((*(*converted.borrow()).1.borrow()).as_pointer().read()) == 81));
-    assert!(((*(*source.borrow()).1.borrow()).as_pointer()).is_null());
+    assert!(({ ((*(*converted.borrow()).0.borrow()) == 0_i64) }));
+    assert!(({ ({ (*(*converted.borrow()).1.borrow()).as_pointer() } == { (original).clone() }) }));
+    assert!(({ (((*(*converted.borrow()).1.borrow()).as_pointer().read()) == 81) }));
+    assert!(({ ((*(*source.borrow()).1.borrow()).as_pointer()).is_null() }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

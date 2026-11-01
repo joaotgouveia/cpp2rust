@@ -233,8 +233,10 @@ fn main_0() -> i32 {
         reorder(__order, |__i| __first.iter_at(__i));
     };
     assert!(
-        (({ (*xs.borrow())[(0) as usize].v } == 1) && ({ (*xs.borrow())[(1) as usize].v } == 2))
-            && ({ (*xs.borrow())[(2) as usize].v } == 3)
+        ({
+            (({ (*xs.borrow())[(0) as usize].v } == 1) && ({ (*xs.borrow())[(1) as usize].v } == 2))
+                && ({ (*xs.borrow())[(2) as usize].v } == 3)
+        })
     );
     let p: Value<Custom> = Rc::new(RefCell::new(Custom { v: 5 }));
     let q: Value<Custom> = Rc::new(RefCell::new(Custom { v: 2 }));
@@ -259,8 +261,10 @@ fn main_0() -> i32 {
         reorder(__order, |__i| __first.iter_at(__i));
     };
     assert!(
-        (({ (*ms.borrow())[(0) as usize].v } == 4) && ({ (*ms.borrow())[(1) as usize].v } == 5))
-            && ({ (*ms.borrow())[(2) as usize].v } == 6)
+        ({
+            (({ (*ms.borrow())[(0) as usize].v } == 4) && ({ (*ms.borrow())[(1) as usize].v } == 5))
+                && ({ (*ms.borrow())[(2) as usize].v } == 6)
+        })
     );
     assert!(
         (({
@@ -316,8 +320,10 @@ fn main_0() -> i32 {
         reorder(__order, |__i| __first.iter_at(__i));
     };
     assert!(
-        (({ (*bs.borrow())[(0) as usize].v } == 1) && ({ (*bs.borrow())[(1) as usize].v } == 2))
-            && ({ (*bs.borrow())[(2) as usize].v } == 3)
+        ({
+            (({ (*bs.borrow())[(0) as usize].v } == 1) && ({ (*bs.borrow())[(1) as usize].v } == 2))
+                && ({ (*bs.borrow())[(2) as usize].v } == 3)
+        })
     );
     let ri1: Value<RefInt> = Rc::new(RefCell::new(RefInt { v: 1 }));
     let ri2: Value<RefInt> = Rc::new(RefCell::new(RefInt { v: 2 }));

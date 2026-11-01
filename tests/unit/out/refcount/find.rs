@@ -30,8 +30,8 @@ fn main_0() -> i32 {
         ({
             let __tmp_0: Value<i32> = Rc::new(RefCell::new(2));
             {
-                let mut __it = (*v_begin.borrow()).clone();
-                let __last = (*v_end.borrow()).clone();
+                let mut __it = ({ (*v_begin.borrow()).clone() });
+                let __last = ({ (*v_end.borrow()).clone() });
                 let __value = __tmp_0.as_pointer();
                 while __it != __last && !CppEq::equal(&__it.iter_deref(), &__value) {
                     __it.iter_inc();

@@ -62,7 +62,7 @@ pub fn lehmer_2(mut sigma: Ptr<u32>, mut len: u32, mut code: Ptr<u32>) {
         let __rhs = ((*it.borrow()).iter_distance(&items.decay().begin()) as u32);
         elem!(code, i).write(__rhs);
         {
-            let __it = <RandomAccessIterator<u32>>::from((*it.borrow()).clone());
+            let __it = <RandomAccessIterator<u32>>::from(({ (*it.borrow()).clone() }));
             let __off = __it.index();
             items
                 .as_pointer()
@@ -107,9 +107,12 @@ fn main_0() -> i32 {
         )
     });
     assert!(
-        ((((*code.borrow())[(0) as usize] == 2_u32) && ((*code.borrow())[(1) as usize] == 0_u32))
-            && ((*code.borrow())[(2) as usize] == 1_u32))
-            && ((*code.borrow())[(3) as usize] == 0_u32)
+        ({
+            ((((*code.borrow())[(0) as usize] == 2_u32)
+                && ((*code.borrow())[(1) as usize] == 0_u32))
+                && ((*code.borrow())[(2) as usize] == 1_u32))
+                && ((*code.borrow())[(3) as usize] == 0_u32)
+        })
     );
     let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
     assert!((({ sum_3(v.as_pointer(),) }) == 6));

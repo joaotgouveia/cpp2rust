@@ -57,7 +57,10 @@ fn main_0() -> i32 {
         __out
     };
     assert!(
-        ({ (*widened.borrow())[0_usize] } == 1_i64) && ({ (*widened.borrow())[2_usize] } == 3_i64)
+        ({
+            ({ (*widened.borrow())[0_usize] } == 1_i64)
+                && ({ (*widened.borrow())[2_usize] } == 3_i64)
+        })
     );
     let constructed: Value<Vec<Degrees>> =
         Rc::new(RefCell::new(vec![Degrees::new({ 0 },); 3_usize as usize]));
@@ -75,8 +78,10 @@ fn main_0() -> i32 {
         __out
     };
     assert!(
-        ({ (*constructed.borrow())[0_usize].value } == 1)
-            && ({ (*constructed.borrow())[2_usize].value } == 3)
+        ({
+            ({ (*constructed.borrow())[0_usize].value } == 1)
+                && ({ (*constructed.borrow())[2_usize].value } == 3)
+        })
     );
     let wide: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([7_i64, 8_i64])));
     let floating: Value<Vec<f64>> = Rc::new(RefCell::new(vec![0_f64; 2_usize as usize]));
@@ -93,7 +98,7 @@ fn main_0() -> i32 {
         }
         __out
     };
-    assert!(({ (*floating.borrow())[1_usize] } == 8_f64));
+    assert!(({ ({ (*floating.borrow())[1_usize] } == 8_f64) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

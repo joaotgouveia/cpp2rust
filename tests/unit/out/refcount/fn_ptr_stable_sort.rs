@@ -58,9 +58,9 @@ fn main_0() -> i32 {
         });
         reorder(__order, |__i| __first.iter_at(__i));
     };
-    assert!(({ (*v.borrow())[0_usize].key } == 1));
-    assert!(({ (*v.borrow())[1_usize].key } == 2));
-    assert!(({ (*v.borrow())[2_usize].key } == 3));
+    assert!(({ ({ (*v.borrow())[0_usize].key } == 1) }));
+    assert!(({ ({ (*v.borrow())[1_usize].key } == 2) }));
+    assert!(({ ({ (*v.borrow())[2_usize].key } == 3) }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -10,8 +10,8 @@ pub fn f1_0(first: RandomAccessIterator<i32>, last: RandomAccessIterator<i32>) {
     let first: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(first));
     let last: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(last));
     {
-        let __first = (*first.borrow()).clone();
-        let __n = (*last.borrow()).clone().iter_distance(&__first);
+        let __first = ({ (*first.borrow()).clone() });
+        let __n = ({ (*last.borrow()).clone() }).iter_distance(&__first);
         let mut __order: Vec<isize> = (0..__n).collect();
         __order.sort_by(|&__x, &__y| cpp_cmp(&__first.iter_at(__x), &__first.iter_at(__y)));
         reorder(__order, |__i| __first.iter_at(__i));

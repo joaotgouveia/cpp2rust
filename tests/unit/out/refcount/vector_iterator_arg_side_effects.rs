@@ -26,8 +26,8 @@ fn main_0() -> i32 {
             .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
         __it
     }));
-    assert!((((*r.borrow()).iter_deref().read()) == 3));
-    assert!(((*v.borrow()).len() == 3_usize));
+    assert!(({ (((*r.borrow()).iter_deref().read()) == 3) }));
+    assert!(({ ((*v.borrow()).len() == 3_usize) }));
     let it2: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
     (*r.borrow_mut()) = {
         let __it = <RandomAccessIterator<i32>>::from((*it2.borrow_mut()).iter_post_inc());
@@ -36,8 +36,10 @@ fn main_0() -> i32 {
         __it
     };
     assert!(
-        ((((*r.borrow()).iter_deref().read()) == 9) && ({ (*v.borrow())[0_usize] } == 9))
-            && ((*v.borrow()).len() == 4_usize)
+        ({
+            ((((*r.borrow()).iter_deref().read()) == 9) && ({ (*v.borrow())[0_usize] } == 9))
+                && ((*v.borrow()).len() == 4_usize)
+        })
     );
     let c: Ptr<Vec<i32>> = v.as_pointer();
     let mut i: i32 = 1;

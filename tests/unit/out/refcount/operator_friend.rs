@@ -34,7 +34,7 @@ pub fn operator_cmp_1(_a0: Ptr<DefaultedOrd>, _a1: Ptr<DefaultedOrd>) -> std::cm
             &(_a0.with(|__s| __s.a)),
             &(_a1.with(|__s| __s.a)),
         )));
-        if !((*cmp.borrow()) == std::cmp::Ordering::Equal) {
+        if !(({ (*cmp.borrow()) }) == std::cmp::Ordering::Equal) {
             return (*cmp.borrow_mut());
         }
     }
@@ -233,7 +233,7 @@ fn main_0() -> i32 {
         ({
             let _arg0: Ptr<DefaultedOrd> = o1.as_pointer();
             operator_cmp_1(_arg0, o2.as_pointer())
-        }) == (*libcc2rs::strong_ordering_less().upgrade().deref())
+        }) == ({ (*libcc2rs::strong_ordering_less().upgrade().deref()) })
     );
     let i1: Value<Inline> = Rc::new(RefCell::new(Inline { a: 1 }));
     let i2: Value<Inline> = Rc::new(RefCell::new(Inline { a: 2 }));

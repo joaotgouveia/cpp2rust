@@ -155,14 +155,18 @@ fn main_0() -> i32 {
             }
         },
     ));
-    assert!(((*v6.borrow()).len() == 3_usize));
+    assert!(({ ((*v6.borrow()).len() == 3_usize) }));
     assert!(
-        ((*(*v6.borrow())[0_usize].0.borrow()) == 1)
-            && ((*(*v6.borrow())[0_usize].1.borrow()) == 10)
+        ({
+            ((*(*v6.borrow())[0_usize].0.borrow()) == 1)
+                && ((*(*v6.borrow())[0_usize].1.borrow()) == 10)
+        })
     );
     assert!(
-        ((*(*v6.borrow())[2_usize].0.borrow()) == 3)
-            && ((*(*v6.borrow())[2_usize].1.borrow()) == 30)
+        ({
+            ((*(*v6.borrow())[2_usize].0.borrow()) == 3)
+                && ((*(*v6.borrow())[2_usize].1.borrow()) == 30)
+        })
     );
     match (
         {
@@ -195,11 +199,13 @@ fn main_0() -> i32 {
             __pos
         }
     };
-    assert!(((*v6.borrow()).len() == 6_usize));
+    assert!(({ ((*v6.borrow()).len() == 6_usize) }));
     assert!(
-        (((*(*v6.borrow())[1_usize].0.borrow()) == 1)
-            && ((*(*v6.borrow())[3_usize].0.borrow()) == 3))
-            && ((*(*v6.borrow())[4_usize].0.borrow()) == 2)
+        ({
+            (((*(*v6.borrow())[1_usize].0.borrow()) == 1)
+                && ((*(*v6.borrow())[3_usize].0.borrow()) == 3))
+                && ((*(*v6.borrow())[4_usize].0.borrow()) == 2)
+        })
     );
     let ints: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
     let mut v7: Vec<Degrees> = match ({ (ints.as_pointer() as Ptr<i32>).offset((3) as isize) },) {

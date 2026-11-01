@@ -24,19 +24,18 @@ fn main_0() -> i32 {
         |__k| cpp_move!(__k),
     )
     .write(20);
-    {
-        // The block ends the borrow of the iterator, e.g., in it = m.erase(it).
-        let __it = ({
+    Map::erase(
+        m.as_pointer(),
+        &({
             let mut __it = m
                 .as_pointer()
                 .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin());
             __it.iter_inc();
             __it
         })
-        .clone();
-        Map::erase(m.as_pointer(), &__it)
-    };
-    assert!(((*m.borrow()).len() == 1_usize));
+        .clone(),
+    );
+    assert!(({ ((*m.borrow()).len() == 1_usize) }));
     assert!(
         ((*(*m
             .as_pointer()

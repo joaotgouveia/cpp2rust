@@ -1099,17 +1099,20 @@ void ConverterRefCount::ConvertDeclRefValue(clang::Expr *expr,
     if (is_global_value && TypeIsCopyable(decl_t)) {
       StrCat(str, ".with(|rc| *rc.borrow())");
     } else if (is_global_value) {
+      borrows_ = true;
       // Borrow the global in place, like a local. Cloning it would be
       // expensive for arrays, and writes through its fields would be lost.
       StrCat(std::format("(*{}.with(Value::clone).borrow())", std::move(str)));
     } else {
       StrCat(std::format("(*{}.borrow())", std::move(str)));
+      borrows_ = true;
     }
   } else {
     if (is_global_value) {
       str += ".with(Value::clone)";
     }
     StrCat(std::format("(*{}.borrow_mut())", std::move(str)));
+    borrows_ = true;
   }
 
   // A copied global is read into a new value.
@@ -1990,6 +1993,7 @@ bool ConverterRefCount::VisitMemberExpr(clang::MemberExpr *expr) {
   } else {
     StrCat(std::format("(*{}.borrow_mut())", std::move(str)));
   }
+  borrows_ = true;
   SetValueFreshness(expr->getType());
   return false;
 }
@@ -2194,14 +2198,15 @@ bool ConverterRefCount::VisitCXXConstructExpr(clang::CXXConstructExpr *expr) {
 
   if (auto str = GetMappedAsString(expr, expr->getArgs(), expr->getNumArgs());
       !str.empty()) {
+    if (!IsPassThroughRule(expr)) {
+      MarkFresh();
+    }
     if (isAddrOf()) {
-      EmitFresh(std::format("Rc::new(RefCell::new({})){}", std::move(str),
+      EmitFresh(std::format("Rc::new(RefCell::new({})){}",
+                            MakeFresh(std::move(str)),
                             AsPointerMethod(expr->getType())));
     } else {
       StrCat(str);
-      if (!IsPassThroughRule(expr)) {
-        MarkFresh();
-      }
     }
     return false;
   }
@@ -3073,7 +3078,11 @@ bool ConverterRefCount::DerefReadsValue(clang::QualType pointee_type) {
 
 const char *
 ConverterRefCount::GetPointerDerefSuffix(clang::QualType pointee_type) {
-  return DerefReadsValue(pointee_type) ? ".read()" : ".upgrade().deref()";
+  if (DerefReadsValue(pointee_type)) {
+    return ".read()";
+  }
+  borrows_ = true;
+  return ".upgrade().deref()";
 }
 
 void ConverterRefCount::EmitPointee(std::string ptr,
