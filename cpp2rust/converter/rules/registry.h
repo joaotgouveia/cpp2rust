@@ -64,6 +64,10 @@ clang::Expr *BuildParamConversion(clang::ASTContext &ctx,
                                   const clang::Expr *expr, unsigned index,
                                   clang::Expr *arg);
 
+// The rule's parameter is a pointer to a generic bound to `type` itself.
+bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
+                   unsigned index, clang::QualType type);
+
 bool MapsToPointer(clang::ASTContext &ctx, clang::QualType qual_type);
 bool MapsToRefcountPointer(clang::ASTContext &ctx, clang::QualType qual_type);
 
