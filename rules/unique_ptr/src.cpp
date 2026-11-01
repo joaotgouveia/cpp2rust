@@ -36,8 +36,7 @@ template <typename T1> T1 *f7(const std::unique_ptr<T1[]> &o) {
   return o.get();
 }
 
-template <typename T1, typename... T2>
-std::unique_ptr<T1> f8(T2 &&...a0) {
+template <typename T1, typename... T2> std::unique_ptr<T1> f8(T2 &&...a0) {
   return std::make_unique<T1>(std::forward<T2>(a0)...);
 }
 

@@ -5,11 +5,11 @@ use std::cell::RefCell;
 use std::collections::BTreeMap;
 use std::rc::Rc;
 
+use crate::Map;
 use crate::capture::MoveCtor;
 use crate::fn_ptr::{FnPtr, FnSig};
 use crate::rc::{AsPointer, Ptr, Value};
 use crate::reinterpret::ByteRepr;
-use crate::Map;
 
 // The C++ move of a value of any type: the moved value, leaving the source in
 // its moved-from state. A type without a move constructor is copied, as in
@@ -29,7 +29,22 @@ macro_rules! impl_cpp_move_by_copy {
 }
 
 impl_cpp_move_by_copy!(
-    i8, u8, i16, u16, i32, u32, i64, u64, i128, u128, isize, usize, f32, f64, bool, ()
+    i8,
+    u8,
+    i16,
+    u16,
+    i32,
+    u32,
+    i64,
+    u64,
+    i128,
+    u128,
+    isize,
+    usize,
+    f32,
+    f64,
+    bool,
+    ()
 );
 
 impl<T: 'static> CppMove for Ptr<T> {

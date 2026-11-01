@@ -1,10 +1,10 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
+use crate::reinterpret::ByteRepr;
 use crate::{
     CChar, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value,
 };
-use crate::reinterpret::ByteRepr;
 use std::cmp::Ordering;
 use std::convert::Infallible;
 use std::marker::PhantomData;
@@ -190,7 +190,7 @@ macro_rules! uninhabited_iterator {
 
         impl<T: 'static> ByteRepr for $name<T> {}
 
-impl<T> PartialEq for $name<T> {
+        impl<T> PartialEq for $name<T> {
             fn eq(&self, _: &Self) -> bool {
                 self.never()
             }
@@ -381,7 +381,7 @@ macro_rules! random_access_iterator {
 
         impl<T: 'static> ByteRepr for $name<T> {}
 
-impl<T> PartialEq for $name<T> {
+        impl<T> PartialEq for $name<T> {
             fn eq(&self, other: &Self) -> bool {
                 match (self, other) {
                     (Self::Vec(a), Self::Vec(b)) => a == b,

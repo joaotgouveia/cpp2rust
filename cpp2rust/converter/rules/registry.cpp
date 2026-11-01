@@ -731,8 +731,8 @@ bool ReturnsProxyReference(clang::ASTContext &ctx, const clang::Expr *expr,
     return false;
   }
   auto [rule, bindings] = Search(ctx, expr);
-  return rule && !pointsTo(ctx, rule->return_type, bindings,
-                           ref->getPointeeType());
+  return rule &&
+         !pointsTo(ctx, rule->return_type, bindings, ref->getPointeeType());
 }
 
 clang::Expr *BuildParamConversion(clang::ASTContext &ctx,

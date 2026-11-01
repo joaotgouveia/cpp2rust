@@ -737,7 +737,7 @@ void ConverterRefCount::AddCloneTrait(const clang::RecordDecl *decl) {
 }
 
 void ConverterRefCount::AddMoveTrait(const clang::RecordDecl *decl) {
-  const char *body = HasMoveFromConstructor(decl) ? "Self::move_from(src)"
+  const char *body = HasMoveFromConstructor(decl)  ? "Self::move_from(src)"
                      : RecordImplementsClone(decl) ? "src.read()"
                                                    : nullptr;
   if (!body) {
@@ -1393,8 +1393,9 @@ bool ConverterRefCount::VisitImplicitCastExpr(clang::ImplicitCastExpr *expr) {
       }
       PushConversionKind push(*this, ConversionKind::Unboxed);
       auto ptr = ConvertPointer(sub_expr);
-      bool points_to_array = sub_expr->getType()->isPointerType() &&
-                             sub_expr->getType()->getPointeeType()->isArrayType();
+      bool points_to_array =
+          sub_expr->getType()->isPointerType() &&
+          sub_expr->getType()->getPointeeType()->isArrayType();
       auto *decay = clang::dyn_cast<clang::ImplicitCastExpr>(sub_expr);
       if (!isFresh() && points_to_array) {
         // A stored pointer to an array is typed, and decays to one to its
@@ -1711,8 +1712,8 @@ bool ConverterRefCount::ConvertAssignmentAsLValue(clang::BinaryOperator *expr) {
     };
     PushBrace brace(*this);
     if (rhs->HasSideEffects(ctx_)) {
-      auto type = expr->isCompoundAssignmentOp() ? rhs->getType()
-                                                 : lhs->getType();
+      auto type =
+          expr->isCompoundAssignmentOp() ? rhs->getType() : lhs->getType();
       StrCat(keyword::kLet, "__rhs", token::kAssign,
              ConvertFreshRValue(rhs, type), token::kSemiColon);
       rhs = local("__rhs", type);
@@ -1747,10 +1748,10 @@ bool ConverterRefCount::ConvertAssignmentAsLValue(clang::BinaryOperator *expr) {
         ctx_, expr, clang::UO_AddrOf, ctx_.getPointerType(expr->getType()),
         clang::VK_PRValue, clang::OK_Ordinary, expr->getExprLoc(), false,
         clang::FPOptionsOverride());
-    Convert(clang::UnaryOperator::Create(
-        ctx_, addr_of, clang::UO_Deref, expr->getType(), clang::VK_LValue,
-        clang::OK_Ordinary, expr->getExprLoc(), false,
-        clang::FPOptionsOverride()));
+    Convert(clang::UnaryOperator::Create(ctx_, addr_of, clang::UO_Deref,
+                                         expr->getType(), clang::VK_LValue,
+                                         clang::OK_Ordinary, expr->getExprLoc(),
+                                         false, clang::FPOptionsOverride()));
     return true;
   }
   return false;

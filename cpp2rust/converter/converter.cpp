@@ -587,13 +587,13 @@ bool Converter::ConvertConstexprScalarInit(clang::VarDecl *decl) {
   clang::Expr *literal = nullptr;
   if (type->isBooleanType()) {
     assert(value->isInt());
-    literal = new (ctx_) clang::CXXBoolLiteralExpr(
-        value->getInt().getBoolValue(), type, loc);
+    literal = new (ctx_)
+        clang::CXXBoolLiteralExpr(value->getInt().getBoolValue(), type, loc);
   } else if (type->isIntegerType()) {
     assert(value->isInt());
     auto num = value->getInt();
-    literal = clang::IntegerLiteral::Create(
-        ctx_, num.isNegative() ? -num : num, type, loc);
+    literal = clang::IntegerLiteral::Create(ctx_, num.isNegative() ? -num : num,
+                                            type, loc);
     if (num.isNegative()) {
       literal = clang::UnaryOperator::Create(
           ctx_, literal, clang::UO_Minus, type, clang::VK_PRValue,
