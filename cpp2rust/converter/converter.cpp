@@ -5245,11 +5245,16 @@ std::string Converter::ConvertIRFragment(
           .access = ph->access,
           .is_receiver = is_receiver,
           .is_cpp_ptr = is_cpp_ptr,
-          // Whatever its spelling, a pointer in C++ is converted as one.
+          // Whatever its spelling, a pointer in C++ is converted as one; an
+          // object that maps to a pointer is still passed by address to a
+          // pointer to its own type (reference_wrapper<reference_wrapper<T>>).
           .maps_to_rust_ptr =
               !is_cpp_ptr &&
               RuleRegistry::MapsToPointer(
-                  ctx_, arg->IgnoreParenNoopCasts(ctx_)->getType()),
+                  ctx_, arg->IgnoreParenNoopCasts(ctx_)->getType()) &&
+              !RuleRegistry::ParamPointsTo(
+                  ctx_, expr, arg_idx,
+                  arg->IgnoreParenNoopCasts(ctx_)->getType()),
           .declared_in_rule_as_rust_ptr =
               RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx),
           .is_index_base = ph->is_index_base,

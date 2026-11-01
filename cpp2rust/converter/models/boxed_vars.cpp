@@ -280,7 +280,8 @@ private:
         continue;
       }
       if (!rule->params[i].is_pointer() || arg->getType()->isPointerType() ||
-          RuleRegistry::MapsToPointer(ctx_, arg->getType())) {
+          (RuleRegistry::MapsToPointer(ctx_, arg->getType()) &&
+           !RuleRegistry::ParamPointsTo(ctx_, expr, i, arg->getType()))) {
         AddValueUse(arg);
       }
     }

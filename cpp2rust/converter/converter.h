@@ -909,6 +909,11 @@ protected:
   virtual bool IsReferenceType(const clang::Expr *expr) const;
 
   bool ExprMapsValueToPointer(const clang::CallExpr *expr) const;
+  // A C++ reference to a proxy record (vector<bool>'s reference &) is that
+  // proxy itself, not a pointer to it.
+  virtual bool IsProxyReference(clang::QualType /*type*/) const {
+    return false;
+  }
 
   virtual bool RecordDerivesDefault(const clang::RecordDecl *decl);
 

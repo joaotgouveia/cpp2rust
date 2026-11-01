@@ -279,6 +279,10 @@ bool ConverterRefCount::VisitIncompleteArrayType(
 
 bool ConverterRefCount::VisitReferenceType(clang::ReferenceType *type) {
   auto pointee_type = type->getPointeeType();
+  if (IsProxyReference(clang::QualType(type, 0))) {
+    PushConversionKind push(*this, ConversionKind::Unboxed);
+    return Convert(pointee_type);
+  }
   if (pointee_type->isFunctionType()) {
     PushConversionKind push(*this, ConversionKind::Unboxed);
     return Convert(ctx_.getPointerType(pointee_type));
@@ -1024,6 +1028,12 @@ void ConverterRefCount::ConvertDeclRefValue(clang::Expr *expr,
     } else {
       is_global_value = true;
     }
+  }
+
+  if (IsProxyReference(decl_t)) {
+    StrCat(str);
+    SetValueFreshness(expr->getType());
+    return;
   }
 
   if (auto *ref = decl_t->getAs<clang::ReferenceType>()) {
@@ -2383,6 +2393,9 @@ std::string ConverterRefCount::ConvertVarInitValue(clang::QualType qual_type,
   }
 
   ScopedPush init_type(curr_init_type_, qual_type);
+  if (IsProxyReference(qual_type)) {
+    return ConvertFreshRValue(expr);
+  }
   if (qual_type->isReferenceType() || qual_type->isFunctionPointerType()) {
     if (llvm::isa<clang::MaterializeTemporaryExpr>(expr->IgnoreImpCasts())) {
       return EmitMaterializedTempBinding(qual_type, expr);
@@ -2914,6 +2927,11 @@ pub fn main() {{
 
 void ConverterRefCount::ConvertAddrOf(clang::Expr *expr,
                                       clang::QualType pointer_type) {
+  if (auto *ref = clang::dyn_cast<clang::DeclRefExpr>(expr->IgnoreParens());
+      ref && IsProxyReference(ref->getDecl()->getType())) {
+    llvm::report_fatal_error(
+        "address of a reference to a proxy record is not supported");
+  }
   StrCat(ConvertPointer(expr));
 }
 
@@ -3031,6 +3049,11 @@ std::string ConverterRefCount::DerefPtrExpr(std::string_view ptr_expr,
   }
   return std::format("({}{}{})", GetPointerDerefPrefix(pointee_type), ptr_expr,
                      GetPointerDerefSuffix(pointee_type));
+}
+
+bool ConverterRefCount::IsProxyReference(clang::QualType type) const {
+  auto *ref = type->getAs<clang::ReferenceType>();
+  return ref && RuleRegistry::IsProxyRecord(ctx_, ref->getPointeeType());
 }
 
 bool ConverterRefCount::IsReferenceType(const clang::Expr *expr) const {

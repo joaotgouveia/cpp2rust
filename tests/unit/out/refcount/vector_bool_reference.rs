@@ -45,6 +45,21 @@ fn main_0() -> i32 {
         .read();
         assert!((b) && (i == 1));
     }
+    let r3: Ptr<bool> = v1.decay().offset(0_usize as isize);
+    {
+        let __a0 = (r3).clone();
+        __a0.write(true);
+        __a0
+    };
+    assert!(v1.decay().offset(0_usize as isize).read());
+    let mut x: bool = ({
+        let __a0 = (r1).clone();
+        __a0.write(false);
+        __a0
+    })
+    .read();
+    assert!(!(x));
+    assert!(!(v1.decay().offset(0_usize as isize).read()));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

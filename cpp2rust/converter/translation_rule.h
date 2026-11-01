@@ -95,6 +95,8 @@ struct TypeInfo {
   std::string cpp_type;
   bool is_refcount_pointer = false;
   bool is_unsafe_pointer = false;
+  // Tn the pointer points to (*mut Tn, Ptr<Tn>), 0 otherwise
+  unsigned pointee_generic = 0;
 
   bool is_pointer() const { return is_refcount_pointer || is_unsafe_pointer; }
 
