@@ -165,7 +165,8 @@ fn main_0() -> i32 {
         })
     );
     assert!(
-        ({ CmpImpl::operator_cmp(&c1.as_pointer(), c2.as_pointer(),) }) == std::cmp::Ordering::Less
+        ({ CmpImpl::operator_cmp(&c1.as_pointer(), c2.as_pointer(),) })
+            == (*libcc2rs::strong_ordering_less().upgrade().deref())
     );
     let b1: Value<Both> = Rc::new(RefCell::new(Both { a: 1 }));
     let b2: Value<Both> = Rc::new(RefCell::new(Both { a: 2 }));
@@ -187,7 +188,7 @@ fn main_0() -> i32 {
     );
     assert!(
         ({ OrdOnlyImpl::operator_cmp(&o2.as_pointer(), o1.as_pointer(),) })
-            == std::cmp::Ordering::Greater
+            == (*libcc2rs::strong_ordering_greater().upgrade().deref())
     );
     let x1: Value<Outer> = Rc::new(RefCell::new(Outer {
         i: Inner { x: 1 },
@@ -208,7 +209,7 @@ fn main_0() -> i32 {
     assert!(({ OuterImpl::operator_eq(&x1.as_pointer(), x3.as_pointer(),) }));
     assert!(
         ({ OuterImpl::operator_cmp(&x2.as_pointer(), x1.as_pointer(),) })
-            == std::cmp::Ordering::Greater
+            == (*libcc2rs::strong_ordering_greater().upgrade().deref())
     );
     let s1: Value<Secondary> = Rc::new(RefCell::new(Secondary { a: 1 }));
     let s2: Value<Secondary> = Rc::new(RefCell::new(Secondary { a: 2 }));
@@ -233,7 +234,7 @@ fn main_0() -> i32 {
     assert!(({ PtrMemberImpl::operator_eq(&p1.as_pointer(), p3.as_pointer(),) }));
     assert!(
         ({ PtrMemberImpl::operator_cmp(&p2.as_pointer(), p1.as_pointer(),) })
-            == std::cmp::Ordering::Greater
+            == (*libcc2rs::strong_ordering_greater().upgrade().deref())
     );
     return 0;
 }
@@ -255,7 +256,7 @@ impl BothImpl for Ptr<Both> {
                 return (*cmp.borrow_mut());
             }
         }
-        return std::cmp::Ordering::Equal;
+        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
     }
 }
 pub trait CmpImpl {
@@ -282,7 +283,7 @@ impl CmpImpl for Ptr<Cmp> {
                 return (*cmp.borrow_mut());
             }
         }
-        return std::cmp::Ordering::Equal;
+        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
     }
     fn operator_eq(&self, _a0: Ptr<Cmp>) -> bool {
         return ({ (*self).with(|__s| __s.a) } == { _a0.with(|__s| __s.a) })
@@ -313,7 +314,7 @@ impl InnerImpl for Ptr<Inner> {
                 return (*cmp.borrow_mut());
             }
         }
-        return std::cmp::Ordering::Equal;
+        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
     }
     fn operator_eq(&self, _a0: Ptr<Inner>) -> bool {
         return ({ (*self).with(|__s| __s.x) } == { _a0.with(|__s| __s.x) });
@@ -333,7 +334,7 @@ impl OrdOnlyImpl for Ptr<OrdOnly> {
                 return (*cmp.borrow_mut());
             }
         }
-        return std::cmp::Ordering::Equal;
+        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
     }
 }
 pub trait OuterImpl {
@@ -362,7 +363,7 @@ impl OuterImpl for Ptr<Outer> {
                 return (*cmp.borrow_mut());
             }
         }
-        return std::cmp::Ordering::Equal;
+        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
     }
     fn operator_eq(&self, _a0: Ptr<Outer>) -> bool {
         return ({
@@ -386,7 +387,7 @@ impl PtrMemberImpl for Ptr<PtrMember> {
                 return (*cmp.borrow_mut());
             }
         }
-        return std::cmp::Ordering::Equal;
+        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
     }
     fn operator_eq(&self, _a0: Ptr<PtrMember>) -> bool {
         return ({ (*self).with(|__s| __s.p.clone()) } == { _a0.with(|__s| __s.p.clone()) });
@@ -419,7 +420,7 @@ impl SecondaryImpl for Ptr<Secondary> {
                 return (*cmp.borrow_mut());
             }
         }
-        return std::cmp::Ordering::Equal;
+        return (*libcc2rs::strong_ordering_equal().upgrade().deref());
     }
     fn operator_lt(&self, _a0: Ptr<Secondary>) -> bool {
         return ({
