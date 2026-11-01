@@ -17,5 +17,19 @@ int main() {
   assert(b == 42);
   r = 7;
   assert(a == 7);
+  int i = 0;
+  int &q = (arr[i++] = 9);
+  assert(i == 1);
+  assert(&q == &arr[0]);
+  assert(arr[0] == 9);
+  int &s = (arr[i++] += 10);
+  assert(i == 2);
+  assert(&s == &arr[1]);
+  assert(arr[1] == 12);
+  int k = 3;
+  int &t = (a = k++);
+  assert(k == 4);
+  assert(a == 3);
+  assert(&t == &a);
   return 0;
 }

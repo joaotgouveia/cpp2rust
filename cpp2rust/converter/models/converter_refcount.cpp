@@ -1690,14 +1690,51 @@ bool ConverterRefCount::ConvertAssignmentAsLValue(clang::BinaryOperator *expr) {
   if (!expr->isAssignmentOp()) {
     return false;
   }
-  // `&(a = b)` -> `{ a = b; &a }`
+  // `&(a = b)` -> `{ T &__lhs = a; __lhs = b; &__lhs }`: the left operand is
+  // evaluated once, after the right one as C++ sequences them.
   if (isAddrOf()) {
+    auto *lhs = expr->getLHS();
+    auto *rhs = expr->getRHS();
+    auto loc = expr->getOperatorLoc();
+    auto local = [&](llvm::StringRef name, clang::QualType type) {
+      auto *var = clang::VarDecl::Create(
+          ctx_, curr_function_, loc, loc, &ctx_.Idents.get(name), type,
+          ctx_.getTrivialTypeSourceInfo(type), clang::SC_None);
+      return clang::DeclRefExpr::Create(
+          ctx_, clang::NestedNameSpecifierLoc(), clang::SourceLocation(), var,
+          /*RefersToEnclosingVariableOrCapture=*/false, loc,
+          type.getNonReferenceType(), clang::VK_LValue);
+    };
     PushBrace brace(*this);
+    if (rhs->HasSideEffects(ctx_)) {
+      auto type = expr->isCompoundAssignmentOp() ? rhs->getType()
+                                                 : lhs->getType();
+      StrCat(keyword::kLet, "__rhs", token::kAssign,
+             ConvertFreshRValue(rhs, type), token::kSemiColon);
+      rhs = local("__rhs", type);
+    }
+    StrCat(keyword::kLet, "__lhs", token::kAssign, ConvertFreshPointer(lhs),
+           token::kSemiColon);
+    auto *lhs_ref = local("__lhs", ctx_.getLValueReferenceType(lhs->getType()));
+    clang::Expr *assign = nullptr;
+    if (auto *compound = clang::dyn_cast<clang::CompoundAssignOperator>(expr)) {
+      assign = clang::CompoundAssignOperator::Create(
+          ctx_, lhs_ref, rhs, compound->getOpcode(), compound->getType(),
+          compound->getValueKind(), compound->getObjectKind(), loc,
+          clang::FPOptionsOverride(), compound->getComputationLHSType(),
+          compound->getComputationResultType());
+    } else {
+      assign = clang::BinaryOperator::Create(
+          ctx_, lhs_ref, rhs, clang::BO_Assign, expr->getType(),
+          expr->getValueKind(), expr->getObjectKind(), loc,
+          clang::FPOptionsOverride());
+    }
     {
       PushExprKind push(*this, ExprKind::Void);
-      Convert(expr);
+      Convert(assign);
     }
-    StrCat(token::kSemiColon, ConvertFreshPointer(expr->getLHS()));
+    StrCat(token::kSemiColon, "__lhs");
+    MarkFresh();
     return true;
   }
   // `(a = b) = v` -> `*&(a = b) = v`
