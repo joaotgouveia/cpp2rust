@@ -29,7 +29,8 @@ fn main_0() -> i32 {
             let mut __it = m
                 .as_pointer()
                 .with(|__m: &Map<i32, (Value<i32>, Value<i32>)>| __m.begin());
-            __it.iter_inc()
+            __it.iter_inc();
+            __it
         })
         .clone();
         Map::erase(m.as_pointer(), &__it)

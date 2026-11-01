@@ -15,7 +15,8 @@ fn main_0() -> i32 {
     assert!(
         ((({
             let mut __it = v.decay().end();
-            __it.iter_dec()
+            __it.iter_dec();
+            __it
         })
         .iter_at(0_isize)
         .read())
@@ -24,7 +25,8 @@ fn main_0() -> i32 {
     assert!(
         ((({
             let mut __it = v.decay().end();
-            __it.iter_dec()
+            __it.iter_dec();
+            __it
         })
         .iter_deref()
         .read())
