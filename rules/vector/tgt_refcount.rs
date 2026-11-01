@@ -307,3 +307,7 @@ fn f121(a0: Ptr<bool>, a1: Ptr<bool>) -> Ptr<bool> {
     __a0.write(a1.read());
     __a0
 }
+
+fn f122(a0: Ptr<bool>, a1: Ptr<bool>) -> bool {
+    a0.read() == a1.read()
+}

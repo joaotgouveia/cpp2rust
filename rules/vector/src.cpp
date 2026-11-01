@@ -293,3 +293,9 @@ f121(typename std::vector<bool, T1>::reference &a0,
      const typename std::vector<bool, T1>::reference &a1) {
   return a0.operator=(a1);
 }
+
+template <typename T1>
+bool f122(typename std::vector<bool, T1>::reference &a0,
+          const typename std::vector<bool, T1>::reference &a1) {
+  return a0 == a1;
+}
