@@ -50,7 +50,7 @@ mod cmp;
 pub use cmp::*;
 
 mod conversion;
-pub use conversion::{CppFrom, CppFromUnsafe};
+pub use conversion::{CppArray, CppFrom, CppFromUnsafe};
 
 mod swap;
 // Used by cpp_swap! and cpp_swap_unsafe!.

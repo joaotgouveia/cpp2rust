@@ -12,6 +12,8 @@ pub trait CppFrom<S>: Sized {
     }
 }
 
+pub trait CppArray<T> {}
+
 pub trait CppFromUnsafe<S>: Sized {
     /// # Safety
     /// `src` must point to a live value.
