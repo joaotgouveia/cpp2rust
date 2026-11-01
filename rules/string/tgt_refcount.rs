@@ -219,3 +219,11 @@ fn f33(a0: Ptr<Vec<i8>>, a1: Ptr<i8>) -> Ptr<Vec<i8>> {
     a0.write(__bytes);
     a0
 }
+
+fn f34(a0: Ptr<Vec<i8>>, a1: usize, a2: usize) -> Vec<i8> {
+    a0.with(|__s: &Vec<i8>| {
+        let mut __tmp1 = __s[a1..::std::cmp::min(a1 + a2, __s.len().saturating_sub(1))].to_vec();
+        __tmp1.push(0);
+        __tmp1
+    })
+}
