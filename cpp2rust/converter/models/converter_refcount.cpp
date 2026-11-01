@@ -443,6 +443,21 @@ std::string ConverterRefCount::ConvertElementPtr(clang::Expr *arg) {
   return ConvertObject(arg, ObjectShape::Element);
 }
 
+// A rule for a function returning a reference whose target returns a bare
+// generic (T1 of iterator &operator++) yields the referenced object itself.
+bool ConverterRefCount::RuleReturnsReferencedObject(clang::CallExpr *expr) {
+  if (!GetReturnTypeOfFunction(expr)->isReferenceType()) {
+    return false;
+  }
+  auto *rule = RuleRegistry::GetExprRule(ctx_, expr);
+  if (!rule) {
+    return false;
+  }
+  llvm::StringRef type = rule->return_type.type;
+  unsigned n = 0;
+  return type.consume_front("T") && !type.empty() && !type.getAsInteger(10, n);
+}
+
 std::string ConverterRefCount::ConvertFreshObject(clang::Expr *expr) {
   return MakeFresh(ConvertObject(expr));
 }
@@ -1280,7 +1295,8 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
   };
   auto ty = GetReturnTypeOfFunction(expr);
   if (auto *ref = ty->getAs<clang::ReferenceType>();
-      ref && !isAddrOf() && !isVoid() && !ExprMapsValueToPointer(expr)) {
+      ref && !isAddrOf() && !isVoid() && !ExprMapsValueToPointer(expr) &&
+      !RuleReturnsReferencedObject(expr)) {
     if (isLValue()) {
       pending_deref_.set(wrap(std::move(str)), /*fresh=*/true);
       return;
