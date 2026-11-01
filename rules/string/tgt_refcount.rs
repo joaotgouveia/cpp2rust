@@ -72,12 +72,12 @@ fn f7(a0: Ptr<i8>, a1: usize) -> Vec<i8> {
     __v
 }
 
-fn f8(a0: std::fs::File, a1: std::fs::File) -> Vec<i8> {
-    use std::io::Read;
+fn f8(a0: Ptr<std::fs::File>) -> Vec<i8> {
     let mut __bytes: Vec<u8> = Vec::new();
-    let mut __f = &a0;
-    __f.read_to_end(&mut __bytes)
-        .expect("couldn't read the file");
+    if !a0.is_null() {
+        a0.with_mut(|__f: &mut std::fs::File| std::io::Read::read_to_end(__f, &mut __bytes))
+            .expect("couldn't read the file");
+    }
     __bytes.push(0);
     CChar::from_byte_vec(__bytes)
 }
