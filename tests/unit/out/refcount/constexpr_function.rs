@@ -72,16 +72,16 @@ fn main_0() -> i32 {
     assert!((({ scaled_2(-3_i32,) }) == 6));
     assert!((({ half_3(5_f64,) }) == 2.5_f64));
     assert!((({ checked_5(1,) }) == 2));
-    let mut c: i32 = ({ checked_5(4) });
+    let mut c: i32 = 5;
     assert!((c == 5));
     assert!((({ use_4(Flag { v: 2 },) }) == 2));
-    let mut u: i32 = ({ use_4(Flag { v: 3 }) });
+    let mut u: i32 = 3;
     assert!((u == 3));
     let mut ptr: Ptr<i32> = (arr.as_pointer() as Ptr<i32>);
     assert!(!(ptr).is_null());
     let p: Value<P> = Rc::new(RefCell::new(P { v: 9 }));
     assert!((({ PImpl::get(&p.as_pointer(),) }) == 9));
-    let mut k: i32 = ({ scaled_2(4) });
+    let mut k: i32 = 4;
     assert!((k == 4));
     return 0;
 }

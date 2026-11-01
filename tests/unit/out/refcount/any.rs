@@ -19,6 +19,11 @@ impl Point {
         Self { x: x, y: y }
     }
 }
+impl CppMove for Point {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
