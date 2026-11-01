@@ -35,6 +35,8 @@ fn main() {
         .expect("rustls-ffi did not export its include dir (DEP_RUSTLS_FFI_INCLUDE)");
     let src = Path::new(&inc).join("rustls.h");
     let dst = crate_root.join("rustls").join("rustls.h");
+    fs::create_dir_all(dst.parent().unwrap())
+        .unwrap_or_else(|e| panic!("failed to create {}: {e}", dst.parent().unwrap().display()));
     fs::copy(&src, &dst)
         .unwrap_or_else(|e| panic!("failed to copy {} to {}: {e}", src.display(), dst.display()));
 
