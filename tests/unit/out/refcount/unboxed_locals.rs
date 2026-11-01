@@ -10,7 +10,9 @@ pub fn set_0(mut p: Ptr<i32>, mut v: i32) {
     p.write({ v });
 }
 pub fn inc_1(r: Ptr<i32>) {
-    r.with_mut(|__v| __v.prefix_inc());
+    r.with_mut(|__v| {
+        __v.prefix_inc();
+    });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -19,6 +21,11 @@ pub struct Pair {
     pub first: i32,
     #[offset(4)]
     pub second: i32,
+}
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn total_2(v: Ptr<Vec<i32>>) -> i32 {
     let s: Value<i32> = Rc::new(RefCell::new(0));
@@ -54,6 +61,11 @@ pub trait Shape {
 pub struct Square {
     #[offset(8)]
     pub side: i32,
+}
+impl CppMove for Square {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Square {
     fn default() -> Self {

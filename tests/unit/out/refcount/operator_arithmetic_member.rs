@@ -12,6 +12,11 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
@@ -101,21 +106,29 @@ impl SImpl for Ptr<S> {
         };
     }
     fn operator_inc_8(&self) -> Ptr<S> {
-        field!((*self), v).with_mut(|__v| __v.prefix_inc());
+        field!((*self), v).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
     fn operator_post_inc_9(&self, mut _a0: i32) -> S {
         let mut old: S = (*(*self).upgrade().deref()).clone();
-        field!((*self), v).with_mut(|__v| __v.prefix_inc());
+        field!((*self), v).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return old;
     }
     fn operator_dec_10(&self) -> Ptr<S> {
-        field!((*self), v).with_mut(|__v| __v.prefix_dec());
+        field!((*self), v).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return (*self).clone();
     }
     fn operator_post_dec_11(&self, mut _a0: i32) -> S {
         let mut old: S = (*(*self).upgrade().deref()).clone();
-        field!((*self), v).with_mut(|__v| __v.prefix_dec());
+        field!((*self), v).with_mut(|__v| {
+            __v.prefix_dec();
+        });
         return old;
     }
 }

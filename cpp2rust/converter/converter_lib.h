@@ -113,6 +113,12 @@ bool IsConvertibleMoveConstructor(const clang::CXXConstructorDecl *ctor);
 bool MovesRuleArg(clang::Expr *expr, unsigned arg_idx, clang::Expr *arg,
                   TranslationRule::Access access);
 
+// Whether a rule takes the value of arg, an object of a library type whose
+// move isn't a copy, from an rvalue reference parameter.
+bool MovesLibraryArg(clang::ASTContext &ctx, clang::Expr *expr,
+                     unsigned arg_idx, clang::Expr *arg,
+                     TranslationRule::Access access);
+
 clang::CXXConstructExpr *BuildMoveConstruction(clang::ASTContext &ctx,
                                                clang::Expr *expr,
                                                unsigned arg_idx,
@@ -381,6 +387,15 @@ bool NeedsImplicitPointeeCast(clang::ASTContext &ctx, const clang::Expr *from,
 
 bool NeedsRefBindingTemp(clang::ASTContext &ctx, const clang::Expr *arg,
                          clang::QualType param_type);
+
+// The type of the reference parameter that argument i of call is bound to
+// through a temporary, if it is.
+std::optional<clang::QualType>
+GetRefBindingTempType(clang::ASTContext &ctx, const clang::CallExpr *call,
+                      unsigned i);
+
+// The value that a transparent union argument is initialized with, or expr.
+clang::Expr *IgnoreTransparentUnion(clang::Expr *expr);
 
 bool IsSizeType(clang::ASTContext &ctx, clang::QualType type);
 

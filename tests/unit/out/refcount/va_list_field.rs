@@ -39,6 +39,11 @@ impl Guard_1 {
         }
     }
 }
+impl CppMove for Guard_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn sum_ptr_2(n: i32, __args: Box<[VaArg]>) -> i32 {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
     let n: Value<i32> = Rc::new(RefCell::new(n));
@@ -61,6 +66,11 @@ pub struct Cursor_3 {
     #[offset(0)]
     #[byte_size(8)]
     pub ap: Ptr<Ptr<VaArg>>,
+}
+impl CppMove for Cursor_3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

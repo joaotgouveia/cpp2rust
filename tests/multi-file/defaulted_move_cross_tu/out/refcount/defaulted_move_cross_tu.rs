@@ -33,6 +33,11 @@ impl S {
         }
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for S {
     fn default() -> Self {
         {
@@ -55,6 +60,11 @@ impl T {
         Self {
             v: field!(_a0, v).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for T {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn sum_0(s: Ptr<S>) -> i32 {
@@ -100,14 +110,14 @@ impl SImpl for Ptr<S> {
         field_ref!((*self), v)
             .as_pointer()
             .write(field!(_a0, v).with_mut(std::mem::take));
-        {
-            ((array_field_ptr!((*self), n)) as Ptr<i32>)
-                .to_any()
-                .memcpy(
+        match ({ ((array_field_ptr!((*self), n)) as Ptr<i32>).to_any() },) {
+            (mut __tmp_0,) => {
+                __tmp_0.memcpy(
                     &((array_field_ptr!(_a0, n)) as Ptr<i32>).to_any(),
                     8_usize as usize,
                 );
-            ((array_field_ptr!((*self), n)) as Ptr<i32>).to_any()
+                (__tmp_0).clone()
+            }
         };
         return (*self).clone();
     }

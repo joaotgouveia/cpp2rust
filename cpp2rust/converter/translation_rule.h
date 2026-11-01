@@ -4,6 +4,7 @@
 // Distributed under the MIT license that can be found in the LICENSE file.
 
 #include <clang/AST/Expr.h>
+#include <clang/AST/ExprCXX.h>
 #include <llvm/ADT/STLFunctionalExtras.h>
 #include <llvm/Support/JSON.h>
 
@@ -30,6 +31,9 @@ struct PlaceholderFragment {
   unsigned n; // "a0", "a1", ...
   Access access;
   bool is_index_base = false;
+  // Whether it is in a loop, a closure or a branch, which may evaluate it other
+  // than once.
+  bool conditional = false;
 
   void dump() const;
 };
@@ -92,8 +96,11 @@ bool AnyFragment(const std::vector<BodyFragment> &body,
 struct TypeInfo {
   std::vector<std::string> derives;
   std::string type;
+  std::string cpp_type;
   bool is_refcount_pointer = false;
   bool is_unsafe_pointer = false;
+  // Tn the pointer points to (*mut Tn, Ptr<Tn>), 0 otherwise
+  unsigned pointee_generic = 0;
 
   bool is_pointer() const { return is_refcount_pointer || is_unsafe_pointer; }
 
@@ -102,6 +109,7 @@ struct TypeInfo {
 
 struct ExprRule {
   std::vector<TypeInfo> params;
+  TypeInfo init;
   TypeInfo return_type;
   std::vector<std::vector<Bound>> generics; // "T1" -> [Ord, Clone]
   std::vector<BodyFragment> body;
@@ -111,6 +119,19 @@ struct ExprRule {
   void dump() const;
   bool usesInit() const;
   const std::vector<BodyFragment> *refExprOperand() const;
+
+  // The arguments to bind to variables before the body, so that they are
+  // evaluated once and in order: those with side effects that the body may
+  // evaluate more than once, or after a later one, and those with side effects
+  // evaluated before them. Values computed from others, which the body may
+  // evaluate more than once, are bound too. args are those of expr.
+  std::vector<bool> argsToBind(clang::ASTContext &ctx, const clang::Expr *expr,
+                               llvm::ArrayRef<clang::Expr *> args) const;
+
+  // Whether the body takes a pointer to arg, its argument i, which is not a
+  // pointer.
+  bool takesAddress(clang::ASTContext &ctx, unsigned i,
+                    const clang::Expr *arg) const;
 };
 
 struct TypeRule {

@@ -39,6 +39,11 @@ impl Clone for Counted {
         Counted::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Counted {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn make_counted_1() -> Counted {
     return Counted::new({ 5 }, { 6 });
 }

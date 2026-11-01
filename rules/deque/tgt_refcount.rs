@@ -65,9 +65,10 @@ fn f11<T1: ByteRepr + Clone>(a0: Ptr<Vec<T1>>, a1: &mut Vec<T1>) {
     a0.write(std::mem::take(&mut *a1))
 }
 
-fn f12<T1>(a0: &mut Vec<T1>, init: T1) {
+fn f12<T1: ByteRepr + 'static>(a0: Ptr<Vec<T1>>, init: T1) -> Ptr<T1> {
     let __init = init;
-    a0.push(__init)
+    a0.with_mut(|__v: &mut Vec<T1>| __v.push(__init));
+    a0.decay().to_last()
 }
 
 fn f14<T1>() -> Vec<T1> {

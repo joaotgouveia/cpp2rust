@@ -3,6 +3,7 @@
 
 #include "converter/models/boxed_vars.h"
 
+#include <clang/AST/ParentMapContext.h>
 #include <clang/AST/RecursiveASTVisitor.h>
 #include <clang/Basic/SourceManager.h>
 
@@ -209,8 +210,11 @@ public:
     return true;
   }
 
+  // A prefix increment is an lvalue naming its operand: the operand is a
+  // value use only if the result is read or discarded.
   bool VisitUnaryOperator(clang::UnaryOperator *expr) {
-    if (expr->isIncrementDecrementOp()) {
+    if (expr->isIncrementDecrementOp() &&
+        (expr->isPostfix() || IsDiscarded(expr))) {
       AddValueUse(expr->getSubExpr(), /*write=*/true);
     }
     return true;
@@ -240,8 +244,9 @@ public:
 
 private:
   // The arguments of a call translated by a rule are passed by value or
-  // borrowed, unless the rule takes a pointer to them. A pointer parameter
-  // receives the value of an argument that is itself translated to a pointer.
+  // borrowed, unless the rule takes a pointer to them, or they are bound to
+  // references. A pointer parameter receives the value of an argument that is
+  // itself translated to a pointer.
   void AddRuleArgs(clang::Expr *expr, clang::Expr **args, unsigned num_args) {
     auto *rule = RuleRegistry::GetExprRule(ctx_, expr);
     if (!rule) {
@@ -249,7 +254,11 @@ private:
     }
     // Variadic arguments are not considered.
     auto all_args = BuildUnifiedArgs(expr, args, num_args);
+    auto bound = rule->argsToBind(ctx_, expr, all_args);
     for (unsigned i = 0; i < all_args.size() && i < rule->params.size(); ++i) {
+      if (bound[i]) {
+        continue;
+      }
       auto *arg = IgnoreNoOpCasts(all_args[i]);
       if (auto *init = RuleRegistry::BuildParamConversion(ctx_, expr, i, arg)) {
         TraverseStmt(init);
@@ -266,14 +275,18 @@ private:
                 TraverseStmt(init);
                 moved_by_ctor = true;
               }
+              if (MovesLibraryArg(ctx_, expr, i, all_args[i], ph->access)) {
+                moved_by_ctor = true;
+              }
             }
             return false;
           });
       if (moved_by_ctor) {
         continue;
       }
-      if (!rule->params[i].is_pointer() || arg->getType()->isPointerType() ||
-          RuleRegistry::MapsToPointer(ctx_, arg->getType())) {
+      if (!rule->takesAddress(ctx_, i, arg) &&
+          !(rule->params[i].is_pointer() && !arg->getType()->isPointerType() &&
+            RuleRegistry::ParamPointsTo(ctx_, expr, i, arg->getType()))) {
         AddValueUse(arg);
       }
     }
@@ -283,6 +296,11 @@ private:
   // without making a pointer to it.
   void AddValueUse(const clang::Expr *expr, bool write = false) {
     expr = IgnoreTransparentStdCall(expr)->IgnoreParens();
+    if (auto *op = clang::dyn_cast<clang::UnaryOperator>(expr);
+        op && op->isPrefix() && op->isIncrementDecrementOp()) {
+      AddValueUse(op->getSubExpr(), /*write=*/true);
+      return;
+    }
     // The value of a conditional lvalue is the value of either operand; it is
     // written through a pointer to the operand.
     if (auto *cond = clang::dyn_cast<clang::ConditionalOperator>(expr)) {
@@ -299,6 +317,35 @@ private:
       if (!write || !op || !ReferToCommonVar(object, op->getArg(1))) {
         AddValueUse(object, write);
       }
+    }
+  }
+
+  // Whether the value of expr is not used: it is a statement, or the left
+  // operand of a comma whose value is not used.
+  bool IsDiscarded(const clang::Expr *expr) const {
+    const clang::Stmt *cur = expr;
+    while (true) {
+      auto parents = ctx_.getParents(*cur);
+      if (parents.empty()) {
+        return true;
+      }
+      auto *parent = parents[0].get<clang::Stmt>();
+      if (!parent) {
+        return false;
+      }
+      if (clang::isa<clang::ParenExpr, clang::ExprWithCleanups>(parent)) {
+        cur = parent;
+        continue;
+      }
+      if (auto *comma = clang::dyn_cast<clang::BinaryOperator>(parent);
+          comma && comma->getOpcode() == clang::BO_Comma) {
+        if (comma->getLHS() == cur) {
+          return true;
+        }
+        cur = comma;
+        continue;
+      }
+      return !clang::isa<clang::Expr, clang::ReturnStmt>(parent);
     }
   }
 

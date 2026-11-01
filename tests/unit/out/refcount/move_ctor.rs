@@ -25,6 +25,11 @@ impl MoveOnly {
         __this
     }
 }
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg)]
 #[byte_size(4)]
 pub struct ConstMove {
@@ -97,6 +102,11 @@ impl Clone for ThrowingMove {
         ThrowingMove::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for ThrowingMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(12)]
@@ -141,6 +151,11 @@ impl Clone for NoexceptMove {
             moves: self.moves.clone(),
         }));
         NoexceptMove::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for NoexceptMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn by_value_0(mut m: MoveOnly) -> i32 {

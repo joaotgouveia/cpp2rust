@@ -25,6 +25,10 @@ fn t5<T1>() -> Ptr<T1> {
     Ptr::null()
 }
 
+fn t6<T2>() -> T2 {
+    unimplemented!()
+}
+
 fn f1<T1>(a0: Ptr<T1>) -> Ptr<T1> {
     a0
 }
@@ -55,4 +59,20 @@ fn f7<T1: Clone + ByteRepr>(a0: Ptr<Vec<T1>>, a1: Vec<T1>) {
 
 fn f8<T1, const T2: usize>(a0: [T1; T2]) -> Vec<T1> {
     Vec::from(a0)
+}
+
+fn f9<const T1: usize, T2>(a0: Ptr<T2>) -> Ptr<T2> {
+    a0.offset(T1 as isize)
+}
+
+fn f10<const T1: usize, T2>(a0: Ptr<T2>) -> Ptr<T2> {
+    a0.offset(T1 as isize)
+}
+
+fn f11<const T1: usize, T2>(a0: Ptr<T2>) -> Ptr<T2> {
+    a0.offset(T1 as isize)
+}
+
+fn f12<const T1: usize, T2>(a0: Ptr<T2>) -> Ptr<T2> {
+    a0.offset(T1 as isize)
 }

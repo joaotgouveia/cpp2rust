@@ -29,11 +29,12 @@ fn t7() -> i8 {
     0_i8
 }
 
-fn f1(a0: Vec<i8>, a1: usize, a2: usize) -> Vec<i8> {
-    let mut __tmp1 =
-        a0[(a1) as usize..::std::cmp::min((a1 + a2) as usize, a0.len().saturating_sub(1))].to_vec();
-    __tmp1.push(0);
-    __tmp1
+fn f1(a0: Ptr<Vec<i8>>, a1: usize, a2: usize) -> Vec<i8> {
+    a0.with(|__s: &Vec<i8>| {
+        let mut __tmp1 = __s[a1..::std::cmp::min(a1 + a2, __s.len().saturating_sub(1))].to_vec();
+        __tmp1.push(0);
+        __tmp1
+    })
 }
 
 fn f2(a0: Vec<i8>) -> usize {
@@ -72,12 +73,12 @@ fn f7(a0: Ptr<i8>, a1: usize) -> Vec<i8> {
     __v
 }
 
-fn f8(a0: std::fs::File, a1: std::fs::File) -> Vec<i8> {
-    use std::io::Read;
+fn f8(a0: Ptr<std::fs::File>) -> Vec<i8> {
     let mut __bytes: Vec<u8> = Vec::new();
-    let mut __f = &a0;
-    __f.read_to_end(&mut __bytes)
-        .expect("couldn't read the file");
+    if !a0.is_null() {
+        a0.with_mut(|__f: &mut std::fs::File| std::io::Read::read_to_end(__f, &mut __bytes))
+            .expect("couldn't read the file");
+    }
     __bytes.push(0);
     CChar::from_byte_vec(__bytes)
 }
@@ -210,4 +211,11 @@ fn f32(a0: Vec<i8>, a1: Ptr<i8>, a2: usize) -> usize {
             .find(|&__i| __hay[__i..].starts_with(__needle))
             .unwrap_or(usize::MAX)
     })
+}
+
+fn f33(a0: Ptr<Vec<i8>>, a1: Ptr<i8>) -> Ptr<Vec<i8>> {
+    let mut __bytes = a1.to_c_bytes();
+    __bytes.push(0);
+    a0.write(__bytes);
+    a0
 }

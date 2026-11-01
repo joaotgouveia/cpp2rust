@@ -42,6 +42,11 @@ impl Clone for Tracked {
         Tracked::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Tracked {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Tracked {
     fn default() -> Self {
         { Tracked::new_2() }
@@ -65,6 +70,11 @@ impl Pair {
         }
     }
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, CopyAssign, MoveAssign)]
 #[byte_size(16)]
 pub struct Arrays {
@@ -85,6 +95,11 @@ impl Arrays {
                 Tracked::move_from({ (array_field_ptr!(_a0, b) as Ptr<Tracked>).offset(__i) })
             })),
         }
+    }
+}
+impl CppMove for Arrays {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for Arrays {
@@ -132,6 +147,11 @@ impl Clone for CopyOnly {
         CopyOnly::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for CopyOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor, Default)]
 #[byte_size(8)]
 pub struct CopyOnlyPair {
@@ -141,6 +161,11 @@ pub struct CopyOnlyPair {
     #[offset(4)]
     #[byte_size(4)]
     pub y: CopyOnly,
+}
+impl CppMove for CopyOnlyPair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 thread_local!(
     pub static moves_3: Value<i32> = Rc::new(RefCell::new(0));
@@ -195,6 +220,11 @@ impl Clone for Moved {
         Moved::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Moved {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(
     Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, CopyAssign, MoveAssign, Destructor, Default,
 )]
@@ -213,6 +243,11 @@ impl MovedPair {
             x: Moved::move_from({ field_ptr!(_a0, x) }),
             y: Moved::move_from({ field_ptr!(_a0, y) }),
         }
+    }
+}
+impl CppMove for MovedPair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn swapped_once_6() -> bool {
@@ -245,6 +280,11 @@ impl Owner {
         Self {
             p: field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
         }
+    }
+}
+impl CppMove for Owner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn main() {

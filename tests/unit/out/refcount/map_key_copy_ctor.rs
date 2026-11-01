@@ -58,6 +58,11 @@ impl Clone for Key {
         Key::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Key {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn make_key_3(mut k: i32) -> Key {
     (*made_2.with(Value::clone).borrow_mut()).prefix_inc();
     return Key::new({ k });
@@ -197,6 +202,7 @@ fn main_0() -> i32 {
         ok = rhs_0
     };
     {
+        // The block ends the borrow of the iterator, e.g., in it = m.erase(it).
         let __it = m
             .as_pointer()
             .with(|__m: &Map<Key, (Value<Key>, Value<i32>)>| __m.find(&a.as_pointer()));

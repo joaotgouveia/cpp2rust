@@ -10,7 +10,9 @@ thread_local!(
     pub static g_cursor_0: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(Ptr::<Ptr<i32>>::null()));
 );
 pub fn advance_1() -> i32 {
-    (*g_cursor_0.with(Value::clone).borrow()).with_mut(|__v| __v.prefix_inc());
+    (*g_cursor_0.with(Value::clone).borrow()).with_mut(|__v| {
+        __v.prefix_inc();
+    });
     return 10;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -19,6 +21,11 @@ pub struct S {
     #[offset(0)]
     #[byte_size(8)]
     pub ptr: Ptr<i32>,
+}
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn by_ref_2(r: Ptr<Ptr<i32>>) {
     let __rhs = ({ advance_1() });

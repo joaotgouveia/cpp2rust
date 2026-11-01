@@ -34,6 +34,11 @@ impl Clone for Counted {
         Counted::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Counted {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(4)]
 pub struct NonConst {
@@ -61,6 +66,11 @@ impl Clone for NonConst {
             mark: self.mark.clone(),
         }));
         NonConst::new_1(__src.as_pointer())
+    }
+}
+impl CppMove for NonConst {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for NonConst {
@@ -91,6 +101,11 @@ impl Clone for Ignored {
         Ignored::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Ignored {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(12)]
 pub struct Holder {
@@ -100,6 +115,11 @@ pub struct Holder {
     #[offset(4)]
     #[byte_size(8)]
     pub arr: Box<[Counted]>,
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Holder {
     fn default() -> Self {
@@ -143,6 +163,11 @@ impl Clone for Box_int_ {
         Box_int_::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Box_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(4)]
 pub struct Owner {
@@ -155,6 +180,11 @@ impl Owner {
         Self {
             box_: Box_int_::move_from({ field_ptr!(_a0, box_) }),
         }
+    }
+}
+impl CppMove for Owner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CppFrom, CopyAssign, Default)]
@@ -182,6 +212,11 @@ impl Clone for OutOfLine {
         OutOfLine::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for OutOfLine {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl OutOfLine {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(4)]
@@ -192,7 +227,9 @@ pub struct Tracked {
 impl Tracked {
     pub fn copy_from(o: Ptr<Tracked>) -> Self {
         let __this: Tracked = Self { copied_from: 0 };
-        field!(o, copied_from).with_mut(|__v| __v.prefix_inc());
+        field!(o, copied_from).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         __this
     }
 }
@@ -204,13 +241,20 @@ impl Clone for Tracked {
         Tracked::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Tracked {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Tracked {
     fn default() -> Self {
         { Tracked { copied_from: 0 } }
     }
 }
 pub fn touch_1(mut t: Ptr<Tracked>) {
-    field!(t, copied_from).with_mut(|__v| __v.prefix_inc());
+    field!(t, copied_from).with_mut(|__v| {
+        __v.prefix_inc();
+    });
 }
 pub fn by_value_2(mut c: Counted) -> i32 {
     return c.v;
@@ -305,14 +349,14 @@ impl HolderImpl for Ptr<Holder> {
             let _arg0: Ptr<Counted> = field_ptr!(_a0, c);
             CountedImpl::copy_assign(&field_ptr!((*self), c), _arg0)
         });
-        {
-            ((array_field_ptr!((*self), arr)) as Ptr<Counted>)
-                .to_any()
-                .memcpy(
+        match ({ ((array_field_ptr!((*self), arr)) as Ptr<Counted>).to_any() },) {
+            (mut __tmp_0,) => {
+                __tmp_0.memcpy(
                     &((array_field_ptr!(_a0, arr)) as Ptr<Counted>).to_any(),
                     8_usize as usize,
                 );
-            ((array_field_ptr!((*self), arr)) as Ptr<Counted>).to_any()
+                (__tmp_0).clone()
+            }
         };
         return (*self).clone();
     }
@@ -349,7 +393,9 @@ pub trait TrackedImpl {
 }
 impl TrackedImpl for Ptr<Tracked> {
     fn copy_assign(&self, o: Ptr<Tracked>) -> Ptr<Tracked> {
-        field!(o, copied_from).with_mut(|__v| __v.prefix_inc());
+        field!(o, copied_from).with_mut(|__v| {
+            __v.prefix_inc();
+        });
         return (*self).clone();
     }
 }

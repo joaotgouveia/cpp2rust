@@ -12,6 +12,11 @@ pub struct S {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn copy_0(mut copy_vector: Vec<i32>) {}
 pub fn main() {
     __cpp2rust_init_globals();
@@ -109,19 +114,25 @@ fn main_0() -> i32 {
     assert!(({ (*v2.borrow())[5_usize] } == 2));
     assert!(({ (*v2.borrow())[8_usize] } == 9));
     let src: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([21, 22])));
-    {
-        let __pos = <RandomAccessIterator<i32>>::from(v2.decay().begin());
-        let start_idx = __pos.index();
-        let mut temp_vec: Vec<i32> = Vec::new();
-        let mut __it = src.decay().begin();
-        while __it != src.decay().end() {
-            temp_vec.push(__it.iter_deref().read());
-            __it.iter_inc();
+    match (
+        { <RandomAccessIterator<i32>>::from(v2.decay().begin()) },
+        { src.decay().begin() },
+        { src.decay().end() },
+    ) {
+        (mut __tmp_0, mut __tmp_1, mut __tmp_2) => {
+            let __pos = (__tmp_0).clone();
+            let start_idx = __pos.index();
+            let mut temp_vec: Vec<i32> = Vec::new();
+            let mut __it = (__tmp_1).clone();
+            while __it != __tmp_2 {
+                temp_vec.push(__it.iter_deref().read());
+                __it.iter_inc();
+            }
+            v2.as_pointer().with_mut(|v: &mut Vec<i32>| {
+                v.splice(start_idx..start_idx, temp_vec);
+            });
+            __pos
         }
-        v2.as_pointer().with_mut(|v: &mut Vec<i32>| {
-            v.splice(start_idx..start_idx, temp_vec);
-        });
-        __pos
     };
     assert!(((*v2.borrow()).len() == 11_usize));
     assert!(({ (*v2.borrow())[0_usize] } == 21));

@@ -31,6 +31,8 @@ pub use void::*;
 mod ptr_dyn;
 pub use ptr_dyn::*;
 
+include!(concat!(env!("OUT_DIR"), "/rule_shims.rs"));
+
 mod cfile;
 pub use cfile::*;
 
@@ -50,7 +52,7 @@ mod cmp;
 pub use cmp::*;
 
 mod conversion;
-pub use conversion::{CppFrom, CppFromUnsafe};
+pub use conversion::{CppFrom, CppFromUnsafe, CppMove};
 
 mod swap;
 // Used by cpp_swap! and cpp_swap_unsafe!.

@@ -18,6 +18,11 @@ pub struct node_t {
     #[offset(16)]
     pub value: i32,
 }
+impl CppMove for node_t {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn find_0(node: Ptr<node_t>, mut value: i32) -> Ptr<node_t> {
     let node: Value<Ptr<node_t>> = Rc::new(RefCell::new(node));
     if ({ value } < { (*node.borrow()).with(|__s| __s.value) })

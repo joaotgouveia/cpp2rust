@@ -14,6 +14,11 @@ pub struct Inner {
     #[offset(4)]
     pub b: i32,
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(48)]
 pub struct Cookie {
@@ -31,6 +36,11 @@ pub struct Cookie {
     #[offset(32)]
     #[byte_size(16)]
     pub arr: Box<[i32]>,
+}
+impl CppMove for Cookie {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Cookie {
     fn default() -> Self {
@@ -50,6 +60,11 @@ impl Default for Cookie {
 pub struct Counter {
     #[offset(0)]
     pub n: i32,
+}
+impl CppMove for Counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Counter {
     fn default() -> Self {
@@ -123,7 +138,9 @@ pub trait CounterImpl {
 }
 impl CounterImpl for Ptr<Counter> {
     fn inc(&self) {
-        field!((*self), n).with_mut(|__v| __v.prefix_inc());
+        field!((*self), n).with_mut(|__v| {
+            __v.prefix_inc();
+        });
     }
 }
 pub fn __cpp2rust_init_globals() {}

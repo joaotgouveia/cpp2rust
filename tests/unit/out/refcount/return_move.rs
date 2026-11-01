@@ -15,6 +15,11 @@ pub struct node {
     #[byte_size(8)]
     pub next: Ptr<node>,
 }
+impl CppMove for node {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct pair_t {
@@ -23,6 +28,11 @@ pub struct pair_t {
     #[offset(8)]
     #[byte_size(8)]
     pub n: Ptr<node>,
+}
+impl CppMove for pair_t {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 thread_local!(
     pub static global_node_0: Value<Ptr<node>> = Rc::new(RefCell::new(Ptr::<node>::null()));

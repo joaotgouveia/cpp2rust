@@ -1,6 +1,17 @@
 #include <cassert>
 #include <cstdint>
+#include <cstdio>
 #include <string>
+
+std::string counted_string(int &calls) {
+  ++calls;
+  return "hello";
+}
+
+std::string &counted_ref(std::string &s, int &calls) {
+  ++calls;
+  return s;
+}
 
 int main() {
   std::string empty;
@@ -141,6 +152,29 @@ int main() {
   assert(diff < 0);
   diff += 6;
   assert(diff == 3);
+
+  std::size_t substr_pos = 1;
+  auto once = s1.substr(substr_pos++, 2);
+  printf("position: %s %zu\n", once.c_str(), substr_pos);
+  std::size_t substr_count = 2;
+  once = s1.substr(1, substr_count++);
+  printf("count: %s %zu\n", once.c_str(), substr_count);
+  int receiver_calls = 0;
+  once = counted_string(receiver_calls).substr(1, 2);
+  printf("receiver: %s %d\n", once.c_str(), receiver_calls);
+  int ref_calls = 0;
+  std::string target = "ab";
+  counted_ref(target, ref_calls).resize(1);
+  counted_ref(target, ref_calls).at(0) = 'A';
+  printf("reference receiver: %s %d\n", target.c_str(), ref_calls);
+  std::string targets[2] = {"cd", "ef"};
+  int target_index = 0;
+  targets[target_index++].resize(1);
+  printf("element receiver: %s %s %d\n", targets[0].c_str(), targets[1].c_str(),
+         target_index);
+  receiver_calls = 0;
+  char before_end = *(counted_string(receiver_calls).end() - 2);
+  printf("temporary end: %c %d\n", before_end, receiver_calls);
 
   // FIXME
   auto t0 = s1.length();

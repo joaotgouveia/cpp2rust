@@ -4,9 +4,10 @@
 use cfg_expr::Expression;
 use cfg_expr::expr::{Predicate, TargetPredicate};
 use ra_ap_syntax::ast::{
-    HasArgList, HasAttrs, HasGenericArgs, HasGenericParams, HasName, HasTypeBounds,
+    HasArgList, HasAttrs, HasGenericArgs, HasGenericParams, HasLoopBody, HasName, HasTypeBounds,
+    IsString,
 };
-use ra_ap_syntax::{AstNode, SyntaxKind, ast, match_ast};
+use ra_ap_syntax::{AstNode, AstToken, SyntaxKind, ast, match_ast};
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
 
@@ -40,6 +41,63 @@ fn pointer_flags(ty: &ast::Type) -> (bool, bool) {
         "type cannot be both refcount and unsafe pointer"
     );
     flags
+}
+
+fn cpp_type_of(ty: &ast::Type) -> Option<String> {
+    let ast::Type::MacroType(macro_type) = ty else {
+        return None;
+    };
+    let call = macro_type.macro_call()?;
+    if call.path()?.segment()?.name_ref()?.text() != "cpp_type" {
+        return None;
+    }
+    let token = call
+        .token_tree()?
+        .syntax()
+        .descendants_with_tokens()
+        .filter_map(|element| element.into_token())
+        .find(|token| token.kind() == SyntaxKind::STRING)
+        .expect("cpp_type! must start with a string literal");
+    let string = ast::String::cast(token).expect("cpp_type! literal is not a string");
+    let text = string.text_without_quotes();
+    assert!(
+        !text.contains('\\'),
+        "cpp_type! literal must not contain escapes"
+    );
+    Some(text.to_string())
+}
+
+/// The generic a pointer type points to (`T1` of `*mut T1`, `Ptr<T1>`), if
+/// the pointee is a bare generic.
+fn pointee_generic(ty: &ast::Type) -> Option<i32> {
+    let pointee = match ty {
+        ast::Type::PtrType(ptr) => ptr.ty()?,
+        ast::Type::PathType(path) => {
+            let segment = path.path()?.segment()?;
+            if segment.name_ref()?.text() != "Ptr" {
+                return None;
+            }
+            match segment.generic_arg_list()?.generic_args().next()? {
+                ast::GenericArg::TypeArg(arg) => arg.ty()?,
+                _ => return None,
+            }
+        }
+        ast::Type::RefType(r) => return pointee_generic(&r.ty()?),
+        _ => return None,
+    };
+    let ast::Type::PathType(path) = pointee else {
+        return None;
+    };
+    let path = path.path()?;
+    if path.qualifier().is_some() {
+        return None;
+    }
+    let segment = path.segment()?;
+    if segment.generic_arg_list().is_some() {
+        return None;
+    }
+    let name = segment.name_ref()?.text().to_string();
+    name.strip_prefix('T')?.parse().ok()
 }
 
 fn is_va_args_type(ty: &ast::Type) -> bool {
@@ -244,6 +302,7 @@ impl<'a> FragmentCtx<'a> {
                         arg: token.text()[1..].parse().unwrap_or(0),
                         access,
                         is_index_base: false,
+                        conditional: Self::is_conditional(token),
                     },
                 });
                 return;
@@ -258,6 +317,35 @@ impl<'a> FragmentCtx<'a> {
             }
         }
         self.text_buf.push_str(token.text());
+    }
+
+    /// Whether a token is in a loop, a closure or a branch, which may evaluate
+    /// it other than once.
+    fn is_conditional(token: &ra_ap_syntax::SyntaxToken) -> bool {
+        fn contains(node: Option<impl AstNode>, token: &ra_ap_syntax::SyntaxToken) -> bool {
+            node.is_some_and(|node| {
+                node.syntax()
+                    .text_range()
+                    .contains_range(token.text_range())
+            })
+        }
+        token.parent_ancestors().any(|node| {
+            match_ast! {
+                match node {
+                    ast::ClosureExpr(_) => true,
+                    ast::LoopExpr(_) => true,
+                    ast::WhileExpr(_) => true,
+                    ast::ForExpr(it) => contains(it.loop_body(), token),
+                    ast::IfExpr(it) => !contains(it.condition(), token),
+                    ast::MatchExpr(it) => !contains(it.expr(), token),
+                    ast::BinExpr(it) => {
+                        matches!(it.op_kind(), Some(ast::BinaryOp::LogicOp(_)))
+                            && contains(it.rhs(), token)
+                    },
+                    _ => false,
+                }
+            }
+        })
     }
 
     fn generic_of_path(&self, path: &ast::Path) -> Option<i32> {
@@ -311,18 +399,27 @@ impl<'a> FragmentCtx<'a> {
         );
         self.flush_text();
 
+        // A chain of calls on a receiver is one access to it, e.g.,
+        // `a0.iter_inc().clone()` borrows a0 for the whole chain.
+        let mut chain = vec![call.clone()];
+        while let Some(ast::Expr::MethodCallExpr(inner)) = chain.last().unwrap().receiver() {
+            chain.push(inner);
+        }
+
         let receiver = {
             let mut receiver_ctx = FragmentCtx::new(self.builder, self.params, self.generic_names);
             receiver_ctx.visit(ra_ap_syntax::NodeOrToken::Node(
-                call.receiver().unwrap().syntax().clone(),
+                chain.last().unwrap().receiver().unwrap().syntax().clone(),
             ));
             receiver_ctx.finish()
         };
 
         let body = {
             let mut body_ctx = FragmentCtx::new(self.builder, self.params, self.generic_names);
-            for child in call.syntax().children_with_tokens().skip(1) {
-                body_ctx.visit(child);
+            for call in chain.iter().rev() {
+                for child in call.syntax().children_with_tokens().skip(1) {
+                    body_ctx.visit(child);
+                }
             }
             body_ctx.finish()
         };
@@ -338,9 +435,11 @@ struct ParamInfo {
     ty: String,
     is_refcount_pointer: bool,
     is_unsafe_pointer: bool,
+    pointee_generic: Option<i32>,
     is_mut_ref: bool,
     is_va_args: bool,
     is_init: bool,
+    cpp_type: Option<String>,
 }
 
 struct FnIrBuilder<'a> {
@@ -376,14 +475,21 @@ impl<'a> FnIrBuilder<'a> {
                 "variadic argument parameter must be named `va`, found `{name}`"
             );
             let is_init = name == "init";
+            let cpp_type = cpp_type_of(&ty);
+            assert!(
+                cpp_type.is_none() || is_init,
+                "cpp_type! is only allowed as the type of `init`, found on `{name}`"
+            );
             params.push(ParamInfo {
                 name,
                 ty: ty.syntax().text().to_string(),
                 is_refcount_pointer,
                 is_unsafe_pointer,
+                pointee_generic: pointee_generic(&ty),
                 is_mut_ref: matches!(&ty, ast::Type::RefType(r) if r.mut_token().is_some()),
                 is_va_args,
                 is_init,
+                cpp_type,
             });
         }
         assert!(
@@ -408,7 +514,9 @@ impl<'a> FnIrBuilder<'a> {
                 ty: ty_str,
                 is_refcount_pointer,
                 is_unsafe_pointer,
+                pointee_generic: pointee_generic(&ty),
                 derives: Vec::new(),
+                cpp_type: None,
             })
         }
     }
@@ -449,9 +557,16 @@ impl<'a> FnIrBuilder<'a> {
 
         if let Some(gpl) = self.fn_item.generic_param_list() {
             for param in gpl.generic_params() {
-                if let ast::GenericParam::TypeParam(tp) = param {
-                    let name = tp.name().map(|n| n.text().to_string()).unwrap_or_default();
-                    generics.insert(name, extract_bounds(tp.type_bound_list()));
+                match param {
+                    ast::GenericParam::TypeParam(tp) => {
+                        let name = tp.name().map(|n| n.text().to_string()).unwrap_or_default();
+                        generics.insert(name, extract_bounds(tp.type_bound_list()));
+                    }
+                    ast::GenericParam::ConstParam(cp) => {
+                        let name = cp.name().map(|n| n.text().to_string()).unwrap_or_default();
+                        generics.insert(name, Vec::new());
+                    }
+                    _ => {}
                 }
             }
         }
@@ -616,7 +731,7 @@ impl<'a> FnIrBuilder<'a> {
 
         let params_map: BTreeMap<String, TypeInfo> = params
             .iter()
-            .filter(|p| !p.is_va_args && !p.is_init)
+            .filter(|p| !p.is_va_args)
             .map(|p| {
                 (
                     p.name.clone(),
@@ -624,7 +739,9 @@ impl<'a> FnIrBuilder<'a> {
                         ty: p.ty.clone(),
                         is_refcount_pointer: p.is_refcount_pointer,
                         is_unsafe_pointer: p.is_unsafe_pointer,
+                        pointee_generic: p.pointee_generic,
                         derives: Vec::new(),
+                        cpp_type: p.cpp_type.clone(),
                     },
                 )
             })
@@ -734,7 +851,9 @@ impl<'a> TypeIrBuilder<'a> {
                 ty: ty.syntax().text().to_string(),
                 is_refcount_pointer,
                 is_unsafe_pointer,
+                pointee_generic: pointee_generic(&ty),
                 derives: Vec::new(),
+                cpp_type: None,
             },
         }
     }

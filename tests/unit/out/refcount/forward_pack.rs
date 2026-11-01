@@ -57,6 +57,11 @@ impl Clone for Tracked {
         Tracked::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Tracked {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn chosen_overload_0(_a0: Ptr<Tracked>) -> Overload {
     return Overload_kLvalueOverload;
 }
@@ -143,6 +148,11 @@ impl Pair {
             a: Tracked::move_from({ field_ptr!(_a0, a) }),
             b: Tracked::move_from({ field_ptr!(_a0, b) }),
         }
+    }
+}
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn forward_pack_into_ctor_8(args_0: Ptr<Tracked>, args_1: Ptr<Tracked>) -> Pair {

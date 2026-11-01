@@ -62,8 +62,8 @@ std::string MapInitializer(Converter &converter, clang::QualType qual_type) {
   auto [rule, subs] =
       RuleRegistry::Search(converter.GetASTContext(), qual_type);
   if (rule && !rule->initializer.empty()) {
-    return converter.ConvertIRFragment(rule->initializer, subs, nullptr,
-                                       nullptr, 0, nullptr);
+    return converter.ConvertIRFragment(rule->initializer, subs, nullptr, {},
+                                       nullptr);
   }
   return {};
 }
@@ -72,11 +72,6 @@ std::string GetParamType(Converter &converter, const clang::Expr *expr,
                          unsigned index) {
   auto [rule, subs] = RuleRegistry::Search(converter.GetASTContext(), expr);
   return Matcher::InstantiateTgt(converter, subs, rule->params.at(index).type);
-}
-
-std::string GetReturnType(Converter &converter, const clang::Expr *expr) {
-  auto [rule, subs] = RuleRegistry::Search(converter.GetASTContext(), expr);
-  return Matcher::InstantiateTgt(converter, subs, rule->return_type.type);
 }
 
 } // namespace cpp2rust::Mapper

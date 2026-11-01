@@ -22,6 +22,11 @@ impl CppEq for X {
         ((operator_eq_1(__lhs.read(), __rhs.read())) != 0)
     }
 }
+impl CppMove for X {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_1(mut a: X, mut b: X) -> i32 {
     return if (a.v == b.v) { 2 } else { 0 };
 }
@@ -46,11 +51,21 @@ pub struct Result {
     #[offset(0)]
     pub r: i32,
 }
+impl CppMove for Result {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Custom {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for Custom {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -68,6 +83,11 @@ impl CppEq for Mixed {
         ((MixedImpl::operator_eq(__lhs, __rhs.clone())) != 0)
     }
 }
+impl CppMove for Mixed {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(bool, to_bool)]
 #[byte_size(1)]
@@ -78,6 +98,11 @@ pub struct MyBool {
 impl MyBool {
     pub fn new(mut v: bool) -> Self {
         Self { value: v }
+    }
+}
+impl CppMove for MyBool {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -100,6 +125,11 @@ impl CppEq for Boolish {
             let __cmp = operator_eq_7(__lhs.read(), __rhs.read());
             MyBoolImpl::to_bool(&Rc::new(RefCell::new(__cmp)).as_pointer())
         }
+    }
+}
+impl CppMove for Boolish {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_eq_7(mut a: Boolish, mut b: Boolish) -> MyBool {
@@ -135,6 +165,11 @@ impl CppEq for RefInt {
             let __cmp = RefIntImpl::operator_eq(__lhs, __rhs.clone());
             RefBoolImpl::to_bool(&__cmp)
         }
+    }
+}
+impl CppMove for RefInt {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

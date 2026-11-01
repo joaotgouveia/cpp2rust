@@ -12,6 +12,11 @@ pub struct Level0_Level1_1_Level2_1_Level3_1 {
     #[offset(0)]
     pub x1: i32,
 }
+impl CppMove for Level0_Level1_1_Level2_1_Level3_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Level0_Level1_1_Level2_1_Level3_2 {
@@ -20,17 +25,32 @@ pub struct Level0_Level1_1_Level2_1_Level3_2 {
     #[offset(4)]
     pub x2: i32,
 }
+impl CppMove for Level0_Level1_1_Level2_1_Level3_2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Level0_Level1_1_Level2_1 {
     #[offset(0)]
     pub x1: i32,
 }
+impl CppMove for Level0_Level1_1_Level2_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Level0_Level1_1 {
     #[offset(0)]
     pub x1: i32,
+}
+impl CppMove for Level0_Level1_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -40,9 +60,19 @@ pub struct Level0_Level1_2 {
     #[offset(4)]
     pub x2: i32,
 }
+impl CppMove for Level0_Level1_2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Level0 {}
+impl CppMove for Level0 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

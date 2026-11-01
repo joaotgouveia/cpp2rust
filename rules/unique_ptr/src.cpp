@@ -5,15 +5,13 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-
 template <typename T1> using t1 = std::unique_ptr<T1>;
 template <typename T1> using t2 = std::unique_ptr<T1[]>;
 template <typename T1> using t3 = typename std::unique_ptr<T1>::pointer;
 template <typename T1> using t4 = typename std::unique_ptr<T1[]>::pointer;
 
-template <typename T1> std::unique_ptr<T1[]> f1(std::size_t n) {
-  return std::make_unique<T1[]>(n);
+template <typename T1> auto f1(std::size_t a0) {
+  return std::make_unique<T1>(a0);
 }
 
 template <typename T1> T1 *f2(const std::unique_ptr<T1> &o) { return o.get(); }
@@ -38,9 +36,8 @@ template <typename T1> T1 *f7(const std::unique_ptr<T1[]> &o) {
   return o.get();
 }
 
-template <typename T1, typename... Args>
-std::unique_ptr<T1> f8(Init<T1, Args> &&...args) {
-  return std::make_unique<T1>(std::forward<Args>(args)...);
+template <typename T1, typename... T2> std::unique_ptr<T1> f8(T2 &&...a0) {
+  return std::make_unique<T1>(std::forward<T2>(a0)...);
 }
 
 template <typename T1> void f9(std::unique_ptr<T1[]> &o) {
@@ -92,4 +89,12 @@ template <typename T1> bool f20(const std::unique_ptr<T1> &o, std::nullptr_t) {
 
 template <typename T1> bool f21(const std::unique_ptr<T1> &o, std::nullptr_t) {
   return o != nullptr;
+}
+
+template <typename T1> bool f22(const std::unique_ptr<T1> &o) {
+  return static_cast<bool>(o);
+}
+
+template <typename T1> bool f23(const std::unique_ptr<T1[]> &o) {
+  return static_cast<bool>(o);
 }

@@ -1,6 +1,7 @@
 // Copyright (c) 2022-present INESC-ID.
 // Distributed under the MIT license that can be found in the LICENSE file.
 
+use crate::reinterpret::ByteRepr;
 use crate::{
     CChar, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value,
 };
@@ -33,14 +34,14 @@ impl<T: CChar> Iterator for CStringIterator<T> {
 
 pub trait CppIterator<T>: Clone {
     fn iter_deref(&self) -> Ptr<T>;
-    fn iter_inc(&mut self) -> Self;
+    fn iter_inc(&mut self) -> &mut Self;
     fn iter_post_inc(&mut self) -> Self;
 }
 
 pub trait CppInputIterator<T>: CppIterator<T> + PartialEq {}
 
 pub trait CppBidirectionalIterator<T>: CppInputIterator<T> {
-    fn iter_dec(&mut self) -> Self;
+    fn iter_dec(&mut self) -> &mut Self;
     fn iter_post_dec(&mut self) -> Self;
 }
 
@@ -53,14 +54,14 @@ pub trait CppRandomAccessIterator<T>: CppBidirectionalIterator<T> + PartialOrd {
 
 pub trait UnsafeCppIterator<T>: Clone {
     fn iter_deref(&self) -> *mut T;
-    fn iter_inc(&mut self) -> Self;
+    fn iter_inc(&mut self) -> &mut Self;
     fn iter_post_inc(&mut self) -> Self;
 }
 
 pub trait UnsafeCppInputIterator<T>: UnsafeCppIterator<T> + PartialEq {}
 
 pub trait UnsafeCppBidirectionalIterator<T>: UnsafeCppInputIterator<T> {
-    fn iter_dec(&mut self) -> Self;
+    fn iter_dec(&mut self) -> &mut Self;
     fn iter_post_dec(&mut self) -> Self;
 }
 
@@ -75,7 +76,7 @@ impl<T> CppIterator<T> for Ptr<T> {
     fn iter_deref(&self) -> Ptr<T> {
         self.clone()
     }
-    fn iter_inc(&mut self) -> Self {
+    fn iter_inc(&mut self) -> &mut Self {
         PrefixInc::prefix_inc(self)
     }
     fn iter_post_inc(&mut self) -> Self {
@@ -86,7 +87,7 @@ impl<T> CppIterator<T> for Ptr<T> {
 impl<T> CppInputIterator<T> for Ptr<T> {}
 
 impl<T> CppBidirectionalIterator<T> for Ptr<T> {
-    fn iter_dec(&mut self) -> Self {
+    fn iter_dec(&mut self) -> &mut Self {
         PrefixDec::prefix_dec(self)
     }
     fn iter_post_dec(&mut self) -> Self {
@@ -116,9 +117,9 @@ macro_rules! raw_pointer_iterator {
             fn iter_deref(&self) -> *mut T {
                 $deref(*self)
             }
-            fn iter_inc(&mut self) -> Self {
+            fn iter_inc(&mut self) -> &mut Self {
                 *self = self.wrapping_add(1);
-                *self
+                self
             }
             fn iter_post_inc(&mut self) -> Self {
                 let old = *self;
@@ -130,9 +131,9 @@ macro_rules! raw_pointer_iterator {
         impl<T> UnsafeCppInputIterator<T> for $ptr {}
 
         impl<T> UnsafeCppBidirectionalIterator<T> for $ptr {
-            fn iter_dec(&mut self) -> Self {
+            fn iter_dec(&mut self) -> &mut Self {
                 *self = self.wrapping_sub(1);
-                *self
+                self
             }
             fn iter_post_dec(&mut self) -> Self {
                 let old = *self;
@@ -187,6 +188,8 @@ macro_rules! uninhabited_iterator {
             }
         }
 
+        impl<T: 'static> ByteRepr for $name<T> {}
+
         impl<T> PartialEq for $name<T> {
             fn eq(&self, _: &Self) -> bool {
                 self.never()
@@ -201,7 +204,7 @@ macro_rules! uninhabited_iterator_ops {
             fn iter_deref(&self) -> $ptr {
                 self.never()
             }
-            fn iter_inc(&mut self) -> Self {
+            fn iter_inc(&mut self) -> &mut Self {
                 self.never()
             }
             fn iter_post_inc(&mut self) -> Self {
@@ -248,6 +251,8 @@ impl<T> Clone for BidirectionalIterator<T> {
     }
 }
 
+impl<T: 'static> ByteRepr for BidirectionalIterator<T> {}
+
 impl<T> PartialEq for BidirectionalIterator<T> {
     fn eq(&self, other: &Self) -> bool {
         match (self, other) {
@@ -262,11 +267,11 @@ impl<T> CppIterator<T> for BidirectionalIterator<T> {
             Self::Map(node) => MapNode::value(node),
         }
     }
-    fn iter_inc(&mut self) -> Self {
+    fn iter_inc(&mut self) -> &mut Self {
         match self {
             Self::Map(node) => *node = MapNode::next(node),
         }
-        self.clone()
+        self
     }
     fn iter_post_inc(&mut self) -> Self {
         let old = self.clone();
@@ -278,11 +283,11 @@ impl<T> CppIterator<T> for BidirectionalIterator<T> {
 impl<T> CppInputIterator<T> for BidirectionalIterator<T> {}
 
 impl<T> CppBidirectionalIterator<T> for BidirectionalIterator<T> {
-    fn iter_dec(&mut self) -> Self {
+    fn iter_dec(&mut self) -> &mut Self {
         match self {
             Self::Map(node) => *node = MapNode::prev(node),
         }
-        self.clone()
+        self
     }
     fn iter_post_dec(&mut self) -> Self {
         let old = self.clone();
@@ -309,6 +314,8 @@ impl<T> Clone for UnsafeBidirectionalIterator<T> {
     }
 }
 
+impl<T: 'static> ByteRepr for UnsafeBidirectionalIterator<T> {}
+
 impl<T> PartialEq for UnsafeBidirectionalIterator<T> {
     fn eq(&self, other: &Self) -> bool {
         match (self, other) {
@@ -323,11 +330,11 @@ impl<T> UnsafeCppIterator<T> for UnsafeBidirectionalIterator<T> {
             Self::Map(node) => UnsafeMapNode::value(*node),
         }
     }
-    fn iter_inc(&mut self) -> Self {
+    fn iter_inc(&mut self) -> &mut Self {
         match self {
             Self::Map(node) => *node = UnsafeMapNode::next(*node),
         }
-        self.clone()
+        self
     }
     fn iter_post_inc(&mut self) -> Self {
         let old = self.clone();
@@ -339,11 +346,11 @@ impl<T> UnsafeCppIterator<T> for UnsafeBidirectionalIterator<T> {
 impl<T> UnsafeCppInputIterator<T> for UnsafeBidirectionalIterator<T> {}
 
 impl<T> UnsafeCppBidirectionalIterator<T> for UnsafeBidirectionalIterator<T> {
-    fn iter_dec(&mut self) -> Self {
+    fn iter_dec(&mut self) -> &mut Self {
         match self {
             Self::Map(node) => *node = UnsafeMapNode::prev(*node),
         }
-        self.clone()
+        self
     }
     fn iter_post_dec(&mut self) -> Self {
         let old = self.clone();
@@ -372,6 +379,8 @@ macro_rules! random_access_iterator {
             }
         }
 
+        impl<T: 'static> ByteRepr for $name<T> {}
+
         impl<T> PartialEq for $name<T> {
             fn eq(&self, other: &Self) -> bool {
                 match (self, other) {
@@ -394,10 +403,13 @@ macro_rules! random_access_iterator {
                     Self::Vec(p) => $iter::<T>::iter_deref(p),
                 }
             }
-            fn iter_inc(&mut self) -> Self {
+            fn iter_inc(&mut self) -> &mut Self {
                 match self {
-                    Self::Vec(p) => Self::Vec($iter::<T>::iter_inc(p)),
+                    Self::Vec(p) => {
+                        $iter::<T>::iter_inc(p);
+                    }
                 }
+                self
             }
             fn iter_post_inc(&mut self) -> Self {
                 match self {
@@ -409,10 +421,13 @@ macro_rules! random_access_iterator {
         impl<T> $input<T> for $name<T> {}
 
         impl<T> $bidi<T> for $name<T> {
-            fn iter_dec(&mut self) -> Self {
+            fn iter_dec(&mut self) -> &mut Self {
                 match self {
-                    Self::Vec(p) => Self::Vec($bidi::<T>::iter_dec(p)),
+                    Self::Vec(p) => {
+                        $bidi::<T>::iter_dec(p);
+                    }
                 }
+                self
             }
             fn iter_post_dec(&mut self) -> Self {
                 match self {

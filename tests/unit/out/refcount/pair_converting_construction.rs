@@ -18,12 +18,22 @@ impl Celsius {
         Self { degrees: d }
     }
 }
+impl CppMove for Celsius {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(i32, to_i32)]
 #[byte_size(4)]
 pub struct Meters {
     #[offset(0)]
     pub value: i32,
+}
+impl CppMove for Meters {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Celsius, new, ptr)]
@@ -37,6 +47,11 @@ impl Label {
         Self {
             id: c.with(|__s| __s.degrees),
         }
+    }
+}
+impl CppMove for Label {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
@@ -63,6 +78,11 @@ impl Owner {
         }
     }
 }
+impl CppMove for Owner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Celsius, new, value)]
 #[byte_size(4)]
@@ -73,6 +93,11 @@ pub struct Holder {
 impl Holder {
     pub fn new(mut c: Celsius) -> Self {
         Self { value: c.degrees }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom)]
@@ -88,6 +113,11 @@ impl Fallback {
         Self { value: v }
     }
 }
+impl CppMove for Fallback {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Fallback {
     fn default() -> Self {
         { Fallback::new(None) }
@@ -98,6 +128,11 @@ impl Default for Fallback {
 pub struct Counter {
     #[offset(0)]
     pub hits: i32,
+}
+impl CppMove for Counter {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Counter, new, mut_ptr)]
@@ -115,6 +150,11 @@ impl Observer {
         __this
     }
 }
+impl CppMove for Observer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Tag {
     pub fn new(u: Ptr<Celsius>) -> Self {
         Self {
@@ -129,6 +169,11 @@ pub struct Tag {
     #[offset(0)]
     pub code: i32,
 }
+impl CppMove for Tag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(Ptr< i8  >  , new, value)]
 #[byte_size(4)]
@@ -141,9 +186,16 @@ impl Name {
         let __this: Value<Name> = Rc::new(RefCell::new(Self { len: 0 }));
         let this: Ptr<Name> = __this.as_pointer();
         'loop_: while ((elem!(s, this.with(|__s| __s.len)).read()) != 0) {
-            field!(this, len).with_mut(|__v| __v.prefix_inc());
+            field!(this, len).with_mut(|__v| {
+                __v.prefix_inc();
+            });
         }
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
+    }
+}
+impl CppMove for Name {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {
@@ -172,13 +224,23 @@ fn main_0() -> i32 {
     )));
     assert!(((*(*from_operators.borrow()).0.borrow()) == 7));
     assert!(((*(*from_operators.borrow()).1.borrow()) == 7_i64));
-    let from_moved_pair: Value<(Value<i64>, Value<f64>)> = Rc::new(RefCell::new({
-        let __a0 = (Rc::new(RefCell::new(3)), Rc::new(RefCell::new(4)));
-        (
-            Rc::new(RefCell::new(((__a0.0.as_pointer().read()) as i64))),
-            Rc::new(RefCell::new(((__a0.1.as_pointer().read()) as f64))),
-        )
-    }));
+    let from_moved_pair: Value<(Value<i64>, Value<f64>)> = Rc::new(RefCell::new(
+        match (Rc::new(RefCell::new((
+            Rc::new(RefCell::new(3)),
+            Rc::new(RefCell::new(4)),
+        )))
+        .as_pointer(),)
+        {
+            (__tmp_0,) => (
+                Rc::new(RefCell::new(
+                    (((*__tmp_0.upgrade().deref()).0.as_pointer().read()) as i64),
+                )),
+                Rc::new(RefCell::new(
+                    (((*__tmp_0.upgrade().deref()).1.as_pointer().read()) as f64),
+                )),
+            ),
+        },
+    ));
     assert!(((*(*from_moved_pair.borrow()).0.borrow()) == 3_i64));
     assert!(((*(*from_moved_pair.borrow()).1.borrow()) == 4_f64));
     let ints: Value<(Value<i32>, Value<i32>)> = Rc::new(RefCell::new((
@@ -231,20 +293,23 @@ fn main_0() -> i32 {
     assert!(({ (*(*from_record_pair.borrow()).0.borrow()).id } == 10));
     assert!(({ (*(*from_record_pair.borrow()).1.borrow()).copied } == 11));
     assert!(({ (*(*from_record_pair.borrow()).1.borrow()).taken } == 0));
-    let from_moved_record_pair: Value<(Value<Label>, Value<Owner>)> = Rc::new(RefCell::new({
-        let __a0 = (
+    let from_moved_record_pair: Value<(Value<Label>, Value<Owner>)> = Rc::new(RefCell::new(
+        match (Rc::new(RefCell::new((
             Rc::new(RefCell::new(Celsius::new({ 12 }))),
             Rc::new(RefCell::new(Celsius::new({ 13 }))),
-        );
-        (
-            Rc::new(RefCell::new(<Label as CppFrom<Celsius>>::cpp_from_move(
-                __a0.0.as_pointer(),
-            ))),
-            Rc::new(RefCell::new(<Owner as CppFrom<Celsius>>::cpp_from_move(
-                __a0.1.as_pointer(),
-            ))),
-        )
-    }));
+        )))
+        .as_pointer(),)
+        {
+            (__tmp_1,) => (
+                Rc::new(RefCell::new(<Label as CppFrom<Celsius>>::cpp_from_move(
+                    (*__tmp_1.upgrade().deref()).0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<Owner as CppFrom<Celsius>>::cpp_from_move(
+                    (*__tmp_1.upgrade().deref()).1.as_pointer(),
+                ))),
+            ),
+        },
+    ));
     assert!(({ (*(*from_moved_record_pair.borrow()).0.borrow()).id } == 12));
     assert!(({ (*(*from_moved_record_pair.borrow()).1.borrow()).taken } == 13));
     assert!(({ (*(*from_moved_record_pair.borrow()).1.borrow()).copied } == 0));
@@ -261,20 +326,23 @@ fn main_0() -> i32 {
     }));
     assert!(({ (*(*from_by_value_pair.borrow()).0.borrow()).value } == 10));
     assert!(({ (*(*from_by_value_pair.borrow()).1.borrow()).value } == 11));
-    let from_moved_by_value_pair: Value<(Value<Holder>, Value<Holder>)> = Rc::new(RefCell::new({
-        let __a0 = (
+    let from_moved_by_value_pair: Value<(Value<Holder>, Value<Holder>)> = Rc::new(RefCell::new(
+        match (Rc::new(RefCell::new((
             Rc::new(RefCell::new(Celsius::new({ 14 }))),
             Rc::new(RefCell::new(Celsius::new({ 15 }))),
-        );
-        (
-            Rc::new(RefCell::new(<Holder as CppFrom<Celsius>>::cpp_from_move(
-                __a0.0.as_pointer(),
-            ))),
-            Rc::new(RefCell::new(<Holder as CppFrom<Celsius>>::cpp_from_move(
-                __a0.1.as_pointer(),
-            ))),
-        )
-    }));
+        )))
+        .as_pointer(),)
+        {
+            (__tmp_2,) => (
+                Rc::new(RefCell::new(<Holder as CppFrom<Celsius>>::cpp_from_move(
+                    (*__tmp_2.upgrade().deref()).0.as_pointer(),
+                ))),
+                Rc::new(RefCell::new(<Holder as CppFrom<Celsius>>::cpp_from_move(
+                    (*__tmp_2.upgrade().deref()).1.as_pointer(),
+                ))),
+            ),
+        },
+    ));
     assert!(({ (*(*from_moved_by_value_pair.borrow()).0.borrow()).value } == 14));
     assert!(({ (*(*from_moved_by_value_pair.borrow()).1.borrow()).value } == 15));
     let mut defaulted: Fallback = Fallback::new(None);

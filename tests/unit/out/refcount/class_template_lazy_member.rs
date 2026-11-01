@@ -12,11 +12,21 @@ pub struct Point {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for Point {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Box_int_ {
     #[offset(0)]
     pub val: i32,
+}
+impl CppMove for Box_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -25,11 +35,21 @@ pub struct Box_Point_ {
     #[byte_size(4)]
     pub val: Point,
 }
+impl CppMove for Box_Point_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Deduced_int_ {
     #[offset(0)]
     pub val: i32,
+}
+impl CppMove for Deduced_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -37,6 +57,11 @@ pub struct Deduced_Point_ {
     #[offset(0)]
     #[byte_size(4)]
     pub val: Point,
+}
+impl CppMove for Deduced_Point_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

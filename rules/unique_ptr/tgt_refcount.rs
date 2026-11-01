@@ -21,9 +21,9 @@ fn t4<T1>() -> Ptr<T1> {
     Ptr::null()
 }
 
-fn f1<T1: Default>(a0: usize) -> Option<Value<Box<[T1]>>> {
+fn f1<T1: CppArray<T2>, T2: Default>(a0: usize) -> Option<Value<Box<[T2]>>> {
     Some(Rc::new(RefCell::new(
-        (0..a0).map(|_| <T1>::default()).collect::<Box<[_]>>(),
+        (0..a0).map(|_| <T2>::default()).collect::<Box<[_]>>(),
     )))
 }
 
@@ -105,5 +105,13 @@ fn f20<T1>(a0: Option<Value<T1>>) -> bool {
 }
 
 fn f21<T1>(a0: Option<Value<T1>>) -> bool {
+    a0.is_some()
+}
+
+fn f22<T1>(a0: Option<Value<T1>>) -> bool {
+    a0.is_some()
+}
+
+fn f23<T1>(a0: Option<Value<Box<[T1]>>>) -> bool {
     a0.is_some()
 }

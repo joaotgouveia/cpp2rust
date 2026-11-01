@@ -12,6 +12,11 @@ pub struct Test {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for Test {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn Update_0(t: Ptr<Test>) -> Ptr<Test> {
     let t: Value<Ptr<Test>> = Rc::new(RefCell::new(t));
     let mut x: i32 = 1;

@@ -20,6 +20,11 @@ impl MyContainer_int_ {
         }
     }
 }
+impl CppMove for MyContainer_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(24)]
 pub struct MyContainer_char_ {
@@ -32,6 +37,11 @@ impl MyContainer_char_ {
         Self {
             vec_: field!(_a0, vec_).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for MyContainer_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -48,6 +58,11 @@ impl MyContainer_float_ {
         }
     }
 }
+impl CppMove for MyContainer_float_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(2)]
 pub struct Boxed_short_ {
@@ -57,6 +72,11 @@ pub struct Boxed_short_ {
 impl Boxed_short_ {
     pub fn twice(mut v: i16) -> i16 {
         return (((v as i32) + (v as i32)) as i16);
+    }
+}
+impl CppMove for Boxed_short_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -70,6 +90,11 @@ impl Boxed_int_ {
         return (v + v);
     }
 }
+impl CppMove for Boxed_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Boxed_long_ {
@@ -81,6 +106,11 @@ impl Boxed_long_ {
         return (v + v);
     }
 }
+impl CppMove for Boxed_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Outer_int__Inner_int_ {
@@ -89,11 +119,21 @@ pub struct Outer_int__Inner_int_ {
     #[offset(4)]
     pub u: i32,
 }
+impl CppMove for Outer_int__Inner_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Outer_int_ {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for Outer_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
@@ -103,6 +143,11 @@ pub struct Outer_long__Inner_int_ {
     #[offset(8)]
     pub u: i32,
 }
+impl CppMove for Outer_long__Inner_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Outer_long__Inner_char_ {
@@ -111,17 +156,32 @@ pub struct Outer_long__Inner_char_ {
     #[offset(8)]
     pub u: i8,
 }
+impl CppMove for Outer_long__Inner_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Outer_long_ {
     #[offset(0)]
     pub v: i64,
 }
+impl CppMove for Outer_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Elem {
     #[offset(0)]
     pub i: i32,
+}
+impl CppMove for Elem {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

@@ -586,6 +586,20 @@ bool MovesRuleArg(clang::Expr *expr, unsigned arg_idx, clang::Expr *arg,
          IsUserDefinedDecl(record);
 }
 
+bool MovesLibraryArg(clang::ASTContext &ctx, clang::Expr *expr,
+                     unsigned arg_idx, clang::Expr *arg,
+                     TranslationRule::Access access) {
+  auto param_type = GetParamType(expr, arg_idx);
+  if (access != TranslationRule::Access::kMove || !param_type ||
+      !(*param_type)->isRValueReferenceType() ||
+      clang::isa<clang::MaterializeTemporaryExpr>(arg)) {
+    return false;
+  }
+  auto *record = arg->getType()->getAsCXXRecordDecl();
+  return record && !IsUserDefinedDecl(record) &&
+         !arg->getType().isTriviallyCopyableType(ctx);
+}
+
 clang::CXXConstructExpr *BuildMoveConstruction(clang::ASTContext &ctx,
                                                clang::Expr *expr,
                                                unsigned arg_idx,
@@ -2354,6 +2368,32 @@ bool NeedsRefBindingTemp(clang::ASTContext &ctx, const clang::Expr *arg,
   return param_type->getPointeeType().isConstQualified() &&
          NeedsImplicitScalarCast(ctx, arg->IgnoreImplicit()->getType(),
                                  param_type.getNonReferenceType());
+}
+
+std::optional<clang::QualType>
+GetRefBindingTempType(clang::ASTContext &ctx, const clang::CallExpr *call,
+                      unsigned i) {
+  auto *decl = call->getCalleeDecl();
+  auto *fn = decl ? decl->getAsFunction() : nullptr;
+  if (!fn || i >= call->getNumArgs() || i >= fn->getNumParams()) {
+    return std::nullopt;
+  }
+  auto param_type = fn->getParamDecl(i)->getType();
+  if (!NeedsRefBindingTemp(ctx, call->getArg(i), param_type)) {
+    return std::nullopt;
+  }
+  return param_type;
+}
+
+clang::Expr *IgnoreTransparentUnion(clang::Expr *expr) {
+  auto *literal = clang::dyn_cast<clang::CompoundLiteralExpr>(expr);
+  auto *record = literal ? literal->getType()->getAsRecordDecl() : nullptr;
+  if (!record || !record->hasAttr<clang::TransparentUnionAttr>()) {
+    return expr;
+  }
+  auto *init = clang::cast<clang::InitListExpr>(literal->getInitializer());
+  assert(init->getNumInits() == 1);
+  return init->getInit(0);
 }
 
 bool IsSizeType(clang::ASTContext &ctx, clang::QualType type) {

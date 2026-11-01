@@ -29,6 +29,11 @@ impl Elem {
         }
     }
 }
+impl CppMove for Elem {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Elem {
     fn default() -> Self {
         {
@@ -73,6 +78,11 @@ impl State {
         }
     }
 }
+impl CppMove for State {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for State {
     fn default() -> Self {
         {
@@ -81,7 +91,7 @@ impl Default for State {
                 grid: (0..2)
                     .map(|_| (0..3).map(|_| 0_i32).collect::<Box<[i32]>>())
                     .collect::<Box<[Box<[i32]>]>>(),
-                arr: std::array::from_fn::<_, 3_usize, _>(|_| 0_i32).to_vec(),
+                arr: std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
                 elems: Default::default(),
                 rows: Default::default(),
             }
@@ -283,14 +293,14 @@ pub trait ElemImpl {
 impl ElemImpl for Ptr<Elem> {
     fn move_assign(&self, _a0: Ptr<Elem>) -> Ptr<Elem> {
         field!((*self), id).write({ { (*_a0.upgrade().deref()).id } });
-        {
-            ((array_field_ptr!((*self), hist)) as Ptr<i32>)
-                .to_any()
-                .memcpy(
+        match ({ ((array_field_ptr!((*self), hist)) as Ptr<i32>).to_any() },) {
+            (mut __tmp_0,) => {
+                __tmp_0.memcpy(
                     &((array_field_ptr!(_a0, hist)) as Ptr<i32>).to_any(),
                     16_usize as usize,
                 );
-            ((array_field_ptr!((*self), hist)) as Ptr<i32>).to_any()
+                (__tmp_0).clone()
+            }
         };
         field_ref!((*self), coeffs)
             .as_pointer()
@@ -304,14 +314,14 @@ pub trait StateImpl {
 impl StateImpl for Ptr<State> {
     fn move_assign(&self, _a0: Ptr<State>) -> Ptr<State> {
         field!((*self), count).write({ { (*_a0.upgrade().deref()).count } });
-        {
-            ((array_field_ptr!((*self), grid)) as Ptr<Box<[i32]>>)
-                .to_any()
-                .memcpy(
+        match ({ ((array_field_ptr!((*self), grid)) as Ptr<Box<[i32]>>).to_any() },) {
+            (mut __tmp_1,) => {
+                __tmp_1.memcpy(
                     &((array_field_ptr!(_a0, grid)) as Ptr<Box<[i32]>>).to_any(),
                     24_usize as usize,
                 );
-            ((array_field_ptr!((*self), grid)) as Ptr<Box<[i32]>>).to_any()
+                (__tmp_1).clone()
+            }
         };
         field_ref!((*self), arr)
             .as_pointer()

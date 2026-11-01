@@ -31,6 +31,11 @@ pub struct HoldsEmpty {
     #[offset(0)]
     pub e: Empty,
 }
+impl CppMove for HoldsEmpty {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for HoldsEmpty {
     fn default() -> Self {
         {

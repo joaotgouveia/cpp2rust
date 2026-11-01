@@ -19,6 +19,11 @@ pub struct Vtable {
     #[byte_size(8)]
     pub destroy: FnPtr<fn(AnyPtr)>,
 }
+impl CppMove for Vtable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static storage_0: Value<i32> = Rc::new(RefCell::new(0_i32));
 );

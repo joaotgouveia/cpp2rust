@@ -166,6 +166,8 @@ public:
 
   void ConvertVarDeclInitializer(clang::VarDecl *decl);
 
+  bool ConvertConstexprScalarInit(clang::VarDecl *decl);
+
   virtual void ConvertGlobalVarDecl(clang::VarDecl *decl);
 
   virtual bool ConvertVarDeclSkipInit(clang::VarDecl *decl);
@@ -301,16 +303,17 @@ public:
     std::vector<std::string> materialized_refs_;
   };
 
+  // args are the arguments of expr, including its receiver.
   std::string
   ConvertIRFragment(const std::vector<TranslationRule::BodyFragment> &fragments,
                     llvm::ArrayRef<clang::TemplateArgument> bindings,
-                    clang::Expr *expr, clang::Expr **args, unsigned num_args,
+                    clang::Expr *expr, llvm::ArrayRef<clang::Expr *> args,
                     TempMaterializationCtx *ctx);
 
   std::string
   ConvertGenericCall(const TranslationRule::GenericCallFragment &call,
                      llvm::ArrayRef<clang::TemplateArgument> bindings,
-                     clang::Expr *expr, clang::Expr **args, unsigned num_args,
+                     clang::Expr *expr, llvm::ArrayRef<clang::Expr *> args,
                      TempMaterializationCtx *ctx);
 
   std::string ConvertConversion(clang::QualType to, clang::QualType from,
@@ -824,6 +827,9 @@ protected:
 
   virtual void AddCloneTrait(const clang::RecordDecl *decl);
 
+  // The C++ move of a record, for the rules that move values generically.
+  virtual void AddMoveTrait(const clang::RecordDecl *decl);
+
   virtual bool RecordImplementsClone(const clang::RecordDecl *decl);
 
   virtual void AddDefaultTrait(const clang::RecordDecl *decl);
@@ -865,6 +871,10 @@ protected:
   // Moves the value out of `arg`, leaving a default value behind.
   virtual std::string ConvertTake(clang::Expr *arg);
 
+  // Moves the value out of `arg`, an object of a library type, as its C++
+  // move constructor does.
+  virtual std::string ConvertLibraryMove(clang::Expr *arg);
+
   // The place of `arg`, which is borrowed mutably by a rule.
   virtual std::string ConvertBorrowMut(clang::Expr *arg);
 
@@ -873,11 +883,15 @@ protected:
   // closure parameter of its with_mut.
   std::vector<std::pair<std::string, std::string>> mut_borrows_;
 
+  // The variables that arguments of rules are bound to by value, whose
+  // address is not taken.
+  std::unordered_set<const clang::VarDecl *> bound_values_;
+
   std::string ConvertVariadicTail(clang::Expr *expr,
-                                  const std::vector<clang::Expr *> &all_args);
+                                  llvm::ArrayRef<clang::Expr *> all_args);
 
   std::string ConvertInitFragment(clang::Expr *expr,
-                                  const std::vector<clang::Expr *> &all_args);
+                                  llvm::ArrayRef<clang::Expr *> all_args);
 
   void ConvertConstructFromArgs(clang::QualType type,
                                 llvm::ArrayRef<clang::Expr *> args,
@@ -890,14 +904,21 @@ protected:
 
   virtual std::string ConvertMappedMethodCall(
       clang::Expr *expr, const TranslationRule::MethodCallFragment &mc,
-      llvm::ArrayRef<clang::TemplateArgument> bindings, clang::Expr **args,
-      unsigned num_args, TempMaterializationCtx *ctx);
+      llvm::ArrayRef<clang::TemplateArgument> bindings,
+      llvm::ArrayRef<clang::Expr *> args, TempMaterializationCtx *ctx);
 
   virtual std::string AccessLValueObject(clang::MemberExpr *member);
 
   virtual void ConvertGenericBinaryOperator(clang::BinaryOperator *expr);
 
   virtual bool IsReferenceType(const clang::Expr *expr) const;
+
+  bool ExprMapsValueToPointer(const clang::CallExpr *expr) const;
+  // A C++ reference to a proxy record (vector<bool>'s reference &) is that
+  // proxy itself, not a pointer to it.
+  virtual bool IsProxyReference(clang::QualType /*type*/) const {
+    return false;
+  }
 
   virtual bool RecordDerivesDefault(const clang::RecordDecl *decl);
 
@@ -913,9 +934,6 @@ protected:
                                  unsigned /*index*/) {
     return false;
   }
-
-  // Checks that the rule of expr returns the type that expr returns in C++.
-  virtual void CheckRuleReturnType(clang::Expr * /*expr*/) {}
 
   bool RecordHasCopyableFields(const clang::RecordDecl *decl);
 
@@ -1161,8 +1179,11 @@ protected:
                       std::optional<clang::QualType> implicit_convert_to = {});
   virtual std::string ConvertFreshObject(clang::Expr *expr);
 
-  virtual std::string ConvertPointerReceiver(clang::Expr *arg,
-                                             std::string_view param_type);
+  // A pointer of param_type to arg, which is converted to implicit_convert_to
+  // if it is a temporary.
+  virtual std::string
+  ConvertPointerReceiver(clang::Expr *arg, std::string_view param_type,
+                         std::optional<clang::QualType> implicit_convert_to);
 
   // A pointer to the elements of the container arg.
   virtual std::string ConvertElementPtr(clang::Expr *arg) {

@@ -53,6 +53,11 @@ impl Clone for Tracked {
         Tracked::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Tracked {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Tracked {
     fn default() -> Self {
         { Tracked::new_2() }
@@ -86,6 +91,11 @@ impl CppLess for Bag {
 impl CppEq for Bag {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_4(__lhs.clone(), __rhs.clone())
+    }
+}
+impl CppMove for Bag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn operator_lt_3(a: Ptr<Bag>, b: Ptr<Bag>) -> bool {

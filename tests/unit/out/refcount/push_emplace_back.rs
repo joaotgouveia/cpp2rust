@@ -12,6 +12,11 @@ pub struct Chunk {
     #[offset(0)]
     pub data: i32,
 }
+impl CppMove for Chunk {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Writer {
@@ -21,6 +26,11 @@ pub struct Writer {
     #[offset(8)]
     #[byte_size(4)]
     pub chunk: Chunk,
+}
+impl CppMove for Writer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(48)]
@@ -40,6 +50,11 @@ impl JPEGData {
         }
     }
 }
+impl CppMove for JPEGData {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn push_param_0(mut dest: Ptr<Vec<Vec<u8>>>) {
     {
         let __a1 = Vec::new();
@@ -55,14 +70,16 @@ pub fn push_local_from_field_1(mut jpg: Ptr<JPEGData>, mut cond: bool) {
         dest = (field_ref!(jpg, app_data).as_pointer());
     }
     {
-        let __a1 = {
-            let mut __v = Vec::new();
-            let mut __it = (head.as_pointer() as Ptr<u8>);
-            while __it != (head.as_pointer() as Ptr<u8>).offset((3) as isize) {
-                __v.push((__it.iter_deref().read()));
-                __it.iter_inc();
+        let __a1 = match ({ (head.as_pointer() as Ptr<u8>).offset((3) as isize) },) {
+            (mut __tmp_0,) => {
+                let mut __v = Vec::new();
+                let mut __it = (head.as_pointer() as Ptr<u8>);
+                while __it != __tmp_0 {
+                    __v.push((__it.iter_deref().read()));
+                    __it.iter_inc();
+                }
+                __v
             }
-            __v
         };
         dest.with_mut(|__v: &mut Vec<Vec<u8>>| __v.push(__a1))
     };
@@ -86,14 +103,16 @@ pub fn emplace_local_from_field_4(mut jpg: Ptr<JPEGData>, mut cond: bool) {
         dest = (field_ref!(jpg, app_data).as_pointer());
     }
     {
-        let __init = {
-            let mut __v = Vec::new();
-            let mut __it = (head.as_pointer() as Ptr<u8>);
-            while __it != (head.as_pointer() as Ptr<u8>).offset((3) as isize) {
-                __v.push((__it.iter_deref().read()));
-                __it.iter_inc();
+        let __init = match ({ (head.as_pointer() as Ptr<u8>).offset((3) as isize) },) {
+            (mut __tmp_1,) => {
+                let mut __v = Vec::new();
+                let mut __it = (head.as_pointer() as Ptr<u8>);
+                while __it != __tmp_1 {
+                    __v.push((__it.iter_deref().read()));
+                    __it.iter_inc();
+                }
+                __v
             }
-            __v
         };
         dest.with_mut(|__v: &mut Vec<Vec<u8>>| __v.push(__init))
     };
@@ -140,6 +159,11 @@ impl Pair {
         }
     }
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Pair {
     fn default() -> Self {
         { Pair::new_2() }
@@ -162,11 +186,13 @@ pub fn emplace_ctor_args_7(mut pairs: Ptr<Vec<Pair>>) {
 pub fn emplace_deque_8(mut queue: Ptr<Vec<Pair>>) {
     {
         let __init = Pair::new_3({ 6 }, { 7 });
-        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        queue.decay().to_last()
     };
     {
         let __init = Pair::new_2();
-        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init))
+        queue.with_mut(|__v: &mut Vec<Pair>| __v.push(__init));
+        queue.decay().to_last()
     };
 }
 pub fn emplace_scalar_9(mut values: Ptr<Vec<i64>>, x: i32) {

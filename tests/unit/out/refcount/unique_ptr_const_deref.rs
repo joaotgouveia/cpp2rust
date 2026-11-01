@@ -20,6 +20,11 @@ impl Holder {
         }
     }
 }
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn read_val_0(mut h: Ptr<Holder>) -> i32 {
     return (h.with(|__s| __s.val.clone()).as_pointer().read());
 }

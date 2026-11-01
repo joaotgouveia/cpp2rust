@@ -12,6 +12,11 @@ pub struct S {
     #[offset(0)]
     pub v: u32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_bitnot_0(a: Ptr<S>) -> S {
     return S {
         v: !a.with(|__s| __s.v),

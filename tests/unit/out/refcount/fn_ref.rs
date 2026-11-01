@@ -28,6 +28,11 @@ pub struct Holder {
     #[byte_size(8)]
     pub f: FnPtr<fn(i32) -> i32>,
 }
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

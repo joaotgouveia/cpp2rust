@@ -14,6 +14,11 @@ pub struct Complex {
     #[offset(8)]
     pub img: f64,
 }
+impl CppMove for Complex {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn Product_0(mut z1: Complex, mut z2: Complex) -> Complex {
     let mut ac: f64 = (z1.re * z2.re);
     let mut bd: f64 = (z1.img * z2.img);

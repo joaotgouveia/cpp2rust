@@ -44,22 +44,6 @@ RE_DG_OPTIONS = re.compile(
 # Target selectors of dg-options that can be decided for the host
 DG_TARGET_SELECTORS = {"le": True, "be": False}
 RE_INCLUDE = re.compile(r'^\s*#\s*include\s*[<"]([^>"]+)[>"]', re.MULTILINE)
-RE_RUSTC_ERROR = re.compile(r"^(error(?:\[E\d+\])?: .*)$", re.MULTILINE)
-TOLERATED_RUSTC_ERRORS = (
-    re.compile(r"error\[E0782\]: "),
-    re.compile(
-        r"error\[E0599\]: no (?:associated function or constant|method) named "
-        r"`[^`]+` found for struct `std_[A-Za-z_]+` in the current scope$"
-    ),
-    re.compile(
-        r"error\[E0433\]: cannot find module or crate `std_[A-Za-z_]+Impl` "
-        r"in this scope$"
-    ),
-    re.compile(
-        r"error\[E0560\]: struct `[^`]+` has no field named "
-        r"`(?:__|_[A-Z])[^`]*`$"
-    ),
-)
 
 
 @dataclass
@@ -350,8 +334,6 @@ class TestContext:
                 return (lit.Test.XFAIL, "")
             return (exp.fail_code, "expected no-compile but compiled successfully")
         if returncode != 0:
-            if only_tolerated_errors(err):
-                return self.success_result()
             return (exp.fail_code, "rustc failed\n" + err)
 
         self.rust_bin = self.tmp_dir / "main"
@@ -404,11 +386,6 @@ class TestContext:
             ) or self.rust_result.returncode not in [-6, 101]:
                 return (exp.fail_code, "expected panic\n" + err)
             return (lit.Test.XFAIL, "")
-
-        if re.search(
-            r"thread 'main' \(\d+\) panicked at", str(self.rust_result.stderr)
-        ) and self.rust_result.returncode in [-6, 101]:
-            return self.success_result()
 
         if exp.is_nondet_result:
             return self.success_result()
@@ -502,18 +479,6 @@ def read_rust_version():
             if m:
                 return m.group(1)
     raise Exception("could not find rust version in " + toolchain_path)
-
-
-def only_tolerated_errors(err):
-    errors = [
-        line
-        for line in RE_RUSTC_ERROR.findall(err)
-        if not line.startswith("error: aborting due to")
-    ]
-    return bool(errors) and all(
-        any(pattern.match(line) for pattern in TOLERATED_RUSTC_ERRORS)
-        for line in errors
-    )
 
 
 def get_temp_dir():

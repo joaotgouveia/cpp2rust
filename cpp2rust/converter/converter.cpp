@@ -134,6 +134,12 @@ Converter::GetTemplateArgumentAsString(const clang::TemplateArgument &arg) {
   case clang::TemplateArgument::Type:
     return GetUnboxedTypeAsString(arg.getAsType());
   case clang::TemplateArgument::Integral:
+    if (!arg.getIntegralType()->isBooleanType()) {
+      llvm::SmallString<16> value;
+      arg.getAsIntegral().toString(value);
+      return std::string(value);
+    }
+    [[fallthrough]];
   case clang::TemplateArgument::NullPtr:
   case clang::TemplateArgument::Declaration:
   case clang::TemplateArgument::StructuralValue: {
@@ -224,9 +230,13 @@ std::string Converter::ConvertFreshObject(clang::Expr *expr) {
   return ConvertFreshPointer(expr);
 }
 
-std::string Converter::ConvertPointerReceiver(clang::Expr *arg,
-                                              std::string_view param_type) {
-  return std::format("({} as {})", ConvertFreshObject(arg), param_type);
+std::string Converter::ConvertPointerReceiver(
+    clang::Expr *arg, std::string_view param_type,
+    std::optional<clang::QualType> implicit_convert_to) {
+  auto ptr = clang::isa<clang::MaterializeTemporaryExpr>(arg->IgnoreImpCasts())
+                 ? ConvertTemporaryPointer(arg, implicit_convert_to)
+                 : ConvertFreshObject(arg);
+  return std::format("({} as {})", ptr, param_type);
 }
 
 std::string Converter::ConvertTemporaryPointer(
@@ -563,8 +573,46 @@ bool Converter::ConvertVarDeclSkipInit(clang::VarDecl *decl) {
   return true;
 }
 
+bool Converter::ConvertConstexprScalarInit(clang::VarDecl *decl) {
+  if (!decl->isConstexpr()) {
+    return false;
+  }
+  auto type = decl->getType().getUnqualifiedType();
+  if (!type->isIntegerType() && !type->isFloatingType()) {
+    return false;
+  }
+  auto *value = decl->evaluateValue();
+  assert(value && "constexpr variable without a constant value");
+  auto loc = decl->getInit()->getExprLoc();
+  clang::Expr *literal = nullptr;
+  if (type->isBooleanType()) {
+    assert(value->isInt());
+    literal = new (ctx_)
+        clang::CXXBoolLiteralExpr(value->getInt().getBoolValue(), type, loc);
+  } else if (type->isIntegerType()) {
+    assert(value->isInt());
+    auto num = value->getInt();
+    literal = clang::IntegerLiteral::Create(ctx_, num.isNegative() ? -num : num,
+                                            type, loc);
+    if (num.isNegative()) {
+      literal = clang::UnaryOperator::Create(
+          ctx_, literal, clang::UO_Minus, type, clang::VK_PRValue,
+          clang::OK_Ordinary, loc, false, clang::FPOptionsOverride());
+    }
+  } else {
+    assert(value->isFloat());
+    literal = clang::FloatingLiteral::Create(ctx_, value->getFloat(),
+                                             /*isexact=*/true, type, loc);
+  }
+  ConvertVarInit(decl->getType(), literal);
+  return true;
+}
+
 void Converter::ConvertVarDeclInitializer(clang::VarDecl *decl) {
   if (decl->hasInit()) {
+    if (ConvertConstexprScalarInit(decl)) {
+      return;
+    }
     ConvertVarInit(decl->getType(), decl->getInit());
   } else if (!clang::isa<clang::ParmVarDecl>(decl)) {
     StrCat(ConvertVarDefaultInit(decl));
@@ -910,6 +958,7 @@ void Converter::EmitRustStructOrUnion(clang::RecordDecl *decl) {
     AddOrdTrait(cxx);
   }
   AddCloneTrait(decl);
+  AddMoveTrait(decl);
   AddDefaultTrait(decl);
 }
 
@@ -1847,11 +1896,16 @@ bool Converter::ConvertSpecialCall(clang::CallExpr *expr) {
   return false;
 }
 
+bool Converter::ExprMapsValueToPointer(const clang::CallExpr *expr) const {
+  return Mapper::Contains(ctx_, expr) && !expr->getType()->isPointerType() &&
+         RuleRegistry::MapsToPointer(ctx_, expr->getType());
+}
+
 void Converter::EmitCallResult(clang::CallExpr *expr, std::string str,
                                const TempMaterializationCtx *temps) {
   bool deref = (GetReturnTypeOfFunction(expr)->isReferenceType() ||
                 (temps && IsReferenceType(expr))) &&
-               !isAddrOf() && !isVoid();
+               !isAddrOf() && !isVoid() && !ExprMapsValueToPointer(expr);
   // The dereference is in the block of the temporaries, so they are still
   // alive, as is the read of a field of the result.
   if (deref && !(temps && Mapper::IsRefExpr(ctx_, expr))) {
@@ -2887,6 +2941,11 @@ bool Converter::ConvertIncAndDec(clang::UnaryOperator *expr) {
   if (!method) {
     return false;
   }
+  bool deref_prefix = expr->isPrefix() && !isVoid();
+  PushParen paren(*this, deref_prefix);
+  if (deref_prefix) {
+    StrCat(token::kStar);
+  }
   {
     PushExprKind push(*this, ExprKind::LValue);
     Convert(expr->getSubExpr());
@@ -3167,6 +3226,13 @@ bool Converter::ConvertCXXOperatorCallExpr(clang::CXXOperatorCallExpr *expr) {
   case clang::OverloadedOperatorKind::OO_Subscript: {
     auto *base = expr->getArg(0);
     auto *idx = expr->getArg(1);
+    // A pointer to the element is a reference to it.
+    std::optional<PushExprKind> place;
+    if (isAddrOf()) {
+      StrCat(token::kRef,
+             expr->getType().isConstQualified() ? "" : keyword_mut_);
+      place.emplace(*this, ExprKind::LValue);
+    }
     // Rust borrows the container before computing the index, so an index that
     // reads the container, or that has side effects through anything the
     // container is reached through, is computed beforehand.
@@ -4783,6 +4849,8 @@ bool Converter::RecordImplementsClone(const clang::RecordDecl *decl) {
          GetUserDefinedCopyConstructor(decl) != nullptr;
 }
 
+void Converter::AddMoveTrait(const clang::RecordDecl *) {}
+
 void Converter::AddDefaultTraitForUnion(const clang::RecordDecl *decl) {
   EmitDefaultImpl(decl, [&] { StrCat("unsafe { std::mem::zeroed() }"); });
 }
@@ -4954,15 +5022,8 @@ void Converter::ConvertCast(clang::QualType qual_type, int line) {
 Converter::TempMaterializationCtx
 Converter::CollectRefBindingTempArgs(clang::CallExpr *expr) {
   TempMaterializationCtx ctx(expr->getNumArgs());
-  if (auto *fn = expr->getCalleeDecl() ? expr->getCalleeDecl()->getAsFunction()
-                                       : nullptr) {
-    for (unsigned i = 0; i < expr->getNumArgs() && i < fn->getNumParams();
-         ++i) {
-      auto param_type = fn->getParamDecl(i)->getType();
-      if (NeedsRefBindingTemp(ctx_, expr->getArg(i), param_type)) {
-        ctx.materialized_args[i] = param_type;
-      }
-    }
+  for (unsigned i = 0; i < expr->getNumArgs(); ++i) {
+    ctx.materialized_args[i] = GetRefBindingTempType(ctx_, expr, i);
   }
   return ctx;
 }
@@ -5048,16 +5109,19 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
     bool borrowed = ph_ctx.access == TranslationRule::Access::kBorrow ||
                     ph_ctx.access == TranslationRule::Access::kBorrowMut;
     PushExprKind push(*this, borrowed ? ExprKind::Object : ExprKind::XValue);
-    return ConvertPointerReceiver(arg, param_type);
+    return ConvertPointerReceiver(arg, param_type, ph_ctx.implicit_convert_to);
   }
+
+  // A container reached through a pointer, e.g., a reference, is indexed
+  // through an explicit reference to it.
+  ScopedValue autoref(
+      autoref_mut_,
+      ph_ctx.is_index_base
+          ? std::optional(ph_ctx.access == TranslationRule::Access::kBorrowMut)
+          : std::nullopt);
 
   if (ph_ctx.needs_object_receiver()) {
     Buffer buf(*this);
-    ScopedValue autoref(autoref_mut_,
-                        ph_ctx.is_index_base
-                            ? std::optional(ph_ctx.access ==
-                                            TranslationRule::Access::kBorrowMut)
-                            : std::nullopt);
     PushExprKind push(*this, ExprKind::RValue);
     ConvertDeref(arg);
     return std::move(buf).str();
@@ -5081,6 +5145,9 @@ std::string Converter::ConvertPlaceholder(clang::Expr *expr, clang::Expr *arg,
     Buffer buf(*this);
     Convert(init);
     return std::move(buf).str();
+  }
+  if (MovesLibraryArg(ctx_, expr, ph_ctx.arg_idx, arg, ph_ctx.access)) {
+    return ConvertLibraryMove(arg);
   }
   if (MovesRuleArg(expr, ph_ctx.arg_idx, arg, ph_ctx.access)) {
     if (TypeIsCopyable(arg->getType())) {
@@ -5107,6 +5174,10 @@ std::string Converter::ConvertBorrowMut(clang::Expr *arg) {
   return ConvertLValue(arg);
 }
 
+std::string Converter::ConvertLibraryMove(clang::Expr *arg) {
+  return ConvertFreshRValue(arg);
+}
+
 std::string Converter::ConvertTake(clang::Expr *arg) {
   auto lvalue = ConvertLValue(arg);
   MarkFresh();
@@ -5115,10 +5186,10 @@ std::string Converter::ConvertTake(clang::Expr *arg) {
 
 std::string Converter::ConvertMappedMethodCall(
     clang::Expr *expr, const TranslationRule::MethodCallFragment &mc,
-    llvm::ArrayRef<clang::TemplateArgument> bindings, clang::Expr **args,
-    unsigned num_args, TempMaterializationCtx *ctx) {
-  return ConvertIRFragment(mc.receiver, bindings, expr, args, num_args, ctx) +
-         ConvertIRFragment(mc.body, bindings, expr, args, num_args, ctx);
+    llvm::ArrayRef<clang::TemplateArgument> bindings,
+    llvm::ArrayRef<clang::Expr *> args, TempMaterializationCtx *ctx) {
+  return ConvertIRFragment(mc.receiver, bindings, expr, args, ctx) +
+         ConvertIRFragment(mc.body, bindings, expr, args, ctx);
 }
 
 std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
@@ -5128,13 +5199,66 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
   if (!tgt_ir)
     return {};
 
-  CheckRuleReturnType(expr);
+  // The arguments that the rule would not evaluate once and in order are bound
+  // to variables by a match. A value is bound by value, unless the rule takes a
+  // pointer to it, and an object by a pointer to it. The temporaries that
+  // objects are bound to live until the end of the statement, like those of
+  // the C++ arguments.
+  auto all_args = BuildUnifiedArgs(expr, args, num_args);
+  auto bind = tgt_ir->argsToBind(ctx_, expr, all_args);
+  std::vector<std::string> values, names;
+  // The variables are local to the function.
+  for (size_t i = 0; curr_function_ && i < all_args.size(); ++i) {
+    if (!bind[i]) {
+      continue;
+    }
+    // The rule takes the value of a transparent union.
+    auto *arg = IgnoreTransparentUnion(all_args[i]);
+    auto type = arg->getType();
+    bool by_value = arg->isPRValue() && !tgt_ir->takesAddress(ctx_, i, arg);
+    if (!by_value && arg->isPRValue()) {
+      arg = new (ctx_) clang::MaterializeTemporaryExpr(type, arg, false);
+    }
+    // A temporary is of the type of the parameter.
+    std::optional<clang::QualType> convert_to;
+    if (clang::isa<clang::MaterializeTemporaryExpr>(arg->IgnoreImpCasts())) {
+      convert_to = GetParamImplicitConvertTarget(expr, i);
+      type = convert_to.value_or(type);
+    }
+    auto var_type = by_value ? type : ctx_.getLValueReferenceType(type);
+    auto loc = arg->getExprLoc();
+    auto *var = clang::VarDecl::Create(
+        ctx_, curr_function_, loc, loc, &ctx_.Idents.get(NewTempName()),
+        var_type, ctx_.getTrivialTypeSourceInfo(var_type, loc), clang::SC_None);
+    // The temporaries of a value, e.g., borrows, end with its block.
+    if (by_value) {
+      bound_values_.insert(var);
+      values.push_back(std::format("{{ {} }}", ConvertFreshRValue(arg)));
+    } else {
+      PushExprKind push(*this, ExprKind::Object);
+      values.push_back(ConvertPointerReceiver(
+          arg, ToString(ctx_.getPointerType(type)), convert_to));
+    }
+    names.push_back((by_value ? "mut " : "") + GetNamedDeclAsString(var));
+    all_args[i] = clang::DeclRefExpr::Create(ctx_, {}, {}, var, false, loc,
+                                             type, clang::VK_LValue);
+    if (by_value && !type->isRecordType()) {
+      all_args[i] = clang::ImplicitCastExpr::Create(
+          ctx_, type, clang::CK_LValueToRValue, all_args[i], nullptr,
+          clang::VK_PRValue, clang::FPOptionsOverride());
+    }
+    // The variable is passed instead of a temporary.
+    if (ctx && i >= HasReceiver(expr)) {
+      ctx->materialized_args[i - HasReceiver(expr)].reset();
+    }
+  }
 
   auto saved_borrows = std::exchange(mut_borrows_, {});
   auto *operand = tgt_ir->refExprOperand();
   bool lvalue = operand && !isAddrOf();
-  auto result = ConvertIRFragment(lvalue ? *operand : tgt_ir->body, bindings,
-                                  expr, args, num_args, ctx);
+  auto result =
+      ConvertIRFragment(lvalue && values.empty() ? *operand : tgt_ir->body,
+                        bindings, expr, all_args, ctx);
   if (tgt_ir->multi_statement) {
     result = '{' + result + '}';
   }
@@ -5143,19 +5267,24 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
     result = std::format("{}.with_mut(|{}| {})", place, name, result);
   }
   mut_borrows_ = std::move(saved_borrows);
+  // A place is reached through a reference to it, out of the match, so that it
+  // can be assigned.
+  if (!values.empty()) {
+    result =
+        std::format("match ({},) {{ ({},) => {{ {} }} }}",
+                    llvm::join(values, ", "), llvm::join(names, ", "), result);
+    if (lvalue) {
+      result = std::format("(*{})", result);
+    }
+  }
   return result;
 }
 
 std::string Converter::ConvertIRFragment(
     const std::vector<TranslationRule::BodyFragment> &fragments,
     llvm::ArrayRef<clang::TemplateArgument> bindings, clang::Expr *expr,
-    clang::Expr **args, unsigned num_args, TempMaterializationCtx *ctx) {
+    llvm::ArrayRef<clang::Expr *> all_args, TempMaterializationCtx *ctx) {
   using namespace TranslationRule;
-
-  std::vector<clang::Expr *> all_args;
-  if (expr) {
-    all_args = BuildUnifiedArgs(expr, args, num_args);
-  }
 
   std::string result;
   for (auto &frag : fragments) {
@@ -5180,11 +5309,16 @@ std::string Converter::ConvertIRFragment(
           .access = ph->access,
           .is_receiver = is_receiver,
           .is_cpp_ptr = is_cpp_ptr,
-          // Whatever its spelling, a pointer in C++ is converted as one.
+          // Whatever its spelling, a pointer in C++ is converted as one; an
+          // object that maps to a pointer is still passed by address to a
+          // pointer to its own type (reference_wrapper<reference_wrapper<T>>).
           .maps_to_rust_ptr =
               !is_cpp_ptr &&
               RuleRegistry::MapsToPointer(
-                  ctx_, arg->IgnoreParenNoopCasts(ctx_)->getType()),
+                  ctx_, arg->IgnoreParenNoopCasts(ctx_)->getType()) &&
+              !RuleRegistry::ParamPointsTo(
+                  ctx_, expr, arg_idx,
+                  arg->IgnoreParenNoopCasts(ctx_)->getType()),
           .declared_in_rule_as_rust_ptr =
               RuleRegistry::ParamIsPointer(ctx_, expr, arg_idx),
           .is_index_base = ph->is_index_base,
@@ -5198,31 +5332,27 @@ std::string Converter::ConvertIRFragment(
       result += ConvertInitFragment(expr, all_args);
     } else if (auto *mc =
                    std::get_if<std::unique_ptr<MethodCallFragment>>(&frag)) {
-      result +=
-          ConvertMappedMethodCall(expr, **mc, bindings, args, num_args, ctx);
+      result += ConvertMappedMethodCall(expr, **mc, bindings, all_args, ctx);
     } else if (auto *re =
                    std::get_if<std::unique_ptr<RefExprFragment>>(&frag)) {
-      result +=
-          (*re)->prefix + ' ' +
-          ConvertIRFragment((*re)->inner, bindings, expr, args, num_args, ctx);
+      result += (*re)->prefix + ' ' +
+                ConvertIRFragment((*re)->inner, bindings, expr, all_args, ctx);
     } else if (auto *call =
                    std::get_if<std::unique_ptr<GenericCallFragment>>(&frag)) {
-      result += ConvertGenericCall(**call, bindings, expr, args, num_args, ctx);
+      result += ConvertGenericCall(**call, bindings, expr, all_args, ctx);
     }
   }
 
   return result;
 }
 
-std::string
-Converter::ConvertGenericCall(const TranslationRule::GenericCallFragment &call,
-                              llvm::ArrayRef<clang::TemplateArgument> bindings,
-                              clang::Expr *expr, clang::Expr **args,
-                              unsigned num_args, TempMaterializationCtx *ctx) {
+std::string Converter::ConvertGenericCall(
+    const TranslationRule::GenericCallFragment &call,
+    llvm::ArrayRef<clang::TemplateArgument> bindings, clang::Expr *expr,
+    llvm::ArrayRef<clang::Expr *> args, TempMaterializationCtx *ctx) {
   std::vector<std::string> call_args;
   for (const auto &arg : call.args) {
-    call_args.push_back(
-        ConvertIRFragment(arg, bindings, expr, args, num_args, ctx));
+    call_args.push_back(ConvertIRFragment(arg, bindings, expr, args, ctx));
   }
   clang::QualType type;
   if (call.generic <= bindings.size() &&
@@ -5279,13 +5409,13 @@ std::string Converter::DerefPtrExpr(std::string_view ptr_expr,
 
 std::string
 Converter::ConvertVariadicTail(clang::Expr *expr,
-                               const std::vector<clang::Expr *> &all_args) {
+                               llvm::ArrayRef<clang::Expr *> all_args) {
   const auto *tgt_ir = RuleRegistry::GetExprRule(ctx_, expr);
   unsigned fixed = tgt_ir ? tgt_ir->params.size() : 0;
 
   Buffer buf(*this);
   StrCat("Box::<[VaArg]>::from([");
-  EmitVariadicArgs(llvm::ArrayRef(all_args).drop_front(fixed),
+  EmitVariadicArgs(all_args.drop_front(fixed),
                    /*into_va_arg=*/true);
   StrCat("])");
   return std::move(buf).str();
@@ -5293,18 +5423,17 @@ Converter::ConvertVariadicTail(clang::Expr *expr,
 
 std::string
 Converter::ConvertInitFragment(clang::Expr *expr,
-                               const std::vector<clang::Expr *> &all_args) {
+                               llvm::ArrayRef<clang::Expr *> all_args) {
   const auto *tgt_ir = RuleRegistry::GetExprRule(ctx_, expr);
   if (!tgt_ir || !tgt_ir->usesInit()) {
     llvm::report_fatal_error("expression rule does not use Init");
   }
-  auto type = RuleRegistry::GetInitType(expr);
+  auto type = RuleRegistry::GetInitType(ctx_, expr);
 
   Buffer buf(*this);
   PushExprKind push(*this, ExprKind::RValue);
-  ConvertConstructFromArgs(
-      type, llvm::ArrayRef(all_args).drop_front(tgt_ir->params.size()),
-      expr->getExprLoc());
+  ConvertConstructFromArgs(type, all_args.drop_front(tgt_ir->params.size()),
+                           expr->getExprLoc());
   return std::move(buf).str();
 }
 

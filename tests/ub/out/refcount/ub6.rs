@@ -16,6 +16,11 @@ pub struct Pair {
     #[byte_size(8)]
     pub x2: Ptr<i32>,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn mkPair_0(x1: Ptr<i32>, x2: Ptr<i32>) -> Pair {
     return Pair {
         x1: (x1).clone(),

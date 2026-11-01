@@ -27,6 +27,11 @@ impl CppEq for Key {
         operator_eq_2(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for Key {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_lt_1(a: Ptr<Key>, b: Ptr<Key>) -> bool {
     return ({ a.with(|__s| __s.order) } < { b.with(|__s| __s.order) });
 }
@@ -44,6 +49,11 @@ impl Mapped {
         let __this: Mapped = Self { value: 0 };
         (*default_constructions_0.with(Value::clone).borrow_mut()).prefix_inc();
         __this
+    }
+}
+impl CppMove for Mapped {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Mapped {

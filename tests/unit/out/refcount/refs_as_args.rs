@@ -37,6 +37,11 @@ pub struct Val {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for Val {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn sum_1(mut a: Val, mut b: Val) -> i32 {
     return (a.x + b.x);
 }

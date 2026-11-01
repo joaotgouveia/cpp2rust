@@ -9,6 +9,8 @@ using t1 = std::ifstream;
 using t2 = std::ofstream;
 template <typename T1> using t3 = std::ostream_iterator<T1>;
 using t4 = std::ostream_iterator<char>::ostream_type;
+using t5 = std::basic_streambuf<char>;
+using t6 = std::istreambuf_iterator<char>;
 
 std::ofstream f1(const char *filename, std::ios_base::openmode mode) {
   return std::ofstream(filename, mode);
