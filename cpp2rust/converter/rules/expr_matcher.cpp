@@ -114,13 +114,15 @@ ResolvedDecl getResolvedDecl(clang::ASTContext &ctx, const clang::Expr *expr,
 // Receivers are references in the rules, dereference the pointer to get a
 // reference: the xvalue a &&-qualified member takes
 // (std::move(set).extract() of flat_set<T1, T2, T3> &&), an lvalue otherwise.
+// A receiver that is not a pointer keeps its own value category, so a prvalue
+// (++m.begin()) deduces a forwarding T3 && as a non-reference.
 clang::Expr *getObject(clang::ASTContext &ctx, clang::Expr *object,
                        const clang::CXXMethodDecl *method) {
   auto type = object->getType();
   bool xvalue = method && method->getRefQualifier() == clang::RQ_RValue;
   if (type->isPointerType()) {
     type = type->getPointeeType();
-  } else if (object->isLValue() && !xvalue) {
+  } else if (!xvalue) {
     return object;
   }
   return new (ctx)

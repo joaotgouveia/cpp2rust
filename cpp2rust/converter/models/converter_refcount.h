@@ -448,6 +448,11 @@ private:
   // one to its elements if they are what ConvertObject wants.
   std::string AsPointerMethod(clang::QualType type);
 
+  // Whether the rule of the call returns the object that the C++ reference
+  // return type refers to, e.g. the iterator for the iterator & of ++it, so
+  // there is no pointer to dereference.
+  bool RuleReturnsReferencedObject(clang::CallExpr *expr);
+
   std::string ConvertTemporaryPointer(
       clang::Expr *expr,
       std::optional<clang::QualType> implicit_convert_to) override;
