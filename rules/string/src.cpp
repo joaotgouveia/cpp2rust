@@ -88,3 +88,5 @@ std::string &f30(std::string &dst, std::string &&src) {
 std::size_t f32(const std::string &a0, const char *a1, std::size_t a2) {
   return a0.find(a1, a2);
 }
+
+std::string &f33(std::string &dst, const char *src) { return dst = src; }

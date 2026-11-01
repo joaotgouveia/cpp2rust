@@ -211,3 +211,10 @@ fn f32(a0: Vec<i8>, a1: Ptr<i8>, a2: usize) -> usize {
             .unwrap_or(usize::MAX)
     })
 }
+
+fn f33(a0: Ptr<Vec<i8>>, a1: Ptr<i8>) -> Ptr<Vec<i8>> {
+    let mut __bytes = a1.to_c_bytes();
+    __bytes.push(0);
+    a0.write(__bytes);
+    a0
+}
