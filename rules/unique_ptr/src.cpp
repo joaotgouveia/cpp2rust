@@ -91,3 +91,11 @@ template <typename T1> bool f20(const std::unique_ptr<T1> &o, std::nullptr_t) {
 template <typename T1> bool f21(const std::unique_ptr<T1> &o, std::nullptr_t) {
   return o != nullptr;
 }
+
+template <typename T1> bool f22(const std::unique_ptr<T1> &o) {
+  return static_cast<bool>(o);
+}
+
+template <typename T1> bool f23(const std::unique_ptr<T1[]> &o) {
+  return static_cast<bool>(o);
+}
