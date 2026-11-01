@@ -43,15 +43,18 @@ std::vector<const clang::TypedefNameDecl *> TakeUnruledTypedefs();
 
 const TranslationRule::ExprRule *GetExprRule(clang::ASTContext &ctx,
                                              const clang::Expr *expr);
-clang::QualType GetInitType(const clang::Expr *expr);
+clang::QualType GetInitType(clang::ASTContext &ctx, const clang::Expr *expr);
+
+std::string InitCppType(Model model, const std::string &dir,
+                        const std::string &name);
+
+std::string InitAliasName(Model model, const std::string &name);
 
 clang::QualType GetGenericType(clang::ASTContext &ctx, const clang::Expr *expr,
                                unsigned n);
 
 clang::QualType GetConversionSourceType(clang::ASTContext &ctx,
                                         const clang::Expr *expr, unsigned to);
-
-clang::QualType GetDeclaredReturnType(const clang::Expr *expr);
 
 bool HasExprRule(const clang::FunctionDecl *decl);
 bool IsLibcPassthrough(clang::ASTContext &ctx, const clang::Expr *expr);

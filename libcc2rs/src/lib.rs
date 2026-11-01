@@ -31,6 +31,8 @@ pub use void::*;
 mod ptr_dyn;
 pub use ptr_dyn::*;
 
+include!(concat!(env!("OUT_DIR"), "/rule_shims.rs"));
+
 mod cfile;
 pub use cfile::*;
 

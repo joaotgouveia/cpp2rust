@@ -6,6 +6,7 @@
 #include <clang/AST/DeclCXX.h>
 #include <clang/AST/DeclTemplate.h>
 #include <clang/AST/ExprCXX.h>
+#include <clang/AST/IgnoreExpr.h>
 #include <clang/Basic/OperatorKinds.h>
 #include <clang/Lex/Lexer.h>
 #include <clang/Sema/EnterExpressionEvaluationContext.h>
@@ -459,6 +460,107 @@ deduceFromParameters(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
 // (std::use_facet<T1>(a0)) against those of the specialization the use calls
 // (use_facet<collate<char>>), or, where the body writes none, from the
 // parameters it passes.
+void deduceMemberTypesFromOperands(
+    clang::Sema &sema, clang::FunctionTemplateDecl *rule,
+    const clang::Expr *use, std::vector<clang::TemplateArgument> &deduced) {
+  auto pattern = rule->getTemplatedDecl();
+  auto operands = getOperands(sema.Context, use, pattern->getNumParams());
+  for (unsigned i = 0; i < operands.size() && i < pattern->getNumParams();
+       ++i) {
+    auto param = pattern->getParamDecl(i)->getType().getNonReferenceType();
+    auto operand = operands[i]->getType().getNonReferenceType();
+    auto args = param->getAs<clang::DependentNameType>()
+                    ? RuleDecls::DeduceMemberType(sema, rule, param, operand)
+                    : std::nullopt;
+    for (unsigned j = 0; args && j < deduced.size(); ++j) {
+      if (deduced[j].isNull()) {
+        deduced[j] = (*args)[j];
+      }
+    }
+  }
+}
+
+llvm::ArrayRef<clang::TemplateArgumentLoc>
+getExplicitTemplateArgs(const clang::Expr *expr) {
+  auto call = llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(expr));
+  if (!call) {
+    return {};
+  }
+  auto callee = call->getCallee()->IgnoreParenImpCasts();
+  if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(callee)) {
+    return ref->template_arguments();
+  }
+  if (auto member = llvm::dyn_cast<clang::MemberExpr>(callee)) {
+    return member->template_arguments();
+  }
+  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(callee)) {
+    return overload->template_arguments();
+  }
+  if (auto member =
+          llvm::dyn_cast<clang::CXXDependentScopeMemberExpr>(callee)) {
+    return member->template_arguments();
+  }
+  return {};
+}
+
+void deduceNonTypeFromExplicitArg(
+    clang::ASTContext &ctx, const clang::TemplateArgument &rule_arg,
+    const clang::Expr *use, unsigned i,
+    std::vector<clang::TemplateArgument> &deduced) {
+  auto ref = llvm::dyn_cast<clang::DeclRefExpr>(
+      rule_arg.getAsExpr()->IgnoreParenImpCasts());
+  auto nttp =
+      ref ? llvm::dyn_cast<clang::NonTypeTemplateParmDecl>(ref->getDecl())
+          : nullptr;
+  if (!nttp) {
+    return;
+  }
+  auto call = llvm::cast<clang::CallExpr>(RuleDecls::SkipImplicit(use));
+  auto callee = call->getDirectCallee();
+  auto spec = callee ? callee->getTemplateSpecializationArgs() : nullptr;
+  assert(spec && i < spec->size() &&
+         "explicit template argument of a non-specialized callee");
+  const auto &value = spec->get(i);
+  assert(value.getKind() == clang::TemplateArgument::Integral &&
+         "non-type template argument is not an integral");
+  auto &slot = deduced[nttp->getIndex()];
+  if (slot.isNull()) {
+    slot = clang::TemplateArgument(ctx, value.getAsIntegral(), nttp->getType());
+  }
+}
+
+void deduceFromExplicitArgs(clang::Sema &sema,
+                            clang::FunctionTemplateDecl *rule,
+                            const clang::Expr *use,
+                            std::vector<clang::TemplateArgument> &deduced) {
+  auto rule_args =
+      getExplicitTemplateArgs(RuleDecls::GetReturned(rule->getTemplatedDecl()));
+  auto use_args = getExplicitTemplateArgs(use);
+  for (unsigned i = 0; i < rule_args.size() && i < use_args.size(); ++i) {
+    const auto &rule_arg = rule_args[i].getArgument();
+    const auto &use_arg = use_args[i].getArgument();
+    if (rule_arg.getKind() == clang::TemplateArgument::Expression) {
+      deduceNonTypeFromExplicitArg(sema.Context, rule_arg, use, i, deduced);
+      continue;
+    }
+    if (rule_arg.getKind() != clang::TemplateArgument::Type ||
+        use_arg.getKind() != clang::TemplateArgument::Type) {
+      continue;
+    }
+    if (rule_arg.getAsType()->getAs<clang::PackExpansionType>()) {
+      break;
+    }
+    auto args = RuleDecls::DeduceFromType(
+        sema, rule->getTemplateParameters(), rule_arg.getAsType(),
+        use_arg.getAsType().getCanonicalType());
+    for (unsigned j = 0; args && j < deduced.size(); ++j) {
+      if (deduced[j].isNull()) {
+        deduced[j] = (*args)[j];
+      }
+    }
+  }
+}
+
 std::optional<std::vector<clang::TemplateArgument>>
 deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
                  const clang::Expr *use) {
@@ -471,15 +573,13 @@ deduceFromCallee(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
     returned = call->getCallee()->IgnoreParenImpCasts();
   }
   llvm::ArrayRef<clang::TemplateArgumentLoc> written;
-  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned)) {
-    if (overload->hasExplicitTemplateArgs()) {
-      written = overload->template_arguments();
-    }
+  if (auto overload = llvm::dyn_cast<clang::OverloadExpr>(returned);
+      overload && overload->hasExplicitTemplateArgs()) {
+    written = overload->template_arguments();
   } else if (auto ref =
-                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned)) {
-    if (ref->hasExplicitTemplateArgs()) {
-      written = ref->template_arguments();
-    }
+                 llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned);
+             ref && ref->hasExplicitTemplateArgs()) {
+    written = ref->template_arguments();
   } else {
     return std::nullopt;
   }
@@ -622,6 +722,11 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
       args = *std::move(from_callee);
     }
   }
+  if (args.empty()) {
+    args.resize(params->size());
+  }
+  deduceMemberTypesFromOperands(sema, rule, use, args);
+  deduceFromExplicitArgs(sema, rule, use, args);
   for (unsigned i = 0; i < args.size(); ++i) {
     auto param = params->getParam(i);
     if (args[i].isNull()) {

@@ -899,6 +899,8 @@ protected:
 
   virtual bool IsReferenceType(const clang::Expr *expr) const;
 
+  bool ExprMapsValueToPointer(const clang::CallExpr *expr) const;
+
   virtual bool RecordDerivesDefault(const clang::RecordDecl *decl);
 
   virtual bool TypeDerivesDefault(clang::QualType qual_type);
@@ -913,9 +915,6 @@ protected:
                                  unsigned /*index*/) {
     return false;
   }
-
-  // Checks that the rule of expr returns the type that expr returns in C++.
-  virtual void CheckRuleReturnType(clang::Expr * /*expr*/) {}
 
   bool RecordHasCopyableFields(const clang::RecordDecl *decl);
 

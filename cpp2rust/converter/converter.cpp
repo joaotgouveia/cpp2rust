@@ -134,6 +134,12 @@ Converter::GetTemplateArgumentAsString(const clang::TemplateArgument &arg) {
   case clang::TemplateArgument::Type:
     return GetUnboxedTypeAsString(arg.getAsType());
   case clang::TemplateArgument::Integral:
+    if (!arg.getIntegralType()->isBooleanType()) {
+      llvm::SmallString<16> value;
+      arg.getAsIntegral().toString(value);
+      return std::string(value);
+    }
+    [[fallthrough]];
   case clang::TemplateArgument::NullPtr:
   case clang::TemplateArgument::Declaration:
   case clang::TemplateArgument::StructuralValue: {
@@ -226,7 +232,10 @@ std::string Converter::ConvertFreshObject(clang::Expr *expr) {
 
 std::string Converter::ConvertPointerReceiver(clang::Expr *arg,
                                               std::string_view param_type) {
-  return std::format("({} as {})", ConvertFreshObject(arg), param_type);
+  auto ptr = clang::isa<clang::MaterializeTemporaryExpr>(arg->IgnoreImpCasts())
+                 ? ConvertTemporaryPointer(arg, std::nullopt)
+                 : ConvertFreshObject(arg);
+  return std::format("({} as {})", ptr, param_type);
 }
 
 std::string Converter::ConvertTemporaryPointer(
@@ -1847,11 +1856,16 @@ bool Converter::ConvertSpecialCall(clang::CallExpr *expr) {
   return false;
 }
 
+bool Converter::ExprMapsValueToPointer(const clang::CallExpr *expr) const {
+  return Mapper::Contains(ctx_, expr) && !expr->getType()->isPointerType() &&
+         RuleRegistry::MapsToPointer(ctx_, expr->getType());
+}
+
 void Converter::EmitCallResult(clang::CallExpr *expr, std::string str,
                                const TempMaterializationCtx *temps) {
   bool deref = (GetReturnTypeOfFunction(expr)->isReferenceType() ||
                 (temps && IsReferenceType(expr))) &&
-               !isAddrOf() && !isVoid();
+               !isAddrOf() && !isVoid() && !ExprMapsValueToPointer(expr);
   // The dereference is in the block of the temporaries, so they are still
   // alive, as is the read of a field of the result.
   if (deref && !(temps && Mapper::IsRefExpr(ctx_, expr))) {
@@ -5128,8 +5142,6 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
   if (!tgt_ir)
     return {};
 
-  CheckRuleReturnType(expr);
-
   auto saved_borrows = std::exchange(mut_borrows_, {});
   auto *operand = tgt_ir->refExprOperand();
   bool lvalue = operand && !isAddrOf();
@@ -5298,7 +5310,7 @@ Converter::ConvertInitFragment(clang::Expr *expr,
   if (!tgt_ir || !tgt_ir->usesInit()) {
     llvm::report_fatal_error("expression rule does not use Init");
   }
-  auto type = RuleRegistry::GetInitType(expr);
+  auto type = RuleRegistry::GetInitType(ctx_, expr);
 
   Buffer buf(*this);
   PushExprKind push(*this, ExprKind::RValue);
