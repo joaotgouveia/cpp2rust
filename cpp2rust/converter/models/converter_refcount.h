@@ -164,6 +164,8 @@ public:
 
   void ConvertBinaryOperator(clang::BinaryOperator *expr) override;
 
+  bool ConvertAssignmentAsLValue(clang::BinaryOperator *expr);
+
   bool VisitStmtExpr(clang::StmtExpr *expr) override;
   bool VisitReturnStmt(clang::ReturnStmt *stmt) override;
 
