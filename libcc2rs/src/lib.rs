@@ -31,8 +31,6 @@ pub use void::*;
 mod ptr_dyn;
 pub use ptr_dyn::*;
 
-include!(concat!(env!("OUT_DIR"), "/rule_shims.rs"));
-
 mod cfile;
 pub use cfile::*;
 
@@ -139,6 +137,12 @@ pub use time::*;
 
 mod map;
 pub use map::*;
+
+mod pair;
+pub use pair::*;
+
+mod cpp_array;
+pub use cpp_array::*;
 
 mod seams;
 pub use seams::*;
