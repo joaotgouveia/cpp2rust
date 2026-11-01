@@ -1242,8 +1242,10 @@ void ConverterRefCount::EmitCallResult(clang::CallExpr *expr, std::string str,
     return temps ? temps->Wrap(std::move(s)) : s;
   };
   auto ty = GetReturnTypeOfFunction(expr);
-  if (auto *ref = ty->getAs<clang::ReferenceType>();
-      ref && !isAddrOf() && !isVoid()) {
+  auto *ref = RuleRegistry::ReturnsProxyReference(ctx_, expr, ty)
+                  ? nullptr
+                  : ty->getAs<clang::ReferenceType>();
+  if (ref && !isAddrOf() && !isVoid()) {
     if (isLValue()) {
       pending_deref_.set(wrap(std::move(str)), /*fresh=*/true);
       return;

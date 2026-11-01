@@ -13,14 +13,12 @@ pub fn main() {
 fn main_0() -> i32 {
     let v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::from([false, false, false])));
     let mut i: i32 = 0;
-    let mut b: bool = (*{
+    let mut b: bool = {
         v.decay()
             .offset((i.postfix_inc() as usize) as isize)
             .write(true);
         v.decay().offset((i.postfix_inc() as usize) as isize)
     }
-    .upgrade()
-    .deref())
     .read();
     assert!(b);
     assert!((i == 1));

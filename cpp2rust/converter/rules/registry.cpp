@@ -686,17 +686,36 @@ bool ParamIsPointer(clang::ASTContext &ctx, const clang::Expr *expr,
   return rule->params.at(index).is_pointer();
 }
 
-bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
-                   unsigned index, clang::QualType type) {
-  auto [rule, bindings] = Search(ctx, expr);
-  assert(rule && "expression must have a translation rule");
-  auto n = rule->params.at(index).pointee_generic;
+static bool pointsTo(clang::ASTContext &ctx,
+                     const TranslationRule::TypeInfo &info,
+                     llvm::ArrayRef<clang::TemplateArgument> bindings,
+                     clang::QualType type) {
+  auto n = info.pointee_generic;
   if (!n || n > bindings.size() ||
       bindings[n - 1].getKind() != clang::TemplateArgument::Type) {
     return false;
   }
   return ctx.hasSameUnqualifiedType(bindings[n - 1].getAsType(),
                                     type.getNonReferenceType());
+}
+
+bool ParamPointsTo(clang::ASTContext &ctx, const clang::Expr *expr,
+                   unsigned index, clang::QualType type) {
+  auto [rule, bindings] = Search(ctx, expr);
+  assert(rule && "expression must have a translation rule");
+  return pointsTo(ctx, rule->params.at(index), bindings, type);
+}
+
+bool ReturnsProxyReference(clang::ASTContext &ctx, const clang::Expr *expr,
+                           clang::QualType type) {
+  auto *ref = type->getAs<clang::ReferenceType>();
+  if (!ref || !ref->getPointeeType()->isRecordType() ||
+      !MapsToPointer(ctx, ref->getPointeeType())) {
+    return false;
+  }
+  auto [rule, bindings] = Search(ctx, expr);
+  return rule && !pointsTo(ctx, rule->return_type, bindings,
+                           ref->getPointeeType());
 }
 
 clang::Expr *BuildParamConversion(clang::ASTContext &ctx,

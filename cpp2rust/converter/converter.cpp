@@ -1849,8 +1849,9 @@ bool Converter::ConvertSpecialCall(clang::CallExpr *expr) {
 
 void Converter::EmitCallResult(clang::CallExpr *expr, std::string str,
                                const TempMaterializationCtx *temps) {
-  bool deref = (GetReturnTypeOfFunction(expr)->isReferenceType() ||
-                (temps && IsReferenceType(expr))) &&
+  auto ty = GetReturnTypeOfFunction(expr);
+  bool deref = (ty->isReferenceType() || (temps && IsReferenceType(expr))) &&
+               !RuleRegistry::ReturnsProxyReference(ctx_, expr, ty) &&
                !isAddrOf() && !isVoid();
   // The dereference is in the block of the temporaries, so they are still
   // alive, as is the read of a field of the result.

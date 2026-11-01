@@ -1,4 +1,4 @@
-// XFAIL: refcount
+// panic: refcount
 #include <cassert>
 #include <vector>
 

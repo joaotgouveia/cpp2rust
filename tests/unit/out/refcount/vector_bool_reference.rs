@@ -31,6 +31,20 @@ fn main_0() -> i32 {
         v1.decay().offset(0_usize as isize)
     };
     assert!(!(v1.decay().offset(0_usize as isize).read()));
+    let __tmp_0: Value<Ptr<bool>> = Rc::new(RefCell::new(v1.decay().offset(0_usize as isize)));
+    let r3: Ptr<Ptr<bool>> = __tmp_0.as_pointer();
+    {
+        (*r3.upgrade().deref()).write(true);
+        (*r3.upgrade().deref()).clone()
+    };
+    assert!(v1.decay().offset(0_usize as isize).read());
+    let mut x: bool = ({
+        r1.write(false);
+        (r1).clone()
+    })
+    .read();
+    assert!(!(x));
+    assert!(!(v1.decay().offset(0_usize as isize).read()));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}
