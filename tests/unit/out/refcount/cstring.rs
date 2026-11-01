@@ -10,12 +10,14 @@ pub fn test_memcpy_0() {
     let src: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"hello\0")));
     let dst: Value<Box<[i8]>> =
         Rc::new(RefCell::new(Box::new([0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8])));
-    let mut r: AnyPtr = {
-        ((dst.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any().memcpy(
-            &((src.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
-            6_usize as usize,
-        );
-        ((dst.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+    let mut r: AnyPtr = match ({ ((dst.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+        (mut __tmp_0,) => {
+            __tmp_0.memcpy(
+                &((src.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
+                6_usize as usize,
+            );
+            (__tmp_0).clone()
+        }
     };
     assert!(({ (r).clone() } == { ((dst.as_pointer() as Ptr::<i8>) as Ptr<i8>).to_any() }));
     assert!(
@@ -31,11 +33,11 @@ pub fn test_memcpy_0() {
 }
 pub fn test_memset_1() {
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new((0..4).map(|_| 0_i8).collect::<Box<[i8]>>()));
-    let mut r: AnyPtr = {
-        ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>)
-            .to_any()
-            .memset((('x' as i8) as i32) as u8, 4_usize as usize);
-        ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any()
+    let mut r: AnyPtr = match ({ ((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
+        (mut __tmp_1,) => {
+            __tmp_1.memset((('x' as i8) as i32) as u8, 4_usize as usize);
+            (__tmp_1).clone()
+        }
     };
     assert!(({ (r).clone() } == { ((buf.as_pointer() as Ptr::<i8>) as Ptr<i8>).to_any() }));
     assert!(
@@ -77,15 +79,16 @@ pub fn test_memmove_3() {
         ('e' as i8),
         ('\0' as i8),
     ])));
-    let mut r: AnyPtr = {
-        ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>)
-            .to_any()
-            .memcpy(
-                &((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
-                4_usize as usize,
-            );
-        ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>).to_any()
-    };
+    let mut r: AnyPtr =
+        match ({ ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>).to_any() },) {
+            (mut __tmp_2,) => {
+                __tmp_2.memcpy(
+                    &((buf.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any(),
+                    4_usize as usize,
+                );
+                (__tmp_2).clone()
+            }
+        };
     assert!(
         ({ (r).clone() } == {
             ((buf.as_pointer() as Ptr<i8>).offset((1) as isize) as Ptr<i8>).to_any()

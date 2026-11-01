@@ -23,17 +23,16 @@ fn main_0() -> i32 {
         Rc::new(RefCell::new(Ptr::alloc(81).to_owned_opt())),
     )));
     let mut original: Ptr<i32> = (*(*source.borrow()).1.borrow()).as_pointer();
-    let converted: Value<(Value<i64>, Value<Option<Value<i32>>>)> = Rc::new(RefCell::new({
-        let __a0 = CppMove::cpp_move(source.as_pointer());
-        (
-            Rc::new(RefCell::new(((__a0.0.as_pointer().read()) as i64))),
-            Rc::new(RefCell::new(<Option<Value<i32>> as CppFrom<
-                Option<Value<i32>>,
-            >>::cpp_from_move(
-                __a0.1.as_pointer()
-            ))),
-        )
-    }));
+    let converted: Value<(Value<i64>, Value<Option<Value<i32>>>)> = Rc::new(RefCell::new((
+        Rc::new(RefCell::new(
+            (((*source.borrow()).0.as_pointer().read()) as i64),
+        )),
+        Rc::new(RefCell::new(<Option<Value<i32>> as CppFrom<
+            Option<Value<i32>>,
+        >>::cpp_from_move(
+            (*source.borrow()).1.as_pointer()
+        ))),
+    )));
     assert!(((*(*converted.borrow()).0.borrow()) == 0_i64));
     assert!(({ (*(*converted.borrow()).1.borrow()).as_pointer() } == { (original).clone() }));
     assert!((((*(*converted.borrow()).1.borrow()).as_pointer().read()) == 81));

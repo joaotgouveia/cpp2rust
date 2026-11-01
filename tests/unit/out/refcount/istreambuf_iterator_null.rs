@@ -13,16 +13,19 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut first: Ptr<::std::fs::File> = Ptr::<::std::fs::File>::null();
     let mut last: Ptr<::std::fs::File> = Ptr::<::std::fs::File>::null();
-    let mut s: Vec<i8> = {
-        let mut __bytes: Vec<u8> = Vec::new();
-        if !(first).clone().is_null() {
-            (first)
-                .clone()
-                .with_mut(|__f: &mut std::fs::File| std::io::Read::read_to_end(__f, &mut __bytes))
-                .expect("couldn't read the file");
+    let mut s: Vec<i8> = match ({ (first).clone() },) {
+        (mut __tmp_0,) => {
+            let mut __bytes: Vec<u8> = Vec::new();
+            if !__tmp_0.is_null() {
+                __tmp_0
+                    .with_mut(|__f: &mut std::fs::File| {
+                        std::io::Read::read_to_end(__f, &mut __bytes)
+                    })
+                    .expect("couldn't read the file");
+            }
+            __bytes.push(0);
+            CChar::from_byte_vec(__bytes)
         }
-        __bytes.push(0);
-        CChar::from_byte_vec(__bytes)
     };
     assert!(s.len() <= 1);
     return 0;

@@ -24,6 +24,7 @@
 #include <variant>
 #include <vector>
 
+#include "converter/converter_lib.h"
 #include "converter/rules/decls.h"
 #include "converter/rules/rule_keys.h"
 
@@ -204,17 +205,7 @@ getOperands(clang::ASTContext &ctx, const clang::Expr *use, unsigned arity = 0,
     operands.pop_back();
   }
   for (auto &operand : operands) {
-    auto literal = llvm::dyn_cast<clang::CompoundLiteralExpr>(operand);
-    if (!literal) {
-      continue;
-    }
-    auto record = literal->getType()->getAsRecordDecl();
-    if (!record || !record->hasAttr<clang::TransparentUnionAttr>()) {
-      continue;
-    }
-    auto init = llvm::cast<clang::InitListExpr>(literal->getInitializer());
-    assert(init->getNumInits() == 1);
-    operand = init->getInit(0);
+    operand = IgnoreTransparentUnion(operand);
   }
   return operands;
 }

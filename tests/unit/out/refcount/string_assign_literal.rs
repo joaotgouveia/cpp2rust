@@ -27,16 +27,14 @@ fn main_0() -> i32 {
         s.as_pointer().write(__bytes);
         s.as_pointer()
     };
-    assert!(Ptr::<i8>::from_string_literal(b"hi").with_c_str(|__s| {
-        (*v.decay().offset(0_usize).upgrade().deref())[..(*v
-            .decay()
-            .offset(0_usize)
-            .upgrade()
-            .deref())
-        .len()
-        .saturating_sub(1)]
-            == *__s
-    }));
+    assert!(match (v.decay().offset(0_usize),) {
+        (__tmp_0,) => {
+            Ptr::<i8>::from_string_literal(b"hi").with_c_str(|__s| {
+                (*__tmp_0.upgrade().deref())[..(*__tmp_0.upgrade().deref()).len().saturating_sub(1)]
+                    == *__s
+            })
+        }
+    });
     assert!(
         Ptr::<i8>::from_string_literal(b"changed")
             .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)

@@ -25,6 +25,7 @@ fn main_0() -> i32 {
     )
     .write(20);
     {
+        // The block ends the borrow of the iterator, e.g., in it = m.erase(it).
         let __it = ({
             let mut __it = m
                 .as_pointer()
