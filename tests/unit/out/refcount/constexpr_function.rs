@@ -28,6 +28,11 @@ pub struct Flag {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for Flag {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn use_4(f: Flag) -> i32 {
     let f: Value<Flag> = Rc::new(RefCell::new(f));
     assert!(({ FlagImpl::to_bool(&f.as_pointer(),) }));
@@ -47,6 +52,11 @@ const _: () = assert!(true, "in_constant_context()");
 pub struct P {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for P {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

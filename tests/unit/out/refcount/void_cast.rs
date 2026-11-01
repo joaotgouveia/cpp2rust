@@ -23,6 +23,11 @@ impl NonTrivial {
         }
     }
 }
+impl CppMove for NonTrivial {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn unused_ref_param_1(x: Ptr<NonTrivial>) {
     &(*x.upgrade().deref());
 }
@@ -42,6 +47,11 @@ pub struct Holder {
     #[offset(0)]
     pub field: i32,
 }
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(8)]
 pub struct NonCopyable {
@@ -54,6 +64,11 @@ impl NonCopyable {
         Self {
             value: field!(_a0, value).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
         }
+    }
+}
+impl CppMove for NonCopyable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn unused_noncopyable_param_5(x: Ptr<NonCopyable>) {

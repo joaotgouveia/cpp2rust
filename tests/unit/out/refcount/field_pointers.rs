@@ -15,6 +15,11 @@ pub struct Inner {
     #[byte_size(8)]
     pub name: Box<[i8]>,
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Inner {
     fn default() -> Self {
         {
@@ -32,6 +37,11 @@ pub struct Header {
     pub tag: i32,
     #[offset(4)]
     pub size: i16,
+}
+impl CppMove for Header {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(104)]
@@ -68,6 +78,11 @@ impl Outer {
                 (*_a0.upgrade().deref()).buf[(__i) as usize]
             })),
         }
+    }
+}
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for Outer {

@@ -67,6 +67,11 @@ pub struct Point {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Point {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn sum_points_11(p: Ptr<Point>) -> i32 {
     return ({
         ({ ({ elem!((p), 0).with(|__s| __s.x) } + { elem!((p), 0).with(|__s| __s.y) }) } + {

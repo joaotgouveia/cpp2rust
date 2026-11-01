@@ -15,6 +15,11 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn g_0(_a0: Ptr<S>) -> Overload {
     return Overload_kMutableOverload;
 }

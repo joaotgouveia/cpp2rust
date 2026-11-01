@@ -44,6 +44,11 @@ impl Clone for Elem {
         Elem::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Elem {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

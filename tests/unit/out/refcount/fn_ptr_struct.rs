@@ -15,6 +15,11 @@ pub struct Handler {
     #[byte_size(8)]
     pub cb: FnPtr<fn(i32) -> i32>,
 }
+impl CppMove for Handler {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn double_it_0(mut x: i32) -> i32 {
     return (x * 2);
 }
@@ -35,6 +40,11 @@ impl S {
         return (x + 3);
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(4)]
@@ -52,6 +62,11 @@ impl MoveOnly {
         };
         field!(x, data_).write(0);
         __this
+    }
+}
+impl CppMove for MoveOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn make_move_only_2() -> MoveOnly {

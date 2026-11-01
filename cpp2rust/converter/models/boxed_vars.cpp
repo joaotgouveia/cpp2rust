@@ -270,6 +270,9 @@ private:
                 TraverseStmt(init);
                 moved_by_ctor = true;
               }
+              if (MovesLibraryArg(ctx_, expr, i, all_args[i], ph->access)) {
+                moved_by_ctor = true;
+              }
             }
             return false;
           });

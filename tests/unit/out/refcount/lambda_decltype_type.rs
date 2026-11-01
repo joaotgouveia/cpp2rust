@@ -18,6 +18,11 @@ pub struct Sorted__lambda_at_lambda_decltype_type_cpp_21_18__ {
     #[byte_size(1)]
     pub cmp: FnPtr<fn(i32, i32) -> bool>,
 }
+impl CppMove for Sorted__lambda_at_lambda_decltype_type_cpp_21_18__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Sorted__lambda_at_lambda_decltype_type_cpp_21_18__ {
     fn default() -> Self {
         {
@@ -44,6 +49,11 @@ pub struct Sorted__lambda_at_lambda_decltype_type_cpp_18_23__ {
     #[offset(20)]
     #[byte_size(1)]
     pub cmp: FnPtr<fn(i32, i32) -> bool>,
+}
+impl CppMove for Sorted__lambda_at_lambda_decltype_type_cpp_18_23__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Sorted__lambda_at_lambda_decltype_type_cpp_18_23__ {
     fn default() -> Self {

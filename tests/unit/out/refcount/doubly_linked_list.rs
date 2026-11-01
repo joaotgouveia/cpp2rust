@@ -18,6 +18,11 @@ pub struct Node {
     #[byte_size(8)]
     pub prev: Ptr<Node>,
 }
+impl CppMove for Node {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn Find_0(mut head: Ptr<Node>, mut idx: i32) -> Ptr<Node> {
     let curr: Value<Ptr<Node>> = Rc::new(RefCell::new((head).clone()));
     let mut i: i32 = 0;

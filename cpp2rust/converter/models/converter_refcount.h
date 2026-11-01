@@ -64,6 +64,8 @@ public:
                              std::string_view src);
   void AddCloneTrait(const clang::RecordDecl *decl) override;
 
+  void AddMoveTrait(const clang::RecordDecl *decl) override;
+
   bool RecordImplementsClone(const clang::RecordDecl *decl) override;
 
   bool RecordDerivesClone(const clang::RecordDecl *decl);
@@ -314,6 +316,8 @@ public:
   bool IsReferenceType(const clang::Expr *expr) const override;
 
   std::string ConvertTake(clang::Expr *arg) override;
+
+  std::string ConvertLibraryMove(clang::Expr *arg) override;
 
   std::string ConvertBorrowMut(clang::Expr *arg) override;
 

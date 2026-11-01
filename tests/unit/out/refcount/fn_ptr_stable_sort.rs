@@ -14,6 +14,11 @@ pub struct Item {
     #[offset(4)]
     pub value: i32,
 }
+impl CppMove for Item {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn Compare_0(a: Ptr<Item>, b: Ptr<Item>) -> bool {
     return ({ a.with(|__s| __s.key) } < { b.with(|__s| __s.key) });
 }

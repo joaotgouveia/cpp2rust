@@ -9,9 +9,19 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A {}
+impl CppMove for A {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct D {}
+impl CppMove for D {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

@@ -736,6 +736,18 @@ void ConverterRefCount::AddCloneTrait(const clang::RecordDecl *decl) {
   StrCat('}');
 }
 
+void ConverterRefCount::AddMoveTrait(const clang::RecordDecl *decl) {
+  const char *body = HasMoveFromConstructor(decl) ? "Self::move_from(src)"
+                     : RecordImplementsClone(decl) ? "src.read()"
+                                                   : nullptr;
+  if (!body) {
+    return;
+  }
+  StrCat(std::format("impl CppMove for {} {{ fn cpp_move(src: Ptr<Self>) -> "
+                     "Self {{ {} }} }}",
+                     GetRecordName(decl), body));
+}
+
 void ConverterRefCount::AddDefaultTrait(const clang::RecordDecl *decl) {
   PushConversionKind push(*this, ConversionKind::FullRefCount);
   Converter::AddDefaultTrait(decl);
@@ -777,6 +789,7 @@ void ConverterRefCount::EmitRustUnion(clang::RecordDecl *decl) {
   }
 
   AddCloneTrait(decl);
+  AddMoveTrait(decl);
   AddDefaultTrait(decl);
 }
 
@@ -3017,6 +3030,12 @@ std::string ConverterRefCount::ConvertBorrowMut(clang::Expr *arg) {
     return std::format("(*{})", name);
   }
   return lvalue;
+}
+
+std::string ConverterRefCount::ConvertLibraryMove(clang::Expr *arg) {
+  auto ptr = ConvertPointer(arg);
+  MarkFresh();
+  return std::format("CppMove::cpp_move({})", std::move(ptr));
 }
 
 std::string ConverterRefCount::ConvertTake(clang::Expr *arg) {

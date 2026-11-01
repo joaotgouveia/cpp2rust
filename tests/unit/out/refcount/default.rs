@@ -24,6 +24,11 @@ pub struct Pointers {
     #[offset(136)]
     pub x5: i32,
 }
+impl CppMove for Pointers {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Pointers {
     fn default() -> Self {
         {
@@ -57,6 +62,11 @@ pub struct SmallArrays {
     #[byte_size(288)]
     pub p: Box<[Pointers]>,
 }
+impl CppMove for SmallArrays {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for SmallArrays {
     fn default() -> Self {
         {
@@ -79,6 +89,11 @@ pub struct BigArray {
     #[offset(0)]
     #[byte_size(132)]
     pub a: Box<[i32]>,
+}
+impl CppMove for BigArray {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for BigArray {
     fn default() -> Self {

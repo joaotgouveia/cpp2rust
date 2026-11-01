@@ -19,6 +19,11 @@ impl CppEq for Eq {
         EqImpl::operator_eq(__lhs, __rhs.clone())
     }
 }
+impl CppMove for Eq {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Cmp {
@@ -37,6 +42,11 @@ impl CppEq for Cmp {
         CmpImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for Cmp {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Both {
@@ -51,6 +61,11 @@ impl CppLess for Both {
 impl CppEq for Both {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         BothImpl::operator_eq(__lhs, __rhs.clone())
+    }
+}
+impl CppMove for Both {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -69,6 +84,11 @@ impl CppEq for OrdOnly {
         OrdOnlyImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for OrdOnly {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Inner {
@@ -83,6 +103,11 @@ impl CppLess for Inner {
 impl CppEq for Inner {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         InnerImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -104,6 +129,11 @@ impl CppEq for Outer {
         OuterImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
     }
 }
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct Secondary {
@@ -118,6 +148,11 @@ impl CppLess for Secondary {
 impl CppEq for Secondary {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         SecondaryImpl::operator_eq(__lhs, __rhs.clone())
+    }
+}
+impl CppMove for Secondary {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -135,6 +170,11 @@ impl CppLess for PtrMember {
 impl CppEq for PtrMember {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         PtrMemberImpl::operator_cmp(__lhs, __rhs.clone()) == std::cmp::Ordering::Equal
+    }
+}
+impl CppMove for PtrMember {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

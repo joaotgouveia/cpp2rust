@@ -23,6 +23,11 @@ impl S {
         }
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn add_0(mut v: Ptr<Vec<i32>>, mut k: i32) {
     {
         let a0_clone = k.clone();

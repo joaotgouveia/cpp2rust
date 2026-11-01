@@ -30,6 +30,11 @@ pub struct Entry {
     #[offset(12)]
     pub opt: Option,
 }
+impl CppMove for Entry {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static global_color_0: Value<Color> = Rc::new(RefCell::new(Color_GREEN));
 );

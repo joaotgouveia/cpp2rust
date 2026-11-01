@@ -18,6 +18,11 @@ pub struct S {
     #[offset(0)]
     pub a: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub type TdEnum = u32;
 pub const TdEnum_TD_A: TdEnum = 0;
 pub const TdEnum_TD_B: TdEnum = 1;
@@ -31,6 +36,11 @@ pub struct WithAnonField {
     pub a: i32,
     #[offset(4)]
     pub field: anon_2,
+}
+impl CppMove for WithAnonField {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

@@ -824,6 +824,9 @@ protected:
 
   virtual void AddCloneTrait(const clang::RecordDecl *decl);
 
+  // The C++ move of a record, for the rules that move values generically.
+  virtual void AddMoveTrait(const clang::RecordDecl *decl);
+
   virtual bool RecordImplementsClone(const clang::RecordDecl *decl);
 
   virtual void AddDefaultTrait(const clang::RecordDecl *decl);
@@ -864,6 +867,10 @@ protected:
 
   // Moves the value out of `arg`, leaving a default value behind.
   virtual std::string ConvertTake(clang::Expr *arg);
+
+  // Moves the value out of `arg`, an object of a library type, as its C++
+  // move constructor does.
+  virtual std::string ConvertLibraryMove(clang::Expr *arg);
 
   // The place of `arg`, which is borrowed mutably by a rule.
   virtual std::string ConvertBorrowMut(clang::Expr *arg);

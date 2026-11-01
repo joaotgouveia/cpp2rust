@@ -29,6 +29,11 @@ impl Elem {
         }
     }
 }
+impl CppMove for Elem {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Elem {
     fn default() -> Self {
         {
@@ -71,6 +76,11 @@ impl State {
             elems: field!(_a0, elems).with_mut(std::mem::take),
             rows: field!(_a0, rows).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for State {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 impl Default for State {

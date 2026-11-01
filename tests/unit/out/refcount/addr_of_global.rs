@@ -12,12 +12,22 @@ pub struct Inner {
     #[offset(0)]
     pub value: i32,
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct Outer {
     #[offset(0)]
     #[byte_size(8)]
     pub p: Ptr<Inner>,
+}
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 thread_local!(
     pub static alpha_0: Value<Inner> = Rc::new(RefCell::new(Inner { value: 1 }));

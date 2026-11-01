@@ -16,6 +16,11 @@ pub struct S {
     #[offset(8)]
     pub c: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn bump_0(mut s: Ptr<S>) -> i32 {
     {
         field!(s, b).with_mut(|__v| *__v = *__v + 10)

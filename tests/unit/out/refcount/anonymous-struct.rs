@@ -14,6 +14,11 @@ pub struct Outer_Named {
     #[offset(4)]
     pub b: i32,
 }
+impl CppMove for Outer_Named {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct anon_0 {
@@ -21,6 +26,11 @@ pub struct anon_0 {
     pub c: i32,
     #[offset(4)]
     pub d: i32,
+}
+impl CppMove for anon_0 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -30,6 +40,11 @@ pub struct anon_1 {
     #[offset(4)]
     pub h: i32,
 }
+impl CppMove for anon_1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct anon_2 {
@@ -38,17 +53,32 @@ pub struct anon_2 {
     #[offset(4)]
     pub f: i32,
 }
+impl CppMove for anon_2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct anon_4 {
     #[offset(0)]
     pub j: i32,
 }
+impl CppMove for anon_4 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
 pub struct anon_5 {
     #[offset(0)]
     pub k: i32,
+}
+impl CppMove for anon_5 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(12)]
@@ -61,6 +91,11 @@ pub struct anon_3 {
     #[offset(8)]
     #[byte_size(4)]
     pub anon_5: anon_5,
+}
+impl CppMove for anon_3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(44)]
@@ -80,6 +115,11 @@ pub struct Outer {
     #[offset(32)]
     #[byte_size(12)]
     pub anon_3: anon_3,
+}
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -133,5 +173,10 @@ pub struct anon_6 {
     pub x: i32,
     #[offset(4)]
     pub z: i32,
+}
+impl CppMove for anon_6 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn __cpp2rust_init_globals() {}

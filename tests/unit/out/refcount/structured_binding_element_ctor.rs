@@ -45,6 +45,11 @@ impl Clone for Elem {
         Elem::copy_from(__src.as_pointer())
     }
 }
+impl CppMove for Elem {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
 #[byte_size(8)]
 pub struct Two {
@@ -61,6 +66,11 @@ impl Two {
             a: Elem::move_from({ field_ptr!(_a0, a) }),
             b: Elem::move_from({ field_ptr!(_a0, b) }),
         }
+    }
+}
+impl CppMove for Two {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn make_two_2() -> Two {

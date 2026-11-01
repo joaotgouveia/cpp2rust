@@ -42,6 +42,11 @@ impl HashHolder_unsigned_long__ptr__bool__ {
         Self { h: (h.read()) }
     }
 }
+impl CppMove for HashHolder_unsigned_long__ptr__bool__ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static total_7: Value<i32> = Rc::new(RefCell::new(0));
 );

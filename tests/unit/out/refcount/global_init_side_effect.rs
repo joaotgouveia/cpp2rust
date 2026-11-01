@@ -20,6 +20,11 @@ impl S {
         __this
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static a_1: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
 );

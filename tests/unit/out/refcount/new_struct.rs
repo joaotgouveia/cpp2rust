@@ -14,6 +14,11 @@ pub struct Pair {
     #[offset(4)]
     pub y: i32,
 }
+impl CppMove for Pair {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
 pub struct Triple {
@@ -24,6 +29,11 @@ pub struct Triple {
     #[offset(8)]
     #[byte_size(8)]
     pub p: Pair,
+}
+impl CppMove for Triple {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();

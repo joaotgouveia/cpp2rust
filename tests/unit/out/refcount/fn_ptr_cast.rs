@@ -31,6 +31,11 @@ pub struct Command {
     #[byte_size(8)]
     pub data: AnyPtr,
 }
+impl CppMove for Command {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn test_void_ptr_to_fn_3() {
     let mut cmd: Command = <Command>::default();
     cmd.data = FnPtr::<fn(i32) -> i32>::new(double_it_0).to_any();

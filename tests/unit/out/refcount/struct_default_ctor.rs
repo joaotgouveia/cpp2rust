@@ -19,6 +19,11 @@ impl S {
         Self { a: 11, b: true }
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for S {
     fn default() -> Self {
         { S::new() }
@@ -31,12 +36,22 @@ pub struct Declared {
     pub v: i32,
 }
 impl Declared {}
+impl CppMove for Declared {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(16)]
 pub struct Holder {
     #[offset(0)]
     #[byte_size(16)]
     pub items: Box<[S]>,
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Holder {
     fn default() -> Self {
@@ -55,6 +70,11 @@ thread_local!(
 pub struct FromStatic {
     #[offset(0)]
     pub v: i32,
+}
+impl CppMove for FromStatic {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for FromStatic {
     fn default() -> Self {

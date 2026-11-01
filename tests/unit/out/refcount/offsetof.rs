@@ -16,6 +16,11 @@ pub struct Layout {
     #[offset(8)]
     pub c: u16,
 }
+impl CppMove for Layout {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(66)]
 pub struct Frame {
@@ -24,6 +29,11 @@ pub struct Frame {
     #[offset(2)]
     #[byte_size(64)]
     pub body: Box<[i8]>,
+}
+impl CppMove for Frame {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Frame {
     fn default() -> Self {

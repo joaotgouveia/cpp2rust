@@ -23,12 +23,22 @@ pub struct X1 {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for X1 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct X2 {
     #[offset(0)]
     #[byte_size(8)]
     pub v: Ptr<X1>,
+}
+impl CppMove for X2 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -37,12 +47,22 @@ pub struct X3 {
     #[byte_size(8)]
     pub v: Ptr<X2>,
 }
+impl CppMove for X3 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
 pub struct X4 {
     #[offset(0)]
     #[byte_size(8)]
     pub v: X3,
+}
+impl CppMove for X4 {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -113,7 +133,7 @@ fn main_0() -> i32 {
         ))
     })
     .read());
-    let mut bar_inc: i32 = ({ bar_2(x1.as_pointer()) }).with_mut(|__v| __v.prefix_inc());
+    let mut bar_inc: i32 = ({ bar_2(x1.as_pointer()) }).with_mut(|__v| __v.prefix_inc().clone());
     bar_inc = ({ bar_2(x1.as_pointer()) }).with_mut(|__v| __v.postfix_inc());
     bar_inc = (((({ bar_2(x1.as_pointer()) }).read()) + ({ foo_0(x4) })) + 1);
     {
@@ -138,7 +158,7 @@ fn main_0() -> i32 {
             v
         ))
     })
-    .with_mut(|__v| __v.prefix_inc());
+    .with_mut(|__v| __v.prefix_inc().clone());
     bar_inc2 = ({
         bar_2(field_ptr!(
             ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer(),) }),) }),) }),
@@ -146,7 +166,9 @@ fn main_0() -> i32 {
         ))
     })
     .with_mut(|__v| __v.postfix_inc());
-    ({ ptr_1((x1.as_pointer())) }).with_mut(|__v| __v.prefix_inc());
+    ({ ptr_1((x1.as_pointer())) }).with_mut(|__v| {
+        __v.prefix_inc();
+    });
     {
         ({ ptr_1((x1.as_pointer())) }).with_mut(|__v| *__v = *__v + 1)
     };
@@ -158,7 +180,9 @@ fn main_0() -> i32 {
             )),
         )
     })
-    .with_mut(|__v| __v.prefix_inc());
+    .with_mut(|__v| {
+        __v.prefix_inc();
+    });
     {
         ({
             ptr_1(

@@ -27,6 +27,11 @@ pub struct S {
     #[offset(4)]
     pub k: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for S {
     fn default() -> Self {
         {

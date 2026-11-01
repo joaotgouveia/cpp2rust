@@ -27,6 +27,11 @@ impl Bar {
         Self { v: v }
     }
 }
+impl CppMove for Bar {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 impl Default for Bar {
     fn default() -> Self {
         { Bar::new(None) }
@@ -36,7 +41,7 @@ thread_local!(
     pub static counter_2: Value<i32> = Rc::new(RefCell::new(0));
 );
 pub fn next_3() -> i32 {
-    return (*counter_2.with(Value::clone).borrow_mut()).prefix_inc();
+    return (*(*counter_2.with(Value::clone).borrow_mut()).prefix_inc());
 }
 pub fn lazy_4(x: Option<i32>) -> i32 {
     let x: Value<i32> = Rc::new(RefCell::new(x.unwrap_or_else(|| ({ next_3() }))));
@@ -74,6 +79,11 @@ pub struct Holder_int_ {
 impl Holder_int_ {
     pub fn new(mut v: i32) -> Self {
         Self { v: v }
+    }
+}
+impl CppMove for Holder_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn main() {

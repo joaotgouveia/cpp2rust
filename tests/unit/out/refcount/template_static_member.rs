@@ -12,18 +12,33 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Static_int_ {}
+impl CppMove for Static_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static s_1: Value<i8> = Rc::new(RefCell::new(55_i8));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Static_char_ {}
+impl CppMove for Static_char_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static s_2: Value<i64> = Rc::new(RefCell::new(55_i64));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Static_long_ {}
+impl CppMove for Static_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static lo_3: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
@@ -33,6 +48,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Range_int_ {}
+impl CppMove for Range_int_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 thread_local!(
     pub static lo_5: Value<i64> = Rc::new(RefCell::new((-2_i32 as i64)));
 );
@@ -42,6 +62,11 @@ thread_local!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Range_long_ {}
+impl CppMove for Range_long_ {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

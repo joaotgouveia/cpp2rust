@@ -12,6 +12,11 @@ pub struct Inner {
     #[offset(0)]
     pub x: i32,
 }
+impl CppMove for Inner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Destructor)]
 #[cpp_from(i32, new, value)]
 #[byte_size(16)]
@@ -32,6 +37,11 @@ impl Explicit {
             inner: Inner { x: (v * 10) },
             arr: Box::new([v, (v + 1)]),
         }
+    }
+}
+impl CppMove for Explicit {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 impl Default for Explicit {
@@ -56,6 +66,11 @@ pub struct Implicit {
     #[offset(8)]
     #[byte_size(8)]
     pub arr: Box<[i32]>,
+}
+impl CppMove for Implicit {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 impl Default for Implicit {
     fn default() -> Self {
@@ -87,6 +102,11 @@ impl DefaultCopyUserMove {
         __this
     }
 }
+impl CppMove for DefaultCopyUserMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, CppFrom, CopyAssign, MoveAssign, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(4)]
@@ -114,6 +134,11 @@ impl Clone for UserCopyDefaultMove {
         let __src: Value<UserCopyDefaultMove> =
             Rc::new(RefCell::new(UserCopyDefaultMove { v: self.v.clone() }));
         UserCopyDefaultMove::copy_from(__src.as_pointer())
+    }
+}
+impl CppMove for UserCopyDefaultMove {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign)]
@@ -158,6 +183,11 @@ impl Buffer {
         }
     }
 }
+impl CppMove for Buffer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Buffer {
     fn default() -> Self {
         {
@@ -197,6 +227,11 @@ impl Owner {
         }
     }
 }
+impl CppMove for Owner {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 impl Default for Owner {
     fn default() -> Self {
         {
@@ -221,6 +256,11 @@ impl Copyable {
         Self {
             data: field!(_a0, data).with_mut(std::mem::take),
         }
+    }
+}
+impl CppMove for Copyable {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, CppFrom, MoveAssign, Destructor, Default)]
@@ -251,6 +291,11 @@ impl Holder {
             e: { (*_a0.upgrade().deref()).e.clone() },
             p: field!(_a0, p).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
         }
+    }
+}
+impl CppMove for Holder {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
     }
 }
 pub fn same_0(a: Ptr<Explicit>, b: Ptr<Explicit>) -> bool {

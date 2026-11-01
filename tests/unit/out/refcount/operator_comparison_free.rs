@@ -22,6 +22,11 @@ impl CppEq for S {
         operator_eq_1(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 pub fn operator_eq_1(a: Ptr<S>, b: Ptr<S>) -> bool {
     return ({ a.with(|__s| __s.v) } == { b.with(|__s| __s.v) });
 }
@@ -60,6 +65,11 @@ impl CppLess for V {
 impl CppEq for V {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
         operator_eq_9(__lhs.read(), __rhs.read())
+    }
+}
+impl CppMove for V {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
     }
 }
 pub fn operator_eq_9(mut a: V, mut b: V) -> bool {

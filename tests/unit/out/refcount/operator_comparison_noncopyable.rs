@@ -39,6 +39,11 @@ impl CppEq for S {
         operator_eq_0(__lhs.clone(), __rhs.clone())
     }
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        Self::move_from(src)
+    }
+}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
