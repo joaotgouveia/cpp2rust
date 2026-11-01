@@ -50,8 +50,7 @@ std::deque<T1> &f11(std::deque<T1> &dst, std::deque<T1> &&src) {
 }
 
 template <typename T1, typename... Args>
-auto f12(std::deque<T1> &o, Init<T1, Args> &&...args)
-    -> decltype(o.emplace_back(std::forward<Args>(args)...)) {
+T1 &f12(std::deque<T1> &o, Init<T1, Args> &&...args) {
   return o.emplace_back(std::forward<Args>(args)...);
 }
 
