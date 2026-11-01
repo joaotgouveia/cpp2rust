@@ -13,7 +13,12 @@ pub fn main() {
 fn main_0() -> i32 {
     let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3, 4])));
     let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
-    (*it.borrow_mut()).iter_inc().clone();
+    {
+        it.as_pointer().with_mut(|__it| {
+            __it.iter_inc();
+        });
+        it.as_pointer()
+    };
     let r: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new({
         let __it = <RandomAccessIterator<i32>>::from((*it.borrow_mut()).iter_post_inc());
         let __off = __it.index();

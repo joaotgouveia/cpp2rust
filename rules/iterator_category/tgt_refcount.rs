@@ -43,8 +43,11 @@ fn f5<T1: CppIterator<T2>, T2>(a0: T1) -> Ptr<T2> {
     a0.iter_deref()
 }
 
-fn f6<T1: CppIterator<T2>, T2>(a0: &mut T1) -> T1 {
-    a0.iter_inc().clone()
+fn f6<T1: CppIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>) -> Ptr<T1> {
+    a0.with_mut(|__it| {
+        __it.iter_inc();
+    });
+    a0
 }
 
 fn f7<T1: CppIterator<T2>, T2>(a0: &mut T1) -> T1 {
@@ -63,20 +66,29 @@ fn f10<T1: CppInputIterator<T2>, T2>(a0: T1, a1: T1) -> bool {
     a0 != a1
 }
 
-fn f11<T1: CppBidirectionalIterator<T2>, T2>(a0: &mut T1) -> T1 {
-    a0.iter_dec().clone()
+fn f11<T1: CppBidirectionalIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>) -> Ptr<T1> {
+    a0.with_mut(|__it| {
+        __it.iter_dec();
+    });
+    a0
 }
 
 fn f12<T1: CppBidirectionalIterator<T2>, T2>(a0: &mut T1) -> T1 {
     a0.iter_post_dec()
 }
 
-fn f13<T1: CppRandomAccessIterator<T2>, T2>(a0: &mut T1, a1: isize) -> T1 {
-    a0.iter_add_assign(a1)
+fn f13<T1: CppRandomAccessIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>, a1: isize) -> Ptr<T1> {
+    a0.with_mut(|__it| {
+        __it.iter_add_assign(a1);
+    });
+    a0
 }
 
-fn f14<T1: CppRandomAccessIterator<T2>, T2>(a0: &mut T1, a1: isize) -> T1 {
-    a0.iter_add_assign(-a1)
+fn f14<T1: CppRandomAccessIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>, a1: isize) -> Ptr<T1> {
+    a0.with_mut(|__it| {
+        __it.iter_add_assign(-a1);
+    });
+    a0
 }
 
 fn f15<T1: CppRandomAccessIterator<T2>, T2>(a0: T1, a1: isize) -> T1 {

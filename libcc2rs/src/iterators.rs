@@ -4,6 +4,7 @@
 use crate::{
     CChar, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value,
 };
+use crate::reinterpret::ByteRepr;
 use std::cmp::Ordering;
 use std::convert::Infallible;
 use std::marker::PhantomData;
@@ -187,7 +188,9 @@ macro_rules! uninhabited_iterator {
             }
         }
 
-        impl<T> PartialEq for $name<T> {
+        impl<T: 'static> ByteRepr for $name<T> {}
+
+impl<T> PartialEq for $name<T> {
             fn eq(&self, _: &Self) -> bool {
                 self.never()
             }
@@ -247,6 +250,8 @@ impl<T> Clone for BidirectionalIterator<T> {
         }
     }
 }
+
+impl<T: 'static> ByteRepr for BidirectionalIterator<T> {}
 
 impl<T> PartialEq for BidirectionalIterator<T> {
     fn eq(&self, other: &Self) -> bool {
@@ -308,6 +313,8 @@ impl<T> Clone for UnsafeBidirectionalIterator<T> {
         }
     }
 }
+
+impl<T: 'static> ByteRepr for UnsafeBidirectionalIterator<T> {}
 
 impl<T> PartialEq for UnsafeBidirectionalIterator<T> {
     fn eq(&self, other: &Self) -> bool {
@@ -372,7 +379,9 @@ macro_rules! random_access_iterator {
             }
         }
 
-        impl<T> PartialEq for $name<T> {
+        impl<T: 'static> ByteRepr for $name<T> {}
+
+impl<T> PartialEq for $name<T> {
             fn eq(&self, other: &Self) -> bool {
                 match (self, other) {
                     (Self::Vec(a), Self::Vec(b)) => a == b,
