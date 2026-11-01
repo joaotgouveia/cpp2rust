@@ -166,6 +166,8 @@ public:
 
   void ConvertVarDeclInitializer(clang::VarDecl *decl);
 
+  bool ConvertConstexprScalarInit(clang::VarDecl *decl);
+
   virtual void ConvertGlobalVarDecl(clang::VarDecl *decl);
 
   virtual bool ConvertVarDeclSkipInit(clang::VarDecl *decl);

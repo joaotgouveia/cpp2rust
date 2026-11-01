@@ -563,8 +563,46 @@ bool Converter::ConvertVarDeclSkipInit(clang::VarDecl *decl) {
   return true;
 }
 
+bool Converter::ConvertConstexprScalarInit(clang::VarDecl *decl) {
+  if (!decl->isConstexpr()) {
+    return false;
+  }
+  auto type = decl->getType().getUnqualifiedType();
+  if (!type->isIntegerType() && !type->isFloatingType()) {
+    return false;
+  }
+  auto *value = decl->evaluateValue();
+  assert(value && "constexpr variable without a constant value");
+  auto loc = decl->getInit()->getExprLoc();
+  clang::Expr *literal = nullptr;
+  if (type->isBooleanType()) {
+    assert(value->isInt());
+    literal = new (ctx_) clang::CXXBoolLiteralExpr(
+        value->getInt().getBoolValue(), type, loc);
+  } else if (type->isIntegerType()) {
+    assert(value->isInt());
+    auto num = value->getInt();
+    literal = clang::IntegerLiteral::Create(
+        ctx_, num.isNegative() ? -num : num, type, loc);
+    if (num.isNegative()) {
+      literal = clang::UnaryOperator::Create(
+          ctx_, literal, clang::UO_Minus, type, clang::VK_PRValue,
+          clang::OK_Ordinary, loc, false, clang::FPOptionsOverride());
+    }
+  } else {
+    assert(value->isFloat());
+    literal = clang::FloatingLiteral::Create(ctx_, value->getFloat(),
+                                             /*isexact=*/true, type, loc);
+  }
+  ConvertVarInit(decl->getType(), literal);
+  return true;
+}
+
 void Converter::ConvertVarDeclInitializer(clang::VarDecl *decl) {
   if (decl->hasInit()) {
+    if (ConvertConstexprScalarInit(decl)) {
+      return;
+    }
     ConvertVarInit(decl->getType(), decl->getInit());
   } else if (!clang::isa<clang::ParmVarDecl>(decl)) {
     StrCat(ConvertVarDefaultInit(decl));
