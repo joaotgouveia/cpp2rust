@@ -531,8 +531,9 @@ void deduceNonTypeFromExplicitArg(
   assert(spec && i < spec->size() &&
          "explicit template argument of a non-specialized callee");
   const auto &value = spec->get(i);
-  assert(value.getKind() == clang::TemplateArgument::Integral &&
-         "non-type template argument is not an integral");
+  if (value.getKind() != clang::TemplateArgument::Integral) {
+    return;
+  }
   auto &slot = deduced[nttp->getIndex()];
   if (slot.isNull()) {
     slot = clang::TemplateArgument(ctx, value.getAsIntegral(), nttp->getType());
