@@ -1605,7 +1605,39 @@ bool ConverterRefCount::VisitStmtExpr(clang::StmtExpr *expr) {
   return Converter::VisitStmtExpr(expr);
 }
 
+bool ConverterRefCount::ConvertAssignmentAsLValue(clang::BinaryOperator *expr) {
+  if (!expr->isAssignmentOp()) {
+    return false;
+  }
+  // `&(a = b)` -> `{ a = b; &a }`
+  if (isAddrOf()) {
+    PushBrace brace(*this);
+    {
+      PushExprKind push(*this, ExprKind::Void);
+      Convert(expr);
+    }
+    StrCat(token::kSemiColon, ConvertFreshPointer(expr->getLHS()));
+    return true;
+  }
+  // `(a = b) = v` -> `*&(a = b) = v`
+  if (isLValue()) {
+    auto *addr_of = clang::UnaryOperator::Create(
+        ctx_, expr, clang::UO_AddrOf, ctx_.getPointerType(expr->getType()),
+        clang::VK_PRValue, clang::OK_Ordinary, expr->getExprLoc(), false,
+        clang::FPOptionsOverride());
+    Convert(clang::UnaryOperator::Create(
+        ctx_, addr_of, clang::UO_Deref, expr->getType(), clang::VK_LValue,
+        clang::OK_Ordinary, expr->getExprLoc(), false,
+        clang::FPOptionsOverride()));
+    return true;
+  }
+  return false;
+}
+
 void ConverterRefCount::ConvertBinaryOperator(clang::BinaryOperator *expr) {
+  if (ConvertAssignmentAsLValue(expr)) {
+    return;
+  }
   auto *lhs = expr->getLHS();
   auto *rhs = expr->getRHS();
   auto lhs_type = lhs->getType();
