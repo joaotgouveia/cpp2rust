@@ -90,7 +90,3 @@ std::size_t f32(const std::string &a0, const char *a1, std::size_t a2) {
 }
 
 std::string &f33(std::string &dst, const char *src) { return dst = src; }
-
-std::string f34(std::string &&a0, std::size_t a1, std::size_t a2) {
-  return a0.substr(a1, a2);
-}
