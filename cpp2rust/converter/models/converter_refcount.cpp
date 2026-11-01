@@ -1308,10 +1308,21 @@ bool ConverterRefCount::VisitImplicitCastExpr(clang::ImplicitCastExpr *expr) {
       }
       PushConversionKind push(*this, ConversionKind::Unboxed);
       auto ptr = ConvertPointer(sub_expr);
-      if (!isFresh()) {
+      bool points_to_array = sub_expr->getType()->isPointerType() &&
+                             sub_expr->getType()->getPointeeType()->isArrayType();
+      auto *decay = clang::dyn_cast<clang::ImplicitCastExpr>(sub_expr);
+      if (!isFresh() && points_to_array) {
+        // A stored pointer to an array is typed, and decays to one to its
+        // first element.
+        StrCat(std::format("({}).decay().to_any()", ptr));
+      } else if (!isFresh()) {
         StrCat(std::format("({}).to_any()", ptr));
-      } else if (sub_expr->getType()->isPointerType() &&
-                 sub_expr->getType()->getPointeeType()->isArrayType()) {
+      } else if (points_to_array && decay &&
+                 decay->getCastKind() == clang::CK_ArrayToPointerDecay) {
+        // A decayed array of arrays is a typed pointer to its rows, which
+        // decays again to one to its first element.
+        StrCat(std::format("{}.decay().to_any()", ptr));
+      } else if (points_to_array) {
         // A pointer to an array points to its first element.
         StrCat(std::format(
             "({} as {}).to_any()", ptr,
