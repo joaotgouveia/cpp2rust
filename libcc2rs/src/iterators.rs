@@ -3,7 +3,8 @@
 
 use crate::reinterpret::ByteRepr;
 use crate::{
-    CChar, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode, Value,
+    CChar, IteratorSeam, MapNode, PostfixDec, PostfixInc, PrefixDec, PrefixInc, Ptr, UnsafeMapNode,
+    Value,
 };
 use std::cmp::Ordering;
 use std::convert::Infallible;
@@ -214,16 +215,82 @@ macro_rules! uninhabited_iterator_ops {
     };
 }
 
-uninhabited_iterator!(InputIterator, "input iterators");
-uninhabited_iterator!(OutputIterator, "output iterators");
-uninhabited_iterator!(ForwardIterator, "forward iterators");
+fn seam_eq<T>(a: &dyn IteratorSeam<T>, b: &dyn IteratorSeam<T>) -> bool {
+    let other = b.as_any();
+    assert!(
+        a.as_any().type_id() == other.type_id(),
+        "comparison of iterators of different types"
+    );
+    a.eq_seam(other)
+}
+
+macro_rules! seam_iterator {
+    ($name:ident) => {
+        pub enum $name<T> {
+            Seam(Box<dyn IteratorSeam<T>>),
+        }
+
+        impl<T> $name<T> {
+            pub fn seam(seam: impl IteratorSeam<T> + 'static) -> Self {
+                Self::Seam(Box::new(seam))
+            }
+
+            pub fn uninitialized() -> Self {
+                panic!(concat!(
+                    stringify!($name),
+                    " has no default value, build it with ",
+                    stringify!($name),
+                    "::seam"
+                ))
+            }
+        }
+
+        impl<T> Clone for $name<T> {
+            fn clone(&self) -> Self {
+                match self {
+                    Self::Seam(seam) => Self::Seam(seam.clone_seam()),
+                }
+            }
+        }
+
+        impl<T: 'static> ByteRepr for $name<T> {}
+
+        impl<T> PartialEq for $name<T> {
+            fn eq(&self, other: &Self) -> bool {
+                match (self, other) {
+                    (Self::Seam(a), Self::Seam(b)) => seam_eq(&**a, &**b),
+                }
+            }
+        }
+
+        impl<T> CppIterator<T> for $name<T> {
+            fn iter_deref(&self) -> Ptr<T> {
+                match self {
+                    Self::Seam(seam) => seam.deref(),
+                }
+            }
+            fn iter_inc(&mut self) -> &mut Self {
+                match self {
+                    Self::Seam(seam) => seam.inc(),
+                }
+                self
+            }
+            fn iter_post_inc(&mut self) -> Self {
+                let old = self.clone();
+                self.iter_inc();
+                old
+            }
+        }
+    };
+}
+
+seam_iterator!(InputIterator);
+seam_iterator!(OutputIterator);
+seam_iterator!(ForwardIterator);
 uninhabited_iterator!(UnsafeInputIterator, "input iterators");
 uninhabited_iterator!(UnsafeOutputIterator, "output iterators");
 uninhabited_iterator!(UnsafeForwardIterator, "forward iterators");
 
-uninhabited_iterator_ops!(InputIterator, CppIterator, Ptr<T>);
-uninhabited_iterator_ops!(OutputIterator, CppIterator, Ptr<T>);
-uninhabited_iterator_ops!(ForwardIterator, CppIterator, Ptr<T>);
 uninhabited_iterator_ops!(UnsafeInputIterator, UnsafeCppIterator, *mut T);
 uninhabited_iterator_ops!(UnsafeOutputIterator, UnsafeCppIterator, *mut T);
 uninhabited_iterator_ops!(UnsafeForwardIterator, UnsafeCppIterator, *mut T);
@@ -235,6 +302,13 @@ impl<T> UnsafeCppInputIterator<T> for UnsafeForwardIterator<T> {}
 
 pub enum BidirectionalIterator<T> {
     Map(Value<MapNode<T>>),
+    Seam(Box<dyn IteratorSeam<T>>),
+}
+
+impl<T> BidirectionalIterator<T> {
+    pub fn seam(seam: impl IteratorSeam<T> + 'static) -> Self {
+        Self::Seam(Box::new(seam))
+    }
 }
 
 impl<T> Default for BidirectionalIterator<T> {
@@ -247,6 +321,7 @@ impl<T> Clone for BidirectionalIterator<T> {
     fn clone(&self) -> Self {
         match self {
             Self::Map(node) => Self::Map(node.clone()),
+            Self::Seam(seam) => Self::Seam(seam.clone_seam()),
         }
     }
 }
@@ -257,6 +332,8 @@ impl<T> PartialEq for BidirectionalIterator<T> {
     fn eq(&self, other: &Self) -> bool {
         match (self, other) {
             (Self::Map(a), Self::Map(b)) => Rc::ptr_eq(a, b),
+            (Self::Seam(a), Self::Seam(b)) => seam_eq(&**a, &**b),
+            _ => panic!("comparison of iterators of different types"),
         }
     }
 }
@@ -265,11 +342,13 @@ impl<T> CppIterator<T> for BidirectionalIterator<T> {
     fn iter_deref(&self) -> Ptr<T> {
         match self {
             Self::Map(node) => MapNode::value(node),
+            Self::Seam(seam) => seam.deref(),
         }
     }
     fn iter_inc(&mut self) -> &mut Self {
         match self {
             Self::Map(node) => *node = MapNode::next(node),
+            Self::Seam(seam) => seam.inc(),
         }
         self
     }
@@ -286,6 +365,7 @@ impl<T> CppBidirectionalIterator<T> for BidirectionalIterator<T> {
     fn iter_dec(&mut self) -> &mut Self {
         match self {
             Self::Map(node) => *node = MapNode::prev(node),
+            Self::Seam(seam) => seam.dec(),
         }
         self
     }
@@ -562,5 +642,225 @@ impl<T> CppRange for Ptr<T> {
     }
     fn end(&self) -> Self::Iter {
         RandomAccessIterator::Vec(self.to_end())
+    }
+}
+
+#[cfg(test)]
+pub(crate) mod tests {
+    use crate::{
+        BidirectionalIterator, CppBidirectionalIterator, CppIterator, ForwardIterator,
+        InputIterator, IterRange, IterStep, IteratorSeam, OutputIterator, Ptr,
+    };
+    use std::any::Any;
+
+    pub(crate) struct IndexSeam<T> {
+        pub(crate) data: Ptr<T>,
+        pub(crate) idx: isize,
+    }
+
+    impl<T: 'static> IteratorSeam<T> for IndexSeam<T> {
+        fn as_any(&self) -> &dyn Any {
+            self
+        }
+        fn clone_seam(&self) -> Box<dyn IteratorSeam<T>> {
+            Box::new(IndexSeam {
+                data: self.data.clone(),
+                idx: self.idx,
+            })
+        }
+        fn eq_seam(&self, other: &dyn Any) -> bool {
+            other
+                .downcast_ref::<Self>()
+                .is_some_and(|other| self.idx == other.idx)
+        }
+        fn deref(&self) -> Ptr<T> {
+            self.data.offset(self.idx)
+        }
+        fn inc(&mut self) {
+            self.idx += 1;
+        }
+        fn dec(&mut self) {
+            self.idx -= 1;
+        }
+    }
+
+    pub(crate) struct NoDecSeam<T>(pub(crate) IndexSeam<T>);
+
+    impl<T: 'static> IteratorSeam<T> for NoDecSeam<T> {
+        fn as_any(&self) -> &dyn Any {
+            self
+        }
+        fn clone_seam(&self) -> Box<dyn IteratorSeam<T>> {
+            Box::new(NoDecSeam(IndexSeam {
+                data: self.0.data.clone(),
+                idx: self.0.idx,
+            }))
+        }
+        fn eq_seam(&self, other: &dyn Any) -> bool {
+            other
+                .downcast_ref::<Self>()
+                .is_some_and(|other| self.0.idx == other.0.idx)
+        }
+        fn deref(&self) -> Ptr<T> {
+            self.0.deref()
+        }
+        fn inc(&mut self) {
+            self.0.inc();
+        }
+    }
+
+    fn data() -> Ptr<i32> {
+        Ptr::alloc_array(vec![10, 20, 30].into_boxed_slice())
+    }
+
+    fn at(data: &Ptr<i32>, idx: isize) -> IndexSeam<i32> {
+        IndexSeam {
+            data: data.clone(),
+            idx,
+        }
+    }
+
+    fn collect<I: IterStep + CppIterator<i32>>(begin: I, end: I) -> Vec<i32> {
+        IterRange::new(begin, end)
+            .map(|it| it.iter_deref().read())
+            .collect()
+    }
+
+    macro_rules! seam_tests {
+        ($module:ident, $name:ident) => {
+            mod $module {
+                use super::{NoDecSeam, at, data};
+                use crate::{CppIterator, $name};
+
+                #[test]
+                fn deref_and_inc() {
+                    let data = data();
+                    let mut it = $name::seam(at(&data, 0));
+                    assert_eq!(it.iter_deref().read(), 10);
+                    assert_eq!(it.iter_inc().iter_deref().read(), 20);
+                    let old = it.iter_post_inc();
+                    assert_eq!(old.iter_deref().read(), 20);
+                    assert_eq!(it.iter_deref().read(), 30);
+                }
+
+                #[test]
+                fn clone_is_independent() {
+                    let data = data();
+                    let it = $name::seam(at(&data, 0));
+                    let mut copy = it.clone();
+                    copy.iter_inc();
+                    assert_eq!(it.iter_deref().read(), 10);
+                    assert_eq!(copy.iter_deref().read(), 20);
+                }
+
+                #[test]
+                fn eq_same_type() {
+                    let data = data();
+                    assert!($name::seam(at(&data, 1)) == $name::seam(at(&data, 1)));
+                    assert!($name::seam(at(&data, 1)) != $name::seam(at(&data, 2)));
+                }
+
+                #[test]
+                #[should_panic(expected = "comparison of iterators of different types")]
+                fn eq_different_types_panics() {
+                    let data = data();
+                    let _ = $name::seam(at(&data, 0)) == $name::seam(NoDecSeam(at(&data, 0)));
+                }
+            }
+        };
+    }
+
+    seam_tests!(input, InputIterator);
+    seam_tests!(output, OutputIterator);
+    seam_tests!(forward, ForwardIterator);
+    seam_tests!(bidirectional, BidirectionalIterator);
+
+    #[test]
+    fn input_iterator_range() {
+        let data = data();
+        let values = collect(
+            InputIterator::seam(at(&data, 0)),
+            InputIterator::seam(at(&data, 3)),
+        );
+        assert_eq!(values, [10, 20, 30]);
+    }
+
+    #[test]
+    fn forward_iterator_range() {
+        let data = data();
+        let values = collect(
+            ForwardIterator::seam(at(&data, 0)),
+            ForwardIterator::seam(at(&data, 3)),
+        );
+        assert_eq!(values, [10, 20, 30]);
+    }
+
+    #[test]
+    fn bidirectional_iterator_range() {
+        let data = data();
+        let values = collect(
+            BidirectionalIterator::seam(at(&data, 0)),
+            BidirectionalIterator::seam(at(&data, 3)),
+        );
+        assert_eq!(values, [10, 20, 30]);
+    }
+
+    #[test]
+    fn output_iterator_writes() {
+        let data = data();
+        let mut it = OutputIterator::seam(at(&data, 0));
+        it.iter_post_inc().iter_deref().write(1);
+        it.iter_deref().write(2);
+        assert_eq!(data.read(), 1);
+        assert_eq!(data.offset(1).read(), 2);
+        assert_eq!(data.offset(2).read(), 30);
+    }
+
+    #[test]
+    fn bidirectional_seam_dec() {
+        let data = data();
+        let mut it = BidirectionalIterator::seam(at(&data, 2));
+        assert_eq!(it.iter_dec().iter_deref().read(), 20);
+        let old = it.iter_post_dec();
+        assert_eq!(old.iter_deref().read(), 20);
+        assert_eq!(it.iter_deref().read(), 10);
+    }
+
+    #[test]
+    #[should_panic(expected = "dec is not supported by this seam")]
+    fn bidirectional_seam_without_dec_panics() {
+        let data = data();
+        BidirectionalIterator::seam(NoDecSeam(at(&data, 1))).iter_dec();
+    }
+
+    #[test]
+    #[should_panic(expected = "comparison of iterators of different types")]
+    fn bidirectional_map_against_seam_panics() {
+        let data = data();
+        let _ = BidirectionalIterator::default() == BidirectionalIterator::seam(at(&data, 0));
+    }
+
+    #[test]
+    #[should_panic(
+        expected = "InputIterator has no default value, build it with InputIterator::seam"
+    )]
+    fn input_iterator_uninitialized_panics() {
+        let _ = InputIterator::<i32>::uninitialized();
+    }
+
+    #[test]
+    #[should_panic(
+        expected = "OutputIterator has no default value, build it with OutputIterator::seam"
+    )]
+    fn output_iterator_uninitialized_panics() {
+        let _ = OutputIterator::<i32>::uninitialized();
+    }
+
+    #[test]
+    #[should_panic(
+        expected = "ForwardIterator has no default value, build it with ForwardIterator::seam"
+    )]
+    fn forward_iterator_uninitialized_panics() {
+        let _ = ForwardIterator::<i32>::uninitialized();
     }
 }
