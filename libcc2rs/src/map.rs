@@ -255,9 +255,7 @@ impl<K: CppLess + 'static, V: 'static> Map<K, Entry<K, V>> {
         map: Ptr<Self>,
         it: &BidirectionalIterator<Entry<K, V>>,
     ) -> BidirectionalIterator<Entry<K, V>> {
-        let BidirectionalIterator::Map(node) = it else {
-            panic!("ub: erase with an iterator of another container")
-        };
+        let BidirectionalIterator::Map(node) = it;
         let key = node
             .borrow()
             .value
@@ -563,25 +561,5 @@ impl<T> Iterator for UnsafeMapRange<T> {
             return None;
         }
         Some(self.cur.iter_post_inc())
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::{Entry, Map};
-    use crate::iterators::tests::IndexSeam;
-    use crate::{AsPointer, BidirectionalIterator, Ptr, Value};
-    use std::cell::RefCell;
-    use std::rc::Rc;
-
-    #[test]
-    #[should_panic(expected = "ub: erase with an iterator of another container")]
-    fn erase_with_seam_iterator_panics() {
-        let map: Value<Map<i32, Entry<i32, i32>>> = Rc::new(RefCell::new(Map::new()));
-        let it = BidirectionalIterator::seam(IndexSeam {
-            data: Ptr::null(),
-            idx: 0,
-        });
-        Map::erase(map.as_pointer(), &it);
     }
 }
