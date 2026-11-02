@@ -274,15 +274,6 @@ impl<T: CChar> Ptr<T> {
                 self.with_slice(self.len() - self.get_offset(), |s| f(until_nul(s)))
             }
             PtrKind::Reinterpreted(_) => f(&self.to_c_string_iterator().collect::<Vec<T>>()),
-            PtrKind::Seam(seam) => {
-                let mut out = None;
-                let mut f = Some(f);
-                if seam.with_c_str(self.offset, &mut |b| out = Some((f.take().unwrap())(b))) {
-                    out.expect("seam with_c_str did not call its callback")
-                } else {
-                    (f.take().unwrap())(&self.to_c_string_iterator().collect::<Vec<T>>())
-                }
-            }
         }
     }
 

@@ -144,9 +144,6 @@ pub use pair::*;
 mod cpp_array;
 pub use cpp_array::*;
 
-mod seams;
-pub use seams::*;
-
 pub use libcc2rs_macros::{
     ByteRepr, CopyAssign, CopyAssignUnsafe, CppFrom, CppFromUnsafe, Destructor, DestructorUnsafe,
     FnPtrArg, MoveAssign, MoveAssignUnsafe, MoveCtor, MoveCtorUnsafe, Record, VaArg, goto,
