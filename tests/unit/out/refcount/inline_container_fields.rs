@@ -118,21 +118,15 @@ pub fn fill_1(mut s: Ptr<State>) {
         i.prefix_inc();
     }
     vec_elem!(s, arr, 1_usize).write(7);
-    {
-        let __a0 = 3_usize as usize;
-        field!(s, elems).with_mut(|__v: &mut Vec<Elem>| __v.resize_with(__a0, || <Elem>::default()))
-    };
+    field!(s, elems).with_mut(|__v: &mut Vec<Elem>| __v.resize_with(3_usize, || <Elem>::default()));
     let mut i: i32 = 0;
     'loop_: while (i < 3) {
         let __rhs = i;
         field!(vec_elem!(s, elems, (i as usize)), id).write(__rhs);
         let __rhs = (10 * i);
         index!(field!(vec_elem!(s, elems, (i as usize)), hist), i).write(__rhs);
-        {
-            let __a0 = 4_usize as usize;
-            field!(vec_elem!(s, elems, (i as usize)), coeffs)
-                .with_mut(|__v: &mut Vec<i16>| __v.resize(__a0, (i as i16)))
-        };
+        field!(vec_elem!(s, elems, (i as usize)), coeffs)
+            .with_mut(|__v: &mut Vec<i16>| __v.resize(4_usize, (i as i16)));
         i.prefix_inc();
     }
     {
@@ -254,12 +248,9 @@ fn main_0() -> i32 {
             .collect::<Vec<_>>(),
     ));
     let mut first: Ptr<Elem> = (elems.decay().offset(0_usize));
-    {
-        let __a0 = 2_usize as usize;
-        (*elems.borrow_mut())[1_usize]
-            .coeffs
-            .resize_with(__a0, || 0_i16)
-    };
+    (*elems.borrow_mut())[1_usize]
+        .coeffs
+        .resize_with(2_usize, || 0_i16);
     vec_elem!(elems.decay().offset(1_usize), coeffs, 1_usize).write(4_i16);
     let __rhs = (((vec_elem!(elems.decay().offset(1_usize), coeffs, 1_usize).read()) as i32) + 1);
     array_elem!(elems.decay().offset(1_usize), hist, 2).write(__rhs);

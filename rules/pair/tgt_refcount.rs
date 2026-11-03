@@ -144,10 +144,9 @@ fn f31<T1: Clone, T2: Clone>(a0: (Value<T1>, Value<T2>)) -> (Value<T1>, Value<T2
 fn f32<T1: CppFrom<T3>, T2: CppFrom<T4>, T3, T4>(
     a0: (Value<T3>, Value<T4>),
 ) -> (Value<T1>, Value<T2>) {
-    let __a0 = a0;
     (
-        Rc::new(RefCell::new(T1::cpp_from(__a0.0.as_pointer()))),
-        Rc::new(RefCell::new(T2::cpp_from(__a0.1.as_pointer()))),
+        Rc::new(RefCell::new(T1::cpp_from(a0.0.as_pointer()))),
+        Rc::new(RefCell::new(T2::cpp_from(a0.1.as_pointer()))),
     )
 }
 
@@ -155,10 +154,9 @@ fn f29<T1: CppFrom<T3> + ByteRepr, T2: CppFrom<T4> + ByteRepr, T3, T4>(
     a0: Ptr<(Value<T1>, Value<T2>)>,
     a1: (Value<T3>, Value<T4>),
 ) -> Ptr<(Value<T1>, Value<T2>)> {
-    let __a1 = a1;
     a0.write((
-        Rc::new(RefCell::new(T1::cpp_from(__a1.0.as_pointer()))),
-        Rc::new(RefCell::new(T2::cpp_from(__a1.1.as_pointer()))),
+        Rc::new(RefCell::new(T1::cpp_from(a1.0.as_pointer()))),
+        Rc::new(RefCell::new(T2::cpp_from(a1.1.as_pointer()))),
     ));
     a0
 }

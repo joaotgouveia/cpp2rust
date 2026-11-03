@@ -34,10 +34,7 @@ fn main_0() -> i32 {
     v1.pop();
     assert!(v1.is_empty());
     let mut s1: usize = v1.len();
-    {
-        let __a0 = 100_usize as usize;
-        v1.resize_with(__a0, || 0_i32)
-    };
+    v1.resize_with(100_usize, || 0_i32);
     assert!((v1.len() == 100_usize));
     assert!((v1[99_usize] == 0));
     v1[0_usize] = 40;
