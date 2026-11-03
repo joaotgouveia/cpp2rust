@@ -11,6 +11,7 @@ template <typename T1> using t3 = std::ostream_iterator<T1>;
 using t4 = std::ostream_iterator<char>::ostream_type;
 using t5 = std::basic_streambuf<char>;
 using t6 = std::istreambuf_iterator<char>;
+using t7 = std::basic_filebuf<char>;
 
 std::ofstream f1(const char *filename, std::ios_base::openmode mode) {
   return std::ofstream(filename, mode);
@@ -44,3 +45,5 @@ std::istreambuf_iterator<T1> f7(std::istreambuf_iterator<T1> &a0) {
 std::istreambuf_iterator<char> f8(std::basic_streambuf<char> *p) {
   return std::istreambuf_iterator<char>(p);
 }
+
+std::filebuf *f9(const std::ofstream &o) { return o.rdbuf(); }
