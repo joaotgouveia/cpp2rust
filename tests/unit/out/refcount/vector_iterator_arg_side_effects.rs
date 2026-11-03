@@ -29,11 +29,14 @@ fn main_0() -> i32 {
     assert!(({ (((*r.borrow()).iter_deref().read()) == 3) }));
     assert!(({ ((*v.borrow()).len() == 3_usize) }));
     let it2: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
-    (*r.borrow_mut()) = {
-        let __it = <RandomAccessIterator<i32>>::from((*it2.borrow_mut()).iter_post_inc());
-        let __off = __it.index();
-        (*v.borrow_mut()).insert(__off, 9);
-        __it
+    {
+        r.as_pointer().write({
+            let __it = <RandomAccessIterator<i32>>::from((*it2.borrow_mut()).iter_post_inc());
+            let __off = __it.index();
+            (*v.borrow_mut()).insert(__off, 9);
+            __it
+        });
+        r.as_pointer()
     };
     assert!(
         ({
