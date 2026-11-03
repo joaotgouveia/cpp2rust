@@ -5217,7 +5217,11 @@ std::string Converter::GetMappedAsString(clang::Expr *expr, clang::Expr **args,
     // The rule takes the value of a transparent union.
     auto *arg = IgnoreTransparentUnion(all_args[i]);
     auto type = arg->getType();
-    bool by_value = arg->isPRValue() && !tgt_ir->takesAddress(ctx_, i, arg);
+    // A proxy record is the pointer it maps to: the proxy is bound, not a
+    // pointer to it.
+    bool proxy = IsProxyReference(ctx_.getLValueReferenceType(type));
+    bool by_value =
+        (arg->isPRValue() || proxy) && !tgt_ir->takesAddress(ctx_, i, arg);
     if (!by_value && arg->isPRValue()) {
       arg = new (ctx_) clang::MaterializeTemporaryExpr(type, arg, false);
     }
