@@ -18,16 +18,14 @@ fn main_0() -> i32 {
     ));
     let mut bit: Ptr<bool> = bits.decay().offset(0_usize as isize);
     let assigned: Ptr<bool> = ({
-        let __a0 = (bit).clone();
-        __a0.write(true);
-        __a0
+        bit.write(true);
+        (bit).clone()
     });
     assert!(assigned.read());
     assert!(bits.decay().offset(0_usize as isize).read());
     let cleared: Ptr<bool> = {
-        let __a0 = (bit).clone();
-        __a0.write(false);
-        __a0
+        bit.write(false);
+        (bit).clone()
     };
     assert!(!(cleared.read()));
     assert!(!(bits.decay().offset(0_usize as isize).read()));
