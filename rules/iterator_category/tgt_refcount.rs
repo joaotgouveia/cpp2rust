@@ -31,12 +31,14 @@ fn f2<T1: CppIterator<T2>, T2>(a0: T1) -> T1 {
     a0
 }
 
-fn f3<T1: CppIterator<T2>, T2>(a0: &mut T1, a1: T1) {
-    *a0 = a1.clone()
+fn f3<T1: CppIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>, a1: T1) -> Ptr<T1> {
+    a0.write(a1.clone());
+    a0
 }
 
-fn f4<T1: CppIterator<T2>, T2>(a0: &mut T1, a1: T1) {
-    *a0 = a1
+fn f4<T1: CppIterator<T2> + ByteRepr, T2>(a0: Ptr<T1>, a1: T1) -> Ptr<T1> {
+    a0.write(a1);
+    a0
 }
 
 fn f5<T1: CppIterator<T2>, T2>(a0: T1) -> Ptr<T2> {

@@ -390,7 +390,11 @@ fn main_0() -> i32 {
                     })
             })
     );
-    (*next.borrow_mut()) = Map::erase(m.as_pointer(), &({ (*next.borrow()).clone() }));
+    {
+        next.as_pointer()
+            .write(Map::erase(m.as_pointer(), &({ (*next.borrow()).clone() })));
+        next.as_pointer()
+    };
     assert!(
         (*next.borrow())
             == m.as_pointer()
