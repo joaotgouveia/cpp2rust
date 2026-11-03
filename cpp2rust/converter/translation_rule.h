@@ -130,8 +130,8 @@ struct ExprRule {
 
   // Whether the body takes a pointer to arg, argument i of expr, rather than
   // its value.
-  bool takesAddress(clang::ASTContext &ctx, const clang::Expr *expr,
-                    unsigned i, const clang::Expr *arg) const;
+  bool takesAddress(clang::ASTContext &ctx, const clang::Expr *expr, unsigned i,
+                    const clang::Expr *arg) const;
 
   // Whether the body takes a pointer to a temporary copy of arg, argument i
   // of expr, that a reference parameter is bound to.

@@ -713,10 +713,9 @@ bool ParamTakesPointerValue(const clang::Expr *expr, unsigned index) {
   assert(match.rule_decl && "expression must have a translation rule");
   auto decl = match.rule_decl->decl;
   auto function = decl->getAsFunction();
-  auto type = function ? function->getType()
-                       : llvm::cast<clang::VarDecl>(decl)
-                             ->getType()
-                             ->getPointeeType();
+  auto type =
+      function ? function->getType()
+               : llvm::cast<clang::VarDecl>(decl)->getType()->getPointeeType();
   auto proto = type->getAs<clang::FunctionProtoType>();
   assert(proto && "expression rule is neither a function nor a function "
                   "pointer");
