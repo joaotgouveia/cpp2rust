@@ -188,7 +188,9 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
       }
     }
   }
-  if (!rule) {
+  // Checking which rules a program uses needs no targets, so every rule is
+  // registered then, with an empty translation.
+  if (!rule && !check_used_rules_) {
     return;
   }
   if (!name.starts_with('f')) {
@@ -196,15 +198,20 @@ void addRule(clang::ASTContext &ctx, const std::string &dir,
     assert(!keys.empty() && "type rule has no key");
     for (auto key : keys) {
       types_.emplace(
-          key, TypeRuleDecl{decl, TranslationRule::ParseTypeRuleJSON(*rule)});
+          key,
+          TypeRuleDecl{decl, rule ? TranslationRule::ParseTypeRuleJSON(*rule)
+                                  : TranslationRule::TypeRule{}});
     }
     return;
   }
   auto make_expr_rule = [&] {
-    return TranslationRule::ParseExprRuleJSON(*rule);
+    return rule ? TranslationRule::ParseExprRuleJSON(*rule)
+                : TranslationRule::ExprRule{};
   };
   if (auto function = decl->getAsFunction()) {
-    checkGenerics(dir, name, function, make_expr_rule());
+    if (rule) {
+      checkGenerics(dir, name, function, make_expr_rule());
+    }
   } else {
     assert(llvm::isa<clang::VarDecl>(decl) &&
            "expression rule is neither a function nor a variable");
@@ -337,10 +344,9 @@ ExprMatch findExpr(const clang::Expr *use) {
           RuleDecls::SkipImplicit(use));
       rewritten && best.rule_decl) {
     auto inner = findExpr(rewritten->getDecomposedForm().InnerBinOp);
-    if (inner.rule_decl &&
-        AstMatcher::MoreSpecialized(*sema_, use, inner.rule_decl->decl,
-                                    best.rule_decl->decl) ==
-            inner.rule_decl->decl) {
+    if (inner.rule_decl && AstMatcher::MoreSpecialized(
+                               *sema_, use, inner.rule_decl->decl,
+                               best.rule_decl->decl) == inner.rule_decl->decl) {
       return {};
     }
   }
@@ -589,7 +595,8 @@ clang::QualType iteratorElementType(clang::ASTContext &ctx,
   auto [rule, bindings] = Search(ctx, iterator);
   if (!rule) {
     auto value = iteratorValueType(iterator);
-    assert(!value.isNull() && "iterator has neither a type rule nor value_type");
+    assert(!value.isNull() &&
+           "iterator has neither a type rule nor value_type");
     return value;
   }
   // the element generic the rule declares (T1: CppIterator<T2>), else the
@@ -721,7 +728,8 @@ Matcher::Match<TranslationRule::TypeRule> Search(clang::ASTContext &ctx,
            "unbound type rule generic is not the element of an iterator "
            "or allocator");
     auto element = iteratorValueType(bindings[owner - 1].getAsType());
-    assert(!element.isNull() && "owner of an element generic has no value_type");
+    assert(!element.isNull() &&
+           "owner of an element generic has no value_type");
     bindings.emplace_back(element);
   }
   if (auto generic = match.rule_decl->rule.generic) {
