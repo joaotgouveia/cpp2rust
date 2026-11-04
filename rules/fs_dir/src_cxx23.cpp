@@ -123,22 +123,6 @@ bool f25(const std::filesystem::directory_entry &a0, std::error_code &a1) {
   return a0.exists(a1);
 }
 
-bool f26(const std::filesystem::directory_entry &a0) {
-  return a0.is_block_file();
-}
-
-bool f27(const std::filesystem::directory_entry &a0, std::error_code &a1) {
-  return a0.is_block_file(a1);
-}
-
-bool f28(const std::filesystem::directory_entry &a0) {
-  return a0.is_character_file();
-}
-
-bool f29(const std::filesystem::directory_entry &a0, std::error_code &a1) {
-  return a0.is_character_file(a1);
-}
-
 bool f30(const std::filesystem::directory_entry &a0) {
   return a0.is_directory();
 }
@@ -147,30 +131,12 @@ bool f31(const std::filesystem::directory_entry &a0, std::error_code &a1) {
   return a0.is_directory(a1);
 }
 
-bool f32(const std::filesystem::directory_entry &a0) { return a0.is_fifo(); }
-
-bool f33(const std::filesystem::directory_entry &a0, std::error_code &a1) {
-  return a0.is_fifo(a1);
-}
-
-bool f34(const std::filesystem::directory_entry &a0) { return a0.is_other(); }
-
-bool f35(const std::filesystem::directory_entry &a0, std::error_code &a1) {
-  return a0.is_other(a1);
-}
-
 bool f36(const std::filesystem::directory_entry &a0) {
   return a0.is_regular_file();
 }
 
 bool f37(const std::filesystem::directory_entry &a0, std::error_code &a1) {
   return a0.is_regular_file(a1);
-}
-
-bool f38(const std::filesystem::directory_entry &a0) { return a0.is_socket(); }
-
-bool f39(const std::filesystem::directory_entry &a0, std::error_code &a1) {
-  return a0.is_socket(a1);
 }
 
 bool f40(const std::filesystem::directory_entry &a0) { return a0.is_symlink(); }
@@ -186,15 +152,6 @@ std::uintmax_t f42(const std::filesystem::directory_entry &a0) {
 std::uintmax_t f43(const std::filesystem::directory_entry &a0,
                    std::error_code &a1) {
   return a0.file_size(a1);
-}
-
-std::uintmax_t f44(const std::filesystem::directory_entry &a0) {
-  return a0.hard_link_count();
-}
-
-std::uintmax_t f45(const std::filesystem::directory_entry &a0,
-                   std::error_code &a1) {
-  return a0.hard_link_count(a1);
 }
 
 std::filesystem::file_time_type
@@ -214,15 +171,6 @@ std::filesystem::file_status f48(const std::filesystem::directory_entry &a0) {
 std::filesystem::file_status f49(const std::filesystem::directory_entry &a0,
                                  std::error_code &a1) {
   return a0.status(a1);
-}
-
-std::filesystem::file_status f50(const std::filesystem::directory_entry &a0) {
-  return a0.symlink_status();
-}
-
-std::filesystem::file_status f51(const std::filesystem::directory_entry &a0,
-                                 std::error_code &a1) {
-  return a0.symlink_status(a1);
 }
 
 bool f52(const std::filesystem::directory_entry &a0,

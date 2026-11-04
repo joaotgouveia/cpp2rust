@@ -19,3 +19,11 @@ int f1(__rlimit_resource_t resource, struct rlimit *rlim) {
 int f2(__rlimit_resource_t resource, const struct rlimit *rlim) {
   return setrlimit(resource, rlim);
 }
+
+__rlimit_resource_t f3(void) { return RLIMIT_FSIZE; }
+
+__rlimit_resource_t f4(void) { return RLIMIT_DATA; }
+
+__rlimit_resource_t f5(void) { return RLIMIT_RSS; }
+
+__rlimit_resource_t f6(void) { return RLIMIT_AS; }

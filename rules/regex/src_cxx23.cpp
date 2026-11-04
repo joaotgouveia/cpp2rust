@@ -74,21 +74,7 @@ void f12(std::match_results<T1, T2> &a0, std::match_results<T1, T2> &a1) {
 
 using t1 = std::cmatch;
 
-using t2 = std::cregex_iterator;
-
-using t3 = std::cregex_token_iterator;
-
 using t4 = std::csub_match;
-
-using t5 = std::pmr::cmatch;
-
-template <typename T1> using t6 = std::pmr::match_results<T1>;
-
-using t7 = std::pmr::smatch;
-
-using t8 = std::pmr::wcmatch;
-
-using t9 = std::pmr::wsmatch;
 
 using t10 = std::regex;
 
@@ -224,26 +210,14 @@ bool f30(const std::basic_string<T4, T1, T2> &a0,
 
 using t11 = std::smatch;
 
-using t12 = std::sregex_iterator;
-
-using t13 = std::sregex_token_iterator;
-
 using t14 = std::ssub_match;
 
 using t15 = std::wcmatch;
-
-using t16 = std::wcregex_iterator;
-
-using t17 = std::wcregex_token_iterator;
 
 using t18 = std::wcsub_match;
 
 using t19 = std::wregex;
 
 using t20 = std::wsmatch;
-
-using t21 = std::wsregex_iterator;
-
-using t22 = std::wsregex_token_iterator;
 
 using t23 = std::wssub_match;

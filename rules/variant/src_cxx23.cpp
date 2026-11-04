@@ -4,30 +4,6 @@
 #include <utility>
 #include <variant>
 
-using t1 = std::bad_variant_access;
-
-std::bad_variant_access f1() { return std::bad_variant_access(); }
-
-const char *f2(const std::bad_variant_access &a0) { return a0.what(); }
-
-std::bad_variant_access f3(const std::bad_variant_access &a0) {
-  return std::bad_variant_access(a0);
-}
-
-std::bad_variant_access f4(std::bad_variant_access &&a0) {
-  return std::bad_variant_access(std::move(a0));
-}
-
-std::bad_variant_access &f5(std::bad_variant_access &a0,
-                            const std::bad_variant_access &a1) {
-  return a0.operator=(a1);
-}
-
-std::bad_variant_access &f6(std::bad_variant_access &a0,
-                            std::bad_variant_access &&a1) {
-  return a0.operator=(std::move(a1));
-}
-
 template <std::size_t T1, typename... T2>
 const std::variant_alternative_t<T1, std::variant<T2...>> &&
 f7(const std::variant<T2...> &&a0) {
@@ -165,10 +141,6 @@ std::variant<T1...> &f31(std::variant<T1...> &a0,
 template <typename... T1>
 std::variant<T1...> &f32(std::variant<T1...> &a0, std::variant<T1...> &&a1) {
   return a0.operator=(std::move(a1));
-}
-
-template <typename... T1> bool f33(const std::variant<T1...> &a0) {
-  return a0.valueless_by_exception();
 }
 
 template <typename... T1> std::size_t f34(const std::variant<T1...> &a0) {

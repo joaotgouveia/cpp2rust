@@ -20,9 +20,6 @@ template <typename T1, typename T2>
 using t6 = typename std::basic_ostream<T1, T2>::traits_type;
 
 template <typename T1, typename T2>
-using t7 = typename std::basic_ostream<T1, T2>::sentry;
-
-template <typename T1, typename T2>
 std::basic_ostream<T1, T2> f1(std::basic_streambuf<T1, T2> *a0) {
   return std::basic_ostream<T1, T2>(a0);
 }
@@ -227,19 +224,6 @@ bool f35(const std::basic_ostream<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-typename std::basic_ostream<T1, T2>::iostate
-f36(const std::basic_ostream<T1, T2> &a0) {
-  return a0.exceptions();
-}
-
-template <typename T1, typename T2>
-void f37(std::basic_ostream<T1, T2> &a0,
-         typename std::basic_ostream<T1, T2>::iostate a1) {
-  return a0.exceptions(
-      std::forward<typename std::basic_ostream<T1, T2>::iostate>(a1));
-}
-
-template <typename T1, typename T2>
 std::basic_ostream<T1, T2> *f38(const std::basic_ostream<T1, T2> &a0) {
   return a0.tie();
 }
@@ -269,29 +253,6 @@ T1 f42(const std::basic_ostream<T1, T2> &a0) {
 template <typename T1, typename T2>
 T1 f43(std::basic_ostream<T1, T2> &a0, T1 a1) {
   return a0.fill(std::move(a1));
-}
-
-template <typename T1, typename T2>
-std::locale f44(std::basic_ostream<T1, T2> &a0, const std::locale &a1) {
-  return a0.imbue(a1);
-}
-
-template <typename T1, typename T2>
-char f45(const std::basic_ostream<T1, T2> &a0, T1 a1, char a2) {
-  return a0.narrow(std::move(a1), a2);
-}
-
-template <typename T1, typename T2>
-T1 f46(const std::basic_ostream<T1, T2> &a0, char a1) {
-  return a0.widen(a1);
-}
-
-template <typename T1, typename T2>
-void f47(std::basic_ostream<T1, T2> &a0,
-         void (*a1)(typename std::basic_ostream<T1, T2>::event,
-                    std::basic_ostream<T1, T2> &, int),
-         int a2) {
-  return a0.register_callback(a1, a2);
 }
 
 template <typename T1, typename T2>
@@ -351,25 +312,6 @@ std::streamsize f56(std::basic_ostream<T1, T2> &a0, std::streamsize a1) {
 
 template <typename T1, typename T2> bool f57(bool a0) {
   return std::basic_ostream<T1, T2>::sync_with_stdio(a0);
-}
-
-template <typename T1, typename T2>
-std::locale f58(const std::basic_ostream<T1, T2> &a0) {
-  return a0.getloc();
-}
-
-template <typename T1, typename T2> int f59() {
-  return std::basic_ostream<T1, T2>::xalloc();
-}
-
-template <typename T1, typename T2>
-long &f60(std::basic_ostream<T1, T2> &a0, int a1) {
-  return a0.iword(a1);
-}
-
-template <typename T1, typename T2>
-void *&f61(std::basic_ostream<T1, T2> &a0, int a1) {
-  return a0.pword(a1);
 }
 
 template <typename T1, typename T2>
@@ -530,15 +472,4 @@ typename std::basic_ostream<T1, T2>::seekdir f92() {
 template <typename T1, typename T2>
 typename std::basic_ostream<T1, T2>::seekdir f93() {
   return std::basic_ostream<T1, T2>::end;
-}
-
-template <typename T1, typename T2>
-typename std::basic_ostream<T1, T2>::sentry
-f94(std::basic_ostream<T1, T2> &a0) {
-  return typename std::basic_ostream<T1, T2>::sentry(a0);
-}
-
-template <typename T1, typename T2>
-bool f95(const typename std::basic_ostream<T1, T2>::sentry &a0) {
-  return static_cast<bool>(a0);
 }

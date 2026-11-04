@@ -5,35 +5,6 @@ template <typename T1> std::back_insert_iterator<T1> f1(T1 &a0) {
   return std::back_inserter(a0);
 }
 
-template <typename T1> using t1 = std::const_iterator<T1>;
-
-template <typename T1> using t2 = std::const_sentinel<T1>;
-
-template <typename T1> std::front_insert_iterator<T1> f2(T1 &a0) {
-  return std::front_inserter(a0);
-}
-
-template <typename T1>
-std::insert_iterator<T1> f3(T1 &a0, std::ranges::iterator_t<T1> a1) {
-  return std::inserter(a0, std::forward<std::ranges::iterator_t<T1>>(a1));
-}
-
-template <typename T1> using t3 = std::iter_const_reference_t<T1>;
-
-template <typename T1>
-std::const_iterator<T1> f4(T1 a0)
-  requires(std::input_iterator<T1>)
-{
-  return std::make_const_iterator(std::move(a0));
-}
-
-template <typename T1>
-std::const_sentinel<T1> f5(T1 a0)
-  requires(std::semiregular<T1>)
-{
-  return std::make_const_sentinel(std::move(a0));
-}
-
 template <typename T1> std::move_iterator<T1> f6(T1 a0) {
   return std::make_move_iterator(std::move(a0));
 }

@@ -11,24 +11,7 @@ T1 f1(const T2 &a0)
 
 template <typename T1> T1 f2(T1 a0) { return std::bit_ceil(std::move(a0)); }
 
-template <typename T1> T1 f3(T1 a0) { return std::bit_floor(std::move(a0)); }
-
-template <typename T1> int f4(T1 a0) { return std::bit_width(std::move(a0)); }
-
-template <typename T1>
-T1 f5(T1 a0)
-  requires(std::integral<T1>)
-{
-  return std::byteswap(std::move(a0));
-}
-
 template <typename T1> int f6(T1 a0) { return std::countl_one(std::move(a0)); }
-
-template <typename T1> int f7(T1 a0) { return std::countl_zero(std::move(a0)); }
-
-template <typename T1> int f8(T1 a0) { return std::countr_one(std::move(a0)); }
-
-template <typename T1> int f9(T1 a0) { return std::countr_zero(std::move(a0)); }
 
 using t1 = std::endian;
 
@@ -38,15 +21,7 @@ std::endian f11() { return std::endian::big; }
 
 std::endian f12() { return std::endian::native; }
 
-template <typename T1> bool f13(T1 a0) {
-  return std::has_single_bit(std::move(a0));
-}
-
 template <typename T1> int f14(T1 a0) { return std::popcount(std::move(a0)); }
-
-template <typename T1> T1 f15(T1 a0, int a1) {
-  return std::rotl(std::move(a0), a1);
-}
 
 template <typename T1> T1 f16(T1 a0, int a1) {
   return std::rotr(std::move(a0), a1);

@@ -473,5 +473,3 @@ template <typename T1, typename T2, typename T3>
 typename std::deque<T1, T2>::size_type f68(std::deque<T1, T2> &a0, T3 a1) {
   return std::erase_if(a0, std::move(a1));
 }
-
-template <typename T1> using t30 = std::pmr::deque<T1>;

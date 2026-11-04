@@ -4,19 +4,9 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
-typename std::multiset<T1, T2, T3>::size_type f1(std::multiset<T1, T2, T3> &a0,
-                                                 T4 a1) {
-  return std::erase_if(a0, std::move(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
 typename std::set<T1, T2, T3>::size_type f2(std::set<T1, T2, T3> &a0, T4 a1) {
   return std::erase_if(a0, std::move(a1));
 }
-
-template <typename T1, typename T2> using t1 = std::pmr::multiset<T1, T2>;
-
-template <typename T1, typename T2> using t2 = std::pmr::set<T1, T2>;
 
 template <typename T1, typename T2, typename T3>
 using t3 = std::set<T1, T2, T3>;
@@ -65,12 +55,6 @@ using t17 = typename std::set<T1, T2, T3>::size_type;
 
 template <typename T1, typename T2, typename T3>
 using t18 = typename std::set<T1, T2, T3>::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t19 = typename std::set<T1, T2, T3>::node_type;
-
-template <typename T1, typename T2, typename T3>
-using t20 = typename std::set<T1, T2, T3>::insert_return_type;
 
 template <typename T1, typename T2, typename T3> std::set<T1, T2, T3> f3() {
   return std::set<T1, T2, T3>();
@@ -249,35 +233,6 @@ void f34(std::set<T1, T2, T3> &a0, std::initializer_list<T1> a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::node_type
-f35(std::set<T1, T2, T3> &a0,
-    typename std::set<T1, T2, T3>::const_iterator a1) {
-  return a0.extract(
-      std::forward<typename std::set<T1, T2, T3>::const_iterator>(a1));
-}
-
-template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::node_type f36(std::set<T1, T2, T3> &a0,
-                                             const T1 &a1) {
-  return a0.extract(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::insert_return_type
-f37(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::node_type &&a1) {
-  return a0.insert(std::move(a1));
-}
-
-template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::iterator
-f38(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
-    typename std::set<T1, T2, T3>::node_type &&a2) {
-  return a0.insert(
-      std::forward<typename std::set<T1, T2, T3>::const_iterator>(a1),
-      std::move(a2));
-}
-
-template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
 f39(std::set<T1, T2, T3> &a0,
     typename std::set<T1, T2, T3>::const_iterator a1) {
@@ -428,16 +383,6 @@ void f63(std::set<T1, T2, T3> &a0, std::set<T1, T4, T3> &&a1) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-void f64(std::set<T1, T2, T3> &a0, std::multiset<T1, T4, T3> &a1) {
-  return a0.template merge<T4>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-void f65(std::set<T1, T2, T3> &a0, std::multiset<T1, T4, T3> &&a1) {
-  return a0.template merge<T4>(std::move(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
 auto f66(const std::set<T1, T2, T3> &a0, const T4 &a1)
   requires(!(std::is_same<T4, typename std::set<T1, T2, T3>::key_type>::value))
 {
@@ -521,9 +466,3 @@ using t24 = typename std::set<T1, T2, T3>::iterator::iterator_category;
 
 template <typename T1, typename T2, typename T3>
 using t25 = typename std::set<T1, T2, T3>::iterator::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t26 = typename std::set<T1, T2, T3>::node_type::key_type;
-
-template <typename T1, typename T2, typename T3>
-using t27 = typename std::set<T1, T2, T3>::node_type::mapped_type;

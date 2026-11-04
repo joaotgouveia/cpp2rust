@@ -57,18 +57,6 @@ bool f12(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
                                       std::move(a4));
 }
 
-template <typename T1, typename T2> auto f13(T1 a0, T1 a1, T2 a2, T2 a3) {
-  return std::lexicographical_compare_three_way(std::move(a0), std::move(a1),
-                                                std::move(a2), std::move(a3));
-}
-
-template <typename T1, typename T2, typename T3>
-auto f14(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
-  return std::lexicographical_compare_three_way(std::move(a0), std::move(a1),
-                                                std::move(a2), std::move(a3),
-                                                std::move(a4));
-}
-
 template <typename T1, typename T2> T1 f15(T1 a0, T1 a1, const T2 &a2) {
   return std::lower_bound(std::move(a0), std::move(a1), a2);
 }

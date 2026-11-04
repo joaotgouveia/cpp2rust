@@ -22,9 +22,6 @@ template <typename T1, typename T2>
 using t6 = typename std::basic_istream<T1, T2>::traits_type;
 
 template <typename T1, typename T2>
-using t7 = typename std::basic_istream<T1, T2>::sentry;
-
-template <typename T1, typename T2>
 std::basic_istream<T1, T2> f1(std::basic_streambuf<T1, T2> *a0) {
   return std::basic_istream<T1, T2>(a0);
 }
@@ -209,12 +206,6 @@ std::basic_istream<T1, T2> &f32(std::basic_istream<T1, T2> &a0, T1 *a1,
 }
 
 template <typename T1, typename T2>
-std::streamsize f33(std::basic_istream<T1, T2> &a0, T1 *a1,
-                    std::streamsize a2) {
-  return a0.readsome(a1, a2);
-}
-
-template <typename T1, typename T2>
 std::basic_istream<T1, T2> &f34(std::basic_istream<T1, T2> &a0, T1 a1) {
   return a0.putback(std::move(a1));
 }
@@ -222,10 +213,6 @@ std::basic_istream<T1, T2> &f34(std::basic_istream<T1, T2> &a0, T1 a1) {
 template <typename T1, typename T2>
 std::basic_istream<T1, T2> &f35(std::basic_istream<T1, T2> &a0) {
   return a0.unget();
-}
-
-template <typename T1, typename T2> int f36(std::basic_istream<T1, T2> &a0) {
-  return a0.sync();
 }
 
 template <typename T1, typename T2>
@@ -303,19 +290,6 @@ bool f48(const std::basic_istream<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-typename std::basic_istream<T1, T2>::iostate
-f49(const std::basic_istream<T1, T2> &a0) {
-  return a0.exceptions();
-}
-
-template <typename T1, typename T2>
-void f50(std::basic_istream<T1, T2> &a0,
-         typename std::basic_istream<T1, T2>::iostate a1) {
-  return a0.exceptions(
-      std::forward<typename std::basic_istream<T1, T2>::iostate>(a1));
-}
-
-template <typename T1, typename T2>
 std::basic_ostream<T1, T2> *f51(const std::basic_istream<T1, T2> &a0) {
   return a0.tie();
 }
@@ -345,29 +319,6 @@ T1 f55(const std::basic_istream<T1, T2> &a0) {
 template <typename T1, typename T2>
 T1 f56(std::basic_istream<T1, T2> &a0, T1 a1) {
   return a0.fill(std::move(a1));
-}
-
-template <typename T1, typename T2>
-std::locale f57(std::basic_istream<T1, T2> &a0, const std::locale &a1) {
-  return a0.imbue(a1);
-}
-
-template <typename T1, typename T2>
-char f58(const std::basic_istream<T1, T2> &a0, T1 a1, char a2) {
-  return a0.narrow(std::move(a1), a2);
-}
-
-template <typename T1, typename T2>
-T1 f59(const std::basic_istream<T1, T2> &a0, char a1) {
-  return a0.widen(a1);
-}
-
-template <typename T1, typename T2>
-void f60(std::basic_istream<T1, T2> &a0,
-         void (*a1)(typename std::basic_istream<T1, T2>::event,
-                    std::basic_istream<T1, T2> &, int),
-         int a2) {
-  return a0.register_callback(a1, a2);
 }
 
 template <typename T1, typename T2>
@@ -427,25 +378,6 @@ std::streamsize f69(std::basic_istream<T1, T2> &a0, std::streamsize a1) {
 
 template <typename T1, typename T2> bool f70(bool a0) {
   return std::basic_istream<T1, T2>::sync_with_stdio(a0);
-}
-
-template <typename T1, typename T2>
-std::locale f71(const std::basic_istream<T1, T2> &a0) {
-  return a0.getloc();
-}
-
-template <typename T1, typename T2> int f72() {
-  return std::basic_istream<T1, T2>::xalloc();
-}
-
-template <typename T1, typename T2>
-long &f73(std::basic_istream<T1, T2> &a0, int a1) {
-  return a0.iword(a1);
-}
-
-template <typename T1, typename T2>
-void *&f74(std::basic_istream<T1, T2> &a0, int a1) {
-  return a0.pword(a1);
 }
 
 template <typename T1, typename T2>
@@ -606,18 +538,4 @@ typename std::basic_istream<T1, T2>::seekdir f105() {
 template <typename T1, typename T2>
 typename std::basic_istream<T1, T2>::seekdir f106() {
   return std::basic_istream<T1, T2>::end;
-}
-
-template <typename T1, typename T2>
-using t8 = typename std::basic_istream<T1, T2>::sentry::traits_type;
-
-template <typename T1, typename T2>
-typename std::basic_istream<T1, T2>::sentry f107(std::basic_istream<T1, T2> &a0,
-                                                 bool a1) {
-  return typename std::basic_istream<T1, T2>::sentry(a0, a1);
-}
-
-template <typename T1, typename T2>
-bool f108(const typename std::basic_istream<T1, T2>::sentry &a0) {
-  return static_cast<bool>(a0);
 }

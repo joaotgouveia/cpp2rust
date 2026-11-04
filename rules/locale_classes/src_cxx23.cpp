@@ -2,17 +2,9 @@
 #include <iosfwd>
 #include <utility>
 
-template <typename T1> bool f1(const std::locale &a0) {
-  return std::has_facet<T1>(a0);
-}
-
 using t1 = std::locale;
 
 using t2 = std::locale::category;
-
-using t3 = std::locale::facet;
-
-using t4 = std::locale::id;
 
 std::locale f2() { return std::locale(); }
 
@@ -81,11 +73,3 @@ std::locale::category f22() { return std::locale::monetary; }
 std::locale::category f23() { return std::locale::messages; }
 
 std::locale::category f24() { return std::locale::all; }
-
-std::locale::id f25() { return {}; }
-
-using t5 = std::locale::_Impl;
-
-template <typename T1> const T1 &f26(const std::locale &a0) {
-  return std::use_facet<T1>(a0);
-}

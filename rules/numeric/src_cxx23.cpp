@@ -55,8 +55,6 @@ f9(T1 a0, T1 a1) {
   return std::midpoint(std::move(a0), std::move(a1));
 }
 
-template <typename T1, typename T2> using t1 = std::ranges::iota_result<T1, T2>;
-
 template <typename T1>
 typename std::iterator_traits<T1>::value_type f10(T1 a0, T1 a1) {
   return std::reduce(std::move(a0), std::move(a1));
@@ -70,27 +68,6 @@ template <typename T1, typename T2, typename T3>
 T2 f12(T1 a0, T1 a1, T2 a2, T3 a3) {
   return std::reduce(std::move(a0), std::move(a1), std::move(a2),
                      std::move(a3));
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-T2 f13(T1 a0, T1 a1, T2 a2, T3 a3, T4 a4, T5 a5) {
-  return std::transform_exclusive_scan(std::move(a0), std::move(a1),
-                                       std::move(a2), std::move(a3),
-                                       std::move(a4), std::move(a5));
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-T2 f14(T1 a0, T1 a1, T2 a2, T3 a3, T4 a4) {
-  return std::transform_inclusive_scan(std::move(a0), std::move(a1),
-                                       std::move(a2), std::move(a3),
-                                       std::move(a4));
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-T2 f15(T1 a0, T1 a1, T2 a2, T3 a3, T4 a4, T5 a5) {
-  return std::transform_inclusive_scan(std::move(a0), std::move(a1),
-                                       std::move(a2), std::move(a3),
-                                       std::move(a4), std::move(a5));
 }
 
 template <typename T1, typename T2, typename T3>

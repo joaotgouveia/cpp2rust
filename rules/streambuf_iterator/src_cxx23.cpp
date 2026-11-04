@@ -7,15 +7,6 @@ void f1(std::istreambuf_iterator<T1> &a0, T2 a1) {
 }
 
 template <typename T1>
-std::ostreambuf_iterator<T1> f2(std::istreambuf_iterator<T1> a0,
-                                std::istreambuf_iterator<T1> a1,
-                                std::ostreambuf_iterator<T1> a2) {
-  return std::copy(std::forward<std::istreambuf_iterator<T1>>(a0),
-                   std::forward<std::istreambuf_iterator<T1>>(a1),
-                   std::forward<std::ostreambuf_iterator<T1>>(a2));
-}
-
-template <typename T1>
 std::istreambuf_iterator<T1> f3(std::istreambuf_iterator<T1> a0,
                                 std::istreambuf_iterator<T1> a1, const T1 &a2) {
   return std::find(std::forward<std::istreambuf_iterator<T1>>(a0),

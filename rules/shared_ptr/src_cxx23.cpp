@@ -62,11 +62,6 @@ template <typename T1, typename T2> T1 *f12(const std::shared_ptr<T2> &a0) {
   return std::get_deleter<T1>(a0);
 }
 
-template <typename T1, typename T2, std::_Lock_policy T3>
-T1 *f13(const std::__shared_ptr<T2, T3> &a0) {
-  return std::get_deleter<T1>(a0);
-}
-
 template <typename T1>
 std::shared_ptr<T1> f14(const std::remove_extent_t<T1> &a0) {
   return std::make_shared<T1>(a0);
@@ -95,12 +90,6 @@ template <typename T1> std::shared_ptr<T1> f19() {
 
 template <typename T1> std::shared_ptr<T1> f20(std::size_t a0) {
   return std::make_shared_for_overwrite<T1>(a0);
-}
-
-template <typename T1, typename T2, typename T3, std::_Lock_policy T4>
-std::basic_ostream<T1, T2> &f21(std::basic_ostream<T1, T2> &a0,
-                                const std::__shared_ptr<T3, T4> &a1) {
-  return std::operator<<(a0, a1);
 }
 
 template <typename T1>
@@ -222,11 +211,6 @@ std::shared_ptr<T1> f43(const std::weak_ptr<T2> &a0) {
   return std::shared_ptr<T1>(a0);
 }
 
-template <typename T1, typename T2>
-std::shared_ptr<T1> f44(std::auto_ptr<T2> &&a0) {
-  return std::shared_ptr<T1>(std::move(a0));
-}
-
 template <typename T1, typename T2, typename T3>
 std::shared_ptr<T1> f45(std::unique_ptr<T2, T3> &&a0) {
   return std::shared_ptr<T1>(std::move(a0));
@@ -237,11 +221,6 @@ std::shared_ptr<T1> &f46(std::shared_ptr<T1> &a0, const std::shared_ptr<T2> &a1)
   requires(!(std::is_same<T2, T1>::value))
 {
   return a0.template operator= <T2>(a1);
-}
-
-template <typename T1, typename T2>
-std::shared_ptr<T1> &f47(std::shared_ptr<T1> &a0, std::auto_ptr<T2> &&a1) {
-  return a0.template operator= <T2>(std::move(a1));
 }
 
 template <typename T1, typename T2>
@@ -293,18 +272,6 @@ void f57(std::shared_ptr<T1> &a0, T2 *a1, T3 a2) {
 template <typename T1, typename T2, typename T3, typename T4>
 void f58(std::shared_ptr<T1> &a0, T2 *a1, T3 a2, T4 a3) {
   return a0.template reset<T2, T3, T4>(a1, std::move(a2), std::move(a3));
-}
-
-template <typename T1, typename T2>
-bool f59(const std::shared_ptr<T1> &a0,
-         const std::__shared_ptr<T2, (std::_Lock_policy)2U> &a1) {
-  return a0.template owner_before<T2>(a1);
-}
-
-template <typename T1, typename T2>
-bool f60(const std::shared_ptr<T1> &a0,
-         const std::__weak_ptr<T2, (std::_Lock_policy)2U> &a1) {
-  return a0.template owner_before<T2>(a1);
 }
 
 template <typename T1> T1 &f61(const std::shared_ptr<T1> &a0) {

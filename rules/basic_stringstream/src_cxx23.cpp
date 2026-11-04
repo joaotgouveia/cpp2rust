@@ -101,12 +101,6 @@ std::basic_string<T1, T2, T3> f11(std::basic_stringstream<T1, T2, T3> &&a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_string_view<T1, T2>
-f12(const std::basic_stringstream<T1, T2, T3> &a0) {
-  return a0.view();
-}
-
-template <typename T1, typename T2, typename T3>
 void f13(std::basic_stringstream<T1, T2, T3> &a0,
          const std::basic_string<T1, T2, T3> &a1) {
   return a0.str(a1);
@@ -355,12 +349,6 @@ f50(std::basic_stringstream<T1, T2, T3> &a0, T1 *a1, std::streamsize a2) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize f51(std::basic_stringstream<T1, T2, T3> &a0, T1 *a1,
-                    std::streamsize a2) {
-  return a0.readsome(a1, a2);
-}
-
-template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
 f52(std::basic_stringstream<T1, T2, T3> &a0, T1 a1) {
   return a0.putback(std::move(a1));
@@ -370,11 +358,6 @@ template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3> &
 f53(std::basic_stringstream<T1, T2, T3> &a0) {
   return a0.unget();
-}
-
-template <typename T1, typename T2, typename T3>
-int f54(std::basic_stringstream<T1, T2, T3> &a0) {
-  return a0.sync();
 }
 
 template <typename T1, typename T2, typename T3>
@@ -452,19 +435,6 @@ bool f66(const std::basic_stringstream<T1, T2, T3> &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::basic_stringstream<T1, T2, T3>::iostate
-f67(const std::basic_stringstream<T1, T2, T3> &a0) {
-  return a0.exceptions();
-}
-
-template <typename T1, typename T2, typename T3>
-void f68(std::basic_stringstream<T1, T2, T3> &a0,
-         typename std::basic_stringstream<T1, T2, T3>::iostate a1) {
-  return a0.exceptions(
-      std::forward<typename std::basic_stringstream<T1, T2, T3>::iostate>(a1));
-}
-
-template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> *f69(const std::basic_stringstream<T1, T2, T3> &a0) {
   return a0.tie();
 }
@@ -483,30 +453,6 @@ T1 f71(const std::basic_stringstream<T1, T2, T3> &a0) {
 template <typename T1, typename T2, typename T3>
 T1 f72(std::basic_stringstream<T1, T2, T3> &a0, T1 a1) {
   return a0.fill(std::move(a1));
-}
-
-template <typename T1, typename T2, typename T3>
-std::locale f73(std::basic_stringstream<T1, T2, T3> &a0,
-                const std::locale &a1) {
-  return a0.imbue(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-char f74(const std::basic_stringstream<T1, T2, T3> &a0, T1 a1, char a2) {
-  return a0.narrow(std::move(a1), a2);
-}
-
-template <typename T1, typename T2, typename T3>
-T1 f75(const std::basic_stringstream<T1, T2, T3> &a0, char a1) {
-  return a0.widen(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-void f76(std::basic_stringstream<T1, T2, T3> &a0,
-         void (*a1)(typename std::basic_stringstream<T1, T2, T3>::event,
-                    std::basic_stringstream<T1, T2, T3> &, int),
-         int a2) {
-  return a0.register_callback(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
@@ -571,25 +517,6 @@ std::streamsize f85(std::basic_stringstream<T1, T2, T3> &a0,
 
 template <typename T1, typename T2, typename T3> bool f86(bool a0) {
   return std::basic_stringstream<T1, T2, T3>::sync_with_stdio(a0);
-}
-
-template <typename T1, typename T2, typename T3>
-std::locale f87(const std::basic_stringstream<T1, T2, T3> &a0) {
-  return a0.getloc();
-}
-
-template <typename T1, typename T2, typename T3> int f88() {
-  return std::basic_stringstream<T1, T2, T3>::xalloc();
-}
-
-template <typename T1, typename T2, typename T3>
-long &f89(std::basic_stringstream<T1, T2, T3> &a0, int a1) {
-  return a0.iword(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-void *&f90(std::basic_stringstream<T1, T2, T3> &a0, int a1) {
-  return a0.pword(a1);
 }
 
 template <typename T1, typename T2, typename T3>

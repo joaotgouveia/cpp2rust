@@ -9,12 +9,6 @@ typename std::map<T1, T2, T3, T4>::size_type f1(std::map<T1, T2, T3, T4> &a0,
   return std::erase_if(a0, std::move(a1));
 }
 
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-typename std::multimap<T1, T2, T3, T4>::size_type
-f2(std::multimap<T1, T2, T3, T4> &a0, T5 a1) {
-  return std::erase_if(a0, std::move(a1));
-}
-
 template <typename T1, typename T2, typename T3, typename T4>
 using t1 = std::map<T1, T2, T3, T4>;
 
@@ -65,12 +59,6 @@ using t16 = typename std::map<T1, T2, T3, T4>::reverse_iterator;
 
 template <typename T1, typename T2, typename T3, typename T4>
 using t17 = typename std::map<T1, T2, T3, T4>::const_reverse_iterator;
-
-template <typename T1, typename T2, typename T3, typename T4>
-using t18 = typename std::map<T1, T2, T3, T4>::node_type;
-
-template <typename T1, typename T2, typename T3, typename T4>
-using t19 = typename std::map<T1, T2, T3, T4>::insert_return_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::map<T1, T2, T3, T4> f3() {
@@ -251,37 +239,6 @@ T2 &f33(std::map<T1, T2, T3, T4> &a0, const T1 &a1) {
 template <typename T1, typename T2, typename T3, typename T4>
 const T2 &f34(const std::map<T1, T2, T3, T4> &a0, const T1 &a1) {
   return a0.at(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::map<T1, T2, T3, T4>::node_type
-f35(std::map<T1, T2, T3, T4> &a0,
-    typename std::map<T1, T2, T3, T4>::const_iterator a1) {
-  return a0.extract(
-      std::forward<typename std::map<T1, T2, T3, T4>::const_iterator>(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::map<T1, T2, T3, T4>::node_type f36(std::map<T1, T2, T3, T4> &a0,
-                                                 const T1 &a1) {
-  return a0.extract(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::map<T1, T2, T3, T4>::insert_return_type
-f37(std::map<T1, T2, T3, T4> &a0,
-    typename std::map<T1, T2, T3, T4>::node_type &&a1) {
-  return a0.insert(std::move(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-typename std::map<T1, T2, T3, T4>::iterator
-f38(std::map<T1, T2, T3, T4> &a0,
-    typename std::map<T1, T2, T3, T4>::const_iterator a1,
-    typename std::map<T1, T2, T3, T4>::node_type &&a2) {
-  return a0.insert(
-      std::forward<typename std::map<T1, T2, T3, T4>::const_iterator>(a1),
-      std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
@@ -487,16 +444,6 @@ void f70(std::map<T1, T2, T3, T4> &a0, std::map<T1, T2, T5, T4> &&a1) {
   return a0.template merge<T5>(std::move(a1));
 }
 
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f71(std::map<T1, T2, T3, T4> &a0, std::multimap<T1, T2, T5, T4> &a1) {
-  return a0.template merge<T5>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-void f72(std::map<T1, T2, T3, T4> &a0, std::multimap<T1, T2, T5, T4> &&a1) {
-  return a0.template merge<T5>(std::move(a1));
-}
-
 template <typename T1, typename T2, typename T3, typename T4, typename... T5>
 std::pair<typename std::map<T1, T2, T3, T4>::iterator, bool>
 f73(std::map<T1, T2, T3, T4> &a0, const T1 &a1, T5 &&...a2) {
@@ -529,39 +476,8 @@ f76(std::map<T1, T2, T3, T4> &a0,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-auto f77(std::map<T1, T2, T3, T4> &a0, T5 &&a1)
-  requires(!(std::is_same<
-               T5, typename std::map<T1, T2, T3, T4>::node_type>::value) &&
-           !(std::is_same<T5, const typename std::map<
-                                  T1, T2, T3, T4>::value_type &>::value) &&
-           !(std::is_same<
-               T5, typename std::map<T1, T2, T3, T4>::value_type>::value) &&
-           !(std::is_same<T5, std::initializer_list<typename std::map<
-                                  T1, T2, T3, T4>::value_type>>::value)) &&
-          std::is_constructible<std::pair<const T1, T2>, T5>::value
-{
-  return a0.template insert<T5>(std::forward<T5>(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
 void f78(std::map<T1, T2, T3, T4> &a0, T5 &&a1) {
   return a0.template insert_range<T5>(std::forward<T5>(a1));
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-auto f79(std::map<T1, T2, T3, T4> &a0,
-         typename std::map<T1, T2, T3, T4>::const_iterator a1, T5 &&a2)
-  requires(!(std::is_same<
-               T5, typename std::map<T1, T2, T3, T4>::node_type>::value) &&
-           !(std::is_same<T5, const typename std::map<
-                                  T1, T2, T3, T4>::value_type &>::value) &&
-           !(std::is_same<
-               T5, typename std::map<T1, T2, T3, T4>::value_type>::value)) &&
-          std::is_constructible<std::pair<const T1, T2>, T5>::value
-{
-  return a0.template insert<T5>(
-      std::forward<typename std::map<T1, T2, T3, T4>::const_iterator>(a1),
-      std::forward<T5>(a2));
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
@@ -712,19 +628,7 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t29 = typename std::map<T1, T2, T3, T4>::const_iterator::difference_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t30 = typename std::map<T1, T2, T3, T4>::node_type::key_type;
-
-template <typename T1, typename T2, typename T3, typename T4>
-using t31 = typename std::map<T1, T2, T3, T4>::node_type::mapped_type;
-
-template <typename T1, typename T2, typename T3, typename T4>
 bool f95(const typename std::map<T1, T2, T3, T4>::value_compare &a0,
          const std::pair<const T1, T2> &a1, const std::pair<const T1, T2> &a2) {
   return a0.operator()(a1, a2);
 }
-
-template <typename T1, typename T2, typename T3>
-using t32 = std::pmr::map<T1, T2, T3>;
-
-template <typename T1, typename T2, typename T3>
-using t33 = std::pmr::multimap<T1, T2, T3>;

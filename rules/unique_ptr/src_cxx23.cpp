@@ -382,11 +382,6 @@ std::unique_ptr<T1, T2> f59(std::unique_ptr<T3, T4> &&a0)
   return std::unique_ptr<T1, T2>(std::move(a0));
 }
 
-template <typename T1, typename T2, typename T3>
-std::unique_ptr<T1, T2> f60(std::auto_ptr<T3> &&a0) {
-  return std::unique_ptr<T1, T2>(std::move(a0));
-}
-
 template <typename T1, typename T2, typename T3, typename T4>
 std::unique_ptr<T1, T2> &f61(std::unique_ptr<T1, T2> &a0,
                              std::unique_ptr<T3, T4> &&a1)

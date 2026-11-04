@@ -4,20 +4,6 @@
 
 template <typename T1> using t1 = std::_Bind<T1>;
 
-template <typename T1, typename... T2> using t2 = std::_Bind_back<T1, T2...>;
-
-template <typename T1, typename... T2, typename T3, typename... T4>
-std::_Bind_back<T1, T2...> f1(int a0, T3 &&a1, T4 &&...a2) {
-  return std::_Bind_back<T1, T2...>(a0, std::forward<T3>(a1),
-                                    std::forward<T4>(a2)...);
-}
-
-template <typename T1, typename... T2, typename T3, typename... T4>
-auto f2(std::_Bind_back<T1, T2...> &a0, T3 &&a1, T4 &&...a2) {
-  return a0.template operator()<T3, T4...>(std::forward<T3>(a1),
-                                           std::forward<T4>(a2)...);
-}
-
 template <typename T1, typename... T2> using t3 = std::_Bind_front<T1, T2...>;
 
 template <typename T1, typename... T2, typename T3, typename... T4>
@@ -31,8 +17,6 @@ auto f4(std::_Bind_front<T1, T2...> &a0, T3 &&a1, T4 &&...a2) {
   return a0.template operator()<T3, T4...>(std::forward<T3>(a1),
                                            std::forward<T4>(a2)...);
 }
-
-template <typename T1, typename T2> using t4 = std::_Bind_result<T1, T2>;
 
 template <typename T1> using t5 = std::_Mem_fn<T1>;
 
@@ -70,19 +54,8 @@ auto f11(const std::_Not_fn<T1> &&a0, T2 &&...a1) {
   return std::move(a0).template operator()<T2...>(std::forward<T2>(a1)...);
 }
 
-template <int T1> using t7 = std::_Placeholder<T1>;
-
 template <typename T1, typename... T2> auto f12(T1 &&a0, T2 &&...a1) {
   return std::bind(std::forward<T1>(a0), std::forward<T2>(a1)...);
-}
-
-template <typename T1, typename T2, typename... T3>
-auto f13(T2 &&a0, T3 &&...a1) {
-  return std::bind<T1>(std::forward<T2>(a0), std::forward<T3>(a1)...);
-}
-
-template <typename T1, typename... T2> auto f14(T1 &&a0, T2 &&...a1) {
-  return std::bind_back(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
 template <typename T1, typename... T2> auto f15(T1 &&a0, T2 &&...a1) {
@@ -93,17 +66,6 @@ template <typename T1, typename... T2>
 std::invoke_result_t<T1, T2...> f16(T1 &&a0, T2 &&...a1) {
   return std::invoke(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
-
-template <typename T1, typename T2, typename... T3>
-T1 f17(T2 &&a0, T3 &&...a1)
-  requires(std::is_invocable_r_v<T1, T2, T3...>)
-{
-  return std::invoke_r<T1>(std::forward<T2>(a0), std::forward<T3>(a1)...);
-}
-
-template <typename T1> bool f18() { return std::is_bind_expression_v<T1>; }
-
-template <typename T1> int f19() { return std::is_placeholder_v<T1>; }
 
 template <typename T1, typename T2> auto f20(T1 T2::*a0) {
   return std::mem_fn(std::forward<T1 T2::*>(a0));

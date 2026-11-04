@@ -13,8 +13,6 @@ typename std::vector<T1, T2>::size_type f2(std::vector<T1, T2> &a0, T3 a1) {
   return std::erase_if(a0, std::move(a1));
 }
 
-template <typename T1> using t1 = std::pmr::vector<T1>;
-
 template <typename T1> using t2 = std::vector<bool, T1>;
 
 template <typename T1> using t3 = typename std::vector<bool, T1>::value_type;

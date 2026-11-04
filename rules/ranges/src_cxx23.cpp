@@ -1,8 +1,6 @@
 #include <ranges>
 #include <utility>
 
-template <typename T1> using t1 = std::ranges::istream_view<T1>;
-
 template <typename T1> using t2 = std::ranges::keys_view<T1>;
 
 template <typename T1, typename... T2>
@@ -50,9 +48,3 @@ auto f6(std::ranges::views::__adaptor::_Partial<T1, T2...> &a0, T3 &&a1,
 }
 
 template <typename T1> using t5 = std::ranges::views::all_t<T1>;
-
-template <typename T1> std::ranges::empty_view<T1> f7() {
-  return std::ranges::views::empty<T1>;
-}
-
-template <typename T1> using t6 = std::ranges::wistream_view<T1>;

@@ -119,10 +119,6 @@ template <typename T1> bool f32() { return std::is_error_code_enum_v<T1>; }
 
 template <typename T1> bool f33() { return std::is_error_condition_enum_v<T1>; }
 
-std::error_code f34(std::errc a0) { return std::make_error_code(a0); }
-
-std::error_condition f35(std::errc a0) { return std::make_error_condition(a0); }
-
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f36(std::basic_ostream<T1, T2> &a0,
                                 const std::error_code &a1) {
@@ -151,42 +147,3 @@ bool f41(const std::error_condition &a0, const std::error_condition &a1) {
 }
 
 const std::error_category &f42() { return std::system_category(); }
-
-using t4 = std::system_error;
-
-std::system_error f43(std::error_code a0) {
-  return std::system_error(std::move(a0));
-}
-
-std::system_error f44(std::error_code a0, const std::string &a1) {
-  return std::system_error(std::move(a0), a1);
-}
-
-std::system_error f45(std::error_code a0, const char *a1) {
-  return std::system_error(std::move(a0), a1);
-}
-
-std::system_error f46(int a0, const std::error_category &a1, const char *a2) {
-  return std::system_error(a0, a1, a2);
-}
-
-std::system_error f47(int a0, const std::error_category &a1) {
-  return std::system_error(a0, a1);
-}
-
-std::system_error f48(int a0, const std::error_category &a1,
-                      const std::string &a2) {
-  return std::system_error(a0, a1, a2);
-}
-
-std::system_error f49(const std::system_error &a0) {
-  return std::system_error(a0);
-}
-
-std::system_error &f50(std::system_error &a0, const std::system_error &a1) {
-  return a0.operator=(a1);
-}
-
-const std::error_code &f51(const std::system_error &a0) { return a0.code(); }
-
-const char *f52(const std::system_error &a0) { return a0.what(); }

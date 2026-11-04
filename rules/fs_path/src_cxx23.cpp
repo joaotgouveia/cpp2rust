@@ -17,52 +17,6 @@ std::ptrdiff_t f2(std::filesystem::path::iterator a0,
   return std::distance(std::move(a0), std::move(a1));
 }
 
-using t1 = std::filesystem::filesystem_error;
-
-std::filesystem::filesystem_error f3(const std::string &a0,
-                                     std::error_code a1) {
-  return std::filesystem::filesystem_error(a0, std::move(a1));
-}
-
-std::filesystem::filesystem_error
-f4(const std::string &a0, const std::filesystem::path &a1, std::error_code a2) {
-  return std::filesystem::filesystem_error(a0, a1, std::move(a2));
-}
-
-std::filesystem::filesystem_error f5(const std::string &a0,
-                                     const std::filesystem::path &a1,
-                                     const std::filesystem::path &a2,
-                                     std::error_code a3) {
-  return std::filesystem::filesystem_error(a0, a1, a2, std::move(a3));
-}
-
-std::filesystem::filesystem_error
-f6(const std::filesystem::filesystem_error &a0) {
-  return std::filesystem::filesystem_error(a0);
-}
-
-std::filesystem::filesystem_error &
-f7(std::filesystem::filesystem_error &a0,
-   const std::filesystem::filesystem_error &a1) {
-  return a0.operator=(a1);
-}
-
-const std::filesystem::path &f8(const std::filesystem::filesystem_error &a0) {
-  return a0.path1();
-}
-
-const std::filesystem::path &f9(const std::filesystem::filesystem_error &a0) {
-  return a0.path2();
-}
-
-const char *f10(const std::filesystem::filesystem_error &a0) {
-  return a0.what();
-}
-
-const std::error_code &f11(const std::filesystem::filesystem_error &a0) {
-  return a0.code();
-}
-
 std::size_t f12(const std::filesystem::path &a0) {
   return std::filesystem::hash_value(a0);
 }
@@ -441,12 +395,4 @@ std::filesystem::path::format f98() {
 
 void f99(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
-}
-
-template <typename T1> std::filesystem::path f100(const T1 &a0) {
-  return std::filesystem::u8path(a0);
-}
-
-template <typename T1> std::filesystem::path f101(T1 a0, T1 a1) {
-  return std::filesystem::u8path(std::move(a0), std::move(a1));
 }

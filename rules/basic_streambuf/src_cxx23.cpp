@@ -21,16 +21,6 @@ template <typename T1, typename T2>
 using t6 = typename std::basic_streambuf<T1, T2>::off_type;
 
 template <typename T1, typename T2>
-std::locale f1(std::basic_streambuf<T1, T2> &a0, const std::locale &a1) {
-  return a0.pubimbue(a1);
-}
-
-template <typename T1, typename T2>
-std::locale f2(const std::basic_streambuf<T1, T2> &a0) {
-  return a0.getloc();
-}
-
-template <typename T1, typename T2>
 std::basic_streambuf<T1, T2> *f3(std::basic_streambuf<T1, T2> &a0, T1 *a1,
                                  std::streamsize a2) {
   return a0.pubsetbuf(a1, a2);

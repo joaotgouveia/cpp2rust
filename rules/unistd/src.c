@@ -44,3 +44,7 @@ char *f15(char *buf, size_t size) { return getcwd(buf, size); }
 int f16(const char *path) { return chdir(path); }
 
 pid_t f17(void) { return getpid(); }
+
+#ifdef _CS_GNU_LIBC_VERSION
+int f18(void) { return _CS_GNU_LIBC_VERSION; }
+#endif

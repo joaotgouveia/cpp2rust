@@ -295,12 +295,6 @@ std::basic_ifstream<T1, T2> &f45(std::basic_ifstream<T1, T2> &a0, T1 *a1,
 }
 
 template <typename T1, typename T2>
-std::streamsize f46(std::basic_ifstream<T1, T2> &a0, T1 *a1,
-                    std::streamsize a2) {
-  return a0.readsome(a1, a2);
-}
-
-template <typename T1, typename T2>
 std::basic_ifstream<T1, T2> &f47(std::basic_ifstream<T1, T2> &a0, T1 a1) {
   return a0.putback(std::move(a1));
 }
@@ -308,10 +302,6 @@ std::basic_ifstream<T1, T2> &f47(std::basic_ifstream<T1, T2> &a0, T1 a1) {
 template <typename T1, typename T2>
 std::basic_ifstream<T1, T2> &f48(std::basic_ifstream<T1, T2> &a0) {
   return a0.unget();
-}
-
-template <typename T1, typename T2> int f49(std::basic_ifstream<T1, T2> &a0) {
-  return a0.sync();
 }
 
 template <typename T1, typename T2>
@@ -389,19 +379,6 @@ bool f61(const std::basic_ifstream<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-typename std::basic_ifstream<T1, T2>::iostate
-f62(const std::basic_ifstream<T1, T2> &a0) {
-  return a0.exceptions();
-}
-
-template <typename T1, typename T2>
-void f63(std::basic_ifstream<T1, T2> &a0,
-         typename std::basic_ifstream<T1, T2>::iostate a1) {
-  return a0.exceptions(
-      std::forward<typename std::basic_ifstream<T1, T2>::iostate>(a1));
-}
-
-template <typename T1, typename T2>
 std::basic_ostream<T1, T2> *f64(const std::basic_ifstream<T1, T2> &a0) {
   return a0.tie();
 }
@@ -420,29 +397,6 @@ T1 f66(const std::basic_ifstream<T1, T2> &a0) {
 template <typename T1, typename T2>
 T1 f67(std::basic_ifstream<T1, T2> &a0, T1 a1) {
   return a0.fill(std::move(a1));
-}
-
-template <typename T1, typename T2>
-std::locale f68(std::basic_ifstream<T1, T2> &a0, const std::locale &a1) {
-  return a0.imbue(a1);
-}
-
-template <typename T1, typename T2>
-char f69(const std::basic_ifstream<T1, T2> &a0, T1 a1, char a2) {
-  return a0.narrow(std::move(a1), a2);
-}
-
-template <typename T1, typename T2>
-T1 f70(const std::basic_ifstream<T1, T2> &a0, char a1) {
-  return a0.widen(a1);
-}
-
-template <typename T1, typename T2>
-void f71(std::basic_ifstream<T1, T2> &a0,
-         void (*a1)(typename std::basic_ifstream<T1, T2>::event,
-                    std::basic_ifstream<T1, T2> &, int),
-         int a2) {
-  return a0.register_callback(a1, a2);
 }
 
 template <typename T1, typename T2>
@@ -502,25 +456,6 @@ std::streamsize f80(std::basic_ifstream<T1, T2> &a0, std::streamsize a1) {
 
 template <typename T1, typename T2> bool f81(bool a0) {
   return std::basic_ifstream<T1, T2>::sync_with_stdio(a0);
-}
-
-template <typename T1, typename T2>
-std::locale f82(const std::basic_ifstream<T1, T2> &a0) {
-  return a0.getloc();
-}
-
-template <typename T1, typename T2> int f83() {
-  return std::basic_ifstream<T1, T2>::xalloc();
-}
-
-template <typename T1, typename T2>
-long &f84(std::basic_ifstream<T1, T2> &a0, int a1) {
-  return a0.iword(a1);
-}
-
-template <typename T1, typename T2>
-void *&f85(std::basic_ifstream<T1, T2> &a0, int a1) {
-  return a0.pword(a1);
 }
 
 template <typename T1, typename T2>

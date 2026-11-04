@@ -122,26 +122,3 @@ template <typename T1>
 std::iter_rvalue_reference_t<T1> f20(const std::move_iterator<T1> &a0) {
   return iter_move(a0);
 }
-
-template <typename T1, typename T2>
-std::iter_difference_t<T1> f21(const std::move_iterator<T1> &a0,
-                               const std::move_sentinel<T2> &a1)
-  requires(std::sized_sentinel_for<T2, T1>)
-{
-  return operator-(a0, a1);
-}
-
-template <typename T1, typename T2>
-std::iter_difference_t<T1> f22(const std::move_sentinel<T2> &a0,
-                               const std::move_iterator<T1> &a1)
-  requires(std::sized_sentinel_for<T2, T1>)
-{
-  return operator-(a0, a1);
-}
-
-template <typename T1, typename T2>
-bool f23(const std::move_iterator<T1> &a0, const std::move_sentinel<T2> &a1)
-  requires(std::sentinel_for<T2, T1>)
-{
-  return operator==(a0, a1);
-}

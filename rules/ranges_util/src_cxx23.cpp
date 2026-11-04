@@ -19,9 +19,6 @@ auto f2(const std::ranges::subrange<T2, T3, T4> &a0)
   return std::ranges::get<T1>(a0);
 }
 
-template <typename T1, typename T2>
-using t2 = std::ranges::mismatch_result<T1, T2>;
-
 using t3 = std::ranges::subrange_kind;
 
 std::ranges::subrange_kind f3() { return std::ranges::subrange_kind::unsized; }

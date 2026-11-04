@@ -118,14 +118,6 @@ std::filesystem::file_type f29() { return std::filesystem::file_type::socket; }
 
 std::filesystem::file_type f30() { return std::filesystem::file_type::unknown; }
 
-std::uintmax_t f31(const std::filesystem::path &a0) {
-  return std::filesystem::hard_link_count(a0);
-}
-
-std::uintmax_t f32(const std::filesystem::path &a0, std::error_code &a1) {
-  return std::filesystem::hard_link_count(a0, a1);
-}
-
 std::filesystem::file_time_type f33(const std::filesystem::path &a0) {
   return std::filesystem::last_write_time(a0);
 }
@@ -334,12 +326,6 @@ std::filesystem::perms f85() { return std::filesystem::perms::mask; }
 
 std::filesystem::perms f86() { return std::filesystem::perms::unknown; }
 
-std::filesystem::path f87(const std::filesystem::path &a0,
-                          const std::filesystem::path &a1,
-                          std::error_code &a2) {
-  return std::filesystem::proximate(a0, a1, a2);
-}
-
 std::filesystem::path f88(const std::filesystem::path &a0,
                           const std::filesystem::path &a1,
                           std::error_code &a2) {
@@ -392,13 +378,4 @@ std::filesystem::file_status f98(const std::filesystem::path &a0) {
 std::filesystem::file_status f99(const std::filesystem::path &a0,
                                  std::error_code &a1) {
   return std::filesystem::status(a0, a1);
-}
-
-std::filesystem::file_status f100(const std::filesystem::path &a0) {
-  return std::filesystem::symlink_status(a0);
-}
-
-std::filesystem::file_status f101(const std::filesystem::path &a0,
-                                  std::error_code &a1) {
-  return std::filesystem::symlink_status(a0, a1);
 }

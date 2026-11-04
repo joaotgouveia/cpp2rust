@@ -16,13 +16,7 @@ std::ios_base &f6(std::ios_base &a0) { return std::hexfloat(a0); }
 
 std::ios_base &f7(std::ios_base &a0) { return std::internal(a0); }
 
-using t1 = std::io_errc;
-
-std::io_errc f8() { return std::io_errc::stream; }
-
 using t2 = std::ios_base;
-
-using t3 = std::ios_base::failure;
 
 using t4 = std::ios_base::fmtflags;
 
@@ -31,17 +25,6 @@ using t5 = std::ios_base::iostate;
 using t6 = std::ios_base::openmode;
 
 using t7 = std::ios_base::seekdir;
-
-using t8 = std::ios_base::event;
-
-using t9 = std::ios_base::event_callback;
-
-using t10 = std::ios_base::Init;
-
-void f9(std::ios_base &a0,
-        void (*a1)(std::ios_base::event, std::ios_base &, int), int a2) {
-  return a0.register_callback(a1, a2);
-}
 
 std::ios_base::fmtflags f10(const std::ios_base &a0) { return a0.flags(); }
 
@@ -75,18 +58,6 @@ std::streamsize f18(std::ios_base &a0, std::streamsize a1) {
 }
 
 bool f19(bool a0) { return std::ios_base::sync_with_stdio(a0); }
-
-std::locale f20(std::ios_base &a0, const std::locale &a1) {
-  return a0.imbue(a1);
-}
-
-std::locale f21(const std::ios_base &a0) { return a0.getloc(); }
-
-int f22() { return std::ios_base::xalloc(); }
-
-long &f23(std::ios_base &a0, int a1) { return a0.iword(a1); }
-
-void *&f24(std::ios_base &a0, int a1) { return a0.pword(a1); }
 
 std::ios_base::fmtflags f25() { return std::ios_base::boolalpha; }
 
@@ -152,59 +123,7 @@ std::ios_base::seekdir f55() { return std::ios_base::cur; }
 
 std::ios_base::seekdir f56() { return std::ios_base::end; }
 
-std::ios_base::failure f57(const std::string &a0) {
-  return std::ios_base::failure(a0);
-}
-
-std::ios_base::failure f58(const std::string &a0, const std::error_code &a1) {
-  return std::ios_base::failure(a0, a1);
-}
-
-std::ios_base::failure f59(const char *a0, const std::error_code &a1) {
-  return std::ios_base::failure(a0, a1);
-}
-
-const char *f60(const std::ios_base::failure &a0) { return a0.what(); }
-
-std::ios_base::failure f61(const std::ios_base::failure &a0) {
-  return std::ios_base::failure(a0);
-}
-
-std::ios_base::failure &f62(std::ios_base::failure &a0,
-                            const std::ios_base::failure &a1) {
-  return a0.operator=(a1);
-}
-
-const std::error_code &f63(const std::ios_base::failure &a0) {
-  return a0.code();
-}
-
-std::ios_base::Init f64() { return std::ios_base::Init(); }
-
-std::ios_base::Init f65(const std::ios_base::Init &a0) {
-  return std::ios_base::Init(a0);
-}
-
-std::ios_base::Init &f66(std::ios_base::Init &a0,
-                         const std::ios_base::Init &a1) {
-  return a0.operator=(a1);
-}
-
-std::ios_base::event f67() { return std::ios_base::erase_event; }
-
-std::ios_base::event f68() { return std::ios_base::imbue_event; }
-
-std::ios_base::event f69() { return std::ios_base::copyfmt_event; }
-
-const std::error_category &f70() { return std::iostream_category(); }
-
 std::ios_base &f71(std::ios_base &a0) { return std::left(a0); }
-
-std::error_code f72(std::io_errc a0) { return std::make_error_code(a0); }
-
-std::error_condition f73(std::io_errc a0) {
-  return std::make_error_condition(a0);
-}
 
 std::ios_base &f74(std::ios_base &a0) { return std::noboolalpha(a0); }
 

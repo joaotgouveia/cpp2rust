@@ -527,5 +527,3 @@ using t22 = typename std::list<T1, T2>::const_iterator::pointer;
 
 template <typename T1, typename T2>
 using t23 = typename std::list<T1, T2>::const_iterator::reference;
-
-template <typename T1> using t24 = std::pmr::list<T1>;

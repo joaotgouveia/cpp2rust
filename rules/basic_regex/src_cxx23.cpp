@@ -17,9 +17,6 @@ using t4 = typename std::basic_regex<T1, T2>::string_type;
 template <typename T1, typename T2>
 using t5 = typename std::basic_regex<T1, T2>::flag_type;
 
-template <typename T1, typename T2>
-using t6 = typename std::basic_regex<T1, T2>::locale_type;
-
 template <typename T1, typename T2> std::basic_regex<T1, T2> f1() {
   return std::basic_regex<T1, T2>();
 }
@@ -117,20 +114,6 @@ template <typename T1, typename T2>
 std::regex_constants::syntax_option_type
 f17(const std::basic_regex<T1, T2> &a0) {
   return a0.flags();
-}
-
-template <typename T1, typename T2>
-typename std::basic_regex<T1, T2>::locale_type
-f18(std::basic_regex<T1, T2> &a0,
-    typename std::basic_regex<T1, T2>::locale_type a1) {
-  return a0.imbue(
-      std::forward<typename std::basic_regex<T1, T2>::locale_type>(a1));
-}
-
-template <typename T1, typename T2>
-typename std::basic_regex<T1, T2>::locale_type
-f19(const std::basic_regex<T1, T2> &a0) {
-  return a0.getloc();
 }
 
 template <typename T1, typename T2>

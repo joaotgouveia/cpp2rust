@@ -5,21 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-using t1 = std::bad_optional_access;
-
-std::bad_optional_access f1() { return std::bad_optional_access(); }
-
-const char *f2(const std::bad_optional_access &a0) { return a0.what(); }
-
-std::bad_optional_access f3(const std::bad_optional_access &a0) {
-  return std::bad_optional_access(a0);
-}
-
-std::bad_optional_access &f4(std::bad_optional_access &a0,
-                             const std::bad_optional_access &a1) {
-  return a0.operator=(a1);
-}
-
 template <typename T1>
 std::enable_if_t<std::is_constructible_v<std::decay_t<T1>, T1>,
                  std::optional<std::decay_t<T1>>>
