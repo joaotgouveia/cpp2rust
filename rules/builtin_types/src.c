@@ -23,7 +23,6 @@ typedef unsigned __int128 t210;
 typedef void t220;
 typedef void *t221;
 typedef const void *t222;
-typedef volatile void *t223;
 typedef const volatile void *t224;
 
 #if defined(__x86_64__)

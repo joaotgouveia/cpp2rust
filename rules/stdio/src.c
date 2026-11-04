@@ -7,19 +7,12 @@
 #include <stdio.h>
 
 typedef FILE *t1;
-typedef FILE t2;
 
 FILE *f1(const char *pathname, const char *mode) {
   return fopen(pathname, mode);
 }
 
 int f2(FILE *stream) { return fclose(stream); }
-
-long f3(FILE *stream) { return ftell(stream); }
-
-int f4(FILE *stream, long offset, int whence) {
-  return fseek(stream, offset, whence);
-}
 
 size_t f5(void *ptr, size_t size, size_t nmemb, FILE *stream) {
   return fread(ptr, size, nmemb, stream);
@@ -43,40 +36,6 @@ int f12(const char *s, FILE *stream) { return fputs(s, stream); }
 
 int f13(const char *s) { return puts(s); }
 
-int f14(FILE *stream) { return fileno(stream); }
-
-int f15(FILE *stream) { return ferror(stream); }
-
-int f16(FILE *stream) { return feof(stream); }
-
-char *f17(char *s, int n, FILE *stream) { return fgets(s, n, stream); }
-
-FILE *f18(const char *pathname, const char *mode, FILE *stream) {
-  return freopen(pathname, mode, stream);
-}
-
-int f19(FILE *stream, off_t offset, int whence) {
-  return fseeko(stream, offset, whence);
-}
-
-FILE *f20(int fd, const char *mode) { return fdopen(fd, mode); }
-
-int (*f21)(char *, size_t, const char *, ...) = snprintf;
-
-int f22(const char *a0, const char *a1) { return rename(a0, a1); }
-
-int f23(FILE *stream) { return getc(stream); }
-
-int f24(FILE *stream, char *buf, int mode, size_t size) {
-  return setvbuf(stream, buf, mode, size);
-}
-
-int f25(void) { return SEEK_SET; }
-
-int f26(void) { return SEEK_CUR; }
-
-int f27(void) { return SEEK_END; }
-
 int (*f28)(FILE *, const char *, ...) = fprintf;
 
 int (*f29)(const char *, ...) = printf;
@@ -86,16 +45,6 @@ int f100(const char *a0) { return remove(a0); }
 
 void f101(const char *s) { return perror(s); }
 
-int f102(char *str, size_t size, const char *format, va_list ap) {
-  return vsnprintf(str, size, format, ap);
-}
-
-FILE *f103(void *buf, size_t size, const char *mode) {
-  return fmemopen(buf, size, mode);
-}
-
 int f104(FILE *stream) { return fgetc(stream); }
-
-int (*f105)(char *, const char *, ...) = sprintf;
 
 int f106(int c, FILE *stream) { return ungetc(c, stream); }

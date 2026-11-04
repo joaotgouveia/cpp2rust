@@ -103,10 +103,6 @@ fn t222() -> *const ::libc::c_void {
     std::ptr::null()
 }
 
-fn t223() -> *mut ::libc::c_void {
-    std::ptr::null_mut()
-}
-
 fn t224() -> *const ::libc::c_void {
     std::ptr::null()
 }

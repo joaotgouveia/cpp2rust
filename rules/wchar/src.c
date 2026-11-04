@@ -6,15 +6,7 @@
 typedef mbstate_t t1;
 typedef wint_t t2;
 
-#ifdef __GLIBC__
-typedef __mbstate_t t3;
-#endif
-
-wchar_t *f1(wchar_t *dst, const wchar_t *src) { return wcscpy(dst, src); }
-
 #include <stdio.h>
-
-wchar_t *f2(wchar_t *s, wchar_t c, size_t n) { return wmemset(s, c, n); }
 
 int f3(const wchar_t *a, const wchar_t *b, size_t n) { return wcsncmp(a, b, n); }
 
@@ -23,8 +15,6 @@ int f4(const wchar_t *a, const wchar_t *b) { return wcscmp(a, b); }
 int f5(const wchar_t *a, const wchar_t *b, size_t n) { return wmemcmp(a, b, n); }
 
 size_t f6(const wchar_t *s) { return wcslen(s); }
-
-long f7(const wchar_t *s, wchar_t **end, int base) { return wcstol(s, end, base); }
 
 wint_t f8(FILE *stream) { return fgetwc(stream); }
 

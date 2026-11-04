@@ -8,10 +8,6 @@
 typedef rlim_t t1;
 typedef struct rlimit t2;
 
-#ifdef __GLIBC__
-typedef __rlim_t t3;
-#endif
-
 int f1(__rlimit_resource_t resource, struct rlimit *rlim) {
   return getrlimit(resource, rlim);
 }

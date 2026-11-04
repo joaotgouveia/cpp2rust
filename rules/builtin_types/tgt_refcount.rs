@@ -19,10 +19,6 @@ fn t222() -> AnyPtr {
     AnyPtr::default()
 }
 
-fn t223() -> AnyPtr {
-    AnyPtr::default()
-}
-
 fn t224() -> AnyPtr {
     AnyPtr::default()
 }

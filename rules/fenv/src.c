@@ -5,5 +5,3 @@
 
 typedef fenv_t t1;
 typedef fexcept_t t2;
-
-int f3(int a0) { return fesetround(a0); }
