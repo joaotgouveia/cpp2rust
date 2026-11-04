@@ -58,6 +58,11 @@ template <typename T1, typename... T2> auto f12(T1 &&a0, T2 &&...a1) {
   return std::bind(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
 
+template <typename T1, typename T2, typename... T3>
+auto f13(T2 &&a0, T3 &&...a1) {
+  return std::bind<T1>(std::forward<T2>(a0), std::forward<T3>(a1)...);
+}
+
 template <typename T1, typename... T2> auto f15(T1 &&a0, T2 &&...a1) {
   return std::bind_front(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }

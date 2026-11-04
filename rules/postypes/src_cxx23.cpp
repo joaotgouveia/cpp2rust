@@ -1,6 +1,16 @@
 #include <iosfwd>
 #include <utility>
 
+template <typename T1>
+bool f1(const std::fpos<T1> &a0, const std::fpos<T1> &a1) {
+  return std::operator!=(a0, a1);
+}
+
+template <typename T1>
+bool f2(const std::fpos<T1> &a0, const std::fpos<T1> &a1) {
+  return std::operator==(a0, a1);
+}
+
 using t1 = std::streamoff;
 
 using t2 = std::streampos;
