@@ -721,6 +721,41 @@ f86(std::unordered_map<T1, T2, T3, T4, T5> &a0,
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           typename T6>
+auto f87(std::unordered_map<T1, T2, T3, T4, T5> &a0, T6 &&a1)
+  requires(
+      !(std::is_same<T6, typename std::unordered_map<T1, T2, T3, T4,
+                                                     T5>::node_type>::value) &&
+      !(std::is_same<T6, const typename std::unordered_map<
+                             T1, T2, T3, T4, T5>::value_type &>::value) &&
+      !(std::is_same<T6, typename std::unordered_map<T1, T2, T3, T4,
+                                                     T5>::value_type>::value) &&
+      !(std::is_same<T6, std::initializer_list<typename std::unordered_map<
+                             T1, T2, T3, T4, T5>::value_type>>::value))
+{
+  return a0.template insert<T6>(std::forward<T6>(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
+auto f88(std::unordered_map<T1, T2, T3, T4, T5> &a0,
+         typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator a1,
+         T6 &&a2)
+  requires(
+      !(std::is_same<T6, typename std::unordered_map<T1, T2, T3, T4,
+                                                     T5>::node_type>::value) &&
+      !(std::is_same<T6, const typename std::unordered_map<
+                             T1, T2, T3, T4, T5>::value_type &>::value) &&
+      !(std::is_same<T6, typename std::unordered_map<T1, T2, T3, T4,
+                                                     T5>::value_type>::value))
+{
+  return a0.template insert<T6>(
+      std::forward<
+          typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator>(a1),
+      std::forward<T6>(a2));
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6>
 void f89(std::unordered_map<T1, T2, T3, T4, T5> &a0, T6 a1, T6 a2) {
   return a0.template insert<T6>(std::move(a1), std::move(a2));
 }
