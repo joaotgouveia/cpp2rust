@@ -113,27 +113,6 @@ bool IsBuiltinConstantP(const clang::Expr *expr) {
   return false;
 }
 
-bool IsRustConstEvaluableExpr(const clang::Expr *expr) {
-  expr = expr->IgnoreParenImpCasts();
-  if (clang::isa<clang::IntegerLiteral, clang::ConceptSpecializationExpr>(
-          expr)) {
-    return true;
-  }
-  if (auto *trait = clang::dyn_cast<clang::UnaryExprOrTypeTraitExpr>(expr)) {
-    return trait->getKind() == clang::UnaryExprOrTypeTrait::UETT_SizeOf;
-  }
-  if (auto *unary = clang::dyn_cast<clang::UnaryOperator>(expr)) {
-    return unary->getOpcode() == clang::UO_LNot &&
-           IsRustConstEvaluableExpr(unary->getSubExpr());
-  }
-  if (auto *binary = clang::dyn_cast<clang::BinaryOperator>(expr)) {
-    return (binary->isEqualityOp() || binary->isRelationalOp()) &&
-           IsRustConstEvaluableExpr(binary->getLHS()) &&
-           IsRustConstEvaluableExpr(binary->getRHS());
-  }
-  return false;
-}
-
 std::string GetEscapedCharLiteral(char character) {
   switch (character) {
   case '"':

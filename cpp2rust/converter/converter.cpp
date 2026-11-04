@@ -1407,17 +1407,12 @@ bool Converter::VisitStaticAssertDecl(clang::StaticAssertDecl *decl) {
   if (assert_expr->isValueDependent()) {
     return false;
   }
-  std::string condition;
-  if (assert_expr->getType()->isBooleanType() &&
-      IsRustConstEvaluableExpr(assert_expr)) {
-    condition = ToString(assert_expr);
-  } else {
-    bool value = false;
-    ENSURE(assert_expr->EvaluateAsBooleanCondition(value, ctx_,
-                                                   /*InConstantContext=*/true));
-    condition = value ? keyword::kTrue : keyword::kFalse;
-  }
-  StrCat(std::format("const _: () = assert!({}{});", condition,
+  // Clang computes the condition, so it needs no rules
+  bool value = false;
+  ENSURE(assert_expr->EvaluateAsBooleanCondition(value, ctx_,
+                                                 /*InConstantContext=*/true));
+  StrCat(std::format("const _: () = assert!({}{});",
+                     value ? keyword::kTrue : keyword::kFalse,
                      GetAssertMessageAsString(assert_expr, ctx_)));
   return false;
 }
