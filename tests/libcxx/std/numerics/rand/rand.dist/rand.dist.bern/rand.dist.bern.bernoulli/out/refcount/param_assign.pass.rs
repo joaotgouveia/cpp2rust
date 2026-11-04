@@ -35,7 +35,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             <std_bernoulli_distribution_param_type>::default(),
         ));
         (*p.borrow_mut()) = (*p0.borrow()).clone();
-        assert!(({ (({ (*p.borrow()).p() }) == 0.7_f64) }));
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).p() }) == 0.7_f64)) });
     }
     return 0;
 }

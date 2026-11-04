@@ -36,11 +36,6 @@ pub fn test_4() {
     const _: () = assert!(true, "(std::is_error_code_enum_v<T>      == Expected)");;
     const _: () = assert!(true, "");;
 }
-pub fn test_5() {
-    const _: () = assert!(true, "(std::is_error_code_enum<T>::value == Expected)");;
-    const _: () = assert!(true, "(std::is_error_code_enum_v<T>      == Expected)");;
-    const _: () = assert!(true, "");;
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_into(std_error_code, to_std_error_code)]
 #[byte_size(1)]
@@ -74,8 +69,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_1() });
     ({ test_2() });
     ({ test_3() });
-    ({ test_4() });
     ({ test_5() });
+    ({ test_4() });
     return 0;
 }
 pub trait AImpl {

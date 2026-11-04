@@ -16,7 +16,7 @@ impl constexpr_char_traits_char_ {
     pub fn lt(mut c1: i8, mut c2: i8) -> bool {
         return ((c1 as i32) < (c2 as i32));
     }
-    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: usize) -> i32 {
+    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: u64) -> i32 {
         'loop_: while (n != 0) {
             if ({
                 let _c1: i8 = (s1.read());
@@ -42,8 +42,8 @@ impl constexpr_char_traits_char_ {
         }
         return 0;
     }
-    pub fn length(mut s: Ptr<i8>) -> usize {
-        let len: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub fn length(mut s: Ptr<i8>) -> u64 {
+        let len: Value<u64> = Rc::new(RefCell::new(0_u64));
         'loop_: while !({
             let _c1: i8 = (s.read());
             let _c2: i8 = 0_i8;
@@ -73,85 +73,85 @@ pub fn test1_1(
     mut expected: i32,
 ) {
     let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(sv1));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_2(
             ({ ({ sign_0(({ (*sv1.borrow()).compare_34((s).clone()) })) }) } == {
                 ({ sign_0(expected) })
-            })
-        })
-    );
+            }),
+        )
+    });
 }
-pub fn test1_2(
+pub fn test1_3(
     sv1: std_basic_string_view_wchar_t__std_char_traits_wchar_t__,
     mut s: Ptr<i32>,
     mut expected: i32,
 ) {
     let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
         Rc::new(RefCell::new(sv1));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_2(
             ({ ({ sign_0(({ (*sv1.borrow()).compare_34((s).clone()) })) }) } == {
                 ({ sign_0(expected) })
-            })
-        })
-    );
+            }),
+        )
+    });
 }
-pub fn test1_3(
+pub fn test1_4(
     sv1: std_basic_string_view_char32_t__std_char_traits_char32_t__,
     mut s: Ptr<u32>,
     mut expected: i32,
 ) {
     let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
         Rc::new(RefCell::new(sv1));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_2(
             ({ ({ sign_0(({ (*sv1.borrow()).compare_34((s).clone()) })) }) } == {
                 ({ sign_0(expected) })
-            })
-        })
-    );
+            }),
+        )
+    });
 }
-pub fn test1_4(
+pub fn test1_5(
     sv1: std_basic_string_view_char16_t__std_char_traits_char16_t__,
     mut s: Ptr<u16>,
     mut expected: i32,
 ) {
     let sv1: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
         Rc::new(RefCell::new(sv1));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_2(
             ({ ({ sign_0(({ (*sv1.borrow()).compare_34((s).clone()) })) }) } == {
                 ({ sign_0(expected) })
-            })
-        })
-    );
+            }),
+        )
+    });
 }
-pub fn test_5(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut expected: i32) {
+pub fn test_6(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut expected: i32) {
     let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
         std_basic_string_view_char__std_char_traits_char__::new_1({ (s1).clone() }),
     ));
     ({ test1_1((*sv1.borrow()).clone(), (s2).clone(), expected) });
 }
-pub fn test_6(mut s1: Ptr<i32>, mut s2: Ptr<i32>, mut expected: i32) {
+pub fn test_7(mut s1: Ptr<i32>, mut s2: Ptr<i32>, mut expected: i32) {
     let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s1).clone() }),
         ));
-    ({ test1_2((*sv1.borrow()).clone(), (s2).clone(), expected) });
+    ({ test1_3((*sv1.borrow()).clone(), (s2).clone(), expected) });
 }
-pub fn test_7(mut s1: Ptr<u32>, mut s2: Ptr<u32>, mut expected: i32) {
+pub fn test_8(mut s1: Ptr<u32>, mut s2: Ptr<u32>, mut expected: i32) {
     let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (s1).clone() }),
         ));
-    ({ test1_3((*sv1.borrow()).clone(), (s2).clone(), expected) });
+    ({ test1_4((*sv1.borrow()).clone(), (s2).clone(), expected) });
 }
-pub fn test_8(mut s1: Ptr<u16>, mut s2: Ptr<u16>, mut expected: i32) {
+pub fn test_9(mut s1: Ptr<u16>, mut s2: Ptr<u16>, mut expected: i32) {
     let sv1: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (s1).clone() }),
         ));
-    ({ test1_4((*sv1.borrow()).clone(), (s2).clone(), expected) });
+    ({ test1_5((*sv1.borrow()).clone(), (s2).clone(), expected) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -175,112 +175,112 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b""),
                 Ptr::<i8>::from_string_literal(b""),
                 0,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b""),
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 -5_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b""),
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 -10_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b""),
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 -20_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 Ptr::<i8>::from_string_literal(b""),
                 5,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 0,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 -5_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 -15_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 Ptr::<i8>::from_string_literal(b""),
                 10,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 5,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 0,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 -10_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 Ptr::<i8>::from_string_literal(b""),
                 20,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 15,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 10,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 0,
@@ -289,14 +289,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 0,
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
@@ -305,7 +305,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
@@ -315,7 +315,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
@@ -327,7 +327,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
@@ -336,7 +336,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
@@ -347,7 +347,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
@@ -359,7 +359,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
@@ -373,7 +373,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
@@ -383,7 +383,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
@@ -395,7 +395,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
@@ -408,7 +408,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
@@ -423,7 +423,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
@@ -435,7 +435,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
@@ -449,7 +449,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
@@ -464,7 +464,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
@@ -483,14 +483,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 0,
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
@@ -499,7 +499,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
@@ -509,7 +509,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
@@ -521,7 +521,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
@@ -530,7 +530,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
@@ -541,7 +541,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
@@ -553,7 +553,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
@@ -567,7 +567,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
@@ -577,7 +577,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
@@ -589,7 +589,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
@@ -602,7 +602,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
@@ -617,7 +617,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
@@ -629,7 +629,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
@@ -643,7 +643,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
@@ -658,7 +658,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
@@ -677,14 +677,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 0,
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
@@ -693,7 +693,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
@@ -703,7 +703,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
@@ -715,7 +715,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
@@ -724,7 +724,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
@@ -735,7 +735,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
@@ -747,7 +747,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
@@ -761,7 +761,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
@@ -771,7 +771,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
@@ -783,7 +783,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
@@ -796,7 +796,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
@@ -811,7 +811,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
@@ -823,7 +823,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
@@ -837,7 +837,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
@@ -852,7 +852,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,

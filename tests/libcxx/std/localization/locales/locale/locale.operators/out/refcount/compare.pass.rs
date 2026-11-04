@@ -30,56 +30,50 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let l: Value<std_locale> = Rc::new(RefCell::new(<std_locale>::default()));
         {
-            let s2: Value<Vec<i8>> = Rc::new(RefCell::new({
-                let mut __bytes = Ptr::<i8>::from_string_literal(b"aaaaaaA").to_c_bytes();
-                __bytes.push(0_i8);
-                __bytes
-            }));
-            let s3: Value<Vec<i8>> = Rc::new(RefCell::new({
-                let mut __bytes = Ptr::<i8>::from_string_literal(b"BaaaaaA").to_c_bytes();
-                __bytes.push(0_i8);
-                __bytes
-            }));
-            assert!(
-                ({
-                    ({
-                        (*l.borrow_mut())(
-                            (s3.as_pointer()).reinterpret_cast::<Vec<i8>>(),
-                            (s2.as_pointer()).reinterpret_cast::<Vec<i8>>(),
-                        )
-                    })
-                })
-            );
+            let s2: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+                Rc::new(RefCell::new(
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"aaaaaaA") },
+                        None,
+                    ),
+                ));
+            let s3: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+                Rc::new(RefCell::new(
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"BaaaaaA") },
+                        None,
+                    ),
+                ));
+            ({ cpp2rust_assert_fail_0(({ (*l.borrow_mut())(s3.as_pointer(), s2.as_pointer()) })) });
         }
         {
-            let s2: Value<Vec<i32>> = Rc::new(RefCell::new({
-                let mut __bytes = Ptr::<i32>::from_string_literal(&[
-                    97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 65 as i32,
-                    0 as i32,
-                ])
-                .to_c_bytes();
-                __bytes.push(0_i32);
-                __bytes
-            }));
-            let s3: Value<Vec<i32>> = Rc::new(RefCell::new({
-                let mut __bytes = Ptr::<i32>::from_string_literal(&[
-                    66 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 65 as i32,
-                    0 as i32,
-                ])
-                .to_c_bytes();
-                __bytes.push(0_i32);
-                __bytes
-            }));
-            assert!(
-                ({
-                    ({
-                        (*l.borrow_mut())(
-                            (s3.as_pointer()).reinterpret_cast::<Vec<i32>>(),
-                            (s2.as_pointer()).reinterpret_cast::<Vec<i32>>(),
-                        )
-                    })
-                })
-            );
+            let s2: Value<
+                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+            > = Rc::new(RefCell::new(
+                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+                    {
+                        Ptr::<i32>::from_string_literal(&[
+                            97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32,
+                            65 as i32, 0 as i32,
+                        ])
+                    },
+                    None,
+                ),
+            ));
+            let s3: Value<
+                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
+            > = Rc::new(RefCell::new(
+                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+                    {
+                        Ptr::<i32>::from_string_literal(&[
+                            66 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32, 97 as i32,
+                            65 as i32, 0 as i32,
+                        ])
+                    },
+                    None,
+                ),
+            ));
+            ({ cpp2rust_assert_fail_0(({ (*l.borrow_mut())(s3.as_pointer(), s2.as_pointer()) })) });
         }
     }
     return 0;

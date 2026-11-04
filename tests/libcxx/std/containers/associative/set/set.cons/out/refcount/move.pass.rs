@@ -85,10 +85,10 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_1: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_2: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_2: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_3: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -98,14 +98,14 @@ impl CppMove for test_alloc_base {
         src.read()
     }
 }
-pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_eq_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_5(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_3(_x, _y)
+        operator_eq_4(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -165,7 +165,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_3(__lhs.clone(), __rhs.clone())
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -194,7 +194,7 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-pub fn operator_eq_5(x: Ptr<test_allocator_int_>, y: Ptr<test_allocator_int_>) -> bool {
+pub fn operator_eq_6(x: Ptr<test_allocator_int_>, y: Ptr<test_allocator_int_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -231,12 +231,16 @@ impl test_allocator_int_ {
             stats_: a.with(|__s| __s.stats_.clone()),
         }));
         let this: Ptr<test_allocator_int_> = __this.as_pointer();
-        assert!(
-            (({ a.with(|__s| __s.data_) } != { destructed_value_1.with(|rc| *rc.borrow()) })
-                && ({ a.with(|__s| __s.id_) } != { destructed_value_1.with(|rc| *rc.borrow()) }))
-                && (!(Ptr::<i8>::from_string_literal(b"copying from destroyed allocator"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({ a.with(|__s| __s.data_) } != { destructed_value_2.with(|rc| *rc.borrow()) })
+                    && ({ a.with(|__s| __s.id_) } != {
+                        destructed_value_2.with(|rc| *rc.borrow())
+                    }))
+                    && (!(Ptr::<i8>::from_string_literal(b"copying from destroyed allocator"))
+                        .is_null()),
+            )
+        });
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_inc();
@@ -250,7 +254,7 @@ impl test_allocator_int_ {
 }
 impl CppEq for test_allocator_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_5(__lhs.clone(), __rhs.clone())
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_int_ {
@@ -306,17 +310,21 @@ impl Tag_X {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_7.with(|rc| *rc.borrow()) >= dealloc_count_8.with(|rc| *rc.borrow())));
-        return ((alloc_count_7.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_8.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_1(
+                (alloc_count_8.with(|rc| *rc.borrow()) >= dealloc_count_9.with(|rc| *rc.borrow())),
+            )
+        });
+        return ((alloc_count_8.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_9.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
-        disable_default_constructor_9.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_6.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_8.with(|rc| *rc.borrow_mut() = 0_usize);
+        ({ cpp2rust_assert_fail_1((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
+        disable_default_constructor_10.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_7.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_8.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_9.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -325,18 +333,18 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_6: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_7: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_7: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_8: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_8: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_9: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static disable_default_constructor_9: Value<bool> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_10: Value<bool> = Rc::new(RefCell::new(false));
 );
-pub fn operator_eq_10(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
+pub fn operator_eq_11(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -344,7 +352,7 @@ pub fn operator_eq_10(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) 
 pub struct min_allocator_int_ {}
 impl CppEq for min_allocator_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_10(__lhs.read(), __rhs.read())
+        operator_eq_11(__lhs.read(), __rhs.read())
     }
 }
 impl CppMove for min_allocator_int_ {
@@ -352,7 +360,7 @@ impl CppMove for min_allocator_int_ {
         src.read()
     }
 }
-pub fn test_11() -> bool {
+pub fn test_12() -> bool {
     {
         let mo: Value<std_set_int__test_less_int___test_allocator_int__> = Rc::new(RefCell::new({
             let __tmp_0: Value<test_less_int_> =
@@ -365,67 +373,79 @@ pub fn test_11() -> bool {
         }));
         let m: Value<std_set_int__test_less_int___test_allocator_int__> =
             Rc::new(RefCell::new((*mo.borrow_mut()).clone()));
-        assert!(
-            ({
-                let _x: Value<test_allocator_int_> =
-                    Rc::new(RefCell::new(({ (*m.borrow()).get_allocator() })));
-                let _y: Value<test_allocator_int_> =
-                    Rc::new(RefCell::new(test_allocator_int_::new_1({ 7 })));
-                operator_eq_5(_x.as_pointer(), _y.as_pointer())
-            })
-        );
-        assert!(
-            ({
-                let _a: Value<test_less_int_> =
-                    Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
-                let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
-                operator_eq_0(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<test_allocator_int_> =
+                        Rc::new(RefCell::new(({ (*m.borrow()).get_allocator() })));
+                    let _y: Value<test_allocator_int_> =
+                        Rc::new(RefCell::new(test_allocator_int_::new_1({ 7 })));
+                    operator_eq_6(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _a: Value<test_less_int_> =
+                        Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
+                    let _b: Value<test_less_int_> =
+                        Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
+                    operator_eq_0(_a.as_pointer(), _b.as_pointer())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_1(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*m.borrow()).end() });
-                    distance_12(___first, ___last)
-                }) == 0_isize)
-            })
-        );
-        assert!(
-            ({
-                let _x: Value<test_allocator_int_> =
-                    Rc::new(RefCell::new(({ (*mo.borrow()).get_allocator() })));
-                let _y: Value<test_allocator_int_> =
-                    Rc::new(RefCell::new(test_allocator_int_::new_1({ 7 })));
-                operator_eq_5(_x.as_pointer(), _y.as_pointer())
-            })
-        );
-        assert!(
-            (({
-                test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(({ (*mo.borrow()).get_allocator() }))).as_pointer(),
-                )
-            }) == moved_value_2.with(|rc| *rc.borrow()))
-        );
-        assert!(
-            ({
-                let _a: Value<test_less_int_> =
-                    Rc::new(RefCell::new(({ (*mo.borrow()).key_comp() })));
-                let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
-                operator_eq_0(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(({ (({ (*mo.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+                    let ___first: std__Rb_tree_const_iterator_int_ = ({ (*m.borrow()).begin() });
+                    let ___last: std__Rb_tree_const_iterator_int_ = ({ (*m.borrow()).end() });
+                    distance_13(___first, ___last)
+                }) == 0_i64),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<test_allocator_int_> =
+                        Rc::new(RefCell::new(({ (*mo.borrow()).get_allocator() })));
+                    let _y: Value<test_allocator_int_> =
+                        Rc::new(RefCell::new(test_allocator_int_::new_1({ 7 })));
+                    operator_eq_6(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*mo.borrow()).begin() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*mo.borrow()).end() });
-                    distance_12(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    test_allocator_int_Impl::get_id(
+                        &Rc::new(RefCell::new(({ (*mo.borrow()).get_allocator() }))).as_pointer(),
+                    )
+                }) == moved_value_3.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _a: Value<test_less_int_> =
+                        Rc::new(RefCell::new(({ (*mo.borrow()).key_comp() })));
+                    let _b: Value<test_less_int_> =
+                        Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
+                    operator_eq_0(_a.as_pointer(), _b.as_pointer())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((({ (*mo.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({
+                    let ___first: std__Rb_tree_const_iterator_int_ = ({ (*mo.borrow()).begin() });
+                    let ___last: std__Rb_tree_const_iterator_int_ = ({ (*mo.borrow()).end() });
+                    distance_13(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let ar: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 2, 2, 2, 3, 3, 3])));
@@ -438,8 +458,8 @@ pub fn test_11() -> bool {
                 { (ar.as_pointer() as Ptr<i32>) },
                 {
                     (ar.as_pointer() as Ptr<i32>).offset(
-                        ((::std::mem::size_of::<[i32; 9]>() as usize)
-                            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        ((::std::mem::size_of::<[i32; 9]>() as u64)
+                            .wrapping_div((::std::mem::size_of::<i32>() as u64)))
                             as isize,
                     )
                 },
@@ -449,80 +469,88 @@ pub fn test_11() -> bool {
         }));
         let m: Value<std_set_int__test_less_int___test_allocator_int__> =
             Rc::new(RefCell::new((*mo.borrow_mut()).clone()));
-        assert!(
-            ({
-                let _x: Value<test_allocator_int_> =
-                    Rc::new(RefCell::new(({ (*m.borrow()).get_allocator() })));
-                let _y: Value<test_allocator_int_> =
-                    Rc::new(RefCell::new(test_allocator_int_::new_1({ 7 })));
-                operator_eq_5(_x.as_pointer(), _y.as_pointer())
-            })
-        );
-        assert!(
-            ({
-                let _a: Value<test_less_int_> =
-                    Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
-                let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
-                operator_eq_0(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<test_allocator_int_> =
+                        Rc::new(RefCell::new(({ (*m.borrow()).get_allocator() })));
+                    let _y: Value<test_allocator_int_> =
+                        Rc::new(RefCell::new(test_allocator_int_::new_1({ 7 })));
+                    operator_eq_6(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _a: Value<test_less_int_> =
+                        Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
+                    let _b: Value<test_less_int_> =
+                        Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
+                    operator_eq_0(_a.as_pointer(), _b.as_pointer())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 3_u64)) });
+        ({
+            cpp2rust_assert_fail_1(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*m.borrow()).end() });
-                    distance_12(___first, ___last)
-                }) == 3_isize)
-            })
-        );
-        assert!(((({ (*m.borrow()).begin() }).iter_deref().read()) == 1));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ({
-                let _x: Value<test_allocator_int_> =
-                    Rc::new(RefCell::new(({ (*mo.borrow()).get_allocator() })));
-                let _y: Value<test_allocator_int_> =
-                    Rc::new(RefCell::new(test_allocator_int_::new_1({ 7 })));
-                operator_eq_5(_x.as_pointer(), _y.as_pointer())
-            })
-        );
-        assert!(
-            (({
-                test_allocator_int_Impl::get_id(
-                    &Rc::new(RefCell::new(({ (*mo.borrow()).get_allocator() }))).as_pointer(),
-                )
-            }) == moved_value_2.with(|rc| *rc.borrow()))
-        );
-        assert!(
-            ({
-                let _a: Value<test_less_int_> =
-                    Rc::new(RefCell::new(({ (*mo.borrow()).key_comp() })));
-                let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
-                operator_eq_0(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(({ (({ (*mo.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+                    let ___first: std__Rb_tree_const_iterator_int_ = ({ (*m.borrow()).begin() });
+                    let ___last: std__Rb_tree_const_iterator_int_ = ({ (*m.borrow()).end() });
+                    distance_13(___first, ___last)
+                }) == 3_i64),
+            )
+        });
+        ({ cpp2rust_assert_fail_1(((({ (*m.borrow()).begin() }).read()) == 1)) });
+        ({
+            cpp2rust_assert_fail_1(((({ next_14(({ (*m.borrow()).begin() }), None) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ((({ next_14(({ (*m.borrow()).begin() }), Some(2_i64)) }).read()) == 3),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<test_allocator_int_> =
+                        Rc::new(RefCell::new(({ (*mo.borrow()).get_allocator() })));
+                    let _y: Value<test_allocator_int_> =
+                        Rc::new(RefCell::new(test_allocator_int_::new_1({ 7 })));
+                    operator_eq_6(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*mo.borrow()).begin() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*mo.borrow()).end() });
-                    distance_12(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    test_allocator_int_Impl::get_id(
+                        &Rc::new(RefCell::new(({ (*mo.borrow()).get_allocator() }))).as_pointer(),
+                    )
+                }) == moved_value_3.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _a: Value<test_less_int_> =
+                        Rc::new(RefCell::new(({ (*mo.borrow()).key_comp() })));
+                    let _b: Value<test_less_int_> =
+                        Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
+                    operator_eq_0(_a.as_pointer(), _b.as_pointer())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((({ (*mo.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({
+                    let ___first: std__Rb_tree_const_iterator_int_ = ({ (*mo.borrow()).begin() });
+                    let ___last: std__Rb_tree_const_iterator_int_ = ({ (*mo.borrow()).end() });
+                    distance_13(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let ar: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 1, 1, 2, 2, 2, 3, 3, 3])));
@@ -535,8 +563,8 @@ pub fn test_11() -> bool {
                 { (ar.as_pointer() as Ptr<i32>) },
                 {
                     (ar.as_pointer() as Ptr<i32>).offset(
-                        ((::std::mem::size_of::<[i32; 9]>() as usize)
-                            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        ((::std::mem::size_of::<[i32; 9]>() as u64)
+                            .wrapping_div((::std::mem::size_of::<i32>() as u64)))
                             as isize,
                     )
                 },
@@ -546,71 +574,73 @@ pub fn test_11() -> bool {
         }));
         let m: Value<std_set_int__test_less_int___min_allocator_int__> =
             Rc::new(RefCell::new((*mo.borrow_mut()).clone()));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
                 ({
                     let _arg0: min_allocator_int_ = ({ (*m.borrow()).get_allocator() });
-                    operator_eq_10(_arg0, <min_allocator_int_>::default())
-                })
-            })
-        );
-        assert!(
-            ({
-                let _a: Value<test_less_int_> =
-                    Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
-                let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
-                operator_eq_0(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
-        assert!(
-            ({
+                    operator_eq_11(_arg0, <min_allocator_int_>::default())
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _a: Value<test_less_int_> =
+                        Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
+                    let _b: Value<test_less_int_> =
+                        Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
+                    operator_eq_0(_a.as_pointer(), _b.as_pointer())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 3_u64)) });
+        ({
+            cpp2rust_assert_fail_1(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*m.borrow()).end() });
-                    distance_13(___first, ___last)
-                }) == 3_isize)
-            })
-        );
-        assert!(((({ (*m.borrow()).begin() }).iter_deref().read()) == 1));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ({
+                    let ___first: std___rb_tree__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*m.borrow()) . begin ( ) } )   ;
+                    let ___last: std___rb_tree__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*m.borrow()) . end ( ) } )   ;
+                    distance_15(___first, ___last)
+                }) == 3_i64),
+            )
+        });
+        ({ cpp2rust_assert_fail_1(((({ (*m.borrow()).begin() }).read()) == 1)) });
+        ({
+            cpp2rust_assert_fail_1(((({ next_16(({ (*m.borrow()).begin() }), None) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ((({ next_16(({ (*m.borrow()).begin() }), Some(2_i64)) }).read()) == 3),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
                 ({
                     let _arg0: min_allocator_int_ = ({ (*mo.borrow()).get_allocator() });
-                    operator_eq_10(_arg0, <min_allocator_int_>::default())
-                })
-            })
-        );
-        assert!(
-            ({
-                let _a: Value<test_less_int_> =
-                    Rc::new(RefCell::new(({ (*mo.borrow()).key_comp() })));
-                let _b: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
-                operator_eq_0(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(({ (({ (*mo.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+                    operator_eq_11(_arg0, <min_allocator_int_>::default())
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _a: Value<test_less_int_> =
+                        Rc::new(RefCell::new(({ (*mo.borrow()).key_comp() })));
+                    let _b: Value<test_less_int_> =
+                        Rc::new(RefCell::new(test_less_int_::new_1({ 5 })));
+                    operator_eq_0(_a.as_pointer(), _b.as_pointer())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((({ (*mo.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_1(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*mo.borrow()).begin() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*mo.borrow()).end() });
-                    distance_13(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std___rb_tree__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*mo.borrow()) . begin ( ) } )   ;
+                    let ___last: std___rb_tree__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*mo.borrow()) . end ( ) } )   ;
+                    distance_15(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     return true;
 }
@@ -634,7 +664,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_11() });
+    ({ test_12() });
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
@@ -653,13 +683,13 @@ impl Tag_XImpl for Ptr<Tag_X> {
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }
@@ -692,15 +722,23 @@ pub trait test_allocator_int_Impl {
 }
 impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
-        assert!(((*self).with(|__s| __s.id_) != destructed_value_1.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.data_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.id_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_dec();
             });
         }
-        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -712,11 +750,13 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        assert!(
-            ((*self).with(|__s| __s.count) == 0)
-                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.count) == 0)
+                    && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                        .is_null()),
+            )
+        });
         field!((*self), count).write(0);
         field!((*self), time_to_throw).write(0);
         field!((*self), alloc_count).write(0);
@@ -740,8 +780,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -765,10 +805,10 @@ impl test_less_int_Impl for Ptr<test_less_int_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_1.with(|_| ());
-    let _ = moved_value_2.with(|_| ());
-    let _ = outstanding_bytes_6.with(|_| ());
-    let _ = alloc_count_7.with(|_| ());
-    let _ = dealloc_count_8.with(|_| ());
-    let _ = disable_default_constructor_9.with(|_| ());
+    let _ = destructed_value_2.with(|_| ());
+    let _ = moved_value_3.with(|_| ());
+    let _ = outstanding_bytes_7.with(|_| ());
+    let _ = alloc_count_8.with(|_| ());
+    let _ = dealloc_count_9.with(|_| ());
+    let _ = disable_default_constructor_10.with(|_| ());
 }

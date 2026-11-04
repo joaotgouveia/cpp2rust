@@ -199,187 +199,262 @@ impl CppMove for ExplicitConversionRef {
     }
 }
 pub fn test_reference_converts_from_temporary_1() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_3.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_4.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_4() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_5.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_5() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_6.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_6() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_7.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_7() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_8.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_8() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_9.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_9() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_10.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_10() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_11.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_11() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_12.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_12() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_13.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_13() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_14.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_14() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_16.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_15() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_17.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_17() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_18.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_18() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_19.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_19() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_20.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_20() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_21.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_21() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_22.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_22() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_23.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_23() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_24.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_24() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_25.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_25() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_26.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_26() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_27.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_27() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_28.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_28() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_29.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_29() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_30.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_30() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_31.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_31() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_32.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_32() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_33.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_33() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_34.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_34() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_35.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_35() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_36.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_36() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_37.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_37() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_38.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_38() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_39.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_39() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_40.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_40() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_41.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_41() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_42.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_42() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_43.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_43() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_44.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_44() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_45.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_45() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_46.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_46() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_47.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_47() {
-    assert!(((value_2.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_48.with(|rc| *rc.borrow()) as i32) == (false as i32))
-    );
+pub fn test_reference_converts_from_temporary_48() {
+    ({ cpp2rust_assert_fail_2(((value_3.with(|rc| *rc.borrow()) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_49.with(|rc| *rc.borrow()) as i32)
+                == (false as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_49() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_50.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_50() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_51.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_reference_converts_from_temporary_51() {
-    assert!(((value_15.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-    assert!(
-        ((reference_converts_from_temporary_v_52.with(|rc| *rc.borrow()) as i32) == (true as i32))
-    );
+pub fn test_reference_converts_from_temporary_52() {
+    ({ cpp2rust_assert_fail_2(((value_16.with(|rc| *rc.borrow()) as i32) == (true as i32))) });
+    ({
+        cpp2rust_assert_fail_2(
+            ((reference_converts_from_temporary_v_53.with(|rc| *rc.borrow()) as i32)
+                == (true as i32)),
+        )
+    });
 }
-pub fn test_53() -> bool {
+pub fn test_54() -> bool {
     ({ test_reference_converts_from_temporary_1() });
     ({ test_reference_converts_from_temporary_1() });
-    ({ test_reference_converts_from_temporary_4() });
-    ({ test_reference_converts_from_temporary_6() });
-    ({ test_reference_converts_from_temporary_8() });
-    ({ test_reference_converts_from_temporary_10() });
-    ({ test_reference_converts_from_temporary_12() });
-    ({ test_reference_converts_from_temporary_14() });
-    ({ test_reference_converts_from_temporary_17() });
-    ({ test_reference_converts_from_temporary_19() });
-    assert!((is_constructible_v_54.with(|rc| *rc.borrow())));
-    ({ test_reference_converts_from_temporary_21() });
-    assert!((is_constructible_v_55.with(|rc| *rc.borrow())));
-    ({ test_reference_converts_from_temporary_23() });
-    assert!((is_constructible_v_56.with(|rc| *rc.borrow())));
-    ({ test_reference_converts_from_temporary_25() });
-    assert!((is_constructible_v_57.with(|rc| *rc.borrow())));
-    ({ test_reference_converts_from_temporary_27() });
-    ({ test_reference_converts_from_temporary_29() });
-    ({ test_reference_converts_from_temporary_31() });
-    ({ test_reference_converts_from_temporary_33() });
-    ({ test_reference_converts_from_temporary_35() });
-    ({ test_reference_converts_from_temporary_37() });
-    ({ test_reference_converts_from_temporary_39() });
-    ({ test_reference_converts_from_temporary_41() });
-    ({ test_reference_converts_from_temporary_10() });
-    ({ test_reference_converts_from_temporary_43() });
-    ({ test_reference_converts_from_temporary_45() });
-    ({ test_reference_converts_from_temporary_47() });
-    ({ test_reference_converts_from_temporary_49() });
-    ({ test_reference_converts_from_temporary_51() });
+    ({ test_reference_converts_from_temporary_5() });
+    ({ test_reference_converts_from_temporary_7() });
+    ({ test_reference_converts_from_temporary_9() });
+    ({ test_reference_converts_from_temporary_11() });
+    ({ test_reference_converts_from_temporary_13() });
+    ({ test_reference_converts_from_temporary_15() });
+    ({ test_reference_converts_from_temporary_18() });
+    ({ test_reference_converts_from_temporary_20() });
+    ({ cpp2rust_assert_fail_2((is_constructible_v_55.with(|rc| *rc.borrow()))) });
+    ({ test_reference_converts_from_temporary_22() });
+    ({ cpp2rust_assert_fail_2((is_constructible_v_56.with(|rc| *rc.borrow()))) });
+    ({ test_reference_converts_from_temporary_24() });
+    ({ cpp2rust_assert_fail_2((is_constructible_v_57.with(|rc| *rc.borrow()))) });
+    ({ test_reference_converts_from_temporary_26() });
+    ({ cpp2rust_assert_fail_2((is_constructible_v_58.with(|rc| *rc.borrow()))) });
+    ({ test_reference_converts_from_temporary_28() });
+    ({ test_reference_converts_from_temporary_30() });
+    ({ test_reference_converts_from_temporary_32() });
+    ({ test_reference_converts_from_temporary_34() });
+    ({ test_reference_converts_from_temporary_36() });
+    ({ test_reference_converts_from_temporary_38() });
+    ({ test_reference_converts_from_temporary_40() });
+    ({ test_reference_converts_from_temporary_42() });
+    ({ test_reference_converts_from_temporary_11() });
+    ({ test_reference_converts_from_temporary_44() });
+    ({ test_reference_converts_from_temporary_46() });
+    ({ test_reference_converts_from_temporary_48() });
+    ({ test_reference_converts_from_temporary_50() });
+    ({ test_reference_converts_from_temporary_52() });
     return true;
 }
 pub fn main() {
@@ -402,7 +477,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_53() });
+    ({ test_54() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

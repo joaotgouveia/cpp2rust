@@ -11,11 +11,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut tcp: i32 = libc::IPPROTO_TCP;
-    let mut udp: i32 = libc::IPPROTO_UDP;
-    let mut ip: i32 = libc::IPPROTO_IP;
-    let mut ip6: i32 = libc::IPPROTO_IPV6;
-    assert!(((((tcp + udp) + ip) + ip6) == 64));
+    let mut tcp: i32 = (anon_0_IPPROTO_TCP as i32);
+    let mut udp: i32 = (anon_0_IPPROTO_UDP as i32);
+    let mut ip: i32 = (anon_0_IPPROTO_IP as i32);
+    let mut ip6: i32 = (anon_0_IPPROTO_IPV6 as i32);
+    ({ cpp2rust_assert_fail_1(((((tcp + udp) + ip) + ip6) == 64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

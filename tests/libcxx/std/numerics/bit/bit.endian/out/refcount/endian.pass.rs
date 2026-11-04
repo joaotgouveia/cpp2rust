@@ -41,25 +41,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let i: Value<u32> = Rc::new(RefCell::new(16909060_u32));
         let c: Value<Box<[i8]>> =
             Rc::new(RefCell::new((0..4).map(|_| 0_i8).collect::<Box<[i8]>>()));
-        const _: () = assert!(
-            (::std::mem::size_of::<u32>() == ::std::mem::size_of::<[i8; 4]>()),
-            "sizeof(i) == sizeof(c)"
-        );;
-        match ({ ((c.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any() },) {
-            (mut __tmp_0,) => {
-                __tmp_0.memcpy(
-                    &((i.as_pointer()) as Ptr<u32>).to_any(),
-                    ::std::mem::size_of::<[i8; 4]>() as usize,
-                );
-                (__tmp_0).clone()
-            }
-        };
-        assert!(
-            ({
+        const _: () = assert!(true, "sizeof(i) == sizeof(c)");;
+        ({
+            let ___dest: AnyPtr = ((c.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
+            let ___n: u64 = (::std::mem::size_of::<[i8; 4]>() as u64);
+            memcpy_0(___dest, ((i.as_pointer()) as Ptr<u32>).to_any(), ___n)
+        });
+        ({
+            cpp2rust_assert_fail_1(
                 (((((*c.borrow())[(0) as usize] as i32) == 1) as i32)
-                    == ((std_endian_native == std_endian_big) as i32))
-            })
-        );
+                    == ((std_endian_native == std_endian_big) as i32)),
+            )
+        });
     }
     return 0;
 }

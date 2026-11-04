@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,25 +33,17 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_std_pair_const_int__double__ {}
-impl CppMove for min_allocator_std_pair_const_int__double__ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CppFrom, Default)]
 #[cpp_from(i32, new, value)]
 #[byte_size(4)]
@@ -65,13 +61,13 @@ impl PrivateConstructor {
 }
 impl CppLess for PrivateConstructor {
     fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_lt_4(__lhs.clone(), __rhs.clone())
+        operator_lt_5(__lhs.clone(), __rhs.clone())
     }
 }
 impl CppEq for PrivateConstructor {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        !(operator_lt_4(__lhs.clone(), __rhs.clone()))
-            && !(operator_lt_4(__rhs.clone(), __lhs.clone()))
+        !(operator_lt_5(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_5(__rhs.clone(), __lhs.clone()))
     }
 }
 impl CppMove for PrivateConstructor {
@@ -79,15 +75,15 @@ impl CppMove for PrivateConstructor {
         src.read()
     }
 }
-pub fn operator_lt_4(lhs: Ptr<PrivateConstructor>, rhs: Ptr<PrivateConstructor>) -> bool {
+pub fn operator_lt_5(lhs: Ptr<PrivateConstructor>, rhs: Ptr<PrivateConstructor>) -> bool {
     return ({ ({ PrivateConstructorImpl::get(&lhs) }) } < {
         ({ PrivateConstructorImpl::get(&rhs) })
     });
 }
-pub fn operator_lt_5(lhs: Ptr<PrivateConstructor>, mut rhs: i32) -> bool {
+pub fn operator_lt_6(lhs: Ptr<PrivateConstructor>, mut rhs: i32) -> bool {
     return ({ ({ PrivateConstructorImpl::get(&lhs) }) } < { rhs });
 }
-pub fn operator_lt_6(mut lhs: i32, rhs: Ptr<PrivateConstructor>) -> bool {
+pub fn operator_lt_7(mut lhs: i32, rhs: Ptr<PrivateConstructor>) -> bool {
     return ({ lhs } < { ({ PrivateConstructorImpl::get(&rhs) }) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -170,13 +166,13 @@ impl C2Int {
 }
 impl CppLess for C2Int {
     fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_lt_7(__lhs.clone(), __rhs.clone())
+        operator_lt_8(__lhs.clone(), __rhs.clone())
     }
 }
 impl CppEq for C2Int {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        !(operator_lt_7(__lhs.clone(), __rhs.clone()))
-            && !(operator_lt_7(__rhs.clone(), __lhs.clone()))
+        !(operator_lt_8(__lhs.clone(), __rhs.clone()))
+            && !(operator_lt_8(__rhs.clone(), __lhs.clone()))
     }
 }
 impl CppMove for C2Int {
@@ -189,13 +185,13 @@ impl Default for C2Int {
         { C2Int::new_2() }
     }
 }
-pub fn operator_lt_8(mut rhs: i32, lhs: Ptr<C2Int>) -> bool {
+pub fn operator_lt_9(mut rhs: i32, lhs: Ptr<C2Int>) -> bool {
     return ({ rhs } < { ({ C2IntImpl::get(&lhs) }) });
 }
-pub fn operator_lt_7(rhs: Ptr<C2Int>, lhs: Ptr<C2Int>) -> bool {
+pub fn operator_lt_8(rhs: Ptr<C2Int>, lhs: Ptr<C2Int>) -> bool {
     return ({ ({ C2IntImpl::get(&rhs) }) } < { ({ C2IntImpl::get(&lhs) }) });
 }
-pub fn operator_lt_9(rhs: Ptr<C2Int>, mut lhs: i32) -> bool {
+pub fn operator_lt_10(rhs: Ptr<C2Int>, mut lhs: i32) -> bool {
     return ({ ({ C2IntImpl::get(&rhs) }) } < { lhs });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -213,318 +209,32 @@ impl CppMove for FinalCompare_int_ {
         src.read()
     }
 }
-pub fn test_10() -> bool {
-    let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
-        (Rc::new(RefCell::new(5)), Rc::new(RefCell::new((5 as f64)))),
-        (Rc::new(RefCell::new(6)), Rc::new(RefCell::new((6 as f64)))),
-        (Rc::new(RefCell::new(7)), Rc::new(RefCell::new((7 as f64)))),
-        (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((8 as f64)))),
-        (Rc::new(RefCell::new(9)), Rc::new(RefCell::new((9 as f64)))),
-        (
-            Rc::new(RefCell::new(10)),
-            Rc::new(RefCell::new((10 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(11)),
-            Rc::new(RefCell::new((11 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(12)),
-            Rc::new(RefCell::new((12 as f64))),
-        ),
-    ])));
-    let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
-        std_map_int__double__std_less_int___std_allocator_std_pair_const_int__double___::new_1(
-            { (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>) },
-            {
-                (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>)
-                    .offset(((128usize as usize).wrapping_div((16usize as usize))) as isize)
-            },
-        ),
-    ));
-    let mut i: i32 = 0;
-    'loop_: while (i < 5) {
-        let mut r: usize = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(i));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 0_usize));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 5;
-    'loop_: while (i < 13) {
-        let mut r: usize = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(i));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 1_usize));
-        i.prefix_inc();
-    }
-    return true;
-}
 pub fn test_11() -> bool {
-    let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
-        (Rc::new(RefCell::new(5)), Rc::new(RefCell::new((5 as f64)))),
-        (Rc::new(RefCell::new(6)), Rc::new(RefCell::new((6 as f64)))),
-        (Rc::new(RefCell::new(7)), Rc::new(RefCell::new((7 as f64)))),
-        (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((8 as f64)))),
-        (Rc::new(RefCell::new(9)), Rc::new(RefCell::new((9 as f64)))),
-        (
-            Rc::new(RefCell::new(10)),
-            Rc::new(RefCell::new((10 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(11)),
-            Rc::new(RefCell::new((11 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(12)),
-            Rc::new(RefCell::new((12 as f64))),
-        ),
-    ])));
-    let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
-        std_map_int__double__std_less_int___min_allocator_std_pair_const_int__double___::new_1(
-            { (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>) },
-            {
-                (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>)
-                    .offset(((128usize as usize).wrapping_div((16usize as usize))) as isize)
-            },
-        ),
-    ));
-    let mut i: i32 = 0;
-    'loop_: while (i < 5) {
-        let mut r: usize = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(i));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 0_usize));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 5;
-    'loop_: while (i < 13) {
-        let mut r: usize = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(i));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 1_usize));
-        i.prefix_inc();
-    }
-    return true;
-}
-pub fn test_12() -> bool {
-    let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
-        (Rc::new(RefCell::new(5)), Rc::new(RefCell::new((5 as f64)))),
-        (Rc::new(RefCell::new(6)), Rc::new(RefCell::new((6 as f64)))),
-        (Rc::new(RefCell::new(7)), Rc::new(RefCell::new((7 as f64)))),
-        (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((8 as f64)))),
-        (Rc::new(RefCell::new(9)), Rc::new(RefCell::new((9 as f64)))),
-        (
-            Rc::new(RefCell::new(10)),
-            Rc::new(RefCell::new((10 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(11)),
-            Rc::new(RefCell::new((11 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(12)),
-            Rc::new(RefCell::new((12 as f64))),
-        ),
-    ])));
-    let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
-        std_map_int__double__FinalCompare_int___std_allocator_std_pair_const_int__double___::new_1(
-            { (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>) },
-            {
-                (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>)
-                    .offset(((128usize as usize).wrapping_div((16usize as usize))) as isize)
-            },
-        ),
-    ));
-    let mut i: i32 = 0;
-    'loop_: while (i < 5) {
-        let mut r: usize = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(i));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 0_usize));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 5;
-    'loop_: while (i < 13) {
-        let mut r: usize = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(i));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 1_usize));
-        i.prefix_inc();
-    }
-    return true;
-}
-pub fn test_13() -> bool {
-    let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
-        (Rc::new(RefCell::new(5)), Rc::new(RefCell::new((5 as f64)))),
-        (Rc::new(RefCell::new(6)), Rc::new(RefCell::new((6 as f64)))),
-        (Rc::new(RefCell::new(7)), Rc::new(RefCell::new((7 as f64)))),
-        (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((8 as f64)))),
-        (Rc::new(RefCell::new(9)), Rc::new(RefCell::new((9 as f64)))),
-        (
-            Rc::new(RefCell::new(10)),
-            Rc::new(RefCell::new((10 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(11)),
-            Rc::new(RefCell::new((11 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(12)),
-            Rc::new(RefCell::new((12 as f64))),
-        ),
-    ])));
-    let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
-        std_map_int__double__std_less_void___std_allocator_std_pair_const_int__double___::new_1(
-            { (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>) },
-            {
-                (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>)
-                    .offset(((128usize as usize).wrapping_div((16usize as usize))) as isize)
-            },
-        ),
-    ));
-    let mut i: i32 = 0;
-    'loop_: while (i < 5) {
-        let mut r: usize = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(i));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 0_usize));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 5;
-    'loop_: while (i < 13) {
-        let mut r: usize = ({
-            let ___x: Value<i32> = Rc::new(RefCell::new(i));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 1_usize));
-        i.prefix_inc();
-    }
-    return true;
-}
-pub fn test_14() -> bool {
-    let ar: Value<Box<[(Value<i32>, Value<f64>)]>> = Rc::new(RefCell::new(Box::new([
-        (Rc::new(RefCell::new(5)), Rc::new(RefCell::new((5 as f64)))),
-        (Rc::new(RefCell::new(6)), Rc::new(RefCell::new((6 as f64)))),
-        (Rc::new(RefCell::new(7)), Rc::new(RefCell::new((7 as f64)))),
-        (Rc::new(RefCell::new(8)), Rc::new(RefCell::new((8 as f64)))),
-        (Rc::new(RefCell::new(9)), Rc::new(RefCell::new((9 as f64)))),
-        (
-            Rc::new(RefCell::new(10)),
-            Rc::new(RefCell::new((10 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(11)),
-            Rc::new(RefCell::new((11 as f64))),
-        ),
-        (
-            Rc::new(RefCell::new(12)),
-            Rc::new(RefCell::new((12 as f64))),
-        ),
-    ])));
-    let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
-        std_map_int__double__std_less_void___std_allocator_std_pair_const_int__double___::new_1(
-            { (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>) },
-            {
-                (ar.as_pointer() as Ptr<(Value<i32>, Value<f64>)>)
-                    .offset(((128usize as usize).wrapping_div((16usize as usize))) as isize)
-            },
-        ),
-    ));
-    let mut i: i32 = 0;
-    'loop_: while (i < 5) {
-        let mut r: usize = ({
-            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ i })));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 0_usize));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 5;
-    'loop_: while (i < 13) {
-        let mut r: usize = ({
-            let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ i })));
-            (*m.borrow()).count(___x.as_pointer())
-        });
-        assert!((r == 1_usize));
-        i.prefix_inc();
-    }
-    return true;
-}
-pub fn test_15() -> bool {
-    ({ test_10() });
-    ({ test_11() });
     ({ test_12() });
     ({ test_13() });
     ({ test_14() });
+    ({ test_15() });
+    ({ test_16() });
     {
-        let m: Value<Map<PrivateConstructor, (Value<PrivateConstructor>, Value<f64>)>> =
-            Rc::new(RefCell::new(Map::new()));
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(({ PrivateConstructor::make(5) }))).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .write(5_f64);
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(({ PrivateConstructor::make(6) }))).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .write(6_f64);
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(({ PrivateConstructor::make(7) }))).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .write(7_f64);
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(({ PrivateConstructor::make(8) }))).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .write(8_f64);
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(({ PrivateConstructor::make(9) }))).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .write(9_f64);
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(({ PrivateConstructor::make(10) }))).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .write(10_f64);
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(({ PrivateConstructor::make(11) }))).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .write(11_f64);
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(({ PrivateConstructor::make(12) }))).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .write(12_f64);
+        let m : Value<std_map_PrivateConstructor__double__std_less_void___std_allocator_std_pair_const_PrivateConstructor__double___ > = Rc::new(RefCell::new(<std_map_PrivateConstructor__double__std_less_void___std_allocator_std_pair_const_PrivateConstructor__double___  >::default() )) ;
+        elem!(m.as_pointer(), ({ PrivateConstructor::make(5,) })).write(5_f64);
+        elem!(m.as_pointer(), ({ PrivateConstructor::make(6,) })).write(6_f64);
+        elem!(m.as_pointer(), ({ PrivateConstructor::make(7,) })).write(7_f64);
+        elem!(m.as_pointer(), ({ PrivateConstructor::make(8,) })).write(8_f64);
+        elem!(m.as_pointer(), ({ PrivateConstructor::make(9,) })).write(9_f64);
+        elem!(m.as_pointer(), ({ PrivateConstructor::make(10,) })).write(10_f64);
+        elem!(m.as_pointer(), ({ PrivateConstructor::make(11,) })).write(11_f64);
+        elem!(m.as_pointer(), ({ PrivateConstructor::make(12,) })).write(12_f64);
         let i: Value<i32> = Rc::new(RefCell::new(0));
         'loop_: while ((*i.borrow()) < 5) {
-            let mut r: usize = ({ (*m.borrow()).count(i.as_pointer()) });
-            assert!((r == 0_usize));
+            let mut r: u64 = ({ (*m.borrow()).count(i.as_pointer()) });
+            ({ cpp2rust_assert_fail_4((r == 0_u64)) });
             (*i.borrow_mut()).prefix_inc();
         }
         let i: Value<i32> = Rc::new(RefCell::new(5));
         'loop_: while ((*i.borrow()) < 13) {
-            let mut r: usize = ({ (*m.borrow()).count(i.as_pointer()) });
-            assert!((r == 1_usize));
+            let mut r: u64 = ({ (*m.borrow()).count(i.as_pointer()) });
+            ({ cpp2rust_assert_fail_4((r == 1_u64)) });
             (*i.borrow_mut()).prefix_inc();
         }
     }
@@ -550,12 +260,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_15() });
+    ({ test_11() });
     return 0;
 }
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__;
 pub trait C2IntImpl {
     fn get(&self) -> i32;
 }
@@ -579,25 +286,6 @@ impl PrivateConstructorImpl for Ptr<PrivateConstructor> {
     fn get(&self) -> i32 {
         return (*self).with(|__s| __s.val);
     }
-}
-pub trait min_allocator_std_pair_const_int__double__Impl {
-    fn allocate(
-        &self,
-        mut n: usize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__,
-        mut n: usize,
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_std_pair_const_int__double__Impl
-    for Ptr<min_allocator_std_pair_const_int__double__>
-{
 }
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());

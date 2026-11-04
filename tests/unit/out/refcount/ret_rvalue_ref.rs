@@ -16,15 +16,17 @@ pub fn main() {
 fn main_0() -> i32 {
     let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
     let i2: Ptr<i32> = __tmp_0.as_pointer();
-    assert!(((i2.read()) == 5));
+    ({ cpp2rust_assert_fail_1(((i2.read()) == 5)) });
     let mut i3: i32 = ({ foo_0((i2).clone()) });
-    assert!((i3 == 5));
-    assert!(
-        (({
-            let _v: Value<i32> = Rc::new(RefCell::new(5));
-            foo_0(_v.as_pointer())
-        }) == 5)
-    );
+    ({ cpp2rust_assert_fail_1((i3 == 5)) });
+    ({
+        cpp2rust_assert_fail_1(
+            (({
+                let _v: Value<i32> = Rc::new(RefCell::new(5));
+                foo_0(_v.as_pointer())
+            }) == 5),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

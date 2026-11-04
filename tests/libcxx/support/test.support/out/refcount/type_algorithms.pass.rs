@@ -178,7 +178,7 @@ impl CppMove for Identity {
         src.read()
     }
 }
-pub fn test_for_each_2() {
+pub fn test_for_each_3() {
     let is_called_array: Value<Box<[bool]>> =
         Rc::new(RefCell::new(Box::new([false, false, false])));
     ({
@@ -187,17 +187,19 @@ pub fn test_for_each_2() {
             ApplyAllTest::new({ (is_called_array.as_pointer() as Ptr<bool>) }),
         )
     });
-    assert!(
-        ({
-            let ___first: Ptr<bool> = (is_called_array.as_pointer() as Ptr<bool>);
-            let ___last: Ptr<bool> =
-                (is_called_array.as_pointer() as Ptr<bool>).offset((3) as isize);
-            all_of_3(___first, ___last, <Identity>::default())
-        })
-    );
+    ({
+        cpp2rust_assert_fail_2(
+            ({
+                let ___first: Ptr<bool> = (is_called_array.as_pointer() as Ptr<bool>);
+                let ___last: Ptr<bool> =
+                    (is_called_array.as_pointer() as Ptr<bool>).offset((3) as isize);
+                all_of_4(___first, ___last, <Identity>::default())
+            }),
+        )
+    });
 }
-pub fn test_4() -> bool {
-    ({ test_for_each_2() });
+pub fn test_5() -> bool {
+    ({ test_for_each_3() });
     return true;
 }
 pub fn main() {
@@ -220,7 +222,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_4() });
+    ({ test_5() });
     const _: () = assert!(true, "test()");;
     return 0;
 }
@@ -234,15 +236,27 @@ pub trait ApplyAllTestImpl {
 }
 impl ApplyAllTestImpl for Ptr<ApplyAllTest> {
     fn check_num_2_0(&self, mut _a0: NumT_0_) {
-        assert!(!(elem!((*self).with(|__s| __s.is_called_array_.clone()), 0).read()));
+        ({
+            cpp2rust_assert_fail_2(
+                !(elem!((*self).with(|__s| __s.is_called_array_.clone()), 0).read()),
+            )
+        });
         elem!((*self).with(|__s| __s.is_called_array_.clone()), 0).write(true);
     }
     fn check_num_2_1(&self, mut _a0: NumT_1_) {
-        assert!(!(elem!((*self).with(|__s| __s.is_called_array_.clone()), 1).read()));
+        ({
+            cpp2rust_assert_fail_2(
+                !(elem!((*self).with(|__s| __s.is_called_array_.clone()), 1).read()),
+            )
+        });
         elem!((*self).with(|__s| __s.is_called_array_.clone()), 1).write(true);
     }
     fn check_num_2_2(&self, mut _a0: NumT_2_) {
-        assert!(!(elem!((*self).with(|__s| __s.is_called_array_.clone()), 2).read()));
+        ({
+            cpp2rust_assert_fail_2(
+                !(elem!((*self).with(|__s| __s.is_called_array_.clone()), 2).read()),
+            )
+        });
         elem!((*self).with(|__s| __s.is_called_array_.clone()), 2).write(true);
     }
     fn operator_call_4_class_NumT_0_(&self) {

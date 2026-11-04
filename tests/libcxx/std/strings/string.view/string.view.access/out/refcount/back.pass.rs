@@ -46,85 +46,83 @@ impl CppMove for test_macros_detail_is_same_const_char32_t_ref__const_char32_t_r
         src.read()
     }
 }
-pub fn test_4(mut s: Ptr<i8>, mut len: usize) -> bool {
+pub fn test_4(mut s: Ptr<i8>, mut len: u64) -> bool {
     let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
-        std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, {
-            (len as u64)
-        }),
+        std_basic_string_view_char__std_char_traits_char__::new_1({ (s).clone() }, { len }),
     ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
-    assert!(
-        ({
+    ({ cpp2rust_assert_fail_5((({ (*sv.borrow()).length() }) == len)) });
+    ({
+        cpp2rust_assert_fail_5(
             ({ ((({ (*sv.borrow()).back() }).read()) as i32) } == {
-                ((elem!(s, (len).wrapping_sub(1_usize)).read()) as i32)
-            })
-        })
-    );
+                ((elem!(s, (len).wrapping_sub(1_u64)).read()) as i32)
+            }),
+        )
+    });
     return ({ ({ (*sv.borrow()).back() }) } == {
         s.offset((len) as isize).offset(-((1) as isize))
     });
 }
-pub fn test_5(mut s: Ptr<i32>, mut len: usize) -> bool {
+pub fn test_6(mut s: Ptr<i32>, mut len: u64) -> bool {
     let sv: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s).clone() }, {
-                (len as u64)
+                len
             }),
         ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
-    assert!(
-        ({
+    ({ cpp2rust_assert_fail_5((({ (*sv.borrow()).length() }) == len)) });
+    ({
+        cpp2rust_assert_fail_5(
             ({ (({ (*sv.borrow()).back() }).read()) } == {
-                (elem!(s, (len).wrapping_sub(1_usize)).read())
-            })
-        })
-    );
+                (elem!(s, (len).wrapping_sub(1_u64)).read())
+            }),
+        )
+    });
     return ({ ({ (*sv.borrow()).back() }) } == {
         s.offset((len) as isize).offset(-((1) as isize))
     });
 }
-pub fn test_6(mut s: Ptr<u16>, mut len: usize) -> bool {
+pub fn test_7(mut s: Ptr<u16>, mut len: u64) -> bool {
     let sv: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (s).clone() }, {
-                (len as u64)
+                len
             }),
         ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
-    assert!(
-        ({
+    ({ cpp2rust_assert_fail_5((({ (*sv.borrow()).length() }) == len)) });
+    ({
+        cpp2rust_assert_fail_5(
             ({ ((({ (*sv.borrow()).back() }).read()) as i32) } == {
-                ((elem!(s, (len).wrapping_sub(1_usize)).read()) as i32)
-            })
-        })
-    );
+                ((elem!(s, (len).wrapping_sub(1_u64)).read()) as i32)
+            }),
+        )
+    });
     return ({ ({ (*sv.borrow()).back() }) } == {
         s.offset((len) as isize).offset(-((1) as isize))
     });
 }
-pub fn test_7(mut s: Ptr<u32>, mut len: usize) -> bool {
+pub fn test_8(mut s: Ptr<u32>, mut len: u64) -> bool {
     let sv: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (s).clone() }, {
-                (len as u64)
+                len
             }),
         ));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!(({ ((({ (*sv.borrow()).length() }) as usize) == len) }));
-    assert!(
-        ({
+    ({ cpp2rust_assert_fail_5((({ (*sv.borrow()).length() }) == len)) });
+    ({
+        cpp2rust_assert_fail_5(
             ({ (({ (*sv.borrow()).back() }).read()) } == {
-                (elem!(s, (len).wrapping_sub(1_usize)).read())
-            })
-        })
-    );
+                (elem!(s, (len).wrapping_sub(1_u64)).read())
+            }),
+        )
+    });
     return ({ ({ (*sv.borrow()).back() }) } == {
         s.offset((len) as isize).offset(-((1) as isize))
     });
@@ -149,62 +147,74 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_4(Ptr::<i8>::from_string_literal(b"ABCDE"), 5_usize,) }));
-    assert!(({ test_4(Ptr::<i8>::from_string_literal(b"a"), 1_usize,) }));
-    assert!(
-        ({
-            test_5(
-                Ptr::<i32>::from_string_literal(&[
-                    65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 0 as i32,
-                ]),
-                5_usize,
-            )
-        })
-    );
-    assert!(
-        ({
-            test_5(
-                Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]),
-                1_usize,
-            )
-        })
-    );
-    assert!(
-        ({
-            test_6(
-                Ptr::<u16>::from_string_literal(&[
-                    65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 0 as u16,
-                ]),
-                5_usize,
-            )
-        })
-    );
-    assert!(
-        ({
-            test_6(
-                Ptr::<u16>::from_string_literal(&[97 as u16, 0 as u16]),
-                1_usize,
-            )
-        })
-    );
-    assert!(
-        ({
-            test_7(
-                Ptr::<u32>::from_string_literal(&[
-                    65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 0 as u32,
-                ]),
-                5_usize,
-            )
-        })
-    );
-    assert!(
-        ({
-            test_7(
-                Ptr::<u32>::from_string_literal(&[97 as u32, 0 as u32]),
-                1_usize,
-            )
-        })
-    );
+    ({ cpp2rust_assert_fail_5(({ test_4(Ptr::<i8>::from_string_literal(b"ABCDE"), 5_u64) })) });
+    ({ cpp2rust_assert_fail_5(({ test_4(Ptr::<i8>::from_string_literal(b"a"), 1_u64) })) });
+    ({
+        cpp2rust_assert_fail_5(
+            ({
+                test_6(
+                    Ptr::<i32>::from_string_literal(&[
+                        65 as i32, 66 as i32, 67 as i32, 68 as i32, 69 as i32, 0 as i32,
+                    ]),
+                    5_u64,
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            ({
+                test_6(
+                    Ptr::<i32>::from_string_literal(&[97 as i32, 0 as i32]),
+                    1_u64,
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            ({
+                test_7(
+                    Ptr::<u16>::from_string_literal(&[
+                        65 as u16, 66 as u16, 67 as u16, 68 as u16, 69 as u16, 0 as u16,
+                    ]),
+                    5_u64,
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            ({
+                test_7(
+                    Ptr::<u16>::from_string_literal(&[97 as u16, 0 as u16]),
+                    1_u64,
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            ({
+                test_8(
+                    Ptr::<u32>::from_string_literal(&[
+                        65 as u32, 66 as u32, 67 as u32, 68 as u32, 69 as u32, 0 as u32,
+                    ]),
+                    5_u64,
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            ({
+                test_8(
+                    Ptr::<u32>::from_string_literal(&[97 as u32, 0 as u32]),
+                    1_u64,
+                )
+            }),
+        )
+    });
     {
         let sv: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
             std_basic_string_view_char__std_char_traits_char__::new_1(

@@ -27,10 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    const _: () = assert!(
-        (::std::mem::size_of::<isize>() == 8usize),
-        "sizeof(std::ptrdiff_t) == sizeof(void*)"
-    );;
+    const _: () = assert!(true, "sizeof(std::ptrdiff_t) == sizeof(void*)");;
     const _: () = assert!(true, "std::is_signed<std::ptrdiff_t>::value");;
     const _: () = assert!(true, "std::is_integral<std::ptrdiff_t>::value");;
     return 0;

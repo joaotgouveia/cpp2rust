@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -48,51 +52,49 @@ impl CppMove for min_allocator_int_ {
         src.read()
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_unsigned_long_ {}
-impl CppMove for min_allocator_unsigned_long_ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
-pub fn is_contiguous_container_asan_correct_4(_a0: Ptr<Vec<i32>>) -> bool {
+pub fn is_contiguous_container_asan_correct_5(
+    _a0: Ptr<std_vector_int__min_allocator_int__>,
+) -> bool {
     return true;
 }
-pub fn tests_5() -> bool {
+pub fn tests_6() -> bool {
     {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-        assert!(({ ((*v.borrow()).capacity() == 0_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_6(v.as_pointer(),) }));
-    }
-    {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-            (0..(100_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
+        let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__std_allocator_int__>::default(),
         ));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        {
-            let __a1 = 0;
-            (*v.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*v.borrow()).capacity() > 101_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_6(v.as_pointer(),) }));
+        ({ cpp2rust_assert_fail_4((({ (*v.borrow()).capacity() }) == 0_u64)) });
+        ({ cpp2rust_assert_fail_4(({ is_contiguous_container_asan_correct_7(v.as_pointer()) })) });
     }
     {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-        assert!(({ ((*v.borrow()).capacity() == 0_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_4(v.as_pointer(),) }));
-    }
-    {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-            (0..(100_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
+        let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            std_vector_int__std_allocator_int__::new_1({ 100_u64 }, None),
         ));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        {
-            let __a1 = 0;
-            (*v.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*v.borrow()).capacity() > 101_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_4(v.as_pointer(),) }));
+        ({ cpp2rust_assert_fail_4((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(0));
+            (*v.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_4((({ (*v.borrow()).capacity() }) > 101_u64)) });
+        ({ cpp2rust_assert_fail_4(({ is_contiguous_container_asan_correct_7(v.as_pointer()) })) });
+    }
+    {
+        let v: Value<std_vector_int__min_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__min_allocator_int__>::default(),
+        ));
+        ({ cpp2rust_assert_fail_4((({ (*v.borrow()).capacity() }) == 0_u64)) });
+        ({ cpp2rust_assert_fail_4(({ is_contiguous_container_asan_correct_5(v.as_pointer()) })) });
+    }
+    {
+        let v: Value<std_vector_int__min_allocator_int__> = Rc::new(RefCell::new(
+            std_vector_int__min_allocator_int__::new_1({ 100_u64 }, None),
+        ));
+        ({ cpp2rust_assert_fail_4((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(0));
+            (*v.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_4((({ (*v.borrow()).capacity() }) > 101_u64)) });
+        ({ cpp2rust_assert_fail_4(({ is_contiguous_container_asan_correct_5(v.as_pointer()) })) });
     }
     return true;
 }
@@ -116,22 +118,19 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_5() });
+    ({ tests_6() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
-pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__;
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
+    fn allocate(&self, n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: u64);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_int_>::default().allocate(n) })
         });
@@ -139,27 +138,11 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
-pub trait min_allocator_unsigned_long_Impl {
-    fn allocate(
-        &self,
-        mut n: usize,
-    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {}
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());
     let _ = alloc_count_1.with(|_| ());

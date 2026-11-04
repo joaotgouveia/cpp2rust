@@ -88,14 +88,16 @@ fn main_0() -> i32 {
     let struct_with_ctor: Value<StructWithCtor> =
         Rc::new(RefCell::new(StructWithCtor::new({ 1 }, { 2 })));
     let x: Value<i32> = Rc::new(RefCell::new(3));
-    assert!(
-        (((({ foo_0(x.as_pointer(),) }).read()) == 3)
-            && ((({ StructWithCtorImpl::x1(&struct_with_ctor.as_pointer(),) }).read()) == 2))
-            && ((({ StructWithCtorImpl::x2(&struct_with_ctor.as_pointer(),) }).read()) == 1)
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            (((({ foo_0(x.as_pointer()) }).read()) == 3)
+                && ((({ StructWithCtorImpl::x1(&struct_with_ctor.as_pointer()) }).read()) == 2))
+                && ((({ StructWithCtorImpl::x2(&struct_with_ctor.as_pointer()) }).read()) == 1),
+        )
+    });
     let mut p: Ptr_ = Ptr_::new();
-    assert!((p.v1.v == 11));
-    assert!((p.v2.v == 22));
+    ({ cpp2rust_assert_fail_1((p.v1.v == 11)) });
+    ({ cpp2rust_assert_fail_1((p.v2.v == 22)) });
     return 0;
 }
 pub trait StructWithCtorImpl {

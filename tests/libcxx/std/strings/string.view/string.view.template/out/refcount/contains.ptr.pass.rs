@@ -27,38 +27,166 @@ pub fn test_0() -> bool {
             { 3_u64 },
         ),
     ));
-    assert!(({ ({ (*sv0.borrow()).contains_45(Ptr::<i8>::from_string_literal(b""),) }) }));
-    assert!(({ !({ (*sv0.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e"),) }) }));
-    assert!(({ ({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b""),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d"),) }) }));
-    assert!(({ ({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e"),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de"),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd"),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde"),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde"),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde"),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz"),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b""),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d"),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e"),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de"),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd"),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"ce"),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde"),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"edc"),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde"),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde"),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz"),) }) }));
-    assert!(({ ({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b""),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d"),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e"),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de"),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd"),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde"),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde"),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde"),) }) }));
-    assert!(({ ({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz"),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"zyx"),) }) }));
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv0.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv0.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv1.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"ce")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"edc")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*sv3.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"d")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"e")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"de")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cd")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"cde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"bcde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"abcde")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"xyz")) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ (*svNot.borrow()).contains_45(Ptr::<i8>::from_string_literal(b"zyx")) }),
+        )
+    });
     return true;
 }
 pub fn main() {

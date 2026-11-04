@@ -33,9 +33,9 @@ fn main_0() -> i32 {
             return (x + (base.read()));
         }
     )));
-    assert!(({ (({ (*add_base.borrow()).call(5,) }) == 15) }));
+    ({ cpp2rust_assert_fail_0((({ (*add_base.borrow()).call(5) }) == 15)) });
     (*base.borrow_mut()) = 100;
-    assert!(({ (({ (*add_base.borrow()).call(5,) }) == 105) }));
+    ({ cpp2rust_assert_fail_0((({ (*add_base.borrow()).call(5) }) == 105)) });
     let s: Value<S> = Rc::new(RefCell::new(S { x: 1, y: 2 }));
     let sum: Value<FnPtr<fn() -> i32>> = Rc::new(RefCell::new(lambda!(
         {
@@ -45,9 +45,9 @@ fn main_0() -> i32 {
             return (s.with(|__s| __s.x) + s.with(|__s| __s.y));
         }
     )));
-    assert!(({ (({ (*sum.borrow()).call() }) == 3) }));
+    ({ cpp2rust_assert_fail_0((({ (*sum.borrow()).call() }) == 3)) });
     (*s.borrow_mut()).x = 50;
-    assert!(({ (({ (*sum.borrow()).call() }) == 52) }));
+    ({ cpp2rust_assert_fail_0((({ (*sum.borrow()).call() }) == 52)) });
     let counter: Value<i32> = Rc::new(RefCell::new(0));
     let bump: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
         {
@@ -59,21 +59,21 @@ fn main_0() -> i32 {
     )));
     ({ (*bump.borrow()).call() });
     ({ (*bump.borrow()).call() });
-    assert!(({ ((*counter.borrow()) == 2) }));
+    ({ cpp2rust_assert_fail_0(((*counter.borrow()) == 2)) });
     let arr: Value<Box<[u16]>> = Rc::new(RefCell::new(Box::new([3_u16, 1_u16, 2_u16, 0_u16])));
-    let swap: Value<FnPtr<fn(usize, usize)>> = Rc::new(RefCell::new(lambda!(
+    let swap: Value<FnPtr<fn(u64, u64)>> = Rc::new(RefCell::new(lambda!(
         {
             let arr: Ptr<u16> = arr.as_pointer();
         },
-        |mut i: usize, mut j: usize| {
+        |mut i: u64, mut j: u64| {
             let mut t: u16 = (elem!((arr), j).read());
             elem!((arr), j).write({ (elem!((arr), i).read()) });
             elem!((arr), i).write(t);
         }
     )));
-    ({ (*swap.borrow()).call(0_usize, 3_usize) });
-    assert!(({ (((*arr.borrow())[(0) as usize] as i32) == 0) }));
-    assert!(({ (((*arr.borrow())[(3) as usize] as i32) == 3) }));
+    ({ (*swap.borrow()).call(0_u64, 3_u64) });
+    ({ cpp2rust_assert_fail_0((((*arr.borrow())[(0) as usize] as i32) == 0)) });
+    ({ cpp2rust_assert_fail_0((((*arr.borrow())[(3) as usize] as i32) == 3)) });
     let total: Value<i32> = Rc::new(RefCell::new(0));
     let add: Value<FnPtr<fn(i32)>> = Rc::new(RefCell::new(lambda!(
         {
@@ -88,7 +88,7 @@ fn main_0() -> i32 {
     )));
     ({ (*add.borrow()).call(2) });
     ({ (*add.borrow()).call(3) });
-    assert!(({ ((*total.borrow()) == 5) }));
+    ({ cpp2rust_assert_fail_0(((*total.borrow()) == 5)) });
     let set_y: Value<FnPtr<fn(i32)>> = Rc::new(RefCell::new(lambda!(
         {
             let y: Ptr<i32> = field_ptr!(s.as_pointer(), y);
@@ -98,7 +98,7 @@ fn main_0() -> i32 {
         }
     )));
     ({ (*set_y.borrow()).call(9) });
-    assert!(({ ({ (*s.borrow()).y } == 9) }));
+    ({ cpp2rust_assert_fail_0(({ (*s.borrow()).y } == 9)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -30,9 +30,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     &({
         let ___a: Value<std_allocator_int_> =
             Rc::new(RefCell::new(<std_allocator_int_>::default()));
-        allocate_shared_0(___a.as_pointer(), 10_usize)
+        allocate_shared_0(___a.as_pointer(), 10_u64)
     });
-    &({ make_shared_1(10_usize) });
+    &({ make_shared_1(10_u64) });
     &({
         let ___a: Value<std_allocator_int_> =
             Rc::new(RefCell::new(<std_allocator_int_>::default()));

@@ -32,37 +32,56 @@ pub fn test_2() -> bool {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!((({ begin_3(a.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
+        ({
+            cpp2rust_assert_fail_3((({ begin_4(a.as_pointer()) }) == (a.as_pointer() as Ptr<i32>)))
+        });
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(
-            ((a.as_pointer() as Ptr<i32>).to_end()
-                == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
-        );
+        ({
+            cpp2rust_assert_fail_3(
+                (({ end_5(a.as_pointer()) }) == (a.as_pointer() as Ptr<i32>).offset((3) as isize)),
+            )
+        });
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(({ ({ begin_4((ca).clone(),) }) } == { (ca).clone() }));
+        ({ cpp2rust_assert_fail_3(({ ({ begin_6((ca).clone()) }) } == { (ca).clone() })) });
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(({ ((ca).clone() as Ptr<i32>).to_end() } == { (ca).offset((3) as isize) }));
+        ({
+            cpp2rust_assert_fail_3(({ ({ end_7((ca).clone()) }) } == { (ca).offset((3) as isize) }))
+        });
     }
     return true;
 }
-pub fn test_r_5() -> bool {
+pub fn test_r_8() -> bool {
     let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
     let ca: Ptr<i32> = a.as_pointer();
     {
         const _: () = assert!(true, "");;
-        assert!(
-            (({ ({ rbegin_6(a.as_pointer(),) }).base() })
-                == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
-        );
+        ({
+            cpp2rust_assert_fail_3(
+                (({ ({ rbegin_9(a.as_pointer()) }).base() })
+                    == (a.as_pointer() as Ptr<i32>).offset((3) as isize)),
+            )
+        });
         const _: () = assert!(true, "");;
-        assert!((({ ({ rend_7(a.as_pointer(),) }).base() }) == (a.as_pointer() as Ptr::<i32>)));
+        ({
+            cpp2rust_assert_fail_3(
+                (({ ({ rend_10(a.as_pointer()) }).base() }) == (a.as_pointer() as Ptr<i32>)),
+            )
+        });
         const _: () = assert!(true, "");;
-        assert!(({ ({ ({ rbegin_8((ca).clone(),) }).base() }) } == { (ca).offset((3) as isize) }));
+        ({
+            cpp2rust_assert_fail_3(
+                ({ ({ ({ rbegin_11((ca).clone()) }).base() }) } == { (ca).offset((3) as isize) }),
+            )
+        });
         const _: () = assert!(true, "");;
-        assert!(({ ({ ({ rend_9((ca).clone(),) }).base() }) } == { (ca).clone() }));
+        ({
+            cpp2rust_assert_fail_3(
+                ({ ({ ({ rend_12((ca).clone()) }).base() }) } == { (ca).clone() }),
+            )
+        });
     }
     return true;
 }
@@ -87,22 +106,28 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_2() });
-    ({ test_r_5() });
+    ({ test_r_8() });
     const _: () = assert!(true, "test()");;
     const _: () = assert!(true, "test_r()");;
     {
-        let mut b: Ptr<i32> = ({ begin_4(a_10.with(|v| v.as_pointer())) });
-        assert!(({ (b).clone() } == { (a_10.with(|v| v.as_pointer()) as Ptr::<i32>) }));
-        let mut e: Ptr<i32> = (a_10.with(|v| v.as_pointer()) as Ptr<i32>).to_end();
-        assert!(
-            ({ (e).clone() } == {
-                (a_10.with(|v| v.as_pointer()) as Ptr<i32>).offset((3) as isize)
-            })
-        );
+        let mut b: Ptr<i32> = ({ begin_6(a_13.with(|v| v.as_pointer())) });
+        ({
+            cpp2rust_assert_fail_3(
+                ({ (b).clone() } == { (a_13.with(|v| v.as_pointer()) as Ptr<i32>) }),
+            )
+        });
+        let mut e: Ptr<i32> = ({ end_7(a_13.with(|v| v.as_pointer())) });
+        ({
+            cpp2rust_assert_fail_3(
+                ({ (e).clone() } == {
+                    (a_13.with(|v| v.as_pointer()) as Ptr<i32>).offset((3) as isize)
+                }),
+            )
+        });
     }
     return 0;
 }
 thread_local!(
-    static a_10: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+    static a_13: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
 );
 pub fn __cpp2rust_init_globals() {}

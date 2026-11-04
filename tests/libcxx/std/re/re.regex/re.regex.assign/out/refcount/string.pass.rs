@@ -30,17 +30,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let r2: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
         <std_basic_regex_char__std_regex_traits_char__>::default(),
     ));
-    (*r2.borrow_mut()) = {
-        let mut __bytes = Ptr::<i8>::from_string_literal(b"(a([bc]))").to_c_bytes();
-        __bytes.push(0_i8);
-        __bytes
-    };
-    assert!(
-        ({
-            ((({ (*r2.borrow()).flags() }) as u32) == (ECMAScript_0.with(|rc| *rc.borrow()) as u32))
-        })
+    (*r2.borrow_mut()) = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { Ptr::<i8>::from_string_literal(b"(a([bc]))") },
+        None,
     );
-    assert!(({ (({ (*r2.borrow()).mark_count() }) == 2_u32) }));
+    ({
+        cpp2rust_assert_fail_0(
+            ((({ (*r2.borrow()).flags() }) as u32)
+                == (ECMAScript_1.with(|rc| *rc.borrow()) as u32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ (*r2.borrow()).mark_count() }) == 2_u32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

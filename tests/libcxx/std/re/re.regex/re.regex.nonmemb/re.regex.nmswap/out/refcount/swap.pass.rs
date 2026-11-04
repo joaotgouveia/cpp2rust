@@ -36,19 +36,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let r2: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
         <std_basic_regex_char__std_regex_traits_char__>::default(),
     ));
-    cpp_swap!(r2.as_pointer(), r1.as_pointer());
-    assert!(
-        ({
-            ((({ (*r1.borrow()).flags() }) as u32) == (ECMAScript_0.with(|rc| *rc.borrow()) as u32))
-        })
-    );
-    assert!(({ (({ (*r1.borrow()).mark_count() }) == 0_u32) }));
-    assert!(
-        ({
-            ((({ (*r2.borrow()).flags() }) as u32) == (ECMAScript_0.with(|rc| *rc.borrow()) as u32))
-        })
-    );
-    assert!(({ (({ (*r2.borrow()).mark_count() }) == 2_u32) }));
+    ({ swap_0(r2.as_pointer(), r1.as_pointer()) });
+    ({
+        cpp2rust_assert_fail_1(
+            ((({ (*r1.borrow()).flags() }) as u32)
+                == (ECMAScript_2.with(|rc| *rc.borrow()) as u32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_1((({ (*r1.borrow()).mark_count() }) == 0_u32)) });
+    ({
+        cpp2rust_assert_fail_1(
+            ((({ (*r2.borrow()).flags() }) as u32)
+                == (ECMAScript_2.with(|rc| *rc.borrow()) as u32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_1((({ (*r2.borrow()).mark_count() }) == 2_u32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

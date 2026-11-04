@@ -20,13 +20,6 @@ pub type anon_1 = u32;
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___std_allocator_char____std_basic_string_char__std_char_traits_char___std_allocator_char___
-{}
-impl CppMove for test_macros_detail_is_same_std_basic_string_char__std_char_traits_char___std_allocator_char____std_basic_string_char__std_char_traits_char___std_allocator_char___ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
-pub type anon_2 = u32;
-pub const anon_2_value: anon_2 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
 pub struct test_macros_detail_is_same_const_char__const_char_ {}
 impl CppMove for test_macros_detail_is_same_const_char__const_char_ {
     fn cpp_move(src: Ptr<Self>) -> Self {
@@ -58,7 +51,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "path::preferred_separator == \'/\'");;
-        let mut dummy: Ptr<i8> = (preferred_separator_3.with(|v| v.as_pointer()));
+        let mut dummy: Ptr<i8> = (preferred_separator_2.with(|v| v.as_pointer()));
         (&(dummy));
     }
     return 0;

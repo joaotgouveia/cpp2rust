@@ -16,10 +16,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!(((E_A as i32) == (1 << 1)));
-    assert!(((E_B as i32) == (1 << 2)));
-    assert!(((E_C as i32) == (1 << 1)));
-    assert!(((E_D as i32) == (1 << 2)));
+    ({ cpp2rust_assert_fail_0(((E_A as i32) == (1 << 1))) });
+    ({ cpp2rust_assert_fail_0(((E_B as i32) == (1 << 2))) });
+    ({ cpp2rust_assert_fail_0(((E_C as i32) == (1 << 1))) });
+    ({ cpp2rust_assert_fail_0(((E_D as i32) == (1 << 2))) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

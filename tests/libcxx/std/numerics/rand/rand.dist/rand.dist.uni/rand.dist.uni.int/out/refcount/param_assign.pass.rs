@@ -35,8 +35,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             <std_uniform_int_distribution_long__param_type>::default(),
         ));
         (*p.borrow_mut()) = (*p0.borrow()).clone();
-        assert!(({ (({ (*p.borrow()).a() }) == 5_i64) }));
-        assert!(({ (({ (*p.borrow()).b() }) == 10_i64) }));
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).a() }) == 5_i64)) });
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).b() }) == 10_i64)) });
     }
     return 0;
 }

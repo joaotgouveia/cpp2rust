@@ -6,16 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(mut p: Ptr<i8>, mut len: usize, mut mc: u32) {
+pub fn test_0(mut p: Ptr<i8>, mut len: u64, mut mc: u32) {
     let r: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
         std_basic_regex_char__std_regex_traits_char__::new_1({ (p).clone() }, { len }, None),
     ));
-    assert!(
-        ({
-            ((({ (*r.borrow()).flags() }) as u32) == (ECMAScript_1.with(|rc| *rc.borrow()) as u32))
-        })
-    );
-    assert!(({ (({ (*r.borrow()).mark_count() }) == mc) }));
+    ({
+        cpp2rust_assert_fail_1(
+            ((({ (*r.borrow()).flags() }) as u32) == (ECMAScript_2.with(|rc| *rc.borrow()) as u32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_1((({ (*r.borrow()).mark_count() }) == mc)) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -37,47 +37,41 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_0(Ptr::<i8>::from_string_literal(b"\\(a\\)"), 5_usize, 0_u32) });
-    ({
-        test_0(
-            Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"),
-            9_usize,
-            0_u32,
-        )
-    });
+    ({ test_0(Ptr::<i8>::from_string_literal(b"\\(a\\)"), 5_u64, 0_u32) });
+    ({ test_0(Ptr::<i8>::from_string_literal(b"\\(a[bc]\\)"), 9_u64, 0_u32) });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"\\(a\\([bc]\\)\\)"),
-            13_usize,
+            13_u64,
             0_u32,
         )
     });
-    ({ test_0(Ptr::<i8>::from_string_literal(b"(a([bc]))"), 9_usize, 2_u32) });
+    ({ test_0(Ptr::<i8>::from_string_literal(b"(a([bc]))"), 9_u64, 2_u32) });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(\0)(b)(c)(d)"),
-            12_usize,
+            12_u64,
             4_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(\0)(b)(c)(d)"),
-            9_usize,
+            9_u64,
             3_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(\0)(b)(c)(d)"),
-            3_usize,
+            3_u64,
             1_u32,
         )
     });
     ({
         test_0(
             Ptr::<i8>::from_string_literal(b"(\0)(b)(c)(d)"),
-            0_usize,
+            0_u64,
             0_u32,
         )
     });

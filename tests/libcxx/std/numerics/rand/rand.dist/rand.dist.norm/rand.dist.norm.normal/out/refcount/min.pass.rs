@@ -31,7 +31,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let d: Value<std_normal_distribution_double_> = Rc::new(RefCell::new(
             std_normal_distribution_double_::new_1({ 0.5_f64 }, { 0.5_f64 }),
         ));
-        assert!(({ (({ (*d.borrow()).min() }) == (-(f32::INFINITY) as f64)) }));
+        ({
+            cpp2rust_assert_fail_0(
+                (({ (*d.borrow()).min() }) == (-({ __builtin_inff_1() }) as f64)),
+            )
+        });
     }
     return 0;
 }

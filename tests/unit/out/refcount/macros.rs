@@ -7,37 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn base_name_0(mut path: Ptr<i8>) -> Ptr<i8> {
-    let mut slash: Ptr<i8> = {
-        let __t = (('/' as i8) as i32) as i8;
-        match path
-            .to_c_string_iterator()
-            .enumerate()
-            .filter(|__e| __e.1 == __t)
-            .last()
-        {
-            Some((__i, _)) => path.offset(__i),
-            None => {
-                if __t == 0 {
-                    path.offset(path.to_c_string_iterator().count())
-                } else {
-                    Ptr::null()
-                }
-            }
-        }
-    };
+    let mut slash: Ptr<i8> = ({ strrchr_1((path).clone(), (('/' as i8) as i32)) });
     return if !(slash).is_null() {
         slash.offset((1) as isize)
     } else {
         path
     };
 }
-pub fn log_1(mut file: Ptr<i8>, mut line: i32, mut func: Ptr<i8>) {
+pub fn log_2(mut file: Ptr<i8>, mut line: i32, mut func: Ptr<i8>) {
     println!("{} {} {}", file, line, func);
 }
-pub fn line_2() -> i32 {
+pub fn line_3() -> i32 {
     return (line!() as u32 as i32);
 }
-pub fn function_3() -> Ptr<i8> {
+pub fn function_4() -> Ptr<i8> {
     return Ptr::<i8>::from_string_literal(b"function");
 }
 pub fn main() {
@@ -52,23 +35,25 @@ fn main_0() -> i32 {
         Ptr::<i8>::from_string_literal(b"main")
     );
     ({
-        log_1(
+        log_2(
             Ptr::<i8>::from_string_literal(b"macros.cpp"),
             20,
             Ptr::<i8>::from_string_literal(b"main"),
         )
     });
-    assert!((line!() as u32 > 0_u32));
-    assert!(
-        (((elem!(
-            ({ base_name_0(Ptr::<i8>::from_string_literal(file!().as_bytes()),) }),
-            0
+    ({ cpp2rust_assert_fail_5((line!() as u32 > 0_u32)) });
+    ({
+        cpp2rust_assert_fail_5(
+            (((elem!(
+                ({ base_name_0(Ptr::<i8>::from_string_literal(file!().as_bytes()),) }),
+                0
+            )
+            .read()) as i32)
+                != (('\0' as i8) as i32)),
         )
-        .read()) as i32)
-            != (('\0' as i8) as i32))
-    );
-    assert!((({ line_2() }) > 0));
-    println!("{}", ({ function_3() }));
+    });
+    ({ cpp2rust_assert_fail_5((({ line_3() }) > 0)) });
+    println!("{}", ({ function_4() }));
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

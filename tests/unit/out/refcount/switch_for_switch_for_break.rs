@@ -39,7 +39,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ for_switch_for_break_0(3,) }) == 122));
+    ({ cpp2rust_assert_fail_1((({ for_switch_for_break_0(3) }) == 122)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

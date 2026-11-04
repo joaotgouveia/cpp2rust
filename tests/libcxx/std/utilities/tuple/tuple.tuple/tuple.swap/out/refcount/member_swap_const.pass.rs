@@ -18,17 +18,21 @@ impl CppMove for ConstSwappable {
     }
 }
 pub fn swap_0(lhs: Ptr<ConstSwappable>, rhs: Ptr<ConstSwappable>) {
-    cpp_swap!(field_ptr!(lhs, i), field_ptr!(rhs, i));
+    ({
+        let ___a: Ptr<i32> = field_ptr!(lhs, i);
+        let ___b: Ptr<i32> = field_ptr!(rhs, i);
+        swap_1(___a, ___b)
+    });
 }
-pub fn test_1() -> bool {
+pub fn test_2() -> bool {
     {
         let t0: Value<std_tuple_const_ConstSwappable_> =
             Rc::new(RefCell::new(ConstSwappable { i: 0 }));
         let t1: Value<std_tuple_const_ConstSwappable_> =
             Rc::new(RefCell::new(ConstSwappable { i: 1 }));
         ({ (*t0.borrow()).swap_79(t1.as_pointer()) });
-        assert!((({ get_2(t0.as_pointer(),) }).with(|__s| __s.i) == 1));
-        assert!((({ get_3(t1.as_pointer(),) }).with(|__s| __s.i) == 0));
+        ({ cpp2rust_assert_fail_3((({ get_4(t0.as_pointer()) }).with(|__s| __s.i) == 1)) });
+        ({ cpp2rust_assert_fail_3((({ get_5(t1.as_pointer()) }).with(|__s| __s.i) == 0)) });
     }
     {
         let t0: Value<std_tuple_ConstSwappable__ConstSwappable_> = Rc::new(RefCell::new({
@@ -46,10 +50,10 @@ pub fn test_1() -> bool {
             })
         }));
         ({ (*t0.borrow()).swap_79(t1.as_pointer()) });
-        assert!((({ get_4(t0.as_pointer(),) }).with(|__s| __s.i) == 2));
-        assert!((({ get_5(t0.as_pointer(),) }).with(|__s| __s.i) == 3));
-        assert!((({ get_4(t1.as_pointer(),) }).with(|__s| __s.i) == 0));
-        assert!((({ get_5(t1.as_pointer(),) }).with(|__s| __s.i) == 1));
+        ({ cpp2rust_assert_fail_3((({ get_6(t0.as_pointer()) }).with(|__s| __s.i) == 2)) });
+        ({ cpp2rust_assert_fail_3((({ get_7(t0.as_pointer()) }).with(|__s| __s.i) == 3)) });
+        ({ cpp2rust_assert_fail_3((({ get_6(t1.as_pointer()) }).with(|__s| __s.i) == 0)) });
+        ({ cpp2rust_assert_fail_3((({ get_7(t1.as_pointer()) }).with(|__s| __s.i) == 1)) });
     }
     {
         let t0: Value<std_tuple_ConstSwappable__const_ConstSwappable__const_ConstSwappable_> =
@@ -75,12 +79,12 @@ pub fn test_1() -> bool {
                 )
             }));
         ({ (*t0.borrow()).swap_79(t1.as_pointer()) });
-        assert!((({ get_6(t0.as_pointer(),) }).with(|__s| __s.i) == 3));
-        assert!((({ get_7(t0.as_pointer(),) }).with(|__s| __s.i) == 4));
-        assert!((({ get_8(t0.as_pointer(),) }).with(|__s| __s.i) == 5));
-        assert!((({ get_6(t1.as_pointer(),) }).with(|__s| __s.i) == 0));
-        assert!((({ get_7(t1.as_pointer(),) }).with(|__s| __s.i) == 1));
-        assert!((({ get_8(t1.as_pointer(),) }).with(|__s| __s.i) == 2));
+        ({ cpp2rust_assert_fail_3((({ get_8(t0.as_pointer()) }).with(|__s| __s.i) == 3)) });
+        ({ cpp2rust_assert_fail_3((({ get_9(t0.as_pointer()) }).with(|__s| __s.i) == 4)) });
+        ({ cpp2rust_assert_fail_3((({ get_10(t0.as_pointer()) }).with(|__s| __s.i) == 5)) });
+        ({ cpp2rust_assert_fail_3((({ get_8(t1.as_pointer()) }).with(|__s| __s.i) == 0)) });
+        ({ cpp2rust_assert_fail_3((({ get_9(t1.as_pointer()) }).with(|__s| __s.i) == 1)) });
+        ({ cpp2rust_assert_fail_3((({ get_10(t1.as_pointer()) }).with(|__s| __s.i) == 2)) });
     }
     return true;
 }
@@ -104,7 +108,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_1() });
+    ({ test_2() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

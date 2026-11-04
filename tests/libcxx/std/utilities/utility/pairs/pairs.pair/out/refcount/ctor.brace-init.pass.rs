@@ -65,18 +65,15 @@ impl CppMove for ImplicitT {
         src.read()
     }
 }
-pub fn can_construct_with_brace_init_0(mut _a0: i32) -> bool {
-    return true;
+pub fn can_construct_with_brace_init_0(__args: Box<[VaArg]>) -> bool {
+    let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
+    return false;
 }
-pub fn can_construct_with_brace_init_1(__args: Box<[VaArg]>) -> bool {
+pub fn can_construct_with_ctad_brace_init_1(__args: Box<[VaArg]>) -> bool {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
     return false;
 }
 pub fn can_construct_with_ctad_brace_init_2(__args: Box<[VaArg]>) -> bool {
-    let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
-    return false;
-}
-pub fn can_construct_with_ctad_brace_init_3(__args: Box<[VaArg]>) -> bool {
     let __args: Value<Box<[VaArg]>> = Rc::new(RefCell::new(__args.into()));
     return false;
 }
@@ -105,68 +102,91 @@ impl CppMove for ExplicitBraceInit {
         src.read()
     }
 }
-pub fn explicit_vs_implicit_brace_init_4(
-    _a0: (Value<ExplicitBraceInit>, Value<ExplicitBraceInit>),
+pub fn explicit_vs_implicit_brace_init_3(
+    _a0: std_pair_ExplicitBraceInit__ExplicitBraceInit_,
 ) -> i32 {
-    let _a0: Value<(Value<ExplicitBraceInit>, Value<ExplicitBraceInit>)> =
-        Rc::new(RefCell::new(_a0));
+    let _a0: Value<std_pair_ExplicitBraceInit__ExplicitBraceInit_> = Rc::new(RefCell::new(_a0));
     return 1;
 }
-pub fn explicit_vs_implicit_brace_init_5(_a0: (Value<BraceInit>, Value<BraceInit>)) -> i32 {
-    let _a0: Value<(Value<BraceInit>, Value<BraceInit>)> = Rc::new(RefCell::new(_a0));
+pub fn explicit_vs_implicit_brace_init_4(_a0: std_pair_BraceInit__BraceInit_) -> i32 {
+    let _a0: Value<std_pair_BraceInit__BraceInit_> = Rc::new(RefCell::new(_a0));
     return 2;
 }
-pub fn test_6() -> bool {
+pub fn test_5() -> bool {
     {
-        let p1: Value<(Value<ExplicitT>, Value<BraceInit>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(ExplicitT::new({ 42 }))),
-            Rc::new(RefCell::new(<BraceInit>::default())),
-        )));
-        assert!(({ ({ (*(*p1.borrow()).0.borrow()).value } == 42) }));
-        let p2: Value<(Value<ExplicitT>, Value<BraceInit>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(ExplicitT::new({ 42 }))),
-            Rc::new(RefCell::new(<BraceInit>::default())),
-        )));
-        assert!(({ ({ (*(*p2.borrow()).0.borrow()).value } == 42) }));
+        let p1: Value<std_pair_ExplicitT__BraceInit_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<ExplicitT> = Rc::new(RefCell::new(ExplicitT::new({ 42 })));
+            let __tmp_1: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            std_pair_ExplicitT__BraceInit_::new_1({ __tmp_0.as_pointer() }, {
+                __tmp_1.as_pointer()
+            })
+        }));
+        ({ cpp2rust_assert_fail_6(({ (*p1.borrow()).first.value } == 42)) });
+        let p2: Value<std_pair_ExplicitT__BraceInit_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<ExplicitT> = Rc::new(RefCell::new(ExplicitT::new({ 42 })));
+            let __tmp_3: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            std_pair_ExplicitT__BraceInit_::new_1({ __tmp_2.as_pointer() }, {
+                __tmp_3.as_pointer()
+            })
+        }));
+        ({ cpp2rust_assert_fail_6(({ (*p2.borrow()).first.value } == 42)) });
     }
     {
-        let p1: Value<(Value<BraceInit>, Value<ExplicitT>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(<BraceInit>::default())),
-            Rc::new(RefCell::new(ExplicitT::new({ 42 }))),
-        )));
-        assert!(({ ({ (*(*p1.borrow()).1.borrow()).value } == 42) }));
-        let p2: Value<(Value<BraceInit>, Value<ExplicitT>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(<BraceInit>::default())),
-            Rc::new(RefCell::new(ExplicitT::new({ 42 }))),
-        )));
-        assert!(({ ({ (*(*p2.borrow()).1.borrow()).value } == 42) }));
+        let p1: Value<std_pair_BraceInit__ExplicitT_> = Rc::new(RefCell::new({
+            let __tmp_4: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            let __tmp_5: Value<ExplicitT> = Rc::new(RefCell::new(ExplicitT::new({ 42 })));
+            std_pair_BraceInit__ExplicitT_::new_1({ __tmp_4.as_pointer() }, {
+                __tmp_5.as_pointer()
+            })
+        }));
+        ({ cpp2rust_assert_fail_6(({ (*p1.borrow()).second.value } == 42)) });
+        let p2: Value<std_pair_BraceInit__ExplicitT_> = Rc::new(RefCell::new({
+            let __tmp_6: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            let __tmp_7: Value<ExplicitT> = Rc::new(RefCell::new(ExplicitT::new({ 42 })));
+            std_pair_BraceInit__ExplicitT_::new_1({ __tmp_6.as_pointer() }, {
+                __tmp_7.as_pointer()
+            })
+        }));
+        ({ cpp2rust_assert_fail_6(({ (*p2.borrow()).second.value } == 42)) });
     }
     {
-        let p: Value<(Value<BraceInit>, Value<BraceInit>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(<BraceInit>::default())),
-            Rc::new(RefCell::new(<BraceInit>::default())),
-        )));
+        let p: Value<std_pair_BraceInit__BraceInit_> = Rc::new(RefCell::new({
+            let __tmp_8: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            let __tmp_9: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            std_pair_BraceInit__BraceInit_::new_1({ __tmp_8.as_pointer() }, {
+                __tmp_9.as_pointer()
+            })
+        }));
         &(*p.borrow_mut());
     }
     {
-        let p: Value<(Value<ImplicitT>, Value<BraceInit>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(ImplicitT::new({ 42 }))),
-            Rc::new(RefCell::new(<BraceInit>::default())),
-        )));
-        assert!(({ ({ (*(*p.borrow()).0.borrow()).value } == 42) }));
+        let p: Value<std_pair_ImplicitT__BraceInit_> = Rc::new(RefCell::new({
+            let __tmp_10: Value<i32> = Rc::new(RefCell::new(42));
+            let __tmp_11: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            std_pair_ImplicitT__BraceInit_::new_1({ __tmp_10.as_pointer() }, {
+                __tmp_11.as_pointer()
+            })
+        }));
+        ({ cpp2rust_assert_fail_6(({ (*p.borrow()).first.value } == 42)) });
     }
     {
-        let p: Value<(Value<BraceInit>, Value<ImplicitT>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(<BraceInit>::default())),
-            Rc::new(RefCell::new(ImplicitT::new({ 42 }))),
-        )));
-        assert!(({ ({ (*(*p.borrow()).1.borrow()).value } == 42) }));
+        let p: Value<std_pair_BraceInit__ImplicitT_> = Rc::new(RefCell::new({
+            let __tmp_12: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            let __tmp_13: Value<i32> = Rc::new(RefCell::new(42));
+            std_pair_BraceInit__ImplicitT_::new_1({ __tmp_12.as_pointer() }, {
+                __tmp_13.as_pointer()
+            })
+        }));
+        ({ cpp2rust_assert_fail_6(({ (*p.borrow()).second.value } == 42)) });
     }
     {
-        let p: Value<(Value<BraceInit>, Value<BraceInit>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(<BraceInit>::default())),
-            Rc::new(RefCell::new(<BraceInit>::default())),
-        )));
+        let p: Value<std_pair_BraceInit__BraceInit_> = Rc::new(RefCell::new({
+            let __tmp_14: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            let __tmp_15: Value<BraceInit> = Rc::new(RefCell::new(<BraceInit>::default()));
+            std_pair_BraceInit__BraceInit_::new_1({ __tmp_14.as_pointer() }, {
+                __tmp_15.as_pointer()
+            })
+        }));
         &(*p.borrow_mut());
     }
     {
@@ -176,14 +196,21 @@ pub fn test_6() -> bool {
         const _: () = assert!(true, "!can_construct_with_ctad_brace_init<int>(0)");;
     }
     {
-        assert!(
-            (({
-                explicit_vs_implicit_brace_init_5((
-                    Rc::new(RefCell::new(<BraceInit>::default())),
-                    Rc::new(RefCell::new(<BraceInit>::default())),
-                ))
-            }) == 2)
-        );
+        ({
+            cpp2rust_assert_fail_6(
+                (({
+                    explicit_vs_implicit_brace_init_4({
+                        let __tmp_16: Value<BraceInit> =
+                            Rc::new(RefCell::new(<BraceInit>::default()));
+                        let __tmp_17: Value<BraceInit> =
+                            Rc::new(RefCell::new(<BraceInit>::default()));
+                        std_pair_BraceInit__BraceInit_::new_1({ __tmp_16.as_pointer() }, {
+                            __tmp_17.as_pointer()
+                        })
+                    })
+                }) == 2),
+            )
+        });
     }
     return true;
 }
@@ -207,7 +234,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_6() });
+    ({ test_5() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

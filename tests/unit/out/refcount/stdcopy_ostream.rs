@@ -11,41 +11,36 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let str: Value<Vec<i8>> = Rc::new(RefCell::new({
-        let mut __bytes = Ptr::<i8>::from_string_literal(b"Hello, world!\n").to_c_bytes();
-        __bytes.push(0_i8);
-        __bytes
-    }));
+    let str: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { Ptr::<i8>::from_string_literal(b"Hello, world!\n") },
+                None,
+            ),
+        ));
     let file: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(
         b"test_stdcopy_ostream.txt\0",
     )));
     {
-        let ofs: Value<::std::fs::File> = Rc::new(RefCell::new(
-            ::std::fs::File::create((file.as_pointer() as Ptr<i8>).to_string())
-                .expect("Failed to open file"),
+        let ofs: Value<std_basic_ofstream_char__std_char_traits_char__> = Rc::new(RefCell::new(
+            std_basic_ofstream_char__std_char_traits_char__::new_1(
+                { (file.as_pointer() as Ptr<i8>) },
+                { binary_0.with(|rc| *rc.borrow()) },
+            ),
         ));
-        match ({ RandomAccessIterator::Vec(str.decay()) }, {
-            RandomAccessIterator::Vec(str.decay().to_last())
-        }) {
-            (mut __tmp_0, mut __tmp_1) => {
-                let mut __first = (__tmp_0).clone();
-                let mut __out = OstreamIterator::new(ofs.as_pointer(), Ptr::null());
-                while __first != __tmp_1 {
-                    __out.iter_deref().write((__first.iter_deref().read()));
-                    __first.iter_inc();
-                    __out.iter_inc();
-                }
-                __out
-            }
-        };
+        ({
+            let ___first: __gnu_cxx___normal_iterator_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char___   = ( { (*str.borrow()) . begin_63 ( ) } )   ;
+            let ___last: __gnu_cxx___normal_iterator_char_ptr__std_basic_string_char__std_char_traits_char___std_allocator_char___   = ( { (*str.borrow()) . end_65 ( ) } )   ;
+            copy_1(
+                ___first,
+                ___last,
+                std_ostream_iterator_char__char__std_char_traits_char__::new_1({
+                    ofs.as_pointer()
+                }),
+            )
+        });
     }
-    match nix::unistd::unlink((file.as_pointer() as Ptr<i8>).to_rust_string().as_str()) {
-        Ok(()) => 0,
-        Err(__e) => {
-            libcc2rs::cpp2rust_errno().write(__e as i32);
-            -1
-        }
-    };
+    ({ unlink_2((file.as_pointer() as Ptr<i8>)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

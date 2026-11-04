@@ -7,84 +7,138 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    assert!(({ !({ is_eq_1(({ (*libcc2rs::strong_ordering_less().upgrade().deref())() }),) }) }));
-    assert!(({ ({ is_eq_1(({ (*libcc2rs::strong_ordering_equal().upgrade().deref())() }),) }) }));
-    assert!(
-        ({ !({ is_eq_1(({ (*libcc2rs::strong_ordering_greater().upgrade().deref())() }),) }) })
-    );
-    assert!(({ !({ is_eq_1(({ (*less_2.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_eq_1(({ (*equivalent_3.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_eq_1(({ (*greater_4.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_eq_1((*less_5.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_eq_1((*equivalent_6.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_eq_1((*greater_7.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_eq_1((*unordered_8.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_neq_9(({ (*libcc2rs::strong_ordering_less().upgrade().deref())() }),) }) }));
-    assert!(({ !({ is_neq_9(({ (*libcc2rs::strong_ordering_equal().upgrade().deref())() }),) }) }));
-    assert!(
-        ({ ({ is_neq_9(({ (*libcc2rs::strong_ordering_greater().upgrade().deref())() }),) }) })
-    );
-    assert!(({ ({ is_neq_9(({ (*less_2.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_neq_9(({ (*equivalent_3.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_neq_9(({ (*greater_4.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_neq_9((*less_5.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_neq_9((*equivalent_6.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_neq_9((*greater_7.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_neq_9((*unordered_8.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_lt_10(({ (*libcc2rs::strong_ordering_less().upgrade().deref())() }),) }) }));
-    assert!(({ !({ is_lt_10(({ (*libcc2rs::strong_ordering_equal().upgrade().deref())() }),) }) }));
-    assert!(
-        ({ !({ is_lt_10(({ (*libcc2rs::strong_ordering_greater().upgrade().deref())() }),) }) })
-    );
-    assert!(({ ({ is_lt_10(({ (*less_2.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_lt_10(({ (*equivalent_3.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_lt_10(({ (*greater_4.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_lt_10((*less_5.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_lt_10((*equivalent_6.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_lt_10((*greater_7.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_lt_10((*unordered_8.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_lteq_11(({ (*libcc2rs::strong_ordering_less().upgrade().deref())() }),) }) }));
-    assert!(
-        ({ ({ is_lteq_11(({ (*libcc2rs::strong_ordering_equal().upgrade().deref())() }),) }) })
-    );
-    assert!(
-        ({ !({ is_lteq_11(({ (*libcc2rs::strong_ordering_greater().upgrade().deref())() }),) }) })
-    );
-    assert!(({ ({ is_lteq_11(({ (*less_2.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_lteq_11(({ (*equivalent_3.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_lteq_11(({ (*greater_4.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_lteq_11((*less_5.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_lteq_11((*equivalent_6.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_lteq_11((*greater_7.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_lteq_11((*unordered_8.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_gt_12(({ (*libcc2rs::strong_ordering_less().upgrade().deref())() }),) }) }));
-    assert!(({ !({ is_gt_12(({ (*libcc2rs::strong_ordering_equal().upgrade().deref())() }),) }) }));
-    assert!(
-        ({ ({ is_gt_12(({ (*libcc2rs::strong_ordering_greater().upgrade().deref())() }),) }) })
-    );
-    assert!(({ !({ is_gt_12(({ (*less_2.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_gt_12(({ (*equivalent_3.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_gt_12(({ (*greater_4.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_gt_12((*less_5.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_gt_12((*equivalent_6.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_gt_12((*greater_7.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_gt_12((*unordered_8.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(
-        ({ !({ is_gteq_13(({ (*libcc2rs::strong_ordering_less().upgrade().deref())() }),) }) })
-    );
-    assert!(
-        ({ ({ is_gteq_13(({ (*libcc2rs::strong_ordering_equal().upgrade().deref())() }),) }) })
-    );
-    assert!(
-        ({ ({ is_gteq_13(({ (*libcc2rs::strong_ordering_greater().upgrade().deref())() }),) }) })
-    );
-    assert!(({ !({ is_gteq_13(({ (*less_2.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_gteq_13(({ (*equivalent_3.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ ({ is_gteq_13(({ (*greater_4.with(Value::clone).borrow())() }),) }) }));
-    assert!(({ !({ is_gteq_13((*less_5.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_gteq_13((*equivalent_6.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ ({ is_gteq_13((*greater_7.with(Value::clone).borrow()).clone(),) }) }));
-    assert!(({ !({ is_gteq_13((*unordered_8.with(Value::clone).borrow()).clone(),) }) }));
+    ({ cpp2rust_assert_fail_1(!({ is_eq_2(({ (*less_3.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_eq_2(({ (*equal_4.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_eq_2(({ (*greater_5.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_eq_2(({ (*less_6.with(Value::clone).borrow())() })) })) });
+    ({
+        cpp2rust_assert_fail_1(({ is_eq_2(({ (*equivalent_7.with(Value::clone).borrow())() })) }))
+    });
+    ({ cpp2rust_assert_fail_1(!({ is_eq_2(({ (*greater_8.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_eq_2((*less_9.with(Value::clone).borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(({ is_eq_2((*equivalent_10.with(Value::clone).borrow()).clone()) }))
+    });
+    ({ cpp2rust_assert_fail_1(!({ is_eq_2((*greater_11.with(Value::clone).borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(!({ is_eq_2((*unordered_12.with(Value::clone).borrow()).clone()) }))
+    });
+    ({ cpp2rust_assert_fail_1(({ is_neq_13(({ (*less_3.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_neq_13(({ (*equal_4.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_neq_13(({ (*greater_5.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_neq_13(({ (*less_6.with(Value::clone).borrow())() })) })) });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ is_neq_13(({ (*equivalent_7.with(Value::clone).borrow())() })) }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(({ is_neq_13(({ (*greater_8.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_neq_13((*less_9.with(Value::clone).borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ is_neq_13((*equivalent_10.with(Value::clone).borrow()).clone()) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(({ is_neq_13((*greater_11.with(Value::clone).borrow()).clone()) }))
+    });
+    ({
+        cpp2rust_assert_fail_1(({ is_neq_13((*unordered_12.with(Value::clone).borrow()).clone()) }))
+    });
+    ({ cpp2rust_assert_fail_1(({ is_lt_14(({ (*less_3.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_lt_14(({ (*equal_4.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_lt_14(({ (*greater_5.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_lt_14(({ (*less_6.with(Value::clone).borrow())() })) })) });
+    ({
+        cpp2rust_assert_fail_1(!({ is_lt_14(({ (*equivalent_7.with(Value::clone).borrow())() })) }))
+    });
+    ({ cpp2rust_assert_fail_1(!({ is_lt_14(({ (*greater_8.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_lt_14((*less_9.with(Value::clone).borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ is_lt_14((*equivalent_10.with(Value::clone).borrow()).clone()) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(!({ is_lt_14((*greater_11.with(Value::clone).borrow()).clone()) }))
+    });
+    ({
+        cpp2rust_assert_fail_1(!({ is_lt_14((*unordered_12.with(Value::clone).borrow()).clone()) }))
+    });
+    ({ cpp2rust_assert_fail_1(({ is_lteq_15(({ (*less_3.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_lteq_15(({ (*equal_4.with(Value::clone).borrow())() })) })) });
+    ({
+        cpp2rust_assert_fail_1(!({ is_lteq_15(({ (*greater_5.with(Value::clone).borrow())() })) }))
+    });
+    ({ cpp2rust_assert_fail_1(({ is_lteq_15(({ (*less_6.with(Value::clone).borrow())() })) })) });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ is_lteq_15(({ (*equivalent_7.with(Value::clone).borrow())() })) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(!({ is_lteq_15(({ (*greater_8.with(Value::clone).borrow())() })) }))
+    });
+    ({ cpp2rust_assert_fail_1(({ is_lteq_15((*less_9.with(Value::clone).borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ is_lteq_15((*equivalent_10.with(Value::clone).borrow()).clone()) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(!({ is_lteq_15((*greater_11.with(Value::clone).borrow()).clone()) }))
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ is_lteq_15((*unordered_12.with(Value::clone).borrow()).clone()) }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(!({ is_gt_16(({ (*less_3.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_gt_16(({ (*equal_4.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_gt_16(({ (*greater_5.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_gt_16(({ (*less_6.with(Value::clone).borrow())() })) })) });
+    ({
+        cpp2rust_assert_fail_1(!({ is_gt_16(({ (*equivalent_7.with(Value::clone).borrow())() })) }))
+    });
+    ({ cpp2rust_assert_fail_1(({ is_gt_16(({ (*greater_8.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(!({ is_gt_16((*less_9.with(Value::clone).borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ is_gt_16((*equivalent_10.with(Value::clone).borrow()).clone()) }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(({ is_gt_16((*greater_11.with(Value::clone).borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(!({ is_gt_16((*unordered_12.with(Value::clone).borrow()).clone()) }))
+    });
+    ({ cpp2rust_assert_fail_1(!({ is_gteq_17(({ (*less_3.with(Value::clone).borrow())() })) })) });
+    ({ cpp2rust_assert_fail_1(({ is_gteq_17(({ (*equal_4.with(Value::clone).borrow())() })) })) });
+    ({
+        cpp2rust_assert_fail_1(({ is_gteq_17(({ (*greater_5.with(Value::clone).borrow())() })) }))
+    });
+    ({ cpp2rust_assert_fail_1(!({ is_gteq_17(({ (*less_6.with(Value::clone).borrow())() })) })) });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ is_gteq_17(({ (*equivalent_7.with(Value::clone).borrow())() })) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(({ is_gteq_17(({ (*greater_8.with(Value::clone).borrow())() })) }))
+    });
+    ({ cpp2rust_assert_fail_1(!({ is_gteq_17((*less_9.with(Value::clone).borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ is_gteq_17((*equivalent_10.with(Value::clone).borrow()).clone()) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(({ is_gteq_17((*greater_11.with(Value::clone).borrow()).clone()) }))
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({ is_gteq_17((*unordered_12.with(Value::clone).borrow()).clone()) }),
+        )
+    });
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;

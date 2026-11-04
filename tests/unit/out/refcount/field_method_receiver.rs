@@ -30,7 +30,7 @@ pub struct S {
     pub arr: Box<[Counter]>,
     #[offset(16)]
     #[byte_size(24)]
-    pub v: Vec<i32>,
+    pub v: std_vector_int__std_allocator_int__,
 }
 impl S {
     pub fn move_from(_a0: Ptr<S>) -> Self {
@@ -58,27 +58,34 @@ impl Default for S {
                 arr: (0..2)
                     .map(|_| <Counter>::default())
                     .collect::<Box<[Counter]>>(),
-                v: Default::default(),
+                v: <std_vector_int__std_allocator_int__>::default(),
             }
         }
     }
 }
-pub fn run_0(mut o: Ptr<S>) {
+pub fn run_1(mut o: Ptr<S>) {
     ({ CounterImpl::add(&field_ptr!(o, c), 2) });
-    assert!((({ CounterImpl::get(&field_ptr!(o, c),) }) == 2));
+    ({ cpp2rust_assert_fail_2((({ CounterImpl::get(&field_ptr!(o, c)) }) == 2)) });
     ({
         CounterImpl::add(
             &(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize),
             5,
         )
     });
-    assert!(
-        (({ CounterImpl::get(&(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize),) })
-            == 5)
-    );
+    ({
+        cpp2rust_assert_fail_2(
+            (({
+                CounterImpl::get(&(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize))
+            }) == 5),
+        )
+    });
     ({ CounterImpl::add(&({ CounterImpl::self_(&field_ptr!(o, c)) }), 1) });
-    assert!((({ CounterImpl::get(&field_ptr!(o, c),) }) == 3));
-    assert!(({ ({ CounterImpl::self_(&field_ptr!(o, c),) }) } == { (field_ptr!(o, c)) }));
+    ({ cpp2rust_assert_fail_2((({ CounterImpl::get(&field_ptr!(o, c)) }) == 3)) });
+    ({
+        cpp2rust_assert_fail_2(
+            ({ ({ CounterImpl::self_(&field_ptr!(o, c)) }) } == { (field_ptr!(o, c)) }),
+        )
+    });
     ({
         let _other: Ptr<Counter> =
             ((array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize));
@@ -87,31 +94,36 @@ pub fn run_0(mut o: Ptr<S>) {
             _other,
         )
     });
-    assert!(
-        (({ CounterImpl::get(&(array_field_ptr!(o, arr) as Ptr<Counter>).offset((0) as isize),) })
-            == 5)
-            && (({
-                CounterImpl::get(&(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize))
-            }) == 0)
-    );
+    ({
+        cpp2rust_assert_fail_2(
+            (({
+                CounterImpl::get(&(array_field_ptr!(o, arr) as Ptr<Counter>).offset((0) as isize))
+            }) == 5)
+                && (({
+                    CounterImpl::get(
+                        &(array_field_ptr!(o, arr) as Ptr<Counter>).offset((1) as isize),
+                    )
+                }) == 0),
+        )
+    });
     ({
         let _other: Ptr<Counter> = (field_ptr!(o, c));
         CounterImpl::take(&field_ptr!(o, c), _other)
     });
-    assert!((({ CounterImpl::get(&field_ptr!(o, c),) }) == 0));
+    ({ cpp2rust_assert_fail_2((({ CounterImpl::get(&field_ptr!(o, c)) }) == 0)) });
     ({ SImpl::bump(&o) });
-    assert!((({ CounterImpl::get(&field_ptr!(o, c),) }) == 1));
-    {
-        let __a1 = ({ CounterImpl::get(&field_ptr!(o, c)) });
-        field!(o, v).with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
-    };
-    assert!(
-        ({
-            ((*o.upgrade().deref()).v.len() == 1_usize)
-                && ((field_ref!(o, v).decay().offset(0_usize as isize).read()) == 1)
-        })
-    );
-    assert!((o.with(|__s| __s.tag) == 1));
+    ({ cpp2rust_assert_fail_2((({ CounterImpl::get(&field_ptr!(o, c)) }) == 1)) });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(({ CounterImpl::get(&field_ptr!(o, c)) })));
+        (*o.upgrade().deref()).v.push_back_60(___x.as_pointer())
+    });
+    ({
+        cpp2rust_assert_fail_2(
+            (({ (*o.upgrade().deref()).v.size() }) == 1_u64)
+                && ((elem!(field_ptr!(o, v), 0_u64).read()) == 1),
+        )
+    });
+    ({ cpp2rust_assert_fail_2((o.with(|__s| __s.tag) == 1)) });
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -120,10 +132,10 @@ pub fn main() {
 fn main_0() -> i32 {
     let local: Value<S> = Rc::new(RefCell::new(<S>::default()));
     (*local.borrow_mut()).tag = 1;
-    ({ run_0((local.as_pointer())) });
+    ({ run_1((local.as_pointer())) });
     let mut heap: Ptr<S> = Ptr::alloc(<S>::default());
     field!(heap, tag).write(1);
-    ({ run_0((heap).clone()) });
+    ({ run_1((heap).clone()) });
     heap.delete();
     return 0;
 }
@@ -168,21 +180,12 @@ impl SImpl for Ptr<S> {
     fn move_assign(&self, _a0: Ptr<S>) -> Ptr<S> {
         field!((*self), tag).write({ { (*_a0.upgrade().deref()).tag } });
         field!((*self), c).write({ { (*_a0.upgrade().deref()).c.clone() } });
-        match ({ ((array_field_ptr!((*self), arr)) as Ptr<Counter>).to_any() },) {
-            (mut __tmp_0,) => {
-                __tmp_0.memcpy(
-                    &((array_field_ptr!(_a0, arr)) as Ptr<Counter>).to_any(),
-                    8_usize as usize,
-                );
-                (__tmp_0).clone()
-            }
-        };
-        {
-            field_ref!((*self), v)
-                .as_pointer()
-                .write(field!(_a0, v).with_mut(std::mem::take));
-            field_ref!((*self), v).as_pointer()
-        };
+        ({
+            let _arg0: AnyPtr = ((array_field_ptr!((*self), arr)) as Ptr<Counter>).to_any();
+            let _arg1: AnyPtr = ((array_field_ptr!(_a0, arr)) as Ptr<Counter>).to_any();
+            __builtin_memcpy_0(_arg0, _arg1, 8_u64)
+        });
+        field!((*self), v).write({ { (*_a0.upgrade().deref()).v.clone() } });
         return (*self).clone();
     }
 }

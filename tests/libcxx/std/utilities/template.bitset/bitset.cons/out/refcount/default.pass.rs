@@ -9,10 +9,10 @@ use std::rc::{Rc, Weak};
 pub fn test_default_ctor_0() {
     {
         let v1: Value<std_bitset_0_> = Rc::new(RefCell::new(<std_bitset_0_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (0_u64 as usize)) }));
-        let mut i: usize = 0_usize;
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 0_u64)) });
+        let mut i: u64 = 0_u64;
         'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
             i.prefix_inc();
         }
     }
@@ -21,118 +21,118 @@ pub fn test_default_ctor_0() {
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
-pub fn test_default_ctor_1() {
-    {
-        let v1: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (1_u64 as usize)) }));
-        let mut i: usize = 0_usize;
-        'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
-            i.prefix_inc();
-        }
-    }
-    {
-        let v1: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
-        const _: () = assert!(true, "v1.size() == N");;
-    }
-}
 pub fn test_default_ctor_2() {
     {
-        let v1: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (31_u64 as usize)) }));
-        let mut i: usize = 0_usize;
+        let v1: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 1_u64)) });
+        let mut i: u64 = 0_u64;
         'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
             i.prefix_inc();
         }
     }
     {
-        let v1: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
+        let v1: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
 pub fn test_default_ctor_3() {
     {
-        let v1: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (32_u64 as usize)) }));
-        let mut i: usize = 0_usize;
+        let v1: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 31_u64)) });
+        let mut i: u64 = 0_u64;
         'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
             i.prefix_inc();
         }
     }
     {
-        let v1: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
+        let v1: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
 pub fn test_default_ctor_4() {
     {
-        let v1: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (33_u64 as usize)) }));
-        let mut i: usize = 0_usize;
+        let v1: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 32_u64)) });
+        let mut i: u64 = 0_u64;
         'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
             i.prefix_inc();
         }
     }
     {
-        let v1: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
+        let v1: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
 pub fn test_default_ctor_5() {
     {
-        let v1: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (63_u64 as usize)) }));
-        let mut i: usize = 0_usize;
+        let v1: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 33_u64)) });
+        let mut i: u64 = 0_u64;
         'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
             i.prefix_inc();
         }
     }
     {
-        let v1: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
+        let v1: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
 pub fn test_default_ctor_6() {
     {
-        let v1: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (64_u64 as usize)) }));
-        let mut i: usize = 0_usize;
+        let v1: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 63_u64)) });
+        let mut i: u64 = 0_u64;
         'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
             i.prefix_inc();
         }
     }
     {
-        let v1: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
+        let v1: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
 pub fn test_default_ctor_7() {
     {
-        let v1: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (65_u64 as usize)) }));
-        let mut i: usize = 0_usize;
+        let v1: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 64_u64)) });
+        let mut i: u64 = 0_u64;
         'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
             i.prefix_inc();
         }
     }
     {
-        let v1: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
+        let v1: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
 pub fn test_default_ctor_8() {
     {
-        let v1: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
-        assert!(({ (({ (*v1.borrow()).size() }) == (1000_u64 as usize)) }));
-        let mut i: usize = 0_usize;
+        let v1: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 65_u64)) });
+        let mut i: u64 = 0_u64;
         'loop_: while (i < ({ (*v1.borrow()).size() })) {
-            assert!(({ (({ (*v1.borrow())[i] } as i32) == (false as i32)) }));
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
+            i.prefix_inc();
+        }
+    }
+    {
+        let v1: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
+        const _: () = assert!(true, "v1.size() == N");;
+    }
+}
+pub fn test_default_ctor_9() {
+    {
+        let v1: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
+        ({ cpp2rust_assert_fail_1((({ (*v1.borrow()).size() }) == 1000_u64)) });
+        let mut i: u64 = 0_u64;
+        'loop_: while (i < ({ (*v1.borrow()).size() })) {
+            ({ cpp2rust_assert_fail_1((({ (*v1.borrow())[i] } as i32) == (false as i32))) });
             i.prefix_inc();
         }
     }
@@ -141,9 +141,8 @@ pub fn test_default_ctor_8() {
         const _: () = assert!(true, "v1.size() == N");;
     }
 }
-pub fn test_9() -> bool {
+pub fn test_10() -> bool {
     ({ test_default_ctor_0() });
-    ({ test_default_ctor_1() });
     ({ test_default_ctor_2() });
     ({ test_default_ctor_3() });
     ({ test_default_ctor_4() });
@@ -151,6 +150,7 @@ pub fn test_9() -> bool {
     ({ test_default_ctor_6() });
     ({ test_default_ctor_7() });
     ({ test_default_ctor_8() });
+    ({ test_default_ctor_9() });
     return true;
 }
 pub fn main() {
@@ -173,7 +173,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_9() });
+    ({ test_10() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

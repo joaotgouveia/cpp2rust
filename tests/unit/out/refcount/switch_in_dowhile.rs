@@ -37,8 +37,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ switch_in_dowhile_0(1,) }) == 1));
-    assert!((({ switch_in_dowhile_0(3,) }) == ((1 + 10) + 100)));
+    ({ cpp2rust_assert_fail_1((({ switch_in_dowhile_0(1) }) == 1)) });
+    ({ cpp2rust_assert_fail_1((({ switch_in_dowhile_0(3) }) == ((1 + 10) + 100))) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

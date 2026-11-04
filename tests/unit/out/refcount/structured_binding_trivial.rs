@@ -28,19 +28,19 @@ fn main_0() -> i32 {
         first: 1,
         second: 2,
     }));
-    assert!(({ ({ (*__decomp_0.borrow()).first } == 1) }));
-    assert!(({ ({ (*__decomp_0.borrow()).second } == 2) }));
+    ({ cpp2rust_assert_fail_1(({ (*__decomp_0.borrow()).first } == 1)) });
+    ({ cpp2rust_assert_fail_1(({ (*__decomp_0.borrow()).second } == 2)) });
     let mut p: Pair = Pair {
         first: 10,
         second: 20,
     };
-    let __decomp_1: Value<Pair> = Rc::new(RefCell::new((p).clone()));
-    (*__decomp_1.borrow_mut()).first = 11;
-    (*__decomp_1.borrow_mut()).second += 1;
-    assert!(({ ({ (*__decomp_1.borrow()).first } == 11) }));
-    assert!(({ ({ (*__decomp_1.borrow()).second } == 21) }));
-    assert!((p.first == 10));
-    assert!((p.second == 20));
+    let __decomp_2: Value<Pair> = Rc::new(RefCell::new((p).clone()));
+    (*__decomp_2.borrow_mut()).first = 11;
+    (*__decomp_2.borrow_mut()).second += 1;
+    ({ cpp2rust_assert_fail_1(({ (*__decomp_2.borrow()).first } == 11)) });
+    ({ cpp2rust_assert_fail_1(({ (*__decomp_2.borrow()).second } == 21)) });
+    ({ cpp2rust_assert_fail_1((p.first == 10)) });
+    ({ cpp2rust_assert_fail_1((p.second == 20)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

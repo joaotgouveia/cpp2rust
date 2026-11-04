@@ -7,62 +7,28 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let m: Value<Map<i32, (Value<i32>, Value<Vec<i8>>)>> = Rc::new(RefCell::new(Map::new()));
-    let p1: Value<(
-        Value<BidirectionalIterator<(Value<i32>, Value<Vec<i8>>)>>,
-        Value<bool>,
-    )> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<(Value<i32>, Value<Vec<i8>>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(1)),
-                Rc::new(RefCell::new({
-                    let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
-                    __bytes.push(0_i8);
-                    __bytes
-                })),
-            )));
-            (*m.borrow()).insert_54(___x.as_pointer())
-        }),
-    ));
-    let p2: Value<(
-        Value<BidirectionalIterator<(Value<i32>, Value<Vec<i8>>)>>,
-        Value<bool>,
-    )> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<(Value<i32>, Value<Vec<i8>>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(2)),
-                Rc::new(RefCell::new({
-                    let mut __bytes = Ptr::<i8>::from_string_literal(b"abc").to_c_bytes();
-                    __bytes.push(0_i8);
-                    __bytes
-                })),
-            )));
-            (*m.borrow()).insert_54(___x.as_pointer())
-        }),
-    ));
-    let cm: Ptr<Map<i32, (Value<i32>, Value<Vec<i8>>)>> = m.as_pointer();
-    assert!(
-        ({
-            let ___x: Ptr<i32> = (*(*(*p1.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                .0
-                .as_pointer();
-            let ___y: Ptr<i32> = (*(*(*p2.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                .0
-                .as_pointer();
-            ({ (*cm.upgrade().deref()).key_comp() })(___x, ___y)
-        })
-    );
-    assert!(
-        !({
-            let ___x: Ptr<i32> = (*(*(*p2.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                .0
-                .as_pointer();
-            let ___y: Ptr<i32> = (*(*(*p1.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                .0
-                .as_pointer();
-            ({ (*cm.upgrade().deref()).key_comp() })(___x, ___y)
-        })
-    );
+    let m : Value<std_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(<std_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____  >::default() )) ;
+    let p1 : Value<std_pair_std__Rb_tree_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char______bool_ > = Rc::new(RefCell::new(( { let ___x : Value<std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char___ > = Rc::new(RefCell::new({ let __tmp_0 : Value<i32 > = Rc::new(RefCell::new(1 )); std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char___ :: new_1 ( { __tmp_0.as_pointer() } , { Ptr::<i8 >::from_string_literal(b"abc" ) } , )  } )); (*m.borrow()) . insert_54 ( ___x.as_pointer() , ) } )  )) ;
+    let p2 : Value<std_pair_std__Rb_tree_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char______bool_ > = Rc::new(RefCell::new(( { let ___x : Value<std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char___ > = Rc::new(RefCell::new({ let __tmp_1 : Value<i32 > = Rc::new(RefCell::new(2 )); std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char___ :: new_1 ( { __tmp_1.as_pointer() } , { Ptr::<i8 >::from_string_literal(b"abc" ) } , )  } )); (*m.borrow()) . insert_54 ( ___x.as_pointer() , ) } )  )) ;
+    let cm : Ptr< std_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_less_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____  > = m .as_pointer()  ;
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let ___x: Ptr<i32> = field_ptr!(field_ptr!(p1.as_pointer(), first), first);
+                let ___y: Ptr<i32> = field_ptr!(field_ptr!(p2.as_pointer(), first), first);
+                ({ (*cm.upgrade().deref()).key_comp() })(___x, ___y)
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({
+                let ___x: Ptr<i32> = field_ptr!(field_ptr!(p2.as_pointer(), first), first);
+                let ___y: Ptr<i32> = field_ptr!(field_ptr!(p1.as_pointer(), first), first);
+                ({ (*cm.upgrade().deref()).key_comp() })(___x, ___y)
+            }),
+        )
+    });
     return true;
 }
 pub fn main() {

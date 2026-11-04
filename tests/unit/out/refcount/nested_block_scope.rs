@@ -14,14 +14,14 @@ fn main_0() -> i32 {
     let mut x: i32 = 1;
     {
         let mut x: i32 = 2;
-        assert!((x == 2));
+        ({ cpp2rust_assert_fail_0((x == 2)) });
         {
             let mut x: i32 = 3;
-            assert!((x == 3));
+            ({ cpp2rust_assert_fail_0((x == 3)) });
         }
-        assert!((x == 2));
+        ({ cpp2rust_assert_fail_0((x == 2)) });
     }
-    assert!((x == 1));
+    ({ cpp2rust_assert_fail_0((x == 1)) });
     let mut sum: i32 = 0;
     let mut i: i32 = 0;
     'loop_: while (i < 3) {
@@ -33,16 +33,16 @@ fn main_0() -> i32 {
         sum += y;
         i.postfix_inc();
     }
-    assert!((sum == 33));
+    ({ cpp2rust_assert_fail_0((sum == 33)) });
     if (x == 1) {
         let mut x: i32 = 5;
         {
             let mut x: i32 = 6;
-            assert!((x == 6));
+            ({ cpp2rust_assert_fail_0((x == 6)) });
         }
-        assert!((x == 5));
+        ({ cpp2rust_assert_fail_0((x == 5)) });
     }
-    assert!((x == 1));
+    ({ cpp2rust_assert_fail_0((x == 1)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

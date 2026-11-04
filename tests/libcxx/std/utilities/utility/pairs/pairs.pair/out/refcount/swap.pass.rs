@@ -33,34 +33,46 @@ impl Default for S {
 }
 pub fn test_0() -> bool {
     {
-        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(3)),
-            Rc::new(RefCell::new(4_i16)),
-        )));
-        let p2: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(5)),
-            Rc::new(RefCell::new(6_i16)),
-        )));
+        let p1: Value<std_pair_int__short_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_1: Value<i16> = Rc::new(RefCell::new(4_i16));
+            std_pair_int__short_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        let p2: Value<std_pair_int__short_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(5));
+            let __tmp_3: Value<i16> = Rc::new(RefCell::new(6_i16));
+            std_pair_int__short_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
         ({ (*p1.borrow()).swap_4(p2.as_pointer()) });
-        assert!(({ ((*(*p1.borrow()).0.borrow()) == 5) }));
-        assert!(({ (((*(*p1.borrow()).1.borrow()) as i32) == 6) }));
-        assert!(({ ((*(*p2.borrow()).0.borrow()) == 3) }));
-        assert!(({ (((*(*p2.borrow()).1.borrow()) as i32) == 4) }));
+        ({ cpp2rust_assert_fail_1(({ (*p1.borrow()).first } == 5)) });
+        ({ cpp2rust_assert_fail_1((({ (*p1.borrow()).second } as i32) == 6)) });
+        ({ cpp2rust_assert_fail_1(({ (*p2.borrow()).first } == 3)) });
+        ({ cpp2rust_assert_fail_1((({ (*p2.borrow()).second } as i32) == 4)) });
     }
     {
-        let p1: Value<(Value<i32>, Value<S>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(3)),
-            Rc::new(RefCell::new(S::new_1({ 4 }))),
-        )));
-        let p2: Value<(Value<i32>, Value<S>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(5)),
-            Rc::new(RefCell::new(S::new_1({ 6 }))),
-        )));
+        let p1: Value<std_pair_int__S_> = Rc::new(RefCell::new({
+            let __tmp_4: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_5: Value<S> = Rc::new(RefCell::new(S::new_1({ 4 })));
+            std_pair_int__S_::new_1({ __tmp_4.as_pointer() }, { __tmp_5.as_pointer() })
+        }));
+        let p2: Value<std_pair_int__S_> = Rc::new(RefCell::new({
+            let __tmp_6: Value<i32> = Rc::new(RefCell::new(5));
+            let __tmp_7: Value<S> = Rc::new(RefCell::new(S::new_1({ 6 })));
+            std_pair_int__S_::new_1({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
+        }));
         ({ (*p1.borrow()).swap_4(p2.as_pointer()) });
-        assert!(({ ((*(*p1.borrow()).0.borrow()) == 5) }));
-        assert!(({ ({ SImpl::operator_eq(&(*p1.borrow()).1.as_pointer(), 6,) }) }));
-        assert!(({ ((*(*p2.borrow()).0.borrow()) == 3) }));
-        assert!(({ ({ SImpl::operator_eq(&(*p2.borrow()).1.as_pointer(), 4,) }) }));
+        ({ cpp2rust_assert_fail_1(({ (*p1.borrow()).first } == 5)) });
+        ({
+            cpp2rust_assert_fail_1(
+                ({ SImpl::operator_eq(&field_ptr!(p1.as_pointer(), second), 6) }),
+            )
+        });
+        ({ cpp2rust_assert_fail_1(({ (*p2.borrow()).first } == 3)) });
+        ({
+            cpp2rust_assert_fail_1(
+                ({ SImpl::operator_eq(&field_ptr!(p2.as_pointer(), second), 4) }),
+            )
+        });
     }
     return true;
 }

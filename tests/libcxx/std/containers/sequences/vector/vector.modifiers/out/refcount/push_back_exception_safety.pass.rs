@@ -35,7 +35,7 @@ impl CMyClass {
         }));
         let this: Ptr<CMyClass> = __this.as_pointer();
         if gCopyConstructorShouldThrow_0.with(|rc| *rc.borrow()) {
-            std::process::abort();
+            ({ __builtin_abort_3() });
         }
         field!(this, fMagicValue).write(kFinishedConstructionMagicValue_2.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
@@ -43,7 +43,7 @@ impl CMyClass {
 }
 impl CppEq for CMyClass {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_3(__lhs.clone(), __rhs.clone())
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for CMyClass {
@@ -68,7 +68,7 @@ thread_local!(
 );
 impl CMyClass {}
 impl CMyClass {}
-pub fn operator_eq_3(lhs: Ptr<CMyClass>, rhs: Ptr<CMyClass>) -> bool {
+pub fn operator_eq_4(lhs: Ptr<CMyClass>, rhs: Ptr<CMyClass>) -> bool {
     return ({
         let _rhs: Ptr<CMyClass> = (rhs).clone();
         CMyClassImpl::equal(&lhs, _rhs)
@@ -96,14 +96,14 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let instance: Value<CMyClass> = Rc::new(RefCell::new(CMyClass::new({ 42 })));
     let _dtor_instance = ScopedDestructor::new(&instance, |__p| __p.destructor());
-    let vec_: Value<Vec<CMyClass>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let a0_clone = (*instance.borrow()).clone();
-        (*vec_.borrow_mut()).push(a0_clone)
-    };
-    let vec2: Value<Vec<CMyClass>> = Rc::new(RefCell::new((*vec_.borrow()).clone()));
-    assert!(({ is_contiguous_container_asan_correct_4(vec_.as_pointer(),) }));
-    assert!(({ is_contiguous_container_asan_correct_4(vec2.as_pointer(),) }));
+    let vec_: Value<std_vector_CMyClass__std_allocator_CMyClass__> = Rc::new(RefCell::new(
+        <std_vector_CMyClass__std_allocator_CMyClass__>::default(),
+    ));
+    ({ (*vec_.borrow()).push_back_59(instance.as_pointer()) });
+    let vec2: Value<std_vector_CMyClass__std_allocator_CMyClass__> =
+        Rc::new(RefCell::new((*vec_.borrow()).clone()));
+    ({ cpp2rust_assert_fail_5(({ is_contiguous_container_asan_correct_6(vec_.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_5(({ is_contiguous_container_asan_correct_6(vec2.as_pointer()) })) });
     return 0;
 }
 pub trait CMyClassImpl {
@@ -122,10 +122,12 @@ impl CMyClassImpl for Ptr<CMyClass> {
         return (*self).clone();
     }
     fn destructor(&self) {
-        assert!(
-            ((*self).with(|__s| __s.fMagicValue)
-                == kFinishedConstructionMagicValue_2.with(|rc| *rc.borrow()))
-        );
+        ({
+            cpp2rust_assert_fail_5(
+                ((*self).with(|__s| __s.fMagicValue)
+                    == kFinishedConstructionMagicValue_2.with(|rc| *rc.borrow())),
+            )
+        });
     }
 }
 pub fn __cpp2rust_init_globals() {

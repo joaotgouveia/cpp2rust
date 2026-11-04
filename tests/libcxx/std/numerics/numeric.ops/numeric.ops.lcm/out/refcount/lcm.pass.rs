@@ -76,10 +76,10 @@ pub fn test0_2(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!((((out as i8) as i32) == (({ lcm_3(value1, value2,) }) as i32)));
+    ({ cpp2rust_assert_fail_3((((out as i8) as i32) == (({ lcm_4(value1, value2) }) as i32))) });
     return true;
 }
-pub fn test0_4(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_5(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u8 = (in1 as u8);
     let mut value2: u8 = (in2 as u8);
     const _: () = assert!(
@@ -90,10 +90,10 @@ pub fn test0_4(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!((((out as u8) as i32) == (({ lcm_5(value1, value2,) }) as i32)));
+    ({ cpp2rust_assert_fail_3((((out as u8) as i32) == (({ lcm_6(value1, value2) }) as i32))) });
     return true;
 }
-pub fn test0_6(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_7(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i8 = (in1 as i8);
     let mut value2: u8 = (in2 as u8);
     const _: () = assert!(
@@ -104,10 +104,10 @@ pub fn test0_6(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_7(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_8(value1, value2) }))) });
     return true;
 }
-pub fn test0_8(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_9(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u8 = (in1 as u8);
     let mut value2: i8 = (in2 as i8);
     const _: () = assert!(
@@ -118,10 +118,10 @@ pub fn test0_8(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_9(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_10(value1, value2) }))) });
     return true;
 }
-pub fn test0_10(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_11(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i16 = (in1 as i16);
     let mut value2: i16 = (in2 as i16);
     const _: () = assert!(
@@ -132,10 +132,10 @@ pub fn test0_10(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!((((out as i16) as i32) == (({ lcm_11(value1, value2,) }) as i32)));
+    ({ cpp2rust_assert_fail_3((((out as i16) as i32) == (({ lcm_12(value1, value2) }) as i32))) });
     return true;
 }
-pub fn test0_12(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_13(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u16 = (in1 as u16);
     let mut value2: u16 = (in2 as u16);
     const _: () = assert!(
@@ -146,10 +146,10 @@ pub fn test0_12(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!((((out as u16) as i32) == (({ lcm_13(value1, value2,) }) as i32)));
+    ({ cpp2rust_assert_fail_3((((out as u16) as i32) == (({ lcm_14(value1, value2) }) as i32))) });
     return true;
 }
-pub fn test0_14(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_15(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i16 = (in1 as i16);
     let mut value2: u16 = (in2 as u16);
     const _: () = assert!(
@@ -160,10 +160,10 @@ pub fn test0_14(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_15(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_16(value1, value2) }))) });
     return true;
 }
-pub fn test0_16(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_17(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u16 = (in1 as u16);
     let mut value2: i16 = (in2 as i16);
     const _: () = assert!(
@@ -174,10 +174,10 @@ pub fn test0_16(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_17(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_18(value1, value2) }))) });
     return true;
 }
-pub fn test0_18(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_19(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -188,10 +188,10 @@ pub fn test0_18(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_19(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_20(value1, value2) }))) });
     return true;
 }
-pub fn test0_20(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_21(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -202,10 +202,10 @@ pub fn test0_20(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_21(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_22(value1, value2) }))) });
     return true;
 }
-pub fn test0_22(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_23(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -216,10 +216,10 @@ pub fn test0_22(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_23(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_24(value1, value2) }))) });
     return true;
 }
-pub fn test0_24(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_25(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -230,10 +230,10 @@ pub fn test0_24(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_25(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_26(value1, value2) }))) });
     return true;
 }
-pub fn test0_26(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_27(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i64 = (in1 as i64);
     let mut value2: i64 = (in2 as i64);
     const _: () = assert!(
@@ -244,10 +244,10 @@ pub fn test0_26(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_27(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_28(value1, value2) }))) });
     return true;
 }
-pub fn test0_28(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_29(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u64 = (in1 as u64);
     let mut value2: u64 = (in2 as u64);
     const _: () = assert!(
@@ -258,10 +258,10 @@ pub fn test0_28(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_29(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_30(value1, value2) }))) });
     return true;
 }
-pub fn test0_30(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_31(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i64 = (in1 as i64);
     let mut value2: u64 = (in2 as u64);
     const _: () = assert!(
@@ -272,10 +272,10 @@ pub fn test0_30(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_31(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_32(value1, value2) }))) });
     return true;
 }
-pub fn test0_32(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_33(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u64 = (in1 as u64);
     let mut value2: i64 = (in2 as i64);
     const _: () = assert!(
@@ -286,10 +286,10 @@ pub fn test0_32(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_33(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_34(value1, value2) }))) });
     return true;
 }
-pub fn test0_34(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_35(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i64 = (in1 as i64);
     let mut value2: i64 = (in2 as i64);
     const _: () = assert!(
@@ -300,10 +300,10 @@ pub fn test0_34(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_35(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_36(value1, value2) }))) });
     return true;
 }
-pub fn test0_36(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_37(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u64 = (in1 as u64);
     let mut value2: u64 = (in2 as u64);
     const _: () = assert!(
@@ -314,10 +314,10 @@ pub fn test0_36(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_37(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_38(value1, value2) }))) });
     return true;
 }
-pub fn test0_38(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_39(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i64 = (in1 as i64);
     let mut value2: u64 = (in2 as u64);
     const _: () = assert!(
@@ -328,10 +328,10 @@ pub fn test0_38(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_39(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_40(value1, value2) }))) });
     return true;
 }
-pub fn test0_40(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_41(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u64 = (in1 as u64);
     let mut value2: i64 = (in2 as i64);
     const _: () = assert!(
@@ -342,10 +342,10 @@ pub fn test0_40(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_41(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_42(value1, value2) }))) });
     return true;
 }
-pub fn test0_42(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_43(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i8 = (in1 as i8);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -356,10 +356,10 @@ pub fn test0_42(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_43(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_44(value1, value2) }))) });
     return true;
 }
-pub fn test0_44(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_45(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: i8 = (in2 as i8);
     const _: () = assert!(
@@ -370,10 +370,10 @@ pub fn test0_44(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_45(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_46(value1, value2) }))) });
     return true;
 }
-pub fn test0_46(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_47(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u8 = (in1 as u8);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -384,10 +384,10 @@ pub fn test0_46(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_47(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_48(value1, value2) }))) });
     return true;
 }
-pub fn test0_48(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_49(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: u8 = (in2 as u8);
     const _: () = assert!(
@@ -398,10 +398,10 @@ pub fn test0_48(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_49(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_50(value1, value2) }))) });
     return true;
 }
-pub fn test0_50(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_51(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i8 = (in1 as i8);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -412,10 +412,10 @@ pub fn test0_50(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_51(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_52(value1, value2) }))) });
     return true;
 }
-pub fn test0_52(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_53(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: i8 = (in2 as i8);
     const _: () = assert!(
@@ -426,10 +426,10 @@ pub fn test0_52(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_53(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_54(value1, value2) }))) });
     return true;
 }
-pub fn test0_54(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_55(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: u8 = (in2 as u8);
     const _: () = assert!(
@@ -440,10 +440,10 @@ pub fn test0_54(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_55(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_56(value1, value2) }))) });
     return true;
 }
-pub fn test0_56(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_57(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u8 = (in1 as u8);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -454,10 +454,10 @@ pub fn test0_56(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_57(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_58(value1, value2) }))) });
     return true;
 }
-pub fn test0_58(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_59(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i16 = (in1 as i16);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -468,10 +468,10 @@ pub fn test0_58(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_59(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_60(value1, value2) }))) });
     return true;
 }
-pub fn test0_60(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_61(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: i16 = (in2 as i16);
     const _: () = assert!(
@@ -482,10 +482,10 @@ pub fn test0_60(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_61(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_62(value1, value2) }))) });
     return true;
 }
-pub fn test0_62(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_63(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u16 = (in1 as u16);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -496,10 +496,10 @@ pub fn test0_62(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_63(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_64(value1, value2) }))) });
     return true;
 }
-pub fn test0_64(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_65(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: u16 = (in2 as u16);
     const _: () = assert!(
@@ -510,10 +510,10 @@ pub fn test0_64(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_65(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_66(value1, value2) }))) });
     return true;
 }
-pub fn test0_66(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_67(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i16 = (in1 as i16);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -524,10 +524,10 @@ pub fn test0_66(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_67(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_68(value1, value2) }))) });
     return true;
 }
-pub fn test0_68(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_69(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: i16 = (in2 as i16);
     const _: () = assert!(
@@ -538,10 +538,10 @@ pub fn test0_68(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u32) == ({ lcm_69(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u32) == ({ lcm_70(value1, value2) }))) });
     return true;
 }
-pub fn test0_70(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_71(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: u16 = (in2 as u16);
     const _: () = assert!(
@@ -552,10 +552,10 @@ pub fn test0_70(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_71(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_72(value1, value2) }))) });
     return true;
 }
-pub fn test0_72(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_73(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u16 = (in1 as u16);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -566,10 +566,10 @@ pub fn test0_72(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i32) == ({ lcm_73(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i32) == ({ lcm_74(value1, value2) }))) });
     return true;
 }
-pub fn test0_74(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_75(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: i64 = (in2 as i64);
     const _: () = assert!(
@@ -580,10 +580,10 @@ pub fn test0_74(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_75(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_76(value1, value2) }))) });
     return true;
 }
-pub fn test0_76(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_77(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i64 = (in1 as i64);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -594,10 +594,10 @@ pub fn test0_76(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_77(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_78(value1, value2) }))) });
     return true;
 }
-pub fn test0_78(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_79(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: u64 = (in2 as u64);
     const _: () = assert!(
@@ -608,10 +608,10 @@ pub fn test0_78(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_79(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_80(value1, value2) }))) });
     return true;
 }
-pub fn test0_80(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_81(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u64 = (in1 as u64);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -622,10 +622,10 @@ pub fn test0_80(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_81(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_82(value1, value2) }))) });
     return true;
 }
-pub fn test0_82(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_83(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: u64 = (in2 as u64);
     const _: () = assert!(
@@ -636,10 +636,10 @@ pub fn test0_82(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_83(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_84(value1, value2) }))) });
     return true;
 }
-pub fn test0_84(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_85(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u64 = (in1 as u64);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -650,10 +650,10 @@ pub fn test0_84(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_85(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_86(value1, value2) }))) });
     return true;
 }
-pub fn test0_86(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_87(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i64 = (in1 as i64);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -664,10 +664,10 @@ pub fn test0_86(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_87(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_88(value1, value2) }))) });
     return true;
 }
-pub fn test0_88(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_89(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: i64 = (in2 as i64);
     const _: () = assert!(
@@ -678,10 +678,10 @@ pub fn test0_88(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_89(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_90(value1, value2) }))) });
     return true;
 }
-pub fn test0_90(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_91(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: i64 = (in2 as i64);
     const _: () = assert!(
@@ -692,10 +692,10 @@ pub fn test0_90(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_91(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_92(value1, value2) }))) });
     return true;
 }
-pub fn test0_92(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_93(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i64 = (in1 as i64);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -706,10 +706,10 @@ pub fn test0_92(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_93(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_94(value1, value2) }))) });
     return true;
 }
-pub fn test0_94(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_95(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: u64 = (in2 as u64);
     const _: () = assert!(
@@ -720,10 +720,10 @@ pub fn test0_94(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_95(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_96(value1, value2) }))) });
     return true;
 }
-pub fn test0_96(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_97(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u64 = (in1 as u64);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -734,10 +734,10 @@ pub fn test0_96(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_97(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_98(value1, value2) }))) });
     return true;
 }
-pub fn test0_98(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_99(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i32 = (in1 as i32);
     let mut value2: u64 = (in2 as u64);
     const _: () = assert!(
@@ -748,10 +748,10 @@ pub fn test0_98(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_99(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_100(value1, value2) }))) });
     return true;
 }
-pub fn test0_100(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_101(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u64 = (in1 as u64);
     let mut value2: i32 = (in2 as i32);
     const _: () = assert!(
@@ -762,10 +762,10 @@ pub fn test0_100(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as u64) == ({ lcm_101(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as u64) == ({ lcm_102(value1, value2) }))) });
     return true;
 }
-pub fn test0_102(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_103(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: i64 = (in1 as i64);
     let mut value2: u32 = (in2 as u32);
     const _: () = assert!(
@@ -776,10 +776,10 @@ pub fn test0_102(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_103(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_104(value1, value2) }))) });
     return true;
 }
-pub fn test0_104(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
+pub fn test0_105(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
     let mut value1: u32 = (in1 as u32);
     let mut value2: i64 = (in2 as i64);
     const _: () = assert!(
@@ -790,225 +790,8 @@ pub fn test0_104(mut in1: i32, mut in2: i32, mut out: i32) -> bool {
         true,
         "std::is_same_v<Output, decltype(std::lcm(value2, value1))>"
     );;
-    assert!(((out as i64) == ({ lcm_105(value1, value2,) })));
+    ({ cpp2rust_assert_fail_3(((out as i64) == ({ lcm_106(value1, value2) }))) });
     return true;
-}
-pub fn do_test_106(_a0: Option<i32>) -> bool {
-    let mut _a0: i32 = _a0.unwrap_or_else(|| 0);
-    let accumulate: Value<bool> = Rc::new(RefCell::new(true));
-    'loop_: for TC in IterRange::new(
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
-        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((8_i64) as isize),
-    ) {
-        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
-        {
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_2(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = -TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_2(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = -TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_2(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = -TC.x;
-                        let _in2: i32 = -TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_2(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_2(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = -TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_2(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = -TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_2(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = -TC.x;
-                        let _in2: i32 = -TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_2(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-        }
-        {
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_4(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_4(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-        }
-        {
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_6(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_8(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = -TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_6(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = -TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_8(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-        }
-        {
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_6(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_8(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = -TC.x;
-                        let _in2: i32 = TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_6(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-            {
-                let rhs_0 = (((*accumulate.borrow()) as i32)
-                    & (({
-                        let _in1: i32 = TC.x;
-                        let _in2: i32 = -TC.y;
-                        let _out: i32 = TC.expect;
-                        test0_8(_in1, _in2, _out)
-                    }) as i32))
-                    != 0;
-                (*accumulate.borrow_mut()) = rhs_0
-            };
-        }
-    }
-    return (*accumulate.borrow());
 }
 pub fn do_test_107(_a0: Option<i32>) -> bool {
     let mut _a0: i32 = _a0.unwrap_or_else(|| 0);
@@ -1025,7 +808,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_10(_in1, _in2, _out)
+                        test0_2(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1036,7 +819,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_10(_in1, _in2, _out)
+                        test0_2(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1047,7 +830,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_10(_in1, _in2, _out)
+                        test0_2(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1058,7 +841,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_10(_in1, _in2, _out)
+                        test0_2(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1069,7 +852,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_10(_in1, _in2, _out)
+                        test0_2(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1080,7 +863,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_10(_in1, _in2, _out)
+                        test0_2(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1091,7 +874,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_10(_in1, _in2, _out)
+                        test0_2(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1102,7 +885,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_10(_in1, _in2, _out)
+                        test0_2(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1115,7 +898,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_12(_in1, _in2, _out)
+                        test0_5(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1126,7 +909,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_12(_in1, _in2, _out)
+                        test0_5(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1139,7 +922,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_14(_in1, _in2, _out)
+                        test0_7(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1150,7 +933,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_16(_in1, _in2, _out)
+                        test0_9(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1161,7 +944,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_14(_in1, _in2, _out)
+                        test0_7(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1172,7 +955,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_16(_in1, _in2, _out)
+                        test0_9(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1185,7 +968,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_14(_in1, _in2, _out)
+                        test0_7(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1196,7 +979,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_16(_in1, _in2, _out)
+                        test0_9(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1207,7 +990,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_14(_in1, _in2, _out)
+                        test0_7(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1218,7 +1001,7 @@ pub fn do_test_107(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_16(_in1, _in2, _out)
+                        test0_9(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1242,7 +1025,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_18(_in1, _in2, _out)
+                        test0_11(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1253,7 +1036,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_18(_in1, _in2, _out)
+                        test0_11(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1264,7 +1047,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_18(_in1, _in2, _out)
+                        test0_11(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1275,7 +1058,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_18(_in1, _in2, _out)
+                        test0_11(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1286,7 +1069,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_18(_in1, _in2, _out)
+                        test0_11(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1297,7 +1080,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_18(_in1, _in2, _out)
+                        test0_11(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1308,7 +1091,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_18(_in1, _in2, _out)
+                        test0_11(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1319,7 +1102,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_18(_in1, _in2, _out)
+                        test0_11(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1332,7 +1115,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_20(_in1, _in2, _out)
+                        test0_13(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1343,7 +1126,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_20(_in1, _in2, _out)
+                        test0_13(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1356,7 +1139,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_22(_in1, _in2, _out)
+                        test0_15(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1367,7 +1150,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_24(_in1, _in2, _out)
+                        test0_17(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1378,7 +1161,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_22(_in1, _in2, _out)
+                        test0_15(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1389,7 +1172,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_24(_in1, _in2, _out)
+                        test0_17(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1402,7 +1185,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_22(_in1, _in2, _out)
+                        test0_15(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1413,7 +1196,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_24(_in1, _in2, _out)
+                        test0_17(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1424,7 +1207,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_22(_in1, _in2, _out)
+                        test0_15(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1435,7 +1218,7 @@ pub fn do_test_108(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_24(_in1, _in2, _out)
+                        test0_17(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1459,7 +1242,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_26(_in1, _in2, _out)
+                        test0_19(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1470,7 +1253,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_26(_in1, _in2, _out)
+                        test0_19(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1481,7 +1264,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_26(_in1, _in2, _out)
+                        test0_19(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1492,7 +1275,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_26(_in1, _in2, _out)
+                        test0_19(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1503,7 +1286,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_26(_in1, _in2, _out)
+                        test0_19(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1514,7 +1297,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_26(_in1, _in2, _out)
+                        test0_19(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1525,7 +1308,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_26(_in1, _in2, _out)
+                        test0_19(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1536,7 +1319,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_26(_in1, _in2, _out)
+                        test0_19(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1549,7 +1332,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_28(_in1, _in2, _out)
+                        test0_21(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1560,7 +1343,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_28(_in1, _in2, _out)
+                        test0_21(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1573,7 +1356,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_30(_in1, _in2, _out)
+                        test0_23(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1584,7 +1367,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_32(_in1, _in2, _out)
+                        test0_25(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1595,7 +1378,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_30(_in1, _in2, _out)
+                        test0_23(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1606,7 +1389,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_32(_in1, _in2, _out)
+                        test0_25(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1619,7 +1402,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_30(_in1, _in2, _out)
+                        test0_23(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1630,7 +1413,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_32(_in1, _in2, _out)
+                        test0_25(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1641,7 +1424,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_30(_in1, _in2, _out)
+                        test0_23(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1652,7 +1435,7 @@ pub fn do_test_109(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_32(_in1, _in2, _out)
+                        test0_25(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1676,7 +1459,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_34(_in1, _in2, _out)
+                        test0_27(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1687,7 +1470,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_34(_in1, _in2, _out)
+                        test0_27(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1698,7 +1481,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_34(_in1, _in2, _out)
+                        test0_27(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1709,7 +1492,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_34(_in1, _in2, _out)
+                        test0_27(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1720,7 +1503,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_34(_in1, _in2, _out)
+                        test0_27(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1731,7 +1514,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_34(_in1, _in2, _out)
+                        test0_27(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1742,7 +1525,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_34(_in1, _in2, _out)
+                        test0_27(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1753,7 +1536,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_34(_in1, _in2, _out)
+                        test0_27(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1766,7 +1549,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_36(_in1, _in2, _out)
+                        test0_29(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1777,7 +1560,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_36(_in1, _in2, _out)
+                        test0_29(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1790,7 +1573,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_38(_in1, _in2, _out)
+                        test0_31(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1801,7 +1584,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_40(_in1, _in2, _out)
+                        test0_33(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1812,7 +1595,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_38(_in1, _in2, _out)
+                        test0_31(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1823,7 +1606,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_40(_in1, _in2, _out)
+                        test0_33(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1836,7 +1619,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_38(_in1, _in2, _out)
+                        test0_31(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1847,7 +1630,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_40(_in1, _in2, _out)
+                        test0_33(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1858,7 +1641,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_38(_in1, _in2, _out)
+                        test0_31(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1869,7 +1652,7 @@ pub fn do_test_110(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_40(_in1, _in2, _out)
+                        test0_33(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1893,7 +1676,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_42(_in1, _in2, _out)
+                        test0_35(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1904,7 +1687,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_42(_in1, _in2, _out)
+                        test0_35(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1915,7 +1698,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_42(_in1, _in2, _out)
+                        test0_35(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1926,7 +1709,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_42(_in1, _in2, _out)
+                        test0_35(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1937,7 +1720,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_44(_in1, _in2, _out)
+                        test0_35(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1948,7 +1731,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_44(_in1, _in2, _out)
+                        test0_35(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1959,7 +1742,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_44(_in1, _in2, _out)
+                        test0_35(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1970,7 +1753,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_44(_in1, _in2, _out)
+                        test0_35(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1983,7 +1766,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_46(_in1, _in2, _out)
+                        test0_37(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -1994,7 +1777,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_48(_in1, _in2, _out)
+                        test0_37(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2007,7 +1790,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_50(_in1, _in2, _out)
+                        test0_39(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2018,7 +1801,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_52(_in1, _in2, _out)
+                        test0_41(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2029,7 +1812,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_50(_in1, _in2, _out)
+                        test0_39(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2040,7 +1823,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_52(_in1, _in2, _out)
+                        test0_41(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2053,7 +1836,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_54(_in1, _in2, _out)
+                        test0_39(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2064,7 +1847,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_56(_in1, _in2, _out)
+                        test0_41(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2075,7 +1858,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_54(_in1, _in2, _out)
+                        test0_39(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2086,7 +1869,7 @@ pub fn do_test_111(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_56(_in1, _in2, _out)
+                        test0_41(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2110,7 +1893,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_44(_in1, _in2, _out)
+                        test0_43(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2121,7 +1904,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_44(_in1, _in2, _out)
+                        test0_43(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2132,7 +1915,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_44(_in1, _in2, _out)
+                        test0_43(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2143,7 +1926,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_44(_in1, _in2, _out)
+                        test0_43(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2154,7 +1937,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_42(_in1, _in2, _out)
+                        test0_45(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2165,7 +1948,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_42(_in1, _in2, _out)
+                        test0_45(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2176,7 +1959,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_42(_in1, _in2, _out)
+                        test0_45(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2187,7 +1970,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_42(_in1, _in2, _out)
+                        test0_45(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2200,7 +1983,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_48(_in1, _in2, _out)
+                        test0_47(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2211,7 +1994,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_46(_in1, _in2, _out)
+                        test0_49(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2224,7 +2007,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_54(_in1, _in2, _out)
+                        test0_51(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2235,7 +2018,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_56(_in1, _in2, _out)
+                        test0_53(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2246,7 +2029,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_54(_in1, _in2, _out)
+                        test0_51(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2257,7 +2040,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_56(_in1, _in2, _out)
+                        test0_53(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2270,7 +2053,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_50(_in1, _in2, _out)
+                        test0_55(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2281,7 +2064,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_52(_in1, _in2, _out)
+                        test0_57(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2292,7 +2075,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_50(_in1, _in2, _out)
+                        test0_55(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2303,7 +2086,7 @@ pub fn do_test_112(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_52(_in1, _in2, _out)
+                        test0_57(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2327,7 +2110,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_58(_in1, _in2, _out)
+                        test0_45(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2338,7 +2121,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_58(_in1, _in2, _out)
+                        test0_45(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2349,7 +2132,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_58(_in1, _in2, _out)
+                        test0_45(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2360,7 +2143,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_58(_in1, _in2, _out)
+                        test0_45(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2371,7 +2154,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_60(_in1, _in2, _out)
+                        test0_43(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2382,7 +2165,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_60(_in1, _in2, _out)
+                        test0_43(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2393,7 +2176,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_60(_in1, _in2, _out)
+                        test0_43(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2404,7 +2187,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_60(_in1, _in2, _out)
+                        test0_43(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2417,7 +2200,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_62(_in1, _in2, _out)
+                        test0_49(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2428,7 +2211,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_64(_in1, _in2, _out)
+                        test0_47(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2441,7 +2224,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_66(_in1, _in2, _out)
+                        test0_55(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2452,7 +2235,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_68(_in1, _in2, _out)
+                        test0_57(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2463,7 +2246,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_66(_in1, _in2, _out)
+                        test0_55(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2474,7 +2257,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_68(_in1, _in2, _out)
+                        test0_57(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2487,7 +2270,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_70(_in1, _in2, _out)
+                        test0_51(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2498,7 +2281,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_72(_in1, _in2, _out)
+                        test0_53(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2509,7 +2292,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_70(_in1, _in2, _out)
+                        test0_51(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2520,7 +2303,7 @@ pub fn do_test_113(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_72(_in1, _in2, _out)
+                        test0_53(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2544,7 +2327,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_60(_in1, _in2, _out)
+                        test0_59(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2555,7 +2338,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_60(_in1, _in2, _out)
+                        test0_59(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2566,7 +2349,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_60(_in1, _in2, _out)
+                        test0_59(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2577,7 +2360,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_60(_in1, _in2, _out)
+                        test0_59(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2588,7 +2371,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_58(_in1, _in2, _out)
+                        test0_61(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2599,7 +2382,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_58(_in1, _in2, _out)
+                        test0_61(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2610,7 +2393,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_58(_in1, _in2, _out)
+                        test0_61(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2621,7 +2404,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_58(_in1, _in2, _out)
+                        test0_61(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2634,7 +2417,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_64(_in1, _in2, _out)
+                        test0_63(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2645,7 +2428,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_62(_in1, _in2, _out)
+                        test0_65(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2658,7 +2441,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_70(_in1, _in2, _out)
+                        test0_67(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2669,7 +2452,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_72(_in1, _in2, _out)
+                        test0_69(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2680,7 +2463,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_70(_in1, _in2, _out)
+                        test0_67(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2691,7 +2474,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_72(_in1, _in2, _out)
+                        test0_69(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2704,7 +2487,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_66(_in1, _in2, _out)
+                        test0_71(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2715,7 +2498,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_68(_in1, _in2, _out)
+                        test0_73(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2726,7 +2509,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_66(_in1, _in2, _out)
+                        test0_71(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2737,7 +2520,7 @@ pub fn do_test_114(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_68(_in1, _in2, _out)
+                        test0_73(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2761,7 +2544,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_74(_in1, _in2, _out)
+                        test0_61(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2772,7 +2555,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_74(_in1, _in2, _out)
+                        test0_61(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2783,7 +2566,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_74(_in1, _in2, _out)
+                        test0_61(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2794,7 +2577,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_74(_in1, _in2, _out)
+                        test0_61(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2805,7 +2588,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_76(_in1, _in2, _out)
+                        test0_59(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2816,7 +2599,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_76(_in1, _in2, _out)
+                        test0_59(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2827,7 +2610,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_76(_in1, _in2, _out)
+                        test0_59(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2838,7 +2621,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_76(_in1, _in2, _out)
+                        test0_59(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2851,7 +2634,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_78(_in1, _in2, _out)
+                        test0_65(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2862,7 +2645,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_80(_in1, _in2, _out)
+                        test0_63(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2875,7 +2658,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_82(_in1, _in2, _out)
+                        test0_71(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2886,7 +2669,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_84(_in1, _in2, _out)
+                        test0_73(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2897,7 +2680,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_82(_in1, _in2, _out)
+                        test0_71(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2908,7 +2691,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_84(_in1, _in2, _out)
+                        test0_73(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2921,7 +2704,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_86(_in1, _in2, _out)
+                        test0_67(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2932,7 +2715,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_88(_in1, _in2, _out)
+                        test0_69(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2943,7 +2726,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_86(_in1, _in2, _out)
+                        test0_67(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2954,7 +2737,7 @@ pub fn do_test_115(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_88(_in1, _in2, _out)
+                        test0_69(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2978,7 +2761,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_76(_in1, _in2, _out)
+                        test0_75(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -2989,7 +2772,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_76(_in1, _in2, _out)
+                        test0_75(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3000,7 +2783,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_76(_in1, _in2, _out)
+                        test0_75(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3011,7 +2794,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_76(_in1, _in2, _out)
+                        test0_75(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3022,7 +2805,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_74(_in1, _in2, _out)
+                        test0_77(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3033,7 +2816,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_74(_in1, _in2, _out)
+                        test0_77(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3044,7 +2827,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_74(_in1, _in2, _out)
+                        test0_77(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3055,7 +2838,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_74(_in1, _in2, _out)
+                        test0_77(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3068,7 +2851,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_80(_in1, _in2, _out)
+                        test0_79(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3079,7 +2862,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_78(_in1, _in2, _out)
+                        test0_81(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3092,7 +2875,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_86(_in1, _in2, _out)
+                        test0_83(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3103,7 +2886,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_88(_in1, _in2, _out)
+                        test0_85(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3114,7 +2897,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_86(_in1, _in2, _out)
+                        test0_83(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3125,7 +2908,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_88(_in1, _in2, _out)
+                        test0_85(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3138,7 +2921,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_82(_in1, _in2, _out)
+                        test0_87(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3149,7 +2932,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_84(_in1, _in2, _out)
+                        test0_89(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3160,7 +2943,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_82(_in1, _in2, _out)
+                        test0_87(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3171,7 +2954,7 @@ pub fn do_test_116(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_84(_in1, _in2, _out)
+                        test0_89(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3195,7 +2978,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_90(_in1, _in2, _out)
+                        test0_77(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3206,7 +2989,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_90(_in1, _in2, _out)
+                        test0_77(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3217,7 +3000,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_90(_in1, _in2, _out)
+                        test0_77(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3228,7 +3011,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_90(_in1, _in2, _out)
+                        test0_77(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3239,7 +3022,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_92(_in1, _in2, _out)
+                        test0_75(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3250,7 +3033,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_92(_in1, _in2, _out)
+                        test0_75(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3261,7 +3044,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_92(_in1, _in2, _out)
+                        test0_75(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3272,7 +3055,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_92(_in1, _in2, _out)
+                        test0_75(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3285,7 +3068,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_94(_in1, _in2, _out)
+                        test0_81(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3296,7 +3079,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_96(_in1, _in2, _out)
+                        test0_79(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3309,7 +3092,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_98(_in1, _in2, _out)
+                        test0_87(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3320,7 +3103,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_100(_in1, _in2, _out)
+                        test0_89(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3331,7 +3114,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_98(_in1, _in2, _out)
+                        test0_87(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3342,7 +3125,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_100(_in1, _in2, _out)
+                        test0_89(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3355,7 +3138,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_102(_in1, _in2, _out)
+                        test0_83(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3366,7 +3149,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_104(_in1, _in2, _out)
+                        test0_85(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3377,7 +3160,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_102(_in1, _in2, _out)
+                        test0_83(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3388,7 +3171,7 @@ pub fn do_test_117(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_104(_in1, _in2, _out)
+                        test0_85(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3412,7 +3195,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_92(_in1, _in2, _out)
+                        test0_91(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3423,7 +3206,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_92(_in1, _in2, _out)
+                        test0_91(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3434,7 +3217,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_92(_in1, _in2, _out)
+                        test0_91(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3445,7 +3228,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_92(_in1, _in2, _out)
+                        test0_91(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3456,7 +3239,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_90(_in1, _in2, _out)
+                        test0_93(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3467,7 +3250,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_90(_in1, _in2, _out)
+                        test0_93(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3478,7 +3261,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_90(_in1, _in2, _out)
+                        test0_93(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3489,7 +3272,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_90(_in1, _in2, _out)
+                        test0_93(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3502,7 +3285,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_96(_in1, _in2, _out)
+                        test0_95(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3513,7 +3296,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_94(_in1, _in2, _out)
+                        test0_97(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3526,7 +3309,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_102(_in1, _in2, _out)
+                        test0_99(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3537,7 +3320,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_104(_in1, _in2, _out)
+                        test0_101(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3548,7 +3331,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_102(_in1, _in2, _out)
+                        test0_99(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3559,7 +3342,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_104(_in1, _in2, _out)
+                        test0_101(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3572,7 +3355,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_98(_in1, _in2, _out)
+                        test0_103(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3583,7 +3366,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_100(_in1, _in2, _out)
+                        test0_105(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3594,7 +3377,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = -TC.x;
                         let _in2: i32 = TC.y;
                         let _out: i32 = TC.expect;
-                        test0_98(_in1, _in2, _out)
+                        test0_103(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3605,7 +3388,7 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
                         let _in1: i32 = TC.x;
                         let _in2: i32 = -TC.y;
                         let _out: i32 = TC.expect;
-                        test0_100(_in1, _in2, _out)
+                        test0_105(_in1, _in2, _out)
                     }) as i32))
                     != 0;
                 (*accumulate.borrow_mut()) = rhs_0
@@ -3614,72 +3397,309 @@ pub fn do_test_118(_a0: Option<i32>) -> bool {
     }
     return (*accumulate.borrow());
 }
-pub fn test_limits_119() -> bool {
-    assert!(
-        (({
-            let ___m: u32 = (u32::MAX as u32).wrapping_sub(1_u32);
-            let ___n: u32 = (u32::MAX as u32).wrapping_sub(1_u32);
-            lcm_21(___m, ___n)
-        }) == (u32::MAX as u32).wrapping_sub(1_u32))
-    );
-    assert!(
-        (({
-            let ___m: u32 = u32::MAX;
-            let ___n: u32 = u32::MAX;
-            lcm_21(___m, ___n)
-        }) == u32::MAX)
-    );
-    return true;
+pub fn do_test_119(_a0: Option<i32>) -> bool {
+    let mut _a0: i32 = _a0.unwrap_or_else(|| 0);
+    let accumulate: Value<bool> = Rc::new(RefCell::new(true));
+    'loop_: for TC in IterRange::new(
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>),
+        (Cases_1.with(|v| v.as_pointer()) as Ptr<anon_0>).offset((8_i64) as isize),
+    ) {
+        let mut TC: anon_0 = (*TC.upgrade().deref()).clone();
+        {
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_93(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = -TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_93(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = -TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_93(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = -TC.x;
+                        let _in2: i32 = -TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_93(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_91(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = -TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_91(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = -TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_91(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = -TC.x;
+                        let _in2: i32 = -TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_91(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+        }
+        {
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_97(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_95(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+        }
+        {
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_103(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_105(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = -TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_103(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = -TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_105(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+        }
+        {
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_99(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_101(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = -TC.x;
+                        let _in2: i32 = TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_99(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+            {
+                let rhs_0 = (((*accumulate.borrow()) as i32)
+                    & (({
+                        let _in1: i32 = TC.x;
+                        let _in2: i32 = -TC.y;
+                        let _out: i32 = TC.expect;
+                        test0_101(_in1, _in2, _out)
+                    }) as i32))
+                    != 0;
+                (*accumulate.borrow_mut()) = rhs_0
+            };
+        }
+    }
+    return (*accumulate.borrow());
 }
 pub fn test_limits_120() -> bool {
-    assert!(
-        (({
-            let ___m: u64 = (u64::MAX as u64).wrapping_sub(1_u64);
-            let ___n: u64 = (u64::MAX as u64).wrapping_sub(1_u64);
-            lcm_29(___m, ___n)
-        }) == (u64::MAX as u64).wrapping_sub(1_u64))
-    );
-    assert!(
-        (({
-            let ___m: u64 = u64::MAX;
-            let ___n: u64 = u64::MAX;
-            lcm_29(___m, ___n)
-        }) == u64::MAX)
-    );
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___m: u32 =
+                    (({ std_numeric_limits_unsigned_int_::max() }) as u32).wrapping_sub(1_u32);
+                let ___n: u32 =
+                    (({ std_numeric_limits_unsigned_int_::max() }) as u32).wrapping_sub(1_u32);
+                lcm_22(___m, ___n)
+            }) == (({ std_numeric_limits_unsigned_int_::max() }) as u32).wrapping_sub(1_u32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___m: u32 = ({ std_numeric_limits_unsigned_int_::max() });
+                let ___n: u32 = ({ std_numeric_limits_unsigned_int_::max() });
+                lcm_22(___m, ___n)
+            }) == ({ std_numeric_limits_unsigned_int_::max() })),
+        )
+    });
     return true;
 }
 pub fn test_limits_121() -> bool {
-    assert!(
-        (({
-            let ___m: i32 = (i32::MAX - 1);
-            let ___n: i32 = (i32::MAX - 1);
-            lcm_19(___m, ___n)
-        }) == (i32::MAX - 1))
-    );
-    assert!(
-        (({
-            let ___m: i32 = i32::MAX;
-            let ___n: i32 = i32::MAX;
-            lcm_19(___m, ___n)
-        }) == i32::MAX)
-    );
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___m: u64 =
+                    (({ std_numeric_limits_unsigned_long_::max() }) as u64).wrapping_sub(1_u64);
+                let ___n: u64 =
+                    (({ std_numeric_limits_unsigned_long_::max() }) as u64).wrapping_sub(1_u64);
+                lcm_30(___m, ___n)
+            }) == (({ std_numeric_limits_unsigned_long_::max() }) as u64).wrapping_sub(1_u64)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___m: u64 = ({ std_numeric_limits_unsigned_long_::max() });
+                let ___n: u64 = ({ std_numeric_limits_unsigned_long_::max() });
+                lcm_30(___m, ___n)
+            }) == ({ std_numeric_limits_unsigned_long_::max() })),
+        )
+    });
     return true;
 }
 pub fn test_limits_122() -> bool {
-    assert!(
-        (({
-            let ___m: i64 = (i64::MAX - 1_i64);
-            let ___n: i64 = (i64::MAX - 1_i64);
-            lcm_27(___m, ___n)
-        }) == (i64::MAX - 1_i64))
-    );
-    assert!(
-        (({
-            let ___m: i64 = i64::MAX;
-            let ___n: i64 = i64::MAX;
-            lcm_27(___m, ___n)
-        }) == i64::MAX)
-    );
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___m: i32 = (({ std_numeric_limits_int_::max() }) - 1);
+                let ___n: i32 = (({ std_numeric_limits_int_::max() }) - 1);
+                lcm_20(___m, ___n)
+            }) == (({ std_numeric_limits_int_::max() }) - 1)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___m: i32 = ({ std_numeric_limits_int_::max() });
+                let ___n: i32 = ({ std_numeric_limits_int_::max() });
+                lcm_20(___m, ___n)
+            }) == ({ std_numeric_limits_int_::max() })),
+        )
+    });
+    return true;
+}
+pub fn test_limits_123() -> bool {
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___m: i64 = (({ std_numeric_limits_long_::max() }) - 1_i64);
+                let ___n: i64 = (({ std_numeric_limits_long_::max() }) - 1_i64);
+                lcm_28(___m, ___n)
+            }) == (({ std_numeric_limits_long_::max() }) - 1_i64)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___m: i64 = ({ std_numeric_limits_long_::max() });
+                let ___n: i64 = ({ std_numeric_limits_long_::max() });
+                lcm_28(___m, ___n)
+            }) == ({ std_numeric_limits_long_::max() })),
+        )
+    });
     return true;
 }
 pub fn main() {
@@ -3708,19 +3728,19 @@ fn main_0(argc: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "do_test<int>()");;
     const _: () = assert!(true, "do_test<long>()");;
     const _: () = assert!(true, "do_test<long long>()");;
-    assert!(({ do_test_106(Some(non_cce),) }));
-    assert!(({ do_test_107(Some(non_cce),) }));
-    assert!(({ do_test_108(Some(non_cce),) }));
-    assert!(({ do_test_109(Some(non_cce),) }));
-    assert!(({ do_test_110(Some(non_cce),) }));
+    ({ cpp2rust_assert_fail_3(({ do_test_107(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_108(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_109(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_110(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_111(Some(non_cce)) })) });
     const _: () = assert!(true, "do_test<std::int8_t>()");;
     const _: () = assert!(true, "do_test<std::int16_t>()");;
     const _: () = assert!(true, "do_test<std::int32_t>()");;
     const _: () = assert!(true, "do_test<std::int64_t>()");;
-    assert!(({ do_test_106(Some(non_cce),) }));
-    assert!(({ do_test_107(Some(non_cce),) }));
-    assert!(({ do_test_108(Some(non_cce),) }));
-    assert!(({ do_test_109(Some(non_cce),) }));
+    ({ cpp2rust_assert_fail_3(({ do_test_107(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_108(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_109(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_110(Some(non_cce)) })) });
     const _: () = assert!(true, "do_test<signed char, int>()");;
     const _: () = assert!(true, "do_test<int, signed char>()");;
     const _: () = assert!(true, "do_test<short, int>()");;
@@ -3729,27 +3749,27 @@ fn main_0(argc: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "do_test<long, int>()");;
     const _: () = assert!(true, "do_test<int, long long>()");;
     const _: () = assert!(true, "do_test<long long, int>()");;
-    assert!(({ do_test_111(Some(non_cce),) }));
-    assert!(({ do_test_112(Some(non_cce),) }));
-    assert!(({ do_test_113(Some(non_cce),) }));
-    assert!(({ do_test_114(Some(non_cce),) }));
-    assert!(({ do_test_115(Some(non_cce),) }));
-    assert!(({ do_test_116(Some(non_cce),) }));
-    assert!(({ do_test_117(Some(non_cce),) }));
-    assert!(({ do_test_118(Some(non_cce),) }));
+    ({ cpp2rust_assert_fail_3(({ do_test_112(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_113(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_114(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_115(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_116(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_117(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_118(Some(non_cce)) })) });
+    ({ cpp2rust_assert_fail_3(({ do_test_119(Some(non_cce)) })) });
     {
-        let res1: Value<i64> = Rc::new(RefCell::new(({ lcm_77(1234_i64, (-2147483647_i32 - 1)) })));
-        &({ lcm_83((-2147483647_i32 - 1), 2_u64) });
+        let res1: Value<i64> = Rc::new(RefCell::new(({ lcm_78(1234_i64, (-2147483647_i32 - 1)) })));
+        &({ lcm_84((-2147483647_i32 - 1), 2_u64) });
         const _: () = assert!(true, "std::is_same_v<decltype(res1), std::int64_t>");;
-        assert!(({ ((*res1.borrow()) == 1324997410816_i64) }));
+        ({ cpp2rust_assert_fail_3(((*res1.borrow()) == 1324997410816_i64)) });
     }
     {
-        assert!(({ test_limits_119() }));
-        assert!(({ test_limits_119() }));
-        assert!(({ test_limits_120() }));
-        assert!(({ test_limits_121() }));
-        assert!(({ test_limits_121() }));
-        assert!(({ test_limits_122() }));
+        ({ cpp2rust_assert_fail_3(({ test_limits_120() })) });
+        ({ cpp2rust_assert_fail_3(({ test_limits_120() })) });
+        ({ cpp2rust_assert_fail_3(({ test_limits_121() })) });
+        ({ cpp2rust_assert_fail_3(({ test_limits_122() })) });
+        ({ cpp2rust_assert_fail_3(({ test_limits_122() })) });
+        ({ cpp2rust_assert_fail_3(({ test_limits_123() })) });
         const _: () = assert!(true, "test_limits<unsigned int>()");;
         const _: () = assert!(true, "test_limits<std::uint32_t>()");;
         const _: () = assert!(true, "test_limits<std::uint64_t>()");;

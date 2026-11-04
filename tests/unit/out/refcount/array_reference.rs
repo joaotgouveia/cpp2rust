@@ -103,83 +103,95 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ len_0(Ptr::<i8>::from_string_literal(b"beta"),) }) == 4));
+    ({ cpp2rust_assert_fail_15((({ len_0(Ptr::<i8>::from_string_literal(b"beta")) }) == 4)) });
     let buf: Value<Box<[i8]>> = Rc::new(RefCell::new(i8::array_from_literal(b"abcd\0")));
-    assert!((({ len_0(buf.as_pointer(),) }) == 4));
+    ({ cpp2rust_assert_fail_15((({ len_0(buf.as_pointer()) }) == 4)) });
     let arr: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-    assert!((({ sum_2(arr.as_pointer(),) }) == 6));
-    assert!(
-        (({
-            let _a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
-            sum_2(_a.as_pointer())
-        }) == 6)
-    );
+    ({ cpp2rust_assert_fail_15((({ sum_2(arr.as_pointer()) }) == 6)) });
+    ({
+        cpp2rust_assert_fail_15(
+            (({
+                let _a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
+                sum_2(_a.as_pointer())
+            }) == 6),
+        )
+    });
     ({ fill_3(arr.as_pointer(), 7) });
-    assert!((({ sum_2(arr.as_pointer(),) }) == 21));
-    assert!((({ sum_twice_4(arr.as_pointer(),) }) == 42));
+    ({ cpp2rust_assert_fail_15((({ sum_2(arr.as_pointer()) }) == 21)) });
+    ({ cpp2rust_assert_fail_15((({ sum_twice_4(arr.as_pointer()) }) == 42)) });
     let out: Value<i32> = Rc::new(RefCell::new(0));
     ({ fill_and_sum_9(arr.as_pointer(), 2, out.as_pointer()) });
-    assert!(({ ((*out.borrow()) == 12) }));
-    assert!(({ ((*arr.borrow())[(0) as usize] == 2) }));
+    ({ cpp2rust_assert_fail_15(((*out.borrow()) == 12)) });
+    ({ cpp2rust_assert_fail_15(((*arr.borrow())[(0) as usize] == 2)) });
     let lit: Ptr<i8> = Ptr::<i8>::from_string_literal(b"beta");
-    assert!((({ len_0((lit).clone(),) }) == 4));
-    assert!(
-        (((elem!(({ pick_10(Ptr::<i8>::from_string_literal(b"beta"),) }), 0).read()) as i32)
-            == (('b' as i8) as i32))
-    );
-    assert!((({ len_0(({ pick_10(buf.as_pointer(),) }),) }) == 4));
+    ({ cpp2rust_assert_fail_15((({ len_0((lit).clone()) }) == 4)) });
+    ({
+        cpp2rust_assert_fail_15(
+            (((elem!(({ pick_10(Ptr::<i8>::from_string_literal(b"beta"),) }), 0).read()) as i32)
+                == (('b' as i8) as i32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_15((({ len_0(({ pick_10(buf.as_pointer()) })) }) == 4)) });
     let pts: Value<Box<[Point]>> = Rc::new(RefCell::new(Box::new([
         Point { x: 1, y: 2 },
         Point { x: 3, y: 4 },
     ])));
-    assert!((({ sum_points_11(pts.as_pointer(),) }) == 10));
+    ({ cpp2rust_assert_fail_15((({ sum_points_11(pts.as_pointer()) }) == 10)) });
     ({ shift_points_12(pts.as_pointer(), 10) });
-    assert!(({ ({ (*pts.borrow())[(0) as usize].x } == 11) }));
-    assert!(({ ({ (*pts.borrow())[(1) as usize].y } == 14) }));
-    assert!((({ sum_points_11(pts.as_pointer(),) }) == 30));
-    assert!((({ sum_decayed_6(arr.as_pointer(),) }) == ({ sum_2(arr.as_pointer(),) })));
+    ({ cpp2rust_assert_fail_15(({ (*pts.borrow())[(0) as usize].x } == 11)) });
+    ({ cpp2rust_assert_fail_15(({ (*pts.borrow())[(1) as usize].y } == 14)) });
+    ({ cpp2rust_assert_fail_15((({ sum_points_11(pts.as_pointer()) }) == 30)) });
+    ({
+        cpp2rust_assert_fail_15(
+            (({ sum_decayed_6(arr.as_pointer()) }) == ({ sum_2(arr.as_pointer()) })),
+        )
+    });
     ({ bump_decayed_8(arr.as_pointer()) });
-    assert!(({ ((*arr.borrow())[(0) as usize] == 3) }));
+    ({ cpp2rust_assert_fail_15(((*arr.borrow())[(0) as usize] == 3)) });
     let names: Value<Box<[Ptr<i8>]>> = Rc::new(RefCell::new(Box::new([
         Ptr::<i8>::from_string_literal(b"ab"),
         Ptr::<i8>::from_string_literal(b"cde"),
     ])));
-    assert!((({ total_len_13(names.as_pointer(),) }) == 5));
+    ({ cpp2rust_assert_fail_15((({ total_len_13(names.as_pointer()) }) == 5)) });
     let rows: Value<Box<[Box<[i32]>]>> = Rc::new(RefCell::new(Box::new([
         Box::new([1, 2, 3]),
         Box::new([4, 5, 6]),
     ])));
     let mut p: Ptr<Box<[i32]>> = (rows.as_pointer() as Ptr<Box<[i32]>>);
     p.prefix_inc();
-    assert!(
-        ({ ((p).as_pointer() as Ptr::<i32>).clone() } == {
-            ((((rows.as_pointer() as Ptr<Box<[i32]>>)
-                .offset(1)
-                .as_pointer()) as Ptr<i32>)
-                .offset(0))
-        })
-    );
+    ({
+        cpp2rust_assert_fail_15(
+            ({ ((p).as_pointer() as Ptr<i32>).clone() } == {
+                ((((rows.as_pointer() as Ptr<Box<[i32]>>)
+                    .offset(1)
+                    .as_pointer()) as Ptr<i32>)
+                    .offset(0))
+            }),
+        )
+    });
     let r: Ptr<i32> = ((p).as_pointer()).clone();
-    assert!(((elem!((r), 0).read()) == 4));
-    assert!((({ sum_2((r).clone(),) }) == 15));
-    assert!((({ sum_2(((p).as_pointer()).clone(),) }) == 15));
+    ({ cpp2rust_assert_fail_15(((elem!((r), 0).read()) == 4)) });
+    ({ cpp2rust_assert_fail_15((({ sum_2((r).clone()) }) == 15)) });
+    ({ cpp2rust_assert_fail_15((({ sum_2(((p).as_pointer()).clone()) }) == 15)) });
     let mut q: Ptr<Box<[i32]>> = (rows.as_pointer() as Ptr<Box<[i32]>>);
-    assert!((({ sum_2(q.offset((1) as isize).as_pointer(),) }) == 15));
-    assert!(
-        ({ (q.offset((1) as isize).as_pointer() as Ptr::<i32>) } == {
-            ((((rows.as_pointer() as Ptr<Box<[i32]>>)
-                .offset(1)
-                .as_pointer()) as Ptr<i32>)
-                .offset(0))
-        })
-    );
+    ({ cpp2rust_assert_fail_15((({ sum_2(q.offset((1) as isize).as_pointer()) }) == 15)) });
+    ({
+        cpp2rust_assert_fail_15(
+            ({ (q.offset((1) as isize).as_pointer() as Ptr<i32>) } == {
+                ((((rows.as_pointer() as Ptr<Box<[i32]>>)
+                    .offset(1)
+                    .as_pointer()) as Ptr<i32>)
+                    .offset(0))
+            }),
+        )
+    });
     elem!((q.offset((1) as isize).as_pointer() as Ptr::<i32>), 2).write(8);
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_15(
             ((*rows.borrow())[(1) as usize][(2) as usize] == 8)
-                && ((*rows.borrow())[(0) as usize][(2) as usize] == 3)
-        })
-    );
+                && ((*rows.borrow())[(0) as usize][(2) as usize] == 3),
+        )
+    });
     (*rows.borrow_mut())[(0) as usize][(1) as usize] =
         { (*rows.borrow())[(0) as usize][(2) as usize] };
     elem!((q.offset((1) as isize).as_pointer() as Ptr::<i32>), 0)
@@ -189,61 +201,73 @@ fn main_0() -> i32 {
         elem!((q.offset((1) as isize).as_pointer() as Ptr::<i32>), 1)
             .with_mut(|__v| *__v = *__v + __rhs)
     };
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_15(
             (((*rows.borrow())[(0) as usize][(1) as usize] == 3)
                 && ((*rows.borrow())[(1) as usize][(0) as usize] == 3))
-                && ((*rows.borrow())[(1) as usize][(1) as usize] == 8)
-        })
-    );
-    assert!(
-        ((((((rows.as_pointer() as Ptr<Box<[i32]>>)
-            .offset(1)
-            .as_pointer()) as Ptr<i32>)
-            .offset(2))
-            - ((((rows.as_pointer() as Ptr<Box<[i32]>>)
+                && ((*rows.borrow())[(1) as usize][(1) as usize] == 8),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_15(
+            ((((((rows.as_pointer() as Ptr<Box<[i32]>>)
                 .offset(1)
                 .as_pointer()) as Ptr<i32>)
-                .offset(0))) as i64
-            == 2_i64)
-    );
-    let key: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 4, 5, 6])));
-    assert!(
-        ((((key.as_pointer() as Ptr<i32>).offset(1)) as Ptr<i32>)
-            .to_any()
-            .memcmp(
-                &((((kTable_14.with(|v| v.as_pointer()) as Ptr<Box<[i32]>>)
+                .offset(2))
+                - ((((rows.as_pointer() as Ptr<Box<[i32]>>)
                     .offset(1)
-                    .as_pointer()) as Ptr::<i32>) as Ptr<i32>)
-                    .to_any(),
-                ::std::mem::size_of::<[i32; 3]>()
-            )
-            == 0)
-    );
-    assert!(
-        ((((key.as_pointer() as Ptr<i32>).offset(1)) as Ptr<i32>)
-            .to_any()
-            .memcmp(
-                &((((kTable_14.with(|v| v.as_pointer()) as Ptr<Box<[i32]>>)
+                    .as_pointer()) as Ptr<i32>)
+                    .offset(0))) as i64
+                == 2_i64),
+        )
+    });
+    let key: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0, 4, 5, 6])));
+    ({
+        cpp2rust_assert_fail_15(
+            (({
+                let ___s2: AnyPtr = ((((kTable_14.with(|v| v.as_pointer()) as Ptr<Box<[i32]>>)
+                    .offset(1)
+                    .as_pointer()) as Ptr<i32>) as Ptr<i32>)
+                    .to_any();
+                let ___n: u64 = (::std::mem::size_of::<[i32; 3]>() as u64);
+                memcmp_16(
+                    (((key.as_pointer() as Ptr<i32>).offset(1)) as Ptr<i32>).to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_15(
+            (({
+                let ___s2: AnyPtr = ((((kTable_14.with(|v| v.as_pointer()) as Ptr<Box<[i32]>>)
                     .offset(0)
-                    .as_pointer()) as Ptr::<i32>) as Ptr<i32>)
-                    .to_any(),
-                ::std::mem::size_of::<[i32; 3]>()
-            )
-            != 0)
-    );
-    assert!(
-        (({
-            let __idx0 = (1) as usize;
-            let __idx1 = (2) as usize;
-            kTable_14.with(|rc| rc.borrow()[__idx0][__idx1])
-        }) == 6)
-            && (({
-                let __idx0 = (0) as usize;
-                let __idx1 = (1) as usize;
+                    .as_pointer()) as Ptr<i32>) as Ptr<i32>)
+                    .to_any();
+                let ___n: u64 = (::std::mem::size_of::<[i32; 3]>() as u64);
+                memcmp_16(
+                    (((key.as_pointer() as Ptr<i32>).offset(1)) as Ptr<i32>).to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) != 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_15(
+            (({
+                let __idx0 = (1) as usize;
+                let __idx1 = (2) as usize;
                 kTable_14.with(|rc| rc.borrow()[__idx0][__idx1])
-            }) == 2)
-    );
+            }) == 6)
+                && (({
+                    let __idx0 = (0) as usize;
+                    let __idx1 = (1) as usize;
+                    kTable_14.with(|rc| rc.borrow()[__idx0][__idx1])
+                }) == 2),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

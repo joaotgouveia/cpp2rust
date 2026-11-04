@@ -28,22 +28,30 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<(Value<Option<Value<i32>>>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(Ptr::alloc(3).to_owned_opt())),
-            Rc::new(RefCell::new(4_i16)),
-        )));
+        let p: Value<std_pair_std_unique_ptr_int__std_default_delete_int____short_> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<std_unique_ptr_int__std_default_delete_int__> =
+                    Rc::new(RefCell::new(
+                        std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(3) }),
+                    ));
+                let __tmp_1: Value<i16> = Rc::new(RefCell::new(4_i16));
+                std_pair_std_unique_ptr_int__std_default_delete_int____short_::new_1(
+                    { __tmp_0.as_pointer() },
+                    { __tmp_1.as_pointer() },
+                )
+            }));
         const _: () = assert!(
             true,
             "std::is_same<const std::unique_ptr<int>&&, decltype(std::get<0>(std::move(p)))>::value"
         );;
         const _: () = assert!(true, "noexcept(std::get<0>(std::move(p)))");;
-        let ptr: Ptr<Option<Value<i32>>> = (*p.borrow()).get_value::<0>().as_pointer();
-        assert!(({ (((*ptr.upgrade().deref()).as_pointer().read()) == 3) }));
+        let ptr: Ptr<std_unique_ptr_int__std_default_delete_int__> = ({ get_0(p.as_pointer()) });
+        ({ cpp2rust_assert_fail_1((((*ptr.upgrade().deref()).read()) == 3)) });
     }
     {
         let x: Value<i32> = Rc::new(RefCell::new(42));
         let y: Value<i32> = Rc::new(RefCell::new(43));
-        let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+        let p: Value<std_pair_int_ref__const_int_ref_> = Rc::new(RefCell::new(
             std_pair_int_ref__const_int_ref_::new_1({ x.as_pointer() }, { y.as_pointer() }),
         ));
         const _: () = assert!(
@@ -60,10 +68,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let x: Value<i32> = Rc::new(RefCell::new(42));
         let y: Value<i32> = Rc::new(RefCell::new(43));
-        let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(x.as_pointer())),
-            Rc::new(RefCell::new(y.as_pointer())),
-        )));
+        let p: Value<std_pair_int_refref__const_int_refref_> = Rc::new(RefCell::new(
+            std_pair_int_refref__const_int_refref_::new_1({ x.as_pointer() }, { y.as_pointer() }),
+        ));
         const _: () = assert!(
             true,
             "std::is_same<int&&, decltype(std::get<0>(std::move(p)))>::value"
@@ -76,10 +83,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(3)),
-            Rc::new(RefCell::new(4_i16)),
-        )));
+        let p1: Value<std_pair_int__short_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_3: Value<i16> = Rc::new(RefCell::new(4_i16));
+            std_pair_int__short_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
         const _: () = assert!(true, "std::get<0>(std::move(p1)) == 3");;
         const _: () = assert!(true, "std::get<1>(std::move(p1)) == 4");;
     }

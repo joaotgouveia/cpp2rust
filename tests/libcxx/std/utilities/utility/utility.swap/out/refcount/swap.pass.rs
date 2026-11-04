@@ -101,7 +101,7 @@ pub fn can_swap_6() -> bool {
 pub fn test_swap_constexpr_7() -> bool {
     let i: Value<i32> = Rc::new(RefCell::new(1));
     let j: Value<i32> = Rc::new(RefCell::new(2));
-    cpp_swap!(i.as_pointer(), j.as_pointer());
+    ({ swap_8(i.as_pointer(), j.as_pointer()) });
     return ((*i.borrow()) == 2) && ((*j.borrow()) == 1);
 }
 pub fn main() {
@@ -127,16 +127,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let i: Value<i32> = Rc::new(RefCell::new(1));
         let j: Value<i32> = Rc::new(RefCell::new(2));
-        cpp_swap!(i.as_pointer(), j.as_pointer());
-        assert!(({ ((*i.borrow()) == 2) }));
-        assert!(({ ((*j.borrow()) == 1) }));
+        ({ swap_8(i.as_pointer(), j.as_pointer()) });
+        ({ cpp2rust_assert_fail_9(((*i.borrow()) == 2)) });
+        ({ cpp2rust_assert_fail_9(((*j.borrow()) == 1)) });
     }
     {
-        let i: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Ptr::alloc(1).to_owned_opt()));
-        let j: Value<Option<Value<i32>>> = Rc::new(RefCell::new(Ptr::alloc(2).to_owned_opt()));
-        cpp_swap!(i.as_pointer(), j.as_pointer());
-        assert!(({ (((*i.borrow()).as_pointer().read()) == 2) }));
-        assert!(({ (((*j.borrow()).as_pointer().read()) == 1) }));
+        let i: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+            std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(1) }),
+        ));
+        let j: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+            std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(2) }),
+        ));
+        ({ swap_10(i.as_pointer(), j.as_pointer()) });
+        ({ cpp2rust_assert_fail_9((((*i.borrow()).read()) == 2)) });
+        ({ cpp2rust_assert_fail_9((((*j.borrow()).read()) == 1)) });
     }
     {
         const _: () = assert!(true, "can_swap<CopyOnly&>()");;

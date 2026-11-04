@@ -33,7 +33,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 1");;
-        const _: () = assert!((10usize == 10_usize), "sizeof(T1) == 10");;
+        const _: () = assert!(true, "sizeof(T1) == 10");;
     }
     {
         const _: () = assert!(true, "");;
@@ -41,7 +41,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 2");;
-        const _: () = assert!((10usize == 10_usize), "sizeof(T1) == 10");;
+        const _: () = assert!(true, "sizeof(T1) == 10");;
     }
     {
         const _: () = assert!(true, "");;
@@ -49,7 +49,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 4");;
-        const _: () = assert!((12usize == 12_usize), "sizeof(T1) == 12");;
+        const _: () = assert!(true, "sizeof(T1) == 12");;
     }
     {
         const _: () = assert!(true, "");;
@@ -57,7 +57,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 8");;
-        const _: () = assert!((16usize == 16_usize), "sizeof(T1) == 16");;
+        const _: () = assert!(true, "sizeof(T1) == 16");;
     }
     {
         const _: () = assert!(true, "");;
@@ -65,7 +65,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 2");;
-        const _: () = assert!((10usize == 10_usize), "sizeof(T1) == 10");;
+        const _: () = assert!(true, "sizeof(T1) == 10");;
     }
     {
         const _: () = assert!(true, "");;
@@ -73,7 +73,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 2");;
-        const _: () = assert!((10usize == 10_usize), "sizeof(T1) == 10");;
+        const _: () = assert!(true, "sizeof(T1) == 10");;
     }
     {
         const _: () = assert!(true, "");;
@@ -81,7 +81,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 4");;
-        const _: () = assert!((4usize == 4_usize), "sizeof(T1) == 4");;
+        const _: () = assert!(true, "sizeof(T1) == 4");;
     }
     {
         const _: () = assert!(true, "");;
@@ -89,7 +89,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 4");;
-        const _: () = assert!((4usize == 4_usize), "sizeof(T1) == 4");;
+        const _: () = assert!(true, "sizeof(T1) == 4");;
     }
     {
         const _: () = assert!(true, "");;
@@ -97,7 +97,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "std::is_trivially_default_constructible<T1>::value");;
         const _: () = assert!(true, "std::is_standard_layout<T1>::value");;
         const _: () = assert!(true, "std::alignment_of<T1>::value == 4");;
-        const _: () = assert!((4usize == 4_usize), "sizeof(T1) == 4");;
+        const _: () = assert!(true, "sizeof(T1) == 4");;
     }
     return 0;
 }

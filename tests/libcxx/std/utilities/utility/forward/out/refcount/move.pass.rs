@@ -125,24 +125,24 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let a: Value<A> = Rc::new(RefCell::new(A::new()));
         let ca: Value<A> = Rc::new(RefCell::new(A::new()));
-        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 0));
-        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 0));
+        ({ cpp2rust_assert_fail_8((copy_ctor_5.with(|rc| *rc.borrow()) == 0)) });
+        ({ cpp2rust_assert_fail_8((move_ctor_6.with(|rc| *rc.borrow()) == 0)) });
         let mut a2: A = A::copy_from({ a.as_pointer() });
         &(a2);
-        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 1));
-        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 0));
+        ({ cpp2rust_assert_fail_8((copy_ctor_5.with(|rc| *rc.borrow()) == 1)) });
+        ({ cpp2rust_assert_fail_8((move_ctor_6.with(|rc| *rc.borrow()) == 0)) });
         let mut a3: A = A::move_from({ a.as_pointer() });
         &(a3);
-        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 1));
-        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 1));
+        ({ cpp2rust_assert_fail_8((copy_ctor_5.with(|rc| *rc.borrow()) == 1)) });
+        ({ cpp2rust_assert_fail_8((move_ctor_6.with(|rc| *rc.borrow()) == 1)) });
         let mut a4: A = A::copy_from({ ca.as_pointer() });
         &(a4);
-        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 2));
-        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 1));
+        ({ cpp2rust_assert_fail_8((copy_ctor_5.with(|rc| *rc.borrow()) == 2)) });
+        ({ cpp2rust_assert_fail_8((move_ctor_6.with(|rc| *rc.borrow()) == 1)) });
         let mut a5: A = A::copy_from({ ca.as_pointer() });
         &(a5);
-        assert!((copy_ctor_5.with(|rc| *rc.borrow()) == 3));
-        assert!((move_ctor_6.with(|rc| *rc.borrow()) == 1));
+        ({ cpp2rust_assert_fail_8((copy_ctor_5.with(|rc| *rc.borrow()) == 3)) });
+        ({ cpp2rust_assert_fail_8((move_ctor_6.with(|rc| *rc.borrow()) == 1)) });
     }
     {
         let mo: Value<move_only> = Rc::new(RefCell::new(move_only::new()));

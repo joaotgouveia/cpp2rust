@@ -35,8 +35,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(std_normal_distribution_double_::new_1({
                 p.as_pointer()
             })));
-        assert!(({ (({ (*d.borrow()).mean() }) == 0.25_f64) }));
-        assert!(({ (({ (*d.borrow()).stddev() }) == 10_f64) }));
+        ({ cpp2rust_assert_fail_0((({ (*d.borrow()).mean() }) == 0.25_f64)) });
+        ({ cpp2rust_assert_fail_0((({ (*d.borrow()).stddev() }) == 10_f64)) });
     }
     return 0;
 }

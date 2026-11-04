@@ -31,7 +31,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
         std_chrono_duration_double__std_ratio_1__1__::new_1({ __tmp_0.as_pointer() })
     }));
-    assert!(({ (({ (*d.borrow()).count() }) == 5_f64) }));
+    ({ cpp2rust_assert_fail_0((({ (*d.borrow()).count() }) == 5_f64)) });
     let d2: Value<std_chrono_duration_double__std_ratio_1__1__> = Rc::new(RefCell::new({
         let __tmp_1: Value<i32> = Rc::new(RefCell::new(5));
         std_chrono_duration_double__std_ratio_1__1__::new_1({ __tmp_1.as_pointer() })

@@ -58,10 +58,10 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_1: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_2: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_2: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_3: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -71,14 +71,14 @@ impl CppMove for test_alloc_base {
         src.read()
     }
 }
-pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_eq_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_5(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_3(_x, _y)
+        operator_eq_4(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -138,7 +138,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_3(__lhs.clone(), __rhs.clone())
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -167,7 +167,7 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-pub fn operator_eq_5(
+pub fn operator_eq_6(
     x: Ptr<test_allocator_NotConstructible_>,
     y: Ptr<test_allocator_NotConstructible_>,
 ) -> bool {
@@ -215,12 +215,16 @@ impl test_allocator_NotConstructible_ {
             stats_: a.with(|__s| __s.stats_.clone()),
         }));
         let this: Ptr<test_allocator_NotConstructible_> = __this.as_pointer();
-        assert!(
-            (({ a.with(|__s| __s.data_) } != { destructed_value_1.with(|rc| *rc.borrow()) })
-                && ({ a.with(|__s| __s.id_) } != { destructed_value_1.with(|rc| *rc.borrow()) }))
-                && (!(Ptr::<i8>::from_string_literal(b"copying from destroyed allocator"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({ a.with(|__s| __s.data_) } != { destructed_value_2.with(|rc| *rc.borrow()) })
+                    && ({ a.with(|__s| __s.id_) } != {
+                        destructed_value_2.with(|rc| *rc.borrow())
+                    }))
+                    && (!(Ptr::<i8>::from_string_literal(b"copying from destroyed allocator"))
+                        .is_null()),
+            )
+        });
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_inc();
@@ -234,7 +238,7 @@ impl test_allocator_NotConstructible_ {
 }
 impl CppEq for test_allocator_NotConstructible_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_5(__lhs.clone(), __rhs.clone())
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_NotConstructible_ {
@@ -336,27 +340,32 @@ pub struct NotConstructible {}
 impl NotConstructible {}
 impl CppEq for NotConstructible {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_6(__lhs.clone(), __rhs.clone())
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
-pub fn operator_eq_6(_a0: Ptr<NotConstructible>, _a1: Ptr<NotConstructible>) -> bool {
+pub fn operator_eq_8(_a0: Ptr<NotConstructible>, _a1: Ptr<NotConstructible>) -> bool {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_8.with(|rc| *rc.borrow()) >= dealloc_count_9.with(|rc| *rc.borrow())));
-        return ((alloc_count_8.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_9.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_1(
+                (alloc_count_10.with(|rc| *rc.borrow())
+                    >= dealloc_count_11.with(|rc| *rc.borrow())),
+            )
+        });
+        return ((alloc_count_10.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_11.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
-        disable_default_constructor_10.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_7.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_8.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_9.with(|rc| *rc.borrow_mut() = 0_usize);
+        ({ cpp2rust_assert_fail_1((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
+        disable_default_constructor_12.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_9.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_10.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_11.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -365,18 +374,18 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_7: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_9: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_8: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_10: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_9: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_11: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static disable_default_constructor_10: Value<bool> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_12: Value<bool> = Rc::new(RefCell::new(false));
 );
-pub fn operator_eq_11(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
+pub fn operator_eq_13(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> bool {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -384,7 +393,7 @@ pub fn operator_eq_11(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) 
 pub struct min_allocator_int_ {}
 impl CppEq for min_allocator_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_11(__lhs.read(), __rhs.read())
+        operator_eq_13(__lhs.read(), __rhs.read())
     }
 }
 impl CppMove for min_allocator_int_ {
@@ -392,7 +401,7 @@ impl CppMove for min_allocator_int_ {
         src.read()
     }
 }
-pub fn operator_eq_12(
+pub fn operator_eq_14(
     mut _a0: min_allocator_NotConstructible_,
     mut _a1: min_allocator_NotConstructible_,
 ) -> bool {
@@ -403,7 +412,7 @@ pub fn operator_eq_12(
 pub struct min_allocator_NotConstructible_ {}
 impl CppEq for min_allocator_NotConstructible_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_12(__lhs.read(), __rhs.read())
+        operator_eq_14(__lhs.read(), __rhs.read())
     }
 }
 impl CppMove for min_allocator_NotConstructible_ {
@@ -444,7 +453,7 @@ impl CppMove
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
 impl min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___ {}
-pub fn operator_eq_13(mut _a0: explicit_allocator_int_, mut _a1: explicit_allocator_int_) -> bool {
+pub fn operator_eq_15(mut _a0: explicit_allocator_int_, mut _a1: explicit_allocator_int_) -> bool {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -457,7 +466,7 @@ impl explicit_allocator_int_ {
 }
 impl CppEq for explicit_allocator_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_13(__lhs.read(), __rhs.read())
+        operator_eq_15(__lhs.read(), __rhs.read())
     }
 }
 impl CppMove for explicit_allocator_int_ {
@@ -470,7 +479,7 @@ impl Default for explicit_allocator_int_ {
         { explicit_allocator_int_::new() }
     }
 }
-pub fn operator_eq_14(
+pub fn operator_eq_16(
     mut _a0: explicit_allocator_NotConstructible_,
     mut _a1: explicit_allocator_NotConstructible_,
 ) -> bool {
@@ -486,7 +495,7 @@ impl explicit_allocator_NotConstructible_ {
 }
 impl CppEq for explicit_allocator_NotConstructible_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_14(__lhs.read(), __rhs.read())
+        operator_eq_16(__lhs.read(), __rhs.read())
     }
 }
 impl CppMove for explicit_allocator_NotConstructible_ {
@@ -527,7 +536,7 @@ impl CppMove for explicit_allocator_NotConstructible_ptr_ {
         src.read()
     }
 }
-pub fn operator_eq_15(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> bool {
+pub fn operator_eq_17(mut _a0: safe_allocator_int_, mut _a1: safe_allocator_int_) -> bool {
     return true;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -540,7 +549,7 @@ impl safe_allocator_int_ {
 }
 impl CppEq for safe_allocator_int_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_15(__lhs.read(), __rhs.read())
+        operator_eq_17(__lhs.read(), __rhs.read())
     }
 }
 impl CppMove for safe_allocator_int_ {
@@ -553,7 +562,7 @@ impl Default for safe_allocator_int_ {
         { safe_allocator_int_::new() }
     }
 }
-pub fn operator_eq_16(
+pub fn operator_eq_19(
     mut _a0: safe_allocator_NotConstructible_,
     mut _a1: safe_allocator_NotConstructible_,
 ) -> bool {
@@ -569,7 +578,7 @@ impl safe_allocator_NotConstructible_ {
 }
 impl CppEq for safe_allocator_NotConstructible_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_16(__lhs.read(), __rhs.read())
+        operator_eq_19(__lhs.read(), __rhs.read())
     }
 }
 impl CppMove for safe_allocator_NotConstructible_ {
@@ -610,116 +619,126 @@ impl CppMove for safe_allocator_NotConstructible_ptr_ {
         src.read()
     }
 }
-pub fn test_17(a: Ptr<test_allocator_NotConstructible_>) {
-    let d: Value<Vec<NotConstructible>> = Rc::new(RefCell::new(
-        std_deque_NotConstructible__test_allocator_NotConstructible__::new_1({ (a).clone() }),
-    ));
-    assert!(({ (({ (*d.borrow()).size() }) == 0_usize) }));
-    assert!(
-        ({
-            let _x: Value<test_allocator_NotConstructible_> =
-                Rc::new(RefCell::new(({ (*d.borrow()).get_allocator() })));
-            let _y: Ptr<test_allocator_NotConstructible_> = (a).clone();
-            operator_eq_5(_x.as_pointer(), _y)
-        })
-    );
+pub fn test_20(a: Ptr<test_allocator_NotConstructible_>) {
+    let d: Value<std_deque_NotConstructible__test_allocator_NotConstructible__> =
+        Rc::new(RefCell::new(
+            std_deque_NotConstructible__test_allocator_NotConstructible__::new_1({ (a).clone() }),
+        ));
+    ({ cpp2rust_assert_fail_1((({ (*d.borrow()).size() }) == 0_u64)) });
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let _x: Value<test_allocator_NotConstructible_> =
+                    Rc::new(RefCell::new(({ (*d.borrow()).get_allocator() })));
+                let _y: Ptr<test_allocator_NotConstructible_> = (a).clone();
+                operator_eq_6(_x.as_pointer(), _y)
+            }),
+        )
+    });
     const _: () = assert!(true, "");;
 }
-pub fn test_18(a: Ptr<min_allocator_int_>) {
-    let d: Value<Vec<i32>> = Rc::new(RefCell::new(std_deque_int__min_allocator_int__::new_1({
-        (a).clone()
-    })));
-    assert!(({ (({ (*d.borrow()).size() }) == 0_usize) }));
-    assert!(
-        ({
+pub fn test_21(a: Ptr<min_allocator_int_>) {
+    let d: Value<std_deque_int__min_allocator_int__> =
+        Rc::new(RefCell::new(std_deque_int__min_allocator_int__::new_1({
+            (a).clone()
+        })));
+    ({ cpp2rust_assert_fail_1((({ (*d.borrow()).size() }) == 0_u64)) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let _arg0: min_allocator_int_ = ({ (*d.borrow()).get_allocator() });
                 let _arg1: min_allocator_int_ = (*a.upgrade().deref()).clone();
-                operator_eq_11(_arg0, _arg1)
-            })
-        })
-    );
+                operator_eq_13(_arg0, _arg1)
+            }),
+        )
+    });
     const _: () = assert!(true, "");;
 }
-pub fn test_19(a: Ptr<safe_allocator_int_>) {
-    let d: Value<Vec<i32>> = Rc::new(RefCell::new(std_deque_int__safe_allocator_int__::new_1({
-        (a).clone()
-    })));
-    assert!(({ (({ (*d.borrow()).size() }) == 0_usize) }));
-    assert!(
-        ({
+pub fn test_22(a: Ptr<safe_allocator_int_>) {
+    let d: Value<std_deque_int__safe_allocator_int__> =
+        Rc::new(RefCell::new(std_deque_int__safe_allocator_int__::new_1({
+            (a).clone()
+        })));
+    ({ cpp2rust_assert_fail_1((({ (*d.borrow()).size() }) == 0_u64)) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let _arg0: safe_allocator_int_ = ({ (*d.borrow()).get_allocator() });
                 let _arg1: safe_allocator_int_ = (*a.upgrade().deref()).clone();
-                operator_eq_15(_arg0, _arg1)
-            })
-        })
-    );
+                operator_eq_17(_arg0, _arg1)
+            }),
+        )
+    });
     const _: () = assert!(true, "");;
 }
-pub fn test_20(a: Ptr<min_allocator_NotConstructible_>) {
-    let d: Value<Vec<NotConstructible>> = Rc::new(RefCell::new(
-        std_deque_NotConstructible__min_allocator_NotConstructible__::new_1({ (a).clone() }),
-    ));
-    assert!(({ (({ (*d.borrow()).size() }) == 0_usize) }));
-    assert!(
-        ({
+pub fn test_23(a: Ptr<min_allocator_NotConstructible_>) {
+    let d: Value<std_deque_NotConstructible__min_allocator_NotConstructible__> =
+        Rc::new(RefCell::new(
+            std_deque_NotConstructible__min_allocator_NotConstructible__::new_1({ (a).clone() }),
+        ));
+    ({ cpp2rust_assert_fail_1((({ (*d.borrow()).size() }) == 0_u64)) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let _arg0: min_allocator_NotConstructible_ = ({ (*d.borrow()).get_allocator() });
                 let _arg1: min_allocator_NotConstructible_ = (*a.upgrade().deref()).clone();
-                operator_eq_12(_arg0, _arg1)
-            })
-        })
-    );
+                operator_eq_14(_arg0, _arg1)
+            }),
+        )
+    });
     const _: () = assert!(true, "");;
 }
-pub fn test_21(a: Ptr<safe_allocator_NotConstructible_>) {
-    let d: Value<Vec<NotConstructible>> = Rc::new(RefCell::new(
-        std_deque_NotConstructible__safe_allocator_NotConstructible__::new_1({ (a).clone() }),
-    ));
-    assert!(({ (({ (*d.borrow()).size() }) == 0_usize) }));
-    assert!(
-        ({
+pub fn test_24(a: Ptr<safe_allocator_NotConstructible_>) {
+    let d: Value<std_deque_NotConstructible__safe_allocator_NotConstructible__> =
+        Rc::new(RefCell::new(
+            std_deque_NotConstructible__safe_allocator_NotConstructible__::new_1({ (a).clone() }),
+        ));
+    ({ cpp2rust_assert_fail_1((({ (*d.borrow()).size() }) == 0_u64)) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let _arg0: safe_allocator_NotConstructible_ = ({ (*d.borrow()).get_allocator() });
                 let _arg1: safe_allocator_NotConstructible_ = (*a.upgrade().deref()).clone();
-                operator_eq_16(_arg0, _arg1)
-            })
-        })
-    );
+                operator_eq_19(_arg0, _arg1)
+            }),
+        )
+    });
     const _: () = assert!(true, "");;
 }
-pub fn test_22(a: Ptr<explicit_allocator_int_>) {
-    let d: Value<Vec<i32>> = Rc::new(RefCell::new(
+pub fn test_25(a: Ptr<explicit_allocator_int_>) {
+    let d: Value<std_deque_int__explicit_allocator_int__> = Rc::new(RefCell::new(
         std_deque_int__explicit_allocator_int__::new_1({ (a).clone() }),
     ));
-    assert!(({ (({ (*d.borrow()).size() }) == 0_usize) }));
-    assert!(
-        ({
+    ({ cpp2rust_assert_fail_1((({ (*d.borrow()).size() }) == 0_u64)) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let _arg0: explicit_allocator_int_ = ({ (*d.borrow()).get_allocator() });
                 let _arg1: explicit_allocator_int_ = (*a.upgrade().deref()).clone();
-                operator_eq_13(_arg0, _arg1)
-            })
-        })
-    );
+                operator_eq_15(_arg0, _arg1)
+            }),
+        )
+    });
     const _: () = assert!(true, "");;
 }
-pub fn test_23(a: Ptr<explicit_allocator_NotConstructible_>) {
-    let d: Value<Vec<NotConstructible>> = Rc::new(RefCell::new(
-        std_deque_NotConstructible__explicit_allocator_NotConstructible__::new_1({ (a).clone() }),
-    ));
-    assert!(({ (({ (*d.borrow()).size() }) == 0_usize) }));
-    assert!(
-        ({
+pub fn test_26(a: Ptr<explicit_allocator_NotConstructible_>) {
+    let d: Value<std_deque_NotConstructible__explicit_allocator_NotConstructible__> =
+        Rc::new(RefCell::new(
+            std_deque_NotConstructible__explicit_allocator_NotConstructible__::new_1({
+                (a).clone()
+            }),
+        ));
+    ({ cpp2rust_assert_fail_1((({ (*d.borrow()).size() }) == 0_u64)) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let _arg0: explicit_allocator_NotConstructible_ =
                     ({ (*d.borrow()).get_allocator() });
                 let _arg1: explicit_allocator_NotConstructible_ = (*a.upgrade().deref()).clone();
-                operator_eq_14(_arg0, _arg1)
-            })
-        })
-    );
+                operator_eq_16(_arg0, _arg1)
+            }),
+        )
+    });
     const _: () = assert!(true, "");;
 }
 pub fn main() {
@@ -744,40 +763,40 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({
         let _a: Value<std_allocator_int_> = Rc::new(RefCell::new(<std_allocator_int_>::default()));
-        test_24(_a.as_pointer())
+        test_27(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_NotConstructible_> =
             Rc::new(RefCell::new(test_allocator_NotConstructible_::new_1({ 3 })));
-        test_17(_a.as_pointer())
+        test_20(_a.as_pointer())
     });
     ({
         let _a: Value<min_allocator_int_> = Rc::new(RefCell::new(<min_allocator_int_>::default()));
-        test_18(_a.as_pointer())
+        test_21(_a.as_pointer())
     });
     ({
         let _a: Value<safe_allocator_int_> = Rc::new(RefCell::new(safe_allocator_int_::new()));
-        test_19(_a.as_pointer())
+        test_22(_a.as_pointer())
     });
     ({
         let _a: Value<min_allocator_NotConstructible_> =
             Rc::new(RefCell::new(<min_allocator_NotConstructible_>::default()));
-        test_20(_a.as_pointer())
+        test_23(_a.as_pointer())
     });
     ({
         let _a: Value<safe_allocator_NotConstructible_> =
             Rc::new(RefCell::new(safe_allocator_NotConstructible_::new()));
-        test_21(_a.as_pointer())
+        test_24(_a.as_pointer())
     });
     ({
         let _a: Value<explicit_allocator_int_> =
             Rc::new(RefCell::new(explicit_allocator_int_::new()));
-        test_22(_a.as_pointer())
+        test_25(_a.as_pointer())
     });
     ({
         let _a: Value<explicit_allocator_NotConstructible_> =
             Rc::new(RefCell::new(explicit_allocator_NotConstructible_::new()));
-        test_23(_a.as_pointer())
+        test_26(_a.as_pointer())
     });
     return 0;
 }
@@ -812,73 +831,73 @@ impl Tag_XImpl for Ptr<Tag_X> {
     }
 }
 pub trait explicit_allocator_NotConstructible_Impl {
-    fn allocate(&self, n: usize) -> Ptr<NotConstructible>;
-    fn deallocate(&self, p: Ptr<NotConstructible>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<NotConstructible>;
+    fn deallocate(&self, p: Ptr<NotConstructible>, n: u64);
 }
 impl explicit_allocator_NotConstructible_Impl for Ptr<explicit_allocator_NotConstructible_> {
-    fn allocate(&self, mut n: usize) -> Ptr<NotConstructible> {
+    fn allocate(&self, mut n: u64) -> Ptr<NotConstructible> {
         return ({ <std_allocator_NotConstructible_>::default().allocate(n) })
             .reinterpret_cast::<NotConstructible>();
     }
-    fn deallocate(&self, mut p: Ptr<NotConstructible>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<NotConstructible>, mut n: u64) {
         ({ <std_allocator_NotConstructible_>::default().deallocate((p).clone(), n) });
     }
 }
 pub trait explicit_allocator_NotConstructible_ptr_Impl {
-    fn allocate(&self, n: usize) -> Ptr<Ptr<NotConstructible>>;
-    fn deallocate(&self, p: Ptr<Ptr<NotConstructible>>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<Ptr<NotConstructible>>;
+    fn deallocate(&self, p: Ptr<Ptr<NotConstructible>>, n: u64);
 }
 impl explicit_allocator_NotConstructible_ptr_Impl
     for Ptr<explicit_allocator_NotConstructible_ptr_>
 {
-    fn allocate(&self, mut n: usize) -> Ptr<Ptr<NotConstructible>> {
+    fn allocate(&self, mut n: u64) -> Ptr<Ptr<NotConstructible>> {
         return ({ <std_allocator_NotConstructible_ptr_>::default().allocate(n) })
             .reinterpret_cast::<Ptr<NotConstructible>>();
     }
-    fn deallocate(&self, mut p: Ptr<Ptr<NotConstructible>>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<Ptr<NotConstructible>>, mut n: u64) {
         ({ <std_allocator_NotConstructible_ptr_>::default().deallocate((p).clone(), n) });
     }
 }
 pub trait explicit_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> Ptr<i32>;
-    fn deallocate(&self, p: Ptr<i32>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, n: u64);
 }
 impl explicit_allocator_int_Impl for Ptr<explicit_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         return ({ <std_allocator_int_>::default().allocate(n) }).reinterpret_cast::<i32>();
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         ({ <std_allocator_int_>::default().deallocate((p).clone(), n) });
     }
 }
 pub trait explicit_allocator_int_ptr_Impl {
-    fn allocate(&self, n: usize) -> Ptr<Ptr<i32>>;
-    fn deallocate(&self, p: Ptr<Ptr<i32>>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<Ptr<i32>>;
+    fn deallocate(&self, p: Ptr<Ptr<i32>>, n: u64);
 }
 impl explicit_allocator_int_ptr_Impl for Ptr<explicit_allocator_int_ptr_> {
-    fn allocate(&self, mut n: usize) -> Ptr<Ptr<i32>> {
+    fn allocate(&self, mut n: u64) -> Ptr<Ptr<i32>> {
         return ({ <std_allocator_int_ptr_>::default().allocate(n) })
             .reinterpret_cast::<Ptr<i32>>();
     }
-    fn deallocate(&self, mut p: Ptr<Ptr<i32>>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<Ptr<i32>>, mut n: u64) {
         ({ <std_allocator_int_ptr_>::default().deallocate((p).clone(), n) });
     }
 }
 pub trait min_allocator_NotConstructible_Impl {
     fn allocate(
         &self,
-        n: usize,
+        n: u64,
     ) -> min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__;
     fn deallocate(
         &self,
         p: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_NotConstructible_Impl for Ptr<min_allocator_NotConstructible_> {
     fn allocate(
         &self,
-        mut n: usize,
+        mut n: u64,
     ) -> min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__ {
         return min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_NotConstructible_>::default().allocate(n) })
@@ -887,17 +906,17 @@ impl min_allocator_NotConstructible_Impl for Ptr<min_allocator_NotConstructible_
     fn deallocate(
         &self,
         mut p: min_pointer_NotConstructible__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_NotConstructible_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
+    fn allocate(&self, n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: u64);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_int_>::default().allocate(n) })
         });
@@ -905,30 +924,30 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
 pub trait min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___Impl
 {
-    fn allocate ( &self , n : usize  , ) -> min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
+    fn allocate ( &self , n : u64  , ) -> min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
     fn deallocate(
         &self,
         p : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___Impl
     for Ptr<min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___>
 {
-    fn allocate ( &self , mut n : usize  , ) -> min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
+    fn allocate ( &self , mut n : u64  , ) -> min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
         return min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { ( { <std_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___  >::default() . allocate ( n  , ) } )   } , )    ;
     }
     fn deallocate(
         &self,
         mut p : min_pointer_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({
             <std_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_long__0___  >::default() . deallocate ( (p . ptr_  ).clone() , n  , )
@@ -936,23 +955,23 @@ impl min_allocator_min_pointer_NotConstructible__std_integral_constant_unsigned_
     }
 }
 pub trait min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl {
-    fn allocate ( &self , n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
+    fn allocate ( &self , n : u64  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
     fn deallocate(
         &self,
         p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl
     for Ptr<min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>
 {
-    fn allocate ( &self , mut n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
+    fn allocate ( &self , mut n : u64  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
         return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { ( { <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___  >::default() . allocate ( n  , ) } )   } , )    ;
     }
     fn deallocate(
         &self,
         mut p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({
             <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>::default()
@@ -961,39 +980,31 @@ impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Imp
     }
 }
 pub trait safe_allocator_NotConstructible_Impl {
-    fn allocate(&self, n: usize) -> Ptr<NotConstructible>;
-    fn deallocate(&self, p: Ptr<NotConstructible>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<NotConstructible>;
+    fn deallocate(&self, p: Ptr<NotConstructible>, n: u64);
 }
 impl safe_allocator_NotConstructible_Impl for Ptr<safe_allocator_NotConstructible_> {
-    fn allocate(&self, mut n: usize) -> Ptr<NotConstructible> {
+    fn allocate(&self, mut n: u64) -> Ptr<NotConstructible> {
         let memory: Value<Ptr<NotConstructible>> = Rc::new(RefCell::new(
             ({ <std_allocator_NotConstructible_>::default().allocate(n) }),
         ));
         {
-            match ({ (*memory.borrow()).to_any() },) {
-                (mut __tmp_2,) => {
-                    __tmp_2.memset(
-                        (0) as u8,
-                        ((1usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                    );
-                    (__tmp_2).clone()
-                }
-            };
+            ({
+                memset_18(
+                    (*memory.borrow()).to_any(),
+                    0,
+                    (1usize as u64).wrapping_mul(n),
+                )
+            });
         }
         return (*memory.borrow()).clone();
     }
-    fn deallocate(&self, mut p: Ptr<NotConstructible>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<NotConstructible>, mut n: u64) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
-                    (mut __tmp_3,) => {
-                        __tmp_3.memset(
-                            (0) as u8,
-                            ((1usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                        );
-                        (__tmp_3).clone()
-                    }
-                }));
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(
+                    ({ memset_18((p).to_any(), 0, (1usize as u64).wrapping_mul(n)) }),
+                ));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }
@@ -1001,39 +1012,31 @@ impl safe_allocator_NotConstructible_Impl for Ptr<safe_allocator_NotConstructibl
     }
 }
 pub trait safe_allocator_NotConstructible_ptr_Impl {
-    fn allocate(&self, n: usize) -> Ptr<Ptr<NotConstructible>>;
-    fn deallocate(&self, p: Ptr<Ptr<NotConstructible>>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<Ptr<NotConstructible>>;
+    fn deallocate(&self, p: Ptr<Ptr<NotConstructible>>, n: u64);
 }
 impl safe_allocator_NotConstructible_ptr_Impl for Ptr<safe_allocator_NotConstructible_ptr_> {
-    fn allocate(&self, mut n: usize) -> Ptr<Ptr<NotConstructible>> {
+    fn allocate(&self, mut n: u64) -> Ptr<Ptr<NotConstructible>> {
         let memory: Value<Ptr<Ptr<NotConstructible>>> = Rc::new(RefCell::new(
             ({ <std_allocator_NotConstructible_ptr_>::default().allocate(n) }),
         ));
         {
-            match ({ (*memory.borrow()).to_any() },) {
-                (mut __tmp_6,) => {
-                    __tmp_6.memset(
-                        (0) as u8,
-                        ((8usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                    );
-                    (__tmp_6).clone()
-                }
-            };
+            ({
+                memset_18(
+                    (*memory.borrow()).to_any(),
+                    0,
+                    (8usize as u64).wrapping_mul(n),
+                )
+            });
         }
         return (*memory.borrow()).clone();
     }
-    fn deallocate(&self, mut p: Ptr<Ptr<NotConstructible>>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<Ptr<NotConstructible>>, mut n: u64) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
-                    (mut __tmp_7,) => {
-                        __tmp_7.memset(
-                            (0) as u8,
-                            ((8usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                        );
-                        (__tmp_7).clone()
-                    }
-                }));
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(
+                    ({ memset_18((p).to_any(), 0, (8usize as u64).wrapping_mul(n)) }),
+                ));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }
@@ -1041,41 +1044,39 @@ impl safe_allocator_NotConstructible_ptr_Impl for Ptr<safe_allocator_NotConstruc
     }
 }
 pub trait safe_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> Ptr<i32>;
-    fn deallocate(&self, p: Ptr<i32>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, n: u64);
 }
 impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         let memory: Value<Ptr<i32>> = Rc::new(RefCell::new(
             ({ <std_allocator_int_>::default().allocate(n) }),
         ));
         {
-            match ({ (*memory.borrow()).to_any() },) {
-                (mut __tmp_0,) => {
-                    __tmp_0.memset(
-                        (0) as u8,
-                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                            as usize,
-                    );
-                    (__tmp_0).clone()
-                }
-            };
+            ({
+                let ___s: AnyPtr = (*memory.borrow()).to_any();
+                memset_18(
+                    ___s,
+                    0,
+                    (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                )
+            });
         }
         return (*memory.borrow()).clone();
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
-                    (mut __tmp_1,) => {
-                        __tmp_1.memset(
-                            (0) as u8,
-                            ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64))
-                                as usize) as usize,
-                        );
-                        (__tmp_1).clone()
-                    }
-                }));
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(
+                    ({
+                        let ___s: AnyPtr = (p).to_any();
+                        memset_18(
+                            ___s,
+                            0,
+                            (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                        )
+                    }),
+                ));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }
@@ -1083,39 +1084,31 @@ impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
     }
 }
 pub trait safe_allocator_int_ptr_Impl {
-    fn allocate(&self, n: usize) -> Ptr<Ptr<i32>>;
-    fn deallocate(&self, p: Ptr<Ptr<i32>>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<Ptr<i32>>;
+    fn deallocate(&self, p: Ptr<Ptr<i32>>, n: u64);
 }
 impl safe_allocator_int_ptr_Impl for Ptr<safe_allocator_int_ptr_> {
-    fn allocate(&self, mut n: usize) -> Ptr<Ptr<i32>> {
+    fn allocate(&self, mut n: u64) -> Ptr<Ptr<i32>> {
         let memory: Value<Ptr<Ptr<i32>>> = Rc::new(RefCell::new(
             ({ <std_allocator_int_ptr_>::default().allocate(n) }),
         ));
         {
-            match ({ (*memory.borrow()).to_any() },) {
-                (mut __tmp_4,) => {
-                    __tmp_4.memset(
-                        (0) as u8,
-                        ((8usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                    );
-                    (__tmp_4).clone()
-                }
-            };
+            ({
+                memset_18(
+                    (*memory.borrow()).to_any(),
+                    0,
+                    (8usize as u64).wrapping_mul(n),
+                )
+            });
         }
         return (*memory.borrow()).clone();
     }
-    fn deallocate(&self, mut p: Ptr<Ptr<i32>>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<Ptr<i32>>, mut n: u64) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
-                    (mut __tmp_5,) => {
-                        __tmp_5.memset(
-                            (0) as u8,
-                            ((8usize as u64).wrapping_mul((n as u64)) as usize) as usize,
-                        );
-                        (__tmp_5).clone()
-                    }
-                }));
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(
+                    ({ memset_18((p).to_any(), 0, (8usize as u64).wrapping_mul(n)) }),
+                ));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }
@@ -1143,19 +1136,31 @@ pub trait test_allocator_NotConstructible_Impl {
 }
 impl test_allocator_NotConstructible_Impl for Ptr<test_allocator_NotConstructible_> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
-        assert!(((*self).with(|__s| __s.id_) != destructed_value_1.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.data_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.id_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_dec();
             });
         }
-        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: u32, _a1: Option<AnyPtr>) -> Ptr<NotConstructible> {
         let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.data_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             if ({
                 (*self)
@@ -1166,7 +1171,7 @@ impl test_allocator_NotConstructible_Impl for Ptr<test_allocator_NotConstructibl
                     .with(|__s| __s.stats_.clone())
                     .with(|__s| __s.throw_after)
             }) {
-                std::process::abort();
+                ({ __builtin_abort_7() });
             }
             field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
                 __v.prefix_inc();
@@ -1181,10 +1186,14 @@ impl test_allocator_NotConstructible_Impl for Ptr<test_allocator_NotConstructibl
                     .wrapping_add(n)) as i32
             });
         }
-        return ({ <std_allocator_NotConstructible_>::default().allocate((n as usize)) });
+        return ({ <std_allocator_NotConstructible_>::default().allocate((n as u64)) });
     }
     fn deallocate(&self, mut p: Ptr<NotConstructible>, mut s: u32) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.data_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
                 __v.prefix_dec();
@@ -1196,12 +1205,12 @@ impl test_allocator_NotConstructible_Impl for Ptr<test_allocator_NotConstructibl
                     .wrapping_sub(s)) as i32
             });
         }
-        ({ <std_allocator_NotConstructible_>::default().deallocate((p).clone(), (s as usize)) });
+        ({ <std_allocator_NotConstructible_>::default().deallocate((p).clone(), (s as u64)) });
     }
     fn max_size(&self) -> u32 {
         return ((((((2147483647_u32).wrapping_mul((2_u32 as u32)) as u32)
-            .wrapping_add((1_u32 as u32))) as usize)
-            .wrapping_div((1usize as usize))) as u32);
+            .wrapping_add((1_u32 as u32))) as u64)
+            .wrapping_div((1usize as u64))) as u32);
     }
     fn destroy(&self, mut p: Ptr<NotConstructible>) {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
@@ -1236,19 +1245,31 @@ pub trait test_allocator_NotConstructible_ptr_Impl {
 }
 impl test_allocator_NotConstructible_ptr_Impl for Ptr<test_allocator_NotConstructible_ptr_> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
-        assert!(((*self).with(|__s| __s.id_) != destructed_value_1.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.data_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.id_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_dec();
             });
         }
-        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: u32, _a1: Option<AnyPtr>) -> Ptr<Ptr<NotConstructible>> {
         let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.data_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             if ({
                 (*self)
@@ -1259,7 +1280,7 @@ impl test_allocator_NotConstructible_ptr_Impl for Ptr<test_allocator_NotConstruc
                     .with(|__s| __s.stats_.clone())
                     .with(|__s| __s.throw_after)
             }) {
-                std::process::abort();
+                ({ __builtin_abort_7() });
             }
             field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
                 __v.prefix_inc();
@@ -1274,10 +1295,14 @@ impl test_allocator_NotConstructible_ptr_Impl for Ptr<test_allocator_NotConstruc
                     .wrapping_add(n)) as i32
             });
         }
-        return ({ <std_allocator_NotConstructible_ptr_>::default().allocate((n as usize)) });
+        return ({ <std_allocator_NotConstructible_ptr_>::default().allocate((n as u64)) });
     }
     fn deallocate(&self, mut p: Ptr<Ptr<NotConstructible>>, mut s: u32) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_1.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.data_) != destructed_value_2.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
                 __v.prefix_dec();
@@ -1289,9 +1314,7 @@ impl test_allocator_NotConstructible_ptr_Impl for Ptr<test_allocator_NotConstruc
                     .wrapping_sub(s)) as i32
             });
         }
-        ({
-            <std_allocator_NotConstructible_ptr_>::default().deallocate((p).clone(), (s as usize))
-        });
+        ({ <std_allocator_NotConstructible_ptr_>::default().deallocate((p).clone(), (s as u64)) });
     }
 }
 pub trait test_allocator_statisticsImpl {
@@ -1300,11 +1323,13 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        assert!(
-            ((*self).with(|__s| __s.count) == 0)
-                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.count) == 0)
+                    && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                        .is_null()),
+            )
+        });
         field!((*self), count).write(0);
         field!((*self), time_to_throw).write(0);
         field!((*self), alloc_count).write(0);
@@ -1328,8 +1353,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -1345,10 +1370,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_1.with(|_| ());
-    let _ = moved_value_2.with(|_| ());
-    let _ = outstanding_bytes_7.with(|_| ());
-    let _ = alloc_count_8.with(|_| ());
-    let _ = dealloc_count_9.with(|_| ());
-    let _ = disable_default_constructor_10.with(|_| ());
+    let _ = destructed_value_2.with(|_| ());
+    let _ = moved_value_3.with(|_| ());
+    let _ = outstanding_bytes_9.with(|_| ());
+    let _ = alloc_count_10.with(|_| ());
+    let _ = dealloc_count_11.with(|_| ());
+    let _ = disable_default_constructor_12.with(|_| ());
 }

@@ -83,9 +83,9 @@ pub fn test_2() -> bool {
         }));
         std_tuple_CS__S_ref_::new_1({ __tmp_1.as_pointer() }, { s2.as_pointer() })
     }));
-    cpp_swap!(t1.as_pointer(), t2.as_pointer());
-    assert!(({ ((*cs_calls.borrow()) == 2) }));
-    assert!(({ ((*s_calls.borrow()) == 2) }));
+    ({ swap_3(t1.as_pointer(), t2.as_pointer()) });
+    ({ cpp2rust_assert_fail_4(((*cs_calls.borrow()) == 2)) });
+    ({ cpp2rust_assert_fail_4(((*s_calls.borrow()) == 2)) });
     return true;
 }
 pub fn main() {

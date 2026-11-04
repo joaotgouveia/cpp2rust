@@ -52,24 +52,30 @@ fn main_0() -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
     let b: Value<S> = Rc::new(RefCell::new(S::new({ 2 })));
     let c: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-    assert!(
-        ({
-            let _x: Ptr<S> = a.as_pointer();
-            operator_eq_0(_x, c.as_pointer())
-        })
-    );
-    assert!(
-        ({
-            let _x: Ptr<S> = a.as_pointer();
-            operator_lt_1(_x, b.as_pointer())
-        })
-    );
-    assert!(
-        !({
-            let _x: Ptr<S> = b.as_pointer();
-            operator_lt_1(_x, a.as_pointer())
-        })
-    );
+    ({
+        cpp2rust_assert_fail_2(
+            ({
+                let _x: Ptr<S> = a.as_pointer();
+                operator_eq_0(_x, c.as_pointer())
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_2(
+            ({
+                let _x: Ptr<S> = a.as_pointer();
+                operator_lt_1(_x, b.as_pointer())
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_2(
+            !({
+                let _x: Ptr<S> = b.as_pointer();
+                operator_lt_1(_x, a.as_pointer())
+            }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -77,72 +77,66 @@ pub fn can_swap_3() -> bool {
     return value_4.with(|rc| *rc.borrow());
 }
 pub fn test_unique_ptr_5() {
-    let i: Value<Box<[Option<Value<i32>>]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
+    let i: Value<Box<[std_unique_ptr_int__std_default_delete_int__]>> = Rc::new(RefCell::new(
+        (0..3)
+            .map(|_| <std_unique_ptr_int__std_default_delete_int__>::default())
+            .collect::<Box<[std_unique_ptr_int__std_default_delete_int__]>>(),
     ));
     let mut k: i32 = 0;
     'loop_: while (k < 3) {
-        {
-            let _p: Ptr<_> = Ptr::alloc((k + 1));
-            (i.as_pointer() as Ptr<Option<Value<i32>>>)
-                .offset(k)
-                .write(_p.to_owned_opt())
-        };
+        ({
+            let ___p: Ptr<i32> = Ptr::alloc((k + 1));
+            (*i.borrow())[(k) as usize].reset(___p)
+        });
         k.prefix_inc();
     }
-    let j: Value<Box<[Option<Value<i32>>]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| None).collect::<Box<[Option<Value<i32>>]>>(),
+    let j: Value<Box<[std_unique_ptr_int__std_default_delete_int__]>> = Rc::new(RefCell::new(
+        (0..3)
+            .map(|_| <std_unique_ptr_int__std_default_delete_int__>::default())
+            .collect::<Box<[std_unique_ptr_int__std_default_delete_int__]>>(),
     ));
     let mut k: i32 = 0;
     'loop_: while (k < 3) {
-        {
-            let _p: Ptr<_> = Ptr::alloc((k + 4));
-            (j.as_pointer() as Ptr<Option<Value<i32>>>)
-                .offset(k)
-                .write(_p.to_owned_opt())
-        };
+        ({
+            let ___p: Ptr<i32> = Ptr::alloc((k + 4));
+            (*j.borrow())[(k) as usize].reset(___p)
+        });
         k.prefix_inc();
     }
-    cpp_swap!(
-        (i.as_pointer() as Ptr<Option<Value<i32>>>),
-        (j.as_pointer() as Ptr<Option<Value<i32>>>)
-    );
-    assert!(({ (((*i.borrow())[(0) as usize].as_pointer().read()) == 4) }));
-    assert!(({ (((*i.borrow())[(1) as usize].as_pointer().read()) == 5) }));
-    assert!(({ (((*i.borrow())[(2) as usize].as_pointer().read()) == 6) }));
-    assert!(({ (((*j.borrow())[(0) as usize].as_pointer().read()) == 1) }));
-    assert!(({ (((*j.borrow())[(1) as usize].as_pointer().read()) == 2) }));
-    assert!(({ (((*j.borrow())[(2) as usize].as_pointer().read()) == 3) }));
+    ({ swap_6(i.as_pointer(), j.as_pointer()) });
+    ({ cpp2rust_assert_fail_7((((*i.borrow())[(0) as usize].read()) == 4)) });
+    ({ cpp2rust_assert_fail_7((((*i.borrow())[(1) as usize].read()) == 5)) });
+    ({ cpp2rust_assert_fail_7((((*i.borrow())[(2) as usize].read()) == 6)) });
+    ({ cpp2rust_assert_fail_7((((*j.borrow())[(0) as usize].read()) == 1)) });
+    ({ cpp2rust_assert_fail_7((((*j.borrow())[(1) as usize].read()) == 2)) });
+    ({ cpp2rust_assert_fail_7((((*j.borrow())[(2) as usize].read()) == 3)) });
 }
-pub fn test_6() -> bool {
+pub fn test_8() -> bool {
     {
         let i: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
         let j: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
-        cpp_swap!((i.as_pointer() as Ptr<i32>), (j.as_pointer() as Ptr<i32>));
-        assert!(({ ((*i.borrow())[(0) as usize] == 4) }));
-        assert!(({ ((*i.borrow())[(1) as usize] == 5) }));
-        assert!(({ ((*i.borrow())[(2) as usize] == 6) }));
-        assert!(({ ((*j.borrow())[(0) as usize] == 1) }));
-        assert!(({ ((*j.borrow())[(1) as usize] == 2) }));
-        assert!(({ ((*j.borrow())[(2) as usize] == 3) }));
+        ({ swap_9(i.as_pointer(), j.as_pointer()) });
+        ({ cpp2rust_assert_fail_7(((*i.borrow())[(0) as usize] == 4)) });
+        ({ cpp2rust_assert_fail_7(((*i.borrow())[(1) as usize] == 5)) });
+        ({ cpp2rust_assert_fail_7(((*i.borrow())[(2) as usize] == 6)) });
+        ({ cpp2rust_assert_fail_7(((*j.borrow())[(0) as usize] == 1)) });
+        ({ cpp2rust_assert_fail_7(((*j.borrow())[(1) as usize] == 2)) });
+        ({ cpp2rust_assert_fail_7(((*j.borrow())[(2) as usize] == 3)) });
     }
     {
         let a: Value<Box<[Box<[i32]>]>> =
             Rc::new(RefCell::new(Box::new([Box::new([0, 1]), Box::new([2, 3])])));
         let b: Value<Box<[Box<[i32]>]>> =
             Rc::new(RefCell::new(Box::new([Box::new([9, 8]), Box::new([7, 6])])));
-        cpp_swap!(
-            (a.as_pointer() as Ptr<Box<[i32]>>),
-            (b.as_pointer() as Ptr<Box<[i32]>>)
-        );
-        assert!(({ ((*a.borrow())[(0) as usize][(0) as usize] == 9) }));
-        assert!(({ ((*a.borrow())[(0) as usize][(1) as usize] == 8) }));
-        assert!(({ ((*a.borrow())[(1) as usize][(0) as usize] == 7) }));
-        assert!(({ ((*a.borrow())[(1) as usize][(1) as usize] == 6) }));
-        assert!(({ ((*b.borrow())[(0) as usize][(0) as usize] == 0) }));
-        assert!(({ ((*b.borrow())[(0) as usize][(1) as usize] == 1) }));
-        assert!(({ ((*b.borrow())[(1) as usize][(0) as usize] == 2) }));
-        assert!(({ ((*b.borrow())[(1) as usize][(1) as usize] == 3) }));
+        ({ swap_10(a.as_pointer(), b.as_pointer()) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(0) as usize][(0) as usize] == 9)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(0) as usize][(1) as usize] == 8)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(1) as usize][(0) as usize] == 7)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(1) as usize][(1) as usize] == 6)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(0) as usize][(0) as usize] == 0)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(0) as usize][(1) as usize] == 1)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(1) as usize][(0) as usize] == 2)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(1) as usize][(1) as usize] == 3)) });
     }
     {
         let a: Value<Box<[Box<[i32]>]>> = Rc::new(RefCell::new(Box::new([
@@ -155,28 +149,25 @@ pub fn test_6() -> bool {
             Box::new([6, 5, 4]),
             Box::new([3, 2, 1]),
         ])));
-        cpp_swap!(
-            (a.as_pointer() as Ptr<Box<[i32]>>),
-            (b.as_pointer() as Ptr<Box<[i32]>>)
-        );
-        assert!(({ ((*a.borrow())[(0) as usize][(0) as usize] == 9) }));
-        assert!(({ ((*a.borrow())[(0) as usize][(1) as usize] == 8) }));
-        assert!(({ ((*a.borrow())[(0) as usize][(2) as usize] == 7) }));
-        assert!(({ ((*a.borrow())[(1) as usize][(0) as usize] == 6) }));
-        assert!(({ ((*a.borrow())[(1) as usize][(1) as usize] == 5) }));
-        assert!(({ ((*a.borrow())[(1) as usize][(2) as usize] == 4) }));
-        assert!(({ ((*a.borrow())[(2) as usize][(0) as usize] == 3) }));
-        assert!(({ ((*a.borrow())[(2) as usize][(1) as usize] == 2) }));
-        assert!(({ ((*a.borrow())[(2) as usize][(2) as usize] == 1) }));
-        assert!(({ ((*b.borrow())[(0) as usize][(0) as usize] == 0) }));
-        assert!(({ ((*b.borrow())[(0) as usize][(1) as usize] == 1) }));
-        assert!(({ ((*b.borrow())[(0) as usize][(2) as usize] == 2) }));
-        assert!(({ ((*b.borrow())[(1) as usize][(0) as usize] == 3) }));
-        assert!(({ ((*b.borrow())[(1) as usize][(1) as usize] == 4) }));
-        assert!(({ ((*b.borrow())[(1) as usize][(2) as usize] == 5) }));
-        assert!(({ ((*b.borrow())[(2) as usize][(0) as usize] == 6) }));
-        assert!(({ ((*b.borrow())[(2) as usize][(1) as usize] == 7) }));
-        assert!(({ ((*b.borrow())[(2) as usize][(2) as usize] == 8) }));
+        ({ swap_11(a.as_pointer(), b.as_pointer()) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(0) as usize][(0) as usize] == 9)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(0) as usize][(1) as usize] == 8)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(0) as usize][(2) as usize] == 7)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(1) as usize][(0) as usize] == 6)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(1) as usize][(1) as usize] == 5)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(1) as usize][(2) as usize] == 4)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(2) as usize][(0) as usize] == 3)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(2) as usize][(1) as usize] == 2)) });
+        ({ cpp2rust_assert_fail_7(((*a.borrow())[(2) as usize][(2) as usize] == 1)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(0) as usize][(0) as usize] == 0)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(0) as usize][(1) as usize] == 1)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(0) as usize][(2) as usize] == 2)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(1) as usize][(0) as usize] == 3)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(1) as usize][(1) as usize] == 4)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(1) as usize][(2) as usize] == 5)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(2) as usize][(0) as usize] == 6)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(2) as usize][(1) as usize] == 7)) });
+        ({ cpp2rust_assert_fail_7(((*b.borrow())[(2) as usize][(2) as usize] == 8)) });
     }
     {
         const _: () = assert!(true, "can_swap<CA&>()");;
@@ -217,7 +208,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_6() });
+    ({ test_8() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

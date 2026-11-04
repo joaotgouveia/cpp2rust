@@ -152,7 +152,7 @@ pub trait BImpl {
 }
 impl BImpl for Ptr<B> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.i_) == 0));
+        ({ cpp2rust_assert_fail_8(((*self).with(|__s| __s.i_) == 0)) });
     }
 }
 pub fn __cpp2rust_init_globals() {}

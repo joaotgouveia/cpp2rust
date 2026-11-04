@@ -44,21 +44,21 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let c: Value<C> = Rc::new(RefCell::new(<C>::default()));
-    assert!((({ CImpl::get(&c.as_pointer(),) }) == 1));
-    assert!((inner_const_1.with(|rc| *rc.borrow()) == 2));
+    ({ cpp2rust_assert_fail_4((({ CImpl::get(&c.as_pointer()) }) == 1)) });
+    ({ cpp2rust_assert_fail_4((inner_const_1.with(|rc| *rc.borrow()) == 2)) });
     let s: Value<S> = Rc::new(RefCell::new(<S>::default()));
     let mut p: Ptr<S> = (s.as_pointer());
-    assert!((inner_const_1.with(|rc| *rc.borrow()) == 2));
-    assert!((inner_const_1.with(|rc| *rc.borrow()) == 2));
-    assert!(((anon_3_kValue as i32) == 3));
-    assert!(((anon_3_kValue as i32) == 3));
+    ({ cpp2rust_assert_fail_4((inner_const_1.with(|rc| *rc.borrow()) == 2)) });
+    ({ cpp2rust_assert_fail_4((inner_const_1.with(|rc| *rc.borrow()) == 2)) });
+    ({ cpp2rust_assert_fail_4(((anon_3_kValue as i32) == 3)) });
+    ({ cpp2rust_assert_fail_4(((anon_3_kValue as i32) == 3)) });
     (*counter_2.with(Value::clone).borrow_mut()) = 20;
-    assert!((counter_2.with(|rc| *rc.borrow()) == 20));
+    ({ cpp2rust_assert_fail_4((counter_2.with(|rc| *rc.borrow()) == 20)) });
     (*counter_2.with(Value::clone).borrow_mut()) += 5;
-    assert!((counter_2.with(|rc| *rc.borrow()) == 25));
-    assert!((counter_2.with(|rc| *rc.borrow()) == 25));
-    assert!((({ S::f() }) == 25));
-    assert!((({ S::f() }) == 25));
+    ({ cpp2rust_assert_fail_4((counter_2.with(|rc| *rc.borrow()) == 25)) });
+    ({ cpp2rust_assert_fail_4((counter_2.with(|rc| *rc.borrow()) == 25)) });
+    ({ cpp2rust_assert_fail_4((({ S::f() }) == 25)) });
+    ({ cpp2rust_assert_fail_4((({ S::f() }) == 25)) });
     return 0;
 }
 pub trait CImpl {

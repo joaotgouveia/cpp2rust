@@ -41,8 +41,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                     { (cinc2_3.with(Ptr::clone)).clone() },
                 ),
             ));
-        assert!((({ get_4(t.as_pointer(),) }) == (inc1_0.with(|v| v.as_pointer()))));
-        assert!((({ get_5(t.as_pointer(),) }) == (inc2_1.with(|v| v.as_pointer()))));
+        ({
+            cpp2rust_assert_fail_4(
+                (({ get_5(t.as_pointer()) }) == (inc1_0.with(|v| v.as_pointer()))),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_4(
+                (({ get_6(t.as_pointer()) }) == (inc2_1.with(|v| v.as_pointer()))),
+            )
+        });
     }
     {
         let t: Value<std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_> =
@@ -52,8 +60,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                     { inc2_1.with(|v| v.as_pointer()) },
                 ),
             ));
-        assert!((({ get_4(t.as_pointer(),) }) == (inc1_0.with(|v| v.as_pointer()))));
-        assert!((({ get_5(t.as_pointer(),) }) == (inc2_1.with(|v| v.as_pointer()))));
+        ({
+            cpp2rust_assert_fail_4(
+                (({ get_5(t.as_pointer()) }) == (inc1_0.with(|v| v.as_pointer()))),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_4(
+                (({ get_6(t.as_pointer()) }) == (inc2_1.with(|v| v.as_pointer()))),
+            )
+        });
     }
     return 0;
 }

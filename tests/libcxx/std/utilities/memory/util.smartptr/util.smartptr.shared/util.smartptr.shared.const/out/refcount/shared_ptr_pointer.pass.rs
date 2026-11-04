@@ -99,12 +99,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let pA: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
             Ptr::alloc(A::new())
         })));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_2(
                 (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                    == 1_i64)
-            })
-        );
+                    == 1_i64),
+            )
+        });
         {
             let b: Value<B> = Rc::new(RefCell::new(B::new()));
             let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
@@ -112,93 +112,96 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 { pA.as_pointer() },
                 { (b.as_pointer()) },
             )));
-            assert!((count_1.with(|rc| *rc.borrow()) == 1));
-            assert!((count_0.with(|rc| *rc.borrow()) == 1));
-            assert!(
-                ({
-                    (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                        == 2_i64)
-                })
-            );
-            assert!(
-                ({
-                    (({ ((*pB.borrow()) as std___shared_ptr_B____gnu_cxx__S_atomic_).use_count() })
-                        == 2_i64)
-                })
-            );
-            assert!(
-                ({
-                    (({ ((*pB.borrow()) as std___shared_ptr_B____gnu_cxx__S_atomic_).get() })
-                        == (b.as_pointer()))
-                })
-            );
-        }
-        assert!(
+            ({ cpp2rust_assert_fail_2((count_1.with(|rc| *rc.borrow()) == 1)) });
+            ({ cpp2rust_assert_fail_2((count_0.with(|rc| *rc.borrow()) == 1)) });
             ({
+                cpp2rust_assert_fail_2(
+                    (({
+                        ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count()
+                    }) == 2_i64),
+                )
+            });
+            ({
+                cpp2rust_assert_fail_2(
+                    (({
+                        ((*pB.borrow()) as std___shared_ptr_B____gnu_cxx__S_atomic_).use_count()
+                    }) == 2_i64),
+                )
+            });
+            ({
+                cpp2rust_assert_fail_2(
+                    (({ ((*pB.borrow()) as std___shared_ptr_B____gnu_cxx__S_atomic_).get() })
+                        == (b.as_pointer())),
+                )
+            });
+        }
+        ({
+            cpp2rust_assert_fail_2(
                 (({ ((*pA.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                    == 1_i64)
-            })
-        );
-        assert!((count_1.with(|rc| *rc.borrow()) == 1));
-        assert!((count_0.with(|rc| *rc.borrow()) == 0));
+                    == 1_i64),
+            )
+        });
+        ({ cpp2rust_assert_fail_2((count_1.with(|rc| *rc.borrow()) == 1)) });
+        ({ cpp2rust_assert_fail_2((count_0.with(|rc| *rc.borrow()) == 0)) });
     }
-    assert!((count_1.with(|rc| *rc.borrow()) == 0));
-    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_2((count_1.with(|rc| *rc.borrow()) == 0)) });
+    ({ cpp2rust_assert_fail_2((count_0.with(|rc| *rc.borrow()) == 0)) });
     {
         let pA: Value<std_shared_ptr_const_A_> =
             Rc::new(RefCell::new(std_shared_ptr_const_A_::new_1({
                 Ptr::alloc(A::new())
             })));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_2(
                 (({
                     ((*pA.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).use_count()
-                }) == 1_i64)
-            })
-        );
+                }) == 1_i64),
+            )
+        });
         {
             let b: Value<B> = Rc::new(RefCell::new(B::new()));
             let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
             let pB: Value<std_shared_ptr_const_B_> = Rc::new(RefCell::new(
                 std_shared_ptr_const_B_::new_1({ pA.as_pointer() }, { (b.as_pointer()) }),
             ));
-            assert!((count_1.with(|rc| *rc.borrow()) == 1));
-            assert!((count_0.with(|rc| *rc.borrow()) == 1));
-            assert!(
-                ({
+            ({ cpp2rust_assert_fail_2((count_1.with(|rc| *rc.borrow()) == 1)) });
+            ({ cpp2rust_assert_fail_2((count_0.with(|rc| *rc.borrow()) == 1)) });
+            ({
+                cpp2rust_assert_fail_2(
                     (({
                         ((*pA.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_)
                             .use_count()
-                    }) == 2_i64)
-                })
-            );
-            assert!(
-                ({
+                    }) == 2_i64),
+                )
+            });
+            ({
+                cpp2rust_assert_fail_2(
                     (({
                         ((*pB.borrow()) as std___shared_ptr_const_B____gnu_cxx__S_atomic_)
                             .use_count()
-                    }) == 2_i64)
-                })
-            );
-            assert!(
-                ({
-                    (({ ((*pB.borrow()) as std___shared_ptr_const_B____gnu_cxx__S_atomic_).get() })
-                        == (b.as_pointer()))
-                })
-            );
-        }
-        assert!(
+                    }) == 2_i64),
+                )
+            });
             ({
+                cpp2rust_assert_fail_2(
+                    (({
+                        ((*pB.borrow()) as std___shared_ptr_const_B____gnu_cxx__S_atomic_).get()
+                    }) == (b.as_pointer())),
+                )
+            });
+        }
+        ({
+            cpp2rust_assert_fail_2(
                 (({
                     ((*pA.borrow()) as std___shared_ptr_const_A____gnu_cxx__S_atomic_).use_count()
-                }) == 1_i64)
-            })
-        );
-        assert!((count_1.with(|rc| *rc.borrow()) == 1));
-        assert!((count_0.with(|rc| *rc.borrow()) == 0));
+                }) == 1_i64),
+            )
+        });
+        ({ cpp2rust_assert_fail_2((count_1.with(|rc| *rc.borrow()) == 1)) });
+        ({ cpp2rust_assert_fail_2((count_0.with(|rc| *rc.borrow()) == 0)) });
     }
-    assert!((count_1.with(|rc| *rc.borrow()) == 0));
-    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_2((count_1.with(|rc| *rc.borrow()) == 0)) });
+    ({ cpp2rust_assert_fail_2((count_0.with(|rc| *rc.borrow()) == 0)) });
     let mut pi: Ptr<i32> = Ptr::alloc(Default::default());
     {
         let p1: Value<std_shared_ptr_int_> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1({
@@ -208,12 +211,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             { p1.as_pointer() },
             { (pi).clone() },
         )));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_2(
                 ({ ({ ((*p2.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).get() }) }
-                    == { (pi).clone() })
-            })
-        );
+                    == { (pi).clone() }),
+            )
+        });
     }
     pi.delete();
     {
@@ -224,11 +227,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             { p1.as_pointer() },
             { Ptr::<i32>::null() },
         )));
-        assert!(
-            ({
-                ({ ((*p2.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).get() }).is_null()
-            })
-        );
+        ({
+            cpp2rust_assert_fail_2(
+                ({ ((*p2.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).get() })
+                    .is_null(),
+            )
+        });
     }
     return 0;
 }

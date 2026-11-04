@@ -32,11 +32,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::is_enum<E>::value");;
     const _: () = assert!(true, "!std::is_convertible<E, UT>::value");;
     const _: () = assert!(true, "");;
-    assert!(
-        ({
-            check_bitmask_type_std_filesystem_directory_options__std_filesystem_directory_options_follow_directory_symlink__std_filesystem_directory_options_skip_permission_denied__unsigned_char____x01_____x02_____x00___std_filesystem_directory_options_none_::check ( )
-        })
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                check_bitmask_type_std_filesystem_directory_options__std_filesystem_directory_options_follow_directory_symlink__std_filesystem_directory_options_skip_permission_denied__unsigned_char____x01_____x02_____x00___std_filesystem_directory_options_none_::check ( )
+            }),
+        )
+    });
     const _: () = assert!(
         true,
         "E::none                     == ME(0) &&\n        E::follow_directory_symlink == ME(1) &&\n        E::skip_permission_denied   == ME(2)"

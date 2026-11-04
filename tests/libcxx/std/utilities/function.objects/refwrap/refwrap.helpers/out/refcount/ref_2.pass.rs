@@ -14,13 +14,13 @@ pub struct unary_counting_predicate_bool__ptr__int___int_ {
     #[byte_size(8)]
     p_: FnPtr<fn(i32) -> bool>,
     #[offset(8)]
-    count_: usize,
+    count_: u64,
 }
 impl unary_counting_predicate_bool__ptr__int___int_ {
     pub fn new(mut p: FnPtr<fn(i32) -> bool>) -> Self {
         Self {
             p_: (p).clone(),
-            count_: 0_usize,
+            count_: 0_u64,
         }
     }
 }
@@ -50,15 +50,6 @@ pub fn call_pred_1(pred: unary_counting_predicate_bool__ptr__int___int_) -> bool
         )
     });
 }
-pub fn call_pred_2(pred: Ptr<unary_counting_predicate_bool__ptr__int___int_>) -> bool {
-    let pred: Value<Ptr<unary_counting_predicate_bool__ptr__int___int_>> =
-        Rc::new(RefCell::new(pred));
-    return ({
-        let ___args: Value<i32> = Rc::new(RefCell::new(5));
-        (*pred.borrow_mut())(___args.as_pointer())
-    })
-    .clone();
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct adl_A {}
@@ -67,19 +58,23 @@ impl CppMove for adl_A {
         src.read()
     }
 }
-pub fn ref_3(mut _a0: adl_A) {}
-pub fn test_4() -> bool {
+pub fn ref_2(mut _a0: adl_A) {}
+pub fn test_3() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
-        let mut r1: Ptr<i32> = ({ ref_5(i.as_pointer()) });
-        let mut r2: Ptr<i32> = ({ ref_6((r1).clone()) });
-        assert!(((r2) == (i.as_pointer())));
+        let r1: Value<std_reference_wrapper_int_> =
+            Rc::new(RefCell::new(({ ref_4(i.as_pointer()) })));
+        let r2: Value<std_reference_wrapper_int_> =
+            Rc::new(RefCell::new(({ ref_5((*r1.borrow()).clone()) })));
+        ({ cpp2rust_assert_fail_6((({ (*r2.borrow()).get() }) == (i.as_pointer()))) });
     }
     {
         let a: Value<adl_A> = Rc::new(RefCell::new(<adl_A>::default()));
-        let mut a1: Ptr<adl_A> = ({ ref_7(a.as_pointer()) });
-        let mut a2: Ptr<adl_A> = ({ ref_8((a1).clone()) });
-        assert!(((a2) == (a.as_pointer())));
+        let a1: Value<std_reference_wrapper_adl_A_> =
+            Rc::new(RefCell::new(({ ref_7(a.as_pointer()) })));
+        let a2: Value<std_reference_wrapper_adl_A_> =
+            Rc::new(RefCell::new(({ ref_8((*a1.borrow()).clone()) })));
+        ({ cpp2rust_assert_fail_6((({ (*a2.borrow()).get() }) == (a.as_pointer()))) });
     }
     return true;
 }
@@ -103,7 +98,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_4() });
+    ({ test_3() });
     const _: () = assert!(true, "test()");;
     {
         let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
@@ -112,36 +107,44 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             }),
         ));
         let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
-        assert!(
-            !({
-                let _a: Value<i32> = Rc::new(RefCell::new(6));
-                unary_counting_predicate_bool__ptr__int___int_Impl::operator_call(
-                    &cp.as_pointer(),
-                    _a.as_pointer(),
-                )
-            })
-        );
-        assert!(
-            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
-                == 1_usize)
-        );
-        assert!(({ ({ call_pred_1((*cp.borrow()).clone(),) }) }));
-        assert!(
-            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
-                == 1_usize)
-        );
-        assert!(({ call_pred_2(({ ref_9(cp.as_pointer(),) }),) }));
-        assert!(
-            (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer(),) })
-                == 2_usize)
-        );
+        ({
+            cpp2rust_assert_fail_6(
+                !({
+                    let _a: Value<i32> = Rc::new(RefCell::new(6));
+                    unary_counting_predicate_bool__ptr__int___int_Impl::operator_call(
+                        &cp.as_pointer(),
+                        _a.as_pointer(),
+                    )
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_6(
+                (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer()) })
+                    == 1_u64),
+            )
+        });
+        ({ cpp2rust_assert_fail_6(({ call_pred_1((*cp.borrow()).clone()) })) });
+        ({
+            cpp2rust_assert_fail_6(
+                (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer()) })
+                    == 1_u64),
+            )
+        });
+        ({ cpp2rust_assert_fail_6(({ call_pred_9(({ ref_10(cp.as_pointer()) })) })) });
+        ({
+            cpp2rust_assert_fail_6(
+                (({ unary_counting_predicate_bool__ptr__int___int_Impl::count(&cp.as_pointer()) })
+                    == 2_u64),
+            )
+        });
     }
     return 0;
 }
 pub trait unary_counting_predicate_bool__ptr__int___int_Impl {
     fn destructor(&self);
     fn operator_call(&self, a: Ptr<i32>) -> bool;
-    fn count(&self) -> usize;
+    fn count(&self) -> u64;
     fn reset(&self) {
         unimplemented!()
     }
@@ -156,7 +159,7 @@ impl unary_counting_predicate_bool__ptr__int___int_Impl
         });
         return ({ (*self).with(|__s| __s.p_.clone()).call((a.read())) });
     }
-    fn count(&self) -> usize {
+    fn count(&self) -> u64 {
         return (*self).with(|__s| __s.count_);
     }
 }

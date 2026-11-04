@@ -27,441 +27,499 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[X]") },
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[X]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[XY]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[XY]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^X]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^X]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^XY]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^XY]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[\\S]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[\\S]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^\\S]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^\\S]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[\\s]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[\\s]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^\\s]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^\\s]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[\\s\\S]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[\\s\\S]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^Y\\s]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^Y\\s]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^X\\s]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^X\\s]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[\\w]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[\\w]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[\\w]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[\\w]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"_"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"_"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^\\w]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^\\w]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^\\w]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^\\w]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"_"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"_"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[\\W]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[\\W]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[\\W]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[\\W]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"_"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"_"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^\\W]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^\\W]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"X"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"X"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^\\W]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^\\W]") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"_"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"_"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"^ab[\\d\\D]cd") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"^ab[\\d\\D]cd") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"abZcd"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"abZcd"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"^ab[\\d\\D]cd") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"^ab[\\d\\D]cd") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"ab5cd"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"ab5cd"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"^ab[\\D]cd") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"^ab[\\D]cd") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"abZcd"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"abZcd"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"^ab\\Dcd") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"^ab\\Dcd") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"abZcd"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"abZcd"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"^ab[\\d]cd") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"^ab[\\d]cd") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"ab5cd"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"ab5cd"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"^ab\\dcd") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"^ab\\dcd") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"ab5cd"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"ab5cd"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"^ab\\dcd") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"^ab\\dcd") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"abZcd"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"abZcd"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        !({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"^ab\\Dcd") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"^ab\\Dcd") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"ab5cd"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"ab5cd"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"_(\\s|\\S)+_") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"_(\\s|\\S)+_") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"_xyz_"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"_xyz_"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
-                RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"_[\\s\\S]+_") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___re: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"_[\\s\\S]+_") },
+                        None,
+                    )),
+                );
+                regex_match_1(
+                    Ptr::<i8>::from_string_literal(b"_xyz_"),
+                    ___re.as_pointer(),
                     None,
-                )),
-            );
-            regex_match_0(
-                Ptr::<i8>::from_string_literal(b"_xyz_"),
-                ___re.as_pointer(),
-                None,
-            )
-        })
-    );
+                )
+            }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

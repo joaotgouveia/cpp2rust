@@ -50,13 +50,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let bound: Value<std__Bind__lambda_at_specialization_pass_cpp_32_14___MyBind__> = Rc::new(
             RefCell::new(({ bind_0(f.as_pointer(), bindexpr.as_pointer()) })),
         );
-        assert!(
-            (({
-                let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
-                let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
-                (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
-            }) == 789)
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({
+                    let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
+                    let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
+                    (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+                }) == 789),
+            )
+        });
     }
     {
         let f: Value<FnPtr<Generic>> =
@@ -65,15 +67,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })));
         let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
         let bound: Value<std__Bind__lambda_at_specialization_pass_cpp_38_14___MyBind__> = Rc::new(
-            RefCell::new(({ bind_1(f.as_pointer(), bindexpr.as_pointer()) })),
+            RefCell::new(({ bind_2(f.as_pointer(), bindexpr.as_pointer()) })),
         );
-        assert!(
-            (({
-                let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
-                let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
-                (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
-            }) == 789)
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({
+                    let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
+                    let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
+                    (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+                }) == 789),
+            )
+        });
     }
     {
         let f: Value<FnPtr<Generic>> =
@@ -82,15 +86,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })));
         let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
         let bound: Value<std__Bind__lambda_at_specialization_pass_cpp_44_14___MyBind__> = Rc::new(
-            RefCell::new(({ bind_2(f.as_pointer(), bindexpr.as_pointer()) })),
+            RefCell::new(({ bind_3(f.as_pointer(), bindexpr.as_pointer()) })),
         );
-        assert!(
-            (({
-                let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
-                let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
-                (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
-            }) == 789)
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({
+                    let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
+                    let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
+                    (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+                }) == 789),
+            )
+        });
     }
     {
         let f: Value<FnPtr<Generic>> =
@@ -99,15 +105,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })));
         let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
         let bound: Value<std__Bind__lambda_at_specialization_pass_cpp_50_14___MyBind__> = Rc::new(
-            RefCell::new(({ bind_3(f.as_pointer(), bindexpr.as_pointer()) })),
+            RefCell::new(({ bind_4(f.as_pointer(), bindexpr.as_pointer()) })),
         );
-        assert!(
-            (({
-                let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
-                let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
-                (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
-            }) == 789)
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({
+                    let ___args_0: Value<i32> = Rc::new(RefCell::new(7));
+                    let ___args_1: Value<i32> = Rc::new(RefCell::new(8));
+                    (*bound.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+                }) == 789),
+            )
+        });
     }
     return 0;
 }

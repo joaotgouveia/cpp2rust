@@ -142,7 +142,7 @@ pub fn test_const_lvalue_get_11() {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((({ get_12(v.as_pointer(),) }).read()) == 42));
+        ({ cpp2rust_assert_fail_12(((({ get_13(v.as_pointer()) }).read()) == 42)) });
     }
     {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
@@ -154,49 +154,49 @@ pub fn test_const_lvalue_get_11() {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((({ get_13(v.as_pointer(),) }).read()) == 42_i64));
+        ({ cpp2rust_assert_fail_12(((({ get_14(v.as_pointer()) }).read()) == 42_i64)) });
     }
 }
-pub fn test_lvalue_get_14() {
+pub fn test_lvalue_get_15() {
     {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((({ get_15(v.as_pointer(),) }).read()) == 42));
+        ({ cpp2rust_assert_fail_12(((({ get_16(v.as_pointer()) }).read()) == 42)) });
     }
     {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
-        assert!(((({ get_16(v.as_pointer(),) }).read()) == 42_i64));
+        ({ cpp2rust_assert_fail_12(((({ get_17(v.as_pointer()) }).read()) == 42_i64)) });
     }
 }
-pub fn test_rvalue_get_17() {
+pub fn test_rvalue_get_18() {
     {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((({ get_18(v.as_pointer(),) }).read()) == 42));
+        ({ cpp2rust_assert_fail_12(((({ get_19(v.as_pointer()) }).read()) == 42)) });
     }
     {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
-        assert!(((({ get_19(v.as_pointer(),) }).read()) == 42_i64));
+        ({ cpp2rust_assert_fail_12(((({ get_20(v.as_pointer()) }).read()) == 42_i64)) });
     }
 }
-pub fn test_const_rvalue_get_20() {
+pub fn test_const_rvalue_get_21() {
     {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((({ get_21(v.as_pointer(),) }).read()) == 42));
+        ({ cpp2rust_assert_fail_12(((({ get_22(v.as_pointer()) }).read()) == 42)) });
     }
     {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
-        assert!(((({ get_22(v.as_pointer(),) }).read()) == 42_i64));
+        ({ cpp2rust_assert_fail_12(((({ get_23(v.as_pointer()) }).read()) == 42_i64)) });
     }
 }
-pub fn test_throws_for_all_value_categories_23() {}
+pub fn test_throws_for_all_value_categories_24() {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -218,10 +218,10 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_const_lvalue_get_11() });
-    ({ test_lvalue_get_14() });
-    ({ test_rvalue_get_17() });
-    ({ test_const_rvalue_get_20() });
-    ({ test_throws_for_all_value_categories_23() });
+    ({ test_lvalue_get_15() });
+    ({ test_rvalue_get_18() });
+    ({ test_const_rvalue_get_21() });
+    ({ test_throws_for_all_value_categories_24() });
     return 0;
 }
 pub trait ForwardingCallObjectImpl {
@@ -233,15 +233,14 @@ impl ForwardingCallObjectImpl for Ptr<ForwardingCallObject> {
     }
 }
 pub trait TypeIDImpl {
-    fn name(&self) -> Vec<i8>;
+    fn name(&self) -> std_basic_string_char__std_char_traits_char___std_allocator_char__;
 }
 impl TypeIDImpl for Ptr<TypeID> {
-    fn name(&self) -> Vec<i8> {
-        return {
-            let mut __bytes = (*self).with(|__s| __s.m_id.clone()).to_c_bytes();
-            __bytes.push(0_i8);
-            __bytes
-        };
+    fn name(&self) -> std_basic_string_char__std_char_traits_char___std_allocator_char__ {
+        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { (*self).with(|__s| __s.m_id.clone()) },
+            None,
+        );
     }
 }
 pub fn __cpp2rust_init_globals() {

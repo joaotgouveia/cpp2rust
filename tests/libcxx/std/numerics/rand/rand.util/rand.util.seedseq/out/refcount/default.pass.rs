@@ -30,7 +30,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     {
         let s: Value<std_seed_seq> = Rc::new(RefCell::new(<std_seed_seq>::default()));
-        assert!(({ (({ (*s.borrow()).size() }) == 0_usize) }));
+        ({ cpp2rust_assert_fail_0((({ (*s.borrow()).size() }) == 0_u64)) });
     }
     return 0;
 }

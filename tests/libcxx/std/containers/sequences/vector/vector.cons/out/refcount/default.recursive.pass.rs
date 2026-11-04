@@ -11,7 +11,7 @@ use std::rc::{Rc, Weak};
 pub struct X {
     #[offset(0)]
     #[byte_size(24)]
-    pub q: Vec<X>,
+    pub q: std_vector_X__std_allocator_X__,
 }
 impl X {
     pub fn move_from(_a0: Ptr<X>) -> Self {
@@ -52,12 +52,7 @@ pub trait XImpl {
 }
 impl XImpl for Ptr<X> {
     fn move_assign(&self, _a0: Ptr<X>) -> Ptr<X> {
-        {
-            field_ref!((*self), q)
-                .as_pointer()
-                .write(field!(_a0, q).with_mut(std::mem::take));
-            field_ref!((*self), q).as_pointer()
-        };
+        field!((*self), q).write({ { (*_a0.upgrade().deref()).q.clone() } });
         return (*self).clone();
     }
 }

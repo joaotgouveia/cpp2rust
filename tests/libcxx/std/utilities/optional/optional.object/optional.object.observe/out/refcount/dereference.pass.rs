@@ -273,30 +273,30 @@ pub fn test_24() -> bool {
     ({ test_contract_23() });
     {
         let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<X>::default()));
-        assert!((({ XImpl::test_1(&(opt.as_pointer()),) }) == 3));
-        assert!((({ XImpl::test_2(&(opt.as_pointer()),) }) == 4));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_25((({ XImpl::test_1(&(opt.as_pointer())) }) == 3)) });
+        ({ cpp2rust_assert_fail_25((({ XImpl::test_2(&(opt.as_pointer())) }) == 4)) });
+        ({
+            cpp2rust_assert_fail_25(
                 (({
                     XImpl::test_3(
                         &Rc::new(RefCell::new((*(*opt.borrow()).upgrade().deref()))).as_pointer(),
                     )
-                }) == 5)
-            })
-        );
-        assert!(
-            ({
+                }) == 5),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_25(
                 (({
                     XImpl::test_4(
                         &Rc::new(RefCell::new((*(*opt.borrow()).upgrade().deref()))).as_pointer(),
                     )
-                }) == 6)
-            })
-        );
+                }) == 6),
+            )
+        });
         let x: Ptr<X> = opt.as_pointer();
-        assert!(({ (x).clone() } == { (opt.as_pointer()) }));
+        ({ cpp2rust_assert_fail_25(({ (x).clone() } == { (opt.as_pointer()) })) });
         let x2: Ptr<X> = opt.as_pointer();
-        assert!(({ (x2).clone() } == { (opt.as_pointer()) }));
+        ({ cpp2rust_assert_fail_25(({ (x2).clone() } == { (opt.as_pointer()) })) });
     }
     return true;
 }
@@ -320,7 +320,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_24() }));
+    ({ cpp2rust_assert_fail_25(({ test_24() })) });
     const _: () = assert!(true, "test()");;
     return 0;
 }

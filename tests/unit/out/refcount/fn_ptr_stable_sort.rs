@@ -27,40 +27,35 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let v: Value<Vec<Item>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = Item { key: 3, value: 30 };
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = Item { key: 1, value: 10 };
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = Item { key: 2, value: 20 };
-        (*v.borrow_mut()).push(__a1)
-    };
-    match ({ CppRange::begin(&v.decay()) },) {
-        (mut __tmp_0,) => {
-            let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_0);
-            let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| {
-                let __a = __tmp_0.iter_at(__x);
-                let __b = __tmp_0.iter_at(__y);
-                if Compare_0.less(__a.clone(), __b.clone()) {
-                    std::cmp::Ordering::Less
-                } else if Compare_0.less(__b, __a) {
-                    std::cmp::Ordering::Greater
-                } else {
-                    std::cmp::Ordering::Equal
-                }
-            });
-            reorder(__order, |__i| __tmp_0.iter_at(__i));
-        }
-    };
-    assert!((v.decay().offset(0_usize as isize).with(|__s| __s.key) == 1));
-    assert!((v.decay().offset(1_usize as isize).with(|__s| __s.key) == 2));
-    assert!((v.decay().offset(2_usize as isize).with(|__s| __s.key) == 3));
+    let v: Value<std_vector_Item__std_allocator_Item__> = Rc::new(RefCell::new(
+        <std_vector_Item__std_allocator_Item__>::default(),
+    ));
+    ({
+        let ___x: Value<Item> = Rc::new(RefCell::new(Item { key: 3, value: 30 }));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<Item> = Rc::new(RefCell::new(Item { key: 1, value: 10 }));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<Item> = Rc::new(RefCell::new(Item { key: 2, value: 20 }));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___first: __gnu_cxx___normal_iterator_Item_ptr__std_vector_Item__std_allocator_Item___ =
+            ({ (*v.borrow()).begin_28() });
+        let ___last: __gnu_cxx___normal_iterator_Item_ptr__std_vector_Item__std_allocator_Item___ =
+            ({ (*v.borrow()).end_30() });
+        stable_sort_1(
+            ___first,
+            ___last,
+            FnPtr::<fn(Ptr<Item>, Ptr<Item>) -> bool>::new(Compare_0),
+        )
+    });
+    ({ cpp2rust_assert_fail_2(({ (*v.borrow())[0_u64].key } == 1)) });
+    ({ cpp2rust_assert_fail_2(({ (*v.borrow())[1_u64].key } == 2)) });
+    ({ cpp2rust_assert_fail_2(({ (*v.borrow())[2_u64].key } == 3)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

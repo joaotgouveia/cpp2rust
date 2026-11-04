@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let e : Value<std_mersenne_twister_engine_unsigned_long__64__312__156__31__13043109905998158313__29__6148914691236517205__17__8202884508482404352__37__18444473444759240704__43__6364136223846793005_ > = Rc::new(RefCell::new(<std_mersenne_twister_engine_unsigned_long__64__312__156__31__13043109905998158313__29__6148914691236517205__17__8202884508482404352__37__18444473444759240704__43__6364136223846793005_  >::default() )) ;
     ({ (*e.borrow()).discard(9999_u64) });
-    assert!(({ (({ (*e.borrow_mut())() }) == 9981545732273789042_u64) }));
+    ({ cpp2rust_assert_fail_0((({ (*e.borrow_mut())() }) == 9981545732273789042_u64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

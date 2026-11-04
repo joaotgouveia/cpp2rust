@@ -35,33 +35,37 @@ pub fn main() {
 fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S { v: 3 }));
     let t: Value<S> = Rc::new(RefCell::new(S { v: 4 }));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_3(
             ({
-                let _a: Ptr<S> = s.as_pointer();
-                operator_comma_0(_a, t.as_pointer())
-            })
-            .v
-        } == 34)
-    );
-    assert!(
-        ({
+                ({
+                    let _a: Ptr<S> = s.as_pointer();
+                    operator_comma_0(_a, t.as_pointer())
+                })
+                .v
+            } == 34),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
             ({
-                let _a: Value<S> = Rc::new(RefCell::new(
-                    ({
-                        let _a: Ptr<S> = s.as_pointer();
-                        operator_comma_0(_a, t.as_pointer())
-                    }),
-                ));
-                let _b: Ptr<S> = s.as_pointer();
-                operator_comma_0(_a.as_pointer(), _b)
-            })
-            .v
-        } == 343)
-    );
-    assert!((({ operator_literal__k_1(2_u64,) }) == 2000_i64));
-    assert!((({ operator_literal__half_2(3_f64,) }) == 1.5_f64));
-    assert!((({ operator_literal__k_1(4_u64,) }) == 4000_i64));
+                ({
+                    let _a: Value<S> = Rc::new(RefCell::new(
+                        ({
+                            let _a: Ptr<S> = s.as_pointer();
+                            operator_comma_0(_a, t.as_pointer())
+                        }),
+                    ));
+                    let _b: Ptr<S> = s.as_pointer();
+                    operator_comma_0(_a.as_pointer(), _b)
+                })
+                .v
+            } == 343),
+        )
+    });
+    ({ cpp2rust_assert_fail_3((({ operator_literal__k_1(2_u64) }) == 2000_i64)) });
+    ({ cpp2rust_assert_fail_3((({ operator_literal__half_2(3_f64) }) == 1.5_f64)) });
+    ({ cpp2rust_assert_fail_3((({ operator_literal__k_1(4_u64) }) == 4000_i64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

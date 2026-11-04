@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,26 +33,17 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct complete_type_allocator_std_pair_const_int__int__ {}
-impl complete_type_allocator_std_pair_const_int__int__ {}
-impl CppMove for complete_type_allocator_std_pair_const_int__int__ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(72)]
 pub struct A {
@@ -56,20 +51,19 @@ pub struct A {
     pub data: i32,
     #[offset(8)]
     #[byte_size(48)]
-    pub m: Map<A, (Value<A>, Value<A>)>,
+    pub m: std_map_A__A__std_less_A___std_allocator_std_pair_const_A__A___,
     #[offset(56)]
     #[byte_size(8)]
-    pub it: BidirectionalIterator<(Value<A>, Value<A>)>,
+    pub it: std__Rb_tree_iterator_std_pair_const_A__A__,
     #[offset(64)]
     #[byte_size(8)]
-    pub cit: BidirectionalIterator<(Value<A>, Value<A>)>,
+    pub cit: std__Rb_tree_const_iterator_std_pair_const_A__A__,
 }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {
             data: { (*_a0.upgrade().deref()).data },
-            m: field_ptr!(_a0, m)
-                .with_mut(|__m: &mut Map<A, (Value<A>, Value<A>)>| std::mem::take(__m)),
+            m: field!(_a0, m).with_mut(std::mem::take),
             it: field!(_a0, it).with_mut(std::mem::take),
             cit: field!(_a0, cit).with_mut(std::mem::take),
         }
@@ -77,12 +71,12 @@ impl A {
 }
 impl CppLess for A {
     fn less(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_lt_4(__lhs.clone(), __rhs.clone())
+        operator_lt_5(__lhs.clone(), __rhs.clone())
     }
 }
 impl CppEq for A {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_5(__lhs.clone(), __rhs.clone())
+        operator_eq_6(__lhs.clone(), __rhs.clone())
     }
 }
 impl CppMove for A {
@@ -90,15 +84,15 @@ impl CppMove for A {
         Self::move_from(src)
     }
 }
-pub fn operator_eq_5(L: Ptr<A>, R: Ptr<A>) -> bool {
+pub fn operator_eq_6(L: Ptr<A>, R: Ptr<A>) -> bool {
     return ({ (L).clone() } == { (R).clone() });
 }
-pub fn operator_lt_4(L: Ptr<A>, R: Ptr<A>) -> bool {
+pub fn operator_lt_5(L: Ptr<A>, R: Ptr<A>) -> bool {
     return ({ L.with(|__s| __s.data) } < { R.with(|__s| __s.data) });
 }
-pub fn test_6() -> bool {
+pub fn test_7() -> bool {
     let mut a: A = <A>::default();
-    let m: Value<Map<i32, (Value<i32>, Value<i32>)>> = Rc::new(RefCell::new(Map::new()));
+    let m : Value<std_map_int__int__std_less_int___complete_type_allocator_std_pair_const_int__int___ > = Rc::new(RefCell::new(<std_map_int__int__std_less_int___complete_type_allocator_std_pair_const_int__int___  >::default() )) ;
     return true;
 }
 pub fn main() {
@@ -121,7 +115,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_6() });
+    ({ test_7() });
     return 0;
 }
 pub trait AImpl {
@@ -130,36 +124,11 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
-        {
-            let __src = field_ptr!(_a0, m)
-                .with_mut(|__m: &mut Map<A, (Value<A>, Value<A>)>| std::mem::take(__m));
-            field_ptr!((*self), m).write(__src);
-            field_ptr!((*self), m)
-        };
-        {
-            let __a1 = ({ { (*_a0.upgrade().deref()).it.clone() } });
-            field_ptr!((*self), it).with_mut(|__it| *__it = __a1);
-            field_ptr!((*self), it)
-        };
-        {
-            let __a1 = ({ { (*_a0.upgrade().deref()).cit.clone() } });
-            field_ptr!((*self), cit).with_mut(|__it| *__it = __a1);
-            field_ptr!((*self), cit)
-        };
+        field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
+        field!((*self), it).write({ { (*_a0.upgrade().deref()).it.clone() } });
+        field!((*self), cit).write({ { (*_a0.upgrade().deref()).cit.clone() } });
         return (*self).clone();
     }
-}
-pub trait complete_type_allocator_std_pair_const_int__int__Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<(Value<i32>, Value<i32>)> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<(Value<i32>, Value<i32>)>, mut n: usize) {
-        unimplemented!()
-    }
-}
-impl complete_type_allocator_std_pair_const_int__int__Impl
-    for Ptr<complete_type_allocator_std_pair_const_int__int__>
-{
 }
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());

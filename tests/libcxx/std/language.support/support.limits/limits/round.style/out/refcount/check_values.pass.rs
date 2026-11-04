@@ -50,11 +50,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "std::denorm_indeterminate == -1");;
     const _: () = assert!(true, "std::denorm_absent == 0");;
     const _: () = assert!(true, "std::denorm_present == 1");;
-    const _: () = assert!(
-        (::std::mem::size_of::<i8>() == 1_usize),
-        "sizeof(test(std::denorm_present)) == 1"
-    );;
-    const _: () = assert!((2usize == 2_usize), "sizeof(test(1)) == 2");;
+    const _: () = assert!(true, "sizeof(test(std::denorm_present)) == 1");;
+    const _: () = assert!(true, "sizeof(test(1)) == 2");;
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

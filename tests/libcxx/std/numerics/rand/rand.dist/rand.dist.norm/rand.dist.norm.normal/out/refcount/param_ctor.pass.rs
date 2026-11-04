@@ -31,22 +31,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let p: Value<std_normal_distribution___param_type> = Rc::new(RefCell::new(
             <std_normal_distribution___param_type>::default(),
         ));
-        assert!(({ (({ (*p.borrow()).mean() }) == 0_f64) }));
-        assert!(({ (({ (*p.borrow()).stddev() }) == 1_f64) }));
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).mean() }) == 0_f64)) });
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).stddev() }) == 1_f64)) });
     }
     {
         let p: Value<std_normal_distribution___param_type> = Rc::new(RefCell::new(
             std_normal_distribution___param_type::new_1({ 10_f64 }, None),
         ));
-        assert!(({ (({ (*p.borrow()).mean() }) == 10_f64) }));
-        assert!(({ (({ (*p.borrow()).stddev() }) == 1_f64) }));
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).mean() }) == 10_f64)) });
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).stddev() }) == 1_f64)) });
     }
     {
         let p: Value<std_normal_distribution___param_type> = Rc::new(RefCell::new(
             std_normal_distribution___param_type::new_1({ 10_f64 }, { Some(5_f64) }),
         ));
-        assert!(({ (({ (*p.borrow()).mean() }) == 10_f64) }));
-        assert!(({ (({ (*p.borrow()).stddev() }) == 5_f64) }));
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).mean() }) == 10_f64)) });
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).stddev() }) == 5_f64)) });
     }
     return 0;
 }

@@ -7,14 +7,8 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test09_0() {
-    {
-        let __s = libcc2rs::cout();
-        let _ = Ptr::<i8>::from_string_literal(b"Enter favorite beach: ").with_c_str(|__cs| {
-            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
-        });
-        __s
-    };
-    ({ (*cin_1.with(Value::clone).borrow()).ignore_29(2048_i64, (('\n' as i8) as i32)) });
+    write!(cout_1.with(|v| v.as_pointer()), "Enter favorite beach: ",);
+    ({ (*cin_2.with(Value::clone).borrow()).ignore_29(2048_i64, (('\n' as i8) as i32)) });
 }
 pub fn main() {
     __cpp2rust_init_globals();

@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -48,7 +52,7 @@ impl CppMove for min_allocator_int_ {
         src.read()
     }
 }
-pub fn test_4() -> bool {
+pub fn test_5() -> bool {
     {
         let ar: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6, 7, 8])));
         let m: Value<std_set_int__std_less_int___std_allocator_int__> = Rc::new(RefCell::new(
@@ -56,284 +60,176 @@ pub fn test_4() -> bool {
                 { (ar.as_pointer() as Ptr<i32>) },
                 {
                     (ar.as_pointer() as Ptr<i32>).offset(
-                        ((::std::mem::size_of::<[i32; 8]>() as usize)
-                            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        ((::std::mem::size_of::<[i32; 8]>() as u64)
+                            .wrapping_div((::std::mem::size_of::<i32>() as u64)))
                             as isize,
                     )
                 },
             ),
         ));
-        assert!(({ (({ (*m.borrow()).size() }) == 8_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 8_u64)) });
         let mut i: u64 = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(9));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 8_u64) }));
-        assert!((i == 0_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 1)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 4)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 7_isize as isize)
-                .iter_deref()
-                .read())
-                == 8)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 8_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 1))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 3))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 4))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 4_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 5_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 6_i64) }).read()) == 7))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 7_i64) }).read()) == 8))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(4));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 7_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 1)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize as isize)
-                .iter_deref()
-                .read())
-                == 8)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 7_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 1))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 3))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 4_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 5_i64) }).read()) == 7))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 6_i64) }).read()) == 8))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(1));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 6_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize as isize)
-                .iter_deref()
-                .read())
-                == 8)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 6_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 3))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 4_i64) }).read()) == 7))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 5_i64) }).read()) == 8))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(8));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 5_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 5_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 3))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 4_i64) }).read()) == 7))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(3));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 4_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 7))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(6));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 3_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 7))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(7));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 2_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 5))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(2));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 1_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_6(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 5))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(5));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
-        assert!((i == 1_u64));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 0_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
     }
     {
         let ar: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3, 4, 5, 6, 7, 8])));
@@ -342,284 +238,176 @@ pub fn test_4() -> bool {
                 { (ar.as_pointer() as Ptr<i32>) },
                 {
                     (ar.as_pointer() as Ptr<i32>).offset(
-                        ((::std::mem::size_of::<[i32; 8]>() as usize)
-                            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
+                        ((::std::mem::size_of::<[i32; 8]>() as u64)
+                            .wrapping_div((::std::mem::size_of::<i32>() as u64)))
                             as isize,
                     )
                 },
             ),
         ));
-        assert!(({ (({ (*m.borrow()).size() }) == 8_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 8_u64)) });
         let mut i: u64 = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(9));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 8_u64) }));
-        assert!((i == 0_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 1)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 4)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 7_isize as isize)
-                .iter_deref()
-                .read())
-                == 8)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 8_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 1))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 3))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 4))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 4_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 5_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 6_i64) }).read()) == 7))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 7_i64) }).read()) == 8))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(4));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 7_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 1)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 6_isize as isize)
-                .iter_deref()
-                .read())
-                == 8)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 7_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 1))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 3))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 4_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 5_i64) }).read()) == 7))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 6_i64) }).read()) == 8))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(1));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 6_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 5_isize as isize)
-                .iter_deref()
-                .read())
-                == 8)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 6_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 3))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 4_i64) }).read()) == 7))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 5_i64) }).read()) == 8))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(8));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 5_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 3)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 4_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 5_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 3))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 4_i64) }).read()) == 7))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(3));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 4_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 6)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 3_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 4_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 6))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 3_i64) }).read()) == 7))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(6));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 2_isize as isize)
-                .iter_deref()
-                .read())
-                == 7)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 3_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 5))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 2_i64) }).read()) == 7))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(7));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 2)
-        );
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 1_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 2_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 2))
+        });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 1_i64) }).read()) == 5))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(2));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
-        assert!((i == 1_u64));
-        assert!(
-            ((libcc2rs::next_refcount(({ ({ (*m.borrow()).begin() }) }), 0_isize as isize)
-                .iter_deref()
-                .read())
-                == 5)
-        );
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 1_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
+        ({
+            cpp2rust_assert_fail_4(((({ next_7(({ (*m.borrow()).begin() }), 0_i64) }).read()) == 5))
+        });
         i = ({
             let ___x: Value<i32> = Rc::new(RefCell::new(5));
             (*m.borrow()).erase_52(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
-        assert!((i == 1_u64));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 0_u64)) });
+        ({ cpp2rust_assert_fail_4((i == 1_u64)) });
     }
     return true;
 }
@@ -643,20 +431,20 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_4() });
+    ({ test_5() });
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }

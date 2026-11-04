@@ -40,7 +40,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ for_test_0(200,) }) == 400));
+    ({ cpp2rust_assert_fail_1((({ for_test_0(200) }) == 400)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

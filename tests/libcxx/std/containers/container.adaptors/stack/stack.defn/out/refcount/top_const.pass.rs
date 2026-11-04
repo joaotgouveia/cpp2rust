@@ -30,7 +30,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let q: Value<std_stack_int__std_deque_int__std_allocator_int___> = Rc::new(RefCell::new(
         <std_stack_int__std_deque_int__std_allocator_int___>::default(),
     ));
-    assert!(({ (({ (*q.borrow()).size() }) == 0_u64) }));
+    ({ cpp2rust_assert_fail_0((({ (*q.borrow()).size() }) == 0_u64)) });
     ({
         let ___x: Value<i32> = Rc::new(RefCell::new(1));
         (*q.borrow()).push_18(___x.as_pointer())
@@ -45,7 +45,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     });
     let cqr: Ptr<std_stack_int__std_deque_int__std_allocator_int___> = q.as_pointer();
     let cir: Ptr<i32> = ({ (*cqr.upgrade().deref()).top_16() });
-    assert!(((cir.read()) == 3));
+    ({ cpp2rust_assert_fail_0(((cir.read()) == 3)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

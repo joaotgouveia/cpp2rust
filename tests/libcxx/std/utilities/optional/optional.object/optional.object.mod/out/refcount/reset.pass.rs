@@ -22,12 +22,12 @@ pub fn check_reset_1() -> bool {
         let opt: Value<std_optional_int_> = Rc::new(RefCell::new(<std_optional_int_>::default()));
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
         ({ (*opt.borrow()).reset() });
-        assert!(({ ((({ (*opt.borrow())() }) as i32) == (false as i32)) }));
+        ({ cpp2rust_assert_fail_2(((({ (*opt.borrow())() }) as i32) == (false as i32))) });
     }
     {
         let opt: Value<std_optional_int_> = Rc::new(RefCell::new(3));
         ({ (*opt.borrow()).reset() });
-        assert!(({ ((({ (*opt.borrow())() }) as i32) == (false as i32)) }));
+        ({ cpp2rust_assert_fail_2(((({ (*opt.borrow())() }) as i32) == (false as i32))) });
     }
     return true;
 }
@@ -56,17 +56,29 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
-        assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+        ({
+            cpp2rust_assert_fail_2(
+                ((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)),
+            )
+        });
         ({ (*opt.borrow()).reset() });
-        assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
-        assert!(({ ((({ (*opt.borrow())() }) as i32) == (false as i32)) }));
+        ({
+            cpp2rust_assert_fail_2(
+                ((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)),
+            )
+        });
+        ({ cpp2rust_assert_fail_2(((({ (*opt.borrow())() }) as i32) == (false as i32))) });
     }
     {
         let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<X>::default()));
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);
         ({ (*opt.borrow()).reset() });
-        assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));
-        assert!(({ ((({ (*opt.borrow())() }) as i32) == (false as i32)) }));
+        ({
+            cpp2rust_assert_fail_2(
+                ((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)),
+            )
+        });
+        ({ cpp2rust_assert_fail_2(((({ (*opt.borrow())() }) as i32) == (false as i32))) });
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);
     }
     return 0;

@@ -6,12 +6,12 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn strlen_0(mut s: Ptr<i8>) -> usize {
+pub fn strlen_0(mut s: Ptr<i8>) -> u64 {
     let mut begin: Ptr<i8> = (s).clone();
     'loop_: while ((s.read()) != 0) {
         s.prefix_inc();
     }
-    return (((s - begin) as i64) as usize);
+    return (((s - begin) as i64) as u64);
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -27,7 +27,9 @@ fn main_0() -> i32 {
         ('g' as i8),
         ('\0' as i8),
     ])));
-    assert!((({ strlen_0(((s.as_pointer() as Ptr<i8>).offset(0)),) }) == 6_usize));
+    ({
+        cpp2rust_assert_fail_1((({ strlen_0(((s.as_pointer() as Ptr<i8>).offset(0))) }) == 6_u64))
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

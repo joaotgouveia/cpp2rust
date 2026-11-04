@@ -8,15 +8,15 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test1_0() {
     let e : Value<std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_ > = Rc::new(RefCell::new(<std_mersenne_twister_engine_unsigned_long__32__624__397__31__2567483615__11__4294967295__7__2636928640__15__4022730752__18__1812433253_  >::default() )) ;
-    assert!(({ (({ (*e.borrow_mut())() }) == 3499211612_u64) }));
-    assert!(({ (({ (*e.borrow_mut())() }) == 581869302_u64) }));
-    assert!(({ (({ (*e.borrow_mut())() }) == 3890346734_u64) }));
+    ({ cpp2rust_assert_fail_1((({ (*e.borrow_mut())() }) == 3499211612_u64)) });
+    ({ cpp2rust_assert_fail_1((({ (*e.borrow_mut())() }) == 581869302_u64)) });
+    ({ cpp2rust_assert_fail_1((({ (*e.borrow_mut())() }) == 3890346734_u64)) });
 }
-pub fn test2_1() {
+pub fn test2_2() {
     let e : Value<std_mersenne_twister_engine_unsigned_long__64__312__156__31__13043109905998158313__29__6148914691236517205__17__8202884508482404352__37__18444473444759240704__43__6364136223846793005_ > = Rc::new(RefCell::new(<std_mersenne_twister_engine_unsigned_long__64__312__156__31__13043109905998158313__29__6148914691236517205__17__8202884508482404352__37__18444473444759240704__43__6364136223846793005_  >::default() )) ;
-    assert!(({ (({ (*e.borrow_mut())() }) == 14514284786278117030_u64) }));
-    assert!(({ (({ (*e.borrow_mut())() }) == 4620546740167642908_u64) }));
-    assert!(({ (({ (*e.borrow_mut())() }) == 13109570281517897720_u64) }));
+    ({ cpp2rust_assert_fail_1((({ (*e.borrow_mut())() }) == 14514284786278117030_u64)) });
+    ({ cpp2rust_assert_fail_1((({ (*e.borrow_mut())() }) == 4620546740167642908_u64)) });
+    ({ cpp2rust_assert_fail_1((({ (*e.borrow_mut())() }) == 13109570281517897720_u64)) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -39,7 +39,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test1_0() });
-    ({ test2_1() });
+    ({ test2_2() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

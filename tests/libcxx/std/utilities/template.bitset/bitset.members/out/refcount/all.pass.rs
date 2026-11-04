@@ -9,99 +9,112 @@ use std::rc::{Rc, Weak};
 pub fn test_all_0() {
     let v: Value<std_bitset_0_> = Rc::new(RefCell::new(<std_bitset_0_>::default()));
     ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((0_u64 == 0_u64) as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((0_u64 == 0_u64) as i32))) });
     ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
-    {}
-}
-pub fn test_all_1() {
-    let v: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
-    ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((1_u64 == 0_u64) as i32)) }));
-    ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
     {}
 }
 pub fn test_all_2() {
-    let v: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
+    let v: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
     ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((31_u64 == 0_u64) as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((1_u64 == 0_u64) as i32))) });
     ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
-    {
-        (*v.borrow_mut())[(31_u64 as u64).wrapping_div(2_u64)] = false;
-        assert!(({ ((({ (*v.borrow()).all() }) as i32) == (false as i32)) }));
-    }
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
+    {}
 }
 pub fn test_all_3() {
-    let v: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
+    let v: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
     ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((32_u64 == 0_u64) as i32)) }));
+    ({
+        cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((31_u64 == 0_u64) as i32)))
+    });
     ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
     {
-        (*v.borrow_mut())[(32_u64 as u64).wrapping_div(2_u64)] = false;
-        assert!(({ ((({ (*v.borrow()).all() }) as i32) == (false as i32)) }));
+        (*v.borrow_mut())[(31_u64 as u64).wrapping_div(2_u64)] = false;
+        ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (false as i32))) });
     }
 }
 pub fn test_all_4() {
-    let v: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
+    let v: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
     ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((33_u64 == 0_u64) as i32)) }));
+    ({
+        cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((32_u64 == 0_u64) as i32)))
+    });
     ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
     {
-        (*v.borrow_mut())[(33_u64 as u64).wrapping_div(2_u64)] = false;
-        assert!(({ ((({ (*v.borrow()).all() }) as i32) == (false as i32)) }));
+        (*v.borrow_mut())[(32_u64 as u64).wrapping_div(2_u64)] = false;
+        ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (false as i32))) });
     }
 }
 pub fn test_all_5() {
-    let v: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
+    let v: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
     ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((63_u64 == 0_u64) as i32)) }));
+    ({
+        cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((33_u64 == 0_u64) as i32)))
+    });
     ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
     {
-        (*v.borrow_mut())[(63_u64 as u64).wrapping_div(2_u64)] = false;
-        assert!(({ ((({ (*v.borrow()).all() }) as i32) == (false as i32)) }));
+        (*v.borrow_mut())[(33_u64 as u64).wrapping_div(2_u64)] = false;
+        ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (false as i32))) });
     }
 }
 pub fn test_all_6() {
-    let v: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
+    let v: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
     ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((64_u64 == 0_u64) as i32)) }));
+    ({
+        cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((63_u64 == 0_u64) as i32)))
+    });
     ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
     {
-        (*v.borrow_mut())[(64_u64 as u64).wrapping_div(2_u64)] = false;
-        assert!(({ ((({ (*v.borrow()).all() }) as i32) == (false as i32)) }));
+        (*v.borrow_mut())[(63_u64 as u64).wrapping_div(2_u64)] = false;
+        ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (false as i32))) });
     }
 }
 pub fn test_all_7() {
-    let v: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
+    let v: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
     ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((65_u64 == 0_u64) as i32)) }));
+    ({
+        cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((64_u64 == 0_u64) as i32)))
+    });
     ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
     {
-        (*v.borrow_mut())[(65_u64 as u64).wrapping_div(2_u64)] = false;
-        assert!(({ ((({ (*v.borrow()).all() }) as i32) == (false as i32)) }));
+        (*v.borrow_mut())[(64_u64 as u64).wrapping_div(2_u64)] = false;
+        ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (false as i32))) });
     }
 }
 pub fn test_all_8() {
-    let v: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
+    let v: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
     ({ (*v.borrow()).reset_22() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == ((1000_u64 == 0_u64) as i32)) }));
+    ({
+        cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((65_u64 == 0_u64) as i32)))
+    });
     ({ (*v.borrow()).set_20() });
-    assert!(({ ((({ (*v.borrow()).all() }) as i32) == (true as i32)) }));
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
     {
-        (*v.borrow_mut())[(1000_u64 as u64).wrapping_div(2_u64)] = false;
-        assert!(({ ((({ (*v.borrow()).all() }) as i32) == (false as i32)) }));
+        (*v.borrow_mut())[(65_u64 as u64).wrapping_div(2_u64)] = false;
+        ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (false as i32))) });
     }
 }
-pub fn test_9() -> bool {
+pub fn test_all_9() {
+    let v: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
+    ({ (*v.borrow()).reset_22() });
+    ({
+        cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == ((1000_u64 == 0_u64) as i32)))
+    });
+    ({ (*v.borrow()).set_20() });
+    ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (true as i32))) });
+    {
+        (*v.borrow_mut())[(1000_u64 as u64).wrapping_div(2_u64)] = false;
+        ({ cpp2rust_assert_fail_1(((({ (*v.borrow()).all() }) as i32) == (false as i32))) });
+    }
+}
+pub fn test_10() -> bool {
     ({ test_all_0() });
-    ({ test_all_1() });
     ({ test_all_2() });
     ({ test_all_3() });
     ({ test_all_4() });
@@ -109,6 +122,7 @@ pub fn test_9() -> bool {
     ({ test_all_6() });
     ({ test_all_7() });
     ({ test_all_8() });
+    ({ test_all_9() });
     return true;
 }
 pub fn main() {
@@ -131,7 +145,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_9() });
+    ({ test_10() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

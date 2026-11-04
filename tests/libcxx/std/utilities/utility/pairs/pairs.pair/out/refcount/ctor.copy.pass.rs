@@ -28,26 +28,24 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(3)),
-            Rc::new(RefCell::new(4_i16)),
-        )));
-        let p2: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(((*p1.borrow()).0.as_pointer().read()))),
-            Rc::new(RefCell::new(((*p1.borrow()).1.as_pointer().read()))),
-        )));
-        assert!(({ ((*(*p2.borrow()).0.borrow()) == 3) }));
-        assert!(({ (((*(*p2.borrow()).1.borrow()) as i32) == 4) }));
+        let p1: Value<std_pair_int__short_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_1: Value<i16> = Rc::new(RefCell::new(4_i16));
+            std_pair_int__short_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        let p2: Value<std_pair_int__short_> = Rc::new(RefCell::new(std_pair_int__short_::new_2({
+            p1.as_pointer()
+        })));
+        ({ cpp2rust_assert_fail_0(({ (*p2.borrow()).first } == 3)) });
+        ({ cpp2rust_assert_fail_0((({ (*p2.borrow()).second } as i32) == 4)) });
     }
     {
-        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(3)),
-            Rc::new(RefCell::new(4_i16)),
-        )));
-        let p2: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new((*p1.borrow()).0.borrow().clone())),
-            Rc::new(RefCell::new((*p1.borrow()).1.borrow().clone())),
-        )));
+        let p1: Value<std_pair_int__short_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_3: Value<i16> = Rc::new(RefCell::new(4_i16));
+            std_pair_int__short_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
+        let p2: Value<std_pair_int__short_> = Rc::new(RefCell::new((*p1.borrow()).clone()));
         const _: () = assert!(true, "p2.first == 3");;
         const _: () = assert!(true, "p2.second == 4");;
     }

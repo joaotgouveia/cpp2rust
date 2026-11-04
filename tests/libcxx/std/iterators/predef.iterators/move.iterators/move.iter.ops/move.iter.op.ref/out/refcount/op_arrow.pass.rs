@@ -14,10 +14,12 @@ pub fn test_0() -> bool {
     let it2: Value<std_move_iterator_char_ptr_> = Rc::new(RefCell::new(
         ({ make_move_iterator_1((a.as_pointer() as Ptr<i8>).offset((1) as isize)) }),
     ));
-    assert!(({ ((*it1.borrow()).iter_deref() == (a.as_pointer() as Ptr::<i8>)) }));
-    assert!(
-        ({ ((*it2.borrow()).iter_deref() == (a.as_pointer() as Ptr::<i8>).offset((1) as isize)) })
-    );
+    ({ cpp2rust_assert_fail_2((({ (*it1.borrow())() }) == (a.as_pointer() as Ptr<i8>))) });
+    ({
+        cpp2rust_assert_fail_2(
+            (({ (*it2.borrow())() }) == (a.as_pointer() as Ptr<i8>).offset((1) as isize)),
+        )
+    });
     return true;
 }
 pub fn main() {

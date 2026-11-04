@@ -16,7 +16,7 @@ impl constexpr_char_traits_char_ {
     pub fn lt(mut c1: i8, mut c2: i8) -> bool {
         return ((c1 as i32) < (c2 as i32));
     }
-    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: usize) -> i32 {
+    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: u64) -> i32 {
         'loop_: while (n != 0) {
             if ({
                 let _c1: i8 = (s1.read());
@@ -42,8 +42,8 @@ impl constexpr_char_traits_char_ {
         }
         return 0;
     }
-    pub fn length(mut s: Ptr<i8>) -> usize {
-        let len: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub fn length(mut s: Ptr<i8>) -> u64 {
+        let len: Value<u64> = Rc::new(RefCell::new(0_u64));
         'loop_: while !({
             let _c1: i8 = (s.read());
             let _c2: i8 = 0_i8;
@@ -104,47 +104,121 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )),
         );
         const _: () = assert!(true, "");;
-        assert!(({ ({ (*sv0.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b""),) }) }));
-        assert!(({ !({ (*sv0.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"e"),) }) }));
-        assert!(({ ({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b""),) }) }));
-        assert!(({ ({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"e"),) }) }));
-        assert!(({ !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"de"),) }) }));
-        assert!(({ !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"cde"),) }) }));
-        assert!(
-            ({ !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"bcde"),) }) })
-        );
-        assert!(
-            ({ !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"abcde"),) }) })
-        );
-        assert!(({ !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"def"),) }) }));
-        assert!(({ ({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b""),) }) }));
-        assert!(({ ({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"e"),) }) }));
-        assert!(({ ({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"de"),) }) }));
-        assert!(({ !({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"cde"),) }) }));
-        assert!(
-            ({ !({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"bcde"),) }) })
-        );
-        assert!(
-            ({ !({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"abcde"),) }) })
-        );
-        assert!(({ !({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"def"),) }) }));
-        assert!(({ ({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b""),) }) }));
-        assert!(({ !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"e"),) }) }));
-        assert!(
-            ({ !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"de"),) }) })
-        );
-        assert!(
-            ({ !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"cde"),) }) })
-        );
-        assert!(
-            ({ !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"bcde"),) }) })
-        );
-        assert!(
-            ({ !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"abcde"),) }) })
-        );
-        assert!(
-            ({ ({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"def"),) }) })
-        );
+        ({
+            cpp2rust_assert_fail_0(
+                ({ (*sv0.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv0.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"e")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                ({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                ({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"e")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"de")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"cde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"bcde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"abcde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv1.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"def")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                ({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                ({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"e")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                ({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"de")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"cde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"bcde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"abcde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*sv2.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"def")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                ({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"e")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"de")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"cde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"bcde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                !({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"abcde")) }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                ({ (*svNot.borrow()).ends_with_42(Ptr::<i8>::from_string_literal(b"def")) }),
+            )
+        });
     }
     {
         let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");

@@ -29,10 +29,10 @@ pub fn test_0() -> bool {
         let ___x: Value<i32> = Rc::new(RefCell::new(2));
         (*q1.borrow()).push_28(___x.as_pointer())
     });
-    cpp_swap!(q1.as_pointer(), q2.as_pointer());
-    assert!(({ ({ (*q1.borrow()).empty() }) }));
-    assert!(({ (({ (*q2.borrow()).size() }) == 3_u64) }));
-    assert!(({ ((({ (*q2.borrow()).top() }).read()) == 3) }));
+    ({ swap_1(q1.as_pointer(), q2.as_pointer()) });
+    ({ cpp2rust_assert_fail_2(({ (*q1.borrow()).empty() })) });
+    ({ cpp2rust_assert_fail_2((({ (*q2.borrow()).size() }) == 3_u64)) });
+    ({ cpp2rust_assert_fail_2(((({ (*q2.borrow()).top() }).read()) == 3)) });
     return true;
 }
 pub fn main() {
@@ -55,7 +55,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_0() }));
+    ({ cpp2rust_assert_fail_2(({ test_0() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

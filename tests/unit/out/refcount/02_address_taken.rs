@@ -17,9 +17,8 @@ fn main_0() -> i32 {
     let mut b_ptr_ptr: Ptr<Ptr<i32>> = (b_ptr.as_pointer());
     (b_ptr_ptr.read()).write(4);
     (*b_ptr.borrow()).write({ ((b_ptr_ptr.read()).read()) });
-    let mut offset: usize =
-        ((((*b_ptr.borrow()).clone() - (*b_ptr.borrow()).clone()) as i64) as usize);
-    assert!(({ ((*b.borrow()) == 4) }));
+    let mut offset: u64 = ((((*b_ptr.borrow()).clone() - (*b_ptr.borrow()).clone()) as i64) as u64);
+    ({ cpp2rust_assert_fail_0(((*b.borrow()) == 4)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

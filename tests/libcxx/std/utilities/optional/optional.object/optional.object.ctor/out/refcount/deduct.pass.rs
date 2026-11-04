@@ -37,13 +37,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let opt: Value<std_optional_int_> = Rc::new(RefCell::new(5));
         const _: () = assert!(true, "");;
-        assert!(({ ({ (*opt.borrow())() }) }));
-        assert!(({ (((*opt.borrow()).read()) == 5) }));
+        ({ cpp2rust_assert_fail_0(({ (*opt.borrow())() })) });
+        ({ cpp2rust_assert_fail_0((((*opt.borrow()).read()) == 5)) });
     }
     {
         let opt: Value<std_optional_A_> = Rc::new(RefCell::new(<A>::default()));
         const _: () = assert!(true, "");;
-        assert!(({ ({ (*opt.borrow())() }) }));
+        ({ cpp2rust_assert_fail_0(({ (*opt.borrow())() })) });
     }
     {
         let __tmp_0: Value<i32> = Rc::new(RefCell::new(5));
@@ -51,8 +51,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let opt: Value<std_optional_int_> =
             Rc::new(RefCell::new(std_optional_int_::new_1({ (source).clone() })));
         const _: () = assert!(true, "");;
-        assert!(({ ({ (*opt.borrow())() }) }));
-        assert!(({ (((*opt.borrow()).read()) == 5) }));
+        ({ cpp2rust_assert_fail_0(({ (*opt.borrow())() })) });
+        ({ cpp2rust_assert_fail_0((((*opt.borrow()).read()) == 5)) });
     }
     {
         let source: Value<Ptr<i32>> = Rc::new(RefCell::new(Ptr::<i32>::null()));
@@ -61,8 +61,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 source.as_pointer()
             })));
         const _: () = assert!(true, "");;
-        assert!(({ ({ (*opt.borrow())() }) }));
-        assert!(({ ((*opt.borrow()).read()).is_null() }));
+        ({ cpp2rust_assert_fail_0(({ (*opt.borrow())() })) });
+        ({ cpp2rust_assert_fail_0(((*opt.borrow()).read()).is_null()) });
     }
     {
         let source: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
@@ -71,15 +71,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 source.as_pointer()
             })));
         const _: () = assert!(true, "");;
-        assert!(({ ({ (*opt.borrow())() }) }));
-        assert!(({ ((elem!(((*opt.borrow()).read()), 0).read()) == 1) }));
+        ({ cpp2rust_assert_fail_0(({ (*opt.borrow())() })) });
+        ({ cpp2rust_assert_fail_0(((elem!(((*opt.borrow()).read()), 0).read()) == 1)) });
     }
     {
         let source: Value<std_optional_char_> = Rc::new(RefCell::new(('A' as i8)));
         let opt: Value<std_optional_char_> = Rc::new(RefCell::new((*source.borrow()).clone()));
         const _: () = assert!(true, "");;
-        assert!(({ ((({ (*opt.borrow())() }) as i32) == (({ (*source.borrow())() }) as i32)) }));
-        assert!(({ ((((*opt.borrow()).read()) as i32) == (((*source.borrow()).read()) as i32)) }));
+        ({
+            cpp2rust_assert_fail_0(
+                ((({ (*opt.borrow())() }) as i32) == (({ (*source.borrow())() }) as i32)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                ((((*opt.borrow()).read()) as i32) == (((*source.borrow()).read()) as i32)),
+            )
+        });
     }
     return 0;
 }

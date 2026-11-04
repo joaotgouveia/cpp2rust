@@ -14,7 +14,7 @@ pub fn unused_param_0(mut x: i32) {
 pub struct NonTrivial {
     #[offset(0)]
     #[byte_size(24)]
-    pub data: Vec<i32>,
+    pub data: std_vector_int__std_allocator_int__,
 }
 impl NonTrivial {
     pub fn move_from(_a0: Ptr<NonTrivial>) -> Self {
@@ -57,12 +57,12 @@ impl CppMove for Holder {
 pub struct NonCopyable {
     #[offset(0)]
     #[byte_size(8)]
-    pub value: Option<Value<i32>>,
+    pub value: std_unique_ptr_int__std_default_delete_int__,
 }
 impl NonCopyable {
     pub fn move_from(_a0: Ptr<NonCopyable>) -> Self {
         Self {
-            value: field!(_a0, value).with_mut(|__v: &mut Option<Value<i32>>| __v.take()),
+            value: field!(_a0, value).with_mut(std::mem::take),
         }
     }
 }
@@ -86,7 +86,7 @@ fn main_0() -> i32 {
         &(y);
         7
     };
-    assert!((z == 7));
+    ({ cpp2rust_assert_fail_6((z == 7)) });
     let counter: Value<i32> = Rc::new(RefCell::new(0));
     let mut w: i32 = {
         {
@@ -95,16 +95,16 @@ fn main_0() -> i32 {
         };
         (*counter.borrow())
     };
-    assert!((w == 3));
-    assert!(({ ((*counter.borrow()) == 3) }));
+    ({ cpp2rust_assert_fail_6((w == 3)) });
+    ({ cpp2rust_assert_fail_6(((*counter.borrow()) == 3)) });
     &({ bump_and_return_4() });
-    assert!((side_effect_counter_3.with(|rc| *rc.borrow()) == 1));
+    ({ cpp2rust_assert_fail_6((side_effect_counter_3.with(|rc| *rc.borrow()) == 1)) });
     let mut v: i32 = {
         &({ bump_and_return_4() });
         99
     };
-    assert!((side_effect_counter_3.with(|rc| *rc.borrow()) == 2));
-    assert!((v == 99));
+    ({ cpp2rust_assert_fail_6((side_effect_counter_3.with(|rc| *rc.borrow()) == 2)) });
+    ({ cpp2rust_assert_fail_6((v == 99)) });
     &(0);
     &(0);
     &(y);
@@ -112,19 +112,19 @@ fn main_0() -> i32 {
     (&(y));
     let mut err: i32 = 0;
     (&(err = 42));
-    assert!((err == 42));
+    ({ cpp2rust_assert_fail_6((err == 42)) });
     let mut chosen: i32 = {
         &(err = 7);
         123
     };
-    assert!((err == 7));
-    assert!((chosen == 123));
+    ({ cpp2rust_assert_fail_6((err == 7)) });
+    ({ cpp2rust_assert_fail_6((chosen == 123)) });
     &(bump_and_return_4);
-    assert!((side_effect_counter_3.with(|rc| *rc.borrow()) == 2));
+    ({ cpp2rust_assert_fail_6((side_effect_counter_3.with(|rc| *rc.borrow()) == 2)) });
     &(FnPtr::<fn() -> i32>::new(bump_and_return_4));
-    assert!((side_effect_counter_3.with(|rc| *rc.borrow()) == 2));
+    ({ cpp2rust_assert_fail_6((side_effect_counter_3.with(|rc| *rc.borrow()) == 2)) });
     &((FnPtr::<fn() -> i32>::new(bump_and_return_4)).cast::<fn() -> i32>());
-    assert!((side_effect_counter_3.with(|rc| *rc.borrow()) == 2));
+    ({ cpp2rust_assert_fail_6((side_effect_counter_3.with(|rc| *rc.borrow()) == 2)) });
     let storage: Value<i32> = Rc::new(RefCell::new(11));
     let mut p: Ptr<i32> = (storage.as_pointer());
     &(p.read());
@@ -139,12 +139,15 @@ fn main_0() -> i32 {
     ({ unused_ref_param_1(nt.as_pointer()) });
     ({ unused_ptr_param_2((nt.as_pointer())) });
     let g: Value<NonCopyable> = Rc::new(RefCell::new(NonCopyable {
-        value: Some(Rc::new(RefCell::new(9))),
+        value: ({
+            let ___args: Value<i32> = Rc::new(RefCell::new(9));
+            make_unique_7(___args.as_pointer())
+        }),
     }));
     (&(*g.borrow_mut()));
     &(*g.borrow_mut());
     ({ unused_noncopyable_param_5(g.as_pointer()) });
-    assert!(((({ { (*g.borrow()).value.clone() } }).as_pointer().read()) == 9));
+    ({ cpp2rust_assert_fail_6((({ (*g.borrow()).value.clone() }.read()) == 9)) });
     return 0;
 }
 pub trait NonCopyableImpl {
@@ -152,11 +155,7 @@ pub trait NonCopyableImpl {
 }
 impl NonCopyableImpl for Ptr<NonCopyable> {
     fn move_assign(&self, _a0: Ptr<NonCopyable>) -> Ptr<NonCopyable> {
-        {
-            field_ptr!((*self), value)
-                .write(field!(_a0, value).with_mut(|__v: &mut Option<Value<i32>>| __v.take()));
-            field_ptr!((*self), value)
-        };
+        field!((*self), value).write({ { (*_a0.upgrade().deref()).value.clone() } });
         return (*self).clone();
     }
 }
@@ -165,12 +164,7 @@ pub trait NonTrivialImpl {
 }
 impl NonTrivialImpl for Ptr<NonTrivial> {
     fn move_assign(&self, _a0: Ptr<NonTrivial>) -> Ptr<NonTrivial> {
-        {
-            field_ref!((*self), data)
-                .as_pointer()
-                .write(field!(_a0, data).with_mut(std::mem::take));
-            field_ref!((*self), data).as_pointer()
-        };
+        field!((*self), data).write({ { (*_a0.upgrade().deref()).data.clone() } });
         return (*self).clone();
     }
 }

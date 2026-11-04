@@ -165,10 +165,18 @@ pub fn test_16() -> bool {
     ({ test_contract_15() });
     let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<X>::default()));
     {
-        assert!((({ XImpl::test_1(&opt.as_pointer(),) }) == 3));
-        assert!((({ XImpl::test_2(&opt.as_pointer(),) }) == 4));
-        assert!(({ (({ (*opt.borrow()).operator_arrow_16() }) == (opt.as_pointer())) }));
-        assert!(({ (({ (*opt.borrow()).operator_arrow_15() }) == (opt.as_pointer())) }));
+        ({ cpp2rust_assert_fail_17((({ XImpl::test_1(&opt.as_pointer()) }) == 3)) });
+        ({ cpp2rust_assert_fail_17((({ XImpl::test_2(&opt.as_pointer()) }) == 4)) });
+        ({
+            cpp2rust_assert_fail_17(
+                (({ (*opt.borrow()).operator_arrow_16() }) == (opt.as_pointer())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_17(
+                (({ (*opt.borrow()).operator_arrow_15() }) == (opt.as_pointer())),
+            )
+        });
     }
     return true;
 }
@@ -192,7 +200,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_16() }));
+    ({ cpp2rust_assert_fail_17(({ test_16() })) });
     const _: () = assert!(true, "test()");;
     return 0;
 }

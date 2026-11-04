@@ -12,30 +12,18 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut cond: bool = true;
-    let mut os1: Ptr<::std::fs::File> = if cond {
-        (libcc2rs::cout())
+    let mut os1: Ptr<std_basic_ostream_char__std_char_traits_char__> = if cond {
+        (cout_0.with(|v| v.as_pointer()))
     } else {
-        (libcc2rs::cerr())
+        (cerr_1.with(|v| v.as_pointer()))
     };
-    {
-        let __s = (os1).clone();
-        let _ = Ptr::<i8>::from_string_literal(b"hello\n").with_c_str(|__cs| {
-            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
-        });
-        __s
-    };
-    let os2: Ptr<::std::fs::File> = if cond {
-        (libcc2rs::cout())
+    write!(os1, "hello\n",);
+    let os2: Ptr<std_basic_ostream_char__std_char_traits_char__> = if cond {
+        (cout_0.with(|v| v.as_pointer()))
     } else {
-        (libcc2rs::cerr())
+        (cerr_1.with(|v| v.as_pointer()))
     };
-    {
-        let __s = (os2).clone();
-        let _ = Ptr::<i8>::from_string_literal(b"hello\n").with_c_str(|__cs| {
-            __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
-        });
-        __s
-    };
+    write!(os2, "hello\n",);
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

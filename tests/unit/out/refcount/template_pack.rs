@@ -41,15 +41,15 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ sum_0(1, 2, 3,) }) == 6));
-    assert!((({ sum_1(4, 5,) }) == 9));
-    assert!((({ first_3(10, 1, 2,) }) == 13));
-    assert!((({ first_4(10, 0,) }) == 10));
-    assert!((({ sizeof_pack_5() }) == 0));
-    assert!((({ sizeof_pack_6(1,) }) == 1));
-    assert!((({ sizeof_pack_7(1, 2,) }) == 2));
-    assert!((({ sizeof_pack_8(1, 2, 3,) }) == 3));
-    assert!((({ sizeof_pack_9(1, 2, 3, 4,) }) == 4));
+    ({ cpp2rust_assert_fail_10((({ sum_0(1, 2, 3) }) == 6)) });
+    ({ cpp2rust_assert_fail_10((({ sum_1(4, 5) }) == 9)) });
+    ({ cpp2rust_assert_fail_10((({ first_3(10, 1, 2) }) == 13)) });
+    ({ cpp2rust_assert_fail_10((({ first_4(10, 0) }) == 10)) });
+    ({ cpp2rust_assert_fail_10((({ sizeof_pack_5() }) == 0)) });
+    ({ cpp2rust_assert_fail_10((({ sizeof_pack_6(1) }) == 1)) });
+    ({ cpp2rust_assert_fail_10((({ sizeof_pack_7(1, 2) }) == 2)) });
+    ({ cpp2rust_assert_fail_10((({ sizeof_pack_8(1, 2, 3) }) == 3)) });
+    ({ cpp2rust_assert_fail_10((({ sizeof_pack_9(1, 2, 3, 4) }) == 4)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

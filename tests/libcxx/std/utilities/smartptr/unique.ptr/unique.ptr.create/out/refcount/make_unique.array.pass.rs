@@ -29,52 +29,32 @@ impl Default for foo {
 }
 pub fn test_0() -> bool {
     {
-        let mut p1: Option<Value<Box<[i32]>>> = Some(Rc::new(RefCell::new(
-            (0..5_usize).map(|_| 0_i32).collect::<Box<[_]>>(),
-        )));
+        let p1: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
+            Rc::new(RefCell::new(({ make_unique_1(5_u64) })));
         let mut i: i32 = 0;
         'loop_: while (i < 5) {
-            assert!(
-                (((p1.as_pointer() as Ptr<i32>)
-                    .offset((i as usize) as isize)
-                    .read())
-                    == 0)
-            );
+            ({ cpp2rust_assert_fail_2(({ (*p1.borrow())[(i as u64)] } == 0)) });
             i.prefix_inc();
         }
     }
     {
-        let mut p2: Option<Value<Box<[Vec<i8>]>>> = Some(Rc::new(RefCell::new(
-            (0..5_usize)
-                .map(|_| vec![i8::default()])
-                .collect::<Box<[_]>>(),
-        )));
+        let p2 : Value<std_unique_ptr_std_basic_string_char__std_char_traits_char___std_allocator_char__arrarr__std_default_delete_std_basic_string_char__std_char_traits_char___std_allocator_char__arrarr__ > = Rc::new(RefCell::new(( { make_unique_3 ( 5_u64  , ) } )  )) ;
         let mut i: i32 = 0;
         'loop_: while (i < 5) {
-            assert!(
-                ({
-                    (((*(p2.as_pointer() as Ptr<Vec<i8>>)
-                        .offset((i as usize) as isize)
-                        .upgrade()
-                        .deref())
-                    .len()
-                        - 1)
-                        == 0_usize)
-                })
-            );
+            ({ cpp2rust_assert_fail_2((({ (*p2.borrow())[(i as u64)].size() }) == 0_u64)) });
             i.prefix_inc();
         }
     }
     {
-        let mut p3: Option<Value<Box<[foo]>>> = Some(Rc::new(RefCell::new(
-            (0..7_usize).map(|_| <foo>::default()).collect::<Box<[_]>>(),
-        )));
+        let p3: Value<std_unique_ptr_fooarrarr__std_default_delete_fooarrarr__> =
+            Rc::new(RefCell::new(({ make_unique_4(7_u64) })));
         let mut i: i32 = 0;
         'loop_: while (i < 7) {
-            assert!(
-                (({ fooImpl::get(&(p3.as_pointer() as Ptr<foo>).offset((i as usize) as isize),) })
-                    == 3)
-            );
+            ({
+                cpp2rust_assert_fail_2(
+                    (({ fooImpl::get(&p3.as_pointer().offset((i as u64))) }) == 3),
+                )
+            });
             i.prefix_inc();
         }
     }

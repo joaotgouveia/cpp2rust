@@ -31,82 +31,55 @@ fn main_0() -> i32 {
     let input: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([1, 2, 3])));
     let output: Value<Box<[i32]>> =
         Rc::new(RefCell::new((0..3).map(|_| 0_i32).collect::<Box<[i32]>>()));
-    match ({ (input.as_pointer() as Ptr<i32>).offset((3) as isize) },) {
-        (mut __tmp_0,) => {
-            let mut __first = (input.as_pointer() as Ptr<i32>);
-            let mut __out = (output.as_pointer() as Ptr<i32>);
-            while __first != __tmp_0 {
-                __out.iter_deref().write((__first.iter_deref().read()));
-                __first.iter_inc();
-                __out.iter_inc();
-            }
-            __out
-        }
-    };
-    let widened: Value<Vec<i64>> = Rc::new(RefCell::new(vec![0_i64; 3_usize as usize]));
-    match ({ (input.as_pointer() as Ptr<i32>).offset((3) as isize) },) {
-        (mut __tmp_1,) => {
-            let mut __first = (input.as_pointer() as Ptr<i32>);
-            let mut __out = CppRange::begin(&widened.decay());
-            while __first != __tmp_1 {
-                __out
-                    .iter_deref()
-                    .write(((__first.iter_deref().read()) as i64));
-                __first.iter_inc();
-                __out.iter_inc();
-            }
-            __out
-        }
-    };
-    assert!(
-        ((widened.decay().offset(0_usize as isize).read()) == 1_i64)
-            && ((widened.decay().offset(2_usize as isize).read()) == 3_i64)
-    );
-    let constructed: Value<Vec<Degrees>> =
-        Rc::new(RefCell::new(vec![Degrees::new({ 0 },); 3_usize as usize]));
-    match ({ (input.as_pointer() as Ptr<i32>).offset((3) as isize) },) {
-        (mut __tmp_2,) => {
-            let mut __first = (input.as_pointer() as Ptr<i32>);
-            let mut __out = CppRange::begin(&constructed.decay());
-            while __first != __tmp_2 {
-                __out
-                    .iter_deref()
-                    .write(<Degrees as CppFrom<i32>>::cpp_from(__first.iter_deref()));
-                __first.iter_inc();
-                __out.iter_inc();
-            }
-            __out
-        }
-    };
-    assert!(
-        (constructed
-            .decay()
-            .offset(0_usize as isize)
-            .with(|__s| __s.value)
-            == 1)
-            && (constructed
-                .decay()
-                .offset(2_usize as isize)
-                .with(|__s| __s.value)
-                == 3)
-    );
+    ({
+        let ___first: Ptr<i32> = (input.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (input.as_pointer() as Ptr<i32>).offset((3) as isize);
+        copy_0(___first, ___last, (output.as_pointer() as Ptr<i32>))
+    });
+    let widened: Value<std_vector_long__std_allocator_long__> = Rc::new(RefCell::new({
+        let __tmp_0: Value<i64> = Rc::new(RefCell::new(0_i64));
+        std_vector_long__std_allocator_long__::new_1({ 3_u64 }, { __tmp_0.as_pointer() }, None)
+    }));
+    ({
+        let ___first: Ptr<i32> = (input.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (input.as_pointer() as Ptr<i32>).offset((3) as isize);
+        copy_1(___first, ___last, ({ (*widened.borrow()).begin_28() }))
+    });
+    ({
+        cpp2rust_assert_fail_2(
+            ({ (*widened.borrow())[0_u64] } == 1_i64) && ({ (*widened.borrow())[2_u64] } == 3_i64),
+        )
+    });
+    let constructed: Value<std_vector_Degrees__std_allocator_Degrees__> = Rc::new(RefCell::new({
+        let __tmp_1: Value<Degrees> = Rc::new(RefCell::new(Degrees::new({ 0 })));
+        std_vector_Degrees__std_allocator_Degrees__::new_1(
+            { 3_u64 },
+            { __tmp_1.as_pointer() },
+            None,
+        )
+    }));
+    ({
+        let ___first: Ptr<i32> = (input.as_pointer() as Ptr<i32>);
+        let ___last: Ptr<i32> = (input.as_pointer() as Ptr<i32>).offset((3) as isize);
+        copy_3(___first, ___last, ({ (*constructed.borrow()).begin_28() }))
+    });
+    ({
+        cpp2rust_assert_fail_2(
+            ({ (*constructed.borrow())[0_u64].value } == 1)
+                && ({ (*constructed.borrow())[2_u64].value } == 3),
+        )
+    });
     let wide: Value<Box<[i64]>> = Rc::new(RefCell::new(Box::new([7_i64, 8_i64])));
-    let floating: Value<Vec<f64>> = Rc::new(RefCell::new(vec![0_f64; 2_usize as usize]));
-    match ({ (wide.as_pointer() as Ptr<i64>).offset((2) as isize) },) {
-        (mut __tmp_3,) => {
-            let mut __first = (wide.as_pointer() as Ptr<i64>);
-            let mut __out = CppRange::begin(&floating.decay());
-            while __first != __tmp_3 {
-                __out
-                    .iter_deref()
-                    .write(((__first.iter_deref().read()) as f64));
-                __first.iter_inc();
-                __out.iter_inc();
-            }
-            __out
-        }
-    };
-    assert!(((floating.decay().offset(1_usize as isize).read()) == 8_f64));
+    let floating: Value<std_vector_double__std_allocator_double__> = Rc::new(RefCell::new({
+        let __tmp_2: Value<f64> = Rc::new(RefCell::new(0_f64));
+        std_vector_double__std_allocator_double__::new_1({ 2_u64 }, { __tmp_2.as_pointer() }, None)
+    }));
+    ({
+        let ___first: Ptr<i64> = (wide.as_pointer() as Ptr<i64>);
+        let ___last: Ptr<i64> = (wide.as_pointer() as Ptr<i64>).offset((2) as isize);
+        copy_4(___first, ___last, ({ (*floating.borrow()).begin_28() }))
+    });
+    ({ cpp2rust_assert_fail_2(({ (*floating.borrow())[1_u64] } == 8_f64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

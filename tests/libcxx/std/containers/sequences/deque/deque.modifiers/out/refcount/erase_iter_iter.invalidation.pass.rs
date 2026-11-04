@@ -6,73 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn del_at_start_0(c: Vec<i32>, mut num: usize) {
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
-    let first: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new(({ (*c.borrow_mut()).begin_24() })));
-    let last: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new((*first.borrow()).iter_add((num as isize))));
-    let it1: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new((*last.borrow()).clone()));
-    let it2: Value<std__Deque_iterator_int__int_ref__int_ptr_> = Rc::new(RefCell::new(
-        ({ (*c.borrow_mut()).end_26() }).iter_add(-1_isize),
-    ));
-    ({
-        (*c.borrow_mut()).erase_69(
-            <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
-                ({ (*first.borrow()).clone() }),
-            ),
-            <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
-                ({ (*last.borrow()).clone() }),
-            ),
-        )
-    });
-    let it3: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new(({ (*c.borrow_mut()).begin_24() })));
-    let it4: Value<std__Deque_iterator_int__int_ref__int_ptr_> = Rc::new(RefCell::new(
-        ({ (*c.borrow_mut()).end_26() }).iter_add(-1_isize),
-    ));
-    assert!(({ (*it1.borrow()) == (*it3.borrow()) }));
-    assert!(({ (((*it1.borrow()).iter_deref().read()) == ((*it3.borrow()).iter_deref().read())) }));
-    assert!(({ (((*it1.borrow()).iter_deref()) == ((*it3.borrow()).iter_deref())) }));
-    assert!(({ (*it2.borrow()) == (*it4.borrow()) }));
-    assert!(({ (((*it2.borrow()).iter_deref().read()) == ((*it4.borrow()).iter_deref().read())) }));
-    assert!(({ (((*it2.borrow()).iter_deref()) == ((*it4.borrow()).iter_deref())) }));
-    const _: () = assert!(true, "");;
-}
-pub fn del_at_end_1(c: Vec<i32>, mut num: usize) {
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
-    let last: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new(({ (*c.borrow_mut()).end_26() })));
-    let first: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new((*last.borrow()).iter_add(-(num as isize))));
-    let it1: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new(({ (*c.borrow_mut()).begin_24() })));
-    let it2: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new((*first.borrow()).iter_add(-1_isize)));
-    ({
-        (*c.borrow_mut()).erase_69(
-            <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
-                ({ (*first.borrow()).clone() }),
-            ),
-            <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
-                ({ (*last.borrow()).clone() }),
-            ),
-        )
-    });
-    let it3: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
-        Rc::new(RefCell::new(({ (*c.borrow_mut()).begin_24() })));
-    let it4: Value<std__Deque_iterator_int__int_ref__int_ptr_> = Rc::new(RefCell::new(
-        ({ (*c.borrow_mut()).end_26() }).iter_add(-1_isize),
-    ));
-    assert!(({ (*it1.borrow()) == (*it3.borrow()) }));
-    assert!(({ (((*it1.borrow()).iter_deref().read()) == ((*it3.borrow()).iter_deref().read())) }));
-    assert!(({ (((*it1.borrow()).iter_deref()) == ((*it3.borrow()).iter_deref())) }));
-    assert!(({ (*it2.borrow()) == (*it4.borrow()) }));
-    assert!(({ (((*it2.borrow()).iter_deref().read()) == ((*it4.borrow()).iter_deref().read())) }));
-    assert!(({ (((*it2.borrow()).iter_deref()) == ((*it4.borrow()).iter_deref())) }));
-    const _: () = assert!(true, "");;
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -93,20 +27,21 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let queue: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    let mut i: i32 = 0;
-    'loop_: while (i < 20) {
-        (*queue.borrow_mut()).push(i);
-        i.prefix_inc();
+    let queue: Value<std_deque_int__std_allocator_int__> =
+        Rc::new(RefCell::new(<std_deque_int__std_allocator_int__>::default()));
+    let i: Value<i32> = Rc::new(RefCell::new(0));
+    'loop_: while ((*i.borrow()) < 20) {
+        ({ (*queue.borrow()).push_back_54(i.as_pointer()) });
+        (*i.borrow_mut()).prefix_inc();
     }
-    'loop_: while (({ (*queue.borrow()).size() }) > 1_usize) {
-        let mut i: usize = 1_usize;
+    'loop_: while (({ (*queue.borrow()).size() }) > 1_u64) {
+        let mut i: u64 = 1_u64;
         'loop_: while (i < ({ (*queue.borrow()).size() })) {
             ({ del_at_start_0((*queue.borrow()).clone(), i) });
             ({ del_at_end_1((*queue.borrow()).clone(), i) });
             i.prefix_inc();
         }
-        ({ (*queue.borrow_mut()).pop_back() });
+        ({ (*queue.borrow()).pop_back() });
     }
     return 0;
 }

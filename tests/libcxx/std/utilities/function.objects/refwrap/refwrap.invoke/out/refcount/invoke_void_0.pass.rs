@@ -28,23 +28,32 @@ impl CppMove for A_void_0 {
 pub fn test_void_0_2() {
     let mut save_count: i32 = count_0.with(|rc| *rc.borrow());
     {
-        let r1: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(f_void_0_1)));
+        let r1: Value<std_reference_wrapper_void____> =
+            Rc::new(RefCell::new(std_reference_wrapper_void____::new({
+                FnPtr::<fn()>::new(f_void_0_1)
+            })));
         ({ (*r1.borrow_mut())() });
-        assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
+        ({ cpp2rust_assert_fail_3((count_0.with(|rc| *rc.borrow()) == (save_count + 1))) });
         save_count = count_0.with(|rc| *rc.borrow());
     }
     {
         let fp: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(f_void_0_1)));
-        let r1: Value<Ptr<FnPtr<fn()>>> = Rc::new(RefCell::new(fp.as_pointer()));
+        let r1: Value<std_reference_wrapper_void__ptr____> =
+            Rc::new(RefCell::new(std_reference_wrapper_void__ptr____::new({
+                fp.as_pointer()
+            })));
         ({ (*r1.borrow_mut())() });
-        assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
+        ({ cpp2rust_assert_fail_3((count_0.with(|rc| *rc.borrow()) == (save_count + 1))) });
         save_count = count_0.with(|rc| *rc.borrow());
     }
     {
         let a0: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-        let r1: Value<Ptr<A_void_0>> = Rc::new(RefCell::new(a0.as_pointer()));
+        let r1: Value<std_reference_wrapper_A_void_0_> =
+            Rc::new(RefCell::new(std_reference_wrapper_A_void_0_::new({
+                a0.as_pointer()
+            })));
         ({ (*r1.borrow_mut())() });
-        assert!((count_0.with(|rc| *rc.borrow()) == (save_count + 1)));
+        ({ cpp2rust_assert_fail_3((count_0.with(|rc| *rc.borrow()) == (save_count + 1))) });
         save_count = count_0.with(|rc| *rc.borrow());
     }
 }

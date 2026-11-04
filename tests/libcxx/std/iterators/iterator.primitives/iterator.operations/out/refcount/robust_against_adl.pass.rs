@@ -42,19 +42,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let p: Value<Ptr<Ptr<Holder_Incomplete_>>> = Rc::new(RefCell::new(
         (a.as_pointer() as Ptr<Ptr<Holder_Incomplete_>>),
     ));
-    let __rhs = libcc2rs::next_refcount(({ (*p.borrow()).clone() }), 1_isize as isize);
+    let __rhs = ({ next_0((*p.borrow()).clone(), None) });
     (*p.borrow_mut()) = __rhs;
-    let __rhs = libcc2rs::prev_refcount(({ (*p.borrow()).clone() }), 1_isize as isize);
+    let __rhs = ({ prev_1((*p.borrow()).clone(), None) });
     (*p.borrow_mut()) = __rhs;
-    let __rhs = libcc2rs::next_refcount(({ (*p.borrow()).clone() }), 2_isize as isize);
+    let __rhs = ({ next_0((*p.borrow()).clone(), Some(2_i64)) });
     (*p.borrow_mut()) = __rhs;
-    let __rhs = libcc2rs::prev_refcount(({ (*p.borrow()).clone() }), 2_isize as isize);
+    let __rhs = ({ prev_1((*p.borrow()).clone(), Some(2_i64)) });
     (*p.borrow_mut()) = __rhs;
-    ({ advance_0(p.as_pointer(), <Intable_Holder_Incomplete__>::default()) });
+    ({ advance_2(p.as_pointer(), <Intable_Holder_Incomplete__>::default()) });
     &({
         let ___first: Ptr<Ptr<Holder_Incomplete_>> = (*p.borrow()).clone();
         let ___last: Ptr<Ptr<Holder_Incomplete_>> = (*p.borrow()).clone();
-        distance_1(___first, ___last)
+        distance_3(___first, ___last)
     });
     return 0;
 }

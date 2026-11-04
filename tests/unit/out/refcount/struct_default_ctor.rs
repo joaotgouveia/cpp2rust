@@ -91,23 +91,27 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut d: Ptr<Declared> = Ptr::<Declared>::null();
-    assert!((d).is_null());
+    ({ cpp2rust_assert_fail_1((d).is_null()) });
     let mut s: S = S::new();
-    assert!((s.a == 11));
-    assert!(((s.b as i32) == (true as i32)));
+    ({ cpp2rust_assert_fail_1((s.a == 11)) });
+    ({ cpp2rust_assert_fail_1(((s.b as i32) == (true as i32))) });
     let mut h: Ptr<Holder> = Ptr::alloc_array(
-        (0..1_usize)
+        (0..1_u64)
             .map(|_| <Holder>::default())
             .collect::<Box<[Holder]>>(),
     );
-    assert!((array_elem!(h.offset((0) as isize), items, 1).with(|__s| __s.a) == 11));
+    ({
+        cpp2rust_assert_fail_1(
+            (array_elem!(h.offset((0) as isize), items, 1).with(|__s| __s.a) == 11),
+        )
+    });
     h.delete();
     let mut fs: Ptr<FromStatic> = Ptr::alloc_array(
-        (0..2_usize)
+        (0..2_u64)
             .map(|_| <FromStatic>::default())
             .collect::<Box<[FromStatic]>>(),
     );
-    assert!((elem!(fs, 1).with(|__s| __s.v) == 3));
+    ({ cpp2rust_assert_fail_1((elem!(fs, 1).with(|__s| __s.v) == 3)) });
     fs.delete();
     return 0;
 }

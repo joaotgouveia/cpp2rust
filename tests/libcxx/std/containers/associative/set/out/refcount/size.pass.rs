@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -48,78 +52,78 @@ impl CppMove for min_allocator_int_ {
         src.read()
     }
 }
-pub fn test_4() -> bool {
+pub fn test_5() -> bool {
     {
         let m: Value<std_set_int__std_less_int___std_allocator_int__> = Rc::new(RefCell::new(
             <std_set_int__std_less_int___std_allocator_int__>::default(),
         ));
-        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 0_u64)) });
         ({
             let ___x: Value<i32> = Rc::new(RefCell::new(2));
             (*m.borrow()).insert_37(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 1_u64)) });
         ({
             let ___x: Value<i32> = Rc::new(RefCell::new(1));
             (*m.borrow()).insert_37(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 2_u64)) });
         ({
             let ___x: Value<i32> = Rc::new(RefCell::new(3));
             (*m.borrow()).insert_37(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 3_u64)) });
         ({
-            let ___position: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
+            let ___position: std__Rb_tree_const_iterator_int_ = ({ (*m.borrow()).begin() });
             (*m.borrow()).erase_51(___position)
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 2_u64)) });
         ({
-            let ___position: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
+            let ___position: std__Rb_tree_const_iterator_int_ = ({ (*m.borrow()).begin() });
             (*m.borrow()).erase_51(___position)
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 1_u64)) });
         ({
-            let ___position: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
+            let ___position: std__Rb_tree_const_iterator_int_ = ({ (*m.borrow()).begin() });
             (*m.borrow()).erase_51(___position)
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 0_u64)) });
     }
     {
         let m: Value<std_set_int__std_less_int___min_allocator_int__> = Rc::new(RefCell::new(
             <std_set_int__std_less_int___min_allocator_int__>::default(),
         ));
-        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 0_u64)) });
         ({
             let ___x: Value<i32> = Rc::new(RefCell::new(2));
             (*m.borrow()).insert_37(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 1_u64)) });
         ({
             let ___x: Value<i32> = Rc::new(RefCell::new(1));
             (*m.borrow()).insert_37(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 2_u64)) });
         ({
             let ___x: Value<i32> = Rc::new(RefCell::new(3));
             (*m.borrow()).insert_37(___x.as_pointer())
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 3_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 3_u64)) });
         ({
-            let ___position: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
+            let ___position: std___rb_tree__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*m.borrow()) . begin ( ) } )   ;
             (*m.borrow()).erase_51(___position)
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 2_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 2_u64)) });
         ({
-            let ___position: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
+            let ___position: std___rb_tree__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*m.borrow()) . begin ( ) } )   ;
             (*m.borrow()).erase_51(___position)
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 1_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 1_u64)) });
         ({
-            let ___position: BidirectionalIterator<i32> = ({ (*m.borrow()).begin() });
+            let ___position: std___rb_tree__Iterator_true__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*m.borrow()) . begin ( ) } )   ;
             (*m.borrow()).erase_51(___position)
         });
-        assert!(({ (({ (*m.borrow()).size() }) == 0_u64) }));
+        ({ cpp2rust_assert_fail_4((({ (*m.borrow()).size() }) == 0_u64)) });
     }
     return true;
 }
@@ -143,20 +147,20 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_4() });
+    ({ test_5() });
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }

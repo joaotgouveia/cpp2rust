@@ -12,22 +12,14 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let a: Ptr<i32> = ({
-        let __tmp_0: Value<i32> = Rc::new(RefCell::new(2));
-        let __tmp_1: Value<i32> = Rc::new(RefCell::new(1));
-        if CppLess::less(&__tmp_0.as_pointer(), &__tmp_1.as_pointer()) {
-            __tmp_0.as_pointer()
-        } else {
-            __tmp_1.as_pointer()
-        }
+        let ___a: Value<i32> = Rc::new(RefCell::new(1));
+        let ___b: Value<i32> = Rc::new(RefCell::new(2));
+        min_0(___a.as_pointer(), ___b.as_pointer())
     });
     let b: Ptr<i32> = ({
-        let __tmp_2: Value<i32> = Rc::new(RefCell::new(1));
-        let __tmp_3: Value<i32> = Rc::new(RefCell::new(2));
-        if CppLess::less(&__tmp_2.as_pointer(), &__tmp_3.as_pointer()) {
-            __tmp_3.as_pointer()
-        } else {
-            __tmp_2.as_pointer()
-        }
+        let ___a: Value<i32> = Rc::new(RefCell::new(1));
+        let ___b: Value<i32> = Rc::new(RefCell::new(2));
+        max_1(___a.as_pointer(), ___b.as_pointer())
     });
     return (({ (a.read()) } == { (b.read()) }) as i32);
 }

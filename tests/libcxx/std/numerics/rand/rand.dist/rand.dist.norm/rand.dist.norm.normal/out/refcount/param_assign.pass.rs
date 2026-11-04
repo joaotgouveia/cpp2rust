@@ -35,8 +35,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             <std_normal_distribution___param_type>::default(),
         ));
         (*p.borrow_mut()) = (*p0.borrow()).clone();
-        assert!(({ (({ (*p.borrow()).mean() }) == 0.75_f64) }));
-        assert!(({ (({ (*p.borrow()).stddev() }) == 6_f64) }));
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).mean() }) == 0.75_f64)) });
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).stddev() }) == 6_f64)) });
     }
     return 0;
 }

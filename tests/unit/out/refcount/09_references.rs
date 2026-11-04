@@ -26,7 +26,7 @@ fn main_0() -> i32 {
     let mut h_ptr: Ptr<i32> = (h_ref1).clone();
     let h_ref2: Ptr<i32> = (h_ptr).clone();
     h_ref2.write(17);
-    assert!((({ (h_ref1.read()) } + { (h_ref2.read()) }) == 34));
+    ({ cpp2rust_assert_fail_3((({ (h_ref1.read()) } + { (h_ref2.read()) }) == 34)) });
     let a: Value<i32> = Rc::new(RefCell::new(1));
     let b: Value<i32> = Rc::new(RefCell::new(2));
     let r: Ptr<i32> = if ((*a.borrow()) < (*b.borrow())) {
@@ -35,13 +35,13 @@ fn main_0() -> i32 {
         (b.as_pointer())
     };
     r.write(10);
-    assert!(({ ((*a.borrow()) == 10) }));
+    ({ cpp2rust_assert_fail_3(((*a.borrow()) == 10)) });
     let cr: Ptr<i32> = if ((*a.borrow()) > (*b.borrow())) {
         (a.as_pointer())
     } else {
         (b.as_pointer())
     };
-    assert!(((cr.read()) == 10));
+    ({ cpp2rust_assert_fail_3(((cr.read()) == 10)) });
     let x: Value<i32> = Rc::new(RefCell::new(1));
     let y: Value<i32> = Rc::new(RefCell::new(2));
     let cx: Ptr<i32> = if ((*x.borrow()) < (*y.borrow())) {
@@ -49,28 +49,28 @@ fn main_0() -> i32 {
     } else {
         (y.as_pointer())
     };
-    assert!(((cx.read()) == 1));
+    ({ cpp2rust_assert_fail_3(((cx.read()) == 1)) });
     let mut cp: Ptr<i32> = if ((*a.borrow()) > (*b.borrow())) {
         (a.as_pointer())
     } else {
         (b.as_pointer())
     };
-    assert!(((cp.read()) == 10));
+    ({ cpp2rust_assert_fail_3(((cp.read()) == 10)) });
     let mut mp: Ptr<i32> = if ((*a.borrow()) < (*b.borrow())) {
         (a.as_pointer())
     } else {
         (b.as_pointer())
     };
     mp.write(20);
-    assert!(({ ((*b.borrow()) == 20) }));
+    ({ cpp2rust_assert_fail_3(((*b.borrow()) == 20)) });
     if ((*a.borrow()) < (*b.borrow())) {
         (a.as_pointer())
     } else {
         (b.as_pointer())
     }
     .write(30);
-    assert!(({ ((*a.borrow()) == 30) }));
-    assert!(({ ((*b.borrow()) == 20) }));
+    ({ cpp2rust_assert_fail_3(((*a.borrow()) == 30)) });
+    ({ cpp2rust_assert_fail_3(((*b.borrow()) == 20)) });
     {
         if ((*a.borrow()) < (*b.borrow())) {
             (a.as_pointer())
@@ -79,26 +79,26 @@ fn main_0() -> i32 {
         }
         .with_mut(|__v| *__v = *__v + 5)
     };
-    assert!(({ ((*b.borrow()) == 25) }));
+    ({ cpp2rust_assert_fail_3(((*b.borrow()) == 25)) });
     let mut ap: Ptr<i32> = (if ((*a.borrow()) > (*b.borrow())) {
         (a.as_pointer())
     } else {
         (b.as_pointer())
     });
     ap.write(40);
-    assert!(({ ((*a.borrow()) == 40) }));
+    ({ cpp2rust_assert_fail_3(((*a.borrow()) == 40)) });
     if ((*a.borrow()) < (*b.borrow())) {
         ({ inc_1() });
     } else {
         ({ dec_2() });
     };
-    assert!((counter_0.with(|rc| *rc.borrow()) == -1_i32));
+    ({ cpp2rust_assert_fail_3((counter_0.with(|rc| *rc.borrow()) == -1_i32)) });
     if ((*a.borrow()) > (*b.borrow())) {
         ({ inc_1() });
     } else {
         ({ dec_2() });
     };
-    assert!((counter_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_3((counter_0.with(|rc| *rc.borrow()) == 0)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

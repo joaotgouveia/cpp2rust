@@ -9,13 +9,6 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct indirect_less {}
-impl Callable2<Ptr<Option<Value<i32>>>, Ptr<Option<Value<i32>>>, bool> for indirect_less {
-    fn call(&self, a1: Ptr<Option<Value<i32>>>, a2: Ptr<Option<Value<i32>>>) -> bool {
-        libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
-            indirect_lessImpl::operator_call_1_class_std_unique_ptr_int_(__it, a1, a2)
-        })
-    }
-}
 impl CppMove for indirect_less {
     fn cpp_move(src: Ptr<Self>) -> Self {
         src.read()
@@ -42,105 +35,65 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-            (0..(1000_usize) as usize)
-                .map(|_| 0_i32)
-                .collect::<Vec<_>>(),
+        let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            std_vector_int__std_allocator_int__::new_1({ 1000_u64 }, None),
         ));
         let mut i: i32 = 0;
-        'loop_: while ((i as usize) < (*v.borrow()).len()) {
+        'loop_: while ((i as u64) < ({ (*v.borrow()).size() })) {
             let __rhs = i;
-            v.decay().offset((i as usize) as isize).write(__rhs);
+            (*v.borrow_mut())[(i as u64)] = __rhs;
             i.prefix_inc();
         }
         ({
-            let ___first: RandomAccessIterator<i32> = CppRange::begin(&v.decay());
-            let ___last: RandomAccessIterator<i32> = CppRange::end(&v.decay());
-            libcc2rs::sort_refcount(___first, ___last, <std_greater_int_>::default())
+            let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___   = ( { (*v.borrow()) . begin_28 ( ) } )   ;
+            let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+                ({ (*v.borrow()).end_30() });
+            sort_0(___first, ___last, <std_greater_int_>::default())
         });
         ({
-            let ___first: RandomAccessIterator<i32> = CppRange::begin(&v.decay());
-            let ___last: RandomAccessIterator<i32> = CppRange::end(&v.decay());
-            reverse_0(___first, ___last)
+            let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___   = ( { (*v.borrow()) . begin_28 ( ) } )   ;
+            let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+                ({ (*v.borrow()).end_30() });
+            reverse_1(___first, ___last)
         });
-        assert!(
-            ({
-                let ___first: RandomAccessIterator<i32> = CppRange::begin(&v.decay());
-                let ___last: RandomAccessIterator<i32> = CppRange::end(&v.decay());
-                is_sorted_1(___first, ___last)
-            })
-        );
+        ({
+            cpp2rust_assert_fail_2(
+                ({
+                    let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___   = ( { (*v.borrow()) . begin_28 ( ) } )   ;
+                    let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___   = ( { (*v.borrow()) . end_30 ( ) } )   ;
+                    is_sorted_3(___first, ___last)
+                }),
+            )
+        });
     }
     {
-        let v: Value<Vec<Option<Value<i32>>>> = Rc::new(RefCell::new(
-            (0..(1000_usize) as usize).map(|_| None).collect::<Vec<_>>(),
-        ));
+        let v : Value<std_vector_std_unique_ptr_int__std_default_delete_int____std_allocator_std_unique_ptr_int__std_default_delete_int____ > = Rc::new(RefCell::new(std_vector_std_unique_ptr_int__std_default_delete_int____std_allocator_std_unique_ptr_int__std_default_delete_int____ :: new_1 ( { 1000_u64  } , None , )  )) ;
         let mut i: i32 = 0;
-        'loop_: while ((i as usize) < (*v.borrow()).len()) {
-            match (v.decay().offset((i as usize) as isize),) {
-                (__tmp_0,) => {
-                    let _p: Ptr<_> = Ptr::alloc(i);
-                    __tmp_0.write(_p.to_owned_opt())
-                }
-            };
+        'loop_: while ((i as u64) < ({ (*v.borrow()).size() })) {
+            ({
+                let ___p: Ptr<i32> = Ptr::alloc(i);
+                (*v.borrow())[(i as u64)].reset(___p)
+            });
             i.prefix_inc();
         }
         ({
-            let ___first: RandomAccessIterator<Option<Value<i32>>> = CppRange::begin(&v.decay());
-            let ___last: RandomAccessIterator<Option<Value<i32>>> = CppRange::end(&v.decay());
-            libcc2rs::sort_refcount(___first, ___last, <indirect_less>::default())
+            let ___first: __gnu_cxx___normal_iterator_std_unique_ptr_int__std_default_delete_int___ptr__std_vector_std_unique_ptr_int__std_default_delete_int____std_allocator_std_unique_ptr_int__std_default_delete_int_____   = ( { (*v.borrow()) . begin_28 ( ) } )   ;
+            let ___last: __gnu_cxx___normal_iterator_std_unique_ptr_int__std_default_delete_int___ptr__std_vector_std_unique_ptr_int__std_default_delete_int____std_allocator_std_unique_ptr_int__std_default_delete_int_____   = ( { (*v.borrow()) . end_30 ( ) } )   ;
+            sort_4(___first, ___last, <indirect_less>::default())
         });
-        assert!(
-            ({
-                let ___first: RandomAccessIterator<Option<Value<i32>>> =
-                    CppRange::begin(&v.decay());
-                let ___last: RandomAccessIterator<Option<Value<i32>>> = CppRange::end(&v.decay());
-                is_sorted_2(___first, ___last, <indirect_less>::default())
-            })
-        );
-        assert!(
-            ({
-                (((*v.decay().offset(0_usize as isize).upgrade().deref())
-                    .as_pointer()
-                    .read())
-                    == 0)
-            })
-        );
-        assert!(
-            ({
-                (((*v.decay().offset(1_usize as isize).upgrade().deref())
-                    .as_pointer()
-                    .read())
-                    == 1)
-            })
-        );
-        assert!(
-            ({
-                (((*v.decay().offset(2_usize as isize).upgrade().deref())
-                    .as_pointer()
-                    .read())
-                    == 2)
-            })
-        );
+        ({
+            cpp2rust_assert_fail_2(
+                ({
+                    let ___first: __gnu_cxx___normal_iterator_std_unique_ptr_int__std_default_delete_int___ptr__std_vector_std_unique_ptr_int__std_default_delete_int____std_allocator_std_unique_ptr_int__std_default_delete_int_____   = ( { (*v.borrow()) . begin_28 ( ) } )   ;
+                    let ___last: __gnu_cxx___normal_iterator_std_unique_ptr_int__std_default_delete_int___ptr__std_vector_std_unique_ptr_int__std_default_delete_int____std_allocator_std_unique_ptr_int__std_default_delete_int_____   = ( { (*v.borrow()) . end_30 ( ) } )   ;
+                    is_sorted_5(___first, ___last, <indirect_less>::default())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_2((((*v.borrow())[0_u64].read()) == 0)) });
+        ({ cpp2rust_assert_fail_2((((*v.borrow())[1_u64].read()) == 1)) });
+        ({ cpp2rust_assert_fail_2((((*v.borrow())[2_u64].read()) == 2)) });
     }
     return 0;
-}
-pub trait indirect_lessImpl {
-    fn operator_call_1_class_std_unique_ptr_int_(
-        &self,
-        x: Ptr<Option<Value<i32>>>,
-        y: Ptr<Option<Value<i32>>>,
-    ) -> bool;
-}
-impl indirect_lessImpl for Ptr<indirect_less> {
-    fn operator_call_1_class_std_unique_ptr_int_(
-        &self,
-        x: Ptr<Option<Value<i32>>>,
-        y: Ptr<Option<Value<i32>>>,
-    ) -> bool {
-        return ({ ((*x.upgrade().deref()).as_pointer().read()) } < {
-            ((*y.upgrade().deref()).as_pointer().read())
-        });
-    }
 }
 pub fn __cpp2rust_init_globals() {}

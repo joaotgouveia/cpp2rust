@@ -252,31 +252,37 @@ fn main_0() -> i32 {
         ))
     })
     .with_mut(|__v| __v.postfix_inc());
-    assert!(
-        ((((({
-            ptr_1(
-                (field_ptr!(
-                    ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer(),) }),) }),) }),
-                    v
-                )),
-            )
-        })
-        .read())
-            + (({
-                bar_2(field_ptr!(
-                    ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer(),) }),) }),) }),
-                    v
-                ))
-            })
-            .read()))
-            + ({
-                foo_0(
-                    ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer()) })) })) })
-                        .with(|__s| __s.v),
+    ({
+        cpp2rust_assert_fail_3(
+            ((((({
+                ptr_1(
+                    (field_ptr!(
+                        ({
+                            X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer()) })) }))
+                        }),
+                        v
+                    )),
                 )
-            }))
-            == 54)
-    );
+            })
+            .read())
+                + (({
+                    bar_2(field_ptr!(
+                        ({
+                            X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer()) })) }))
+                        }),
+                        v
+                    ))
+                })
+                .read()))
+                + ({
+                    foo_0(
+                        ({ X2Impl::get(&({ X3Impl::get(&({ X4Impl::get(&d.as_pointer()) })) })) })
+                            .with(|__s| __s.v),
+                    )
+                }))
+                == 54),
+        )
+    });
     return 0;
 }
 pub trait X2Impl {

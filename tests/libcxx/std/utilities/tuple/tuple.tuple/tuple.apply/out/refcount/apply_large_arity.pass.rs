@@ -2572,36 +2572,57 @@ pub fn test_all_21() {
         (FnPtr::<fn(Ptr<i32>) -> bool>::new(test_apply_fn_3)),
     ));
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 1, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_22(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_23(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_24(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_25(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_int__1_> = Rc::new(RefCell::new(<std_array_int__1_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_23(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_24(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_25(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_26(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 1, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_26(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_27(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_const_int__1_> =
+            Rc::new(RefCell::new(<std_array_const_int__1_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_27(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_28(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_int_> = Rc::new(RefCell::new(<std_tuple_int_>::default()));
-        assert!((({ apply_28(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_29(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_30(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_31(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_29(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_30(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_31(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_32(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_const_int_> =
             Rc::new(RefCell::new(<std_tuple_const_int_>::default()));
-        assert!((({ apply_32(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_33(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_33(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_34(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
 }
-pub fn test_all_34() {
+pub fn test_all_35() {
     let val_fn: Value<FnPtr<fn(i32, i32) -> bool>> = Rc::new(RefCell::new(
         (FnPtr::<fn(i32, i32) -> bool>::new(test_apply_fn_4)),
     ));
@@ -2615,36 +2636,57 @@ pub fn test_all_34() {
         (FnPtr::<fn(Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_7)),
     ));
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 2, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_35(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_36(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_37(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_38(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_int__2_> = Rc::new(RefCell::new(<std_array_int__2_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_36(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_37(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_38(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_39(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 2, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_39(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_40(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_const_int__2_> =
+            Rc::new(RefCell::new(<std_array_const_int__2_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_40(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_41(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_int__int_> = Rc::new(RefCell::new(<std_tuple_int__int_>::default()));
-        assert!((({ apply_41(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_42(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_43(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_44(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_42(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_43(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_44(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_45(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_const_int__const_int_> =
             Rc::new(RefCell::new(<std_tuple_const_int__const_int_>::default()));
-        assert!((({ apply_45(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_46(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_46(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_47(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
 }
-pub fn test_all_47() {
+pub fn test_all_48() {
     let val_fn: Value<FnPtr<fn(i32, i32, i32) -> bool>> = Rc::new(RefCell::new(
         (FnPtr::<fn(i32, i32, i32) -> bool>::new(test_apply_fn_8)),
     ));
@@ -2658,38 +2700,59 @@ pub fn test_all_47() {
         (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_11)),
     ));
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_48(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_49(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_50(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_51(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_int__3_> = Rc::new(RefCell::new(<std_array_int__3_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_49(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_50(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_51(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_52(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_52(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_53(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_const_int__3_> =
+            Rc::new(RefCell::new(<std_array_const_int__3_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_53(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_54(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_int__int__int_> =
             Rc::new(RefCell::new(<std_tuple_int__int__int_>::default()));
-        assert!((({ apply_54(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_55(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_56(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_57(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_55(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_56(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_57(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_58(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_const_int__const_int__const_int_> = Rc::new(RefCell::new(
             <std_tuple_const_int__const_int__const_int_>::default(),
         ));
-        assert!((({ apply_58(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_59(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_59(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_60(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
 }
-pub fn test_all_60() {
+pub fn test_all_61() {
     let val_fn: Value<FnPtr<fn(i32, i32, i32, i32) -> bool>> = Rc::new(RefCell::new(
         (FnPtr::<fn(i32, i32, i32, i32) -> bool>::new(test_apply_fn_12)),
     ));
@@ -2706,38 +2769,59 @@ pub fn test_all_60() {
             (FnPtr::<fn(Ptr<i32>, Ptr<i32>, Ptr<i32>, Ptr<i32>) -> bool>::new(test_apply_fn_15)),
         ));
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 4, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_61(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_62(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_63(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_64(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_int__4_> = Rc::new(RefCell::new(<std_array_int__4_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_62(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_63(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_64(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_65(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 4, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_65(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_66(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_const_int__4_> =
+            Rc::new(RefCell::new(<std_array_const_int__4_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_66(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_67(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_int__int__int__int_> =
             Rc::new(RefCell::new(<std_tuple_int__int__int__int_>::default()));
-        assert!((({ apply_67(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_68(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_69(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_70(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_68(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_69(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_70(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_71(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_const_int__const_int__const_int__const_int_> = Rc::new(
             RefCell::new(<std_tuple_const_int__const_int__const_int__const_int_>::default()),
         );
-        assert!((({ apply_71(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_72(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_72(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_73(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
 }
-pub fn test_all_73() {
+pub fn test_all_74() {
     let val_fn: Value<FnPtr<fn(i32, i32, i32, i32, i32) -> bool>> = Rc::new(RefCell::new(
         (FnPtr::<fn(i32, i32, i32, i32, i32) -> bool>::new(test_apply_fn_16)),
     ));
@@ -2760,39 +2844,60 @@ pub fn test_all_73() {
             )),
         ));
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 5, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_74(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_75(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_76(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_77(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_int__5_> = Rc::new(RefCell::new(<std_array_int__5_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_75(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_76(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_77(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_78(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 5, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_78(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_79(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_const_int__5_> =
+            Rc::new(RefCell::new(<std_array_const_int__5_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_79(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_80(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_int__int__int__int__int_> =
             Rc::new(RefCell::new(<std_tuple_int__int__int__int__int_>::default()));
-        assert!((({ apply_80(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_81(ref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_82(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_83(rref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_81(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_82(ref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_83(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_84(rref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a: Value<std_tuple_const_int__const_int__const_int__const_int__const_int_> =
             Rc::new(RefCell::new(
                 <std_tuple_const_int__const_int__const_int__const_int__const_int_>::default(),
             ));
-        assert!((({ apply_84(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
-        assert!((({ apply_85(cref_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_85(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
+        ({
+            cpp2rust_assert_fail_22((({ apply_86(cref_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
 }
-pub fn test_one_86() {
+pub fn test_one_87() {
     let val_fn: Value<
         FnPtr<
             fn(
@@ -3317,14 +3422,16 @@ pub fn test_one_86() {
         >::new(test_apply_fn_20)),
     ));
     {
-        let a: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 256, _>(|_| 0_i32).to_vec(),
-        ));
-        assert!((({ apply_87(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        let a: Value<std_array_int__256_> = Rc::new(RefCell::new(<std_array_int__256_>::default()));
+        ({
+            cpp2rust_assert_fail_22((({ apply_88(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
     {
         let a : Value<std_tuple_int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ > = Rc::new(RefCell::new(<std_tuple_int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_  >::default() )) ;
-        assert!((({ apply_88(val_fn.as_pointer(), a.as_pointer(),) }) as bool));
+        ({
+            cpp2rust_assert_fail_22((({ apply_89(val_fn.as_pointer(), a.as_pointer()) }) as bool))
+        });
     }
 }
 pub fn main() {
@@ -3348,11 +3455,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_all_21() });
-    ({ test_all_34() });
-    ({ test_all_47() });
-    ({ test_all_60() });
-    ({ test_all_73() });
-    ({ test_one_86() });
+    ({ test_all_35() });
+    ({ test_all_48() });
+    ({ test_all_61() });
+    ({ test_all_74() });
+    ({ test_one_87() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

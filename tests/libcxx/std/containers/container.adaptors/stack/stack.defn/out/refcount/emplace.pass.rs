@@ -88,27 +88,29 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let ___args_1: Value<f64> = Rc::new(RefCell::new(2.5_f64));
         (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
     });
-    assert!(({ ({ (r1).clone() } == { ({ (*q.borrow()).top_15() }) }) }));
+    ({ cpp2rust_assert_fail_2(({ (r1).clone() } == { ({ (*q.borrow()).top_15() }) })) });
     let r2: Ptr<Emplaceable> = ({
         let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
         let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
         (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
     });
-    assert!(({ ({ (r2).clone() } == { ({ (*q.borrow()).top_15() }) }) }));
+    ({ cpp2rust_assert_fail_2(({ (r2).clone() } == { ({ (*q.borrow()).top_15() }) })) });
     let r3: Ptr<Emplaceable> = ({
         let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
         let ___args_1: Value<f64> = Rc::new(RefCell::new(4.5_f64));
         (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
     });
-    assert!(({ ({ (r3).clone() } == { ({ (*q.borrow()).top_15() }) }) }));
-    assert!(({ (({ (*q.borrow()).size() }) == 3_u64) }));
-    assert!(
-        ({
-            let _x: Value<Emplaceable> =
-                Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
-            EmplaceableImpl::operator_eq(&({ (*q.borrow()).top_15() }), _x.as_pointer())
-        })
-    );
+    ({ cpp2rust_assert_fail_2(({ (r3).clone() } == { ({ (*q.borrow()).top_15() }) })) });
+    ({ cpp2rust_assert_fail_2((({ (*q.borrow()).size() }) == 3_u64)) });
+    ({
+        cpp2rust_assert_fail_2(
+            ({
+                let _x: Value<Emplaceable> =
+                    Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
+                EmplaceableImpl::operator_eq(&({ (*q.borrow()).top_15() }), _x.as_pointer())
+            }),
+        )
+    });
     return 0;
 }
 pub trait EmplaceableImpl {

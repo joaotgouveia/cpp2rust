@@ -27,14 +27,16 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(argc: i32, argv: Ptr<Ptr<i8>>) -> i32 {
-    let mut s: Vec<i8> = {
-        let mut __bytes = (elem!(argv, 0).read()).to_c_bytes();
-        __bytes.push(0_i8);
-        __bytes
-    };
-    assert!((argc == 1));
-    assert!(((s.len() - 1) > 0_usize));
-    assert!(((argc + (((s.len() - 1) > 0_usize) as i32)) == 2));
+    let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { (elem!(argv, 0).read()) },
+                None,
+            ),
+        ));
+    ({ cpp2rust_assert_fail_0((argc == 1)) });
+    ({ cpp2rust_assert_fail_0((({ (*s.borrow()).size() }) > 0_u64)) });
+    ({ cpp2rust_assert_fail_0(((argc + ((({ (*s.borrow()).size() }) > 0_u64) as i32)) == 2)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

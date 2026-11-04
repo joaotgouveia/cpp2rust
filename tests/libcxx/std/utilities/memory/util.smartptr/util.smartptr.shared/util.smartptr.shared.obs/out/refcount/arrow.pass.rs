@@ -29,42 +29,52 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let p: Value<std_shared_ptr_std_pair_int__int__> =
         Rc::new(RefCell::new(std_shared_ptr_std_pair_int__int__::new_1({
-            Ptr::alloc((Rc::new(RefCell::new(3)), Rc::new(RefCell::new(4))))
+            Ptr::alloc({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(3));
+                let __tmp_1: Value<i32> = Rc::new(RefCell::new(4));
+                std_pair_int__int_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+            })
         })));
-    assert!(
-        ({
-            ( (*( * ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) .upgrade().deref() )  .0.borrow()) == 3 )
-        })
-    );
-    assert!(
-        ({
-            ( (*( * ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) .upgrade().deref() )  .1.borrow()) == 4 )
-        })
-    );
-    (*(*(((*p.borrow())
-        as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_)
-        .read())
-    .upgrade()
-    .deref())
-    .0
-    .borrow_mut()) = 5;
-    (*(*(((*p.borrow())
-        as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_)
-        .read())
-    .upgrade()
-    .deref())
-    .1
-    .borrow_mut()) = 6;
-    assert!(
-        ({
-            ( (*( * ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) .upgrade().deref() )  .0.borrow()) == 5 )
-        })
-    );
-    assert!(
-        ({
-            ( (*( * ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) .upgrade().deref() )  .1.borrow()) == 6 )
-        })
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) . first
+            } == 3),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) . second
+            } == 4),
+        )
+    });
+    field!(
+        ((*p.borrow_mut())
+            as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_),
+        first
+    )
+    .write(5);
+    field!(
+        ((*p.borrow_mut())
+            as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_),
+        second
+    )
+    .write(6);
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) . first
+            } == 5),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                ( ( (*p.borrow()) as std___shared_ptr_access_std_pair_int__int_____gnu_cxx__S_atomic__false__false_ ) .read() ) . second
+            } == 6),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

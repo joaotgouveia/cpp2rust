@@ -31,9 +31,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ default_middle_0(1,) }) == 1));
-    assert!((({ default_middle_0(2,) }) == 2));
-    assert!((({ default_middle_0(99,) }) == 99));
+    ({ cpp2rust_assert_fail_1((({ default_middle_0(1) }) == 1)) });
+    ({ cpp2rust_assert_fail_1((({ default_middle_0(2) }) == 2)) });
+    ({ cpp2rust_assert_fail_1((({ default_middle_0(99) }) == 99)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

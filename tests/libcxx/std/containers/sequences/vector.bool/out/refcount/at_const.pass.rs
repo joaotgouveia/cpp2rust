@@ -20,17 +20,21 @@ impl CppMove for test_macros_detail_is_same_bool__bool_ {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_2.with(|rc| *rc.borrow()) >= dealloc_count_3.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_5(
+                (alloc_count_2.with(|rc| *rc.borrow()) >= dealloc_count_3.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_2.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_3.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_5((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_4.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -39,13 +43,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_3: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_3: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_4: Value<bool> = Rc::new(RefCell::new(false));
@@ -121,10 +125,10 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_5: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_6: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_6: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_7: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -134,14 +138,14 @@ impl CppMove for test_alloc_base {
         src.read()
     }
 }
-pub fn operator_eq_7(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_eq_8(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_8(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_9(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_7(_x, _y)
+        operator_eq_8(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -201,7 +205,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_7(__lhs.clone(), __rhs.clone())
+        operator_eq_8(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -308,12 +312,16 @@ impl test_allocator_unsigned_long_ {
             stats_: a.with(|__s| __s.stats_.clone()),
         }));
         let this: Ptr<test_allocator_unsigned_long_> = __this.as_pointer();
-        assert!(
-            (({ a.with(|__s| __s.data_) } != { destructed_value_5.with(|rc| *rc.borrow()) })
-                && ({ a.with(|__s| __s.id_) } != { destructed_value_5.with(|rc| *rc.borrow()) }))
-                && (!(Ptr::<i8>::from_string_literal(b"copying from destroyed allocator"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_5(
+                (({ a.with(|__s| __s.data_) } != { destructed_value_6.with(|rc| *rc.borrow()) })
+                    && ({ a.with(|__s| __s.id_) } != {
+                        destructed_value_6.with(|rc| *rc.borrow())
+                    }))
+                    && (!(Ptr::<i8>::from_string_literal(b"copying from destroyed allocator"))
+                        .is_null()),
+            )
+        });
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_inc();
@@ -375,7 +383,7 @@ impl Tag_X {
         Self {}
     }
 }
-pub fn test_9() {
+pub fn test_11() {
     let a: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([
         (1 != 0),
         (0 != 0),
@@ -383,74 +391,26 @@ pub fn test_9() {
         (0 != 0),
         (1 != 0),
     ])));
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
-        match ({
-            (a.as_pointer() as Ptr<bool>).offset(
-                ((::std::mem::size_of::<[bool; 5]>() as usize)
-                    .wrapping_div((::std::mem::size_of::<bool>() as usize)))
-                    as isize,
-            )
-        },)
-        {
-            (mut __tmp_0,) => {
-                let mut __v = Vec::new();
-                let mut __it = (a.as_pointer() as Ptr<bool>);
-                while __it != __tmp_0 {
-                    __v.push(__it.iter_deref().read() != false);
-                    __it.iter_inc();
-                }
-                __v
-            }
-        },
-    ));
+    let v: Value<std_vector_bool__min_allocator_bool__> =
+        Rc::new(RefCell::new(std_vector_bool__min_allocator_bool__::new_1(
+            { (a.as_pointer() as Ptr<bool>) },
+            {
+                (a.as_pointer() as Ptr<bool>).offset(
+                    ((::std::mem::size_of::<[bool; 5]>() as u64)
+                        .wrapping_div((::std::mem::size_of::<bool>() as u64)))
+                        as isize,
+                )
+            },
+            None,
+        )));
     const _: () = assert!(true, "");;
-    assert!(
-        (((if 0_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(0_usize as isize)
-        }
-        .read()) as i32)
-            == (true as i32))
-    );
-    assert!(
-        (((if 1_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(1_usize as isize)
-        }
-        .read()) as i32)
-            == (false as i32))
-    );
-    assert!(
-        (((if 2_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(2_usize as isize)
-        }
-        .read()) as i32)
-            == (true as i32))
-    );
-    assert!(
-        (((if 3_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(3_usize as isize)
-        }
-        .read()) as i32)
-            == (false as i32))
-    );
-    assert!(
-        (((if 4_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(4_usize as isize)
-        }
-        .read()) as i32)
-            == (true as i32))
-    );
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(0_u64) }) as i32) == (true as i32))) });
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(1_u64) }) as i32) == (false as i32))) });
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(2_u64) }) as i32) == (true as i32))) });
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(3_u64) }) as i32) == (false as i32))) });
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(4_u64) }) as i32) == (true as i32))) });
 }
-pub fn test_10() {
+pub fn test_12() {
     let a: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([
         (1 != 0),
         (0 != 0),
@@ -458,85 +418,37 @@ pub fn test_10() {
         (0 != 0),
         (1 != 0),
     ])));
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new(
-        match ({
-            (a.as_pointer() as Ptr<bool>).offset(
-                ((::std::mem::size_of::<[bool; 5]>() as usize)
-                    .wrapping_div((::std::mem::size_of::<bool>() as usize)))
-                    as isize,
-            )
-        },)
-        {
-            (mut __tmp_1,) => {
-                let mut __v = Vec::new();
-                let mut __it = (a.as_pointer() as Ptr<bool>);
-                while __it != __tmp_1 {
-                    __v.push(__it.iter_deref().read() != false);
-                    __it.iter_inc();
-                }
-                __v
-            }
-        },
-    ));
+    let v: Value<std_vector_bool__test_allocator_bool__> =
+        Rc::new(RefCell::new(std_vector_bool__test_allocator_bool__::new_1(
+            { (a.as_pointer() as Ptr<bool>) },
+            {
+                (a.as_pointer() as Ptr<bool>).offset(
+                    ((::std::mem::size_of::<[bool; 5]>() as u64)
+                        .wrapping_div((::std::mem::size_of::<bool>() as u64)))
+                        as isize,
+                )
+            },
+            None,
+        )));
     const _: () = assert!(true, "");;
-    assert!(
-        (((if 0_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(0_usize as isize)
-        }
-        .read()) as i32)
-            == (true as i32))
-    );
-    assert!(
-        (((if 1_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(1_usize as isize)
-        }
-        .read()) as i32)
-            == (false as i32))
-    );
-    assert!(
-        (((if 2_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(2_usize as isize)
-        }
-        .read()) as i32)
-            == (true as i32))
-    );
-    assert!(
-        (((if 3_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(3_usize as isize)
-        }
-        .read()) as i32)
-            == (false as i32))
-    );
-    assert!(
-        (((if 4_usize as usize >= (*v.as_pointer().upgrade().deref()).len() {
-            panic!("out of bounds access")
-        } else {
-            v.as_pointer().decay().offset(4_usize as isize)
-        }
-        .read()) as i32)
-            == (true as i32))
-    );
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(0_u64) }) as i32) == (true as i32))) });
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(1_u64) }) as i32) == (false as i32))) });
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(2_u64) }) as i32) == (true as i32))) });
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(3_u64) }) as i32) == (false as i32))) });
+    ({ cpp2rust_assert_fail_5(((({ (*v.borrow()).at_43(4_u64) }) as i32) == (true as i32))) });
 }
-pub fn test_exception_11() {}
-pub fn test_exception_12() {}
-pub fn tests_13() -> bool {
-    ({ test_14() });
-    ({ test_9() });
-    ({ test_10() });
+pub fn test_exception_13() {}
+pub fn test_exception_14() {}
+pub fn tests_15() -> bool {
+    ({ test_16() });
+    ({ test_11() });
+    ({ test_12() });
     return true;
 }
-pub fn test_exceptions_15() {
-    ({ test_exception_16() });
-    ({ test_exception_11() });
-    ({ test_exception_12() });
+pub fn test_exceptions_17() {
+    ({ test_exception_18() });
+    ({ test_exception_13() });
+    ({ test_exception_14() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -558,8 +470,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_13() });
-    ({ test_exceptions_15() });
+    ({ tests_15() });
+    ({ test_exceptions_17() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
@@ -582,13 +494,13 @@ impl Tag_XImpl for Ptr<Tag_X> {
     }
 }
 pub trait min_allocator_bool_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_bool__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_bool__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }
@@ -597,18 +509,18 @@ impl min_allocator_bool_Impl for Ptr<min_allocator_bool_> {}
 pub trait min_allocator_unsigned_long_Impl {
     fn allocate(
         &self,
-        n: usize,
+        n: u64,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__;
     fn deallocate(
         &self,
         p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {
     fn allocate(
         &self,
-        mut n: usize,
+        mut n: u64,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         return min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_unsigned_long_>::default().allocate(n) })
@@ -617,11 +529,11 @@ impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {
     fn deallocate(
         &self,
         mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({
             let ___p: Ptr<u64> = (p.ptr_).clone();
-            let ___n: usize = n;
+            let ___n: u64 = n;
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
@@ -655,15 +567,23 @@ pub trait test_allocator_bool_Impl {
 }
 impl test_allocator_bool_Impl for Ptr<test_allocator_bool_> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
-        assert!(((*self).with(|__s| __s.id_) != destructed_value_5.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_5(
+                ((*self).with(|__s| __s.data_) != destructed_value_6.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_5(
+                ((*self).with(|__s| __s.id_) != destructed_value_6.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_dec();
             });
         }
-        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_6.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_6.with(|rc| *rc.borrow()));
     }
 }
 pub trait test_allocator_statisticsImpl {
@@ -672,11 +592,13 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        assert!(
-            ((*self).with(|__s| __s.count) == 0)
-                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_5(
+                ((*self).with(|__s| __s.count) == 0)
+                    && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                        .is_null()),
+            )
+        });
         field!((*self), count).write(0);
         field!((*self), time_to_throw).write(0);
         field!((*self), alloc_count).write(0);
@@ -717,19 +639,31 @@ pub trait test_allocator_unsigned_long_Impl {
 }
 impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
-        assert!(((*self).with(|__s| __s.id_) != destructed_value_5.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_5(
+                ((*self).with(|__s| __s.data_) != destructed_value_6.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_5(
+                ((*self).with(|__s| __s.id_) != destructed_value_6.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_dec();
             });
         }
-        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_6.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_6.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: u32, _a1: Option<AnyPtr>) -> Ptr<u64> {
         let mut _a1: AnyPtr = _a1.unwrap_or_else(|| AnyPtr::default());
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_5(
+                ((*self).with(|__s| __s.data_) != destructed_value_6.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             if ({
                 (*self)
@@ -740,7 +674,7 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
                     .with(|__s| __s.stats_.clone())
                     .with(|__s| __s.throw_after)
             }) {
-                std::process::abort();
+                ({ __builtin_abort_10() });
             }
             field!((*self).with(|__s| __s.stats_.clone()), time_to_throw).with_mut(|__v| {
                 __v.prefix_inc();
@@ -755,10 +689,14 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
                     .wrapping_add(n)) as i32
             });
         }
-        return ({ <std_allocator_unsigned_long_>::default().allocate((n as usize)) });
+        return ({ <std_allocator_unsigned_long_>::default().allocate((n as u64)) });
     }
     fn deallocate(&self, mut p: Ptr<u64>, mut s: u32) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_5(
+                ((*self).with(|__s| __s.data_) != destructed_value_6.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
                 __v.prefix_dec();
@@ -772,7 +710,7 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
         }
         ({
             let ___p: Ptr<u64> = (p).clone();
-            let ___n: usize = (s as usize);
+            let ___n: u64 = (s as u64);
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
@@ -785,8 +723,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_6.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_6.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -806,6 +744,6 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_2.with(|_| ());
     let _ = dealloc_count_3.with(|_| ());
     let _ = disable_default_constructor_4.with(|_| ());
-    let _ = destructed_value_5.with(|_| ());
-    let _ = moved_value_6.with(|_| ());
+    let _ = destructed_value_6.with(|_| ());
+    let _ = moved_value_7.with(|_| ());
 }

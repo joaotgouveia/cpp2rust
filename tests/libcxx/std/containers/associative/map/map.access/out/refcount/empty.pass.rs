@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,53 +33,51 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_std_pair_const_int__double__ {}
-impl CppMove for min_allocator_std_pair_const_int__double__ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
-pub fn test_4() -> bool {
+pub fn test_5() -> bool {
     {
-        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
-        assert!(({ ({ (*m.borrow()).empty() }) }));
+        let m : Value<std_map_int__double__std_less_int___std_allocator_std_pair_const_int__double___ > = Rc::new(RefCell::new(<std_map_int__double__std_less_int___std_allocator_std_pair_const_int__double___  >::default() )) ;
+        ({ cpp2rust_assert_fail_4(({ (*m.borrow()).empty() })) });
         ({
-            let ___x: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(1)),
-                Rc::new(RefCell::new(1.5_f64)),
-            )));
+            let ___x: Value<std_pair_const_int__double_> = Rc::new(RefCell::new({
+                let __tmp_0: Value<i32> = Rc::new(RefCell::new(1));
+                let __tmp_1: Value<f64> = Rc::new(RefCell::new(1.5_f64));
+                std_pair_const_int__double_::new_1({ __tmp_0.as_pointer() }, {
+                    __tmp_1.as_pointer()
+                })
+            }));
             (*m.borrow()).insert_54(___x.as_pointer())
         });
-        assert!(({ !({ (*m.borrow()).empty() }) }));
+        ({ cpp2rust_assert_fail_4(!({ (*m.borrow()).empty() })) });
         ({ (*m.borrow()).clear() });
-        assert!(({ ({ (*m.borrow()).empty() }) }));
+        ({ cpp2rust_assert_fail_4(({ (*m.borrow()).empty() })) });
     }
     {
-        let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
-        assert!(({ ({ (*m.borrow()).empty() }) }));
+        let m : Value<std_map_int__double__std_less_int___min_allocator_std_pair_const_int__double___ > = Rc::new(RefCell::new(<std_map_int__double__std_less_int___min_allocator_std_pair_const_int__double___  >::default() )) ;
+        ({ cpp2rust_assert_fail_4(({ (*m.borrow()).empty() })) });
         ({
-            let ___x: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-                Rc::new(RefCell::new(1)),
-                Rc::new(RefCell::new(1.5_f64)),
-            )));
+            let ___x: Value<std_pair_const_int__double_> = Rc::new(RefCell::new({
+                let __tmp_2: Value<i32> = Rc::new(RefCell::new(1));
+                let __tmp_3: Value<f64> = Rc::new(RefCell::new(1.5_f64));
+                std_pair_const_int__double_::new_1({ __tmp_2.as_pointer() }, {
+                    __tmp_3.as_pointer()
+                })
+            }));
             (*m.borrow()).insert_54(___x.as_pointer())
         });
-        assert!(({ !({ (*m.borrow()).empty() }) }));
+        ({ cpp2rust_assert_fail_4(!({ (*m.borrow()).empty() })) });
         ({ (*m.borrow()).clear() });
-        assert!(({ ({ (*m.borrow()).empty() }) }));
+        ({ cpp2rust_assert_fail_4(({ (*m.borrow()).empty() })) });
     }
     return true;
 }
@@ -99,30 +101,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_4() });
+    ({ test_5() });
     return 0;
-}
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__;
-pub trait min_allocator_std_pair_const_int__double__Impl {
-    fn allocate(
-        &self,
-        mut n: usize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__,
-        mut n: usize,
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_std_pair_const_int__double__Impl
-    for Ptr<min_allocator_std_pair_const_int__double__>
-{
 }
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());

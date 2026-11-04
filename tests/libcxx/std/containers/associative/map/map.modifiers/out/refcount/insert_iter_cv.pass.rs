@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,237 +33,21 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
 );
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_std_pair_const_int__double__ {}
-impl CppMove for min_allocator_std_pair_const_int__double__ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
-pub fn do_insert_iter_cv_test_4() -> bool {
-    let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
-    let v1: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(2)),
-        Rc::new(RefCell::new(2.5_f64)),
-    )));
-    let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
-        ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                );
-            (*m.borrow()).insert_58(___position, v1.as_pointer())
-        }),
-    ));
-    assert!(
-        (*r.borrow())
-            == m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
-    );
-    assert!(({ ((*m.borrow()).len() == 1_usize) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64) }));
-    let v2: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(1)),
-        Rc::new(RefCell::new(1.5_f64)),
-    )));
+pub fn test_5() -> bool {
+    ({ do_insert_iter_cv_test_6() });
     {
-        let __a1 = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                );
-            (*m.borrow()).insert_58(___position, v2.as_pointer())
-        });
-        r.as_pointer().with_mut(|__it| *__it = __a1);
-        r.as_pointer()
-    };
-    assert!(
-        (*r.borrow())
-            == m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
-    );
-    assert!(({ ((*m.borrow()).len() == 2_usize) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 1.5_f64) }));
-    let v3: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(3)),
-        Rc::new(RefCell::new(3.5_f64)),
-    )));
-    {
-        let __a1 = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                );
-            (*m.borrow()).insert_58(___position, v3.as_pointer())
-        });
-        r.as_pointer().with_mut(|__it| *__it = __a1);
-        r.as_pointer()
-    };
-    assert!(
-        (*r.borrow())
-            == libcc2rs::prev_refcount(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize as isize
-            )
-    );
-    assert!(({ ((*m.borrow()).len() == 3_usize) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 3.5_f64) }));
-    let v4: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(3)),
-        Rc::new(RefCell::new(4.5_f64)),
-    )));
-    {
-        let __a1 = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                );
-            (*m.borrow()).insert_58(___position, v4.as_pointer())
-        });
-        r.as_pointer().with_mut(|__it| *__it = __a1);
-        r.as_pointer()
-    };
-    assert!(
-        (*r.borrow())
-            == libcc2rs::prev_refcount(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize as isize
-            )
-    );
-    assert!(({ ((*m.borrow()).len() == 3_usize) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 3.5_f64) }));
-    return true;
-}
-pub fn do_insert_iter_cv_test_5() -> bool {
-    let m: Value<Map<i32, (Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(Map::new()));
-    let v1: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(2)),
-        Rc::new(RefCell::new(2.5_f64)),
-    )));
-    let r: Value<BidirectionalIterator<(Value<i32>, Value<f64>)>> = Rc::new(RefCell::new(
-        ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                );
-            (*m.borrow()).insert_58(___position, v1.as_pointer())
-        }),
-    ));
-    assert!(
-        (*r.borrow())
-            == m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
-    );
-    assert!(({ ((*m.borrow()).len() == 1_usize) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 2.5_f64) }));
-    let v2: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(1)),
-        Rc::new(RefCell::new(1.5_f64)),
-    )));
-    {
-        let __a1 = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                );
-            (*m.borrow()).insert_58(___position, v2.as_pointer())
-        });
-        r.as_pointer().with_mut(|__it| *__it = __a1.clone());
-        r.as_pointer()
-    };
-    assert!(
-        (*r.borrow())
-            == m.as_pointer()
-                .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.begin())
-    );
-    assert!(({ ((*m.borrow()).len() == 2_usize) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 1) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 1.5_f64) }));
-    let v3: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(3)),
-        Rc::new(RefCell::new(3.5_f64)),
-    )));
-    {
-        let __a1 = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                );
-            (*m.borrow()).insert_58(___position, v3.as_pointer())
-        });
-        r.as_pointer().with_mut(|__it| *__it = __a1.clone());
-        r.as_pointer()
-    };
-    assert!(
-        (*r.borrow())
-            == libcc2rs::prev_refcount(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize as isize
-            )
-    );
-    assert!(({ ((*m.borrow()).len() == 3_usize) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 3.5_f64) }));
-    let v4: Value<(Value<i32>, Value<f64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(3)),
-        Rc::new(RefCell::new(4.5_f64)),
-    )));
-    {
-        let __a1 = ({
-            let ___position: BidirectionalIterator<(Value<i32>, Value<f64>)> =
-                <BidirectionalIterator<(Value<i32>, Value<f64>)>>::from(
-                    m.as_pointer()
-                        .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                );
-            (*m.borrow()).insert_58(___position, v4.as_pointer())
-        });
-        r.as_pointer().with_mut(|__it| *__it = __a1.clone());
-        r.as_pointer()
-    };
-    assert!(
-        (*r.borrow())
-            == libcc2rs::prev_refcount(
-                m.as_pointer()
-                    .with(|__m: &Map<i32, (Value<i32>, Value<f64>)>| __m.end()),
-                1_isize as isize
-            )
-    );
-    assert!(({ ((*m.borrow()).len() == 3_usize) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
-    assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).1.borrow()) == 3.5_f64) }));
-    return true;
-}
-pub fn test_6() -> bool {
-    ({ do_insert_iter_cv_test_4() });
-    {
-        ({ do_insert_iter_cv_test_5() });
+        ({ do_insert_iter_cv_test_7() });
     }
     return true;
 }
@@ -283,30 +71,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_6() });
+    ({ test_5() });
     return 0;
-}
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__;
-pub trait min_allocator_std_pair_const_int__double__Impl {
-    fn allocate(
-        &self,
-        mut n: usize,
-    ) -> min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__,
-        mut n: usize,
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_std_pair_const_int__double__Impl
-    for Ptr<min_allocator_std_pair_const_int__double__>
-{
 }
 pub fn __cpp2rust_init_globals() {
     let _ = outstanding_bytes_0.with(|_| ());

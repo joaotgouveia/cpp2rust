@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -84,78 +88,107 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        let c: Value<std_deque_int__std_allocator_int__> =
+            Rc::new(RefCell::new(<std_deque_int__std_allocator_int__>::default()));
         const _: () = assert!(true, "");;
-        assert!(({ (({ (*c.borrow()).size() }) == 0_usize) }));
-        const _: () = assert!(true, "");;
-        (*c.borrow_mut()).push(2);
-        assert!(({ (({ (*c.borrow()).size() }) == 1_usize) }));
-        const _: () = assert!(true, "");;
-        (*c.borrow_mut()).push(1);
-        assert!(({ (({ (*c.borrow()).size() }) == 2_usize) }));
-        const _: () = assert!(true, "");;
-        (*c.borrow_mut()).push(3);
-        assert!(({ (({ (*c.borrow()).size() }) == 3_usize) }));
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 0_u64)) });
         const _: () = assert!(true, "");;
         ({
-            let ___position: std__Deque_iterator_int__const_int_ref__const_int_ptr_ =
-                <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
-                    ({ (*c.borrow_mut()).begin_24() }),
-                );
-            (*c.borrow_mut()).erase_68(___position)
+            let ___x: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).push_back_55(___x.as_pointer())
         });
-        assert!(({ (({ (*c.borrow()).size() }) == 2_usize) }));
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 1_u64)) });
         const _: () = assert!(true, "");;
         ({
-            let ___position: std__Deque_iterator_int__const_int_ref__const_int_ptr_ =
-                <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
-                    ({ (*c.borrow_mut()).begin_24() }),
-                );
-            (*c.borrow_mut()).erase_68(___position)
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).push_back_55(___x.as_pointer())
         });
-        assert!(({ (({ (*c.borrow()).size() }) == 1_usize) }));
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 2_u64)) });
         const _: () = assert!(true, "");;
         ({
-            let ___position: std__Deque_iterator_int__const_int_ref__const_int_ptr_ =
-                <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
-                    ({ (*c.borrow_mut()).begin_24() }),
-                );
-            (*c.borrow_mut()).erase_68(___position)
+            let ___x: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).push_back_55(___x.as_pointer())
         });
-        assert!(({ (({ (*c.borrow()).size() }) == 0_usize) }));
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 3_u64)) });
+        const _: () = assert!(true, "");;
+        ({
+            let ___position: std__Deque_iterator_int__const_int_ref__const_int_ptr_ = {
+                let __tmp_0: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+                    Rc::new(RefCell::new(({ (*c.borrow()).begin_24() })));
+                std__Deque_iterator_int__const_int_ref__const_int_ptr_::new_1({
+                    __tmp_0.as_pointer()
+                })
+            };
+            (*c.borrow()).erase_68(___position)
+        });
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 2_u64)) });
+        const _: () = assert!(true, "");;
+        ({
+            let ___position: std__Deque_iterator_int__const_int_ref__const_int_ptr_ = {
+                let __tmp_1: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+                    Rc::new(RefCell::new(({ (*c.borrow()).begin_24() })));
+                std__Deque_iterator_int__const_int_ref__const_int_ptr_::new_1({
+                    __tmp_1.as_pointer()
+                })
+            };
+            (*c.borrow()).erase_68(___position)
+        });
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 1_u64)) });
+        const _: () = assert!(true, "");;
+        ({
+            let ___position: std__Deque_iterator_int__const_int_ref__const_int_ptr_ = {
+                let __tmp_2: Value<std__Deque_iterator_int__int_ref__int_ptr_> =
+                    Rc::new(RefCell::new(({ (*c.borrow()).begin_24() })));
+                std__Deque_iterator_int__const_int_ref__const_int_ptr_::new_1({
+                    __tmp_2.as_pointer()
+                })
+            };
+            (*c.borrow()).erase_68(___position)
+        });
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 0_u64)) });
         const _: () = assert!(true, "");;
     }
     {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        let c: Value<std_deque_int__min_allocator_int__> =
+            Rc::new(RefCell::new(<std_deque_int__min_allocator_int__>::default()));
         const _: () = assert!(true, "");;
-        assert!(({ (({ (*c.borrow()).size() }) == 0_usize) }));
-        const _: () = assert!(true, "");;
-        (*c.borrow_mut()).push(2);
-        assert!(({ (({ (*c.borrow()).size() }) == 1_usize) }));
-        const _: () = assert!(true, "");;
-        (*c.borrow_mut()).push(1);
-        assert!(({ (({ (*c.borrow()).size() }) == 2_usize) }));
-        const _: () = assert!(true, "");;
-        (*c.borrow_mut()).push(3);
-        assert!(({ (({ (*c.borrow()).size() }) == 3_usize) }));
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 0_u64)) });
         const _: () = assert!(true, "");;
         ({
-            let ___position: std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___   = <std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___  >::from(( { (*c.borrow_mut()) . begin_24 ( ) } )  )  ;
-            (*c.borrow_mut()).erase_68(___position)
+            let ___x: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).push_back_55(___x.as_pointer())
         });
-        assert!(({ (({ (*c.borrow()).size() }) == 2_usize) }));
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 1_u64)) });
         const _: () = assert!(true, "");;
         ({
-            let ___position: std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___   = <std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___  >::from(( { (*c.borrow_mut()) . begin_24 ( ) } )  )  ;
-            (*c.borrow_mut()).erase_68(___position)
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).push_back_55(___x.as_pointer())
         });
-        assert!(({ (({ (*c.borrow()).size() }) == 1_usize) }));
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 2_u64)) });
         const _: () = assert!(true, "");;
         ({
-            let ___position: std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___   = <std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___  >::from(( { (*c.borrow_mut()) . begin_24 ( ) } )  )  ;
-            (*c.borrow_mut()).erase_68(___position)
+            let ___x: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).push_back_55(___x.as_pointer())
         });
-        assert!(({ (({ (*c.borrow()).size() }) == 0_usize) }));
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 3_u64)) });
+        const _: () = assert!(true, "");;
+        ({
+            let ___position: std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___   = { let __tmp_3 : Value<std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_24 ( ) } )  )); std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_3.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_68(___position)
+        });
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 2_u64)) });
+        const _: () = assert!(true, "");;
+        ({
+            let ___position: std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___   = { let __tmp_4 : Value<std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_24 ( ) } )  )); std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_4.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_68(___position)
+        });
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 1_u64)) });
+        const _: () = assert!(true, "");;
+        ({
+            let ___position: std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___   = { let __tmp_5 : Value<std__Deque_iterator_int__int_ref__min_pointer_int__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_24 ( ) } )  )); std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_5.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_68(___position)
+        });
+        ({ cpp2rust_assert_fail_4((({ (*c.borrow()).size() }) == 0_u64)) });
         const _: () = assert!(true, "");;
     }
     return 0;
@@ -167,11 +200,11 @@ pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0__
 #[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
+    fn allocate(&self, n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: u64);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_int_>::default().allocate(n) })
         });
@@ -179,29 +212,29 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
 pub trait min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl {
-    fn allocate ( &self , n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
+    fn allocate ( &self , n : u64  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
     fn deallocate(
         &self,
         p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl
     for Ptr<min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>
 {
-    fn allocate ( &self , mut n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
+    fn allocate ( &self , mut n : u64  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
         return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { ( { <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___  >::default() . allocate ( n  , ) } )   } , )    ;
     }
     fn deallocate(
         &self,
         mut p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({
             <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>::default()

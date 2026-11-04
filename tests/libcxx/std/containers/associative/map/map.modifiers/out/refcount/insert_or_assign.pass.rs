@@ -59,927 +59,595 @@ impl Default for Moveable {
 }
 pub fn test_0() -> bool {
     {
-        let m: Value<Map<i32, (Value<i32>, Value<Moveable>)>> = Rc::new(RefCell::new(Map::new()));
-        let r: Value<(
-            Value<BidirectionalIterator<(Value<i32>, Value<Moveable>)>>,
-            Value<bool>,
-        )> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(BidirectionalIterator::default())),
-            Rc::new(RefCell::new(false)),
-        )));
+        let m : Value<std_map_int__Moveable__std_less_int___std_allocator_std_pair_const_int__Moveable___ > = Rc::new(RefCell::new(<std_map_int__Moveable__std_less_int___std_allocator_std_pair_const_int__Moveable___  >::default() )) ;
+        let r: Value<std_pair_std__Rb_tree_iterator_std_pair_const_int__Moveable____bool_> =
+            Rc::new(RefCell::new(
+                <std_pair_std__Rb_tree_iterator_std_pair_const_int__Moveable____bool_>::default(),
+            ));
         let i: Value<i32> = Rc::new(RefCell::new(0));
         'loop_: while ((*i.borrow()) < 20) {
-            {
-                let (__it, __inserted) = Map::emplace(
-                    m.as_pointer(),
-                    (
-                        Rc::new(RefCell::new(({ (*i.borrow()) }))),
-                        Rc::new(RefCell::new(Moveable::new_2({ (*i.borrow()) }, {
-                            ((*i.borrow()) as f64)
-                        }))),
-                    ),
-                );
-                (
-                    Rc::new(RefCell::new(__it)),
-                    Rc::new(RefCell::new(__inserted)),
-                )
-            };
+            ({
+                let ___args_0: Ptr<i32> = i.as_pointer();
+                let ___args_1: Value<Moveable> =
+                    Rc::new(RefCell::new(Moveable::new_2({ (*i.borrow()) }, {
+                        ((*i.borrow()) as f64)
+                    })));
+                (*m.borrow()).emplace(___args_0, ___args_1.as_pointer())
+            });
             (*i.borrow_mut()) += 2;
         }
-        assert!(({ ((*m.borrow()).len() == 10_usize) }));
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 10_u64)) });
         let i: Value<i32> = Rc::new(RefCell::new(0));
         'loop_: while ((*i.borrow()) < 20) {
             let mv: Value<Moveable> =
                 Rc::new(RefCell::new(Moveable::new_2({ ((*i.borrow()) + 1) }, {
                     (((*i.borrow()) + 1) as f64)
                 })));
-            {
-                r.as_pointer().write(CppMove::cpp_move(
-                    Rc::new(RefCell::new(
-                        ({ (*m.borrow()).insert_or_assign(i.as_pointer(), mv.as_pointer()) }),
-                    ))
-                    .as_pointer(),
-                ));
-                r.as_pointer()
-            };
-            assert!(({ ((*m.borrow()).len() == 10_usize) }));
-            assert!(({ !(*(*r.borrow()).1.borrow()) }));
-            assert!(({ MoveableImpl::moved(&mv.as_pointer(),) }));
-            assert!(
-                ({
-                    ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .0
-                        .borrow())
-                        == (*i.borrow()))
-                })
-            );
-            assert!(
-                ({
+            (*r.borrow_mut()) =
+                ({ (*m.borrow()).insert_or_assign(i.as_pointer(), mv.as_pointer()) });
+            ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 10_u64)) });
+            ({ cpp2rust_assert_fail_1(!({ (*r.borrow()).second })) });
+            ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv.as_pointer()) })) });
+            ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).first.read()).first } == (*i.borrow()))) });
+            ({
+                cpp2rust_assert_fail_1(
                     (({
-                        MoveableImpl::get(
-                            &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                                .1
-                                .as_pointer(),
-                        )
-                    }) == ((*i.borrow()) + 1))
-                })
-            );
+                        MoveableImpl::get(&field_ptr!(field_ptr!(r.as_pointer(), first), second))
+                    }) == ((*i.borrow()) + 1)),
+                )
+            });
             (*i.borrow_mut()) += 2;
         }
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5 }, { 5_f64 })));
-        {
-            r.as_pointer().write(CppMove::cpp_move(
-                Rc::new(RefCell::new(
-                    ({
-                        let ___k: Value<i32> = Rc::new(RefCell::new(-1_i32));
-                        (*m.borrow()).insert_or_assign(___k.as_pointer(), mv1.as_pointer())
-                    }),
-                ))
-                .as_pointer(),
-            ));
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 11_usize) }));
-        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
-        assert!(
-            ({
-                ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                    .0
-                    .borrow())
-                    == -1_i32)
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 5)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___k: Value<i32> = Rc::new(RefCell::new(-1_i32));
+            (*m.borrow()).insert_or_assign(___k.as_pointer(), mv1.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 11_u64)) });
+        ({ cpp2rust_assert_fail_1(({ (*r.borrow()).second } as bool)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv1.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).first.read()).first } == -1_i32)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(field_ptr!(r.as_pointer(), first), second)) })
+                    == 5),
+            )
+        });
         let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 9 }, { 9_f64 })));
-        {
-            r.as_pointer().write(CppMove::cpp_move(
-                Rc::new(RefCell::new(
-                    ({
-                        let ___k: Value<i32> = Rc::new(RefCell::new(3));
-                        (*m.borrow()).insert_or_assign(___k.as_pointer(), mv2.as_pointer())
-                    }),
-                ))
-                .as_pointer(),
-            ));
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 12_usize) }));
-        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        assert!(({ MoveableImpl::moved(&mv2.as_pointer(),) }));
-        assert!(
-            ({
-                ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                    .0
-                    .borrow())
-                    == 3)
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 9)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___k: Value<i32> = Rc::new(RefCell::new(3));
+            (*m.borrow()).insert_or_assign(___k.as_pointer(), mv2.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 12_u64)) });
+        ({ cpp2rust_assert_fail_1(({ (*r.borrow()).second } as bool)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv2.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).first.read()).first } == 3)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(field_ptr!(r.as_pointer(), first), second)) })
+                    == 9),
+            )
+        });
         let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ -1_i32 }, { 5_f64 })));
-        {
-            r.as_pointer().write(CppMove::cpp_move(
-                Rc::new(RefCell::new(
-                    ({
-                        let ___k: Value<i32> = Rc::new(RefCell::new(117));
-                        (*m.borrow()).insert_or_assign(___k.as_pointer(), mv3.as_pointer())
-                    }),
-                ))
-                .as_pointer(),
-            ));
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 13_usize) }));
-        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        assert!(({ MoveableImpl::moved(&mv3.as_pointer(),) }));
-        assert!(
-            ({
-                ((*(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                    .0
-                    .borrow())
-                    == 117)
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == -1_i32)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___k: Value<i32> = Rc::new(RefCell::new(117));
+            (*m.borrow()).insert_or_assign(___k.as_pointer(), mv3.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 13_u64)) });
+        ({ cpp2rust_assert_fail_1(({ (*r.borrow()).second } as bool)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv3.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).first.read()).first } == 117)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(field_ptr!(r.as_pointer(), first), second)) })
+                    == -1_i32),
+            )
+        });
     }
     {
-        let m: Value<Map<Moveable, (Value<Moveable>, Value<Moveable>)>> =
-            Rc::new(RefCell::new(Map::new()));
-        let r: Value<(
-            Value<BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>>,
-            Value<bool>,
-        )> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(BidirectionalIterator::default())),
-            Rc::new(RefCell::new(false)),
-        )));
+        let m : Value<std_map_Moveable__Moveable__std_less_Moveable___std_allocator_std_pair_const_Moveable__Moveable___ > = Rc::new(RefCell::new(<std_map_Moveable__Moveable__std_less_Moveable___std_allocator_std_pair_const_Moveable__Moveable___  >::default() )) ;
+        let r : Value<std_pair_std__Rb_tree_iterator_std_pair_const_Moveable__Moveable____bool_ > = Rc::new(RefCell::new(<std_pair_std__Rb_tree_iterator_std_pair_const_Moveable__Moveable____bool_  >::default() )) ;
         let mut i: i32 = 0;
         'loop_: while (i < 20) {
-            {
-                let (__it, __inserted) = Map::emplace(
-                    m.as_pointer(),
-                    (
-                        Rc::new(RefCell::new(Moveable::new_2({ i }, { (i as f64) }))),
-                        Rc::new(RefCell::new(Moveable::new_2({ (i + 1) }, {
-                            ((i as f64) + 1_f64)
-                        }))),
-                    ),
-                );
-                (
-                    Rc::new(RefCell::new(__it)),
-                    Rc::new(RefCell::new(__inserted)),
-                )
-            };
+            ({
+                let ___args_0: Value<Moveable> =
+                    Rc::new(RefCell::new(Moveable::new_2({ i }, { (i as f64) })));
+                let ___args_1: Value<Moveable> =
+                    Rc::new(RefCell::new(Moveable::new_2({ (i + 1) }, {
+                        ((i as f64) + 1_f64)
+                    })));
+                (*m.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+            });
             i += 2;
         }
-        assert!(({ ((*m.borrow()).len() == 10_usize) }));
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 10_u64)) });
         let mvkey1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 2 }, { 2_f64 })));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 4 }, { 4_f64 })));
-        {
-            r.as_pointer().write(CppMove::cpp_move(
-                Rc::new(RefCell::new(
-                    ({
-                        let ___k: Ptr<Moveable> = mvkey1.as_pointer();
-                        let ___obj: Ptr<Moveable> = mv1.as_pointer();
-                        (*m.borrow()).insert_or_assign(___k, ___obj)
-                    }),
-                ))
-                .as_pointer(),
-            ));
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 10_usize) }));
-        assert!(({ !(*(*r.borrow()).1.borrow()) }));
-        assert!(!({ MoveableImpl::moved(&mvkey1.as_pointer(),) }));
-        assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
-        assert!(
-            ({
+        (*r.borrow_mut()) = ({
+            let ___k: Ptr<Moveable> = mvkey1.as_pointer();
+            let ___obj: Ptr<Moveable> = mv1.as_pointer();
+            (*m.borrow()).insert_or_assign(___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 10_u64)) });
+        ({ cpp2rust_assert_fail_1(!({ (*r.borrow()).second })) });
+        ({ cpp2rust_assert_fail_1(!({ MoveableImpl::moved(&mvkey1.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv1.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
                 ({
                     MoveableImpl::operator_eq(
-                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
+                        &field_ptr!(field_ptr!(r.as_pointer(), first), first),
                         mvkey1.as_pointer(),
                     )
-                })
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 4)
-            })
-        );
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(field_ptr!(r.as_pointer(), first), second)) })
+                    == 4),
+            )
+        });
         let mvkey2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3 }, { 3_f64 })));
         let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5 }, { 5_f64 })));
-        {
-            r.as_pointer().write(CppMove::cpp_move(
-                Rc::new(RefCell::new(
-                    ({
-                        let ___k: Ptr<Moveable> = mvkey2.as_pointer();
-                        let ___args: Ptr<Moveable> = mv2.as_pointer();
-                        (*m.borrow()).try_emplace(___k, ___args)
-                    }),
-                ))
-                .as_pointer(),
-            ));
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 11_usize) }));
-        assert!(({ ((*(*r.borrow()).1.borrow()) as bool) }));
-        assert!(({ MoveableImpl::moved(&mv2.as_pointer(),) }));
-        assert!(({ MoveableImpl::moved(&mvkey2.as_pointer(),) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
-                    )
-                }) == 3)
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*(*r.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 5)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___k: Ptr<Moveable> = mvkey2.as_pointer();
+            let ___args: Ptr<Moveable> = mv2.as_pointer();
+            (*m.borrow()).try_emplace(___k, ___args)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 11_u64)) });
+        ({ cpp2rust_assert_fail_1(({ (*r.borrow()).second } as bool)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv2.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mvkey2.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(field_ptr!(r.as_pointer(), first), first)) })
+                    == 3),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(field_ptr!(r.as_pointer(), first), second)) })
+                    == 5),
+            )
+        });
     }
     {
-        let m: Value<Map<i32, (Value<i32>, Value<Moveable>)>> = Rc::new(RefCell::new(Map::new()));
-        let r: Value<BidirectionalIterator<(Value<i32>, Value<Moveable>)>> =
-            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        let m : Value<std_map_int__Moveable__std_less_int___std_allocator_std_pair_const_int__Moveable___ > = Rc::new(RefCell::new(<std_map_int__Moveable__std_less_int___std_allocator_std_pair_const_int__Moveable___  >::default() )) ;
+        let r: Value<std__Rb_tree_iterator_std_pair_const_int__Moveable__> = Rc::new(RefCell::new(
+            <std__Rb_tree_iterator_std_pair_const_int__Moveable__>::default(),
+        ));
         let i: Value<i32> = Rc::new(RefCell::new(0));
         'loop_: while ((*i.borrow()) < 20) {
-            {
-                let (__it, __inserted) = Map::emplace(
-                    m.as_pointer(),
-                    (
-                        Rc::new(RefCell::new(({ (*i.borrow()) }))),
-                        Rc::new(RefCell::new(Moveable::new_2({ (*i.borrow()) }, {
-                            ((*i.borrow()) as f64)
-                        }))),
-                    ),
-                );
-                (
-                    Rc::new(RefCell::new(__it)),
-                    Rc::new(RefCell::new(__inserted)),
-                )
-            };
+            ({
+                let ___args_0: Ptr<i32> = i.as_pointer();
+                let ___args_1: Value<Moveable> =
+                    Rc::new(RefCell::new(Moveable::new_2({ (*i.borrow()) }, {
+                        ((*i.borrow()) as f64)
+                    })));
+                (*m.borrow()).emplace(___args_0, ___args_1.as_pointer())
+            });
             (*i.borrow_mut()) += 2;
         }
-        assert!(({ ((*m.borrow()).len() == 10_usize) }));
-        let it: Value<BidirectionalIterator<(Value<i32>, Value<Moveable>)>> = Rc::new(
-            RefCell::new(
-                <BidirectionalIterator<(Value<i32>, Value<Moveable>)>>::from(
-                    ({
-                        let __tmp_0: Value<i32> = Rc::new(RefCell::new(2));
-                        m.as_pointer()
-                            .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| {
-                                __m.find(&__tmp_0.as_pointer())
-                            })
-                    }),
-                ),
-            ),
-        );
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 10_u64)) });
+        let it: Value<std__Rb_tree_const_iterator_std_pair_const_int__Moveable__> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<std__Rb_tree_iterator_std_pair_const_int__Moveable__> =
+                    Rc::new(RefCell::new(
+                        ({
+                            let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                            (*m.borrow()).find_74(___x.as_pointer())
+                        }),
+                    ));
+                std__Rb_tree_const_iterator_std_pair_const_int__Moveable__::new_1({
+                    __tmp_0.as_pointer()
+                })
+            }));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3 }, { 3_f64 })));
         let key1: Value<i32> = Rc::new(RefCell::new(2));
-        {
-            let __a1 = ({
-                (*m.borrow()).insert_or_assign(
-                    (*it.borrow()).clone(),
-                    key1.as_pointer(),
-                    mv1.as_pointer(),
-                )
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 10_usize) }));
-        assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
-        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 2) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 3)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            (*m.borrow()).insert_or_assign(
+                (*it.borrow()).clone(),
+                key1.as_pointer(),
+                mv1.as_pointer(),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 10_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv1.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).read()).first } == 2)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 3),
+            )
+        });
         let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5 }, { 5_f64 })));
         let key2: Value<i32> = Rc::new(RefCell::new(3));
-        {
-            let __a1 = ({
-                (*m.borrow()).insert_or_assign(
-                    (*it.borrow()).clone(),
-                    key2.as_pointer(),
-                    mv2.as_pointer(),
-                )
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 11_usize) }));
-        assert!(({ MoveableImpl::moved(&mv2.as_pointer(),) }));
-        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 3) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 5)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            (*m.borrow()).insert_or_assign(
+                (*it.borrow()).clone(),
+                key2.as_pointer(),
+                mv2.as_pointer(),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 11_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv2.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).read()).first } == 3)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 5),
+            )
+        });
         let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 7 }, { 7_f64 })));
         let key3: Value<i32> = Rc::new(RefCell::new(4));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<i32>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<i32>, Value<Moveable>)>>::from(
-                        m.as_pointer()
-                            .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.begin()),
-                    );
-                (*m.borrow()).insert_or_assign(___hint, key3.as_pointer(), mv3.as_pointer())
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 11_usize) }));
-        assert!(({ MoveableImpl::moved(&mv3.as_pointer(),) }));
-        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 4) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 7)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_int__Moveable__ = {
+                let __tmp_1: Value<std__Rb_tree_iterator_std_pair_const_int__Moveable__> =
+                    Rc::new(RefCell::new(({ (*m.borrow()).begin_20() })));
+                std__Rb_tree_const_iterator_std_pair_const_int__Moveable__::new_1({
+                    __tmp_1.as_pointer()
+                })
+            };
+            (*m.borrow()).insert_or_assign(___hint, key3.as_pointer(), mv3.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 11_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv3.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).read()).first } == 4)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 7),
+            )
+        });
         let mv4: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 9 }, { 9_f64 })));
         let key4: Value<i32> = Rc::new(RefCell::new(5));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<i32>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<i32>, Value<Moveable>)>>::from(
-                        m.as_pointer()
-                            .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.begin()),
-                    );
-                (*m.borrow()).insert_or_assign(___hint, key4.as_pointer(), mv4.as_pointer())
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 12_usize) }));
-        assert!(({ MoveableImpl::moved(&mv4.as_pointer(),) }));
-        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 5) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 9)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_int__Moveable__ = {
+                let __tmp_2: Value<std__Rb_tree_iterator_std_pair_const_int__Moveable__> =
+                    Rc::new(RefCell::new(({ (*m.borrow()).begin_20() })));
+                std__Rb_tree_const_iterator_std_pair_const_int__Moveable__::new_1({
+                    __tmp_2.as_pointer()
+                })
+            };
+            (*m.borrow()).insert_or_assign(___hint, key4.as_pointer(), mv4.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 12_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv4.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).read()).first } == 5)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 9),
+            )
+        });
         let mv5: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 11 }, { 11_f64 })));
         let key5: Value<i32> = Rc::new(RefCell::new(6));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<i32>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<i32>, Value<Moveable>)>>::from(
-                        m.as_pointer()
-                            .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.end()),
-                    );
-                (*m.borrow()).insert_or_assign(___hint, key5.as_pointer(), mv5.as_pointer())
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 12_usize) }));
-        assert!(({ MoveableImpl::moved(&mv5.as_pointer(),) }));
-        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 6) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 11)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_int__Moveable__ = {
+                let __tmp_3: Value<std__Rb_tree_iterator_std_pair_const_int__Moveable__> =
+                    Rc::new(RefCell::new(({ (*m.borrow()).end_22() })));
+                std__Rb_tree_const_iterator_std_pair_const_int__Moveable__::new_1({
+                    __tmp_3.as_pointer()
+                })
+            };
+            (*m.borrow()).insert_or_assign(___hint, key5.as_pointer(), mv5.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 12_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv5.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).read()).first } == 6)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 11),
+            )
+        });
         let mv6: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 13 }, { 13_f64 })));
         let key6: Value<i32> = Rc::new(RefCell::new(7));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<i32>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<i32>, Value<Moveable>)>>::from(
-                        m.as_pointer()
-                            .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.end()),
-                    );
-                (*m.borrow()).insert_or_assign(___hint, key6.as_pointer(), mv6.as_pointer())
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 13_usize) }));
-        assert!(({ MoveableImpl::moved(&mv6.as_pointer(),) }));
-        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 7) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 13)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_int__Moveable__ = {
+                let __tmp_4: Value<std__Rb_tree_iterator_std_pair_const_int__Moveable__> =
+                    Rc::new(RefCell::new(({ (*m.borrow()).end_22() })));
+                std__Rb_tree_const_iterator_std_pair_const_int__Moveable__::new_1({
+                    __tmp_4.as_pointer()
+                })
+            };
+            (*m.borrow()).insert_or_assign(___hint, key6.as_pointer(), mv6.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 13_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv6.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).read()).first } == 7)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 13),
+            )
+        });
         let mv7: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 15 }, { 15_f64 })));
         let key7: Value<i32> = Rc::new(RefCell::new(8));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<i32>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<i32>, Value<Moveable>)>>::from(
-                        libcc2rs::next_refcount(
-                            m.as_pointer()
-                                .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.begin()),
-                            2_isize as isize,
-                        ),
-                    );
-                (*m.borrow()).insert_or_assign(___hint, key7.as_pointer(), mv7.as_pointer())
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 13_usize) }));
-        assert!(({ MoveableImpl::moved(&mv7.as_pointer(),) }));
-        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 8) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 15)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_int__Moveable__ = {
+                let __tmp_5: Value<std__Rb_tree_iterator_std_pair_const_int__Moveable__> = Rc::new(
+                    RefCell::new(({ next_2(({ (*m.borrow()).begin_20() }), 2_i64) })),
+                );
+                std__Rb_tree_const_iterator_std_pair_const_int__Moveable__::new_1({
+                    __tmp_5.as_pointer()
+                })
+            };
+            (*m.borrow()).insert_or_assign(___hint, key7.as_pointer(), mv7.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 13_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv7.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).read()).first } == 8)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 15),
+            )
+        });
         let mv8: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 17 }, { 17_f64 })));
         let key8: Value<i32> = Rc::new(RefCell::new(9));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<i32>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<i32>, Value<Moveable>)>>::from(
-                        libcc2rs::next_refcount(
-                            m.as_pointer()
-                                .with(|__m: &Map<i32, (Value<i32>, Value<Moveable>)>| __m.begin()),
-                            2_isize as isize,
-                        ),
-                    );
-                (*m.borrow()).insert_or_assign(___hint, key8.as_pointer(), mv8.as_pointer())
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 14_usize) }));
-        assert!(({ MoveableImpl::moved(&mv8.as_pointer(),) }));
-        assert!(({ ((*(*(*r.borrow()).iter_deref().upgrade().deref()).0.borrow()) == 9) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 17)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_int__Moveable__ = {
+                let __tmp_6: Value<std__Rb_tree_iterator_std_pair_const_int__Moveable__> = Rc::new(
+                    RefCell::new(({ next_2(({ (*m.borrow()).begin_20() }), 2_i64) })),
+                );
+                std__Rb_tree_const_iterator_std_pair_const_int__Moveable__::new_1({
+                    __tmp_6.as_pointer()
+                })
+            };
+            (*m.borrow()).insert_or_assign(___hint, key8.as_pointer(), mv8.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 14_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv8.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ ((*r.borrow()).read()).first } == 9)) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 17),
+            )
+        });
     }
     {
-        let m: Value<Map<Moveable, (Value<Moveable>, Value<Moveable>)>> =
-            Rc::new(RefCell::new(Map::new()));
-        let r: Value<BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>> =
-            Rc::new(RefCell::new(BidirectionalIterator::default()));
+        let m : Value<std_map_Moveable__Moveable__std_less_Moveable___std_allocator_std_pair_const_Moveable__Moveable___ > = Rc::new(RefCell::new(<std_map_Moveable__Moveable__std_less_Moveable___std_allocator_std_pair_const_Moveable__Moveable___  >::default() )) ;
+        let r: Value<std__Rb_tree_iterator_std_pair_const_Moveable__Moveable__> = Rc::new(
+            RefCell::new(<std__Rb_tree_iterator_std_pair_const_Moveable__Moveable__>::default()),
+        );
         let mut i: i32 = 0;
         'loop_: while (i < 20) {
-            {
-                let (__it, __inserted) = Map::emplace(
-                    m.as_pointer(),
-                    (
-                        Rc::new(RefCell::new(Moveable::new_2({ i }, { (i as f64) }))),
-                        Rc::new(RefCell::new(Moveable::new_2({ (i + 1) }, {
-                            ((i as f64) + 1_f64)
-                        }))),
-                    ),
-                );
-                (
-                    Rc::new(RefCell::new(__it)),
-                    Rc::new(RefCell::new(__inserted)),
-                )
-            };
+            ({
+                let ___args_0: Value<Moveable> =
+                    Rc::new(RefCell::new(Moveable::new_2({ i }, { (i as f64) })));
+                let ___args_1: Value<Moveable> =
+                    Rc::new(RefCell::new(Moveable::new_2({ (i + 1) }, {
+                        ((i as f64) + 1_f64)
+                    })));
+                (*m.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
+            });
             i += 2;
         }
-        assert!(({ ((*m.borrow()).len() == 10_usize) }));
-        let it: Value<BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>> =
-            Rc::new(RefCell::new(libcc2rs::next_refcount(
-                ({ ({ (*m.borrow()).cbegin() }) }),
-                1_isize as isize,
-            )));
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 10_u64)) });
+        let it: Value<std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__> = Rc::new(
+            RefCell::new(({ next_3(({ (*m.borrow()).cbegin() }), None) })),
+        );
         let mvkey1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 2 }, { 2_f64 })));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 4 }, { 4_f64 })));
-        {
-            let __a1 = ({
-                let ___k: Ptr<Moveable> = mvkey1.as_pointer();
-                let ___obj: Ptr<Moveable> = mv1.as_pointer();
-                (*m.borrow()).insert_or_assign((*it.borrow()).clone(), ___k, ___obj)
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 10_usize) }));
-        assert!(({ MoveableImpl::moved(&mv1.as_pointer(),) }));
-        assert!(!({ MoveableImpl::moved(&mvkey1.as_pointer(),) }));
-        assert!(
-            ({
+        (*r.borrow_mut()) = ({
+            let ___k: Ptr<Moveable> = mvkey1.as_pointer();
+            let ___obj: Ptr<Moveable> = mv1.as_pointer();
+            (*m.borrow()).insert_or_assign((*it.borrow()).clone(), ___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 10_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv1.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(!({ MoveableImpl::moved(&mvkey1.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
                 ({
                     MoveableImpl::operator_eq(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
+                        &field_ptr!(r.as_pointer(), first),
                         mvkey1.as_pointer(),
                     )
-                })
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 4)
-            })
-        );
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 4),
+            )
+        });
         let mvkey2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3 }, { 3_f64 })));
         let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5 }, { 5_f64 })));
-        {
-            let __a1 = ({
-                let ___k: Ptr<Moveable> = mvkey2.as_pointer();
-                let ___obj: Ptr<Moveable> = mv2.as_pointer();
-                (*m.borrow()).insert_or_assign((*it.borrow()).clone(), ___k, ___obj)
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 11_usize) }));
-        assert!(({ MoveableImpl::moved(&mv2.as_pointer(),) }));
-        assert!(({ MoveableImpl::moved(&mvkey2.as_pointer(),) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
-                    )
-                }) == 3)
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 5)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___k: Ptr<Moveable> = mvkey2.as_pointer();
+            let ___obj: Ptr<Moveable> = mv2.as_pointer();
+            (*m.borrow()).insert_or_assign((*it.borrow()).clone(), ___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 11_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv2.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mvkey2.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), first)) }) == 3),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 5),
+            )
+        });
         let mvkey3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 6 }, { 6_f64 })));
         let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 8 }, { 8_f64 })));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<Moveable>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>>::from(
-                        m.as_pointer().with(
-                            |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| __m.begin(),
-                        ),
-                    );
-                let ___k: Ptr<Moveable> = mvkey3.as_pointer();
-                let ___obj: Ptr<Moveable> = mv3.as_pointer();
-                (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 11_usize) }));
-        assert!(({ MoveableImpl::moved(&mv3.as_pointer(),) }));
-        assert!(!({ MoveableImpl::moved(&mvkey3.as_pointer(),) }));
-        assert!(
-            ({
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__ = {
+                let __tmp_7: Value<std__Rb_tree_iterator_std_pair_const_Moveable__Moveable__> =
+                    Rc::new(RefCell::new(({ (*m.borrow()).begin_20() })));
+                std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__::new_1({
+                    __tmp_7.as_pointer()
+                })
+            };
+            let ___k: Ptr<Moveable> = mvkey3.as_pointer();
+            let ___obj: Ptr<Moveable> = mv3.as_pointer();
+            (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 11_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv3.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(!({ MoveableImpl::moved(&mvkey3.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
                 ({
                     MoveableImpl::operator_eq(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
+                        &field_ptr!(r.as_pointer(), first),
                         mvkey3.as_pointer(),
                     )
-                })
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 8)
-            })
-        );
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 8),
+            )
+        });
         let mvkey4: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 7 }, { 7_f64 })));
         let mv4: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 9 }, { 9_f64 })));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<Moveable>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>>::from(
-                        m.as_pointer().with(
-                            |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| __m.begin(),
-                        ),
-                    );
-                let ___k: Ptr<Moveable> = mvkey4.as_pointer();
-                let ___obj: Ptr<Moveable> = mv4.as_pointer();
-                (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 12_usize) }));
-        assert!(({ MoveableImpl::moved(&mv4.as_pointer(),) }));
-        assert!(({ MoveableImpl::moved(&mvkey4.as_pointer(),) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
-                    )
-                }) == 7)
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 9)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__ = {
+                let __tmp_8: Value<std__Rb_tree_iterator_std_pair_const_Moveable__Moveable__> =
+                    Rc::new(RefCell::new(({ (*m.borrow()).begin_20() })));
+                std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__::new_1({
+                    __tmp_8.as_pointer()
+                })
+            };
+            let ___k: Ptr<Moveable> = mvkey4.as_pointer();
+            let ___obj: Ptr<Moveable> = mv4.as_pointer();
+            (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 12_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv4.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mvkey4.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), first)) }) == 7),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 9),
+            )
+        });
         let mvkey5: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 8 }, { 8_f64 })));
         let mv5: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 10 }, { 10_f64 })));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<Moveable>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>>::from(
-                        m.as_pointer().with(
-                            |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| __m.end(),
-                        ),
-                    );
-                let ___k: Ptr<Moveable> = mvkey5.as_pointer();
-                let ___obj: Ptr<Moveable> = mv5.as_pointer();
-                (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 12_usize) }));
-        assert!(({ MoveableImpl::moved(&mv5.as_pointer(),) }));
-        assert!(!({ MoveableImpl::moved(&mvkey5.as_pointer(),) }));
-        assert!(
-            ({
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__ = {
+                let __tmp_9: Value<std__Rb_tree_iterator_std_pair_const_Moveable__Moveable__> =
+                    Rc::new(RefCell::new(({ (*m.borrow()).end_22() })));
+                std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__::new_1({
+                    __tmp_9.as_pointer()
+                })
+            };
+            let ___k: Ptr<Moveable> = mvkey5.as_pointer();
+            let ___obj: Ptr<Moveable> = mv5.as_pointer();
+            (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 12_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv5.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(!({ MoveableImpl::moved(&mvkey5.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
                 ({
                     MoveableImpl::operator_eq(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
+                        &field_ptr!(r.as_pointer(), first),
                         mvkey5.as_pointer(),
                     )
-                })
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 10)
-            })
-        );
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 10),
+            )
+        });
         let mvkey6: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 9 }, { 9_f64 })));
         let mv6: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 11 }, { 11_f64 })));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<Moveable>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>>::from(
-                        m.as_pointer().with(
-                            |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| __m.end(),
-                        ),
-                    );
-                let ___k: Ptr<Moveable> = mvkey6.as_pointer();
-                let ___obj: Ptr<Moveable> = mv6.as_pointer();
-                (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 13_usize) }));
-        assert!(({ MoveableImpl::moved(&mv6.as_pointer(),) }));
-        assert!(({ MoveableImpl::moved(&mvkey6.as_pointer(),) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
-                    )
-                }) == 9)
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 11)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__ = {
+                let __tmp_10: Value<std__Rb_tree_iterator_std_pair_const_Moveable__Moveable__> =
+                    Rc::new(RefCell::new(({ (*m.borrow()).end_22() })));
+                std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__::new_1({
+                    __tmp_10.as_pointer()
+                })
+            };
+            let ___k: Ptr<Moveable> = mvkey6.as_pointer();
+            let ___obj: Ptr<Moveable> = mv6.as_pointer();
+            (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 13_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv6.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mvkey6.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), first)) }) == 9),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 11),
+            )
+        });
         let mvkey7: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 10 }, { 10_f64 })));
         let mv7: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 12 }, { 12_f64 })));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<Moveable>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>>::from(
-                        libcc2rs::next_refcount(
-                            m.as_pointer().with(
-                                |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| {
-                                    __m.begin()
-                                },
-                            ),
-                            2_isize as isize,
-                        ),
-                    );
-                let ___k: Ptr<Moveable> = mvkey7.as_pointer();
-                let ___obj: Ptr<Moveable> = mv7.as_pointer();
-                (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 13_usize) }));
-        assert!(({ MoveableImpl::moved(&mv7.as_pointer(),) }));
-        assert!(!({ MoveableImpl::moved(&mvkey7.as_pointer(),) }));
-        assert!(
-            ({
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__ = {
+                let __tmp_11: Value<std__Rb_tree_iterator_std_pair_const_Moveable__Moveable__> =
+                    Rc::new(RefCell::new(
+                        ({ next_4(({ (*m.borrow()).begin_20() }), 2_i64) }),
+                    ));
+                std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__::new_1({
+                    __tmp_11.as_pointer()
+                })
+            };
+            let ___k: Ptr<Moveable> = mvkey7.as_pointer();
+            let ___obj: Ptr<Moveable> = mv7.as_pointer();
+            (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 13_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv7.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(!({ MoveableImpl::moved(&mvkey7.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
                 ({
                     MoveableImpl::operator_eq(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
+                        &field_ptr!(r.as_pointer(), first),
                         mvkey7.as_pointer(),
                     )
-                })
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 12)
-            })
-        );
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 12),
+            )
+        });
         let mvkey8: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 11 }, { 11_f64 })));
         let mv8: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 13 }, { 13_f64 })));
-        {
-            let __a1 = ({
-                let ___hint: BidirectionalIterator<(Value<Moveable>, Value<Moveable>)> =
-                    <BidirectionalIterator<(Value<Moveable>, Value<Moveable>)>>::from(
-                        libcc2rs::next_refcount(
-                            m.as_pointer().with(
-                                |__m: &Map<Moveable, (Value<Moveable>, Value<Moveable>)>| {
-                                    __m.begin()
-                                },
-                            ),
-                            2_isize as isize,
-                        ),
-                    );
-                let ___k: Ptr<Moveable> = mvkey8.as_pointer();
-                let ___obj: Ptr<Moveable> = mv8.as_pointer();
-                (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
-            });
-            r.as_pointer().with_mut(|__it| *__it = __a1);
-            r.as_pointer()
-        };
-        assert!(({ ((*m.borrow()).len() == 14_usize) }));
-        assert!(({ MoveableImpl::moved(&mv8.as_pointer(),) }));
-        assert!(({ MoveableImpl::moved(&mvkey8.as_pointer(),) }));
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .0
-                            .as_pointer(),
-                    )
-                }) == 11)
-            })
-        );
-        assert!(
-            ({
-                (({
-                    MoveableImpl::get(
-                        &(*(*r.borrow()).iter_deref().upgrade().deref())
-                            .1
-                            .as_pointer(),
-                    )
-                }) == 13)
-            })
-        );
+        (*r.borrow_mut()) = ({
+            let ___hint: std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__ = {
+                let __tmp_12: Value<std__Rb_tree_iterator_std_pair_const_Moveable__Moveable__> =
+                    Rc::new(RefCell::new(
+                        ({ next_4(({ (*m.borrow()).begin_20() }), 2_i64) }),
+                    ));
+                std__Rb_tree_const_iterator_std_pair_const_Moveable__Moveable__::new_1({
+                    __tmp_12.as_pointer()
+                })
+            };
+            let ___k: Ptr<Moveable> = mvkey8.as_pointer();
+            let ___obj: Ptr<Moveable> = mv8.as_pointer();
+            (*m.borrow()).insert_or_assign(___hint, ___k, ___obj)
+        });
+        ({ cpp2rust_assert_fail_1((({ (*m.borrow()).size() }) == 14_u64)) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mv8.as_pointer()) })) });
+        ({ cpp2rust_assert_fail_1(({ MoveableImpl::moved(&mvkey8.as_pointer()) })) });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), first)) }) == 11),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                (({ MoveableImpl::get(&field_ptr!(r.as_pointer(), second)) }) == 13),
+            )
+        });
     }
     return true;
 }

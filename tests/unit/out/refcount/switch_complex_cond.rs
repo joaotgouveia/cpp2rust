@@ -31,10 +31,10 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let p_val: Value<i32> = Rc::new(RefCell::new(5));
-    assert!((({ switch_complex_cond_0((p_val.as_pointer()), 0,) }) == 2));
-    assert!((({ switch_complex_cond_0((p_val.as_pointer()), 5,) }) == 3));
-    assert!((({ switch_complex_cond_0((p_val.as_pointer()), -5_i32,) }) == 1));
-    assert!((({ switch_complex_cond_0((p_val.as_pointer()), 99,) }) == 0));
+    ({ cpp2rust_assert_fail_1((({ switch_complex_cond_0((p_val.as_pointer()), 0) }) == 2)) });
+    ({ cpp2rust_assert_fail_1((({ switch_complex_cond_0((p_val.as_pointer()), 5) }) == 3)) });
+    ({ cpp2rust_assert_fail_1((({ switch_complex_cond_0((p_val.as_pointer()), -5_i32) }) == 1)) });
+    ({ cpp2rust_assert_fail_1((({ switch_complex_cond_0((p_val.as_pointer()), 99) }) == 0)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

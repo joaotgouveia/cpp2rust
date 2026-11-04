@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let lc: Value<::libc::lconv> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    let lc: Value<lconv> = Rc::new(RefCell::new(<lconv>::default()));
     (&(*lc.borrow_mut()));
     const _: () = assert!(
         true,

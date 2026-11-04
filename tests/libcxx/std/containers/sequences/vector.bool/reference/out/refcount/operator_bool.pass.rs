@@ -7,22 +7,20 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
-    let vec_: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+    let vec_: Value<std_vector_bool__std_allocator_bool__> = Rc::new(RefCell::new(
+        <std_vector_bool__std_allocator_bool__>::default(),
+    ));
     const _: () = assert!(true, "std::is_convertible<Ref, bool>::value");;
-    {
-        let a0_clone = true.clone();
-        (*vec_.borrow_mut()).push(a0_clone)
-    };
-    {
-        let a0_clone = false.clone();
-        (*vec_.borrow_mut()).push(a0_clone)
-    };
-    let mut true_ref: Ptr<bool> = vec_.decay().offset(0_usize as isize);
-    let mut false_ref: Ptr<bool> = vec_.decay().offset(1_usize as isize);
-    let mut b: bool = true_ref.read();
-    assert!(b);
-    assert!(true_ref.read());
-    assert!(!(false_ref.read()));
+    ({ (*vec_.borrow()).push_back(true) });
+    ({ (*vec_.borrow()).push_back(false) });
+    let true_ref: Value<std__Bit_reference> =
+        Rc::new(RefCell::new(((*vec_.borrow())[0_u64]).clone()));
+    let false_ref: Value<std__Bit_reference> =
+        Rc::new(RefCell::new(((*vec_.borrow())[1_u64]).clone()));
+    let mut b: bool = ({ (*true_ref.borrow())() });
+    ({ cpp2rust_assert_fail_1(b) });
+    ({ cpp2rust_assert_fail_1(({ (*true_ref.borrow())() })) });
+    ({ cpp2rust_assert_fail_1(!({ (*false_ref.borrow())() })) });
     return true;
 }
 pub fn main() {

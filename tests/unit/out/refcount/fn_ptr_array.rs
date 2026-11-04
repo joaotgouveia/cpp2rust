@@ -25,12 +25,12 @@ fn main_0() -> i32 {
         FnPtr::<fn(i32, i32) -> i32>::new(sub_1),
         FnPtr::<fn(i32, i32) -> i32>::new(mul_2),
     ];
-    assert!((({ ops[(0) as usize].call(2, 3,) }) == 5));
-    assert!((({ ops[(1) as usize].call(7, 4,) }) == 3));
-    assert!((({ ops[(2) as usize].call(6, 5,) }) == 30));
-    assert!(!((ops[(0) as usize]).is_null()));
-    assert!((ops[(0) as usize] == FnPtr::<fn(i32, i32) -> i32>::new(add_0)));
-    assert!((ops[(0) as usize] != FnPtr::<fn(i32, i32) -> i32>::new(sub_1)));
+    ({ cpp2rust_assert_fail_3((({ ops[(0) as usize].call(2, 3) }) == 5)) });
+    ({ cpp2rust_assert_fail_3((({ ops[(1) as usize].call(7, 4) }) == 3)) });
+    ({ cpp2rust_assert_fail_3((({ ops[(2) as usize].call(6, 5) }) == 30)) });
+    ({ cpp2rust_assert_fail_3(!((ops[(0) as usize]).is_null())) });
+    ({ cpp2rust_assert_fail_3((ops[(0) as usize] == FnPtr::<fn(i32, i32) -> i32>::new(add_0))) });
+    ({ cpp2rust_assert_fail_3((ops[(0) as usize] != FnPtr::<fn(i32, i32) -> i32>::new(sub_1))) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

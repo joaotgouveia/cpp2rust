@@ -34,8 +34,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let d: Value<std_uniform_real_distribution_double_> = Rc::new(RefCell::new(
             std_uniform_real_distribution_double_::new_1({ p.as_pointer() }),
         ));
-        assert!(({ (({ (*d.borrow()).a() }) == 3.5_f64) }));
-        assert!(({ (({ (*d.borrow()).b() }) == 8_f64) }));
+        ({ cpp2rust_assert_fail_0((({ (*d.borrow()).a() }) == 3.5_f64)) });
+        ({ cpp2rust_assert_fail_0((({ (*d.borrow()).b() }) == 8_f64)) });
     }
     return 0;
 }

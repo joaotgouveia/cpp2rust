@@ -31,29 +31,29 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ call_op_4(5,) }) == 5));
+    ({ cpp2rust_assert_fail_5((({ call_op_4(5) }) == 5)) });
     ({ set_op_3(FnPtr::<fn(i32) -> i32>::new(double_it_0)) });
-    assert!(({ !((*g_op_2.with(Value::clone).borrow()).is_null()) }));
-    assert!(
-        ({
+    ({ cpp2rust_assert_fail_5(!((*g_op_2.with(Value::clone).borrow()).is_null())) });
+    ({
+        cpp2rust_assert_fail_5(
             ({ (*g_op_2.with(Value::clone).borrow()).clone() } == {
                 FnPtr::<fn(i32) -> i32>::new(double_it_0)
-            })
-        })
-    );
-    assert!((({ call_op_4(5,) }) == 10));
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_5((({ call_op_4(5) }) == 10)) });
     ({ set_op_3(FnPtr::<fn(i32) -> i32>::new(triple_it_1)) });
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_5(
             ({ (*g_op_2.with(Value::clone).borrow()).clone() } == {
                 FnPtr::<fn(i32) -> i32>::new(triple_it_1)
-            })
-        })
-    );
-    assert!((({ call_op_4(5,) }) == 15));
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_5((({ call_op_4(5) }) == 15)) });
     ({ set_op_3(FnPtr::<fn(i32) -> i32>::null()) });
-    assert!(({ (*g_op_2.with(Value::clone).borrow()).is_null() }));
-    assert!((({ call_op_4(5,) }) == 5));
+    ({ cpp2rust_assert_fail_5((*g_op_2.with(Value::clone).borrow()).is_null()) });
+    ({ cpp2rust_assert_fail_5((({ call_op_4(5) }) == 5)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

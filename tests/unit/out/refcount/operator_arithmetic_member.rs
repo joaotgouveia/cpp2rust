@@ -32,36 +32,70 @@ pub fn main() {
 fn main_0() -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S { v: 7 }));
     let b: Value<S> = Rc::new(RefCell::new(S { v: 2 }));
-    assert!(({ ({ SImpl::operator_add_1(&a.as_pointer(), b.as_pointer(),) }).v } == 9));
-    assert!(({ ({ SImpl::operator_sub_2(&a.as_pointer(), b.as_pointer(),) }).v } == 5));
-    assert!(({ ({ SImpl::operator_mul(&a.as_pointer(), b.as_pointer(),) }).v } == 14));
-    assert!(({ ({ SImpl::operator_div(&a.as_pointer(), b.as_pointer(),) }).v } == 3));
-    assert!(({ ({ SImpl::operator_rem(&a.as_pointer(), b.as_pointer(),) }).v } == 1));
-    assert!(({ ({ SImpl::operator_pos_6(&a.as_pointer(),) }).v } == 7));
-    assert!(({ ({ SImpl::operator_neg_7(&a.as_pointer(),) }).v } == -7_i32));
-    assert!((({ SImpl::operator_inc_8(&a.as_pointer(),) }).with(|__s| (__s).v) == 8));
-    assert!(({ ({ SImpl::operator_post_inc_9(&a.as_pointer(), 0,) }).v } == 8));
-    assert!(({ ({ (*a.borrow()).v } == 9) }));
-    assert!((({ SImpl::operator_dec_10(&a.as_pointer(),) }).with(|__s| (__s).v) == 8));
-    assert!(({ ({ SImpl::operator_post_dec_11(&a.as_pointer(), 0,) }).v } == 8));
-    assert!(({ ({ (*a.borrow()).v } == 7) }));
-    assert!(
-        (({ SImpl::operator_inc_8(&({ SImpl::operator_inc_8(&a.as_pointer(),) }),) })
-            .with(|__s| (__s).v)
-            == 9)
-    );
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_add_1(&a.as_pointer(), b.as_pointer()) }).v } == 9),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_sub_2(&a.as_pointer(), b.as_pointer()) }).v } == 5),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_mul(&a.as_pointer(), b.as_pointer()) }).v } == 14),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_div(&a.as_pointer(), b.as_pointer()) }).v } == 3),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ SImpl::operator_rem(&a.as_pointer(), b.as_pointer()) }).v } == 1),
+        )
+    });
+    ({ cpp2rust_assert_fail_0(({ ({ SImpl::operator_pos_6(&a.as_pointer()) }).v } == 7)) });
+    ({ cpp2rust_assert_fail_0(({ ({ SImpl::operator_neg_7(&a.as_pointer()) }).v } == -7_i32)) });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ SImpl::operator_inc_8(&a.as_pointer()) }).with(|__s| (__s).v) == 8),
+        )
+    });
+    ({ cpp2rust_assert_fail_0(({ ({ SImpl::operator_post_inc_9(&a.as_pointer(), 0) }).v } == 8)) });
+    ({ cpp2rust_assert_fail_0(({ (*a.borrow()).v } == 9)) });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ SImpl::operator_dec_10(&a.as_pointer()) }).with(|__s| (__s).v) == 8),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(({ ({ SImpl::operator_post_dec_11(&a.as_pointer(), 0) }).v } == 8))
+    });
+    ({ cpp2rust_assert_fail_0(({ (*a.borrow()).v } == 7)) });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ SImpl::operator_inc_8(&({ SImpl::operator_inc_8(&a.as_pointer()) })) })
+                .with(|__s| (__s).v)
+                == 9),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
             ({
-                let _o: Value<S> = Rc::new(RefCell::new(S { v: 4 }));
-                SImpl::operator_add_1(
-                    &Rc::new(RefCell::new(S { v: 3 })).as_pointer(),
-                    _o.as_pointer(),
-                )
-            })
-            .v
-        } == 7)
-    );
+                ({
+                    let _o: Value<S> = Rc::new(RefCell::new(S { v: 4 }));
+                    SImpl::operator_add_1(
+                        &Rc::new(RefCell::new(S { v: 3 })).as_pointer(),
+                        _o.as_pointer(),
+                    )
+                })
+                .v
+            } == 7),
+        )
+    });
     return 0;
 }
 pub trait SImpl {

@@ -101,74 +101,84 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let opt: Value<std_optional_X_> = Rc::new(RefCell::new(2));
         let y: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
-        assert!(
-            ({
-                let _x: Value<X> =
-                    Rc::new(RefCell::new(({ (*opt.borrow()).value_or(y.as_pointer()) })));
-                let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 2 })));
-                operator_eq_0(_x.as_pointer(), _y.as_pointer())
-            })
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<X> =
+                        Rc::new(RefCell::new(({ (*opt.borrow()).value_or(y.as_pointer()) })));
+                    let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 2 })));
+                    operator_eq_0(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
     }
     {
         let opt: Value<std_optional_X_> = Rc::new(RefCell::new(2));
-        assert!(
-            ({
-                let _x: Value<X> = Rc::new(RefCell::new(
-                    ({
-                        let ___u: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
-                        (*opt.borrow()).value_or(___u.as_pointer())
-                    }),
-                ));
-                let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 2 })));
-                operator_eq_0(_x.as_pointer(), _y.as_pointer())
-            })
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<X> = Rc::new(RefCell::new(
+                        ({
+                            let ___u: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
+                            (*opt.borrow()).value_or(___u.as_pointer())
+                        }),
+                    ));
+                    let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 2 })));
+                    operator_eq_0(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
     }
     {
         let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
         let y: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
-        assert!(
-            ({
-                let _x: Value<X> =
-                    Rc::new(RefCell::new(({ (*opt.borrow()).value_or(y.as_pointer()) })));
-                let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 3 })));
-                operator_eq_0(_x.as_pointer(), _y.as_pointer())
-            })
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<X> =
+                        Rc::new(RefCell::new(({ (*opt.borrow()).value_or(y.as_pointer()) })));
+                    let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 3 })));
+                    operator_eq_0(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
     }
     {
         let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
-        assert!(
-            ({
-                let _x: Value<X> = Rc::new(RefCell::new(
-                    ({
-                        let ___u: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
-                        (*opt.borrow()).value_or(___u.as_pointer())
-                    }),
-                ));
-                let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 4 })));
-                operator_eq_0(_x.as_pointer(), _y.as_pointer())
-            })
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<X> = Rc::new(RefCell::new(
+                        ({
+                            let ___u: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
+                            (*opt.borrow()).value_or(___u.as_pointer())
+                        }),
+                    ));
+                    let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 4 })));
+                    operator_eq_0(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
     }
     {
         let opt: Value<std_optional_X_> = Rc::new(RefCell::new(<std_optional_X_>::default()));
-        assert!(
-            ({
-                let _x: Value<X> = Rc::new(RefCell::new(
-                    ({
-                        let ___u: Value<X> = Rc::new(RefCell::new({
-                            let __tmp_0: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
-                            X::new_3({ __tmp_0.as_pointer() })
-                        }));
-                        (*opt.borrow()).value_or(___u.as_pointer())
-                    }),
-                ));
-                let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 4 })));
-                operator_eq_0(_x.as_pointer(), _y.as_pointer())
-            })
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                ({
+                    let _x: Value<X> = Rc::new(RefCell::new(
+                        ({
+                            let ___u: Value<X> = Rc::new(RefCell::new({
+                                let __tmp_0: Value<Y> = Rc::new(RefCell::new(Y::new({ 3 })));
+                                X::new_3({ __tmp_0.as_pointer() })
+                            }));
+                            (*opt.borrow()).value_or(___u.as_pointer())
+                        }),
+                    ));
+                    let _y: Value<X> = Rc::new(RefCell::new(X::new_1({ 4 })));
+                    operator_eq_0(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
     }
     return 0;
 }

@@ -42,20 +42,34 @@ pub fn test_0() -> bool {
     {
         let a: Value<A1> = Rc::new(RefCell::new(<A1>::default()));
         const _: () = assert!(true, "");;
-        let mut b1: Ptr<B> = a.as_pointer();
-        assert!(((b1) == (field_ptr!(a.as_pointer(), b_))));
+        let b1: Value<std_reference_wrapper_B_> =
+            Rc::new(RefCell::new(std_reference_wrapper_B_::new_1({
+                a.as_pointer()
+            })));
+        ({
+            cpp2rust_assert_fail_1((({ (*b1.borrow()).get() }) == (field_ptr!(a.as_pointer(), b_))))
+        });
         const _: () = assert!(true, "");;
-        b1 = a.as_pointer();
-        assert!(((b1) == (field_ptr!(a.as_pointer(), b_))));
+        (*b1.borrow_mut()) = std_reference_wrapper_B_::new_1({ a.as_pointer() });
+        ({
+            cpp2rust_assert_fail_1((({ (*b1.borrow()).get() }) == (field_ptr!(a.as_pointer(), b_))))
+        });
     }
     {
         let a: Value<A2> = Rc::new(RefCell::new(<A2>::default()));
         const _: () = assert!(true, "");;
-        let mut b2: Ptr<B> = a.as_pointer();
-        assert!(((b2) == (field_ptr!(a.as_pointer(), b_))));
+        let b2: Value<std_reference_wrapper_B_> =
+            Rc::new(RefCell::new(std_reference_wrapper_B_::new_2({
+                a.as_pointer()
+            })));
+        ({
+            cpp2rust_assert_fail_1((({ (*b2.borrow()).get() }) == (field_ptr!(a.as_pointer(), b_))))
+        });
         const _: () = assert!(true, "");;
-        b2 = a.as_pointer();
-        assert!(((b2) == (field_ptr!(a.as_pointer(), b_))));
+        (*b2.borrow_mut()) = std_reference_wrapper_B_::new_2({ a.as_pointer() });
+        ({
+            cpp2rust_assert_fail_1((({ (*b2.borrow()).get() }) == (field_ptr!(a.as_pointer(), b_))))
+        });
     }
     return true;
 }

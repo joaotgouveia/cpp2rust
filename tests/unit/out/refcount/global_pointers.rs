@@ -51,26 +51,32 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!(({ ({ (*single_entry_0.with(Value::clone).borrow()).p.clone() }).is_null() }));
+    ({
+        cpp2rust_assert_fail_3(
+            ({ (*single_entry_0.with(Value::clone).borrow()).p.clone() }).is_null(),
+        )
+    });
     let mut i: i32 = 0;
     'loop_: while (i < 2) {
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_3(
                 ({
                     (*entries_1.with(Value::clone).borrow())[(i) as usize]
                         .p
                         .clone()
                 })
-                .is_null()
-            })
-        );
-        assert!(
-            ({
-                let __idx0 = (i) as usize;
-                arr_of_pointers_2.with(|rc| rc.borrow()[__idx0].clone())
-            })
-            .is_null()
-        );
+                .is_null(),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let __idx0 = (i) as usize;
+                    arr_of_pointers_2.with(|rc| rc.borrow()[__idx0].clone())
+                })
+                .is_null(),
+            )
+        });
         i.prefix_inc();
     }
     return 0;

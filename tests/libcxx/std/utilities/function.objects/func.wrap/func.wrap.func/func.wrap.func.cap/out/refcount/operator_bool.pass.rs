@@ -40,9 +40,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let f: Value<std_function_int__int__> =
             Rc::new(RefCell::new(<std_function_int__int__>::default()));
-        assert!(({ !({ (*f.borrow())() }) }));
+        ({ cpp2rust_assert_fail_1(!({ (*f.borrow())() })) });
         (*f.borrow_mut()) = g_0;
-        assert!(({ ({ (*f.borrow())() }) }));
+        ({ cpp2rust_assert_fail_1(({ (*f.borrow())() })) });
     }
     return 0;
 }

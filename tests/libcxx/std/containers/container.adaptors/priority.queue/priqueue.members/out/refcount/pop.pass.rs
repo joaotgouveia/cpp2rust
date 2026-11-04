@@ -16,23 +16,23 @@ pub fn test_0() -> bool {
         let ___x: Value<i32> = Rc::new(RefCell::new(1));
         (*q.borrow()).push_28(___x.as_pointer())
     });
-    assert!(({ ((({ (*q.borrow()).top() }).read()) == 1) }));
+    ({ cpp2rust_assert_fail_1(((({ (*q.borrow()).top() }).read()) == 1)) });
     ({
         let ___x: Value<i32> = Rc::new(RefCell::new(3));
         (*q.borrow()).push_28(___x.as_pointer())
     });
-    assert!(({ ((({ (*q.borrow()).top() }).read()) == 3) }));
+    ({ cpp2rust_assert_fail_1(((({ (*q.borrow()).top() }).read()) == 3)) });
     ({
         let ___x: Value<i32> = Rc::new(RefCell::new(2));
         (*q.borrow()).push_28(___x.as_pointer())
     });
-    assert!(({ ((({ (*q.borrow()).top() }).read()) == 3) }));
+    ({ cpp2rust_assert_fail_1(((({ (*q.borrow()).top() }).read()) == 3)) });
     ({ (*q.borrow()).pop() });
-    assert!(({ ((({ (*q.borrow()).top() }).read()) == 2) }));
+    ({ cpp2rust_assert_fail_1(((({ (*q.borrow()).top() }).read()) == 2)) });
     ({ (*q.borrow()).pop() });
-    assert!(({ ((({ (*q.borrow()).top() }).read()) == 1) }));
+    ({ cpp2rust_assert_fail_1(((({ (*q.borrow()).top() }).read()) == 1)) });
     ({ (*q.borrow()).pop() });
-    assert!(({ ({ (*q.borrow()).empty() }) }));
+    ({ cpp2rust_assert_fail_1(({ (*q.borrow()).empty() })) });
     return true;
 }
 pub fn main() {
@@ -55,7 +55,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_0() }));
+    ({ cpp2rust_assert_fail_1(({ test_0() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

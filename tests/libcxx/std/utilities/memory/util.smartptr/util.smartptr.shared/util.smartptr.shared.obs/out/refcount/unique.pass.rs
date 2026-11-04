@@ -29,14 +29,24 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let p: Value<std_shared_ptr_int_> =
         Rc::new(RefCell::new(std_shared_ptr_int_::new_1({ Ptr::alloc(32) })));
-    assert!(({ ({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).unique() }) }));
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).unique() }),
+        )
+    });
     {
         let p2: Value<std_shared_ptr_int_> = Rc::new(RefCell::new((*p.borrow()).clone()));
-        assert!(
-            ({ !({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).unique() }) })
-        );
+        ({
+            cpp2rust_assert_fail_0(
+                !({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).unique() }),
+            )
+        });
     }
-    assert!(({ ({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).unique() }) }));
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ((*p.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_).unique() }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

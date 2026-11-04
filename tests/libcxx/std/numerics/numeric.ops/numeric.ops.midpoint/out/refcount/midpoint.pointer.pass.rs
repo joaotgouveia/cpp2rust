@@ -126,14 +126,14 @@ impl CppMove for test_macros_detail_is_same_const_volatile_double_ptr__const_vol
         src.read()
     }
 }
-const _: () = assert!(!(false), "!has_midpoint<std::nullptr_t>");
-const _: () = assert!(!(false), "!has_midpoint<FuncPtr>");
+const _: () = assert!(true, "!has_midpoint<std::nullptr_t>");
+const _: () = assert!(true, "!has_midpoint<FuncPtr>");
 const _: () = assert!(true, "");
-const _: () = assert!(!(false), "!has_midpoint<void*>");
-const _: () = assert!(!(false), "!has_midpoint<const void*>");
-const _: () = assert!(!(false), "!has_midpoint<volatile void*>");
-const _: () = assert!(!(false), "!has_midpoint<const volatile void*>");
-pub fn check_12(mut base: Ptr<i8>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+const _: () = assert!(true, "!has_midpoint<void*>");
+const _: () = assert!(true, "!has_midpoint<const void*>");
+const _: () = assert!(true, "!has_midpoint<volatile void*>");
+const _: () = assert!(true, "!has_midpoint<const volatile void*>");
+pub fn check_12(mut base: Ptr<i8>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<i8> = base.offset((i) as isize);
@@ -142,7 +142,7 @@ pub fn check_12(mut base: Ptr<i8>, mut i: isize, mut j: isize, mut expect: isize
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_14(mut base: Ptr<i8>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_14(mut base: Ptr<i8>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<i8> = base.offset((i) as isize);
@@ -151,7 +151,7 @@ pub fn check_14(mut base: Ptr<i8>, mut i: isize, mut j: isize, mut expect: isize
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_16(mut base: Ptr<i8>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_16(mut base: Ptr<i8>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<i8> = base.offset((i) as isize);
@@ -160,7 +160,7 @@ pub fn check_16(mut base: Ptr<i8>, mut i: isize, mut j: isize, mut expect: isize
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_18(mut base: Ptr<i8>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_18(mut base: Ptr<i8>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<i8> = base.offset((i) as isize);
@@ -169,7 +169,7 @@ pub fn check_18(mut base: Ptr<i8>, mut i: isize, mut j: isize, mut expect: isize
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_20(mut base: Ptr<i32>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_20(mut base: Ptr<i32>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<i32> = base.offset((i) as isize);
@@ -178,7 +178,7 @@ pub fn check_20(mut base: Ptr<i32>, mut i: isize, mut j: isize, mut expect: isiz
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_22(mut base: Ptr<i32>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_22(mut base: Ptr<i32>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<i32> = base.offset((i) as isize);
@@ -187,7 +187,7 @@ pub fn check_22(mut base: Ptr<i32>, mut i: isize, mut j: isize, mut expect: isiz
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_24(mut base: Ptr<i32>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_24(mut base: Ptr<i32>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<i32> = base.offset((i) as isize);
@@ -196,7 +196,7 @@ pub fn check_24(mut base: Ptr<i32>, mut i: isize, mut j: isize, mut expect: isiz
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_26(mut base: Ptr<i32>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_26(mut base: Ptr<i32>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<i32> = base.offset((i) as isize);
@@ -205,7 +205,7 @@ pub fn check_26(mut base: Ptr<i32>, mut i: isize, mut j: isize, mut expect: isiz
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_28(mut base: Ptr<f64>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_28(mut base: Ptr<f64>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<f64> = base.offset((i) as isize);
@@ -214,7 +214,7 @@ pub fn check_28(mut base: Ptr<f64>, mut i: isize, mut j: isize, mut expect: isiz
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_30(mut base: Ptr<f64>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_30(mut base: Ptr<f64>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<f64> = base.offset((i) as isize);
@@ -223,7 +223,7 @@ pub fn check_30(mut base: Ptr<f64>, mut i: isize, mut j: isize, mut expect: isiz
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_32(mut base: Ptr<f64>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_32(mut base: Ptr<f64>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<f64> = base.offset((i) as isize);
@@ -232,7 +232,7 @@ pub fn check_32(mut base: Ptr<f64>, mut i: isize, mut j: isize, mut expect: isiz
         })
     } == { base.offset((expect) as isize) });
 }
-pub fn check_34(mut base: Ptr<f64>, mut i: isize, mut j: isize, mut expect: isize) -> bool {
+pub fn check_34(mut base: Ptr<f64>, mut i: i64, mut j: i64, mut expect: i64) -> bool {
     return ({
         ({
             let ___a: Ptr<f64> = base.offset((i) as isize);
@@ -248,83 +248,56 @@ pub fn test_pointer_36() -> bool {
         0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
         0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
     ])));
-    assert!(({ check_12((array.as_pointer() as Ptr::<i8>), 0_isize, 0_isize, 0_isize,) }));
-    assert!(({ check_12((array.as_pointer() as Ptr::<i8>), 1_isize, 1_isize, 1_isize,) }));
-    assert!(({ check_12((array.as_pointer() as Ptr::<i8>), 0_isize, 9_isize, 4_isize,) }));
-    assert!(
-        ({
-            check_12((array.as_pointer() as Ptr<i8>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_12((array.as_pointer() as Ptr<i8>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(({ check_12((array.as_pointer() as Ptr::<i8>), 9_isize, 0_isize, 5_isize,) }));
-    assert!(
-        ({
-            check_12((array.as_pointer() as Ptr<i8>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_12((array.as_pointer() as Ptr<i8>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_12((array.as_pointer() as Ptr<i8>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_12((array.as_pointer() as Ptr<i8>), 2_isize, 12_isize, 7_isize)
-        })
-    );
-    return true;
-}
-pub fn test_pointer_37() -> bool {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    let array: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
-        0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
-        0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
-    ])));
-    assert!(({ check_14((array.as_pointer() as Ptr::<i8>), 0_isize, 0_isize, 0_isize,) }));
-    assert!(({ check_14((array.as_pointer() as Ptr::<i8>), 1_isize, 1_isize, 1_isize,) }));
-    assert!(({ check_14((array.as_pointer() as Ptr::<i8>), 0_isize, 9_isize, 4_isize,) }));
-    assert!(
-        ({
-            check_14((array.as_pointer() as Ptr<i8>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_14((array.as_pointer() as Ptr<i8>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(({ check_14((array.as_pointer() as Ptr::<i8>), 9_isize, 0_isize, 5_isize,) }));
-    assert!(
-        ({
-            check_14((array.as_pointer() as Ptr<i8>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_14((array.as_pointer() as Ptr<i8>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_14((array.as_pointer() as Ptr<i8>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_14((array.as_pointer() as Ptr<i8>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_12((array.as_pointer() as Ptr<i8>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_38() -> bool {
@@ -334,40 +307,56 @@ pub fn test_pointer_38() -> bool {
         0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
         0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
     ])));
-    assert!(({ check_16((array.as_pointer() as Ptr::<i8>), 0_isize, 0_isize, 0_isize,) }));
-    assert!(({ check_16((array.as_pointer() as Ptr::<i8>), 1_isize, 1_isize, 1_isize,) }));
-    assert!(({ check_16((array.as_pointer() as Ptr::<i8>), 0_isize, 9_isize, 4_isize,) }));
-    assert!(
-        ({
-            check_16((array.as_pointer() as Ptr<i8>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_16((array.as_pointer() as Ptr<i8>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(({ check_16((array.as_pointer() as Ptr::<i8>), 9_isize, 0_isize, 5_isize,) }));
-    assert!(
-        ({
-            check_16((array.as_pointer() as Ptr<i8>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_16((array.as_pointer() as Ptr<i8>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_16((array.as_pointer() as Ptr<i8>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_16((array.as_pointer() as Ptr<i8>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_14((array.as_pointer() as Ptr<i8>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_39() -> bool {
@@ -377,99 +366,115 @@ pub fn test_pointer_39() -> bool {
         0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
         0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
     ])));
-    assert!(({ check_18((array.as_pointer() as Ptr::<i8>), 0_isize, 0_isize, 0_isize,) }));
-    assert!(({ check_18((array.as_pointer() as Ptr::<i8>), 1_isize, 1_isize, 1_isize,) }));
-    assert!(({ check_18((array.as_pointer() as Ptr::<i8>), 0_isize, 9_isize, 4_isize,) }));
-    assert!(
-        ({
-            check_18((array.as_pointer() as Ptr<i8>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_18((array.as_pointer() as Ptr<i8>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(({ check_18((array.as_pointer() as Ptr::<i8>), 9_isize, 0_isize, 5_isize,) }));
-    assert!(
-        ({
-            check_18((array.as_pointer() as Ptr<i8>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_18((array.as_pointer() as Ptr<i8>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_18((array.as_pointer() as Ptr<i8>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_18((array.as_pointer() as Ptr<i8>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_16((array.as_pointer() as Ptr<i8>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_40() -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
-        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
-        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+    let array: Value<Box<[i8]>> = Rc::new(RefCell::new(Box::new([
+        0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
+        0_i8, 0_i8, 0_i8, 0_i8, 0_i8,
     ])));
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 0_isize, 0_isize, 0_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 1_isize, 1_isize, 1_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 0_isize, 9_isize, 4_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 9_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_20((array.as_pointer() as Ptr<i32>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_18((array.as_pointer() as Ptr<i8>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_41() -> bool {
@@ -479,56 +484,56 @@ pub fn test_pointer_41() -> bool {
         0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
         0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ])));
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 0_isize, 0_isize, 0_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 1_isize, 1_isize, 1_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 0_isize, 9_isize, 4_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 9_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_22((array.as_pointer() as Ptr<i32>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_20((array.as_pointer() as Ptr<i32>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_42() -> bool {
@@ -538,56 +543,56 @@ pub fn test_pointer_42() -> bool {
         0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
         0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ])));
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 0_isize, 0_isize, 0_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 1_isize, 1_isize, 1_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 0_isize, 9_isize, 4_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 9_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_24((array.as_pointer() as Ptr<i32>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_22((array.as_pointer() as Ptr<i32>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_43() -> bool {
@@ -597,115 +602,115 @@ pub fn test_pointer_43() -> bool {
         0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
         0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ])));
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 0_isize, 0_isize, 0_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 1_isize, 1_isize, 1_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 0_isize, 9_isize, 4_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 9_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_26((array.as_pointer() as Ptr<i32>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_24((array.as_pointer() as Ptr<i32>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_44() -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([
-        0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
-        0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
+    let array: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
+        0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32, 0_i32,
     ])));
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 0_isize, 0_isize, 0_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 1_isize, 1_isize, 1_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 0_isize, 9_isize, 4_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 9_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_28((array.as_pointer() as Ptr<f64>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_26((array.as_pointer() as Ptr<i32>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_45() -> bool {
@@ -715,56 +720,56 @@ pub fn test_pointer_45() -> bool {
         0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
         0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
     ])));
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 0_isize, 0_isize, 0_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 1_isize, 1_isize, 1_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 0_isize, 9_isize, 4_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 9_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_30((array.as_pointer() as Ptr<f64>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_28((array.as_pointer() as Ptr<f64>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_46() -> bool {
@@ -774,56 +779,56 @@ pub fn test_pointer_46() -> bool {
         0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
         0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
     ])));
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 0_isize, 0_isize, 0_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 1_isize, 1_isize, 1_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 0_isize, 9_isize, 4_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 9_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_32((array.as_pointer() as Ptr<f64>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_30((array.as_pointer() as Ptr<f64>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
 pub fn test_pointer_47() -> bool {
@@ -833,79 +838,138 @@ pub fn test_pointer_47() -> bool {
         0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
         0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
     ])));
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 0_isize, 0_isize, 0_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 1_isize, 1_isize, 1_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 0_isize, 9_isize, 4_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 0_isize, 10_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 0_isize, 11_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 9_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 10_isize, 0_isize, 5_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 11_isize, 0_isize, 6_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 0_isize, 18_isize, 9_isize)
-        })
-    );
-    assert!(
-        ({
-            check_34((array.as_pointer() as Ptr<f64>), 2_isize, 12_isize, 7_isize)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_32((array.as_pointer() as Ptr<f64>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
     return true;
 }
-pub fn test_48() {
-    assert!(({ test_pointer_36() }));
-    assert!(({ test_pointer_37() }));
-    assert!(({ test_pointer_38() }));
-    assert!(({ test_pointer_39() }));
-    const _: () = assert!(true, "test_pointer<T>()");;
-    const _: () = assert!(true, "test_pointer<const T>()");;
+pub fn test_pointer_48() -> bool {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    let array: Value<Box<[f64]>> = Rc::new(RefCell::new(Box::new([
+        0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
+        0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64, 0_f64,
+    ])));
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 0_i64, 0_i64, 0_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 1_i64, 1_i64, 1_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 0_i64, 9_i64, 4_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 0_i64, 10_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 0_i64, 11_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 9_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 10_i64, 0_i64, 5_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 11_i64, 0_i64, 6_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 0_i64, 18_i64, 9_i64) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_37(
+            ({ check_34((array.as_pointer() as Ptr<f64>), 2_i64, 12_i64, 7_i64) }),
+        )
+    });
+    return true;
 }
 pub fn test_49() {
-    assert!(({ test_pointer_40() }));
-    assert!(({ test_pointer_41() }));
-    assert!(({ test_pointer_42() }));
-    assert!(({ test_pointer_43() }));
+    ({ cpp2rust_assert_fail_37(({ test_pointer_36() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_38() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_39() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_40() })) });
     const _: () = assert!(true, "test_pointer<T>()");;
     const _: () = assert!(true, "test_pointer<const T>()");;
 }
 pub fn test_50() {
-    assert!(({ test_pointer_44() }));
-    assert!(({ test_pointer_45() }));
-    assert!(({ test_pointer_46() }));
-    assert!(({ test_pointer_47() }));
+    ({ cpp2rust_assert_fail_37(({ test_pointer_41() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_42() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_43() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_44() })) });
+    const _: () = assert!(true, "test_pointer<T>()");;
+    const _: () = assert!(true, "test_pointer<const T>()");;
+}
+pub fn test_51() {
+    ({ cpp2rust_assert_fail_37(({ test_pointer_45() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_46() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_47() })) });
+    ({ cpp2rust_assert_fail_37(({ test_pointer_48() })) });
     const _: () = assert!(true, "test_pointer<T>()");;
     const _: () = assert!(true, "test_pointer<const T>()");;
 }
@@ -929,9 +993,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_48() });
     ({ test_49() });
     ({ test_50() });
+    ({ test_51() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

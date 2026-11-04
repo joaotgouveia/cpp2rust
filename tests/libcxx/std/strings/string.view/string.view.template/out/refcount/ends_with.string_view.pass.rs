@@ -13,7 +13,7 @@ impl constexpr_char_traits_char_ {
     pub fn lt(mut c1: i8, mut c2: i8) -> bool {
         return ((c1 as i32) < (c2 as i32));
     }
-    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: usize) -> i32 {
+    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: u64) -> i32 {
         'loop_: while (n != 0) {
             if ({
                 let _c1: i8 = (s1.read());
@@ -104,61 +104,75 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )),
         );
         const _: () = assert!(true, "");;
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_0(
                 ({
                     let ___x: std_basic_string_view_char__std_char_traits_char__ =
                         (*sv0.borrow()).clone();
                     (*sv0.borrow()).ends_with_40(___x)
-                })
-            })
-        );
-        assert!(({ !({ (*sv0.borrow()).ends_with_40((*sv1.borrow()).clone(),) }) }));
-        assert!(({ ({ (*sv1.borrow()).ends_with_40((*sv0.borrow()).clone(),) }) }));
-        assert!(
-            ({
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_0(!({ (*sv0.borrow()).ends_with_40((*sv1.borrow()).clone()) })) });
+        ({ cpp2rust_assert_fail_0(({ (*sv1.borrow()).ends_with_40((*sv0.borrow()).clone()) })) });
+        ({
+            cpp2rust_assert_fail_0(
                 ({
                     let ___x: std_basic_string_view_char__std_char_traits_char__ =
                         (*sv1.borrow()).clone();
                     (*sv1.borrow()).ends_with_40(___x)
-                })
-            })
-        );
-        assert!(({ !({ (*sv1.borrow()).ends_with_40((*sv2.borrow()).clone(),) }) }));
-        assert!(({ !({ (*sv1.borrow()).ends_with_40((*sv3.borrow()).clone(),) }) }));
-        assert!(({ !({ (*sv1.borrow()).ends_with_40((*sv4.borrow()).clone(),) }) }));
-        assert!(({ !({ (*sv1.borrow()).ends_with_40((*sv5.borrow()).clone(),) }) }));
-        assert!(({ !({ (*sv1.borrow()).ends_with_40((*svNot.borrow()).clone(),) }) }));
-        assert!(({ ({ (*sv2.borrow()).ends_with_40((*sv0.borrow()).clone(),) }) }));
-        assert!(({ ({ (*sv2.borrow()).ends_with_40((*sv1.borrow()).clone(),) }) }));
-        assert!(
-            ({
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_0(!({ (*sv1.borrow()).ends_with_40((*sv2.borrow()).clone()) })) });
+        ({ cpp2rust_assert_fail_0(!({ (*sv1.borrow()).ends_with_40((*sv3.borrow()).clone()) })) });
+        ({ cpp2rust_assert_fail_0(!({ (*sv1.borrow()).ends_with_40((*sv4.borrow()).clone()) })) });
+        ({ cpp2rust_assert_fail_0(!({ (*sv1.borrow()).ends_with_40((*sv5.borrow()).clone()) })) });
+        ({
+            cpp2rust_assert_fail_0(!({ (*sv1.borrow()).ends_with_40((*svNot.borrow()).clone()) }))
+        });
+        ({ cpp2rust_assert_fail_0(({ (*sv2.borrow()).ends_with_40((*sv0.borrow()).clone()) })) });
+        ({ cpp2rust_assert_fail_0(({ (*sv2.borrow()).ends_with_40((*sv1.borrow()).clone()) })) });
+        ({
+            cpp2rust_assert_fail_0(
                 ({
                     let ___x: std_basic_string_view_char__std_char_traits_char__ =
                         (*sv2.borrow()).clone();
                     (*sv2.borrow()).ends_with_40(___x)
-                })
-            })
-        );
-        assert!(({ !({ (*sv2.borrow()).ends_with_40((*sv3.borrow()).clone(),) }) }));
-        assert!(({ !({ (*sv2.borrow()).ends_with_40((*sv4.borrow()).clone(),) }) }));
-        assert!(({ !({ (*sv2.borrow()).ends_with_40((*sv5.borrow()).clone(),) }) }));
-        assert!(({ !({ (*sv2.borrow()).ends_with_40((*svNot.borrow()).clone(),) }) }));
-        assert!(({ ({ (*svNot.borrow()).ends_with_40((*sv0.borrow()).clone(),) }) }));
-        assert!(({ !({ (*svNot.borrow()).ends_with_40((*sv1.borrow()).clone(),) }) }));
-        assert!(({ !({ (*svNot.borrow()).ends_with_40((*sv2.borrow()).clone(),) }) }));
-        assert!(({ !({ (*svNot.borrow()).ends_with_40((*sv3.borrow()).clone(),) }) }));
-        assert!(({ !({ (*svNot.borrow()).ends_with_40((*sv4.borrow()).clone(),) }) }));
-        assert!(({ !({ (*svNot.borrow()).ends_with_40((*sv5.borrow()).clone(),) }) }));
-        assert!(
-            ({
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_0(!({ (*sv2.borrow()).ends_with_40((*sv3.borrow()).clone()) })) });
+        ({ cpp2rust_assert_fail_0(!({ (*sv2.borrow()).ends_with_40((*sv4.borrow()).clone()) })) });
+        ({ cpp2rust_assert_fail_0(!({ (*sv2.borrow()).ends_with_40((*sv5.borrow()).clone()) })) });
+        ({
+            cpp2rust_assert_fail_0(!({ (*sv2.borrow()).ends_with_40((*svNot.borrow()).clone()) }))
+        });
+        ({ cpp2rust_assert_fail_0(({ (*svNot.borrow()).ends_with_40((*sv0.borrow()).clone()) })) });
+        ({
+            cpp2rust_assert_fail_0(!({ (*svNot.borrow()).ends_with_40((*sv1.borrow()).clone()) }))
+        });
+        ({
+            cpp2rust_assert_fail_0(!({ (*svNot.borrow()).ends_with_40((*sv2.borrow()).clone()) }))
+        });
+        ({
+            cpp2rust_assert_fail_0(!({ (*svNot.borrow()).ends_with_40((*sv3.borrow()).clone()) }))
+        });
+        ({
+            cpp2rust_assert_fail_0(!({ (*svNot.borrow()).ends_with_40((*sv4.borrow()).clone()) }))
+        });
+        ({
+            cpp2rust_assert_fail_0(!({ (*svNot.borrow()).ends_with_40((*sv5.borrow()).clone()) }))
+        });
+        ({
+            cpp2rust_assert_fail_0(
                 ({
                     let ___x: std_basic_string_view_char__std_char_traits_char__ =
                         (*svNot.borrow()).clone();
                     (*svNot.borrow()).ends_with_40(___x)
-                })
-            })
-        );
+                }),
+            )
+        });
     }
     {
         let mut s: Ptr<i8> = Ptr::<i8>::from_string_literal(b"abcde");

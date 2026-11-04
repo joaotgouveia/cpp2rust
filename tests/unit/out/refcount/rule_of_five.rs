@@ -114,53 +114,67 @@ fn main_0() -> i32 {
         let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
         let b: Value<Buffer> = Rc::new(RefCell::new(Buffer::copy_from({ a.as_pointer() })));
         let _dtor_b = ScopedDestructor::new(&b, |__p| __p.destructor());
-        assert!(
-            ((alive_0.with(|rc| *rc.borrow()) == 2) && (copies_1.with(|rc| *rc.borrow()) == 1))
-                && (moves_2.with(|rc| *rc.borrow()) == 0)
-        );
+        ({
+            cpp2rust_assert_fail_4(
+                ((alive_0.with(|rc| *rc.borrow()) == 2) && (copies_1.with(|rc| *rc.borrow()) == 1))
+                    && (moves_2.with(|rc| *rc.borrow()) == 0),
+            )
+        });
         array_elem!(b.as_pointer(), data, 0).write(100);
-        assert!(((array_elem!(a.as_pointer(), data, 0).read()) == 0));
+        ({ cpp2rust_assert_fail_4(((array_elem!(a.as_pointer(), data, 0).read()) == 0)) });
         let c: Value<Buffer> = Rc::new(RefCell::new(Buffer::move_from({ a.as_pointer() })));
         let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
-        assert!((alive_0.with(|rc| *rc.borrow()) == 3) && (moves_2.with(|rc| *rc.borrow()) == 1));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_4(
+                (alive_0.with(|rc| *rc.borrow()) == 3) && (moves_2.with(|rc| *rc.borrow()) == 1),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_4(
                 ({ (*a.borrow()).size } == 0)
-                    && ((array_elem!(a.as_pointer(), data, 0).read()) == -1_i32)
-            })
-        );
-        assert!(
-            ({
+                    && ((array_elem!(a.as_pointer(), data, 0).read()) == -1_i32),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_4(
                 ({ (*c.borrow()).size } == 4)
-                    && ((array_elem!(c.as_pointer(), data, 3).read()) == 3)
-            })
-        );
+                    && ((array_elem!(c.as_pointer(), data, 3).read()) == 3),
+            )
+        });
         let d: Value<Buffer> = Rc::new(RefCell::new(({ make_3(2) })));
         let _dtor_d = ScopedDestructor::new(&d, |__p| __p.destructor());
-        assert!(({ ({ (*d.borrow()).size } == 2) && (moves_2.with(|rc| *rc.borrow()) == 2) }));
+        ({
+            cpp2rust_assert_fail_4(
+                ({ (*d.borrow()).size } == 2) && (moves_2.with(|rc| *rc.borrow()) == 2),
+            )
+        });
         ({ BufferImpl::copy_assign(&d.as_pointer(), b.as_pointer()) });
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_4(
                 (({ (*d.borrow()).size } == 4)
                     && ((array_elem!(d.as_pointer(), data, 0).read()) == 100))
-                    && (copies_1.with(|rc| *rc.borrow()) == 2)
-            })
-        );
+                    && (copies_1.with(|rc| *rc.borrow()) == 2),
+            )
+        });
         ({ BufferImpl::move_assign(&d.as_pointer(), c.as_pointer()) });
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_4(
                 (((array_elem!(d.as_pointer(), data, 0).read()) == 0)
                     && ({ (*c.borrow()).size } == 0))
-                    && (moves_2.with(|rc| *rc.borrow()) == 3)
-            })
-        );
+                    && (moves_2.with(|rc| *rc.borrow()) == 3),
+            )
+        });
         ({
             let _o: Ptr<Buffer> = d.as_pointer();
             BufferImpl::move_assign(&d.as_pointer(), _o)
         });
-        assert!(({ ({ (*d.borrow()).size } == 4) && (moves_2.with(|rc| *rc.borrow()) == 3) }));
+        ({
+            cpp2rust_assert_fail_4(
+                ({ (*d.borrow()).size } == 4) && (moves_2.with(|rc| *rc.borrow()) == 3),
+            )
+        });
     }
-    assert!((alive_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_4((alive_0.with(|rc| *rc.borrow()) == 0)) });
     return 0;
 }
 pub trait BufferImpl {

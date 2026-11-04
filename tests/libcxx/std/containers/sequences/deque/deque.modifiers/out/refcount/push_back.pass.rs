@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -63,127 +67,6 @@ impl CppMove for min_allocator_min_pointer_int__std_integral_constant_unsigned_l
     }
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___ {}
-pub fn make_4(mut size: i32, mut start: i32) -> Vec<i32> {
-    let mut b: i32 = (((4096_usize).wrapping_div((::std::mem::size_of::<i32>() as usize))) as i32);
-    let mut init: i32 = 0;
-    if (start > 0) {
-        init = (((start + 1) / b) + ((((start + 1) % b) != 0) as i32));
-        init *= b;
-        init.prefix_dec();
-    }
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new({
-        let __tmp_0: Value<i32> = Rc::new(RefCell::new(0));
-        std_deque_int__std_allocator_int__::new_1(
-            { (init as usize) },
-            { __tmp_0.as_pointer() },
-            None,
-        )
-    }));
-    let mut i: i32 = 0;
-    'loop_: while (i < (init - start)) {
-        ({ (*c.borrow_mut()).pop_back() });
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < size) {
-        (*c.borrow_mut()).push(i);
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < start) {
-        (*c.borrow_mut()).remove(0);
-        i.prefix_inc();
-    }
-    return ({ std::mem::take(&mut (*c.borrow_mut())) });
-}
-pub fn make_5(mut size: i32, mut start: i32) -> Vec<i32> {
-    let mut b: i32 = (((4096_usize).wrapping_div((::std::mem::size_of::<i32>() as usize))) as i32);
-    let mut init: i32 = 0;
-    if (start > 0) {
-        init = (((start + 1) / b) + ((((start + 1) % b) != 0) as i32));
-        init *= b;
-        init.prefix_dec();
-    }
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new({
-        let __tmp_1: Value<i32> = Rc::new(RefCell::new(0));
-        std_deque_int__min_allocator_int__::new_1(
-            { (init as usize) },
-            { __tmp_1.as_pointer() },
-            None,
-        )
-    }));
-    let mut i: i32 = 0;
-    'loop_: while (i < (init - start)) {
-        ({ (*c.borrow_mut()).pop_back() });
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < size) {
-        (*c.borrow_mut()).push(i);
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < start) {
-        (*c.borrow_mut()).remove(0);
-        i.prefix_inc();
-    }
-    return ({ std::mem::take(&mut (*c.borrow_mut())) });
-}
-pub fn test_6(mut size: i32) {
-    let mut rng: [i32; 11] = [0, 1, 2, 3, 1023, 1024, 1025, 2046, 2047, 2048, 2049];
-    let mut N: i32 = (((::std::mem::size_of::<[i32; 11]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as i32);
-    let mut j: i32 = 0;
-    'loop_: while (j < N) {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_4(size, rng[(j) as usize]) })));
-        let it: Value<std__Deque_iterator_int__const_int_ref__const_int_ptr_> =
-            Rc::new(RefCell::new(
-                <std__Deque_iterator_int__const_int_ref__const_int_ptr_>::from(
-                    ({ (*c.borrow_mut()).begin_24() }),
-                ),
-            ));
-        const _: () = assert!(true, "");;
-        let mut i: i32 = 0;
-        'loop_: while (i < size) {
-            assert!(({ (((*it.borrow()).iter_deref().read()) == i) }));
-            {
-                i.prefix_inc();
-                {
-                    it.as_pointer().with_mut(|__it| {
-                        __it.iter_inc();
-                    });
-                    it.as_pointer()
-                }
-            };
-        }
-        j.prefix_inc();
-    }
-}
-pub fn test_7(mut size: i32) {
-    let mut rng: [i32; 11] = [0, 1, 2, 3, 1023, 1024, 1025, 2046, 2047, 2048, 2049];
-    let mut N: i32 = (((::std::mem::size_of::<[i32; 11]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as i32);
-    let mut j: i32 = 0;
-    'loop_: while (j < N) {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_5(size, rng[(j) as usize]) })));
-        let it : Value<std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___ > = Rc::new(RefCell::new(<std__Deque_iterator_int__const_int_ref__min_pointer_const_int__std_integral_constant_unsigned_long__0___  >::from(( { (*c.borrow_mut()) . begin_24 ( ) } )  ) )) ;
-        const _: () = assert!(true, "");;
-        let mut i: i32 = 0;
-        'loop_: while (i < size) {
-            assert!(({ (((*it.borrow()).iter_deref().read()) == i) }));
-            {
-                i.prefix_inc();
-                {
-                    it.as_pointer().with_mut(|__it| {
-                        __it.iter_inc();
-                    });
-                    it.as_pointer()
-                }
-            };
-        }
-        j.prefix_inc();
-    }
-}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -208,12 +91,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut rng: [i32; 14] = [
             0, 1, 2, 3, 1023, 1024, 1025, 2046, 2047, 2048, 2049, 4094, 4095, 4096,
         ];
-        let mut N: i32 = (((::std::mem::size_of::<[i32; 14]>() as usize)
-            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
-            as i32);
+        let mut N: i32 = (((::std::mem::size_of::<[i32; 14]>() as u64)
+            .wrapping_div((::std::mem::size_of::<i32>() as u64))) as i32);
         let mut j: i32 = 0;
         'loop_: while (j < N) {
-            ({ test_6(rng[(j) as usize]) });
+            ({ test_5(rng[(j) as usize]) });
             j.prefix_inc();
         }
     }
@@ -221,12 +103,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let mut rng: [i32; 14] = [
             0, 1, 2, 3, 1023, 1024, 1025, 2046, 2047, 2048, 2049, 4094, 4095, 4096,
         ];
-        let mut N: i32 = (((::std::mem::size_of::<[i32; 14]>() as usize)
-            .wrapping_div((::std::mem::size_of::<i32>() as usize)))
-            as i32);
+        let mut N: i32 = (((::std::mem::size_of::<[i32; 14]>() as u64)
+            .wrapping_div((::std::mem::size_of::<i32>() as u64))) as i32);
         let mut j: i32 = 0;
         'loop_: while (j < N) {
-            ({ test_7(rng[(j) as usize]) });
+            ({ test_6(rng[(j) as usize]) });
             j.prefix_inc();
         }
     }
@@ -239,11 +120,11 @@ pub struct min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0__
 #[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
+    fn allocate(&self, n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: u64);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_int_>::default().allocate(n) })
         });
@@ -251,29 +132,29 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
 pub trait min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl {
-    fn allocate ( &self , n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
+    fn allocate ( &self , n : u64  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__  ;
     fn deallocate(
         &self,
         p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___Impl
     for Ptr<min_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>
 {
-    fn allocate ( &self , mut n : usize  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
+    fn allocate ( &self , mut n : u64  , ) -> min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__{
         return min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ :: new_1 ( { ( { <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___  >::default() . allocate ( n  , ) } )   } , )    ;
     }
     fn deallocate(
         &self,
         mut p : min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({
             <std_allocator_min_pointer_int__std_integral_constant_unsigned_long__0___>::default()

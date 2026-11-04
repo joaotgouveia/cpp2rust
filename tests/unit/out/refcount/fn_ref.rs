@@ -38,17 +38,27 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ call_ref_2(FnPtr::<fn(i32) -> i32>::new(square_0), 3,) }) == 9));
-    assert!((({ call_ref_2(FnPtr::<fn(i32) -> i32>::new(twice_1), 3,) }) == 6));
+    ({
+        cpp2rust_assert_fail_5((({ call_ref_2(FnPtr::<fn(i32) -> i32>::new(square_0), 3) }) == 9))
+    });
+    ({ cpp2rust_assert_fail_5((({ call_ref_2(FnPtr::<fn(i32) -> i32>::new(twice_1), 3) }) == 6)) });
     let r: FnPtr<fn(i32) -> i32> = FnPtr::<fn(i32) -> i32>::new(square_0);
-    assert!((({ r.call(4,) }) == 16));
-    assert!((({ call_ref_2((r).clone(), 5,) }) == 25));
-    assert!((({ call_deduced_3(FnPtr::<fn(i32) -> i32>::new(twice_1), 7,) }) == 14));
-    assert!((({ call_forwarded_4(FnPtr::<fn(i32) -> i32>::new(square_0), 6,) }) == 36));
+    ({ cpp2rust_assert_fail_5((({ r.call(4) }) == 16)) });
+    ({ cpp2rust_assert_fail_5((({ call_ref_2((r).clone(), 5) }) == 25)) });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ call_deduced_3(FnPtr::<fn(i32) -> i32>::new(twice_1), 7) }) == 14),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_5(
+            (({ call_forwarded_4(FnPtr::<fn(i32) -> i32>::new(square_0), 6) }) == 36),
+        )
+    });
     let h: Value<Holder> = Rc::new(RefCell::new(Holder {
         f: FnPtr::<fn(i32) -> i32>::new(twice_1),
     }));
-    assert!((({ HolderImpl::run(&h.as_pointer(), 8,) }) == 16));
+    ({ cpp2rust_assert_fail_5((({ HolderImpl::run(&h.as_pointer(), 8) }) == 16)) });
     return 0;
 }
 pub trait HolderImpl {

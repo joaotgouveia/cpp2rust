@@ -89,18 +89,18 @@ fn main_0() -> i32 {
     ({ Sorted__lambda_at_lambda_decltype_type_cpp_21_18__Impl::insert(&desc.as_pointer(), 2) });
     ({ Sorted__lambda_at_lambda_decltype_type_cpp_21_18__Impl::insert(&desc.as_pointer(), 7) });
     ({ Sorted__lambda_at_lambda_decltype_type_cpp_21_18__Impl::insert(&desc.as_pointer(), 4) });
-    assert!(((array_elem!(desc.as_pointer(), items, 0).read()) == 7));
-    assert!(((array_elem!(desc.as_pointer(), items, 1).read()) == 4));
-    assert!(((array_elem!(desc.as_pointer(), items, 2).read()) == 2));
+    ({ cpp2rust_assert_fail_0(((array_elem!(desc.as_pointer(), items, 0).read()) == 7)) });
+    ({ cpp2rust_assert_fail_0(((array_elem!(desc.as_pointer(), items, 1).read()) == 4)) });
+    ({ cpp2rust_assert_fail_0(((array_elem!(desc.as_pointer(), items, 2).read()) == 2)) });
     let asc: Value<Sorted__lambda_at_lambda_decltype_type_cpp_18_23__> = Rc::new(RefCell::new(
         <Sorted__lambda_at_lambda_decltype_type_cpp_18_23__>::default(),
     ));
     ({ Sorted__lambda_at_lambda_decltype_type_cpp_18_23__Impl::insert(&asc.as_pointer(), 2) });
     ({ Sorted__lambda_at_lambda_decltype_type_cpp_18_23__Impl::insert(&asc.as_pointer(), 7) });
     ({ Sorted__lambda_at_lambda_decltype_type_cpp_18_23__Impl::insert(&asc.as_pointer(), 4) });
-    assert!(((array_elem!(asc.as_pointer(), items, 0).read()) == 2));
-    assert!(((array_elem!(asc.as_pointer(), items, 1).read()) == 4));
-    assert!(((array_elem!(asc.as_pointer(), items, 2).read()) == 7));
+    ({ cpp2rust_assert_fail_0(((array_elem!(asc.as_pointer(), items, 0).read()) == 2)) });
+    ({ cpp2rust_assert_fail_0(((array_elem!(asc.as_pointer(), items, 1).read()) == 4)) });
+    ({ cpp2rust_assert_fail_0(((array_elem!(asc.as_pointer(), items, 2).read()) == 7)) });
     let fresh: Value<FnPtr<fn(i32, i32) -> bool>> =
         Rc::new(RefCell::new(FnPtr::<fn(i32, i32) -> bool>::new(
             |mut a: i32, mut b: i32| -> bool {
@@ -109,8 +109,8 @@ fn main_0() -> i32 {
                 }
             },
         )));
-    assert!(({ (({ (*fresh.borrow()).call(3, 1,) }) as bool) }));
-    assert!(({ !({ (*fresh.borrow()).call(1, 3,) }) }));
+    ({ cpp2rust_assert_fail_0((({ (*fresh.borrow()).call(3, 1) }) as bool)) });
+    ({ cpp2rust_assert_fail_0(!({ (*fresh.borrow()).call(1, 3) })) });
     let assigned: Value<FnPtr<fn(i32, i32) -> bool>> =
         Rc::new(RefCell::new(FnPtr::<fn(i32, i32) -> bool>::new(
             |mut a: i32, mut b: i32| -> bool {
@@ -120,7 +120,7 @@ fn main_0() -> i32 {
             },
         )));
     (*assigned.borrow_mut()) = (*greater.borrow()).clone();
-    assert!(({ (({ (*assigned.borrow()).call(5, 4,) }) as bool) }));
+    ({ cpp2rust_assert_fail_0((({ (*assigned.borrow()).call(5, 4) }) as bool)) });
     let less: Value<FnPtr<fn(i32, i32) -> bool>> =
         Rc::new(RefCell::new(FnPtr::<fn(i32, i32) -> bool>::new(
             |mut a: i32, mut b: i32| -> bool {
@@ -129,7 +129,7 @@ fn main_0() -> i32 {
                 }
             },
         )));
-    assert!(({ (({ (*less.borrow()).call(1, 3,) }) as bool) }));
+    ({ cpp2rust_assert_fail_0((({ (*less.borrow()).call(1, 3) }) as bool)) });
     return 0;
 }
 pub trait Sorted__lambda_at_lambda_decltype_type_cpp_18_23__Impl {

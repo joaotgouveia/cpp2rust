@@ -40,16 +40,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let w: Value<std_weak_ptr_A_> =
         Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ s.as_pointer() })));
     const _: () = assert!(true, "");;
-    assert!(({ !({ ((*w.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).expired() }) }));
-    assert!(
-        ({
-            (({ ((*w.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() }) == 1_i64)
-        })
-    );
-    assert!(
-        (({ (({ (*w.borrow()).lock() }) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() })
-            == ({ ((*s.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }))
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            !({ ((*w.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).expired() }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ ((*w.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() }) == 1_i64),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ (({ (*w.borrow()).lock() }) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() })
+                == ({ ((*s.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() })),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

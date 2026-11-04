@@ -69,17 +69,17 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let i: Value<Box_int_> = Rc::new(RefCell::new(Box_int_ { val: 3 }));
-    assert!((({ Box_int_Impl::twice(&i.as_pointer(),) }) == 6));
+    ({ cpp2rust_assert_fail_0((({ Box_int_Impl::twice(&i.as_pointer()) }) == 6)) });
     let p: Value<Box_Point_> = Rc::new(RefCell::new(Box_Point_ {
         val: Point { x: 4 },
     }));
-    assert!(({ ({ Box_Point_Impl::get(&p.as_pointer(),) }).x } == 4));
+    ({ cpp2rust_assert_fail_0(({ ({ Box_Point_Impl::get(&p.as_pointer()) }).x } == 4)) });
     let d: Value<Deduced_int_> = Rc::new(RefCell::new(Deduced_int_ { val: 5 }));
-    assert!((({ Deduced_int_Impl::twice(&d.as_pointer(),) }) == 10));
+    ({ cpp2rust_assert_fail_0((({ Deduced_int_Impl::twice(&d.as_pointer()) }) == 10)) });
     let dp: Value<Deduced_Point_> = Rc::new(RefCell::new(Deduced_Point_ {
         val: Point { x: 6 },
     }));
-    assert!(({ ({ Deduced_Point_Impl::get(&dp.as_pointer(),) }).x } == 6));
+    ({ cpp2rust_assert_fail_0(({ ({ Deduced_Point_Impl::get(&dp.as_pointer()) }).x } == 6)) });
     return 0;
 }
 pub trait Box_Point_Impl {

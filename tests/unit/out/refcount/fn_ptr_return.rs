@@ -24,13 +24,13 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut f: FnPtr<fn(i32) -> i32> = ({ pick_2(1) });
-    assert!(!((f).is_null()));
-    assert!(({ (f).clone() } == { FnPtr::<fn(i32) -> i32>::new(inc_0) }));
-    assert!((({ f.call(10,) }) == 11));
+    ({ cpp2rust_assert_fail_3(!((f).is_null())) });
+    ({ cpp2rust_assert_fail_3(({ (f).clone() } == { FnPtr::<fn(i32) -> i32>::new(inc_0) })) });
+    ({ cpp2rust_assert_fail_3((({ f.call(10) }) == 11)) });
     let mut g: FnPtr<fn(i32) -> i32> = ({ pick_2(0) });
-    assert!(({ (g).clone() } == { FnPtr::<fn(i32) -> i32>::new(dec_1) }));
-    assert!((({ g.call(10,) }) == 9));
-    assert!(({ (f).clone() } != { (g).clone() }));
+    ({ cpp2rust_assert_fail_3(({ (g).clone() } == { FnPtr::<fn(i32) -> i32>::new(dec_1) })) });
+    ({ cpp2rust_assert_fail_3((({ g.call(10) }) == 9)) });
+    ({ cpp2rust_assert_fail_3(({ (f).clone() } != { (g).clone() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

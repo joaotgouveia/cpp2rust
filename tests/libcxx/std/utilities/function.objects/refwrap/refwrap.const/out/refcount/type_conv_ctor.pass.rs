@@ -78,7 +78,9 @@ impl CppMove for convertible_from_int {
         src.read()
     }
 }
-pub fn meow_1(mut _a0: Ptr<i32>) {}
+pub fn meow_1(_a0: std_reference_wrapper_int_) {
+    let _a0: Value<std_reference_wrapper_int_> = Rc::new(RefCell::new(_a0));
+}
 pub fn meow_2(mut _a0: convertible_from_int) {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -103,14 +105,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let t: Value<convertible_to_int_ref> =
             Rc::new(RefCell::new(<convertible_to_int_ref>::default()));
-        let mut r: Ptr<convertible_to_int_ref> = t.as_pointer();
-        assert!(((r) == (t.as_pointer())));
+        let r: Value<std_reference_wrapper_convertible_to_int_ref_> = Rc::new(RefCell::new(
+            std_reference_wrapper_convertible_to_int_ref_::new({ t.as_pointer() }),
+        ));
+        ({ cpp2rust_assert_fail_3((({ (*r.borrow()).get() }) == (t.as_pointer()))) });
     }
     {
         let t: Value<convertible_to_int_ref> =
             Rc::new(RefCell::new(<convertible_to_int_ref>::default()));
-        let mut r: Ptr<convertible_to_int_ref> = t.as_pointer();
-        assert!(((r) == (t.as_pointer())));
+        let r: Value<std_reference_wrapper_const_convertible_to_int_ref_> = Rc::new(RefCell::new(
+            std_reference_wrapper_const_convertible_to_int_ref_::new({ t.as_pointer() }),
+        ));
+        ({ cpp2rust_assert_fail_3((({ (*r.borrow()).get() }) == (t.as_pointer()))) });
     }
     {
         const _: () = assert!(true, "");;
@@ -120,7 +126,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
-        let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
+        let ri: Value<std_reference_wrapper_int_> =
+            Rc::new(RefCell::new(std_reference_wrapper_int_::new({
+                i.as_pointer()
+            })));
         const _: () = assert!(
             true,
             "(std::is_same<decltype(ri), std::reference_wrapper<int>>::value)"
@@ -128,7 +137,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         let j: Value<i32> = Rc::new(RefCell::new(0));
-        let rj: Value<Ptr<i32>> = Rc::new(RefCell::new(j.as_pointer()));
+        let rj: Value<std_reference_wrapper_const_int_> =
+            Rc::new(RefCell::new(std_reference_wrapper_const_int_::new({
+                j.as_pointer()
+            })));
         const _: () = assert!(
             true,
             "(std::is_same<decltype(rj), std::reference_wrapper<const int>>::value)"

@@ -167,9 +167,9 @@ fn main_0() -> i32 {
                 }),
             }));
         let _dtor_g = ScopedDestructor::new(&g, |__p| __p.destructor());
-        assert!((count_0.with(|rc| *rc.borrow()) == 0));
+        ({ cpp2rust_assert_fail_3((count_0.with(|rc| *rc.borrow()) == 0)) });
     }
-    assert!((count_0.with(|rc| *rc.borrow()) == 1));
+    ({ cpp2rust_assert_fail_3((count_0.with(|rc| *rc.borrow()) == 1)) });
     let n: Value<Holder__lambda_at_lambda_as_field_cpp_38_12__> = Rc::new(RefCell::new(
         Holder__lambda_at_lambda_as_field_cpp_38_12__ {
             f: FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
@@ -180,10 +180,13 @@ fn main_0() -> i32 {
             calls: 0,
         },
     ));
-    assert!(
-        (({ Holder__lambda_at_lambda_as_field_cpp_38_12__Impl::call(&n.as_pointer(), 2,) }) == 3)
-    );
-    assert!(({ ({ (*n.borrow()).calls } == 1) }));
+    ({
+        cpp2rust_assert_fail_3(
+            (({ Holder__lambda_at_lambda_as_field_cpp_38_12__Impl::call(&n.as_pointer(), 2) })
+                == 3),
+        )
+    });
+    ({ cpp2rust_assert_fail_3(({ (*n.borrow()).calls } == 1)) });
     let cleaned: Value<i32> = Rc::new(RefCell::new(0));
     {
         let g: Value<Guard__lambda_at_lambda_as_field_cpp_44_13__> =
@@ -198,9 +201,9 @@ fn main_0() -> i32 {
                 ),
             }));
         let _dtor_g = ScopedDestructor::new(&g, |__p| __p.destructor());
-        assert!(({ ((*cleaned.borrow()) == 0) }));
+        ({ cpp2rust_assert_fail_3(((*cleaned.borrow()) == 0)) });
     }
-    assert!(({ ((*cleaned.borrow()) == 1) }));
+    ({ cpp2rust_assert_fail_3(((*cleaned.borrow()) == 1)) });
     let factor: Value<i32> = Rc::new(RefCell::new(3));
     let h: Value<Holder__lambda_at_lambda_as_field_cpp_50_12__> = Rc::new(RefCell::new(
         Holder__lambda_at_lambda_as_field_cpp_50_12__ {
@@ -216,13 +219,19 @@ fn main_0() -> i32 {
         },
     ));
     (*factor.borrow_mut()) = 100;
-    assert!(
-        (({ Holder__lambda_at_lambda_as_field_cpp_50_12__Impl::call(&h.as_pointer(), 2,) }) == 6)
-    );
-    assert!(
-        (({ Holder__lambda_at_lambda_as_field_cpp_50_12__Impl::call(&h.as_pointer(), 5,) }) == 15)
-    );
-    assert!(({ ({ (*h.borrow()).calls } == 2) }));
+    ({
+        cpp2rust_assert_fail_3(
+            (({ Holder__lambda_at_lambda_as_field_cpp_50_12__Impl::call(&h.as_pointer(), 2) })
+                == 6),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
+            (({ Holder__lambda_at_lambda_as_field_cpp_50_12__Impl::call(&h.as_pointer(), 5) })
+                == 15),
+        )
+    });
+    ({ cpp2rust_assert_fail_3(({ (*h.borrow()).calls } == 2)) });
     let w: Value<FnPtr<fn(i32) -> i32>> = Rc::new(RefCell::new(
         ({
             wrap_1(lambda!(
@@ -236,10 +245,10 @@ fn main_0() -> i32 {
         }),
     ));
     (*factor.borrow_mut()) = 7;
-    assert!(({ (({ (*w.borrow()).call(2,) }) == 201) }));
+    ({ cpp2rust_assert_fail_3((({ (*w.borrow()).call(2) }) == 201)) });
     let ww: Value<FnPtr<fn(i32) -> i32>> =
         Rc::new(RefCell::new(({ wrap_2((*w.borrow()).copy_from()) })));
-    assert!(({ (({ (*ww.borrow()).call(2,) }) == 202) }));
+    ({ cpp2rust_assert_fail_3((({ (*ww.borrow()).call(2) }) == 202)) });
     let m: Value<Moving__lambda_at_lambda_as_field_cpp_63_12__> = Rc::new(RefCell::new(
         Moving__lambda_at_lambda_as_field_cpp_63_12__::new({
             FnPtr::<fn(i32) -> i32>::new(|mut x: i32| -> i32 {
@@ -252,8 +261,8 @@ fn main_0() -> i32 {
     let m2: Value<Moving__lambda_at_lambda_as_field_cpp_63_12__> = Rc::new(RefCell::new(
         Moving__lambda_at_lambda_as_field_cpp_63_12__::move_from({ m.as_pointer() }),
     ));
-    assert!(({ (({ (*m2.borrow()).f.call(3,) }) == 6) }));
-    assert!(({ ({ (*m2.borrow()).moves } == 1) }));
+    ({ cpp2rust_assert_fail_3((({ (*m2.borrow()).f.call(3) }) == 6)) });
+    ({ cpp2rust_assert_fail_3(({ (*m2.borrow()).moves } == 1)) });
     return 0;
 }
 pub trait Guard__lambda_at_lambda_as_field_cpp_33_13__Impl {

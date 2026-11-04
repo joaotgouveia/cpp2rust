@@ -30,45 +30,47 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let r0: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
         <std_basic_regex_char__std_regex_traits_char__>::default(),
     ));
-    ({ (*r0.borrow()).assign_18(Ptr::<i8>::from_string_literal(b"(a([bc]))"), 9_usize, None) });
-    assert!(
-        ({
-            ((({ (*r0.borrow()).flags() }) as u32) == (ECMAScript_0.with(|rc| *rc.borrow()) as u32))
-        })
-    );
-    assert!(({ (({ (*r0.borrow()).mark_count() }) == 2_u32) }));
+    ({ (*r0.borrow()).assign_18(Ptr::<i8>::from_string_literal(b"(a([bc]))"), 9_u64, None) });
+    ({
+        cpp2rust_assert_fail_0(
+            ((({ (*r0.borrow()).flags() }) as u32)
+                == (ECMAScript_1.with(|rc| *rc.borrow()) as u32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ (*r0.borrow()).mark_count() }) == 2_u32)) });
     let r1: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
         <std_basic_regex_char__std_regex_traits_char__>::default(),
     ));
     ({
         (*r1.borrow()).assign_18(
             Ptr::<i8>::from_string_literal(b"(a([bc]))"),
-            9_usize,
-            Some(ECMAScript_0.with(|rc| *rc.borrow())),
+            9_u64,
+            Some(ECMAScript_1.with(|rc| *rc.borrow())),
         )
     });
-    assert!(
-        ({
-            ((({ (*r1.borrow()).flags() }) as u32) == (ECMAScript_0.with(|rc| *rc.borrow()) as u32))
-        })
-    );
-    assert!(({ (({ (*r1.borrow()).mark_count() }) == 2_u32) }));
+    ({
+        cpp2rust_assert_fail_0(
+            ((({ (*r1.borrow()).flags() }) as u32)
+                == (ECMAScript_1.with(|rc| *rc.borrow()) as u32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ (*r1.borrow()).mark_count() }) == 2_u32)) });
     let r2: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
         <std_basic_regex_char__std_regex_traits_char__>::default(),
     ));
     ({
         (*r2.borrow()).assign_18(
             Ptr::<i8>::from_string_literal(b"(a([bc]))"),
-            9_usize,
-            Some(extended_1.with(|rc| *rc.borrow())),
+            9_u64,
+            Some(extended_2.with(|rc| *rc.borrow())),
         )
     });
-    assert!(
-        ({
-            ((({ (*r2.borrow()).flags() }) as u32) == (extended_1.with(|rc| *rc.borrow()) as u32))
-        })
-    );
-    assert!(({ (({ (*r2.borrow()).mark_count() }) == 2_u32) }));
+    ({
+        cpp2rust_assert_fail_0(
+            ((({ (*r2.borrow()).flags() }) as u32) == (extended_2.with(|rc| *rc.borrow()) as u32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ (*r2.borrow()).mark_count() }) == 2_u32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

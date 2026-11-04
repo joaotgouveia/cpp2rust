@@ -20,7 +20,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ empty_switch_0(5,) }) == 5));
+    ({ cpp2rust_assert_fail_1((({ empty_switch_0(5) }) == 5)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

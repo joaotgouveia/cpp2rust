@@ -14,15 +14,15 @@ pub fn test_0() {
             { (a.as_pointer() as Ptr<u32>) },
             { (a.as_pointer() as Ptr<u32>).offset((5) as isize) },
         )));
-        assert!(({ (({ (*s.borrow()).size() }) == 5_usize) }));
+        ({ cpp2rust_assert_fail_1((({ (*s.borrow()).size() }) == 5_u64)) });
         let b: Value<Box<[u32]>> =
             Rc::new(RefCell::new(Box::new([0_u32, 0_u32, 0_u32, 0_u32, 0_u32])));
         ({ (*s.borrow()).param((b.as_pointer() as Ptr<u32>)) });
-        assert!(({ ((*b.borrow())[(0) as usize] == 5_u32) }));
-        assert!(({ ((*b.borrow())[(1) as usize] == 4_u32) }));
-        assert!(({ ((*b.borrow())[(2) as usize] == 3_u32) }));
-        assert!(({ ((*b.borrow())[(3) as usize] == 2_u32) }));
-        assert!(({ ((*b.borrow())[(4) as usize] == 1_u32) }));
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(0) as usize] == 5_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(1) as usize] == 4_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(2) as usize] == 3_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(3) as usize] == 2_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(4) as usize] == 1_u32)) });
     }
     {
         let a: Value<Box<[u64]>> = Rc::new(RefCell::new(Box::new([
@@ -35,13 +35,13 @@ pub fn test_0() {
             { (a.as_pointer() as Ptr<u64>) },
             { (a.as_pointer() as Ptr<u64>).offset((4) as isize) },
         )));
-        assert!(({ (({ (*s.borrow()).size() }) == 4_usize) }));
+        ({ cpp2rust_assert_fail_1((({ (*s.borrow()).size() }) == 4_u64)) });
         let b: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([0_u32, 0_u32, 0_u32, 0_u32])));
         ({ (*s.borrow()).param((b.as_pointer() as Ptr<u32>)) });
-        assert!(({ ((*b.borrow())[(0) as usize] == 1450704896_u32) }));
-        assert!(({ ((*b.borrow())[(1) as usize] == 878082048_u32) }));
-        assert!(({ ((*b.borrow())[(2) as usize] == 4294967295_u32) }));
-        assert!(({ ((*b.borrow())[(3) as usize] == 2147483648_u32) }));
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(0) as usize] == 1450704896_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(1) as usize] == 878082048_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(2) as usize] == 4294967295_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(3) as usize] == 2147483648_u32)) });
     }
     {
         let a: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([1_u32, 2_u32, 3_u32])));
@@ -49,12 +49,12 @@ pub fn test_0() {
             { (a.as_pointer() as Ptr<u32>) },
             { (a.as_pointer() as Ptr<u32>).offset((3) as isize) },
         )));
-        assert!(({ (({ (*s.borrow()).size() }) == 3_usize) }));
+        ({ cpp2rust_assert_fail_1((({ (*s.borrow()).size() }) == 3_u64)) });
         let b: Value<Box<[u32]>> = Rc::new(RefCell::new(Box::new([0_u32, 0_u32, 0_u32])));
         ({ (*s.borrow()).param((b.as_pointer() as Ptr<u32>)) });
-        assert!(({ ((*b.borrow())[(0) as usize] == 1_u32) }));
-        assert!(({ ((*b.borrow())[(1) as usize] == 2_u32) }));
-        assert!(({ ((*b.borrow())[(2) as usize] == 3_u32) }));
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(0) as usize] == 1_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(1) as usize] == 2_u32)) });
+        ({ cpp2rust_assert_fail_1(((*b.borrow())[(2) as usize] == 3_u32)) });
     }
 }
 pub fn main() {

@@ -11,63 +11,65 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = 10;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 1;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 9;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 2;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 8;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 3;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 7;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 4;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 5;
-        (*v.borrow_mut()).push(__a1)
-    };
-    {
-        let __a1 = 6;
-        (*v.borrow_mut()).push(__a1)
-    };
-    match ({ CppRange::begin(&v.decay()) },) {
-        (mut __tmp_0,) => {
-            let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_0);
-            let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_0.iter_at(__x), &__tmp_0.iter_at(__y)));
-            reorder(__order, |__i| __tmp_0.iter_at(__i));
-        }
-    };
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        <std_vector_int__std_allocator_int__>::default(),
+    ));
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(10));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(1));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(9));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(2));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(8));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(3));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(7));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(4));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(5));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___x: Value<i32> = Rc::new(RefCell::new(6));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___first: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+            ({ (*v.borrow()).begin_28() });
+        let ___last: __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ =
+            ({ (*v.borrow()).end_30() });
+        sort_0(___first, ___last)
+    });
     let mut i: u32 = 0_u32;
-    'loop_: while ((i as usize) < ((*v.borrow()).len()).wrapping_sub(1_usize)) {
-        assert!(
-            ((v.decay().offset((i as usize) as isize).read())
-                < (v.decay()
-                    .offset((((i).wrapping_add(1_u32)) as usize) as isize)
-                    .read()))
-        );
+    'loop_: while ((i as u64) < ({ (*v.borrow()).size() }).wrapping_sub(1_u64)) {
+        ({
+            cpp2rust_assert_fail_1(
+                ({ (*v.borrow())[(i as u64)] } < {
+                    (*v.borrow())[(((i).wrapping_add(1_u32)) as u64)]
+                }),
+            )
+        });
         i.prefix_inc();
     }
     return 0;

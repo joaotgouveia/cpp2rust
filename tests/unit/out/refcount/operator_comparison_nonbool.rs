@@ -180,178 +180,190 @@ fn main_0() -> i32 {
     let mut a: X = X { v: 1 };
     let mut b: X = X { v: 2 };
     let mut c: X = X { v: 1 };
-    assert!(
-        (({
-            let _a: X = (a).clone();
-            operator_eq_1(_a, (c).clone())
-        }) == 2)
-    );
-    assert!(
-        (({
-            let _a: X = (a).clone();
-            operator_eq_1(_a, (b).clone())
-        }) == 0)
-    );
-    assert!(
-        (({
-            let _a: X = (a).clone();
-            operator_ne_2(_a, (b).clone())
-        }) == 3)
-    );
-    assert!(
-        (({
-            let _a: X = (a).clone();
-            operator_lt_0(_a, (b).clone())
-        }) == 4)
-    );
-    assert!(
-        (({
-            let _a: X = (b).clone();
-            operator_gt_3(_a, (a).clone())
-        }) == 5)
-    );
-    assert!(
-        (({
-            let _a: X = (a).clone();
-            operator_le_4(_a, (c).clone())
-        }) == 6)
-    );
-    assert!(
-        (({
-            let _a: X = (a).clone();
-            operator_ge_5(_a, (c).clone())
-        }) == 7)
-    );
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _a: X = (a).clone();
+                operator_eq_1(_a, (c).clone())
+            }) == 2),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _a: X = (a).clone();
+                operator_eq_1(_a, (b).clone())
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _a: X = (a).clone();
+                operator_ne_2(_a, (b).clone())
+            }) == 3),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _a: X = (a).clone();
+                operator_lt_0(_a, (b).clone())
+            }) == 4),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _a: X = (b).clone();
+                operator_gt_3(_a, (a).clone())
+            }) == 5),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _a: X = (a).clone();
+                operator_le_4(_a, (c).clone())
+            }) == 6),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _a: X = (a).clone();
+                operator_ge_5(_a, (c).clone())
+            }) == 7),
+        )
+    });
     let xs: Value<Box<[X]>> = Rc::new(RefCell::new(Box::new([X { v: 3 }, X { v: 1 }, X { v: 2 }])));
-    match ({ (xs.as_pointer() as Ptr<X>) },) {
-        (mut __tmp_0,) => {
-            let __n = (xs.as_pointer() as Ptr<X>)
-                .offset((3) as isize)
-                .iter_distance(&__tmp_0);
-            let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_0.iter_at(__x), &__tmp_0.iter_at(__y)));
-            reorder(__order, |__i| __tmp_0.iter_at(__i));
-        }
-    };
-    assert!(
-        ({
-            (({ (*xs.borrow())[(0) as usize].v } == 1) && ({ (*xs.borrow())[(1) as usize].v } == 2))
-                && ({ (*xs.borrow())[(2) as usize].v } == 3)
-        })
-    );
+    ({
+        let ___first: Ptr<X> = (xs.as_pointer() as Ptr<X>);
+        let ___last: Ptr<X> = (xs.as_pointer() as Ptr<X>).offset((3) as isize);
+        sort_10(___first, ___last)
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({ (*xs.borrow())[(0) as usize].v } == 1)
+                && ({ (*xs.borrow())[(1) as usize].v } == 2))
+                && ({ (*xs.borrow())[(2) as usize].v } == 3),
+        )
+    });
     let p: Value<Custom> = Rc::new(RefCell::new(Custom { v: 5 }));
     let q: Value<Custom> = Rc::new(RefCell::new(Custom { v: 2 }));
     let mut r: Result = ({ CustomImpl::operator_cmp(&p.as_pointer(), q.as_pointer()) });
-    assert!((r.r == 3));
+    ({ cpp2rust_assert_fail_9((r.r == 3)) });
     let m: Value<Mixed> = Rc::new(RefCell::new(Mixed { v: 4 }));
     let n: Value<Mixed> = Rc::new(RefCell::new(Mixed { v: 4 }));
-    assert!((({ MixedImpl::operator_eq(&m.as_pointer(), n.as_pointer(),) }) == 9));
-    assert!(({ ({ MixedImpl::operator_cmp(&m.as_pointer(), n.as_pointer(),) }).r } == 0));
+    ({
+        cpp2rust_assert_fail_9((({ MixedImpl::operator_eq(&m.as_pointer(), n.as_pointer()) }) == 9))
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            ({ ({ MixedImpl::operator_cmp(&m.as_pointer(), n.as_pointer()) }).r } == 0),
+        )
+    });
     let ms: Value<Box<[Mixed]>> = Rc::new(RefCell::new(Box::new([
         Mixed { v: 6 },
         Mixed { v: 4 },
         Mixed { v: 5 },
     ])));
-    match ({ (ms.as_pointer() as Ptr<Mixed>) },) {
-        (mut __tmp_1,) => {
-            let __n = (ms.as_pointer() as Ptr<Mixed>)
-                .offset((3) as isize)
-                .iter_distance(&__tmp_1);
-            let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_1.iter_at(__x), &__tmp_1.iter_at(__y)));
-            reorder(__order, |__i| __tmp_1.iter_at(__i));
-        }
-    };
-    assert!(
-        ({
-            (({ (*ms.borrow())[(0) as usize].v } == 4) && ({ (*ms.borrow())[(1) as usize].v } == 5))
-                && ({ (*ms.borrow())[(2) as usize].v } == 6)
-        })
-    );
-    assert!(
-        (({
-            let _o: Ptr<Mixed> = (ms.as_pointer() as Ptr<Mixed>).offset(1);
-            MixedImpl::operator_lt(&(ms.as_pointer() as Ptr<Mixed>).offset(0), _o)
-        }) == 8)
-    );
+    ({
+        let ___first: Ptr<Mixed> = (ms.as_pointer() as Ptr<Mixed>);
+        let ___last: Ptr<Mixed> = (ms.as_pointer() as Ptr<Mixed>).offset((3) as isize);
+        sort_11(___first, ___last)
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({ (*ms.borrow())[(0) as usize].v } == 4)
+                && ({ (*ms.borrow())[(1) as usize].v } == 5))
+                && ({ (*ms.borrow())[(2) as usize].v } == 6),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let _o: Ptr<Mixed> = (ms.as_pointer() as Ptr<Mixed>).offset(1);
+                MixedImpl::operator_lt(&(ms.as_pointer() as Ptr<Mixed>).offset(0), _o)
+            }) == 8),
+        )
+    });
     let mut b1: Boolish = Boolish { v: 1 };
     let mut b2: Boolish = Boolish { v: 2 };
-    assert!(
-        ({
-            MyBoolImpl::to_bool(
-                &Rc::new(RefCell::new(
-                    ({
-                        let _a: Boolish = (b1).clone();
-                        operator_eq_7(_a, Boolish { v: 1 })
-                    }),
-                ))
-                .as_pointer(),
-            )
-        })
-    );
-    assert!(
-        !({
-            MyBoolImpl::to_bool(
-                &Rc::new(RefCell::new(
-                    ({
-                        let _a: Boolish = (b2).clone();
-                        operator_lt_6(_a, (b1).clone())
-                    }),
-                ))
-                .as_pointer(),
-            )
-        })
-    );
+    ({
+        cpp2rust_assert_fail_9(
+            ({
+                MyBoolImpl::to_bool(
+                    &Rc::new(RefCell::new(
+                        ({
+                            let _a: Boolish = (b1).clone();
+                            operator_eq_7(_a, Boolish { v: 1 })
+                        }),
+                    ))
+                    .as_pointer(),
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            !({
+                MyBoolImpl::to_bool(
+                    &Rc::new(RefCell::new(
+                        ({
+                            let _a: Boolish = (b2).clone();
+                            operator_lt_6(_a, (b1).clone())
+                        }),
+                    ))
+                    .as_pointer(),
+                )
+            }),
+        )
+    });
     let mut lt: MyBool = ({
         let _a: Boolish = (b1).clone();
         operator_lt_6(_a, (b2).clone())
     });
-    assert!(lt.value);
+    ({ cpp2rust_assert_fail_9(lt.value) });
     let bs: Value<Box<[Boolish]>> = Rc::new(RefCell::new(Box::new([
         Boolish { v: 3 },
         Boolish { v: 1 },
         Boolish { v: 2 },
     ])));
-    match ({ (bs.as_pointer() as Ptr<Boolish>) },) {
-        (mut __tmp_2,) => {
-            let __n = (bs.as_pointer() as Ptr<Boolish>)
-                .offset((3) as isize)
-                .iter_distance(&__tmp_2);
-            let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_2.iter_at(__x), &__tmp_2.iter_at(__y)));
-            reorder(__order, |__i| __tmp_2.iter_at(__i));
-        }
-    };
-    assert!(
-        ({
-            (({ (*bs.borrow())[(0) as usize].v } == 1) && ({ (*bs.borrow())[(1) as usize].v } == 2))
-                && ({ (*bs.borrow())[(2) as usize].v } == 3)
-        })
-    );
+    ({
+        let ___first: Ptr<Boolish> = (bs.as_pointer() as Ptr<Boolish>);
+        let ___last: Ptr<Boolish> = (bs.as_pointer() as Ptr<Boolish>).offset((3) as isize);
+        sort_12(___first, ___last)
+    });
+    ({
+        cpp2rust_assert_fail_9(
+            (({ (*bs.borrow())[(0) as usize].v } == 1)
+                && ({ (*bs.borrow())[(1) as usize].v } == 2))
+                && ({ (*bs.borrow())[(2) as usize].v } == 3),
+        )
+    });
     let ri1: Value<RefInt> = Rc::new(RefCell::new(RefInt { v: 1 }));
     let ri2: Value<RefInt> = Rc::new(RefCell::new(RefInt { v: 2 }));
-    assert!(
-        ({
-            RefBoolImpl::to_bool(
-                &({ RefIntImpl::operator_eq(&ri1.as_pointer(), ri2.as_pointer()) }),
-            )
-        })
-    );
+    ({
+        cpp2rust_assert_fail_9(
+            ({
+                RefBoolImpl::to_bool(
+                    &({ RefIntImpl::operator_eq(&ri1.as_pointer(), ri2.as_pointer()) }),
+                )
+            }),
+        )
+    });
     let ris: Value<Box<[RefInt]>> =
         Rc::new(RefCell::new(Box::new([RefInt { v: 1 }, RefInt { v: 2 }])));
-    assert!(
-        (match ({ (ris.as_pointer() as Ptr<RefInt>).offset((2) as isize) },) {
-            (mut __tmp_3,) => {
-                {
-                    let mut __it = (ris.as_pointer() as Ptr<RefInt>);
-                    while __it != __tmp_3 && !CppEq::equal(&__it.iter_deref(), &ri2.as_pointer()) {
-                        __it.iter_inc();
-                    }
-                    __it
-                }
-            }
-        } == (ris.as_pointer() as Ptr<RefInt>))
-    );
+    ({
+        cpp2rust_assert_fail_9(
+            (({
+                let ___first: Ptr<RefInt> = (ris.as_pointer() as Ptr<RefInt>);
+                let ___last: Ptr<RefInt> = (ris.as_pointer() as Ptr<RefInt>).offset((2) as isize);
+                find_13(___first, ___last, ri2.as_pointer())
+            }) == (ris.as_pointer() as Ptr<RefInt>)),
+        )
+    });
     return 0;
 }
 pub trait CustomImpl {

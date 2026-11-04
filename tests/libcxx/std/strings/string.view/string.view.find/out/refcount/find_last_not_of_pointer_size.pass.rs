@@ -13,8 +13,8 @@ impl constexpr_char_traits_char_ {
     pub fn eq(mut c1: i8, mut c2: i8) -> bool {
         return ((c1 as i32) == (c2 as i32));
     }
-    pub fn length(mut s: Ptr<i8>) -> usize {
-        let len: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub fn length(mut s: Ptr<i8>) -> u64 {
+        let len: Value<u64> = Rc::new(RefCell::new(0_u64));
         'loop_: while !({
             let _c1: i8 = (s.read());
             let _c2: i8 = 0_i8;
@@ -25,7 +25,7 @@ impl constexpr_char_traits_char_ {
         }
         return (*len.borrow());
     }
-    pub fn find(s: Ptr<i8>, mut n: usize, a: Ptr<i8>) -> Ptr<i8> {
+    pub fn find(s: Ptr<i8>, mut n: u64, a: Ptr<i8>) -> Ptr<i8> {
         let s: Value<Ptr<i8>> = Rc::new(RefCell::new(s));
         'loop_: while (n != 0) {
             if ({

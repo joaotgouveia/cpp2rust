@@ -62,26 +62,32 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let ___args: Value<i32> = Rc::new(RefCell::new(3));
             (*list.borrow()).emplace_back(___args.as_pointer())
         });
-        assert!(({ ({ (*destroyed_0.with(Value::clone).borrow()).empty() }) }));
+        ({ cpp2rust_assert_fail_1(({ (*destroyed_0.with(Value::clone).borrow()).empty() })) });
     }
-    assert!(
-        (({
-            let ___x: Value<i32> = Rc::new(RefCell::new(1));
-            (*destroyed_0.with(Value::clone).borrow()).count(___x.as_pointer())
-        }) == 1_u64)
-    );
-    assert!(
-        (({
-            let ___x: Value<i32> = Rc::new(RefCell::new(2));
-            (*destroyed_0.with(Value::clone).borrow()).count(___x.as_pointer())
-        }) == 1_u64)
-    );
-    assert!(
-        (({
-            let ___x: Value<i32> = Rc::new(RefCell::new(3));
-            (*destroyed_0.with(Value::clone).borrow()).count(___x.as_pointer())
-        }) == 1_u64)
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(1));
+                (*destroyed_0.with(Value::clone).borrow()).count(___x.as_pointer())
+            }) == 1_u64),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(2));
+                (*destroyed_0.with(Value::clone).borrow()).count(___x.as_pointer())
+            }) == 1_u64),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                (*destroyed_0.with(Value::clone).borrow()).count(___x.as_pointer())
+            }) == 1_u64),
+        )
+    });
     return 0;
 }
 pub trait FooImpl {

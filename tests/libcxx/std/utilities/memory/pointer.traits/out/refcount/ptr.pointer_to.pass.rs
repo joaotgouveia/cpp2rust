@@ -14,10 +14,12 @@ pub fn test_0() -> bool {
             "std::is_same<decltype(std::pointer_traits<int*>::pointer_to(i)), int*>::value"
         );;
         const _: () = assert!(true, "");;
-        assert!(
-            (({ std___ptr_traits_ptr_to_int_ptr__int__false_::pointer_to(i.as_pointer(),) })
-                == (i.as_pointer()))
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({ std___ptr_traits_ptr_to_int_ptr__int__false_::pointer_to(i.as_pointer()) })
+                    == (i.as_pointer())),
+            )
+        });
     }
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
@@ -26,11 +28,15 @@ pub fn test_0() -> bool {
             "std::is_same<decltype(std::pointer_traits<const int*>::pointer_to(i)), const int*>::value"
         );;
         const _: () = assert!(true, "");;
-        assert!(
-            (({
-                std___ptr_traits_ptr_to_const_int_ptr__const_int__false_::pointer_to(i.as_pointer())
-            }) == (i.as_pointer()))
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({
+                    std___ptr_traits_ptr_to_const_int_ptr__const_int__false_::pointer_to(
+                        i.as_pointer(),
+                    )
+                }) == (i.as_pointer())),
+            )
+        });
     }
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
@@ -39,11 +45,15 @@ pub fn test_0() -> bool {
             "std::is_same<decltype(std::pointer_traits<const int*>::pointer_to(i)), const int*>::value"
         );;
         const _: () = assert!(true, "");;
-        assert!(
-            (({
-                std___ptr_traits_ptr_to_const_int_ptr__const_int__false_::pointer_to(i.as_pointer())
-            }) == (i.as_pointer()))
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                (({
+                    std___ptr_traits_ptr_to_const_int_ptr__const_int__false_::pointer_to(
+                        i.as_pointer(),
+                    )
+                }) == (i.as_pointer())),
+            )
+        });
     }
     return true;
 }

@@ -69,7 +69,7 @@ fn main_0() -> i32 {
     field!(p3.with(|__s| __s.p.clone()), x).write(100);
     field!(({ YImpl::ptr(&y.as_pointer(),) }), x).write(1);
     field!(({ YImpl::ptr(&y.as_pointer(),) }), x).write(50);
-    assert!(({ ({ (*x.borrow()).x } == 100) }));
+    ({ cpp2rust_assert_fail_0(({ (*x.borrow()).x } == 100)) });
     return 0;
 }
 pub trait YImpl {

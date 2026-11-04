@@ -15,31 +15,46 @@ impl CppMove for functor1 {
     }
 }
 pub fn test_0(t: Ptr<FnPtr<fn()>>) {
-    let mut r: Ptr<FnPtr<fn()>> = (t).clone();
-    let r2: Ptr<FnPtr<fn()>> = (r).clone();
-    assert!(({ (r2).clone() } == { (t).clone() }));
+    let r: Value<std_reference_wrapper_void__ptr____> =
+        Rc::new(RefCell::new(std_reference_wrapper_void__ptr____::new({
+            (t).clone()
+        })));
+    let r2: Ptr<FnPtr<fn()>> = ({ (*r.borrow())() });
+    ({ cpp2rust_assert_fail_1(({ (r2).clone() } == { (t).clone() })) });
 }
-pub fn test_1(t: FnPtr<fn()>) {
-    let mut r: FnPtr<fn()> = (t).clone();
-    let r2: FnPtr<fn()> = (r).clone();
-    assert!(({ (r2).clone() } == { (t).clone() }));
+pub fn test_2(t: FnPtr<fn()>) {
+    let r: Value<std_reference_wrapper_void____> =
+        Rc::new(RefCell::new(std_reference_wrapper_void____::new({
+            (t).clone()
+        })));
+    let r2: FnPtr<fn()> = ({ (*r.borrow())() });
+    ({ cpp2rust_assert_fail_1(({ (r2).clone() } == { (t).clone() })) });
 }
-pub fn test_2(t: Ptr<functor1>) {
-    let mut r: Ptr<functor1> = (t).clone();
-    let r2: Ptr<functor1> = (r).clone();
-    assert!(({ (r2).clone() } == { (t).clone() }));
-}
-pub fn test_3(t: Ptr<i32>) {
-    let mut r: Ptr<i32> = (t).clone();
-    let r2: Ptr<i32> = (r).clone();
-    assert!(({ (r2).clone() } == { (t).clone() }));
+pub fn test_3(t: Ptr<functor1>) {
+    let r: Value<std_reference_wrapper_functor1_> =
+        Rc::new(RefCell::new(std_reference_wrapper_functor1_::new({
+            (t).clone()
+        })));
+    let r2: Ptr<functor1> = ({ (*r.borrow())() });
+    ({ cpp2rust_assert_fail_1(({ (r2).clone() } == { (t).clone() })) });
 }
 pub fn test_4(t: Ptr<i32>) {
-    let mut r: Ptr<i32> = (t).clone();
-    let r2: Ptr<i32> = (r).clone();
-    assert!(({ (r2).clone() } == { (t).clone() }));
+    let r: Value<std_reference_wrapper_int_> =
+        Rc::new(RefCell::new(std_reference_wrapper_int_::new({
+            (t).clone()
+        })));
+    let r2: Ptr<i32> = ({ (*r.borrow())() });
+    ({ cpp2rust_assert_fail_1(({ (r2).clone() } == { (t).clone() })) });
 }
-pub fn f_5() {}
+pub fn test_5(t: Ptr<i32>) {
+    let r: Value<std_reference_wrapper_const_int_> =
+        Rc::new(RefCell::new(std_reference_wrapper_const_int_::new({
+            (t).clone()
+        })));
+    let r2: Ptr<i32> = ({ (*r.borrow())() });
+    ({ cpp2rust_assert_fail_1(({ (r2).clone() } == { (t).clone() })) });
+}
+pub fn f_6() {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -60,15 +75,15 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let fp: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(f_5)));
+    let fp: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(f_6)));
     ({ test_0(fp.as_pointer()) });
-    ({ test_1(FnPtr::<fn()>::new(f_5)) });
+    ({ test_2(FnPtr::<fn()>::new(f_6)) });
     let f1: Value<functor1> = Rc::new(RefCell::new(<functor1>::default()));
-    ({ test_2(f1.as_pointer()) });
+    ({ test_3(f1.as_pointer()) });
     let i: Value<i32> = Rc::new(RefCell::new(0));
-    ({ test_3(i.as_pointer()) });
+    ({ test_4(i.as_pointer()) });
     let j: Value<i32> = Rc::new(RefCell::new(0));
-    ({ test_4(j.as_pointer()) });
+    ({ test_5(j.as_pointer()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

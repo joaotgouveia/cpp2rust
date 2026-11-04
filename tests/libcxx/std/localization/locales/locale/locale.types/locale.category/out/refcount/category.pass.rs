@@ -28,37 +28,41 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "(std::is_same<std::locale::category, int>::value)");;
-    assert!((none_1.with(|rc| *rc.borrow()) == 0));
-    assert!((collate_2.with(|rc| *rc.borrow()) != 0));
-    assert!((ctype_3.with(|rc| *rc.borrow()) != 0));
-    assert!((monetary_4.with(|rc| *rc.borrow()) != 0));
-    assert!((numeric_5.with(|rc| *rc.borrow()) != 0));
-    assert!((time_6.with(|rc| *rc.borrow()) != 0));
-    assert!((messages_7.with(|rc| *rc.borrow()) != 0));
-    assert!(
-        ((((((collate_2.with(|rc| *rc.borrow()) & ctype_3.with(|rc| *rc.borrow()))
-            & monetary_4.with(|rc| *rc.borrow()))
-            & numeric_5.with(|rc| *rc.borrow()))
-            & time_6.with(|rc| *rc.borrow()))
-            & messages_7.with(|rc| *rc.borrow()))
-            == 0)
-    );
-    assert!(
-        ((((((collate_2.with(|rc| *rc.borrow()) | ctype_3.with(|rc| *rc.borrow()))
-            | monetary_4.with(|rc| *rc.borrow()))
-            | numeric_5.with(|rc| *rc.borrow()))
-            | time_6.with(|rc| *rc.borrow()))
-            | messages_7.with(|rc| *rc.borrow()))
-            == all_8.with(|rc| *rc.borrow()))
-    );
-    ({ test_0(none_1.with(|v| v.as_pointer())) });
-    ({ test_0(collate_2.with(|v| v.as_pointer())) });
-    ({ test_0(ctype_3.with(|v| v.as_pointer())) });
-    ({ test_0(monetary_4.with(|v| v.as_pointer())) });
-    ({ test_0(numeric_5.with(|v| v.as_pointer())) });
-    ({ test_0(time_6.with(|v| v.as_pointer())) });
-    ({ test_0(messages_7.with(|v| v.as_pointer())) });
-    ({ test_0(all_8.with(|v| v.as_pointer())) });
+    ({ cpp2rust_assert_fail_1((none_2.with(|rc| *rc.borrow()) == 0)) });
+    ({ cpp2rust_assert_fail_1((collate_3.with(|rc| *rc.borrow()) != 0)) });
+    ({ cpp2rust_assert_fail_1((ctype_4.with(|rc| *rc.borrow()) != 0)) });
+    ({ cpp2rust_assert_fail_1((monetary_5.with(|rc| *rc.borrow()) != 0)) });
+    ({ cpp2rust_assert_fail_1((numeric_6.with(|rc| *rc.borrow()) != 0)) });
+    ({ cpp2rust_assert_fail_1((time_7.with(|rc| *rc.borrow()) != 0)) });
+    ({ cpp2rust_assert_fail_1((messages_8.with(|rc| *rc.borrow()) != 0)) });
+    ({
+        cpp2rust_assert_fail_1(
+            ((((((collate_3.with(|rc| *rc.borrow()) & ctype_4.with(|rc| *rc.borrow()))
+                & monetary_5.with(|rc| *rc.borrow()))
+                & numeric_6.with(|rc| *rc.borrow()))
+                & time_7.with(|rc| *rc.borrow()))
+                & messages_8.with(|rc| *rc.borrow()))
+                == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ((((((collate_3.with(|rc| *rc.borrow()) | ctype_4.with(|rc| *rc.borrow()))
+                | monetary_5.with(|rc| *rc.borrow()))
+                | numeric_6.with(|rc| *rc.borrow()))
+                | time_7.with(|rc| *rc.borrow()))
+                | messages_8.with(|rc| *rc.borrow()))
+                == all_9.with(|rc| *rc.borrow())),
+        )
+    });
+    ({ test_0(none_2.with(|v| v.as_pointer())) });
+    ({ test_0(collate_3.with(|v| v.as_pointer())) });
+    ({ test_0(ctype_4.with(|v| v.as_pointer())) });
+    ({ test_0(monetary_5.with(|v| v.as_pointer())) });
+    ({ test_0(numeric_6.with(|v| v.as_pointer())) });
+    ({ test_0(time_7.with(|v| v.as_pointer())) });
+    ({ test_0(messages_8.with(|v| v.as_pointer())) });
+    ({ test_0(all_9.with(|v| v.as_pointer())) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -28,17 +28,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let l: Value<std_locale> = Rc::new(RefCell::new(<std_locale>::default()));
-    assert!(!({ ispunct_0((' ' as i8), l.as_pointer(),) }));
-    assert!(({ ispunct_0(('<' as i8), l.as_pointer(),) }));
-    assert!(!({ ispunct_0(('\x08' as i8), l.as_pointer(),) }));
-    assert!(!({ ispunct_0(('A' as i8), l.as_pointer(),) }));
-    assert!(!({ ispunct_0(('a' as i8), l.as_pointer(),) }));
-    assert!(!({ ispunct_0(('z' as i8), l.as_pointer(),) }));
-    assert!(!({ ispunct_0(('3' as i8), l.as_pointer(),) }));
-    assert!(({ ispunct_0(('.' as i8), l.as_pointer(),) }));
-    assert!(!({ ispunct_0(('f' as i8), l.as_pointer(),) }));
-    assert!(!({ ispunct_0(('9' as i8), l.as_pointer(),) }));
-    assert!(({ ispunct_0(('+' as i8), l.as_pointer(),) }));
+    ({ cpp2rust_assert_fail_0(!({ ispunct_1((' ' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ ispunct_1(('<' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ ispunct_1(('\x08' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ ispunct_1(('A' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ ispunct_1(('a' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ ispunct_1(('z' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ ispunct_1(('3' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ ispunct_1(('.' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ ispunct_1(('f' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ ispunct_1(('9' as i8), l.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ ispunct_1(('+' as i8), l.as_pointer()) })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

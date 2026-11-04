@@ -50,19 +50,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         let mut p: bool = true;
-        assert!(p);
+        ({ cpp2rust_assert_fail_2(p) });
     }
     {
         const _: () = assert!(true, "std::is_constant_evaluated()");;
-        let mut p: bool = ({ is_constant_evaluated_2() });
-        assert!(!(p));
+        let mut p: bool = ({ is_constant_evaluated_3() });
+        ({ cpp2rust_assert_fail_2(!(p)) });
         const _: () = assert!(true, "");;
-        assert!((local_static_3.with(|rc| *rc.borrow()) == 42));
+        ({ cpp2rust_assert_fail_2((local_static_4.with(|rc| *rc.borrow()) == 42)) });
     }
     return 0;
 }
 thread_local!(
-    static local_static_3: Value<i32> = Rc::new(RefCell::new(if ({ is_constant_evaluated_2() }) {
+    static local_static_4: Value<i32> = Rc::new(RefCell::new(if ({ is_constant_evaluated_3() }) {
         42
     } else {
         -1_i32

@@ -24,66 +24,8 @@ impl CppMove for Charlike_Holder_Incomplete__ {
         src.read()
     }
 }
-pub fn test_string_0() {
-    let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
-    let a: Value<Box<[Charlike_Holder_Incomplete__]>> = Rc::new(RefCell::new(Box::new([
-        Charlike_Holder_Incomplete__::new({ ('m' as i8) }),
-        Charlike_Holder_Incomplete__::new({ ('a' as i8) }),
-        Charlike_Holder_Incomplete__::new({ ('h' as i8) }),
-        Charlike_Holder_Incomplete__::new({ ('i' as i8) }),
-    ])));
-    ({
-        let ___first: Ptr<Charlike_Holder_Incomplete__> =
-            (a.as_pointer() as Ptr<Charlike_Holder_Incomplete__>);
-        let ___last: Ptr<Charlike_Holder_Incomplete__> =
-            (a.as_pointer() as Ptr<Charlike_Holder_Incomplete__>).offset((4) as isize);
-        (*s.borrow_mut()).append_108_struct_Charlike_struct_Holder_struct_Incomplete____ptr_void(
-            ___first, ___last,
-        )
-    });
-    ({
-        let ___first: Ptr<Charlike_Holder_Incomplete__> =
-            (a.as_pointer() as Ptr<Charlike_Holder_Incomplete__>);
-        let ___last: Ptr<Charlike_Holder_Incomplete__> =
-            (a.as_pointer() as Ptr<Charlike_Holder_Incomplete__>).offset((4) as isize);
-        (*s.borrow_mut()).assign_118_struct_Charlike_struct_Holder_struct_Incomplete____ptr_void(
-            ___first, ___last,
-        )
-    });
-    ({
-        let ___p: RandomAccessIterator<i8> =
-            <RandomAccessIterator<i8>>::from(RandomAccessIterator::Vec(s.decay()));
-        let ___beg: Ptr<Charlike_Holder_Incomplete__> =
-            (a.as_pointer() as Ptr<Charlike_Holder_Incomplete__>);
-        let ___end: Ptr<Charlike_Holder_Incomplete__> =
-            (a.as_pointer() as Ptr<Charlike_Holder_Incomplete__>).offset((4) as isize);
-        (*s.borrow_mut()).insert_124_struct_Charlike_struct_Holder_struct_Incomplete____ptr_void(
-            ___p, ___beg, ___end,
-        )
-    });
-    ({
-        let ___i1: RandomAccessIterator<i8> =
-            <RandomAccessIterator<i8>>::from(RandomAccessIterator::Vec(s.decay()));
-        let ___i2: RandomAccessIterator<i8> = <RandomAccessIterator<i8>>::from(
-            RandomAccessIterator::Vec(s.decay()).iter_add(4_isize),
-        );
-        let ___k1: Ptr<Charlike_Holder_Incomplete__> =
-            (a.as_pointer() as Ptr<Charlike_Holder_Incomplete__>);
-        let ___k2: Ptr<Charlike_Holder_Incomplete__> =
-            (a.as_pointer() as Ptr<Charlike_Holder_Incomplete__>).offset((4) as isize);
-        (*s.borrow_mut()).replace_148_struct_Charlike_struct_Holder_struct_Incomplete____ptr_void(
-            ___i1, ___i2, ___k1, ___k2,
-        )
-    });
-    assert!(
-        ({
-            Ptr::<i8>::from_string_literal(b"mahimahi")
-                .with_c_str(|__s| (*s.borrow())[..(*s.borrow()).len().saturating_sub(1)] == *__s)
-        })
-    );
-}
-pub fn test_1() -> bool {
-    ({ test_string_0() });
+pub fn test_0() -> bool {
+    ({ test_string_1() });
     return true;
 }
 pub fn main() {
@@ -106,7 +48,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_1() });
+    ({ test_0() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

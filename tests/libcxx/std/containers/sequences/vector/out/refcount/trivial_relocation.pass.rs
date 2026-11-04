@@ -10,7 +10,7 @@ use std::rc::{Rc, Weak};
 #[byte_size(8)]
 pub struct Tracker {
     #[offset(0)]
-    pub move_constructs: usize,
+    pub move_constructs: u64,
 }
 impl CppMove for Tracker {
     fn cpp_move(src: Ptr<Self>) -> Self {
@@ -21,7 +21,7 @@ impl Default for Tracker {
     fn default() -> Self {
         {
             Tracker {
-                move_constructs: 0_usize,
+                move_constructs: 0_u64,
             }
         }
     }
@@ -48,7 +48,7 @@ impl Inner {
             (this
                 .with(|__s| __s.tracker_.clone())
                 .with(|__s| __s.move_constructs))
-            .wrapping_add(1_usize)
+            .wrapping_add(1_u64)
         });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -61,7 +61,7 @@ impl Inner {
             (this
                 .with(|__s| __s.tracker_.clone())
                 .with(|__s| __s.move_constructs))
-            .wrapping_add(1_usize)
+            .wrapping_add(1_u64)
         });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
@@ -110,30 +110,26 @@ const _: () = assert!(
 const _: () = assert!(true, "");
 pub fn tests_0() -> bool {
     let track: Value<Tracker> = Rc::new(RefCell::new(<Tracker>::default()));
-    let v: Value<Vec<NotTriviallyMovable>> = Rc::new(RefCell::new(Vec::new()));
-    if 5_usize as usize > (*v.borrow()).capacity() as usize {
-        let len_0 = (*v.borrow()).len();
-        (*v.borrow_mut()).reserve_exact(5_usize as usize - len_0 as usize);
-    };
-    let mut capacity: usize = (*v.borrow()).capacity();
-    'loop_: while ((*v.borrow()).len() < (*v.borrow()).capacity()) {
-        {
-            let __init = NotTriviallyMovable::new({ (track.as_pointer()) });
-            v.as_pointer()
-                .with_mut(|__v: &mut Vec<NotTriviallyMovable>| __v.push(__init));
-            v.as_pointer().decay().to_last()
-        };
+    let v: Value<std_vector_NotTriviallyMovable__std_allocator_NotTriviallyMovable__> =
+        Rc::new(RefCell::new(
+            <std_vector_NotTriviallyMovable__std_allocator_NotTriviallyMovable__>::default(),
+        ));
+    ({ (*v.borrow()).reserve(5_u64) });
+    let mut capacity: u64 = ({ (*v.borrow()).capacity() });
+    'loop_: while (({ (*v.borrow()).size() }) < ({ (*v.borrow()).capacity() })) {
+        ({
+            let ___args: Value<Ptr<Tracker>> = Rc::new(RefCell::new((track.as_pointer())));
+            (*v.borrow()).emplace_back(___args.as_pointer())
+        });
     }
-    assert!(({ ({ (*track.borrow()).move_constructs } == 0_usize) }));
-    assert!(({ ((*v.borrow()).capacity() == capacity) }));
-    assert!(({ ((*v.borrow()).len() == capacity) }));
-    {
-        let __init = NotTriviallyMovable::new({ (track.as_pointer()) });
-        v.as_pointer()
-            .with_mut(|__v: &mut Vec<NotTriviallyMovable>| __v.push(__init));
-        v.as_pointer().decay().to_last()
-    };
-    assert!(({ ({ (*track.borrow()).move_constructs } == capacity) }));
+    ({ cpp2rust_assert_fail_1(({ (*track.borrow()).move_constructs } == 0_u64)) });
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == capacity)) });
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == capacity)) });
+    ({
+        let ___args: Value<Ptr<Tracker>> = Rc::new(RefCell::new((track.as_pointer())));
+        (*v.borrow()).emplace_back(___args.as_pointer())
+    });
+    ({ cpp2rust_assert_fail_1(({ (*track.borrow()).move_constructs } == capacity)) });
     return true;
 }
 pub fn main() {

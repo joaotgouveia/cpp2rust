@@ -100,12 +100,12 @@ fn main_0() -> i32 {
             return (({ (*c.borrow()).copies } * 10) + { (*c.borrow()).moves });
         }
     )));
-    assert!(({ (({ (*f.borrow()).call() }) == 10) }));
+    ({ cpp2rust_assert_fail_1((({ (*f.borrow()).call() }) == 10)) });
     let g: Value<FnPtr<fn() -> i32>> = Rc::new(RefCell::new((*f.borrow()).copy_from()));
-    assert!(({ (({ (*g.borrow()).call() }) == 20) }));
-    assert!(({ (({ (*f.borrow()).call() }) == 10) }));
+    ({ cpp2rust_assert_fail_1((({ (*g.borrow()).call() }) == 20)) });
+    ({ cpp2rust_assert_fail_1((({ (*f.borrow()).call() }) == 10)) });
     let h: Value<FnPtr<fn() -> i32>> = Rc::new(RefCell::new((*f.borrow()).move_from()));
-    assert!(({ (({ (*h.borrow()).call() }) == 11) }));
+    ({ cpp2rust_assert_fail_1((({ (*h.borrow()).call() }) == 11)) });
     let mut returned: i32 = {
         ({
             lambda!(
@@ -121,7 +121,7 @@ fn main_0() -> i32 {
         })
         .copies
     };
-    assert!((returned == 2));
+    ({ cpp2rust_assert_fail_1((returned == 2)) });
     let arr: Value<Box<[Counted]>> = Rc::new(RefCell::new(Box::new(
         std::array::from_fn::<_, 2, _>(|_| Counted::new()),
     )));
@@ -139,11 +139,11 @@ fn main_0() -> i32 {
             });
         }
     )));
-    assert!(({ (({ (*a.borrow()).call() }) == 2) }));
+    ({ cpp2rust_assert_fail_1((({ (*a.borrow()).call() }) == 2)) });
     let a2: Value<FnPtr<fn() -> i32>> = Rc::new(RefCell::new((*a.borrow()).copy_from()));
-    assert!(({ (({ (*a2.borrow()).call() }) == 4) }));
+    ({ cpp2rust_assert_fail_1((({ (*a2.borrow()).call() }) == 4)) });
     let a3: Value<FnPtr<fn() -> i32>> = Rc::new(RefCell::new((*a.borrow()).move_from()));
-    assert!(({ (({ (*a3.borrow()).call() }) == 2) }));
+    ({ cpp2rust_assert_fail_1((({ (*a3.borrow()).call() }) == 2)) });
     {
         let m: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
             {
@@ -155,7 +155,7 @@ fn main_0() -> i32 {
         let m2: Value<FnPtr<fn()>> = Rc::new(RefCell::new((*m.borrow()).move_from()));
         let _dtor_m2 = ScopedDestructor::new(&m2, |__p| __p.with(|__f| __f.destroy()));
     }
-    assert!((drops_0.with(|rc| *rc.borrow()) == 2));
+    ({ cpp2rust_assert_fail_1((drops_0.with(|rc| *rc.borrow()) == 2)) });
     {
         let k: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
             {
@@ -167,7 +167,7 @@ fn main_0() -> i32 {
         let k2: Value<FnPtr<fn()>> = Rc::new(RefCell::new((*k.borrow()).copy_from()));
         let _dtor_k2 = ScopedDestructor::new(&k2, |__p| __p.with(|__f| __f.destroy()));
     }
-    assert!((drops_0.with(|rc| *rc.borrow()) == 4));
+    ({ cpp2rust_assert_fail_1((drops_0.with(|rc| *rc.borrow()) == 4)) });
     {
         let inner: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
             {
@@ -185,7 +185,7 @@ fn main_0() -> i32 {
         )));
         let _dtor_outer = ScopedDestructor::new(&outer, |__p| __p.with(|__f| __f.destroy()));
     }
-    assert!((drops_0.with(|rc| *rc.borrow()) == 6));
+    ({ cpp2rust_assert_fail_1((drops_0.with(|rc| *rc.borrow()) == 6)) });
     return 0;
 }
 pub trait DroppedImpl {

@@ -9,8 +9,8 @@ use std::rc::{Rc, Weak};
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct my_hash {}
-impl Callable1<Ptr<std_tuple_int__int_>, usize> for my_hash {
-    fn call(&self, a1: Ptr<std_tuple_int__int_>) -> usize {
+impl Callable1<Ptr<std_tuple_int__int_>, u64> for my_hash {
+    fn call(&self, a1: Ptr<std_tuple_int__int_>) -> u64 {
         libcc2rs::with_record_ptr(&mut self.clone(), |__it| {
             my_hashImpl::operator_call(__it, a1)
         })
@@ -54,11 +54,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     return 0;
 }
 pub trait my_hashImpl {
-    fn operator_call(&self, _a0: Ptr<std_tuple_int__int_>) -> usize;
+    fn operator_call(&self, _a0: Ptr<std_tuple_int__int_>) -> u64;
 }
 impl my_hashImpl for Ptr<my_hash> {
-    fn operator_call(&self, _a0: Ptr<std_tuple_int__int_>) -> usize {
-        return 0_usize;
+    fn operator_call(&self, _a0: Ptr<std_tuple_int__int_>) -> u64 {
+        return 0_u64;
     }
 }
 pub fn __cpp2rust_init_globals() {}

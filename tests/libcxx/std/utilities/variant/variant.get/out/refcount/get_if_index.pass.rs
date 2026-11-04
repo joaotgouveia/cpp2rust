@@ -123,20 +123,20 @@ pub fn test_const_get_if_8() {
 pub fn test_get_if_9() {
     {
         let mut v: Ptr<std_variant_int_> = Ptr::<std_variant_int_>::null();
-        assert!(({ get_if_10((v).clone(),) }).is_null());
+        ({ cpp2rust_assert_fail_10(({ get_if_11((v).clone()) }).is_null()) });
     }
     {
         let v: Value<std_variant_int__long_> = Rc::new(RefCell::new(42));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        assert!(((({ get_if_11((v.as_pointer()),) }).read()) == 42));
-        assert!(({ get_if_12((v.as_pointer()),) }).is_null());
+        ({ cpp2rust_assert_fail_10(((({ get_if_12((v.as_pointer())) }).read()) == 42)) });
+        ({ cpp2rust_assert_fail_10(({ get_if_13((v.as_pointer())) }).is_null()) });
     }
     {
         let v: Value<std_variant_int__const_long_> = Rc::new(RefCell::new(42_i64));
         const _: () = assert!(true, "");;
-        assert!(((({ get_if_13((v.as_pointer()),) }).read()) == 42_i64));
-        assert!(({ get_if_14((v.as_pointer()),) }).is_null());
+        ({ cpp2rust_assert_fail_10(((({ get_if_14((v.as_pointer())) }).read()) == 42_i64)) });
+        ({ cpp2rust_assert_fail_10(({ get_if_15((v.as_pointer())) }).is_null()) });
     }
 }
 pub fn main() {
@@ -172,15 +172,14 @@ impl ForwardingCallObjectImpl for Ptr<ForwardingCallObject> {
     }
 }
 pub trait TypeIDImpl {
-    fn name(&self) -> Vec<i8>;
+    fn name(&self) -> std_basic_string_char__std_char_traits_char___std_allocator_char__;
 }
 impl TypeIDImpl for Ptr<TypeID> {
-    fn name(&self) -> Vec<i8> {
-        return {
-            let mut __bytes = (*self).with(|__s| __s.m_id.clone()).to_c_bytes();
-            __bytes.push(0_i8);
-            __bytes
-        };
+    fn name(&self) -> std_basic_string_char__std_char_traits_char___std_allocator_char__ {
+        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { (*self).with(|__s| __s.m_id.clone()) },
+            None,
+        );
     }
 }
 pub fn __cpp2rust_init_globals() {

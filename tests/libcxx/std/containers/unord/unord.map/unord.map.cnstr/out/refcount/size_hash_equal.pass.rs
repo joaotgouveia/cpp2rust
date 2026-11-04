@@ -120,10 +120,10 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_2: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_3: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_3: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_4: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -133,14 +133,14 @@ impl CppMove for test_alloc_base {
         src.read()
     }
 }
-pub fn operator_eq_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_eq_5(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_5(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_6(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_4(_x, _y)
+        operator_eq_5(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -200,7 +200,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_4(__lhs.clone(), __rhs.clone())
+        operator_eq_5(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -222,45 +222,6 @@ impl Default for test_allocator_void_ {
     fn default() -> Self {
         {
             test_allocator_void_ {
-                data_: 0,
-                id_: 0,
-                stats_: Ptr::<test_allocator_statistics>::null(),
-            }
-        }
-    }
-}
-pub fn operator_eq_6(
-    x: Ptr<test_allocator_std_pair_const_NotConstructible__NotConstructible__>,
-    y: Ptr<test_allocator_std_pair_const_NotConstructible__NotConstructible__>,
-) -> bool {
-    return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_allocator_std_pair_const_NotConstructible__NotConstructible___rebind_std_pair_const_NotConstructible__NotConstructible__
-{}
-impl CppMove for test_allocator_std_pair_const_NotConstructible__NotConstructible___rebind_std_pair_const_NotConstructible__NotConstructible__ { fn cpp_move(src: Ptr<Self>) -> Self { src.read() } }
-#[derive(Record, ByteRepr, FnPtrArg, Destructor)]
-#[byte_size(16)]
-pub struct test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-    #[offset(0)]
-    data_: i32,
-    #[offset(4)]
-    id_: i32,
-    #[offset(8)]
-    #[byte_size(8)]
-    stats_: Ptr<test_allocator_statistics>,
-}
-impl test_allocator_std_pair_const_NotConstructible__NotConstructible__ {}
-impl CppEq for test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_6(__lhs.clone(), __rhs.clone())
-    }
-}
-impl Default for test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-    fn default() -> Self {
-        {
-            test_allocator_std_pair_const_NotConstructible__NotConstructible__ {
                 data_: 0,
                 id_: 0,
                 stats_: Ptr::<test_allocator_statistics>::null(),
@@ -295,17 +256,21 @@ impl Tag_X {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_8.with(|rc| *rc.borrow()) >= dealloc_count_9.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_2(
+                (alloc_count_8.with(|rc| *rc.borrow()) >= dealloc_count_9.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_8.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_9.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_2((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_10.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_7.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_8.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_9.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_7.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_8.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_9.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -314,36 +279,18 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_7: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_7: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_8: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_8: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_9: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_9: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_10: Value<bool> = Rc::new(RefCell::new(false));
 );
-pub fn operator_eq_11(
-    mut _a0: min_allocator_std_pair_const_NotConstructible__NotConstructible__,
-    mut _a1: min_allocator_std_pair_const_NotConstructible__NotConstructible__,
-) -> bool {
-    return true;
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_std_pair_const_NotConstructible__NotConstructible__ {}
-impl CppEq for min_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-    fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_11(__lhs.read(), __rhs.read())
-    }
-}
-impl CppMove for min_allocator_std_pair_const_NotConstructible__NotConstructible__ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
+
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -367,97 +314,111 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let c : Value<std_unordered_map_NotConstructible__NotConstructible__test_hash_NotConstructible___test_equal_to_NotConstructible___test_allocator_std_pair_const_NotConstructible__NotConstructible___ > = Rc::new(RefCell::new({ let __tmp_0 : Value<test_hash_NotConstructible_ > = Rc::new(RefCell::new(test_hash_NotConstructible_ :: new ( { Some ( 8  ) } , )  ));let __tmp_1 : Value<test_equal_to_NotConstructible_ > = Rc::new(RefCell::new(test_equal_to_NotConstructible_ :: new_1 ( { 9  } , )  )); std_unordered_map_NotConstructible__NotConstructible__test_hash_NotConstructible___test_equal_to_NotConstructible___test_allocator_std_pair_const_NotConstructible__NotConstructible___ :: new_1 ( { 7_u64  } , { __tmp_0.as_pointer() } , { __tmp_1.as_pointer() } , None , )  } )) ;
         const _: () = assert!(true, "");;
-        assert!(
-            ({
-                let _c: Value<test_hash_NotConstructible_> =
-                    Rc::new(RefCell::new(test_hash_NotConstructible_::new({ Some(8) })));
-                test_hash_NotConstructible_Impl::operator_eq(
-                    &Rc::new(RefCell::new(({ (*c.borrow()).hash_function() }))).as_pointer(),
-                    _c.as_pointer(),
-                )
-            })
-        );
-        assert!(
-            ({
-                let _a: Value<test_equal_to_NotConstructible_> =
-                    Rc::new(RefCell::new(({ (*c.borrow()).key_eq() })));
-                let _b: Value<test_equal_to_NotConstructible_> =
-                    Rc::new(RefCell::new(test_equal_to_NotConstructible_::new_1({ 9 })));
-                operator_eq_1(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(
-            ({
-                let _x: Value<test_allocator_std_pair_const_NotConstructible__NotConstructible__> =
-                    Rc::new(RefCell::new(({ (*c.borrow()).get_allocator() })));
-                let _y : Value<test_allocator_std_pair_const_NotConstructible__NotConstructible__ > = Rc::new(RefCell::new(( <test_allocator_std_pair_const_NotConstructible__NotConstructible__  >::default() ) ));
-                operator_eq_6(_x.as_pointer(), _y.as_pointer())
-            })
-        );
-        assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
-        assert!(({ ({ (*c.borrow()).empty() }) }));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_2(
+                ({
+                    let _c: Value<test_hash_NotConstructible_> =
+                        Rc::new(RefCell::new(test_hash_NotConstructible_::new({ Some(8) })));
+                    test_hash_NotConstructible_Impl::operator_eq(
+                        &Rc::new(RefCell::new(({ (*c.borrow()).hash_function() }))).as_pointer(),
+                        _c.as_pointer(),
+                    )
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_2(
+                ({
+                    let _a: Value<test_equal_to_NotConstructible_> =
+                        Rc::new(RefCell::new(({ (*c.borrow()).key_eq() })));
+                    let _b: Value<test_equal_to_NotConstructible_> =
+                        Rc::new(RefCell::new(test_equal_to_NotConstructible_::new_1({ 9 })));
+                    operator_eq_1(_a.as_pointer(), _b.as_pointer())
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_2(
+                ({
+                    let _x: Value<
+                        test_allocator_std_pair_const_NotConstructible__NotConstructible__,
+                    > = Rc::new(RefCell::new(({ (*c.borrow()).get_allocator() })));
+                    let _y : Value<test_allocator_std_pair_const_NotConstructible__NotConstructible__ > = Rc::new(RefCell::new(( <test_allocator_std_pair_const_NotConstructible__NotConstructible__  >::default() ) ));
+                    operator_eq_11(_x.as_pointer(), _y.as_pointer())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_2((({ (*c.borrow()).size() }) == 0_u64)) });
+        ({ cpp2rust_assert_fail_2(({ (*c.borrow()).empty() })) });
+        ({
+            cpp2rust_assert_fail_2(
                 (({
                     let ___first: std___detail__Node_iterator_std_pair_const_NotConstructible__NotConstructible___false__true_   = ( { (*c.borrow()) . begin_27 ( ) } )   ;
                     let ___last: std___detail__Node_iterator_std_pair_const_NotConstructible__NotConstructible___false__true_   = ( { (*c.borrow()) . end_30 ( ) } )   ;
                     distance_12(___first, ___last)
-                }) == 0_isize)
-            })
-        );
-        assert!(({ (({ (*c.borrow()).load_factor() }) == 0_f32) }));
-        assert!(({ (({ (*c.borrow()).max_load_factor_95() }) == 1_f32) }));
+                }) == 0_i64),
+            )
+        });
+        ({ cpp2rust_assert_fail_2((({ (*c.borrow()).load_factor() }) == 0_f32)) });
+        ({ cpp2rust_assert_fail_2((({ (*c.borrow()).max_load_factor_95() }) == 1_f32)) });
     }
     {
         let c : Value<std_unordered_map_NotConstructible__NotConstructible__test_hash_NotConstructible___test_equal_to_NotConstructible___min_allocator_std_pair_const_NotConstructible__NotConstructible___ > = Rc::new(RefCell::new({ let __tmp_2 : Value<test_hash_NotConstructible_ > = Rc::new(RefCell::new(test_hash_NotConstructible_ :: new ( { Some ( 8  ) } , )  ));let __tmp_3 : Value<test_equal_to_NotConstructible_ > = Rc::new(RefCell::new(test_equal_to_NotConstructible_ :: new_1 ( { 9  } , )  )); std_unordered_map_NotConstructible__NotConstructible__test_hash_NotConstructible___test_equal_to_NotConstructible___min_allocator_std_pair_const_NotConstructible__NotConstructible___ :: new_1 ( { 7_u64  } , { __tmp_2.as_pointer() } , { __tmp_3.as_pointer() } , None , )  } )) ;
         const _: () = assert!(true, "");;
-        assert!(
-            ({
-                let _c: Value<test_hash_NotConstructible_> =
-                    Rc::new(RefCell::new(test_hash_NotConstructible_::new({ Some(8) })));
-                test_hash_NotConstructible_Impl::operator_eq(
-                    &Rc::new(RefCell::new(({ (*c.borrow()).hash_function() }))).as_pointer(),
-                    _c.as_pointer(),
-                )
-            })
-        );
-        assert!(
-            ({
-                let _a: Value<test_equal_to_NotConstructible_> =
-                    Rc::new(RefCell::new(({ (*c.borrow()).key_eq() })));
-                let _b: Value<test_equal_to_NotConstructible_> =
-                    Rc::new(RefCell::new(test_equal_to_NotConstructible_::new_1({ 9 })));
-                operator_eq_1(_a.as_pointer(), _b.as_pointer())
-            })
-        );
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_2(
+                ({
+                    let _c: Value<test_hash_NotConstructible_> =
+                        Rc::new(RefCell::new(test_hash_NotConstructible_::new({ Some(8) })));
+                    test_hash_NotConstructible_Impl::operator_eq(
+                        &Rc::new(RefCell::new(({ (*c.borrow()).hash_function() }))).as_pointer(),
+                        _c.as_pointer(),
+                    )
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_2(
+                ({
+                    let _a: Value<test_equal_to_NotConstructible_> =
+                        Rc::new(RefCell::new(({ (*c.borrow()).key_eq() })));
+                    let _b: Value<test_equal_to_NotConstructible_> =
+                        Rc::new(RefCell::new(test_equal_to_NotConstructible_::new_1({ 9 })));
+                    operator_eq_1(_a.as_pointer(), _b.as_pointer())
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_2(
                 ({
                     let _arg0: min_allocator_std_pair_const_NotConstructible__NotConstructible__ =
                         ({ (*c.borrow()).get_allocator() });
-                    operator_eq_11 ( _arg0 , ( <min_allocator_std_pair_const_NotConstructible__NotConstructible__  >::default() )  , )
-                })
-            })
-        );
-        assert!(({ (({ (*c.borrow()).size() }) == 0_u64) }));
-        assert!(({ ({ (*c.borrow()).empty() }) }));
-        assert!(
-            ({
+                    operator_eq_13 ( _arg0 , ( <min_allocator_std_pair_const_NotConstructible__NotConstructible__  >::default() )  , )
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_2((({ (*c.borrow()).size() }) == 0_u64)) });
+        ({ cpp2rust_assert_fail_2(({ (*c.borrow()).empty() })) });
+        ({
+            cpp2rust_assert_fail_2(
                 (({
                     let ___first: std___detail__Node_iterator_std_pair_const_NotConstructible__NotConstructible___false__true_   = ( { (*c.borrow()) . begin_27 ( ) } )   ;
                     let ___last: std___detail__Node_iterator_std_pair_const_NotConstructible__NotConstructible___false__true_   = ( { (*c.borrow()) . end_30 ( ) } )   ;
                     distance_12(___first, ___last)
-                }) == 0_isize)
-            })
-        );
-        assert!(({ (({ (*c.borrow()).load_factor() }) == 0_f32) }));
-        assert!(({ (({ (*c.borrow()).max_load_factor_95() }) == 1_f32) }));
+                }) == 0_i64),
+            )
+        });
+        ({ cpp2rust_assert_fail_2((({ (*c.borrow()).load_factor() }) == 0_f32)) });
+        ({ cpp2rust_assert_fail_2((({ (*c.borrow()).max_load_factor_95() }) == 1_f32)) });
     }
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
-pub struct min_pointer_std_pair_const_NotConstructible__NotConstructible___std_integral_constant_unsigned_long__0__;
+pub struct test_allocator_std_pair_const_NotConstructible__NotConstructible__;
+#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(1)]
+pub struct min_allocator_std_pair_const_NotConstructible__NotConstructible__;
 pub trait NotConstructibleImpl {
     fn copy_assign(&self, _a0: Ptr<NotConstructible>) -> Ptr<NotConstructible> {
         unimplemented!()
@@ -476,33 +437,19 @@ impl Tag_XImpl for Ptr<Tag_X> {
         return (*self).clone();
     }
 }
-pub trait min_allocator_std_pair_const_NotConstructible__NotConstructible__Impl {
-    fn allocate ( &self , mut n : usize  , ) -> min_pointer_std_pair_const_NotConstructible__NotConstructible___std_integral_constant_unsigned_long__0__{
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p : min_pointer_std_pair_const_NotConstructible__NotConstructible___std_integral_constant_unsigned_long__0__,
-        mut n: usize,
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_std_pair_const_NotConstructible__NotConstructible__Impl
-    for Ptr<min_allocator_std_pair_const_NotConstructible__NotConstructible__>
-{
-}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        assert!(
-            ((*self).with(|__s| __s.count) == 0)
-                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_2(
+                ((*self).with(|__s| __s.count) == 0)
+                    && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                        .is_null()),
+            )
+        });
         field!((*self), count).write(0);
         field!((*self), time_to_throw).write(0);
         field!((*self), alloc_count).write(0);
@@ -518,62 +465,6 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0);
     }
 }
-pub trait test_allocator_std_pair_const_NotConstructible__NotConstructible__Impl {
-    fn destructor(&self);
-    fn address_11(
-        &self,
-        x: Ptr<(Value<NotConstructible>, Value<NotConstructible>)>,
-    ) -> Ptr<(Value<NotConstructible>, Value<NotConstructible>)> {
-        unimplemented!()
-    }
-    fn address_12(
-        &self,
-        x: Ptr<(Value<NotConstructible>, Value<NotConstructible>)>,
-    ) -> Ptr<(Value<NotConstructible>, Value<NotConstructible>)> {
-        unimplemented!()
-    }
-    fn allocate(
-        &self,
-        mut n: u32,
-        mut _a1: AnyPtr,
-    ) -> Ptr<(Value<NotConstructible>, Value<NotConstructible>)> {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: Ptr<(Value<NotConstructible>, Value<NotConstructible>)>,
-        mut s: u32,
-    ) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> u32 {
-        unimplemented!()
-    }
-    fn destroy(&self, mut p: Ptr<(Value<NotConstructible>, Value<NotConstructible>)>) {
-        unimplemented!()
-    }
-    fn get_data(&self) -> i32 {
-        unimplemented!()
-    }
-    fn get_id(&self) -> i32 {
-        unimplemented!()
-    }
-}
-impl test_allocator_std_pair_const_NotConstructible__NotConstructible__Impl
-    for Ptr<test_allocator_std_pair_const_NotConstructible__NotConstructible__>
-{
-    fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_2.with(|rc| *rc.borrow())));
-        assert!(((*self).with(|__s| __s.id_) != destructed_value_2.with(|rc| *rc.borrow())));
-        if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
-            field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
-                __v.prefix_dec();
-            });
-        }
-        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
-    }
-}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> i32;
@@ -582,8 +473,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_3.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_3.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -605,7 +496,7 @@ pub trait test_equal_to_NotConstructible_Impl {
 }
 impl test_equal_to_NotConstructible_Impl for Ptr<test_equal_to_NotConstructible_> {}
 pub trait test_hash_NotConstructible_Impl {
-    fn operator_call(&self, x: Ptr<NotConstructible>) -> usize {
+    fn operator_call(&self, x: Ptr<NotConstructible>) -> u64 {
         unimplemented!()
     }
     fn operator_eq(&self, c: Ptr<test_hash_NotConstructible_>) -> bool;
@@ -616,8 +507,8 @@ impl test_hash_NotConstructible_Impl for Ptr<test_hash_NotConstructible_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_2.with(|_| ());
-    let _ = moved_value_3.with(|_| ());
+    let _ = destructed_value_3.with(|_| ());
+    let _ = moved_value_4.with(|_| ());
     let _ = outstanding_bytes_7.with(|_| ());
     let _ = alloc_count_8.with(|_| ());
     let _ = dealloc_count_9.with(|_| ());

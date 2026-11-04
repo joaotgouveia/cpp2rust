@@ -28,15 +28,15 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let a: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(None));
+        let a: Value<std_any> = Rc::new(RefCell::new(<std_any>::default()));
         const _: () = assert!(true, "noexcept(swap(a, a))");;
     }
     {
-        let a1: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(1));
-        let a2: Value<Option<Rc<dyn std::any::Any>>> = Rc::new(RefCell::new(2));
-        cpp_swap!(a1.as_pointer(), a2.as_pointer());
-        assert!((({ libcc2rs::any_cast_refcount(a1.as_pointer(),) }) == 2));
-        assert!((({ libcc2rs::any_cast_refcount(a2.as_pointer(),) }) == 1));
+        let a1: Value<std_any> = Rc::new(RefCell::new(1));
+        let a2: Value<std_any> = Rc::new(RefCell::new(2));
+        ({ swap_0(a1.as_pointer(), a2.as_pointer()) });
+        ({ cpp2rust_assert_fail_1((({ any_cast_2(a1.as_pointer()) }) == 2)) });
+        ({ cpp2rust_assert_fail_1((({ any_cast_2(a2.as_pointer()) }) == 1)) });
     }
     return 0;
 }

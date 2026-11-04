@@ -91,52 +91,60 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ foo_0(1, None,) }) == 11));
-    assert!((({ foo_0(1, Some(2),) }) == 3));
+    ({ cpp2rust_assert_fail_10((({ foo_0(1, None) }) == 11)) });
+    ({ cpp2rust_assert_fail_10((({ foo_0(1, Some(2)) }) == 3)) });
     let a: Value<i32> = Rc::new(RefCell::new(0));
-    assert!(((({ baz_1((a.as_pointer()), None,) }) as i32) == (false as i32)));
-    assert!(
-        ((({
-            let _a: Ptr<i32> = (a.as_pointer());
-            let _b: Ptr<i32> = (a.as_pointer());
-            baz_1(_a, Some(_b))
-        }) as i32)
-            == (true as i32))
-    );
+    ({ cpp2rust_assert_fail_10(((({ baz_1((a.as_pointer()), None) }) as i32) == (false as i32))) });
+    ({
+        cpp2rust_assert_fail_10(
+            ((({
+                let _a: Ptr<i32> = (a.as_pointer());
+                let _b: Ptr<i32> = (a.as_pointer());
+                baz_1(_a, Some(_b))
+            }) as i32)
+                == (true as i32)),
+        )
+    });
     let mut b: Bar = Bar::new(None);
-    assert!((b.v == 1));
-    assert!(({ Bar::new({ Some(2) },).v } == 2));
+    ({ cpp2rust_assert_fail_10((b.v == 1)) });
+    ({ cpp2rust_assert_fail_10(({ Bar::new({ Some(2) }).v } == 2)) });
     let mut arr: [Bar; 3] = [Bar::new(None), Bar::new(None), Bar::new(None)];
-    assert!((arr[(0) as usize].v == 1));
-    assert!((arr[(2) as usize].v == 1));
-    assert!((({ lazy_4(Some(5),) }) == 5));
-    assert!((counter_2.with(|rc| *rc.borrow()) == 0));
-    assert!((({ lazy_4(None,) }) == 1));
-    assert!((counter_2.with(|rc| *rc.borrow()) == 1));
-    assert!((({ by_ref_5(None,) }) == 7));
-    assert!(
-        (({
-            let _b: Value<Bar> = Rc::new(RefCell::new(Bar::new({ Some(3) })));
-            by_ref_5(Some(_b.as_pointer()))
-        }) == 3)
-    );
-    assert!((({ by_global_ref_7(None,) }) == 9));
-    assert!(
-        (({
-            let _b: Value<Bar> = Rc::new(RefCell::new(Bar::new({ Some(4) })));
-            by_global_ref_7(Some(_b.as_pointer()))
-        }) == 4)
-    );
+    ({ cpp2rust_assert_fail_10((arr[(0) as usize].v == 1)) });
+    ({ cpp2rust_assert_fail_10((arr[(2) as usize].v == 1)) });
+    ({ cpp2rust_assert_fail_10((({ lazy_4(Some(5)) }) == 5)) });
+    ({ cpp2rust_assert_fail_10((counter_2.with(|rc| *rc.borrow()) == 0)) });
+    ({ cpp2rust_assert_fail_10((({ lazy_4(None) }) == 1)) });
+    ({ cpp2rust_assert_fail_10((counter_2.with(|rc| *rc.borrow()) == 1)) });
+    ({ cpp2rust_assert_fail_10((({ by_ref_5(None) }) == 7)) });
+    ({
+        cpp2rust_assert_fail_10(
+            (({
+                let _b: Value<Bar> = Rc::new(RefCell::new(Bar::new({ Some(3) })));
+                by_ref_5(Some(_b.as_pointer()))
+            }) == 3),
+        )
+    });
+    ({ cpp2rust_assert_fail_10((({ by_global_ref_7(None) }) == 9)) });
+    ({
+        cpp2rust_assert_fail_10(
+            (({
+                let _b: Value<Bar> = Rc::new(RefCell::new(Bar::new({ Some(4) })));
+                by_global_ref_7(Some(_b.as_pointer()))
+            }) == 4),
+        )
+    });
     let mut h: Holder_int_ = Holder_int_::new({ 4 });
-    assert!((h.v == 4));
-    assert!((({ shifted_8(3, None,) }) == 2));
-    assert!((({ shifted_8(3, Some(4),) }) == 7));
-    assert!(
-        (({
-            let _r: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
-            first_9(_r.as_pointer())
-        }) == 4)
-    );
+    ({ cpp2rust_assert_fail_10((h.v == 4)) });
+    ({ cpp2rust_assert_fail_10((({ shifted_8(3, None) }) == 2)) });
+    ({ cpp2rust_assert_fail_10((({ shifted_8(3, Some(4)) }) == 7)) });
+    ({
+        cpp2rust_assert_fail_10(
+            (({
+                let _r: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([4, 5, 6])));
+                first_9(_r.as_pointer())
+            }) == 4),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

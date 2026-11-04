@@ -23,7 +23,7 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut arr: Ptr<Item> = Ptr::alloc_array(
-        (0..2_usize)
+        (0..2_u64)
             .map(|_| <Item>::default())
             .collect::<Box<[Item]>>(),
     );
@@ -36,7 +36,7 @@ fn main_0() -> i32 {
     let mut result: i32 =
         (elem!(arr, 0).with(|__s| __s.value) + elem!(arr, 1).with(|__s| __s.value));
     arr.delete();
-    assert!((result == 11));
+    ({ cpp2rust_assert_fail_0((result == 11)) });
     return 0;
 }
 pub trait ItemImpl {

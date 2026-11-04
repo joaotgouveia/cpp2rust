@@ -44,12 +44,16 @@ fn main_0() -> i32 {
         out += { (elem!(ptr, i).read()) };
         i.prefix_inc();
     }
-    assert!((out == 51));
+    ({ cpp2rust_assert_fail_0((out == 51)) });
     let mut step: i64 = 2_i64;
     let mut offset: Ptr<i32> = (arr.as_pointer() as Ptr<i32>).offset((step) as isize);
-    assert!(({ ({ (offset.read()) } == { (*arr.borrow())[(2) as usize] }) }));
+    ({ cpp2rust_assert_fail_0(({ (offset.read()) } == { (*arr.borrow())[(2) as usize] })) });
     offset = { offset.offset(-((step) as isize)) };
-    assert!(({ (offset).clone() } == { ((arr.as_pointer() as Ptr<i32>).offset(0)) }));
+    ({
+        cpp2rust_assert_fail_0(
+            ({ (offset).clone() } == { ((arr.as_pointer() as Ptr<i32>).offset(0)) }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

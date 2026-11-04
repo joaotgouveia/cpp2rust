@@ -27,52 +27,51 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let vecss: Value<
-        Vec<std_basic_stringstream_char__std_char_traits_char___std_allocator_char__>,
-    > = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 =
-            <std_basic_stringstream_char__std_char_traits_char___std_allocator_char__>::default();
-        (*vecss.borrow_mut()).push(__a1)
-    };
+    let vecss : Value<std_vector_std_basic_stringstream_char___std_allocator_std_basic_stringstream_char___ > = Rc::new(RefCell::new(<std_vector_std_basic_stringstream_char___std_allocator_std_basic_stringstream_char___  >::default() )) ;
     ({
-        let ___s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __bytes =
-                Ptr::<i8>::from_string_literal(b"hub started at [00 6b 8b 45 69]").to_c_bytes();
-            __bytes.push(0_i8);
-            __bytes
-        }));
-        (*vecss.decay().to_last().upgrade().deref()).str_22(___s.as_pointer())
+        let ___x: Value<std_basic_stringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                <std_basic_stringstream_char__std_char_traits_char___std_allocator_char__>::default(
+                ),
+            ));
+        (*vecss.borrow()).push_back_60(___x.as_pointer())
     });
-    {
-        let __a1 =
-            <std_basic_stringstream_char__std_char_traits_char___std_allocator_char__>::default();
-        (*vecss.borrow_mut()).push(__a1)
-    };
     ({
-        let ___s: Value<Vec<i8>> = Rc::new(RefCell::new({
-            let mut __bytes =
-                Ptr::<i8>::from_string_literal(b"hub started at [00 6b 8b 45 69]").to_c_bytes();
-            __bytes.push(0_i8);
-            __bytes
-        }));
-        (*vecss.decay().to_last().upgrade().deref()).str_22(___s.as_pointer())
+        let ___s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"hub started at [00 6b 8b 45 69]") },
+                    None,
+                ),
+            ));
+        (*({ (*vecss.borrow()).back_55() }).upgrade().deref()).str_22(___s.as_pointer())
     });
-    let mut n: usize = 0_usize;
-    'loop_: while (n < (*vecss.borrow()).len()) {
-        assert!(
-            ((({ (*vecss.decay().offset(n as isize).upgrade().deref()).str_16() }).len() - 1)
-                == 31_usize)
-        );
+    ({
+        let ___x: Value<std_basic_stringstream_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                <std_basic_stringstream_char__std_char_traits_char___std_allocator_char__>::default(
+                ),
+            ));
+        (*vecss.borrow()).push_back_60(___x.as_pointer())
+    });
+    ({
+        let ___s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                    { Ptr::<i8>::from_string_literal(b"hub started at [00 6b 8b 45 69]") },
+                    None,
+                ),
+            ));
+        (*({ (*vecss.borrow()).back_55() }).upgrade().deref()).str_22(___s.as_pointer())
+    });
+    let mut n: u64 = 0_u64;
+    'loop_: while (n < ({ (*vecss.borrow()).size() })) {
+        ({ cpp2rust_assert_fail_0((({ ({ (*vecss.borrow())[n].str_16() }).size() }) == 31_u64)) });
         ({
-            ((*vecss.decay().offset(n as isize).upgrade().deref())
-                as std_basic_istream_char__std_char_traits_char__)
-                .seekg_40(0_i64, beg_0.with(|rc| *rc.borrow()))
+            ((*vecss.borrow())[n] as std_basic_istream_char__std_char_traits_char__)
+                .seekg_40(0_i64, beg_1.with(|rc| *rc.borrow()))
         });
-        assert!(
-            ((({ (*vecss.decay().offset(n as isize).upgrade().deref()).str_16() }).len() - 1)
-                == 31_usize)
-        );
+        ({ cpp2rust_assert_fail_0((({ ({ (*vecss.borrow())[n].str_16() }).size() }) == 31_u64)) });
         n.postfix_inc();
     }
     return 0;

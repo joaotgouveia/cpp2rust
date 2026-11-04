@@ -209,25 +209,25 @@ pub fn test_2() -> bool {
         let val: Value<i32> = Rc::new(RefCell::new(1729));
         let result: Ptr<i32> = val.as_pointer();
         const _: () = assert!(true, "std::is_same_v<decltype(result), const int&>");;
-        assert!(({ (result).clone() } == { (val.as_pointer()) }));
+        ({ cpp2rust_assert_fail_3(({ (result).clone() } == { (val.as_pointer()) })) });
     }
     {
         let val: Value<i32> = Rc::new(RefCell::new(1729));
         let result: Ptr<i32> = val.as_pointer();
         const _: () = assert!(true, "std::is_same_v<decltype(result), int&>");;
-        assert!(({ (result).clone() } == { (val.as_pointer()) }));
+        ({ cpp2rust_assert_fail_3(({ (result).clone() } == { (val.as_pointer()) })) });
     }
     {
         let val: Value<i32> = Rc::new(RefCell::new(1729));
         let result: Ptr<i32> = val.as_pointer();
         const _: () = assert!(true, "std::is_same_v<decltype(result), const int&&>");;
-        assert!(({ (result).clone() } == { (val.as_pointer()) }));
+        ({ cpp2rust_assert_fail_3(({ (result).clone() } == { (val.as_pointer()) })) });
     }
     {
         let val: Value<i32> = Rc::new(RefCell::new(1729));
         let result: Ptr<i32> = val.as_pointer();
         const _: () = assert!(true, "std::is_same_v<decltype(result), int&&>");;
-        assert!(({ (result).clone() } == { (val.as_pointer()) }));
+        ({ cpp2rust_assert_fail_3(({ (result).clone() } == { (val.as_pointer()) })) });
     }
     return true;
 }

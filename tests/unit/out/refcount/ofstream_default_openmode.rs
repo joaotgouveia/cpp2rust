@@ -11,19 +11,23 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let ofs: Value<::std::fs::File> = Rc::new(RefCell::new(
-        ::std::fs::File::create(
-            Ptr::<i8>::from_string_literal(b"./ofstream_default_openmode.txt").to_string(),
-        )
-        .expect("Failed to open file"),
+    let ofs: Value<std_basic_ofstream_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_ofstream_char__std_char_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"./ofstream_default_openmode.txt") },
+            None,
+        ),
     ));
-    let app: Value<::std::fs::File> = Rc::new(RefCell::new(
-        ::std::fs::File::create(
-            Ptr::<i8>::from_string_literal(b"./ofstream_default_openmode.txt").to_string(),
-        )
-        .expect("Failed to open file"),
+    let app: Value<std_basic_ofstream_char__std_char_traits_char__> = Rc::new(RefCell::new(
+        std_basic_ofstream_char__std_char_traits_char__::new_1(
+            { Ptr::<i8>::from_string_literal(b"./ofstream_default_openmode.txt") },
+            { Some(app_0.with(|rc| *rc.borrow())) },
+        ),
     ));
-    assert!((16_i32 != 1_i32));
+    ({
+        cpp2rust_assert_fail_1(
+            ((out_2.with(|rc| *rc.borrow()) as i32) != (app_0.with(|rc| *rc.borrow()) as i32)),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

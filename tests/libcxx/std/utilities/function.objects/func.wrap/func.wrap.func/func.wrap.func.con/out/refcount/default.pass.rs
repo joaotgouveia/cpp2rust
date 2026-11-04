@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let f: Value<std_function_int__int__> =
         Rc::new(RefCell::new(<std_function_int__int__>::default()));
-    assert!(({ !({ (*f.borrow())() }) }));
+    ({ cpp2rust_assert_fail_0(!({ (*f.borrow())() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

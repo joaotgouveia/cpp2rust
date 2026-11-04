@@ -11,11 +11,13 @@ use std::rc::{Rc, Weak};
 pub struct nasty_vector_int_ {
     #[offset(0)]
     #[byte_size(24)]
-    pub v_: Vec<i32>,
+    pub v_: std_vector_int__std_allocator_int__,
 }
 impl nasty_vector_int_ {
     pub fn new_1() -> Self {
-        Self { v_: Vec::new() }
+        Self {
+            v_: <std_vector_int__std_allocator_int__>::default(),
+        }
     }
 }
 impl CppMove for nasty_vector_int_ {
@@ -37,7 +39,7 @@ impl nasty_mutex {
     }
     fn copy_from(_a0: Ptr<nasty_mutex>) -> Self {
         let __this: nasty_mutex = Self {};
-        assert!(false);
+        ({ cpp2rust_assert_fail_0(false) });
         __this
     }
 }
@@ -81,14 +83,6 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
         }
     }
 }
-pub fn test_0(c: Vec<i32>) -> bool {
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(c));
-    let i: Value<std_back_insert_iterator_std_vector_int__std_allocator_int___> =
-        Rc::new(RefCell::new(
-            std_back_insert_iterator_std_vector_int__std_allocator_int___::new({ c.as_pointer() }),
-        ));
-    return true;
-}
 pub fn test_1(c: nasty_vector_int_) -> bool {
     let c: Value<nasty_vector_int_> = Rc::new(RefCell::new(c));
     let _dtor_c = ScopedDestructor::new(&c, |__p| __p.destructor());
@@ -125,7 +119,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_0(Vec::new()) });
+    ({ test_3(<std_vector_int__std_allocator_int__>::default()) });
     ({ test_1(nasty_vector_int_::new_1()) });
     ({ test_2(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
@@ -144,7 +138,7 @@ pub trait ConstexprFixedCapacityDeque_int__10_Impl {
     fn end_5(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn size(&self) -> usize {
+    fn size(&self) -> u64 {
         unimplemented!()
     }
     fn front(&self) -> Ptr<i32> {
@@ -178,11 +172,11 @@ pub trait nasty_mutexImpl {
 impl nasty_mutexImpl for Ptr<nasty_mutex> {
     fn destructor(&self) {}
     fn operator_addr(&self) -> Ptr<nasty_mutex> {
-        assert!(false);
+        ({ cpp2rust_assert_fail_0(false) });
         return Ptr::<nasty_mutex>::null();
     }
     fn copy_assign(&self, _a0: Ptr<nasty_mutex>) -> Ptr<nasty_mutex> {
-        assert!(false);
+        ({ cpp2rust_assert_fail_0(false) });
         return (*self).clone();
     }
     fn lock(&self) {}
@@ -198,22 +192,28 @@ impl nasty_mutexImpl for Ptr<nasty_mutex> {
 }
 pub trait nasty_vector_int_Impl {
     fn destructor(&self);
-    fn assign_10(&self, mut n: usize, u: Ptr<i32>) {
+    fn assign_10(&self, mut n: u64, u: Ptr<i32>) {
         unimplemented!()
     }
-    fn assign_11(&self, il: Vec<i32>) {
+    fn assign_11(&self, il: std_initializer_list_int_) {
         unimplemented!()
     }
-    fn begin_12(&self) -> RandomAccessIterator<i32> {
+    fn begin_12(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
-    fn begin_13(&self) -> RandomAccessIterator<i32> {
+    fn begin_13(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
-    fn end_14(&self) -> RandomAccessIterator<i32> {
+    fn end_14(&self) -> __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
-    fn end_15(&self) -> RandomAccessIterator<i32> {
+    fn end_15(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }    fn rbegin_16 ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
@@ -224,44 +224,48 @@ pub trait nasty_vector_int_Impl {
     }    fn rend_19 ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
     }
-    fn cbegin(&self) -> RandomAccessIterator<i32> {
+    fn cbegin(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
-    fn cend(&self) -> RandomAccessIterator<i32> {
+    fn cend(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }    fn crbegin ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
     }    fn crend ( &self , ) -> std_reverse_iterator___gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int____{
         unimplemented!()
     }
-    fn size(&self) -> usize {
+    fn size(&self) -> u64 {
         unimplemented!()
     }
-    fn max_size(&self) -> usize {
+    fn max_size(&self) -> u64 {
         unimplemented!()
     }
-    fn capacity(&self) -> usize {
+    fn capacity(&self) -> u64 {
         unimplemented!()
     }
     fn empty(&self) -> bool {
         unimplemented!()
     }
-    fn reserve(&self, mut n: usize) {
+    fn reserve(&self, mut n: u64) {
         unimplemented!()
     }
     fn shrink_to_fit(&self) {
         unimplemented!()
     }
-    fn operator_index_30(&self, mut n: usize) -> Ptr<i32> {
+    fn operator_index_30(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
-    fn operator_index_31(&self, mut n: usize) -> Ptr<i32> {
+    fn operator_index_31(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
-    fn at_32(&self, mut n: usize) -> Ptr<i32> {
+    fn at_32(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
-    fn at_33(&self, mut n: usize) -> Ptr<i32> {
+    fn at_33(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
     fn front_34(&self) -> Ptr<i32> {
@@ -291,40 +295,55 @@ pub trait nasty_vector_int_Impl {
     fn pop_back(&self) {
         unimplemented!()
     }
-    fn insert_45(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32> {
+    fn insert_45(
+        &self,
+        pos: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___,
+        x: Ptr<i32>,
+    ) -> __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
-    fn insert_46(&self, pos: RandomAccessIterator<i32>, x: Ptr<i32>) -> RandomAccessIterator<i32> {
+    fn insert_46(
+        &self,
+        pos: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___,
+        x: Ptr<i32>,
+    ) -> __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
     fn insert_47(
         &self,
-        pos: RandomAccessIterator<i32>,
-        mut n: usize,
+        pos: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___,
+        mut n: u64,
         x: Ptr<i32>,
-    ) -> RandomAccessIterator<i32> {
+    ) -> __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
-    fn insert_49(&self, pos: RandomAccessIterator<i32>, il: Vec<i32>) -> RandomAccessIterator<i32> {
+    fn insert_49(
+        &self,
+        pos: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___,
+        il: std_initializer_list_int_,
+    ) -> __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
-    fn erase_50(&self, pos: RandomAccessIterator<i32>) -> RandomAccessIterator<i32> {
+    fn erase_50(
+        &self,
+        pos: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___,
+    ) -> __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
     fn erase_51(
         &self,
-        first: RandomAccessIterator<i32>,
-        last: RandomAccessIterator<i32>,
-    ) -> RandomAccessIterator<i32> {
+        first: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___,
+        last: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___,
+    ) -> __gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ {
         unimplemented!()
     }
     fn clear(&self) {
         unimplemented!()
     }
-    fn resize_53(&self, mut sz: usize) {
+    fn resize_53(&self, mut sz: u64) {
         unimplemented!()
     }
-    fn resize_54(&self, mut sz: usize, c: Ptr<i32>) {
+    fn resize_54(&self, mut sz: u64, c: Ptr<i32>) {
         unimplemented!()
     }
     fn swap(&self, nv: Ptr<nasty_vector_int_>) {

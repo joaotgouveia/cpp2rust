@@ -15,17 +15,17 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut size: usize = 1_usize;
-    assert!((size == 1_usize));
+    let mut size: u64 = 1_u64;
+    ({ cpp2rust_assert_fail_0((size == 1_u64)) });
     let mut ul: u64 = 5_u64;
-    let mut s1: usize = (ul as usize);
-    assert!((s1 == 5_usize));
-    ul = (7_usize as u64);
-    assert!((ul == 7_u64));
+    let mut s1: u64 = ul;
+    ({ cpp2rust_assert_fail_0((s1 == 5_u64)) });
+    ul = (7_u64 as u64);
+    ({ cpp2rust_assert_fail_0((ul == 7_u64)) });
     let mut i: i32 = 2;
     let mut e: E = ((i) as E);
-    assert!(((e as i32) == (E_C as i32)));
-    assert!(((e as i32) == 2));
+    ({ cpp2rust_assert_fail_0(((e as i32) == (E_C as i32))) });
+    ({ cpp2rust_assert_fail_0(((e as i32) == 2)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

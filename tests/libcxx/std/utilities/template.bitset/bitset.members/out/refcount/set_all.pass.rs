@@ -9,87 +9,86 @@ use std::rc::{Rc, Weak};
 pub fn test_set_all_0() {
     let v: Value<std_bitset_0_> = Rc::new(RefCell::new(<std_bitset_0_>::default()));
     ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
+    let mut i: u64 = 0_u64;
     'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
-        i.prefix_inc();
-    }
-}
-pub fn test_set_all_1() {
-    let v: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
-    ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
-    'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
         i.prefix_inc();
     }
 }
 pub fn test_set_all_2() {
-    let v: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
+    let v: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
     ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
+    let mut i: u64 = 0_u64;
     'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
         i.prefix_inc();
     }
 }
 pub fn test_set_all_3() {
-    let v: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
+    let v: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
     ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
+    let mut i: u64 = 0_u64;
     'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
         i.prefix_inc();
     }
 }
 pub fn test_set_all_4() {
-    let v: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
+    let v: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
     ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
+    let mut i: u64 = 0_u64;
     'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
         i.prefix_inc();
     }
 }
 pub fn test_set_all_5() {
-    let v: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
+    let v: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
     ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
+    let mut i: u64 = 0_u64;
     'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
         i.prefix_inc();
     }
 }
 pub fn test_set_all_6() {
-    let v: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
+    let v: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
     ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
+    let mut i: u64 = 0_u64;
     'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
         i.prefix_inc();
     }
 }
 pub fn test_set_all_7() {
-    let v: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
+    let v: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
     ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
+    let mut i: u64 = 0_u64;
     'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
         i.prefix_inc();
     }
 }
 pub fn test_set_all_8() {
-    let v: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
+    let v: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
     ({ (*v.borrow()).set_20() });
-    let mut i: usize = 0_usize;
+    let mut i: u64 = 0_u64;
     'loop_: while (i < ({ (*v.borrow()).size() })) {
-        assert!(({ (*v.borrow())[i]() }));
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
         i.prefix_inc();
     }
 }
-pub fn test_9() -> bool {
+pub fn test_set_all_9() {
+    let v: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
+    ({ (*v.borrow()).set_20() });
+    let mut i: u64 = 0_u64;
+    'loop_: while (i < ({ (*v.borrow()).size() })) {
+        ({ cpp2rust_assert_fail_1(({ (*v.borrow())[i]() })) });
+        i.prefix_inc();
+    }
+}
+pub fn test_10() -> bool {
     ({ test_set_all_0() });
-    ({ test_set_all_1() });
     ({ test_set_all_2() });
     ({ test_set_all_3() });
     ({ test_set_all_4() });
@@ -97,6 +96,7 @@ pub fn test_9() -> bool {
     ({ test_set_all_6() });
     ({ test_set_all_7() });
     ({ test_set_all_8() });
+    ({ test_set_all_9() });
     return true;
 }
 pub fn main() {
@@ -119,7 +119,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_9() });
+    ({ test_10() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

@@ -162,28 +162,34 @@ pub fn operator_lt_0(rhs: Ptr<C2Int>, mut lhs: i32) -> bool {
 }
 pub fn test_3() -> bool {
     {
-        assert!(
-            (({
-                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
-                Map::new().count(___x.as_pointer())
-            }) == 0_usize)
-        );
+        ({
+            cpp2rust_assert_fail_4(
+                (({
+                    let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
+                    <std_map_int__double__transparent_less__std_allocator_std_pair_const_int__double___  >::default() . count ( ___x.as_pointer() , )
+                }) == 0_u64),
+            )
+        });
     }
     {
-        assert!(
-            (({
-                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
-                Map::new().count(___x.as_pointer())
-            }) == 0_usize)
-        );
+        ({
+            cpp2rust_assert_fail_4(
+                (({
+                    let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
+                    <std_map_int__double__transparent_less_not_referenceable__std_allocator_std_pair_const_int__double___  >::default() . count ( ___x.as_pointer() , )
+                }) == 0_u64),
+            )
+        });
     }
     {
-        assert!(
-            (({
-                let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
-                Map::new().count(___x.as_pointer())
-            }) == 0_usize)
-        );
+        ({
+            cpp2rust_assert_fail_4(
+                (({
+                    let ___x: Value<C2Int> = Rc::new(RefCell::new(C2Int::new_1({ 5 })));
+                    <std_map_int__double__transparent_less_nonempty__std_allocator_std_pair_const_int__double___  >::default() . count ( ___x.as_pointer() , )
+                }) == 0_u64),
+            )
+        });
     }
     return true;
 }

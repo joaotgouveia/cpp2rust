@@ -20,127 +20,20 @@ pub fn test01_0() {
     ({ strcpy_1((carray.as_pointer() as Ptr<i8>), (ccarray1).clone()) });
     let mut v: AnyPtr = ((carray.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
     let mut cv: AnyPtr = (ccarray1).to_any();
-    cc1 = {
-        let __t = (('c' as i8) as i32) as i8;
-        match ccarray1.to_c_string_iterator().position(|__c| __c == __t) {
-            Some(__i) => ccarray1.offset(__i),
-            None => {
-                if __t == 0 {
-                    ccarray1.offset(ccarray1.to_c_string_iterator().count())
-                } else {
-                    Ptr::null()
-                }
-            }
-        }
-    };
-    c1 = ({ libcc2rs::strchr_refcount((carray.as_pointer() as Ptr<i8>), (('c' as i8) as i32)) });
-    cc1 = match ccarray1
-        .to_c_string_iterator()
-        .position(|__c| ccarray2.to_c_string_iterator().any(|__r| __r == __c))
-    {
-        Some(__i) => ccarray1.offset(__i),
-        None => Ptr::null(),
-    };
-    c1 = match ({ (carray.as_pointer() as Ptr<i8>) },) {
-        (mut __tmp_0,) => {
-            match __tmp_0
-                .to_c_string_iterator()
-                .position(|__c| ccarray2.to_c_string_iterator().any(|__r| __r == __c))
-            {
-                Some(__i) => __tmp_0.offset(__i),
-                None => Ptr::null(),
-            }
-        }
-    };
-    cc1 = {
-        let __t = (('c' as i8) as i32) as i8;
-        match ccarray1
-            .to_c_string_iterator()
-            .enumerate()
-            .filter(|__e| __e.1 == __t)
-            .last()
-        {
-            Some((__i, _)) => ccarray1.offset(__i),
-            None => {
-                if __t == 0 {
-                    ccarray1.offset(ccarray1.to_c_string_iterator().count())
-                } else {
-                    Ptr::null()
-                }
-            }
-        }
-    };
-    c1 = match ({ (carray.as_pointer() as Ptr<i8>) },) {
-        (mut __tmp_1,) => {
-            let __t = (('c' as i8) as i32) as i8;
-            match __tmp_1
-                .to_c_string_iterator()
-                .enumerate()
-                .filter(|__e| __e.1 == __t)
-                .last()
-            {
-                Some((__i, _)) => __tmp_1.offset(__i),
-                None => {
-                    if __t == 0 {
-                        __tmp_1.offset(__tmp_1.to_c_string_iterator().count())
-                    } else {
-                        Ptr::null()
-                    }
-                }
-            }
-        }
-    };
-    cc1 = {
-        let mut __p = (ccarray1).clone();
-        loop {
-            let mut __h = __p.to_c_string_iterator();
-            if ccarray2
-                .to_c_string_iterator()
-                .all(|__c| __h.next() == Some(__c))
-            {
-                break __p;
-            }
-            if __p.read() == 0 {
-                break Ptr::null();
-            }
-            __p += 1;
-        }
-    };
-    c1 = match ({ (carray.as_pointer() as Ptr<i8>) },) {
-        (mut __tmp_2,) => {
-            let mut __p = (carray.as_pointer() as Ptr<i8>);
-            loop {
-                let mut __h = __p.to_c_string_iterator();
-                if __tmp_2
-                    .to_c_string_iterator()
-                    .all(|__c| __h.next() == Some(__c))
-                {
-                    break __p;
-                }
-                if __p.read() == 0 {
-                    break Ptr::null();
-                }
-                __p += 1;
-            }
-        }
-    };
-    cv = {
-        {
-            let mut __p = cv.reinterpret_cast::<u8>();
-            let mut __i: usize = 0;
-            loop {
-                if __i == 3_usize {
-                    break Ptr::<u8>::null().to_any();
-                }
-                if __p.read() == (('a' as i8) as i32) as u8 {
-                    break __p.to_any();
-                }
-                __p += 1;
-                __i += 1;
-            }
-        }
-    };
-    v = { ({ libcc2rs::memchr_refcount((v).clone(), (('a' as i8) as i32), 3_usize) }) };
+    cc1 = ({ strchr_2((ccarray1).clone(), (('c' as i8) as i32)) });
+    c1 = ({ strchr_3((carray.as_pointer() as Ptr<i8>), (('c' as i8) as i32)) });
+    cc1 = ({ strpbrk_4((ccarray1).clone(), (ccarray2).clone()) });
+    c1 = ({ strpbrk_5((carray.as_pointer() as Ptr<i8>), (ccarray2).clone()) });
+    cc1 = ({ strrchr_6((ccarray1).clone(), (('c' as i8) as i32)) });
+    c1 = ({ strrchr_7((carray.as_pointer() as Ptr<i8>), (('c' as i8) as i32)) });
+    cc1 = ({ strstr_8((ccarray1).clone(), (ccarray2).clone()) });
+    c1 = ({
+        let ___haystack: Ptr<i8> = (carray.as_pointer() as Ptr<i8>);
+        let ___needle: Ptr<i8> = (carray.as_pointer() as Ptr<i8>);
+        strstr_9(___haystack, ___needle)
+    });
+    cv = { ({ memchr_10((cv).clone(), (('a' as i8) as i32), 3_u64) }) };
+    v = { ({ memchr_11((v).clone(), (('a' as i8) as i32), 3_u64) }) };
     cc1 = { (cc1).clone() };
     c1 = { (c1).clone() };
 }

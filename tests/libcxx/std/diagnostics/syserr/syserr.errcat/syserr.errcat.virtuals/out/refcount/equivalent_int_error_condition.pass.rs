@@ -31,22 +31,22 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let e_cond: Value<std_error_condition> = Rc::new(RefCell::new(
         ({ (*e_cat.upgrade().deref()).default_error_condition(5) }),
     ));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let ___cond: Ptr<std_error_condition> = e_cond.as_pointer();
                 (*e_cat.upgrade().deref()).equivalent_9(5, ___cond)
-            })
-        })
-    );
-    assert!(
-        ({
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
             !({
                 let ___cond: Ptr<std_error_condition> = e_cond.as_pointer();
                 (*e_cat.upgrade().deref()).equivalent_9(6, ___cond)
-            })
-        })
-    );
+            }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

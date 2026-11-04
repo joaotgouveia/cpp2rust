@@ -29,11 +29,11 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let mut p: AnyPtr = AnyPtr::default();
-        assert!(!(!(p).is_null()));
+        ({ cpp2rust_assert_fail_0(!(!(p).is_null())) });
     }
     {
         let mut p: AnyPtr = AnyPtr::default();
-        assert!(!(!(p).is_null()));
+        ({ cpp2rust_assert_fail_0(!(!(p).is_null())) });
     }
     return 0;
 }

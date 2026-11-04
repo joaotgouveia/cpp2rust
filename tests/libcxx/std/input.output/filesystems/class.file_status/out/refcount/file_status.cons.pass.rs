@@ -35,8 +35,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         const _: () = assert!(true, "test_convertible<file_status>()");;
         let f: Value<std_filesystem_file_status> =
             Rc::new(RefCell::new(<std_filesystem_file_status>::default()));
-        assert!(({ (({ (*f.borrow()).type_8() }) == std_filesystem_file_type_none) }));
-        assert!(({ (({ (*f.borrow()).permissions_9() }) == std_filesystem_perms_unknown) }));
+        ({
+            cpp2rust_assert_fail_0((({ (*f.borrow()).type_8() }) == std_filesystem_file_type_none))
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                (({ (*f.borrow()).permissions_9() }) == std_filesystem_perms_unknown),
+            )
+        });
     }
     {
         const _: () = assert!(
@@ -47,8 +53,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let f: Value<std_filesystem_file_status> = Rc::new(RefCell::new(
             std_filesystem_file_status::new_1({ std_filesystem_file_type_not_found }, None),
         ));
-        assert!(({ (({ (*f.borrow()).type_8() }) == std_filesystem_file_type_not_found) }));
-        assert!(({ (({ (*f.borrow()).permissions_9() }) == std_filesystem_perms_unknown) }));
+        ({
+            cpp2rust_assert_fail_0(
+                (({ (*f.borrow()).type_8() }) == std_filesystem_file_type_not_found),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                (({ (*f.borrow()).permissions_9() }) == std_filesystem_perms_unknown),
+            )
+        });
     }
     {
         const _: () = assert!(
@@ -61,8 +75,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 Some(std_filesystem_perms_owner_read)
             }),
         ));
-        assert!(({ (({ (*f.borrow()).type_8() }) == std_filesystem_file_type_regular) }));
-        assert!(({ (({ (*f.borrow()).permissions_9() }) == std_filesystem_perms_owner_read) }));
+        ({
+            cpp2rust_assert_fail_0(
+                (({ (*f.borrow()).type_8() }) == std_filesystem_file_type_regular),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_0(
+                (({ (*f.borrow()).permissions_9() }) == std_filesystem_perms_owner_read),
+            )
+        });
     }
     return 0;
 }

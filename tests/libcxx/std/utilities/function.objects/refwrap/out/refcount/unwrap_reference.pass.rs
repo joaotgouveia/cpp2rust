@@ -246,173 +246,53 @@ pub fn check_equal_23() {
         "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
     );;
 }
-pub fn check_equal_24() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_25() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_26() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_27() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_28() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_29() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_30() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_31() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_32() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_33() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_34() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_equal_35() {
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, Expected>"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>"
-    );;
-}
-pub fn check_36() {
+pub fn check_24() {
     ({ check_equal_0() });
     ({ check_equal_1() });
     ({ check_equal_2() });
     ({ check_equal_3() });
+    ({ check_equal_25() });
+    ({ check_equal_26() });
+}
+pub fn check_27() {
     ({ check_equal_4() });
     ({ check_equal_5() });
-}
-pub fn check_37() {
     ({ check_equal_6() });
     ({ check_equal_7() });
+    ({ check_equal_28() });
+    ({ check_equal_29() });
+}
+pub fn check_30() {
     ({ check_equal_8() });
     ({ check_equal_9() });
     ({ check_equal_10() });
     ({ check_equal_11() });
+    ({ check_equal_31() });
+    ({ check_equal_32() });
 }
-pub fn check_38() {
+pub fn check_33() {
     ({ check_equal_12() });
     ({ check_equal_13() });
     ({ check_equal_14() });
     ({ check_equal_15() });
+    ({ check_equal_34() });
+    ({ check_equal_35() });
+}
+pub fn check_36() {
     ({ check_equal_16() });
     ({ check_equal_17() });
-}
-pub fn check_39() {
     ({ check_equal_18() });
     ({ check_equal_19() });
+    ({ check_equal_37() });
+    ({ check_equal_38() });
+}
+pub fn check_39() {
     ({ check_equal_20() });
     ({ check_equal_21() });
     ({ check_equal_22() });
     ({ check_equal_23() });
-}
-pub fn check_40() {
-    ({ check_equal_24() });
-    ({ check_equal_25() });
-    ({ check_equal_26() });
-    ({ check_equal_27() });
-    ({ check_equal_28() });
-    ({ check_equal_29() });
-}
-pub fn check_41() {
-    ({ check_equal_30() });
-    ({ check_equal_31() });
-    ({ check_equal_32() });
-    ({ check_equal_33() });
-    ({ check_equal_34() });
-    ({ check_equal_35() });
+    ({ check_equal_40() });
+    ({ check_equal_41() });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -442,12 +322,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
+    ({ check_24() });
+    ({ check_27() });
+    ({ check_30() });
+    ({ check_33() });
     ({ check_36() });
-    ({ check_37() });
-    ({ check_38() });
     ({ check_39() });
-    ({ check_40() });
-    ({ check_41() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

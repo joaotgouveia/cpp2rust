@@ -54,31 +54,24 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let v: Value<Vec<Elem>> = Rc::new(RefCell::new(Vec::new()));
-    if 4_usize as usize > (*v.borrow()).capacity() as usize {
-        let len_0 = (*v.borrow()).len();
-        (*v.borrow_mut()).reserve_exact(4_usize as usize - len_0 as usize);
-    };
+    let v: Value<std_vector_Elem__std_allocator_Elem__> = Rc::new(RefCell::new(
+        <std_vector_Elem__std_allocator_Elem__>::default(),
+    ));
+    ({ (*v.borrow()).reserve(4_u64) });
     let a: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 1 })));
-    let mut b: Elem = Elem::new({ 2 });
-    match ({ <RandomAccessIterator<Elem>>::from(CppRange::end(&v.decay())) },) {
-        (mut __tmp_0,) => {
-            let __off = __tmp_0.index();
-            (*v.borrow_mut()).insert(__off, Elem::move_from({ a.as_pointer() }));
-            (__tmp_0).clone()
-        }
-    };
-    match ({ <RandomAccessIterator<Elem>>::from(CppRange::end(&v.decay())) },) {
-        (mut __tmp_1,) => {
-            let __off = __tmp_1.index();
-            (*v.borrow_mut()).insert(__off, (b).clone());
-            (__tmp_1).clone()
-        }
-    };
+    let b: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 2 })));
+    ({
+        let ___position: __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___   = { let __tmp_0 : Value<__gnu_cxx___normal_iterator_Elem_ptr__std_vector_Elem__std_allocator_Elem___ > = Rc::new(RefCell::new(( { (*v.borrow()) . end_30 ( ) } )  )); __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___ :: new_1 ( { __tmp_0.as_pointer() } , )  }  ;
+        (*v.borrow()).insert_65(___position, a.as_pointer())
+    });
+    ({
+        let ___position: __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___   = { let __tmp_1 : Value<__gnu_cxx___normal_iterator_Elem_ptr__std_vector_Elem__std_allocator_Elem___ > = Rc::new(RefCell::new(( { (*v.borrow()) . end_30 ( ) } )  )); __gnu_cxx___normal_iterator_const_Elem_ptr__std_vector_Elem__std_allocator_Elem___ :: new_1 ( { __tmp_1.as_pointer() } , )  }  ;
+        (*v.borrow()).insert_64(___position, b.as_pointer())
+    });
     let mut ok: bool = (((copies_0.with(|rc| *rc.borrow()) == 1)
         && (moves_1.with(|rc| *rc.borrow()) == 1))
-        && (v.decay().offset(0_usize as isize).with(|__s| __s.v) == 1))
-        && (v.decay().offset(1_usize as isize).with(|__s| __s.v) == 2);
+        && ({ (*v.borrow())[0_u64].v } == 1))
+        && ({ (*v.borrow())[1_u64].v } == 2);
     let mut pa: Ptr<Elem> = (a.as_pointer());
     println!(
         "{} {} {}",

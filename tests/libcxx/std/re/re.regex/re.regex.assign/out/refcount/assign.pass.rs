@@ -37,13 +37,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         <std_basic_regex_char__std_regex_traits_char__>::default(),
     ));
     ({ (*r2.borrow()).assign_15(r1.as_pointer()) });
-    assert!(
-        ({
-            ((({ (*r2.borrow()).flags() }) as u32) == (ECMAScript_0.with(|rc| *rc.borrow()) as u32))
-        })
-    );
-    assert!(({ (({ (*r2.borrow()).mark_count() }) == 2_u32) }));
-    assert!(({ regex_search_1(Ptr::<i8>::from_string_literal(b"ab"), r2.as_pointer(), None,) }));
+    ({
+        cpp2rust_assert_fail_0(
+            ((({ (*r2.borrow()).flags() }) as u32)
+                == (ECMAScript_1.with(|rc| *rc.borrow()) as u32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ (*r2.borrow()).mark_count() }) == 2_u32)) });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ regex_search_2(Ptr::<i8>::from_string_literal(b"ab"), r2.as_pointer(), None) }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

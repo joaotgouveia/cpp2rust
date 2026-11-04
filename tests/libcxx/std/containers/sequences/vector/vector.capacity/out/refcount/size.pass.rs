@@ -14,17 +14,21 @@ pub fn DoNotOptimize_0(value: Ptr<AnyPtr>) -> Ptr<AnyPtr> {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_2.with(|rc| *rc.borrow()) >= dealloc_count_3.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_5(
+                (alloc_count_2.with(|rc| *rc.borrow()) >= dealloc_count_3.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_2.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_3.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_5((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_4.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -33,13 +37,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_3: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_3: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_4: Value<bool> = Rc::new(RefCell::new(false));
@@ -70,156 +74,117 @@ impl Default for safe_allocator_int_ {
         { safe_allocator_int_::new() }
     }
 }
-pub fn tests_5() -> bool {
+pub fn tests_7() -> bool {
     {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        let c: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__std_allocator_int__>::default(),
+        ));
         const _: () = assert!(true, "");;
-        assert!(({ ((*c.borrow()).len() == 0_usize) }));
-        {
-            let __a1 = 2;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 1_usize) }));
-        {
-            let __a1 = 1;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 2_usize) }));
-        {
-            let __a1 = 3;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 3_usize) }));
-        match ({ <RandomAccessIterator<i32>>::from(CppRange::begin(&c.decay())) },) {
-            (mut __tmp_2,) => {
-                let __off = __tmp_2.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_2).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 2_usize) }));
-        match ({ <RandomAccessIterator<i32>>::from(CppRange::begin(&c.decay())) },) {
-            (mut __tmp_3,) => {
-                let __off = __tmp_3.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_3).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 1_usize) }));
-        match ({ <RandomAccessIterator<i32>>::from(CppRange::begin(&c.decay())) },) {
-            (mut __tmp_4,) => {
-                let __off = __tmp_4.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_4).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 0_usize) }));
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 0_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 1_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 2_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 3_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___   = { let __tmp_0 : Value<__gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___ :: new_1 ( { __tmp_0.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 2_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___   = { let __tmp_1 : Value<__gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___ :: new_1 ( { __tmp_1.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 1_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___   = { let __tmp_2 : Value<__gnu_cxx___normal_iterator_int_ptr__std_vector_int__std_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__std_allocator_int___ :: new_1 ( { __tmp_2.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 0_u64)) });
     }
     {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        let c: Value<std_vector_int__min_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__min_allocator_int__>::default(),
+        ));
         const _: () = assert!(true, "");;
-        assert!(({ ((*c.borrow()).len() == 0_usize) }));
-        {
-            let __a1 = 2;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 1_usize) }));
-        {
-            let __a1 = 1;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 2_usize) }));
-        {
-            let __a1 = 3;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 3_usize) }));
-        match ({
-            <__gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___  >::from(CppRange::begin(&c .decay() )  )
-        },)
-        {
-            (mut __tmp_5,) => {
-                let __off = __tmp_5.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_5).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 2_usize) }));
-        match ({
-            <__gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___  >::from(CppRange::begin(&c .decay() )  )
-        },)
-        {
-            (mut __tmp_6,) => {
-                let __off = __tmp_6.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_6).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 1_usize) }));
-        match ({
-            <__gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___  >::from(CppRange::begin(&c .decay() )  )
-        },)
-        {
-            (mut __tmp_7,) => {
-                let __off = __tmp_7.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_7).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 0_usize) }));
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 0_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 1_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 2_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 3_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___   = { let __tmp_3 : Value<__gnu_cxx___normal_iterator_min_pointer_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___ :: new_1 ( { __tmp_3.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 2_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___   = { let __tmp_4 : Value<__gnu_cxx___normal_iterator_min_pointer_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___ :: new_1 ( { __tmp_4.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 1_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___   = { let __tmp_5 : Value<__gnu_cxx___normal_iterator_min_pointer_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_vector_int__min_allocator_int___ :: new_1 ( { __tmp_5.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 0_u64)) });
     }
     {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        let c: Value<std_vector_int__safe_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__safe_allocator_int__>::default(),
+        ));
         const _: () = assert!(true, "");;
-        assert!(({ ((*c.borrow()).len() == 0_usize) }));
-        {
-            let __a1 = 2;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 1_usize) }));
-        {
-            let __a1 = 1;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 2_usize) }));
-        {
-            let __a1 = 3;
-            (*c.borrow_mut()).push(__a1)
-        };
-        assert!(({ ((*c.borrow()).len() == 3_usize) }));
-        match ({ <RandomAccessIterator<i32>>::from(CppRange::begin(&c.decay())) },) {
-            (mut __tmp_8,) => {
-                let __off = __tmp_8.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_8).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 2_usize) }));
-        match ({ <RandomAccessIterator<i32>>::from(CppRange::begin(&c.decay())) },) {
-            (mut __tmp_9,) => {
-                let __off = __tmp_9.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_9).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 1_usize) }));
-        match ({ <RandomAccessIterator<i32>>::from(CppRange::begin(&c.decay())) },) {
-            (mut __tmp_10,) => {
-                let __off = __tmp_10.index();
-                c.as_pointer()
-                    .with_mut(|__v: &mut Vec<i32>| __v.remove(__off));
-                (__tmp_10).clone()
-            }
-        };
-        assert!(({ ((*c.borrow()).len() == 0_usize) }));
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 0_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(2));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 1_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 2_u64)) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(3));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 3_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__safe_allocator_int___   = { let __tmp_6 : Value<__gnu_cxx___normal_iterator_int_ptr__std_vector_int__safe_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__safe_allocator_int___ :: new_1 ( { __tmp_6.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 2_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__safe_allocator_int___   = { let __tmp_7 : Value<__gnu_cxx___normal_iterator_int_ptr__std_vector_int__safe_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__safe_allocator_int___ :: new_1 ( { __tmp_7.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 1_u64)) });
+        ({
+            let ___position: __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__safe_allocator_int___   = { let __tmp_8 : Value<__gnu_cxx___normal_iterator_int_ptr__std_vector_int__safe_allocator_int___ > = Rc::new(RefCell::new(( { (*c.borrow()) . begin_28 ( ) } )  )); __gnu_cxx___normal_iterator_const_int_ptr__std_vector_int__safe_allocator_int___ :: new_1 ( { __tmp_8.as_pointer() } , )  }  ;
+            (*c.borrow()).erase_71(___position)
+        });
+        ({ cpp2rust_assert_fail_5((({ (*c.borrow()).size() }) == 0_u64)) });
     }
     return true;
 }
@@ -243,7 +208,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_5() });
+    ({ tests_7() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
@@ -251,11 +216,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
 #[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
+    fn allocate(&self, n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: u64);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_int_>::default().allocate(n) })
         });
@@ -263,47 +228,45 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
 pub trait safe_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> Ptr<i32>;
-    fn deallocate(&self, p: Ptr<i32>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, n: u64);
 }
 impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         let memory: Value<Ptr<i32>> = Rc::new(RefCell::new(
             ({ <std_allocator_int_>::default().allocate(n) }),
         ));
         {
-            match ({ (*memory.borrow()).to_any() },) {
-                (mut __tmp_0,) => {
-                    __tmp_0.memset(
-                        (0) as u8,
-                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                            as usize,
-                    );
-                    (__tmp_0).clone()
-                }
-            };
+            ({
+                let ___s: AnyPtr = (*memory.borrow()).to_any();
+                memset_6(
+                    ___s,
+                    0,
+                    (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                )
+            });
         }
         return (*memory.borrow()).clone();
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
-                    (mut __tmp_1,) => {
-                        __tmp_1.memset(
-                            (0) as u8,
-                            ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64))
-                                as usize) as usize,
-                        );
-                        (__tmp_1).clone()
-                    }
-                }));
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(
+                    ({
+                        let ___s: AnyPtr = (p).to_any();
+                        memset_6(
+                            ___s,
+                            0,
+                            (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                        )
+                    }),
+                ));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }

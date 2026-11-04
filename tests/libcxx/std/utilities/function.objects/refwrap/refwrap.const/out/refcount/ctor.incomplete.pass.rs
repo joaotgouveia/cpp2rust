@@ -8,8 +8,11 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     let foo: Ptr<Foo> = ({ get_foo_1() });
-    let mut ref_: Ptr<Foo> = (foo).clone();
-    assert!(({ (ref_).clone() } == { (foo).clone() }));
+    let ref_: Value<std_reference_wrapper_Foo_> =
+        Rc::new(RefCell::new(std_reference_wrapper_Foo_::new({
+            (foo).clone()
+        })));
+    ({ cpp2rust_assert_fail_2(({ ({ (*ref_.borrow()).get() }) } == { (foo).clone() })) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -20,10 +23,10 @@ impl CppMove for Foo {
     }
 }
 pub fn get_foo_1() -> Ptr<Foo> {
-    return foo_2.with(|v| v.as_pointer());
+    return foo_3.with(|v| v.as_pointer());
 }
 thread_local!(
-    static foo_2: Value<Foo> = Rc::new(RefCell::new(<Foo>::default()));
+    static foo_3: Value<Foo> = Rc::new(RefCell::new(<Foo>::default()));
 );
 
 pub fn main() {

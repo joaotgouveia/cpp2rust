@@ -51,35 +51,35 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let mut flag: Flag = Flag_FLAG_ON;
-    assert!(flag);
-    assert!(!(Flag_FLAG_OFF));
+    ({ cpp2rust_assert_fail_0(flag) });
+    ({ cpp2rust_assert_fail_0(!(Flag_FLAG_OFF)) });
     flag = Flag_FLAG_OFF;
-    assert!(((flag as i32) == (Flag_FLAG_OFF as i32)));
+    ({ cpp2rust_assert_fail_0(((flag as i32) == (Flag_FLAG_OFF as i32))) });
     let mut b: bool = flag;
-    assert!(((b as i32) == (false as i32)));
+    ({ cpp2rust_assert_fail_0(((b as i32) == (false as i32))) });
     let mut s: Small = Small_SMALL_MAX;
-    assert!(((s as i32) == 255));
-    assert!((::std::mem::size_of::<Small>() == 1_usize));
+    ({ cpp2rust_assert_fail_0(((s as i32) == 255)) });
+    ({ cpp2rust_assert_fail_0((::std::mem::size_of::<Small>() == 1_u64)) });
     s = Small_SMALL_ZERO;
-    assert!((((s as i32) + 1) == 1));
+    ({ cpp2rust_assert_fail_0((((s as i32) + 1) == 1)) });
     let mut sg: Signed = Signed_SIGNED_MIN;
-    assert!(((sg as i32) == -128_i32));
-    assert!(((sg as i32) < (Signed_SIGNED_ONE as i32)));
+    ({ cpp2rust_assert_fail_0(((sg as i32) == -128_i32)) });
+    ({ cpp2rust_assert_fail_0(((sg as i32) < (Signed_SIGNED_ONE as i32))) });
     let mut w: Wide = Wide_WIDE_BIG;
-    assert!(((w as i64) == (1_i64 << 40)));
-    assert!((::std::mem::size_of::<Wide>() == 8_usize));
-    assert!(((Wide_WIDE_NEG as i64) < 0_i64));
+    ({ cpp2rust_assert_fail_0(((w as i64) == (1_i64 << 40))) });
+    ({ cpp2rust_assert_fail_0((::std::mem::size_of::<Wide>() == 8_u64)) });
+    ({ cpp2rust_assert_fail_0(((Wide_WIDE_NEG as i64) < 0_i64)) });
     let mut z: Sized = Sized_SIZED_B;
-    assert!(((z as i32) == 65535));
-    assert!((::std::mem::size_of::<Sized>() == 2_usize));
-    assert!((((Sized_SIZED_A as i32) + 1) == 2));
+    ({ cpp2rust_assert_fail_0(((z as i32) == 65535)) });
+    ({ cpp2rust_assert_fail_0((::std::mem::size_of::<Sized>() == 2_u64)) });
+    ({ cpp2rust_assert_fail_0((((Sized_SIZED_A as i32) + 1) == 2)) });
     let mut sc: Scoped = Scoped_NEG;
-    assert!(((sc as i32) == -2_i32));
-    assert!((((Scoped_POS as i8) as i32) == 2));
+    ({ cpp2rust_assert_fail_0(((sc as i32) == -2_i32)) });
+    ({ cpp2rust_assert_fail_0((((Scoped_POS as i8) as i32) == 2)) });
     let mut he: HoldsEmpty = <HoldsEmpty>::default();
-    assert!(!(he.e));
+    ({ cpp2rust_assert_fail_0(!(he.e)) });
     let mut ev: Empty = <Empty>::default();
-    assert!(((ev as i32) == (he.e as i32)));
+    ({ cpp2rust_assert_fail_0(((ev as i32) == (he.e as i32))) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

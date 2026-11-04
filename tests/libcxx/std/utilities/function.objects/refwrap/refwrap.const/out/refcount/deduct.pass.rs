@@ -28,23 +28,30 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let i: Value<i32> = Rc::new(RefCell::new(0));
-    let ri: Value<Ptr<i32>> = Rc::new(RefCell::new(i.as_pointer()));
+    let ri: Value<std_reference_wrapper_int_> =
+        Rc::new(RefCell::new(std_reference_wrapper_int_::new({
+            i.as_pointer()
+        })));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri), std::reference_wrapper<int>>"
     );;
-    let ri2: Value<Ptr<i32>> = Rc::new(RefCell::new((*ri.borrow()).clone()));
+    let ri2: Value<std_reference_wrapper_int_> = Rc::new(RefCell::new((*ri.borrow()).clone()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(ri2), std::reference_wrapper<int>>"
     );;
     let j: Value<i32> = Rc::new(RefCell::new(0));
-    let rj: Value<Ptr<i32>> = Rc::new(RefCell::new(j.as_pointer()));
+    let rj: Value<std_reference_wrapper_const_int_> =
+        Rc::new(RefCell::new(std_reference_wrapper_const_int_::new({
+            j.as_pointer()
+        })));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj), std::reference_wrapper<const int>>"
     );;
-    let rj2: Value<Ptr<i32>> = Rc::new(RefCell::new((*rj.borrow()).clone()));
+    let rj2: Value<std_reference_wrapper_const_int_> =
+        Rc::new(RefCell::new((*rj.borrow()).clone()));
     const _: () = assert!(
         true,
         "std::is_same_v<decltype(rj2), std::reference_wrapper<const int>>"

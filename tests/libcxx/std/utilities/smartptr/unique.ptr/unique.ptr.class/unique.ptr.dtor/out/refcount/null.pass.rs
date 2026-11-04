@@ -24,33 +24,33 @@ impl Default for Deleter {
 }
 pub fn test_basic_0() {
     let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
-    assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
+    ({ cpp2rust_assert_fail_1((({ DeleterImpl::state(&d.as_pointer()) }) == 0)) });
     {
-        let p: Value<Option<Value<i32>>> = Rc::new(RefCell::new(
-            std_unique_ptr_int__Deleter_ref_::new_1({ Ptr::null() }, { d.as_pointer() }),
+        let p: Value<std_unique_ptr_int__Deleter_ref_> = Rc::new(RefCell::new(
+            std_unique_ptr_int__Deleter_ref_::new_1({ Ptr::<i32>::null() }, { d.as_pointer() }),
         ));
-        assert!(({ ((*p.borrow()).as_pointer()).is_null() }));
-        assert!(({ (({ (*p.borrow()).get_deleter_17() }) == (d.as_pointer())) }));
+        ({ cpp2rust_assert_fail_1(({ (*p.borrow()).get() }).is_null()) });
+        ({ cpp2rust_assert_fail_1((({ (*p.borrow()).get_deleter_17() }) == (d.as_pointer()))) });
     }
-    assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
+    ({ cpp2rust_assert_fail_1((({ DeleterImpl::state(&d.as_pointer()) }) == 0)) });
 }
-pub fn test_basic_1() {
+pub fn test_basic_2() {
     let d: Value<Deleter> = Rc::new(RefCell::new(Deleter::new()));
-    assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
+    ({ cpp2rust_assert_fail_1((({ DeleterImpl::state(&d.as_pointer()) }) == 0)) });
     {
-        let p: Value<Option<Value<Box<[i32]>>>> = Rc::new(RefCell::new(
+        let p: Value<std_unique_ptr_intarrarr__Deleter_ref_> = Rc::new(RefCell::new(
             std_unique_ptr_intarrarr__Deleter_ref_::new_1({ Default::default() }, {
                 d.as_pointer()
             }),
         ));
-        assert!(({ ((*p.borrow()).as_pointer()).is_null() }));
-        assert!(({ (({ (*p.borrow()).get_deleter_15() }) == (d.as_pointer())) }));
+        ({ cpp2rust_assert_fail_1(({ (*p.borrow()).get() }).is_null()) });
+        ({ cpp2rust_assert_fail_1((({ (*p.borrow()).get_deleter_15() }) == (d.as_pointer()))) });
     }
-    assert!((({ DeleterImpl::state(&d.as_pointer(),) }) == 0));
+    ({ cpp2rust_assert_fail_1((({ DeleterImpl::state(&d.as_pointer()) }) == 0)) });
 }
-pub fn test_2() -> bool {
+pub fn test_3() -> bool {
     ({ test_basic_0() });
-    ({ test_basic_1() });
+    ({ test_basic_2() });
     return true;
 }
 pub fn main() {
@@ -73,7 +73,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_2() });
+    ({ test_3() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

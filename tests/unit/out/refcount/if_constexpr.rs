@@ -52,12 +52,12 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let v: Value<i32> = Rc::new(RefCell::new(7));
-    assert!((({ classify_0((v.as_pointer()),) }) == 7));
-    assert!((({ classify_1(1_i64,) }) == 2));
-    assert!((({ classify_2(1,) }) == 1));
-    assert!((({ keep_both_3(1,) }) == 2));
-    assert!((({ widen_4(1_u32,) }) == 1_u64));
-    assert!((({ widen_5(1_u64,) }) == 4294967296_u64));
+    ({ cpp2rust_assert_fail_6((({ classify_0((v.as_pointer())) }) == 7)) });
+    ({ cpp2rust_assert_fail_6((({ classify_1(1_i64) }) == 2)) });
+    ({ cpp2rust_assert_fail_6((({ classify_2(1) }) == 1)) });
+    ({ cpp2rust_assert_fail_6((({ keep_both_3(1) }) == 2)) });
+    ({ cpp2rust_assert_fail_6((({ widen_4(1_u32) }) == 1_u64)) });
+    ({ cpp2rust_assert_fail_6((({ widen_5(1_u64) }) == 4294967296_u64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

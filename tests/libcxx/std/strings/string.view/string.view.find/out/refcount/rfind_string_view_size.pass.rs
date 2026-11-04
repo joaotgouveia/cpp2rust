@@ -13,7 +13,7 @@ impl constexpr_char_traits_char_ {
     pub fn lt(mut c1: i8, mut c2: i8) -> bool {
         return ((c1 as i32) < (c2 as i32));
     }
-    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: usize) -> i32 {
+    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: u64) -> i32 {
         'loop_: while (n != 0) {
             if ({
                 let _c1: i8 = (s1.read());

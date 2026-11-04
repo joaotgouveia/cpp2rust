@@ -28,9 +28,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let mut c: i64 = 0_i64;
-    let mut s: usize = 0_usize;
-    let t: Value<::libc::time_t> = Rc::new(RefCell::new((0 as ::libc::time_t)));
-    let tm: Value<libcc2rs::Tm> = Rc::new(RefCell::new(Default::default()));
+    let mut s: u64 = 0_u64;
+    let t: Value<i64> = Rc::new(RefCell::new(0_i64));
+    let tm: Value<tm> = Rc::new(RefCell::new(<tm>::default()));
     (&(c));
     (&(s));
     (&(*t.borrow_mut()));

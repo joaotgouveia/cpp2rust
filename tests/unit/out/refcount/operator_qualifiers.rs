@@ -25,20 +25,25 @@ fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S { v: 10 }));
     let cs: Value<S> = Rc::new(RefCell::new(S { v: 10 }));
     let vs: Value<S> = Rc::new(RefCell::new(S { v: 10 }));
-    assert!((({ SImpl::operator_add_1(&s.as_pointer(), 1,) }) == 11));
-    assert!((({ SImpl::operator_add_2(&cs.as_pointer(), 1,) }) == 12));
-    assert!((({ SImpl::operator_add_3(&vs.as_pointer(), 1,) }) == 13));
-    assert!((({ SImpl::operator_sub_4(&s.as_pointer(), 1,) }) == 9));
-    assert!(
-        (({ SImpl::operator_sub_5(&Rc::new(RefCell::new(S { v: 10 })).as_pointer(), 1,) }) == 8)
-    );
-    assert!((({ SImpl::operator_mul_6(&s.as_pointer(), 3,) }) == 30));
-    assert!((({ SImpl::operator_mul_6(&cs.as_pointer(), 3,) }) == 30));
-    assert!(
-        (({ SImpl::operator_mul_7(&Rc::new(RefCell::new(S { v: 10 })).as_pointer(), 3,) }) == 60)
-    );
-    assert!((({ SImpl::operator_index_8(&s.as_pointer(), 2,) }) == 12));
-    assert!((({ SImpl::operator_index_9(&cs.as_pointer(), 2,) }) == 112));
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_add_1(&s.as_pointer(), 1) }) == 11)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_add_2(&cs.as_pointer(), 1) }) == 12)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_add_3(&vs.as_pointer(), 1) }) == 13)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_sub_4(&s.as_pointer(), 1) }) == 9)) });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ SImpl::operator_sub_5(&Rc::new(RefCell::new(S { v: 10 })).as_pointer(), 1) }) == 8),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_mul_6(&s.as_pointer(), 3) }) == 30)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_mul_6(&cs.as_pointer(), 3) }) == 30)) });
+    ({
+        cpp2rust_assert_fail_0(
+            (({ SImpl::operator_mul_7(&Rc::new(RefCell::new(S { v: 10 })).as_pointer(), 3) })
+                == 60),
+        )
+    });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_index_8(&s.as_pointer(), 2) }) == 12)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::operator_index_9(&cs.as_pointer(), 2) }) == 112)) });
     return 0;
 }
 pub trait SImpl {

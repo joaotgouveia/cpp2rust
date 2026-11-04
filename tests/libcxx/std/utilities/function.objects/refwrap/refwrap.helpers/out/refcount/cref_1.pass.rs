@@ -8,8 +8,9 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let i: Value<i32> = Rc::new(RefCell::new(0));
-    let mut r: Ptr<i32> = ({ cref_1(i.as_pointer()) });
-    assert!(((r) == (i.as_pointer())));
+    let r: Value<std_reference_wrapper_const_int_> =
+        Rc::new(RefCell::new(({ cref_1(i.as_pointer()) })));
+    ({ cpp2rust_assert_fail_2((({ (*r.borrow()).get() }) == (i.as_pointer()))) });
     return true;
 }
 pub fn main() {

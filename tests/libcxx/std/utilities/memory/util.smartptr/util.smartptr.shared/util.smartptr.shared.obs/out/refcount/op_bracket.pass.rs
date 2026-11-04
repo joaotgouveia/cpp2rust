@@ -30,31 +30,31 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let p: Value<std_shared_ptr_intarr8arr_> =
             Rc::new(RefCell::new(std_shared_ptr_intarr8arr_::new_1({
-                Ptr::alloc_array((0..8_usize).map(|_| 0_i32).collect::<Box<[i32]>>())
+                Ptr::alloc_array((0..8_u64).map(|_| 0_i32).collect::<Box<[i32]>>())
             })));
         let mut i: i32 = 0;
         'loop_: while (i < 8) {
             let __rhs = i;
             ((*p.borrow_mut())
                 as std___shared_ptr_access_intarr8arr____gnu_cxx__S_atomic__true__false_)
-                [(i as isize)] = __rhs;
+                [(i as i64)] = __rhs;
             i.prefix_inc();
         }
         let mut i: i32 = 0;
         'loop_: while (i < 8) {
-            assert!(
-                ({
+            ({
+                cpp2rust_assert_fail_0(
                     ({
-                        ( (*p.borrow()) as std___shared_ptr_access_intarr8arr____gnu_cxx__S_atomic__true__false_ ) [( i as isize ) ]
-                    } == i)
-                })
-            );
+                        ( (*p.borrow()) as std___shared_ptr_access_intarr8arr____gnu_cxx__S_atomic__true__false_ ) [( i as i64 ) ]
+                    } == i),
+                )
+            });
             i.prefix_inc();
         }
     }
     {
         let mut iptr: Ptr<i32> =
-            Ptr::alloc_array((0..8_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
+            Ptr::alloc_array((0..8_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
         let mut i: i32 = 0;
         'loop_: while (i < 8) {
             elem!(iptr, i).write({ i });
@@ -66,40 +66,40 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             })));
         let mut i: i32 = 0;
         'loop_: while (i < 8) {
-            assert!(
-                ({
+            ({
+                cpp2rust_assert_fail_0(
                     ({
-                        ( (*p.borrow()) as std___shared_ptr_access_intarr8arr____gnu_cxx__S_atomic__true__false_ ) [( i as isize ) ]
-                    } == i)
-                })
-            );
+                        ( (*p.borrow()) as std___shared_ptr_access_intarr8arr____gnu_cxx__S_atomic__true__false_ ) [( i as i64 ) ]
+                    } == i),
+                )
+            });
             i.prefix_inc();
         }
     }
     {
         let p: Value<std_shared_ptr_intarrarr_> =
             Rc::new(RefCell::new(std_shared_ptr_intarrarr_::new_1({
-                Ptr::alloc_array((0..8_usize).map(|_| 0_i32).collect::<Box<[i32]>>())
+                Ptr::alloc_array((0..8_u64).map(|_| 0_i32).collect::<Box<[i32]>>())
             })));
         let mut i: i32 = 0;
         'loop_: while (i < 8) {
             let __rhs = i;
             ((*p.borrow_mut())
                 as std___shared_ptr_access_intarrarr____gnu_cxx__S_atomic__true__false_)
-                [(i as isize)] = __rhs;
+                [(i as i64)] = __rhs;
             i.prefix_inc();
         }
         let mut i: i32 = 0;
         'loop_: while (i < 8) {
-            assert!(
-                ({
+            ({
+                cpp2rust_assert_fail_0(
                     ({
                         ((*p.borrow())
                             as std___shared_ptr_access_intarrarr____gnu_cxx__S_atomic__true__false_)
-                            [(i as isize)]
-                    } == i)
-                })
-            );
+                            [(i as i64)]
+                    } == i),
+                )
+            });
             i.prefix_inc();
         }
     }

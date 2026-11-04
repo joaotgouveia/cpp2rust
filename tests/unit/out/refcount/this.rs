@@ -86,71 +86,81 @@ fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S::new_1({ 1 })));
     let ref_: Ptr<S> = ({ SImpl::returns_this_reference(&s.as_pointer()) });
     field!(ref_, a_).with_mut(|__v| __v.postfix_inc());
-    assert!(({ ({ (*s.borrow()).a_ } == 2) }));
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).a_ } == 2)) });
     let mut ptr: Ptr<S> = ({ SImpl::returns_this_pointer(&s.as_pointer()) });
     field!(ptr, a_).with_mut(|__v| __v.postfix_inc());
-    assert!(({ ({ (*s.borrow()).a_ } == 3) }));
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).a_ } == 3)) });
     ({ SImpl::inc(&({ SImpl::inc(&({ SImpl::inc(&s.as_pointer()) })) })) });
-    assert!(({ ({ (*s.borrow()).a_ } == 6) }));
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).a_ } == 6)) });
     ({ SImpl::set_from_this(&s.as_pointer()) });
-    assert!(({ ({ (*s.borrow()).a_ } == 7) }));
-    assert!((({ SImpl::twice(&s.as_pointer(),) }) == 14));
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).a_ } == 7)) });
+    ({ cpp2rust_assert_fail_1((({ SImpl::twice(&s.as_pointer()) }) == 14)) });
     ({ SImpl::link(&s.as_pointer()) });
-    assert!(({ ({ { (*s.borrow()).self__.clone() } } == { (s.as_pointer()) }) }));
+    ({ cpp2rust_assert_fail_1(({ { (*s.borrow()).self__.clone() } } == { (s.as_pointer()) })) });
     field!({ (*s.borrow()).self__.clone() }, a_).with_mut(|__v| __v.postfix_inc());
-    assert!(({ ({ (*s.borrow()).a_ } == 8) }));
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).a_ } == 8)) });
     ({ SImpl::bump_me(&s.as_pointer()) });
-    assert!(({ ({ (*s.borrow()).a_ } == 9) }));
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).a_ } == 9)) });
     let mut d: D = D::new({ 3 });
-    assert!((d.a_ == 6));
+    ({ cpp2rust_assert_fail_1((d.a_ == 6)) });
     let cr: Ptr<S> = ({ SImpl::cref(&s.as_pointer()) });
-    assert!((cr.with(|__s| __s.a_) == 9));
+    ({ cpp2rust_assert_fail_1((cr.with(|__s| __s.a_) == 9)) });
     let t: Value<S> = Rc::new(RefCell::new(S::new_1({ 0 })));
-    assert!(
-        ({
-            let _o: Ptr<S> = (s.as_pointer());
-            SImpl::is(&s.as_pointer(), _o)
-        })
-    );
-    assert!(!({ SImpl::is(&s.as_pointer(), (t.as_pointer()),) }));
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let _o: Ptr<S> = (s.as_pointer());
+                SImpl::is(&s.as_pointer(), _o)
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(!({ SImpl::is(&s.as_pointer(), (t.as_pointer())) })) });
     let mut p: Ptr<S> = Ptr::alloc(S::new_1({ 1 }));
     let mut q: Ptr<S> = ({ SImpl::returns_this_pointer(&p) });
     field!(q, a_).with_mut(|__v| __v.postfix_inc());
-    assert!((p.with(|__s| __s.a_) == 2));
+    ({ cpp2rust_assert_fail_1((p.with(|__s| __s.a_) == 2)) });
     p.delete();
     let mut h: Ptr<S> = Ptr::alloc(S::new_1({ 5 }));
     ({ SImpl::destroy(&h) });
     ({ SImpl::reset(&s.as_pointer()) });
-    assert!(({ ({ (*s.borrow()).a_ } == 0) }));
-    assert!(({ ({ (*s.borrow()).self__.clone() }).is_null() }));
-    assert!(
-        ((({
-            let _other: Ptr<S> = (s.as_pointer());
-            SImpl::copy_if_different(&s.as_pointer(), _other)
-        }) as i32)
-            == (false as i32))
-    );
-    assert!(
-        ((({
-            let _other: Ptr<S> = (s.as_pointer());
-            SImpl::copy_if_different_const(&s.as_pointer(), _other)
-        }) as i32)
-            == (false as i32))
-    );
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).a_ } == 0)) });
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).self__.clone() }).is_null()) });
+    ({
+        cpp2rust_assert_fail_1(
+            ((({
+                let _other: Ptr<S> = (s.as_pointer());
+                SImpl::copy_if_different(&s.as_pointer(), _other)
+            }) as i32)
+                == (false as i32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ((({
+                let _other: Ptr<S> = (s.as_pointer());
+                SImpl::copy_if_different_const(&s.as_pointer(), _other)
+            }) as i32)
+                == (false as i32)),
+        )
+    });
     let other: Value<S> = Rc::new(RefCell::new(S::new_1({ 22 })));
-    assert!(
-        ((({ SImpl::copy_if_different(&s.as_pointer(), (other.as_pointer()),) }) as i32)
-            == (true as i32))
-    );
-    assert!(({ ({ (*s.borrow()).a_ } == { (*other.borrow()).a_ }) }));
-    assert!(
-        ({ ({ { (*s.borrow()).self__.clone() } } == { { (*other.borrow()).self__.clone() } }) })
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ((({ SImpl::copy_if_different(&s.as_pointer(), (other.as_pointer())) }) as i32)
+                == (true as i32)),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(({ (*s.borrow()).a_ } == { (*other.borrow()).a_ })) });
+    ({
+        cpp2rust_assert_fail_1(
+            ({ { (*s.borrow()).self__.clone() } } == { { (*other.borrow()).self__.clone() } }),
+        )
+    });
     let mut u: S = S::new_2({ 1 }, { (s.as_pointer()) });
-    assert!(({ (u.self__).clone() } == { (s.as_pointer()) }));
+    ({ cpp2rust_assert_fail_1(({ (u.self__).clone() } == { (s.as_pointer()) })) });
     let s_const: Value<S> = Rc::new(RefCell::new(S::new_1({ 100 })));
     let mut u1: S = S::new_3({ 1 }, { (s_const.as_pointer()) });
-    assert!((u1.self__).is_null());
+    ({ cpp2rust_assert_fail_1((u1.self__).is_null()) });
     return 0;
 }
 pub trait SImpl {

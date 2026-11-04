@@ -28,11 +28,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let p: Value<std_weak_ptr_A_> = Rc::new(RefCell::new(<std_weak_ptr_A_>::default()));
-    assert!(
-        ({
-            (({ ((*p.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() }) == 0_i64)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            (({ ((*p.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() }) == 0_i64),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

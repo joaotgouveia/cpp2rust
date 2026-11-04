@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn strlen_0(mut s: Ptr<i8>) -> usize {
-    let count: Value<usize> = Rc::new(RefCell::new(0_usize));
+pub fn strlen_0(mut s: Ptr<i8>) -> u64 {
+    let count: Value<u64> = Rc::new(RefCell::new(0_u64));
     'loop_: while ((s.postfix_inc().read()) != 0) {
         (*count.borrow_mut()).prefix_inc();
     }

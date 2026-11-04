@@ -112,11 +112,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ by_value_4() }) == 0));
-    assert!((({ by_value_5(1, 2, 3,) }) == 6));
-    assert!((({ by_ref_6(1, 2, 3,) }) == 12));
-    assert!((({ init_pack_7(1, 2, 3,) }) == 9));
-    assert!((({ implicit_8(4, 5,) }) == 9));
+    ({ cpp2rust_assert_fail_9((({ by_value_4() }) == 0)) });
+    ({ cpp2rust_assert_fail_9((({ by_value_5(1, 2, 3) }) == 6)) });
+    ({ cpp2rust_assert_fail_9((({ by_ref_6(1, 2, 3) }) == 12)) });
+    ({ cpp2rust_assert_fail_9((({ init_pack_7(1, 2, 3) }) == 9)) });
+    ({ cpp2rust_assert_fail_9((({ implicit_8(4, 5) }) == 9)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

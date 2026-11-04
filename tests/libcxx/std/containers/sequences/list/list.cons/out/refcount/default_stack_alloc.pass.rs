@@ -54,10 +54,10 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_0: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_1: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_1: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_2: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -67,14 +67,14 @@ impl CppMove for test_alloc_base {
         src.read()
     }
 }
-pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_2(_x, _y)
+        operator_eq_3(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -134,7 +134,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_2(__lhs.clone(), __rhs.clone())
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -190,7 +190,7 @@ impl Tag_X {
 #[byte_size(16)]
 pub struct limited_alloc_handle_4_ {
     #[offset(0)]
-    pub outstanding_: usize,
+    pub outstanding_: u64,
     #[offset(8)]
     #[byte_size(8)]
     pub last_alloc_: AnyPtr,
@@ -204,20 +204,20 @@ impl Default for limited_alloc_handle_4_ {
     fn default() -> Self {
         {
             limited_alloc_handle_4_ {
-                outstanding_: 0_usize,
+                outstanding_: 0_u64,
                 last_alloc_: AnyPtr::default(),
             }
         }
     }
 }
-pub fn make_thread_unsafe_shared_4() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_4__ {
+pub fn make_thread_unsafe_shared_5() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_4__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_4__> = Rc::new(
         RefCell::new(<detail_thread_unsafe_shared_ptr_limited_alloc_handle_4__>::default()),
     );
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block_  >::default() )) ;
     (*ptr.borrow_mut()).block = ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block__::allocate_1 ( alloc .as_pointer()  , 1_usize  , )
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block__::allocate_1 ( alloc .as_pointer()  , 1_u64  , )
     });
     ({
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
@@ -229,7 +229,7 @@ pub fn make_thread_unsafe_shared_4() -> detail_thread_unsafe_shared_ptr_limited_
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block {
     pub fn new() -> Self {
         Self {
-            ref_count: 1_usize,
+            ref_count: 1_u64,
             content: <limited_alloc_handle_4_>::default(),
         }
     }
@@ -238,7 +238,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block {
 #[byte_size(24)]
 struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block {
     #[offset(0)]
-    pub ref_count: usize,
+    pub ref_count: u64,
     #[offset(8)]
     #[byte_size(16)]
     pub content: limited_alloc_handle_4_,
@@ -252,7 +252,7 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___contro
     fn default() -> Self {
         {
             detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block {
-                ref_count: 1_usize,
+                ref_count: 1_u64,
                 content: <limited_alloc_handle_4_>::default(),
             }
         }
@@ -326,17 +326,21 @@ impl CppMove for limited_allocator_int__4_ {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_6.with(|rc| *rc.borrow()) >= dealloc_count_7.with(|rc| *rc.borrow())));
-        return ((alloc_count_6.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_7.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_0(
+                (alloc_count_7.with(|rc| *rc.borrow()) >= dealloc_count_8.with(|rc| *rc.borrow())),
+            )
+        });
+        return ((alloc_count_7.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_8.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
-        disable_default_constructor_8.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_6.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
+        ({ cpp2rust_assert_fail_0((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
+        disable_default_constructor_9.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_6.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_7.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_8.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -345,16 +349,16 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_5: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_6: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_6: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_7: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_7: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_8: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static disable_default_constructor_8: Value<bool> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_9: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -364,20 +368,20 @@ impl CppMove for min_allocator_int_ {
         src.read()
     }
 }
-pub fn test_9() -> bool {
+pub fn test_10() -> bool {
     {
         let l: Value<std_list_int__std_allocator_int__> =
             Rc::new(RefCell::new(<std_list_int__std_allocator_int__>::default()));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_0((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_0(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_10(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_int_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_int_ = ({ (*l.borrow()).end_26() });
+                    distance_11(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__std_allocator_int__> = Rc::new(RefCell::new({
@@ -385,45 +389,45 @@ pub fn test_9() -> bool {
                 Rc::new(RefCell::new((<std_allocator_int_>::default())));
             std_list_int__std_allocator_int__::new_1({ __tmp_0.as_pointer() })
         }));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_0((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_0(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_10(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_int_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_int_ = ({ (*l.borrow()).end_26() });
+                    distance_11(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__limited_allocator_int__4__> = Rc::new(RefCell::new(
             <std_list_int__limited_allocator_int__4__>::default(),
         ));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_0((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_0(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_10(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_int_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_int_ = ({ (*l.borrow()).end_26() });
+                    distance_11(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__min_allocator_int__> =
             Rc::new(RefCell::new(<std_list_int__min_allocator_int__>::default()));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_0((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_0(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_11(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std___list__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . begin_24 ( ) } )   ;
+                    let ___last: std___list__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . end_26 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__min_allocator_int__> = Rc::new(RefCell::new({
@@ -431,16 +435,16 @@ pub fn test_9() -> bool {
                 Rc::new(RefCell::new((<min_allocator_int_>::default())));
             std_list_int__min_allocator_int__::new_1({ __tmp_1.as_pointer() })
         }));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_0((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_0(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_11(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std___list__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . begin_24 ( ) } )   ;
+                    let ___last: std___list__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . end_26 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     return true;
 }
@@ -464,7 +468,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_9() }));
+    ({ cpp2rust_assert_fail_0(({ test_10() })) });
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
@@ -515,7 +519,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_4__Impl
         if ((*self)
             .with(|__s| __s.block.clone())
             .with(|__s| __s.ref_count)
-            != 0_usize)
+            != 0_u64)
         {
             return;
         };
@@ -524,7 +528,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_4__Impl
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
         });
         ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_usize  , )
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_4___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_u64  , )
         });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_4_> {
@@ -539,13 +543,13 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_4__Impl
     }
 }
 pub trait limited_allocator_int__4_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         unimplemented!()
     }
-    fn max_size(&self) -> usize {
+    fn max_size(&self) -> u64 {
         unimplemented!()
     }
     fn getHandle(&self) -> Ptr<limited_alloc_handle_4_> {
@@ -559,13 +563,13 @@ impl limited_allocator_int__4_Impl for Ptr<limited_allocator_int__4_> {
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }
@@ -577,11 +581,13 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        assert!(
-            ((*self).with(|__s| __s.count) == 0)
-                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_0(
+                ((*self).with(|__s| __s.count) == 0)
+                    && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                        .is_null()),
+            )
+        });
         field!((*self), count).write(0);
         field!((*self), time_to_throw).write(0);
         field!((*self), alloc_count).write(0);
@@ -605,8 +611,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -622,10 +628,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_0.with(|_| ());
-    let _ = moved_value_1.with(|_| ());
-    let _ = outstanding_bytes_5.with(|_| ());
-    let _ = alloc_count_6.with(|_| ());
-    let _ = dealloc_count_7.with(|_| ());
-    let _ = disable_default_constructor_8.with(|_| ());
+    let _ = destructed_value_1.with(|_| ());
+    let _ = moved_value_2.with(|_| ());
+    let _ = outstanding_bytes_6.with(|_| ());
+    let _ = alloc_count_7.with(|_| ());
+    let _ = dealloc_count_8.with(|_| ());
+    let _ = disable_default_constructor_9.with(|_| ());
 }

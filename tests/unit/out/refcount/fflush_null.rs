@@ -11,7 +11,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut file_ptr: Ptr<CFile> = Ptr::null();
-    return 0;
+    let mut file_ptr: Ptr<_IO_FILE> = Ptr::<_IO_FILE>::null();
+    return ({ fflush_0(file_ptr) });
 }
 pub fn __cpp2rust_init_globals() {}

@@ -8,11 +8,11 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
     let m : Value<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_char_ptr__std_allocator_std_sub_match_const_char_ptr___  >::default() )) ;
-    assert!(({ (({ (*m.borrow()).max_size() }) > 0_u64) }));
+    ({ cpp2rust_assert_fail_1((({ (*m.borrow()).max_size() }) > 0_u64)) });
 }
-pub fn test_1() {
+pub fn test_2() {
     let m : Value<std_match_results_const_wchar_t_ptr__std_allocator_std_sub_match_const_wchar_t_ptr___ > = Rc::new(RefCell::new(<std_match_results_const_wchar_t_ptr__std_allocator_std_sub_match_const_wchar_t_ptr___  >::default() )) ;
-    assert!(({ (({ (*m.borrow()).max_size() }) > 0_u64) }));
+    ({ cpp2rust_assert_fail_1((({ (*m.borrow()).max_size() }) > 0_u64)) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -35,7 +35,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
-    ({ test_1() });
+    ({ test_2() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

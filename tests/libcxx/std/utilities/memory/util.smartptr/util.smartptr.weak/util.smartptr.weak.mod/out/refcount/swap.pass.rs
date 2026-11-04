@@ -74,38 +74,44 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let w2: Value<std_weak_ptr_A_> =
                 Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ p2.as_pointer() })));
             ({ ((*w1.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).swap(w2.as_pointer()) });
-            assert!(
-                ({
+            ({
+                cpp2rust_assert_fail_1(
                     (({ ((*w1.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                        == 1_i64)
-                })
-            );
-            assert!(
-                ({
+                        == 1_i64),
+                )
+            });
+            ({
+                cpp2rust_assert_fail_1(
                     ({
-                        (({ (*w1.borrow()).lock() }) as std___shared_ptr_A____gnu_cxx__S_atomic_)
-                            .get()
-                    })
-                } == { (ptr2).clone() })
-            );
-            assert!(
-                ({
+                        ({
+                            (({ (*w1.borrow()).lock() })
+                                as std___shared_ptr_A____gnu_cxx__S_atomic_)
+                                .get()
+                        })
+                    } == { (ptr2).clone() }),
+                )
+            });
+            ({
+                cpp2rust_assert_fail_1(
                     (({ ((*w2.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                        == 1_i64)
-                })
-            );
-            assert!(
-                ({
+                        == 1_i64),
+                )
+            });
+            ({
+                cpp2rust_assert_fail_1(
                     ({
-                        (({ (*w2.borrow()).lock() }) as std___shared_ptr_A____gnu_cxx__S_atomic_)
-                            .get()
-                    })
-                } == { (ptr1).clone() })
-            );
-            assert!((count_0.with(|rc| *rc.borrow()) == 2));
+                        ({
+                            (({ (*w2.borrow()).lock() })
+                                as std___shared_ptr_A____gnu_cxx__S_atomic_)
+                                .get()
+                        })
+                    } == { (ptr1).clone() }),
+                )
+            });
+            ({ cpp2rust_assert_fail_1((count_0.with(|rc| *rc.borrow()) == 2)) });
         }
     }
-    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_1((count_0.with(|rc| *rc.borrow()) == 0)) });
     return 0;
 }
 pub trait AImpl {

@@ -34,9 +34,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let il: Value<Vec<A>> = Rc::new(RefCell::new(Default::default()));
-    assert!(({ ((*il.borrow()).len() == 0_usize) }));
-    let il2: Value<Vec<A>> = Rc::new(RefCell::new(Default::default()));
+    let il: Value<std_initializer_list_A_> =
+        Rc::new(RefCell::new(<std_initializer_list_A_>::default()));
+    ({ cpp2rust_assert_fail_0((({ (*il.borrow()).size() }) == 0_u64)) });
+    let il2: Value<std_initializer_list_A_> =
+        Rc::new(RefCell::new(<std_initializer_list_A_>::default()));
     const _: () = assert!(true, "il2.size() == 0");;
     return 0;
 }

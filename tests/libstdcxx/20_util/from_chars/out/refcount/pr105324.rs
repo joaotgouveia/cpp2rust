@@ -11,18 +11,20 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let s: Value<Vec<i8>> = Rc::new(RefCell::new(
-        vec![('1' as i8); (512_usize) as usize]
-            .iter()
-            .cloned()
-            .chain(std::iter::once(0_i8))
-            .collect(),
-    ));
-    s.decay().offset(1_usize as isize).write(('.' as i8));
+    let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+        Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { 512_u64 },
+                { ('1' as i8) },
+                None,
+            ),
+        ));
+    (*s.borrow_mut())[1_u64] = ('.' as i8);
     let d: Value<f64> = Rc::new(RefCell::new(0_f64));
     ({
-        let ___first: Ptr<i8> = s.decay();
-        let ___last: Ptr<i8> = s.decay().offset(((*s.borrow()).len() - 1) as isize);
+        let ___first: Ptr<i8> = ({ (*s.borrow()).data_168() });
+        let ___last: Ptr<i8> =
+            ({ (*s.borrow()).data_168() }).offset(({ (*s.borrow()).size() }) as isize);
         from_chars_0(___first, ___last, d.as_pointer(), None)
     });
     0

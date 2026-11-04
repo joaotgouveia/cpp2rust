@@ -33,16 +33,16 @@ fn main_0() -> i32 {
     let mut i: i32 = 0_i32;
     let mut d: f64 = 0_f64;
     let mut p: Ptr<i32> = ({ zero_0() });
-    assert!((i == 0));
-    assert!((d == 0_f64));
-    assert!((p).is_null());
-    assert!((({ zero_1() }) == 0_i64));
+    ({ cpp2rust_assert_fail_4((i == 0)) });
+    ({ cpp2rust_assert_fail_4((d == 0_f64)) });
+    ({ cpp2rust_assert_fail_4((p).is_null()) });
+    ({ cpp2rust_assert_fail_4((({ zero_1() }) == 0_i64)) });
     let x: Value<i32> = Rc::new(RefCell::new(5));
     ({ destroy_2((x.as_pointer())) });
-    assert!(({ ((*x.borrow()) == 5) }));
+    ({ cpp2rust_assert_fail_4(((*x.borrow()) == 5)) });
     let pod: Value<Pod> = Rc::new(RefCell::new(Pod { v: 7 }));
     ({ destroy_3((pod.as_pointer())) });
-    assert!(({ ({ (*pod.borrow()).v } == 7) }));
+    ({ cpp2rust_assert_fail_4(({ (*pod.borrow()).v } == 7)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

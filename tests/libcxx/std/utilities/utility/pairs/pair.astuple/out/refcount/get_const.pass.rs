@@ -28,18 +28,20 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(3)),
-            Rc::new(RefCell::new(4_i16)),
-        )));
-        assert!(({ (((*p.borrow()).get_value::<0>().as_pointer().read()) == 3) }));
-        assert!(({ ((((*p.borrow()).get_value::<1>().as_pointer().read()) as i32) == 4) }));
+        let p: Value<std_pair_int__short_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_1: Value<i16> = Rc::new(RefCell::new(4_i16));
+            std_pair_int__short_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        ({ cpp2rust_assert_fail_0(((({ get_1(p.as_pointer()) }).read()) == 3)) });
+        ({ cpp2rust_assert_fail_0((((({ get_2(p.as_pointer()) }).read()) as i32) == 4)) });
     }
     {
-        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(3)),
-            Rc::new(RefCell::new(4_i16)),
-        )));
+        let p1: Value<std_pair_int__short_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_3: Value<i16> = Rc::new(RefCell::new(4_i16));
+            std_pair_int__short_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
         const _: () = assert!(true, "std::get<0>(p1) == 3");;
         const _: () = assert!(true, "std::get<1>(p1) == 4");;
     }

@@ -28,32 +28,30 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let m : Value<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____ > = Rc::new(RefCell::new(<std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____  >::default() )) ;
-    let p : Value<(Value<std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false_  >, Value<bool  >) > = Rc::new(RefCell::new(( { let ___x : Value<(Value<i32  >, Value<Vec<i8  >  >) > = Rc::new(RefCell::new((Rc::new(RefCell::new(1 )), Rc::new(RefCell::new({let mut __bytes = Ptr::<i8 >::from_string_literal(b"abc" ) .to_c_bytes();
-    __bytes.push(0_i8);
-    __bytes}  ))) )); (*m.borrow()) . insert_44 ( ___x.as_pointer() , ) } )  )) ;
+    let p : Value<std_pair_std___detail__Node_iterator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____false__false___bool_ > = Rc::new(RefCell::new(( { let ___x : Value<std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char___ > = Rc::new(RefCell::new({ let __tmp_0 : Value<i32 > = Rc::new(RefCell::new(1 )); std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char___ :: new_1 ( { __tmp_0.as_pointer() } , { Ptr::<i8 >::from_string_literal(b"abc" ) } , )  } )); (*m.borrow()) . insert_44 ( ___x.as_pointer() , ) } )  )) ;
     let cm : Ptr< std_unordered_map_int__std_basic_string_char__std_char_traits_char___std_allocator_char____std_hash_int___std_equal_to_int___std_allocator_std_pair_const_int__std_basic_string_char__std_char_traits_char___std_allocator_char_____  > = m .as_pointer()  ;
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_0(
             ({
-                ({ (*cm.upgrade().deref()).hash_function() })(
-                    (*(*(*(*p.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .0
-                        .borrow()),
-                )
-            })
-        } == { ({ ({ (*cm.upgrade().deref()).hash_function() })(1,) }) })
-    );
-    assert!(
-        ({ ({ ({ (*cm.upgrade().deref()).hash_function() })(1,) }) } == {
-            ({
-                ({ (*cm.upgrade().deref()).hash_function() })(
-                    (*(*(*(*p.borrow()).0.borrow()).iter_deref().upgrade().deref())
-                        .0
-                        .borrow()),
-                )
-            })
-        })
-    );
+                ({
+                    ({ (*cm.upgrade().deref()).hash_function() })({
+                        ((*p.borrow()).first.read()).first
+                    })
+                })
+            } == { ({ ({ (*cm.upgrade().deref()).hash_function() })(1) }) }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({ ({ ({ (*cm.upgrade().deref()).hash_function() })(1) }) } == {
+                ({
+                    ({ (*cm.upgrade().deref()).hash_function() })({
+                        ((*p.borrow()).first.read()).first
+                    })
+                })
+            }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

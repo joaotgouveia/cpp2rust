@@ -7,106 +7,50 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn is_complete_0(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
+    const _: () = assert!(true, "Size > 0");;
     return true;
 }
 pub fn is_complete_1(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
+    const _: () = assert!(true, "Size > 0");;
     return true;
 }
 pub fn is_complete_2(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
+    const _: () = assert!(true, "Size > 0");;
     return true;
 }
 pub fn is_complete_3(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
+    const _: () = assert!(true, "Size > 0");;
     return true;
 }
-pub fn is_complete_4(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
-    return true;
-}
-pub fn is_complete_5(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
-    return true;
-}
-pub fn is_complete_6(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
-    return true;
-}
-pub fn is_complete_7(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
-    return true;
-}
-pub fn is_complete_8(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
-    return true;
-}
-pub fn is_complete_9(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
-    return true;
-}
-pub fn is_complete_10(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
-    return true;
-}
-pub fn is_complete_11(mut _a0: i32) -> bool {
-    const _: () = assert!((1_u64 > 0_u64), "Size > 0");;
-    return true;
-}
-pub fn is_complete_12(mut _a0: i64) -> bool {
+pub fn is_complete_4(mut _a0: i64) -> bool {
     return false;
 }
-pub fn is_complete_13(mut _a0: i64) -> bool {
+pub fn is_complete_5(mut _a0: i64) -> bool {
     return false;
 }
-pub fn is_complete_14(mut _a0: i64) -> bool {
+pub fn is_complete_6(mut _a0: i64) -> bool {
     return false;
 }
-pub fn is_complete_15() -> bool {
+pub fn is_complete_7() -> bool {
     return ({ is_complete_0(0) });
 }
-pub fn is_complete_16() -> bool {
+pub fn is_complete_8() -> bool {
     return ({ is_complete_1(0) });
 }
-pub fn is_complete_17() -> bool {
+pub fn is_complete_9() -> bool {
     return ({ is_complete_2(0) });
 }
-pub fn is_complete_18() -> bool {
+pub fn is_complete_10() -> bool {
     return ({ is_complete_3(0) });
 }
-pub fn is_complete_19() -> bool {
-    return ({ is_complete_4(0) });
+pub fn is_complete_11() -> bool {
+    return ({ is_complete_4(0_i64) });
 }
-pub fn is_complete_20() -> bool {
-    return ({ is_complete_5(0) });
+pub fn is_complete_12() -> bool {
+    return ({ is_complete_5(0_i64) });
 }
-pub fn is_complete_21() -> bool {
-    return ({ is_complete_6(0) });
-}
-pub fn is_complete_22() -> bool {
-    return ({ is_complete_7(0) });
-}
-pub fn is_complete_23() -> bool {
-    return ({ is_complete_8(0) });
-}
-pub fn is_complete_24() -> bool {
-    return ({ is_complete_9(0) });
-}
-pub fn is_complete_25() -> bool {
-    return ({ is_complete_10(0) });
-}
-pub fn is_complete_26() -> bool {
-    return ({ is_complete_11(0) });
-}
-pub fn is_complete_27() -> bool {
-    return ({ is_complete_12(0_i64) });
-}
-pub fn is_complete_28() -> bool {
-    return ({ is_complete_13(0_i64) });
-}
-pub fn is_complete_29() -> bool {
-    return ({ is_complete_14(0_i64) });
+pub fn is_complete_13() -> bool {
+    return ({ is_complete_6(0_i64) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -124,37 +68,25 @@ impl CppMove for Dummy2 {
         src.read()
     }
 }
-pub fn test_complete_30() {
+pub fn test_complete_14() {
     const _: () = assert!(true, "is_complete<T>()");;
     const _: () = assert!(true, "is_complete<const T>()");;
     const _: () = assert!(true, "is_complete<volatile T>()");;
     const _: () = assert!(true, "is_complete<const volatile T>()");;
 }
-pub fn test_complete_31() {
-    const _: () = assert!(true, "is_complete<T>()");;
-    const _: () = assert!(true, "is_complete<const T>()");;
-    const _: () = assert!(true, "is_complete<volatile T>()");;
-    const _: () = assert!(true, "is_complete<const volatile T>()");;
-}
-pub fn test_complete_32() {
-    const _: () = assert!(true, "is_complete<T>()");;
-    const _: () = assert!(true, "is_complete<const T>()");;
-    const _: () = assert!(true, "is_complete<volatile T>()");;
-    const _: () = assert!(true, "is_complete<const volatile T>()");;
-}
-pub fn test_incomplete_33() {
+pub fn test_incomplete_15() {
     const _: () = assert!(true, "!is_complete<T>()");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub fn test_incomplete_34() {
+pub fn test_incomplete_16() {
     const _: () = assert!(true, "!is_complete<T>()");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub fn test_incomplete_35() {
+pub fn test_incomplete_17() {
     const _: () = assert!(true, "!is_complete<T>()");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -180,16 +112,16 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_complete_36() });
-    ({ test_complete_37() });
-    ({ test_complete_38() });
-    ({ test_complete_30() });
-    ({ test_complete_31() });
-    ({ test_complete_32() });
-    ({ test_incomplete_33() });
-    ({ test_incomplete_34() });
-    ({ test_incomplete_39() });
-    ({ test_incomplete_35() });
+    ({ test_complete_18() });
+    ({ test_complete_19() });
+    ({ test_complete_20() });
+    ({ test_complete_21() });
+    ({ test_complete_22() });
+    ({ test_complete_14() });
+    ({ test_incomplete_15() });
+    ({ test_incomplete_16() });
+    ({ test_incomplete_23() });
+    ({ test_incomplete_17() });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -47,17 +47,21 @@ thread_local!(
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_4.with(|rc| *rc.borrow()) >= dealloc_count_5.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_7(
+                (alloc_count_4.with(|rc| *rc.borrow()) >= dealloc_count_5.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_4.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_5.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_7((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_6.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_3.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_4.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_3.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_4.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -66,13 +70,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_3: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_3: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_4: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_4: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_5: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_5: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_6: Value<bool> = Rc::new(RefCell::new(false));
@@ -111,36 +115,35 @@ impl Default for explicit_allocator_int_ {
         { explicit_allocator_int_::new() }
     }
 }
-pub fn test_7() -> bool {
+pub fn test_8() -> bool {
     {
         let l: Value<std_list_int__std_allocator_int__> =
             Rc::new(RefCell::new(<std_list_int__std_allocator_int__>::default()));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_8(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_int_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_int_ = ({ (*l.borrow()).end_26() });
+                    distance_9(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_DefaultOnly__std_allocator_DefaultOnly__> = Rc::new(RefCell::new(
             <std_list_DefaultOnly__std_allocator_DefaultOnly__>::default(),
         ));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<DefaultOnly> =
-                        ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<DefaultOnly> = ({ (*l.borrow()).end_26() });
-                    distance_9(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_DefaultOnly_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_DefaultOnly_ = ({ (*l.borrow()).end_26() });
+                    distance_10(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__std_allocator_int__> = Rc::new(RefCell::new({
@@ -148,46 +151,45 @@ pub fn test_7() -> bool {
                 Rc::new(RefCell::new((<std_allocator_int_>::default())));
             std_list_int__std_allocator_int__::new_1({ __tmp_0.as_pointer() })
         }));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_8(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_int_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_int_ = ({ (*l.borrow()).end_26() });
+                    distance_9(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__min_allocator_int__> =
             Rc::new(RefCell::new(<std_list_int__min_allocator_int__>::default()));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_10(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std___list__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . begin_24 ( ) } )   ;
+                    let ___last: std___list__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . end_26 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_DefaultOnly__min_allocator_DefaultOnly__> = Rc::new(RefCell::new(
             <std_list_DefaultOnly__min_allocator_DefaultOnly__>::default(),
         ));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<DefaultOnly> =
-                        ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<DefaultOnly> = ({ (*l.borrow()).end_26() });
-                    distance_11(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std___list__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . begin_24 ( ) } )   ;
+                    let ___last: std___list__Iterator_false__min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . end_26 ( ) } )   ;
+                    distance_12(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__min_allocator_int__> = Rc::new(RefCell::new({
@@ -195,45 +197,45 @@ pub fn test_7() -> bool {
                 Rc::new(RefCell::new((<min_allocator_int_>::default())));
             std_list_int__min_allocator_int__::new_1({ __tmp_1.as_pointer() })
         }));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_10(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std___list__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . begin_24 ( ) } )   ;
+                    let ___last: std___list__Iterator_false__min_pointer_int__std_integral_constant_unsigned_long__0___   = ( { (*l.borrow()) . end_26 ( ) } )   ;
+                    distance_11(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__std_allocator_int__> =
             Rc::new(RefCell::new(<std_list_int__std_allocator_int__>::default()));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_8(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_int_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_int_ = ({ (*l.borrow()).end_26() });
+                    distance_9(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__explicit_allocator_int__> = Rc::new(RefCell::new(
             <std_list_int__explicit_allocator_int__>::default(),
         ));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_8(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_int_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_int_ = ({ (*l.borrow()).end_26() });
+                    distance_9(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     {
         let l: Value<std_list_int__explicit_allocator_int__> = Rc::new(RefCell::new({
@@ -241,16 +243,16 @@ pub fn test_7() -> bool {
                 Rc::new(RefCell::new((explicit_allocator_int_::new())));
             std_list_int__explicit_allocator_int__::new_1({ __tmp_2.as_pointer() })
         }));
-        assert!(({ (({ (*l.borrow()).size() }) == 0_u64) }));
-        assert!(
-            ({
+        ({ cpp2rust_assert_fail_7((({ (*l.borrow()).size() }) == 0_u64)) });
+        ({
+            cpp2rust_assert_fail_7(
                 (({
-                    let ___first: BidirectionalIterator<i32> = ({ (*l.borrow()).begin_24() });
-                    let ___last: BidirectionalIterator<i32> = ({ (*l.borrow()).end_26() });
-                    distance_8(___first, ___last)
-                }) == 0_isize)
-            })
-        );
+                    let ___first: std__List_iterator_int_ = ({ (*l.borrow()).begin_24() });
+                    let ___last: std__List_iterator_int_ = ({ (*l.borrow()).end_26() });
+                    distance_9(___first, ___last)
+                }) == 0_i64),
+            )
+        });
     }
     return true;
 }
@@ -274,7 +276,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_7() }));
+    ({ cpp2rust_assert_fail_7(({ test_8() })) });
     return 0;
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
@@ -296,10 +298,10 @@ impl DefaultOnlyImpl for Ptr<DefaultOnly> {
     }
 }
 pub trait explicit_allocator_int_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         unimplemented!()
     }
 }
@@ -307,27 +309,27 @@ impl explicit_allocator_int_Impl for Ptr<explicit_allocator_int_> {}
 pub trait min_allocator_DefaultOnly_Impl {
     fn allocate(
         &self,
-        mut n: usize,
+        mut n: u64,
     ) -> min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_DefaultOnly__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }
 }
 impl min_allocator_DefaultOnly_Impl for Ptr<min_allocator_DefaultOnly_> {}
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }

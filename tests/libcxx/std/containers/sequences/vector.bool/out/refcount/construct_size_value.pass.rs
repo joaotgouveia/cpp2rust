@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -63,40 +67,14 @@ impl CppMove for min_allocator_unsigned_long_ {
     }
 }
 impl min_allocator_unsigned_long_ {}
-pub fn test_4(mut n: usize, x: Ptr<bool>) {
-    let c: Value<Vec<bool>> = Rc::new(RefCell::new(
-        (0..(n) as usize).map(|_| (x.read())).collect::<Vec<bool>>(),
-    ));
-    const _: () = assert!(true, "");;
-    assert!(({ ((&(*c.borrow())).len() == n) }));
-    let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(c.decay().begin()));
-    let e: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(c.decay().end()));
-    'loop_: while !((*i.borrow()) == (*e.borrow())) {
-        assert!(({ ({ ((*i.borrow()).iter_deref().read() as i32) } == { ((x.read()) as i32) }) }));
-        (*i.borrow_mut()).iter_inc();
-    }
-}
-pub fn test_5(mut n: usize, x: Ptr<bool>) {
-    let c: Value<Vec<bool>> = Rc::new(RefCell::new(
-        (0..(n) as usize).map(|_| (x.read())).collect::<Vec<bool>>(),
-    ));
-    const _: () = assert!(true, "");;
-    assert!(({ ((&(*c.borrow())).len() == n) }));
-    let i: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(c.decay().begin()));
-    let e: Value<RandomAccessIterator<bool>> = Rc::new(RefCell::new(c.decay().end()));
-    'loop_: while !((*i.borrow()) == (*e.borrow())) {
-        assert!(({ ({ ((*i.borrow()).iter_deref().read() as i32) } == { ((x.read()) as i32) }) }));
-        (*i.borrow_mut()).iter_inc();
-    }
-}
-pub fn tests_6() -> bool {
+pub fn tests_5() -> bool {
     ({
         let _x: Value<bool> = Rc::new(RefCell::new(true));
-        test_4(50_usize, _x.as_pointer())
+        test_6(50_u64, _x.as_pointer())
     });
     ({
         let _x: Value<bool> = Rc::new(RefCell::new(true));
-        test_5(50_usize, _x.as_pointer())
+        test_7(50_u64, _x.as_pointer())
     });
     return true;
 }
@@ -120,7 +98,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_6() });
+    ({ tests_5() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
@@ -131,13 +109,13 @@ pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__;
 #[byte_size(1)]
 pub struct min_pointer_bool__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_bool_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_bool__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_bool__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }
@@ -146,18 +124,18 @@ impl min_allocator_bool_Impl for Ptr<min_allocator_bool_> {}
 pub trait min_allocator_unsigned_long_Impl {
     fn allocate(
         &self,
-        n: usize,
+        n: u64,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__;
     fn deallocate(
         &self,
         p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {
     fn allocate(
         &self,
-        mut n: usize,
+        mut n: u64,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         return min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_unsigned_long_>::default().allocate(n) })
@@ -166,11 +144,11 @@ impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {
     fn deallocate(
         &self,
         mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({
             let ___p: Ptr<u64> = (p.ptr_).clone();
-            let ___n: usize = n;
+            let ___n: u64 = n;
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }

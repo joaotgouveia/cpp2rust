@@ -7,15 +7,17 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(a: Ptr<i32>, b: Ptr<i32>, x: Ptr<i32>) {
-    assert!(
-        ({
-            (if CppLess::less(&(b).clone(), &(a).clone()) {
-                (b).clone()
-            } else {
-                (a).clone()
-            })
-        } == { (x).clone() })
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                ({
+                    let ___a: Ptr<i32> = (a).clone();
+                    let ___b: Ptr<i32> = (b).clone();
+                    min_2(___a, ___b)
+                })
+            } == { (x).clone() }),
+        )
+    });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

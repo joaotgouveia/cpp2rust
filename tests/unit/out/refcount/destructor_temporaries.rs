@@ -18,6 +18,11 @@ pub struct S {
     #[offset(0)]
     pub v: i32,
 }
+impl CppMove for S {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(8)]
 pub struct Outer {
@@ -26,6 +31,11 @@ pub struct Outer {
     pub inner: S,
     #[offset(4)]
     pub w: i32,
+}
+impl CppMove for Outer {
+    fn cpp_move(src: Ptr<Self>) -> Self {
+        src.read()
+    }
 }
 pub fn make_2(mut v: i32) -> S {
     return S { v: v };
@@ -37,10 +47,10 @@ pub fn make_outer_3() -> Outer {
     };
 }
 pub fn use_4(s: Ptr<S>) -> i32 {
-    assert!((destroyed_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_5((destroyed_0.with(|rc| *rc.borrow()) == 0)) });
     return s.with(|__s| __s.v);
 }
-pub fn value_5(s: Ptr<S>) -> i32 {
+pub fn value_6(s: Ptr<S>) -> i32 {
     return s.with(|__s| __s.v);
 }
 pub fn main() {
@@ -49,49 +59,65 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     ({ make_2(1) });
-    assert!((destroyed_0.with(|rc| *rc.borrow()) == 1) && (last_1.with(|rc| *rc.borrow()) == 1));
+    ({
+        cpp2rust_assert_fail_5(
+            (destroyed_0.with(|rc| *rc.borrow()) == 1) && (last_1.with(|rc| *rc.borrow()) == 1),
+        )
+    });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     &({ make_2(2) });
-    assert!((destroyed_0.with(|rc| *rc.borrow()) == 1) && (last_1.with(|rc| *rc.borrow()) == 2));
+    ({
+        cpp2rust_assert_fail_5(
+            (destroyed_0.with(|rc| *rc.borrow()) == 1) && (last_1.with(|rc| *rc.borrow()) == 2),
+        )
+    });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     let mut x: i32 = { ({ make_2(3) }).v };
-    assert!(
-        ((x == 3) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
-            && (last_1.with(|rc| *rc.borrow()) == 3)
-    );
+    ({
+        cpp2rust_assert_fail_5(
+            ((x == 3) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
+                && (last_1.with(|rc| *rc.borrow()) == 3),
+        )
+    });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     x = ({ SImpl::get(&Rc::new(RefCell::new(({ make_2(4) }))).as_pointer()) });
-    assert!(
-        ((x == 4) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
-            && (last_1.with(|rc| *rc.borrow()) == 4)
-    );
+    ({
+        cpp2rust_assert_fail_5(
+            ((x == 4) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
+                && (last_1.with(|rc| *rc.borrow()) == 4),
+        )
+    });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     x = { ({ make_outer_3() }).inner.v };
-    assert!(
-        ((x == 7) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
-            && (last_1.with(|rc| *rc.borrow()) == 7)
-    );
+    ({
+        cpp2rust_assert_fail_5(
+            ((x == 7) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
+                && (last_1.with(|rc| *rc.borrow()) == 7),
+        )
+    });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     x = { S { v: 5 }.v };
-    assert!((x == 5) && (destroyed_0.with(|rc| *rc.borrow()) == 1));
+    ({ cpp2rust_assert_fail_5((x == 5) && (destroyed_0.with(|rc| *rc.borrow()) == 1)) });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     x = ({
         let _s: Value<S> = Rc::new(RefCell::new(({ make_2(6) })));
         use_4(_s.as_pointer())
     });
-    assert!(
-        ((x == 6) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
-            && (last_1.with(|rc| *rc.borrow()) == 6)
-    );
+    ({
+        cpp2rust_assert_fail_5(
+            ((x == 6) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
+                && (last_1.with(|rc| *rc.borrow()) == 6),
+        )
+    });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     x = (({
         let _s: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
-        value_5(_s.as_pointer())
+        value_6(_s.as_pointer())
     }) + ({
         let _s: Value<S> = Rc::new(RefCell::new(S { v: 2 }));
-        value_5(_s.as_pointer())
+        value_6(_s.as_pointer())
     }));
-    assert!((x == 3) && (destroyed_0.with(|rc| *rc.borrow()) == 2));
+    ({ cpp2rust_assert_fail_5((x == 3) && (destroyed_0.with(|rc| *rc.borrow()) == 2)) });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     let __rhs = {
         (if (x == 3) {
@@ -102,31 +128,45 @@ fn main_0() -> i32 {
         .v
     };
     x = __rhs;
-    assert!(
-        ((x == 9) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
-            && (last_1.with(|rc| *rc.borrow()) == 9)
-    );
+    ({
+        cpp2rust_assert_fail_5(
+            ((x == 9) && (destroyed_0.with(|rc| *rc.borrow()) == 1))
+                && (last_1.with(|rc| *rc.borrow()) == 9),
+        )
+    });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     {
         let __tmp_0: Value<S> = Rc::new(RefCell::new(({ make_2(11) })));
         let r: Ptr<S> = __tmp_0.as_pointer();
-        assert!((destroyed_0.with(|rc| *rc.borrow()) == 0) && (r.with(|__s| __s.v) == 11));
+        ({
+            cpp2rust_assert_fail_5(
+                (destroyed_0.with(|rc| *rc.borrow()) == 0) && (r.with(|__s| __s.v) == 11),
+            )
+        });
     }
-    assert!((destroyed_0.with(|rc| *rc.borrow()) == 1) && (last_1.with(|rc| *rc.borrow()) == 11));
+    ({
+        cpp2rust_assert_fail_5(
+            (destroyed_0.with(|rc| *rc.borrow()) == 1) && (last_1.with(|rc| *rc.borrow()) == 11),
+        )
+    });
     destroyed_0.with(|rc| *rc.borrow_mut() = 0);
     {
         let s: Value<S> = Rc::new(RefCell::new(S { v: 12 }));
         let _dtor_s = ScopedDestructor::new(&s, |__p| __p.destructor());
         (*s.borrow_mut()) = ({ make_2(13) });
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_5(
                 ((destroyed_0.with(|rc| *rc.borrow()) == 1)
                     && (last_1.with(|rc| *rc.borrow()) == 13))
-                    && ({ (*s.borrow()).v } == 13)
-            })
-        );
+                    && ({ (*s.borrow()).v } == 13),
+            )
+        });
     }
-    assert!((destroyed_0.with(|rc| *rc.borrow()) == 2) && (last_1.with(|rc| *rc.borrow()) == 13));
+    ({
+        cpp2rust_assert_fail_5(
+            (destroyed_0.with(|rc| *rc.borrow()) == 2) && (last_1.with(|rc| *rc.borrow()) == 13),
+        )
+    });
     return 0;
 }
 pub trait OuterImpl {

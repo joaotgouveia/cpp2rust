@@ -54,10 +54,10 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_0: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_1: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_1: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_2: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -67,14 +67,14 @@ impl CppMove for test_alloc_base {
         src.read()
     }
 }
-pub fn operator_eq_2(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_2(_x, _y)
+        operator_eq_3(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -134,7 +134,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_2(__lhs.clone(), __rhs.clone())
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -199,7 +199,7 @@ impl A {
             data_: (0..10).map(|_| 0_i32).collect::<Box<[i32]>>(),
         }));
         let this: Ptr<A> = __this.as_pointer();
-        (*count_4.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_5.with(Value::clone).borrow_mut()).prefix_inc();
         let mut i: i32 = 0;
         'loop_: while (i < 10) {
             array_elem!(this, data_, i).write({ i });
@@ -211,7 +211,7 @@ impl A {
         let __this: A = Self {
             data_: (0..10).map(|_| 0_i32).collect::<Box<[i32]>>(),
         };
-        (*count_4.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_5.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
 }
@@ -239,7 +239,7 @@ impl Default for A {
     }
 }
 thread_local!(
-    pub static count_4: Value<i32> = Rc::new(RefCell::new(0));
+    pub static count_5: Value<i32> = Rc::new(RefCell::new(0));
 );
 
 pub fn main() {
@@ -272,7 +272,7 @@ pub trait AImpl {
 }
 impl AImpl for Ptr<A> {
     fn destructor(&self) {
-        (*count_4.with(Value::clone).borrow_mut()).prefix_dec();
+        (*count_5.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn operator_call(&self, i: i32) -> i32 {
         let i: Value<i32> = Rc::new(RefCell::new(i));
@@ -287,15 +287,11 @@ impl AImpl for Ptr<A> {
         return 1;
     }
     fn copy_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
-        match ({ ((array_field_ptr!((*self), data_)) as Ptr<i32>).to_any() },) {
-            (mut __tmp_0,) => {
-                __tmp_0.memcpy(
-                    &((array_field_ptr!(_a0, data_)) as Ptr<i32>).to_any(),
-                    40_usize as usize,
-                );
-                (__tmp_0).clone()
-            }
-        };
+        ({
+            let _arg0: AnyPtr = ((array_field_ptr!((*self), data_)) as Ptr<i32>).to_any();
+            let _arg1: AnyPtr = ((array_field_ptr!(_a0, data_)) as Ptr<i32>).to_any();
+            __builtin_memcpy_6(_arg0, _arg1, 40_u64)
+        });
         return (*self).clone();
     }
 }
@@ -317,11 +313,13 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        assert!(
-            ((*self).with(|__s| __s.count) == 0)
-                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_0(
+                ((*self).with(|__s| __s.count) == 0)
+                    && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                        .is_null()),
+            )
+        });
         field!((*self), count).write(0);
         field!((*self), time_to_throw).write(0);
         field!((*self), alloc_count).write(0);
@@ -345,8 +343,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_0.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_0.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -362,7 +360,7 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_0.with(|_| ());
-    let _ = moved_value_1.with(|_| ());
-    let _ = count_4.with(|_| ());
+    let _ = destructed_value_1.with(|_| ());
+    let _ = moved_value_2.with(|_| ());
+    let _ = count_5.with(|_| ());
 }

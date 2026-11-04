@@ -49,26 +49,29 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<(Value<f32>, Value<Ptr<i16>>)> = Rc::new(RefCell::new({
+        let p: Value<std_pair_float__short_ptr_> = Rc::new(RefCell::new({
             let __tmp_0: Value<f32> = Rc::new(RefCell::new(3.5_f32));
             let __tmp_1: Value<Ptr<i16>> = Rc::new(RefCell::new(Ptr::<i16>::null()));
             std_pair_float__short_ptr_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
         }));
-        assert!(({ ((*(*p.borrow()).0.borrow()) == 3.5_f32) }));
-        assert!(({ (*(*p.borrow()).1.borrow()).is_null() }));
+        ({ cpp2rust_assert_fail_0(({ (*p.borrow()).first } == 3.5_f32)) });
+        ({ cpp2rust_assert_fail_0(({ (*p.borrow()).second.clone() }).is_null()) });
     }
     {
-        let p: Value<(Value<A>, Value<i32>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(A::new({ 1 }))),
-            Rc::new(RefCell::new(2)),
-        )));
-        assert!(
-            ({
-                let _a: Value<A> = Rc::new(RefCell::new(A::new({ 1 })));
-                AImpl::operator_eq(&(*p.borrow()).0.as_pointer(), _a.as_pointer())
-            })
-        );
-        assert!(({ ((*(*p.borrow()).1.borrow()) == 2) }));
+        let p: Value<std_pair_A__int_> = Rc::new(RefCell::new({
+            let __tmp_2: Value<i32> = Rc::new(RefCell::new(1));
+            let __tmp_3: Value<i32> = Rc::new(RefCell::new(2));
+            std_pair_A__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+        }));
+        ({
+            cpp2rust_assert_fail_0(
+                ({
+                    let _a: Value<A> = Rc::new(RefCell::new(A::new({ 1 })));
+                    AImpl::operator_eq(&field_ptr!(p.as_pointer(), first), _a.as_pointer())
+                }),
+            )
+        });
+        ({ cpp2rust_assert_fail_0(({ (*p.borrow()).second } == 2)) });
     }
     return 0;
 }

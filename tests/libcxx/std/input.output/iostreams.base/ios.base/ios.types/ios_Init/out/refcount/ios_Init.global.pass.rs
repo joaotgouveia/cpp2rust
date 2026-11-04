@@ -17,13 +17,7 @@ pub struct Global {}
 impl Global {
     pub fn new() -> Self {
         let __this: Global = Self {};
-        {
-            let __s = libcc2rs::cout();
-            let _ = Ptr::<i8>::from_string_literal(b"Hello!").with_c_str(|__cs| {
-                __s.write_all(&__cs.iter().map(|&__c| __c as u8).collect::<Vec<u8>>())
-            });
-            __s
-        };
+        write!(cout_1.with(|v| v.as_pointer()), "Hello!",);
         __this
     }
 }
@@ -38,7 +32,7 @@ impl Default for Global {
     }
 }
 thread_local!(
-    pub static global_1: Value<Global> = Rc::new(RefCell::new(Global::new()));
+    pub static global_2: Value<Global> = Rc::new(RefCell::new(Global::new()));
 );
 
 pub fn main() {
@@ -64,5 +58,5 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     return 0;
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = global_1.with(|_| ());
+    let _ = global_2.with(|_| ());
 }

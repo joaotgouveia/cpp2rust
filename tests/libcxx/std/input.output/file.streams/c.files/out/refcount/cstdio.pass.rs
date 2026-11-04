@@ -27,9 +27,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    let mut fp: Ptr<CFile> = Ptr::null();
+    let mut fp: Ptr<_IO_FILE> = Ptr::<_IO_FILE>::null();
     let fpos: Value<_G_fpos_t> = Rc::new(RefCell::new(<_G_fpos_t>::default()));
-    let mut s: usize = 0_usize;
+    let mut s: u64 = 0_u64;
     let mut cp: Ptr<i8> = Ptr::<i8>::null();
     let va: Value<Ptr<VaArg>> = Rc::new(RefCell::new(Ptr::<VaArg>::default()));
     let mut vp: AnyPtr = AnyPtr::default();

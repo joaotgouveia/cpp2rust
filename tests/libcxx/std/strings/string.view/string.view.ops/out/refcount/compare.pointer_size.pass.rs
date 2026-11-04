@@ -16,7 +16,7 @@ impl constexpr_char_traits_char_ {
     pub fn lt(mut c1: i8, mut c2: i8) -> bool {
         return ((c1 as i32) < (c2 as i32));
     }
-    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: usize) -> i32 {
+    pub fn compare(mut s1: Ptr<i8>, mut s2: Ptr<i8>, mut n: u64) -> i32 {
         'loop_: while (n != 0) {
             if ({
                 let _c1: i8 = (s1.read());
@@ -42,8 +42,8 @@ impl constexpr_char_traits_char_ {
         }
         return 0;
     }
-    pub fn length(mut s: Ptr<i8>) -> usize {
-        let len: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub fn length(mut s: Ptr<i8>) -> u64 {
+        let len: Value<u64> = Rc::new(RefCell::new(0_u64));
         'loop_: while !({
             let _c1: i8 = (s.read());
             let _c2: i8 = 0_i8;
@@ -69,2813 +69,2771 @@ pub fn sign_0(mut x: i32) -> i32 {
 }
 pub fn test1_1(
     sv1: std_basic_string_view_char__std_char_traits_char__,
-    mut pos1: usize,
-    mut n1: usize,
+    mut pos1: u64,
+    mut n1: u64,
     mut s: Ptr<i8>,
     mut expected: i32,
 ) {
     let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(sv1));
-    if (pos1 <= (({ (*sv1.borrow()).size() }) as usize)) {
-        assert!(
-            ({
-                ({
-                    ({
-                        sign_0(
-                            ({
-                                (*sv1.borrow()).compare_35((pos1 as u64), (n1 as u64), (s).clone())
-                            }),
-                        )
-                    })
-                } == { ({ sign_0(expected) }) })
-            })
-        );
+    if (pos1 <= ({ (*sv1.borrow()).size() })) {
+        ({
+            cpp2rust_assert_fail_2(
+                ({ ({ sign_0(({ (*sv1.borrow()).compare_35(pos1, n1, (s).clone()) })) }) } == {
+                    ({ sign_0(expected) })
+                }),
+            )
+        });
     }
 }
-pub fn test1_2(
+pub fn test1_3(
     sv1: std_basic_string_view_wchar_t__std_char_traits_wchar_t__,
-    mut pos1: usize,
-    mut n1: usize,
+    mut pos1: u64,
+    mut n1: u64,
     mut s: Ptr<i32>,
     mut expected: i32,
 ) {
     let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
         Rc::new(RefCell::new(sv1));
-    if (pos1 <= (({ (*sv1.borrow()).size() }) as usize)) {
-        assert!(
-            ({
-                ({
-                    ({
-                        sign_0(
-                            ({
-                                (*sv1.borrow()).compare_35((pos1 as u64), (n1 as u64), (s).clone())
-                            }),
-                        )
-                    })
-                } == { ({ sign_0(expected) }) })
-            })
-        );
+    if (pos1 <= ({ (*sv1.borrow()).size() })) {
+        ({
+            cpp2rust_assert_fail_2(
+                ({ ({ sign_0(({ (*sv1.borrow()).compare_35(pos1, n1, (s).clone()) })) }) } == {
+                    ({ sign_0(expected) })
+                }),
+            )
+        });
     }
 }
-pub fn test1_3(
+pub fn test1_4(
     sv1: std_basic_string_view_char32_t__std_char_traits_char32_t__,
-    mut pos1: usize,
-    mut n1: usize,
+    mut pos1: u64,
+    mut n1: u64,
     mut s: Ptr<u32>,
     mut expected: i32,
 ) {
     let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
         Rc::new(RefCell::new(sv1));
-    if (pos1 <= (({ (*sv1.borrow()).size() }) as usize)) {
-        assert!(
-            ({
-                ({
-                    ({
-                        sign_0(
-                            ({
-                                (*sv1.borrow()).compare_35((pos1 as u64), (n1 as u64), (s).clone())
-                            }),
-                        )
-                    })
-                } == { ({ sign_0(expected) }) })
-            })
-        );
+    if (pos1 <= ({ (*sv1.borrow()).size() })) {
+        ({
+            cpp2rust_assert_fail_2(
+                ({ ({ sign_0(({ (*sv1.borrow()).compare_35(pos1, n1, (s).clone()) })) }) } == {
+                    ({ sign_0(expected) })
+                }),
+            )
+        });
     }
 }
-pub fn test1_4(
+pub fn test1_5(
     sv1: std_basic_string_view_char16_t__std_char_traits_char16_t__,
-    mut pos1: usize,
-    mut n1: usize,
+    mut pos1: u64,
+    mut n1: u64,
     mut s: Ptr<u16>,
     mut expected: i32,
 ) {
     let sv1: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
         Rc::new(RefCell::new(sv1));
-    if (pos1 <= (({ (*sv1.borrow()).size() }) as usize)) {
-        assert!(
-            ({
-                ({
-                    ({
-                        sign_0(
-                            ({
-                                (*sv1.borrow()).compare_35((pos1 as u64), (n1 as u64), (s).clone())
-                            }),
-                        )
-                    })
-                } == { ({ sign_0(expected) }) })
-            })
-        );
+    if (pos1 <= ({ (*sv1.borrow()).size() })) {
+        ({
+            cpp2rust_assert_fail_2(
+                ({ ({ sign_0(({ (*sv1.borrow()).compare_35(pos1, n1, (s).clone()) })) }) } == {
+                    ({ sign_0(expected) })
+                }),
+            )
+        });
     }
 }
-pub fn test_5(mut s1: Ptr<i8>, mut pos1: usize, mut n1: usize, mut s2: Ptr<i8>, mut expected: i32) {
+pub fn test_6(mut s1: Ptr<i8>, mut pos1: u64, mut n1: u64, mut s2: Ptr<i8>, mut expected: i32) {
     let sv1: Value<std_basic_string_view_char__std_char_traits_char__> = Rc::new(RefCell::new(
         std_basic_string_view_char__std_char_traits_char__::new_1({ (s1).clone() }),
     ));
     ({ test1_1((*sv1.borrow()).clone(), pos1, n1, (s2).clone(), expected) });
 }
-pub fn test_6(
-    mut s1: Ptr<i32>,
-    mut pos1: usize,
-    mut n1: usize,
-    mut s2: Ptr<i32>,
-    mut expected: i32,
-) {
+pub fn test_7(mut s1: Ptr<i32>, mut pos1: u64, mut n1: u64, mut s2: Ptr<i32>, mut expected: i32) {
     let sv1: Value<std_basic_string_view_wchar_t__std_char_traits_wchar_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_wchar_t__std_char_traits_wchar_t__::new_1({ (s1).clone() }),
         ));
-    ({ test1_2((*sv1.borrow()).clone(), pos1, n1, (s2).clone(), expected) });
+    ({ test1_3((*sv1.borrow()).clone(), pos1, n1, (s2).clone(), expected) });
 }
-pub fn test_7(
-    mut s1: Ptr<u32>,
-    mut pos1: usize,
-    mut n1: usize,
-    mut s2: Ptr<u32>,
-    mut expected: i32,
-) {
+pub fn test_8(mut s1: Ptr<u32>, mut pos1: u64, mut n1: u64, mut s2: Ptr<u32>, mut expected: i32) {
     let sv1: Value<std_basic_string_view_char32_t__std_char_traits_char32_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_char32_t__std_char_traits_char32_t__::new_1({ (s1).clone() }),
         ));
-    ({ test1_3((*sv1.borrow()).clone(), pos1, n1, (s2).clone(), expected) });
+    ({ test1_4((*sv1.borrow()).clone(), pos1, n1, (s2).clone(), expected) });
 }
-pub fn test_8(
-    mut s1: Ptr<u16>,
-    mut pos1: usize,
-    mut n1: usize,
-    mut s2: Ptr<u16>,
-    mut expected: i32,
-) {
+pub fn test_9(mut s1: Ptr<u16>, mut pos1: u64, mut n1: u64, mut s2: Ptr<u16>, mut expected: i32) {
     let sv1: Value<std_basic_string_view_char16_t__std_char_traits_char16_t__> =
         Rc::new(RefCell::new(
             std_basic_string_view_char16_t__std_char_traits_char16_t__::new_1({ (s1).clone() }),
         ));
-    ({ test1_4((*sv1.borrow()).clone(), pos1, n1, (s2).clone(), expected) });
+    ({ test1_5((*sv1.borrow()).clone(), pos1, n1, (s2).clone(), expected) });
 }
-pub fn test0_9() {
+pub fn test0_10() {
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b""),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -4_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -9_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -19_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            2_usize,
+            0_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b""),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            2_usize,
+            0_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -3_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            2_usize,
+            0_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -8_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            2_usize,
+            0_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -18_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            4_usize,
+            0_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b""),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            4_usize,
+            0_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -1_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            4_usize,
+            0_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -6_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            4_usize,
+            0_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -16_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            5_usize,
+            0_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b""),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            5_usize,
+            0_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            5_usize,
+            0_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            5_usize,
+            0_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -15_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            6_usize,
+            0_u64,
+            6_u64,
             Ptr::<i8>::from_string_literal(b""),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            6_usize,
+            0_u64,
+            6_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            6_usize,
+            0_u64,
+            6_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            0_usize,
-            6_usize,
+            0_u64,
+            6_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -15_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            2_usize,
+            1_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b""),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            2_usize,
+            1_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            2_usize,
+            1_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            2_usize,
+            1_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            3_usize,
+            1_u64,
+            3_u64,
             Ptr::<i8>::from_string_literal(b""),
             3,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            3_usize,
+            1_u64,
+            3_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            3_usize,
+            1_u64,
+            3_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            3_usize,
+            1_u64,
+            3_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            4_usize,
+            1_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b""),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            4_usize,
+            1_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            4_usize,
+            1_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            4_usize,
+            1_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            5_usize,
+            1_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b""),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            5_usize,
+            1_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            5_usize,
+            1_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            1_usize,
-            5_usize,
+            1_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            0_usize,
+            2_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            0_usize,
+            2_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            0_usize,
+            2_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            0_usize,
+            2_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            1_usize,
+            2_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            1_usize,
+            2_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            1_usize,
+            2_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            1_usize,
+            2_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            2_usize,
+            2_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b""),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            2_usize,
+            2_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            2_usize,
+            2_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            2_usize,
+            2_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            3_usize,
+            2_u64,
+            3_u64,
             Ptr::<i8>::from_string_literal(b""),
             3,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            3_usize,
+            2_u64,
+            3_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            3_usize,
+            2_u64,
+            3_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            3_usize,
+            2_u64,
+            3_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            4_usize,
+            2_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b""),
             3,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            4_usize,
+            2_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            4_usize,
+            2_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            2_usize,
-            4_usize,
+            2_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            0_usize,
+            4_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            0_usize,
+            4_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            0_usize,
+            4_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            0_usize,
+            4_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            1_usize,
+            4_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            1_usize,
+            4_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            1_usize,
+            4_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            1_usize,
+            4_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            2_usize,
+            4_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            2_usize,
+            4_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            2_usize,
+            4_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            4_usize,
-            2_usize,
+            4_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            5_usize,
-            0_usize,
+            5_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            5_usize,
-            0_usize,
+            5_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            5_usize,
-            0_usize,
+            5_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            5_usize,
-            0_usize,
+            5_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            5_usize,
-            1_usize,
+            5_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            5_usize,
-            1_usize,
+            5_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            5_usize,
-            1_usize,
+            5_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            5_usize,
-            1_usize,
+            5_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
 }
-pub fn test1_10() {
+pub fn test1_11() {
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            6_usize,
-            0_usize,
+            6_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            6_usize,
-            0_usize,
+            6_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            6_usize,
-            0_usize,
+            6_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcde"),
-            6_usize,
-            0_usize,
+            6_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -4_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -9_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -19_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            5_usize,
+            0_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b""),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            5_usize,
+            0_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            5_usize,
+            0_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            5_usize,
+            0_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -15_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            9_usize,
+            0_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b""),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            9_usize,
+            0_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            9_usize,
+            0_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -1_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            9_usize,
+            0_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -11_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            10_usize,
+            0_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b""),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            10_usize,
+            0_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            10_usize,
+            0_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            10_usize,
+            0_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            11_usize,
+            0_u64,
+            11_u64,
             Ptr::<i8>::from_string_literal(b""),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            11_usize,
+            0_u64,
+            11_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            11_usize,
+            0_u64,
+            11_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            0_usize,
-            11_usize,
+            0_u64,
+            11_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            4_usize,
+            1_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b""),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            4_usize,
+            1_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            4_usize,
+            1_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            4_usize,
+            1_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            8_usize,
+            1_u64,
+            8_u64,
             Ptr::<i8>::from_string_literal(b""),
             8,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            8_usize,
+            1_u64,
+            8_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            8_usize,
+            1_u64,
+            8_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            8_usize,
+            1_u64,
+            8_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            9_usize,
+            1_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b""),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            9_usize,
+            1_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            9_usize,
+            1_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            9_usize,
+            1_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            10_usize,
+            1_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b""),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            10_usize,
+            1_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            10_usize,
+            1_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            1_usize,
-            10_usize,
+            1_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            0_usize,
+            5_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            0_usize,
+            5_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            0_usize,
+            5_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            0_usize,
+            5_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            1_usize,
+            5_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            1_usize,
+            5_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            1_usize,
+            5_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            1_usize,
+            5_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            2_usize,
+            5_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b""),
             2,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            2_usize,
+            5_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            2_usize,
+            5_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            2_usize,
+            5_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            4_usize,
+            5_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b""),
             4,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            4_usize,
+            5_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            4_usize,
+            5_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            4_usize,
+            5_u64,
+            4_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            5_usize,
+            5_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b""),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            5_usize,
+            5_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            5_usize,
+            5_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            5_usize,
+            5_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            6_usize,
+            5_u64,
+            6_u64,
             Ptr::<i8>::from_string_literal(b""),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            6_usize,
+            5_u64,
+            6_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            6_usize,
+            5_u64,
+            6_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            5_usize,
-            6_usize,
+            5_u64,
+            6_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            0_usize,
+            9_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            0_usize,
+            9_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            0_usize,
+            9_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            0_usize,
+            9_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            1_usize,
+            9_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            1_usize,
+            9_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            1_usize,
+            9_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            1_usize,
+            9_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            2_usize,
+            9_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            2_usize,
+            9_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            2_usize,
+            9_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            9_usize,
-            2_usize,
+            9_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            10_usize,
-            0_usize,
+            10_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            10_usize,
-            0_usize,
+            10_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            10_usize,
-            0_usize,
+            10_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            10_usize,
-            0_usize,
+            10_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            10_usize,
-            1_usize,
+            10_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            10_usize,
-            1_usize,
+            10_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            10_usize,
-            1_usize,
+            10_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            10_usize,
-            1_usize,
+            10_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            11_usize,
-            0_usize,
+            11_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            11_usize,
-            0_usize,
+            11_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            11_usize,
-            0_usize,
+            11_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
-            11_usize,
-            0_usize,
+            11_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             0,
         )
     });
 }
-pub fn test2_11() {
+pub fn test2_12() {
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            0_usize,
+            0_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -4_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -9_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            1_usize,
+            0_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -19_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            10_usize,
+            0_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b""),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            10_usize,
+            0_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            10_usize,
+            0_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            10_usize,
+            0_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            19_usize,
+            0_u64,
+            19_u64,
             Ptr::<i8>::from_string_literal(b""),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            19_usize,
+            0_u64,
+            19_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             14,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            19_usize,
+            0_u64,
+            19_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            19_usize,
+            0_u64,
+            19_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -1_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            20_usize,
+            0_u64,
+            20_u64,
             Ptr::<i8>::from_string_literal(b""),
             20,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            20_usize,
+            0_u64,
+            20_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             15,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            20_usize,
+            0_u64,
+            20_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            20_usize,
+            0_u64,
+            20_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            21_usize,
+            0_u64,
+            21_u64,
             Ptr::<i8>::from_string_literal(b""),
             20,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            21_usize,
+            0_u64,
+            21_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             15,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            21_usize,
+            0_u64,
+            21_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            0_usize,
-            21_usize,
+            0_u64,
+            21_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            0_usize,
+            1_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            1_usize,
+            1_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            9_usize,
+            1_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b""),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            9_usize,
+            1_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            9_usize,
+            1_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            9_usize,
+            1_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            18_usize,
+            1_u64,
+            18_u64,
             Ptr::<i8>::from_string_literal(b""),
             18,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            18_usize,
+            1_u64,
+            18_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            18_usize,
+            1_u64,
+            18_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            18_usize,
+            1_u64,
+            18_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            19_usize,
+            1_u64,
+            19_u64,
             Ptr::<i8>::from_string_literal(b""),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            19_usize,
+            1_u64,
+            19_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            19_usize,
+            1_u64,
+            19_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            19_usize,
+            1_u64,
+            19_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            20_usize,
+            1_u64,
+            20_u64,
             Ptr::<i8>::from_string_literal(b""),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            20_usize,
+            1_u64,
+            20_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            20_usize,
+            1_u64,
+            20_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            1_usize,
-            20_usize,
+            1_u64,
+            20_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            0_usize,
+            10_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            0_usize,
+            10_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            0_usize,
+            10_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            0_usize,
+            10_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            1_usize,
+            10_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            1_usize,
+            10_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            1_usize,
+            10_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            1_usize,
+            10_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            5_usize,
+            10_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b""),
             5,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            5_usize,
+            10_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            5_usize,
+            10_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            5_usize,
+            10_u64,
+            5_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            9_usize,
+            10_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b""),
             9,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            9_usize,
+            10_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            9_usize,
+            10_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            9_usize,
+            10_u64,
+            9_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            10_usize,
+            10_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b""),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            10_usize,
+            10_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            10_usize,
+            10_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            10_usize,
+            10_u64,
+            10_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            11_usize,
+            10_u64,
+            11_u64,
             Ptr::<i8>::from_string_literal(b""),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            11_usize,
+            10_u64,
+            11_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            11_usize,
+            10_u64,
+            11_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            10_usize,
-            11_usize,
+            10_u64,
+            11_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             10,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            0_usize,
+            19_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            0_usize,
+            19_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            0_usize,
+            19_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            0_usize,
+            19_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            1_usize,
+            19_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            1_usize,
+            19_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            1_usize,
+            19_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            1_usize,
+            19_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            2_usize,
+            19_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b""),
             1,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            2_usize,
+            19_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            2_usize,
+            19_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            19_usize,
-            2_usize,
+            19_u64,
+            2_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             19,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            20_usize,
-            0_usize,
+            20_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            20_usize,
-            0_usize,
+            20_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            20_usize,
-            0_usize,
+            20_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            20_usize,
-            0_usize,
+            20_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            20_usize,
-            1_usize,
+            20_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            20_usize,
-            1_usize,
+            20_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             -5_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            20_usize,
-            1_usize,
+            20_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             -10_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            20_usize,
-            1_usize,
+            20_u64,
+            1_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             -20_i32,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            21_usize,
-            0_usize,
+            21_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b""),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            21_usize,
-            0_usize,
+            21_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcde"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            21_usize,
-            0_usize,
+            21_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghij"),
             0,
         )
     });
     ({
-        test_5(
+        test_6(
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-            21_usize,
-            0_usize,
+            21_u64,
+            0_u64,
             Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
             0,
         )
@@ -2901,150 +2859,150 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test0_9() });
-    ({ test1_10() });
-    ({ test2_11() });
+    ({ test0_10() });
+    ({ test1_11() });
+    ({ test2_12() });
     {
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b""),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<i8>::from_string_literal(b""),
                 0,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b""),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 -5_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b""),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 -10_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b""),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 -20_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcde"),
-                0_usize,
-                2_usize,
+                0_u64,
+                2_u64,
                 Ptr::<i8>::from_string_literal(b""),
                 5,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcde"),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 0,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcde"),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 -5_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcde"),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 -15_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<i8>::from_string_literal(b""),
                 10,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 5,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<i8>::from_string_literal(b"def"),
                 0,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
-                0_usize,
-                4_usize,
+                0_u64,
+                4_u64,
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 -10_i32,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-                5_usize,
-                5_usize,
+                5_u64,
+                5_u64,
                 Ptr::<i8>::from_string_literal(b""),
                 20,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-                0_usize,
-                8_usize,
+                0_u64,
+                8_u64,
                 Ptr::<i8>::from_string_literal(b"abcde"),
                 15,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-                0_usize,
-                12_usize,
+                0_u64,
+                12_u64,
                 Ptr::<i8>::from_string_literal(b"abcdefghij"),
                 10,
             )
         });
         ({
-            test_5(
+            test_6(
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
-                0_usize,
-                (-1_i32 as usize),
+                0_u64,
+                (-1_i32 as u64),
                 Ptr::<i8>::from_string_literal(b"abcdefghijklmnopqrst"),
                 0,
             )
@@ -3052,19 +3010,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 0,
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
@@ -3072,10 +3030,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
@@ -3084,10 +3042,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
@@ -3098,23 +3056,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
-                0_usize,
-                2_usize,
+                0_u64,
+                2_u64,
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 5,
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
@@ -3122,12 +3080,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
@@ -3136,12 +3094,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
@@ -3152,25 +3110,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 10,
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
@@ -3178,25 +3136,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<i32>::from_string_literal(&[100 as i32, 101 as i32, 102 as i32, 0 as i32]),
                 0,
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
                 ]),
-                0_usize,
-                4_usize,
+                0_u64,
+                4_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
@@ -3207,29 +3165,29 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
                     109 as i32, 110 as i32, 111 as i32, 112 as i32, 113 as i32, 114 as i32,
                     115 as i32, 116 as i32, 0 as i32,
                 ]),
-                5_usize,
-                5_usize,
+                5_u64,
+                5_u64,
                 Ptr::<i32>::from_string_literal(&[0 as i32]),
                 20,
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
                     109 as i32, 110 as i32, 111 as i32, 112 as i32, 113 as i32, 114 as i32,
                     115 as i32, 116 as i32, 0 as i32,
                 ]),
-                0_usize,
-                8_usize,
+                0_u64,
+                8_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 0 as i32,
                 ]),
@@ -3237,15 +3195,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
                     109 as i32, 110 as i32, 111 as i32, 112 as i32, 113 as i32, 114 as i32,
                     115 as i32, 116 as i32, 0 as i32,
                 ]),
-                0_usize,
-                12_usize,
+                0_u64,
+                12_u64,
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 0 as i32,
@@ -3254,15 +3212,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_6(
+            test_7(
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
                     109 as i32, 110 as i32, 111 as i32, 112 as i32, 113 as i32, 114 as i32,
                     115 as i32, 116 as i32, 0 as i32,
                 ]),
-                0_usize,
-                (-1_i32 as usize),
+                0_u64,
+                (-1_i32 as u64),
                 Ptr::<i32>::from_string_literal(&[
                     97 as i32, 98 as i32, 99 as i32, 100 as i32, 101 as i32, 102 as i32,
                     103 as i32, 104 as i32, 105 as i32, 106 as i32, 107 as i32, 108 as i32,
@@ -3275,19 +3233,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 0,
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
@@ -3295,10 +3253,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
@@ -3307,10 +3265,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
@@ -3321,23 +3279,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
-                0_usize,
-                2_usize,
+                0_u64,
+                2_u64,
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 5,
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
@@ -3345,12 +3303,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
@@ -3359,12 +3317,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
@@ -3375,25 +3333,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 10,
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
@@ -3401,25 +3359,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<u32>::from_string_literal(&[100 as u32, 101 as u32, 102 as u32, 0 as u32]),
                 0,
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
                 ]),
-                0_usize,
-                4_usize,
+                0_u64,
+                4_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
@@ -3430,29 +3388,29 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
                     109 as u32, 110 as u32, 111 as u32, 112 as u32, 113 as u32, 114 as u32,
                     115 as u32, 116 as u32, 0 as u32,
                 ]),
-                5_usize,
-                5_usize,
+                5_u64,
+                5_u64,
                 Ptr::<u32>::from_string_literal(&[0 as u32]),
                 20,
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
                     109 as u32, 110 as u32, 111 as u32, 112 as u32, 113 as u32, 114 as u32,
                     115 as u32, 116 as u32, 0 as u32,
                 ]),
-                0_usize,
-                8_usize,
+                0_u64,
+                8_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 0 as u32,
                 ]),
@@ -3460,15 +3418,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
                     109 as u32, 110 as u32, 111 as u32, 112 as u32, 113 as u32, 114 as u32,
                     115 as u32, 116 as u32, 0 as u32,
                 ]),
-                0_usize,
-                12_usize,
+                0_u64,
+                12_u64,
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 0 as u32,
@@ -3477,15 +3435,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_7(
+            test_8(
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
                     109 as u32, 110 as u32, 111 as u32, 112 as u32, 113 as u32, 114 as u32,
                     115 as u32, 116 as u32, 0 as u32,
                 ]),
-                0_usize,
-                (-1_i32 as usize),
+                0_u64,
+                (-1_i32 as u64),
                 Ptr::<u32>::from_string_literal(&[
                     97 as u32, 98 as u32, 99 as u32, 100 as u32, 101 as u32, 102 as u32,
                     103 as u32, 104 as u32, 105 as u32, 106 as u32, 107 as u32, 108 as u32,
@@ -3498,19 +3456,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     }
     {
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 0,
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
@@ -3518,10 +3476,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
@@ -3530,10 +3488,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
-                0_usize,
-                0_usize,
+                0_u64,
+                0_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
@@ -3544,23 +3502,23 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
-                0_usize,
-                2_usize,
+                0_u64,
+                2_u64,
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 5,
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
@@ -3568,12 +3526,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
@@ -3582,12 +3540,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
-                0_usize,
-                6_usize,
+                0_u64,
+                6_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
@@ -3598,25 +3556,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 10,
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
@@ -3624,25 +3582,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
                 ]),
-                3_usize,
-                3_usize,
+                3_u64,
+                3_u64,
                 Ptr::<u16>::from_string_literal(&[100 as u16, 101 as u16, 102 as u16, 0 as u16]),
                 0,
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
                 ]),
-                0_usize,
-                4_usize,
+                0_u64,
+                4_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
@@ -3653,29 +3611,29 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
                     109 as u16, 110 as u16, 111 as u16, 112 as u16, 113 as u16, 114 as u16,
                     115 as u16, 116 as u16, 0 as u16,
                 ]),
-                5_usize,
-                5_usize,
+                5_u64,
+                5_u64,
                 Ptr::<u16>::from_string_literal(&[0 as u16]),
                 20,
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
                     109 as u16, 110 as u16, 111 as u16, 112 as u16, 113 as u16, 114 as u16,
                     115 as u16, 116 as u16, 0 as u16,
                 ]),
-                0_usize,
-                8_usize,
+                0_u64,
+                8_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 0 as u16,
                 ]),
@@ -3683,15 +3641,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
                     109 as u16, 110 as u16, 111 as u16, 112 as u16, 113 as u16, 114 as u16,
                     115 as u16, 116 as u16, 0 as u16,
                 ]),
-                0_usize,
-                12_usize,
+                0_u64,
+                12_u64,
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 0 as u16,
@@ -3700,15 +3658,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             )
         });
         ({
-            test_8(
+            test_9(
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,
                     109 as u16, 110 as u16, 111 as u16, 112 as u16, 113 as u16, 114 as u16,
                     115 as u16, 116 as u16, 0 as u16,
                 ]),
-                0_usize,
-                (-1_i32 as usize),
+                0_u64,
+                (-1_i32 as u64),
                 Ptr::<u16>::from_string_literal(&[
                     97 as u16, 98 as u16, 99 as u16, 100 as u16, 101 as u16, 102 as u16,
                     103 as u16, 104 as u16, 105 as u16, 106 as u16, 107 as u16, 108 as u16,

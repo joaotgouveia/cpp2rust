@@ -46,10 +46,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     return 0;
 }
 pub trait ExplicitAllocator_int_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut ptr: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut ptr: Ptr<i32>, mut n: u64) {
         unimplemented!()
     }
 }

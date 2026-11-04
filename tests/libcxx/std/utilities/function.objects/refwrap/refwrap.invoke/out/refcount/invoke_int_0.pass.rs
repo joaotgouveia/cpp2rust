@@ -27,23 +27,31 @@ impl CppMove for A_int_0 {
 }
 pub fn test_int_0_2() {
     {
-        let r1: Value<FnPtr<fn() -> i32>> =
-            Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(f_int_0_1)));
-        assert!(({ (({ (*r1.borrow_mut())() }) == 3) }));
+        let r1: Value<std_reference_wrapper_int____> =
+            Rc::new(RefCell::new(std_reference_wrapper_int____::new({
+                FnPtr::<fn() -> i32>::new(f_int_0_1)
+            })));
+        ({ cpp2rust_assert_fail_3((({ (*r1.borrow_mut())() }) == 3)) });
     }
     {
         let fp: Value<FnPtr<fn() -> i32>> =
             Rc::new(RefCell::new(FnPtr::<fn() -> i32>::new(f_int_0_1)));
-        let r1: Value<Ptr<FnPtr<fn() -> i32>>> = Rc::new(RefCell::new(fp.as_pointer()));
-        assert!(({ (({ (*r1.borrow_mut())() }) == 3) }));
+        let r1: Value<std_reference_wrapper_int__ptr____> =
+            Rc::new(RefCell::new(std_reference_wrapper_int__ptr____::new({
+                fp.as_pointer()
+            })));
+        ({ cpp2rust_assert_fail_3((({ (*r1.borrow_mut())() }) == 3)) });
     }
     {
         let a0: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-        let r1: Value<Ptr<A_int_0>> = Rc::new(RefCell::new(a0.as_pointer()));
-        assert!(({ (({ (*r1.borrow_mut())() }) == 4) }));
+        let r1: Value<std_reference_wrapper_A_int_0_> =
+            Rc::new(RefCell::new(std_reference_wrapper_A_int_0_::new({
+                a0.as_pointer()
+            })));
+        ({ cpp2rust_assert_fail_3((({ (*r1.borrow_mut())() }) == 4)) });
     }
 }
-pub fn f_void_1_3(mut i: i32) {
+pub fn f_void_1_4(mut i: i32) {
     count_0.with(|rc| *rc.borrow_mut() += i);
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]

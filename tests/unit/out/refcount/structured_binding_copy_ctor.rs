@@ -54,20 +54,20 @@ pub fn main() {
 fn main_0() -> i32 {
     let s: Value<Counted> = Rc::new(RefCell::new(Counted::new({ 1 }, { 2 })));
     let __decomp_2: Value<Counted> = Rc::new(RefCell::new(Counted::copy_from({ s.as_pointer() })));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 1));
-    assert!(({ ({ (*__decomp_2.borrow()).x } == 2) }));
-    assert!(({ ({ (*__decomp_2.borrow()).y } == 4) }));
-    let __decomp_3: Ptr<Counted> = s.as_pointer();
-    assert!((copies_0.with(|rc| *rc.borrow()) == 1));
-    assert!((__decomp_3.with(|__s| __s.x) == 1));
-    assert!((__decomp_3.with(|__s| __s.y) == 2));
+    ({ cpp2rust_assert_fail_3((copies_0.with(|rc| *rc.borrow()) == 1)) });
+    ({ cpp2rust_assert_fail_3(({ (*__decomp_2.borrow()).x } == 2)) });
+    ({ cpp2rust_assert_fail_3(({ (*__decomp_2.borrow()).y } == 4)) });
     let __decomp_4: Ptr<Counted> = s.as_pointer();
-    assert!((copies_0.with(|rc| *rc.borrow()) == 1));
-    assert!((__decomp_4.with(|__s| __s.x) == 1));
-    let __decomp_5: Value<Counted> = Rc::new(RefCell::new(({ make_counted_1() })));
-    assert!((copies_0.with(|rc| *rc.borrow()) == 1));
-    assert!(({ ({ (*__decomp_5.borrow()).x } == 5) }));
-    assert!(({ ({ (*__decomp_5.borrow()).y } == 6) }));
+    ({ cpp2rust_assert_fail_3((copies_0.with(|rc| *rc.borrow()) == 1)) });
+    ({ cpp2rust_assert_fail_3((__decomp_4.with(|__s| __s.x) == 1)) });
+    ({ cpp2rust_assert_fail_3((__decomp_4.with(|__s| __s.y) == 2)) });
+    let __decomp_5: Ptr<Counted> = s.as_pointer();
+    ({ cpp2rust_assert_fail_3((copies_0.with(|rc| *rc.borrow()) == 1)) });
+    ({ cpp2rust_assert_fail_3((__decomp_5.with(|__s| __s.x) == 1)) });
+    let __decomp_6: Value<Counted> = Rc::new(RefCell::new(({ make_counted_1() })));
+    ({ cpp2rust_assert_fail_3((copies_0.with(|rc| *rc.borrow()) == 1)) });
+    ({ cpp2rust_assert_fail_3(({ (*__decomp_6.borrow()).x } == 5)) });
+    ({ cpp2rust_assert_fail_3(({ (*__decomp_6.borrow()).y } == 6)) });
     return 0;
 }
 pub trait CountedImpl {

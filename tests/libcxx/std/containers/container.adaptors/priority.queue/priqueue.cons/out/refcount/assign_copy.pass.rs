@@ -6,20 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn make_0(mut n: i32) -> Vec<i32> {
-    let mut c: Vec<i32> = Vec::new();
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        {
-            let a0_clone = i.clone();
-            c.push(a0_clone)
-        };
-        i.prefix_inc();
-    }
-    return std::mem::take(&mut c);
-}
-pub fn test_1() -> bool {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_0(5) })));
+pub fn test_0() -> bool {
+    let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(({ make_1(5) })));
     let qo: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_greater_int__> =
         Rc::new(RefCell::new({
             let __tmp_0: Value<std_greater_int_> =
@@ -31,8 +19,8 @@ pub fn test_1() -> bool {
         }));
     let q : Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_greater_int__ > = Rc::new(RefCell::new(<std_priority_queue_int__std_vector_int__std_allocator_int____std_greater_int__  >::default() )) ;
     (*q.borrow_mut()) = (*qo.borrow()).clone();
-    assert!(({ (({ (*q.borrow()).size() }) == 5_u64) }));
-    assert!(({ ((({ (*q.borrow()).top() }).read()) == 0) }));
+    ({ cpp2rust_assert_fail_2((({ (*q.borrow()).size() }) == 5_u64)) });
+    ({ cpp2rust_assert_fail_2(((({ (*q.borrow()).top() }).read()) == 0)) });
     return true;
 }
 pub fn main() {
@@ -55,7 +43,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_1() }));
+    ({ cpp2rust_assert_fail_2(({ test_0() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

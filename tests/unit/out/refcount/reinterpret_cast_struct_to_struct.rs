@@ -42,10 +42,10 @@ fn main_0() -> i32 {
         y: 20_u32,
     }));
     let mut pair: Ptr<Pair> = (pt.as_pointer()).reinterpret_cast::<Pair>();
-    assert!((pair.with(|__s| __s.first) == 10_u32));
-    assert!((pair.with(|__s| __s.second) == 20_u32));
+    ({ cpp2rust_assert_fail_0((pair.with(|__s| __s.first) == 10_u32)) });
+    ({ cpp2rust_assert_fail_0((pair.with(|__s| __s.second) == 20_u32)) });
     field!(pair, first).write(42_u32);
-    assert!(({ ({ (*pt.borrow()).x } == 42_u32) }));
+    ({ cpp2rust_assert_fail_0(({ (*pt.borrow()).x } == 42_u32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

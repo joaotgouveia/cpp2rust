@@ -30,26 +30,7 @@ impl Default for ConstexprFixedCapacityDeque_int__10_ {
         }
     }
 }
-pub fn test_1(c: Vec<Copyable>) -> bool {
-    let c: Value<Vec<Copyable>> = Rc::new(RefCell::new(c));
-    let v: Value<Copyable> = Rc::new(RefCell::new(Copyable::new()));
-    let _dtor_v = ScopedDestructor::new(&v, |__p| __p.destructor());
-    let i: Value<std_back_insert_iterator_std_vector_Copyable__std_allocator_Copyable___> =
-        Rc::new(RefCell::new(
-            std_back_insert_iterator_std_vector_Copyable__std_allocator_Copyable___::new({
-                c.as_pointer()
-            }),
-        ));
-    (*i.borrow_mut()) = (*v.borrow()).clone();
-    assert!(
-        ({
-            let _x: Ptr<Copyable> = c.decay().to_last();
-            operator_eq_2(_x, v.as_pointer())
-        })
-    );
-    return true;
-}
-pub fn test_3(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
+pub fn test_2(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
     let c: Value<ConstexprFixedCapacityDeque_int__10_> = Rc::new(RefCell::new(c));
     let v: Value<i32> = Rc::new(RefCell::new(0_i32));
     let i: Value<std_back_insert_iterator_ConstexprFixedCapacityDeque_int__10__> =
@@ -57,15 +38,15 @@ pub fn test_3(c: ConstexprFixedCapacityDeque_int__10_) -> bool {
             std_back_insert_iterator_ConstexprFixedCapacityDeque_int__10__::new({ c.as_pointer() }),
         ));
     (*i.borrow_mut()) = (*v.borrow());
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_0(
             ((({ ConstexprFixedCapacityDeque_int__10_Impl::back(&c.as_pointer()) }).read())
-                == (*v.borrow()))
-        })
-    );
+                == (*v.borrow())),
+        )
+    });
     return true;
 }
-pub fn operator_eq_2(x: Ptr<Copyable>, y: Ptr<Copyable>) -> bool {
+pub fn operator_eq_3(x: Ptr<Copyable>, y: Ptr<Copyable>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
@@ -81,7 +62,7 @@ impl Copyable {
 }
 impl CppEq for Copyable {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_2(__lhs.clone(), __rhs.clone())
+        operator_eq_3(__lhs.clone(), __rhs.clone())
     }
 }
 impl CppMove for Copyable {
@@ -114,8 +95,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_1(Vec::new()) });
-    ({ test_3(<ConstexprFixedCapacityDeque_int__10_>::default()) });
+    ({ test_4(<std_vector_Copyable__std_allocator_Copyable__>::default()) });
+    ({ test_2(<ConstexprFixedCapacityDeque_int__10_>::default()) });
     const _: () = assert!(true, "test(ConstexprFixedCapacityDeque<int, 10>())");;
     return 0;
 }
@@ -130,7 +111,7 @@ pub trait ConstexprFixedCapacityDeque_int__10_Impl {
     fn end_5(&self) -> Ptr<i32> {
         unimplemented!()
     }
-    fn size(&self) -> usize {
+    fn size(&self) -> u64 {
         unimplemented!()
     }
     fn front(&self) -> Ptr<i32> {
@@ -149,7 +130,7 @@ impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDequ
             .offset(((*self).with(|__s| __s.size_)) as isize);
     }
     fn back(&self) -> Ptr<i32> {
-        assert!(((*self).with(|__s| __s.size_) >= 1));
+        ({ cpp2rust_assert_fail_0(((*self).with(|__s| __s.size_) >= 1)) });
         return (array_field_ptr!((*self), data_) as Ptr<i32>)
             .offset(((*self).with(|__s| __s.size_) - 1) as isize);
     }
@@ -165,7 +146,7 @@ impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDequ
                 let ___result: Ptr<i32> = (array_field_ptr!((*self), data_) as Ptr<i32>)
                     .offset(((*self).with(|__s| __s.size_)) as isize)
                     .offset((1) as isize);
-                move_backward_0(___first, ___last, ___result)
+                move_backward_1(___first, ___last, ___result)
             });
         }
         array_elem!((*self), data_, i).write(t);

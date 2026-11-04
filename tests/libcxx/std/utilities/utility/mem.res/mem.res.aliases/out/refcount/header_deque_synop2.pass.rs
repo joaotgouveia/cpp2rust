@@ -28,7 +28,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let d: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        let d: Value<std_deque_int__std_pmr_polymorphic_allocator_int__> = Rc::new(RefCell::new(
+            <std_deque_int__std_pmr_polymorphic_allocator_int__>::default(),
+        ));
     }
     return 0;
 }

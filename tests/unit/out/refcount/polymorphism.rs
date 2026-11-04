@@ -36,7 +36,7 @@ fn main_0() -> i32 {
     let cat: Value<Cat> = Rc::new(RefCell::new(<Cat>::default()));
     animal = (cat.as_pointer()).to_dyn::<dyn Animal>(|w| w);
     let mut eat2: bool = ({ (*animal.upgrade().deref()).bark() });
-    assert!((eat1) && (!(eat2)));
+    ({ cpp2rust_assert_fail_0((eat1) && (!(eat2))) });
     return 0;
 }
 impl Animal for Cat {

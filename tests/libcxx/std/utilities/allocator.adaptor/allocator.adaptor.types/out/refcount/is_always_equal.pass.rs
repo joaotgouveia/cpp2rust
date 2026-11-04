@@ -31,19 +31,22 @@ impl A3_int_ {}
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!(
-            (alloc_count_12.with(|rc| *rc.borrow()) >= dealloc_count_13.with(|rc| *rc.borrow()))
-        );
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_15(
+                (alloc_count_12.with(|rc| *rc.borrow())
+                    >= dealloc_count_13.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_12.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_13.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_15((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_14.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_11.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_12.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_13.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_11.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_12.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_13.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -52,13 +55,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_11: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_11: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_12: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_12: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_13: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_13: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_14: Value<bool> = Rc::new(RefCell::new(false));
@@ -134,13 +137,13 @@ pub trait A1_int_Impl {
     fn move_assign(&self, a: Ptr<A1_int_>) -> Ptr<A1_int_> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         unimplemented!()
     }
-    fn max_size(&self) -> usize {
+    fn max_size(&self) -> u64 {
         unimplemented!()
     }
 }
@@ -155,7 +158,7 @@ pub trait A2_int_Impl {
     fn move_assign(&self, a: Ptr<A2_int_>) -> Ptr<A2_int_> {
         unimplemented!()
     }
-    fn allocate(&self, mut _a0: usize, mut hint: AnyPtr) -> Ptr<i32> {
+    fn allocate(&self, mut _a0: u64, mut hint: AnyPtr) -> Ptr<i32> {
         unimplemented!()
     }
 }
@@ -176,13 +179,13 @@ pub trait A3_int_Impl {
 }
 impl A3_int_Impl for Ptr<A3_int_> {}
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }

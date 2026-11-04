@@ -51,11 +51,6 @@ pub fn test_2() {
     const _: () = assert!(true, "std::is_copy_assignable<Wrap>::value");;
     const _: () = assert!(true, "std::is_trivially_copyable<Wrap>::value");;
 }
-pub fn test_3() {
-    const _: () = assert!(true, "std::is_copy_constructible<Wrap>::value");;
-    const _: () = assert!(true, "std::is_copy_assignable<Wrap>::value");;
-    const _: () = assert!(true, "std::is_trivially_copyable<Wrap>::value");;
-}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -78,8 +73,8 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ test_0() });
     ({ test_1() });
-    ({ test_2() });
     ({ test_3() });
+    ({ test_2() });
     return 0;
 }
 pub trait MoveOnlyImpl {

@@ -18,15 +18,19 @@ pub fn cref_0(mut _a0: adl_A) {}
 pub fn test_1() -> bool {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0));
-        let mut r1: Ptr<i32> = ({ cref_2(i.as_pointer()) });
-        let mut r2: Ptr<i32> = ({ cref_3((r1).clone()) });
-        assert!(((r2) == (i.as_pointer())));
+        let r1: Value<std_reference_wrapper_const_int_> =
+            Rc::new(RefCell::new(({ cref_2(i.as_pointer()) })));
+        let r2: Value<std_reference_wrapper_const_int_> =
+            Rc::new(RefCell::new(({ cref_3((*r1.borrow()).clone()) })));
+        ({ cpp2rust_assert_fail_4((({ (*r2.borrow()).get() }) == (i.as_pointer()))) });
     }
     {
         let a: Value<adl_A> = Rc::new(RefCell::new(<adl_A>::default()));
-        let mut a1: Ptr<adl_A> = ({ cref_4(a.as_pointer()) });
-        let mut a2: Ptr<adl_A> = ({ cref_5((a1).clone()) });
-        assert!(((a2) == (a.as_pointer())));
+        let a1: Value<std_reference_wrapper_const_adl_A_> =
+            Rc::new(RefCell::new(({ cref_5(a.as_pointer()) })));
+        let a2: Value<std_reference_wrapper_const_adl_A_> =
+            Rc::new(RefCell::new(({ cref_6((*a1.borrow()).clone()) })));
+        ({ cpp2rust_assert_fail_4((({ (*a2.borrow()).get() }) == (a.as_pointer()))) });
     }
     return true;
 }

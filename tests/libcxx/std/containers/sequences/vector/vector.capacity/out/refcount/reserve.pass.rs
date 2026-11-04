@@ -58,10 +58,10 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_1: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_2: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_2: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_3: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -71,14 +71,14 @@ impl CppMove for test_alloc_base {
         src.read()
     }
 }
-pub fn operator_eq_3(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_eq_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_4(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_5(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_3(_x, _y)
+        operator_eq_4(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -138,7 +138,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_3(__lhs.clone(), __rhs.clone())
+        operator_eq_4(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -194,7 +194,7 @@ impl Tag_X {
 #[byte_size(16)]
 pub struct limited_alloc_handle_251_ {
     #[offset(0)]
-    pub outstanding_: usize,
+    pub outstanding_: u64,
     #[offset(8)]
     #[byte_size(8)]
     pub last_alloc_: AnyPtr,
@@ -208,20 +208,20 @@ impl Default for limited_alloc_handle_251_ {
     fn default() -> Self {
         {
             limited_alloc_handle_251_ {
-                outstanding_: 0_usize,
+                outstanding_: 0_u64,
                 last_alloc_: AnyPtr::default(),
             }
         }
     }
 }
-pub fn make_thread_unsafe_shared_5() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_251__ {
+pub fn make_thread_unsafe_shared_7() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_251__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_251__> = Rc::new(
         RefCell::new(<detail_thread_unsafe_shared_ptr_limited_alloc_handle_251__>::default()),
     );
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block_  >::default() )) ;
     (*ptr.borrow_mut()).block = ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block__::allocate_1 ( alloc .as_pointer()  , 1_usize  , )
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block__::allocate_1 ( alloc .as_pointer()  , 1_u64  , )
     });
     ({
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
@@ -233,7 +233,7 @@ pub fn make_thread_unsafe_shared_5() -> detail_thread_unsafe_shared_ptr_limited_
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block {
     pub fn new() -> Self {
         Self {
-            ref_count: 1_usize,
+            ref_count: 1_u64,
             content: <limited_alloc_handle_251_>::default(),
         }
     }
@@ -242,7 +242,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block {
 #[byte_size(24)]
 struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block {
     #[offset(0)]
-    pub ref_count: usize,
+    pub ref_count: u64,
     #[offset(8)]
     #[byte_size(16)]
     pub content: limited_alloc_handle_251_,
@@ -256,7 +256,7 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___cont
     fn default() -> Self {
         {
             detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block {
-                ref_count: 1_usize,
+                ref_count: 1_u64,
                 content: <limited_alloc_handle_251_>::default(),
             }
         }
@@ -319,14 +319,6 @@ impl CppMove for limited_allocator_int__251__rebind_int_ {
         src.read()
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct limited_allocator_int__251__rebind_unsigned_long_ {}
-impl CppMove for limited_allocator_int__251__rebind_unsigned_long_ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(8)]
 pub struct limited_allocator_int__251_ {
@@ -337,7 +329,7 @@ pub struct limited_allocator_int__251_ {
 impl limited_allocator_int__251_ {
     pub fn new() -> Self {
         Self {
-            handle_: ({ make_thread_unsafe_shared_5() }),
+            handle_: ({ make_thread_unsafe_shared_7() }),
         }
     }
 }
@@ -351,34 +343,25 @@ impl Default for limited_allocator_int__251_ {
         { limited_allocator_int__251_::new() }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
-#[byte_size(8)]
-pub struct limited_allocator_unsigned_long__251_ {
-    #[offset(0)]
-    #[byte_size(8)]
-    handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_251__,
-}
-impl limited_allocator_unsigned_long__251_ {}
-impl CppMove for limited_allocator_unsigned_long__251_ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_7.with(|rc| *rc.borrow()) >= dealloc_count_8.with(|rc| *rc.borrow())));
-        return ((alloc_count_7.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_8.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_1(
+                (alloc_count_9.with(|rc| *rc.borrow()) >= dealloc_count_10.with(|rc| *rc.borrow())),
+            )
+        });
+        return ((alloc_count_9.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_10.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
-        disable_default_constructor_9.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_6.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_7.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_8.with(|rc| *rc.borrow_mut() = 0_usize);
+        ({ cpp2rust_assert_fail_1((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
+        disable_default_constructor_11.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_8.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_9.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_10.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -387,29 +370,21 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_6: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_8: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_7: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_9: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_8: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_10: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static disable_default_constructor_9: Value<bool> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_11: Value<bool> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_int_ {}
 impl CppMove for min_allocator_int_ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct min_allocator_unsigned_long_ {}
-impl CppMove for min_allocator_unsigned_long_ {
     fn cpp_move(src: Ptr<Self>) -> Self {
         src.read()
     }
@@ -432,127 +407,97 @@ impl Default for safe_allocator_int_ {
         { safe_allocator_int_::new() }
     }
 }
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct safe_allocator_unsigned_long_ {}
-impl safe_allocator_unsigned_long_ {}
-impl CppMove for safe_allocator_unsigned_long_ {
-    fn cpp_move(src: Ptr<Self>) -> Self {
-        src.read()
-    }
-}
-pub fn is_contiguous_container_asan_correct_10(_a0: Ptr<Vec<i32>>) -> bool {
+pub fn is_contiguous_container_asan_correct_13(
+    _a0: Ptr<std_vector_int__limited_allocator_int__251__>,
+) -> bool {
     return true;
 }
-pub fn is_contiguous_container_asan_correct_11(_a0: Ptr<Vec<i32>>) -> bool {
+pub fn is_contiguous_container_asan_correct_14(
+    _a0: Ptr<std_vector_int__min_allocator_int__>,
+) -> bool {
     return true;
 }
-pub fn is_contiguous_container_asan_correct_12(_a0: Ptr<Vec<i32>>) -> bool {
+pub fn is_contiguous_container_asan_correct_15(
+    _a0: Ptr<std_vector_int__safe_allocator_int__>,
+) -> bool {
     return true;
 }
-pub fn tests_13() -> bool {
+pub fn tests_16() -> bool {
     {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-        if 10_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(10_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).capacity() >= 10_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_14(v.as_pointer(),) }));
-    }
-    {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-            (0..(100_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
+        let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__std_allocator_int__>::default(),
         ));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        if 50_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(50_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).len() == 100_usize) }));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        if 150_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(150_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).len() == 100_usize) }));
-        assert!(({ ((*v.borrow()).capacity() == 150_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_14(v.as_pointer(),) }));
+        ({ (*v.borrow()).reserve(10_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) >= 10_u64)) });
+        ({ cpp2rust_assert_fail_1(({ is_contiguous_container_asan_correct_17(v.as_pointer()) })) });
     }
     {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-            (0..(100_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
+        let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            std_vector_int__std_allocator_int__::new_1({ 100_u64 }, None),
         ));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        if 50_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(50_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).len() == 100_usize) }));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        if 150_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(150_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).len() == 100_usize) }));
-        assert!(({ ((*v.borrow()).capacity() == 150_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_10(v.as_pointer(),) }));
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({ (*v.borrow()).reserve(50_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 100_u64)) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({ (*v.borrow()).reserve(150_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 100_u64)) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 150_u64)) });
+        ({ cpp2rust_assert_fail_1(({ is_contiguous_container_asan_correct_17(v.as_pointer()) })) });
     }
     {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-        if 10_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(10_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).capacity() >= 10_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_11(v.as_pointer(),) }));
-    }
-    {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-            (0..(100_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
+        let v: Value<std_vector_int__limited_allocator_int__251__> = Rc::new(RefCell::new(
+            std_vector_int__limited_allocator_int__251__::new_1({ 100_u64 }, None),
         ));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        if 50_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(50_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).len() == 100_usize) }));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        if 150_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(150_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).len() == 100_usize) }));
-        assert!(({ ((*v.borrow()).capacity() == 150_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_11(v.as_pointer(),) }));
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({ (*v.borrow()).reserve(50_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 100_u64)) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({ (*v.borrow()).reserve(150_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 100_u64)) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 150_u64)) });
+        ({ cpp2rust_assert_fail_1(({ is_contiguous_container_asan_correct_13(v.as_pointer()) })) });
     }
     {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-        if 10_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(10_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).capacity() >= 10_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_12(v.as_pointer(),) }));
-    }
-    {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-            (0..(100_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>(),
+        let v: Value<std_vector_int__min_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__min_allocator_int__>::default(),
         ));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        if 50_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(50_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).len() == 100_usize) }));
-        assert!(({ ((*v.borrow()).capacity() == 100_usize) }));
-        if 150_usize as usize > (*v.borrow()).capacity() as usize {
-            let len_0 = (*v.borrow()).len();
-            (*v.borrow_mut()).reserve_exact(150_usize as usize - len_0 as usize);
-        };
-        assert!(({ ((*v.borrow()).len() == 100_usize) }));
-        assert!(({ ((*v.borrow()).capacity() == 150_usize) }));
-        assert!(({ is_contiguous_container_asan_correct_12(v.as_pointer(),) }));
+        ({ (*v.borrow()).reserve(10_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) >= 10_u64)) });
+        ({ cpp2rust_assert_fail_1(({ is_contiguous_container_asan_correct_14(v.as_pointer()) })) });
+    }
+    {
+        let v: Value<std_vector_int__min_allocator_int__> = Rc::new(RefCell::new(
+            std_vector_int__min_allocator_int__::new_1({ 100_u64 }, None),
+        ));
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({ (*v.borrow()).reserve(50_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 100_u64)) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({ (*v.borrow()).reserve(150_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 100_u64)) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 150_u64)) });
+        ({ cpp2rust_assert_fail_1(({ is_contiguous_container_asan_correct_14(v.as_pointer()) })) });
+    }
+    {
+        let v: Value<std_vector_int__safe_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__safe_allocator_int__>::default(),
+        ));
+        ({ (*v.borrow()).reserve(10_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) >= 10_u64)) });
+        ({ cpp2rust_assert_fail_1(({ is_contiguous_container_asan_correct_15(v.as_pointer()) })) });
+    }
+    {
+        let v: Value<std_vector_int__safe_allocator_int__> = Rc::new(RefCell::new(
+            std_vector_int__safe_allocator_int__::new_1({ 100_u64 }, None),
+        ));
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({ (*v.borrow()).reserve(50_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 100_u64)) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 100_u64)) });
+        ({ (*v.borrow()).reserve(150_u64) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 100_u64)) });
+        ({ cpp2rust_assert_fail_1((({ (*v.borrow()).capacity() }) == 150_u64)) });
+        ({ cpp2rust_assert_fail_1(({ is_contiguous_container_asan_correct_15(v.as_pointer()) })) });
     }
     return true;
 }
@@ -576,13 +521,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_13() });
+    ({ tests_16() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
-#[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
-#[byte_size(1)]
-pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__;
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
@@ -631,7 +573,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_251__Impl
         if ((*self)
             .with(|__s| __s.block.clone())
             .with(|__s| __s.ref_count)
-            != 0_usize)
+            != 0_u64)
         {
             return;
         };
@@ -640,7 +582,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_251__Impl
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
         });
         ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_usize  , )
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_251___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_u64  , )
         });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_251_> {
@@ -655,13 +597,13 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_251__Impl
     }
 }
 pub trait limited_alloc_handle_251_Impl {
-    fn allocate_1_int(&self, N: usize) -> Ptr<i32>;
-    fn deallocate_2_int(&self, ptr: Ptr<i32>, N: usize);
+    fn allocate_1_int(&self, N: u64) -> Ptr<i32>;
+    fn deallocate_2_int(&self, ptr: Ptr<i32>, N: u64);
 }
 impl limited_alloc_handle_251_Impl for Ptr<limited_alloc_handle_251_> {
-    fn allocate_1_int(&self, mut N: usize) -> Ptr<i32> {
-        if ((N).wrapping_add((*self).with(|__s| __s.outstanding_)) > (251_u64 as usize)) {
-            std::process::abort();
+    fn allocate_1_int(&self, mut N: u64) -> Ptr<i32> {
+        if ((N).wrapping_add((*self).with(|__s| __s.outstanding_)) > 251_u64) {
+            ({ __builtin_abort_6() });
         }
         let alloc: Value<Ptr<i32>> = Rc::new(RefCell::new(
             ({ <std_allocator_int_>::default().allocate(N) }),
@@ -671,10 +613,10 @@ impl limited_alloc_handle_251_Impl for Ptr<limited_alloc_handle_251_> {
             .write({ ((*self).with(|__s| __s.outstanding_)).wrapping_add(N) });
         return (*alloc.borrow()).clone();
     }
-    fn deallocate_2_int(&self, mut ptr: Ptr<i32>, mut N: usize) {
+    fn deallocate_2_int(&self, mut ptr: Ptr<i32>, mut N: u64) {
         if ({ (ptr).to_any() } == { (*self).with(|__s| __s.last_alloc_.clone()) }) {
             field!((*self), last_alloc_).write(AnyPtr::default());
-            assert!(((*self).with(|__s| __s.outstanding_) >= N));
+            ({ cpp2rust_assert_fail_1(((*self).with(|__s| __s.outstanding_) >= N)) });
             field!((*self), outstanding_)
                 .write({ ((*self).with(|__s| __s.outstanding_)).wrapping_sub(N) });
         }
@@ -682,16 +624,16 @@ impl limited_alloc_handle_251_Impl for Ptr<limited_alloc_handle_251_> {
     }
 }
 pub trait limited_allocator_int__251_Impl {
-    fn allocate(&self, n: usize) -> Ptr<i32>;
-    fn deallocate(&self, p: Ptr<i32>, n: usize);
-    fn max_size(&self) -> usize;
+    fn allocate(&self, n: u64) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, n: u64);
+    fn max_size(&self) -> u64;
     fn getHandle(&self) -> Ptr<limited_alloc_handle_251_> {
         unimplemented!()
     }
     fn destructor(&self);
 }
 impl limited_allocator_int__251_Impl for Ptr<limited_allocator_int__251_> {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         return ({
             limited_alloc_handle_251_Impl::allocate_1_int(
                 &({
@@ -703,7 +645,7 @@ impl limited_allocator_int__251_Impl for Ptr<limited_allocator_int__251_> {
             )
         });
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         ({
             limited_alloc_handle_251_Impl::deallocate_2_int(
                 &({
@@ -716,39 +658,19 @@ impl limited_allocator_int__251_Impl for Ptr<limited_allocator_int__251_> {
             )
         });
     }
-    fn max_size(&self) -> usize {
-        return (251_u64 as usize);
+    fn max_size(&self) -> u64 {
+        return 251_u64;
     }
-    fn destructor(&self) {
-        field_ptr!(self, handle_).destructor();
-    }
-}
-pub trait limited_allocator_unsigned_long__251_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<u64> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<u64>, mut n: usize) {
-        unimplemented!()
-    }
-    fn max_size(&self) -> usize {
-        unimplemented!()
-    }
-    fn getHandle(&self) -> Ptr<limited_alloc_handle_251_> {
-        unimplemented!()
-    }
-    fn destructor(&self);
-}
-impl limited_allocator_unsigned_long__251_Impl for Ptr<limited_allocator_unsigned_long__251_> {
     fn destructor(&self) {
         field_ptr!(self, handle_).destructor();
     }
 }
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
+    fn allocate(&self, n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: u64);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_int_>::default().allocate(n) })
         });
@@ -756,89 +678,64 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
-pub trait min_allocator_unsigned_long_Impl {
-    fn allocate(
-        &self,
-        mut n: usize,
-    ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
-        unimplemented!()
-    }
-    fn deallocate(
-        &self,
-        mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
-    ) {
-        unimplemented!()
-    }
-}
-impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {}
 pub trait safe_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> Ptr<i32>;
-    fn deallocate(&self, p: Ptr<i32>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, n: u64);
 }
 impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         let memory: Value<Ptr<i32>> = Rc::new(RefCell::new(
             ({ <std_allocator_int_>::default().allocate(n) }),
         ));
         {
-            match ({ (*memory.borrow()).to_any() },) {
-                (mut __tmp_0,) => {
-                    __tmp_0.memset(
-                        (0) as u8,
-                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                            as usize,
-                    );
-                    (__tmp_0).clone()
-                }
-            };
+            ({
+                let ___s: AnyPtr = (*memory.borrow()).to_any();
+                memset_12(
+                    ___s,
+                    0,
+                    (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                )
+            });
         }
         return (*memory.borrow()).clone();
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
-                    (mut __tmp_1,) => {
-                        __tmp_1.memset(
-                            (0) as u8,
-                            ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64))
-                                as usize) as usize,
-                        );
-                        (__tmp_1).clone()
-                    }
-                }));
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(
+                    ({
+                        let ___s: AnyPtr = (p).to_any();
+                        memset_12(
+                            ___s,
+                            0,
+                            (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                        )
+                    }),
+                ));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }
         ({ <std_allocator_int_>::default().deallocate((p).clone(), n) });
     }
 }
-pub trait safe_allocator_unsigned_long_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<u64> {
-        unimplemented!()
-    }
-    fn deallocate(&self, mut p: Ptr<u64>, mut n: usize) {
-        unimplemented!()
-    }
-}
-impl safe_allocator_unsigned_long_Impl for Ptr<safe_allocator_unsigned_long_> {}
 pub trait test_allocator_statisticsImpl {
     fn clear(&self);
     fn clear_ctor_counters(&self);
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        assert!(
-            ((*self).with(|__s| __s.count) == 0)
-                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_1(
+                ((*self).with(|__s| __s.count) == 0)
+                    && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                        .is_null()),
+            )
+        });
         field!((*self), count).write(0);
         field!((*self), time_to_throw).write(0);
         field!((*self), alloc_count).write(0);
@@ -862,8 +759,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_1.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_1.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_2.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_2.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -879,10 +776,10 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_1.with(|_| ());
-    let _ = moved_value_2.with(|_| ());
-    let _ = outstanding_bytes_6.with(|_| ());
-    let _ = alloc_count_7.with(|_| ());
-    let _ = dealloc_count_8.with(|_| ());
-    let _ = disable_default_constructor_9.with(|_| ());
+    let _ = destructed_value_2.with(|_| ());
+    let _ = moved_value_3.with(|_| ());
+    let _ = outstanding_bytes_8.with(|_| ());
+    let _ = alloc_count_9.with(|_| ());
+    let _ = dealloc_count_10.with(|_| ());
+    let _ = disable_default_constructor_11.with(|_| ());
 }

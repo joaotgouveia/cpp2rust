@@ -11,24 +11,24 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let a: Value<(Value<i32>, Value<i64>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new(1)),
-        Rc::new(RefCell::new(2_i64)),
-    )));
-    let b: Value<(Value<i16>, Value<i32>)> = Rc::new(RefCell::new((
-        Rc::new(RefCell::new((7 as i16))),
-        Rc::new(RefCell::new(8)),
-    )));
-    {
-        a.as_pointer().write((
-            Rc::new(RefCell::new((((*b.borrow()).0.as_pointer().read()) as i32))),
-            Rc::new(RefCell::new((((*b.borrow()).1.as_pointer().read()) as i64))),
-        ));
-        a.as_pointer()
-    };
-    assert!(({ ((*(*a.borrow()).0.borrow()) == 7) && ((*(*a.borrow()).1.borrow()) == 8_i64) }));
-    (*(*b.borrow()).0.borrow_mut()) = 9_i16;
-    assert!(({ ((*(*a.borrow()).0.borrow()) == 7) }));
+    let a: Value<std_pair_int__long_> = Rc::new(RefCell::new({
+        let __tmp_0: Value<i32> = Rc::new(RefCell::new(1));
+        let __tmp_1: Value<i64> = Rc::new(RefCell::new(2_i64));
+        std_pair_int__long_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+    }));
+    let b: Value<std_pair_short__int_> = Rc::new(RefCell::new({
+        let __tmp_2: Value<i32> = Rc::new(RefCell::new(7));
+        let __tmp_3: Value<i32> = Rc::new(RefCell::new(8));
+        std_pair_short__int_::new_1({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
+    }));
+    (*a.borrow_mut()) = (*b.borrow()).clone();
+    ({
+        cpp2rust_assert_fail_0(
+            ({ (*a.borrow()).first } == 7) && ({ (*a.borrow()).second } == 8_i64),
+        )
+    });
+    (*b.borrow_mut()).first = 9_i16;
+    ({ cpp2rust_assert_fail_0(({ (*a.borrow()).first } == 7)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

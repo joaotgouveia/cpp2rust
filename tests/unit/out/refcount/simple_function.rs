@@ -16,7 +16,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut x: i32 = (({ foo_0() }) + 1);
     let mut y: i32 = ({ foo_0() });
-    assert!(((x + y) == 1));
+    ({ cpp2rust_assert_fail_1(((x + y) == 1)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

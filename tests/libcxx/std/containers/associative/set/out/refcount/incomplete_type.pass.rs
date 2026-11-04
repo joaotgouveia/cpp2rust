@@ -16,10 +16,10 @@ pub struct A {
     pub m: std_set_A__std_less_A___std_allocator_A__,
     #[offset(56)]
     #[byte_size(8)]
-    pub it: BidirectionalIterator<A>,
+    pub it: std__Rb_tree_const_iterator_A_,
     #[offset(64)]
     #[byte_size(8)]
-    pub cit: BidirectionalIterator<A>,
+    pub cit: std__Rb_tree_const_iterator_A_,
 }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
@@ -86,16 +86,8 @@ impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), data).write({ { (*_a0.upgrade().deref()).data } });
         field!((*self), m).write({ { (*_a0.upgrade().deref()).m.clone() } });
-        {
-            let __a1 = ({ { (*_a0.upgrade().deref()).it.clone() } });
-            field_ptr!((*self), it).with_mut(|__it| *__it = __a1);
-            field_ptr!((*self), it)
-        };
-        {
-            let __a1 = ({ { (*_a0.upgrade().deref()).cit.clone() } });
-            field_ptr!((*self), cit).with_mut(|__it| *__it = __a1);
-            field_ptr!((*self), cit)
-        };
+        field!((*self), it).write({ { (*_a0.upgrade().deref()).it.clone() } });
+        field!((*self), cit).write({ { (*_a0.upgrade().deref()).cit.clone() } });
         return (*self).clone();
     }
 }

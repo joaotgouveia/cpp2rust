@@ -59,16 +59,16 @@ pub fn test_pr34298_2() {
         let CX: Ptr<IncompleteReturnType> = X.as_pointer();
         let X2: Value<IncompleteReturnType> =
             Rc::new(RefCell::new((*CX.upgrade().deref()).clone()));
-        assert!(({ ({ (*X2.borrow()).fn_() }) }));
-        assert!((called_0.with(|rc| *rc.borrow()) == 0));
+        ({ cpp2rust_assert_fail_3(({ (*X2.borrow()).fn_() })) });
+        ({ cpp2rust_assert_fail_3((called_0.with(|rc| *rc.borrow()) == 0)) });
         ({ (*X2.borrow()).fn_() });
-        assert!((called_0.with(|rc| *rc.borrow()) == 1));
+        ({ cpp2rust_assert_fail_3((called_0.with(|rc| *rc.borrow()) == 1)) });
     }
     {
         let Empty: Value<IncompleteReturnType> =
             Rc::new(RefCell::new(<IncompleteReturnType>::default()));
         let X2: Value<IncompleteReturnType> = Rc::new(RefCell::new((*Empty.borrow()).clone()));
-        assert!(({ !({ (*X2.borrow()).fn_() }) }));
+        ({ cpp2rust_assert_fail_3(!({ (*X2.borrow()).fn_() })) });
     }
 }
 pub fn main() {

@@ -18,21 +18,21 @@ fn main_0() -> i32 {
     let mut code: Code = Code_CODE_OK;
     let mut err: Code = Code_CODE_ERR;
     if (code != 0) {
-        assert!(false);
+        ({ cpp2rust_assert_fail_0(false) });
     }
     if !(code != 0) {
-        assert!(true);
+        ({ cpp2rust_assert_fail_0(true) });
     }
     if (err != 0) {
-        assert!(true);
+        ({ cpp2rust_assert_fail_0(true) });
     }
     if !(err != 0) {
-        assert!(false);
+        ({ cpp2rust_assert_fail_0(false) });
     }
     let mut t9: i32 = (!(code != 0) as i32);
-    assert!((t9 == 1));
+    ({ cpp2rust_assert_fail_0((t9 == 1)) });
     let mut b4: bool = (code != 0);
-    assert!(!(b4));
+    ({ cpp2rust_assert_fail_0(!(b4)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

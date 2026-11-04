@@ -47,8 +47,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ));
     let task2: Value<std__Bind_std_function_float__float__float____float__float__> =
         Rc::new(RefCell::new((*task.borrow()).clone()));
-    assert!(({ (({ (*task.borrow_mut())() }) == 16_f32) }));
-    assert!(({ (({ (*task2.borrow_mut())() }) == 16_f32) }));
+    ({ cpp2rust_assert_fail_3((({ (*task.borrow_mut())() }) == 16_f32)) });
+    ({ cpp2rust_assert_fail_3((({ (*task2.borrow_mut())() }) == 16_f32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

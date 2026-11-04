@@ -8,18 +8,14 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn tests_0() -> bool {
     {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 2, _>(|_| 0_i32).to_vec(),
-        ));
+        let c: Value<std_array_int__2_> = Rc::new(RefCell::new(<std_array_int__2_>::default()));
         const _: () = assert!(true, "");;
-        assert!(({ (({ (*c.borrow()).max_size() }) == 2_usize) }));
+        ({ cpp2rust_assert_fail_1((({ (*c.borrow()).max_size() }) == 2_u64)) });
     }
     {
-        let c: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 0, _>(|_| 0_i32).to_vec(),
-        ));
+        let c: Value<std_array_int__0_> = Rc::new(RefCell::new(<std_array_int__0_>::default()));
         const _: () = assert!(true, "");;
-        assert!(({ (({ (*c.borrow()).max_size() }) == 0_usize) }));
+        ({ cpp2rust_assert_fail_1((({ (*c.borrow()).max_size() }) == 0_u64)) });
     }
     return true;
 }
@@ -46,9 +42,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     ({ tests_0() });
     const _: () = assert!(true, "tests()");;
     {
-        let array: Value<Vec<i32>> = Rc::new(RefCell::new(
-            std::array::from_fn::<_, 3, _>(|_| 0_i32).to_vec(),
-        ));
+        let array: Value<std_array_int__3_> = Rc::new(RefCell::new(<std_array_int__3_>::default()));
         const _: () = assert!(true, "array.max_size() == 3");;
     }
     return 0;

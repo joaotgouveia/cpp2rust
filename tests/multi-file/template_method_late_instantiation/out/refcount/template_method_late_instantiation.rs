@@ -29,10 +29,10 @@ pub fn main() {
 fn main_0() -> i32 {
     let p: Value<S_int_> = Rc::new(RefCell::new(<S_int_>::default()));
     ({ S_int_Impl::set(&p.as_pointer(), 3) });
-    assert!((({ f_0((p.as_pointer()),) }) == 3));
+    ({ cpp2rust_assert_fail_0((({ f_1((p.as_pointer())) }) == 3)) });
     return 0;
 }
-pub fn f_0(mut p: Ptr<S_int_>) -> i32 {
+pub fn f_1(mut p: Ptr<S_int_>) -> i32 {
     return ({ S_int_Impl::get(&p) });
 }
 pub trait S_int_Impl {

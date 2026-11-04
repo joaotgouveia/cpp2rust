@@ -16,7 +16,7 @@ fn main_0() -> i32 {
     let mut y: i32 = 10;
     r.write({ y });
     y += 1;
-    assert!(({ ((*x.borrow()) == 10) }));
+    ({ cpp2rust_assert_fail_0(((*x.borrow()) == 10)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

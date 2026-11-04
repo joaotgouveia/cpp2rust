@@ -55,19 +55,19 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S::new({ 1 })));
-    assert!((({ SImpl::get(&s.as_pointer(),) }) == 1));
+    ({ cpp2rust_assert_fail_1((({ SImpl::get(&s.as_pointer()) }) == 1)) });
     ({ SImpl::set(&s.as_pointer(), 4) });
-    assert!((({ SImpl::get(&s.as_pointer(),) }) == 4));
-    assert!((({ SImpl::add(&s.as_pointer(), 2,) }) == 6));
+    ({ cpp2rust_assert_fail_1((({ SImpl::get(&s.as_pointer()) }) == 4)) });
+    ({ cpp2rust_assert_fail_1((({ SImpl::add(&s.as_pointer(), 2) }) == 6)) });
     let derived: Value<Derived> = Rc::new(RefCell::new(Derived::new({ 3 })));
     let mut base: PtrDyn<dyn Base> = (derived.as_pointer()).to_dyn::<dyn Base>(|w| w);
-    assert!((({ (*base.upgrade().deref_mut()).apply(5,) }) == 15));
+    ({ cpp2rust_assert_fail_1((({ (*base.upgrade().deref_mut()).apply(5) }) == 15)) });
     let pair: Value<Pair> = Rc::new(RefCell::new(Pair {
         first: 7,
         second: 3,
     }));
-    assert!((({ pair_sum_1((pair.as_pointer()),) }) == 10));
-    assert!((({ pair_diff_0((pair.as_pointer()),) }) == 4));
+    ({ cpp2rust_assert_fail_1((({ pair_sum_2((pair.as_pointer())) }) == 10)) });
+    ({ cpp2rust_assert_fail_1((({ pair_diff_0((pair.as_pointer())) }) == 4)) });
     return 0;
 }
 impl S {
@@ -82,7 +82,7 @@ impl Derived {
 }
 impl S {}
 impl Derived {}
-pub fn pair_sum_1(mut p: Ptr<Pair>) -> i32 {
+pub fn pair_sum_2(mut p: Ptr<Pair>) -> i32 {
     return ({ p.with(|__s| __s.first) } + { p.with(|__s| __s.second) });
 }
 impl Base for Derived {

@@ -77,8 +77,12 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ sum_0(3, Box::new([(1).into(), (2).into(), (3).into(),])) }) == 6));
-    assert!((({ sum_ptr_2(2, Box::new([(4).into(), (5).into(),])) }) == 9));
+    ({
+        cpp2rust_assert_fail_4(
+            (({ sum_0(3, Box::new([(1).into(), (2).into(), (3).into()])) }) == 6),
+        )
+    });
+    ({ cpp2rust_assert_fail_4((({ sum_ptr_2(2, Box::new([(4).into(), (5).into()])) }) == 9)) });
     return 0;
 }
 pub trait Guard_1Impl {

@@ -40,35 +40,35 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         Rc::new(RefCell::new(std_weak_ptr_int_::new_1({ p2.as_pointer() })));
     let w3: Value<std_weak_ptr_int_> =
         Rc::new(RefCell::new(std_weak_ptr_int_::new_1({ p3.as_pointer() })));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_0(
             !({
                 ((*p1.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_)
                     .owner_before(w2.as_pointer())
-            })
-        })
-    );
-    assert!(
-        ({
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
             !({
                 ((*p2.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_)
                     .owner_before(w1.as_pointer())
-            })
-        })
-    );
-    assert!(
-        ({
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
             ({
                 ((*p1.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_)
                     .owner_before(w3.as_pointer())
             }) || ({
                 ((*p3.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_)
                     .owner_before(w1.as_pointer())
-            })
-        })
-    );
-    assert!(
-        ({
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
             ((({
                 ((*p3.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_)
                     .owner_before(w1.as_pointer())
@@ -76,9 +76,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 == (({
                     ((*p3.borrow()) as std___shared_ptr_int____gnu_cxx__S_atomic_)
                         .owner_before(w2.as_pointer())
-                }) as i32))
-        })
-    );
+                }) as i32)),
+        )
+    });
     const _: () = assert!(true, "");;
     return 0;
 }

@@ -46,9 +46,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((((({ foo_0() }) + ({ foo_0() })) + ({ foo_0() })) == 15));
-    assert!((({ from_local_class_6() }) == 9));
-    assert!((({ from_local_class_6() }) == 13));
+    ({ cpp2rust_assert_fail_9((((({ foo_0() }) + ({ foo_0() })) + ({ foo_0() })) == 15)) });
+    ({ cpp2rust_assert_fail_9((({ from_local_class_6() }) == 9)) });
+    ({ cpp2rust_assert_fail_9((({ from_local_class_6() }) == 13)) });
     return 0;
 }
 pub trait S_8Impl {

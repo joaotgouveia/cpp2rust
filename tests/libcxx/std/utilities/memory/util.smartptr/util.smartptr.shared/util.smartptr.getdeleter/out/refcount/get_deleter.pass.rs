@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -49,10 +53,10 @@ impl CppMove for test_deleter_base {
     }
 }
 thread_local!(
-    pub static count_4: Value<i32> = Rc::new(RefCell::new(0));
+    pub static count_5: Value<i32> = Rc::new(RefCell::new(0));
 );
 thread_local!(
-    pub static dealloc_count_5: Value<i32> = Rc::new(RefCell::new(0));
+    pub static dealloc_count_6: Value<i32> = Rc::new(RefCell::new(0));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
 #[byte_size(4)]
@@ -63,14 +67,14 @@ pub struct test_deleter_A_ {
 impl test_deleter_A_ {
     pub fn new_1(mut s: i32) -> Self {
         let __this: test_deleter_A_ = Self { state_: s };
-        (*count_4.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_5.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(d: Ptr<test_deleter_A_>) -> Self {
         let __this: test_deleter_A_ = Self {
             state_: d.with(|__s| __s.state_),
         };
-        (*count_4.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_5.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
 }
@@ -100,12 +104,12 @@ pub struct A {}
 impl A {
     pub fn new() -> Self {
         let __this: A = Self {};
-        (*count_6.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_7.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(_a0: Ptr<A>) -> Self {
         let __this: A = Self {};
-        (*count_6.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_7.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
 }
@@ -126,7 +130,7 @@ impl Default for A {
     }
 }
 thread_local!(
-    pub static count_6: Value<i32> = Rc::new(RefCell::new(0));
+    pub static count_7: Value<i32> = Rc::new(RefCell::new(0));
 );
 
 pub fn main() {
@@ -156,41 +160,41 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
                 Rc::new(RefCell::new(std_shared_ptr_A_::new_1({ (ptr).clone() }, {
                     test_deleter_A_::new_1({ 3 })
                 })));
-            let mut d: Ptr<test_deleter_A_> = ({ get_deleter_7(p.as_pointer()) });
-            assert!((count_4.with(|rc| *rc.borrow()) == 1));
-            assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 0));
-            assert!(!(d).is_null());
-            assert!((({ test_deleter_A_Impl::state(&d,) }) == 3));
+            let mut d: Ptr<test_deleter_A_> = ({ get_deleter_8(p.as_pointer()) });
+            ({ cpp2rust_assert_fail_4((count_5.with(|rc| *rc.borrow()) == 1)) });
+            ({ cpp2rust_assert_fail_4((dealloc_count_6.with(|rc| *rc.borrow()) == 0)) });
+            ({ cpp2rust_assert_fail_4(!(d).is_null()) });
+            ({ cpp2rust_assert_fail_4((({ test_deleter_A_Impl::state(&d) }) == 3)) });
         }
-        assert!((count_6.with(|rc| *rc.borrow()) == 0));
-        assert!((count_4.with(|rc| *rc.borrow()) == 0));
-        assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 1));
+        ({ cpp2rust_assert_fail_4((count_7.with(|rc| *rc.borrow()) == 0)) });
+        ({ cpp2rust_assert_fail_4((count_5.with(|rc| *rc.borrow()) == 0)) });
+        ({ cpp2rust_assert_fail_4((dealloc_count_6.with(|rc| *rc.borrow()) == 1)) });
     }
-    dealloc_count_5.with(|rc| *rc.borrow_mut() = 0);
+    dealloc_count_6.with(|rc| *rc.borrow_mut() = 0);
     {
         {
             let p: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_2(
                 { Default::default() },
                 { test_deleter_A_::new_1({ 3 }) },
             )));
-            let mut d: Ptr<test_deleter_A_> = ({ get_deleter_7(p.as_pointer()) });
-            assert!((count_4.with(|rc| *rc.borrow()) == 1));
-            assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 0));
-            assert!(!(d).is_null());
-            assert!((({ test_deleter_A_Impl::state(&d,) }) == 3));
+            let mut d: Ptr<test_deleter_A_> = ({ get_deleter_8(p.as_pointer()) });
+            ({ cpp2rust_assert_fail_4((count_5.with(|rc| *rc.borrow()) == 1)) });
+            ({ cpp2rust_assert_fail_4((dealloc_count_6.with(|rc| *rc.borrow()) == 0)) });
+            ({ cpp2rust_assert_fail_4(!(d).is_null()) });
+            ({ cpp2rust_assert_fail_4((({ test_deleter_A_Impl::state(&d) }) == 3)) });
         }
-        assert!((count_6.with(|rc| *rc.borrow()) == 0));
-        assert!((count_4.with(|rc| *rc.borrow()) == 0));
-        assert!((dealloc_count_5.with(|rc| *rc.borrow()) == 1));
+        ({ cpp2rust_assert_fail_4((count_7.with(|rc| *rc.borrow()) == 0)) });
+        ({ cpp2rust_assert_fail_4((count_5.with(|rc| *rc.borrow()) == 0)) });
+        ({ cpp2rust_assert_fail_4((dealloc_count_6.with(|rc| *rc.borrow()) == 1)) });
     }
-    dealloc_count_5.with(|rc| *rc.borrow_mut() = 0);
+    dealloc_count_6.with(|rc| *rc.borrow_mut() = 0);
     {
         let p: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_2(
             { Default::default() },
             { test_deleter_A_::new_1({ 3 }) },
         )));
-        let mut d: Ptr<std_default_delete_A_> = ({ get_deleter_8(p.as_pointer()) });
-        assert!((d).is_null());
+        let mut d: Ptr<std_default_delete_A_> = ({ get_deleter_9(p.as_pointer()) });
+        ({ cpp2rust_assert_fail_4((d).is_null()) });
     }
     return 0;
 }
@@ -200,7 +204,7 @@ pub trait AImpl {
 }
 impl AImpl for Ptr<A> {
     fn destructor(&self) {
-        (*count_6.with(Value::clone).borrow_mut()).prefix_dec();
+        (*count_7.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn copy_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         return (*self).clone();
@@ -216,16 +220,16 @@ pub trait test_deleter_A_Impl {
 }
 impl test_deleter_A_Impl for Ptr<test_deleter_A_> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.state_) >= 0));
-        (*count_4.with(Value::clone).borrow_mut()).prefix_dec();
+        ({ cpp2rust_assert_fail_4(((*self).with(|__s| __s.state_) >= 0)) });
+        (*count_5.with(Value::clone).borrow_mut()).prefix_dec();
         field!((*self), state_).write(-1_i32);
     }
     fn state(&self) -> i32 {
         return (*self).with(|__s| __s.state_);
     }
     fn operator_call(&self, mut p: Ptr<A>) {
-        assert!(((*self).with(|__s| __s.state_) >= 0));
-        (*dealloc_count_5.with(Value::clone).borrow_mut()).prefix_inc();
+        ({ cpp2rust_assert_fail_4(((*self).with(|__s| __s.state_) >= 0)) });
+        (*dealloc_count_6.with(Value::clone).borrow_mut()).prefix_inc();
         {
             let __p = p;
             __p.destructor();
@@ -238,7 +242,7 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_1.with(|_| ());
     let _ = dealloc_count_2.with(|_| ());
     let _ = disable_default_constructor_3.with(|_| ());
-    let _ = count_4.with(|_| ());
-    let _ = dealloc_count_5.with(|_| ());
-    let _ = count_6.with(|_| ());
+    let _ = count_5.with(|_| ());
+    let _ = dealloc_count_6.with(|_| ());
+    let _ = count_7.with(|_| ());
 }

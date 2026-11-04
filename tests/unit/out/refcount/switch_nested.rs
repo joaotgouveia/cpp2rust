@@ -47,10 +47,10 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ nested_0(1, 10,) }) == 12));
-    assert!((({ nested_0(1, 99,) }) == 14));
-    assert!((({ nested_0(2, 0,) }) == 2));
-    assert!((({ nested_0(3, 3,) }) == -1_i32));
+    ({ cpp2rust_assert_fail_1((({ nested_0(1, 10) }) == 12)) });
+    ({ cpp2rust_assert_fail_1((({ nested_0(1, 99) }) == 14)) });
+    ({ cpp2rust_assert_fail_1((({ nested_0(2, 0) }) == 2)) });
+    ({ cpp2rust_assert_fail_1((({ nested_0(3, 3) }) == -1_i32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

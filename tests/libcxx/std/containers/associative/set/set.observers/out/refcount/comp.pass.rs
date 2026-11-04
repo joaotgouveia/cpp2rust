@@ -10,47 +10,55 @@ pub fn test_0() -> bool {
     let s: Value<std_set_int__std_less_int___std_allocator_int__> = Rc::new(RefCell::new(
         <std_set_int__std_less_int___std_allocator_int__>::default(),
     ));
-    let p1: Value<(Value<BidirectionalIterator<i32>>, Value<bool>)> = Rc::new(RefCell::new(
+    let p1: Value<std_pair_std__Rb_tree_const_iterator_int___bool_> = Rc::new(RefCell::new(
         ({
             let ___x: Value<i32> = Rc::new(RefCell::new(1));
             (*s.borrow()).insert_37(___x.as_pointer())
         }),
     ));
-    let p2: Value<(Value<BidirectionalIterator<i32>>, Value<bool>)> = Rc::new(RefCell::new(
+    let p2: Value<std_pair_std__Rb_tree_const_iterator_int___bool_> = Rc::new(RefCell::new(
         ({
             let ___x: Value<i32> = Rc::new(RefCell::new(2));
             (*s.borrow()).insert_37(___x.as_pointer())
         }),
     ));
     let cs: Ptr<std_set_int__std_less_int___std_allocator_int__> = s.as_pointer();
-    assert!(
-        ({
-            let ___x: Ptr<i32> = (*(*p1.borrow()).0.borrow()).iter_deref();
-            let ___y: Ptr<i32> = (*(*p2.borrow()).0.borrow()).iter_deref();
-            ({ (*cs.upgrade().deref()).key_comp() })(___x, ___y)
-        })
-    );
-    assert!(
-        !({
-            let ___x: Ptr<i32> = (*(*p2.borrow()).0.borrow()).iter_deref();
-            let ___y: Ptr<i32> = (*(*p1.borrow()).0.borrow()).iter_deref();
-            ({ (*cs.upgrade().deref()).key_comp() })(___x, ___y)
-        })
-    );
-    assert!(
-        ({
-            let ___x: Ptr<i32> = (*(*p1.borrow()).0.borrow()).iter_deref();
-            let ___y: Ptr<i32> = (*(*p2.borrow()).0.borrow()).iter_deref();
-            ({ (*cs.upgrade().deref()).value_comp() })(___x, ___y)
-        })
-    );
-    assert!(
-        !({
-            let ___x: Ptr<i32> = (*(*p2.borrow()).0.borrow()).iter_deref();
-            let ___y: Ptr<i32> = (*(*p1.borrow()).0.borrow()).iter_deref();
-            ({ (*cs.upgrade().deref()).value_comp() })(___x, ___y)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let ___x: Ptr<i32> = field_ptr!(p1.as_pointer(), first);
+                let ___y: Ptr<i32> = field_ptr!(p2.as_pointer(), first);
+                ({ (*cs.upgrade().deref()).key_comp() })(___x, ___y)
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({
+                let ___x: Ptr<i32> = field_ptr!(p2.as_pointer(), first);
+                let ___y: Ptr<i32> = field_ptr!(p1.as_pointer(), first);
+                ({ (*cs.upgrade().deref()).key_comp() })(___x, ___y)
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let ___x: Ptr<i32> = field_ptr!(p1.as_pointer(), first);
+                let ___y: Ptr<i32> = field_ptr!(p2.as_pointer(), first);
+                ({ (*cs.upgrade().deref()).value_comp() })(___x, ___y)
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({
+                let ___x: Ptr<i32> = field_ptr!(p2.as_pointer(), first);
+                let ___y: Ptr<i32> = field_ptr!(p1.as_pointer(), first);
+                ({ (*cs.upgrade().deref()).value_comp() })(___x, ___y)
+            }),
+        )
+    });
     return true;
 }
 pub fn main() {

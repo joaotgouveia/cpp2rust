@@ -55,9 +55,9 @@ pub fn test_0() -> bool {
     {
         let tuple: Value<std_tuple_TrackDtor_> =
             Rc::new(RefCell::new(TrackDtor::new({ (count.as_pointer()) })));
-        assert!(({ ((*count.borrow()) == 0) }));
+        ({ cpp2rust_assert_fail_1(((*count.borrow()) == 0)) });
     }
-    assert!(({ ((*count.borrow()) == 1) }));
+    ({ cpp2rust_assert_fail_1(((*count.borrow()) == 1)) });
     return true;
 }
 pub fn main() {

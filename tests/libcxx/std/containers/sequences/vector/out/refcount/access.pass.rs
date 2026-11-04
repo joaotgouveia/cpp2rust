@@ -34,17 +34,21 @@ pub fn DoNotOptimize_2(value: Ptr<AnyPtr>) -> Ptr<AnyPtr> {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_4.with(|rc| *rc.borrow()) >= dealloc_count_5.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_7(
+                (alloc_count_4.with(|rc| *rc.borrow()) >= dealloc_count_5.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_4.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_5.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_7((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_6.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_3.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_4.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_3.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_4.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_5.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -53,13 +57,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_3: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_3: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_4: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_4: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_5: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_5: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_6: Value<bool> = Rc::new(RefCell::new(false));
@@ -90,370 +94,10 @@ impl Default for safe_allocator_int_ {
         { safe_allocator_int_::new() }
     }
 }
-pub fn make_7(mut size: i32, mut start: i32) -> Vec<i32> {
-    let mut c: Vec<i32> = Vec::new();
-    let mut i: i32 = 0;
-    'loop_: while (i < size) {
-        {
-            let __a1 = (start + i);
-            c.push(__a1)
-        };
-        i.prefix_inc();
-    }
-    return std::mem::take(&mut c);
-}
-pub fn make_8(mut size: i32, mut start: i32) -> Vec<i32> {
-    let mut c: Vec<i32> = Vec::new();
-    let mut i: i32 = 0;
-    'loop_: while (i < size) {
-        {
-            let __a1 = (start + i);
-            c.push(__a1)
-        };
-        i.prefix_inc();
-    }
-    return std::mem::take(&mut c);
-}
-pub fn make_9(mut size: i32, mut start: i32) -> Vec<i32> {
-    let mut c: Vec<i32> = Vec::new();
-    let mut i: i32 = 0;
-    'loop_: while (i < size) {
-        {
-            let __a1 = (start + i);
-            c.push(__a1)
-        };
-        i.prefix_inc();
-    }
-    return std::mem::take(&mut c);
-}
-pub fn test_get_basic_10(c: Ptr<Vec<i32>>, mut start_value: i32) {
-    let mut n: i32 = ((*c.upgrade().deref()).len() as i32);
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(({ (c.decay().offset((i as usize) as isize).read()) } == { (start_value + i) }));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(({ (c.decay().offset((i as usize) as isize).read()) } == { (start_value + i) }));
-        i.prefix_inc();
-    }
-    assert!(({ (c.decay().read()) } == { start_value }));
-    assert!(({ (c.decay().to_last().read()) } == { ((start_value + n) - 1) }));
-}
-pub fn test_get_basic_11(c: Ptr<Vec<i32>>, mut start_value: i32) {
-    let mut n: i32 = ((*c.upgrade().deref()).len() as i32);
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(
-            ({
-                (match ({ (i as usize) },) {
-                    (mut __tmp_2,) => {
-                        if __tmp_2 as usize >= (*c.upgrade().deref()).len() {
-                            panic!("out of bounds access")
-                        } else {
-                            c.decay().offset(__tmp_2 as isize)
-                        }
-                    }
-                }
-                .read())
-            } == { (start_value + i) })
-        );
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(
-            ({
-                (match ({ (i as usize) },) {
-                    (mut __tmp_3,) => {
-                        if __tmp_3 as usize >= (*c.upgrade().deref()).len() {
-                            panic!("out of bounds access")
-                        } else {
-                            c.decay().offset(__tmp_3 as isize)
-                        }
-                    }
-                }
-                .read())
-            } == { (start_value + i) })
-        );
-        i.prefix_inc();
-    }
-    assert!(({ ({ (({ (*c.upgrade().deref()).front_54() }).read()) } == { start_value }) }));
-    assert!(({ (c.decay().to_last().read()) } == { ((start_value + n) - 1) }));
-}
-pub fn test_get_basic_12(c: Ptr<Vec<i32>>, mut start_value: i32) {
-    let mut n: i32 = ((*c.upgrade().deref()).len() as i32);
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(({ (c.decay().offset((i as usize) as isize).read()) } == { (start_value + i) }));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(({ (c.decay().offset((i as usize) as isize).read()) } == { (start_value + i) }));
-        i.prefix_inc();
-    }
-    assert!(({ (c.decay().read()) } == { start_value }));
-    assert!(({ (c.decay().to_last().read()) } == { ((start_value + n) - 1) }));
-}
-pub fn test_get_basic_13(c: Ptr<Vec<i32>>, mut start_value: i32) {
-    let mut n: i32 = ((*c.upgrade().deref()).len() as i32);
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(
-            ({
-                (match ({ (i as usize) },) {
-                    (mut __tmp_4,) => {
-                        if __tmp_4 as usize >= (*c.upgrade().deref()).len() {
-                            panic!("out of bounds access")
-                        } else {
-                            c.decay().offset(__tmp_4 as isize)
-                        }
-                    }
-                }
-                .read())
-            } == { (start_value + i) })
-        );
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(
-            ({
-                (match ({ (i as usize) },) {
-                    (mut __tmp_5,) => {
-                        if __tmp_5 as usize >= (*c.upgrade().deref()).len() {
-                            panic!("out of bounds access")
-                        } else {
-                            c.decay().offset(__tmp_5 as isize)
-                        }
-                    }
-                }
-                .read())
-            } == { (start_value + i) })
-        );
-        i.prefix_inc();
-    }
-    assert!(({ ({ (({ (*c.upgrade().deref()).front_54() }).read()) } == { start_value }) }));
-    assert!(({ (c.decay().to_last().read()) } == { ((start_value + n) - 1) }));
-}
-pub fn test_get_basic_14(c: Ptr<Vec<i32>>, mut start_value: i32) {
-    let mut n: i32 = ((*c.upgrade().deref()).len() as i32);
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(({ (c.decay().offset((i as usize) as isize).read()) } == { (start_value + i) }));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(({ (c.decay().offset((i as usize) as isize).read()) } == { (start_value + i) }));
-        i.prefix_inc();
-    }
-    assert!(({ (c.decay().read()) } == { start_value }));
-    assert!(({ (c.decay().to_last().read()) } == { ((start_value + n) - 1) }));
-}
-pub fn test_get_basic_15(c: Ptr<Vec<i32>>, mut start_value: i32) {
-    let mut n: i32 = ((*c.upgrade().deref()).len() as i32);
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(
-            ({
-                (match ({ (i as usize) },) {
-                    (mut __tmp_6,) => {
-                        if __tmp_6 as usize >= (*c.upgrade().deref()).len() {
-                            panic!("out of bounds access")
-                        } else {
-                            c.decay().offset(__tmp_6 as isize)
-                        }
-                    }
-                }
-                .read())
-            } == { (start_value + i) })
-        );
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(
-            ({
-                (match ({ (i as usize) },) {
-                    (mut __tmp_7,) => {
-                        if __tmp_7 as usize >= (*c.upgrade().deref()).len() {
-                            panic!("out of bounds access")
-                        } else {
-                            c.decay().offset(__tmp_7 as isize)
-                        }
-                    }
-                }
-                .read())
-            } == { (start_value + i) })
-        );
-        i.prefix_inc();
-    }
-    assert!(({ ({ (({ (*c.upgrade().deref()).front_54() }).read()) } == { start_value }) }));
-    assert!(({ (c.decay().to_last().read()) } == { ((start_value + n) - 1) }));
-}
-pub fn test_get_16() {
-    let mut start_value: i32 = 35;
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_7(10, start_value) })));
-    let cc: Ptr<Vec<i32>> = c.as_pointer();
-    ({ test_get_basic_10(c.as_pointer(), start_value) });
-    ({
-        let _c: Ptr<Vec<i32>> = (cc).clone();
-        let _start_value: i32 = start_value;
-        test_get_basic_11(_c, _start_value)
-    });
-}
-pub fn test_get_17() {
-    let mut start_value: i32 = 35;
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_8(10, start_value) })));
-    let cc: Ptr<Vec<i32>> = c.as_pointer();
-    ({ test_get_basic_12(c.as_pointer(), start_value) });
-    ({
-        let _c: Ptr<Vec<i32>> = (cc).clone();
-        let _start_value: i32 = start_value;
-        test_get_basic_13(_c, _start_value)
-    });
-}
-pub fn test_get_18() {
-    let mut start_value: i32 = 35;
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_9(10, start_value) })));
-    let cc: Ptr<Vec<i32>> = c.as_pointer();
-    ({ test_get_basic_14(c.as_pointer(), start_value) });
-    ({
-        let _c: Ptr<Vec<i32>> = (cc).clone();
-        let _start_value: i32 = start_value;
-        test_get_basic_15(_c, _start_value)
-    });
-}
-pub fn test_set_19() {
-    let mut start_value: i32 = 35;
-    let mut n: i32 = 10;
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_7(n, start_value) })));
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(((c.decay().offset((i as usize) as isize).read()) == (start_value + i)));
-        let __rhs = ((start_value + i) + 1);
-        c.decay().offset((i as usize) as isize).write(__rhs);
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 1)));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 1)));
-        let __rhs = ((start_value + i) + 2);
-        c.decay().offset((i as usize) as isize).write(__rhs);
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 2)));
-        i.prefix_inc();
-    }
-    assert!(((c.decay().read()) == (start_value + 2)));
-    c.decay().write((start_value + 3));
-    assert!(((c.decay().read()) == (start_value + 3)));
-    assert!(((c.decay().to_last().read()) == ((start_value + n) + 1)));
-    c.decay().to_last().write(((start_value + n) + 2));
-    assert!(((c.decay().to_last().read()) == ((start_value + n) + 2)));
-}
-pub fn test_set_20() {
-    let mut start_value: i32 = 35;
-    let mut n: i32 = 10;
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_8(n, start_value) })));
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(((c.decay().offset((i as usize) as isize).read()) == (start_value + i)));
-        let __rhs = ((start_value + i) + 1);
-        c.decay().offset((i as usize) as isize).write(__rhs);
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 1)));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 1)));
-        let __rhs = ((start_value + i) + 2);
-        c.decay().offset((i as usize) as isize).write(__rhs);
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 2)));
-        i.prefix_inc();
-    }
-    assert!(((c.decay().read()) == (start_value + 2)));
-    c.decay().write((start_value + 3));
-    assert!(((c.decay().read()) == (start_value + 3)));
-    assert!(((c.decay().to_last().read()) == ((start_value + n) + 1)));
-    c.decay().to_last().write(((start_value + n) + 2));
-    assert!(((c.decay().to_last().read()) == ((start_value + n) + 2)));
-}
-pub fn test_set_21() {
-    let mut start_value: i32 = 35;
-    let mut n: i32 = 10;
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(({ make_9(n, start_value) })));
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(((c.decay().offset((i as usize) as isize).read()) == (start_value + i)));
-        let __rhs = ((start_value + i) + 1);
-        c.decay().offset((i as usize) as isize).write(__rhs);
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 1)));
-        i.prefix_inc();
-    }
-    let mut i: i32 = 0;
-    'loop_: while (i < n) {
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 1)));
-        let __rhs = ((start_value + i) + 2);
-        c.decay().offset((i as usize) as isize).write(__rhs);
-        assert!(((c.decay().offset((i as usize) as isize).read()) == ((start_value + i) + 2)));
-        i.prefix_inc();
-    }
-    assert!(((c.decay().read()) == (start_value + 2)));
-    c.decay().write((start_value + 3));
-    assert!(((c.decay().read()) == (start_value + 3)));
-    assert!(((c.decay().to_last().read()) == ((start_value + n) + 1)));
-    c.decay().to_last().write(((start_value + n) + 2));
-    assert!(((c.decay().to_last().read()) == ((start_value + n) + 2)));
-}
-pub fn test_22() {
-    ({ test_get_16() });
-    ({ test_set_19() });
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    let cc: Ptr<Vec<i32>> = c.as_pointer();
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-}
-pub fn test_23() {
-    ({ test_get_17() });
-    ({ test_set_20() });
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    let cc: Ptr<Vec<i32>> = c.as_pointer();
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-}
-pub fn test_24() {
-    ({ test_get_18() });
-    ({ test_set_21() });
-    let c: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
-    let cc: Ptr<Vec<i32>> = c.as_pointer();
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-}
-pub fn tests_25() -> bool {
-    ({ test_22() });
-    ({ test_23() });
-    ({ test_24() });
+pub fn tests_9() -> bool {
+    ({ test_10() });
+    ({ test_11() });
+    ({ test_12() });
     return true;
 }
 pub fn main() {
@@ -476,7 +120,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_25() });
+    ({ tests_9() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
@@ -484,11 +128,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
 #[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
+    fn allocate(&self, n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: u64);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_int_>::default().allocate(n) })
         });
@@ -496,47 +140,45 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
 pub trait safe_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> Ptr<i32>;
-    fn deallocate(&self, p: Ptr<i32>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, n: u64);
 }
 impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         let memory: Value<Ptr<i32>> = Rc::new(RefCell::new(
             ({ <std_allocator_int_>::default().allocate(n) }),
         ));
         {
-            match ({ (*memory.borrow()).to_any() },) {
-                (mut __tmp_0,) => {
-                    __tmp_0.memset(
-                        (0) as u8,
-                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                            as usize,
-                    );
-                    (__tmp_0).clone()
-                }
-            };
+            ({
+                let ___s: AnyPtr = (*memory.borrow()).to_any();
+                memset_8(
+                    ___s,
+                    0,
+                    (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                )
+            });
         }
         return (*memory.borrow()).clone();
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
-                    (mut __tmp_1,) => {
-                        __tmp_1.memset(
-                            (0) as u8,
-                            ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64))
-                                as usize) as usize,
-                        );
-                        (__tmp_1).clone()
-                    }
-                }));
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(
+                    ({
+                        let ___s: AnyPtr = (p).to_any();
+                        memset_8(
+                            ___s,
+                            0,
+                            (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                        )
+                    }),
+                ));
                 DoNotOptimize_2(_value.as_pointer())
             });
         }

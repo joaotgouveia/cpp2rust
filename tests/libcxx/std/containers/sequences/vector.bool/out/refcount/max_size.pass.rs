@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -240,10 +244,10 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_4: Value<i32> = Rc::new(RefCell::new(-1_i32));
+    pub static destructed_value_5: Value<i32> = Rc::new(RefCell::new(-1_i32));
 );
 thread_local!(
-    pub static moved_value_5: Value<i32> = Rc::new(RefCell::new(2147483647));
+    pub static moved_value_6: Value<i32> = Rc::new(RefCell::new(2147483647));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -253,14 +257,14 @@ impl CppMove for test_alloc_base {
         src.read()
     }
 }
-pub fn operator_eq_6(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_eq_7(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_7(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
+pub fn operator_ne_8(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> bool {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_6(_x, _y)
+        operator_eq_7(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -320,7 +324,7 @@ impl test_allocator_void_ {
 }
 impl CppEq for test_allocator_void_ {
     fn equal(__lhs: &Ptr<Self>, __rhs: &Ptr<Self>) -> bool {
-        operator_eq_6(__lhs.clone(), __rhs.clone())
+        operator_eq_7(__lhs.clone(), __rhs.clone())
     }
 }
 impl Clone for test_allocator_void_ {
@@ -435,12 +439,16 @@ impl test_allocator_unsigned_long_ {
             stats_: a.with(|__s| __s.stats_.clone()),
         }));
         let this: Ptr<test_allocator_unsigned_long_> = __this.as_pointer();
-        assert!(
-            (({ a.with(|__s| __s.data_) } != { destructed_value_4.with(|rc| *rc.borrow()) })
-                && ({ a.with(|__s| __s.id_) } != { destructed_value_4.with(|rc| *rc.borrow()) }))
-                && (!(Ptr::<i8>::from_string_literal(b"copying from destroyed allocator"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_4(
+                (({ a.with(|__s| __s.data_) } != { destructed_value_5.with(|rc| *rc.borrow()) })
+                    && ({ a.with(|__s| __s.id_) } != {
+                        destructed_value_5.with(|rc| *rc.borrow())
+                    }))
+                    && (!(Ptr::<i8>::from_string_literal(b"copying from destroyed allocator"))
+                        .is_null()),
+            )
+        });
         if !((this.with(|__s| __s.stats_.clone())).is_null()) {
             field!(this.with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_inc();
@@ -552,7 +560,7 @@ impl Tag_X {
 #[byte_size(16)]
 pub struct limited_alloc_handle_18446744073709551615_ {
     #[offset(0)]
-    pub outstanding_: usize,
+    pub outstanding_: u64,
     #[offset(8)]
     #[byte_size(8)]
     pub last_alloc_: AnyPtr,
@@ -566,7 +574,7 @@ impl Default for limited_alloc_handle_18446744073709551615_ {
     fn default() -> Self {
         {
             limited_alloc_handle_18446744073709551615_ {
-                outstanding_: 0_usize,
+                outstanding_: 0_u64,
                 last_alloc_: AnyPtr::default(),
             }
         }
@@ -576,7 +584,7 @@ impl Default for limited_alloc_handle_18446744073709551615_ {
 #[byte_size(16)]
 pub struct limited_alloc_handle_302405640552615600_ {
     #[offset(0)]
-    pub outstanding_: usize,
+    pub outstanding_: u64,
     #[offset(8)]
     #[byte_size(8)]
     pub last_alloc_: AnyPtr,
@@ -590,7 +598,7 @@ impl Default for limited_alloc_handle_302405640552615600_ {
     fn default() -> Self {
         {
             limited_alloc_handle_302405640552615600_ {
-                outstanding_: 0_usize,
+                outstanding_: 0_u64,
                 last_alloc_: AnyPtr::default(),
             }
         }
@@ -600,7 +608,7 @@ impl Default for limited_alloc_handle_302405640552615600_ {
 #[byte_size(16)]
 pub struct limited_alloc_handle_292805461487453200_ {
     #[offset(0)]
-    pub outstanding_: usize,
+    pub outstanding_: u64,
     #[offset(8)]
     #[byte_size(8)]
     pub last_alloc_: AnyPtr,
@@ -614,13 +622,13 @@ impl Default for limited_alloc_handle_292805461487453200_ {
     fn default() -> Self {
         {
             limited_alloc_handle_292805461487453200_ {
-                outstanding_: 0_usize,
+                outstanding_: 0_u64,
                 last_alloc_: AnyPtr::default(),
             }
         }
     }
 }
-pub fn make_thread_unsafe_shared_8()
+pub fn make_thread_unsafe_shared_9()
 -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__> =
         Rc::new(RefCell::new(
@@ -630,7 +638,7 @@ pub fn make_thread_unsafe_shared_8()
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block_  >::default() )) ;
     (*ptr.borrow_mut()).block = ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::allocate_1 ( alloc .as_pointer()  , 1_usize  , )
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::allocate_1 ( alloc .as_pointer()  , 1_u64  , )
     });
     ({
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
@@ -639,7 +647,7 @@ pub fn make_thread_unsafe_shared_8()
         { ptr.as_pointer() },
     );
 }
-pub fn make_thread_unsafe_shared_9()
+pub fn make_thread_unsafe_shared_10()
 -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__> =
         Rc::new(RefCell::new(
@@ -648,7 +656,7 @@ pub fn make_thread_unsafe_shared_9()
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block_  >::default() )) ;
     (*ptr.borrow_mut()).block = ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::allocate_1 ( alloc .as_pointer()  , 1_usize  , )
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::allocate_1 ( alloc .as_pointer()  , 1_u64  , )
     });
     ({
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
@@ -657,7 +665,7 @@ pub fn make_thread_unsafe_shared_9()
         ptr.as_pointer()
     });
 }
-pub fn make_thread_unsafe_shared_10()
+pub fn make_thread_unsafe_shared_11()
 -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__> =
         Rc::new(RefCell::new(
@@ -666,7 +674,7 @@ pub fn make_thread_unsafe_shared_10()
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc : Value<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block_ > = Rc::new(RefCell::new(<std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block_  >::default() )) ;
     (*ptr.borrow_mut()).block = ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::allocate_1 ( alloc .as_pointer()  , 1_usize  , )
+        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::allocate_1 ( alloc .as_pointer()  , 1_u64  , )
     });
     ({
         std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
@@ -678,7 +686,7 @@ pub fn make_thread_unsafe_shared_10()
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block {
     pub fn new() -> Self {
         Self {
-            ref_count: 1_usize,
+            ref_count: 1_u64,
             content: <limited_alloc_handle_18446744073709551615_>::default(),
         }
     }
@@ -687,7 +695,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
 #[byte_size(24)]
 struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block {
     #[offset(0)]
-    pub ref_count: usize,
+    pub ref_count: u64,
     #[offset(8)]
     #[byte_size(16)]
     pub content: limited_alloc_handle_18446744073709551615_,
@@ -704,7 +712,7 @@ impl Default
 {
     fn default() -> Self {
         {
-            detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block { ref_count : 1_usize  , content : <limited_alloc_handle_18446744073709551615_  >::default() , }
+            detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block { ref_count : 1_u64  , content : <limited_alloc_handle_18446744073709551615_  >::default() , }
         }
     }
 }
@@ -763,7 +771,7 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_1844674407
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block {
     pub fn new() -> Self {
         Self {
-            ref_count: 1_usize,
+            ref_count: 1_u64,
             content: <limited_alloc_handle_302405640552615600_>::default(),
         }
     }
@@ -772,7 +780,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___c
 #[byte_size(24)]
 struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block {
     #[offset(0)]
-    pub ref_count: usize,
+    pub ref_count: u64,
     #[offset(8)]
     #[byte_size(16)]
     pub content: limited_alloc_handle_302405640552615600_,
@@ -789,7 +797,7 @@ impl Default
 {
     fn default() -> Self {
         {
-            detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block { ref_count : 1_usize  , content : <limited_alloc_handle_302405640552615600_  >::default() , }
+            detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block { ref_count : 1_u64  , content : <limited_alloc_handle_302405640552615600_  >::default() , }
         }
     }
 }
@@ -848,7 +856,7 @@ impl Default for detail_thread_unsafe_shared_ptr_limited_alloc_handle_3024056405
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block {
     pub fn new() -> Self {
         Self {
-            ref_count: 1_usize,
+            ref_count: 1_u64,
             content: <limited_alloc_handle_292805461487453200_>::default(),
         }
     }
@@ -857,7 +865,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___c
 #[byte_size(24)]
 struct detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block {
     #[offset(0)]
-    pub ref_count: usize,
+    pub ref_count: u64,
     #[offset(8)]
     #[byte_size(16)]
     pub content: limited_alloc_handle_292805461487453200_,
@@ -874,7 +882,7 @@ impl Default
 {
     fn default() -> Self {
         {
-            detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block { ref_count : 1_usize  , content : <limited_alloc_handle_292805461487453200_  >::default() , }
+            detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block { ref_count : 1_u64  , content : <limited_alloc_handle_292805461487453200_  >::default() , }
         }
     }
 }
@@ -969,7 +977,7 @@ pub struct limited_allocator_unsigned_long__18446744073709551615_ {
 impl limited_allocator_unsigned_long__18446744073709551615_ {
     pub fn new() -> Self {
         Self {
-            handle_: ({ make_thread_unsafe_shared_8() }),
+            handle_: ({ make_thread_unsafe_shared_9() }),
         }
     }
 }
@@ -1022,7 +1030,7 @@ pub struct limited_allocator_unsigned_long__302405640552615600_ {
 impl limited_allocator_unsigned_long__302405640552615600_ {
     pub fn new() -> Self {
         Self {
-            handle_: ({ make_thread_unsafe_shared_9() }),
+            handle_: ({ make_thread_unsafe_shared_10() }),
         }
     }
 }
@@ -1075,7 +1083,7 @@ pub struct limited_allocator_unsigned_long__292805461487453200_ {
 impl limited_allocator_unsigned_long__292805461487453200_ {
     pub fn new() -> Self {
         Self {
-            handle_: ({ make_thread_unsafe_shared_10() }),
+            handle_: ({ make_thread_unsafe_shared_11() }),
         }
     }
 }
@@ -1089,105 +1097,133 @@ impl Default for limited_allocator_unsigned_long__292805461487453200_ {
         { limited_allocator_unsigned_long__292805461487453200_::new() }
     }
 }
-pub fn test_11(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_12(v: Ptr<std_vector_bool__min_allocator_bool__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_12(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_13(v: Ptr<std_vector_bool__test_allocator_bool__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_13(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_14(v: Ptr<std_vector_bool__other_allocator_bool__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_14(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_15(v: Ptr<std_vector_bool__sized_allocator_bool__unsigned_char__signed_char__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_15(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_16(v: Ptr<std_vector_bool__sized_allocator_bool__unsigned_short__short__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_16(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_17(v: Ptr<std_vector_bool__sized_allocator_bool__unsigned_int__int__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_17(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_18(v: Ptr<std_vector_bool__sized_allocator_bool__unsigned_long__long__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_18(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_19(v: Ptr<std_vector_bool__limited_allocator_bool__18446744073709551615__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_19(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_20(v: Ptr<std_vector_bool__limited_allocator_bool__302405640552615600__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn test_20(v: Ptr<Vec<bool>>) {
-    let mut max_dist: usize = (i64::MAX as usize);
-    assert!(({ ({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist }) }));
+pub fn test_21(v: Ptr<std_vector_bool__limited_allocator_bool__292805461487453200__>) {
+    let mut max_dist: u64 = (({ std_numeric_limits_long_::max() }) as u64);
+    ({ cpp2rust_assert_fail_4(({ ({ (*v.upgrade().deref()).max_size() }) } <= { max_dist })) });
 }
-pub fn tests_21() -> bool {
+pub fn tests_22() -> bool {
     {
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
-            test_22(_v.as_pointer())
+            let _v: Value<std_vector_bool__std_allocator_bool__> = Rc::new(RefCell::new(
+                <std_vector_bool__std_allocator_bool__>::default(),
+            ));
+            test_23(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
-            test_22(_v.as_pointer())
+            let _v: Value<std_vector_bool__std_allocator_bool__> = Rc::new(RefCell::new(
+                <std_vector_bool__std_allocator_bool__>::default(),
+            ));
+            test_23(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
-            test_11(_v.as_pointer())
+            let _v: Value<std_vector_bool__min_allocator_bool__> = Rc::new(RefCell::new(
+                <std_vector_bool__min_allocator_bool__>::default(),
+            ));
+            test_12(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new({
+            let _v: Value<std_vector_bool__test_allocator_bool__> = Rc::new(RefCell::new({
                 let __tmp_0: Value<test_allocator_bool_> =
                     Rc::new(RefCell::new(test_allocator_bool_::new_1({ 1 })));
                 std_vector_bool__test_allocator_bool__::new_1({ __tmp_0.as_pointer() })
             }));
-            test_12(_v.as_pointer())
+            test_13(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new({
+            let _v: Value<std_vector_bool__other_allocator_bool__> = Rc::new(RefCell::new({
                 let __tmp_1: Value<other_allocator_bool_> =
                     Rc::new(RefCell::new(other_allocator_bool_::new_1({ 5 })));
                 std_vector_bool__other_allocator_bool__::new_1({ __tmp_1.as_pointer() })
             }));
-            test_13(_v.as_pointer())
-        });
-        ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
             test_14(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+            let _v: Value<std_vector_bool__sized_allocator_bool__unsigned_char__signed_char__> =
+                Rc::new(RefCell::new(
+                    <std_vector_bool__sized_allocator_bool__unsigned_char__signed_char__>::default(
+                    ),
+                ));
             test_15(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+            let _v: Value<std_vector_bool__sized_allocator_bool__unsigned_short__short__> =
+                Rc::new(RefCell::new(
+                    <std_vector_bool__sized_allocator_bool__unsigned_short__short__>::default(),
+                ));
             test_16(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+            let _v: Value<std_vector_bool__sized_allocator_bool__unsigned_int__int__> =
+                Rc::new(RefCell::new(
+                    <std_vector_bool__sized_allocator_bool__unsigned_int__int__>::default(),
+                ));
             test_17(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+            let _v: Value<std_vector_bool__sized_allocator_bool__unsigned_long__long__> =
+                Rc::new(RefCell::new(
+                    <std_vector_bool__sized_allocator_bool__unsigned_long__long__>::default(),
+                ));
             test_18(_v.as_pointer())
+        });
+        ({
+            let _v: Value<std_vector_bool__limited_allocator_bool__18446744073709551615__> =
+                Rc::new(RefCell::new(
+                    <std_vector_bool__limited_allocator_bool__18446744073709551615__>::default(),
+                ));
+            test_19(_v.as_pointer())
         });
     }
     {
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
-            test_19(_v.as_pointer())
+            let _v: Value<std_vector_bool__limited_allocator_bool__302405640552615600__> =
+                Rc::new(RefCell::new(
+                    <std_vector_bool__limited_allocator_bool__302405640552615600__>::default(),
+                ));
+            test_20(_v.as_pointer())
         });
         ({
-            let _v: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
-            test_20(_v.as_pointer())
+            let _v: Value<std_vector_bool__limited_allocator_bool__292805461487453200__> =
+                Rc::new(RefCell::new(
+                    <std_vector_bool__limited_allocator_bool__292805461487453200__>::default(),
+                ));
+            test_21(_v.as_pointer())
         });
     }
     return true;
@@ -1212,7 +1248,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_21() });
+    ({ tests_22() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
@@ -1267,7 +1303,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
         if ((*self)
             .with(|__s| __s.block.clone())
             .with(|__s| __s.ref_count)
-            != 0_usize)
+            != 0_u64)
         {
             return;
         };
@@ -1276,7 +1312,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
         });
         ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_usize  , )
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_u64  , )
         });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
@@ -1323,7 +1359,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__Im
         if ((*self)
             .with(|__s| __s.block.clone())
             .with(|__s| __s.ref_count)
-            != 0_usize)
+            != 0_u64)
         {
             return;
         };
@@ -1332,7 +1368,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__Im
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
         });
         ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_usize  , )
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_u64  , )
         });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_292805461487453200_> {
@@ -1379,7 +1415,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__Im
         if ((*self)
             .with(|__s| __s.block.clone())
             .with(|__s| __s.ref_count)
-            != 0_usize)
+            != 0_u64)
         {
             return;
         };
@@ -1388,7 +1424,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__Im
             std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
         });
         ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_usize  , )
+            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::deallocate ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , 1_u64  , )
         });
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_302405640552615600_> {
@@ -1403,73 +1439,73 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__Im
     }
 }
 pub trait limited_alloc_handle_18446744073709551615_Impl {
-    fn deallocate_2_unsigned_long(&self, ptr: Ptr<u64>, N: usize);
+    fn deallocate_2_unsigned_long(&self, ptr: Ptr<u64>, N: u64);
 }
 impl limited_alloc_handle_18446744073709551615_Impl
     for Ptr<limited_alloc_handle_18446744073709551615_>
 {
-    fn deallocate_2_unsigned_long(&self, mut ptr: Ptr<u64>, mut N: usize) {
+    fn deallocate_2_unsigned_long(&self, mut ptr: Ptr<u64>, mut N: u64) {
         if ({ (ptr).to_any() } == { (*self).with(|__s| __s.last_alloc_.clone()) }) {
             field!((*self), last_alloc_).write(AnyPtr::default());
-            assert!(((*self).with(|__s| __s.outstanding_) >= N));
+            ({ cpp2rust_assert_fail_4(((*self).with(|__s| __s.outstanding_) >= N)) });
             field!((*self), outstanding_)
                 .write({ ((*self).with(|__s| __s.outstanding_)).wrapping_sub(N) });
         }
         ({
             let ___p: Ptr<u64> = (ptr).clone();
-            let ___n: usize = N;
+            let ___n: u64 = N;
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
 }
 pub trait limited_alloc_handle_292805461487453200_Impl {
-    fn deallocate_2_unsigned_long(&self, ptr: Ptr<u64>, N: usize);
+    fn deallocate_2_unsigned_long(&self, ptr: Ptr<u64>, N: u64);
 }
 impl limited_alloc_handle_292805461487453200_Impl
     for Ptr<limited_alloc_handle_292805461487453200_>
 {
-    fn deallocate_2_unsigned_long(&self, mut ptr: Ptr<u64>, mut N: usize) {
+    fn deallocate_2_unsigned_long(&self, mut ptr: Ptr<u64>, mut N: u64) {
         if ({ (ptr).to_any() } == { (*self).with(|__s| __s.last_alloc_.clone()) }) {
             field!((*self), last_alloc_).write(AnyPtr::default());
-            assert!(((*self).with(|__s| __s.outstanding_) >= N));
+            ({ cpp2rust_assert_fail_4(((*self).with(|__s| __s.outstanding_) >= N)) });
             field!((*self), outstanding_)
                 .write({ ((*self).with(|__s| __s.outstanding_)).wrapping_sub(N) });
         }
         ({
             let ___p: Ptr<u64> = (ptr).clone();
-            let ___n: usize = N;
+            let ___n: u64 = N;
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
 }
 pub trait limited_alloc_handle_302405640552615600_Impl {
-    fn deallocate_2_unsigned_long(&self, ptr: Ptr<u64>, N: usize);
+    fn deallocate_2_unsigned_long(&self, ptr: Ptr<u64>, N: u64);
 }
 impl limited_alloc_handle_302405640552615600_Impl
     for Ptr<limited_alloc_handle_302405640552615600_>
 {
-    fn deallocate_2_unsigned_long(&self, mut ptr: Ptr<u64>, mut N: usize) {
+    fn deallocate_2_unsigned_long(&self, mut ptr: Ptr<u64>, mut N: u64) {
         if ({ (ptr).to_any() } == { (*self).with(|__s| __s.last_alloc_.clone()) }) {
             field!((*self), last_alloc_).write(AnyPtr::default());
-            assert!(((*self).with(|__s| __s.outstanding_) >= N));
+            ({ cpp2rust_assert_fail_4(((*self).with(|__s| __s.outstanding_) >= N)) });
             field!((*self), outstanding_)
                 .write({ ((*self).with(|__s| __s.outstanding_)).wrapping_sub(N) });
         }
         ({
             let ___p: Ptr<u64> = (ptr).clone();
-            let ___n: usize = N;
+            let ___n: u64 = N;
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
 }
 pub trait limited_allocator_bool__18446744073709551615_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<bool> {
+    fn allocate(&self, mut n: u64) -> Ptr<bool> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<bool>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<bool>, mut n: u64) {
         unimplemented!()
     }
-    fn max_size(&self) -> usize {
+    fn max_size(&self) -> u64 {
         unimplemented!()
     }
     fn getHandle(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
@@ -1485,13 +1521,13 @@ impl limited_allocator_bool__18446744073709551615_Impl
     }
 }
 pub trait limited_allocator_bool__292805461487453200_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<bool> {
+    fn allocate(&self, mut n: u64) -> Ptr<bool> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<bool>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<bool>, mut n: u64) {
         unimplemented!()
     }
-    fn max_size(&self) -> usize {
+    fn max_size(&self) -> u64 {
         unimplemented!()
     }
     fn getHandle(&self) -> Ptr<limited_alloc_handle_292805461487453200_> {
@@ -1507,13 +1543,13 @@ impl limited_allocator_bool__292805461487453200_Impl
     }
 }
 pub trait limited_allocator_bool__302405640552615600_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<bool> {
+    fn allocate(&self, mut n: u64) -> Ptr<bool> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<bool>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<bool>, mut n: u64) {
         unimplemented!()
     }
-    fn max_size(&self) -> usize {
+    fn max_size(&self) -> u64 {
         unimplemented!()
     }
     fn getHandle(&self) -> Ptr<limited_alloc_handle_302405640552615600_> {
@@ -1529,11 +1565,11 @@ impl limited_allocator_bool__302405640552615600_Impl
     }
 }
 pub trait limited_allocator_unsigned_long__18446744073709551615_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<u64> {
+    fn allocate(&self, mut n: u64) -> Ptr<u64> {
         unimplemented!()
     }
-    fn deallocate(&self, p: Ptr<u64>, n: usize);
-    fn max_size(&self) -> usize;
+    fn deallocate(&self, p: Ptr<u64>, n: u64);
+    fn max_size(&self) -> u64;
     fn getHandle(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
         unimplemented!()
     }
@@ -1542,10 +1578,10 @@ pub trait limited_allocator_unsigned_long__18446744073709551615_Impl {
 impl limited_allocator_unsigned_long__18446744073709551615_Impl
     for Ptr<limited_allocator_unsigned_long__18446744073709551615_>
 {
-    fn deallocate(&self, mut p: Ptr<u64>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<u64>, mut n: u64) {
         ({
             let _ptr: Ptr<u64> = (p).clone();
-            let _N: usize = n;
+            let _N: u64 = n;
             limited_alloc_handle_18446744073709551615_Impl::deallocate_2_unsigned_long(
                 &({
                     detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__Impl :: operator_arrow_7 ( &field_ptr!((* self )  , handle_)  , )
@@ -1555,19 +1591,19 @@ impl limited_allocator_unsigned_long__18446744073709551615_Impl
             )
         });
     }
-    fn max_size(&self) -> usize {
-        return (18446744073709551615_u64 as usize);
+    fn max_size(&self) -> u64 {
+        return 18446744073709551615_u64;
     }
     fn destructor(&self) {
         field_ptr!(self, handle_).destructor();
     }
 }
 pub trait limited_allocator_unsigned_long__292805461487453200_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<u64> {
+    fn allocate(&self, mut n: u64) -> Ptr<u64> {
         unimplemented!()
     }
-    fn deallocate(&self, p: Ptr<u64>, n: usize);
-    fn max_size(&self) -> usize;
+    fn deallocate(&self, p: Ptr<u64>, n: u64);
+    fn max_size(&self) -> u64;
     fn getHandle(&self) -> Ptr<limited_alloc_handle_292805461487453200_> {
         unimplemented!()
     }
@@ -1576,10 +1612,10 @@ pub trait limited_allocator_unsigned_long__292805461487453200_Impl {
 impl limited_allocator_unsigned_long__292805461487453200_Impl
     for Ptr<limited_allocator_unsigned_long__292805461487453200_>
 {
-    fn deallocate(&self, mut p: Ptr<u64>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<u64>, mut n: u64) {
         ({
             let _ptr: Ptr<u64> = (p).clone();
-            let _N: usize = n;
+            let _N: u64 = n;
             limited_alloc_handle_292805461487453200_Impl::deallocate_2_unsigned_long(
                 &({
                     detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__Impl :: operator_arrow_7 ( &field_ptr!((* self )  , handle_)  , )
@@ -1589,19 +1625,19 @@ impl limited_allocator_unsigned_long__292805461487453200_Impl
             )
         });
     }
-    fn max_size(&self) -> usize {
-        return (292805461487453200_u64 as usize);
+    fn max_size(&self) -> u64 {
+        return 292805461487453200_u64;
     }
     fn destructor(&self) {
         field_ptr!(self, handle_).destructor();
     }
 }
 pub trait limited_allocator_unsigned_long__302405640552615600_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<u64> {
+    fn allocate(&self, mut n: u64) -> Ptr<u64> {
         unimplemented!()
     }
-    fn deallocate(&self, p: Ptr<u64>, n: usize);
-    fn max_size(&self) -> usize;
+    fn deallocate(&self, p: Ptr<u64>, n: u64);
+    fn max_size(&self) -> u64;
     fn getHandle(&self) -> Ptr<limited_alloc_handle_302405640552615600_> {
         unimplemented!()
     }
@@ -1610,10 +1646,10 @@ pub trait limited_allocator_unsigned_long__302405640552615600_Impl {
 impl limited_allocator_unsigned_long__302405640552615600_Impl
     for Ptr<limited_allocator_unsigned_long__302405640552615600_>
 {
-    fn deallocate(&self, mut p: Ptr<u64>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<u64>, mut n: u64) {
         ({
             let _ptr: Ptr<u64> = (p).clone();
-            let _N: usize = n;
+            let _N: u64 = n;
             limited_alloc_handle_302405640552615600_Impl::deallocate_2_unsigned_long(
                 &({
                     detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__Impl :: operator_arrow_7 ( &field_ptr!((* self )  , handle_)  , )
@@ -1623,21 +1659,21 @@ impl limited_allocator_unsigned_long__302405640552615600_Impl
             )
         });
     }
-    fn max_size(&self) -> usize {
-        return (302405640552615600_u64 as usize);
+    fn max_size(&self) -> u64 {
+        return 302405640552615600_u64;
     }
     fn destructor(&self) {
         field_ptr!(self, handle_).destructor();
     }
 }
 pub trait min_allocator_bool_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_bool__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_bool__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }
@@ -1646,34 +1682,34 @@ impl min_allocator_bool_Impl for Ptr<min_allocator_bool_> {}
 pub trait min_allocator_unsigned_long_Impl {
     fn allocate(
         &self,
-        mut n: usize,
+        mut n: u64,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {
     fn deallocate(
         &self,
         mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({
             let ___p: Ptr<u64> = (p.ptr_).clone();
-            let ___n: usize = n;
+            let ___n: u64 = n;
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
 }
 pub trait other_allocator_bool_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<bool> {
+    fn allocate(&self, mut n: u64) -> Ptr<bool> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<bool>, mut s: usize) {
+    fn deallocate(&self, mut p: Ptr<bool>, mut s: u64) {
         unimplemented!()
     }
     fn select_on_container_copy_construction(&self) -> other_allocator_bool_ {
@@ -1685,10 +1721,10 @@ pub trait other_allocator_bool_Impl {
 }
 impl other_allocator_bool_Impl for Ptr<other_allocator_bool_> {}
 pub trait other_allocator_unsigned_long_Impl {
-    fn allocate(&self, mut n: usize) -> Ptr<u64> {
+    fn allocate(&self, mut n: u64) -> Ptr<u64> {
         unimplemented!()
     }
-    fn deallocate(&self, p: Ptr<u64>, s: usize);
+    fn deallocate(&self, p: Ptr<u64>, s: u64);
     fn select_on_container_copy_construction(&self) -> other_allocator_unsigned_long_ {
         unimplemented!()
     }
@@ -1697,10 +1733,10 @@ pub trait other_allocator_unsigned_long_Impl {
     }
 }
 impl other_allocator_unsigned_long_Impl for Ptr<other_allocator_unsigned_long_> {
-    fn deallocate(&self, mut p: Ptr<u64>, mut s: usize) {
+    fn deallocate(&self, mut p: Ptr<u64>, mut s: u64) {
         ({
             let ___p: Ptr<u64> = (p).clone();
-            let ___n: usize = s;
+            let ___n: u64 = s;
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
@@ -1778,12 +1814,13 @@ impl sized_allocator_unsigned_long__unsigned_char__signed_char_Impl
     fn deallocate(&self, mut p: Ptr<u64>, mut n: u8) {
         ({
             let ___p: Ptr<u64> = (p).clone();
-            let ___n: usize = (n as usize);
+            let ___n: u64 = (n as u64);
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
     fn max_size(&self) -> u8 {
-        return (((u8::MAX as usize).wrapping_div((::std::mem::size_of::<u64>() as usize))) as u8);
+        return (((({ std_numeric_limits_unsigned_char_::max() }) as u64)
+            .wrapping_div((::std::mem::size_of::<u64>() as u64))) as u8);
     }
 }
 pub trait sized_allocator_unsigned_long__unsigned_int__int_Impl {
@@ -1799,13 +1836,13 @@ impl sized_allocator_unsigned_long__unsigned_int__int_Impl
     fn deallocate(&self, mut p: Ptr<u64>, mut n: u32) {
         ({
             let ___p: Ptr<u64> = (p).clone();
-            let ___n: usize = (n as usize);
+            let ___n: u64 = (n as u64);
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
     fn max_size(&self) -> u32 {
-        return (((u32::MAX as usize).wrapping_div((::std::mem::size_of::<u64>() as usize)))
-            as u32);
+        return (((({ std_numeric_limits_unsigned_int_::max() }) as u64)
+            .wrapping_div((::std::mem::size_of::<u64>() as u64))) as u32);
     }
 }
 pub trait sized_allocator_unsigned_long__unsigned_long__long_Impl {
@@ -1821,12 +1858,13 @@ impl sized_allocator_unsigned_long__unsigned_long__long_Impl
     fn deallocate(&self, mut p: Ptr<u64>, mut n: u64) {
         ({
             let ___p: Ptr<u64> = (p).clone();
-            let ___n: usize = (n as usize);
+            let ___n: u64 = (n as u64);
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
     fn max_size(&self) -> u64 {
-        return (u64::MAX as u64).wrapping_div((::std::mem::size_of::<u64>() as u64));
+        return (({ std_numeric_limits_unsigned_long_::max() }) as u64)
+            .wrapping_div((::std::mem::size_of::<u64>() as u64));
     }
 }
 pub trait sized_allocator_unsigned_long__unsigned_short__short_Impl {
@@ -1842,13 +1880,13 @@ impl sized_allocator_unsigned_long__unsigned_short__short_Impl
     fn deallocate(&self, mut p: Ptr<u64>, mut n: u16) {
         ({
             let ___p: Ptr<u64> = (p).clone();
-            let ___n: usize = (n as usize);
+            let ___n: u64 = (n as u64);
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
     fn max_size(&self) -> u16 {
-        return (((u16::MAX as usize).wrapping_div((::std::mem::size_of::<u64>() as usize)))
-            as u16);
+        return (((({ std_numeric_limits_unsigned_short_::max() }) as u64)
+            .wrapping_div((::std::mem::size_of::<u64>() as u64))) as u16);
     }
 }
 pub trait test_allocator_bool_Impl {
@@ -1880,15 +1918,23 @@ pub trait test_allocator_bool_Impl {
 }
 impl test_allocator_bool_Impl for Ptr<test_allocator_bool_> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_4.with(|rc| *rc.borrow())));
-        assert!(((*self).with(|__s| __s.id_) != destructed_value_4.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_4(
+                ((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_4(
+                ((*self).with(|__s| __s.id_) != destructed_value_5.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_dec();
             });
         }
-        field!((*self), data_).write(destructed_value_4.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_4.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
     }
 }
 pub trait test_allocator_statisticsImpl {
@@ -1897,11 +1943,13 @@ pub trait test_allocator_statisticsImpl {
 }
 impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
     fn clear(&self) {
-        assert!(
-            ((*self).with(|__s| __s.count) == 0)
-                && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
-                    .is_null())
-        );
+        ({
+            cpp2rust_assert_fail_4(
+                ((*self).with(|__s| __s.count) == 0)
+                    && (!(Ptr::<i8>::from_string_literal(b"clearing leaking allocator data?"))
+                        .is_null()),
+            )
+        });
         field!((*self), count).write(0);
         field!((*self), time_to_throw).write(0);
         field!((*self), alloc_count).write(0);
@@ -1942,18 +1990,30 @@ pub trait test_allocator_unsigned_long_Impl {
 }
 impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
     fn destructor(&self) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_4.with(|rc| *rc.borrow())));
-        assert!(((*self).with(|__s| __s.id_) != destructed_value_4.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_4(
+                ((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_4(
+                ((*self).with(|__s| __s.id_) != destructed_value_5.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| {
                 __v.prefix_dec();
             });
         }
-        field!((*self), data_).write(destructed_value_4.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_4.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
     }
     fn deallocate(&self, mut p: Ptr<u64>, mut s: u32) {
-        assert!(((*self).with(|__s| __s.data_) != destructed_value_4.with(|rc| *rc.borrow())));
+        ({
+            cpp2rust_assert_fail_4(
+                ((*self).with(|__s| __s.data_) != destructed_value_5.with(|rc| *rc.borrow())),
+            )
+        });
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), alloc_count).with_mut(|__v| {
                 __v.prefix_dec();
@@ -1967,14 +2027,14 @@ impl test_allocator_unsigned_long_Impl for Ptr<test_allocator_unsigned_long_> {
         }
         ({
             let ___p: Ptr<u64> = (p).clone();
-            let ___n: usize = (s as usize);
+            let ___n: u64 = (s as u64);
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }
     fn max_size(&self) -> u32 {
         return ((((((2147483647_u32).wrapping_mul((2_u32 as u32)) as u32)
-            .wrapping_add((1_u32 as u32))) as usize)
-            .wrapping_div((::std::mem::size_of::<u64>() as usize))) as u32);
+            .wrapping_add((1_u32 as u32))) as u64)
+            .wrapping_div((::std::mem::size_of::<u64>() as u64))) as u32);
     }
 }
 pub trait test_allocator_void_Impl {
@@ -1985,8 +2045,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_4.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_4.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_5.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_5.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> i32 {
         return (*self).with(|__s| __s.id_);
@@ -2006,6 +2066,6 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_1.with(|_| ());
     let _ = dealloc_count_2.with(|_| ());
     let _ = disable_default_constructor_3.with(|_| ());
-    let _ = destructed_value_4.with(|_| ());
-    let _ = moved_value_5.with(|_| ());
+    let _ = destructed_value_5.with(|_| ());
+    let _ = moved_value_6.with(|_| ());
 }

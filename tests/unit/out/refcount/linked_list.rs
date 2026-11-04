@@ -133,14 +133,16 @@ fn main_0() -> i32 {
     head = __rhs;
     let __rhs = ({ Delete_2((head).clone(), -2_i32) });
     head = __rhs;
-    assert!(
-        (((((({ Find_0((head).clone(), 0,) }).with(|__s| __s.val) == 4)
-            && (({ Find_0((head).clone(), 1,) }).with(|__s| __s.val) == 3))
-            && (({ Find_0((head).clone(), 2,) }).with(|__s| __s.val) == 2))
-            && (({ Find_0((head).clone(), 3,) }).with(|__s| __s.val) == 1))
-            && (({ Find_0((head).clone(), 4,) }).with(|__s| __s.val) == -1_i32))
-            && (({ Find_0((head).clone(), 5,) }).is_null())
-    );
+    ({
+        cpp2rust_assert_fail_3(
+            (((((({ Find_0((head).clone(), 0) }).with(|__s| __s.val) == 4)
+                && (({ Find_0((head).clone(), 1) }).with(|__s| __s.val) == 3))
+                && (({ Find_0((head).clone(), 2) }).with(|__s| __s.val) == 2))
+                && (({ Find_0((head).clone(), 3) }).with(|__s| __s.val) == 1))
+                && (({ Find_0((head).clone(), 4) }).with(|__s| __s.val) == -1_i32))
+                && (({ Find_0((head).clone(), 5) }).is_null()),
+        )
+    });
     return 0;
 }
 pub trait NodeImpl {

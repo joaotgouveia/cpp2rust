@@ -82,7 +82,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         });
     }
     {
-        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+        let p1: Value<std_pair_const_int_ref__const_int_ref_> = Rc::new(RefCell::new(
             ({
                 minmax_3(
                     x_1.with(|v| v.as_pointer()),
@@ -93,7 +93,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ));
         const _: () = assert!(true, "p1.first  == x");;
         const _: () = assert!(true, "p1.second == y");;
-        let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+        let p2: Value<std_pair_const_int_ref__const_int_ref_> = Rc::new(RefCell::new(
             ({
                 minmax_3(
                     y_2.with(|v| v.as_pointer()),

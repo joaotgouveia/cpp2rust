@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -156,7 +160,7 @@ pub struct A1 {}
 impl A1 {
     pub fn new(mut count: Ptr<i32>, mut c: i8) -> Self {
         let __this: A1 = Self {};
-        assert!(((c as i32) == (('c' as i8) as i32)));
+        ({ cpp2rust_assert_fail_4(((c as i32) == (('c' as i8) as i32))) });
         count.with_mut(|__v| {
             __v.prefix_inc();
         });
@@ -174,8 +178,8 @@ pub struct A2 {}
 impl A2 {
     pub fn new(mut count: Ptr<i32>, mut c: i8, mut i: i32) -> Self {
         let __this: A2 = Self {};
-        assert!(((c as i32) == (('d' as i8) as i32)));
-        assert!((i == 5));
+        ({ cpp2rust_assert_fail_4(((c as i32) == (('d' as i8) as i32))) });
+        ({ cpp2rust_assert_fail_4((i == 5)) });
         count.with_mut(|__v| {
             __v.prefix_inc();
         });
@@ -187,13 +191,13 @@ impl CppMove for A2 {
         src.read()
     }
 }
-pub fn test_7() -> bool {
+pub fn test_8() -> bool {
     {
         let A0_count: Value<i32> = Rc::new(RefCell::new(0));
         let a: Value<A_A0_> = Rc::new(RefCell::new(<A_A0_>::default()));
         let alloc: Value<std_allocator_A0_> = Rc::new(RefCell::new(<std_allocator_A0_>::default()));
-        let mut a0: Ptr<A0> = ({ (*alloc.borrow()).allocate(1_usize) });
-        assert!(({ ((*A0_count.borrow()) == 0) }));
+        let mut a0: Ptr<A0> = ({ (*alloc.borrow()).allocate(1_u64) });
+        ({ cpp2rust_assert_fail_4(((*A0_count.borrow()) == 0)) });
         ({
             let ___args: Value<Ptr<i32>> = Rc::new(RefCell::new((A0_count.as_pointer())));
             std_allocator_traits_A_A0__::construct(
@@ -202,15 +206,15 @@ pub fn test_7() -> bool {
                 ___args.as_pointer(),
             )
         });
-        assert!(({ ((*A0_count.borrow()) == 1) }));
-        ({ (*alloc.borrow()).deallocate((a0).clone(), 1_usize) });
+        ({ cpp2rust_assert_fail_4(((*A0_count.borrow()) == 1)) });
+        ({ (*alloc.borrow()).deallocate((a0).clone(), 1_u64) });
     }
     {
         let A1_count: Value<i32> = Rc::new(RefCell::new(0));
         let a: Value<A_A1_> = Rc::new(RefCell::new(<A_A1_>::default()));
         let alloc: Value<std_allocator_A1_> = Rc::new(RefCell::new(<std_allocator_A1_>::default()));
-        let mut a1: Ptr<A1> = ({ (*alloc.borrow()).allocate(1_usize) });
-        assert!(({ ((*A1_count.borrow()) == 0) }));
+        let mut a1: Ptr<A1> = ({ (*alloc.borrow()).allocate(1_u64) });
+        ({ cpp2rust_assert_fail_4(((*A1_count.borrow()) == 0)) });
         ({
             let ___args_2: Value<Ptr<i32>> = Rc::new(RefCell::new((A1_count.as_pointer())));
             let ___args_3: Value<i8> = Rc::new(RefCell::new(('c' as i8)));
@@ -221,15 +225,15 @@ pub fn test_7() -> bool {
                 ___args_3.as_pointer(),
             )
         });
-        assert!(({ ((*A1_count.borrow()) == 1) }));
-        ({ (*alloc.borrow()).deallocate((a1).clone(), 1_usize) });
+        ({ cpp2rust_assert_fail_4(((*A1_count.borrow()) == 1)) });
+        ({ (*alloc.borrow()).deallocate((a1).clone(), 1_u64) });
     }
     {
         let A2_count: Value<i32> = Rc::new(RefCell::new(0));
         let a: Value<A_A2_> = Rc::new(RefCell::new(<A_A2_>::default()));
         let alloc: Value<std_allocator_A2_> = Rc::new(RefCell::new(<std_allocator_A2_>::default()));
-        let mut a2: Ptr<A2> = ({ (*alloc.borrow()).allocate(1_usize) });
-        assert!(({ ((*A2_count.borrow()) == 0) }));
+        let mut a2: Ptr<A2> = ({ (*alloc.borrow()).allocate(1_u64) });
+        ({ cpp2rust_assert_fail_4(((*A2_count.borrow()) == 0)) });
         ({
             let ___args_2: Value<Ptr<i32>> = Rc::new(RefCell::new((A2_count.as_pointer())));
             let ___args_3: Value<i8> = Rc::new(RefCell::new(('d' as i8)));
@@ -242,8 +246,8 @@ pub fn test_7() -> bool {
                 ___args_4.as_pointer(),
             )
         });
-        assert!(({ ((*A2_count.borrow()) == 1) }));
-        ({ (*alloc.borrow()).deallocate((a2).clone(), 1_usize) });
+        ({ cpp2rust_assert_fail_4(((*A2_count.borrow()) == 1)) });
+        ({ (*alloc.borrow()).deallocate((a2).clone(), 1_u64) });
     }
     {
         let a: Value<A_Holder_NS_Incomplete__ptr_> =
@@ -251,7 +255,7 @@ pub fn test_7() -> bool {
         let alloc: Value<std_allocator_Holder_NS_Incomplete__ptr_> = Rc::new(RefCell::new(
             <std_allocator_Holder_NS_Incomplete__ptr_>::default(),
         ));
-        let mut vt: Ptr<Ptr<Holder_NS_Incomplete_>> = ({ (*alloc.borrow()).allocate(1_usize) });
+        let mut vt: Ptr<Ptr<Holder_NS_Incomplete_>> = ({ (*alloc.borrow()).allocate(1_u64) });
         ({
             let ___args: Value<AnyPtr> = Rc::new(RefCell::new(Default::default()));
             std_allocator_traits_A_Holder_NS_Incomplete__ptr__::construct(
@@ -260,16 +264,16 @@ pub fn test_7() -> bool {
                 ___args.as_pointer(),
             )
         });
-        ({ (*alloc.borrow()).deallocate((vt).clone(), 1_usize) });
+        ({ (*alloc.borrow()).deallocate((vt).clone(), 1_u64) });
     }
     {
         let A0_count: Value<i32> = Rc::new(RefCell::new(0));
         let b_construct: Value<i32> = Rc::new(RefCell::new(0));
         let b: Value<B_A0_> = Rc::new(RefCell::new(B_A0_::new({ b_construct.as_pointer() })));
         let alloc: Value<std_allocator_A0_> = Rc::new(RefCell::new(<std_allocator_A0_>::default()));
-        let mut a0: Ptr<A0> = ({ (*alloc.borrow()).allocate(1_usize) });
-        assert!(({ ((*A0_count.borrow()) == 0) }));
-        assert!(({ ((*b_construct.borrow()) == 0) }));
+        let mut a0: Ptr<A0> = ({ (*alloc.borrow()).allocate(1_u64) });
+        ({ cpp2rust_assert_fail_4(((*A0_count.borrow()) == 0)) });
+        ({ cpp2rust_assert_fail_4(((*b_construct.borrow()) == 0)) });
         ({
             let ___args: Value<Ptr<i32>> = Rc::new(RefCell::new((A0_count.as_pointer())));
             std_allocator_traits_B_A0__::construct(
@@ -278,18 +282,18 @@ pub fn test_7() -> bool {
                 ___args.as_pointer(),
             )
         });
-        assert!(({ ((*A0_count.borrow()) == 1) }));
-        assert!(({ ((*b_construct.borrow()) == 1) }));
-        ({ (*alloc.borrow()).deallocate((a0).clone(), 1_usize) });
+        ({ cpp2rust_assert_fail_4(((*A0_count.borrow()) == 1)) });
+        ({ cpp2rust_assert_fail_4(((*b_construct.borrow()) == 1)) });
+        ({ (*alloc.borrow()).deallocate((a0).clone(), 1_u64) });
     }
     {
         let A1_count: Value<i32> = Rc::new(RefCell::new(0));
         let b_construct: Value<i32> = Rc::new(RefCell::new(0));
         let b: Value<B_A1_> = Rc::new(RefCell::new(B_A1_::new({ b_construct.as_pointer() })));
         let alloc: Value<std_allocator_A1_> = Rc::new(RefCell::new(<std_allocator_A1_>::default()));
-        let mut a1: Ptr<A1> = ({ (*alloc.borrow()).allocate(1_usize) });
-        assert!(({ ((*A1_count.borrow()) == 0) }));
-        assert!(({ ((*b_construct.borrow()) == 0) }));
+        let mut a1: Ptr<A1> = ({ (*alloc.borrow()).allocate(1_u64) });
+        ({ cpp2rust_assert_fail_4(((*A1_count.borrow()) == 0)) });
+        ({ cpp2rust_assert_fail_4(((*b_construct.borrow()) == 0)) });
         ({
             let ___args_2: Value<Ptr<i32>> = Rc::new(RefCell::new((A1_count.as_pointer())));
             let ___args_3: Value<i8> = Rc::new(RefCell::new(('c' as i8)));
@@ -300,18 +304,18 @@ pub fn test_7() -> bool {
                 ___args_3.as_pointer(),
             )
         });
-        assert!(({ ((*A1_count.borrow()) == 1) }));
-        assert!(({ ((*b_construct.borrow()) == 1) }));
-        ({ (*alloc.borrow()).deallocate((a1).clone(), 1_usize) });
+        ({ cpp2rust_assert_fail_4(((*A1_count.borrow()) == 1)) });
+        ({ cpp2rust_assert_fail_4(((*b_construct.borrow()) == 1)) });
+        ({ (*alloc.borrow()).deallocate((a1).clone(), 1_u64) });
     }
     {
         let A2_count: Value<i32> = Rc::new(RefCell::new(0));
         let b_construct: Value<i32> = Rc::new(RefCell::new(0));
         let b: Value<B_A2_> = Rc::new(RefCell::new(B_A2_::new({ b_construct.as_pointer() })));
         let alloc: Value<std_allocator_A2_> = Rc::new(RefCell::new(<std_allocator_A2_>::default()));
-        let mut a2: Ptr<A2> = ({ (*alloc.borrow()).allocate(1_usize) });
-        assert!(({ ((*A2_count.borrow()) == 0) }));
-        assert!(({ ((*b_construct.borrow()) == 0) }));
+        let mut a2: Ptr<A2> = ({ (*alloc.borrow()).allocate(1_u64) });
+        ({ cpp2rust_assert_fail_4(((*A2_count.borrow()) == 0)) });
+        ({ cpp2rust_assert_fail_4(((*b_construct.borrow()) == 0)) });
         ({
             let ___args_2: Value<Ptr<i32>> = Rc::new(RefCell::new((A2_count.as_pointer())));
             let ___args_3: Value<i8> = Rc::new(RefCell::new(('d' as i8)));
@@ -324,9 +328,9 @@ pub fn test_7() -> bool {
                 ___args_4.as_pointer(),
             )
         });
-        assert!(({ ((*A2_count.borrow()) == 1) }));
-        assert!(({ ((*b_construct.borrow()) == 1) }));
-        ({ (*alloc.borrow()).deallocate((a2).clone(), 1_usize) });
+        ({ cpp2rust_assert_fail_4(((*A2_count.borrow()) == 1)) });
+        ({ cpp2rust_assert_fail_4(((*b_construct.borrow()) == 1)) });
+        ({ (*alloc.borrow()).deallocate((a2).clone(), 1_u64) });
     }
     return true;
 }
@@ -350,7 +354,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_7() });
+    ({ test_8() });
     const _: () = assert!(true, "test()");;
     return 0;
 }
@@ -368,7 +372,7 @@ impl B_A0_Impl for Ptr<B_A0_> {
         ({
             let ___location: Ptr<A0> = (p).clone();
             let ___args: Ptr<Ptr<i32>> = (args).clone();
-            construct_at_4(___location, ___args)
+            construct_at_5(___location, ___args)
         });
     }
 }
@@ -394,7 +398,7 @@ impl B_A1_Impl for Ptr<B_A1_> {
             let ___location: Ptr<A1> = (p).clone();
             let ___args_1: Ptr<Ptr<i32>> = (args_1).clone();
             let ___args_2: Ptr<i8> = (args_2).clone();
-            construct_at_5(___location, ___args_1, ___args_2)
+            construct_at_6(___location, ___args_1, ___args_2)
         });
     }
 }
@@ -423,7 +427,7 @@ impl B_A2_Impl for Ptr<B_A2_> {
             let ___args_1: Ptr<Ptr<i32>> = (args_1).clone();
             let ___args_2: Ptr<i8> = (args_2).clone();
             let ___args_3: Ptr<i32> = (args_3).clone();
-            construct_at_6(___location, ___args_1, ___args_2, ___args_3)
+            construct_at_7(___location, ___args_1, ___args_2, ___args_3)
         });
     }
 }

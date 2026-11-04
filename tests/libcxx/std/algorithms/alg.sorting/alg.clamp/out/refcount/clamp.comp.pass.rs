@@ -160,34 +160,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Ptr::<i8>::from_string_literal(b"Zero-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        x.as_pointer(),
-                        y.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = x.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        y.as_pointer(),
-                        x.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = y.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            x.as_pointer(),
+                            y.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = x.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            y.as_pointer(),
+                            x.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = y.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
     }
     {
         let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
@@ -202,34 +206,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Ptr::<i8>::from_string_literal(b"One-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        x.as_pointer(),
-                        y.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = x.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        y.as_pointer(),
-                        x.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = y.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            x.as_pointer(),
+                            y.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = x.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            y.as_pointer(),
+                            x.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = y.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
     }
     {
         let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1 }, {
@@ -244,34 +252,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Ptr::<i8>::from_string_literal(b"One-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        x.as_pointer(),
-                        y.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = x.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        z.as_pointer(),
-                        y.as_pointer(),
-                        x.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = z.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            x.as_pointer(),
+                            y.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = x.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            z.as_pointer(),
+                            y.as_pointer(),
+                            x.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = z.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
     }
     {
         let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 1 }, {
@@ -286,34 +298,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Ptr::<i8>::from_string_literal(b"Two-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        x.as_pointer(),
-                        y.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = x.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        y.as_pointer(),
-                        x.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = x.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            x.as_pointer(),
+                            y.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = x.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            y.as_pointer(),
+                            x.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = x.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
     }
     {
         let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 0 }, {
@@ -328,34 +344,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Ptr::<i8>::from_string_literal(b"Two-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        x.as_pointer(),
-                        y.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = y.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        y.as_pointer(),
-                        x.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = y.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            x.as_pointer(),
+                            y.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = y.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            y.as_pointer(),
+                            x.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = y.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
     }
     {
         let x: Value<Tag> = Rc::new(RefCell::new(Tag::new_2({ 2 }, {
@@ -370,34 +390,38 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Ptr::<i8>::from_string_literal(b"One-z")
         })));
         let _dtor_z = ScopedDestructor::new(&z, |__p| __p.destructor());
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        x.as_pointer(),
-                        y.as_pointer(),
-                        z.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = z.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
-        assert!(
-            ({
-                let _rhs: Ptr<Tag> = ({
-                    clamp_3(
-                        y.as_pointer(),
-                        z.as_pointer(),
-                        x.as_pointer(),
-                        FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
-                    )
-                });
-                let _lhs: Ptr<Tag> = z.as_pointer();
-                eq_0(_rhs, _lhs)
-            })
-        );
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            x.as_pointer(),
+                            y.as_pointer(),
+                            z.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = z.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_3(
+                ({
+                    let _rhs: Ptr<Tag> = ({
+                        clamp_4(
+                            y.as_pointer(),
+                            z.as_pointer(),
+                            x.as_pointer(),
+                            FnPtr::<fn(Ptr<Tag>, Ptr<Tag>) -> bool>::new(comp_1),
+                        )
+                    });
+                    let _lhs: Ptr<Tag> = z.as_pointer();
+                    eq_0(_rhs, _lhs)
+                }),
+            )
+        });
     }
     {
         let x: Value<i32> = Rc::new(RefCell::new(1));

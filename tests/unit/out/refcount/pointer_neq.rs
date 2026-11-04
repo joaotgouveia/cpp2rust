@@ -14,7 +14,7 @@ fn main_0() -> i32 {
     let x: Value<i32> = Rc::new(RefCell::new(5));
     let mut p1: Ptr<i32> = (x.as_pointer());
     let mut p2: Ptr<i32> = (x.as_pointer());
-    assert!(!({ (p1).clone() } != { (p2).clone() }));
+    ({ cpp2rust_assert_fail_0(!({ (p1).clone() } != { (p2).clone() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

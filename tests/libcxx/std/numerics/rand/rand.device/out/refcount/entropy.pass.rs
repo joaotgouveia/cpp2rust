@@ -29,8 +29,12 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let r: Value<std_random_device> = Rc::new(RefCell::new(<std_random_device>::default()));
     let mut e: f64 = ({ (*r.borrow()).entropy() });
-    assert!((e >= 0_f64));
-    assert!((e <= (((::std::mem::size_of::<u32>() as usize).wrapping_mul(8_usize)) as f64)));
+    ({ cpp2rust_assert_fail_0((e >= 0_f64)) });
+    ({
+        cpp2rust_assert_fail_0(
+            (e <= (((::std::mem::size_of::<u32>() as u64).wrapping_mul(8_u64)) as f64)),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

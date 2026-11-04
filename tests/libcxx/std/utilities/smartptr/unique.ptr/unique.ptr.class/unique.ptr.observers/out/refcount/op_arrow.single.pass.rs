@@ -28,8 +28,10 @@ impl Default for A {
     }
 }
 pub fn test_0() -> bool {
-    let mut p: Option<Value<A>> = Ptr::alloc(A::new()).to_owned_opt();
-    assert!((p.as_pointer().with(|__s| __s.i_) == 7));
+    let p: Value<std_unique_ptr_A__std_default_delete_A__> = Rc::new(RefCell::new(
+        std_unique_ptr_A__std_default_delete_A__::new_1({ Ptr::alloc(A::new()) }),
+    ));
+    ({ cpp2rust_assert_fail_1(({ ((*p.borrow()).read()).i_ } == 7)) });
     return true;
 }
 pub fn main() {

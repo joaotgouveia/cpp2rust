@@ -24,22 +24,26 @@ pub fn main() {
 fn main_0() -> i32 {
     let t: Value<S> = Rc::new(RefCell::new(S { v: 1 }));
     let f: Value<S> = Rc::new(RefCell::new(S { v: 0 }));
-    assert!(({ SImpl::operator_not(&f.as_pointer(),) }));
-    assert!(!({ SImpl::operator_not(&t.as_pointer(),) }));
-    assert!(
-        ({
-            let _o: Ptr<S> = t.as_pointer();
-            SImpl::operator_and(&t.as_pointer(), _o)
-        })
-    );
-    assert!(!({ SImpl::operator_and(&t.as_pointer(), f.as_pointer(),) }));
-    assert!(({ SImpl::operator_or(&t.as_pointer(), f.as_pointer(),) }));
-    assert!(
-        !({
-            let _o: Ptr<S> = f.as_pointer();
-            SImpl::operator_or(&f.as_pointer(), _o)
-        })
-    );
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_not(&f.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(!({ SImpl::operator_not(&t.as_pointer()) })) });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let _o: Ptr<S> = t.as_pointer();
+                SImpl::operator_and(&t.as_pointer(), _o)
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_0(!({ SImpl::operator_and(&t.as_pointer(), f.as_pointer()) })) });
+    ({ cpp2rust_assert_fail_0(({ SImpl::operator_or(&t.as_pointer(), f.as_pointer()) })) });
+    ({
+        cpp2rust_assert_fail_0(
+            !({
+                let _o: Ptr<S> = f.as_pointer();
+                SImpl::operator_or(&f.as_pointer(), _o)
+            }),
+        )
+    });
     return 0;
 }
 pub trait SImpl {

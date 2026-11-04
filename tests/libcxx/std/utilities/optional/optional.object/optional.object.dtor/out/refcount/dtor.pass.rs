@@ -71,9 +71,17 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             let _dtor_x = ScopedDestructor::new(&x, |__p| __p.destructor());
             let opt: Value<std_optional_X_> =
                 Rc::new(RefCell::new(std_optional_X_::new_1({ x.as_pointer() })));
-            assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)));
+            ({
+                cpp2rust_assert_fail_1(
+                    ((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (false as i32)),
+                )
+            });
         }
-        assert!(((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)));
+        ({
+            cpp2rust_assert_fail_1(
+                ((dtor_called_0.with(|rc| *rc.borrow()) as i32) == (true as i32)),
+            )
+        });
     }
     return 0;
 }

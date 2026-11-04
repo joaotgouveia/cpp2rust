@@ -6,11 +6,11 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn f_0(s: Ptr<Vec<i8>>) {
+pub fn f_0(s: Ptr<std_basic_string_char__std_char_traits_char___std_allocator_char__>) {
     &({ (*s.upgrade().deref()).begin_64() });
 }
-pub fn AppendTo_1(v: Ptr<Vec<i8>>) {
-    &(CppRange::begin(&v.decay()));
+pub fn AppendTo_1(v: Ptr<std_vector_char__std_allocator_char__>) {
+    &({ (*v.upgrade().deref()).begin_29() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

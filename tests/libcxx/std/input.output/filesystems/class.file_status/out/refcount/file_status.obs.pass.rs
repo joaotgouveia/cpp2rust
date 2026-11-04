@@ -35,7 +35,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "noexcept(st.type())");;
         const _: () = assert!(true, "std::is_same<decltype(st.type()), file_type>::value");;
-        assert!(({ (({ (*st.borrow()).type_8() }) == std_filesystem_file_type_regular) }));
+        ({
+            cpp2rust_assert_fail_0(
+                (({ (*st.borrow()).type_8() }) == std_filesystem_file_type_regular),
+            )
+        });
     }
     {
         const _: () = assert!(true, "noexcept(st.permissions())");;
@@ -43,7 +47,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             true,
             "std::is_same<decltype(st.permissions()), perms>::value"
         );;
-        assert!(({ (({ (*st.borrow()).permissions_9() }) == std_filesystem_perms_owner_read) }));
+        ({
+            cpp2rust_assert_fail_0(
+                (({ (*st.borrow()).permissions_9() }) == std_filesystem_perms_owner_read),
+            )
+        });
     }
     return 0;
 }

@@ -11,16 +11,15 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut tmp: Vec<i32> = Vec::new();
+    let tmp: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+        <std_vector_int__std_allocator_int__>::default(),
+    ));
     let mut j: i32 = 0;
     'loop_: while (j < 2000) {
-        let mut i: i32 = 0;
-        'loop_: while (i < 10000) {
-            {
-                let a0_clone = i.clone();
-                tmp.push(a0_clone)
-            };
-            i.postfix_inc();
+        let i: Value<i32> = Rc::new(RefCell::new(0));
+        'loop_: while ((*i.borrow()) < 10000) {
+            ({ (*tmp.borrow()).push_back_59(i.as_pointer()) });
+            (*i.borrow_mut()).postfix_inc();
         }
         j.postfix_inc();
     }

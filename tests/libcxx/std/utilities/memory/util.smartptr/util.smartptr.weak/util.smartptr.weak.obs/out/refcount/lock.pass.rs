@@ -64,18 +64,18 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let wp: Value<std_weak_ptr_A_> = Rc::new(RefCell::new(<std_weak_ptr_A_>::default()));
         let sp: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(({ (*wp.borrow()).lock() })));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
                 (({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                    == 0_i64)
-            })
-        );
-        assert!(
-            ({
-                ({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }).is_null()
-            })
-        );
-        assert!((count_0.with(|rc| *rc.borrow()) == 0));
+                    == 0_i64),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }).is_null(),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((count_0.with(|rc| *rc.borrow()) == 0)) });
     }
     {
         let sp0: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
@@ -84,21 +84,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         let wp: Value<std_weak_ptr_A_> =
             Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ sp0.as_pointer() })));
         let sp: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(({ (*wp.borrow()).lock() })));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
                 (({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                    == 2_i64)
-            })
-        );
-        assert!(
-            ({
+                    == 2_i64),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
                 (({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() })
-                    == ({ ((*sp0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }))
-            })
-        );
-        assert!((count_0.with(|rc| *rc.borrow()) == 1));
+                    == ({ ((*sp0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() })),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((count_0.with(|rc| *rc.borrow()) == 1)) });
     }
-    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_1((count_0.with(|rc| *rc.borrow()) == 0)) });
     {
         let sp0: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
             Ptr::alloc(A::new())
@@ -107,20 +107,20 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ sp0.as_pointer() })));
         ({ ((*sp0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).reset() });
         let sp: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(({ (*wp.borrow()).lock() })));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
                 (({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                    == 0_i64)
-            })
-        );
-        assert!(
-            ({
-                ({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }).is_null()
-            })
-        );
-        assert!((count_0.with(|rc| *rc.borrow()) == 0));
+                    == 0_i64),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
+                ({ ((*sp.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).get() }).is_null(),
+            )
+        });
+        ({ cpp2rust_assert_fail_1((count_0.with(|rc| *rc.borrow()) == 0)) });
     }
-    assert!((count_0.with(|rc| *rc.borrow()) == 0));
+    ({ cpp2rust_assert_fail_1((count_0.with(|rc| *rc.borrow()) == 0)) });
     return 0;
 }
 pub trait AImpl {

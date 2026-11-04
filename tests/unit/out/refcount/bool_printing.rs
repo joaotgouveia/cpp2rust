@@ -19,60 +19,20 @@ pub fn main() {
 fn main_0() -> i32 {
     let mut i1: i32 = 0;
     let mut i2: i32 = 1;
-    {
-        let __s = {
-            let __s = libcc2rs::cout();
-            write_bool_refcount(&__s, true);
-            __s
-        };
-        let _ = __s.write_all(&[('\n' as i8) as u8]);
-        __s
-    };
-    {
-        let __s = {
-            let __s = libcc2rs::cout();
-            write_bool_refcount(&__s, false);
-            __s
-        };
-        let _ = __s.write_all(&[('\n' as i8) as u8]);
-        __s
-    };
-    {
-        let __s = {
-            let __s = libcc2rs::cout();
-            write_bool_refcount(&__s, (i1 != i2));
-            __s
-        };
-        let _ = __s.write_all(&[('\n' as i8) as u8]);
-        __s
-    };
-    {
-        let __s = {
-            let __s = libcc2rs::cout();
-            write_bool_refcount(&__s, (i1 == i2));
-            __s
-        };
-        let _ = __s.write_all(&[('\n' as i8) as u8]);
-        __s
-    };
-    {
-        let __s = {
-            let __s = libcc2rs::cout();
-            write_bool_refcount(&__s, ({ foo_0() }));
-            __s
-        };
-        let _ = __s.write_all(&[('\n' as i8) as u8]);
-        __s
-    };
-    {
-        let __s = {
-            let __s = libcc2rs::cout();
-            write_bool_refcount(&__s, ({ bar_1() }));
-            __s
-        };
-        let _ = __s.write_all(&[('\n' as i8) as u8]);
-        __s
-    };
+    write!(cout_2.with(|v| v.as_pointer()), "{:}\n", (true as u8),);
+    write!(cout_2.with(|v| v.as_pointer()), "{:}\n", (false as u8),);
+    write!(cout_2.with(|v| v.as_pointer()), "{:}\n", ((i1 != i2) as u8),);
+    write!(cout_2.with(|v| v.as_pointer()), "{:}\n", ((i1 == i2) as u8),);
+    write!(
+        cout_2.with(|v| v.as_pointer()),
+        "{:}\n",
+        (({ foo_0() }) as u8),
+    );
+    write!(
+        cout_2.with(|v| v.as_pointer()),
+        "{:}\n",
+        (({ bar_1() }) as u8),
+    );
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

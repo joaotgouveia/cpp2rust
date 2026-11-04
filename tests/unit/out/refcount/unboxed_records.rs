@@ -114,25 +114,25 @@ fn main_0() -> i32 {
     (*cookie.borrow_mut()).in_ = (in_.as_pointer() as Ptr<i32>);
     (*cookie.borrow_mut()).inner.a = 1;
     (*cookie.borrow_mut()).inner.b = 3;
-    assert!((({ consume_3(cookie.as_pointer(),) }) == 23));
-    assert!(
-        ({
+    ({ cpp2rust_assert_fail_4((({ consume_3(cookie.as_pointer()) }) == 23)) });
+    ({
+        cpp2rust_assert_fail_4(
             (((*data.borrow())[(0) as usize] == 22) && ((*data.borrow())[(1) as usize] == 22))
-                && ((*data.borrow())[(3) as usize] == 8)
-        })
-    );
-    assert!((({ get_1(cookie.as_pointer(),) }) == 2));
+                && ((*data.borrow())[(3) as usize] == 8),
+        )
+    });
+    ({ cpp2rust_assert_fail_4((({ get_1(cookie.as_pointer()) }) == 2)) });
     let mut local: Inner = <Inner>::default();
     local.a = 4;
     local.b = { (local.a * 2) };
     local.a.postfix_inc();
-    assert!(((local.a + local.b) == 13));
+    ({ cpp2rust_assert_fail_4(((local.a + local.b) == 13)) });
     let field_addr: Value<Inner> = Rc::new(RefCell::new(Inner { a: 0, b: 0 }));
     ({ set_0((field_ptr!(field_addr.as_pointer(), b)), 7) });
-    assert!(({ ({ (*field_addr.borrow()).b } == 7) }));
+    ({ cpp2rust_assert_fail_4(({ (*field_addr.borrow()).b } == 7)) });
     let counter: Value<Counter> = Rc::new(RefCell::new(<Counter>::default()));
     ({ CounterImpl::inc(&counter.as_pointer()) });
-    assert!(({ ({ (*counter.borrow()).n } == 1) }));
+    ({ cpp2rust_assert_fail_4(({ (*counter.borrow()).n } == 1)) });
     return 0;
 }
 pub trait CounterImpl {

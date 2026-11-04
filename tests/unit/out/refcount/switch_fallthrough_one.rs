@@ -28,9 +28,9 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ fallthrough_one_0(1,) }) == 30));
-    assert!((({ fallthrough_one_0(2,) }) == 20));
-    assert!((({ fallthrough_one_0(99,) }) == -1_i32));
+    ({ cpp2rust_assert_fail_1((({ fallthrough_one_0(1) }) == 30)) });
+    ({ cpp2rust_assert_fail_1((({ fallthrough_one_0(2) }) == 20)) });
+    ({ cpp2rust_assert_fail_1((({ fallthrough_one_0(99) }) == -1_i32)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -31,44 +31,46 @@ impl Checker {
             clog_mem_dump: Ptr::alloc_array((0..272usize).map(|_| 0_i8).collect::<Box<[i8]>>()),
         }));
         let this: Ptr<Checker> = __this.as_pointer();
-        match ({ (this.with(|__s| __s.cerr_mem_dump.clone()) as Ptr<i8>).to_any() },) {
-            (mut __tmp_0,) => {
-                __tmp_0.memcpy(
-                    &((libcc2rs::cerr()).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-                    272usize as usize,
-                );
-                (__tmp_0).clone()
-            }
-        };
-        match ({ (this.with(|__s| __s.cin_mem_dump.clone()) as Ptr<i8>).to_any() },) {
-            (mut __tmp_1,) => {
-                __tmp_1.memcpy(
-                    &((cin_0.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>)
-                        .to_any(),
-                    280usize as usize,
-                );
-                (__tmp_1).clone()
-            }
-        };
-        match ({ (this.with(|__s| __s.cout_mem_dump.clone()) as Ptr<i8>).to_any() },) {
-            (mut __tmp_2,) => {
-                __tmp_2.memcpy(
-                    &((libcc2rs::cout()).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-                    272usize as usize,
-                );
-                (__tmp_2).clone()
-            }
-        };
-        match ({ (this.with(|__s| __s.clog_mem_dump.clone()) as Ptr<i8>).to_any() },) {
-            (mut __tmp_3,) => {
-                __tmp_3.memcpy(
-                    &((clog_1.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>)
-                        .to_any(),
-                    272usize as usize,
-                );
-                (__tmp_3).clone()
-            }
-        };
+        ({
+            let ___src: AnyPtr =
+                ((cerr_0.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+            let ___n: u64 = (272usize as u64);
+            memcpy_1(
+                (this.with(|__s| __s.cerr_mem_dump.clone()) as Ptr<i8>).to_any(),
+                ___src,
+                ___n,
+            )
+        });
+        ({
+            let ___src: AnyPtr =
+                ((cin_2.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+            let ___n: u64 = (280usize as u64);
+            memcpy_1(
+                (this.with(|__s| __s.cin_mem_dump.clone()) as Ptr<i8>).to_any(),
+                ___src,
+                ___n,
+            )
+        });
+        ({
+            let ___src: AnyPtr =
+                ((cout_3.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+            let ___n: u64 = (272usize as u64);
+            memcpy_1(
+                (this.with(|__s| __s.cout_mem_dump.clone()) as Ptr<i8>).to_any(),
+                ___src,
+                ___n,
+            )
+        });
+        ({
+            let ___src: AnyPtr =
+                ((clog_4.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+            let ___n: u64 = (272usize as u64);
+            memcpy_1(
+                (this.with(|__s| __s.clog_mem_dump.clone()) as Ptr<i8>).to_any(),
+                ___src,
+                ___n,
+            )
+        });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -83,7 +85,7 @@ impl Default for Checker {
     }
 }
 thread_local!(
-    pub static check_2: Value<Checker> = Rc::new(RefCell::new(Checker::new()));
+    pub static check_5: Value<Checker> = Rc::new(RefCell::new(Checker::new()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
 #[byte_size(32)]
@@ -110,46 +112,46 @@ impl WideChecker {
             wclog_mem_dump: Ptr::alloc_array((0..272usize).map(|_| 0_i8).collect::<Box<[i8]>>()),
         }));
         let this: Ptr<WideChecker> = __this.as_pointer();
-        match ({ (this.with(|__s| __s.wcerr_mem_dump.clone()) as Ptr<i8>).to_any() },) {
-            (mut __tmp_4,) => {
-                __tmp_4.memcpy(
-                    &((wcerr_3.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>)
-                        .to_any(),
-                    272usize as usize,
-                );
-                (__tmp_4).clone()
-            }
-        };
-        match ({ (this.with(|__s| __s.wcin_mem_dump.clone()) as Ptr<i8>).to_any() },) {
-            (mut __tmp_5,) => {
-                __tmp_5.memcpy(
-                    &((wcin_4.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>)
-                        .to_any(),
-                    280usize as usize,
-                );
-                (__tmp_5).clone()
-            }
-        };
-        match ({ (this.with(|__s| __s.wcout_mem_dump.clone()) as Ptr<i8>).to_any() },) {
-            (mut __tmp_6,) => {
-                __tmp_6.memcpy(
-                    &((wcout_5.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>)
-                        .to_any(),
-                    272usize as usize,
-                );
-                (__tmp_6).clone()
-            }
-        };
-        match ({ (this.with(|__s| __s.wclog_mem_dump.clone()) as Ptr<i8>).to_any() },) {
-            (mut __tmp_7,) => {
-                __tmp_7.memcpy(
-                    &((wclog_6.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>)
-                        .to_any(),
-                    272usize as usize,
-                );
-                (__tmp_7).clone()
-            }
-        };
+        ({
+            let ___src: AnyPtr =
+                ((wcerr_6.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+            let ___n: u64 = (272usize as u64);
+            memcpy_1(
+                (this.with(|__s| __s.wcerr_mem_dump.clone()) as Ptr<i8>).to_any(),
+                ___src,
+                ___n,
+            )
+        });
+        ({
+            let ___src: AnyPtr =
+                ((wcin_7.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+            let ___n: u64 = (280usize as u64);
+            memcpy_1(
+                (this.with(|__s| __s.wcin_mem_dump.clone()) as Ptr<i8>).to_any(),
+                ___src,
+                ___n,
+            )
+        });
+        ({
+            let ___src: AnyPtr =
+                ((wcout_8.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+            let ___n: u64 = (272usize as u64);
+            memcpy_1(
+                (this.with(|__s| __s.wcout_mem_dump.clone()) as Ptr<i8>).to_any(),
+                ___src,
+                ___n,
+            )
+        });
+        ({
+            let ___src: AnyPtr =
+                ((wclog_9.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+            let ___n: u64 = (272usize as u64);
+            memcpy_1(
+                (this.with(|__s| __s.wclog_mem_dump.clone()) as Ptr<i8>).to_any(),
+                ___src,
+                ___n,
+            )
+        });
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -164,7 +166,7 @@ impl Default for WideChecker {
     }
 }
 thread_local!(
-    pub static wide_check_7: Value<WideChecker> = Rc::new(RefCell::new(WideChecker::new()));
+    pub static wide_check_10: Value<WideChecker> = Rc::new(RefCell::new(WideChecker::new()));
 );
 
 pub fn main() {
@@ -187,98 +189,149 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(
-        (({
-            ({ (*check_2.with(Value::clone).borrow()).cerr_mem_dump.clone() } as Ptr<i8>).to_any()
-        })
-        .memcmp(
-            &((libcc2rs::cerr()).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-            272usize
-        ) == 0)
-    );
-    assert!(
-        (({
-            ({ (*check_2.with(Value::clone).borrow()).cin_mem_dump.clone() } as Ptr<i8>).to_any()
-        })
-        .memcmp(
-            &((cin_0.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-            280usize
-        ) == 0)
-    );
-    assert!(
-        (({
-            ({ (*check_2.with(Value::clone).borrow()).cout_mem_dump.clone() } as Ptr<i8>).to_any()
-        })
-        .memcmp(
-            &((libcc2rs::cout()).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-            272usize
-        ) == 0)
-    );
-    assert!(
-        (({
-            ({ (*check_2.with(Value::clone).borrow()).clog_mem_dump.clone() } as Ptr<i8>).to_any()
-        })
-        .memcmp(
-            &((clog_1.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-            272usize
-        ) == 0)
-    );
-    assert!(
-        (({
-            ({
-                (*wide_check_7.with(Value::clone).borrow())
-                    .wcerr_mem_dump
-                    .clone()
-            } as Ptr<i8>)
-                .to_any()
-        })
-        .memcmp(
-            &((wcerr_3.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-            272usize
-        ) == 0)
-    );
-    assert!(
-        (({
-            ({
-                (*wide_check_7.with(Value::clone).borrow())
-                    .wcin_mem_dump
-                    .clone()
-            } as Ptr<i8>)
-                .to_any()
-        })
-        .memcmp(
-            &((wcin_4.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-            280usize
-        ) == 0)
-    );
-    assert!(
-        (({
-            ({
-                (*wide_check_7.with(Value::clone).borrow())
-                    .wcout_mem_dump
-                    .clone()
-            } as Ptr<i8>)
-                .to_any()
-        })
-        .memcmp(
-            &((wcout_5.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-            272usize
-        ) == 0)
-    );
-    assert!(
-        (({
-            ({
-                (*wide_check_7.with(Value::clone).borrow())
-                    .wclog_mem_dump
-                    .clone()
-            } as Ptr<i8>)
-                .to_any()
-        })
-        .memcmp(
-            &((wclog_6.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any(),
-            272usize
-        ) == 0)
-    );
+    ({
+        cpp2rust_assert_fail_11(
+            (({
+                let ___s2: AnyPtr = ((cerr_0.with(|v| v.as_pointer())).reinterpret_cast::<i8>()
+                    as Ptr<i8>)
+                    .to_any();
+                let ___n: u64 = (272usize as u64);
+                memcmp_12(
+                    ({ (*check_5.with(Value::clone).borrow()).cerr_mem_dump.clone() } as Ptr<i8>)
+                        .to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_11(
+            (({
+                let ___s2: AnyPtr =
+                    ((cin_2.with(|v| v.as_pointer())).reinterpret_cast::<i8>() as Ptr<i8>).to_any();
+                let ___n: u64 = (280usize as u64);
+                memcmp_12(
+                    ({ (*check_5.with(Value::clone).borrow()).cin_mem_dump.clone() } as Ptr<i8>)
+                        .to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_11(
+            (({
+                let ___s2: AnyPtr = ((cout_3.with(|v| v.as_pointer())).reinterpret_cast::<i8>()
+                    as Ptr<i8>)
+                    .to_any();
+                let ___n: u64 = (272usize as u64);
+                memcmp_12(
+                    ({ (*check_5.with(Value::clone).borrow()).cout_mem_dump.clone() } as Ptr<i8>)
+                        .to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_11(
+            (({
+                let ___s2: AnyPtr = ((clog_4.with(|v| v.as_pointer())).reinterpret_cast::<i8>()
+                    as Ptr<i8>)
+                    .to_any();
+                let ___n: u64 = (272usize as u64);
+                memcmp_12(
+                    ({ (*check_5.with(Value::clone).borrow()).clog_mem_dump.clone() } as Ptr<i8>)
+                        .to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_11(
+            (({
+                let ___s2: AnyPtr = ((wcerr_6.with(|v| v.as_pointer())).reinterpret_cast::<i8>()
+                    as Ptr<i8>)
+                    .to_any();
+                let ___n: u64 = (272usize as u64);
+                memcmp_12(
+                    ({
+                        (*wide_check_10.with(Value::clone).borrow())
+                            .wcerr_mem_dump
+                            .clone()
+                    } as Ptr<i8>)
+                        .to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_11(
+            (({
+                let ___s2: AnyPtr = ((wcin_7.with(|v| v.as_pointer())).reinterpret_cast::<i8>()
+                    as Ptr<i8>)
+                    .to_any();
+                let ___n: u64 = (280usize as u64);
+                memcmp_12(
+                    ({
+                        (*wide_check_10.with(Value::clone).borrow())
+                            .wcin_mem_dump
+                            .clone()
+                    } as Ptr<i8>)
+                        .to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_11(
+            (({
+                let ___s2: AnyPtr = ((wcout_8.with(|v| v.as_pointer())).reinterpret_cast::<i8>()
+                    as Ptr<i8>)
+                    .to_any();
+                let ___n: u64 = (272usize as u64);
+                memcmp_12(
+                    ({
+                        (*wide_check_10.with(Value::clone).borrow())
+                            .wcout_mem_dump
+                            .clone()
+                    } as Ptr<i8>)
+                        .to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_11(
+            (({
+                let ___s2: AnyPtr = ((wclog_9.with(|v| v.as_pointer())).reinterpret_cast::<i8>()
+                    as Ptr<i8>)
+                    .to_any();
+                let ___n: u64 = (272usize as u64);
+                memcmp_12(
+                    ({
+                        (*wide_check_10.with(Value::clone).borrow())
+                            .wclog_mem_dump
+                            .clone()
+                    } as Ptr<i8>)
+                        .to_any(),
+                    ___s2,
+                    ___n,
+                )
+            }) == 0),
+        )
+    });
     return 0;
 }
 pub trait CheckerImpl {
@@ -304,6 +357,6 @@ impl WideCheckerImpl for Ptr<WideChecker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = check_2.with(|_| ());
-    let _ = wide_check_7.with(|_| ());
+    let _ = check_5.with(|_| ());
+    let _ = wide_check_10.with(|_| ());
 }

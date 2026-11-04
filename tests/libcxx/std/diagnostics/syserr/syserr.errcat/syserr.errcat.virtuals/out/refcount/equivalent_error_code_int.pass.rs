@@ -28,24 +28,28 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let e_cat: Ptr<std_error_category> = ({ generic_category_0() });
-    assert!(
-        ({
-            let ___code: Value<std_error_code> =
-                Rc::new(RefCell::new(std_error_code::new_1({ 5 }, {
-                    (e_cat).clone()
-                })));
-            (*e_cat.upgrade().deref()).equivalent_10(___code.as_pointer(), 5)
-        })
-    );
-    assert!(
-        !({
-            let ___code: Value<std_error_code> =
-                Rc::new(RefCell::new(std_error_code::new_1({ 5 }, {
-                    (e_cat).clone()
-                })));
-            (*e_cat.upgrade().deref()).equivalent_10(___code.as_pointer(), 6)
-        })
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let ___code: Value<std_error_code> =
+                    Rc::new(RefCell::new(std_error_code::new_1({ 5 }, {
+                        (e_cat).clone()
+                    })));
+                (*e_cat.upgrade().deref()).equivalent_10(___code.as_pointer(), 5)
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_1(
+            !({
+                let ___code: Value<std_error_code> =
+                    Rc::new(RefCell::new(std_error_code::new_1({ 5 }, {
+                        (e_cat).clone()
+                    })));
+                (*e_cat.upgrade().deref()).equivalent_10(___code.as_pointer(), 6)
+            }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

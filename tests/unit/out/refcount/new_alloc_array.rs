@@ -11,17 +11,15 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let mut array: Ptr<i32> =
-        Ptr::alloc_array((0..100_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
-    match ({ (array).to_any() },) {
-        (mut __tmp_0,) => {
-            __tmp_0.memset(
-                (0) as u8,
-                (::std::mem::size_of::<i32>() as usize).wrapping_mul(100_usize) as usize,
-            );
-            (__tmp_0).clone()
-        }
-    };
+    let mut array: Ptr<i32> = Ptr::alloc_array((0..100_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
+    ({
+        let ___s: AnyPtr = (array).to_any();
+        memset_0(
+            ___s,
+            0,
+            ((::std::mem::size_of::<i32>() as u64).wrapping_mul(100_u64) as u64),
+        )
+    });
     elem!(array, 99).write(-1_i32);
     let mut p1: Ptr<i32> = (array).clone();
     'loop_: while ((p1.read()) >= 0) {
@@ -36,7 +34,7 @@ fn main_0() -> i32 {
     }
     let mut p2: Ptr<i32> = (array).clone();
     p2.delete();
-    assert!((out == 99));
+    ({ cpp2rust_assert_fail_1((out == 99)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

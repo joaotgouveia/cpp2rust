@@ -48,21 +48,25 @@ pub fn test_0() -> bool {
             )
         }),
     ));
-    assert!(
-        (({
-            let ___args: Value<i32> = Rc::new(RefCell::new(5));
-            (*g.borrow_mut())(___args.as_pointer())
-        }) == 10)
-    );
-    assert!(
-        (({
-            let ___args: Value<i32> = Rc::new(RefCell::new(5));
-            ({
-                let ___f: Value<plus_one> = Rc::new(RefCell::new(<plus_one>::default()));
-                bind_3(___f.as_pointer(), g.as_pointer())
-            })(___args.as_pointer())
-        }) == 11)
-    );
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___args: Value<i32> = Rc::new(RefCell::new(5));
+                (*g.borrow_mut())(___args.as_pointer())
+            }) == 10),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_3(
+            (({
+                let ___args: Value<i32> = Rc::new(RefCell::new(5));
+                ({
+                    let ___f: Value<plus_one> = Rc::new(RefCell::new(<plus_one>::default()));
+                    bind_4(___f.as_pointer(), g.as_pointer())
+                })(___args.as_pointer())
+            }) == 11),
+        )
+    });
     return true;
 }
 pub fn main() {

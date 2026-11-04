@@ -28,7 +28,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut l: Vec<i32> = Vec::new();
+        let mut l: std_vector_int__std_pmr_polymorphic_allocator_int__ =
+            <std_vector_int__std_pmr_polymorphic_allocator_int__>::default();
     }
     return 0;
 }

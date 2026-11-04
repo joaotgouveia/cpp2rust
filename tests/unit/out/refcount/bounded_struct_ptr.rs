@@ -31,7 +31,7 @@ fn main_0() -> i32 {
     let mut p1: Ptr<i32> = (field_ptr!((arr.as_pointer() as Ptr<Foo>).offset(1), x1));
     let mut a: i32 = (p1.read());
     let mut p2: Ptr<Foo> = ((arr.as_pointer() as Ptr<Foo>).offset(0));
-    assert!((({ a } + { p2.with(|__s| __s.x2) }) == 5));
+    ({ cpp2rust_assert_fail_0((({ a } + { p2.with(|__s| __s.x2) }) == 5)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

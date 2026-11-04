@@ -8,43 +8,42 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_size_0() {
     let v: Value<std_bitset_0_> = Rc::new(RefCell::new(<std_bitset_0_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (0_u64 as usize)) }));
-}
-pub fn test_size_1() {
-    let v: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (1_u64 as usize)) }));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 0_u64)) });
 }
 pub fn test_size_2() {
-    let v: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (31_u64 as usize)) }));
+    let v: Value<std_bitset_1_> = Rc::new(RefCell::new(<std_bitset_1_>::default()));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 1_u64)) });
 }
 pub fn test_size_3() {
-    let v: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (32_u64 as usize)) }));
+    let v: Value<std_bitset_31_> = Rc::new(RefCell::new(<std_bitset_31_>::default()));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 31_u64)) });
 }
 pub fn test_size_4() {
-    let v: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (33_u64 as usize)) }));
+    let v: Value<std_bitset_32_> = Rc::new(RefCell::new(<std_bitset_32_>::default()));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 32_u64)) });
 }
 pub fn test_size_5() {
-    let v: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (63_u64 as usize)) }));
+    let v: Value<std_bitset_33_> = Rc::new(RefCell::new(<std_bitset_33_>::default()));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 33_u64)) });
 }
 pub fn test_size_6() {
-    let v: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (64_u64 as usize)) }));
+    let v: Value<std_bitset_63_> = Rc::new(RefCell::new(<std_bitset_63_>::default()));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 63_u64)) });
 }
 pub fn test_size_7() {
-    let v: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (65_u64 as usize)) }));
+    let v: Value<std_bitset_64_> = Rc::new(RefCell::new(<std_bitset_64_>::default()));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 64_u64)) });
 }
 pub fn test_size_8() {
-    let v: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
-    assert!(({ (({ (*v.borrow()).size() }) == (1000_u64 as usize)) }));
+    let v: Value<std_bitset_65_> = Rc::new(RefCell::new(<std_bitset_65_>::default()));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 65_u64)) });
 }
-pub fn test_9() -> bool {
+pub fn test_size_9() {
+    let v: Value<std_bitset_1000_> = Rc::new(RefCell::new(<std_bitset_1000_>::default()));
+    ({ cpp2rust_assert_fail_1((({ (*v.borrow()).size() }) == 1000_u64)) });
+}
+pub fn test_10() -> bool {
     ({ test_size_0() });
-    ({ test_size_1() });
     ({ test_size_2() });
     ({ test_size_3() });
     ({ test_size_4() });
@@ -52,6 +51,7 @@ pub fn test_9() -> bool {
     ({ test_size_6() });
     ({ test_size_7() });
     ({ test_size_8() });
+    ({ test_size_9() });
     return true;
 }
 pub fn main() {
@@ -74,7 +74,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_9() });
+    ({ test_10() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

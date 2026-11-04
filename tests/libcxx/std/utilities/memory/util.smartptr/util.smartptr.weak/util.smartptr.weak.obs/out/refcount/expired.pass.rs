@@ -63,21 +63,21 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let wp: Value<std_weak_ptr_A_> = Rc::new(RefCell::new(<std_weak_ptr_A_>::default()));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
                 (({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                    == 0_i64)
-            })
-        );
-        assert!(
-            ({
+                    == 0_i64),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
                 ((({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).expired() })
                     as i32)
                     == ((({
                         ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count()
-                    }) == 0_i64) as i32))
-            })
-        );
+                    }) == 0_i64) as i32)),
+            )
+        });
     }
     {
         let sp0: Value<std_shared_ptr_A_> = Rc::new(RefCell::new(std_shared_ptr_A_::new_1({
@@ -85,37 +85,37 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         })));
         let wp: Value<std_weak_ptr_A_> =
             Rc::new(RefCell::new(std_weak_ptr_A_::new_1({ sp0.as_pointer() })));
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
                 (({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                    == 1_i64)
-            })
-        );
-        assert!(
-            ({
+                    == 1_i64),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
                 ((({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).expired() })
                     as i32)
                     == ((({
                         ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count()
-                    }) == 0_i64) as i32))
-            })
-        );
+                    }) == 0_i64) as i32)),
+            )
+        });
         ({ ((*sp0.borrow()) as std___shared_ptr_A____gnu_cxx__S_atomic_).reset() });
-        assert!(
-            ({
+        ({
+            cpp2rust_assert_fail_1(
                 (({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count() })
-                    == 0_i64)
-            })
-        );
-        assert!(
-            ({
+                    == 0_i64),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_1(
                 ((({ ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).expired() })
                     as i32)
                     == ((({
                         ((*wp.borrow()) as std___weak_ptr_A____gnu_cxx__S_atomic_).use_count()
-                    }) == 0_i64) as i32))
-            })
-        );
+                    }) == 0_i64) as i32)),
+            )
+        });
     }
     return 0;
 }

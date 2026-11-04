@@ -7,28 +7,19 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test07_0() {
-    {
-        let __s = {
-            let __s = libcc2rs::cout();
-            write_int_refcount(
-                &__s,
-                ({
-                    ({
-                        (*({
-                            ((*cin_1.with(Value::clone).borrow())
-                                as std_basic_ios_char__std_char_traits_char__)
-                                .rdbuf_17()
-                        })
-                        .upgrade()
-                        .deref())
-                        .in_avail()
-                    })
-                }),
-            );
-            __s
-        };
-        libcc2rs::endl_refcount.call(__s)
-    };
+    write!(
+        cout_1.with(|v| v.as_pointer()),
+        "{:}\n",
+        ({
+            (*({
+                ((*cin_2.with(Value::clone).borrow()) as std_basic_ios_char__std_char_traits_char__)
+                    .rdbuf_17()
+            })
+            .upgrade()
+            .deref())
+            .in_avail()
+        }),
+    );
 }
 pub fn main() {
     __cpp2rust_init_globals();

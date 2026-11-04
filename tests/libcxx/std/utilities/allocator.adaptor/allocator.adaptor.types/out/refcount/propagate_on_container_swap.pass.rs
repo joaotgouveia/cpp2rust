@@ -71,13 +71,13 @@ pub trait A1_int_Impl {
     fn move_assign(&self, a: Ptr<A1_int_>) -> Ptr<A1_int_> {
         unimplemented!()
     }
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         unimplemented!()
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         unimplemented!()
     }
-    fn max_size(&self) -> usize {
+    fn max_size(&self) -> u64 {
         unimplemented!()
     }
 }
@@ -92,7 +92,7 @@ pub trait A2_int_Impl {
     fn move_assign(&self, a: Ptr<A2_int_>) -> Ptr<A2_int_> {
         unimplemented!()
     }
-    fn allocate(&self, mut _a0: usize, mut hint: AnyPtr) -> Ptr<i32> {
+    fn allocate(&self, mut _a0: u64, mut hint: AnyPtr) -> Ptr<i32> {
         unimplemented!()
     }
 }

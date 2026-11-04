@@ -28,8 +28,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ stacked_block_0(2,) }) == 5));
-    assert!((({ stacked_block_0(9,) }) == 0));
+    ({ cpp2rust_assert_fail_1((({ stacked_block_0(2) }) == 5)) });
+    ({ cpp2rust_assert_fail_1((({ stacked_block_0(9) }) == 0)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

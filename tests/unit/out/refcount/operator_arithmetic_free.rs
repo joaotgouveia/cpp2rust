@@ -95,115 +95,139 @@ pub fn main() {
 fn main_0() -> i32 {
     let a: Value<S> = Rc::new(RefCell::new(S { v: 7 }));
     let b: Value<S> = Rc::new(RefCell::new(S { v: 2 }));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_13(
             ({
-                let _a: Ptr<S> = a.as_pointer();
-                operator_add_0(_a, b.as_pointer())
-            })
-            .v
-        } == 9)
-    );
-    assert!(
-        ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_add_0(_a, b.as_pointer())
+                })
+                .v
+            } == 9),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
             ({
-                let _a: Ptr<S> = a.as_pointer();
-                operator_sub_1(_a, b.as_pointer())
-            })
-            .v
-        } == 5)
-    );
-    assert!(
-        ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_sub_1(_a, b.as_pointer())
+                })
+                .v
+            } == 5),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
             ({
-                let _a: Ptr<S> = a.as_pointer();
-                operator_mul_2(_a, b.as_pointer())
-            })
-            .v
-        } == 14)
-    );
-    assert!(
-        ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_mul_2(_a, b.as_pointer())
+                })
+                .v
+            } == 14),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
             ({
-                let _a: Ptr<S> = a.as_pointer();
-                operator_div_3(_a, b.as_pointer())
-            })
-            .v
-        } == 3)
-    );
-    assert!(
-        ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_div_3(_a, b.as_pointer())
+                })
+                .v
+            } == 3),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
             ({
-                let _a: Ptr<S> = a.as_pointer();
-                operator_rem_4(_a, b.as_pointer())
-            })
-            .v
-        } == 1)
-    );
-    assert!(
-        ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_rem_4(_a, b.as_pointer())
+                })
+                .v
+            } == 1),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
             ({
-                let _a: Ptr<S> = a.as_pointer();
-                operator_pos_5(_a)
-            })
-            .v
-        } == 7)
-    );
-    assert!(
-        ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_pos_5(_a)
+                })
+                .v
+            } == 7),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
             ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_neg_6(_a)
+                })
+                .v
+            } == -7_i32),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
+            (({
                 let _a: Ptr<S> = a.as_pointer();
-                operator_neg_6(_a)
+                operator_inc_7(_a)
             })
-            .v
-        } == -7_i32)
-    );
-    assert!(
-        (({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_inc_7(_a)
-        })
-        .with(|__s| (__s).v)
-            == 8)
-    );
-    assert!(
-        ({
+            .with(|__s| (__s).v)
+                == 8),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
             ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_post_inc_8(_a, 0)
+                })
+                .v
+            } == 8),
+        )
+    });
+    ({ cpp2rust_assert_fail_13(({ (*a.borrow()).v } == 9)) });
+    ({
+        cpp2rust_assert_fail_13(
+            (({
                 let _a: Ptr<S> = a.as_pointer();
-                operator_post_inc_8(_a, 0)
+                operator_dec_9(_a)
             })
-            .v
-        } == 8)
-    );
-    assert!(({ ({ (*a.borrow()).v } == 9) }));
-    assert!(
-        (({
-            let _a: Ptr<S> = a.as_pointer();
-            operator_dec_9(_a)
-        })
-        .with(|__s| (__s).v)
-            == 8)
-    );
-    assert!(
-        ({
+            .with(|__s| (__s).v)
+                == 8),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_13(
             ({
-                let _a: Ptr<S> = a.as_pointer();
-                operator_post_dec_10(_a, 0)
-            })
-            .v
-        } == 8)
-    );
-    assert!(({ ({ (*a.borrow()).v } == 7) }));
-    assert!(
-        ({
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_post_dec_10(_a, 0)
+                })
+                .v
+            } == 8),
+        )
+    });
+    ({ cpp2rust_assert_fail_13(({ (*a.borrow()).v } == 7)) });
+    ({
+        cpp2rust_assert_fail_13(
             ({
-                let _a: Ptr<S> = a.as_pointer();
-                operator_add_11(_a, 1)
-            })
-            .v
-        } == 8)
-    );
-    assert!(({ ({ operator_add_12(1, a.as_pointer(),) }).v } == 8));
+                ({
+                    let _a: Ptr<S> = a.as_pointer();
+                    operator_add_11(_a, 1)
+                })
+                .v
+            } == 8),
+        )
+    });
+    ({ cpp2rust_assert_fail_13(({ ({ operator_add_12(1, a.as_pointer()) }).v } == 8)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

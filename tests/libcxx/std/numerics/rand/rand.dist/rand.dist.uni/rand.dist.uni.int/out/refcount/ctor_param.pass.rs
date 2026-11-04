@@ -35,8 +35,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(std_uniform_int_distribution_int_::new_1({
                 p.as_pointer()
             })));
-        assert!(({ (({ (*d.borrow()).a() }) == 3) }));
-        assert!(({ (({ (*d.borrow()).b() }) == 8) }));
+        ({ cpp2rust_assert_fail_0((({ (*d.borrow()).a() }) == 3)) });
+        ({ cpp2rust_assert_fail_0((({ (*d.borrow()).b() }) == 8)) });
     }
     return 0;
 }

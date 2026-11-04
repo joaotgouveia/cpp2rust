@@ -27,9 +27,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!((({ lerp_0(0_f32, 0_f32, 0_f32,) }) == 32_f32));
-    assert!((({ lerp_1(0_f64, 0_f64, 0_f64,) }) == 32_f64));
-    assert!((({ lerp_2(0_f64, 0_f64, 0_f64,) }) == 32_f64));
+    ({ cpp2rust_assert_fail_0((({ lerp_1(0_f32, 0_f32, 0_f32) }) == 32_f32)) });
+    ({ cpp2rust_assert_fail_0((({ lerp_2(0_f64, 0_f64, 0_f64) }) == 32_f64)) });
+    ({ cpp2rust_assert_fail_0((({ lerp_3(0_f64, 0_f64, 0_f64) }) == 32_f64)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

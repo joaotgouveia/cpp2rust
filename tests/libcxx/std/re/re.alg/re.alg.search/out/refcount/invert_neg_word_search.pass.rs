@@ -27,36 +27,40 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(
-        ({
-            let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
-                std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^\\W]") },
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^\\W]") },
+                        None,
+                    )),
+                );
+                regex_search_1(
+                    Ptr::<i8>::from_string_literal(b"HelloWorld"),
+                    ___e.as_pointer(),
                     None,
-                ),
-            ));
-            regex_search_0(
-                Ptr::<i8>::from_string_literal(b"HelloWorld"),
-                ___e.as_pointer(),
-                None,
-            )
-        })
-    );
-    assert!(
-        ({
-            let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(RefCell::new(
-                std_basic_regex_char__std_regex_traits_char__::new_1(
-                    { Ptr::<i8>::from_string_literal(b"[^\\W]") },
+                )
+            }),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            ({
+                let ___e: Value<std_basic_regex_char__std_regex_traits_char__> = Rc::new(
+                    RefCell::new(std_basic_regex_char__std_regex_traits_char__::new_1(
+                        { Ptr::<i8>::from_string_literal(b"[^\\W]") },
+                        None,
+                    )),
+                );
+                regex_search_1(
+                    Ptr::<i8>::from_string_literal(b"_"),
+                    ___e.as_pointer(),
                     None,
-                ),
-            ));
-            regex_search_0(
-                Ptr::<i8>::from_string_literal(b"_"),
-                ___e.as_pointer(),
-                None,
-            )
-        })
-    );
+                )
+            }),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

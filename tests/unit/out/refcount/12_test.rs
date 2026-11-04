@@ -11,11 +11,13 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let v: Value<Vec<Vec<i32>>> = Rc::new(RefCell::new(Vec::new()));
-    {
-        let __a1 = (0..(10_usize) as usize).map(|_| 0_i32).collect::<Vec<_>>();
-        (*v.borrow_mut()).push(__a1)
-    };
+    let v : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____  >::default() )) ;
+    ({
+        let ___x: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            std_vector_int__std_allocator_int__::new_1({ 10_u64 }, None),
+        ));
+        (*v.borrow()).push_back_60(___x.as_pointer())
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

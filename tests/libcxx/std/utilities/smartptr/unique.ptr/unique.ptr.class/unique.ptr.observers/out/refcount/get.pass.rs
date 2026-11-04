@@ -190,677 +190,979 @@ pub fn test_basic_18() {
     {
         {
             let mut x: Ptr<i8> = Ptr::alloc(Default::default());
-            let mut ptr: Option<Value<i8>> = x.to_owned_opt();
+            let ptr: Value<std_unique_ptr_char__std_default_delete_char__> = Rc::new(RefCell::new(
+                std_unique_ptr_char__std_default_delete_char__::new_1({ (x).clone() }),
+            ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
             let mut x: Ptr<i8> = Ptr::alloc(Default::default());
-            let mut ptr: Option<Value<i8>> = x.to_owned_opt();
+            let ptr: Value<std_unique_ptr_char__std_default_delete_char__> = Rc::new(RefCell::new(
+                std_unique_ptr_char__std_default_delete_char__::new_1({ (x).clone() }),
+            ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
             let mut x: Ptr<i8> = Ptr::alloc(Default::default());
-            let mut ptr: Option<Value<i8>> = x.to_owned_opt();
+            let ptr: Value<std_unique_ptr_const_char__std_default_delete_const_char__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_const_char__std_default_delete_const_char__::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
             let mut x: Ptr<i8> = Ptr::alloc(Default::default());
-            let mut ptr: Option<Value<i8>> = x.to_owned_opt();
+            let ptr: Value<std_unique_ptr_const_char__std_default_delete_const_char__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_const_char__std_default_delete_const_char__::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<i8> =
-                Ptr::alloc_array((0..3_usize).map(|_| 0_i8).collect::<Box<[i8]>>());
-            let mut ptr: Option<Value<Box<[i8]>>> = x.to_owned_opt();
+            let mut x: Ptr<i8> = Ptr::alloc_array((0..3_u64).map(|_| 0_i8).collect::<Box<[i8]>>());
+            let ptr: Value<std_unique_ptr_chararrarr__std_default_delete_chararrarr__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_chararrarr__std_default_delete_chararrarr__::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<i8> =
-                Ptr::alloc_array((0..3_usize).map(|_| 0_i8).collect::<Box<[i8]>>());
-            let mut ptr: Option<Value<Box<[i8]>>> = x.to_owned_opt();
+            let mut x: Ptr<i8> = Ptr::alloc_array((0..3_u64).map(|_| 0_i8).collect::<Box<[i8]>>());
+            let ptr: Value<std_unique_ptr_chararrarr__std_default_delete_chararrarr__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_chararrarr__std_default_delete_chararrarr__::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<i8> =
-                Ptr::alloc_array((0..3_usize).map(|_| 0_i8).collect::<Box<[i8]>>());
-            let mut ptr: Option<Value<Box<[i8]>>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<i8> =
-                Ptr::alloc_array((0..3_usize).map(|_| 0_i8).collect::<Box<[i8]>>());
-            let mut ptr: Option<Value<Box<[i8]>>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-}
-pub fn test_basic_19() {
-    {
-        {
-            let mut x: Ptr<i32> = Ptr::alloc(Default::default());
-            let mut ptr: Option<Value<i32>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<i32> = Ptr::alloc(Default::default());
-            let mut ptr: Option<Value<i32>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<i32> = Ptr::alloc(Default::default());
-            let mut ptr: Option<Value<i32>> = x.to_owned_opt();
+            let mut x: Ptr<i8> = Ptr::alloc_array((0..3_u64).map(|_| 0_i8).collect::<Box<[i8]>>());
+            let ptr: Value<std_unique_ptr_const_chararrarr__std_default_delete_const_chararrarr__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_const_chararrarr__std_default_delete_const_chararrarr__::new_1(
+                        { (x).clone() },
+                    ),
+                ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<i32> = Ptr::alloc(Default::default());
-            let mut ptr: Option<Value<i32>> = x.to_owned_opt();
+            let mut x: Ptr<i8> = Ptr::alloc_array((0..3_u64).map(|_| 0_i8).collect::<Box<[i8]>>());
+            let ptr: Value<std_unique_ptr_const_chararrarr__std_default_delete_const_chararrarr__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_const_chararrarr__std_default_delete_const_chararrarr__::new_1(
+                        { (x).clone() },
+                    ),
+                ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<i32> =
-                Ptr::alloc_array((0..3_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
-            let mut ptr: Option<Value<Box<[i32]>>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<i32> =
-                Ptr::alloc_array((0..3_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
-            let mut ptr: Option<Value<Box<[i32]>>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<i32> =
-                Ptr::alloc_array((0..3_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
-            let mut ptr: Option<Value<Box<[i32]>>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<i32> =
-                Ptr::alloc_array((0..3_usize).map(|_| 0_i32).collect::<Box<[i32]>>());
-            let mut ptr: Option<Value<Box<[i32]>>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
 }
 pub fn test_basic_20() {
     {
         {
-            let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: Option<Value<WithSize_1_>> = x.to_owned_opt();
+            let mut x: Ptr<i32> = Ptr::alloc(Default::default());
+            let ptr: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+                std_unique_ptr_int__std_default_delete_int__::new_1({ (x).clone() }),
+            ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: Option<Value<WithSize_1_>> = x.to_owned_opt();
+            let mut x: Ptr<i32> = Ptr::alloc(Default::default());
+            let ptr: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+                std_unique_ptr_int__std_default_delete_int__::new_1({ (x).clone() }),
+            ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: Option<Value<WithSize_1_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: Option<Value<WithSize_1_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_1_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_1_>::default())
-                    .collect::<Box<[WithSize_1_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_1_]>>> = x.to_owned_opt();
+            let mut x: Ptr<i32> = Ptr::alloc(Default::default());
+            let ptr: Value<std_unique_ptr_const_int__std_default_delete_const_int__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_const_int__std_default_delete_const_int__::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_1_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_1_>::default())
-                    .collect::<Box<[WithSize_1_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_1_]>>> = x.to_owned_opt();
+            let mut x: Ptr<i32> = Ptr::alloc(Default::default());
+            let ptr: Value<std_unique_ptr_const_int__std_default_delete_const_int__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_const_int__std_default_delete_const_int__::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_1_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_1_>::default())
-                    .collect::<Box<[WithSize_1_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_1_]>>> = x.to_owned_opt();
+            let mut x: Ptr<i32> =
+                Ptr::alloc_array((0..3_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
+            let ptr: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_1_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_1_>::default())
-                    .collect::<Box<[WithSize_1_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_1_]>>> = x.to_owned_opt();
+            let mut x: Ptr<i32> =
+                Ptr::alloc_array((0..3_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
+            let ptr: Value<std_unique_ptr_intarrarr__std_default_delete_intarrarr__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_intarrarr__std_default_delete_intarrarr__::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<i32> =
+                Ptr::alloc_array((0..3_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
+            let ptr: Value<std_unique_ptr_const_intarrarr__std_default_delete_const_intarrarr__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_const_intarrarr__std_default_delete_const_intarrarr__::new_1({
+                        (x).clone()
+                    }),
+                ));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<i32> =
+                Ptr::alloc_array((0..3_u64).map(|_| 0_i32).collect::<Box<[i32]>>());
+            let ptr: Value<std_unique_ptr_const_intarrarr__std_default_delete_const_intarrarr__> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_const_intarrarr__std_default_delete_const_intarrarr__::new_1({
+                        (x).clone()
+                    }),
+                ));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
 }
 pub fn test_basic_21() {
     {
         {
-            let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: Option<Value<WithSize_2_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: Option<Value<WithSize_2_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: Option<Value<WithSize_2_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: Option<Value<WithSize_2_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_2_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_2_>::default())
-                    .collect::<Box<[WithSize_2_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_2_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_2_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_2_>::default())
-                    .collect::<Box<[WithSize_2_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_2_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_2_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_2_>::default())
-                    .collect::<Box<[WithSize_2_]>>(),
+            let mut x: Ptr<WithSize_1_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_1_>::default())
+                    .collect::<Box<[WithSize_1_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_2_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_1_arrarr__std_default_delete_WithSize_1_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_1_arrarr__std_default_delete_WithSize_1_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_2_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_2_>::default())
-                    .collect::<Box<[WithSize_2_]>>(),
+            let mut x: Ptr<WithSize_1_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_1_>::default())
+                    .collect::<Box<[WithSize_1_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_2_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_1_arrarr__std_default_delete_WithSize_1_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_1_arrarr__std_default_delete_WithSize_1_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<WithSize_1_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_1_>::default())
+                    .collect::<Box<[WithSize_1_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_1_arrarr__std_default_delete_const_WithSize_1_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_1_arrarr__std_default_delete_const_WithSize_1_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_1_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_1_>::default())
+                    .collect::<Box<[WithSize_1_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_1_arrarr__std_default_delete_const_WithSize_1_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_1_arrarr__std_default_delete_const_WithSize_1_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
 }
 pub fn test_basic_22() {
     {
         {
-            let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: Option<Value<WithSize_3_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: Option<Value<WithSize_3_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: Option<Value<WithSize_3_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: Option<Value<WithSize_3_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_3_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_3_>::default())
-                    .collect::<Box<[WithSize_3_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_3_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_3_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_3_>::default())
-                    .collect::<Box<[WithSize_3_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_3_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_3_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_3_>::default())
-                    .collect::<Box<[WithSize_3_]>>(),
+            let mut x: Ptr<WithSize_2_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_2_>::default())
+                    .collect::<Box<[WithSize_2_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_3_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_2_arrarr__std_default_delete_WithSize_2_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_2_arrarr__std_default_delete_WithSize_2_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_3_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_3_>::default())
-                    .collect::<Box<[WithSize_3_]>>(),
+            let mut x: Ptr<WithSize_2_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_2_>::default())
+                    .collect::<Box<[WithSize_2_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_3_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_2_arrarr__std_default_delete_WithSize_2_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_2_arrarr__std_default_delete_WithSize_2_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<WithSize_2_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_2_>::default())
+                    .collect::<Box<[WithSize_2_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_2_arrarr__std_default_delete_const_WithSize_2_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_2_arrarr__std_default_delete_const_WithSize_2_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_2_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_2_>::default())
+                    .collect::<Box<[WithSize_2_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_2_arrarr__std_default_delete_const_WithSize_2_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_2_arrarr__std_default_delete_const_WithSize_2_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
 }
 pub fn test_basic_23() {
     {
         {
-            let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: Option<Value<WithSize_4_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: Option<Value<WithSize_4_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: Option<Value<WithSize_4_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: Option<Value<WithSize_4_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_4_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_4_>::default())
-                    .collect::<Box<[WithSize_4_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_4_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_4_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_4_>::default())
-                    .collect::<Box<[WithSize_4_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_4_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_4_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_4_>::default())
-                    .collect::<Box<[WithSize_4_]>>(),
+            let mut x: Ptr<WithSize_3_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_3_>::default())
+                    .collect::<Box<[WithSize_3_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_4_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_3_arrarr__std_default_delete_WithSize_3_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_3_arrarr__std_default_delete_WithSize_3_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_4_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_4_>::default())
-                    .collect::<Box<[WithSize_4_]>>(),
+            let mut x: Ptr<WithSize_3_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_3_>::default())
+                    .collect::<Box<[WithSize_3_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_4_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_3_arrarr__std_default_delete_WithSize_3_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_3_arrarr__std_default_delete_WithSize_3_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<WithSize_3_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_3_>::default())
+                    .collect::<Box<[WithSize_3_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_3_arrarr__std_default_delete_const_WithSize_3_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_3_arrarr__std_default_delete_const_WithSize_3_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_3_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_3_>::default())
+                    .collect::<Box<[WithSize_3_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_3_arrarr__std_default_delete_const_WithSize_3_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_3_arrarr__std_default_delete_const_WithSize_3_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
 }
 pub fn test_basic_24() {
     {
         {
-            let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: Option<Value<WithSize_8_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: Option<Value<WithSize_8_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: Option<Value<WithSize_8_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: Option<Value<WithSize_8_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_8_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_8_>::default())
-                    .collect::<Box<[WithSize_8_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_8_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_8_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_8_>::default())
-                    .collect::<Box<[WithSize_8_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_8_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_8_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_8_>::default())
-                    .collect::<Box<[WithSize_8_]>>(),
+            let mut x: Ptr<WithSize_4_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_4_>::default())
+                    .collect::<Box<[WithSize_4_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_8_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_4_arrarr__std_default_delete_WithSize_4_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_4_arrarr__std_default_delete_WithSize_4_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_8_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_8_>::default())
-                    .collect::<Box<[WithSize_8_]>>(),
+            let mut x: Ptr<WithSize_4_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_4_>::default())
+                    .collect::<Box<[WithSize_4_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_8_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_4_arrarr__std_default_delete_WithSize_4_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_4_arrarr__std_default_delete_WithSize_4_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<WithSize_4_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_4_>::default())
+                    .collect::<Box<[WithSize_4_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_4_arrarr__std_default_delete_const_WithSize_4_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_4_arrarr__std_default_delete_const_WithSize_4_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_4_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_4_>::default())
+                    .collect::<Box<[WithSize_4_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_4_arrarr__std_default_delete_const_WithSize_4_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_4_arrarr__std_default_delete_const_WithSize_4_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
 }
 pub fn test_basic_25() {
     {
         {
-            let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: Option<Value<WithSize_16_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: Option<Value<WithSize_16_>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-    }
-    {
-        {
-            let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: Option<Value<WithSize_16_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
-        }
-        {
-            let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: Option<Value<WithSize_16_>> = x.to_owned_opt();
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_16_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_16_>::default())
-                    .collect::<Box<[WithSize_16_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_16_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_16_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_16_>::default())
-                    .collect::<Box<[WithSize_16_]>>(),
-            );
-            let mut ptr: Option<Value<Box<[WithSize_16_]>>> = x.to_owned_opt();
+            let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
-            let mut x: Ptr<WithSize_16_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_16_>::default())
-                    .collect::<Box<[WithSize_16_]>>(),
+            let mut x: Ptr<WithSize_8_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_8_>::default())
+                    .collect::<Box<[WithSize_8_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_16_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_8_arrarr__std_default_delete_WithSize_8_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_8_arrarr__std_default_delete_WithSize_8_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
-            let mut x: Ptr<WithSize_16_> = Ptr::alloc_array(
-                (0..3_usize)
-                    .map(|_| <WithSize_16_>::default())
-                    .collect::<Box<[WithSize_16_]>>(),
+            let mut x: Ptr<WithSize_8_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_8_>::default())
+                    .collect::<Box<[WithSize_8_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_16_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_8_arrarr__std_default_delete_WithSize_8_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_8_arrarr__std_default_delete_WithSize_8_arrarr__::new_1({
+                    (x).clone()
+                }),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<WithSize_8_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_8_>::default())
+                    .collect::<Box<[WithSize_8_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_8_arrarr__std_default_delete_const_WithSize_8_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_8_arrarr__std_default_delete_const_WithSize_8_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_8_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_8_>::default())
+                    .collect::<Box<[WithSize_8_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_8_arrarr__std_default_delete_const_WithSize_8_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_8_arrarr__std_default_delete_const_WithSize_8_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
 }
 pub fn test_basic_26() {
     {
         {
+            let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___::new_1({
+                        (x).clone()
+                    }),
+                ));
+            const _: () = assert!(true, "");;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
+            let ptr: Value<std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___::new_1({
+                        (x).clone()
+                    }),
+                ));
+            const _: () = assert!(true, "");;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___::new_1(
+                    { (x).clone() },
+                ),
+            ));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___::new_1(
+                    { (x).clone() },
+                ),
+            ));
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<WithSize_16_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_16_>::default())
+                    .collect::<Box<[WithSize_16_]>>(),
+            );
+            let ptr: Value<
+                std_unique_ptr_WithSize_16_arrarr__std_default_delete_WithSize_16_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_16_arrarr__std_default_delete_WithSize_16_arrarr__::new_1(
+                    { (x).clone() },
+                ),
+            ));
+            const _: () = assert!(true, "");;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_16_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_16_>::default())
+                    .collect::<Box<[WithSize_16_]>>(),
+            );
+            let ptr: Value<
+                std_unique_ptr_WithSize_16_arrarr__std_default_delete_WithSize_16_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_16_arrarr__std_default_delete_WithSize_16_arrarr__::new_1(
+                    { (x).clone() },
+                ),
+            ));
+            const _: () = assert!(true, "");;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+    {
+        {
+            let mut x: Ptr<WithSize_16_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_16_>::default())
+                    .collect::<Box<[WithSize_16_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_16_arrarr__std_default_delete_const_WithSize_16_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_16_arrarr__std_default_delete_const_WithSize_16_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+        {
+            let mut x: Ptr<WithSize_16_> = Ptr::alloc_array(
+                (0..3_u64)
+                    .map(|_| <WithSize_16_>::default())
+                    .collect::<Box<[WithSize_16_]>>(),
+            );
+            let ptr : Value<std_unique_ptr_const_WithSize_16_arrarr__std_default_delete_const_WithSize_16_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_16_arrarr__std_default_delete_const_WithSize_16_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
+            const _: () = assert!(true, "");;
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
+        }
+    }
+}
+pub fn test_basic_27() {
+    {
+        {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: Option<Value<WithSize_256_>> = x.to_owned_opt();
+            let ptr: Value<std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: Option<Value<WithSize_256_>> = x.to_owned_opt();
+            let ptr: Value<std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___> =
+                Rc::new(RefCell::new(
+                    std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___::new_1({
+                        (x).clone()
+                    }),
+                ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: Option<Value<WithSize_256_>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___::new_1(
+                    { (x).clone() },
+                ),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: Option<Value<WithSize_256_>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___::new_1(
+                    { (x).clone() },
+                ),
+            ));
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc_array(
-                (0..3_usize)
+                (0..3_u64)
                     .map(|_| <WithSize_256_>::default())
                     .collect::<Box<[WithSize_256_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_256_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_256_arrarr__std_default_delete_WithSize_256_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_256_arrarr__std_default_delete_WithSize_256_arrarr__::new_1(
+                    { (x).clone() },
+                ),
+            ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc_array(
-                (0..3_usize)
+                (0..3_u64)
                     .map(|_| <WithSize_256_>::default())
                     .collect::<Box<[WithSize_256_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_256_]>>> = x.to_owned_opt();
+            let ptr: Value<
+                std_unique_ptr_WithSize_256_arrarr__std_default_delete_WithSize_256_arrarr__,
+            > = Rc::new(RefCell::new(
+                std_unique_ptr_WithSize_256_arrarr__std_default_delete_WithSize_256_arrarr__::new_1(
+                    { (x).clone() },
+                ),
+            ));
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
     {
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc_array(
-                (0..3_usize)
+                (0..3_u64)
                     .map(|_| <WithSize_256_>::default())
                     .collect::<Box<[WithSize_256_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_256_]>>> = x.to_owned_opt();
+            let ptr : Value<std_unique_ptr_const_WithSize_256_arrarr__std_default_delete_const_WithSize_256_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_256_arrarr__std_default_delete_const_WithSize_256_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc_array(
-                (0..3_usize)
+                (0..3_u64)
                     .map(|_| <WithSize_256_>::default())
                     .collect::<Box<[WithSize_256_]>>(),
             );
-            let mut ptr: Option<Value<Box<[WithSize_256_]>>> = x.to_owned_opt();
+            let ptr : Value<std_unique_ptr_const_WithSize_256_arrarr__std_default_delete_const_WithSize_256_arrarr__ > = Rc::new(RefCell::new(std_unique_ptr_const_WithSize_256_arrarr__std_default_delete_const_WithSize_256_arrarr__ :: new_1 ( { (x ).clone() } , )  )) ;
             const _: () = assert!(true, "");;
-            assert!(({ ptr.as_pointer() } == { (x).clone() }));
+            ({ cpp2rust_assert_fail_19(({ ({ (*ptr.borrow()).get() }) } == { (x).clone() })) });
         }
     }
 }
@@ -1011,9 +1313,8 @@ impl Default for WithSize_256_ {
         }
     }
 }
-pub fn test_27() -> bool {
+pub fn test_28() -> bool {
     ({ test_basic_18() });
-    ({ test_basic_19() });
     ({ test_basic_20() });
     ({ test_basic_21() });
     ({ test_basic_22() });
@@ -1021,6 +1322,7 @@ pub fn test_27() -> bool {
     ({ test_basic_24() });
     ({ test_basic_25() });
     ({ test_basic_26() });
+    ({ test_basic_27() });
     return true;
 }
 pub fn main() {
@@ -1043,7 +1345,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ test_27() });
+    ({ test_28() });
     const _: () = assert!(true, "test()");;
     return 0;
 }

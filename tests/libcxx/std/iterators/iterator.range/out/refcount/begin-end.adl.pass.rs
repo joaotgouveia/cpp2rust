@@ -93,59 +93,105 @@ pub fn test_20() -> bool {
             <ArrayHijacker>::default(),
             <ArrayHijacker>::default(),
         ])));
-        assert!((({ begin_0(a.as_pointer(),) }) == 42));
-        assert!((({ end_1(a.as_pointer(),) }) == 42));
-        assert!((({ begin_21(a.as_pointer(),) }) == (a.as_pointer() as Ptr<ArrayHijacker>)));
-        assert!(
-            ((a.as_pointer() as Ptr<ArrayHijacker>).to_end()
-                == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize))
-        );
-        assert!((({ cbegin_22(a.as_pointer(),) }) == (a.as_pointer() as Ptr<ArrayHijacker>)));
-        assert!(
-            (({ cend_23(a.as_pointer(),) })
-                == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize))
-        );
-        assert!(
-            (({ ({ rbegin_24(a.as_pointer(),) }).base() })
-                == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize))
-        );
-        assert!(
-            (({ ({ rend_25(a.as_pointer(),) }).base() }) == (a.as_pointer() as Ptr<ArrayHijacker>))
-        );
-        assert!(
-            (({ ({ crbegin_26(a.as_pointer(),) }).base() })
-                == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize))
-        );
-        assert!(
-            (({ ({ crend_27(a.as_pointer(),) }).base() })
-                == (a.as_pointer() as Ptr<ArrayHijacker>))
-        );
+        ({ cpp2rust_assert_fail_21((({ begin_0(a.as_pointer()) }) == 42)) });
+        ({ cpp2rust_assert_fail_21((({ end_1(a.as_pointer()) }) == 42)) });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ begin_22(a.as_pointer()) }) == (a.as_pointer() as Ptr<ArrayHijacker>)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ end_23(a.as_pointer()) })
+                    == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ cbegin_24(a.as_pointer()) }) == (a.as_pointer() as Ptr<ArrayHijacker>)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ cend_25(a.as_pointer()) })
+                    == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ ({ rbegin_26(a.as_pointer()) }).base() })
+                    == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ ({ rend_27(a.as_pointer()) }).base() })
+                    == (a.as_pointer() as Ptr<ArrayHijacker>)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ ({ crbegin_28(a.as_pointer()) }).base() })
+                    == (a.as_pointer() as Ptr<ArrayHijacker>).offset((3) as isize)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ ({ crend_29(a.as_pointer()) }).base() })
+                    == (a.as_pointer() as Ptr<ArrayHijacker>)),
+            )
+        });
     }
     {
         let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([0_i32, 0_i32, 0_i32])));
         let c: Value<ContainerHijacker> = Rc::new(RefCell::new(ContainerHijacker {
             a_: (a.as_pointer() as Ptr<i32>),
         }));
-        assert!((({ begin_4(c.as_pointer(),) }) == 42));
-        assert!((({ end_5(c.as_pointer(),) }) == 42));
-        assert!((({ begin_28(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
-        assert!(
-            (({ libcc2rs::end_refcount(c.as_pointer(),) })
-                == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
-        );
-        assert!((({ cbegin_29(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
-        assert!(
-            (({ cend_30(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
-        );
-        assert!((({ rbegin_31(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
-        assert!(
-            (({ rend_32(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
-        );
-        assert!((({ crbegin_33(c.as_pointer(),) }) == (a.as_pointer() as Ptr::<i32>)));
-        assert!(
-            (({ crend_34(c.as_pointer(),) })
-                == (a.as_pointer() as Ptr::<i32>).offset((3) as isize))
-        );
+        ({ cpp2rust_assert_fail_21((({ begin_4(c.as_pointer()) }) == 42)) });
+        ({ cpp2rust_assert_fail_21((({ end_5(c.as_pointer()) }) == 42)) });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ begin_30(c.as_pointer()) }) == (a.as_pointer() as Ptr<i32>)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ end_31(c.as_pointer()) }) == (a.as_pointer() as Ptr<i32>).offset((3) as isize)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ cbegin_32(c.as_pointer()) }) == (a.as_pointer() as Ptr<i32>)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ cend_33(c.as_pointer()) })
+                    == (a.as_pointer() as Ptr<i32>).offset((3) as isize)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ rbegin_34(c.as_pointer()) }) == (a.as_pointer() as Ptr<i32>)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ rend_35(c.as_pointer()) })
+                    == (a.as_pointer() as Ptr<i32>).offset((3) as isize)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ crbegin_36(c.as_pointer()) }) == (a.as_pointer() as Ptr<i32>)),
+            )
+        });
+        ({
+            cpp2rust_assert_fail_21(
+                (({ crend_37(c.as_pointer()) })
+                    == (a.as_pointer() as Ptr<i32>).offset((3) as isize)),
+            )
+        });
     }
     return true;
 }

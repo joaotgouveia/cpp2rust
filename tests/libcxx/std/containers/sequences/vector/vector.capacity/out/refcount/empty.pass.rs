@@ -14,17 +14,21 @@ pub fn DoNotOptimize_0(value: Ptr<AnyPtr>) -> Ptr<AnyPtr> {
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_2.with(|rc| *rc.borrow()) >= dealloc_count_3.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_5(
+                (alloc_count_2.with(|rc| *rc.borrow()) >= dealloc_count_3.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_2.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_3.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_5((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_4.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -33,13 +37,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_3: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_3: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_4: Value<bool> = Rc::new(RefCell::new(false));
@@ -70,42 +74,48 @@ impl Default for safe_allocator_int_ {
         { safe_allocator_int_::new() }
     }
 }
-pub fn tests_5() -> bool {
+pub fn tests_7() -> bool {
     {
-        let mut c: Vec<i32> = Vec::new();
+        let c: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__std_allocator_int__>::default(),
+        ));
         const _: () = assert!(true, "");;
-        assert!(c.is_empty());
-        {
-            let __a1 = 1;
-            c.push(__a1)
-        };
-        assert!(!(c.is_empty()));
-        c.clear();
-        assert!(c.is_empty());
+        ({ cpp2rust_assert_fail_5(({ (*c.borrow()).empty() })) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5(!({ (*c.borrow()).empty() })) });
+        ({ (*c.borrow()).clear() });
+        ({ cpp2rust_assert_fail_5(({ (*c.borrow()).empty() })) });
     }
     {
-        let mut c: Vec<i32> = Vec::new();
+        let c: Value<std_vector_int__min_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__min_allocator_int__>::default(),
+        ));
         const _: () = assert!(true, "");;
-        assert!(c.is_empty());
-        {
-            let __a1 = 1;
-            c.push(__a1)
-        };
-        assert!(!(c.is_empty()));
-        c.clear();
-        assert!(c.is_empty());
+        ({ cpp2rust_assert_fail_5(({ (*c.borrow()).empty() })) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5(!({ (*c.borrow()).empty() })) });
+        ({ (*c.borrow()).clear() });
+        ({ cpp2rust_assert_fail_5(({ (*c.borrow()).empty() })) });
     }
     {
-        let mut c: Vec<i32> = Vec::new();
+        let c: Value<std_vector_int__safe_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__safe_allocator_int__>::default(),
+        ));
         const _: () = assert!(true, "");;
-        assert!(c.is_empty());
-        {
-            let __a1 = 1;
-            c.push(__a1)
-        };
-        assert!(!(c.is_empty()));
-        c.clear();
-        assert!(c.is_empty());
+        ({ cpp2rust_assert_fail_5(({ (*c.borrow()).empty() })) });
+        ({
+            let ___x: Value<i32> = Rc::new(RefCell::new(1));
+            (*c.borrow()).push_back_60(___x.as_pointer())
+        });
+        ({ cpp2rust_assert_fail_5(!({ (*c.borrow()).empty() })) });
+        ({ (*c.borrow()).clear() });
+        ({ cpp2rust_assert_fail_5(({ (*c.borrow()).empty() })) });
     }
     return true;
 }
@@ -129,7 +139,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_5() });
+    ({ tests_7() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
@@ -137,11 +147,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
 #[byte_size(1)]
 pub struct min_pointer_int__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
-    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: usize);
+    fn allocate(&self, n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__;
+    fn deallocate(&self, p: min_pointer_int__std_integral_constant_unsigned_long__0__, n: u64);
 }
 impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_int__std_integral_constant_unsigned_long__0__ {
         return min_pointer_int__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_int_>::default().allocate(n) })
         });
@@ -149,47 +159,45 @@ impl min_allocator_int_Impl for Ptr<min_allocator_int_> {
     fn deallocate(
         &self,
         mut p: min_pointer_int__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({ <std_allocator_int_>::default().deallocate((p.ptr_).clone(), n) });
     }
 }
 pub trait safe_allocator_int_Impl {
-    fn allocate(&self, n: usize) -> Ptr<i32>;
-    fn deallocate(&self, p: Ptr<i32>, n: usize);
+    fn allocate(&self, n: u64) -> Ptr<i32>;
+    fn deallocate(&self, p: Ptr<i32>, n: u64);
 }
 impl safe_allocator_int_Impl for Ptr<safe_allocator_int_> {
-    fn allocate(&self, mut n: usize) -> Ptr<i32> {
+    fn allocate(&self, mut n: u64) -> Ptr<i32> {
         let memory: Value<Ptr<i32>> = Rc::new(RefCell::new(
             ({ <std_allocator_int_>::default().allocate(n) }),
         ));
         {
-            match ({ (*memory.borrow()).to_any() },) {
-                (mut __tmp_0,) => {
-                    __tmp_0.memset(
-                        (0) as u8,
-                        ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64)) as usize)
-                            as usize,
-                    );
-                    (__tmp_0).clone()
-                }
-            };
+            ({
+                let ___s: AnyPtr = (*memory.borrow()).to_any();
+                memset_6(
+                    ___s,
+                    0,
+                    (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                )
+            });
         }
         return (*memory.borrow()).clone();
     }
-    fn deallocate(&self, mut p: Ptr<i32>, mut n: usize) {
+    fn deallocate(&self, mut p: Ptr<i32>, mut n: u64) {
         {
             ({
-                let _value: Value<AnyPtr> = Rc::new(RefCell::new(match ({ (p).to_any() },) {
-                    (mut __tmp_1,) => {
-                        __tmp_1.memset(
-                            (0) as u8,
-                            ((::std::mem::size_of::<i32>() as u64).wrapping_mul((n as u64))
-                                as usize) as usize,
-                        );
-                        (__tmp_1).clone()
-                    }
-                }));
+                let _value: Value<AnyPtr> = Rc::new(RefCell::new(
+                    ({
+                        let ___s: AnyPtr = (p).to_any();
+                        memset_6(
+                            ___s,
+                            0,
+                            (::std::mem::size_of::<i32>() as u64).wrapping_mul(n),
+                        )
+                    }),
+                ));
                 DoNotOptimize_0(_value.as_pointer())
             });
         }

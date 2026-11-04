@@ -28,35 +28,43 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let f: Value<std_plus_int_> = Rc::new(RefCell::new(<std_plus_int_>::default()));
-    assert!(
-        (({
-            let ___x: Value<i32> = Rc::new(RefCell::new(3));
-            let ___y: Value<i32> = Rc::new(RefCell::new(2));
-            (*f.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
-        }) == 5)
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            (({
+                let ___x: Value<i32> = Rc::new(RefCell::new(3));
+                let ___y: Value<i32> = Rc::new(RefCell::new(2));
+                (*f.borrow_mut())(___x.as_pointer(), ___y.as_pointer())
+            }) == 5),
+        )
+    });
     let f2: Value<std_plus_void_> = Rc::new(RefCell::new(<std_plus_void_>::default()));
-    assert!(
-        (({
-            let ___t: Value<i32> = Rc::new(RefCell::new(3));
-            let ___u: Value<i32> = Rc::new(RefCell::new(2));
-            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
-        }) == 5)
-    );
-    assert!(
-        (({
-            let ___t: Value<f64> = Rc::new(RefCell::new(3_f64));
-            let ___u: Value<i32> = Rc::new(RefCell::new(2));
-            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
-        }) == 5_f64)
-    );
-    assert!(
-        (({
-            let ___t: Value<i32> = Rc::new(RefCell::new(3));
-            let ___u: Value<f64> = Rc::new(RefCell::new(2.5_f64));
-            (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
-        }) == 5.5_f64)
-    );
+    ({
+        cpp2rust_assert_fail_0(
+            (({
+                let ___t: Value<i32> = Rc::new(RefCell::new(3));
+                let ___u: Value<i32> = Rc::new(RefCell::new(2));
+                (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+            }) == 5),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            (({
+                let ___t: Value<f64> = Rc::new(RefCell::new(3_f64));
+                let ___u: Value<i32> = Rc::new(RefCell::new(2));
+                (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+            }) == 5_f64),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            (({
+                let ___t: Value<i32> = Rc::new(RefCell::new(3));
+                let ___u: Value<f64> = Rc::new(RefCell::new(2.5_f64));
+                (*f2.borrow_mut())(___t.as_pointer(), ___u.as_pointer())
+            }) == 5.5_f64),
+        )
+    });
     let mut foo: i32 = 5;
     const _: () = assert!(true, "foo == 5");;
     let mut bar: f64 = 5_f64;

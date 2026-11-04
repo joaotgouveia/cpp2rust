@@ -33,15 +33,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    let the_map: Value<Map<bool, (Value<bool>, Value<moveable>)>> =
-        Rc::new(RefCell::new(Map::new()));
-    return ({
-        moveableImpl::to_i32(&Map::subscript_move(
-            the_map.as_pointer(),
-            Rc::new(RefCell::new(true)).as_pointer(),
-            |__k| cpp_move!(__k),
-        ))
-    });
+    let the_map : Value<std_map_bool__moveable__std_less_bool___std_allocator_std_pair_const_bool__moveable___ > = Rc::new(RefCell::new(<std_map_bool__moveable__std_less_bool___std_allocator_std_pair_const_bool__moveable___  >::default() )) ;
+    return ({ moveableImpl::to_i32(&the_map.as_pointer().offset(true)) });
 }
 pub trait moveableImpl {
     fn to_i32(&self) -> i32;

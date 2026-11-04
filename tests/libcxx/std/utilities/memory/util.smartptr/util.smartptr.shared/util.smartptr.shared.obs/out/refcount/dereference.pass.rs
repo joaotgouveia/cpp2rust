@@ -29,21 +29,21 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     let p: Value<std_shared_ptr_int_> =
         Rc::new(RefCell::new(std_shared_ptr_int_::new_1({ Ptr::alloc(32) })));
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_0(
             ((((*p.borrow()) as std___shared_ptr_access_int____gnu_cxx__S_atomic__false__false_)
                 .read())
-                == 32)
-        })
-    );
+                == 32),
+        )
+    });
     ((*p.borrow_mut()) as std___shared_ptr_access_int____gnu_cxx__S_atomic__false__false_).write(3);
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_0(
             ((((*p.borrow()) as std___shared_ptr_access_int____gnu_cxx__S_atomic__false__false_)
                 .read())
-                == 3)
-        })
-    );
+                == 3),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

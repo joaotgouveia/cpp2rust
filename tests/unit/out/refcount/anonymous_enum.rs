@@ -47,18 +47,18 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!(((anon_0_FIRST_A as i32) != (anon_0_FIRST_B as i32)));
-    assert!(((anon_1_SECOND_A as i32) != (anon_1_SECOND_B as i32)));
-    assert!(((anon_3_THIRD_A as i32) != (anon_3_THIRD_B as i32)));
+    ({ cpp2rust_assert_fail_4(((anon_0_FIRST_A as i32) != (anon_0_FIRST_B as i32))) });
+    ({ cpp2rust_assert_fail_4(((anon_1_SECOND_A as i32) != (anon_1_SECOND_B as i32))) });
+    ({ cpp2rust_assert_fail_4(((anon_3_THIRD_A as i32) != (anon_3_THIRD_B as i32))) });
     let mut td: TdEnum = TdEnum_TD_A;
-    assert!(((td as i32) == (TdEnum_TD_A as i32)));
+    ({ cpp2rust_assert_fail_4(((td as i32) == (TdEnum_TD_A as i32))) });
     td = TdEnum_TD_B;
-    assert!(((td as i32) == (TdEnum_TD_B as i32)));
+    ({ cpp2rust_assert_fail_4(((td as i32) == (TdEnum_TD_B as i32))) });
     let mut w: WithAnonField = <WithAnonField>::default();
     w.field = anon_2_FIELD_A;
-    assert!(((w.field as i32) == (anon_2_FIELD_A as i32)));
+    ({ cpp2rust_assert_fail_4(((w.field as i32) == (anon_2_FIELD_A as i32))) });
     w.field = anon_2_FIELD_B;
-    assert!(((w.field as i32) == (anon_2_FIELD_B as i32)));
+    ({ cpp2rust_assert_fail_4(((w.field as i32) == (anon_2_FIELD_B as i32))) });
     return 0;
 }
 pub type anon_3 = u32;

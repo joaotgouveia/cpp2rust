@@ -53,84 +53,84 @@ pub fn test_0() -> bool {
         ),
     ));
     const _: () = assert!(true, "");;
-    assert!(
-        ({
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let ___x: std_basic_string_view_char__std_char_traits_char__ =
                     (*sv0.borrow()).clone();
                 (*sv0.borrow()).contains_43(___x)
-            })
-        })
-    );
-    assert!(({ !({ (*sv0.borrow()).contains_43((*sv1.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv1.borrow()).contains_43((*sv0.borrow()).clone(),) }) }));
-    assert!(
-        ({
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(!({ (*sv0.borrow()).contains_43((*sv1.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv1.borrow()).contains_43((*sv0.borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let ___x: std_basic_string_view_char__std_char_traits_char__ =
                     (*sv1.borrow()).clone();
                 (*sv1.borrow()).contains_43(___x)
-            })
-        })
-    );
-    assert!(({ !({ (*sv1.borrow()).contains_43((*sv2.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_43((*sv3.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_43((*sv4.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_43((*sv5.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_43((*svNot.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_43((*svNot2.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_43((*svNot3.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_43((*sv0.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_43((*sv1.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv3.borrow()).contains_43((*sv2.borrow()).clone(),) }) }));
-    assert!(
-        ({
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_43((*sv2.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_43((*sv3.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_43((*sv4.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_43((*sv5.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_43((*svNot.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_43((*svNot2.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_43((*svNot3.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv3.borrow()).contains_43((*sv0.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv3.borrow()).contains_43((*sv1.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv3.borrow()).contains_43((*sv2.borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let ___x: std_basic_string_view_char__std_char_traits_char__ =
                     (*sv3.borrow()).clone();
                 (*sv3.borrow()).contains_43(___x)
-            })
-        })
-    );
-    assert!(({ !({ (*sv3.borrow()).contains_43((*sv4.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_43((*sv5.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_43((*svNot.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_43((*svNot2.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv3.borrow()).contains_43((*svNot3.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv5.borrow()).contains_43((*sv0.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv5.borrow()).contains_43((*sv1.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv5.borrow()).contains_43((*sv2.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv5.borrow()).contains_43((*sv3.borrow()).clone(),) }) }));
-    assert!(({ ({ (*sv5.borrow()).contains_43((*sv4.borrow()).clone(),) }) }));
-    assert!(
-        ({
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(!({ (*sv3.borrow()).contains_43((*sv4.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv3.borrow()).contains_43((*sv5.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv3.borrow()).contains_43((*svNot.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv3.borrow()).contains_43((*svNot2.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv3.borrow()).contains_43((*svNot3.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv5.borrow()).contains_43((*sv0.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv5.borrow()).contains_43((*sv1.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv5.borrow()).contains_43((*sv2.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv5.borrow()).contains_43((*sv3.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv5.borrow()).contains_43((*sv4.borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let ___x: std_basic_string_view_char__std_char_traits_char__ =
                     (*sv5.borrow()).clone();
                 (*sv5.borrow()).contains_43(___x)
-            })
-        })
-    );
-    assert!(({ !({ (*sv5.borrow()).contains_43((*svNot.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv5.borrow()).contains_43((*svNot2.borrow()).clone(),) }) }));
-    assert!(({ !({ (*sv5.borrow()).contains_43((*svNot3.borrow()).clone(),) }) }));
-    assert!(({ ({ (*svNot.borrow()).contains_43((*sv0.borrow()).clone(),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_43((*sv1.borrow()).clone(),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_43((*sv2.borrow()).clone(),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_43((*sv3.borrow()).clone(),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_43((*sv4.borrow()).clone(),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_43((*sv5.borrow()).clone(),) }) }));
-    assert!(
-        ({
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(!({ (*sv5.borrow()).contains_43((*svNot.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv5.borrow()).contains_43((*svNot2.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv5.borrow()).contains_43((*svNot3.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(({ (*svNot.borrow()).contains_43((*sv0.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*svNot.borrow()).contains_43((*sv1.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*svNot.borrow()).contains_43((*sv2.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*svNot.borrow()).contains_43((*sv3.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*svNot.borrow()).contains_43((*sv4.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*svNot.borrow()).contains_43((*sv5.borrow()).clone()) })) });
+    ({
+        cpp2rust_assert_fail_1(
             ({
                 let ___x: std_basic_string_view_char__std_char_traits_char__ =
                     (*svNot.borrow()).clone();
                 (*svNot.borrow()).contains_43(___x)
-            })
-        })
-    );
-    assert!(({ !({ (*svNot.borrow()).contains_43((*svNot2.borrow()).clone(),) }) }));
-    assert!(({ !({ (*svNot.borrow()).contains_43((*svNot3.borrow()).clone(),) }) }));
+            }),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(!({ (*svNot.borrow()).contains_43((*svNot2.borrow()).clone()) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*svNot.borrow()).contains_43((*svNot3.borrow()).clone()) })) });
     return true;
 }
 pub fn main() {

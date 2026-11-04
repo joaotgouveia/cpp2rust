@@ -8,33 +8,26 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> bool {
     let a: Value<Box<[i32]>> = Rc::new(RefCell::new(Box::new([3, 5, 2, 0, 6, 8, 1])));
-    let mut n: i32 = (((::std::mem::size_of::<[i32; 7]>() as usize)
-        .wrapping_div((::std::mem::size_of::<i32>() as usize))) as i32);
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(
-        match ({ (a.as_pointer() as Ptr<i32>).offset((n / 2) as isize) },) {
-            (mut __tmp_0,) => {
-                let mut __v = Vec::new();
-                let mut __it = (a.as_pointer() as Ptr<i32>);
-                while __it != __tmp_0 {
-                    __v.push((__it.iter_deref().read()));
-                    __it.iter_inc();
-                }
-                __v
-            }
-        },
-    ));
+    let mut n: i32 = (((::std::mem::size_of::<[i32; 7]>() as u64)
+        .wrapping_div((::std::mem::size_of::<i32>() as u64))) as i32);
+    let v: Value<std_vector_int__std_allocator_int__> =
+        Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1(
+            { (a.as_pointer() as Ptr<i32>) },
+            { (a.as_pointer() as Ptr<i32>).offset((n / 2) as isize) },
+            None,
+        )));
     let q: Value<std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__> =
         Rc::new(RefCell::new({
-            let __tmp_1: Value<std_less_int_> = Rc::new(RefCell::new(<std_less_int_>::default()));
+            let __tmp_0: Value<std_less_int_> = Rc::new(RefCell::new(<std_less_int_>::default()));
             std_priority_queue_int__std_vector_int__std_allocator_int____std_less_int__::new_1(
                 { (a.as_pointer() as Ptr<i32>).offset((n / 2) as isize) },
                 { (a.as_pointer() as Ptr<i32>).offset((n) as isize) },
-                { __tmp_1.as_pointer() },
+                { __tmp_0.as_pointer() },
                 { v.as_pointer() },
             )
         }));
-    assert!(({ (({ (*q.borrow()).size() }) == (n as u64)) }));
-    assert!(({ ((({ (*q.borrow()).top() }).read()) == 8) }));
+    ({ cpp2rust_assert_fail_1((({ (*q.borrow()).size() }) == (n as u64))) });
+    ({ cpp2rust_assert_fail_1(((({ (*q.borrow()).top() }).read()) == 8)) });
     return true;
 }
 pub fn main() {
@@ -57,7 +50,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_0() }));
+    ({ cpp2rust_assert_fail_1(({ test_0() })) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

@@ -13,11 +13,7 @@ pub fn main() {
 fn main_0() -> i32 {
     let a0: Value<f64> = Rc::new(RefCell::new(3.14_f64));
     let a1: Value<f64> = Rc::new(RefCell::new(2.71_f64));
-    if CppLess::less(&a1.as_pointer(), &a0.as_pointer()) {
-        a1.as_pointer()
-    } else {
-        a0.as_pointer()
-    };
+    ({ min_0(a0.as_pointer(), a1.as_pointer()) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {}

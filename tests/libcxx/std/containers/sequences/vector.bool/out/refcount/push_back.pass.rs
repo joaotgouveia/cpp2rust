@@ -10,17 +10,21 @@ use std::rc::{Rc, Weak};
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
-    pub fn outstanding_alloc() -> usize {
-        assert!((alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())));
+    pub fn outstanding_alloc() -> u64 {
+        ({
+            cpp2rust_assert_fail_4(
+                (alloc_count_1.with(|rc| *rc.borrow()) >= dealloc_count_2.with(|rc| *rc.borrow())),
+            )
+        });
         return ((alloc_count_1.with(|rc| *rc.borrow()))
             .wrapping_sub(dealloc_count_2.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
-        assert!((({ malloc_allocator_base::outstanding_alloc() }) == 0_usize));
+        ({ cpp2rust_assert_fail_4((({ malloc_allocator_base::outstanding_alloc() }) == 0_u64)) });
         disable_default_constructor_3.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_usize);
-        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_usize);
-        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_usize);
+        outstanding_bytes_0.with(|rc| *rc.borrow_mut() = 0_u64);
+        alloc_count_1.with(|rc| *rc.borrow_mut() = 0_u64);
+        dealloc_count_2.with(|rc| *rc.borrow_mut() = 0_u64);
     }
 }
 impl CppMove for malloc_allocator_base {
@@ -29,13 +33,13 @@ impl CppMove for malloc_allocator_base {
     }
 }
 thread_local!(
-    pub static outstanding_bytes_0: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static outstanding_bytes_0: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static alloc_count_1: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static alloc_count_1: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
-    pub static dealloc_count_2: Value<usize> = Rc::new(RefCell::new(0_usize));
+    pub static dealloc_count_2: Value<u64> = Rc::new(RefCell::new(0_u64));
 );
 thread_local!(
     pub static disable_default_constructor_3: Value<bool> = Rc::new(RefCell::new(false));
@@ -56,7 +60,7 @@ impl CppMove for min_allocator_unsigned_long_ {
         src.read()
     }
 }
-pub fn tests_4() -> bool {
+pub fn tests_5() -> bool {
     {
         let mut a: [bool; 7] = [
             (0 != 0),
@@ -67,20 +71,27 @@ pub fn tests_4() -> bool {
             (0 != 0),
             (0 != 0),
         ];
-        let mut N: u32 = (((::std::mem::size_of::<[bool; 7]>() as usize)
-            .wrapping_div((::std::mem::size_of::<bool>() as usize)))
+        let mut N: u32 = (((::std::mem::size_of::<[bool; 7]>() as u64)
+            .wrapping_div((::std::mem::size_of::<bool>() as u64)))
             as u32);
-        let c: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+        let c: Value<std_vector_bool__std_allocator_bool__> = Rc::new(RefCell::new(
+            <std_vector_bool__std_allocator_bool__>::default(),
+        ));
         let mut i: u32 = 0_u32;
         'loop_: while (i < N) {
-            {
-                let a0_clone = a[(i) as usize].clone();
-                (*c.borrow_mut()).push(a0_clone)
-            };
-            assert!(({ ((&(*c.borrow())).len() == (((i).wrapping_add(1_u32)) as usize)) }));
-            let mut j: usize = 0_usize;
-            'loop_: while (j < (&(*c.borrow())).len()) {
-                assert!(((c.decay().offset(j as isize).read() as i32) == (a[(j) as usize] as i32)));
+            ({ (*c.borrow()).push_back(a[(i) as usize]) });
+            ({
+                cpp2rust_assert_fail_4(
+                    (({ (*c.borrow()).size() }) == (((i).wrapping_add(1_u32)) as u64)),
+                )
+            });
+            let mut j: u64 = 0_u64;
+            'loop_: while (j < ({ (*c.borrow()).size() })) {
+                ({
+                    cpp2rust_assert_fail_4(
+                        ((({ (*c.borrow())[j]() }) as i32) == (a[(j) as usize] as i32)),
+                    )
+                });
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -96,20 +107,27 @@ pub fn tests_4() -> bool {
             (0 != 0),
             (0 != 0),
         ];
-        let mut N: u32 = (((::std::mem::size_of::<[bool; 7]>() as usize)
-            .wrapping_div((::std::mem::size_of::<bool>() as usize)))
+        let mut N: u32 = (((::std::mem::size_of::<[bool; 7]>() as u64)
+            .wrapping_div((::std::mem::size_of::<bool>() as u64)))
             as u32);
-        let c: Value<Vec<bool>> = Rc::new(RefCell::new(Vec::new()));
+        let c: Value<std_vector_bool__min_allocator_bool__> = Rc::new(RefCell::new(
+            <std_vector_bool__min_allocator_bool__>::default(),
+        ));
         let mut i: u32 = 0_u32;
         'loop_: while (i < N) {
-            {
-                let a0_clone = a[(i) as usize].clone();
-                (*c.borrow_mut()).push(a0_clone)
-            };
-            assert!(({ ((&(*c.borrow())).len() == (((i).wrapping_add(1_u32)) as usize)) }));
-            let mut j: usize = 0_usize;
-            'loop_: while (j < (&(*c.borrow())).len()) {
-                assert!(((c.decay().offset(j as isize).read() as i32) == (a[(j) as usize] as i32)));
+            ({ (*c.borrow()).push_back(a[(i) as usize]) });
+            ({
+                cpp2rust_assert_fail_4(
+                    (({ (*c.borrow()).size() }) == (((i).wrapping_add(1_u32)) as u64)),
+                )
+            });
+            let mut j: u64 = 0_u64;
+            'loop_: while (j < ({ (*c.borrow()).size() })) {
+                ({
+                    cpp2rust_assert_fail_4(
+                        ((({ (*c.borrow())[j]() }) as i32) == (a[(j) as usize] as i32)),
+                    )
+                });
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -137,7 +155,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    ({ tests_4() });
+    ({ tests_5() });
     const _: () = assert!(true, "tests()");;
     return 0;
 }
@@ -148,13 +166,13 @@ pub struct min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__;
 #[byte_size(1)]
 pub struct min_pointer_bool__std_integral_constant_unsigned_long__0__;
 pub trait min_allocator_bool_Impl {
-    fn allocate(&self, mut n: usize) -> min_pointer_bool__std_integral_constant_unsigned_long__0__ {
+    fn allocate(&self, mut n: u64) -> min_pointer_bool__std_integral_constant_unsigned_long__0__ {
         unimplemented!()
     }
     fn deallocate(
         &self,
         mut p: min_pointer_bool__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         unimplemented!()
     }
@@ -163,18 +181,18 @@ impl min_allocator_bool_Impl for Ptr<min_allocator_bool_> {}
 pub trait min_allocator_unsigned_long_Impl {
     fn allocate(
         &self,
-        n: usize,
+        n: u64,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__;
     fn deallocate(
         &self,
         p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        n: usize,
+        n: u64,
     );
 }
 impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {
     fn allocate(
         &self,
-        mut n: usize,
+        mut n: u64,
     ) -> min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__ {
         return min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__::new_1({
             ({ <std_allocator_unsigned_long_>::default().allocate(n) })
@@ -183,11 +201,11 @@ impl min_allocator_unsigned_long_Impl for Ptr<min_allocator_unsigned_long_> {
     fn deallocate(
         &self,
         mut p: min_pointer_unsigned_long__std_integral_constant_unsigned_long__0__,
-        mut n: usize,
+        mut n: u64,
     ) {
         ({
             let ___p: Ptr<u64> = (p.ptr_).clone();
-            let ___n: usize = n;
+            let ___n: u64 = n;
             <std_allocator_unsigned_long_>::default().deallocate(___p, ___n)
         });
     }

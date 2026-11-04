@@ -49,7 +49,7 @@ impl CppMove for B {
     }
 }
 pub fn test_0() -> bool {
-    let p: Value<(Value<A>, Value<B>)> = Rc::new(RefCell::new(std_pair_A__B_::new_1(
+    let p: Value<std_pair_A__B_> = Rc::new(RefCell::new(std_pair_A__B_::new_1(
         { (*piecewise_construct_1.with(Value::clone).borrow()).clone() },
         {
             ({
@@ -71,13 +71,22 @@ pub fn test_0() -> bool {
             })
         },
     )));
-    assert!(({ (({ AImpl::get_i(&(*p.borrow()).0.as_pointer(),) }) == 4) }));
-    assert!(
-        ({ ((({ AImpl::get_c(&(*p.borrow()).0.as_pointer(),) }) as i32) == (('a' as i8) as i32)) })
-    );
-    assert!(({ (({ BImpl::get_d(&(*p.borrow()).1.as_pointer(),) }) == 3.5_f64) }));
-    assert!(({ (({ BImpl::get_u1(&(*p.borrow()).1.as_pointer(),) }) == 6_u32) }));
-    assert!(({ (({ BImpl::get_u2(&(*p.borrow()).1.as_pointer(),) }) == 2_u32) }));
+    ({ cpp2rust_assert_fail_4((({ AImpl::get_i(&field_ptr!(p.as_pointer(), first)) }) == 4)) });
+    ({
+        cpp2rust_assert_fail_4(
+            ((({ AImpl::get_c(&field_ptr!(p.as_pointer(), first)) }) as i32)
+                == (('a' as i8) as i32)),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_4((({ BImpl::get_d(&field_ptr!(p.as_pointer(), second)) }) == 3.5_f64))
+    });
+    ({
+        cpp2rust_assert_fail_4((({ BImpl::get_u1(&field_ptr!(p.as_pointer(), second)) }) == 6_u32))
+    });
+    ({
+        cpp2rust_assert_fail_4((({ BImpl::get_u2(&field_ptr!(p.as_pointer(), second)) }) == 2_u32))
+    });
     return true;
 }
 pub fn main() {

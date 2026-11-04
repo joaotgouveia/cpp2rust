@@ -7,19 +7,12 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test01_0() {
-    let v: Value<Vec<Vec<i32>>> = Rc::new(RefCell::new(
-        (0..(20000_usize) as usize)
-            .map(|_| Default::default())
-            .collect::<Vec<_>>(),
-    ));
-    match ({ CppRange::begin(&v.decay()) },) {
-        (mut __tmp_0,) => {
-            let __n = CppRange::end(&v.decay()).iter_distance(&__tmp_0);
-            let mut __order: Vec<isize> = (0..__n).collect();
-            __order.sort_by(|&__x, &__y| cpp_cmp(&__tmp_0.iter_at(__x), &__tmp_0.iter_at(__y)));
-            reorder(__order, |__i| __tmp_0.iter_at(__i));
-        }
-    };
+    let v : Value<std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ > = Rc::new(RefCell::new(std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int____ :: new_1 ( { 20000_u64  } , None , )  )) ;
+    ({
+        let ___first: __gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int_____   = ( { (*v.borrow()) . begin_28 ( ) } )   ;
+        let ___last: __gnu_cxx___normal_iterator_std_vector_int__std_allocator_int___ptr__std_vector_std_vector_int__std_allocator_int____std_allocator_std_vector_int__std_allocator_int_____   = ( { (*v.borrow()) . end_30 ( ) } )   ;
+        sort_1(___first, ___last)
+    });
 }
 pub fn main() {
     __cpp2rust_init_globals();

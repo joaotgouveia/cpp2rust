@@ -14,16 +14,16 @@ pub struct A {
     pub l: std_list_A__std_allocator_A__,
     #[offset(24)]
     #[byte_size(8)]
-    pub it: BidirectionalIterator<A>,
+    pub it: std__List_iterator_A_,
     #[offset(32)]
     #[byte_size(8)]
-    pub cit: BidirectionalIterator<A>,
+    pub cit: std__List_const_iterator_A_,
     #[offset(40)]
     #[byte_size(8)]
-    pub rit: BidirectionalIterator<A>,
+    pub rit: std_reverse_iterator_std__List_iterator_A__,
     #[offset(48)]
     #[byte_size(8)]
-    pub crit: BidirectionalIterator<A>,
+    pub crit: std_reverse_iterator_std__List_const_iterator_A__,
 }
 impl A {
     pub fn move_from(_a0: Ptr<A>) -> Self {
@@ -66,7 +66,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_0() }));
+    ({ cpp2rust_assert_fail_1(({ test_0() })) });
     return 0;
 }
 pub trait AImpl {
@@ -75,26 +75,10 @@ pub trait AImpl {
 impl AImpl for Ptr<A> {
     fn move_assign(&self, _a0: Ptr<A>) -> Ptr<A> {
         field!((*self), l).write({ { (*_a0.upgrade().deref()).l.clone() } });
-        {
-            let __a1 = ({ { (*_a0.upgrade().deref()).it.clone() } });
-            field_ptr!((*self), it).with_mut(|__it| *__it = __a1);
-            field_ptr!((*self), it)
-        };
-        {
-            let __a1 = ({ { (*_a0.upgrade().deref()).cit.clone() } });
-            field_ptr!((*self), cit).with_mut(|__it| *__it = __a1);
-            field_ptr!((*self), cit)
-        };
-        {
-            let __a1 = ({ { (*_a0.upgrade().deref()).rit.clone() } });
-            field_ptr!((*self), rit).with_mut(|__it| *__it = __a1.clone());
-            field_ptr!((*self), rit)
-        };
-        {
-            let __a1 = ({ { (*_a0.upgrade().deref()).crit.clone() } });
-            field_ptr!((*self), crit).with_mut(|__it| *__it = __a1.clone());
-            field_ptr!((*self), crit)
-        };
+        field!((*self), it).write({ { (*_a0.upgrade().deref()).it.clone() } });
+        field!((*self), cit).write({ { (*_a0.upgrade().deref()).cit.clone() } });
+        field!((*self), rit).write({ { (*_a0.upgrade().deref()).rit.clone() } });
+        field!((*self), crit).write({ { (*_a0.upgrade().deref()).crit.clone() } });
         return (*self).clone();
     }
 }

@@ -64,37 +64,43 @@ pub fn test_0() -> bool {
         let ___args_1: Value<f64> = Rc::new(RefCell::new(2.5_f64));
         (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
     });
-    assert!(
-        ({
-            let _x: Value<Emplaceable> =
-                Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
-            EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
-        })
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let _x: Value<Emplaceable> =
+                    Rc::new(RefCell::new(Emplaceable::new_2({ 1 }, { 2.5_f64 })));
+                EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
+            }),
+        )
+    });
     ({
         let ___args_0: Value<i32> = Rc::new(RefCell::new(3));
         let ___args_1: Value<f64> = Rc::new(RefCell::new(4.5_f64));
         (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
     });
-    assert!(
-        ({
-            let _x: Value<Emplaceable> =
-                Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
-            EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
-        })
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let _x: Value<Emplaceable> =
+                    Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
+                EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
+            }),
+        )
+    });
     ({
         let ___args_0: Value<i32> = Rc::new(RefCell::new(2));
         let ___args_1: Value<f64> = Rc::new(RefCell::new(3.5_f64));
         (*q.borrow()).emplace(___args_0.as_pointer(), ___args_1.as_pointer())
     });
-    assert!(
-        ({
-            let _x: Value<Emplaceable> =
-                Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
-            EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
-        })
-    );
+    ({
+        cpp2rust_assert_fail_1(
+            ({
+                let _x: Value<Emplaceable> =
+                    Rc::new(RefCell::new(Emplaceable::new_2({ 3 }, { 4.5_f64 })));
+                EmplaceableImpl::operator_eq(&({ (*q.borrow()).top() }), _x.as_pointer())
+            }),
+        )
+    });
     return true;
 }
 pub fn main() {
@@ -117,7 +123,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
-    assert!(({ test_0() }));
+    ({ cpp2rust_assert_fail_1(({ test_0() })) });
     return 0;
 }
 pub trait EmplaceableImpl {

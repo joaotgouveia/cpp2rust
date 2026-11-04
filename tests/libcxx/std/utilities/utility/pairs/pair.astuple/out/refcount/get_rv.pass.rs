@@ -28,15 +28,22 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let p: Value<(Value<Option<Value<i32>>>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(Ptr::alloc(3).to_owned_opt())),
-            Rc::new(RefCell::new(4_i16)),
-        )));
-        let mut ptr: Option<Value<i32>> = (*p.borrow())
-            .get_value::<0>()
-            .as_pointer()
-            .with_mut(|__v: &mut Option<Value<i32>>| __v.take());
-        assert!(((ptr.as_pointer().read()) == 3));
+        let p: Value<std_pair_std_unique_ptr_int__std_default_delete_int____short_> =
+            Rc::new(RefCell::new({
+                let __tmp_0: Value<std_unique_ptr_int__std_default_delete_int__> =
+                    Rc::new(RefCell::new(
+                        std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(3) }),
+                    ));
+                let __tmp_1: Value<i16> = Rc::new(RefCell::new(4_i16));
+                std_pair_std_unique_ptr_int__std_default_delete_int____short_::new_1(
+                    { __tmp_0.as_pointer() },
+                    { __tmp_1.as_pointer() },
+                )
+            }));
+        let ptr: Value<std_unique_ptr_int__std_default_delete_int__> = Rc::new(RefCell::new(
+            ({ get_0(p.as_pointer()) }).with_mut(std::mem::take),
+        ));
+        ({ cpp2rust_assert_fail_1((((*ptr.borrow()).read()) == 3)) });
     }
     return 0;
 }

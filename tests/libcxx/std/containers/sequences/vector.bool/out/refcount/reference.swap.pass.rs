@@ -9,26 +9,28 @@ use std::rc::{Rc, Weak};
 pub fn tests_0() -> bool {
     let a: Value<Box<[bool]>> = Rc::new(RefCell::new(Box::new([false, true, false, true])));
     let mut an: Ptr<bool> = (a.as_pointer() as Ptr<bool>).offset(
-        ((::std::mem::size_of::<[bool; 4]>() as usize)
-            .wrapping_div((::std::mem::size_of::<bool>() as usize))) as isize,
+        ((::std::mem::size_of::<[bool; 4]>() as u64)
+            .wrapping_div((::std::mem::size_of::<bool>() as u64))) as isize,
     );
-    let v: Value<Vec<bool>> = Rc::new(RefCell::new({
-        let mut __v = Vec::new();
-        let mut __it = (a.as_pointer() as Ptr<bool>);
-        while __it != an {
-            __v.push(__it.iter_deref().read() != false);
-            __it.iter_inc();
-        }
-        __v
-    }));
-    let mut r1: Ptr<bool> = v.decay().offset(0_usize as isize);
-    let mut r2: Ptr<bool> = v.decay().offset(3_usize as isize);
+    let v: Value<std_vector_bool__std_allocator_bool__> =
+        Rc::new(RefCell::new(std_vector_bool__std_allocator_bool__::new_1(
+            { (a.as_pointer() as Ptr<bool>) },
+            { (an).clone() },
+            None,
+        )));
+    let r1: Value<std__Bit_reference> = Rc::new(RefCell::new(((*v.borrow())[0_u64]).clone()));
+    let r2: Value<std__Bit_reference> = Rc::new(RefCell::new(((*v.borrow())[3_u64]).clone()));
     const _: () = assert!(true, "(noexcept(v.swap(r1, r2)))");;
-    assert!(!(r1.read()));
-    assert!(r2.read());
-    ({ std_vector_bool__std_allocator_bool__::swap_51((r1).clone(), (r2).clone()) });
-    assert!(r1.read());
-    assert!(!(r2.read()));
+    ({ cpp2rust_assert_fail_1(!({ (*r1.borrow())() })) });
+    ({ cpp2rust_assert_fail_1(({ (*r2.borrow())() })) });
+    ({
+        std_vector_bool__std_allocator_bool__::swap_51(
+            (*r1.borrow()).clone(),
+            (*r2.borrow()).clone(),
+        )
+    });
+    ({ cpp2rust_assert_fail_1(({ (*r1.borrow())() })) });
+    ({ cpp2rust_assert_fail_1(!({ (*r2.borrow())() })) });
     return true;
 }
 pub fn main() {

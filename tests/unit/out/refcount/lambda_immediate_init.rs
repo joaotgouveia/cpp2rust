@@ -72,11 +72,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    assert!((({ pick_0(None,) }) == 237));
-    assert!((({ pick_0(Some(1),) }) == 1));
+    ({ cpp2rust_assert_fail_2((({ pick_0(None) }) == 237)) });
+    ({ cpp2rust_assert_fail_2((({ pick_0(Some(1)) }) == 1)) });
     let mut s: S = <S>::default();
-    assert!((s.k == 4));
-    assert!((g_1.with(|rc| *rc.borrow()) == 10));
+    ({ cpp2rust_assert_fail_2((s.k == 4)) });
+    ({ cpp2rust_assert_fail_2((g_1.with(|rc| *rc.borrow()) == 10)) });
     let a: Value<i32> = Rc::new(RefCell::new(2));
     let mut c: i32 = ({
         lambda!(
@@ -90,8 +90,8 @@ fn main_0() -> i32 {
         )
         .call()
     });
-    assert!((c == 30));
-    assert!(({ ((*a.borrow()) == 3) }));
+    ({ cpp2rust_assert_fail_2((c == 30)) });
+    ({ cpp2rust_assert_fail_2(((*a.borrow()) == 3)) });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

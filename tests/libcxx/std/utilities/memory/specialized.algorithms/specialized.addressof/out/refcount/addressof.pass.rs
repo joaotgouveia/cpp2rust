@@ -49,33 +49,35 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         let i: Value<i32> = Rc::new(RefCell::new(0_i32));
         let d: Value<f64> = Rc::new(RefCell::new(0_f64));
-        assert!((({ addressof_1(i.as_pointer(),) }) == (i.as_pointer())));
-        assert!((({ addressof_2(d.as_pointer(),) }) == (d.as_pointer())));
+        ({ cpp2rust_assert_fail_1((({ addressof_2(i.as_pointer()) }) == (i.as_pointer()))) });
+        ({ cpp2rust_assert_fail_1((({ addressof_3(d.as_pointer()) }) == (d.as_pointer()))) });
         let mut tp: Ptr<A> = Ptr::alloc(<A>::default());
         let mut ctp: Ptr<A> = (tp).clone();
-        assert!(({ ({ addressof_3((tp).clone(),) }) } == { (tp).clone() }));
-        assert!(({ ({ addressof_4((ctp).clone(),) }) } == { (tp).clone() }));
+        ({ cpp2rust_assert_fail_1(({ ({ addressof_4((tp).clone()) }) } == { (tp).clone() })) });
+        ({ cpp2rust_assert_fail_1(({ ({ addressof_5((ctp).clone()) }) } == { (tp).clone() })) });
         tp.delete();
     }
     {
-        let anon_5: Value<anon_5> = Rc::new(RefCell::new(<anon_5>::default()));
-        assert!(
-            ((({ addressof_6((anon_5::n(anon_5.as_pointer())).clone(),) }) as Ptr<nothing>)
-                .to_any()
-                == (({ addressof_1((anon_5::i(anon_5.as_pointer())).clone(),) }) as Ptr<i32>)
-                    .to_any())
-        );
+        let anon_6: Value<anon_6> = Rc::new(RefCell::new(<anon_6>::default()));
+        ({
+            cpp2rust_assert_fail_1(
+                ((({ addressof_7((anon_6::n(anon_6.as_pointer())).clone()) }) as Ptr<nothing>)
+                    .to_any()
+                    == (({ addressof_2((anon_6::i(anon_6.as_pointer())).clone()) }) as Ptr<i32>)
+                        .to_any()),
+            )
+        });
     }
     return 0;
 }
 #[derive(VaArg, FnPtrArg, ByteRepr, Clone)]
 #[byte_size(4)]
-pub struct anon_5 {
+pub struct anon_6 {
     #[offset(0)]
     #[byte_size(4)]
     __bytes: Box<[u8]>,
 }
-impl anon_5 {
+impl anon_6 {
     pub fn n(this: Ptr<Self>) -> Ptr<nothing> {
         this.reinterpret_cast()
     }
@@ -83,14 +85,14 @@ impl anon_5 {
         this.reinterpret_cast()
     }
 }
-impl CppMove for anon_5 {
+impl CppMove for anon_6 {
     fn cpp_move(src: Ptr<Self>) -> Self {
         src.read()
     }
 }
-impl Default for anon_5 {
+impl Default for anon_6 {
     fn default() -> Self {
-        anon_5 {
+        anon_6 {
             __bytes: Box::from([0u8; 4]),
         }
     }

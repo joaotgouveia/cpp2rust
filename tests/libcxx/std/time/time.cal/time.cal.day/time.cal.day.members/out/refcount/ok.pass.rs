@@ -40,15 +40,15 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "!day{{0}}.ok()");;
     const _: () = assert!(true, "day{{1}}.ok()");;
-    assert!(!({ 0_u32.ok() }));
+    ({ cpp2rust_assert_fail_1(!({ std_chrono_day::new_1({ 0_u32 }).ok() })) });
     let mut i: u32 = 1_u32;
     'loop_: while (i <= 31_u32) {
-        assert!(({ i.ok() }));
+        ({ cpp2rust_assert_fail_1(({ std_chrono_day::new_1({ i }).ok() })) });
         i.prefix_inc();
     }
     let mut i: u32 = 32_u32;
     'loop_: while (i <= 255_u32) {
-        assert!(!({ i.ok() }));
+        ({ cpp2rust_assert_fail_1(!({ std_chrono_day::new_1({ i }).ok() })) });
         i.prefix_inc();
     }
     return 0;

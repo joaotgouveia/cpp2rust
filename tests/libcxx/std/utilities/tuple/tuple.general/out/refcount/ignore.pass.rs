@@ -24,12 +24,16 @@ pub fn test_1() -> bool {
     {
         let res: Ptr<std__Swallow_assign> = (ignore_2.with(|rc| *rc.borrow_mut() = 42));
         const _: () = assert!(true, "noexcept(res = (std::ignore = 42))");;
-        assert!(({ (res).clone() } == { (ignore_2.with(|v| v.as_pointer())) }));
+        ({
+            cpp2rust_assert_fail_3(({ (res).clone() } == { (ignore_2.with(|v| v.as_pointer())) }))
+        });
     }
     {
-        let mut s: S_3 = S_3 { bf: 2_u32 };
+        let mut s: S_4 = S_4 { bf: 2_u32 };
         let res: Ptr<std__Swallow_assign> = (ignore_2.with(|rc| *rc.borrow_mut() = s.bf));
-        assert!(({ (res).clone() } == { (ignore_2.with(|v| v.as_pointer())) }));
+        ({
+            cpp2rust_assert_fail_3(({ (res).clone() } == { (ignore_2.with(|v| v.as_pointer())) }))
+        });
     }
     {
         let copy: Value<std__Swallow_assign> = Rc::new(RefCell::new(
@@ -54,11 +58,11 @@ pub fn test_1() -> bool {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
-pub struct S_3 {
+pub struct S_4 {
     #[offset(0)]
     pub bf: u32,
 }
-impl CppMove for S_3 {
+impl CppMove for S_4 {
     fn cpp_move(src: Ptr<Self>) -> Self {
         src.read()
     }

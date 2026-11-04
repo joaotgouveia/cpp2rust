@@ -87,7 +87,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let mut s: usize = 0_usize;
+        let mut s: u64 = 0_u64;
         let mut vp: AnyPtr = AnyPtr::default();
         let mut vpc: AnyPtr = AnyPtr::default();
         let mut cp: Ptr<i8> = Ptr::<i8>::null();
@@ -115,194 +115,102 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = {
-            let __t = (('l' as i8) as i32) as i8;
-            match s.to_c_string_iterator().position(|__c| __c == __t) {
-                Some(__i) => s.offset(__i),
-                None => {
-                    if __t == 0 {
-                        s.offset(s.to_c_string_iterator().count())
-                    } else {
-                        Ptr::null()
-                    }
-                }
-            }
-        };
-        assert!(({ (res).clone() } == { (s.offset((2) as isize)) }));
+        let mut res: Ptr<i8> = ({ strchr_6((s).clone(), (('l' as i8) as i32)) });
+        ({ cpp2rust_assert_fail_7(({ (res).clone() } == { (s.offset((2) as isize)) })) });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = ({ libcc2rs::strchr_refcount((s).clone(), (('l' as i8) as i32)) });
-        assert!(({ (res).clone() } == { (s.offset((2) as isize)) }));
+        let mut res: Ptr<i8> = ({ strchr_8((s).clone(), (('l' as i8) as i32)) });
+        ({ cpp2rust_assert_fail_7(({ (res).clone() } == { (s.offset((2) as isize)) })) });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = match s.to_c_string_iterator().position(|__c| {
-            Ptr::<i8>::from_string_literal(b"el")
-                .to_c_string_iterator()
-                .any(|__r| __r == __c)
-        }) {
-            Some(__i) => s.offset(__i),
-            None => Ptr::null(),
-        };
-        assert!(({ (res).clone() } == { (s.offset((1) as isize)) }));
+        let mut res: Ptr<i8> = ({ strpbrk_9((s).clone(), Ptr::<i8>::from_string_literal(b"el")) });
+        ({ cpp2rust_assert_fail_7(({ (res).clone() } == { (s.offset((1) as isize)) })) });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = match s.to_c_string_iterator().position(|__c| {
-            Ptr::<i8>::from_string_literal(b"el")
-                .to_c_string_iterator()
-                .any(|__r| __r == __c)
-        }) {
-            Some(__i) => s.offset(__i),
-            None => Ptr::null(),
-        };
-        assert!(({ (res).clone() } == { (s.offset((1) as isize)) }));
+        let mut res: Ptr<i8> = ({ strpbrk_10((s).clone(), Ptr::<i8>::from_string_literal(b"el")) });
+        ({ cpp2rust_assert_fail_7(({ (res).clone() } == { (s.offset((1) as isize)) })) });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = {
-            let __t = (('l' as i8) as i32) as i8;
-            match s
-                .to_c_string_iterator()
-                .enumerate()
-                .filter(|__e| __e.1 == __t)
-                .last()
-            {
-                Some((__i, _)) => s.offset(__i),
-                None => {
-                    if __t == 0 {
-                        s.offset(s.to_c_string_iterator().count())
-                    } else {
-                        Ptr::null()
-                    }
-                }
-            }
-        };
-        assert!(({ (res).clone() } == { (s.offset((9) as isize)) }));
+        let mut res: Ptr<i8> = ({ strrchr_11((s).clone(), (('l' as i8) as i32)) });
+        ({ cpp2rust_assert_fail_7(({ (res).clone() } == { (s.offset((9) as isize)) })) });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = {
-            let __t = (('l' as i8) as i32) as i8;
-            match s
-                .to_c_string_iterator()
-                .enumerate()
-                .filter(|__e| __e.1 == __t)
-                .last()
-            {
-                Some((__i, _)) => s.offset(__i),
-                None => {
-                    if __t == 0 {
-                        s.offset(s.to_c_string_iterator().count())
-                    } else {
-                        Ptr::null()
-                    }
-                }
-            }
-        };
-        assert!(({ (res).clone() } == { (s.offset((9) as isize)) }));
+        let mut res: Ptr<i8> = ({ strrchr_12((s).clone(), (('l' as i8) as i32)) });
+        ({ cpp2rust_assert_fail_7(({ (res).clone() } == { (s.offset((9) as isize)) })) });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
-        let mut count: usize = 11_usize;
+        let mut count: u64 = 11_u64;
         let mut s: AnyPtr = ((storage.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
         const _: () = assert!(true, "");;
-        let mut res: AnyPtr = {
-            let mut __p = s.reinterpret_cast::<u8>();
-            let mut __i: usize = 0;
-            loop {
-                if __i == count {
-                    break Ptr::<u8>::null().to_any();
-                }
-                if __p.read() == (('l' as i8) as i32) as u8 {
-                    break __p.to_any();
-                }
-                __p += 1;
-                __i += 1;
-            }
-        };
-        assert!(
-            ({ (res).clone() } == {
-                (((storage.as_pointer() as Ptr<i8>).offset(2)) as Ptr<i8>).to_any()
-            })
-        );
+        let mut res: AnyPtr = ({ memchr_13((s).clone(), (('l' as i8) as i32), count) });
+        ({
+            cpp2rust_assert_fail_7(
+                ({ (res).clone() } == {
+                    (((storage.as_pointer() as Ptr<i8>).offset(2)) as Ptr<i8>).to_any()
+                }),
+            )
+        });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
-        let mut count: usize = 11_usize;
+        let mut count: u64 = 11_u64;
         let mut s: AnyPtr = ((storage.as_pointer() as Ptr<i8>) as Ptr<i8>).to_any();
         const _: () = assert!(true, "");;
-        let mut res: AnyPtr =
-            ({ libcc2rs::memchr_refcount((s).clone(), (('l' as i8) as i32), count) });
-        assert!(
-            ({ (res).clone() } == {
-                (((storage.as_pointer() as Ptr<i8>).offset(2)) as Ptr<i8>).to_any()
-            })
-        );
+        let mut res: AnyPtr = ({ memchr_14((s).clone(), (('l' as i8) as i32), count) });
+        ({
+            cpp2rust_assert_fail_7(
+                ({ (res).clone() } == {
+                    (((storage.as_pointer() as Ptr<i8>).offset(2)) as Ptr<i8>).to_any()
+                }),
+            )
+        });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = {
-            let mut __p = (s).clone();
-            loop {
-                let mut __h = __p.to_c_string_iterator();
-                if Ptr::<i8>::from_string_literal(b"wor")
-                    .to_c_string_iterator()
-                    .all(|__c| __h.next() == Some(__c))
-                {
-                    break __p;
-                }
-                if __p.read() == 0 {
-                    break Ptr::null();
-                }
-                __p += 1;
-            }
-        };
-        assert!(({ (res).clone() } == { ((storage.as_pointer() as Ptr<i8>).offset(6)) }));
+        let mut res: Ptr<i8> = ({ strstr_15((s).clone(), Ptr::<i8>::from_string_literal(b"wor")) });
+        ({
+            cpp2rust_assert_fail_7(
+                ({ (res).clone() } == { ((storage.as_pointer() as Ptr<i8>).offset(6)) }),
+            )
+        });
     }
     {
         let storage: Value<Box<[i8]>> =
             Rc::new(RefCell::new(i8::array_from_literal(b"hello world\0")));
         let mut s: Ptr<i8> = (storage.as_pointer() as Ptr<i8>);
         const _: () = assert!(true, "");;
-        let mut res: Ptr<i8> = {
-            let mut __p = (s).clone();
-            loop {
-                let mut __h = __p.to_c_string_iterator();
-                if Ptr::<i8>::from_string_literal(b"wor")
-                    .to_c_string_iterator()
-                    .all(|__c| __h.next() == Some(__c))
-                {
-                    break __p;
-                }
-                if __p.read() == 0 {
-                    break Ptr::null();
-                }
-                __p += 1;
-            }
-        };
-        assert!(({ (res).clone() } == { ((storage.as_pointer() as Ptr<i8>).offset(6)) }));
+        let mut res: Ptr<i8> = ({ strstr_16((s).clone(), Ptr::<i8>::from_string_literal(b"wor")) });
+        ({
+            cpp2rust_assert_fail_7(
+                ({ (res).clone() } == { ((storage.as_pointer() as Ptr<i8>).offset(6)) }),
+            )
+        });
     }
     return 0;
 }

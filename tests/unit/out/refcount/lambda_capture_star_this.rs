@@ -23,12 +23,12 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let s: Value<S> = Rc::new(RefCell::new(S { n: 1 }));
-    assert!((({ SImpl::modify_copy(&s.as_pointer(),) }) == 1101));
-    assert!(({ ({ (*s.borrow()).n } == 1) }));
-    assert!((({ SImpl::snapshot(&s.as_pointer(),) }) == 2));
-    assert!(({ ({ (*s.borrow()).n } == 99) }));
-    assert!((({ SImpl::mixed(&s.as_pointer(), 1,) }) == 100));
-    assert!(({ ({ (*s.borrow()).n } == 0) }));
+    ({ cpp2rust_assert_fail_0((({ SImpl::modify_copy(&s.as_pointer()) }) == 1101)) });
+    ({ cpp2rust_assert_fail_0(({ (*s.borrow()).n } == 1)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::snapshot(&s.as_pointer()) }) == 2)) });
+    ({ cpp2rust_assert_fail_0(({ (*s.borrow()).n } == 99)) });
+    ({ cpp2rust_assert_fail_0((({ SImpl::mixed(&s.as_pointer(), 1) }) == 100)) });
+    ({ cpp2rust_assert_fail_0(({ (*s.borrow()).n } == 0)) });
     return 0;
 }
 pub trait SImpl {

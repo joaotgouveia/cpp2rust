@@ -6,8 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn has_value_0(mut _a0: i32) -> bool {
-    return true;
+pub fn has_value_0(mut _a0: i64) -> bool {
+    return false;
 }
 pub fn has_value_1(mut _a0: i64) -> bool {
     return false;
@@ -15,20 +15,14 @@ pub fn has_value_1(mut _a0: i64) -> bool {
 pub fn has_value_2(mut _a0: i64) -> bool {
     return false;
 }
-pub fn has_value_3(mut _a0: i64) -> bool {
-    return false;
+pub fn has_value_3() -> bool {
+    return ({ has_value_0(0_i64) });
 }
 pub fn has_value_4() -> bool {
-    return ({ has_value_0(0) });
-}
-pub fn has_value_5() -> bool {
     return ({ has_value_1(0_i64) });
 }
-pub fn has_value_6() -> bool {
+pub fn has_value_5() -> bool {
     return ({ has_value_2(0_i64) });
-}
-pub fn has_value_7() -> bool {
-    return ({ has_value_3(0_i64) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]

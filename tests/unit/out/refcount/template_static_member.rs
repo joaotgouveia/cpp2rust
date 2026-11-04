@@ -74,14 +74,20 @@ pub fn main() {
 fn main_0() -> i32 {
     s_0.with(|rc| *rc.borrow_mut() = 22);
     s_1.with(|rc| *rc.borrow_mut() = 33_i8);
-    assert!((s_0.with(|rc| *rc.borrow()) == 22));
-    assert!(((s_1.with(|rc| *rc.borrow()) as i32) == 33));
-    assert!((s_2.with(|rc| *rc.borrow()) == 55_i64));
-    assert!((lo_3.with(|rc| *rc.borrow()) == -1_i32) && (hi_4.with(|rc| *rc.borrow()) == 1));
-    assert!(
-        (lo_5.with(|rc| *rc.borrow()) == (-2_i32 as i64))
-            && (hi_6.with(|rc| *rc.borrow()) == 2_i64)
-    );
+    ({ cpp2rust_assert_fail_7((s_0.with(|rc| *rc.borrow()) == 22)) });
+    ({ cpp2rust_assert_fail_7(((s_1.with(|rc| *rc.borrow()) as i32) == 33)) });
+    ({ cpp2rust_assert_fail_7((s_2.with(|rc| *rc.borrow()) == 55_i64)) });
+    ({
+        cpp2rust_assert_fail_7(
+            (lo_3.with(|rc| *rc.borrow()) == -1_i32) && (hi_4.with(|rc| *rc.borrow()) == 1),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_7(
+            (lo_5.with(|rc| *rc.borrow()) == (-2_i32 as i64))
+                && (hi_6.with(|rc| *rc.borrow()) == 2_i64),
+        )
+    });
     return 0;
 }
 pub fn __cpp2rust_init_globals() {

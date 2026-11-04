@@ -13,14 +13,14 @@ pub fn main() {
 fn main_0() -> i32 {
     let N: Value<i32> = Rc::new(RefCell::new(5));
     let mut A: Ptr<i32> = Ptr::alloc_array(
-        (0..((*N.borrow()) as usize))
+        (0..((*N.borrow()) as u64))
             .map(|_| 0_i32)
             .collect::<Box<[i32]>>(),
     );
     A.delete();
     let N2: Ptr<i32> = N.as_pointer();
     let mut A2: Ptr<i32> = Ptr::alloc_array(
-        (0..((N2.read()) as usize))
+        (0..((N2.read()) as u64))
             .map(|_| 0_i32)
             .collect::<Box<[i32]>>(),
     );

@@ -32,7 +32,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             std_normal_distribution_double_::new_1({ 5_f64 }, { 0.25_f64 }),
         ));
         let mut m: f64 = ({ (*d.borrow()).max() });
-        assert!((m == ((f32::INFINITY) as f64)));
+        ({ cpp2rust_assert_fail_0((m == (({ __builtin_inff_1() }) as f64))) });
     }
     return 0;
 }

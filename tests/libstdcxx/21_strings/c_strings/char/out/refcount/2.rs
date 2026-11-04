@@ -18,76 +18,15 @@ pub fn test02_0() {
     let mut cv1: AnyPtr = AnyPtr::default();
     let mut cc: Ptr<i8> = Ptr::<i8>::null();
     let mut c: Ptr<i8> = Ptr::<i8>::null();
-    cv1 = {
-        let mut __p = cv.reinterpret_cast::<u8>();
-        let mut __i: usize = 0;
-        loop {
-            if __i == 3_usize {
-                break Ptr::<u8>::null().to_any();
-            }
-            if __p.read() == (('/' as i8) as i32) as u8 {
-                break __p.to_any();
-            }
-            __p += 1;
-            __i += 1;
-        }
-    };
-    cc = {
-        let __t = (('/' as i8) as i32) as i8;
-        match ccarray1.to_c_string_iterator().position(|__c| __c == __t) {
-            Some(__i) => ccarray1.offset(__i),
-            None => {
-                if __t == 0 {
-                    ccarray1.offset(ccarray1.to_c_string_iterator().count())
-                } else {
-                    Ptr::null()
-                }
-            }
-        }
-    };
-    cc = {
-        let __t = (('c' as i8) as i32) as i8;
-        match ccarray1
-            .to_c_string_iterator()
-            .enumerate()
-            .filter(|__e| __e.1 == __t)
-            .last()
-        {
-            Some((__i, _)) => ccarray1.offset(__i),
-            None => {
-                if __t == 0 {
-                    ccarray1.offset(ccarray1.to_c_string_iterator().count())
-                } else {
-                    Ptr::null()
-                }
-            }
-        }
-    };
-    cc = match ccarray1
-        .to_c_string_iterator()
-        .position(|__c| ccarray2.to_c_string_iterator().any(|__r| __r == __c))
-    {
-        Some(__i) => ccarray1.offset(__i),
-        None => Ptr::null(),
-    };
-    c = match ({ (carray.as_pointer() as Ptr<i8>) },) {
-        (mut __tmp_0,) => {
-            let mut __p = (carray.as_pointer() as Ptr<i8>);
-            loop {
-                let mut __h = __p.to_c_string_iterator();
-                if __tmp_0
-                    .to_c_string_iterator()
-                    .all(|__c| __h.next() == Some(__c))
-                {
-                    break __p;
-                }
-                if __p.read() == 0 {
-                    break Ptr::null();
-                }
-                __p += 1;
-            }
-        }
-    };
+    cv1 = ({ memchr_2((cv).clone(), (('/' as i8) as i32), 3_u64) });
+    cc = ({ strchr_3((ccarray1).clone(), (('/' as i8) as i32)) });
+    cc = ({ strrchr_4((ccarray1).clone(), (('c' as i8) as i32)) });
+    cc = ({ strpbrk_5((ccarray1).clone(), (ccarray2).clone()) });
+    c = ({
+        let ___haystack: Ptr<i8> = (carray.as_pointer() as Ptr<i8>);
+        let ___needle: Ptr<i8> = (carray.as_pointer() as Ptr<i8>);
+        strstr_6(___haystack, ___needle)
+    });
     cv1 = { (cv1).clone() };
     cc = { (cc).clone() };
     c = { (c).clone() };

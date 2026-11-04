@@ -11,12 +11,12 @@ use std::rc::{Rc, Weak};
 pub struct NaturalParameters {
     #[offset(0)]
     #[byte_size(24)]
-    m_data: Vec<f64>,
+    m_data: std_vector_double__std_allocator_double__,
 }
 impl NaturalParameters {
     pub fn new() -> Self {
         Self {
-            m_data: (0..(2_usize) as usize).map(|_| 0_f64).collect::<Vec<_>>(),
+            m_data: std_vector_double__std_allocator_double__::new_1({ 2_u64 }, None),
         }
     }
     pub fn move_from(_a0: Ptr<NaturalParameters>) -> Self {
@@ -46,19 +46,19 @@ pub fn operator_add_0(a: Ptr<NaturalParameters>, b: Ptr<NaturalParameters>) -> N
     .clone();
 }
 pub fn test01_1() {
-    let mut i: usize = 0_usize;
-    'loop_: while (i < 1000_usize) {
-        let ChildrenNP: Value<Vec<NaturalParameters>> = Rc::new(RefCell::new(
-            (0..(1000_usize) as usize)
-                .map(|_| <NaturalParameters>::default())
-                .collect::<Vec<_>>(),
-        ));
+    let mut i: u64 = 0_u64;
+    'loop_: while (i < 1000_u64) {
+        let ChildrenNP: Value<std_vector_NaturalParameters__std_allocator_NaturalParameters__> =
+            Rc::new(RefCell::new(
+                std_vector_NaturalParameters__std_allocator_NaturalParameters__::new_1(
+                    { 1000_u64 },
+                    None,
+                ),
+            ));
         let init: Value<NaturalParameters> = Rc::new(RefCell::new(NaturalParameters::new()));
         let mut NP: NaturalParameters = ({
-            let ___first: RandomAccessIterator<NaturalParameters> =
-                CppRange::begin(&ChildrenNP.decay());
-            let ___last: RandomAccessIterator<NaturalParameters> =
-                CppRange::end(&ChildrenNP.decay());
+            let ___first: __gnu_cxx___normal_iterator_NaturalParameters_ptr__std_vector_NaturalParameters__std_allocator_NaturalParameters___   = ( { (*ChildrenNP.borrow()) . begin_28 ( ) } )   ;
+            let ___last: __gnu_cxx___normal_iterator_NaturalParameters_ptr__std_vector_NaturalParameters__std_allocator_NaturalParameters___   = ( { (*ChildrenNP.borrow()) . end_30 ( ) } )   ;
             accumulate_2(___first, ___last, (*init.borrow()).clone())
         });
         i.prefix_inc();
@@ -73,28 +73,33 @@ fn main_0() -> i32 {
     return 0;
 }
 pub trait NaturalParametersImpl {
-    fn begin(&self) -> RandomAccessIterator<f64>;
-    fn end(&self) -> RandomAccessIterator<f64>;
+    fn begin(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_const_double_ptr__std_vector_double__std_allocator_double___;
+    fn end(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_const_double_ptr__std_vector_double__std_allocator_double___;
     fn operator_add_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters>;
     fn move_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters>;
 }
 impl NaturalParametersImpl for Ptr<NaturalParameters> {
-    fn begin(&self) -> RandomAccessIterator<f64> {
-        return CppRange::begin(&field_ref!((*self), m_data).decay());
+    fn begin(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_const_double_ptr__std_vector_double__std_allocator_double___
+    {
+        return ({ (*(*self).upgrade().deref()).m_data.begin_29() });
     }
-    fn end(&self) -> RandomAccessIterator<f64> {
-        return CppRange::begin(&field_ref!((*self), m_data).decay());
+    fn end(
+        &self,
+    ) -> __gnu_cxx___normal_iterator_const_double_ptr__std_vector_double__std_allocator_double___
+    {
+        return ({ (*(*self).upgrade().deref()).m_data.begin_29() });
     }
     fn operator_add_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters> {
         return (*self).clone();
     }
     fn move_assign(&self, _a0: Ptr<NaturalParameters>) -> Ptr<NaturalParameters> {
-        {
-            field_ref!((*self), m_data)
-                .as_pointer()
-                .write(field!(_a0, m_data).with_mut(std::mem::take));
-            field_ref!((*self), m_data).as_pointer()
-        };
+        field!((*self), m_data).write({ { (*_a0.upgrade().deref()).m_data.clone() } });
         return (*self).clone();
     }
 }

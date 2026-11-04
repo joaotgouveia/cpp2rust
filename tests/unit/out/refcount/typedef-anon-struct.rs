@@ -24,7 +24,7 @@ impl CppMove for Outer_RunInfo {
 pub struct Outer {
     #[offset(0)]
     #[byte_size(24)]
-    pub runs: Vec<Outer_RunInfo>,
+    pub runs: std_vector_Outer_RunInfo__std_allocator_Outer_RunInfo__,
 }
 impl Outer {
     pub fn move_from(_a0: Ptr<Outer>) -> Self {
@@ -44,28 +44,22 @@ pub fn main() {
 }
 fn main_0() -> i32 {
     let o: Value<Outer> = Rc::new(RefCell::new(<Outer>::default()));
-    let mut info: Outer_RunInfo = <Outer_RunInfo>::default();
-    info.block_idx = 1;
-    info.num_extra_zero_runs = 2;
-    {
-        let a0_clone = info.clone();
-        (*o.borrow_mut()).runs.push(a0_clone)
-    };
-    assert!(({ ((*o.borrow()).runs.len() == 1_usize) }));
-    assert!(
-        (field_ref!(o.as_pointer(), runs)
-            .decay()
-            .offset(0_usize as isize)
-            .with(|__s| __s.block_idx)
-            == 1)
-    );
-    assert!(
-        (field_ref!(o.as_pointer(), runs)
-            .decay()
-            .offset(0_usize as isize)
-            .with(|__s| __s.num_extra_zero_runs)
-            == 2)
-    );
+    let info: Value<Outer_RunInfo> = Rc::new(RefCell::new(<Outer_RunInfo>::default()));
+    (*info.borrow_mut()).block_idx = 1;
+    (*info.borrow_mut()).num_extra_zero_runs = 2;
+    ({ (*o.borrow()).runs.push_back_59(info.as_pointer()) });
+    ({ cpp2rust_assert_fail_0((({ (*o.borrow()).runs.size() }) == 1_u64)) });
+    ({
+        cpp2rust_assert_fail_0(
+            (elem!(field_ptr!(o.as_pointer(), runs), 0_u64).with(|__s| __s.block_idx) == 1),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_0(
+            (elem!(field_ptr!(o.as_pointer(), runs), 0_u64).with(|__s| __s.num_extra_zero_runs)
+                == 2),
+        )
+    });
     return 0;
 }
 pub trait OuterImpl {
@@ -73,12 +67,7 @@ pub trait OuterImpl {
 }
 impl OuterImpl for Ptr<Outer> {
     fn move_assign(&self, _a0: Ptr<Outer>) -> Ptr<Outer> {
-        {
-            field_ref!((*self), runs)
-                .as_pointer()
-                .write(field!(_a0, runs).with_mut(std::mem::take));
-            field_ref!((*self), runs).as_pointer()
-        };
+        field!((*self), runs).write({ { (*_a0.upgrade().deref()).runs.clone() } });
         return (*self).clone();
     }
 }

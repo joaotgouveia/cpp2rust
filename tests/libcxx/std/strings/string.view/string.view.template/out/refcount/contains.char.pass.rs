@@ -17,12 +17,12 @@ pub fn test_0() -> bool {
         ),
     ));
     const _: () = assert!(true, "");;
-    assert!(({ !({ (*sv1.borrow()).contains_44(('c' as i8),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_44(('e' as i8),) }) }));
-    assert!(({ !({ (*sv1.borrow()).contains_44(('x' as i8),) }) }));
-    assert!(({ ({ (*sv2.borrow()).contains_44(('c' as i8),) }) }));
-    assert!(({ ({ (*sv2.borrow()).contains_44(('e' as i8),) }) }));
-    assert!(({ !({ (*sv2.borrow()).contains_44(('x' as i8),) }) }));
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_44(('c' as i8)) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_44(('e' as i8)) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv1.borrow()).contains_44(('x' as i8)) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv2.borrow()).contains_44(('c' as i8)) })) });
+    ({ cpp2rust_assert_fail_1(({ (*sv2.borrow()).contains_44(('e' as i8)) })) });
+    ({ cpp2rust_assert_fail_1(!({ (*sv2.borrow()).contains_44(('x' as i8)) })) });
     return true;
 }
 pub fn main() {

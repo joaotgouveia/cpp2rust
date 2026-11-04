@@ -33,8 +33,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         ));
         let p: Value<std_uniform_real_distribution_float__param_type> =
             Rc::new(RefCell::new((*p0.borrow()).clone()));
-        assert!(({ (({ (*p.borrow()).a() }) == 5_f32) }));
-        assert!(({ (({ (*p.borrow()).b() }) == 10_f32) }));
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).a() }) == 5_f32)) });
+        ({ cpp2rust_assert_fail_0((({ (*p.borrow()).b() }) == 10_f32)) });
     }
     return 0;
 }

@@ -28,12 +28,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
-        let s: Value<Vec<i8>> = Rc::new(RefCell::new(vec![i8::default()]));
-        let it : Value<std_back_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ > = Rc::new(RefCell::new(std_back_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ :: new ( { (s .as_pointer() ).reinterpret_cast::<Vec<i8  >  >()  } , )  )) ;
+        let s: Value<std_basic_string_char__std_char_traits_char___std_allocator_char__> =
+            Rc::new(RefCell::new(
+                <std_basic_string_char__std_char_traits_char___std_allocator_char__>::default(),
+            ));
+        let it : Value<std_back_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ > = Rc::new(RefCell::new(std_back_insert_iterator_std_basic_string_char__std_char_traits_char___std_allocator_char___ :: new ( { s .as_pointer()  } , )  )) ;
         const _: () = assert!(true, "");;
     }
     {
-        let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::new()));
+        let v: Value<std_vector_int__std_allocator_int__> = Rc::new(RefCell::new(
+            <std_vector_int__std_allocator_int__>::default(),
+        ));
         let it: Value<std_back_insert_iterator_std_vector_int__std_allocator_int___> =
             Rc::new(RefCell::new(
                 std_back_insert_iterator_std_vector_int__std_allocator_int___::new({

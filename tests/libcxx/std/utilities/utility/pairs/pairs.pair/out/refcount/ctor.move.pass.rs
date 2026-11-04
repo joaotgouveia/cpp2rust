@@ -44,14 +44,14 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     {
         const _: () = assert!(true, "std::is_move_constructible<P1>::value");;
-        let p1: Value<(Value<i32>, Value<i16>)> = Rc::new(RefCell::new((
-            Rc::new(RefCell::new(3)),
-            Rc::new(RefCell::new(4_i16)),
-        )));
-        let p2: Value<(Value<i32>, Value<i16>)> =
-            Rc::new(RefCell::new(CppMove::cpp_move(p1.as_pointer())));
-        assert!(({ ((*(*p2.borrow()).0.borrow()) == 3) }));
-        assert!(({ (((*(*p2.borrow()).1.borrow()) as i32) == 4) }));
+        let p1: Value<std_pair_int__short_> = Rc::new(RefCell::new({
+            let __tmp_0: Value<i32> = Rc::new(RefCell::new(3));
+            let __tmp_1: Value<i16> = Rc::new(RefCell::new(4_i16));
+            std_pair_int__short_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        }));
+        let p2: Value<std_pair_int__short_> = Rc::new(RefCell::new((*p1.borrow_mut()).clone()));
+        ({ cpp2rust_assert_fail_0(({ (*p2.borrow()).first } == 3)) });
+        ({ cpp2rust_assert_fail_0((({ (*p2.borrow()).second } as i32) == 4)) });
     }
     {
         const _: () = assert!(true, "!std::is_copy_constructible<P>::value");;
@@ -62,37 +62,48 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
             const _: () = assert!(true, "std::is_move_constructible<P>::value");;
             let obj: Value<NotCopyOrMoveConstructible> =
                 Rc::new(RefCell::new(<NotCopyOrMoveConstructible>::default()));
-            let p2: Value<(Value<Ptr<NotCopyOrMoveConstructible>>, Value<i32>)> =
-                Rc::new(RefCell::new((
-                    Rc::new(RefCell::new(obj.as_pointer())),
-                    Rc::new(RefCell::new(3)),
-                )));
-            let p1: Value<(Value<Ptr<NotCopyOrMoveConstructible>>, Value<i32>)> =
-                Rc::new(RefCell::new(CppMove::cpp_move(p2.as_pointer())));
-            assert!(
-                ({ ({ ((*p1.borrow()).0.borrow().clone()).clone() } == { (obj.as_pointer()) }) })
-            );
-            assert!(
-                ({ ({ ((*p2.borrow()).0.borrow().clone()).clone() } == { (obj.as_pointer()) }) })
-            );
+            let p2: Value<std_pair_NotCopyOrMoveConstructible_ref__int_> = Rc::new(RefCell::new({
+                let __tmp_2: Value<i32> = Rc::new(RefCell::new(3));
+                std_pair_NotCopyOrMoveConstructible_ref__int_::new_1({ obj.as_pointer() }, {
+                    __tmp_2.as_pointer()
+                })
+            }));
+            let p1: Value<std_pair_NotCopyOrMoveConstructible_ref__int_> =
+                Rc::new(RefCell::new((*p2.borrow_mut()).clone()));
+            ({
+                cpp2rust_assert_fail_0(
+                    ({ ({ (*p1.borrow()).first.clone() }).clone() } == { (obj.as_pointer()) }),
+                )
+            });
+            ({
+                cpp2rust_assert_fail_0(
+                    ({ ({ (*p2.borrow()).first.clone() }).clone() } == { (obj.as_pointer()) }),
+                )
+            });
         }
         {
             const _: () = assert!(true, "std::is_move_constructible<P>::value");;
             let obj: Value<NotCopyOrMoveConstructible> =
                 Rc::new(RefCell::new(<NotCopyOrMoveConstructible>::default()));
-            let p2: Value<(Value<Ptr<NotCopyOrMoveConstructible>>, Value<i32>)> =
-                Rc::new(RefCell::new((
-                    Rc::new(RefCell::new(obj.as_pointer())),
-                    Rc::new(RefCell::new(3)),
-                )));
-            let p1: Value<(Value<Ptr<NotCopyOrMoveConstructible>>, Value<i32>)> =
-                Rc::new(RefCell::new(CppMove::cpp_move(p2.as_pointer())));
-            assert!(
-                ({ ({ ((*p1.borrow()).0.borrow().clone()).clone() } == { (obj.as_pointer()) }) })
-            );
-            assert!(
-                ({ ({ ((*p2.borrow()).0.borrow().clone()).clone() } == { (obj.as_pointer()) }) })
-            );
+            let p2: Value<std_pair_NotCopyOrMoveConstructible_refref__int_> =
+                Rc::new(RefCell::new({
+                    let __tmp_3: Value<i32> = Rc::new(RefCell::new(3));
+                    std_pair_NotCopyOrMoveConstructible_refref__int_::new_1({ obj.as_pointer() }, {
+                        __tmp_3.as_pointer()
+                    })
+                }));
+            let p1: Value<std_pair_NotCopyOrMoveConstructible_refref__int_> =
+                Rc::new(RefCell::new((*p2.borrow_mut()).clone()));
+            ({
+                cpp2rust_assert_fail_0(
+                    ({ ({ (*p1.borrow()).first.clone() }).clone() } == { (obj.as_pointer()) }),
+                )
+            });
+            ({
+                cpp2rust_assert_fail_0(
+                    ({ ({ (*p2.borrow()).first.clone() }).clone() } == { (obj.as_pointer()) }),
+                )
+            });
         }
     }
     return 0;

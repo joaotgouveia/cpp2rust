@@ -7,10 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 const _: () = assert!(true, "Small<int>");
-const _: () = assert!(
-    (::std::mem::size_of::<i32>() == 4_usize),
-    "sizeof(int) == 4"
-);
+const _: () = assert!(true, "sizeof(int) == 4");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Sized {}
@@ -50,16 +47,16 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> i32 {
-    const _: () = assert!(!(false), "!Small<long>");;
-    assert!(({ is_small_0() }));
-    assert!(!({ is_small_1() }));
-    assert!(true);
-    assert!(!(false));
-    assert!(({ has_size_2() }));
-    assert!(!({ has_size_3() }));
-    assert!((({ pick_4(1,) }) == 1));
-    assert!((({ pick_5(1_i64,) }) == 2));
-    assert!((({ pick_6(1_f32,) }) == 2));
+    const _: () = assert!(true, "!Small<long>");;
+    ({ cpp2rust_assert_fail_7(({ is_small_0() })) });
+    ({ cpp2rust_assert_fail_7(!({ is_small_1() })) });
+    ({ cpp2rust_assert_fail_7(true) });
+    ({ cpp2rust_assert_fail_7(!(false)) });
+    ({ cpp2rust_assert_fail_7(({ has_size_2() })) });
+    ({ cpp2rust_assert_fail_7(!({ has_size_3() })) });
+    ({ cpp2rust_assert_fail_7((({ pick_4(1) }) == 1)) });
+    ({ cpp2rust_assert_fail_7((({ pick_5(1_i64) }) == 2)) });
+    ({ cpp2rust_assert_fail_7((({ pick_6(1_f32) }) == 2)) });
     return 0;
 }
 pub trait SizedImpl {

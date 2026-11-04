@@ -7,15 +7,19 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(a: Ptr<i32>, b: Ptr<i32>, x: Ptr<i32>, y: Ptr<i32>) {
-    let p: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
+    let p: Value<std_pair_const_int_ref__const_int_ref_> = Rc::new(RefCell::new(
         ({
             let ___a: Ptr<i32> = (a).clone();
             let ___b: Ptr<i32> = (b).clone();
             minmax_1(___a, ___b)
         }),
     ));
-    assert!(({ ({ ((*p.borrow()).0.borrow().clone()).clone() } == { (x).clone() }) }));
-    assert!(({ ({ ((*p.borrow()).1.borrow().clone()).clone() } == { (y).clone() }) }));
+    ({
+        cpp2rust_assert_fail_2(({ ({ (*p.borrow()).first.clone() }).clone() } == { (x).clone() }))
+    });
+    ({
+        cpp2rust_assert_fail_2(({ ({ (*p.borrow()).second.clone() }).clone() } == { (y).clone() }))
+    });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -92,13 +96,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
         });
     }
     {
-        let p1: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
-            ({ minmax_1(x_2.with(|v| v.as_pointer()), y_3.with(|v| v.as_pointer())) }),
+        let p1: Value<std_pair_const_int_ref__const_int_ref_> = Rc::new(RefCell::new(
+            ({ minmax_1(x_3.with(|v| v.as_pointer()), y_4.with(|v| v.as_pointer())) }),
         ));
         const _: () = assert!(true, "p1.first  == y");;
         const _: () = assert!(true, "p1.second == x");;
-        let p2: Value<(Value<Ptr<i32>>, Value<Ptr<i32>>)> = Rc::new(RefCell::new(
-            ({ minmax_1(y_3.with(|v| v.as_pointer()), x_2.with(|v| v.as_pointer())) }),
+        let p2: Value<std_pair_const_int_ref__const_int_ref_> = Rc::new(RefCell::new(
+            ({ minmax_1(y_4.with(|v| v.as_pointer()), x_3.with(|v| v.as_pointer())) }),
         ));
         const _: () = assert!(true, "p2.first  == y");;
         const _: () = assert!(true, "p2.second == x");;
@@ -106,9 +110,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> i32 {
     return 0;
 }
 thread_local!(
-    static x_2: Value<i32> = Rc::new(RefCell::new(1));
+    static x_3: Value<i32> = Rc::new(RefCell::new(1));
 );
 thread_local!(
-    static y_3: Value<i32> = Rc::new(RefCell::new(0));
+    static y_4: Value<i32> = Rc::new(RefCell::new(0));
 );
 pub fn __cpp2rust_init_globals() {}

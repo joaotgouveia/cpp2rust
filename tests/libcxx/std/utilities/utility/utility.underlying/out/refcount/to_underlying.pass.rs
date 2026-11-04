@@ -82,26 +82,42 @@ pub fn test_3() -> bool {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    assert!((0 == ({ to_underlying_4(e_default_a,) })));
-    assert!((1 == ({ to_underlying_4(e_default_b,) })));
-    assert!((2 == ({ to_underlying_4(e_default_c,) })));
-    assert!((10 == (({ to_underlying_5(e_ushort_d,) }) as i32)));
-    assert!((25 == (({ to_underlying_5(e_ushort_e,) }) as i32)));
-    assert!((50 == (({ to_underlying_5(e_ushort_f,) }) as i32)));
-    assert!((i64::MIN == ({ to_underlying_6(e_longlong_low,) })));
-    assert!((i64::MAX == ({ to_underlying_6(e_longlong_high,) })));
-    assert!((10_u32 == ({ to_underlying_7(e_non_class_enum_a,) })));
-    assert!((11_u32 == ({ to_underlying_7(e_non_class_enum_b,) })));
-    assert!((12_u32 == ({ to_underlying_7(e_non_class_enum_c,) })));
-    assert!((i32::MIN == ({ to_underlying_8(e_int_enum_min,) })));
-    assert!((i32::MAX == ({ to_underlying_8(e_int_enum_max,) })));
+    ({ cpp2rust_assert_fail_4((0 == ({ to_underlying_5(e_default_a) }))) });
+    ({ cpp2rust_assert_fail_4((1 == ({ to_underlying_5(e_default_b) }))) });
+    ({ cpp2rust_assert_fail_4((2 == ({ to_underlying_5(e_default_c) }))) });
+    ({ cpp2rust_assert_fail_4((10 == (({ to_underlying_6(e_ushort_d) }) as i32))) });
+    ({ cpp2rust_assert_fail_4((25 == (({ to_underlying_6(e_ushort_e) }) as i32))) });
+    ({ cpp2rust_assert_fail_4((50 == (({ to_underlying_6(e_ushort_f) }) as i32))) });
+    ({
+        cpp2rust_assert_fail_4(
+            (({ std_numeric_limits_long_long_::min() }) == ({ to_underlying_7(e_longlong_low) })),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_4(
+            (({ std_numeric_limits_long_long_::max() }) == ({ to_underlying_7(e_longlong_high) })),
+        )
+    });
+    ({ cpp2rust_assert_fail_4((10_u32 == ({ to_underlying_8(e_non_class_enum_a) }))) });
+    ({ cpp2rust_assert_fail_4((11_u32 == ({ to_underlying_8(e_non_class_enum_b) }))) });
+    ({ cpp2rust_assert_fail_4((12_u32 == ({ to_underlying_8(e_non_class_enum_c) }))) });
+    ({
+        cpp2rust_assert_fail_4(
+            (({ std_numeric_limits_int_::min() }) == ({ to_underlying_9(e_int_enum_min) })),
+        )
+    });
+    ({
+        cpp2rust_assert_fail_4(
+            (({ std_numeric_limits_int_::max() }) == ({ to_underlying_9(e_int_enum_max) })),
+        )
+    });
     let mut bf: WithBitfieldEnums = <WithBitfieldEnums>::default();
     bf.e1 = ((3) as e_default);
     bf.e2 = e_ushort_e;
     bf.e3 = e_bool_t;
-    assert!((3 == ({ to_underlying_4(bf.e1,) })));
-    assert!((25 == (({ to_underlying_5(bf.e2,) }) as i32)));
-    assert!((1 == (({ to_underlying_9(bf.e3,) }) as i32)));
+    ({ cpp2rust_assert_fail_4((3 == ({ to_underlying_5(bf.e1) }))) });
+    ({ cpp2rust_assert_fail_4((25 == (({ to_underlying_6(bf.e2) }) as i32))) });
+    ({ cpp2rust_assert_fail_4((1 == (({ to_underlying_10(bf.e3) }) as i32))) });
     return true;
 }
 pub fn main() {

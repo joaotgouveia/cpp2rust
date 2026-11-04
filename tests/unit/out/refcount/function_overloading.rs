@@ -65,7 +65,7 @@ fn main_0() -> i32 {
     ({ FooImpl::method_3(&foo1.as_pointer(), 1) });
     ({ FooImpl::foo_1(&foo2.as_pointer()) });
     ({ FooImpl::method_4(&foo2.as_pointer(), 2) });
-    assert!((out == 13));
+    ({ cpp2rust_assert_fail_7((out == 13)) });
     return 0;
 }
 pub trait FooImpl {

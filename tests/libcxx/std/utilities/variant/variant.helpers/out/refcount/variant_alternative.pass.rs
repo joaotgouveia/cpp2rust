@@ -108,15 +108,14 @@ impl ForwardingCallObjectImpl for Ptr<ForwardingCallObject> {
     }
 }
 pub trait TypeIDImpl {
-    fn name(&self) -> Vec<i8>;
+    fn name(&self) -> std_basic_string_char__std_char_traits_char___std_allocator_char__;
 }
 impl TypeIDImpl for Ptr<TypeID> {
-    fn name(&self) -> Vec<i8> {
-        return {
-            let mut __bytes = (*self).with(|__s| __s.m_id.clone()).to_c_bytes();
-            __bytes.push(0_i8);
-            __bytes
-        };
+    fn name(&self) -> std_basic_string_char__std_char_traits_char___std_allocator_char__ {
+        return std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { (*self).with(|__s| __s.m_id.clone()) },
+            None,
+        );
     }
 }
 pub fn __cpp2rust_init_globals() {
