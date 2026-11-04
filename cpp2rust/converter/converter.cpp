@@ -2811,7 +2811,7 @@ bool Converter::VisitCXXRewrittenBinaryOperator(
     };
     auto decomposed = expr->getDecomposedForm();
     clang::Expr *args[] = {operand(decomposed.LHS), operand(decomposed.RHS)};
-    StrCat(GetMappedAsString(expr, args, 2, nullptr));
+    EmitFresh(GetMappedAsString(expr, args, 2, nullptr));
     return false;
   }
   Convert(expr->getSemanticForm());
